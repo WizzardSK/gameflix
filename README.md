@@ -21,7 +21,7 @@ Run `mount.sh` or `roms.sh` or `bash <(curl -Ls https://raw.githubusercontent.co
 
 The library is mounted into 'roms' folder in your home directory.
 
-Then use the library with any emulation system like Retroarch. I am using https://es-de.org/ on Linux on my arm Chromebook.
+Then use the library with any emulation system like Retroarch. It is up to you how you configure the emulators. I am using https://es-de.org/ on Linux on my arm Chromebook, what is basically EmulationStation Desktop Edition suitable for desktop computers, including arm.
 
 Now you may run the roms directly without copying them to local storage, just like Netflix. Again, you should not play the game if you do not own it, you may just try it.
 
