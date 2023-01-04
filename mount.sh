@@ -1,1 +1,1 @@
-bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gamestream/main/roms.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/roms.sh)
