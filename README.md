@@ -16,6 +16,8 @@ If your version is not up to date, grab it from here: https://rclone.org/downloa
 
 All games are stored on public services like Internet Archive and Myrient. Thumbnails are used from https://thumbnails.libretro.com/.
 
+Why is it better than to have all games on local storage? You may have the access to all your games without the need to have a huge storage. Some PSX, PS2, GameCube or Dreamcast games may be very large and using this script you may run them on a Chromebook with small storage (if it may run those emulators). The disadvantage is that you need fast internet connection and even with that the loading of bigger games may be quite slow.
+
 ## Usage
 Run `mount.sh` or `roms.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/roms.sh)` to mount the library.
 
@@ -24,7 +26,5 @@ The library is mounted into `roms` folder in your home directory.
 Then use the library with any emulation system like Retroarch. It is up to you how you configure the emulators. I am using https://es-de.org/ on Linux on my arm Chromebook, what is basically EmulationStation Desktop Edition suitable for desktop computers, including arm.
 
 Now you may run the roms directly without copying them to local storage, just like Netflix. Again, you should not play the game if you do not own it, you may just try it.
-
-Why is it better than to have all games on local storage? You may have the access to all your games without the need to have a huge storage. Some PSX, PS2, GameCube or Dreamcast games may be very large and using this script you may run them on a Chromebook with small storage (if it may run those emulators). The disadvantage is that you need fast internet connection and even with that the loading of bigger games may be quite slow.
 
 Run `unmount.sh` or `unroms.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/unroms.sh)` to unmount the library.
