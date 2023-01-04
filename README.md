@@ -13,6 +13,10 @@ Also it is needed to have rclone configured for all the remotes.
 If your version is not up to date, grab it from here: https://rclone.org/downloads/
 
 ## Usage
-run 'mount.sh' or 'roms.sh' to mount the library
+run 'mount.sh' or 'roms.sh' to mount the library.
 
-run 'unmount.sh' or 'unroms.sh' to unmount the library
+The library is mounted into 'roms' folder in your home directory.
+
+Then use the library with any emulation system. I am using https://es-de.org/ on Linux on my arm Chromebook.
+
+run 'unmount.sh' or 'unroms.sh' to unmount the library.
