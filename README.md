@@ -1,4 +1,4 @@
-# gamestream
+# gameflix
 
 Project for running games directly from public online sources.
 
