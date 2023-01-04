@@ -14,7 +14,7 @@ Attached `rclone.conf` should be placed in `~/.config/rclone/` with Archive S3 k
 
 If your version is not up to date, grab it from here: https://rclone.org/downloads/
 
-All games are stored on puclic services like Internet Archive and Myrient. Thumbnails are used from https://thumbnails.libretro.com/.
+All games are stored on public services like Internet Archive and Myrient. Thumbnails are used from https://thumbnails.libretro.com/.
 
 ## Usage
 Run `mount.sh` or `roms.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/roms.sh)` to mount the library.
