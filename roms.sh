@@ -12,7 +12,7 @@ params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-ti
 # Amstrad
 rclone mount archive:AmstradCPCGameCollectionByGhostware roms/amstradcpc $params &
 rclone mount "thumbnails:Amstrad - CPC/Named_Snaps" ~/.emulationstation/downloaded_media/amstradcpc/screenshots/ $params &
-
+;
 # Atari - Amiga
 rclone mount "myrient:No-Intro/Atari - 2600" roms/atari2600 $params &
 rclone mount "thumbnails:Atari - 2600/Named_Snaps" ~/.emulationstation/downloaded_media/atari2600/screenshots/ $params &
@@ -77,7 +77,7 @@ rclone mount "thumbnails:Sega - Game Gear/Named_Snaps" ~/.emulationstation/downl
 rclone mount archive:GamecubeCollectionByGhostware roms/gamecube $params &
 rclone mount "thumbnails:Nintendo - GameCube/Named_Boxarts" ~/.emulationstation/downloaded_media/gc/screenshots/ $params &
 
-rclone mount "myrient:No-Intro/Nintendo - Nintendo 64 (BigEndian)" roms/n64 $params &
+rclone mount "myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)" roms/n64 $params &
 rclone mount "thumbnails:Nintendo - Nintendo 64/Named_Snaps" ~/.emulationstation/downloaded_media/n64/screenshots/ $params &
 
 rclone mount "myrient:No-Intro/Nintendo - Super Nintendo Entertainment System" roms/snes $params &
