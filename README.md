@@ -10,6 +10,8 @@ Rclone binary is needed on host system (version 1.60+).
 
 Also it is needed to have rclone configured for all the remotes.
 
+Attached `rclone.conf` should be placed in `~/.config/rclone/` with Archive S3 keys added from https://archive.org/account/s3.php
+
 If your version is not up to date, grab it from here: https://rclone.org/downloads/
 
 ## Usage
