@@ -1,2 +1,2 @@
 
-bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gamestream/main/unroms.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/unroms.sh)
