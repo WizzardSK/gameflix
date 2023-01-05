@@ -10,102 +10,102 @@ params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-ti
 #rclone mount "thumbnails:MAME/Named_Snaps" ~/.emulationstation/downloaded_media/mame/screenshots/ $params &
 
 # Amstrad
-mkdir roms/amstradcpc
-rclone mount archive:AmstradCPCGameCollectionByGhostware roms/amstradcpc $params &
+mkdir ~/roms/amstradcpc
+rclone mount archive:AmstradCPCGameCollectionByGhostware ~/roms/amstradcpc $params &
 rclone mount "thumbnails:Amstrad - CPC/Named_Snaps" ~/.emulationstation/downloaded_media/amstradcpc/screenshots/ $params &
 
 # Atari - Amiga
-mkdir roms/atari2600
-rclone mount "myrient:No-Intro/Atari - 2600" roms/atari2600 $params &
+mkdir ~/roms/atari2600
+rclone mount "myrient:No-Intro/Atari - 2600" ~/roms/atari2600 $params &
 rclone mount "thumbnails:Atari - 2600/Named_Snaps" ~/.emulationstation/downloaded_media/atari2600/screenshots/ $params &
 
-mkdir roms/atari5200
-rclone mount "myrient:No-Intro/Atari - 5200" roms/atari5200 $params &
+mkdir ~/roms/atari5200
+rclone mount "myrient:No-Intro/Atari - 5200" ~/roms/atari5200 $params &
 rclone mount "thumbnails:Atari - 5200/Named_Snaps" ~/.emulationstation/downloaded_media/atari5200/screenshots/ $params &
 
-mkdir roms/atari7800
-rclone mount "myrient:No-Intro/Atari - 7800" roms/atari7800 $params &
+mkdir ~/roms/atari7800
+rclone mount "myrient:No-Intro/Atari - 7800" ~/roms/atari7800 $params &
 rclone mount "thumbnails:Atari - 7800/Named_Snaps" ~/.emulationstation/downloaded_media/atari7800/screenshots/ $params &
 
-mkdir roms/atarijaguar
-rclone mount "myrient:No-Intro/Atari - Jaguar (J64)" roms/atarijaguar $params &
+mkdir ~/roms/atarijaguar
+rclone mount "myrient:No-Intro/Atari - Jaguar (J64)" ~/roms/atarijaguar $params &
 rclone mount "thumbnails:Atari - Jaguar/Named_Snaps" ~/.emulationstation/downloaded_media/atarijaguar/screenshots/ $params &
 
-mkdir roms/atarilynx
-rclone mount "myrient:No-Intro/Atari - Lynx" roms/atarilynx $params &
+mkdir ~/roms/atarilynx
+rclone mount "myrient:No-Intro/Atari - Lynx" ~/roms/atarilynx $params &
 rclone mount "thumbnails:Atari - Lynx/Named_Snaps" ~/.emulationstation/downloaded_media/atarilynx/screenshots/ $params &
 
-mkdir roms/atarist
-rclone mount "myrient:No-Intro/Atari - ST" roms/atarist $params &
+mkdir ~/roms/atarist
+rclone mount "myrient:No-Intro/Atari - ST" ~/roms/atarist $params &
 rclone mount "thumbnails:Atari - ST/Named_Snaps" ~/.emulationstation/downloaded_media/atarist/screenshots/ $params &
 
-mkdir roms/amiga
-rclone mount archive:Amiga_WHD_Games roms/amiga $params &
+mkdir ~/roms/amiga
+rclone mount archive:Amiga_WHD_Games ~/roms/amiga $params &
 rclone mount "thumbnails:Commodore - Amiga/Named_Snaps" ~/.emulationstation/downloaded_media/amiga/screenshots/ $params &
 
-mkdir roms/c64
-rclone mount "myrient:No-Intro/Commodore - Commodore 64" roms/c64 $params &
+mkdir ~/roms/c64
+rclone mount "myrient:No-Intro/Commodore - Commodore 64" ~/roms/c64 $params &
 rclone mount "thumbnails:Commodore - 64/Named_Snaps" ~/.emulationstation/downloaded_media/c64/screenshots/ $params &
 
 # PS
-mkdir roms/ps1
-rclone mount archive:chd_psx roms/ps1 $params &
+mkdir ~/roms/ps1
+rclone mount archive:chd_psx ~/roms/ps1 $params &
 rclone mount "thumbnails:Sony - PlayStation/Named_Snaps" ~/.emulationstation/downloaded_media/psx/screenshots/ $params &
 
-mkdir roms/psp
-rclone mount archive:def-jam-vendetta-u roms/psp $params &
+mkdir ~/roms/psp
+rclone mount archive:def-jam-vendetta-u ~/roms/psp $params &
 rclone mount "thumbnails:Sony - PlayStation Portable/Named_Boxarts" ~/.emulationstation/downloaded_media/psp/screenshots/ $params &
 
-mkdir roms/ps2
-rclone mount archive:ps2chd roms/ps2 $params &
+mkdir ~/roms/ps2
+rclone mount archive:ps2chd ~/roms/ps2 $params &
 rclone mount "thumbnails:Sony - PlayStation 2/Named_Boxarts" ~/.emulationstation/downloaded_media/ps2/screenshots/ $params &
 
 # Sega
-mkdir roms/segadc
-rclone mount archive:chd_dc roms/segadc $params &
+mkdir ~/roms/segadc
+rclone mount archive:chd_dc ~/roms/segadc $params &
 rclone mount "thumbnails:Sega - Dreamcast/Named_Snaps" ~/.emulationstation/downloaded_media/dreamcast/screenshots/ $params &
 
-mkdir roms/segasaturn
-rclone mount "myrient:Redump/Sega - Saturn" roms/segasaturn $params &
+mkdir ~/roms/segasaturn
+rclone mount "myrient:Redump/Sega - Saturn" ~/roms/segasaturn $params &
 rclone mount "thumbnails:Sega - Saturn/Named_Snaps" ~/.emulationstation/downloaded_media/saturn/screenshots/ $params &
 
-mkdir roms/segamd
-rclone mount "myrient:No-Intro/Sega - Mega Drive - Genesis" roms/segamd $params &
+mkdir ~/roms/segamd
+rclone mount "myrient:No-Intro/Sega - Mega Drive - Genesis" ~/roms/segamd $params &
 rclone mount "thumbnails:Sega - Mega Drive - Genesis/Named_Snaps" ~/.emulationstation/downloaded_media/genesis/screenshots/ $params &
 
-mkdir roms/segacd
-rclone mount "myrient:Redump/Sega - Mega CD & Sega CD" roms/segacd $params &
+mkdir ~/roms/segacd
+rclone mount "myrient:Redump/Sega - Mega CD & Sega CD" ~/roms/segacd $params &
 rclone mount "thumbnails:Sega - Mega-CD - Sega CD/Named_Snaps" ~/.emulationstation/downloaded_media/segacd/screenshots/ $params &
 
-mkdir roms/segams
-rclone mount "myrient:No-Intro/Sega - Master System - Mark III" roms/segams $params &
+mkdir ~/roms/segams
+rclone mount "myrient:No-Intro/Sega - Master System - Mark III" ~/roms/segams $params &
 rclone mount "thumbnails:Sega - Master System - Mark III/Named_Snaps" ~/.emulationstation/downloaded_media/mastersystem/screenshots/ $params &
 
-mkdir roms/sega1000
-rclone mount "myrient:No-Intro/Sega - SG-1000" roms/sega1000 $params &
+mkdir ~/roms/sega1000
+rclone mount "myrient:No-Intro/Sega - SG-1000" ~/roms/sega1000 $params &
 rclone mount "thumbnails:Sega - SG-1000/Named_Snaps" ~/.emulationstation/downloaded_media/sg-1000/screenshots/ $params &
 
-mkdir roms/sega32x
-rclone mount "myrient:No-Intro/Sega - 32X" roms/sega32x $params &
+mkdir ~/roms/sega32x
+rclone mount "myrient:No-Intro/Sega - 32X" ~/roms/sega32x $params &
 rclone mount "thumbnails:Sega - 32X/Named_Boxarts" ~/.emulationstation/downloaded_media/sega32x/screenshots/ $params &
 
-mkdir roms/segagg
-rclone mount "myrient:No-Intro/Sega - Game Gear" roms/segagg $params &
+mkdir ~/roms/segagg
+rclone mount "myrient:No-Intro/Sega - Game Gear" ~/roms/segagg $params &
 rclone mount "thumbnails:Sega - Game Gear/Named_Snaps" ~/.emulationstation/downloaded_media/gamegear/screenshots/ $params &
 
 # Nintendo
-mkdir roms/gamecube
-rclone mount archive:GamecubeCollectionByGhostware roms/gamecube $params &
+mkdir ~/roms/gamecube
+rclone mount archive:GamecubeCollectionByGhostware ~/roms/gamecube $params &
 rclone mount "thumbnails:Nintendo - GameCube/Named_Boxarts" ~/.emulationstation/downloaded_media/gc/screenshots/ $params &
 
-mkdir roms/n64
-rclone mount "myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)" roms/n64 $params &
+mkdir ~/roms/n64
+rclone mount "myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)" ~/roms/n64 $params &
 rclone mount "thumbnails:Nintendo - Nintendo 64/Named_Snaps" ~/.emulationstation/downloaded_media/n64/screenshots/ $params &
 
-mkdir roms/snes
-rclone mount "myrient:No-Intro/Nintendo - Super Nintendo Entertainment System" roms/snes $params &
+mkdir ~/roms/snes
+rclone mount "myrient:No-Intro/Nintendo - Super Nintendo Entertainment System" ~/roms/snes $params &
 rclone mount "thumbnails:Nintendo - Super Nintendo Entertainment System/Named_Snaps" ~/.emulationstation/downloaded_media/snes/screenshots/ $params &
 
-mkdir roms/nes
-rclone mount "myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)" roms/nes $params &
+mkdir ~/roms/nes
+rclone mount "myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)" ~/roms/nes $params &
 rclone mount "thumbnails:Nintendo - Nintendo Entertainment System/Named_Snaps" ~/.emulationstation/downloaded_media/nes/screenshots/ $params &
