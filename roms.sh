@@ -1,5 +1,6 @@
 #!/bin/bash
 params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty"
+mkdir ~/roms
 
 # DOS
 #rclone mount "myrient:Redump/IBM - PC compatible" roms/dos $params &
