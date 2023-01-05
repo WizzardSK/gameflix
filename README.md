@@ -21,7 +21,7 @@ Why is it better than to have all games on local storage? You may have the acces
 ## Usage
 Run `mount.sh` or `roms.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/roms.sh)` to mount the library.
 
-The library is mounted into `roms` folder in your home directory.
+The library is mounted into `roms` folder in your home directory. If roms directories do not exist, they are automatically created.
 
 Then use the library with any emulation system like Retroarch. It is up to you how you configure the emulators. I am using https://es-de.org/ on Linux on my arm Chromebook, what is basically EmulationStation Desktop Edition suitable for desktop computers, including arm.
 
