@@ -1,6 +1,6 @@
 # gameflix
 
-Project for running games directly from public online sources.
+Project for running games directly from public online sources on Linux machines.
 
 Only for testing purposes.
 
