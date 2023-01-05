@@ -27,4 +27,4 @@ Then use the library with any emulation system like Retroarch. It is up to you h
 
 Now you may run the roms directly without copying them to local storage, just like Netflix. Again, you should not play the game if you do not own it, you may just try it.
 
-Run `unmount.sh` or `unroms.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/unroms.sh)` to unmount the library.
+Run `unmount.sh` or `unroms.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/unroms.sh)` to unmount the library or it is unmounted after restart.
