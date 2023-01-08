@@ -402,7 +402,7 @@
     <system>
         <name>fbneo</name>
         <fullname>FinalBurn Neo</fullname>
-        <path>%ROMPATH%/fbneo/arcade</path>
+        <path>%ROMPATH%/fbneo/Cylum's FinalBurn Neo ROM Collection (02-18-21)</path>
         <extension>.ccd .CCD .cue .CUE .7z .7Z .zip .ZIP</extension>
         <command>%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/fbneo_libretro.so %ROM%</command>
         <platform>arcade</platform>
