@@ -10,7 +10,7 @@ mkdir -p ~/roms
 
 # Arcade
 mkdir -p ~/roms/fbneo
-rclone mount archive:fbnarcade-fullnonmerged roms/fbneo $params &
+rclone mount archive:cylums-final-burn-neo-rom-collection roms/fbneo $params &
 mkdir -p ~/.emulationstation/downloaded_media/fbneo/screenshots
 rclone mount "thumbnails:FBNeo - Arcade Games/Named_Snaps" ~/.emulationstation/downloaded_media/fbneo/screenshots/ $params &
 
