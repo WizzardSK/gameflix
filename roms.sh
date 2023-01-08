@@ -1,6 +1,6 @@
 #!/bin/bash
 params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty"
-mkdir ~/roms
+[ -d "~/roms" ] && mkdir ~/roms
 
 # DOS
 #rclone mount "myrient:Redump/IBM - PC compatible" roms/dos $params &
@@ -58,8 +58,8 @@ mkdir ~/.emulationstation/downloaded_media/c64/screenshots
 rclone mount "thumbnails:Commodore - 64/Named_Snaps" ~/.emulationstation/downloaded_media/c64/screenshots/ $params &
 
 # PS
-mkdir ~/roms/ps1
-rclone mount archive:chd_psx ~/roms/ps1 $params &
+mkdir ~/roms/psx
+rclone mount archive:chd_psx ~/roms/psx $params &
 mkdir ~/.emulationstation/downloaded_media/psx/screenshots
 rclone mount "thumbnails:Sony - PlayStation/Named_Snaps" ~/.emulationstation/downloaded_media/psx/screenshots/ $params &
 
@@ -74,18 +74,18 @@ mkdir ~/.emulationstation/downloaded_media/ps2/screenshots
 rclone mount "thumbnails:Sony - PlayStation 2/Named_Boxarts" ~/.emulationstation/downloaded_media/ps2/screenshots/ $params &
 
 # Sega
-mkdir ~/roms/segadc
-rclone mount archive:chd_dc ~/roms/segadc $params &
+mkdir ~/roms/dreamcast
+rclone mount archive:chd_dc ~/roms/dreamcast $params &
 mkdir ~/.emulationstation/downloaded_media/dreamcast/screenshots
 rclone mount "thumbnails:Sega - Dreamcast/Named_Snaps" ~/.emulationstation/downloaded_media/dreamcast/screenshots/ $params &
 
-mkdir ~/roms/segasaturn
-rclone mount "myrient:Redump/Sega - Saturn" ~/roms/segasaturn $params &
+mkdir ~/roms/saturn
+rclone mount "myrient:Redump/Sega - Saturn" ~/roms/saturn $params &
 mkdir ~/.emulationstation/downloaded_media/saturn/screenshots
 rclone mount "thumbnails:Sega - Saturn/Named_Snaps" ~/.emulationstation/downloaded_media/saturn/screenshots/ $params &
 
-mkdir ~/roms/segamd
-rclone mount "myrient:No-Intro/Sega - Mega Drive - Genesis" ~/roms/segamd $params &
+mkdir ~/roms/genesis
+rclone mount "myrient:No-Intro/Sega - Mega Drive - Genesis" ~/roms/genesis $params &
 mkdir ~/.emulationstation/downloaded_media/genesis/screenshots
 rclone mount "thumbnails:Sega - Mega Drive - Genesis/Named_Snaps" ~/.emulationstation/downloaded_media/genesis/screenshots/ $params &
 
@@ -94,13 +94,13 @@ rclone mount "myrient:Redump/Sega - Mega CD & Sega CD" ~/roms/segacd $params &
 mkdir ~/.emulationstation/downloaded_media/segacd/screenshots
 rclone mount "thumbnails:Sega - Mega-CD - Sega CD/Named_Snaps" ~/.emulationstation/downloaded_media/segacd/screenshots/ $params &
 
-mkdir ~/roms/segams
-rclone mount "myrient:No-Intro/Sega - Master System - Mark III" ~/roms/segams $params &
+mkdir ~/roms/mastersystem
+rclone mount "myrient:No-Intro/Sega - Master System - Mark III" ~/roms/mastersystem $params &
 mkdir ~/.emulationstation/downloaded_media/mastersystem/screenshots
 rclone mount "thumbnails:Sega - Master System - Mark III/Named_Snaps" ~/.emulationstation/downloaded_media/mastersystem/screenshots/ $params &
 
-mkdir ~/roms/sega1000
-rclone mount "myrient:No-Intro/Sega - SG-1000" ~/roms/sega1000 $params &
+mkdir ~/roms/sg-1000
+rclone mount "myrient:No-Intro/Sega - SG-1000" ~/roms/sg-1000 $params &
 mkdir ~/.emulationstation/downloaded_media/sg-1000/screenshots
 rclone mount "thumbnails:Sega - SG-1000/Named_Snaps" ~/.emulationstation/downloaded_media/sg-1000/screenshots/ $params &
 
@@ -109,14 +109,14 @@ rclone mount "myrient:No-Intro/Sega - 32X" ~/roms/sega32x $params &
 mkdir ~/.emulationstation/downloaded_media/sega32x/screenshots
 rclone mount "thumbnails:Sega - 32X/Named_Boxarts" ~/.emulationstation/downloaded_media/sega32x/screenshots/ $params &
 
-mkdir ~/roms/segagg
-rclone mount "myrient:No-Intro/Sega - Game Gear" ~/roms/segagg $params &
+mkdir ~/roms/gamegear
+rclone mount "myrient:No-Intro/Sega - Game Gear" ~/roms/gamegear $params &
 mkdir ~/.emulationstation/downloaded_media/gamegear/screenshots
 rclone mount "thumbnails:Sega - Game Gear/Named_Snaps" ~/.emulationstation/downloaded_media/gamegear/screenshots/ $params &
 
 # Nintendo
-mkdir ~/roms/gamecube
-rclone mount archive:GamecubeCollectionByGhostware ~/roms/gamecube $params &
+mkdir ~/roms/gc
+rclone mount archive:GamecubeCollectionByGhostware ~/roms/gc $params &
 mkdir ~/.emulationstation/downloaded_media/gc/screenshots
 rclone mount "thumbnails:Nintendo - GameCube/Named_Boxarts" ~/.emulationstation/downloaded_media/gc/screenshots/ $params &
 
