@@ -30,8 +30,8 @@ fusermount -u ~/.emulationstation/downloaded_media/atarist/screenshots
 fusermount -u ~/roms/c64
 fusermount -u ~/.emulationstation/downloaded_media/c64/screenshots
 
-fusermount -u ~/roms/mame
-fusermount -u ~/.emulationstation/downloaded_media/mame/screenshots
+fusermount -u ~/roms/fbneo
+fusermount -u ~/.emulationstation/downloaded_media/fbneo/screenshots
 
 fusermount -u ~/roms/psx
 fusermount -u ~/.emulationstation/downloaded_media/psx/screenshots
