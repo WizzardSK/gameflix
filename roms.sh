@@ -1,8 +1,6 @@
 #!/bin/bash
 params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty"
-if [ ! -d "~/roms" ]; then 
-  mkdir ~/roms
-fi
+mkdir -p ~/roms
 
 # DOS
 #rclone mount "myrient:Redump/IBM - PC compatible" roms/dos $params &
@@ -13,126 +11,126 @@ fi
 #rclone mount "thumbnails:MAME/Named_Snaps" ~/.emulationstation/downloaded_media/mame/screenshots/ $params &
 
 # Amstrad
-[ ! -d "~/roms/amstradcpc" ] && mkdir ~/roms/amstradcpc
+mkdir -p ~/roms/amstradcpc
 rclone mount archive:AmstradCPCGameCollectionByGhostware ~/roms/amstradcpc $params &
-[ ! -d "~/.emulationstation/downloaded_media/amstradcpc/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/amstradcpc/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/amstradcpc/screenshots
 rclone mount "thumbnails:Amstrad - CPC/Named_Snaps" ~/.emulationstation/downloaded_media/amstradcpc/screenshots/ $params &
 
 # Atari - Amiga
-[ ! -d "~/roms/atari2600" ] && mkdir ~/roms/atari2600
+mkdir -p ~/roms/atari2600
 rclone mount "myrient:No-Intro/Atari - 2600" ~/roms/atari2600 $params &
-[ ! -d "~/.emulationstation/downloaded_media/atari2600/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/atari2600/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/atari2600/screenshots
 rclone mount "thumbnails:Atari - 2600/Named_Snaps" ~/.emulationstation/downloaded_media/atari2600/screenshots/ $params &
 
-[ ! -d "~/roms/atari5200" ] && mkdir ~/roms/atari5200
+mkdir -p ~/roms/atari5200
 rclone mount "myrient:No-Intro/Atari - 5200" ~/roms/atari5200 $params &
-[ ! -d "~/.emulationstation/downloaded_media/atari5200/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/atari5200/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/atari5200/screenshots
 rclone mount "thumbnails:Atari - 5200/Named_Snaps" ~/.emulationstation/downloaded_media/atari5200/screenshots/ $params &
 
-[ ! -d "~/roms/atari7800" ] && mkdir ~/roms/atari7800
+mkdir -p ~/roms/atari7800
 rclone mount "myrient:No-Intro/Atari - 7800" ~/roms/atari7800 $params &
-[ ! -d "~/.emulationstation/downloaded_media/atari7800/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/atari7800/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/atari7800/screenshots
 rclone mount "thumbnails:Atari - 7800/Named_Snaps" ~/.emulationstation/downloaded_media/atari7800/screenshots/ $params &
 
-[ ! -d "~/roms/atarijaguar" ] && mkdir ~/roms/atarijaguar
+mkdir -p ~/roms/atarijaguar
 rclone mount "myrient:No-Intro/Atari - Jaguar (J64)" ~/roms/atarijaguar $params &
-mkdir ~/.emulationstation/downloaded_media/atarijaguar/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/atarijaguar/screenshots
 rclone mount "thumbnails:Atari - Jaguar/Named_Snaps" ~/.emulationstation/downloaded_media/atarijaguar/screenshots/ $params &
 
-[ ! -d "~/roms/atarilynx" ] && mkdir ~/roms/atarilynx
+mkdir -p ~/roms/atarilynx
 rclone mount "myrient:No-Intro/Atari - Lynx" ~/roms/atarilynx $params &
-[ ! -d "~/.emulationstation/downloaded_media/atarilynx/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/atarilynx/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/atarilynx/screenshots
 rclone mount "thumbnails:Atari - Lynx/Named_Snaps" ~/.emulationstation/downloaded_media/atarilynx/screenshots/ $params &
 
-[ ! -d "~/roms/atarist" ] && mkdir ~/roms/atarist
+mkdir -p ~/roms/atarist
 rclone mount "myrient:No-Intro/Atari - ST" ~/roms/atarist $params &
-[ ! -d "~/.emulationstation/downloaded_media/atarist/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/atarist/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/atarist/screenshots
 rclone mount "thumbnails:Atari - ST/Named_Snaps" ~/.emulationstation/downloaded_media/atarist/screenshots/ $params &
 
-[ ! -d "~/roms/amiga" ] && mkdir ~/roms/amiga
+mkdir -p ~/roms/amiga
 rclone mount archive:Amiga_WHD_Games ~/roms/amiga $params &
-[ ! -d "~/.emulationstation/downloaded_media/amiga/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/amiga/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/amiga/screenshots
 rclone mount "thumbnails:Commodore - Amiga/Named_Snaps" ~/.emulationstation/downloaded_media/amiga/screenshots/ $params &
 
-[ ! -d "~/roms/c64" ] && mkdir ~/roms/c64
+mkdir -p ~/roms/c64
 rclone mount "myrient:No-Intro/Commodore - Commodore 64" ~/roms/c64 $params &
-[ ! -d "~/.emulationstation/downloaded_media/c64/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/c64/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/c64/screenshots
 rclone mount "thumbnails:Commodore - 64/Named_Snaps" ~/.emulationstation/downloaded_media/c64/screenshots/ $params &
 
 # PS
-[ ! -d "~/roms/psx" ] && mkdir ~/roms/psx
+mkdir -p ~/roms/psx
 rclone mount archive:chd_psx ~/roms/psx $params &
-[ ! -d "~/.emulationstation/downloaded_media/psx/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/psx/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/psx/screenshots
 rclone mount "thumbnails:Sony - PlayStation/Named_Snaps" ~/.emulationstation/downloaded_media/psx/screenshots/ $params &
 
-[ ! -d "~/roms/psp" ] && mkdir ~/roms/psp
+mkdir -p ~/roms/psp
 rclone mount archive:def-jam-vendetta-u ~/roms/psp $params &
-[ ! -d "~/.emulationstation/downloaded_media/psp/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/psp/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/psp/screenshots
 rclone mount "thumbnails:Sony - PlayStation Portable/Named_Boxarts" ~/.emulationstation/downloaded_media/psp/screenshots/ $params &
 
-[ ! -d "~/roms/ps2" ] && mkdir ~/roms/ps2
+mkdir -p ~/roms/ps2
 rclone mount archive:ps2chd ~/roms/ps2 $params &
-[ ! -d "~/.emulationstation/downloaded_media/ps2/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/ps2/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/ps2/screenshots
 rclone mount "thumbnails:Sony - PlayStation 2/Named_Boxarts" ~/.emulationstation/downloaded_media/ps2/screenshots/ $params &
 
 # Sega
-[ ! -d "~/roms/dreamcast" ] && mkdir ~/roms/dreamcast
+mkdir -p ~/roms/dreamcast
 rclone mount archive:chd_dc ~/roms/dreamcast $params &
-[ ! -d "~/.emulationstation/downloaded_media/dreamcast/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/dreamcast/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/dreamcast/screenshots
 rclone mount "thumbnails:Sega - Dreamcast/Named_Snaps" ~/.emulationstation/downloaded_media/dreamcast/screenshots/ $params &
 
-[ ! -d "~/roms/saturn" ] && mkdir ~/roms/saturn
+mkdir -p ~/roms/saturn
 rclone mount "myrient:Redump/Sega - Saturn" ~/roms/saturn $params &
-[ ! -d "~/.emulationstation/downloaded_media/saturn/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/saturn/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/saturn/screenshots
 rclone mount "thumbnails:Sega - Saturn/Named_Snaps" ~/.emulationstation/downloaded_media/saturn/screenshots/ $params &
 
-[ ! -d "~/roms/genesis" ] && mkdir ~/roms/genesis
+mkdir -p ~/roms/genesis
 rclone mount "myrient:No-Intro/Sega - Mega Drive - Genesis" ~/roms/genesis $params &
-[ ! -d "~/.emulationstation/downloaded_media/genesis/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/genesis/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/genesis/screenshots
 rclone mount "thumbnails:Sega - Mega Drive - Genesis/Named_Snaps" ~/.emulationstation/downloaded_media/genesis/screenshots/ $params &
 
-[ ! -d "~/roms/segacd" ] && mkdir ~/roms/segacd
+mkdir -p ~/roms/segacd
 rclone mount "myrient:Redump/Sega - Mega CD & Sega CD" ~/roms/segacd $params &
-[ ! -d "~/.emulationstation/downloaded_media/segacd/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/segacd/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/segacd/screenshots
 rclone mount "thumbnails:Sega - Mega-CD - Sega CD/Named_Snaps" ~/.emulationstation/downloaded_media/segacd/screenshots/ $params &
 
-[ ! -d "~/roms/mastersystem" ] && mkdir ~/roms/mastersystem
+mkdir -p ~/roms/mastersystem
 rclone mount "myrient:No-Intro/Sega - Master System - Mark III" ~/roms/mastersystem $params &
-[ ! -d "~/.emulationstation/downloaded_media/mastersystem/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/mastersystem/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/mastersystem/screenshots
 rclone mount "thumbnails:Sega - Master System - Mark III/Named_Snaps" ~/.emulationstation/downloaded_media/mastersystem/screenshots/ $params &
 
-[ ! -d "~/roms/sg-1000" ] && mkdir ~/roms/sg-1000
+mkdir -p ~/roms/sg-1000
 rclone mount "myrient:No-Intro/Sega - SG-1000" ~/roms/sg-1000 $params &
-[ ! -d "~/.emulationstation/downloaded_media/sg-1000/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/sg-1000/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/sg-1000/screenshots
 rclone mount "thumbnails:Sega - SG-1000/Named_Snaps" ~/.emulationstation/downloaded_media/sg-1000/screenshots/ $params &
 
-[ ! -d "~/roms/sega32x" ] && mkdir ~/roms/sega32x
+mkdir -p ~/roms/sega32x
 rclone mount "myrient:No-Intro/Sega - 32X" ~/roms/sega32x $params &
-[ ! -d "~/.emulationstation/downloaded_media/sega32x/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/sega32x/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/sega32x/screenshots
 rclone mount "thumbnails:Sega - 32X/Named_Boxarts" ~/.emulationstation/downloaded_media/sega32x/screenshots/ $params &
 
-[ ! -d "~/roms/gamegear" ] && mkdir ~/roms/gamegear
+mkdir -p ~/roms/gamegear
 rclone mount "myrient:No-Intro/Sega - Game Gear" ~/roms/gamegear $params &
-[ ! -d "~/.emulationstation/downloaded_media/gamegear/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/gamegear/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/gamegear/screenshots
 rclone mount "thumbnails:Sega - Game Gear/Named_Snaps" ~/.emulationstation/downloaded_media/gamegear/screenshots/ $params &
 
 # Nintendo
-[ ! -d "~/roms/gc" ] && mkdir ~/roms/gc
+mkdir -p ~/roms/gc
 rclone mount archive:GamecubeCollectionByGhostware ~/roms/gc $params &
-[ ! -d "~/.emulationstation/downloaded_media/gc/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/gc/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/gc/screenshots
 rclone mount "thumbnails:Nintendo - GameCube/Named_Boxarts" ~/.emulationstation/downloaded_media/gc/screenshots/ $params &
 
-[ ! -d "~/roms/n64" ] && mkdir ~/roms/n64
+mkdir -p ~/roms/n64
 rclone mount "myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)" ~/roms/n64 $params &
-[ ! -d "~/.emulationstation/downloaded_media/n64/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/n64/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/n64/screenshots
 rclone mount "thumbnails:Nintendo - Nintendo 64/Named_Snaps" ~/.emulationstation/downloaded_media/n64/screenshots/ $params &
 
-[ ! -d "~/roms/snes" ] && mkdir ~/roms/snes
+mkdir -p ~/roms/snes
 rclone mount "myrient:No-Intro/Nintendo - Super Nintendo Entertainment System" ~/roms/snes $params &
-[ ! -d "~/.emulationstation/downloaded_media/snes/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/snes/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/snes/screenshots
 rclone mount "thumbnails:Nintendo - Super Nintendo Entertainment System/Named_Snaps" ~/.emulationstation/downloaded_media/snes/screenshots/ $params &
 
-[ ! -d "~/roms/nes" ] && mkdir ~/roms/nes
+mkdir -p ~/roms/nes
 rclone mount "myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)" ~/roms/nes $params &
-[ ! -d "~/.emulationstation/downloaded_media/nes/screenshots" ] && mkdir ~/.emulationstation/downloaded_media/nes/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/nes/screenshots
 rclone mount "thumbnails:Nintendo - Nintendo Entertainment System/Named_Snaps" ~/.emulationstation/downloaded_media/nes/screenshots/ $params &
