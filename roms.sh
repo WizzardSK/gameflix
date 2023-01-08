@@ -2,15 +2,17 @@
 params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty"
 mkdir -p ~/roms
 
-# Arcade
-#rclone mount archive:fbnarcade-fullnonmerged roms/mame $params &
-#rclone mount "thumbnails:MAME/Named_Snaps" ~/.emulationstation/downloaded_media/mame/screenshots/ $params &
-
 # DOS
-mkdir -p ~/roms/dos
-rclone mount "myrient:Redump/IBM - PC compatible" roms/dos $params &
-mkdir -p ~/.emulationstation/downloaded_media/dos/screenshots
-rclone mount "thumbnails:DOS/Named_Boxarts" ~/.emulationstation/downloaded_media/dos/screenshots/ $params &
+#mkdir -p ~/roms/dos
+#rclone mount "myrient:Redump/IBM - PC compatible" roms/dos $params &
+#mkdir -p ~/.emulationstation/downloaded_media/dos/screenshots
+#rclone mount "thumbnails:DOS/Named_Boxarts" ~/.emulationstation/downloaded_media/dos/screenshots/ $params &
+
+# Arcade
+mkdir -p ~/roms/mame
+rclone mount archive:fbnarcade-fullnonmerged roms/mame $params &
+mkdir -p ~/.emulationstation/downloaded_media/mame/screenshots
+rclone mount "thumbnails:MAME/Named_Snaps" ~/.emulationstation/downloaded_media/mame/screenshots/ $params &
 
 # Amstrad
 mkdir -p ~/roms/amstradcpc
