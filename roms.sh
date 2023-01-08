@@ -134,3 +134,5 @@ mkdir -p ~/roms/nes
 rclone mount "myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)" ~/roms/nes $params &
 mkdir -p ~/.emulationstation/downloaded_media/nes/screenshots
 rclone mount "thumbnails:Nintendo - Nintendo Entertainment System/Named_Snaps" ~/.emulationstation/downloaded_media/nes/screenshots/ $params &
+
+emulationstation &
