@@ -6,9 +6,6 @@ fusermount -u ~/.emulationstation/downloaded_media/amiga/screenshots
 fusermount -u ~/roms/amstradcpc
 fusermount -u ~/.emulationstation/downloaded_media/amstradcpc/screenshots
 
-fusermount -u ~/roms/arcade
-fusermount -u ~/.emulationstation/downloaded_media/arcade/screenshots
-
 fusermount -u ~/roms/atari2600
 fusermount -u ~/.emulationstation/downloaded_media/atari2600/screenshots
 
