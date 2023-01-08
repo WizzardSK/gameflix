@@ -11,23 +11,23 @@ params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-ti
 #rclone mount "thumbnails:MAME/Named_Snaps" ~/.emulationstation/downloaded_media/mame/screenshots/ $params &
 
 # Amstrad
-[ -d "~/roms/amstradcpc" ] mkdir ~/roms/amstradcpc
+[ -d "~/roms/amstradcpc" ] && mkdir ~/roms/amstradcpc
 rclone mount archive:AmstradCPCGameCollectionByGhostware ~/roms/amstradcpc $params &
-[ -d "~/roms" ] mkdir ~/.emulationstation/downloaded_media/amstradcpc/screenshots
+[ -d "~/.emulationstation/downloaded_media/amstradcpc/screenshots" ] mkdir ~/.emulationstation/downloaded_media/amstradcpc/screenshots
 rclone mount "thumbnails:Amstrad - CPC/Named_Snaps" ~/.emulationstation/downloaded_media/amstradcpc/screenshots/ $params &
 
 # Atari - Amiga
-[ -d "~/roms/atari2600" ] mkdir ~/roms/atari2600
+[ -d "~/roms/atari2600" ] && mkdir ~/roms/atari2600
 rclone mount "myrient:No-Intro/Atari - 2600" ~/roms/atari2600 $params &
 mkdir ~/.emulationstation/downloaded_media/atari2600/screenshots
 rclone mount "thumbnails:Atari - 2600/Named_Snaps" ~/.emulationstation/downloaded_media/atari2600/screenshots/ $params &
 
-[ -d "~/roms/atari5200" ] mkdir ~/roms/atari5200
+[ -d "~/roms/atari5200" ] && mkdir ~/roms/atari5200
 rclone mount "myrient:No-Intro/Atari - 5200" ~/roms/atari5200 $params &
 mkdir ~/.emulationstation/downloaded_media/atari5200/screenshots
 rclone mount "thumbnails:Atari - 5200/Named_Snaps" ~/.emulationstation/downloaded_media/atari5200/screenshots/ $params &
 
-[ -d "~/roms/atari7800" ] mkdir ~/roms/atari7800
+[ -d "~/roms/atari7800" ] && mkdir ~/roms/atari7800
 rclone mount "myrient:No-Intro/Atari - 7800" ~/roms/atari7800 $params &
 mkdir ~/.emulationstation/downloaded_media/atari7800/screenshots
 rclone mount "thumbnails:Atari - 7800/Named_Snaps" ~/.emulationstation/downloaded_media/atari7800/screenshots/ $params &
