@@ -2,7 +2,7 @@
 
 Project for running games directly from public online sources on Linux machines.
 
-Only for testing purposes.
+Only for testing purposes. I made this project mostly for my own personal needs, to have the same setup on all my machines.
 
 You must own all the games that you are running using this script.
 
