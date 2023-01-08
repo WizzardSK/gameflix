@@ -9,10 +9,10 @@ mkdir -p ~/roms
 #rclone mount "thumbnails:DOS/Named_Boxarts" ~/.emulationstation/downloaded_media/dos/screenshots/ $params &
 
 # Arcade
-mkdir -p ~/roms/mame
-rclone mount archive:fbnarcade-fullnonmerged roms/mame $params &
-mkdir -p ~/.emulationstation/downloaded_media/mame/screenshots
-rclone mount "thumbnails:MAME/Named_Snaps" ~/.emulationstation/downloaded_media/mame/screenshots/ $params &
+mkdir -p ~/roms/fbneo
+rclone mount archive:fbnarcade-fullnonmerged roms/fbneo $params &
+mkdir -p ~/.emulationstation/downloaded_media/fbneo/screenshots
+rclone mount "thumbnails:FBNeo - Arcade Games/Named_Snaps" ~/.emulationstation/downloaded_media/fbneo/screenshots/ $params &
 
 # Amstrad
 mkdir -p ~/roms/amstradcpc
