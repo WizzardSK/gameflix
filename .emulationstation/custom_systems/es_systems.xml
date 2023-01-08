@@ -402,7 +402,7 @@
     <system>
         <name>fbneo</name>
         <fullname>FinalBurn Neo</fullname>
-        <path>%ROMPATH%/fbneo</path>
+        <path>%ROMPATH%/fbneo/arcade</path>
         <extension>.ccd .CCD .cue .CUE .7z .7Z .zip .ZIP</extension>
         <command>%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/fbneo_libretro.so %ROM%</command>
         <platform>arcade</platform>
