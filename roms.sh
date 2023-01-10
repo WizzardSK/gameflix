@@ -1,12 +1,5 @@
 #!/bin/bash
 params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty --daemon"
-mkdir -p ~/roms
-
-# DOS
-#mkdir -p ~/roms/dos
-#rclone mount "myrient:Redump/IBM - PC compatible" roms/dos $params
-#mkdir -p ~/.emulationstation/downloaded_media/dos/screenshots
-#rclone mount "thumbnails:DOS/Named_Boxarts" ~/.emulationstation/downloaded_media/dos/screenshots/ $params
 
 # Arcade
 mkdir -p ~/roms/fbneo
