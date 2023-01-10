@@ -84,7 +84,7 @@ mkdir -p ~/.emulationstation/downloaded_media/dreamcast/screenshots
 rclone mount "thumbnails:Sega - Dreamcast/Named_Snaps" ~/.emulationstation/downloaded_media/dreamcast/screenshots/ $params
 
 mkdir -p ~/roms/saturn
-rclone mount archive:chd_saturn ~/roms/saturn $params
+rclone mount archive:SaturnRedumpCHDs ~/roms/saturn $params
 mkdir -p ~/.emulationstation/downloaded_media/saturn/screenshots
 rclone mount "thumbnails:Sega - Saturn/Named_Snaps" ~/.emulationstation/downloaded_media/saturn/screenshots/ $params
 
