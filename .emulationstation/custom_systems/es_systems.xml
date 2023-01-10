@@ -1023,7 +1023,7 @@
     <system>
         <name>saturn</name>
         <fullname>Sega Saturn</fullname>
-        <path>%ROMPATH%/saturn</path>
+        <path>%ROMPATH%/saturn/CHD-Saturn</path>
         <extension>.bin .BIN .ccd .CCD .chd .CHD .cue .CUE .iso .ISO .mds .MDS .toc .TOC .m3u .M3U .7z .7Z .zip .ZIP</extension>
         <command label="Beetle Saturn">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_saturn_libretro.so %ROM%</command>
         <command label="Kronos">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/kronos_libretro.so %ROM%</command>
