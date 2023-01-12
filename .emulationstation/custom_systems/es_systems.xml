@@ -1,4 +1,4 @@
-š<?xml version="1.0"?>
+<?xml version="1.0"?>
 <!-- This is the ES-DE game systems configuration file for Unix -->
 <systemList>
     <system>
@@ -429,7 +429,7 @@
     <system>
         <name>gamegear</name>
         <fullname>Sega Game Gear</fullname>
-        <path>%ROMPATH%/segagg</path>
+        <path>%ROMPATH%/gamegear</path>
         <extension>.68k .68K .bin .BIN .bms .BMS .chd .CHD .col .COL .cue .CUE .gen .GEN .gg .GG .iso .ISO .m3u .M3U .md .MD .mdx .MDX .rom .ROM .sg .SG .sgd .SGD .smd .SMD .sms .SMS .7z .7Z .zip .ZIP</extension>
         <command label="Gearsystem">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/gearsystem_libretro.so %ROM%</command>
         <command label="SMS Plus GX">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/smsplus_libretro.so %ROM%</command>
@@ -481,10 +481,12 @@
     <system>
         <name>gc</name>
         <fullname>Nintendo GameCube</fullname>
-        <path>%ROMPATH%/gamecube</path>
-        <extension>.gcm .GCM .iso .ISO .wbfs .WBFS .ciso .CISO .gcz .GCZ .elf .ELF .dol .DOL .dff .DFF .tgc .TGC .wad .WAD .7z .7Z .zip .ZIP</extension>
-        <command label="Libretro">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/dolphin_libretro.so %ROM%</command>
-        <command label="Standalone">dolphin-emu %ROM%</command>
+        <path>%ROMPATH%/gc/RVZ-GC-USA-REDUMP</path>
+        <extension>.ciso .CISO .dff .DFF .dol .DOL .elf .ELF .gcm .GCM .gcz .GCZ .iso .ISO .json .JSON .m3u .M3U .rvz .RVZ .tgc .TGC .wad .WAD .wbfs .WBFS .wia .WIA .7z .7Z .zip .ZIP</extension>
+        <command label="Dolphin">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/dolphin_libretro.so %ROM%</command>
+        <command label="Dolphin (Standalone)">%EMULATOR_DOLPHIN% -b -e %ROM%</command>
+        <command label="PrimeHack (Standalone)">%EMULATOR_PRIMEHACK% -b -e %ROM%</command>
+        <command label="Triforce (Standalone)">%EMULATOR_TRIFORCE% -b -e %ROM%</command>
         <platform>gc</platform>
         <theme>gc</theme>
     </system>
@@ -730,7 +732,7 @@
     <system>
         <name>n64</name>
         <fullname>Nintendo 64</fullname>
-        <path>%ROMPATH%/No-Intro/Nintendo - Nintendo 64 (BigEndian)</path>
+        <path>%ROMPATH%/n64</path>
         <extension>.n64 .N64 .v64 .V64 .z64 .Z64 .bin .BIN .u1 .U1 .7z .7Z .zip .ZIP</extension>
         <command label="Mupen64Plus-Next">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mupen64plus_next_libretro.so %ROM%</command>
         <command label="ParaLLEl N64">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/parallel_n64_libretro.so %ROM%</command>
@@ -1094,7 +1096,7 @@
     <system>
         <name>sg-1000</name>
         <fullname>Sega SG-1000</fullname>
-        <path>%ROMPATH%/sega1000</path>
+        <path>%ROMPATH%/sg-1000</path>
         <extension>.68k .68K .bin .BIN .bms .BMS .chd .CHD .cue .CUE .gen .GEN .gg .GG .iso .ISO .m3u .M3U .md .MD .mdx .MDX .ri .RI .rom .ROM .sg .SG .sgd .SGD .smd .SMD .sms .SMS .7z .7Z .zip .ZIP</extension>
         <command label="Gearsystem">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/gearsystem_libretro.so %ROM%</command>
         <command label="Genesis Plus GX">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/genesis_plus_gx_libretro.so %ROM%</command>
@@ -1417,3 +1419,4 @@
         <theme>zxspectrum</theme>
     </system>
 </systemList>
+<loadExclusive/>
