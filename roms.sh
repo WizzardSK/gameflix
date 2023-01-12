@@ -113,7 +113,7 @@ rclone mount "thumbnails:Sega - Game Gear/Named_Snaps" ~/.emulationstation/downl
 
 # Nintendo
 mkdir -p ~/roms/gc
-rclone mount archive:GamecubeCollectionByGhostware ~/roms/gc $params
+rclone mount archive:rvz-gc-usa-redump ~/roms/gc $params
 mkdir -p ~/.emulationstation/downloaded_media/gc/screenshots
 rclone mount "thumbnails:Nintendo - GameCube/Named_Boxarts" ~/.emulationstation/downloaded_media/gc/screenshots/ $params
 
