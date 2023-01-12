@@ -72,7 +72,7 @@ rclone mount "thumbnails:Sony - PlayStation 2/Named_Boxarts" ~/.emulationstation
 
 # Sega
 mkdir -p ~/roms/dreamcast
-rclone mount archive:chd_dc ~/roms/dreamcast $params
+rclone mount "myrient:Redump/Sega - Dreamcast" ~/roms/dreamcast $params
 mkdir -p ~/.emulationstation/downloaded_media/dreamcast/screenshots
 rclone mount "thumbnails:Sega - Dreamcast/Named_Snaps" ~/.emulationstation/downloaded_media/dreamcast/screenshots/ $params
 
