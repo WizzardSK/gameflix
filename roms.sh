@@ -61,7 +61,7 @@ mkdir -p ~/.emulationstation/downloaded_media/psx/screenshots
 rclone mount "thumbnails:Sony - PlayStation/Named_Snaps" ~/.emulationstation/downloaded_media/psx/screenshots/ $params
 
 mkdir -p ~/roms/psp
-rclone mount archive:def-jam-vendetta-u ~/roms/psp $params
+rclone mount archive:psp_20220507 ~/roms/psp $params
 mkdir -p ~/.emulationstation/downloaded_media/psp/screenshots
 rclone mount "thumbnails:Sony - PlayStation Portable/Named_Boxarts" ~/.emulationstation/downloaded_media/psp/screenshots/ $params
 
