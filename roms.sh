@@ -9,7 +9,7 @@ rclone mount "thumbnails:FBNeo - Arcade Games/Named_Snaps" ~/.emulationstation/d
 
 # Amstrad
 mkdir -p ~/roms/amstradcpc
-rclone mount archive:AmstradCPCGameCollectionByGhostware ~/roms/amstradcpc $params
+rclone mount archive:Amstrad.CPC ~/roms/amstradcpc $params
 mkdir -p ~/.emulationstation/downloaded_media/amstradcpc/screenshots
 rclone mount "thumbnails:Amstrad - CPC/Named_Snaps" ~/.emulationstation/downloaded_media/amstradcpc/screenshots/ $params
 
