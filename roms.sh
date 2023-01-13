@@ -3,9 +3,9 @@ params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-ti
 
 # Arcade
 mkdir -p ~/roms/fbneo
-rclone mount archive:cylums-final-burn-neo-rom-collection roms/fbneo $params
+rclone mount archive:finalBurnAlphaMerged029743ArcadeRomsOnly roms/fbneo $params
 mkdir -p ~/.emulationstation/downloaded_media/fbneo/screenshots
-rclone mount "thumbnails:MAME/Named_Snaps" ~/.emulationstation/downloaded_media/fbneo/screenshots/ $params
+rclone mount "thumbnails:FBNeo - Arcade Games/Named_Snaps" ~/.emulationstation/downloaded_media/fbneo/screenshots/ $params
 
 # Amstrad
 mkdir -p ~/roms/amstradcpc
