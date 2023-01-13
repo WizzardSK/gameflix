@@ -9,7 +9,7 @@ rclone mount "thumbnails:DOS/Named_Boxarts" ~/.emulationstation/downloaded_media
 
 # Arcade
 mkdir -p ~/roms/fbneo
-rclone mount archive:finalBurnAlphaMerged029743ArcadeRomsOnly roms/fbneo $params
+rclone mount "archive:finalBurnAlphaMerged029743ArcadeRomsOnly" roms/fbneo $params
 mkdir -p ~/.emulationstation/downloaded_media/fbneo/screenshots
 rclone mount "thumbnails:FBNeo - Arcade Games/Named_Snaps" ~/.emulationstation/downloaded_media/fbneo/screenshots/ $params
 
@@ -62,28 +62,28 @@ rclone mount "thumbnails:Commodore - 64/Named_Snaps" ~/.emulationstation/downloa
 
 # PS
 mkdir -p ~/roms/psx
-rclone mount archive:chd_psx ~/roms/psx $params
+rclone mount "archive:chd_psx" ~/roms/psx $params
 mkdir -p ~/.emulationstation/downloaded_media/psx/screenshots
 rclone mount "thumbnails:Sony - PlayStation/Named_Snaps" ~/.emulationstation/downloaded_media/psx/screenshots/ $params
 
 mkdir -p ~/roms/psp
-rclone mount archive:psp_20220507 ~/roms/psp $params
+rclone mount "archive:psp_20220507" ~/roms/psp $params
 mkdir -p ~/.emulationstation/downloaded_media/psp/screenshots
 rclone mount "thumbnails:Sony - PlayStation Portable/Named_Boxarts" ~/.emulationstation/downloaded_media/psp/screenshots/ $params
 
 mkdir -p ~/roms/ps2
-rclone mount archive:ps2chd ~/roms/ps2 $params
+rclone mount "archive:ps2chd" ~/roms/ps2 $params
 mkdir -p ~/.emulationstation/downloaded_media/ps2/screenshots
 rclone mount "thumbnails:Sony - PlayStation 2/Named_Boxarts" ~/.emulationstation/downloaded_media/ps2/screenshots/ $params
 
 # Sega
 mkdir -p ~/roms/dreamcast
-rclone mount archive:chd_dc ~/roms/dreamcast $params
+rclone mount "archive:chd_dc" ~/roms/dreamcast $params
 mkdir -p ~/.emulationstation/downloaded_media/dreamcast/screenshots
 rclone mount "thumbnails:Sega - Dreamcast/Named_Snaps" ~/.emulationstation/downloaded_media/dreamcast/screenshots/ $params
 
 mkdir -p ~/roms/saturn
-rclone mount archive:SaturnRedumpCHDs ~/roms/saturn $params
+rclone mount "archive:SaturnRedumpCHDs" ~/roms/saturn $params
 mkdir -p ~/.emulationstation/downloaded_media/saturn/screenshots
 rclone mount "thumbnails:Sega - Saturn/Named_Snaps" ~/.emulationstation/downloaded_media/saturn/screenshots/ $params
 
@@ -119,7 +119,7 @@ rclone mount "thumbnails:Sega - Game Gear/Named_Snaps" ~/.emulationstation/downl
 
 # Nintendo
 mkdir -p ~/roms/gc
-rclone mount archive:rvz-gc-usa-redump ~/roms/gc $params
+rclone mount "archive:rvz-gc-usa-redump" ~/roms/gc $params
 mkdir -p ~/.emulationstation/downloaded_media/gc/screenshots
 rclone mount "thumbnails:Nintendo - GameCube/Named_Boxarts" ~/.emulationstation/downloaded_media/gc/screenshots/ $params
 
