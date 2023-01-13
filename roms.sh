@@ -45,7 +45,7 @@ mkdir -p ~/.emulationstation/downloaded_media/atarist/screenshots
 rclone mount "thumbnails:Atari - ST/Named_Snaps" ~/.emulationstation/downloaded_media/atarist/screenshots/ $params
 
 mkdir -p ~/roms/amiga
-rclone mount archive:Amiga_WHD_Games ~/roms/amiga $params
+rclone mount archive:AmigaRomCollectionByGhostware_201711 ~/roms/amiga $params
 mkdir -p ~/.emulationstation/downloaded_media/amiga/screenshots
 rclone mount "thumbnails:Commodore - Amiga/Named_Snaps" ~/.emulationstation/downloaded_media/amiga/screenshots/ $params
 
