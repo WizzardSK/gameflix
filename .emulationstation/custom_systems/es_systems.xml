@@ -338,7 +338,7 @@
     <system>
         <name>dos</name>
         <fullname>DOS (PC)</fullname>
-        <path>%ROMPATH%/dos/Games/Files</path>
+        <path>%ROMPATH%/dos</path>
         <extension>.dosz .bat .BAT .com .COM .conf .CONF .cue .CUE .exe .EXE .iso .ISO .7z .7Z .zip .ZIP</extension>
         <command label="DOSBox-Core">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/dosbox_core_libretro.so %ROM%</command>
         <command label="DOSBox-Pure">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/dosbox_pure_libretro.so %ROM%</command>
