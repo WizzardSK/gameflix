@@ -1,6 +1,12 @@
 #!/bin/bash
 params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty --daemon"
 
+# DOS
+mkdir -p ~/roms/dos
+rclone mount "myrient:TOSEC/IBM PC Compatibles - Games - [IMG]" roms/dos $params
+mkdir -p ~/.emulationstation/downloaded_media/dos/screenshots
+rclone mount "thumbnails:DOS/Named_Boxarts" ~/.emulationstation/downloaded_media/dos/screenshots/ $params
+
 # Arcade
 mkdir -p ~/roms/fbneo
 rclone mount archive:finalBurnAlphaMerged029743ArcadeRomsOnly roms/fbneo $params
