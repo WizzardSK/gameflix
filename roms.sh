@@ -50,10 +50,10 @@ rclone mount "myrient:No-Intro/Atari - ST" ~/roms/atarist $params
 mkdir -p ~/.emulationstation/downloaded_media/atarist/screenshots
 rclone mount "thumbnails:Atari - ST/Named_Snaps" ~/.emulationstation/downloaded_media/atarist/screenshots/ $params
 
-mkdir -p ~/roms/amiga
-rclone mount "archive:AmigaRomCollectionByGhostware_201711" ~/roms/amiga $params
-mkdir -p ~/.emulationstation/downloaded_media/amiga/screenshots
-rclone mount "thumbnails:Commodore - Amiga/Named_Snaps" ~/.emulationstation/downloaded_media/amiga/screenshots/ $params
+mkdir -p ~/roms/zxspectrum
+rclone mount "myrient:No-Intro/Sinclair - ZX Spectrum +3" ~/roms/zxspectrum $params
+mkdir -p ~/.emulationstation/downloaded_media/zxspectrum/screenshots
+rclone mount "thumbnails:Sinclair - ZX Spectrum/Named_Snaps" ~/.emulationstation/downloaded_media/zxspectrum/screenshots/ $params
 
 mkdir -p ~/roms/c64
 rclone mount "myrient:No-Intro/Commodore - Commodore 64" ~/roms/c64 $params
