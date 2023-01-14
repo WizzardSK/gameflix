@@ -1,4 +1,7 @@
 #!/bin/bash
+wget https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/custom_systems/es_systems.xml
+mv es_systems.xml ~/.emulationstation/custom_systems/
+
 params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty --daemon"
 
 # DOS
