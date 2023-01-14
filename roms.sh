@@ -51,7 +51,7 @@ mkdir -p ~/.emulationstation/downloaded_media/atarist/screenshots
 rclone mount "thumbnails:Atari - ST/Named_Snaps" ~/.emulationstation/downloaded_media/atarist/screenshots/ $params
 
 mkdir -p ~/roms/zxspectrum
-rclone mount "myrient:No-Intro/Sinclair - ZX Spectrum +3" ~/roms/zxspectrum $params
+rclone mount "myrient:TOSEC/Sinclair ZX Spectrum - Games - [TAP]" ~/roms/zxspectrum $params
 mkdir -p ~/.emulationstation/downloaded_media/zxspectrum/screenshots
 rclone mount "thumbnails:Sinclair - ZX Spectrum/Named_Snaps" ~/.emulationstation/downloaded_media/zxspectrum/screenshots/ $params
 
