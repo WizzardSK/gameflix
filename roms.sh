@@ -1,14 +1,6 @@
 #!/bin/bash
-wget https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/custom_systems/es_systems.xml
-mv es_systems.xml ~/.emulationstation/custom_systems/
-
+wget -P ~/.emulationstation/custom_systems https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/custom_systems/es_systems.xml
 params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty --daemon"
-
-# DOS
-mkdir -p ~/roms/dos
-rclone mount "myrient:TOSEC/IBM PC Compatibles - Games - [IMG]" roms/dos $params
-mkdir -p ~/.emulationstation/downloaded_media/dos/screenshots
-rclone mount "thumbnails:DOS/Named_Boxarts" ~/.emulationstation/downloaded_media/dos/screenshots/ $params
 
 # Arcade
 mkdir -p ~/roms/fbneo
@@ -52,11 +44,6 @@ mkdir -p ~/roms/atarist
 rclone mount "myrient:No-Intro/Atari - ST" ~/roms/atarist $params
 mkdir -p ~/.emulationstation/downloaded_media/atarist/screenshots
 rclone mount "thumbnails:Atari - ST/Named_Snaps" ~/.emulationstation/downloaded_media/atarist/screenshots/ $params
-
-mkdir -p ~/roms/zxspectrum
-rclone mount "myrient:TOSEC/Sinclair ZX Spectrum - Games - [TAP]" ~/roms/zxspectrum $params
-mkdir -p ~/.emulationstation/downloaded_media/zxspectrum/screenshots
-rclone mount "thumbnails:Sinclair - ZX Spectrum/Named_Snaps" ~/.emulationstation/downloaded_media/zxspectrum/screenshots/ $params
 
 mkdir -p ~/roms/c64
 rclone mount "myrient:No-Intro/Commodore - Commodore 64" ~/roms/c64 $params
