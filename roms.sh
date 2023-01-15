@@ -2,11 +2,11 @@
 wget -O ~/.emulationstation/custom_systems/es_systems.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/custom_systems/es_systems.xml
 params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty --daemon"
 
-# Arcade
-mkdir -p ~/roms/fbneo
-rclone mount "archive:finalBurnAlphaMerged029743ArcadeRomsOnly" roms/fbneo $params
-mkdir -p ~/.emulationstation/downloaded_media/fbneo/screenshots
-rclone mount "thumbnails:FBNeo - Arcade Games/Named_Snaps" ~/.emulationstation/downloaded_media/fbneo/screenshots/ $params
+# Videopac
+mkdir -p ~/roms/videopac
+rclone mount "myrient:No-Intro/Magnavox - Odyssey 2" roms/videopac $params
+mkdir -p ~/.emulationstation/downloaded_media/videopac/screenshots
+rclone mount "thumbnails:Magnavox - Odyssey2/Named_Snaps" ~/.emulationstation/downloaded_media/videopac/screenshots/ $params
 
 # Intellivision, Colecovision
 mkdir -p ~/roms/intellivision
@@ -19,7 +19,7 @@ rclone mount "myrient:No-Intro/Coleco - ColecoVision" ~/roms/coleco $params
 mkdir -p ~/.emulationstation/downloaded_media/colecovision/screenshots
 rclone mount "thumbnails:Coleco - ColecoVision/Named_Snaps" ~/.emulationstation/downloaded_media/colecovision/screenshots/ $params
 
-# Atari - Amiga
+# Atari
 mkdir -p ~/roms/atari2600
 rclone mount "myrient:No-Intro/Atari - 2600" ~/roms/atari2600 $params
 mkdir -p ~/.emulationstation/downloaded_media/atari2600/screenshots
@@ -50,6 +50,7 @@ rclone mount "myrient:No-Intro/Atari - ST" ~/roms/atarist $params
 mkdir -p ~/.emulationstation/downloaded_media/atarist/screenshots
 rclone mount "thumbnails:Atari - ST/Named_Snaps" ~/.emulationstation/downloaded_media/atarist/screenshots/ $params
 
+# Commodore
 mkdir -p ~/roms/c64
 rclone mount "myrient:No-Intro/Commodore - Commodore 64" ~/roms/c64 $params
 mkdir -p ~/.emulationstation/downloaded_media/c64/screenshots
