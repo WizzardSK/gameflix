@@ -8,11 +8,16 @@ rclone mount "archive:finalBurnAlphaMerged029743ArcadeRomsOnly" roms/fbneo $para
 mkdir -p ~/.emulationstation/downloaded_media/fbneo/screenshots
 rclone mount "thumbnails:FBNeo - Arcade Games/Named_Snaps" ~/.emulationstation/downloaded_media/fbneo/screenshots/ $params
 
-# Amstrad
-mkdir -p ~/roms/amstradcpc
-rclone mount "myrient:TOSEC/Amstrad CPC - Games - [DSK]" ~/roms/amstradcpc $params
-mkdir -p ~/.emulationstation/downloaded_media/amstradcpc/screenshots
-rclone mount "thumbnails:Amstrad - CPC/Named_Snaps" ~/.emulationstation/downloaded_media/amstradcpc/screenshots/ $params
+# Intellivision, Colecovision
+mkdir -p ~/roms/intellivision
+rclone mount "myrient:No-Intro/Mattel - Intellivision" ~/roms/intellivision $params
+mkdir -p ~/.emulationstation/downloaded_media/intellivision/screenshots
+rclone mount "thumbnails:Mattel - Intellivision/Named_Snaps" ~/.emulationstation/downloaded_media/intellivision/screenshots/ $params
+
+mkdir -p ~/roms/colecovision
+rclone mount "myrient:No-Intro/Coleco - ColecoVision" ~/roms/colecovision $params
+mkdir -p ~/.emulationstation/downloaded_media/colecovision/screenshots
+rclone mount "thumbnails:Coleco - ColecoVision/Named_Snaps" ~/.emulationstation/downloaded_media/colecovision/screenshots/ $params
 
 # Atari - Amiga
 mkdir -p ~/roms/atari2600
