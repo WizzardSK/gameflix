@@ -14,7 +14,7 @@ rclone mount "myrient:No-Intro/Mattel - Intellivision" ~/roms/intellivision $par
 mkdir -p ~/.emulationstation/downloaded_media/intellivision/screenshots
 rclone mount "thumbnails:Mattel - Intellivision/Named_Snaps" ~/.emulationstation/downloaded_media/intellivision/screenshots/ $params
 
-mkdir -p ~/roms/colecovision
+mkdir -p ~/roms/coleco
 rclone mount "myrient:No-Intro/Coleco - ColecoVision" ~/roms/coleco $params
 mkdir -p ~/.emulationstation/downloaded_media/coleco/screenshots
 rclone mount "thumbnails:Coleco - ColecoVision/Named_Snaps" ~/.emulationstation/downloaded_media/coleco/screenshots/ $params
