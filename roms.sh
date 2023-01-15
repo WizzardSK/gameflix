@@ -16,8 +16,8 @@ rclone mount "thumbnails:Mattel - Intellivision/Named_Snaps" ~/.emulationstation
 
 mkdir -p ~/roms/coleco
 rclone mount "myrient:No-Intro/Coleco - ColecoVision" ~/roms/coleco $params
-mkdir -p ~/.emulationstation/downloaded_media/coleco/screenshots
-rclone mount "thumbnails:Coleco - ColecoVision/Named_Snaps" ~/.emulationstation/downloaded_media/coleco/screenshots/ $params
+mkdir -p ~/.emulationstation/downloaded_media/colecovision/screenshots
+rclone mount "thumbnails:Coleco - ColecoVision/Named_Snaps" ~/.emulationstation/downloaded_media/colecovision/screenshots/ $params
 
 # Atari - Amiga
 mkdir -p ~/roms/atari2600
