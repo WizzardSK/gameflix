@@ -14,7 +14,7 @@ Attached `rclone.conf` should be placed in `~/.config/rclone/` with Archive S3 k
 
 If your version is not up to date, grab it from here: https://rclone.org/downloads/
 
-All games are stored on public services like Internet Archive and Myrient. Thumbnails are used from https://thumbnails.libretro.com/ configured to use with ES-DE frontend.
+All games are stored on public services like Internet Archive and Myrient. Thumbnails are used from https://thumbnails.libretro.com/ configured to use with ES-DE frontend. BIOS files are also read from remote sources. My goal is to have all needed BIOS files available online without the need to have them on local storage. The Retroarch BIOS folder is mounted from Internet Archive.
 
 `es_systems.xml` is used to configure roms directories for your emulators and alternative emulators for ES-DE frontend. It is updated automatically from this repository when running mount script.
 
