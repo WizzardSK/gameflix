@@ -16,7 +16,7 @@ If your version is not up to date, grab it from here: https://rclone.org/downloa
 
 All games are stored on public services like Internet Archive and Myrient. Thumbnails are used from https://thumbnails.libretro.com/ configured to use with ES-DE frontend.
 
-`es_systems.xml` is used to configure roms directories for your emulators and alternative emulators for ES-DE frontend.
+`es_systems.xml` is used to configure roms directories for your emulators and alternative emulators for ES-DE frontend. It is updated automatically from this repository when running mount script.
 
 Why is it better than to have all games on local storage? You may have the access to all your games without the need to have a huge storage. Some PSX, PS2, GameCube or Dreamcast games may be very large and using this script you may run them on a Chromebook with small storage (if it may run those emulators). The disadvantage is that you need fast internet connection and even with that the loading of bigger games may be quite slow.
 
