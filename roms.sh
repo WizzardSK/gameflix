@@ -1,9 +1,9 @@
 #!/bin/bash
 wget -O ~/.emulationstation/custom_systems/es_systems.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/custom_systems/es_systems.xml
-params="--no-checksum --no-modtime --read-only --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty --daemon"
+params="--no-checksum --no-modtime --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty --daemon"
 
 # BIOS
-rclone mount "archive:retroarch-bios" ~/.config/retroarch/system $params
+rclone mount "archive:retroarchbios" ~/.config/retroarch/system $params
 
 # Videopac
 mkdir -p ~/roms/videopac
