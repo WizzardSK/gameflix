@@ -27,6 +27,6 @@ The library is mounted into `roms` folder in your home directory. If roms direct
 
 Then use the library with any emulation system like Retroarch. It is up to you how you configure the emulators. I am using https://es-de.org/ on Linux on my arm Chromebook, what is basically EmulationStation Desktop Edition suitable for desktop computers, including arm.
 
-Now you may run the roms directly without copying them to local storage, just like Netflix. Again, you should not play the game if you do not own it, you may just try it.
+Now you may run the roms directly without copying them to local storage, just like Netflix. Again, you should not play the game if you do not own it.
 
 Run `unmount.sh` or `unroms.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/unroms.sh)` to unmount the library or it is unmounted after restart.
