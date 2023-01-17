@@ -947,7 +947,8 @@
         <path>%ROMPATH%/ps2</path>
         <extension>.chd .CHD .iso .ISO .isz .ISZ .cso .CSO .bin .BIN .elf .ELF .gz</extension>
         <command label="PCSX2">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/pcsx2_libretro.so %ROM%</command>
-        <command label="AetherSX2">~/AetherSX2*.AppImage %ROM%</command>
+        <command label="AetherSX2 standalone">~/AetherSX2*.AppImage %ROM%</command>
+        <command label="PCSX2 standalone">~/pcsx2*.AppImage %ROM%</command>
         <platform>ps2</platform>
         <theme>ps2</theme>
     </system>
