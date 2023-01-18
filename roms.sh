@@ -3,7 +3,7 @@ wget -O ~/.emulationstation/custom_systems/es_systems.xml https://raw.githubuser
 params="--no-checksum --no-modtime --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty --daemon"
 
 # BIOS
-rclone mount "archive:retroarchbios" ~/.config/retroarch/system $params
+rclone mount "archive:retroarch-bios" ~/.config/retroarch/system $params
 
 # Videopac
 mkdir -p ~/roms/videopac
