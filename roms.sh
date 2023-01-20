@@ -7,7 +7,7 @@ rclone mount "archive:retroarch-bios" ~/.config/retroarch/system $params
 
 # Videopac
 mkdir -p ~/roms/videopac
-rclone mount "myrient:No-Intro/Magnavox - Odyssey 2" roms/videopac $params
+rclone mount "myrient:No-Intro/Magnavox - Odyssey 2" ~/roms/videopac $params
 mkdir -p ~/.emulationstation/downloaded_media/videopac/screenshots
 rclone mount "thumbnails:Magnavox - Odyssey2/Named_Snaps" ~/.emulationstation/downloaded_media/videopac/screenshots/ $params
 
