@@ -1,6 +1,6 @@
 #!/bin/bash
 wget -O ~/.emulationstation/custom_systems/es_systems.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/custom_systems/es_systems.xml
-params="--no-modtime --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty --daemon -vv"
+params="--no-modtime --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h --vfs-cache-mode full --allow-non-empty --daemon"
 
 # BIOS
 rclone mount "archive:retroarch-bios" ~/.config/retroarch/system $params
