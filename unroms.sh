@@ -1,5 +1,7 @@
 #!/bin/bash
 
+fusermount -u ~/.config/retroarch/system
+
 fusermount -u ~/roms/intellivision
 fusermount -u ~/.emulationstation/downloaded_media/intellivision/screenshots
 
