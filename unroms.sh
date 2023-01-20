@@ -3,7 +3,7 @@
 fusermount -u ~/roms/intellivision
 fusermount -u ~/.emulationstation/downloaded_media/intellivision/screenshots
 
-fusermount -u ~/roms/coleco
+fusermount -u ~/roms/colecovision
 fusermount -u ~/.emulationstation/downloaded_media/colecovision/screenshots
 
 fusermount -u ~/roms/videopac
