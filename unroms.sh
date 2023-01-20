@@ -1,10 +1,13 @@
 #!/bin/bash
 
-fusermount -u ~/roms/amiga
-fusermount -u ~/.emulationstation/downloaded_media/amiga/screenshots
+fusermount -u ~/roms/intellivision
+fusermount -u ~/.emulationstation/downloaded_media/intellivision/screenshots
 
-fusermount -u ~/roms/amstradcpc
-fusermount -u ~/.emulationstation/downloaded_media/amstradcpc/screenshots
+fusermount -u ~/roms/coleco
+fusermount -u ~/.emulationstation/downloaded_media/colecovision/screenshots
+
+fusermount -u ~/roms/videopac
+fusermount -u ~/.emulationstation/downloaded_media/videopac/screenshots
 
 fusermount -u ~/roms/atari2600
 fusermount -u ~/.emulationstation/downloaded_media/atari2600/screenshots
@@ -65,9 +68,6 @@ fusermount -u ~/.emulationstation/downloaded_media/mastersystem/screenshots
 
 fusermount -u ~/roms/saturn
 fusermount -u ~/.emulationstation/downloaded_media/saturn/screenshots
-
-fusermount -u ~/roms/dos
-fusermount -u ~/.emulationstation/downloaded_media/dos/screenshots
 
 fusermount -u ~/roms/gc
 fusermount -u ~/.emulationstation/downloaded_media/gc/screenshots
