@@ -10,7 +10,7 @@ rclone mount "archive:retroarch-bios" ~/.config/retroarch/system $params
 # Vectrex
 mkdir -p ~/roms/vectrex
 rclone mount "myrient:No-Intro/GCE - Vectrex" ~/roms/vectrex $params
-mkdir -p ~/.emulationstation/downloaded_media/videopac/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/vectrex/screenshots
 rclone mount "thumbnails:GCE - Vectrex/Named_Snaps" ~/.emulationstation/downloaded_media/vectrex/screenshots/ $params
 
 # Intellivision, Colecovision
