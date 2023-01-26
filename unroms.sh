@@ -8,8 +8,8 @@ fusermount -u ~/.emulationstation/downloaded_media/intellivision/screenshots
 fusermount -u ~/roms/colecovision
 fusermount -u ~/.emulationstation/downloaded_media/colecovision/screenshots
 
-fusermount -u ~/roms/videopac
-fusermount -u ~/.emulationstation/downloaded_media/videopac/screenshots
+fusermount -u ~/roms/vectrex
+fusermount -u ~/.emulationstation/downloaded_media/vectrex/screenshots
 
 fusermount -u ~/roms/atari2600
 fusermount -u ~/.emulationstation/downloaded_media/atari2600/screenshots
