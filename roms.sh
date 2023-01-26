@@ -7,11 +7,11 @@ params="--no-modtime --attr-timeout 10h --dir-cache-time 10h --poll-interval 10h
 # BIOS
 rclone mount "archive:retroarch-bios" ~/.config/retroarch/system $params
 
-# Videopac
-mkdir -p ~/roms/videopac
-rclone mount "myrient:No-Intro/Magnavox - Odyssey 2" ~/roms/videopac $params
+# Vectrex
+mkdir -p ~/roms/vectrex
+rclone mount "myrient:No-Intro/GCE - Vectrex" ~/roms/vectrex $params
 mkdir -p ~/.emulationstation/downloaded_media/videopac/screenshots
-rclone mount "thumbnails:Magnavox - Odyssey2/Named_Snaps" ~/.emulationstation/downloaded_media/videopac/screenshots/ $params
+rclone mount "thumbnails:GCE - Vectrex/Named_Snaps" ~/.emulationstation/downloaded_media/vectrex/screenshots/ $params
 
 # Intellivision, Colecovision
 mkdir -p ~/roms/intellivision
