@@ -20,7 +20,7 @@ All games are stored on public services like Internet Archive and Myrient. Thumb
 
 Why is it better than to have all games on local storage? You may have the access to all your games without the need to have a huge storage. Some PSX, PS2, GameCube or Dreamcast games may be very large and using this script you may run them on a Chromebook with small storage (if it may run those emulators). The disadvantage is that you need fast internet connection and even with that the loading of bigger games may be quite slow.
 
-## Usage
+## Usage - EmulationStation DE
 Run [mount.sh](mount.sh) or `roms.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/roms.sh)` to mount the library.
 
 The library is mounted into `roms` folder in your home directory. If roms directories do not exist, they are automatically created.
