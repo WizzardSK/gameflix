@@ -5,5 +5,7 @@ params="--config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-
 /userdata/system/rclone mount "myrient:No-Intro/Atari - 5200" /userdata/roms/atari5200/online $params
 /userdata/system/rclone mount "myrient:No-Intro/Atari - 7800" /userdata/roms/atari7800/online $params
 /userdata/system/rclone mount "myrient:No-Intro/Atari - Jaguar (J64)" /userdata/roms/jaguar/online $params
+/userdata/system/rclone mount "myrient:No-Intro/Atari - Lynx" /userdata/roms/lynx/online $params
+/userdata/system/rclone mount "myrient:No-Intro/Atari - ST" /userdata/roms/atarist/online $params
 
 curl http://127.0.0.1:1234/reloadgames
