@@ -1,5 +1,5 @@
 #!/bin/bash
-params="--config=/userdata/system/.config/rclone/rclone.conf --log-file=/userdata/system/rclone.log --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon"
+params="--config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon"
 
 /userdata/system/rclone mount "myrient:No-Intro/Atari - 2600" /userdata/roms/atari2600/online $params
 /userdata/system/rclone mount "myrient:No-Intro/Atari - 5200" /userdata/roms/atari5200/online $params
