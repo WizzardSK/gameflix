@@ -7,3 +7,5 @@ params="--no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --p
 /userdata/system/rclone mount "myrient:No-Intro/Atari - Jaguar (J64)" /userdata/roms/jaguar/online $params
 
 curl http://127.0.0.1:1234/reloadgames
+
+touch /userdata/system/ok.txt
