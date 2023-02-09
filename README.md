@@ -32,4 +32,4 @@ Now you may run the roms directly without copying them to local storage, just li
 Run [unmount.sh](unmount.sh) or `unroms.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/unroms.sh)` to unmount the library or it is unmounted after restart.
 
 ## Usage - Batocera Linux
-For Batocera, you need to copy [custom.sh](custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. You also need rclone binary in system folder and rclone config file in ./config/rclone folder in system folder. Thumbnail folders are not mounting because Batocera supports background scraping.
+For Batocera, you need to copy [custom.sh](custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone binary and rclone config file in ./config/rclone folder in system folder. Thumbnail folders are not mounting because Batocera supports background scraping.
