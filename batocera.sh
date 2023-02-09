@@ -1,6 +1,7 @@
 #!/bin/bash
 params="--config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon"
-sudo -v ; curl https://rclone.org/install.sh | sudo bash
+wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf
+curl -s -L https://rclone.org/install.sh | bash
 
 mkdir -p /userdata/roms/atari2600/online
 rclone mount "myrient:No-Intro/Atari - 2600" /userdata/roms/atari2600/online $params
