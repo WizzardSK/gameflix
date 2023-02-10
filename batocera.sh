@@ -4,6 +4,11 @@ params="--config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 curl -s -L https://rclone.org/install.sh | bash
 
+roms+=("vectrex,myrient:No-Intro/GCE - Vectrex")
+roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision")
+roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision")
+roms+=("c64,myrient:No-Intro/Commodore - Commodore 64")
+
 roms+=("atari2600,myrient:No-Intro/Atari - 2600")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200")
 roms+=("atari7800,myrient:No-Intro/Atari - 7800")
