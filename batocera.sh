@@ -39,7 +39,7 @@ for each in "${roms[@]}"
 do
   read -ra rom < <(printf '%s' "$each")
   mkdir /userdata/roms/${rom[0]}/online
-  rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
+  rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon"
 done
 
 curl http://127.0.0.1:1234/reloadgames
