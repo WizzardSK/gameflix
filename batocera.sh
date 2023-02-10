@@ -4,10 +4,10 @@ if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/
 curl -s -L https://rclone.org/install.sh | bash
 declare -a roms=()
 
-roms+=("vectrex,myrient:No-Intro/GCE - Vectrex")
-roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision")
-roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision")
-roms+=("c64,myrient:No-Intro/Commodore - Commodore 64")
+#roms+=("vectrex,myrient:No-Intro/GCE - Vectrex")
+#roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision")
+#roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision")
+#roms+=("c64,myrient:No-Intro/Commodore - Commodore 64")
 
 roms+=("atari2600,myrient:No-Intro/Atari - 2600")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200")
@@ -16,10 +16,10 @@ roms+=("jaguar,myrient:No-Intro/Atari - Jaguar (J64)")
 roms+=("lynx,myrient:No-Intro/Atari - Lynx")
 roms+=("atarist,myrient:No-Intro/Atari - ST")
 
-#roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)")
-#roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System")
-#roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)")
-#roms+=("gamecube,archive:rvz-gc-usa-redump")
+roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)")
+roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System")
+roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)")
+roms+=("gamecube,archive:rvz-gc-usa-redump")
 
 #roms+=("sg1000,myrient:No-Intro/Sega - SG-1000")
 #roms+=("mastersystem,myrient:No-Intro/Sega - Master System - Mark III")
