@@ -1,8 +1,8 @@
 #!/bin/bash
-declare -a roms=()
 params="--config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon"
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 curl -s -L https://rclone.org/install.sh | bash
+declare -a roms=()
 
 roms+=("vectrex,myrient:No-Intro/GCE - Vectrex")
 roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision")
