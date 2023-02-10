@@ -21,6 +21,10 @@ roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System")
 roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)")
 roms+=("gamecube,archive:rvz-gc-usa-redump")
 
+roms+=("psx,archive:chd_psx")
+roms+=("psp,archive:psp_20220507")
+roms+=("ps2,archive:ps2chd")
+
 IFS=","
 for each in "${roms[@]}"
 do
