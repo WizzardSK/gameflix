@@ -7,35 +7,16 @@ curl -s -L https://rclone.org/install.sh | bash
 roms+=("atari2600,myrient:No-Intro/Atari - 2600")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200")
 roms+=("atari7800,myrient:No-Intro/Atari - 7800")
-roms+=("atarijaguar,myrient:No-Intro/Atari - Jaguar (J64)")
-roms+=("atarilynx,myrient:No-Intro/Atari - Lynx")
+roms+=("jaguar,myrient:No-Intro/Atari - Jaguar (J64)")
+roms+=("lynx,myrient:No-Intro/Atari - Lynx")
 roms+=("atarist,myrient:No-Intro/Atari - ST")
 
 IFS=","
-
-# for each in "${roms[@]}"
-# do
-#  read -ra rom < <(printf '%s' "$each")
-#  mkdir -p ~/roms/${rom[0]}
-#  rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
-# done
-
-mkdir -p /userdata/roms/atari2600/online
-rclone mount "myrient:No-Intro/Atari - 2600" /userdata/roms/atari2600/online $params
-
-mkdir -p /userdata/roms/atari5200/online
-rclone mount "myrient:No-Intro/Atari - 5200" /userdata/roms/atari5200/online $params
-
-mkdir -p /userdata/roms/atari7800/online
-rclone mount "myrient:No-Intro/Atari - 7800" /userdata/roms/atari7800/online $params
-
-mkdir -p /userdata/roms/jaguar/online
-rclone mount "myrient:No-Intro/Atari - Jaguar (J64)" /userdata/roms/jaguar/online $params
-
-mkdir -p /userdata/roms/lynx/online
-rclone mount "myrient:No-Intro/Atari - Lynx" /userdata/roms/lynx/online $params
-
-mkdir -p /userdata/roms/atarist/online
-rclone mount "myrient:No-Intro/Atari - ST" /userdata/roms/atarist/online $params
+for each in "${roms[@]}"
+do
+  read -ra rom < <(printf '%s' "$each")
+  mkdir -p /userdata/roms/${rom[0]}/online
+  rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
+done
 
 curl http://127.0.0.1:1234/reloadgames
