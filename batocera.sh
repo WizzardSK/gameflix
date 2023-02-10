@@ -16,6 +16,11 @@ roms+=("jaguar,myrient:No-Intro/Atari - Jaguar (J64)")
 roms+=("lynx,myrient:No-Intro/Atari - Lynx")
 roms+=("atarist,myrient:No-Intro/Atari - ST")
 
+roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)")
+roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System")
+roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)")
+roms+=("gamecube,archive:rvz-gc-usa-redump")
+
 IFS=","
 for each in "${roms[@]}"
 do
