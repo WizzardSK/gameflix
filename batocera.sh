@@ -1,4 +1,6 @@
 #!/bin/bash
+exec >/logfile.txt 2>&1
+
 params="--config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon"
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 curl -s -L https://rclone.org/install.sh | bash
@@ -41,6 +43,5 @@ do
   mkdir -p /userdata/roms/${rom[0]}/online
   rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 done
-touch /done.txt
 
 curl http://127.0.0.1:1234/reloadgames
