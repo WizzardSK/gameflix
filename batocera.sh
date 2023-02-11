@@ -1,44 +1,38 @@
 #!/bin/bash
 curl -L https://rclone.org/install.sh | bash
+params="--config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon"
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
-declare -a roms=()
-IFS=","
+for dir in /userdata/roms/*/; do mkdir -p "$dir/online"; done
 
-roms+=("vectrex,myrient:No-Intro/GCE - Vectrex")
-roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision")
-roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision")
-roms+=("c64,myrient:No-Intro/Commodore - Commodore 64")
+rclone mount "myrient:No-Intro/GCE - Vectrex"             /userdata/roms/vectrex/online $params
+rclone mount "myrient:No-Intro/Mattel - Intellivision"    /userdata/roms/intellivision/online $params
+rclone mount "myrient:No-Intro/Mattel - Intellivision"    /userdata/roms/intellivision/online $params
+rclone mount "myrient:No-Intro/Coleco - ColecoVision"     /userdata/roms/colecovision/online $params
+rclone mount "myrient:No-Intro/Commodore - Commodore 64"  /userdata/roms/c64/online $params
 
-roms+=("atari2600,myrient:No-Intro/Atari - 2600")
-roms+=("atari5200,myrient:No-Intro/Atari - 5200")
-roms+=("atari7800,myrient:No-Intro/Atari - 7800")
-roms+=("jaguar,myrient:No-Intro/Atari - Jaguar (J64)")
-roms+=("lynx,myrient:No-Intro/Atari - Lynx")
-roms+=("atarist,myrient:No-Intro/Atari - ST")
+rclone mount "myrient:No-Intro/Atari - 2600"          /userdata/roms/atari2600/online $params
+rclone mount "myrient:No-Intro/Atari - 5200"          /userdata/roms/atari5200/online $params
+rclone mount "myrient:No-Intro/Atari - 7800"          /userdata/roms/atari7800/online $params
+rclone mount "myrient:No-Intro/Atari - Jaguar (J64)"  /userdata/roms/jaguar/online $params
+rclone mount "myrient:No-Intro/Atart - Lynx"          /userdata/roms/lynx/online $params
+rclone mount "myrient:No-Intro/Atari - ST"            /userdata/roms/atarist/online $params
 
-roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)")
-roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System")
-roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)")
-roms+=("gamecube,archive:rvz-gc-usa-redump")
+rclone mount "myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)" /userdata/roms/nes/online $params
+rclone mount "myrient:No-Intro/Nintendo - Super Nintendo Entertainment System"        /userdata/roms/snes/online $params
+rclone mount "myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)"                  /userdata/roms/n64/online $params
+rclone mount "archive:rvz-gc-usa-redump"                                              /userdata/roms/gamecube/online $params
 
-roms+=("sg1000,myrient:No-Intro/Sega - SG-1000")
-roms+=("mastersystem,myrient:No-Intro/Sega - Master System - Mark III")
-roms+=("gamegear,myrient:No-Intro/Sega - Game Gear")
-roms+=("megadrive,myrient:No-Intro/Sega - Mega Drive - Genesis")
-roms+=("sega32x,myrient:No-Intro/Sega - 32X")
-roms+=("segacd,myrient:Redump/Sega - Mega CD & Sega CD")
-roms+=("saturn,archive:SaturnRedumpCHDs")
-roms+=("dreamcast,archive:chd_dc")
+rclone mount "myrient:No-Intro/Sega - SG-1000"                  /userdata/roms/sg1000/online $params
+rclone mount "myrient:No-Intro/Sega - Master System - Mark III" /userdata/roms/mastersystem/online $params
+rclone mount "myrient:No-Intro/Sega - Game Gear"                /userdata/roms/gamegear/online $params
+rclone mount "myrient:No-Intro/Sega - Mega Drive - Genesis"     /userdata/roms/megadrive/online $params
+rclone mount "myrient:No-Intro/Sega - 32X"                      /userdata/roms/sega32x/online $params
+rclone mount "myrient:Redump/Sega - Mega CD & Sega CD"          /userdata/roms/segacd/online $params
+rclone mount "archive:SaturnRedumpCHDs"                         /userdata/roms/saturn/online $params
+rclone mount "archive:chd_dc"                                   /userdata/roms/dreamcast/online $params
 
-roms+=("psx,archive:chd_psx")
-roms+=("psp,archive:psp_20220507")
-roms+=("ps2,archive:ps2chd")
-
-for each in "${roms[@]}"
-do
-  read -ra rom < <(printf '%s' "$each")
-  mkdir -p /userdata/roms/${rom[0]}/online
-  rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
-done
+rclone mount "archive:chd_psx"      /userdata/roms/psx/online $params
+rclone mount "archive:psp_20220507" /userdata/roms/psp/online $params
+rclone mount "archive:ps2chd"       /userdata/roms/ps2/online $params
 
 curl http://127.0.0.1:1234/reloadgames
