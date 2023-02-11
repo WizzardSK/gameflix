@@ -2,6 +2,12 @@
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 curl -L https://rclone.org/install.sh | bash
 declare -a roms=()
+IFS=","
+
+roms+=("vectrex,myrient:No-Intro/GCE - Vectrex")
+roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision")
+roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision")
+roms+=("c64,myrient:No-Intro/Commodore - Commodore 64")
 
 roms+=("atari2600,myrient:No-Intro/Atari - 2600")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200")
@@ -9,11 +15,6 @@ roms+=("atari7800,myrient:No-Intro/Atari - 7800")
 roms+=("jaguar,myrient:No-Intro/Atari - Jaguar (J64)")
 roms+=("lynx,myrient:No-Intro/Atari - Lynx")
 roms+=("atarist,myrient:No-Intro/Atari - ST")
-
-roms+=("vectrex,myrient:No-Intro/GCE - Vectrex")
-roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision")
-roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision")
-roms+=("c64,myrient:No-Intro/Commodore - Commodore 64")
 
 roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)")
 roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System")
@@ -33,7 +34,6 @@ roms+=("psx,archive:chd_psx")
 roms+=("psp,archive:psp_20220507")
 roms+=("ps2,archive:ps2chd")
 
-IFS=","
 for each in "${roms[@]}"
 do
   read -ra rom < <(printf '%s' "$each")
