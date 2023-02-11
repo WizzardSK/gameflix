@@ -11,7 +11,7 @@ roms+=("jaguar,myrient:No-Intro/Atari - Jaguar (J64)")
 roms+=("lynx,myrient:No-Intro/Atari - Lynx")
 roms+=("atarist,myrient:No-Intro/Atari - ST")
 
-roms+=("vectrex,myrient:No-Intro/GCE - Vectrex")
+#roms+=("vectrex,myrient:No-Intro/GCE - Vectrex")
 #roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision")
 #roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision")
 #roms+=("c64,myrient:No-Intro/Commodore - Commodore 64")
@@ -38,8 +38,9 @@ IFS=","
 for each in "${roms[@]}"
 do
   read -ra rom < <(printf '%s' "$each")
-  mkdir /userdata/roms/${rom[0]}/online
+  mkdir -p /userdata/roms/${rom[0]}/online
   rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 done
+touch /done.txt
 
 curl http://127.0.0.1:1234/reloadgames
