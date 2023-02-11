@@ -1,7 +1,7 @@
 #!/bin/bash
-curl -L https://rclone.org/install.sh | bash
+#curl -L https://rclone.org/install.sh | bash
 params="--config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon"
-if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
+#if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 for dir in /userdata/roms/*/; do mkdir -p "$dir/online"; done
 
 rclone mount "myrient:No-Intro/GCE - Vectrex"             /userdata/roms/vectrex/online $params
