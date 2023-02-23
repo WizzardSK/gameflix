@@ -44,3 +44,5 @@ do
   mkdir -p /recalbox/share/roms/${rom[0]}/online
   rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/online --config=/recalbox/share/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 done
+
+touch /recalbox/share/system/done.txt
