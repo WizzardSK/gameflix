@@ -43,5 +43,3 @@ do
   mkdir -p /recalbox/share/roms/${rom[0]}/online
   rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/online --log-file=/mylogfile.txt --config=/recalbox/share/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 done
-
-curl http://127.0.0.1:1234/reloadgames
