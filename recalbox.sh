@@ -35,11 +35,12 @@ roms+=("atarist,myrient:No-Intro/Atari - ST")
 #roms+=("psp,archive:psp_20220507")
 #roms+=("ps2,archive:ps2chd")
 
-rclone mount "archive:retroarch-bios" /recalbox/share/bios --cache-dir /tmp --config=/recalbox/share/system/.config/rclone/rclone.conf --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon
+rclone mount "archive:retroarch-bios" /recalbox/share/bios --config=/recalbox/share/system/.config/rclone/rclone.conf --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon
 IFS=","
 for each in "${roms[@]}"
 do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p /recalbox/share/roms/${rom[0]}/online
-  rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/online --cache-dir /tmp --config=/recalbox/share/system/.config/rclone/rclone.conf --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon
+  rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/online --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon
+  #--vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty 
 done
