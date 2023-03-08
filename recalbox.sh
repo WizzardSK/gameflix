@@ -43,6 +43,7 @@ do
   mkdir -p /recalbox/share/roms/${rom[0]}/online
   rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/online --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --allow-other
   
+  > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gamelist>\n" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   ls /recalbox/share/roms/${rom[0]}/online | while read line; do
     echo "<game><path>./online/${line}</path></game>\n" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
