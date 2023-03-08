@@ -25,7 +25,6 @@ roms+=("gamegear,myrient:No-Intro/Sega - Game Gear")
 roms+=("megadrive,myrient:No-Intro/Sega - Mega Drive - Genesis")
 roms+=("sega32x,myrient:No-Intro/Sega - 32X")
 roms+=("segacd,myrient:Redump/Sega - Mega CD & Sega CD")
-roms+=("saturn,archive:SaturnRedumpCHDs")
 roms+=("dreamcast,archive:chd_dc")
 
 roms+=("psx,archive:chd_psx")
