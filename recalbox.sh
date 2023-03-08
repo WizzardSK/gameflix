@@ -25,6 +25,10 @@ roms+=("gamegear,myrient:No-Intro/Sega - Game Gear")
 roms+=("megadrive,myrient:No-Intro/Sega - Mega Drive - Genesis")
 roms+=("sega32x,myrient:No-Intro/Sega - 32X")
 roms+=("segacd,myrient:Redump/Sega - Mega CD & Sega CD")
+roms+=("dreamcast,archive:chd_dc")
+
+roms+=("psx,archive:chd_psx")
+roms+=("psp,archive:psp_20220507")
 
 rclone mount "archive:retroarch-bios" /recalbox/share/bios --config=/recalbox/share/system/.config/rclone/rclone.conf --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon --allow-other
 IFS=","
