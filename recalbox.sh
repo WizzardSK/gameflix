@@ -45,7 +45,7 @@ do
   
   echo "<gamelist>\n" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   ls /recalbox/share/roms/${rom[0]}/online | while read line; do
-    echo "<game><path>online/$line</path></game>\n" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+    echo "<game><path>online/${line}</path></game>\n" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   done
   echo "</gamelist>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   
