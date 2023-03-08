@@ -18,7 +18,6 @@ roms+=("c64,myrient:No-Intro/Commodore - Commodore 64")
 roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)")
 roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System")
 roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)")
-roms+=("gamecube,archive:rvz-gc-usa-redump")
 
 roms+=("sg1000,myrient:No-Intro/Sega - SG-1000")
 roms+=("mastersystem,myrient:No-Intro/Sega - Master System - Mark III")
