@@ -25,7 +25,7 @@ roms+=("gamegear,myrient:No-Intro/Sega - Game Gear")
 roms+=("megadrive,myrient:No-Intro/Sega - Mega Drive - Genesis")
 roms+=("sega32x,myrient:No-Intro/Sega - 32X")
 roms+=("segacd,myrient:Redump/Sega - Mega CD & Sega CD")
-roms+=("dreamcast,archive:chd_dc")
+roms+=("dreamcast,archive:dreamcastfrenchchd")
 
 roms+=("psx,archive:andrettiracingusa")
 roms+=("psp,archive:psp_20220507")
