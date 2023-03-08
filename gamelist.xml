@@ -1,0 +1,8 @@
+<gameList>
+	<game>
+		<path>/home/pi/ROMs/nes/mm2.nes</path>
+		<name>Mega Man 2</name>
+		<desc>Mega Man 2 is a classic NES game which follows Mega Man as he murders eight robot masters in cold blood.</desc>
+		<image>~/.emulationstation/downloaded_images/nes/Mega Man 2-image.png</image>
+	</game>
+</gameList>
