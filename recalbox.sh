@@ -30,6 +30,7 @@ roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)")
 roms+=("psx,archive:andrettiracingusa")
 roms+=("psp,archive:psp_20220507")
 
+echo "Mounting BIOS"
 rclone mount "archive:retroarch-bios" /recalbox/share/bios --config=/recalbox/share/system/.config/rclone/rclone.conf --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon --allow-other
 IFS=","
 for each in "${roms[@]}"
