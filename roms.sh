@@ -35,7 +35,7 @@ wget -O ~/.emulationstation/custom_systems/es_systems.xml https://raw.githubuser
 wget -O ~/.emulationstation/es_controller_mappings.cfg https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/es_controller_mappings.cfg
 wget -O ~/.emulationstation/es_input.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/es_input.xml
 
-rclone mount "archive:retroarch-bios" ~/.config/retroarch/system --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
+rclone mount "archive:retroarchbios" ~/.config/retroarch/system --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 IFS=","
 for each in "${roms[@]}"
 do
