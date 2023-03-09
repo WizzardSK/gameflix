@@ -35,8 +35,8 @@ rclone mount "archive:retroarch-bios" /recalbox/share/bios --config=/recalbox/sh
 IFS=","
 for each in "${roms[@]}"
 do
-  echo "Mounting ${rom[0]}"
   read -ra rom < <(printf '%s' "$each")
+  echo "Mounting ${rom[0]}"
   mkdir -p /recalbox/share/roms/${rom[0]}/online
   rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/online --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --allow-other
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
