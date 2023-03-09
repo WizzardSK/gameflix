@@ -35,6 +35,6 @@ Run [unmount.sh](unmount.sh) or `unroms.sh` or `bash <(curl -Ls https://raw.gith
 For Batocera, you need to copy [custom.sh](custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone binary and rclone config file in ./config/rclone folder in system folder. Thumbnail folders are not mounting because Batocera supports background scraping.
 
 ## Usage - Recalbox
-Recalbox is not well supported because it seem to use inotify subsystem for handling file operations what is not supported on fuse filesystems. It is possible to mount remote shares, but Recalbox does not update the gamelists with these games. So the game lists are generated in the script instead of Recalbox itself.
+Recalbox is not well supported because it seem to use inotify subsystem for handling file operations what is not supported on fuse filesystems. It is possible to mount remote shares, but Recalbox does not update the gamelists with these games. So the game lists are generated in the script instead of Recalbox itself. Thumbnail folders are not mounting because Recalbox supports auto scraping (Patron edition currently).
 
-I still need to find a way how to run that mount script on boot.
+I still need to find a way how to run that mount script on boot. For now it is necessary to run it manually using ssh. 
