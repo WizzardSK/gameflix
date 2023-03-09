@@ -15,10 +15,6 @@ roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision")
 roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision")
 roms+=("c64,myrient:No-Intro/Commodore - Commodore 64")
 
-roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)")
-roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System")
-roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)")
-
 roms+=("sg1000,myrient:No-Intro/Sega - SG-1000")
 roms+=("mastersystem,myrient:No-Intro/Sega - Master System - Mark III")
 roms+=("gamegear,myrient:No-Intro/Sega - Game Gear")
@@ -27,8 +23,12 @@ roms+=("sega32x,myrient:No-Intro/Sega - 32X")
 roms+=("segacd,myrient:Redump/Sega - Mega CD & Sega CD")
 roms+=("dreamcast,archive:dreamcastfrenchchd")
 
-roms+=("psx,archive:andrettiracingusa")
-roms+=("psp,archive:psp_20220507")
+#roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)")
+#roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System")
+#roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)")
+
+#roms+=("psx,archive:andrettiracingusa")
+#roms+=("psp,archive:psp_20220507")
 
 rclone mount "archive:retroarch-bios" /recalbox/share/bios --config=/recalbox/share/system/.config/rclone/rclone.conf --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon --allow-other
 IFS=","
