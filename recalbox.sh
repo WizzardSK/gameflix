@@ -46,3 +46,5 @@ do
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
+
+es restart
