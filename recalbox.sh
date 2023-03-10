@@ -30,12 +30,6 @@ roms+=("dreamcast,archive:dreamcastfrenchchd")
 roms+=("psx,archive:andrettiracingusa")
 roms+=("psp,archive:psp_20220507")
 
-now=1980
-while (( $now < 2020 )); do
-    sleep 1
-    now=$(date '+%Y')
-done
-
 #echo "Mounting BIOS"
 #rclone mount "archive:recalbox-bios" /recalbox/share/bios --config=/recalbox/share/system/.config/rclone/rclone.conf --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon --allow-other
 IFS=","
