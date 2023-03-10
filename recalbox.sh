@@ -47,4 +47,5 @@ do
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
 
-/etc/init.d/S31emulationstation restart
+es stop
+es start
