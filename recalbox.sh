@@ -29,10 +29,10 @@ fi
 if [ ! -f /usr/bin/rclone ]
 then
   wget https://downloads.rclone.org/rclone-current-linux-${rclarch}.zip
-  7za e -y rclone-current-linux-arm-v7.zip
+  7za e -y rclone-current-linux-${rclarch}.zip
   mv rclone /usr/bin/
   chmod +x /usr/bin/rclone
-  rm rclone-current-linux-arm-v7.zip
+  rm rclone-current-linux-${rclarch}.zip
 fi
 
 mkdir -p /recalbox/share/system/.config/rclone
