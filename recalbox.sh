@@ -42,7 +42,6 @@ declare -a roms=()
 roms+=("atari2600,myrient:No-Intro/Atari - 2600")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200")
 roms+=("atari7800,myrient:No-Intro/Atari - 7800")
-roms+=("jaguar,myrient:No-Intro/Atari - Jaguar (J64)")
 roms+=("lynx,myrient:No-Intro/Atari - Lynx")
 roms+=("atarist,myrient:No-Intro/Atari - ST")
 
