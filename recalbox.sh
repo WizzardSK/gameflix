@@ -11,7 +11,7 @@ if [ ! -f /usr/bin/rclone ]
 then
   wget https://downloads.rclone.org/rclone-current-linux-arm-v7.zip
   7za e -y rclone-current-linux-arm-v7.zip
-  mv 7za /usr/bin/
+  mv rclone /usr/bin/
   chmod +x /usr/bin/rclone
 fi
 
