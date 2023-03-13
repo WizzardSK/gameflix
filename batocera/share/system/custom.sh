@@ -6,4 +6,7 @@ while (( $now < 2020 )); do
     now=$(date '+%Y')
 done
 
-curl -L -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera.sh | su -c bash
+if [ $1 == "start" ]
+then 
+	curl -s -L https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera.sh | su -c bash
+fi
