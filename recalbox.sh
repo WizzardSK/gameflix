@@ -7,13 +7,13 @@ then
   chmod +x /usr/bin/7za
 fi
 
-#if [ ! -f /usr/bin/rclone ]
-#then
-#  wget https://downloads.rclone.org/rclone-current-linux-arm-v7.zip
-#  7za e -y rclone-current-linux-arm-v7.zip
-#  mv 7za /usr/bin/
-#  chmod +x /usr/bin/rclone
-#fi
+if [ ! -f /usr/bin/rclone ]
+then
+  wget https://downloads.rclone.org/rclone-current-linux-arm-v7.zip
+  7za e -y rclone-current-linux-arm-v7.zip
+  mv 7za /usr/bin/
+  chmod +x /usr/bin/rclone
+fi
 
 mkdir -p /recalbox/share/system/.config/rclone
 if [ ! -f /recalbox/share/system/.config/rclone/rclone.conf ]; then wget -O /recalbox/share/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
