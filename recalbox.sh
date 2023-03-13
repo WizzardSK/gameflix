@@ -3,20 +3,20 @@ mount -o remount,rw /
 
 case $( uname -m ) in
   armv7l)
-    ziparch = "arm"
-    rclarch = "arm-v7"
+    $ziparch = "arm"
+    $rclarch = "arm-v7"
   ;;
   aarch64)
-    ziparch = "arm64"
-    rclarch = "arm64"
+    $ziparch = "arm64"
+    $rclarch = "arm64"
   ;;
   x86_64)
-    ziparch = "x64"
-    rclarch = "amd64"
+    $ziparch = "x64"
+    $rclarch = "amd64"
   ;;
   x86_32)
-    ziparch = "ia32"
-    rclarch = "386"
+    $ziparch = "ia32"
+    $rclarch = "386"
   ;;
 esac
 
