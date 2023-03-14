@@ -14,7 +14,7 @@ case $( uname -m ) in
     ziparch="x64"
     rclarch="amd64"
   ;;
-  x86_32)
+  i386)
     ziparch="ia32"
     rclarch="386"
   ;;
