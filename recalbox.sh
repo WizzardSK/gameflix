@@ -78,7 +78,7 @@ do
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   ls /recalbox/share/roms/${rom[0]}/online${rom[2]} | while read line; do
-    if [[ ${line} !=~ .*\.(jpg|png) ]]; then 
+    if [[ ! ${line} =~ .*\.(jpg|png) ]]; then 
       echo "<game><path>online${rom[2]}/${line}</path></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
     fi
   done
