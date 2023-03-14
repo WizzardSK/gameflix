@@ -40,6 +40,7 @@ if [ ! -f /recalbox/share/system/.config/rclone/rclone.conf ]; then wget -O /rec
 declare -a roms=()
 
 roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,/roms")
+roms+=("neogeo,archive:Neo-geoRomCollectionByGhostware")
 
 roms+=("atari2600,myrient:No-Intro/Atari - 2600")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200")
