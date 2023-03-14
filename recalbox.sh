@@ -64,7 +64,7 @@ roms+=("sega32x,myrient:No-Intro/Sega - 32X")
 roms+=("segacd,myrient:Redump/Sega - Mega CD & Sega CD")
 roms+=("dreamcast,archive:chd_dc,/CHD-Dreamcast")
 
-roms+=("psx,archive:andrettiracingusa")
+roms+=("psx,archive:chd_psx,/CHD-PSX-USA")
 roms+=("psp,archive:psp_20220507")
 
 #echo "Mounting BIOS"
