@@ -85,6 +85,8 @@ do
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
 
+test -e "/recalbox/share/system/samba.sh" && bash /recalbox/share/system/samba.sh
+
 es restart
 
 rclone sync "archive:recalbox-bios" /recalbox/share/bios --config=/recalbox/share/system/.config/rclone/rclone.conf
