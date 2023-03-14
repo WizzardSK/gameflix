@@ -39,6 +39,8 @@ mkdir -p /recalbox/share/system/.config/rclone
 if [ ! -f /recalbox/share/system/.config/rclone/rclone.conf ]; then wget -O /recalbox/share/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 declare -a roms=()
 
+roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,/roms")
+
 roms+=("atari2600,myrient:No-Intro/Atari - 2600")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200")
 roms+=("atari7800,myrient:No-Intro/Atari - 7800")
@@ -76,8 +78,8 @@ do
   rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/online --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
-  ls /recalbox/share/roms/${rom[0]}/online | while read line; do
-    echo "<game><path>online/${line}</path></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+  ls /recalbox/share/roms/${rom[0]}/online${rom[1]} | while read line; do
+    echo "<game><path>online${rom[1]}/${line}</path></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
