@@ -53,7 +53,7 @@ roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision")
 roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision")
 roms+=("c64,myrient:No-Intro/Commodore - Commodore 64")
 
-roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless)")
+roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headered)")
 roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System")
 roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)")
 
