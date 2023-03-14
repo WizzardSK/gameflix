@@ -40,7 +40,7 @@ declare -a roms=()
 roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,/roms")
 roms+=("neogeo,archive:Neo-geoRomCollectionByGhostware")
 roms+=("dos,archive:exov5_2,/eXo/eXoDOS")
-roms+=("amiga1200,AmigaSingleRomsA-ZReuploadByGhostware")
+roms+=("amiga1200,archive:AmigaSingleRomsA-ZReuploadByGhostware")
 
 roms+=("atari2600,myrient:No-Intro/Atari - 2600")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200")
