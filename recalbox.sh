@@ -20,12 +20,14 @@ case $( uname -m ) in
   ;;
 esac
 
-if [ ! -f /usr/bin/7za ]; then
+if [ ! -f /usr/bin/7za ]
+then
   wget -O /usr/bin/7za https://github.com/develar/7zip-bin/raw/master/linux/${ziparch}/7za
   chmod +x /usr/bin/7za
 fi
 
-if [ ! -f /usr/bin/rclone ]; then
+if [ ! -f /usr/bin/rclone ]
+then
   wget https://downloads.rclone.org/rclone-current-linux-${rclarch}.zip
   7za e -y rclone-current-linux-${rclarch}.zip
   mv rclone /usr/bin/
