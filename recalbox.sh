@@ -71,6 +71,8 @@ roms+=("psx,archive:chd_psx,/CHD-PSX-USA")
 roms+=("psp,archive:psp_20220507")
 
 es stop
+chvt 3
+clear
 
 IFS=","
 for each in "${roms[@]}"
