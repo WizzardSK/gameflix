@@ -48,7 +48,7 @@ roms+=("atari2600,myrient:No-Intro/Atari - 2600")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200")
 roms+=("atari7800,myrient:No-Intro/Atari - 7800")
 roms+=("lynx,myrient:No-Intro/Atari - Lynx")
-roms+=("atarist,myrient:No-Intro/Atari - ST")
+roms+=("atarist,archive:AtariSTRomsetByGhostware2018")
 
 roms+=("vectrex,myrient:No-Intro/GCE - Vectrex")
 roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision")
@@ -84,7 +84,7 @@ do
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   ls /recalbox/share/roms/${rom[0]}/online${rom[2]} | while read line; do
-    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite) ]]; then 
+    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       echo "<game><path>online${rom[2]}/${line}</path></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
     fi
   done
