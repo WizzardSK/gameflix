@@ -70,6 +70,8 @@ roms+=("dreamcast,archive:chd_dc,/CHD-Dreamcast")
 roms+=("psx,archive:chd_psx,/CHD-PSX-USA")
 roms+=("psp,archive:psp_20220507")
 
+es stop
+
 IFS=","
 for each in "${roms[@]}"
 do
@@ -89,7 +91,7 @@ done
 
 test -e "/recalbox/share/system/samba.sh" && bash /recalbox/share/system/samba.sh
 
-es restart
+es start
 
 rclone sync "archive:recalbox-bios" /recalbox/share/bios --config=/recalbox/share/system/.config/rclone/rclone.conf
 
