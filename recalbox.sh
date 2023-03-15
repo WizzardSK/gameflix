@@ -93,6 +93,7 @@ done
 
 test -e "/recalbox/share/system/samba.sh" && bash /recalbox/share/system/samba.sh
 
+chvt 1
 es start
 
 rclone sync "archive:recalbox-bios" /recalbox/share/bios --config=/recalbox/share/system/.config/rclone/rclone.conf
