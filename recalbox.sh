@@ -47,7 +47,7 @@ roms+=("amiga1200,archive:AmigaSingleRomsA-ZReuploadByGhostware,Commodore - Amig
 roms+=("atari2600,myrient:No-Intro/Atari - 2600,Atari - 2600/Named_Snaps")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200,Atari - 5200/Named_Snaps")
 roms+=("atari7800,myrient:No-Intro/Atari - 7800,Atari - 7800/Named_Snaps")
-roms+=("atarilynx,myrient:No-Intro/Atari - Lynx,Atari - Lynx/Named_Snaps")
+roms+=("lynx,myrient:No-Intro/Atari - Lynx,Atari - Lynx/Named_Snaps")
 roms+=("atarist,myrient:No-Intro/Atari - ST,Atari - ST/Named_Snaps")
 
 roms+=("vectrex,myrient:No-Intro/GCE - Vectrex,GCE - Vectrex/Named_Snaps")
