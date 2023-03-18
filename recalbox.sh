@@ -65,7 +65,7 @@ roms+=("gamegear,myrient:No-Intro/Sega - Game Gear,Sega - Game Gear/Named_Snaps"
 roms+=("genesis,myrient:No-Intro/Sega - Mega Drive - Genesis,Sega - Mega Drive - Genesis/Named_Snaps")
 roms+=("sega32x,myrient:No-Intro/Sega - 32X,Sega - 32X/Named_Boxarts")
 roms+=("segacd,myrient:Redump/Sega - Mega CD & Sega CD,Sega - Mega-CD - Sega CD/Named_Snaps")
-roms+=("dreamcast,archive:chd_dc,Sega - Dreamcast/Named_Snaps")
+roms+=("dreamcast,archive:chd_dc,Sega - Dreamcast/Named_Snaps,/CHD-Dreamcast")
 
 roms+=("psx,archive:chd_psx,Sony - PlayStation/Named_Snaps,/CHD-PSX-USA")
 roms+=("psp,archive:psp_20220507,Sony - PlayStation Portable/Named_Boxarts")
