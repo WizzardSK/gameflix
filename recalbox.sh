@@ -86,7 +86,7 @@ do
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   ls /recalbox/share/roms/${rom[0]}/online${rom[3]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
-      echo "<game><path>online${rom[3]}/${line}</path></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+      echo "<game><path>online${rom[3]}/${line}</path><image>media/${line%.*}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
