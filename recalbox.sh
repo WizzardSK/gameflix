@@ -90,7 +90,7 @@ do
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
-  rclone mount thumbnails:${rom[2]} /recalbox/share/roms/${rom[0]}/media/images --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
+  rclone mount thumbnails:${rom[2]} /recalbox/share/roms/${rom[0]}/media/images/online --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 done
 
 test -e "/recalbox/share/system/samba.sh" && bash /recalbox/share/system/samba.sh
