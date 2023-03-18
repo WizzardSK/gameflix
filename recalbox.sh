@@ -39,36 +39,36 @@ mkdir -p /recalbox/share/system/.config/rclone
 if [ ! -f /recalbox/share/system/.config/rclone/rclone.conf ]; then wget -O /recalbox/share/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 declare -a roms=()
 
-roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,/roms")
-roms+=("neogeo,archive:Neo-geoRomCollectionByGhostware")
-roms+=("dos,archive:exov5_2,/eXo/eXoDOS")
-roms+=("amiga1200,archive:AmigaSingleRomsA-ZReuploadByGhostware")
+roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,MAME/Named_Snaps,/roms")
+roms+=("neogeo,archive:Neo-geoRomCollectionByGhostware,SNK - Neo Geo/Named_Snaps")
+roms+=("dos,archive:exov5_2,DOS/Named_Boxarts,/eXo/eXoDOS")
+roms+=("amiga1200,archive:AmigaSingleRomsA-ZReuploadByGhostware,Commodore - Amiga/Named_Snaps")
 
-roms+=("atari2600,myrient:No-Intro/Atari - 2600")
-roms+=("atari5200,myrient:No-Intro/Atari - 5200")
-roms+=("atari7800,myrient:No-Intro/Atari - 7800")
-roms+=("lynx,myrient:No-Intro/Atari - Lynx")
-roms+=("atarist,archive:AtariSTRomsetByGhostware2018")
+roms+=("atari2600,myrient:No-Intro/Atari - 2600,Atari - 2600/Named_Snaps")
+roms+=("atari5200,myrient:No-Intro/Atari - 5200,Atari - 5200/Named_Snaps")
+roms+=("atari7800,myrient:No-Intro/Atari - 7800,Atari - 7800/Named_Snaps")
+roms+=("atarilynx,myrient:No-Intro/Atari - Lynx,Atari - Lynx/Named_Snaps")
+roms+=("atarist,myrient:No-Intro/Atari - ST,Atari - ST/Named_Snaps")
 
-roms+=("vectrex,myrient:No-Intro/GCE - Vectrex")
-roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision")
-roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision")
-roms+=("c64,myrient:No-Intro/Commodore - Commodore 64")
+roms+=("vectrex,myrient:No-Intro/GCE - Vectrex,GCE - Vectrex/Named_Snaps")
+roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision,Mattel - Intellivision/Named_Snaps")
+roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision,Coleco - ColecoVision/Named_Snaps")
+roms+=("c64,myrient:No-Intro/Commodore - Commodore 64,Commodore - 64/Named_Snaps")
 
-roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headered)")
-roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System")
-roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped)")
+roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headered),Nintendo - Nintendo Entertainment System/Named_Snaps")
+roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System,Nintendo - Super Nintendo Entertainment System/Named_Snaps")
+roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped),Nintendo - Nintendo 64/Named_Snaps")
 
-roms+=("sg1000,myrient:No-Intro/Sega - SG-1000")
-roms+=("mastersystem,myrient:No-Intro/Sega - Master System - Mark III")
-roms+=("gamegear,myrient:No-Intro/Sega - Game Gear")
-roms+=("megadrive,myrient:No-Intro/Sega - Mega Drive - Genesis")
-roms+=("sega32x,myrient:No-Intro/Sega - 32X")
-roms+=("segacd,myrient:Redump/Sega - Mega CD & Sega CD")
-roms+=("dreamcast,archive:chd_dc,/CHD-Dreamcast")
+roms+=("sg-1000,myrient:No-Intro/Sega - SG-1000,Sega - SG-1000/Named_Snaps")
+roms+=("mastersystem,myrient:No-Intro/Sega - Master System - Mark III,Sega - Master System - Mark III/Named_Snaps")
+roms+=("gamegear,myrient:No-Intro/Sega - Game Gear,Sega - Game Gear/Named_Snaps")
+roms+=("genesis,myrient:No-Intro/Sega - Mega Drive - Genesis,Sega - Mega Drive - Genesis/Named_Snaps")
+roms+=("sega32x,myrient:No-Intro/Sega - 32X,Sega - 32X/Named_Boxarts")
+roms+=("segacd,myrient:Redump/Sega - Mega CD & Sega CD,Sega - Mega-CD - Sega CD/Named_Snaps")
+roms+=("dreamcast,archive:chd_dc,Sega - Dreamcast/Named_Snaps")
 
-roms+=("psx,archive:chd_psx,/CHD-PSX-USA")
-roms+=("psp,archive:psp_20220507")
+roms+=("psx,archive:chd_psx,Sony - PlayStation/Named_Snaps,/CHD-PSX-USA")
+roms+=("psp,archive:psp_20220507,Sony - PlayStation Portable/Named_Boxarts")
 
 es stop
 chvt 3
@@ -80,15 +80,17 @@ do
   read -ra rom < <(printf '%s' "$each")
   echo "Mounting ${rom[0]}"
   mkdir -p /recalbox/share/roms/${rom[0]}/online
+  mkdir -p /recalbox/share/roms/${rom[0]}/media/images
   rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/online --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
-  ls /recalbox/share/roms/${rom[0]}/online${rom[2]} | while read line; do
+  ls /recalbox/share/roms/${rom[0]}/online${rom[3]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
-      echo "<game><path>online${rom[2]}/${line}</path></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+      echo "<game><path>online${rom[3]}/${line}</path></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+  rclone mount thumbnails:${rom[2]} /recalbox/share/roms/${rom[0]}/media/images --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 done
 
 test -e "/recalbox/share/system/samba.sh" && bash /recalbox/share/system/samba.sh
