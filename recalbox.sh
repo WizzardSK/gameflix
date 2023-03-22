@@ -40,7 +40,6 @@ if [ ! -f /recalbox/share/system/.config/rclone/rclone.conf ]; then wget -O /rec
 declare -a roms=()
 
 roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,MAME/Named_Snaps,/roms")
-roms+=("neogeo,archive:Neo-geoRomCollectionByGhostware,SNK - Neo Geo/Named_Snaps")
 roms+=("dos,archive:exov5_2,DOS/Named_Boxarts,/eXo/eXoDOS")
 roms+=("amiga1200,archive:AmigaSingleRomsA-ZReuploadByGhostware,Commodore - Amiga/Named_Snaps")
 
