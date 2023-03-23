@@ -94,6 +94,8 @@ for each in "${roms[@]}"; do
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
 
+wget -O /recalbox/share/roms/mame/gamelist.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/recalbox/share/roms/mame/gamelist.xml
+
 chvt 1
 es start
 
