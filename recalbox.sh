@@ -87,7 +87,7 @@ do
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   ls /recalbox/share/roms/${rom[0]}/online${rom[3]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
-      line2=${line}
+      line2=${line%.*}
       if [[ ${rom[0]} == "mame" ]]; then
         line2=$(xmllint --xpath "//game[@name='${line%.*}']/description/text()" /recalbox/share/bios/mame2003-plus/mame2003-plus.xml)
       fi
