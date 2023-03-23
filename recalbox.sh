@@ -20,14 +20,12 @@ case $( uname -m ) in
   ;;
 esac
 
-if [ ! -f /usr/bin/7za ]
-then
+if [ ! -f /usr/bin/7za ]; then
   wget -O /usr/bin/7za https://github.com/develar/7zip-bin/raw/master/linux/${ziparch}/7za
   chmod +x /usr/bin/7za
 fi
 
-if [ ! -f /usr/bin/rclone ]
-then
+if [ ! -f /usr/bin/rclone ]; then
   wget https://downloads.rclone.org/rclone-current-linux-${rclarch}.zip
   7za e -y rclone-current-linux-${rclarch}.zip
   mv rclone /usr/bin/
@@ -77,8 +75,7 @@ mkdir -p /recalbox/share/thumbs
 rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 
 IFS=","
-for each in "${roms[@]}"
-do
+for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "Mounting ${rom[0]}"
   mkdir -p /recalbox/share/roms/${rom[0]}/online
@@ -88,9 +85,9 @@ do
   ls /recalbox/share/roms/${rom[0]}/online${rom[3]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
-      if [[ ${rom[0]} == "mame" ]]; then
-        line2=$(xmllint --xpath "//game[@name='${line%.*}']/description/text()" /recalbox/share/bios/mame2003-plus/mame2003-plus.xml)
-      fi
+      //if [[ ${rom[0]} == "mame" ]]; then
+      //  line2=$(xmllint --xpath "//game[@name='${line%.*}']/description/text()" /recalbox/share/bios/mame2003-plus/mame2003-plus.xml)
+      //fi
       echo "<game><path>online${rom[3]}/${line}</path><image>../../thumbs/${rom[2]}/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
     fi
   done
