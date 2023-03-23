@@ -89,7 +89,7 @@ do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line}
       if [[ ${rom[0]} == "mame" ]]; then
-        line2=$(grep -A1 "name=\"${line%.*}\"" /recalbox/share/bios/mame2003-plus/mame2003-plus.xml | grep -oP '(?<=<description>).*(?=</description>)')
+        line2=$(grep -A1 "name=\"${line%.*}\"" /recalbox/share/bios/mame2003-plus/mame2003-plus.xml | grep -Eo '<description>.*</description>' | sed 's/<\/\?description>//g')
       fi
       echo "<game><path>online${rom[3]}/${line}</path><image>../../thumbs/${rom[2]}/${line2%.*}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
     fi
