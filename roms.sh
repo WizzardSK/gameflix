@@ -1,6 +1,8 @@
 #!/bin/bash
 declare -a roms=()
 
+roms+=("dos,archive:exov5_2,DOS/Named_Boxarts")
+
 roms+=("vectrex,myrient:No-Intro/GCE - Vectrex,GCE - Vectrex/Named_Snaps")
 roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision,Mattel - Intellivision/Named_Snaps")
 roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision,Coleco - ColecoVision/Named_Snaps")
