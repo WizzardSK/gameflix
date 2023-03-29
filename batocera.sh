@@ -4,6 +4,8 @@ if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/
 curl -s -L https://rclone.org/install.sh | bash
 declare -a roms=()
 
+roms+=("dos,archive:exov5_2")
+
 roms+=("atari2600,myrient:No-Intro/Atari - 2600")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200")
 roms+=("atari7800,myrient:No-Intro/Atari - 7800")
