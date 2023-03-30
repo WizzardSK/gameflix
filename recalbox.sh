@@ -88,14 +88,15 @@ for each in "${roms[@]}"; do
       #if [[ ${rom[0]} == "mame" ]]; then
       #  line2=$(xmllint --xpath "//game[@name='${line%.*}']/description/text()" /recalbox/share/bios/mame2003-plus/mame2003-plus.xml)
       #fi
-      echo "<game><path>online${rom[3]}/${line}</path><image>../../thumbs/${rom[2]}/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+      echo "<game><path>online${rom[3]}/${line}</path><image>../../thumbs/${rom[2]}/${line2}.png</image></game>" recalbox.local/share/thumbs/DOS/Named_Snaps/>> /recalbox/share/roms/${rom[0]}/gamelist.xml
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
 
 wget -O /recalbox/share/roms/mame/gamelist.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/recalbox/share/roms/mame/gamelist.xml
-wget -O /recalbox/share/roms/dos/gamelist.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/recalbox/share/roms/dos/gamelist.xml
+#wget -O /recalbox/share/roms/dos/gamelist.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/recalbox/share/roms/dos/gamelist.xml
+mount archive:dos-thumbs /recalbox/share/thumbs/DOS/Named_Snaps --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 
 chvt 1
 es start
