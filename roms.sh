@@ -49,7 +49,7 @@ do
   mkdir -p ~/roms/${rom[0]}
   rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
   rm ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
-  ln -s ~/.emulationstation/media/${rom[2]} screenshots
+  ln -s ~/.emulationstation/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
   #rclone mount thumbnails:${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 done
 
