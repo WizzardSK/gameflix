@@ -2,9 +2,7 @@
 
 Project for running games directly from public online sources on Linux machines.
 
-Only for testing purposes. I made this project mostly for my own personal needs, to have the same setup on all my machines.
-
-You must own all the games that you are running using this script.
+I made this project for my own personal needs, to have the same setup on all my machines.
 
 `rclone` binary is needed on host system (version 1.60+).
 
@@ -27,7 +25,7 @@ The library is mounted into `roms` folder in your home directory. If roms direct
 
 Then use the library with any emulation system like Retroarch. It is up to you how you configure the emulators. I am using https://es-de.org/ on Linux on my arm Chromebook, what is basically EmulationStation Desktop Edition suitable for desktop computers, including arm.
 
-Now you may run the roms directly without copying them to local storage, just like Netflix. Again, you should not play the game if you do not own it.
+Now you may run the roms directly without copying them to local storage, just like Netflix. 
 
 Run [unmount.sh](unmount.sh) or `unroms.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/unroms.sh)` to unmount the library or it is unmounted after restart.
 
