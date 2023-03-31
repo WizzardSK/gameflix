@@ -56,7 +56,7 @@ roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headered)
 roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System,Nintendo - Super Nintendo Entertainment System/Named_Snaps")
 roms+=("n64,archive:n64-raspberry-pi-buenos-aires,Nintendo - Nintendo 64/Named_Snaps")
 
-roms+=("sg-1000,myrient:No-Intro/Sega - SG-1000,Sega - SG-1000/Named_Snaps")
+roms+=("sg1000,myrient:No-Intro/Sega - SG-1000,Sega - SG-1000/Named_Snaps")
 roms+=("mastersystem,myrient:No-Intro/Sega - Master System - Mark III,Sega - Master System - Mark III/Named_Snaps")
 roms+=("gamegear,myrient:No-Intro/Sega - Game Gear,Sega - Game Gear/Named_Snaps")
 roms+=("megadrive,myrient:No-Intro/Sega - Mega Drive - Genesis,Sega - Mega Drive - Genesis/Named_Snaps")
