@@ -1,5 +1,5 @@
 #!/bin/bash
-params="--config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon"
+params="--config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-mrclone mount "archive:retroarchbios" /userdata/bios --config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemonodtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon"
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 #curl -s -L https://rclone.org/install.sh | bash
 declare -a roms=()
@@ -37,13 +37,13 @@ roms+=("psp,archive:psp_20220507")
 roms+=("ps2,archive:ps2chd")
 
 mkdir -p /userdata/thumbs
-rclone mount thumbnails: /userdata/thumbs --config=/userdata/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
-rclone mount archive:retroarchbios /userdata/bios --config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
+rclone mount thumbnails: /userdata/thumbs $params
+rclone mount archive:retroarchbios /userdata/bios $params
 IFS=","
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p /userdata/roms/${rom[0]}/online
-  rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
+  rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online $params
 done
 
 curl http://127.0.0.1:1234/reloadgames
