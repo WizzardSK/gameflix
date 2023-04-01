@@ -36,10 +36,9 @@ roms+=("psx,archive:chd_psx")
 roms+=("psp,archive:psp_20220507")
 roms+=("ps2,archive:ps2chd")
 
-rclone mount "archive:retroarchbios" /userdata/bios --config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon -vv --log=file=/userdata/system/log.txt
+rclone mount "archive:retroarchbios" /userdata/bios --config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 IFS=","
-for each in "${roms[@]}"
-do
+for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p /userdata/roms/${rom[0]}/online
   rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
