@@ -1,7 +1,7 @@
 #!/bin/bash
 params="--config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon"
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
-#curl -s -L https://rclone.org/install.sh | bash
+curl -s -L https://rclone.org/install.sh | bash
 declare -a roms=()
 
 roms+=("dos,archive:exov5_2")
