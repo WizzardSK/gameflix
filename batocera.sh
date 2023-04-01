@@ -38,7 +38,7 @@ roms+=("ps2,archive:ps2chd")
 
 mkdir -p /userdata/thumbs
 rclone mount thumbnails: /userdata/thumbs --config=/userdata/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
-rclone mount "archive:retroarchbios" /userdata/bios --config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
+rclone mount archive:retroarchbios /userdata/bios --config=/userdata/system/.config/rclone/rclone.conf --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 IFS=","
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
