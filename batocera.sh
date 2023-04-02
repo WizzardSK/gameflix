@@ -1,6 +1,6 @@
 #!/bin/bash
-curl -s -L https://rclone.org/install.sh | bash
 ln -s /usr/bin/fusermount /usr/bin/fusermount3
+curl -s -L https://rclone.org/install.sh | bash
 params="--no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf"
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 declare -a roms=()
