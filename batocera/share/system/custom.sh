@@ -8,5 +8,5 @@ done
 
 if [ $1 == "start" ]
 then 
-	curl -s -L https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera.sh | su -c bash
+	curl -s -L https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera.sh | bash
 fi
