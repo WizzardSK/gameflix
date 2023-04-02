@@ -1,5 +1,6 @@
 #!/bin/bash
 curl -s -L https://rclone.org/install.sh | bash
+ln -s /usr/bin/fusermount /usr/bin/fusermount3
 params="--no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf"
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 declare -a roms=()
@@ -45,7 +46,7 @@ IFS=","
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p /userdata/roms/${rom[0]}/online
-  rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf -vv --log-file=/userdata/system/log.txt
+  rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
   rm -rf /userdata/roms/${rom[0]}/images
   ln -s /userdata/thumbs/${rom[2]} /userdata/roms/${rom[0]}/images
 done
