@@ -46,7 +46,8 @@ for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p /userdata/roms/${rom[0]}/online
   rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online $params
-  ln -s /userdata/thumbs/${rom[2]} /userdata/roms/${rom[0]}/media
+  rm -rf /userdata/roms/${rom[0]}/images
+  ln -s /userdata/thumbs/${rom[2]} /userdata/roms/${rom[0]}/images
 done
 
 curl http://127.0.0.1:1234/reloadgames
