@@ -1,4 +1,5 @@
 #!/bin/bash
+ln -s /usr/bin/fusermount /usr/bin/fusermount3
 mount -o remount,rw /
 
 case $( uname -m ) in
