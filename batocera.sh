@@ -5,9 +5,9 @@ params="--no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --att
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 declare -a roms=()
 
-#roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,MAME/Named_Snaps,/roms")
-#roms+=("dos,archive:exov5_2,DOS/Named_Snaps,/eXo/eXoDOS")
-#roms+=("amiga1200,archive:AmigaSingleRomsA-ZReuploadByGhostware,Commodore - Amiga/Named_Snaps")
+roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,MAME/Named_Snaps,/roms")
+roms+=("dos,archive:exov5_2,DOS/Named_Snaps,/eXo/eXoDOS")
+roms+=("amiga1200,archive:AmigaSingleRomsA-ZReuploadByGhostware,Commodore - Amiga/Named_Snaps")
 
 roms+=("atari2600,myrient:No-Intro/Atari - 2600,Atari - 2600/Named_Snaps")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200,Atari - 5200/Named_Snaps")
@@ -35,9 +35,9 @@ roms+=("segacd,myrient:Redump/Sega - Mega CD & Sega CD,Sega - Mega-CD - Sega CD/
 roms+=("dreamcast,archive:chd_dc,Sega - Dreamcast/Named_Snaps,/CHD-Dreamcast")
 roms+=("saturn,archive:SaturnRedumpCHDs,Sega - Saturn/Named_Snaps")
 
-#roms+=("psx,archive:chd_psx,Sony - PlayStation/Named_Snaps,/CHD-PSX-USA")
-#roms+=("psp,archive:psp_20220507,Sony - PlayStation Portable/Named_Boxarts")
-#roms+=("ps2,archive:ps2chd,Sony - PlayStation 2/Named_Boxarts")
+roms+=("psx,archive:chd_psx,Sony - PlayStation/Named_Snaps,/CHD-PSX-USA")
+roms+=("psp,archive:psp_20220507,Sony - PlayStation Portable/Named_Boxarts")
+roms+=("ps2,archive:ps2chd,Sony - PlayStation 2/Named_Boxarts")
 
 emulationstation stop
 chvt 3
@@ -57,5 +57,4 @@ done
 
 chvt 2
 curl http://127.0.0.1:1234/reloadgames
-
 rclone sync archive:retroarchbios /userdata/bios --config=/userdata/system/.config/rclone/rclone.conf
