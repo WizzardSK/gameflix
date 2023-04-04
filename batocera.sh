@@ -45,16 +45,9 @@ IFS=","
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p /userdata/roms/${rom[0]}/online
+  mkdir -p /userdata/roms/${rom[0]}/images
   rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
-  > /userdata/roms/${rom[0]}/gamelist.xml
-  echo "<gameList>" >> /userdata/roms/${rom[0]}/gamelist.xml
-  ls /userdata/roms/${rom[0]}/online${rom[3]} | while read line; do
-    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
-      line2=${line%.*}
-      echo "<game><path>online${rom[3]}/${line}</path><image>../../thumbs/${rom[2]}/${line2}.png</image></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
-    fi
-  done
-  echo "</gameList>" >> /userdata/roms/${rom[0]}/gamelist.xml
+  mount -o bind /userdata/thumbs/${rom[2]} /userdata/roms/${rom[0]}/images
 done
 
 curl http://127.0.0.1:1234/reloadgames
