@@ -48,7 +48,7 @@ rclone mount thumbnails: /userdata/thumbs $params
 IFS=","
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
-  echo "Mounting ${rom[0]}
+  echo "Mounting ${rom[0]}"
   mkdir -p /userdata/roms/${rom[0]}/online
   mkdir -p /userdata/roms/${rom[0]}/images
   rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
