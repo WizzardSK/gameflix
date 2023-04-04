@@ -24,7 +24,7 @@ Now you may run the roms directly without copying them to local storage, just li
 Run [unmount.sh](unmount.sh) or `unroms.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/unroms.sh)` to unmount the library or it is unmounted after restart.
 
 ## Usage - Batocera Linux
-For Batocera, you need to copy [custom.sh](batocera/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone binary and rclone config file in ./config/rclone folder in system folder. Thumbnail folders are not mounting because Batocera supports background scraping.
+For Batocera, you need to copy [custom.sh](batocera/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone binary and rclone config file in ./config/rclone folder in system folder. Thumbnail folders are mounting too. It is necessary to enable "Search for local art" option in Advanced Settings - Developer Options.
 
 ## Usage - Recalbox
 For Recalbox, you need to copy [custom.sh](recalbox/share/system/custom.sh) file to your system folder in shared drive. Recalbox is not well supported because it seem to use inotify subsystem for handling file operations what is not supported on fuse filesystems. It is possible to mount remote shares, but Recalbox does not update the gamelists with these games. So the game lists are generated in the script instead of Recalbox itself. Thumbnail folders are mounted too. BIOS folder is not mounting because Recalbox has problem searching in it, so it synchronizes BIOS files with Internet Archive.
