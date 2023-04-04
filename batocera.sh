@@ -5,9 +5,9 @@ params="--no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --att
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 declare -a roms=()
 
-roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,MAME/Named_Snaps,/roms")
-roms+=("dos,archive:exov5_2,DOS/Named_Snaps,/eXo/eXoDOS")
-roms+=("amiga1200,archive:AmigaSingleRomsA-ZReuploadByGhostware,Commodore - Amiga/Named_Snaps")
+#roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,MAME/Named_Snaps,/roms")
+#roms+=("dos,archive:exov5_2,DOS/Named_Snaps,/eXo/eXoDOS")
+#roms+=("amiga1200,archive:AmigaSingleRomsA-ZReuploadByGhostware,Commodore - Amiga/Named_Snaps")
 
 roms+=("atari2600,myrient:No-Intro/Atari - 2600,Atari - 2600/Named_Snaps")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200,Atari - 5200/Named_Snaps")
@@ -56,8 +56,8 @@ for each in "${roms[@]}"; do
 done
 
 chvt 1
-emulationstation start
-#curl http://127.0.0.1:1234/reloadgames
+#emulationstation start
+curl http://127.0.0.1:1234/reloadgames
 
 rclone sync archive:retroarchbios /userdata/bios --config=/userdata/system/.config/rclone/rclone.conf
 
