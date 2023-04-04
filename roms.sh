@@ -1,7 +1,9 @@
 #!/bin/bash
 declare -a roms=()
 
-roms+=("dos,archive:exov5_2,DOS/Named_Boxarts")
+roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,MAME/Named_Snaps,/roms")
+roms+=("dos,archive:exov5_2,DOS/Named_Snaps,/eXo/eXoDOS")
+roms+=("amiga1200,archive:AmigaSingleRomsA-ZReuploadByGhostware,Commodore - Amiga/Named_Snaps")
 
 roms+=("vectrex,myrient:No-Intro/GCE - Vectrex,GCE - Vectrex/Named_Snaps")
 roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision,Mattel - Intellivision/Named_Snaps")
