@@ -55,4 +55,6 @@ do
   ln -s ~/.emulationstation/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
 done
 
+rclone mount archive:dos-thumbs ~/.emulationstation/media/DOS/Named_Snaps --config=/userdata/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
+
 emulationstation &
