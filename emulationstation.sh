@@ -3,12 +3,7 @@ declare -a roms=()
 
 roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,MAME/Named_Snaps,/roms")
 roms+=("dos,archive:exov5_2,DOS/Named_Snaps,/eXo/eXoDOS")
-roms+=("amiga1200,myrient:No-Intro/Commodore - Amiga,Commodore - Amiga/Named_Snaps")
-
-roms+=("vectrex,myrient:No-Intro/GCE - Vectrex,GCE - Vectrex/Named_Snaps")
-roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision,Mattel - Intellivision/Named_Snaps")
-roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision,Coleco - ColecoVision/Named_Snaps")
-roms+=("c64,myrient:No-Intro/Commodore - Commodore 64,Commodore - 64/Named_Snaps")
+roms+=("amiga1200,archive:AmigaSingleRomsA-ZReuploadByGhostware,Commodore - Amiga/Named_Snaps")
 
 roms+=("atari2600,myrient:No-Intro/Atari - 2600,Atari - 2600/Named_Snaps")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200,Atari - 5200/Named_Snaps")
@@ -16,6 +11,11 @@ roms+=("atari7800,myrient:No-Intro/Atari - 7800,Atari - 7800/Named_Snaps")
 roms+=("atarijaguar,myrient:No-Intro/Atari - Jaguar (J64),Atari - Jaguar/Named_Snaps")
 roms+=("atarilynx,myrient:No-Intro/Atari - Lynx,Atari - Lynx/Named_Snaps")
 roms+=("atarist,myrient:No-Intro/Atari - ST,Atari - ST/Named_Snaps")
+
+roms+=("vectrex,myrient:No-Intro/GCE - Vectrex,GCE - Vectrex/Named_Snaps")
+roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision,Mattel - Intellivision/Named_Snaps")
+roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision,Coleco - ColecoVision/Named_Snaps")
+roms+=("c64,myrient:No-Intro/Commodore - Commodore 64,Commodore - 64/Named_Snaps")
 
 roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless),Nintendo - Nintendo Entertainment System/Named_Snaps")
 roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System,Nintendo - Super Nintendo Entertainment System/Named_Snaps")
