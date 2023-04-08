@@ -17,7 +17,7 @@ roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision,Mattel - Intellivi
 roms+=("colecovision,myrient:No-Intro/Coleco - ColecoVision,Coleco - ColecoVision/Named_Snaps")
 roms+=("c64,myrient:No-Intro/Commodore - Commodore 64,Commodore - 64/Named_Snaps")
 
-roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless),Nintendo - Nintendo Entertainment System/Named_Snaps")
+roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headered),Nintendo - Nintendo Entertainment System/Named_Snaps")
 roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System,Nintendo - Super Nintendo Entertainment System/Named_Snaps")
 roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped),Nintendo - Nintendo 64/Named_Snaps")
 roms+=("gamecube,archive:rvz-gc-usa-redump,Nintendo - GameCube/Named_Boxarts")
