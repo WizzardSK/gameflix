@@ -20,7 +20,7 @@ roms+=("c64,myrient:No-Intro/Commodore - Commodore 64,Commodore - 64/Named_Snaps
 roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headerless),Nintendo - Nintendo Entertainment System/Named_Snaps")
 roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System,Nintendo - Super Nintendo Entertainment System/Named_Snaps")
 roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped),Nintendo - Nintendo 64/Named_Snaps")
-roms+=("gamecubec,archive:rvz-gc-usa-redump,Nintendo - GameCube/Named_Boxarts")
+roms+=("gamecube,archive:rvz-gc-usa-redump,Nintendo - GameCube/Named_Boxarts")
 
 roms+=("sg1000,myrient:No-Intro/Sega - SG-1000,Sega - SG-1000/Named_Snaps")
 roms+=("mastersystem,myrient:No-Intro/Sega - Master System - Mark III,Sega - Master System - Mark III/Named_Snaps")
