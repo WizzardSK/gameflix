@@ -186,9 +186,9 @@
         <theme>atarijaguarcd</theme>
     </system>
     <system>
-        <name>atarilynx</name>
+        <name>lynx</name>
         <fullname>Atari Lynx</fullname>
-        <path>%ROMPATH%/atarilynx</path>
+        <path>%ROMPATH%/lynx</path>
         <extension>.lnx .LNX .o .O .7z .7Z .zip .ZIP</extension>
         <command label="Handy">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/handy_libretro.so %ROM%</command>
         <command label="Beetle Lynx">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_lynx_libretro.so %ROM%</command>
