@@ -168,9 +168,9 @@
         <theme>atari800</theme>
     </system>
     <system>
-        <name>atarijaguar</name>
+        <name>jaguar</name>
         <fullname>Atari Jaguar</fullname>
-        <path>%ROMPATH%/atarijaguar</path>
+        <path>%ROMPATH%/jaguar</path>
         <extension>.j64 .J64 .jag .JAG .rom .ROM .abs .ABS .cof .COF .bin .BIN .prg .PRG .7z .7Z .zip .ZIP</extension>
         <command>%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/virtualjaguar_libretro.so %ROM%</command>
         <platform>atarijaguar, atarijaguarcd</platform>
