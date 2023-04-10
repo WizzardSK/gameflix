@@ -64,8 +64,6 @@ for each in "${roms[@]}"; do
 done
 
 wget -O /recalbox/share/roms/mame/gamelist.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/recalbox/share/roms/mame/gamelist.xml
-#wget -O /recalbox/share/roms/dos/gamelist.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/recalbox/share/roms/dos/gamelist.xml
-rclone mount archive:dos-thumbs /recalbox/share/thumbs/DOS/Named_Snaps --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 
 chvt 1
 es start
