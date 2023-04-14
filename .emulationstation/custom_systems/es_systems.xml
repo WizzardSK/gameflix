@@ -359,7 +359,7 @@
     <system>
         <name>dreamcast</name>
         <fullname>Sega Dreamcast</fullname>
-        <path>%ROMPATH%/dreamcast/CHD-Dreamcast</path>
+        <path>%ROMPATH%/dreamcast</path>
         <extension>.chd .CHD .cdi .CDI .iso .ISO .elf .ELF .cue .CUE .gdi .GDI .lst .LST .dat .DAT .m3u .M3U .7z .7Z .zip .ZIP</extension>
         <command>%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/flycast_libretro.so %ROM%</command>
         <platform>dreamcast</platform>
