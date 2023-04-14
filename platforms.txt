@@ -28,6 +28,6 @@ roms+=("segacd,myrient:Redump/Sega - Mega CD & Sega CD,Sega - Mega-CD - Sega CD/
 roms+=("saturn,archive:chd_saturn,Sega - Saturn/Named_Snaps,/CHD-Saturn/USA")
 roms+=("dreamcast,archive:chd_dc,Sega - Dreamcast/Named_Snaps,/CHD-Dreamcast")
 
-roms+=("psx,archive:chd_psx,Sony - PlayStation/Named_Snaps")
+roms+=("psx,archive:chd_psx,Sony - PlayStation/Named_Snaps,/CHD-PSX-USA")
 roms+=("psp,archive:psp_20220507,Sony - PlayStation Portable/Named_Boxarts")
 roms+=("ps2,archive:ps2chd,Sony - PlayStation 2/Named_Boxarts")
