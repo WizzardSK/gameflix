@@ -1,7 +1,4 @@
-roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,MAME/Named_Snaps,/roms")
-roms+=("dos,archive:exov5_2,DOS/Named_Snaps,/eXo/eXoDOS")
 roms+=("amiga1200,myrient:No-Intro/Commodore - Amiga,Commodore - Amiga/Named_Snaps")
-
 roms+=("atari2600,myrient:No-Intro/Atari - 2600,Atari - 2600/Named_Snaps")
 roms+=("atari5200,myrient:No-Intro/Atari - 5200,Atari - 5200/Named_Snaps")
 roms+=("atari7800,myrient:No-Intro/Atari - 7800,Atari - 7800/Named_Snaps")
@@ -17,7 +14,6 @@ roms+=("c64,myrient:No-Intro/Commodore - Commodore 64,Commodore - 64/Named_Snaps
 roms+=("nes,myrient:No-Intro/Nintendo - Nintendo Entertainment System (Headered),Nintendo - Nintendo Entertainment System/Named_Snaps")
 roms+=("snes,myrient:No-Intro/Nintendo - Super Nintendo Entertainment System,Nintendo - Super Nintendo Entertainment System/Named_Snaps")
 roms+=("n64,myrient:No-Intro/Nintendo - Nintendo 64 (ByteSwapped),Nintendo - Nintendo 64/Named_Snaps")
-roms+=("gamecube,archive:rvz-gc-usa-redump,Nintendo - GameCube/Named_Snaps,/RVZ-GC-USA-REDUMP")
 
 roms+=("sg1000,myrient:No-Intro/Sega - SG-1000,Sega - SG-1000/Named_Snaps")
 roms+=("mastersystem,myrient:No-Intro/Sega - Master System - Mark III,Sega - Master System - Mark III/Named_Snaps")
@@ -25,6 +21,11 @@ roms+=("gamegear,myrient:No-Intro/Sega - Game Gear,Sega - Game Gear/Named_Snaps"
 roms+=("megadrive,myrient:No-Intro/Sega - Mega Drive - Genesis,Sega - Mega Drive - Genesis/Named_Snaps")
 roms+=("sega32x,myrient:No-Intro/Sega - 32X,Sega - 32X/Named_Snaps")
 roms+=("segacd,myrient:Redump/Sega - Mega CD & Sega CD,Sega - Mega-CD - Sega CD/Named_Snaps")
+
+roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,MAME/Named_Snaps,/roms")
+roms+=("dos,archive:exov5_2,DOS/Named_Snaps,/eXo/eXoDOS")
+
+roms+=("gamecube,archive:rvz-gc-usa-redump,Nintendo - GameCube/Named_Snaps,/RVZ-GC-USA-REDUMP")
 roms+=("saturn,archive:chd_saturn,Sega - Saturn/Named_Snaps,/CHD-Saturn/USA")
 roms+=("dreamcast,archive:chd_dc,Sega - Dreamcast/Named_Snaps,/CHD-Dreamcast")
 
