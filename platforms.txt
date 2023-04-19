@@ -5,6 +5,7 @@ roms+=("atari7800,myrient:No-Intro/Atari - 7800,Atari - 7800/Named_Snaps")
 roms+=("lynx,myrient:No-Intro/Atari - Lynx,Atari - Lynx/Named_Snaps")
 roms+=("atarist,myrient:No-Intro/Atari - ST,Atari - ST/Named_Snaps")
 roms+=("jaguar,myrient:No-Intro/Atari - Jaguar (J64),Atari - Jaguar/Named_Snaps")
+roms+=("atari800,myrient:TOSEC/Atari/8bit/Games,Atari - 5200/Named_Snaps")
 
 roms+=("vectrex,myrient:No-Intro/GCE - Vectrex,GCE - Vectrex/Named_Snaps")
 roms+=("intellivision,myrient:No-Intro/Mattel - Intellivision,Mattel - Intellivision/Named_Snaps")
