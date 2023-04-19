@@ -63,6 +63,7 @@ for each in "${roms[@]}"; do
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
 
+unzip "/recalbox/share/roms/atari800/[ATR]/Atari 8bit - Games - [ATR].zip" /recalbox/share/roms/atari800/
 wget -O /recalbox/share/roms/mame/gamelist.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/recalbox/share/roms/mame/gamelist.xml
 
 chvt 1
