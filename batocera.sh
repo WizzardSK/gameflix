@@ -18,7 +18,7 @@ for each in "${roms[@]}"; do
   echo "Mounting ${rom[0]}"
   mkdir -p /userdata/roms/${rom[0]}/online
   mkdir -p /userdata/roms/${rom[0]}/images
-  rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online $params
+  rclone mount $params ${rom[1]} /userdata/roms/${rom[0]}/online
   mount -o bind /userdata/thumbs/${rom[2]} /userdata/roms/${rom[0]}/images
 done
 
