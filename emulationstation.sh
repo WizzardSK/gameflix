@@ -20,7 +20,7 @@ for each in "${roms[@]}"; do
   ln -s ~/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
 done
 
-archivemount "~/media/atari800/[ATR]/Atari 8bit - Games - [ATR].zip" ~/media/atari800
+archivemount "~/roms/atari800/[ATR]/Atari 8bit - Games - [ATR].zip" ~/roms/atari800
 
 emulationstation &
 rclone sync "archive:retroarchbios" ~/.config/retroarch/system
