@@ -21,7 +21,7 @@ for each in "${roms[@]}"; do
 done
 
 archivemount ~/roms/atari8bit/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip ~/roms/atari800 -o nonempty
-archivemount ~/roms/spectrum/Sinclair\ ZX\ Spectrum\ -\ Games -\ \[Z80].zip ~/roms/atari800 -o nonempty
+archivemount ~/roms/spectrum/Sinclair\ ZX\ Spectrum\ -\ Games -\ \[Z80].zip ~/roms/zxspectrum -o nonempty
 archivemount ~/roms/amstrad/Amstrad\ CPC\ -\ Games -\ \[DSK].zip ~/roms/amstradcpc -o nonempty
 
 emulationstation &
