@@ -21,8 +21,8 @@ for each in "${roms[@]}"; do
 done
 
 #fuse-zip ~/roms/atari8bihttps://github.com/WizzardSK/gameflix/edit/main/emulationstation.sht/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip ~/roms/atari800 -o nonempty
-#fuse-zip ~/roms/spectrum/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip ~/roms/zxspectrum -o nonempty
-fuse-zip ~/roms/amstrad/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip ~/roms/amstradcpc -o nonempty
+fuse-zip ~/roms/spectrum/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip ~/roms/zxspectrum -o nonempty
+#fuse-zip ~/roms/amstrad/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip ~/roms/amstradcpc -o nonempty
 
 emulationstation &
 rclone sync "archive:retroarchbios" ~/.config/retroarch/system
