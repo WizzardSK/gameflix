@@ -1,5 +1,5 @@
 roms+=("atari8bit,myrient:TOSEC/Atari/8bit/Games/[ATR],Atari - 5200/Named_Snaps")
-roms+=("sinclair,myrient:TOSEC/Sinclair/ZX Spectrum/Games/[Z80],Sinclair - ZX Spectrum/Named_Snaps")
+roms+=("spectrum,myrient:TOSEC/Sinclair/ZX Spectrum/Games/[Z80],Sinclair - ZX Spectrum/Named_Snaps")
 roms+=("amstrad,myrient:TOSEC/Amstrad/CPC/Games/[DSK],Amstrad - CPC/Named_Snaps")
 
 roms+=("atari2600,myrient:No-Intro/Atari - 2600,Atari - 2600/Named_Snaps")
