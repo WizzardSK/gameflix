@@ -10,6 +10,7 @@ mkdir -p ~/media
 rm -rf ~/.emulationstation/downloaded_media
 
 rclone mount thumbnails: ~/media --daemon
+rclone mount myrient: ~/myrient --daemon
 
 IFS=","
 for each in "${roms[@]}"; do
