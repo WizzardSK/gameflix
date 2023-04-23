@@ -22,6 +22,7 @@ for each in "${roms[@]}"; do
   ln -s ~/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
 done
 
+mkdir -p ~/roms/atari800
 fuse-zip ~/roms/atari8bit/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip ~/roms/atari800 -o nonempty
 #fuse-zip ~/roms/amstrad/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip ~/roms/amstradcpc -o nonempty
 #fuse-zip ~/roms/spectrum/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip ~/roms/zxspectrum -o nonempty
