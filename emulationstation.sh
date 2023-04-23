@@ -9,8 +9,8 @@ wget -O ~/.emulationstation/es_input.xml https://raw.githubusercontent.com/Wizza
 mkdir -p ~/media
 rm -rf ~/.emulationstation/downloaded_media
 
-rclone mount thumbnails: ~/media --daemon
-rclone mount myrient: ~/myrient --daemon
+rclone mount thumbnails: ~/media --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
+rclone mount myrient: ~/myrient --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 
 IFS=","
 for each in "${roms[@]}"; do
