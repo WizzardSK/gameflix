@@ -17,7 +17,7 @@ for each in "${roms[@]}"; do
   echo "Mounting ${rom[0]}"
   mkdir -p /userdata/roms/${rom[0]}/online
   mkdir -p /userdata/roms/${rom[0]}/images
-  rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
+  rclone mount myrient:${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
   mount -o bind /userdata/thumbs/${rom[2]} /userdata/roms/${rom[0]}/images
 done
 
