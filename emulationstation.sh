@@ -9,6 +9,7 @@ wget -O ~/.emulationstation/es_input.xml https://raw.githubusercontent.com/Wizza
 mkdir -p ~/media
 mkdir -p ~/myrient
 rm -rf ~/.emulationstation/downloaded_media
+rm -rf ~/roms
 
 rclone mount thumbnails: ~/media --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 rclone mount myrient: ~/myrient --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
