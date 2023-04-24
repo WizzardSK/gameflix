@@ -27,13 +27,13 @@ roms+=("megadrive,No-Intro/Sega - Mega Drive - Genesis,Sega - Mega Drive - Genes
 roms+=("sega32x,No-Intro/Sega - 32X,Sega - 32X/Named_Snaps")
 roms+=("segacd,Redump/Sega - Mega CD & Sega CD,Sega - Mega-CD - Sega CD/Named_Snaps")
 
-#roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,MAME/Named_Snaps,/roms")
-#roms+=("dos,archive:exov5_2,DOS/Named_Snaps,/eXo/eXoDOS")
+roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018,MAME/Named_Snaps,/roms")
+roms+=("dos,archive:exov5_2,DOS/Named_Snaps,/eXo/eXoDOS")
 
-#roms+=("gamecube,archive:rvz-gc-usa-redump,Nintendo - GameCube/Named_Snaps,/RVZ-GC-USA-REDUMP")
-#roms+=("saturn,archive:chd_saturn,Sega - Saturn/Named_Snaps,/CHD-Saturn/USA")
-#roms+=("dreamcast,archive:chd_dc,Sega - Dreamcast/Named_Snaps,/CHD-Dreamcast")
+roms+=("gamecube,archive:rvz-gc-usa-redump,Nintendo - GameCube/Named_Snaps,/RVZ-GC-USA-REDUMP")
+roms+=("saturn,archive:chd_saturn,Sega - Saturn/Named_Snaps,/CHD-Saturn/USA")
+roms+=("dreamcast,archive:chd_dc,Sega - Dreamcast/Named_Snaps,/CHD-Dreamcast")
 
-#roms+=("psx,archive:chd_psx,Sony - PlayStation/Named_Snaps,/CHD-PSX-USA")
-#roms+=("psp,archive:psp_20220507,Sony - PlayStation Portable/Named_Snaps")
-#roms+=("ps2,archive:ps2chd,Sony - PlayStation 2/Named_Snaps")
+roms+=("psx,archive:chd_psx,Sony - PlayStation/Named_Snaps,/CHD-PSX-USA")
+roms+=("psp,archive:psp_20220507,Sony - PlayStation Portable/Named_Snaps")
+roms+=("ps2,archive:ps2chd,Sony - PlayStation 2/Named_Snaps")
