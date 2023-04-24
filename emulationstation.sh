@@ -10,6 +10,7 @@ mkdir -p ~/media
 mkdir -p ~/myrient
 rm -rf ~/.emulationstation/downloaded_media
 rm -rf ~/roms
+mkdir -p ~/roms
 
 rclone mount thumbnails: ~/media --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 rclone mount myrient: ~/myrient --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
