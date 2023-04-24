@@ -16,9 +16,7 @@ rclone mount myrient: ~/myrient --no-checksum --no-modtime --attr-timeout 100h -
 IFS=","
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
-  #mkdir -p ~/roms/${rom[0]}
   mkdir -p ~/.emulationstation/downloaded_media/${rom[0]}
-  #rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
   ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   ln -s ~/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
 done
