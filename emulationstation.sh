@@ -9,7 +9,6 @@ wget -O ~/.emulationstation/es_input.xml https://raw.githubusercontent.com/Wizza
 mkdir -p ~/media
 mkdir -p ~/myrient
 rm -rf ~/.emulationstation/downloaded_media
-rm -rf ~/.cache/rclone
 rm -rf ~/roms
 mkdir -p ~/roms
 
