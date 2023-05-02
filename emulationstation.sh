@@ -25,23 +25,17 @@ for each in "${roms[@]}"; do
   ln -s ~/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
 done
 
-echo "mounting thumbs"
 rclone mount thumbnails: ~/media --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
-echo "mounting myrient"
 rclone mount myrient: ~/myrient --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 
 mkdir -p ~/roms/atari800
 mkdir -p ~/roms/amstradcpc
 mkdir -p ~/roms/zxspectrum
 
-echo "mounting Atari 800"
-fuse-zip ~/myrient/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip ~/roms/atari800 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-echo "mounting Amstrad CPC"
-fuse-zip ~/myrient/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip ~/roms/amstradcpc -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-echo "mounting ZX Spectrum"
-fuse-zip ~/myrient/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip ~/roms/zxspectrum -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#fuse-zip ~/myrient/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip ~/roms/atari800 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#fuse-zip ~/myrient/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip ~/roms/amstradcpc -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#fuse-zip ~/myrient/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip ~/roms/zxspectrum -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 
-echo "moving snaps"
 mv ~/.emulationstation/downloaded_media/atari8bit ~/.emulationstation/downloaded_media/atari800
 mv ~/.emulationstation/downloaded_media/amstrad ~/.emulationstation/downloaded_media/amstradcpc
 mv ~/.emulationstation/downloaded_media/spectrum ~/.emulationstation/downloaded_media/zxspectrum
