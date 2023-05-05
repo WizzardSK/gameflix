@@ -12,7 +12,6 @@ roms+=("jaguar,No-Intro/Atari - Jaguar (J64),Atari - Jaguar/Named_Snaps")
 roms+=("c64,No-Intro/Commodore - Commodore 64,Commodore - 64/Named_Snaps")
 roms+=("amiga1200,No-Intro/Commodore - Amiga,Commodore - Amiga/Named_Snaps")
 
-roms+=("vectrex,No-Intro/GCE - Vectrex,GCE - Vectrex/Named_Snaps")
 roms+=("intellivision,No-Intro/Mattel - Intellivision,Mattel - Intellivision/Named_Snaps")
 roms+=("colecovision,No-Intro/Coleco - ColecoVision,Coleco - ColecoVision/Named_Snaps")
 
