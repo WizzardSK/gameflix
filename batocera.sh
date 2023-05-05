@@ -24,7 +24,6 @@ for each in "${roms[@]}"; do
   if grep -q "archive:" <<< "${rom[1]}"; then
     rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
   else
-    rm -rf /userdata/roms/${rom[0]}/online
     mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/online
     #rclone mount myrient:${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
   fi  
