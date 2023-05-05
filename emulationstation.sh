@@ -12,6 +12,9 @@ rm -rf ~/.emulationstation/downloaded_media
 rm -rf ~/roms
 mkdir -p ~/roms
 
+rclone mount thumbnails: ~/media --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
+rclone mount myrient: ~/myrient --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
+
 IFS=","
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
@@ -20,13 +23,14 @@ for each in "${roms[@]}"; do
     mkdir -p ~/roms/${rom[0]}
     rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
   else
-    ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
+    mkdir -p ~/roms/${rom[0]}
+    mount -o bind ~/myrient/${rom[1]} ~/roms/${rom[0]}
+    #ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   fi
-  ln -s ~/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
+  mkdir -p ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
+  mount -o bind ~/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
+  #ln -s ~/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
 done
-
-rclone mount thumbnails: ~/media --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
-rclone mount myrient: ~/myrient --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 
 mkdir -p ~/roms/atari800
 mkdir -p ~/roms/amstradcpc
