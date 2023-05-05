@@ -32,13 +32,17 @@ mkdir -p ~/roms/atari800
 mkdir -p ~/roms/amstradcpc
 mkdir -p ~/roms/zxspectrum
 
+mkdir -p ~/.emulationstation/downloaded_media/atari800/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/amstradcpc/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/zxspectrum/screenshots
+
 fuse-zip ~/myrient/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip ~/roms/atari800 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 fuse-zip ~/myrient/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip ~/roms/amstradcpc -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 fuse-zip ~/myrient/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip ~/roms/zxspectrum -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 
-ln -s "~/media/Atari - 5200/Named_Snaps" ~/.emulationstation/downloaded_media/atari800
-ln -s "~/media/Amstrad - CPC/Named_Snaps" ~/.emulationstation/downloaded_media/amstradcpc
-ln -s "~/media/Sinclair - ZX Spectrum/Named_Snaps" ~/.emulationstation/downloaded_media/zxspectrum
+ln -s "~/media/Atari - 5200/Named_Snaps" ~/.emulationstation/downloaded_media/atari800/screenshots
+ln -s "~/media/Amstrad - CPC/Named_Snaps" ~/.emulationstation/downloaded_media/amstradcpc/screenshots
+ln -s "~/media/Sinclair - ZX Spectrum/Named_Snaps" ~/.emulationstation/downloaded_media/zxspectrum/screenshots
 
 emulationstation &
 rclone sync "archive:retroarchbios" ~/.config/retroarch/system
