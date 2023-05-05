@@ -36,9 +36,9 @@ fuse-zip ~/myrient/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR]
 fuse-zip ~/myrient/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip ~/roms/amstradcpc -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 fuse-zip ~/myrient/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip ~/roms/zxspectrum -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 
-mv ~/.emulationstation/downloaded_media/atari8bit ~/.emulationstation/downloaded_media/atari800
-mv ~/.emulationstation/downloaded_media/amstrad ~/.emulationstation/downloaded_media/amstradcpc
-mv ~/.emulationstation/downloaded_media/spectrum ~/.emulationstation/downloaded_media/zxspectrum
+ln -s "~/media/Atari - 5200/Named_Snaps" ~/.emulationstation/downloaded_media/atari800
+ln -s "~/media/Amstrad - CPC/Named_Snaps" ~/.emulationstation/downloaded_media/amstradcpc
+ln -s "~/media/Sinclair - ZX Spectrum/Named_Snaps" ~/.emulationstation/downloaded_media/zxspectrum
 
 emulationstation &
 rclone sync "archive:retroarchbios" ~/.config/retroarch/system
