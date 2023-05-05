@@ -23,13 +23,9 @@ for each in "${roms[@]}"; do
     mkdir -p ~/roms/${rom[0]}
     rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
   else
-    mkdir -p ~/roms/${rom[0]}
-    mount -o bind ~/myrient/${rom[1]} ~/roms/${rom[0]}
-    #ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
+    ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   fi
-  mkdir -p ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
-  mount -o bind ~/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
-  #ln -s ~/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
+  ln -s ~/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
 done
 
 mkdir -p ~/roms/atari800
