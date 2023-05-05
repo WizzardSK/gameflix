@@ -32,9 +32,9 @@ mkdir -p ~/roms/atari800
 mkdir -p ~/roms/amstradcpc
 mkdir -p ~/roms/zxspectrum
 
-mkdir -p ~/.emulationstation/downloaded_media/atari800/screenshots
-mkdir -p ~/.emulationstation/downloaded_media/amstradcpc/screenshots
-mkdir -p ~/.emulationstation/downloaded_media/zxspectrum/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/atari800
+mkdir -p ~/.emulationstation/downloaded_media/amstradcpc
+mkdir -p ~/.emulationstation/downloaded_media/zxspectrum
 
 fuse-zip ~/myrient/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip ~/roms/atari800 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 fuse-zip ~/myrient/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip ~/roms/amstradcpc -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
