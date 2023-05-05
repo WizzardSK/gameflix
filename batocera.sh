@@ -10,8 +10,12 @@ chvt 3
 clear
 
 mkdir -p /userdata/thumbs
+mkdir -p /userdata/rom
+
+rclone mount myrient: /userdata/rom --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
 rclone mount thumbnails: /userdata/thumbs --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
-IFS=","
+
+IFS=","/home/wizzard/roms/atari2600/
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "Mounting ${rom[0]}"
@@ -20,7 +24,9 @@ for each in "${roms[@]}"; do
   if grep -q "archive:" <<< "${rom[1]}"; then
     rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
   else
-    rclone mount myrient:${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
+    rm -rf /userdata/roms/${rom[0]}/online
+    mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/online
+    #rclone mount myrient:${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
   fi  
   mount -o bind /userdata/thumbs/${rom[2]} /userdata/roms/${rom[0]}/images
 done
