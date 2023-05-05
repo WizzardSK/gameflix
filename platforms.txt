@@ -9,7 +9,7 @@ roms+=("lynx,No-Intro/Atari - Lynx,Atari - Lynx/Named_Snaps")
 roms+=("atarist,No-Intro/Atari - ST,Atari - ST/Named_Snaps")
 roms+=("jaguar,No-Intro/Atari - Jaguar (J64),Atari - Jaguar/Named_Snaps")
 
-roms+=("c64,myrient:Commodore - Commodore 64,Commodore - 64/Named_Snaps")
+roms+=("c64,Commodore - Commodore 64,Commodore - 64/Named_Snaps")
 roms+=("amiga1200,No-Intro/Commodore - Amiga,Commodore - Amiga/Named_Snaps")
 
 roms+=("vectrex,No-Intro/GCE - Vectrex,GCE - Vectrex/Named_Snaps")
