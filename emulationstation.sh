@@ -42,7 +42,7 @@ fuse-zip ~/myrient/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectru
 
 ln -s ~/media/Atari\ -\ 5200/Named_Snaps ~/.emulationstation/downloaded_media/atari800/screenshots
 ln -s ~/media/Amstrad\ -\ CPC/Named_Snaps ~/.emulationstation/downloaded_media/amstradcpc/screenshots
-ln -s ~/media/Sinclair\ -\ ZX Spectrum/Named_Snaps ~/.emulationstation/downloaded_media/zxspectrum/screenshots
+ln -s ~/media/Sinclair\ -\ ZX\ Spectrum/Named_Snaps ~/.emulationstation/downloaded_media/zxspectrum/screenshots
 
 emulationstation &
 rclone sync "archive:retroarchbios" ~/.config/retroarch/system
