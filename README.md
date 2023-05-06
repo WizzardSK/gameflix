@@ -6,7 +6,7 @@ I made this project for my own personal needs, to have the same setup on all my 
 
 `rclone` binary is needed on host system (version 1.60+). Also it is needed to have rclone configured for all the remotes. Attached [rclone.conf](/.config/rclone/rclone.conf) should be placed in `~/.config/rclone/` with Archive S3 keys added from https://archive.org/account/s3.php If your version is not up to date, grab it from here: https://rclone.org/downloads/
 
-All games are stored on public services Internet Archive and Myrient. Thumbnails are used from https://thumbnails.libretro.com/ configured to use with ES-DE frontend. BIOS files are also synced from remote sources after EmulationStation start. My goal is to have all needed BIOS files available without manual copying from external places. The Retroarch BIOS folder is synced from Internet Archive.
+All games are stored on public services Internet Archive and Myrient. Thumbnails are used from https://thumbnails.libretro.com/ configured to use with ES-DE frontend. BIOS files are also synced from remote sources after EmulationStation start. My goal was to have all needed files available without manual copying from external places, but it caused problems for some platforms so BIOS folder is synced from remote place.
 
 [es_systems.xml](.emulationstation/custom_systems/es_systems.xml) is used to configure roms directories for your emulators and alternative emulators for ES-DE frontend. It is updated automatically from this repository when running mount script.
 
