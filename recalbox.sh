@@ -44,7 +44,10 @@ chvt 3
 clear
 
 mkdir -p /recalbox/share/thumbs
+mkdir -p /recalbox/share/rom
+
 rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
+rclone mount myrient: /recalbox/share/rom --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 
 IFS=","
 for each in "${roms[@]}"; do
@@ -54,7 +57,8 @@ for each in "${roms[@]}"; do
   if grep -q "archive:" <<< "${rom[1]}"; then
     rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/online --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
   else
-    rclone mount myrient:${rom[1]} /recalbox/share/roms/${rom[0]}/online --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
+    mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/online
+    #rclone mount myrient:${rom[1]} /recalbox/share/roms/${rom[0]}/online --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
   fi
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
