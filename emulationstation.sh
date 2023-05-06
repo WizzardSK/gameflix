@@ -25,7 +25,7 @@ for each in "${roms[@]}"; do
   else
     ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   fi
-  ln -s ~/media/${rom[2]} ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
+  ln -s ~/media/${rom[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
 done
 
 mkdir -p ~/roms/atari800
