@@ -26,7 +26,7 @@ for each in "${roms[@]}"; do
   else
     mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/online
   fi  
-  mount -o bind /userdata/thumbs/${rom[2]} /userdata/roms/${rom[0]}/images
+  mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
 done
 
 chvt 2
