@@ -24,7 +24,10 @@ Now you may run the roms directly without copying them to local storage, just li
 You also need `fuse-zip` program to use Amstrad CPC, ZX Spectrum and Atari 800 games. They are stored in zipped libraries on remote place so the program needs to mount it like folder.
 
 ## Usage - Batocera Linux
-For Batocera, you need to copy [custom.sh](batocera/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone binary and rclone config file in ./config/rclone folder in system folder. Thumbnail folders are mounting too. It is necessary to enable "Search for local art" option in Advanced Settings - Developer Options.
+For Batocera, you need to copy [custom.sh](batocera/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone binary and rclone config file in ./config/rclone folder in system folder. Thumbnail folders are mounting too.
+
+To show the game thumbnails, it is necessary to enable "Search for local art" option in Advanced Settings - Developer Options.
+Also, I also recommend enabling preloading options in the same menu, it greatly improves the performance when opening the system for the first time.
 
 ## Usage - Recalbox
 For Recalbox, you need to copy [custom.sh](recalbox/share/system/custom.sh) file to your system folder in shared drive. Recalbox is not well supported because it seem to use inotify subsystem for handling file operations what is not supported on fuse filesystems. It is possible to mount remote shares, but Recalbox does not update the gamelists with these games. So the game lists are generated in the script instead of Recalbox itself. Thumbnail folders are mounted too.
