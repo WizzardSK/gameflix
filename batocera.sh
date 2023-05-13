@@ -30,10 +30,10 @@ done
 wget -O /usr/bin/fuse-zip https://raw.githubusercontent.com/WizzardSK/gameflix/main/fuse-zip
 chmod +x /usr/bin/fuse-zip
 
-echo "Mounting atari800"
-mkdir -p /userdata/roms/atari800/online
-mkdir -p /userdata/roms/atari800/images
-fuse-zip /userdata/rom/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip /userdata/roms/atari800/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#echo "Mounting atari800"
+#mkdir -p /userdata/roms/atari800/online
+#mkdir -p /userdata/roms/atari800/images
+#fuse-zip /userdata/rom/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip /userdata/roms/atari800/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 echo "Mounting amstradcpc"
 mkdir -p /userdata/roms/amstradcpc/online
 mkdir -p /userdata/roms/amstradcpc/images
