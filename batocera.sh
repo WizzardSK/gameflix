@@ -28,6 +28,7 @@ for each in "${roms[@]}"; do
 done
 
 wget -O /usr/bin/fuse-zip https://raw.githubusercontent.com/WizzardSK/gameflix/main/fuse-zip
+chmod +x /usr/bin/fuse-zip
 
 fuse-zip /userdata/rom/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip /userdata/roms/atari800 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 fuse-zip /userdata/rom/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip /userdata/roms/amstradcpc -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
