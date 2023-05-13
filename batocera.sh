@@ -30,12 +30,18 @@ done
 wget -O /usr/bin/fuse-zip https://raw.githubusercontent.com/WizzardSK/gameflix/main/fuse-zip
 chmod +x /usr/bin/fuse-zip
 
+echo "Mounting atari800"
 fuse-zip /userdata/rom/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip /userdata/roms/atari800/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+echo "Mounting amstradcpc"
 fuse-zip /userdata/rom/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip /userdata/roms/amstradcpc/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+echo "Mounting zxspectrum"
 fuse-zip /userdata/rom/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip /userdata/roms/zxspectrum/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 
+echo "Mounting atari800 images"
 mount -o bind /userdata/thumbnails/Atari\ -\ 8-\bit/Named_Snaps /userdata/roms/atari800/images
+echo "Mounting amstradcpc images"
 mount -o bind /userdata/thumbnails/Amstrad\ -\ CPC/Named_Snaps /userdata/roms/amstradcpc/images
+echo "Mounting zxspectrum immages"
 mount -o bind /userdata/thumbnails/Sinclair\ -\ ZX\ Spectrum/Named_Snaps /userdata/roms/zxspectrum/images
 
 chvt 2
