@@ -27,6 +27,16 @@ for each in "${roms[@]}"; do
   mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
 done
 
+wget -O /usr/bin/fuse-zip https://raw.githubusercontent.com/WizzardSK/gameflix/main/fuse-zip
+
+fuse-zip /userdata/rom/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip /userdata/roms/atari800 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+fuse-zip /userdata/rom/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip /userdata/roms/amstradcpc -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+fuse-zip /userdata/rom/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip /userdata/roms/zxspectrum -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+
+mount -o bind /userdata/thumbnails/Atari\ -\ 8-\bit/Named_Snaps /userdata/roms/atari800/images
+mount -o bind /userdata/thumbnails/Amstrad\ -\ CPC/Named_Snaps /userdata/roms/amstradcpc/images
+mount -o bind /userdata/thumbnails/Sinclair\ -\ ZX\ Spectrum/Named_Snaps /userdata/roms/zxspectrum/images
+
 chvt 2
 curl http://127.0.0.1:1234/reloadgames
 rclone sync archive:retroarchbios /userdata/bios --config=/userdata/system/.config/rclone/rclone.conf
