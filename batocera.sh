@@ -30,9 +30,9 @@ done
 wget -O /usr/bin/fuse-zip https://raw.githubusercontent.com/WizzardSK/gameflix/main/fuse-zip
 chmod +x /usr/bin/fuse-zip
 
-fuse-zip /userdata/rom/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip /userdata/roms/atari800 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-fuse-zip /userdata/rom/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip /userdata/roms/amstradcpc -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-fuse-zip /userdata/rom/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip /userdata/roms/zxspectrum -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+fuse-zip /userdata/rom/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip /userdata/roms/atari800/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+fuse-zip /userdata/rom/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip /userdata/roms/amstradcpc/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+fuse-zip /userdata/rom/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip /userdata/roms/zxspectrum/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 
 mount -o bind /userdata/thumbnails/Atari\ -\ 8-\bit/Named_Snaps /userdata/roms/atari800/images
 mount -o bind /userdata/thumbnails/Amstrad\ -\ CPC/Named_Snaps /userdata/roms/amstradcpc/images
