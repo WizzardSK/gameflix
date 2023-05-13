@@ -32,8 +32,8 @@ chmod +x /usr/bin/fuse-zip
 
 echo "Mounting atari800"
 fuse-zip /userdata/rom/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip /userdata/roms/atari800/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-echo "Mounting amstradcpc"
-fuse-zip /userdata/rom/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip /userdata/roms/amstradcpc/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#echo "Mounting amstradcpc"
+#fuse-zip /userdata/rom/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip /userdata/roms/amstradcpc/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 echo "Mounting zxspectrum"
 fuse-zip /userdata/rom/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip /userdata/roms/zxspectrum/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 
