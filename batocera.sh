@@ -34,12 +34,18 @@ echo "Mounting atari800"
 /userdata/system/fuse-zip /userdata/rom/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip /userdata/roms/atari800/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 mount -o bind /userdata/thumbs/Atari\ -\ 8-\bit/Named_Snaps /userdata/roms/atari800/images
 
+wget -O /userdata/system/fuse-zip2 https://raw.githubusercontent.com/WizzardSK/gameflix/main/fuse-zip
+chmod +x /userdata/system/fuse-zip2
+
 echo "Mounting amstradcpc"
-/userdata/system/fuse-zip /userdata/rom/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip /userdata/roms/amstradcpc/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+/userdata/system/fuse-zip2 /userdata/rom/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip /userdata/roms/amstradcpc/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 mount -o bind /userdata/thumbs/Amstrad\ -\ CPC/Named_Snaps /userdata/roms/amstradcpc/images
 
+wget -O /userdata/system/fuse-zip3 https://raw.githubusercontent.com/WizzardSK/gameflix/main/fuse-zip
+chmod +x /userdata/system/fuse-zip3
+
 echo "Mounting zxspectrum"
-/userdata/system/fuse-zip /userdata/rom/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip /userdata/roms/zxspectrum/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+/userdata/system/fuse-zip3 /userdata/rom/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip /userdata/roms/zxspectrum/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 mount -o bind /userdata/thumbs/Sinclair\ -\ ZX\ Spectrum/Named_Snaps /userdata/roms/zxspectrum/images
 
 chvt 2
