@@ -27,22 +27,22 @@ for each in "${roms[@]}"; do
   mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
 done
 
-wget -O /usr/bin/fuse-zip https://raw.githubusercontent.com/WizzardSK/gameflix/main/fuse-zip
-wget -O /lib64/libzip.so.4 https://raw.githubusercontent.com/WizzardSK/gameflix/main/libzip.so.4.0
-wget -O /lib64/libcrypto.so.3 https://raw.githubusercontent.com/WizzardSK/gameflix/main/libcrypto.so.3
-chmod +x /usr/bin/fuse-zip
+#wget -O /usr/bin/fuse-zip https://raw.githubusercontent.com/WizzardSK/gameflix/main/fuse-zip
+#wget -O /lib64/libzip.so.4 https://raw.githubusercontent.com/WizzardSK/gameflix/main/libzip.so.4.0
+#wget -O /lib64/libcrypto.so.3 https://raw.githubusercontent.com/WizzardSK/gameflix/main/libcrypto.so.3
+#chmod +x /usr/bin/fuse-zip
 
-echo "Mounting atari800"
-fuse-zip /userdata/rom/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip /userdata/roms/atari800/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-mount -o bind /userdata/thumbs/Atari\ -\ 8-\bit/Named_Snaps /userdata/roms/atari800/images
+#echo "Mounting atari800"
+#fuse-zip /userdata/rom/TOSEC/Atari/8bit/Games/[ATR]/Atari\ 8bit\ -\ Games\ -\ \[ATR].zip /userdata/roms/atari800/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#mount -o bind /userdata/thumbs/Atari\ -\ 8-\bit/Named_Snaps /userdata/roms/atari800/images
 
-echo "Mounting amstradcpc"
-fuse-zip /userdata/rom/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip /userdata/roms/amstradcpc/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-mount -o bind /userdata/thumbs/Amstrad\ -\ CPC/Named_Snaps /userdata/roms/amstradcpc/images
+#echo "Mounting amstradcpc"
+#fuse-zip /userdata/rom/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip /userdata/roms/amstradcpc/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#mount -o bind /userdata/thumbs/Amstrad\ -\ CPC/Named_Snaps /userdata/roms/amstradcpc/images
 
-echo "Mounting zxspectrum"
-fuse-zip /userdata/rom/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip /userdata/roms/zxspectrum/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-mount -o bind /userdata/thumbs/Sinclair\ -\ ZX\ Spectrum/Named_Snaps /userdata/roms/zxspectrum/images
+#echo "Mounting zxspectrum"
+#fuse-zip /userdata/rom/TOSEC/Sinclair/ZX\ Spectrum/Games/[Z80]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[Z80].zip /userdata/roms/zxspectrum/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#mount -o bind /userdata/thumbs/Sinclair\ -\ ZX\ Spectrum/Named_Snaps /userdata/roms/zxspectrum/images
 
 chvt 2
 curl http://127.0.0.1:1234/reloadgames
