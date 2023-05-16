@@ -29,6 +29,7 @@ done
 
 wget -O /usr/bin/fuse-zip https://raw.githubusercontent.com/WizzardSK/gameflix/main/fuse-zip
 wget -O /lib64/libzip.so.4 https://raw.githubusercontent.com/WizzardSK/gameflix/main/libzip.so.4.0
+wget -O /lib64/libcrypto.so.3 https://raw.githubusercontent.com/WizzardSK/gameflix/main/libcrypto.so.3
 chmod +x /usr/bin/fuse-zip
 
 echo "Mounting atari800"
