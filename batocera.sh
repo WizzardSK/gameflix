@@ -28,7 +28,7 @@ for each in "${roms[@]}"; do
 done
 
 wget -O /usr/bin/fuse-zip https://raw.githubusercontent.com/WizzardSK/gameflix/main/fuse-zip
-wget -O /lib/x86_64-linux-gnu/libzip.so.4 https://raw.githubusercontent.com/WizzardSK/gameflix/main/libzip.so.4.0
+wget -O /lib64/libzip.so.4 https://raw.githubusercontent.com/WizzardSK/gameflix/main/libzip.so.4.0
 chmod +x /usr/bin/fuse-zip
 
 echo "Mounting atari800"
