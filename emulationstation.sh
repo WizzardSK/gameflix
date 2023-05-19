@@ -46,6 +46,8 @@ ln -s ~/media/Sinclair\ -\ ZX\ Spectrum/Named_Snaps ~/.emulationstation/download
 
 emulationstation &
 
+rm -rf ~/.emulationstation/downloaded_media/mame/screenshots
+mkdir -p ~/.emulationstation/downloaded_media/mame/screenshots
 xml_file="/usr/share/emulationstation/resources/MAME/mamenames.xml"
 while IFS= read -r line
 do
