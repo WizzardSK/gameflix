@@ -22,7 +22,7 @@ roms+=("megadrive,No-Intro/Sega - Mega Drive - Genesis,Sega - Mega Drive - Genes
 roms+=("sega32x,No-Intro/Sega - 32X,Sega - 32X")
 roms+=("segacd,Redump/Sega - Mega CD & Sega CD,Sega - Mega-CD - Sega CD")
 
-roms+=("mame,archive:MAME_2003-Plus_Reference_Set_2018/roms,MAME")
+roms+=("mame,archive:mame-merged/mame-merged,MAME")
 roms+=("dos,archive:exov5_2/eXo/eXoDOS,DOS")
 
 roms+=("gamecube,archive:rvz-gc-usa-redump/RVZ-GC-USA-REDUMP,Nintendo - GameCube")
