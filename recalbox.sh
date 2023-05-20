@@ -61,10 +61,10 @@ for each in "${roms[@]}"; do
   fi
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
-  ls /recalbox/share/roms/${rom[0]}/online${rom[3]} | while read line; do
+  ls /recalbox/share/roms/${rom[0]}/online | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
-      echo "<game><path>online${rom[3]}/${line}</path><image>../../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+      echo "<game><path>online/${line}</path><image>../../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
