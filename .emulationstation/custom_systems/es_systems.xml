@@ -338,7 +338,7 @@
     <system>
         <name>dos</name>
         <fullname>DOS (PC)</fullname>
-        <path>%ROMPATH%/dos/eXo/eXoDOS</path>
+        <path>%ROMPATH%/dos</path>
         <extension>.dosz .bat .BAT .com .COM .conf .CONF .cue .CUE .exe .EXE .iso .ISO .7z .7Z .zip .ZIP</extension>
         <command label="DOSBox-Core">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/dosbox_core_libretro.so %ROM%</command>
         <command label="DOSBox-Pure">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/dosbox_pure_libretro.so %ROM%</command>
@@ -359,7 +359,7 @@
     <system>
         <name>dreamcast</name>
         <fullname>Sega Dreamcast</fullname>
-        <path>%ROMPATH%/dreamcast/CHD-Dreamcast</path>
+        <path>%ROMPATH%/dreamcast</path>
         <extension>.chd .CHD .cdi .CDI .iso .ISO .elf .ELF .cue .CUE .gdi .GDI .lst .LST .dat .DAT .m3u .M3U .7z .7Z .zip .ZIP</extension>
         <command>%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/flycast_libretro.so %ROM%</command>
         <platform>dreamcast</platform>
@@ -481,7 +481,7 @@
     <system>
         <name>gamecube</name>
         <fullname>Nintendo GameCube</fullname>
-        <path>%ROMPATH%/gamecube/RVZ-GC-USA-REDUMP</path>
+        <path>%ROMPATH%/gamecube</path>
         <extension>.ciso .CISO .dff .DFF .dol .DOL .elf .ELF .gcm .GCM .gcz .GCZ .iso .ISO .json .JSON .m3u .M3U .rvz .RVZ .tgc .TGC .wad .WAD .wbfs .WBFS .wia .WIA .7z .7Z .zip .ZIP</extension>
         <command label="Dolphin">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/dolphin_libretro.so %ROM%</command>
         <command label="Dolphin (Standalone)">%EMULATOR_DOLPHIN% -b -e %ROM%</command>
@@ -568,7 +568,7 @@
     <system>
         <name>mame</name>
         <fullname>Multiple Arcade Machine Emulator</fullname>
-        <path>%ROMPATH%/mame/roms</path>
+        <path>%ROMPATH%/mame</path>
         <extension>.cmd .CMD .7z .7Z .zip .ZIP</extension>
         <command label="MAME 2003-Plus">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mame2003_plus_libretro.so %ROM%</command>
         <command label="MAME 2000">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mame2000_libretro.so %ROM%</command>
@@ -992,7 +992,7 @@
     <system>
         <name>psx</name>
         <fullname>Sony PlayStation</fullname>
-        <path>%ROMPATH%/psx/CHD-PSX-USA</path>
+        <path>%ROMPATH%/psx</path>
         <extension>.bin .BIN .cbn .CBN .ccd .CCD .chd .CHD .cue .CUE .ecm .ECM .exe .EXE .img .IMG .iso .ISO .m3u .M3U .mdf .MDF .mds .MDS .pbp .PBP .psexe .PSEXE .psf .PSF .toc .TOC .z .Z .znx .ZNX .7z .7Z .zip .ZIP</extension>
         <command label="Beetle PSX">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_psx_libretro.so %ROM%</command>
         <command label="Beetle PSX HW">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_psx_hw_libretro.so %ROM%</command>
@@ -1026,7 +1026,7 @@
     <system>
         <name>saturn</name>
         <fullname>Sega Saturn</fullname>
-        <path>%ROMPATH%/saturn/CHD-Saturn/USA</path>
+        <path>%ROMPATH%/saturn</path>
         <extension>.bin .BIN .ccd .CCD .chd .CHD .cue .CUE .iso .ISO .mds .MDS .toc .TOC .m3u .M3U .7z .7Z .zip .ZIP</extension>
         <command label="Beetle Saturn">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_saturn_libretro.so %ROM%</command>
         <command label="Kronos">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/kronos_libretro.so %ROM%</command>
