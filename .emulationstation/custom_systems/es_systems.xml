@@ -570,6 +570,7 @@
         <fullname>Multiple Arcade Machine Emulator</fullname>
         <path>%ROMPATH%/mame</path>
         <extension>.cmd .CMD .7z .7Z .zip .ZIP</extension>
+        <command label="MAME">mame %ROM%</command>       
         <command label="MAME 2003-Plus">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mame2003_plus_libretro.so %ROM%</command>
         <command label="MAME 2000">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mame2000_libretro.so %ROM%</command>
         <command label="MAME 2010">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mame2010_libretro.so %ROM%</command>
