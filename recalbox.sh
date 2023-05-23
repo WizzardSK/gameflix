@@ -84,7 +84,7 @@ do
     elif [[ $line == *"realname"* ]]; then
         realname=$(echo "$line" | awk -F'<realname>' '{print $2}' | awk -F'</realname>' '{print $1}')
         realname=${realname//:/_}
-        if [ -f /recalbox/share/thumbs/MAME/Named_Snaps/"$realname".png ]; then
+        if [ -f "/recalbox/share/thumbs/MAME/Named_Snaps/$realname.png" ]; then
             ln -s "/recalbox/share/thumbs/MAME/Named_Snaps/$realname.png" /recalbox/mamethumbs/$mamename.png
         fi
     fi
