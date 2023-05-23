@@ -49,6 +49,8 @@ mkdir -p /recalbox/share/rom
 rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 rclone mount myrient: /recalbox/share/rom --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 
+wget -O /recalbox/share/bios/mamenames.xml https://gitlab.com/es-de/emulationstation-de/-/raw/master/resources/MAME/mamenames.xml?inline=false
+
 IFS=","
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
