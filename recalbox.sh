@@ -49,8 +49,6 @@ mkdir -p /recalbox/share/rom
 rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 rclone mount myrient: /recalbox/share/rom --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 
-wget -O /recalbox/share/bios/mamenames.xml https://gitlab.com/es-de/emulationstation-de/-/raw/master/resources/MAME/mamenames.xml?inline=false
-
 IFS=","
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
@@ -72,7 +70,24 @@ for each in "${roms[@]}"; do
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
 
-wget -O /recalbox/share/roms/mame/gamelist.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/recalbox/share/roms/mame/gamelist.xml
+wget -O /recalbox/share/bios/mamenames.xml https://gitlab.com/es-de/emulationstation-de/-/raw/master/resources/MAME/mamenames.xml?inline=false
+xml_file="/recalbox/share/bios/mamenames.xml"
+mkdir -p /recalbox/mamethumbs
+while IFS= read -r line
+do
+    if [[ $line == *"mamename"* ]]; then
+        mamename=$(echo "$line" | awk -F'<mamename>' '{print $2}' | awk -F'</mamename>' '{print $1}')
+    elif [[ $line == *"realname"* ]]; then
+        realname=$(echo "$line" | awk -F'<realname>' '{print $2}' | awk -F'</realname>' '{print $1}')
+        realname=${realname//:/_}
+        if [ -f ~/media/MAME/Named_Snaps/"$realname".png ]; then
+            ln -s "/recalbox/share/thumbs/MAME/Named_Snaps/$realname.png" ~/recalbox/mamethumbs/$mamename.png
+        fi
+    fi
+done < "$xml_file"
+mount -o bind /recalbox/mamethumbs /recalbox/share/thumbs/MAME/Named_Snaps
+
+#wget -O /recalbox/share/roms/mame/gamelist.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/recalbox/share/roms/mame/gamelist.xml
 
 chvt 1
 es start
