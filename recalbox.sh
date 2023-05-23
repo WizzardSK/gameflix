@@ -70,9 +70,13 @@ for each in "${roms[@]}"; do
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
 
+chvt 1
+es start
+
 wget -O /recalbox/share/bios/mamenames.xml https://gitlab.com/es-de/emulationstation-de/-/raw/master/resources/MAME/mamenames.xml?inline=false
 xml_file="/recalbox/share/bios/mamenames.xml"
 mkdir -p /recalbox/mamethumbs
+mount -o bind /recalbox/mamethumbs /recalbox/share/thumbs/MAME/Named_Snaps
 while IFS= read -r line
 do
     if [[ $line == *"mamename"* ]]; then
@@ -81,15 +85,12 @@ do
         realname=$(echo "$line" | awk -F'<realname>' '{print $2}' | awk -F'</realname>' '{print $1}')
         realname=${realname//:/_}
         if [ -f ~/media/MAME/Named_Snaps/"$realname".png ]; then
-            ln -s "/recalbox/share/thumbs/MAME/Named_Snaps/$realname.png" ~/recalbox/mamethumbs/$mamename.png
+            ln -s "/recalbox/share/thumbs/MAME/Named_Snaps/$realname.png" /recalbox/mamethumbs/$mamename.png
         fi
     fi
 done < "$xml_file"
-mount -o bind /recalbox/mamethumbs /recalbox/share/thumbs/MAME/Named_Snaps
 
 #wget -O /recalbox/share/roms/mame/gamelist.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/recalbox/share/roms/mame/gamelist.xml
 
-chvt 1
-es start
 
 # rclone sync "archive:recalbox-bios" /recalbox/share/bios --config=/recalbox/share/system/.config/rclone/rclone.conf
