@@ -76,7 +76,7 @@ es start
 wget -O /recalbox/share/bios/mamenames.xml https://gitlab.com/es-de/emulationstation-de/-/raw/master/resources/MAME/mamenames.xml?inline=false
 xml_file="/recalbox/share/bios/mamenames.xml"
 mkdir -p /recalbox/mamethumbs
-mount -o bind /recalbox/mamethumbs /recalbox/share/thumbs/MAME/Named_Snaps
+#mount -o bind /recalbox/mamethumbs /recalbox/share/thumbs/MAME/Named_Snaps
 while IFS= read -r line
 do
     if [[ $line == *"mamename"* ]]; then
