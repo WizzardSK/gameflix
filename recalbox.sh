@@ -77,7 +77,7 @@ wget -O /recalbox/share/bios/mamenames.xml https://gitlab.com/es-de/emulationsta
 xml_file="/recalbox/share/bios/mamenames.xml"
 mkdir -p /recalbox/mamethumbs
 mkdir -p /recalbox/mamesnaps
-rclone mount myrient:MAME/Named_Snaps /recalbox/mamesnaps --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
+rclone mount thumbnails:MAME/Named_Snaps /recalbox/mamesnaps --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 mount -o bind /recalbox/mamethumbs /recalbox/share/thumbs/MAME/Named_Snaps
 while IFS= read -r line
 do
