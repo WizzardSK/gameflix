@@ -1416,7 +1416,8 @@
         <fullname>Sinclair ZX Spectrum</fullname>
         <path>%ROMPATH%/zxspectrum</path>
         <extension>.tzx .TZX .tap .TAP .z80 .Z80 .rzx .RZX .scl .SCL .trd .TRD .sh .SH .sna .SNA .szx .SZX .udi .UDI .mgt .MGT .img .IMG .dsk .DSK .gz .GZ .7z .7Z .zip .ZIP</extension>
-        <command>%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/fuse_libretro.so %ROM%</command>
+        <command label="libretro">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/fuse_libretro.so %ROM%</command>
+        <command label="standalone">fuse-sdl --full-screen %ROM%</command>
         <platform>zxspectrum</platform>
         <theme>zxspectrum</theme>
     </system>
