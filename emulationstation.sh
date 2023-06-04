@@ -1,6 +1,7 @@
 #!/bin/bash
 declare -a roms=()
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
+source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/zips.txt)
 
 wget -O ~/.emulationstation/custom_systems/es_systems.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/custom_systems/es_systems.xml
 wget -O ~/.emulationstation/es_controller_mappings.cfg https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/es_controller_mappings.cfg
@@ -28,25 +29,33 @@ for each in "${roms[@]}"; do
   ln -s ~/media/${rom[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
 done
 
-mkdir -p ~/roms/atari800
-mkdir -p ~/roms/amstradcpc
-mkdir -p ~/roms/zxspectrum
-mkdir -p ~/roms/zx81
+for each in "${zips[@]}"; do
+  read -ra zip < <(printf '%s' "$each")
+  mkdir -p ~/roms/${zip[0]}
+  mkdir -p ~/.emulationstation/downloaded_media/${zip[0]}
+  ln -s ~/media/${zip[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${zip[0]}/screenshots
+  fuse-zip ~/myrient/${zip[1]} ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+done
 
-mkdir -p ~/.emulationstation/downloaded_media/atari800
-mkdir -p ~/.emulationstation/downloaded_media/amstradcpc
-mkdir -p ~/.emulationstation/downloaded_media/zxspectrum
-mkdir -p ~/.emulationstation/downloaded_media/zx81
+#mkdir -p ~/roms/atari800
+#mkdir -p ~/roms/amstradcpc
+#mkdir -p ~/roms/zxspectrum
+#mkdir -p ~/roms/zx81
 
-fuse-zip ~/myrient/TOSEC/Atari/8bit/Games/[XEX]/Atari\ 8bit\ -\ Games\ -\ \[XEX].zip ~/roms/atari800 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-fuse-zip ~/myrient/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip ~/roms/amstradcpc -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-fuse-zip ~/myrient/TOSEC/Sinclair/ZX\ Spectrum/Games/[TRD]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[TRD].zip ~/roms/zxspectrum -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-fuse-zip ~/myrient/TOSEC/Sinclair/ZX81/Games/[P]/Sinclair\ ZX81\ -\ Games\ -\ \[P].zip ~/roms/zx81 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#mkdir -p ~/.emulationstation/downloaded_media/atari800
+#mkdir -p ~/.emulationstation/downloaded_media/amstradcpc
+#mkdir -p ~/.emulationstation/downloaded_media/zxspectrum
+#mkdir -p ~/.emulationstation/downloaded_media/zx81
 
-ln -s ~/media/Atari\ -\ 8-\bit/Named_Snaps ~/.emulationstation/downloaded_media/atari800/screenshots
-ln -s ~/media/Amstrad\ -\ CPC/Named_Snaps ~/.emulationstation/downloaded_media/amstradcpc/screenshots
-ln -s ~/media/Sinclair\ -\ ZX\ Spectrum/Named_Snaps ~/.emulationstation/downloaded_media/zxspectrum/screenshots
-ln -s ~/media/Sinclair\ -\ ZX\ 81/Named_Snaps ~/.emulationstation/downloaded_media/zx81/screenshots
+#fuse-zip ~/myrient/TOSEC/Atari/8bit/Games/[XEX]/Atari\ 8bit\ -\ Games\ -\ \[XEX].zip ~/roms/atari800 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#fuse-zip ~/myrient/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip ~/roms/amstradcpc -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#fuse-zip ~/myrient/TOSEC/Sinclair/ZX\ Spectrum/Games/[TRD]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[TRD].zip ~/roms/zxspectrum -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#fuse-zip ~/myrient/TOSEC/Sinclair/ZX81/Games/[P]/Sinclair\ ZX81\ -\ Games\ -\ \[P].zip ~/roms/zx81 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+
+#ln -s ~/media/Atari\ -\ 8-\bit/Named_Snaps ~/.emulationstation/downloaded_media/atari800/screenshots
+#ln -s ~/media/Amstrad\ -\ CPC/Named_Snaps ~/.emulationstation/downloaded_media/amstradcpc/screenshots
+#ln -s ~/media/Sinclair\ -\ ZX\ Spectrum/Named_Snaps ~/.emulationstation/downloaded_media/zxspectrum/screenshots
+#ln -s ~/media/Sinclair\ -\ ZX\ 81/Named_Snaps ~/.emulationstation/downloaded_media/zx81/screenshots
 
 emulationstation &
 
