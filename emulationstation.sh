@@ -32,6 +32,7 @@ done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   mkdir -p ~/roms/${zip[0]}/${zip[3]}
+  touch ~/roms/${zip[0]}/flatten.txt
   mkdir -p ~/.emulationstation/downloaded_media/${zip[0]}
   ln -s ~/media/${zip[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${zip[0]}/screenshots
   fuse-zip ~/myrient/${zip[1]} ~/roms/${zip[O]}/${zip[3]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
