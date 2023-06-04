@@ -40,7 +40,7 @@ mkdir -p ~/.emulationstation/downloaded_media/zx81
 
 fuse-zip ~/myrient/TOSEC/Atari/8bit/Games/[XEX]/Atari\ 8bit\ -\ Games\ -\ \[XEX].zip ~/roms/atari800 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 fuse-zip ~/myrient/TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad\ CPC\ -\ Games\ -\ \[DSK].zip ~/roms/amstradcpc -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-fuse-zip ~/myrient/TOSEC/Sinclair/ZX\ Spectrum/Games/[DSK]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[DSK].zip ~/roms/zxspectrum -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+fuse-zip ~/myrient/TOSEC/Sinclair/ZX\ Spectrum/Games/[TRD]/Sinclair\ ZX\ Spectrum\ -\ Games\ -\ \[TRD].zip ~/roms/zxspectrum -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 fuse-zip ~/myrient/TOSEC/Sinclair/ZX81/Games/[P]/Sinclair\ ZX81\ -\ Games\ -\ \[P].zip ~/roms/zx81 -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 
 ln -s ~/media/Atari\ -\ 8-\bit/Named_Snaps ~/.emulationstation/downloaded_media/atari800/screenshots
