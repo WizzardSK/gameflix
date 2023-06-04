@@ -1,5 +1,6 @@
 #!/bin/bash
 declare -a roms=()
+declare -a zips=()
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/zips.txt)
 
@@ -28,11 +29,9 @@ for each in "${roms[@]}"; do
   fi
   ln -s ~/media/${rom[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
 done
-
-IFS=","
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
-  mkdir -p ~/roms/${zip[0]}
+  mkdir -p ~/roms/${zip[0]}/${zip[3]}
   mkdir -p ~/.emulationstation/downloaded_media/${zip[0]}
   ln -s ~/media/${zip[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${zip[0]}/screenshots
   fuse-zip ~/myrient/${zip[1]} ~/roms/${zip[O]}/${zip[3]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
