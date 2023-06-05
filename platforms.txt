@@ -22,9 +22,9 @@ roms+=("megadrive,No-Intro/Sega - Mega Drive - Genesis,Sega - Mega Drive - Genes
 roms+=("sega32x,No-Intro/Sega - 32X,Sega - 32X")
 roms+=("segacd,Redump/Sega - Mega CD & Sega CD,Sega - Mega-CD - Sega CD")
 
-roms+=("mame,archive:mame-2003-plus-reference-set/roms,MAME")
-roms+=("dos,archive:exov5_2/eXo/eXoDOS,DOS")
+roms+=("neogeocd,Redump/SNK - Neo Geo CD,SNK - Neo Geo CD")
 
+roms+=("dos,archive:exov5_2/eXo/eXoDOS,DOS")
 roms+=("gamecube,archive:rvz-gc-usa-redump/RVZ-GC-USA-REDUMP,Nintendo - GameCube")
 roms+=("saturn,archive:chd_saturn/CHD-Saturn/USA,Sega - Saturn")
 roms+=("dreamcast,archive:chd_dc/CHD-Dreamcast,Sega - Dreamcast")
