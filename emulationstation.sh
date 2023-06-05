@@ -38,20 +38,20 @@ done
 
 emulationstation &
 
-rm -rf ~/.emulationstation/downloaded_media/mame/screenshots
-mkdir -p ~/.emulationstation/downloaded_media/mame/screenshots
-xml_file="/usr/share/emulationstation/resources/MAME/mamenames.xml"
-while IFS= read -r line
-do
-    if [[ $line == *"mamename"* ]]; then
-        mamename=$(echo "$line" | awk -F'<mamename>' '{print $2}' | awk -F'</mamename>' '{print $1}')
-    elif [[ $line == *"realname"* ]]; then
-        realname=$(echo "$line" | awk -F'<realname>' '{print $2}' | awk -F'</realname>' '{print $1}')
-        realname=${realname//:/_}
-        if [ -f ~/media/MAME/Named_Snaps/"$realname".png ]; then
-            ln -s "../../../../media/MAME/Named_Snaps/$realname.png" ~/.emulationstation/downloaded_media/mame/screenshots/$mamename.png
-        fi
-    fi
-done < "$xml_file"
+#rm -rf ~/.emulationstation/downloaded_media/mame/screenshots
+#mkdir -p ~/.emulationstation/downloaded_media/mame/screenshots
+#xml_file="/usr/share/emulationstation/resources/MAME/mamenames.xml"
+#while IFS= read -r line
+#do
+#    if [[ $line == *"mamename"* ]]; then
+#        mamename=$(echo "$line" | awk -F'<mamename>' '{print $2}' | awk -F'</mamename>' '{print $1}')
+#    elif [[ $line == *"realname"* ]]; then
+#        realname=$(echo "$line" | awk -F'<realname>' '{print $2}' | awk -F'</realname>' '{print $1}')
+#        realname=${realname//:/_}
+#        if [ -f ~/media/MAME/Named_Snaps/"$realname".png ]; then
+#            ln -s "../../../../media/MAME/Named_Snaps/$realname.png" ~/.emulationstation/downloaded_media/mame/screenshots/$mamename.png
+#        fi
+#    fi
+#done < "$xml_file"
 
 # rclone sync "archive:retroarchbios" ~/.config/retroarch/system
