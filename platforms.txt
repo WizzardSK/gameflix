@@ -22,6 +22,8 @@ roms+=("megadrive,No-Intro/Sega - Mega Drive - Genesis,Sega - Mega Drive - Genes
 roms+=("sega32x,No-Intro/Sega - 32X,Sega - 32X")
 roms+=("segacd,Redump/Sega - Mega CD & Sega CD,Sega - Mega-CD - Sega CD")
 
+roms+=("pcengine,No-Intro/NEC - PC Engine - TurboGrafx-16,NEC - PC Engine - TurboGrafx 16")
+
 roms+=("dos,archive:exov5_2/eXo/eXoDOS,DOS")
 roms+=("gamecube,archive:rvz-gc-usa-redump/RVZ-GC-USA-REDUMP,Nintendo - GameCube")
 roms+=("saturn,archive:chd_saturn/CHD-Saturn/USA,Sega - Saturn")
