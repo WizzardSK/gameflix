@@ -21,6 +21,7 @@ roms+=("gamegear,No-Intro/Sega - Game Gear,Sega - Game Gear")
 roms+=("megadrive,No-Intro/Sega - Mega Drive - Genesis,Sega - Mega Drive - Genesis")
 roms+=("sega32x,No-Intro/Sega - 32X,Sega - 32X")
 roms+=("segacd,Redump/Sega - Mega CD & Sega CD,Sega - Mega-CD - Sega CD")
+roms+=("naomi,Redump/Arcade - Sega - Naomi,Sega - Naomi")
 
 roms+=("pcengine,No-Intro/NEC - PC Engine - TurboGrafx-16,NEC - PC Engine - TurboGrafx 16")
 roms+=("pcenginecd,archive:redump-nec-pc-engine-cd-turbografx-cd-2021-06-06,NEC - PC Engine CD - TurboGrafx-CD")
