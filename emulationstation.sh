@@ -28,15 +28,15 @@ for each in "${roms[@]}"; do
   fi
   ln -s ~/media/${rom[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
   
-  > ~/roms/${rom[0]}/gamelist.xml
-  echo "<gameList>" >> ~/roms/${rom[0]}/gamelist.xml
-  ls ~/roms/${rom[0]}/online | while read line; do
+  > ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
+  echo "<gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
+  ls ~/roms/${rom[0]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
-      echo "<game><path>./${line}</path></game>" >> ~/roms/${rom[0]}/gamelist.xml
+      echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
     fi
   done
-  echo "</gameList>" >> ~/roms/${rom[0]}/gamelist.xml
+  echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   
 done
 for each in "${zips[@]}"; do
