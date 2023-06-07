@@ -24,6 +24,7 @@ roms+=("segacd,Redump/Sega - Mega CD & Sega CD,Sega - Mega-CD - Sega CD")
 
 roms+=("pcengine,No-Intro/NEC - PC Engine - TurboGrafx-16,NEC - PC Engine - TurboGrafx 16")
 roms+=("pcenginecd,archive:redump-nec-pc-engine-cd-turbografx-cd-2021-06-06,NEC - PC Engine CD - TurboGrafx-CD")
+roms+=("neogeocd,Redump/SNK - Neo Geo CD,SNK - Neo Geo CD")
 
 roms+=("dos,archive:exov5_2/eXo/eXoDOS,DOS")
 roms+=("gamecube,archive:rvz-gc-usa-redump/RVZ-GC-USA-REDUMP,Nintendo - GameCube")
