@@ -27,6 +27,17 @@ for each in "${roms[@]}"; do
     ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   fi
   ln -s ~/media/${rom[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
+  
+  > ~/roms/${rom[0]}/gamelist.xml
+  echo "<gameList>" >> ~/roms/${rom[0]}/gamelist.xml
+  ls ~/roms/${rom[0]}/online | while read line; do
+    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
+      line2=${line%.*}
+      echo "<game><path>./${line}</path></game>" >> ~/roms/${rom[0]}/gamelist.xml
+    fi
+  done
+  echo "</gameList>" >> ~/roms/${rom[0]}/gamelist.xml
+  
 done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
