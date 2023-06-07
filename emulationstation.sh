@@ -11,6 +11,7 @@ mkdir -p ~/media
 mkdir -p ~/myrient
 rm -rf ~/.emulationstation/downloaded_media
 rm -rf ~/.emulationstation/gamelists
+rm -rf ~/.cache/rclone
 rm -rf ~/roms
 mkdir -p ~/roms
 
@@ -34,7 +35,7 @@ for each in "${roms[@]}"; do
   ls ~/roms/${rom[0]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
-      echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
+      echo "<game><path>./${line}</path><name>${line2}</name></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
     fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
@@ -51,7 +52,7 @@ for each in "${zips[@]}"; do
   ls ~/roms/${zip[0]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
-      echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
+      echo "<game><path>./${line}</path><name>${line2}</name></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
     fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
