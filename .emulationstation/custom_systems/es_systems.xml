@@ -783,6 +783,7 @@
         <fullname>SNK Neo Geo CD</fullname>
         <path>%ROMPATH%/neogeocd</path>
         <extension>.chd .CHD .cue .CUE .7z .7Z .zip .ZIP</extension>
+        <command label="FB Alpha 2012 Neo Geo">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/fbalpha2012_neogeo_libretro.so %ROM%</command>
         <command label="neocd">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/neocd_libretro.so %ROM%</command>
         <command label="fbneo">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/fbneo_libretro.so %ROM%</command>
         <platform>neogeocd</platform>
