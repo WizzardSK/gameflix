@@ -45,16 +45,16 @@ for each in "${zips[@]}"; do
   mkdir -p ~/.emulationstation/downloaded_media/${zip[0]}
   ln -s ~/media/${zip[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${zip[0]}/screenshots
   fuse-zip ~/myrient/${zip[1]} ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-  mkdir -p ~/.emulationstation/gamelists/${rom[0]}
-  > ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-  echo "<gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-  ls ~/roms/${rom[0]} | while read line; do
+  mkdir -p ~/.emulationstation/gamelists/${zip[0]}
+  > ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
+  echo "<gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
+  ls ~/roms/${zip[0]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
-      echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
+      echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
     fi
   done
-  echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
+  echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
 done
 
 emulationstation &
