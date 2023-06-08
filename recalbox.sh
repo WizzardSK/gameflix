@@ -43,6 +43,8 @@ es stop
 chvt 3
 clear
 
+rm -rf /recalbox/share/roms
+mkdir -p /recalbox/share/roms
 mkdir -p /recalbox/share/thumbs
 mkdir -p /recalbox/share/rom
 
