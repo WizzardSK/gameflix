@@ -29,4 +29,5 @@ done
 
 chvt 2
 curl http://127.0.0.1:1234/reloadgames
-rclone sync archive:retroarchbios /userdata/bios --config=/userdata/system/.config/rclone/rclone.conf
+
+# rclone sync archive:retroarchbios /userdata/bios --config=/userdata/system/.config/rclone/rclone.conf
