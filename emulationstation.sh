@@ -33,10 +33,7 @@ for each in "${roms[@]}"; do
   > ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   echo "<gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   ls ~/roms/${rom[0]} | while read line; do
-    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
-      line2=${line%.*}
-      echo "<game><path>./${line}</path><name>${line2}</name></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-    fi
+    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml; fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
 done
@@ -50,10 +47,7 @@ for each in "${zips[@]}"; do
   > ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   echo "<gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   ls ~/roms/${zip[0]} | while read line; do
-    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
-      line2=${line%.*}
-      echo "<game><path>./${line}</path><name>${line2}</name></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
-    fi
+    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml; fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
 done
