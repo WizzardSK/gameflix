@@ -73,23 +73,4 @@ done
 chvt 1
 es start
 
-wget -O /recalbox/share/bios/mamenames.xml https://gitlab.com/es-de/emulationstation-de/-/raw/master/resources/MAME/mamenames.xml?inline=false
-xml_file="/recalbox/share/bios/mamenames.xml"
-mkdir -p /recalbox/mamethumbs
-mkdir -p /recalbox/mamesnaps
-rclone mount thumbnails:MAME/Named_Snaps /recalbox/mamesnaps --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
-mount -o bind /recalbox/mamethumbs /recalbox/share/thumbs/MAME/Named_Snaps
-while IFS= read -r line
-do
-    if [[ $line == *"mamename"* ]]; then
-        mamename=$(echo "$line" | awk -F'<mamename>' '{print $2}' | awk -F'</mamename>' '{print $1}')
-    elif [[ $line == *"realname"* ]]; then
-        realname=$(echo "$line" | awk -F'<realname>' '{print $2}' | awk -F'</realname>' '{print $1}')
-        realname=${realname//:/_}
-        if [ -f /recalbox/mamesnaps/$realname.png ]; then
-            ln -s "/recalbox/mamesnaps/$realname.png" /recalbox/mamethumbs/$mamename.png
-        fi
-    fi
-done < "$xml_file"
-
 # rclone sync "archive:recalbox-bios" /recalbox/share/bios --config=/recalbox/share/system/.config/rclone/rclone.conf
