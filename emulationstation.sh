@@ -7,12 +7,12 @@ wget -O ~/.emulationstation/custom_systems/es_systems.xml https://raw.githubuser
 wget -O ~/.emulationstation/es_controller_mappings.cfg https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/es_controller_mappings.cfg
 wget -O ~/.emulationstation/es_input.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/es_input.xml
 
-mkdir -p ~/media
-mkdir -p ~/myrient
 rm -rf ~/.emulationstation/downloaded_media
 rm -rf ~/.emulationstation/gamelists
 rm -rf ~/.cache/rclone
 rm -rf ~/roms
+mkdir -p ~/media
+mkdir -p ~/myrient
 mkdir -p ~/roms
 
 rclone mount thumbnails: ~/media --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
