@@ -1,5 +1,5 @@
 #!/bin/bash
-curl https://rclone.org/install.sh | bash
+#curl https://rclone.org/install.sh | bash
 mkdir -p /userdata/system/.config/rclone
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 declare -a roms=()
