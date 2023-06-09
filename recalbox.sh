@@ -27,7 +27,7 @@ if [ ! -f /usr/bin/7za ]; then
 fi
 
 if [ ! -f /usr/bin/rclone ]; then
-  wget https://downloads.rclone.org/rclone-v1.60.0-linux-${rclarch}.zip
+  wget https://downloads.rclone.org/v1.60.0/rclone-v1.60.0-linux-${rclarch}.zip
   7za e -y rclone-v1.60.0-linux-${rclarch}.zip
   mv rclone /usr/bin/
   chmod +x /usr/bin/rclone
