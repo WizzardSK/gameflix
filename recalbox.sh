@@ -71,6 +71,18 @@ for each in "${roms[@]}"; do
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
+for each in "${zips[@]}"; do
+  read -ra zip < <(printf '%s' "$each")
+  echo " Mounting ${zip[0]}"
+  mkdir -p /recalbox/share/roms/${zip[0]}
+  sh /recalbox/share/system/fuse-zip /recalbox/share/rom/${zip[1]} /recalbox/share/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  > /recalbox/share/roms/${zip[0]}/gamelist.xml
+  echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
+  ls /recalbox/share/roms/${zip[0]}/online | while read line; do
+    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then echo "<game><path>./${line}</path></game>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml; fi
+  done
+  echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
+done
 
 chvt 1
 es start
