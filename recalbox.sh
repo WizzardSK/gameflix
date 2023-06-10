@@ -79,7 +79,10 @@ for each in "${zips[@]}"; do
   > /recalbox/share/roms/${zip[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
   ls /recalbox/share/roms/${zip[0]}/online | while read line; do
-    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then echo "<game><path>./${line}</path></game>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml; fi
+    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
+      line2=${line%.*}
+      echo "<game><path>online/${line}</path><image>../../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml;
+    fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
 done
