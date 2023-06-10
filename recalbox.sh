@@ -34,6 +34,11 @@ if [ ! -f /usr/bin/rclone ]; then
   rm rclone-v1.60.0-linux-${rclarch}.zip
 fi
 
+if [ ! -f /usr/bin/fuse-zip ]; then
+  wget -O /usr/bin/fuse-zip https://github.com/WizzardSK/gameflix/raw/main/recalbox/share/system/fuse-zip
+  chmod +x /usr/bin/fuse-zip
+fi
+
 mkdir -p /recalbox/share/system/.config/rclone
 if [ ! -f /recalbox/share/system/.config/rclone/rclone.conf ]; then wget -O /recalbox/share/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 declare -a roms=()
@@ -75,7 +80,7 @@ for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   echo " Mounting ${zip[0]}"
   mkdir -p /recalbox/share/roms/${zip[0]}/online
-  sh /recalbox/share/system/fuse-zip /recalbox/share/rom/${zip[1]} /recalbox/share/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  fuse-zip /recalbox/share/rom/${zip[1]} /recalbox/share/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   > /recalbox/share/roms/${zip[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
   ls /recalbox/share/roms/${zip[0]}/online | while read line; do
