@@ -3,22 +3,10 @@ ln -s /usr/bin/fusermount /usr/bin/fusermount3
 mount -o remount,rw /
 
 case $( uname -m ) in
-  armv7l)
-    ziparch="arm"
-    rclarch="arm-v7"
-  ;;
-  aarch64)
-    ziparch="arm64"
-    rclarch="arm64"
-  ;;
-  x86_64)
-    ziparch="x64"
-    rclarch="amd64"
-  ;;
-  i386)
-    ziparch="ia32"
-    rclarch="386"
-  ;;
+  armv7l) ziparch="arm"; rclarch="arm-v7" ;;
+  aarch64) ziparch="arm64"; rclarch="arm64" ;;
+  x86_64) ziparch="x64"; rclarch="amd64" ;;
+  i386) ziparch="ia32"; rclarch="386" ;;
 esac
 
 if [ ! -f /usr/bin/7za ]; then wget -O /usr/bin/7za https://github.com/develar/7zip-bin/raw/master/linux/${ziparch}/7za; chmod +x /usr/bin/7za; fi
