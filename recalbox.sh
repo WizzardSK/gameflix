@@ -12,11 +12,10 @@ esac
 if [ ! -f /usr/bin/7za ]; then wget -O /usr/bin/7za https://github.com/develar/7zip-bin/raw/master/linux/${ziparch}/7za; chmod +x /usr/bin/7za; fi
 if [ ! -f /usr/bin/fuse-zip ]; then wget -O /usr/bin/fuse-zip https://github.com/WizzardSK/gameflix/raw/main/recalbox/share/system/fuse-zip; chmod +x /usr/bin/fuse-zip; fi
 if [ ! -f /usr/bin/rclone ]; then
-  wget https://downloads.rclone.org/v1.60.0/rclone-v1.60.0-linux-${rclarch}.zip
-  7za e -y rclone-v1.60.0-linux-${rclarch}.zip
-  mv rclone /usr/bin/
+  wget -O /usr/bin/rclone.zip https://downloads.rclone.org/v1.60.0/rclone-v1.60.0-linux-${rclarch}.zip
+  7za e -y /usr/bin/rclone.zip
   chmod +x /usr/bin/rclone
-  rm rclone-v1.60.0-linux-${rclarch}.zip
+  rm /usr/bin/rclone.zip
 fi
 
 mkdir -p /recalbox/share/system/.config/rclone
