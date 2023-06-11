@@ -24,9 +24,7 @@ if [ ! -f /recalbox/share/system/.config/rclone/rclone.conf ]; then wget -O /rec
 declare -a roms=()
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 
-es stop
-chvt 3
-clear
+es stop; chvt 3; clear
 
 rm -rf /recalbox/share/roms
 mkdir -p /recalbox/share/roms
@@ -72,7 +70,6 @@ for each in "${zips[@]}"; do
   echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
 done
 
-chvt 1
-es start
+chvt 1; es start
 
 rclone sync "archive:recalbox-bios" /recalbox/share/bios --config=/recalbox/share/system/.config/rclone/rclone.conf
