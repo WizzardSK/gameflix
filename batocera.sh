@@ -9,6 +9,8 @@ emulationstation stop
 chvt 3
 clear
 
+rm -rf /userdata/roms
+mkdir -p /userdata/roms
 mkdir -p /userdata/thumbs
 mkdir -p /userdata/rom
 
