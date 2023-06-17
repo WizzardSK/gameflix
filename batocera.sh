@@ -35,7 +35,7 @@ for each in "${zips[@]}"; do
   echo "Mounting ${zip[0]}"
   mkdir -p /userdata/roms/${zip[0]}/online
   mkdir -p /userdata/roms/${zip[0]}/images
-  fuse-zip /userdata/rom/${zip[1]} /userdata/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2 1> /userdata/system/vystup.txt 2> /userdata/system/chyba.txt
+  fuse-zip /userdata/rom/${zip[1]} /userdata/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
 done
 
