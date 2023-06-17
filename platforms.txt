@@ -34,6 +34,6 @@ roms+=("psx,archive:chd_psx/CHD-PSX-USA,Sony - PlayStation")
 roms+=("psp,archive:psp_20220507,Sony - PlayStation Portable")
 roms+=("ps2,archive:ps2chd,Sony - PlayStation 2")
 
-zips+=("zxspectrum,TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip,Sinclair - ZX Spectrum")
-zips+=("amstradcpc,TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip,Amstrad - CPC")
 zips+=("atari800,TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip,Atari - 8-bit")
+#zips+=("amstradcpc,TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip,Amstrad - CPC")
+#zips+=("zxspectrum,TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip,Sinclair - ZX Spectrum")
