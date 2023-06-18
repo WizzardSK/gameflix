@@ -54,5 +54,3 @@ for each in "${zips[@]}"; do
 done
 
 emulationstation &
-
-# rclone sync "archive:retroarchbios" ~/.config/retroarch/system
