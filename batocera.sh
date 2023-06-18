@@ -42,7 +42,3 @@ done
 
 chvt 2
 curl http://127.0.0.1:1234/reloadgames
-
-mkdir -p /userdata/bio
-rclone mount archive:full-pack-bios-batocera-v-35-tmctv /userdata/bio --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
-fuse-zip /userdata/bio/FULL-PACK-BIOS-BATOCERA-V35.zip /userdata/bios -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
