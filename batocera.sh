@@ -1,5 +1,4 @@
 #!/bin/bash
-ethtool -s eth0 speed 1000 duplex full autoneg off
 mount -o remount,size=1000M /overlay
 mkdir -p /userdata/system/.config/rclone
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
