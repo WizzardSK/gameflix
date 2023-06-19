@@ -37,7 +37,7 @@ rclone mount myrient: /recalbox/share/rom --config=/recalbox/share/system/.confi
 IFS=","
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
-  echo " Mounting ${rom[0]}"
+  echo "Mounting ${rom[0]}"
   mkdir -p /recalbox/share/roms/${rom[0]}/online  
   if grep -q "archive:" <<< "${rom[1]}"; then
     rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/online --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
@@ -56,7 +56,7 @@ for each in "${roms[@]}"; do
 done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
-  echo " Mounting ${zip[0]}"
+  echo "Mounting ${zip[0]}"
   mkdir -p /recalbox/share/roms/${zip[0]}/online
   fuse-zip /recalbox/share/rom/${zip[1]} /recalbox/share/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   > /recalbox/share/roms/${zip[0]}/gamelist.xml
