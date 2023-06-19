@@ -14,6 +14,7 @@ if [ ! -f /usr/bin/fuse-zip ]; then wget -O /usr/bin/fuse-zip https://github.com
 if [ ! -f /usr/bin/rclone ]; then
   wget -O /usr/bin/rclone.zip https://downloads.rclone.org/v1.60.0/rclone-v1.60.0-linux-${rclarch}.zip
   7za e -y /usr/bin/rclone.zip
+  mv rclone /usr/bin
   chmod +x /usr/bin/rclone
   rm /usr/bin/rclone.zip
 fi
