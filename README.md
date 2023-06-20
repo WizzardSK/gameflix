@@ -34,6 +34,8 @@ Also, I also recommend enabling preloading options in the same menu, it greatly 
 AMD64 version also supports zipped libraries for Atari 800, Amstrad CPC and ZX Spectrum.
 
 ## Usage - Recalbox
-For Recalbox, you need to copy [custom.sh](recalbox/share/system/custom.sh) file to your system folder in shared drive. Recalbox is not well supported because it seem to use inotify subsystem for handling file operations what is not supported on fuse filesystems. It is possible to mount remote shares, but Recalbox does not update the gamelists with these games. So the game lists are generated in the script instead of Recalbox itself. Thumbnail folders are mounted too.
+For Recalbox, you need to copy [custom.sh](recalbox/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone config file in ./config/rclone folder in system folder. Thumbnail folders are mounting too.
+
+Thumbnail folders are mounted too.
 
 Raspberry Pi 4 version also supports zipped libraries for Atari 800, Amstrad CPC and ZX Spectrum.
