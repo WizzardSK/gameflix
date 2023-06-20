@@ -21,7 +21,6 @@ fi
 
 mkdir -p /recalbox/share/system/.config/rclone
 if [ ! -f /recalbox/share/system/.config/rclone/rclone.conf ]; then wget -O /recalbox/share/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
-declare -a roms=()
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 
 es stop; chvt 3; clear
