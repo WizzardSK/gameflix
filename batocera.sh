@@ -3,12 +3,9 @@ mount -o remount,size=1000M /overlay
 mkdir -p /userdata/system/.config/rclone
 if [ ! -f /userdata/system/.config/rclone/rclone.conf ]; then wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
 if [ ! -f /usr/bin/fuse-zip ]; then wget -O /usr/bin/fuse-zip https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/fuse-zip; chmod +x /usr/bin/fuse-zip; fi
-declare -a roms=()
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 
-emulationstation stop
-chvt 3
-clear
+emulationstation stop; chvt 3; clear
 
 rm -rf /userdata/roms
 mkdir -p /userdata/roms
@@ -40,5 +37,4 @@ for each in "${zips[@]}"; do
   mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
 done
 
-chvt 2
-curl http://127.0.0.1:1234/reloadgames
+chvt 2; curl http://127.0.0.1:1234/reloadgames
