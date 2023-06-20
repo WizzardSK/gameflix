@@ -28,14 +28,11 @@ You also need `fuse-zip` program to use Amstrad CPC, ZX Spectrum and Atari 800 g
 ## Usage - Batocera Linux
 For Batocera, you need to copy [custom.sh](batocera/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone config file in ./config/rclone folder in system folder. Thumbnail folders are mounting too.
 
-To show the game thumbnails, it is necessary to enable "Search for local art" option in Advanced Settings - Developer Options.
-Also, I also recommend enabling preloading options in the same menu, it greatly improves the performance when opening the system for the first time.
+To show the game thumbnails, it is necessary to enable "Search for local art" option in Advanced Settings - Developer Options. Also, I also recommend enabling preloading options in the same menu, it greatly improves the performance when opening the system for the first time.
 
 AMD64 version also supports zipped libraries for Atari 800, Amstrad CPC and ZX Spectrum.
 
 ## Usage - Recalbox
 For Recalbox, you need to copy [custom.sh](recalbox/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone config file in ./config/rclone folder in system folder. Thumbnail folders are mounting too.
-
-Thumbnail folders are mounted too.
 
 Raspberry Pi 4 version also supports zipped libraries for Atari 800, Amstrad CPC and ZX Spectrum.
