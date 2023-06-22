@@ -42,7 +42,7 @@ for each in "${zips[@]}"; do
   mkdir -p ~/roms/${zip[0]}
   mkdir -p ~/.emulationstation/downloaded_media/${zip[0]}
   ln -s ~/media/${zip[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${zip[0]}/screenshots
-  fuse-zip ~/myrient/${zip[1]} ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  mount-zip ~/myrient/${zip[1]} ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   mkdir -p ~/.emulationstation/gamelists/${zip[0]}
   > ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   echo "<gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
