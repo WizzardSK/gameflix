@@ -980,6 +980,7 @@
         <fullname>Sony PlayStation Portable</fullname>
         <path>%ROMPATH%/psp</path>
         <extension>.elf .ELF .iso .ISO .cso .CSO .prx .PRX .pbp .PBP .7z .7Z .zip .ZIP</extension>
+        <command label="Libretro zipped">mount-zip %ROM% ~/iso; %EMULATOR_RETROARCH% -L %CORE_RETROARCH%/ppsspp_libretro.so ~/iso/*.iso; umount ~/iso</command>    
         <command label="Libretro">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/ppsspp_libretro.so %ROM%</command>
         <command label="Standalone">PPSSPPSDL %ROM%</command>
         <platform>psp</platform>
