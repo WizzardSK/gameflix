@@ -10,7 +10,7 @@ case $( uname -m ) in
 esac
 
 if [ ! -f /usr/bin/7za ]; then wget -O /usr/bin/7za https://github.com/develar/7zip-bin/raw/master/linux/${ziparch}/7za; chmod +x /usr/bin/7za; fi
-if [ ! -f /usr/bin/fuse-zip ]; then wget -O /usr/bin/fuse-zip https://github.com/WizzardSK/gameflix/raw/main/recalbox/share/system/fuse-zip; chmod +x /usr/bin/fuse-zip; fi
+if [ ! -f /usr/bin/mount-zip ]; then wget -O /usr/bin/mount-zip https://github.com/WizzardSK/gameflix/raw/main/recalbox/share/system/mount-zip; chmod +x /usr/bin/mount-zip; fi
 if [ ! -f /usr/bin/rclone ]; then
   wget -O /usr/bin/rclone.zip https://downloads.rclone.org/v1.60.0/rclone-v1.60.0-linux-${rclarch}.zip
   7za e -y /usr/bin/rclone.zip
@@ -57,7 +57,7 @@ for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   echo "Mounting ${zip[0]}"
   mkdir -p /recalbox/share/roms/${zip[0]}/online
-  fuse-zip /recalbox/share/rom/${zip[1]} /recalbox/share/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  mount-zip /recalbox/share/rom/${zip[1]} /recalbox/share/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   > /recalbox/share/roms/${zip[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
   ls /recalbox/share/roms/${zip[0]}/online | while read line; do
