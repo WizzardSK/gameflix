@@ -949,8 +949,7 @@
         <fullname>Sony PlayStation 2</fullname>
         <path>%ROMPATH%/ps2</path>
         <extension>.chd .CHD .iso .ISO .isz .ISZ .cso .CSO .bin .BIN .elf .ELF .gz .zip</extension>
-        <command label="AetherSX2 zipped">mount-zip %ROM% ~/iso; ~/AetherSX2*.AppImage ~/iso/*.iso; umount ~/iso</command>        
-        <command label="PCSX2 zipped">mount-zip %ROM% ~/iso; ~/pcsx2*.AppImage ~/iso/*.iso; umount ~/iso</command>
+        <command label="AetherSX2/PCSX2 zipped">mount-zip %ROM% ~/iso; ~/*2.AppImage ~/iso/*.iso; umount ~/iso</command>        
         <command label="AetherSX2 standalone">~/AetherSX2*.AppImage %ROM%</command>
         <command label="PCSX2 standalone">~/pcsx2*.AppImage %ROM%</command>
         <command label="PCSX2 libretro">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/pcsx2_libretro.so %ROM%</command>
