@@ -36,7 +36,7 @@ zips+=("atari800,TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip,Ata
 zips+=("atarist,TOSEC/Atari/ST/Games/[STX]/Atari ST - Games - [STX].zip,Atari - ST")
 zips+=("amstradcpc,TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip,Amstrad - CPC")
 zips+=("zxspectrum,TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip,Sinclair - ZX Spectrum")
-zips+=("zxspectrum,TOSEC/Commodore/Amiga/Games/[ADF]/Commodore Amiga - Games - [ADF].zip,Commodore - Amiga")
+zips+=("amiga1200,TOSEC/Commodore/Amiga/Games/[ADF]/Commodore Amiga - Games - [ADF].zip,Commodore - Amiga")
 
 #roms+=("amiga1200,No-Intro/Commodore - Amiga,Commodore - Amiga")
 #roms+=("psx,archive:chd_psx/CHD-PSX-USA,Sony - PlayStation")
