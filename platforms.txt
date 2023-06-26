@@ -5,6 +5,7 @@ roms+=("lynx,No-Intro/Atari - Lynx,Atari - Lynx")
 roms+=("jaguar,No-Intro/Atari - Jaguar (J64),Atari - Jaguar")
 
 roms+=("c64,No-Intro/Commodore - Commodore 64,Commodore - 64")
+roms+=("amiga1200,No-Intro/Commodore - Amiga,Commodore - Amiga")
 
 roms+=("intellivision,No-Intro/Mattel - Intellivision,Mattel - Intellivision")
 roms+=("colecovision,No-Intro/Coleco - ColecoVision,Coleco - ColecoVision")
@@ -36,9 +37,8 @@ zips+=("atari800,TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip,Ata
 zips+=("atarist,TOSEC/Atari/ST/Games/[STX]/Atari ST - Games - [STX].zip,Atari - ST")
 zips+=("amstradcpc,TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip,Amstrad - CPC")
 zips+=("zxspectrum,TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip,Sinclair - ZX Spectrum")
-zips+=("amiga1200,TOSEC/Commodore/Amiga/Games/[ADF]/Commodore Amiga - Games - [ADF].zip,Commodore - Amiga")
+#zips+=("amiga1200,TOSEC/Commodore/Amiga/Games/[ADF]/Commodore Amiga - Games - [ADF].zip,Commodore - Amiga")
 
-#roms+=("amiga1200,No-Intro/Commodore - Amiga,Commodore - Amiga")
 #roms+=("psx,archive:chd_psx/CHD-PSX-USA,Sony - PlayStation")
 #roms+=("psp,archive:psp_20220507,Sony - PlayStation Portable")
 #roms+=("ps2,archive:ps2chd,Sony - PlayStation 2")
