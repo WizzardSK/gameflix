@@ -913,6 +913,7 @@
         <fullname>NEC PC Engine CD</fullname>
         <path>%ROMPATH%/pcenginecd</path>
         <extension>.bin .BIN .ccd .CCD .chd .CHD .cue .CUE .img .IMG .iso .ISO .m3u .M3U .pce .PCE .sgx .SGX .toc .TOC .7z .7Z .zip .ZIP</extension>
+        <command label="Beetle PCE zipped">mount-zip %ROM% ~/iso; %EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_pce_libretro.so ~/iso/*.cue; umount ~/iso</command>
         <command label="Beetle PCE">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_pce_libretro.so %ROM%</command>
         <command label="Beetle PCE FAST">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_pce_fast_libretro.so %ROM%</command>
         <platform>pcenginecd</platform>
