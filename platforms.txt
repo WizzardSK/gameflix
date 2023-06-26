@@ -31,7 +31,7 @@ roms+=("dreamcast,archive:chd_dc/CHD-Dreamcast,Sega - Dreamcast")
 roms+=("psx,Redump/Sony - PlayStation,Sony - PlayStation")
 roms+=("psp,Redump/Sony - PlayStation Portable,Sony - PlayStation Portable")
 roms+=("ps2,Redump/Sony - PlayStation 2,Sony - PlayStation 2")
-roms+=("ps2,Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k],Nintendo - GameCube")
+roms+=("gamecube,Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k],Nintendo - GameCube")
 
 zips+=("atari800,TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip,Atari - 8-bit")
 zips+=("atarist,TOSEC/Atari/ST/Games/[STX]/Atari ST - Games - [STX].zip,Atari - ST")
