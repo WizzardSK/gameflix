@@ -1386,7 +1386,8 @@
         <name>xbox</name>
         <fullname>Microsoft Xbox</fullname>
         <path>%ROMPATH%/xbox</path>
-        <extension>.iso .ISO</extension>
+        <extension>.zip .iso .ISO</extension>
+        <command label="xemu zipped">mount-zip %ROM% ~/iso; %EMULATOR_XEMU% -full-screen -dvd_path ~/iso/*.iso; umount ~/iso</command>
         <command label="xemu (Standalone)">%EMULATOR_XEMU% -full-screen -dvd_path %ROM%</command>
         <platform>xbox</platform>
         <theme>xbox</theme>
