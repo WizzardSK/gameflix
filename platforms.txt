@@ -15,6 +15,7 @@ roms+=("nes,No-Intro/Nintendo - Nintendo Entertainment System (Headered),Nintend
 roms+=("snes,No-Intro/Nintendo - Super Nintendo Entertainment System,Nintendo - Super Nintendo Entertainment System")
 roms+=("n64,No-Intro/Nintendo - Nintendo 64 (ByteSwapped),Nintendo - Nintendo 64")
 roms+=("gamecube,Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k],Nintendo - GameCube")
+roms+=("wii,Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k],Nintendo - Wii")
 
 roms+=("sg1000,No-Intro/Sega - SG-1000,Sega - SG-1000")
 roms+=("mastersystem,No-Intro/Sega - Master System - Mark III,Sega - Master System - Mark III")
