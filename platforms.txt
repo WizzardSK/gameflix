@@ -7,7 +7,6 @@ roms+=("atarist,No-Intro/Atari - ST,Atari - ST")
 
 roms+=("c64,No-Intro/Commodore - Commodore 64,Commodore - 64")
 roms+=("amiga1200,No-Intro/Commodore - Amiga,Commodore - Amiga")
-
 roms+=("intellivision,No-Intro/Mattel - Intellivision,Mattel - Intellivision")
 roms+=("colecovision,No-Intro/Coleco - ColecoVision,Coleco - ColecoVision")
 
@@ -26,14 +25,16 @@ roms+=("segacd,Redump/Sega - Mega CD & Sega CD,Sega - Mega-CD - Sega CD")
 roms+=("saturn,Redump/Sega - Saturn,Sega - Saturn")
 roms+=("dreamcast,Redump/Sega - Dreamcast,Sega - Dreamcast")
 
-roms+=("pcengine,No-Intro/NEC - PC Engine - TurboGrafx-16,NEC - PC Engine - TurboGrafx 16")
-roms+=("pcenginecd,Redump/NEC - PC Engine CD & TurboGrafx CD,NEC - PC Engine CD - TurboGrafx-CD")
-
-roms+=("dos,archive:exov5_2/eXo/eXoDOS,DOS")
-
 roms+=("psx,Redump/Sony - PlayStation,Sony - PlayStation")
 roms+=("psp,Redump/Sony - PlayStation Portable,Sony - PlayStation Portable")
 roms+=("ps2,Redump/Sony - PlayStation 2,Sony - PlayStation 2")
+
+roms+=("pcengine,No-Intro/NEC - PC Engine - TurboGrafx-16,NEC - PC Engine - TurboGrafx 16")
+roms+=("pcenginecd,Redump/NEC - PC Engine CD & TurboGrafx CD,NEC - PC Engine CD - TurboGrafx-CD")
+
+roms+=("xbox,Redump/Microsoft - Xbox,Microsoft - Xbox")
+
+roms+=("dos,archive:exov5_2/eXo/eXoDOS,DOS")
 
 zips+=("atari800,TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip,Atari - 8-bit")
 zips+=("amstradcpc,TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip,Amstrad - CPC")
