@@ -9,6 +9,7 @@ case $( uname -m ) in
   i386) ziparch="ia32"; rclarch="386" ;;
 esac
 
+if [ ! -f /recalbox/share/system/systemlist.xml ]; then wget -O /recalbox/share/system/systemlist.xml https://raw.githubusercontent.com/WizzardSK/gameflix/recalbox/share/system/systemlist.xml; fi
 if [ ! -f /usr/bin/7za ]; then wget -O /usr/bin/7za https://github.com/develar/7zip-bin/raw/master/linux/${ziparch}/7za; chmod +x /usr/bin/7za; fi
 if [ ! -f /usr/bin/mount-zip ]; then wget -O /usr/bin/mount-zip https://github.com/WizzardSK/gameflix/raw/main/recalbox/share/system/mount-zip; chmod +x /usr/bin/mount-zip; fi
 if [ ! -f /usr/bin/rclone ]; then
