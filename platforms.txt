@@ -32,8 +32,6 @@ roms+=("ps2,Redump/Sony - PlayStation 2,Sony - PlayStation 2")
 roms+=("pcengine,No-Intro/NEC - PC Engine - TurboGrafx-16,NEC - PC Engine - TurboGrafx 16")
 roms+=("pcenginecd,Redump/NEC - PC Engine CD & TurboGrafx CD,NEC - PC Engine CD - TurboGrafx-CD")
 
-roms+=("xbox,Redump/Microsoft - Xbox,Microsoft - Xbox")
-
 roms+=("dos,archive:exov5_2/eXo/eXoDOS,DOS")
 
 zips+=("atari800,TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip,Atari - 8-bit")
