@@ -860,7 +860,7 @@
     </emulatorList>
   </system>
   <system uuid="27291bbe-713a-4e2b-a64b-7651f580ad32" name="pcenginecd" fullname="PC Engine CD">
-    <descriptor path="%ROOT%/pcenginecd" theme="pcenginecd" extensions=".img .cue pce .pce .ccd .sgx .chd .iso .bin" icon="$F273" downloader="0"/>
+    <descriptor path="%ROOT%/pcenginecd" theme="pcenginecd" extensions=".img .cue pce .pce .ccd .sgx .chd .iso .bin" icon="$F273" downloader="0" command="umount /iso; mount-zip %ROM% /iso; python /usr/bin/emulatorlauncher.pyc %CONTROLLERSCONFIG% -system %SYSTEM% -rom /iso/*.cue -emulator %EMULATOR% -core %CORE% -ratio %RATIO% %NETPLAY% %CRT%"/>
     <scraper screenscraper="114"/>
     <properties type="console" pad="mandatory" keyboard="no" mouse="no" lightgun="no" releasedate="1988-12" manufacturer="NEC" retroachievements="0" crt.multiresolution="0" crt.multiregion="0" ignoredfiles=""/>
     <emulatorList>
