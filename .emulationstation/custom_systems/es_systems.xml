@@ -361,7 +361,7 @@
         <fullname>Sega Dreamcast</fullname>
         <path>%ROMPATH%/dreamcast</path>
         <extension>.chd .CHD .cdi .CDI .iso .ISO .elf .ELF .cue .CUE .gdi .GDI .lst .LST .dat .DAT .m3u .M3U .7z .7Z .zip .ZIP</extension>
-        <command>mount-zip %ROM% ~/iso; %EMULATOR_RETROARCH% -L %CORE_RETROARCH%/flycast_libretro.so ~/iso/*.cue; umount ~/iso</command>
+        <command>umount ~/iso; mount-zip %ROM% ~/iso; %EMULATOR_RETROARCH% -L %CORE_RETROARCH%/flycast_libretro.so ~/iso/*.cue</command>
         <platform>dreamcast</platform>
         <theme>dreamcast</theme>
     </system>
@@ -483,7 +483,7 @@
         <fullname>Nintendo GameCube</fullname>
         <path>%ROMPATH%/gamecube</path>
         <extension>.ciso .CISO .dff .DFF .dol .DOL .elf .ELF .gcm .GCM .gcz .GCZ .iso .ISO .json .JSON .m3u .M3U .rvz .RVZ .tgc .TGC .wad .WAD .wbfs .WBFS .wia .WIA .7z .7Z .zip .ZIP</extension>
-        <command label="Dolphin zipped">mount-zip %ROM% ~/iso; %EMULATOR_DOLPHIN% -b -e ~/iso/*.rvz; umount ~/iso</command>
+        <command label="Dolphin zipped">umount ~/iso; mount-zip %ROM% ~/iso; %EMULATOR_DOLPHIN% -b -e ~/iso/*.rvz</command>
         <command label="Dolphin">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/dolphin_libretro.so %ROM%</command>
         <command label="Dolphin (Standalone)">%EMULATOR_DOLPHIN% -b -e %ROM%</command>
         <command label="PrimeHack (Standalone)">%EMULATOR_PRIMEHACK% -b -e %ROM%</command>
@@ -913,7 +913,7 @@
         <fullname>NEC PC Engine CD</fullname>
         <path>%ROMPATH%/pcenginecd</path>
         <extension>.bin .BIN .ccd .CCD .chd .CHD .cue .CUE .img .IMG .iso .ISO .m3u .M3U .pce .PCE .sgx .SGX .toc .TOC .7z .7Z .zip .ZIP</extension>
-        <command label="Beetle PCE fast zipped">mount-zip %ROM% ~/iso; %EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_pce_fast_libretro.so ~/iso/*.cue; umount ~/iso</command>
+        <command label="Beetle PCE fast zipped">umount ~/iso; mount-zip %ROM% ~/iso; %EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_pce_fast_libretro.so ~/iso/*.cue</command>
         <command label="Beetle PCE">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_pce_libretro.so %ROM%</command>
         <command label="Beetle PCE FAST">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mednafen_pce_fast_libretro.so %ROM%</command>
         <platform>pcenginecd</platform>
@@ -951,7 +951,7 @@
         <fullname>Sony PlayStation 2</fullname>
         <path>%ROMPATH%/ps2</path>
         <extension>.chd .CHD .iso .ISO .isz .ISZ .cso .CSO .bin .BIN .elf .ELF .gz .zip</extension>
-        <command label="AetherSX2/PCSX2 zipped">mount-zip %ROM% ~/iso; ~/*2.AppImage ~/iso/*.iso; umount ~/iso</command>        
+        <command label="AetherSX2/PCSX2 zipped">umount ~/iso; mount-zip %ROM% ~/iso; ~/*2.AppImage ~/iso/*.iso</command>        
         <command label="AetherSX2 standalone">~/AetherSX2*.AppImage %ROM%</command>
         <command label="PCSX2 standalone">~/pcsx2*.AppImage %ROM%</command>
         <command label="PCSX2 libretro">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/pcsx2_libretro.so %ROM%</command>
@@ -981,7 +981,7 @@
         <fullname>Sony PlayStation Portable</fullname>
         <path>%ROMPATH%/psp</path>
         <extension>.elf .ELF .iso .ISO .cso .CSO .prx .PRX .pbp .PBP .7z .7Z .zip .ZIP</extension>
-        <command label="Libretro zipped">mount-zip %ROM% ~/iso; %EMULATOR_RETROARCH% -L %CORE_RETROARCH%/ppsspp_libretro.so ~/iso/*.iso; umount ~/iso</command>    
+        <command label="Libretro zipped">umount ~/iso; mount-zip %ROM% ~/iso; %EMULATOR_RETROARCH% -L %CORE_RETROARCH%/ppsspp_libretro.so ~/iso/*.iso</command>    
         <command label="Libretro">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/ppsspp_libretro.so %ROM%</command>
         <command label="Standalone">PPSSPPSDL %ROM%</command>
         <platform>psp</platform>
@@ -1332,7 +1332,7 @@
         <fullname>Nintendo Wii</fullname>
         <path>%ROMPATH%/wii</path>
         <extension>.gcm .GCM .iso .ISO .wbfs .WBFS .ciso .CISO .gcz .GCZ .elf .ELF .dol .DOL .dff .DFF .tgc .TGC .wad .WAD .7z .7Z .zip .ZIP</extension>
-        <command label="Dolphin zipped">mount-zip %ROM% ~/iso; %EMULATOR_DOLPHIN% -b -e ~/iso/*.rvz; umount ~/iso</command>
+        <command label="Dolphin zipped">umount ~/iso; mount-zip %ROM% ~/iso; %EMULATOR_DOLPHIN% -b -e ~/iso/*.rvz</command>
         <command label="Dolphin">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/dolphin_libretro.so %ROM%</command>
         <platform>wii</platform>
         <theme>wii</theme>
@@ -1387,7 +1387,7 @@
         <fullname>Microsoft Xbox</fullname>
         <path>%ROMPATH%/xbox</path>
         <extension>.zip .iso .ISO</extension>
-        <command label="xemu zipped">mount-zip %ROM% ~/iso; %EMULATOR_XEMU% -full-screen -dvd_path ~/iso/*.iso; umount ~/iso</command>
+        <command label="xemu zipped">umount ~/iso; mount-zip %ROM% ~/iso; %EMULATOR_XEMU% -full-screen -dvd_path ~/iso/*.iso</command>
         <command label="xemu (Standalone)">%EMULATOR_XEMU% -full-screen -dvd_path %ROM%</command>
         <platform>xbox</platform>
         <theme>xbox</theme>
