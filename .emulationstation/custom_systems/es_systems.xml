@@ -1333,7 +1333,7 @@
         <path>%ROMPATH%/wii</path>
         <extension>.gcm .GCM .iso .ISO .wbfs .WBFS .ciso .CISO .gcz .GCZ .elf .ELF .dol .DOL .dff .DFF .tgc .TGC .wad .WAD .7z .7Z .zip .ZIP</extension>
         <command label="Dolphin zipped">mount-zip %ROM% ~/iso; %EMULATOR_DOLPHIN% -b -e ~/iso/*.rvz; umount ~/iso</command>
-        <command>%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/dolphin_libretro.so %ROM%</command>
+        <command label="Dolphin">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/dolphin_libretro.so %ROM%</command>
         <platform>wii</platform>
         <theme>wii</theme>
     </system>
