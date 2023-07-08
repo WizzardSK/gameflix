@@ -963,7 +963,7 @@
         <fullname>Sony PlayStation 3</fullname>
         <path>%ROMPATH%/ps3</path>
         <extension>.ps3dir .PS3DIR .zip .isp</extension>
-        <command label="RPCS3 (zipped)">umount ~/iso; mount-zip %ROM% ~/iso; ~/*2.AppImage --no-gui ~/iso/*.iso</command>
+        <command label="RPCS3 (zipped)">umount ~/iso; mount-zip %ROM% ~/iso; ~/*3.AppImage --no-gui ~/iso/*.iso</command>
         <command label="RPCS3 (Standalone)">%EMULATOR_RPCS3% --no-gui %ROM%</command>
         <platform>ps3</platform>
         <theme>ps3</theme>
