@@ -28,6 +28,7 @@ roms+=("dreamcast,Redump/Sega - Dreamcast,Sega - Dreamcast")
 roms+=("psx,Redump/Sony - PlayStation,Sony - PlayStation")
 roms+=("psp,Redump/Sony - PlayStation Portable,Sony - PlayStation Portable")
 roms+=("ps2,Redump/Sony - PlayStation 2,Sony - PlayStation 2")
+roms+=("ps3,Redump/Sony - PlayStation 3,Sony - PlayStation 3")
 
 roms+=("pcengine,No-Intro/NEC - PC Engine - TurboGrafx-16,NEC - PC Engine - TurboGrafx 16")
 roms+=("pcenginecd,Redump/NEC - PC Engine CD & TurboGrafx CD,NEC - PC Engine CD - TurboGrafx-CD")
