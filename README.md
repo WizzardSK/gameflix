@@ -25,6 +25,11 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Amiga        | myrient  | No-Intro  |
 | Intellivision| myrient  | No-Intro  |
 | Colecovision | myrient  | No-Intro  |
+| NES          | myrient  | No-Intro  |
+| SNES         | myrient  | No-Intro  |
+| Nintendo 64  | myrient  | Redump    |
+| GameCube     | myrient  | Redump    |
+| Wii          | myrient  | Redump    |
 | DOS          | archive  | eXoDOS    |
 
 ## Usage - EmulationStation DE
