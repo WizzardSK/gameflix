@@ -27,7 +27,7 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Colecovision | myrient  | No-Intro  |
 | NES          | myrient  | No-Intro  |
 | SNES         | myrient  | No-Intro  |
-| Nintendo 64  | myrient  | Ni-Intro  |
+| Nintendo 64  | myrient  | No-Intro  |
 | GameCube     | myrient  | Redump    |
 | Wii          | myrient  | Redump    |
 | DOS          | archive  | eXoDOS    |
