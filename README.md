@@ -30,6 +30,9 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Nintendo 64  | myrient  | No-Intro  |
 | GameCube     | myrient  | Redump    |
 | Wii          | myrient  | Redump    |
+| PlayStation  | myrient  | Redump    |
+| PlayStation 2| myrient  | Redump    |
+| PlayStation 3| myrient  | Redump    |
 | DOS          | archive  | eXoDOS    |
 
 ## Usage - EmulationStation DE
