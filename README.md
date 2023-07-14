@@ -10,6 +10,18 @@ Why is it better than to have all games on local storage? You may have the acces
 
 For BIOS, check this page: https://github.com/Luciano2018
 
+| Platform     | Location | Type      |
+| ------------ | -------- | --------- |
+| Atari 2600   | myrient  | No-Intro  |
+| Atari 5200   | myrient  | No-Intro  |
+| Atari 7800   | myrient  | No-Intro  |
+| Atari Lynx   | myrient  | No-Intro  |
+| Atari Jaguar | myrient  | No-Intro  |
+| Atari ST     | myrient  | No-Intro  |
+| Atari 8-bit  | myrient  | TOSEC zip |
+| Amstrad CPC  | myrient  | TOSEC zip |
+| ZX Spectrum  | myrient  | TOSEC zip |
+
 ## Usage - EmulationStation DE
 `rclone` binary is needed on host system (version 1.60+). Also it is needed to have rclone configured for all the remotes. Attached [rclone.conf](/.config/rclone/rclone.conf) should be placed in `~/.config/rclone/` with Archive S3 keys added from https://archive.org/account/s3.php If your version is not up to date, grab it from here: https://rclone.org/downloads/
 
