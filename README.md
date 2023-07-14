@@ -30,6 +30,14 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Nintendo 64  | myrient  | No-Intro  |
 | GameCube     | myrient  | Redump    |
 | Wii          | myrient  | Redump    |
+| SG-1000      | myrient  | No-Intro  |
+| Master System| myrient  | No-Intro  |
+| Game Gear    | myrient  | No-Intro  |
+| Mega Drive   | myrient  | No-Intro  |
+| Sega 32X     | myrient  | No-Intro  |
+| Sega CD      | myrient  | Redump    |
+| Saturn       | myrient  | Redump    |
+| Dreamcast    | myrient  | Redump    |
 | PlayStation  | myrient  | Redump    |
 | PlayStation 2| myrient  | Redump    |
 | PlayStation 3| myrient  | Redump    |
