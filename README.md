@@ -33,6 +33,8 @@ For BIOS, check this page: https://github.com/Luciano2018
 | PlayStation  | myrient  | Redump    |
 | PlayStation 2| myrient  | Redump    |
 | PlayStation 3| myrient  | Redump    |
+| PC Engine    | myrient  | No-Intro  |
+| PC Engine CD | myrient  | Redump    |
 | DOS          | archive  | eXoDOS    |
 
 ## Usage - EmulationStation DE
