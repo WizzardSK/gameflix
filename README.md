@@ -21,6 +21,10 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Atari 8-bit  | myrient  | TOSEC zip |
 | Amstrad CPC  | myrient  | TOSEC zip |
 | ZX Spectrum  | myrient  | TOSEC zip |
+| Commodore 64 | myrient  | No-Intro  |
+| Amiga        | myrient  | No-Intro  |
+| Intellivision| myrient  | No-Intro  |
+| Colecovision | myrient  | No-Intro  |
 | DOS          | archive  | eXoDOS    |
 
 ## Usage - EmulationStation DE
