@@ -21,6 +21,7 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Atari 8-bit  | myrient  | TOSEC zip |
 | Amstrad CPC  | myrient  | TOSEC zip |
 | ZX Spectrum  | myrient  | TOSEC zip |
+| DOS          | archive  | eXoDOS    |
 
 ## Usage - EmulationStation DE
 `rclone` binary is needed on host system (version 1.60+). Also it is needed to have rclone configured for all the remotes. Attached [rclone.conf](/.config/rclone/rclone.conf) should be placed in `~/.config/rclone/` with Archive S3 keys added from https://archive.org/account/s3.php If your version is not up to date, grab it from here: https://rclone.org/downloads/
