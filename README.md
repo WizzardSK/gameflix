@@ -10,15 +10,15 @@ Why is it better than to have all games on local storage? You may have the acces
 
 For BIOS, check this page: https://github.com/Luciano2018
 
-| Platform     | Location | Type      |
-| ------------ | -------- | --------- |
-| Atari 2600   | myrient  | No-Intro  |
-| Atari 5200   | myrient  | No-Intro  |
-| Atari 7800   | myrient  | No-Intro  |
-| Atari Lynx   | myrient  | No-Intro  |
-| Atari Jaguar | myrient  | No-Intro  |
-| Atari ST     | myrient  | No-Intro  |
-| Atari 8-bit  | myrient  | TOSEC zip |
+| Platform     | Location | Type      | Thumbs |
+| ------------ | -------- | --------- | ------ |
+| Atari 2600   | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Atari%20-%202600/Named_Snaps)
+| Atari 5200   | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Atari%20-%205200/Named_Snaps)
+| Atari 7800   | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Atari%20-%207800/Named_Snaps)
+| Atari Lynx   | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Atari%20-%20Lynx/Named_Snaps)
+| Atari Jaguar | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Atari%20-%20Jaguar/Named_Snaps)
+| Atari ST     | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Atari%20-%20ST/Named_Snaps)
+| Atari 8-bit  | myrient  | TOSEC zip | [libretro](http://thumbnails.libretro.com/Atari%20-%208-bit/Named_Snaps)
 | Amstrad CPC  | myrient  | TOSEC zip |
 | ZX Spectrum  | myrient  | TOSEC zip |
 | Commodore 64 | myrient  | No-Intro  |
