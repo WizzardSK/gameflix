@@ -40,7 +40,7 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Dreamcast    | myrient  | Redump    |
 | PlayStation  | myrient  | Redump    |
 | PlayStation 2| myrient  | Redump    |
-| PlayStation 3| myrient  | Redump    |
+| PSP          | myrient  | Redump    |
 | PC Engine    | myrient  | No-Intro  |
 | PC Engine CD | myrient  | Redump    |
 | DOS          | archive  | eXoDOS    |
