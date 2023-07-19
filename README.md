@@ -21,10 +21,10 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Atari 8-bit  | myrient  | TOSEC zip | [libretro](http://thumbnails.libretro.com/Atari%20-%208-bit/Named_Snaps)
 | Amstrad CPC  | myrient  | TOSEC zip | [libretro](http://thumbnails.libretro.com/Amstrad%20-%20CPC/Named_Snaps)
 | ZX Spectrum  | myrient  | TOSEC zip | [libretro](http://thumbnails.libretro.com/Sinclair%20-%20ZX%20Spectrum/Named_Snaps)
-| Commodore 64 | myrient  | No-Intro  |
-| Amiga        | myrient  | No-Intro  |
-| Intellivision| myrient  | No-Intro  |
-| Colecovision | myrient  | No-Intro  |
+| Commodore 64 | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Commodore%20-%2064/Named_Snaps)
+| Amiga        | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Commodore%20-%20Amiga/Named_Snaps)
+| Intellivision| myrient  | No-Intro  | 
+| Colecovision | myrient  | No-Intro  | 
 | NES          | myrient  | No-Intro  |
 | SNES         | myrient  | No-Intro  |
 | Nintendo 64  | myrient  | No-Intro  |
