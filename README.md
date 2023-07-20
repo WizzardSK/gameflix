@@ -25,11 +25,11 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Amiga        | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Commodore%20-%20Amiga/Named_Snaps)
 | Intellivision| myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Mattel%20-%20Intellivision/Named_Snaps)
 | Colecovision | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Coleco%20-%20ColecoVision/Named_Snaps)
-| NES          | myrient  | No-Intro  | [libretro]
-| SNES         | myrient  | No-Intro  | [libretro]
-| Nintendo 64  | myrient  | No-Intro  | [libretro]
-| GameCube     | myrient  | Redump    | [libretro]
-| Wii          | myrient  | Redump    | [libretro]
+| NES          | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Nintendo%20Entertainment%20System/Named_Snaps)
+| SNES         | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System)
+| Nintendo 64  | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Nintendo%2064/Named_Snaps)
+| GameCube     | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20GameCube/Named_Snaps)
+| Wii          | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Wii/Named_Snaps)
 | SG-1000      | myrient  | No-Intro  | [libretro]
 | Master System| myrient  | No-Intro  | [libretro]
 | Game Gear    | myrient  | No-Intro  | [libretro]
