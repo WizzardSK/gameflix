@@ -11,7 +11,7 @@ Why is it better than to have all games on local storage? You may have the acces
 For BIOS, check this page: https://github.com/Luciano2018
 
 | Platform     | Location | Type      | Thumbs |   | Platform     | Location | Type      | Thumbs |
-| ------------ | -------- | --------- | ------ | - | ----------- | -------- | --------- | ------ |
+| ------------ | -------- | --------- | ------ | - | ------------ | -------- | --------- | ------ |
 | Atari 2600   | myrient  | [No-Intro](https://myrient.erista.me/files/No-Intro/Atari%20-%202600) | [libretro](http://thumbnails.libretro.com/Atari%20-%202600/Named_Snaps) | | Atari 8-bit  | myrient  | [TOSEC](https://myrient.erista.me/files/TOSEC/Atari/8bit/Games/[XEX]) | [libretro](http://thumbnails.libretro.com/Atari%20-%208-bit/Named_Snaps)
 | Atari 5200   | myrient  | [No-Intro](https://myrient.erista.me/files/No-Intro/Atari%20-%205200) | [libretro](http://thumbnails.libretro.com/Atari%20-%205200/Named_Snaps) | | Amstrad CPC  | myrient  | [TOSEC](https://myrient.erista.me/files/TOSEC/Amstrad/CPC/Games/[DSK]) | [libretro](http://thumbnails.libretro.com/Amstrad%20-%20CPC/Named_Snaps)
 | Atari 7800   | myrient  | [No-Intro](https://myrient.erista.me/files/No-Intro/Atari%20-%207800) | [libretro](http://thumbnails.libretro.com/Atari%20-%207800/Named_Snaps) | | ZX Spectrum  | myrient  | [TOSEC](https://myrient.erista.me/files/TOSEC/Sinclair/ZX%20Spectrum/Games/[DSK]) | [libretro](http://thumbnails.libretro.com/Sinclair%20-%20ZX%20Spectrum/Named_Snaps)
@@ -24,7 +24,7 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Colecovision | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Coleco%20-%20ColecoVision/Named_Snaps) | | PlayStation 2| myrient  | Redump    | [libretro](http://thumbnails.libretro.com/Sony%20-%20PlayStation%202/Named_Snaps)
 | NES          | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Nintendo%20Entertainment%20System/Named_Snaps) | | PSP          | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/Sony%20-%20PlayStation%20Portable/Named_Snaps)
 | SNES         | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System)  | | PC Engine CD | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/NEC%20-%20PC%20Engine%20CD%20-%20TurboGrafx-CD/Named_Snaps)
-| Nintendo 64  | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Nintendo%2064/Named_Snaps) | |  DOS          | archive  | eXoDOS    | [libretro](http://thumbnails.libretro.com/DOS/Named_Snaps)
+| Nintendo 64  | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Nintendo%2064/Named_Snaps) | |  DOS          | archive  | [eXoDOS](https://archive.org/download/exov5_2/eXo/eXoDOS) | [libretro](http://thumbnails.libretro.com/DOS/Named_Snaps)
 | SG-1000      | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%20SG-1000/Named_Snaps)
 | Master System| myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%20Master%20System%20-%20Mark%20III/Named_Snaps)
 | Game Gear    | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%20Game%20Gear/Named_Snaps)
