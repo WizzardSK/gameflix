@@ -23,14 +23,14 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Intellivision  | [No-Intro](https://myrient.erista.me/files/No-Intro/Mattel%20-%20Intellivision) | [libretro](http://thumbnails.libretro.com/Mattel%20-%20Intellivision/Named_Snaps) | | PlayStation  | Redump    | [libretro](http://thumbnails.libretro.com/Sony%20-%20PlayStation/Named_Snaps)
 | Colecovision   | [No-Intro](https://myrient.erista.me/files/No-Intro/Coleco%20-%20ColecoVision) | [libretro](http://thumbnails.libretro.com/Coleco%20-%20ColecoVision/Named_Snaps) | | PlayStation 2| Redump    | [libretro](http://thumbnails.libretro.com/Sony%20-%20PlayStation%202/Named_Snaps)
 | NES          | [No-Intro](https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Nintendo%20Entertainment%20System%20(Headered)) | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Nintendo%20Entertainment%20System/Named_Snaps) | | PSP | Redump    | [libretro](http://thumbnails.libretro.com/Sony%20-%20PlayStation%20Portable/Named_Snaps)
-| SNES        | [No-Intro](https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System) | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System)  | | PC Engine CD | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/NEC%20-%20PC%20Engine%20CD%20-%20TurboGrafx-CD/Named_Snaps)
+| SNES        | [No-Intro](https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System) | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System)  | | PC Engine CD | Redump    | [libretro](http://thumbnails.libretro.com/NEC%20-%20PC%20Engine%20CD%20-%20TurboGrafx-CD/Named_Snaps)
 | Nintendo 64  | [No-Intro](https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Nintendo%2064%20(ByteSwapped)) | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Nintendo%2064/Named_Snaps) | |  DOS | [eXoDOS](https://archive.org/download/exov5_2/eXo/eXoDOS) | [libretro](http://thumbnails.libretro.com/DOS/Named_Snaps)
-| SG-1000       | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%20SG-1000/Named_Snaps)
-| Master System | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%20Master%20System%20-%20Mark%20III/Named_Snaps)
-| Game Gear     | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%20Game%20Gear/Named_Snaps)
-| Mega Drive   | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%20Mega%20Drive%20-%20Genesis/Named_Snaps)
-| Sega 32X     | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%2032X/Named_Snaps)
-| PC Engine    | No-Intro  | [libretro](http://thumbnails.libretro.com/NEC%20-%20PC%20Engine%20-%20TurboGrafx%2016/Named_Snaps) 
+| SG-1000       | [No-Intro](https://myrient.erista.me/files/No-Intro/Sega%20-%20SG-1000) | [libretro](http://thumbnails.libretro.com/Sega%20-%20SG-1000/Named_Snaps)
+| Master System | [No-Intro](https://myrient.erista.me/files/No-Intro/Sega%20-%20Master%20System%20-%20Mark%20III) | [libretro](http://thumbnails.libretro.com/Sega%20-%20Master%20System%20-%20Mark%20III/Named_Snaps)
+| Game Gear     | [No-Intro](https://myrient.erista.me/files/No-Intro/Sega%20-%20Game%20Gear) | [libretro](http://thumbnails.libretro.com/Sega%20-%20Game%20Gear/Named_Snaps)
+| Mega Drive   | [No-Intro](https://myrient.erista.me/files/No-Intro/Sega%20-%20Mega%20Drive%20-%20Genesis) | [libretro](http://thumbnails.libretro.com/Sega%20-%20Mega%20Drive%20-%20Genesis/Named_Snaps)
+| Sega 32X     | [No-Intro](https://myrient.erista.me/files/No-Intro/Sega%20-%2032X) | [libretro](http://thumbnails.libretro.com/Sega%20-%2032X/Named_Snaps)
+| PC Engine    | [No-Intro](https://myrient.erista.me/files/No-Intro/NEC%20-%20PC%20Engine%20-%20TurboGrafx-16) | [libretro](http://thumbnails.libretro.com/NEC%20-%20PC%20Engine%20-%20TurboGrafx%2016/Named_Snaps) 
 
 ## Usage - EmulationStation DE
 `rclone` binary is needed on host system (version 1.60+). Also it is needed to have rclone configured for all the remotes. Attached [rclone.conf](/.config/rclone/rclone.conf) should be placed in `~/.config/rclone/` with Archive S3 keys added from https://archive.org/account/s3.php If your version is not up to date, grab it from here: https://rclone.org/downloads/
