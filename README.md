@@ -23,27 +23,27 @@ For BIOS, check this page: https://github.com/Luciano2018
 | ZX Spectrum  | myrient  | TOSEC zip | [libretro](http://thumbnails.libretro.com/Sinclair%20-%20ZX%20Spectrum/Named_Snaps)
 | Commodore 64 | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Commodore%20-%2064/Named_Snaps)
 | Amiga        | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Commodore%20-%20Amiga/Named_Snaps)
-| Intellivision| myrient  | No-Intro  | 
-| Colecovision | myrient  | No-Intro  | 
-| NES          | myrient  | No-Intro  |
-| SNES         | myrient  | No-Intro  |
-| Nintendo 64  | myrient  | No-Intro  |
-| GameCube     | myrient  | Redump    |
-| Wii          | myrient  | Redump    |
-| SG-1000      | myrient  | No-Intro  |
-| Master System| myrient  | No-Intro  |
-| Game Gear    | myrient  | No-Intro  |
-| Mega Drive   | myrient  | No-Intro  |
-| Sega 32X     | myrient  | No-Intro  |
-| Sega CD      | myrient  | Redump    |
-| Saturn       | myrient  | Redump    |
-| Dreamcast    | myrient  | Redump    |
-| PlayStation  | myrient  | Redump    |
-| PlayStation 2| myrient  | Redump    |
-| PSP          | myrient  | Redump    |
-| PC Engine    | myrient  | No-Intro  |
-| PC Engine CD | myrient  | Redump    |
-| DOS          | archive  | eXoDOS    |
+| Intellivision| myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Mattel%20-%20Intellivision/Named_Snaps)
+| Colecovision | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Coleco%20-%20ColecoVision/Named_Snaps)
+| NES          | myrient  | No-Intro  | [libretro]
+| SNES         | myrient  | No-Intro  | [libretro]
+| Nintendo 64  | myrient  | No-Intro  | [libretro]
+| GameCube     | myrient  | Redump    | [libretro]
+| Wii          | myrient  | Redump    | [libretro]
+| SG-1000      | myrient  | No-Intro  | [libretro]
+| Master System| myrient  | No-Intro  | [libretro]
+| Game Gear    | myrient  | No-Intro  | [libretro]
+| Mega Drive   | myrient  | No-Intro  | [libretro]
+| Sega 32X     | myrient  | No-Intro  | [libretro]
+| Sega CD      | myrient  | Redump    | [libretro]
+| Saturn       | myrient  | Redump    | [libretro]
+| Dreamcast    | myrient  | Redump    | [libretro]
+| PlayStation  | myrient  | Redump    | [libretro]
+| PlayStation 2| myrient  | Redump    | [libretro]
+| PSP          | myrient  | Redump    | [libretro]
+| PC Engine    | myrient  | No-Intro  | [libretro]
+| PC Engine CD | myrient  | Redump    | [libretro]
+| DOS          | archive  | eXoDOS    | [libretro]
 
 ## Usage - EmulationStation DE
 `rclone` binary is needed on host system (version 1.60+). Also it is needed to have rclone configured for all the remotes. Attached [rclone.conf](/.config/rclone/rclone.conf) should be placed in `~/.config/rclone/` with Archive S3 keys added from https://archive.org/account/s3.php If your version is not up to date, grab it from here: https://rclone.org/downloads/
