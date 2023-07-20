@@ -30,20 +30,20 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Nintendo 64  | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Nintendo%2064/Named_Snaps)
 | GameCube     | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20GameCube/Named_Snaps)
 | Wii          | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Wii/Named_Snaps)
-| SG-1000      | myrient  | No-Intro  | [libretro]
-| Master System| myrient  | No-Intro  | [libretro]
-| Game Gear    | myrient  | No-Intro  | [libretro]
-| Mega Drive   | myrient  | No-Intro  | [libretro]
-| Sega 32X     | myrient  | No-Intro  | [libretro]
-| Sega CD      | myrient  | Redump    | [libretro]
-| Saturn       | myrient  | Redump    | [libretro]
-| Dreamcast    | myrient  | Redump    | [libretro]
-| PlayStation  | myrient  | Redump    | [libretro]
-| PlayStation 2| myrient  | Redump    | [libretro]
-| PSP          | myrient  | Redump    | [libretro]
-| PC Engine    | myrient  | No-Intro  | [libretro]
-| PC Engine CD | myrient  | Redump    | [libretro]
-| DOS          | archive  | eXoDOS    | [libretro]
+| SG-1000      | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%20SG-1000/Named_Snaps)
+| Master System| myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%20Master%20System%20-%20Mark%20III/Named_Snaps)
+| Game Gear    | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%20Game%20Gear/Named_Snaps)
+| Mega Drive   | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%20Mega%20Drive%20-%20Genesis/Named_Snaps)
+| Sega 32X     | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/Sega%20-%2032X/Named_Snaps)
+| Sega CD      | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/Sega%20-%20Mega-CD%20-%20Sega%20CD/Named_Snaps)
+| Saturn       | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/Sega%20-%20Saturn/Named_Snaps)
+| Dreamcast    | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/Sega%20-%20Dreamcast/Named_Snaps)
+| PlayStation  | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/Sony%20-%20PlayStation/Named_Snaps)
+| PlayStation 2| myrient  | Redump    | [libretro](http://thumbnails.libretro.com/Sony%20-%20PlayStation%202/Named_Snaps)
+| PSP          | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/Sony%20-%20PlayStation%20Portable/Named_Snaps)
+| PC Engine    | myrient  | No-Intro  | [libretro](http://thumbnails.libretro.com/NEC%20-%20PC%20Engine%20-%20TurboGrafx%2016/Named_Snaps)
+| PC Engine CD | myrient  | Redump    | [libretro](http://thumbnails.libretro.com/NEC%20-%20PC%20Engine%20CD%20-%20TurboGrafx-CD/Named_Snaps)
+| DOS          | archive  | eXoDOS    | [libretro](http://thumbnails.libretro.com/DOS/Named_Snaps)
 
 ## Usage - EmulationStation DE
 `rclone` binary is needed on host system (version 1.60+). Also it is needed to have rclone configured for all the remotes. Attached [rclone.conf](/.config/rclone/rclone.conf) should be placed in `~/.config/rclone/` with Archive S3 keys added from https://archive.org/account/s3.php If your version is not up to date, grab it from here: https://rclone.org/downloads/
