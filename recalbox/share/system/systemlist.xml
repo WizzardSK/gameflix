@@ -29,7 +29,7 @@
     </emulatorList>
   </system>
   <system uuid="b58b9072-0e44-4330-869d-96b72f53de1f" name="3do" fullname="Panasonic 3DO">
-    <descriptor path="%ROOT%/3do" theme="3do" extensions=".cue .chd .iso" icon="$F28d" downloader="0"/  command="umount /iso; mount-zip %ROM% /iso; python /usr/bin/emulatorlauncher.pyc %CONTROLLERSCONFIG% -system %SYSTEM% -rom /iso/*.cue -emulator %EMULATOR% -core %CORE% -ratio %RATIO% %NETPLAY% %CRT%"/>>
+    <descriptor path="%ROOT%/3do" theme="3do" extensions=".cue .chd .iso" icon="$F28d" downloader="0"  command="umount /iso; mount-zip %ROM% /iso; python /usr/bin/emulatorlauncher.pyc %CONTROLLERSCONFIG% -system %SYSTEM% -rom /iso/*.cue -emulator %EMULATOR% -core %CORE% -ratio %RATIO% %NETPLAY% %CRT%" />
     <scraper screenscraper="29"/>
     <properties type="console" pad="mandatory" keyboard="no" mouse="no" lightgun="optional" releasedate="1993-10" manufacturer="Panasonic" retroachievements="1" crt.multiresolution="1" crt.multiregion="0" ignoredfiles=""/>
     <emulatorList>
