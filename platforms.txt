@@ -10,6 +10,8 @@ roms+=("amiga1200,No-Intro/Commodore - Amiga,Commodore - Amiga")
 roms+=("intellivision,No-Intro/Mattel - Intellivision,Mattel - Intellivision")
 roms+=("colecovision,No-Intro/Coleco - ColecoVision,Coleco - ColecoVision")
 
+roms+=("gbc,No-Intro/Nintendo - Game Boy Color,Nintendo - Game Boy Color")
+roms+=("gba,No-Intro/Nintendo - Game Boy Advance,Nintendo - Game Boy Advance")
 roms+=("nes,No-Intro/Nintendo - Nintendo Entertainment System (Headered),Nintendo - Nintendo Entertainment System")
 roms+=("snes,No-Intro/Nintendo - Super Nintendo Entertainment System,Nintendo - Super Nintendo Entertainment System")
 roms+=("n64,No-Intro/Nintendo - Nintendo 64 (ByteSwapped),Nintendo - Nintendo 64")
