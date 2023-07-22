@@ -24,8 +24,8 @@ rclone mount myrient:Redump ~/myrient/Redump --no-checksum --no-modtime --attr-t
 rclone mount myrient:TOSEC ~/myrient/TOSEC --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 
 IFS=","
-> ~/systems.html
-echo "<frameset cols='100, 100%'><frame name='menu' src='systems.html'><frame name='main'></frameset>" > ~/gameflix.html
+echo "<style>a { font-size: 12 }</style>" > ~/systems.html
+echo "<frameset cols='90, 100%'><frame name='menu' src='systems.html'><frame name='main'></frameset>" > ~/gameflix.html
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p ~/.emulationstation/downloaded_media/${rom[0]}
