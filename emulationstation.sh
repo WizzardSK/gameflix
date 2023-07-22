@@ -39,11 +39,11 @@ for each in "${roms[@]}"; do
   > ~/${rom[0]}.html
   echo "<gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   echo "<style>figure { display: inline-block; width: 100; height: 150; font-size: 10; vertical-align: top }</style>" >> ~/${rom[0]}.html
-  echo "<style>img    { width: 160 }</style>" >> ~/${rom[0]}.html
+  echo "<style>img    { width: 160; height: 120; background-color: black }</style>" >> ~/${rom[0]}.html
   ls ~/roms/${rom[0]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
       echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml      
-      echo "<figure><a href='roms/${rom[0]}/${line}'><img src='media/${rom[2]}/Named_Snaps/${line%.*}.png'><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
+      echo "<figure><a href='roms/${rom[0]}/${line}'><img loading=lazy src='media/${rom[2]}/Named_Snaps/${line%.*}.png'><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
     fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
