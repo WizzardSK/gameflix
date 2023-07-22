@@ -38,8 +38,8 @@ for each in "${roms[@]}"; do
   > ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   > ~/${rom[0]}.html
   echo "<gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-  echo "<style>figure { display: inline-block; width: 280 }</style>" >> ~/${rom[0]}.html
-  echo "<style>img    { width: 320 }</style>" >> ~/${rom[0]}.html
+  echo "<style>figure { display: inline-block; width: 180 }</style>" >> ~/${rom[0]}.html
+  echo "<style>img    { width: 240 }</style>" >> ~/${rom[0]}.html
   ls ~/roms/${rom[0]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
       echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml      
