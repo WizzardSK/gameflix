@@ -24,7 +24,7 @@ rclone mount myrient:Redump ~/myrient/Redump --no-checksum --no-modtime --attr-t
 rclone mount myrient:TOSEC ~/myrient/TOSEC --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 
 IFS=","
-echo "<style>a { font-size: 12 }</style>" > ~/systems.html
+echo "<style>a { font-size: 15; font-family: Arial }</style>" > ~/systems.html
 echo "<frameset cols='90, 100%'><frame name='menu' src='systems.html'><frame name='main'></frameset>" > ~/gameflix.html
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
@@ -49,7 +49,7 @@ for each in "${roms[@]}"; do
     fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-  echo "<a href='${rom[0]}.html' target='main'>${rom[0]}</a>" >> ~/systems.html
+  echo "<a href='${rom[0]}.html' target='main'>${rom[0]}</a><br />" >> ~/systems.html
 done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
