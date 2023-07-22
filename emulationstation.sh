@@ -43,7 +43,7 @@ for each in "${roms[@]}"; do
   ls ~/roms/${rom[0]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
       echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml      
-      echo "<figure><a href='roms/${rom[0]}/${line}'><img loading=lazy src='http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png'><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
+      echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
     fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
@@ -63,7 +63,7 @@ for each in "${zips[@]}"; do
   ls ~/roms/${zip[0]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
       echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
-      echo "<figure><a href='roms/${zip[0]}/${line}'><img loading=lazy src='http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png'><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
+      echo "<figure><a href=\"roms/${zip[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
     fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
