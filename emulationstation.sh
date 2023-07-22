@@ -49,7 +49,7 @@ for each in "${roms[@]}"; do
     fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-  echo "<a href='${rom[0]}.html' target='main'>${rom[0]}</a>"
+  echo "<a href='${rom[0]}.html' target='main'>${rom[0]}</a>" >> ~/systems.html
 done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
@@ -70,7 +70,7 @@ for each in "${zips[@]}"; do
     fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
-  echo "<a href='${zip[0]}.html' target='main'>${zip[0]}</a>"
+  echo "<a href='${zip[0]}.html' target='main'>${zip[0]}</a>" >> ~/systems.html
 done
 
 emulationstation &
