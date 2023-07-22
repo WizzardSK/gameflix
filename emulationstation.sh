@@ -70,7 +70,7 @@ for each in "${zips[@]}"; do
     fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
-  echo "<a href='${zip[0]}.html' target='main'>${zip[0]}</a>" >> ~/systems.html
+  echo "<a href='${zip[0]}.html' target='main'>${zip[0]}</a><br />" >> ~/systems.html
 done
 
 emulationstation &
