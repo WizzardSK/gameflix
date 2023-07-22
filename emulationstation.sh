@@ -43,7 +43,7 @@ for each in "${roms[@]}"; do
   ls ~/roms/${rom[0]} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
       echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml      
-      echo "<figure><a href='roms/${rom[0]}/${line}'><img loading=lazy src='media/${rom[2]}/Named_Snaps/${line%.*}.png'><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
+      echo "<figure><a href='roms/${rom[0]}/${line}'><img loading=lazy src='http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png'><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
     fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
@@ -56,9 +56,15 @@ for each in "${zips[@]}"; do
   mount-zip ~/myrient/${zip[1]} ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   mkdir -p ~/.emulationstation/gamelists/${zip[0]}
   > ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
+  > ~/${zip[0]}.html
   echo "<gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
+  echo "<style>figure { margin:0; display: inline-block; width: 160; height: 160; font-size: 10; font-family: Arial; vertical-align: top }</style>" >> ~/${zip[0]}.html
+  echo "<style>img    { width: 160; height: 120; background-color: black }</style>" >> ~/${zip[0]}.html
   ls ~/roms/${zip[0]} | while read line; do
-    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml; fi
+    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
+      echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
+      echo "<figure><a href='roms/${zip[0]}/${line}'><img loading=lazy src='http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png'><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
+    fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
 done
