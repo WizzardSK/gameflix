@@ -43,13 +43,17 @@ for each in "${roms[@]}"; do
   echo "<style>figure { margin: 0; display: inline-block; width: 160; height: 160; font-size: 10; font-family: Arial; vertical-align: top }</style>" >> ~/${rom[0]}.html
   echo "<style>img    { width: 160; height: 120; background-color: black }</style>" >> ~/${rom[0]}.html
   pocet=0  
-  while IFS="," read -r line; do
+  
+  {
+  while IFS= read -r line; do
     if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)|\(Aftermarket\)) ]]; then
       echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-      ((++pocet))
       echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
+      ((pocet++))
     fi
-  done < <(ls ~/roms/${rom[0]}
+  done
+} < <(ls ~/roms/${rom[0]})
+  
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   echo "<a href='${rom[0]}.html' target='main'>${rom[0]} ($pocet)</a><br />" >> ~/systems.html
 done
