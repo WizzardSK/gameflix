@@ -26,6 +26,7 @@ rclone mount myrient:TOSEC ~/myrient/TOSEC --no-checksum --no-modtime --attr-tim
 IFS=","
 echo "<style>a { font-size: 15; font-family: Arial }</style>" > ~/systems.html
 echo "<frameset cols='160, 100%'><frame name='menu' src='systems.html'><frame name='main'></frameset>" > ~/gameflix.html
+total=0
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p ~/.emulationstation/downloaded_media/${rom[0]}
@@ -49,6 +50,7 @@ for each in "${roms[@]}"; do
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
         echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
         ((pocet++))
+        ((total++))
       fi
     done
   } < <(ls ~/roms/${rom[0]})
@@ -74,11 +76,13 @@ for each in "${zips[@]}"; do
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
         echo "<figure><a href=\"roms/${zip[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
         ((pocet++))
+        ((total++))
       fi
     done
   } < <(ls ~/roms/${zip[0]})
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   echo "<a href='${zip[0]}.html' target='main'>${zip[0]} ($pocet)</a><br />" >> ~/systems.html
 done
+echo "<p><b>Total: $total</b>" >> ~/systems.html
 
 emulationstation &
