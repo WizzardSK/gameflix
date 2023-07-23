@@ -43,6 +43,7 @@ for each in "${roms[@]}"; do
   echo "<style>figure { margin:0; display: inline-block; width: 160; height: 160; font-size: 10; font-family: Arial; vertical-align: top }</style>" >> ~/${rom[0]}.html
   echo "<style>img    { width: 160; height: 120; background-color: black }</style>" >> ~/${rom[0]}.html
   pocet=0
+  ((++pocet))
   ls ~/roms/${rom[0]} | while read line; do
     if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)|\(Aftermarket\)) ]]; then
       ((++pocet))
@@ -66,6 +67,7 @@ for each in "${zips[@]}"; do
   echo "<style>figure { margin:0; display: inline-block; width: 160; height: 160; font-size: 10; font-family: Arial; vertical-align: top }</style>" >> ~/${zip[0]}.html
   echo "<style>img    { width: 160; height: 120; background-color: black }</style>" >> ~/${zip[0]}.html
   pocet=0
+  ((pocet++))
   ls ~/roms/${zip[0]} | while read line; do
     if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)|\(Aftermarket\)) ]]; then
       ((++pocet))
