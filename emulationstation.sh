@@ -40,14 +40,14 @@ for each in "${roms[@]}"; do
   > ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   > ~/${rom[0]}.html
   echo "<gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-  echo "<style>figure { margin:0; display: inline-block; width: 160; height: 160; font-size: 10; font-family: Arial; vertical-align: top }</style>" >> ~/${rom[0]}.html
+  echo "<style>figure { margin: 0; display: inline-block; width: 160; height: 160; font-size: 10; font-family: Arial; vertical-align: top }</style>" >> ~/${rom[0]}.html
   echo "<style>img    { width: 160; height: 120; background-color: black }</style>" >> ~/${rom[0]}.html
   pocet=0
   ls ~/roms/${rom[0]} | while read line; do
     if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)|\(Aftermarket\)) ]]; then
       echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml      
-      ((++pocet))
       echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
+      ((pocet++))
     fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
@@ -63,14 +63,14 @@ for each in "${zips[@]}"; do
   > ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   > ~/${zip[0]}.html
   echo "<gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
-  echo "<style>figure { margin:0; display: inline-block; width: 160; height: 160; font-size: 10; font-family: Arial; vertical-align: top }</style>" >> ~/${zip[0]}.html
+  echo "<style>figure { margin: 0; display: inline-block; width: 160; height: 160; font-size: 10; font-family: Arial; vertical-align: top }</style>" >> ~/${zip[0]}.html
   echo "<style>img    { width: 160; height: 120; background-color: black }</style>" >> ~/${zip[0]}.html
   pocet=0
   ls ~/roms/${zip[0]} | while read line; do
     if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)|\(Aftermarket\)) ]]; then
-      echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
-      ((++pocet))
+      echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml      
       echo "<figure><a href=\"roms/${zip[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
+      ((pocet++))
     fi
   done
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
