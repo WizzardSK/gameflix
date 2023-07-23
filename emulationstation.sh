@@ -25,7 +25,7 @@ rclone mount myrient:TOSEC ~/myrient/TOSEC --no-checksum --no-modtime --attr-tim
 
 IFS=","
 echo "<style>a { font-size: 15; font-family: Arial }</style>" > ~/systems.html
-echo "<frameset cols='90, 100%'><frame name='menu' src='systems.html'><frame name='main'></frameset>" > ~/gameflix.html
+echo "<frameset cols='160, 100%'><frame name='menu' src='systems.html'><frame name='main'></frameset>" > ~/gameflix.html
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p ~/.emulationstation/downloaded_media/${rom[0]}
@@ -42,18 +42,16 @@ for each in "${roms[@]}"; do
   echo "<gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   echo "<style>figure { margin: 0; display: inline-block; width: 160; height: 160; font-size: 10; font-family: Arial; vertical-align: top }</style>" >> ~/${rom[0]}.html
   echo "<style>img    { width: 160; height: 120; background-color: black }</style>" >> ~/${rom[0]}.html
-  pocet=0  
-  
+  pocet=0    
   {
-  while IFS= read -r line; do
-    if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)|\(Aftermarket\)) ]]; then
-      echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-      echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
-      ((pocet++))
-    fi
-  done
-} < <(ls ~/roms/${rom[0]})
-  
+    while IFS= read -r line; do
+      if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)|\(Aftermarket\)) ]]; then
+        echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
+        echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
+        ((pocet++))
+      fi
+    done
+  } < <(ls ~/roms/${rom[0]})
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   echo "<a href='${rom[0]}.html' target='main'>${rom[0]} ($pocet)</a><br />" >> ~/systems.html
 done
@@ -70,13 +68,15 @@ for each in "${zips[@]}"; do
   echo "<style>figure { margin: 0; display: inline-block; width: 160; height: 160; font-size: 10; font-family: Arial; vertical-align: top }</style>" >> ~/${zip[0]}.html
   echo "<style>img    { width: 160; height: 120; background-color: black }</style>" >> ~/${zip[0]}.html
   pocet=0
-  ls ~/roms/${zip[0]} | while read line; do
-    if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)|\(Aftermarket\)) ]]; then
-      echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml      
-      echo "<figure><a href=\"roms/${zip[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
-      ((pocet++))
-    fi
-  done
+  {
+    while IFS= read -r line; do
+      if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)|\(Aftermarket\)) ]]; then
+        echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
+        echo "<figure><a href=\"roms/${zip[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
+        ((pocet++))
+      fi
+    done
+  } < <(ls ~/roms/${zip[0]})
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   echo "<a href='${zip[0]}.html' target='main'>${zip[0]} ($pocet)</a><br />" >> ~/systems.html
 done
