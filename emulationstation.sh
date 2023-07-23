@@ -44,7 +44,7 @@ for each in "${roms[@]}"; do
   echo "<style>img    { width: 160; height: 120; background-color: black }</style>" >> ~/${rom[0]}.html
   pocet=0
   ls ~/roms/${rom[0]} | while read line; do
-    if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)) ]]; then
+    if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)|\(Aftermarket\)) ]]; then
       ((++pocet))
       echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml      
       echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
@@ -67,7 +67,7 @@ for each in "${zips[@]}"; do
   echo "<style>img    { width: 160; height: 120; background-color: black }</style>" >> ~/${zip[0]}.html
   pocet=0
   ls ~/roms/${zip[0]} | while read line; do
-    if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)) ]]; then
+    if [[ ! ${line} =~ (\[BIOS\]|\(Beta\)|\(Demo\)|\(Aftermarket\)) ]]; then
       ((++pocet))
       echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
       echo "<figure><a href=\"roms/${zip[0]}/${line}\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
