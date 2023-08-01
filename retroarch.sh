@@ -25,8 +25,8 @@ case "$adresar" in
   "saturn")        core="yabause" ;;
   "dreamcast")     command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/flycast_libretro.so ~/iso/*.cue" ;;
 
-  "gbc")           core="mgba" ;;
-  "gba")           core="sameboy" ;;
+  "gbc")           core="sameboy" ;;
+  "gba")           core="mgba" ;;
   "nes")           core="nestopia" ;;
   "snes")          core="snes9x" ;;
   "n64")           core="mupen64plus_next" ;;
