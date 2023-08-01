@@ -26,8 +26,8 @@ rclone mount myrient:TOSEC ~/myrient/TOSEC --no-checksum --no-modtime --attr-tim
 IFS=","
 echo "<style>a { font-size: 15; font-family: Arial }</style>" > ~/systems.html
 echo "<frameset border=0 cols='160, 100%'><frame name='menu' src='systems.html'><frame name='main'></frameset>" > ~/gameflix.html
-total=0
 for each in "${roms[@]}"; do
+  ((platforms++))
   read -ra rom < <(printf '%s' "$each")
   mkdir -p ~/.emulationstation/downloaded_media/${rom[0]}
   if grep -q ":" <<< "${rom[1]}"; then
@@ -58,6 +58,7 @@ for each in "${roms[@]}"; do
   echo "<a href='${rom[0]}.html' target='main'>${rom[0]} ($pocet)</a><br />" >> ~/systems.html
 done
 for each in "${zips[@]}"; do
+  ((platforms++))
   read -ra zip < <(printf '%s' "$each")
   mkdir -p ~/roms/${zip[0]}
   mkdir -p ~/.emulationstation/downloaded_media/${zip[0]}
@@ -84,5 +85,6 @@ for each in "${zips[@]}"; do
   echo "<a href='${zip[0]}.html' target='main'>${zip[0]} ($pocet)</a><br />" >> ~/systems.html
 done
 echo "<p><b>Total: $total</b>" >> ~/systems.html
+echo "<p><b>Platforms: $platforms</b>" >> ~/systems.html
 
 emulationstation &
