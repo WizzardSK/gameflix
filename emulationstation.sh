@@ -6,6 +6,7 @@ wget -O ~/.emulationstation/es_controller_mappings.cfg https://raw.githubusercon
 wget -O ~/.emulationstation/es_input.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/es_input.xml
 wget -O ~/.emulationstation/es_settings.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/es_settings.xml
 wget -O ~/retroarch.sh https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.sh
+chmod +x ~/retroarch.sh
 
 rm -rf ~/.emulationstation/downloaded_media
 rm -rf ~/.emulationstation/gamelists
