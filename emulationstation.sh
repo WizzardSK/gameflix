@@ -70,7 +70,7 @@ for each in "${zips[@]}"; do
   > ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   > ~/${zip[0]}.html
   echo "<gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
-  echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" >> ~/${rom[0]}.html
+  echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" >> ~/${zip[0]}.html
   pocet=0
   {
     while IFS= read -r line; do
