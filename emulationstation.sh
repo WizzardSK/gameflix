@@ -43,8 +43,7 @@ for each in "${roms[@]}"; do
   > ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   > ~/${rom[0]}.html
   echo "<gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-  echo "<style>figure { margin: 0; display: inline-block; width: 160; height: 160; font-size: 10; font-family: Arial; vertical-align: top }</style>" >> ~/${rom[0]}.html
-  echo "<style>img    { width: 160; height: 120; background-color: black }</style>" >> ~/${rom[0]}.html
+  echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" >> ~/${rom[0]}.html
   pocet=0    
   {
     while IFS= read -r line; do
