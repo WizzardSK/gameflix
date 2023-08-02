@@ -1,4 +1,4 @@
 figure { margin: 0; display: inline-block; width: 160; height: 160; font-size: 10; font-family: Arial; vertical-align: top }
 img    { width: 160; height: 120; background-color: black; transition: transform 0.3s ease }
-img:hover { transform: scale(1.5) }
-img:active { transform: scale(1.5) translateY(10px) translateX(10px); box-shadow: 0 0 20px rgba(0, 0, 0, 1) }
+img:hover { transform: scale(2) }
+img:active { transform: scale(2) translateY(10px) translateX(10px); box-shadow: 0 0 20px rgba(0, 0, 0, 1) }
