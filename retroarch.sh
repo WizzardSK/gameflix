@@ -21,7 +21,7 @@ case "$adresar" in
   "gamegear")      core="genesis_plus_gx" ;;
   "megadrive")     core="genesis_plus_gx" ;;
   "sega32x")       core="picodrive" ;;
-  "segacd")        core="genesis_plus_gx" ;;
+  "segacd")        core="picodrive" ;;
   "saturn")        core="yabause" ;;
   "dreamcast")     command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/flycast_libretro.so ~/iso/*.cue" ;;
 
