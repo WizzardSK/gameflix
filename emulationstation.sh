@@ -57,7 +57,7 @@ for each in "${roms[@]}"; do
     done
   } < <(ls ~/roms/${rom[0]})
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-  echo "<a href='${rom[0]}.html' target='main'>${rom[0]} ($pocet)</a><br />" >> ~/systems.html
+  echo "<a href='${rom[0]}.html' target='main'>${rom[3]} ($pocet)</a><br />" >> ~/systems.html
 done
 for each in "${zips[@]}"; do
   ((platforms++))
@@ -83,7 +83,7 @@ for each in "${zips[@]}"; do
     done
   } < <(ls ~/roms/${zip[0]})
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
-  echo "<a href='${zip[0]}.html' target='main'>${zip[0]} ($pocet)</a><br />" >> ~/systems.html
+  echo "<a href='${zip[0]}.html' target='main'>${zip[3]} ($pocet)</a><br />" >> ~/systems.html
 done
 echo "<p><b>Total: $total</b>" >> ~/systems.html
 echo "<p><b>Platforms: $platforms</b>" >> ~/systems.html
