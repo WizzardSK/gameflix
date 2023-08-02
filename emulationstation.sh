@@ -28,7 +28,7 @@ rclone mount myrient:TOSEC ~/myrient/TOSEC --no-checksum --no-modtime --attr-tim
 
 IFS=","
 echo "<style>a { font-size: 15; font-family: Arial }</style>" > ~/systems.html
-echo "<frameset border=0 cols='160, 100%'><frame name='menu' src='systems.html'><frame name='main'></frameset>" > ~/gameflix.html
+echo "<frameset border=0 cols='240, 100%'><frame name='menu' src='systems.html'><frame name='main'></frameset>" > ~/gameflix.html
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
