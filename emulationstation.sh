@@ -7,7 +7,9 @@ wget -O ~/.emulationstation/es_input.xml https://raw.githubusercontent.com/Wizza
 wget -O ~/.emulationstation/es_settings.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/es_settings.xml
 wget -O ~/retroarch.sh https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.sh
 wget -O ~/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/style.css
+wget -O ~/.local/share/applications/retroarch.sh.desktop https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.sh.desktop
 chmod +x ~/retroarch.sh
+xdg-mime default ~/.local/share/applications/retroarch.sh.desktop application/zip
 
 rm -rf ~/.emulationstation/downloaded_media
 rm -rf ~/.emulationstation/gamelists
