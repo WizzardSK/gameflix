@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=$HOME/retroarch.sh
+MimeType=application/zip;
+Name=retroarch.sh
+NoDisplay=true
+Type=Application
