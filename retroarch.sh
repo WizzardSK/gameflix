@@ -47,4 +47,5 @@ case "$adresar" in
 
 esac
 /usr/bin/retroarch -L ~/.config/retroarch/cores/${core}_libretro.so "$1"
+flatpak run org.libretro.RetroArch -L ~/.config/retroarch/cores/${core}_libretro.so "$1"
 eval "$command"
