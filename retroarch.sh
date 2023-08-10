@@ -3,47 +3,47 @@ adresar=$(dirname "$1")
 adresar="${adresar##*/}"
 case "$adresar" in
 
-  "atari2600")     core="stella" ;;
-  "atari5200")     core="a5200" ;;
-  "atari7800")     core="prosystem" ;;
-  "lynx")          core="mednafen_lynx" ;;
-  "jaguar")        core="virtualjaguar" ;;
-  "atarist")       core="hatari" ;;
-  "atari800")      core="atari800" ;;
+  "atari2600"|"Atari - 2600")                                   core="stella" ;;
+  "atari5200"|"Atari - 5200")                                   core="a5200" ;;
+  "atari7800"|"Atari - 7800")                                   core="prosystem" ;;
+  "lynx"|"Atari - Lynx")                                        core="mednafen_lynx" ;;
+  "jaguar"|"Atari - Jaguar (J64)")                              core="virtualjaguar" ;;
+  "atarist"|"Atari - ST")                                       core="hatari" ;;
 
-  "c64")           core="vice_x64sc" ;;
-  "amiga1200")     core="puae" ;;
-  "intellivision") core="freeintv" ;;
-  "colecovision")  core="bluemsx" ;;
+  "c64"|"Commodore - Commodore 64")                             core="vice_x64sc" ;;
+  "amiga1200"|"Commodore - Amiga")                              core="puae" ;;
+  "intellivision"|"Mattel - Intellivision")                     core="freeintv" ;;
+  "colecovision"|"Coleco - ColecoVision")                       core="bluemsx" ;;
 
-  "sg1000")        core="genesis_plus_gx" ;;
-  "mastersystem")  core="genesis_plus_gx" ;;
-  "gamegear")      core="genesis_plus_gx" ;;
-  "megadrive")     core="genesis_plus_gx" ;;
-  "sega32x")       core="picodrive" ;;
-  "segacd")        core="picodrive" ;;
-  "saturn")        core="yabause" ;;
-  "dreamcast")     command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/flycast_libretro.so ~/iso/*.cue" ;;
+  "sg1000"|"Sega - SG-1000")                                    core="genesis_plus_gx" ;;
+  "mastersystem"|"Sega - Master System - Mark III")             core="genesis_plus_gx" ;;
+  "gamegear"|"Sega - Game Gear")                                core="genesis_plus_gx" ;;
+  "megadrive"|"Sega - Mega Drive - Genesis")                    core="genesis_plus_gx" ;;
+  "sega32x"|"Sega - 32X")                                       core="picodrive" ;;
+  "segacd"|"Sega - Mega CD & Sega CD")                          core="picodrive" ;;
+  "saturn"|"Sega - Saturn")                                     core="yabause" ;;
+  "dreamcast"|"Sega - Dreamcast")                               command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/flycast_libretro.so ~/iso/*.cue" ;;
 
-  "gbc")           core="sameboy" ;;
-  "gba")           core="mgba" ;;
-  "nes")           core="nestopia" ;;
-  "snes")          core="snes9x" ;;
-  "n64")           core="mupen64plus_next" ;;
-  "gamecube")      command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/local/bin/dolphin-emu -b -e ~/iso/*.rvz" ;;
-  "wii")           command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/local/bin/dolphin-emu -b -e ~/iso/*.rvz" ;;
+  "gbc"|"Nintendo - Game Boy Color")                            core="sameboy" ;;
+  "gba"|"Nintendo - Game Boy Advance")                          core="mgba" ;;
+  "nes"|"Nintendo - Nintendo Entertainment System (Headered)")  core="nestopia" ;;
+  "snes"|"Nintendo - Super Nintendo Entertainment System")      core="snes9x" ;;
+  "n64"|"Nintendo - Nintendo 64 (ByteSwapped)")                 core="mupen64plus_next" ;;
+  "gamecube"|"Nintendo - GameCube - NKit RVZ [zstd-19-128k]")   command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/local/bin/dolphin-emu -b -e ~/iso/*.rvz" ;;
+  "wii"|"Nintendo - Wii - NKit RVZ [zstd-19-128k]")             command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/local/bin/dolphin-emu -b -e ~/iso/*.rvz" ;;
 
-  "psx")           core="pcsx_rearmed" ;;
-  "ps2")           command="umount ~/iso; mount-zip \"$1\" ~/iso; ~/*2.AppImage ~/iso/*.iso" ;;
-  "psp")           command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/ppsspp_libretro.so ~/iso/*.iso" ;;
+  "psx"|"Sony - PlayStation")                                   core="pcsx_rearmed" ;;
+  "ps2"|"Sony - PlayStation 2")                                 command="umount ~/iso; mount-zip \"$1\" ~/iso; ~/*2.AppImage ~/iso/*.iso" ;;
+  "psp"|"Sony - PlayStation Portable")                          command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/ppsspp_libretro.so ~/iso/*.iso" ;;
 
-  "pcengine")      core="mednafen_pce_fast" ;;
-  "pcenginecd")    command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/mednafen_pce_fast_libretro.so ~/iso/*.cue" ;;
-  "3do")           command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/opera_libretro.so ~/iso/*.cue" ;;
-  "dos")           core="dosbox_pure" ;;
+  "pcengine"|"NEC - PC Engine - TurboGrafx-16")                 core="mednafen_pce_fast" ;;
+  "pcenginecd"|"NEC - PC Engine CD & TurboGrafx CD")            command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/mednafen_pce_fast_libretro.so ~/iso/*.cue" ;;
+  "3do"|"Panasonic - 3DO Interactive Multiplayer")              command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/opera_libretro.so ~/iso/*.cue" ;;
 
-  "amstradcpc")    core="cap32" ;;
-  "zxspectrum")    core="fuse" ;;
+  "atari800")                                                   core="atari800" ;;
+  "amstradcpc")                                                 core="cap32" ;;
+  "zxspectrum")                                                 core="fuse" ;;
+  "dos")                                                        core="dosbox_pure" ;;
 
 esac
 /usr/bin/retroarch -L ~/.config/retroarch/cores/${core}_libretro.so "$1"
