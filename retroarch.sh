@@ -41,6 +41,7 @@ case "$adresar" in
   "pcengine"|"NEC - PC Engine - TurboGrafx-16")                 core="mednafen_pce_fast" ;;
   "pcenginecd"|"NEC - PC Engine CD & TurboGrafx CD")            command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/mednafen_pce_fast_libretro.so ~/iso/*.cue" ;;
   "3do"|"Panasonic - 3DO Interactive Multiplayer")              command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/opera_libretro.so ~/iso/*.cue" ;;
+  "neogeocd"|"SNK - Neo Geo CD")                                command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/neocd_libretro.so ~/iso/*.cue" ;;
 
   "atari800")                                                   core="atari800" ;;
   "amstradcpc")                                                 core="cap32" ;;
