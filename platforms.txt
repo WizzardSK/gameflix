@@ -36,6 +36,7 @@ roms+=("ps2,Redump/Sony - PlayStation 2,Sony - PlayStation 2,PlayStation 2")
 roms+=("pcengine,No-Intro/NEC - PC Engine - TurboGrafx-16,NEC - PC Engine - TurboGrafx 16,PC Engine")
 roms+=("pcenginecd,Redump/NEC - PC Engine CD & TurboGrafx CD,NEC - PC Engine CD - TurboGrafx-CD,PC Engine CD")
 roms+=("3do,Redump/Panasonic - 3DO Interactive Multiplayer,The 3DO Company - 3DO,3DO")
+roms+=("neogeocd,Redump/SNK - Neo Geo CD,SNK - Neo Geo CD,Neo Geo CD")
 
 roms+=("dos,archive:exov5_2/eXo/eXoDOS,DOS,MS-DOS")
 
