@@ -12,6 +12,7 @@ case "$adresar" in
 
   "c64"|"Commodore - Commodore 64")                             core="vice_x64sc" ;;
   "amiga1200"|"Commodore - Amiga")                              core="puae" ;;
+  "amigacd32"|"Commodore - Amiga CD32")                         core="puae" ;;
   "intellivision"|"Mattel - Intellivision")                     core="freeintv" ;;
   "colecovision"|"Coleco - ColecoVision")                       core="bluemsx" ;;
 
