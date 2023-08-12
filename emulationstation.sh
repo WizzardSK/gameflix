@@ -96,5 +96,5 @@ done
 echo "<p><b>Total: $total</b>" >> ~/systems.html
 echo "<p><b>Platforms: $platforms</b>" >> ~/systems.html
 
-emulationstation &
+# emulationstation &
 xdg-open gameflix.html
