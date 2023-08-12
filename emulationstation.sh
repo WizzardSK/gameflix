@@ -11,10 +11,10 @@ wget -O ~/.local/share/applications/retroarch.sh.desktop https://raw.githubuserc
 chmod +x ~/retroarch.sh
 xdg-mime default ~/.local/share/applications/retroarch.sh.desktop application/zip
 
-fusermount -u ~/media
-fusermount -u ~/myrient/No-Intro
-fusermount -u ~/myrient/Redump
-fusermount -u ~/myrient/TOSEC
+#fusermount -u ~/media
+#fusermount -u ~/myrient/No-Intro
+#fusermount -u ~/myrient/Redump
+#fusermount -u ~/myrient/TOSEC
 rm -rf ~/.emulationstation/downloaded_media
 rm -rf ~/.emulationstation/gamelists
 rm -rf ~/.cache/rclone
