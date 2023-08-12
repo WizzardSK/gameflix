@@ -51,10 +51,9 @@ for each in "${roms[@]}"; do
   {
     while IFS= read -r line; do
       if [[ ! ${line} =~ (\[BIOS\]|\(Beta|\(Demo\)|\(Aftermarket\)|\(Proto|\(Unl\)|\(Program\)|\(Alt\)|\(Pirate\)) ]]; then
-        thumb=$(echo "$line" | tr '&' '_')
-        thumb=$(echo "$thumb" | sed "s/'/\\\'/g")
+        thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-        echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\" style=\"background-image: url('http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${thumb%.*}.png')\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
+        echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img title=\"${line%.*}\" src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\" style=\"background-image: url('http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${thumb%.*}.png')\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
         ((pocet++))
         ((total++))
       fi
@@ -79,10 +78,9 @@ for each in "${zips[@]}"; do
   {
     while IFS= read -r line; do
       if [[ ! ${line} =~ (\[BIOS\]|\(Beta|\(Demo\)|\(Aftermarket\)|\(Proto|\(Unl\)|\(Program\)|\(Alt\)|\(Pirate\)) ]]; then
-        thumb=$(echo "$line" | tr '&' '_')
-        thumb=$(echo "$thumb" | sed "s/'/\\\'/g")        
+        thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")    
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
-        echo "<figure><a href=\"roms/${zip[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\" style=\"background-image: url('http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${thumb%.*}.png')\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
+        echo "<figure><a href=\"roms/${zip[0]}/${line}\"><img title=\"${line%.*}\" src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\" style=\"background-image: url('http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${thumb%.*}.png')\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
         ((pocet++))
         ((total++))
       fi
