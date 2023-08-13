@@ -57,6 +57,7 @@ for each in "${roms[@]}"; do
   echo "<input type=\"checkbox\" id=\"showHideProgram\"><label for=\"showHideProgram\">Program</label>" >> ~/${rom[0]}.html
   echo "<input type=\"checkbox\" id=\"showHideAlt\"><label for=\"showHideAlt\">Alternate</label>" >> ~/${rom[0]}.html
   echo "<input type=\"checkbox\" id=\"showHidePirate\"><label for=\"showHidePirate\">Pirated</label>" >> ~/${rom[0]}.html  
+  echo "<a href=\"#\" onclick=\"change80()\">80px</a> <a href=\"#\" onclick=\"change120()\">120px</a> <a href=\"#\" onclick=\"change160()\">160px</a> <a href=\"#\" onclick=\"change240()\">240px</a> <a href=\"#\" onclick=\"change320()\">320px</a>" >> ~/${rom[0]}.html
   echo "<p><div id=\"figureList\">" >> ~/${rom[0]}.html
   pocet=0    
   {
@@ -95,6 +96,7 @@ for each in "${zips[@]}"; do
   echo "<input type=\"checkbox\" id=\"showHideProgram\"><label for=\"showHideProgram\">Program</label>" >> ~/${zip[0]}.html
   echo "<input type=\"checkbox\" id=\"showHideAlt\"><label for=\"showHideAlt\">Alternate</label>" >> ~/${zip[0]}.html
   echo "<input type=\"checkbox\" id=\"showHidePirate\"><label for=\"showHidePirate\">Pirated</label>" >> ~/${zip[0]}.html  
+  echo "<a href=\"#\" onclick=\"change80()\">80px</a> <a href=\"#\" onclick=\"change120()\">120px</a> <a href=\"#\" onclick=\"change160()\">160px</a> <a href=\"#\" onclick=\"change240()\">240px</a> <a href=\"#\" onclick=\"change320()\">320px</a>" >> ~/${zip[0]}.html
   echo "<p><div id=\"figureList\">" >> ~/${zip[0]}.html
   pocet=0
   {
