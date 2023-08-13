@@ -49,14 +49,14 @@ for each in "${roms[@]}"; do
   echo "<gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" >> ~/${rom[0]}.html
   echo "<input type=\"text\" id=\"filterInput\" placeholder=\"Filter...\">" >> ~/${rom[0]}.html
-  echo "<label for=\"showHideBeta\">Beta</label><input type=\"checkbox\" id=\"showHideBeta\">" >> ~/${rom[0]}.html
-  echo "<label for=\"showHideDemo\">Demo</label><input type=\"checkbox\" id=\"showHideDemo\">" >> ~/${rom[0]}.html
-  echo "<label for=\"showHideAftermarket\">Aftermarket</label><input type=\"checkbox\" id=\"showHideAftermarket\">" >> ~/${rom[0]}.html
-  echo "<label for=\"showHideProto\">Proto</label><input type=\"checkbox\" id=\"showHideProto\">" >> ~/${rom[0]}.html
-  echo "<label for=\"showHideUnl\">Unl</label><input type=\"checkbox\" id=\"showHideUnl\">" >> ~/${rom[0]}.html
-  echo "<label for=\"showHideProgram\">Program</label><input type=\"checkbox\" id=\"showHideProgram\">" >> ~/${rom[0]}.html
-  echo "<label for=\"showHideAlt\">Alt</label><input type=\"checkbox\" id=\"showHideAlt\">" >> ~/${rom[0]}.html
-  echo "<label for=\"showHidePirate\">Pirate</label><input type=\"checkbox\" id=\"showHidePirate\">" >> ~/${rom[0]}.html  
+  echo "<input type=\"checkbox\" id=\"showHideBeta\"><label for=\"showHideBeta\">Betaversion</label>" >> ~/${rom[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHideDemo\"><label for=\"showHideDemo\">Demoversion</label>" >> ~/${rom[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHideAftermarket\"><label for=\"showHideAftermarket\">Aftermarket</label>" >> ~/${rom[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHideProto\"><label for=\"showHideProto\">Prototype</label>" >> ~/${rom[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHideUnl\"><label for=\"showHideUnl\">Unlicensed</label>" >> ~/${rom[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHideProgram\"><label for=\"showHideProgram\">Program</label>" >> ~/${rom[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHideAlt\"><label for=\"showHideAlt\">Alternate</label>" >> ~/${rom[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHidePirate\"><label for=\"showHidePirate\">Pirated</label>" >> ~/${rom[0]}.html  
   echo "<p><div id=\"figureList\">" >> ~/${rom[0]}.html
   pocet=0    
   {
@@ -87,14 +87,14 @@ for each in "${zips[@]}"; do
   echo "<gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" >> ~/${zip[0]}.html
   echo "<input type=\"text\" id=\"filterInput\" placeholder=\"Filter...\">" >> ~/${zip[0]}.html
-  echo "<label for=\"showHideBeta\">Beta</label><input type=\"checkbox\" id=\"showHideBeta\">" >> ~/${zip[0]}.html
-  echo "<label for=\"showHideDemo\">Demo</label><input type=\"checkbox\" id=\"showHideDemo\">" >> ~/${zip[0]}.html
-  echo "<label for=\"showHideAftermarket\">Aftermarket</label><input type=\"checkbox\" id=\"showHideAftermarket\">" >> ~/${zip[0]}.html
-  echo "<label for=\"showHideProto\">Proto</label><input type=\"checkbox\" id=\"showHideProto\">" >> ~/${zip[0]}.html
-  echo "<label for=\"showHideUnl\">Unl</label><input type=\"checkbox\" id=\"showHideUnl\">" >> ~/${zip[0]}.html
-  echo "<label for=\"showHideProgram\">Program</label><input type=\"checkbox\" id=\"showHideProgram\">" >> ~/${zip[0]}.html
-  echo "<label for=\"showHideAlt\">Alt</label><input type=\"checkbox\" id=\"showHideAlt\">" >> ~/${zip[0]}.html
-  echo "<label for=\"showHidePirate\">Pirate</label><input type=\"checkbox\" id=\"showHidePirate\">" >> ~/${zip[0]}.html  
+  echo "<input type=\"checkbox\" id=\"showHideBeta\"><label for=\"showHideBeta\">Betaversion</label>" >> ~/${zip[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHideDemo\"><label for=\"showHideDemo\">Demoversion</label>" >> ~/${zip[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHideAftermarket\"><label for=\"showHideAftermarket\">Aftermarket</label>" >> ~/${zip[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHideProto\"><label for=\"showHideProto\">Prototype</label>" >> ~/${zip[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHideUnl\"><label for=\"showHideUnl\">Unlicensed</label>" >> ~/${zip[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHideProgram\"><label for=\"showHideProgram\">Program</label>" >> ~/${zip[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHideAlt\"><label for=\"showHideAlt\">Alternate</label>" >> ~/${zip[0]}.html
+  echo "<input type=\"checkbox\" id=\"showHidePirate\"><label for=\"showHidePirate\">Pirated</label>" >> ~/${zip[0]}.html  
   echo "<p><div id=\"figureList\">" >> ~/${zip[0]}.html
   pocet=0
   {
