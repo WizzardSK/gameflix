@@ -7,6 +7,7 @@ wget -O ~/.emulationstation/es_input.xml https://raw.githubusercontent.com/Wizza
 wget -O ~/.emulationstation/es_settings.xml https://raw.githubusercontent.com/WizzardSK/gameflix/main/.emulationstation/es_settings.xml
 wget -O ~/retroarch.sh https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.sh
 wget -O ~/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/style.css
+wget -O ~/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 wget -O ~/.local/share/applications/retroarch.sh.desktop https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.sh.desktop
 chmod +x ~/retroarch.sh
 xdg-mime default ~/.local/share/applications/retroarch.sh.desktop application/zip
@@ -47,10 +48,19 @@ for each in "${roms[@]}"; do
   > ~/${rom[0]}.html
   echo "<gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" >> ~/${rom[0]}.html
+  echo "<input type=\"text\" id=\"filterInput\" placeholder=\"Filter...\">" >> ~/${rom[0]}.html
+  echo "<label for=\"showHideBeta\">Beta</label><input type=\"checkbox\" id=\"showHideBeta\">" >> ~/${rom[0]}.html
+  echo "<label for=\"showHideDemo\">Demo</label><input type=\"checkbox\" id=\"showHideDemo\">" >> ~/${rom[0]}.html
+  echo "<label for=\"showHideAftermarket\">Aftermarket</label><input type=\"checkbox\" id=\"showHideAftermarket\">" >> ~/${rom[0]}.html
+  echo "<label for=\"showHideProto\">Proto</label><input type=\"checkbox\" id=\"showHideProto\">" >> ~/${rom[0]}.html
+  echo "<label for=\"showHideUnl\">Unl</label><input type=\"checkbox\" id=\"showHideUnl\">" >> ~/${rom[0]}.html
+  echo "<label for=\"showHideProgram\">Program</label><input type=\"checkbox\" id=\"showHideProgram\">" >> ~/${rom[0]}.html
+  echo "<label for=\"showHideAlt\">Alt</label><input type=\"checkbox\" id=\"showHideAlt\">" >> ~/${rom[0]}.html
+  echo "<label for=\"showHidePirate\">Pirate</label><input type=\"checkbox\" id=\"showHidePirate\">" >> ~/${rom[0]}.html  
   pocet=0    
   {
     while IFS= read -r line; do
-      if [[ ! ${line} =~ (\[BIOS\]|\(Beta|\(Demo\)|\(Aftermarket\)|\(Proto|\(Unl\)|\(Program\)|\(Alt\)|\(Pirate\)) ]]; then
+      if [[ ! ${line} =~ \[BIOS\] ]]; then
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
         echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img title=\"${line%.*}\" src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\" style=\"background-image: url('http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${thumb%.*}.png')\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
@@ -77,7 +87,7 @@ for each in "${zips[@]}"; do
   pocet=0
   {
     while IFS= read -r line; do
-      if [[ ! ${line} =~ (\[BIOS\]|\(Beta|\(Demo\)|\(Aftermarket\)|\(Proto|\(Unl\)|\(Program\)|\(Alt\)|\(Pirate\)) ]]; then
+      if [[ ! ${line} =~ \[BIOS\] ]]; then
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")    
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
         echo "<figure><a href=\"roms/${zip[0]}/${line}\"><img title=\"${line%.*}\" src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\" style=\"background-image: url('http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${thumb%.*}.png')\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
