@@ -64,7 +64,7 @@ for each in "${roms[@]}"; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-        echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\" onerror=\"this.src='http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${thumb%.*}.png'\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
+        echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\" onerror=\"this.src='http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${thumb%.*}.png';this.onerror=null\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
         ((pocet++))
         ((total++))
       fi
@@ -102,7 +102,7 @@ for each in "${zips[@]}"; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")    
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
-        echo "<figure><a href=\"roms/${zip[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"  onerror=\"this.src='http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${thumb%.*}.png'\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
+        echo "<figure><a href=\"roms/${zip[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"  onerror=\"this.src='http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${thumb%.*}.png';this.onerror=null\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
         ((pocet++))
         ((total++))
       fi
