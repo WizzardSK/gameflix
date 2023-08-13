@@ -83,3 +83,11 @@ document.addEventListener('keydown', function (event) {
         filterInput.dispatchEvent(new Event('input'));
     }
 });
+showHideBeta.dispatchEvent(new Event('change'));
+showHideDemo.dispatchEvent(new Event('change'));
+showHideAftermarket.dispatchEvent(new Event('change'));
+showHideProto.dispatchEvent(new Event('change'));
+showHideUnl.dispatchEvent(new Event('change'));
+showHideProgram.dispatchEvent(new Event('change'));
+showHideAlt.dispatchEvent(new Event('change'));
+showHidePirate.dispatchEvent(new Event('change'));
