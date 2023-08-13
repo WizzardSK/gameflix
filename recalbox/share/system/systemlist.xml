@@ -729,7 +729,7 @@
     </emulatorList>
   </system>
   <system uuid="4b3915a7-8b05-4646-ae4c-255057060e7a" name="neogeocd" fullname="Neo-Geo CD">
-    <descriptor path="%ROOT%/neogeocd" theme="neogeocd" extensions=".img .cue .ccd .iso .chd .bin" icon="$F2bb" downloader="0"/>
+    <descriptor path="%ROOT%/neogeocd" theme="neogeocd" extensions=".img .cue .ccd .iso .chd .bin" icon="$F2bb" downloader="0" command="umount /iso; mount-zip %ROM% /iso; python /usr/bin/emulatorlauncher.pyc %CONTROLLERSCONFIG% -system %SYSTEM% -rom /iso/*.cue -emulator %EMULATOR% -core %CORE% -ratio %RATIO% %NETPLAY% %CRT%"/>
     <scraper screenscraper="70"/>
     <properties type="console" pad="mandatory" keyboard="no" mouse="no" lightgun="no" releasedate="1994-09" manufacturer="SNK" retroachievements="1" crt.multiresolution="0" crt.multiregion="0" ignoredfiles=""/>
     <emulatorList>
