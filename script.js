@@ -87,7 +87,6 @@ function change80() {
   for (var i = 0; i < obrazky.length; i++) {
     obrazky[i].style.width = '80px';
     obrazky[i].style.height = '60px';
-    obrazky[i].style.backgroundSize = '80px 60px';
     figurky[i].style.width = '80px';
     figurky[i].style.height = '80px';
     figurky[i].style.fontSize = '8px';
@@ -99,7 +98,6 @@ function change120() {
   for (var i = 0; i < obrazky.length; i++) {
     obrazky[i].style.width = '120px';
     obrazky[i].style.height = '90px';
-    obrazky[i].style.backgroundSize = '120px 90px';
     figurky[i].style.width = '120px';
     figurky[i].style.height = '120px';
     figurky[i].style.fontSize = '10px';
@@ -111,7 +109,6 @@ function change160() {
   for (var i = 0; i < obrazky.length; i++) {
     obrazky[i].style.width = '160px';
     obrazky[i].style.height = '120px';
-    obrazky[i].style.backgroundSize = '160px 120px';
     figurky[i].style.width = '160px';
     figurky[i].style.height = '160px';
     figurky[i].style.fontSize = '12px';
@@ -123,7 +120,6 @@ function change240() {
   for (var i = 0; i < obrazky.length; i++) {
     obrazky[i].style.width = '240px';
     obrazky[i].style.height = '180px';
-    obrazky[i].style.backgroundSize = '240px 180px';
     figurky[i].style.width = '240px';
     figurky[i].style.height = '240px';
     figurky[i].style.fontSize = '14px';
@@ -135,7 +131,6 @@ function change320() {
   for (var i = 0; i < obrazky.length; i++) {
     obrazky[i].style.width = '320px';
     obrazky[i].style.height = '240px';
-    obrazky[i].style.backgroundSize = '320px 240px';
     figurky[i].style.width = '320px';
     figurky[i].style.height = '320px';
     figurky[i].style.fontSize = '16px';
