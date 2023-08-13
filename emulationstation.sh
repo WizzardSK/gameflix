@@ -30,7 +30,7 @@ rclone mount myrient:Redump ~/myrient/Redump --no-checksum --no-modtime --attr-t
 rclone mount myrient:TOSEC ~/myrient/TOSEC --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 
 IFS=","
-echo "<style>a { font-size: 15; font-family: Arial }</style>" > ~/systems.html
+echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/systems.html
 echo "<frameset border=0 cols='240, 100%'><frame name='menu' src='systems.html'><frame name='main'></frameset>" > ~/gameflix.html
 for each in "${roms[@]}"; do
   ((platforms++))
