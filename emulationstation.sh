@@ -57,6 +57,7 @@ for each in "${roms[@]}"; do
   echo "<label for=\"showHideProgram\">Program</label><input type=\"checkbox\" id=\"showHideProgram\">" >> ~/${rom[0]}.html
   echo "<label for=\"showHideAlt\">Alt</label><input type=\"checkbox\" id=\"showHideAlt\">" >> ~/${rom[0]}.html
   echo "<label for=\"showHidePirate\">Pirate</label><input type=\"checkbox\" id=\"showHidePirate\">" >> ~/${rom[0]}.html  
+  echo "<div id=\"figureList\"><p>" >> ~/${rom[0]}.html
   pocet=0    
   {
     while IFS= read -r line; do
@@ -70,6 +71,7 @@ for each in "${roms[@]}"; do
     done
   } < <(ls ~/roms/${rom[0]})
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
+  echo "</div><script src=\"script.js\"></script>" >> ~/${rom[0]}.html
   echo "<a href='${rom[0]}.html' target='main'>${rom[3]} ($pocet)</a><br />" >> ~/systems.html
 done
 for each in "${zips[@]}"; do
@@ -84,6 +86,16 @@ for each in "${zips[@]}"; do
   > ~/${zip[0]}.html
   echo "<gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" >> ~/${zip[0]}.html
+  echo "<input type=\"text\" id=\"filterInput\" placeholder=\"Filter...\">" >> ~/${zip[0]}.html
+  echo "<label for=\"showHideBeta\">Beta</label><input type=\"checkbox\" id=\"showHideBeta\">" >> ~/${zip[0]}.html
+  echo "<label for=\"showHideDemo\">Demo</label><input type=\"checkbox\" id=\"showHideDemo\">" >> ~/${zip[0]}.html
+  echo "<label for=\"showHideAftermarket\">Aftermarket</label><input type=\"checkbox\" id=\"showHideAftermarket\">" >> ~/${zip[0]}.html
+  echo "<label for=\"showHideProto\">Proto</label><input type=\"checkbox\" id=\"showHideProto\">" >> ~/${zip[0]}.html
+  echo "<label for=\"showHideUnl\">Unl</label><input type=\"checkbox\" id=\"showHideUnl\">" >> ~/${zip[0]}.html
+  echo "<label for=\"showHideProgram\">Program</label><input type=\"checkbox\" id=\"showHideProgram\">" >> ~/${zip[0]}.html
+  echo "<label for=\"showHideAlt\">Alt</label><input type=\"checkbox\" id=\"showHideAlt\">" >> ~/${zip[0]}.html
+  echo "<label for=\"showHidePirate\">Pirate</label><input type=\"checkbox\" id=\"showHidePirate\">" >> ~/${zip[0]}.html  
+  echo "<div id=\"figureList\"><p>" >> ~/${zip[0]}.html
   pocet=0
   {
     while IFS= read -r line; do
@@ -97,6 +109,7 @@ for each in "${zips[@]}"; do
     done
   } < <(ls ~/roms/${zip[0]})
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
+  echo "</div><script src=\"script.js\"></script>" >> ~/${zip[0]}.html
   echo "<a href='${zip[0]}.html' target='main'>${zip[3]} ($pocet)</a><br />" >> ~/systems.html
 done
 echo "<p><b>Total: $total</b>" >> ~/systems.html
