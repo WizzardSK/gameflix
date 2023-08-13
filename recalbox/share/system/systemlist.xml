@@ -86,8 +86,8 @@
         <core name="amiberry" priority="1" extensions=".cue .iso .ccd" netplay="0" softpatching="0" compatibility="high" speed="high" crt.available="0"/>
       </emulator>
       <emulator name="libretro">
-        <core name="uae4arm" priority="2" extensions=".cue .ccd .chd .nrg .mds .iso .uae .m3u" netplay="0" softpatching="0" compatibility="high" speed="high" crt.available="1"/>
-        <core name="puae" priority="3" extensions=".cue .ccd .chd .nrg .mds .iso .uae .m3u" netplay="0" softpatching="0" compatibility="high" speed="high" crt.available="0"/>
+        <core name="uae4arm" priority="3" extensions=".cue .ccd .chd .nrg .mds .iso .uae .m3u" netplay="0" softpatching="0" compatibility="high" speed="high" crt.available="1"/>
+        <core name="puae" priority="2" extensions=".cue .ccd .chd .nrg .mds .iso .uae .m3u" netplay="0" softpatching="0" compatibility="high" speed="high" crt.available="1"/>
       </emulator>
     </emulatorList>
   </system>
