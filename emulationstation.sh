@@ -57,7 +57,7 @@ for each in "${roms[@]}"; do
   echo "<label for=\"showHideProgram\">Program</label><input type=\"checkbox\" id=\"showHideProgram\">" >> ~/${rom[0]}.html
   echo "<label for=\"showHideAlt\">Alt</label><input type=\"checkbox\" id=\"showHideAlt\">" >> ~/${rom[0]}.html
   echo "<label for=\"showHidePirate\">Pirate</label><input type=\"checkbox\" id=\"showHidePirate\">" >> ~/${rom[0]}.html  
-  echo "<div id=\"figureList\"><p>" >> ~/${rom[0]}.html
+  echo "<p><div id=\"figureList\">" >> ~/${rom[0]}.html
   pocet=0    
   {
     while IFS= read -r line; do
@@ -95,7 +95,7 @@ for each in "${zips[@]}"; do
   echo "<label for=\"showHideProgram\">Program</label><input type=\"checkbox\" id=\"showHideProgram\">" >> ~/${zip[0]}.html
   echo "<label for=\"showHideAlt\">Alt</label><input type=\"checkbox\" id=\"showHideAlt\">" >> ~/${zip[0]}.html
   echo "<label for=\"showHidePirate\">Pirate</label><input type=\"checkbox\" id=\"showHidePirate\">" >> ~/${zip[0]}.html  
-  echo "<div id=\"figureList\"><p>" >> ~/${zip[0]}.html
+  echo "<p><div id=\"figureList\">" >> ~/${zip[0]}.html
   pocet=0
   {
     while IFS= read -r line; do
