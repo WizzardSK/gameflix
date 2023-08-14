@@ -7,7 +7,7 @@ roms+=("atarist,No-Intro/Atari - ST,Atari - ST,Atari ST")
 
 roms+=("c64,No-Intro/Commodore - Commodore 64,Commodore - 64,Commodore 64")
 roms+=("amiga1200,No-Intro/Commodore - Amiga,Commodore - Amiga,Amiga 1200")
-roms+=("amigacd32,Redump/Commodore - Amiga CD32,Commodore - Amiga,Amiga CD32")
+roms+=("amigacd32,Redump/Commodore - Amiga CD32,Commodore - CD32,Amiga CD32")
 roms+=("intellivision,No-Intro/Mattel - Intellivision,Mattel - Intellivision,Intellivision")
 roms+=("colecovision,No-Intro/Coleco - ColecoVision,Coleco - ColecoVision,Colecovision")
 
