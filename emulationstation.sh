@@ -47,18 +47,8 @@ for each in "${roms[@]}"; do
   > ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   > ~/${rom[0]}.html
   echo "<gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-  echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" >> ~/${rom[0]}.html
-  echo "<input type=\"text\" id=\"filterInput\" placeholder=\"Filter...\">" >> ~/${rom[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideBeta\"><label for=\"showHideBeta\">Betaversion</label>" >> ~/${rom[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideDemo\"><label for=\"showHideDemo\">Demoversion</label>" >> ~/${rom[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideAftermarket\"><label for=\"showHideAftermarket\">Aftermarket</label>" >> ~/${rom[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideProto\"><label for=\"showHideProto\">Prototype</label>" >> ~/${rom[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideUnl\"><label for=\"showHideUnl\">Unlicensed</label>" >> ~/${rom[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideProgram\"><label for=\"showHideProgram\">Program</label>" >> ~/${rom[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideAlt\"><label for=\"showHideAlt\">Alternate</label>" >> ~/${rom[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHidePirate\"><label for=\"showHidePirate\">Pirated</label>" >> ~/${rom[0]}.html  
-  echo "<a href=\"#\" onclick=\"change80()\">80px</a> <a href=\"#\" onclick=\"change120()\">120px</a> <a href=\"#\" onclick=\"change160()\">160px</a> <a href=\"#\" onclick=\"change240()\">240px</a> <a href=\"#\" onclick=\"change320()\">320px</a>" >> ~/${rom[0]}.html
-  echo "<p><div id=\"figureList\">" >> ~/${rom[0]}.html
+  wget -O ~/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+  wget -O ~/online/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0    
   {
     while IFS= read -r line; do
@@ -86,18 +76,8 @@ for each in "${zips[@]}"; do
   > ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   > ~/${zip[0]}.html
   echo "<gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
-  echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" >> ~/${zip[0]}.html
-  echo "<input type=\"text\" id=\"filterInput\" placeholder=\"Filter...\">" >> ~/${zip[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideBeta\"><label for=\"showHideBeta\">Betaversion</label>" >> ~/${zip[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideDemo\"><label for=\"showHideDemo\">Demoversion</label>" >> ~/${zip[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideAftermarket\"><label for=\"showHideAftermarket\">Aftermarket</label>" >> ~/${zip[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideProto\"><label for=\"showHideProto\">Prototype</label>" >> ~/${zip[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideUnl\"><label for=\"showHideUnl\">Unlicensed</label>" >> ~/${zip[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideProgram\"><label for=\"showHideProgram\">Program</label>" >> ~/${zip[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHideAlt\"><label for=\"showHideAlt\">Alternate</label>" >> ~/${zip[0]}.html
-  echo "<input type=\"checkbox\" id=\"showHidePirate\"><label for=\"showHidePirate\">Pirated</label>" >> ~/${zip[0]}.html  
-  echo "<a href=\"#\" onclick=\"change80()\">80px</a> <a href=\"#\" onclick=\"change120()\">120px</a> <a href=\"#\" onclick=\"change160()\">160px</a> <a href=\"#\" onclick=\"change240()\">240px</a> <a href=\"#\" onclick=\"change320()\">320px</a>" >> ~/${zip[0]}.html
-  echo "<p><div id=\"figureList\">" >> ~/${zip[0]}.html
+  wget -O ~/${zip[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+  wget -O ~/online/${zip[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0
   {
     while IFS= read -r line; do
