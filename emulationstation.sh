@@ -37,9 +37,11 @@ for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p ~/.emulationstation/downloaded_media/${rom[0]}
   if grep -q ":" <<< "${rom[1]}"; then
+    location="archive.org/download"
     mkdir -p ~/roms/${rom[0]}
     rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
   else
+    location="myrient.erista.me/files"
     ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   fi
   ln -s ~/media/${rom[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
@@ -56,6 +58,7 @@ for each in "${roms[@]}"; do
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
         echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\" onerror=\"this.src='http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${thumb%.*}.png';this.onerror=''\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
+        echo "<figure><a href=\"https://${location}/${rom[1]}/${rom[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\" onerror=\"this.src='http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${thumb%.*}.png';this.onerror=''\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/online/${rom[0]}.html
         ((pocet++))
         ((total++))
       fi
@@ -63,6 +66,7 @@ for each in "${roms[@]}"; do
   } < <(ls ~/roms/${rom[0]})
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   echo "</div><script src=\"script.js\"></script>" >> ~/${rom[0]}.html
+  echo "</div><script src=\"script.js\"></script>" >> ~/online/${rom[0]}.html
   echo "<a href='${rom[0]}.html' target='main'>${rom[3]} ($pocet)</a><br />" >> ~/systems.html
 done
 for each in "${zips[@]}"; do
@@ -85,6 +89,7 @@ for each in "${zips[@]}"; do
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")    
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
         echo "<figure><a href=\"roms/${zip[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"  onerror=\"this.src='http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${thumb%.*}.png';this.onerror=''\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${zip[0]}.html
+        echo "<figure><a href=\"https://myrient.erista.me/files/${zip[1]}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\" onerror=\"this.src='http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${thumb%.*}.png';this.onerror=''\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/online/${zip[0]}.html
         ((pocet++))
         ((total++))
       fi
@@ -92,6 +97,7 @@ for each in "${zips[@]}"; do
   } < <(ls ~/roms/${zip[0]})
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   echo "</div><script src=\"script.js\"></script>" >> ~/${zip[0]}.html
+  echo "</div><script src=\"script.js\"></script>" >> ~/online/${zip[0]}.html
   echo "<a href='${zip[0]}.html' target='main'>${zip[3]} ($pocet)</a><br />" >> ~/systems.html
 done
 echo "<p><b>Total: $total</b>" >> ~/systems.html
