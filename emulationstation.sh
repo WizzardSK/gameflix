@@ -58,7 +58,7 @@ for each in "${roms[@]}"; do
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
         echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\" onerror=\"this.src='http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${thumb%.*}.png';this.onerror=''\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
-        echo "<figure><a href=\"https://${location}/${rom[1]}/${rom[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\" onerror=\"this.src='http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${thumb%.*}.png';this.onerror=''\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/online/${rom[0]}.html
+        echo "<figure><a href=\"https://${location}/${rom[1]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\" onerror=\"this.src='http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${thumb%.*}.png';this.onerror=''\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/online/${rom[0]}.html
         ((pocet++))
         ((total++))
       fi
