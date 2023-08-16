@@ -136,6 +136,27 @@ function change320() {
     figurky[i].style.fontSize = '16px';
   }
 }
+function boxarts() {
+    var obrazky = document.getElementsByTagName('img');
+    var figurky = document.getElementsByTagName('figure');
+    for (var i = 0; i < obrazky.length; i++) {
+        obrazky[i].src = obrazky[i].src.replace(/_Snaps|_Titles/g, '_Boxarts');
+    }
+}
+function snaps() {
+    var obrazky = document.getElementsByTagName('img');
+    var figurky = document.getElementsByTagName('figure');
+    for (var i = 0; i < obrazky.length; i++) {
+        obrazky[i].src = obrazky[i].src.replace(/_Boxarts|_Titles/g, '_Snaps');
+    }
+}
+function titles() {
+    var obrazky = document.getElementsByTagName('img');
+    var figurky = document.getElementsByTagName('figure');
+    for (var i = 0; i < obrazky.length; i++) {
+        obrazky[i].src = obrazky[i].src.replace(/_Snaps|_Boxarts/g, '_Titles');
+    }
+}
 showHideBeta.dispatchEvent(new Event('change'));
 showHideDemo.dispatchEvent(new Event('change'));
 showHideAftermarket.dispatchEvent(new Event('change'));
