@@ -1,6 +1,8 @@
 const filterInput = document.getElementById('filterInput');
 const figureList = document.getElementById('figureList');
 const figures = figureList.getElementsByTagName('figure');
+var multiply = 1;
+var size = 160;
 filterInput.focus();
 filterInput.addEventListener('input', function () {
     const filterText = filterInput.value.toLowerCase();
@@ -85,10 +87,11 @@ function change80() {
   var obrazky = document.getElementsByTagName('img');
   var figurky = document.getElementsByTagName('figure');
   for (var i = 0; i < obrazky.length; i++) {
-    obrazky[i].style.width = '80px';
+    size = 80;
+    obrazky[i].style.width = size * multiply;
     obrazky[i].style.height = '60px';
-    figurky[i].style.width = '80px';
-    figurky[i].style.height = '80px';
+    figurky[i].style.width = size;
+    figurky[i].style.height = size;
     figurky[i].style.fontSize = '8px';
   }
 }
@@ -96,10 +99,11 @@ function change120() {
   var obrazky = document.getElementsByTagName('img');
   var figurky = document.getElementsByTagName('figure');
   for (var i = 0; i < obrazky.length; i++) {
-    obrazky[i].style.width = '120px';
+    size = 120;
+    obrazky[i].style.width = size * multiply;
     obrazky[i].style.height = '90px';
-    figurky[i].style.width = '120px';
-    figurky[i].style.height = '120px';
+    figurky[i].style.width = size;
+    figurky[i].style.height = size;
     figurky[i].style.fontSize = '10px';
   }
 }
@@ -107,10 +111,11 @@ function change160() {
   var obrazky = document.getElementsByTagName('img');
   var figurky = document.getElementsByTagName('figure');
   for (var i = 0; i < obrazky.length; i++) {
-    obrazky[i].style.width = '160px';
+    size = 160;
+    obrazky[i].style.width = size * multiply;
     obrazky[i].style.height = '120px';
-    figurky[i].style.width = '160px';
-    figurky[i].style.height = '160px';
+    figurky[i].style.width = size;
+    figurky[i].style.height = size;
     figurky[i].style.fontSize = '12px';
   }
 }
@@ -118,10 +123,11 @@ function change240() {
   var obrazky = document.getElementsByTagName('img');
   var figurky = document.getElementsByTagName('figure');
   for (var i = 0; i < obrazky.length; i++) {
-    obrazky[i].style.width = '240px';
+    size = 240;
+    obrazky[i].style.width = size * multiply;
     obrazky[i].style.height = '180px';
-    figurky[i].style.width = '240px';
-    figurky[i].style.height = '240px';
+    figurky[i].style.width = size;
+    figurky[i].style.height = size;
     figurky[i].style.fontSize = '14px';
   }
 }
@@ -129,32 +135,39 @@ function change320() {
   var obrazky = document.getElementsByTagName('img');
   var figurky = document.getElementsByTagName('figure');
   for (var i = 0; i < obrazky.length; i++) {
-    obrazky[i].style.width = '320px';
+    size = 320;
+    obrazky[i].style.width = size * multiply;
     obrazky[i].style.height = '240px';
-    figurky[i].style.width = '320px';
-    figurky[i].style.height = '320px';
+    figurky[i].style.width = size;
+    figurky[i].style.height = size;
     figurky[i].style.fontSize = '16px';
   }
 }
 function boxarts() {
     var obrazky = document.getElementsByTagName('img');
     var figurky = document.getElementsByTagName('figure');
+    multiply = 0.5;
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].src = obrazky[i].src.replace(/_Snaps|_Titles/g, '_Boxarts');
+        obrazky[i].style.width = size * multiply;
     }
 }
 function snaps() {
     var obrazky = document.getElementsByTagName('img');
     var figurky = document.getElementsByTagName('figure');
+    multiply = 1;
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].src = obrazky[i].src.replace(/_Boxarts|_Titles/g, '_Snaps');
+        obrazky[i].style.width = size * multiply;
     }
 }
 function titles() {
     var obrazky = document.getElementsByTagName('img');
     var figurky = document.getElementsByTagName('figure');
+    multiply = 1;
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].src = obrazky[i].src.replace(/_Snaps|_Boxarts/g, '_Titles');
+        obrazky[i].style.width = size * multiply;
     }
 }
 showHideBeta.dispatchEvent(new Event('change'));
