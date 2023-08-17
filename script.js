@@ -146,7 +146,7 @@ function change320() {
 function boxarts() {
     var obrazky = document.getElementsByTagName('img');
     var figurky = document.getElementsByTagName('figure');
-    multiply = 0.5;
+    multiply = 0.5625;
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].src = obrazky[i].src.replace(/_Snaps|_Titles/g, '_Boxarts');
         obrazky[i].style.width = size * multiply;
