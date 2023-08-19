@@ -147,6 +147,9 @@ function boxarts() {
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].style.visibility = "visible";
         obrazky[i].src = obrazky[i].src.replace(/_Snaps|_Titles/g, '_Boxarts');
+        obrazky[i].onerror = function() {
+            this.style.visibility = "hidden";
+        };
     }
 }
 function snaps() {
@@ -154,6 +157,9 @@ function snaps() {
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].style.visibility = "visible";
         obrazky[i].src = obrazky[i].src.replace(/_Boxarts|_Titles/g, '_Snaps');
+        obrazky[i].onerror = function() {
+            this.style.visibility = "hidden";
+        };
     }
 }
 function titles() {
@@ -161,11 +167,14 @@ function titles() {
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].style.visibility = "visible";
         obrazky[i].src = obrazky[i].src.replace(/_Snaps|_Boxarts/g, '_Titles');
+        obrazky[i].onerror = function() {
+            this.style.visibility = "hidden";
+        };
     }
 }
-function imgonerror(image) { image.style.visibility = "hidden"; }
-var obrazky = document.querySelectorAll("img");
-for (var i = 0; i < obrazky.length; i++) { obrazky[i].onerror = function() { imgonerror(this); }; }
+//function imgonerror(image) { image.style.visibility = "hidden"; }
+//var obrazky = document.querySelectorAll("img");
+//for (var i = 0; i < obrazky.length; i++) { obrazky[i].onerror = function() { imgonerror(this); }; }
 showHideBeta.dispatchEvent(new Event('change'));
 showHideDemo.dispatchEvent(new Event('change'));
 showHideAftermarket.dispatchEvent(new Event('change'));
@@ -174,3 +183,4 @@ showHideUnl.dispatchEvent(new Event('change'));
 showHideProgram.dispatchEvent(new Event('change'));
 showHideAlt.dispatchEvent(new Event('change'));
 showHidePirate.dispatchEvent(new Event('change'));
+snaps();
