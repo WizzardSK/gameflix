@@ -1,7 +1,6 @@
 const filterInput = document.getElementById('filterInput');
 const figureList = document.getElementById('figureList');
 const figures = figureList.getElementsByTagName('figure');
-var multiply = 1;
 var size = 160;
 filterInput.focus();
 filterInput.addEventListener('input', function () {
@@ -88,7 +87,7 @@ function change80() {
   var figurky = document.getElementsByTagName('figure');
   for (var i = 0; i < obrazky.length; i++) {
     size = 80;
-    obrazky[i].style.width = size * multiply;
+    obrazky[i].style.width = size;
     obrazky[i].style.height = '60px';
     figurky[i].style.width = size;
     figurky[i].style.height = size;
@@ -100,7 +99,7 @@ function change120() {
   var figurky = document.getElementsByTagName('figure');
   for (var i = 0; i < obrazky.length; i++) {
     size = 120;
-    obrazky[i].style.width = size * multiply;
+    obrazky[i].style.width = size;
     obrazky[i].style.height = '90px';
     figurky[i].style.width = size;
     figurky[i].style.height = size;
@@ -112,7 +111,7 @@ function change160() {
   var figurky = document.getElementsByTagName('figure');
   for (var i = 0; i < obrazky.length; i++) {
     size = 160;
-    obrazky[i].style.width = size * multiply;
+    obrazky[i].style.width = size;
     obrazky[i].style.height = '120px';
     figurky[i].style.width = size;
     figurky[i].style.height = size;
@@ -124,7 +123,7 @@ function change240() {
   var figurky = document.getElementsByTagName('figure');
   for (var i = 0; i < obrazky.length; i++) {
     size = 240;
-    obrazky[i].style.width = size * multiply;
+    obrazky[i].style.width = size;
     obrazky[i].style.height = '180px';
     figurky[i].style.width = size;
     figurky[i].style.height = size;
@@ -136,8 +135,8 @@ function change320() {
   var figurky = document.getElementsByTagName('figure');
   for (var i = 0; i < obrazky.length; i++) {
     size = 320;
-    obrazky[i].style.width = size * multiply;
-    obrazky[i].style.height = '240px';
+    obrazky[i].style.width = size;
+    obrazky[i].style.height = "240px";
     figurky[i].style.width = size;
     figurky[i].style.height = size;
     figurky[i].style.fontSize = '16px';
@@ -146,28 +145,26 @@ function change320() {
 function boxarts() {
     var obrazky = document.getElementsByTagName('img');
     var figurky = document.getElementsByTagName('figure');
-    multiply = 0.5625;
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].src = obrazky[i].src.replace(/_Snaps|_Titles/g, '_Boxarts');
-        obrazky[i].style.width = size * multiply;
+        obrazky[i].style.width = "100%";
+        obrazky[i].style.height = "75%";
     }
 }
 function snaps() {
     var obrazky = document.getElementsByTagName('img');
     var figurky = document.getElementsByTagName('figure');
-    multiply = 1;
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].src = obrazky[i].src.replace(/_Boxarts|_Titles/g, '_Snaps');
-        obrazky[i].style.width = size * multiply;
+        obrazky[i].style.width = size;
     }
 }
 function titles() {
     var obrazky = document.getElementsByTagName('img');
     var figurky = document.getElementsByTagName('figure');
-    multiply = 1;
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].src = obrazky[i].src.replace(/_Snaps|_Boxarts/g, '_Titles');
-        obrazky[i].style.width = size * multiply;
+        obrazky[i].style.width = size;
     }
 }
 showHideBeta.dispatchEvent(new Event('change'));
