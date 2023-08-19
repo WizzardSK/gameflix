@@ -147,8 +147,6 @@ function boxarts() {
     var figurky = document.getElementsByTagName('figure');
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].src = obrazky[i].src.replace(/_Snaps|_Titles/g, '_Boxarts');
-        obrazky[i].style.width = "100%";
-        obrazky[i].style.height = "75%";
     }
 }
 function snaps() {
@@ -156,7 +154,6 @@ function snaps() {
     var figurky = document.getElementsByTagName('figure');
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].src = obrazky[i].src.replace(/_Boxarts|_Titles/g, '_Snaps');
-        obrazky[i].style.width = size;
     }
 }
 function titles() {
@@ -164,7 +161,6 @@ function titles() {
     var figurky = document.getElementsByTagName('figure');
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].src = obrazky[i].src.replace(/_Snaps|_Boxarts/g, '_Titles');
-        obrazky[i].style.width = size;
     }
 }
 showHideBeta.dispatchEvent(new Event('change'));
