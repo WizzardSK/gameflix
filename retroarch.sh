@@ -45,7 +45,7 @@ case "$adresar" in
   "ngpc"|"SNK - NeoGeo Pocket Color")                           core="mednafen_ngp" ;;
   "neogeocd"|"SNK - Neo Geo CD")                                command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/neocd_libretro.so ~/iso/*.cue" ;;
 
-  "atari800")                                                   core="atari800" ;;
+  "atari800")                                                   command="atari800 \"$1\"" ;;
   "amstradcpc")                                                 core="cap32" ;;
   "zxspectrum")                                                 core="fuse" ;;
   "dos")                                                        core="dosbox_pure" ;;
