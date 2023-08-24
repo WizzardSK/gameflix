@@ -54,6 +54,8 @@ You also need `mount-zip` program to use Amstrad CPC, ZX Spectrum and Atari 800 
 ## Web version
 [mount.sh](mount.sh) script also generates a `gameflix.html` web page in your home directory which is automatically opened in default browser. Firefox is recommended. Web page contains links to all the platforms supported with all the games available. The game is launched after clicking on the thumbnail. It is necessary to associate the zip files and other rom files with `retroarch.sh` script, which is also downloaded into home directory. It automatically launches RetroArch with correct core or standalone emulator. You may edit that file according to your needs.
 
+Demo version is here: https://wizzardsk.github.io/
+
 ## Usage - Batocera Linux
 For Batocera, you need to copy [custom.sh](batocera/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone config file in ./config/rclone folder in system folder. Thumbnail folders are mounting too.
 
