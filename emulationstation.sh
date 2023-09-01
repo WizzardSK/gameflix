@@ -60,8 +60,14 @@ for each in "${roms[@]}"; do
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-        echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
-        echo "<figure><a onclick=\"window.location.href='https://${location}/${rom[1]}/${ahref}'\"><img title=\"${line%.*}\" loading=lazy src=\"https://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/online/${rom[0]}.html
+
+        rom[2]=$(echo ${rom[2]} | sed 's/ /_/g')
+        echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"https://github.com/libretro-thumbnails/${rom[2]}/blob/master/Named_Snaps/${line%.*}.png?raw=true\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
+        echo "<figure><a onclick=\"window.location.href='https://${location}/${rom[1]}/${ahref}'\"><img title=\"${line%.*}\" loading=lazy src=\"https://github.com/libretro-thumbnails/${rom[2]}/blob/master/Named_Snaps/${line%.*}.png?raw=true\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/online/${rom[0]}.html      
+        
+//        echo "<figure><a href=\"roms/${rom[0]}/${line}\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/${rom[0]}.html
+//        echo "<figure><a onclick=\"window.location.href='https://${location}/${rom[1]}/${ahref}'\"><img title=\"${line%.*}\" loading=lazy src=\"https://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></a></figure>" >> ~/online/${rom[0]}.html
+        
         echo ${line} >> ~/${rom[0]}.txt;
         ((pocet++))
         ((total++))
@@ -109,5 +115,4 @@ done
 echo "<p><b>Total: $total</b>" >> ~/systems.html
 echo "<p><b>Platforms: $platforms</b>" >> ~/systems.html
 
-# emulationstation &
 xdg-open gameflix.html
