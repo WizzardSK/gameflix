@@ -1,5 +1,5 @@
 body { font-size: 15; font-family: Arial; }
-figure { margin: 0; display: inline-block; width: 160; height: 160; font-size: 12px; font-family: Arial; vertical-align: top; transition: transform 0.3s ease; background: white; text-align: center }
+figure { cursor: pointer; margin: 0; display: inline-block; width: 160; height: 160; font-size: 12px; font-family: Arial; vertical-align: top; transition: transform 0.3s ease; background: white; text-align: center }
 img    { width: 160px; height: 120px; background-color: white; object-fit: contain }
 figure:hover { transform: scale(2); box-shadow: 0 0 20px rgba(0, 0, 0, 1) }
 figure:active { transform: scale(2) translateY(10px) translateX(10px) }
