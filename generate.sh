@@ -1,5 +1,6 @@
 #!/bin/bash
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
+IFS=","
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/systems.html
 echo "<frameset border=0 cols='240, 100%'><frame name='menu' src='systems.html'><frame name='main'></frameset>" > ~/gameflix.html
 for each in "${roms[@]}"; do
