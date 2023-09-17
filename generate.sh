@@ -31,8 +31,8 @@ for each in "${roms[@]}"; do
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
-        echo "<figure onclick=\"window.location.href='roms/${rom[0]}/${ahref}'\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${rom[0]}.html
-        echo "<figure onclick=\"window.location.href='https://${location}/${rom[1]}/${ahref}'\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/online/${rom[0]}.html        
+        echo "<figure onclick=\"window.location.href='roms/${rom[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${rom[0]}.html
+        echo "<figure onclick=\"window.location.href='https://${location}/${rom[1]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/online/${rom[0]}.html        
         echo ${line} >> ~/${rom[0]}.txt;
         ((pocet++))
         ((total++))
@@ -65,8 +65,8 @@ for each in "${zips[@]}"; do
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")    
         echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
-        echo "<figure onclick=\"window.location.href='roms/${zip[0]}/${ahref}'\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${zip[0]}.html
-        echo "<figure onclick=\"window.location.href='https://myrient.erista.me/files/${zip[1]}'\"><img title=\"${line%.*}\" loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/online/${zip[0]}.html
+        echo "<figure onclick=\"window.location.href='roms/${zip[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${zip[0]}.html
+        echo "<figure onclick=\"window.location.href='https://myrient.erista.me/files/${zip[1]}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/online/${zip[0]}.html
         echo ${line} >> ~/${zip[0]}.txt;        
         ((pocet++))
         ((total++))
@@ -80,5 +80,3 @@ for each in "${zips[@]}"; do
 done
 echo "<p><b>Total: $total</b>" >> ~/systems.html
 echo "<p><b>Platforms: $platforms</b>" >> ~/systems.html
-
-xdg-open gameflix.html
