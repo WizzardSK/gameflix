@@ -42,7 +42,7 @@ for each in "${roms[@]}"; do
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   echo "</div><script src=\"script.js\"></script>" >> ~/${rom[0]}.html
   echo "</div><script src=\"script.js\"></script>" >> ~/online/${rom[0]}.html
-  echo "<a href='${rom[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${rom[3]} ($pocet)</a><br />" >> ~/systems.html
+  echo "<a href='${rom[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${rom[3]}</a> ($pocet)<br />" >> ~/systems.html
 done
 for each in "${zips[@]}"; do
   ((platforms++))
@@ -76,7 +76,7 @@ for each in "${zips[@]}"; do
   echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   echo "</div><script src=\"script.js\"></script>" >> ~/${zip[0]}.html
   echo "</div><script src=\"script.js\"></script>" >> ~/online/${zip[0]}.html
-  echo "<a href='${zip[0]}.html' target='main' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]} ($pocet)</a><br />" >> ~/systems.html
+  echo "<a href='${zip[0]}.html' target='main' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]}</a> ($pocet)<br />" >> ~/systems.html
 done
 echo "<p><b>Total: $total</b>" >> ~/systems.html
 echo "<p><b>Platforms: $platforms</b>" >> ~/systems.html
