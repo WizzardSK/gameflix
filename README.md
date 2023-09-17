@@ -25,6 +25,7 @@ For BIOS, check this page: https://github.com/Luciano2018
 | ZX Spectrum | [TOSEC](https://myrient.erista.me/files/TOSEC/Sinclair/ZX%20Spectrum/Games/[DSK]) | [libretro](http://thumbnails.libretro.com/Sinclair%20-%20ZX%20Spectrum)
 | Commodore 64 | [No-Intro](https://myrient.erista.me/files/No-Intro/Commodore%20-%20Commodore%2064) | [libretro](http://thumbnails.libretro.com/Commodore%20-%2064) 
 | Amiga  | [No-Intro](https://myrient.erista.me/files/No-Intro/Commodore%20-%20Amiga) | [libretro](http://thumbnails.libretro.com/Commodore%20-%20Amiga) 
+| Amiga CD32 | [Redump](https://myrient.erista.me/files/Redump/Commodore%20-%20Amiga%20CD32) | [libretro](https://thumbnails.libretro.com/Commodore%20-%20CD32) 
 | Intellivision  | [No-Intro](https://myrient.erista.me/files/No-Intro/Mattel%20-%20Intellivision) | [libretro](http://thumbnails.libretro.com/Mattel%20-%20Intellivision) 
 | Colecovision | [No-Intro](https://myrient.erista.me/files/No-Intro/Coleco%20-%20ColecoVision) | [libretro](http://thumbnails.libretro.com/Coleco%20-%20ColecoVision) 
 | PlayStation  | [Redump](https://myrient.erista.me/files/Redump/Sony%20-%20PlayStation) | [libretro](http://thumbnails.libretro.com/Sony%20-%20PlayStation)
