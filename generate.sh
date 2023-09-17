@@ -1,7 +1,7 @@
 #!/bin/bash
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 IFS=","
-echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/systems.html
+echo "<h3 id=\"platforma\"></h3><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/systems.html
 echo "<frameset border=0 cols='240, 100%'><frame name='menu' src='systems.html'><frame name='main'></frameset>" > ~/gameflix.html
 for each in "${roms[@]}"; do
   ((platforms++))
@@ -42,7 +42,7 @@ for each in "${roms[@]}"; do
   echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   echo "</div><script src=\"script.js\"></script>" >> ~/${rom[0]}.html
   echo "</div><script src=\"script.js\"></script>" >> ~/online/${rom[0]}.html
-  echo "<a href='${rom[0]}.html' target='main'>${rom[3]} ($pocet)</a><br />" >> ~/systems.html
+  echo "<a href='${rom[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${rom[3]} ($pocet)</a><br />" >> ~/systems.html
 done
 for each in "${zips[@]}"; do
   ((platforms++))
