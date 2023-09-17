@@ -30,6 +30,7 @@ For BIOS, check this page: https://github.com/Luciano2018
 | PlayStation  | [Redump](https://myrient.erista.me/files/Redump/Sony%20-%20PlayStation) | [libretro](http://thumbnails.libretro.com/Sony%20-%20PlayStation/Named_Snaps)
 | PSP | [Redump](https://myrient.erista.me/files/Redump/Sony%20-%20PlayStation%20Portable) | [libretro](http://thumbnails.libretro.com/Sony%20-%20PlayStation%20Portable/Named_Snaps)
 | PlayStation 2 | [Redump](https://myrient.erista.me/files/Redump/Sony%20-%20PlayStation%202) | [libretro](http://thumbnails.libretro.com/Sony%20-%20PlayStation%202/Named_Snaps)
+| Game Boy | [No-Intro](https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Game%20Boy) | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Game%20Boy/Named_Snaps)
 | Game Boy Color | [No-Intro](https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Game%20Boy%20Color) | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Game%20Boy%20Color/Named_Snaps)
 | Game Boy Advance | [No-Intro](https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Game%20Boy%20Advance) | [libretro](https://thumbnails.libretro.com/Nintendo%20-%20Game%20Boy%20Advance/Named_Snaps)
 | NES | [No-Intro](https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Nintendo%20Entertainment%20System%20(Headered)) | [libretro](http://thumbnails.libretro.com/Nintendo%20-%20Nintendo%20Entertainment%20System/Named_Snaps) |
