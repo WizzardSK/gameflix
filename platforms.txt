@@ -40,7 +40,7 @@ roms+=("ngp,No-Intro/SNK - NeoGeo Pocket,SNK - Neo Geo Pocket,Neo Geo Pocket")
 roms+=("ngpc,No-Intro/SNK - NeoGeo Pocket Color,SNK - Neo Geo Pocket Color,Neo Geo Pocket Color")
 roms+=("neogeocd,Redump/SNK - Neo Geo CD,SNK - Neo Geo CD,Neo Geo CD")
 
-roms+=("dos,archive:exov5_2/eXo/eXoDOS,DOS,MS-DOS")
+roms+=("dos,eye:Games/eXo/eXoDOS_v5/eXo/eXoDOS,DOS,MS-DOS")
 
 zips+=("atari800,TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip,Atari - 8-bit,Atari 8bit")
 zips+=("amstradcpc,TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip,Amstrad - CPC,Amstrad CPC")
