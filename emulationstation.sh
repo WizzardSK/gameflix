@@ -35,12 +35,9 @@ for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p ~/.emulationstation/downloaded_media/${rom[0]}
   if grep -q ":" <<< "${rom[1]}"; then
-    location="archive.org/download"
     mkdir -p ~/roms/${rom[0]}
-    rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
-    rom[1]="${rom[1]/archive:/}"
+    rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon    
   else
-    location="myrient.erista.me/files"
     ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   fi
   ln -s ~/media/${rom[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
