@@ -6,7 +6,6 @@ echo "<frameset border=0 cols='240, 100%'><frame name='menu' src='systems.html'>
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
-  mkdir -p ~/.emulationstation/downloaded_media/${rom[0]}
   if grep -q ":" <<< "${rom[1]}"; then
     location="the-eye.eu/public"
     mkdir -p ~/roms/${rom[0]}
@@ -16,12 +15,8 @@ for each in "${roms[@]}"; do
     location="myrient.erista.me/files"
     ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   fi
-  ln -s ~/media/${rom[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${rom[0]}/screenshots
-  mkdir -p ~/.emulationstation/gamelists/${rom[0]}
-  > ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   > ~/${rom[0]}.html
   > ~/${rom[0]}.txt
-  echo "<gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   wget -O ~/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   wget -O ~/online/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0    
@@ -30,7 +25,6 @@ for each in "${roms[@]}"; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")
-        echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
         echo "<figure onclick=\"window.location.href='roms/${rom[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${rom[0]}.html
         echo "<figure onclick=\"window.location.href='https://${location}/${rom[1]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/online/${rom[0]}.html        
         echo ${line} >> ~/${rom[0]}.txt;
@@ -39,7 +33,6 @@ for each in "${roms[@]}"; do
       fi
     done
   } < <(ls ~/roms/${rom[0]})
-  echo "</gameList>" >> ~/.emulationstation/gamelists/${rom[0]}/gamelist.xml
   echo "</div><script src=\"script.js\"></script>" >> ~/${rom[0]}.html
   echo "</div><script src=\"script.js\"></script>" >> ~/online/${rom[0]}.html
   echo "<a href='${rom[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${rom[3]}</a> ($pocet)<br />" >> ~/systems.html
@@ -48,14 +41,9 @@ for each in "${zips[@]}"; do
   ((platforms++))
   read -ra zip < <(printf '%s' "$each")
   mkdir -p ~/roms/${zip[0]}
-  mkdir -p ~/.emulationstation/downloaded_media/${zip[0]}
-  ln -s ~/media/${zip[2]}/Named_Snaps ~/.emulationstation/downloaded_media/${zip[0]}/screenshots
   mount-zip ~/myrient/${zip[1]} ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-  mkdir -p ~/.emulationstation/gamelists/${zip[0]}
-  > ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   > ~/${zip[0]}.html
   > ~/${zip[0]}.txt
-  echo "<gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   wget -O ~/${zip[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   wget -O ~/online/${zip[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0
@@ -64,7 +52,6 @@ for each in "${zips[@]}"; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")    
-        echo "<game><path>./${line}</path></game>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
         echo "<figure onclick=\"window.location.href='roms/${zip[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${zip[0]}.html
         echo "<figure onclick=\"window.location.href='https://myrient.erista.me/files/${zip[1]}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/online/${zip[0]}.html
         echo ${line} >> ~/${zip[0]}.txt;        
@@ -73,7 +60,6 @@ for each in "${zips[@]}"; do
       fi
     done
   } < <(ls ~/roms/${zip[0]})
-  echo "</gameList>" >> ~/.emulationstation/gamelists/${zip[0]}/gamelist.xml
   echo "</div><script src=\"script.js\"></script>" >> ~/${zip[0]}.html
   echo "</div><script src=\"script.js\"></script>" >> ~/online/${zip[0]}.html
   echo "<a href='${zip[0]}.html' target='main' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]}</a> ($pocet)<br />" >> ~/systems.html
