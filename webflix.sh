@@ -1,6 +1,6 @@
 #!/bin/bash
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
-if [ ! -f ~/.config/rclone/rclone.conf ]; then wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf; fi
+wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf
 wget -O ~/retroarch.sh https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.sh
 wget -O ~/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/style.css
 wget -O ~/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
