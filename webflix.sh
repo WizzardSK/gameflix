@@ -27,17 +27,15 @@ rclone mount myrient:TOSEC ~/myrient/TOSEC --no-checksum --no-modtime --attr-tim
 
 IFS=","
 for each in "${roms[@]}"; do
-  ((platforms++))
   read -ra rom < <(printf '%s' "$each")
   if grep -q ":" <<< "${rom[1]}"; then
     mkdir -p ~/roms/${rom[0]}
     rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon 
-  else
+  #else
     #ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   fi
 done
 for each in "${zips[@]}"; do
-  ((platforms++))
   read -ra zip < <(printf '%s' "$each")
   mkdir -p ~/roms/${zip[0]}
   mount-zip ~/myrient/${zip[1]} ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
