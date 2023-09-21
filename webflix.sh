@@ -8,18 +8,12 @@ wget -O ~/.local/share/applications/retroarch.sh.desktop https://raw.githubuserc
 chmod +x ~/retroarch.sh
 xdg-mime default ~/.local/share/applications/retroarch.sh.desktop application/zip
 
-#rm -rf ~/.cache/rclone
-#rm -rf ~/roms
-#mkdir -p ~/media
-
 mkdir -p ~/myrient
 mkdir -p ~/myrient/No-Intro
 mkdir -p ~/myrient/Redump
 mkdir -p ~/myrient/TOSEC
 mkdir -p ~/roms
 mkdir -p ~/iso
-
-#rclone mount thumbnails: ~/media --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 
 rclone mount myrient:No-Intro ~/myrient/No-Intro --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
 rclone mount myrient:Redump ~/myrient/Redump --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon
@@ -31,8 +25,6 @@ for each in "${roms[@]}"; do
   if grep -q ":" <<< "${rom[1]}"; then
     mkdir -p ~/roms/${rom[0]}
     rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon 
-  #else
-    #ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   fi
 done
 for each in "${zips[@]}"; do
