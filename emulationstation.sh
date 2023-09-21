@@ -36,7 +36,7 @@ for each in "${roms[@]}"; do
   mkdir -p ~/.emulationstation/downloaded_media/${rom[0]}
   if grep -q ":" <<< "${rom[1]}"; then
     mkdir -p ~/roms/${rom[0]}
-    rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon --vfs-cache-mode full
+    rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon 
   else
     ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   fi
