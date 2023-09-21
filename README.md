@@ -55,10 +55,8 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Neo Geo Pocket Color | [No-Intro](https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color) | [libretro](https://thumbnails.libretro.com/SNK%20-%20Neo%20Geo%20Pocket%20Color)
 | Neo Geo CD | [Redump](https://myrient.erista.me/files/Redump/SNK%20-%20Neo%20Geo%20CD) | [libretro](https://thumbnails.libretro.com/SNK%20-%20Neo%20Geo%20CD)
 
-## Usage - EmulationStation DE
+## Web version
 `rclone` binary is needed on host system (version 1.60+). Also it is needed to have rclone configured for all the remotes. Attached [rclone.conf](/.config/rclone/rclone.conf) should be placed in `~/.config/rclone/` with Archive S3 keys added from https://archive.org/account/s3.php If your version is not up to date, grab it from here: https://rclone.org/downloads/
-
-[es_systems.xml](.emulationstation/custom_systems/es_systems.xml) is used to configure roms directories for your emulators and alternative emulators for ES-DE frontend. It is updated automatically from this repository when running mount script.
 
 Run [mount.sh](mount.sh) or `emulationstation.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/emulationstation.sh)` to mount the library.
 
@@ -70,8 +68,7 @@ Now you may run the roms directly without copying them to local storage, just li
 
 You also need `mount-zip` program to use Amstrad CPC, ZX Spectrum and Atari 800 games. They are stored in zipped libraries on remote place so the program needs to mount it like folder. It is also used to run zipped ISO files for PSP, PS2, PC Engine CD.
 
-## Web version
-[mount.sh](mount.sh) script also generates a `gameflix.html` web page in your home directory which is automatically opened in default browser. Firefox is recommended. Web page contains links to all the platforms supported with all the games available. The game is launched after clicking on the thumbnail. It is necessary to associate the zip files and other rom files with `retroarch.sh` script, which is also downloaded into home directory. It automatically launches RetroArch with correct core or standalone emulator. You may edit that file according to your needs.
+[mount.sh](mount.sh) script generates a `gameflix.html` web page in your home directory which is automatically opened in default browser. Firefox is recommended. Web page contains links to all the platforms supported with all the games available. The game is launched after clicking on the thumbnail. It is necessary to associate the zip files and other rom files with `retroarch.sh` script, which is also downloaded into home directory. It automatically launches RetroArch with correct core or standalone emulator. You may edit that file according to your needs.
 
 Demo version is here: https://wizzardsk.github.io/
 
