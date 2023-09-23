@@ -50,8 +50,8 @@ case "$adresar" in
   "amstradcpc")                                                 core="cap32" ;;
   "zxspectrum")                                                 core="fuse" ;;
   "dos")                                                        core="dosbox_pure" ;;
+  "xbox"|"Microsoft - Xbox")                                    command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/xemu ~/iso/*.iso" ;;
 
 esac
 /usr/bin/retroarch -L ~/.config/retroarch/cores/${core}_libretro.so "$1"
-flatpak run org.libretro.RetroArch -L ~/.config/retroarch/cores/${core}_libretro.so "$1"
 eval "$command"
