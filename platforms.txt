@@ -14,6 +14,7 @@ roms+=("colecovision,No-Intro/Coleco - ColecoVision,Coleco - ColecoVision,Coleco
 roms+=("gb,No-Intro/Nintendo - Game Boy,Nintendo - Game Boy,Game Boy")
 roms+=("gbc,No-Intro/Nintendo - Game Boy Color,Nintendo - Game Boy Color,Game Boy Color")
 roms+=("gba,No-Intro/Nintendo - Game Boy Advance,Nintendo - Game Boy Advance,Game Boy Advance")
+roms+=("nds,No-Intro/Nintendo - Nintendo DS (Decrypted),Nintendo - Nintendo DS,Nintendo DS")
 roms+=("nes,No-Intro/Nintendo - Nintendo Entertainment System (Headered),Nintendo - Nintendo Entertainment System,Nintendo")
 roms+=("snes,No-Intro/Nintendo - Super Nintendo Entertainment System,Nintendo - Super Nintendo Entertainment System,Super Nintendo")
 roms+=("n64,No-Intro/Nintendo - Nintendo 64 (ByteSwapped),Nintendo - Nintendo 64,Nintendo 64")
