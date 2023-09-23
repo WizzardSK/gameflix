@@ -28,6 +28,7 @@ case "$adresar" in
   "gb"|"Nintendo - Game Boy")                                   core="sameboy" ;;
   "gbc"|"Nintendo - Game Boy Color")                            core="sameboy" ;;
   "gba"|"Nintendo - Game Boy Advance")                          core="mgba" ;;
+  "nds"|"Nintendo - Nintendo DS (Decrypted)")                   core="melonds" ;;
   "nes"|"Nintendo - Nintendo Entertainment System (Headered)")  core="nestopia" ;;
   "snes"|"Nintendo - Super Nintendo Entertainment System")      core="snes9x" ;;
   "n64"|"Nintendo - Nintendo 64 (ByteSwapped)")                 core="mupen64plus_next" ;;
