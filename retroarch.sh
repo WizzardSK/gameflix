@@ -50,6 +50,8 @@ case "$adresar" in
   "amstradcpc")                                                 core="cap32" ;;
   "zxspectrum")                                                 core="fuse" ;;
   "dos")                                                        core="dosbox_pure" ;;
+  "msx"|"Microsoft - MSX")                                      core="bluemsx" ;;
+  "msx2"|"Microsoft - MSX")                                     core="bluemsx" ;;  
   "xbox"|"Microsoft - Xbox")                                    command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/xemu ~/iso/*.iso" ;;
 
 esac
