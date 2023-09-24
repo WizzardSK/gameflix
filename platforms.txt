@@ -1,5 +1,5 @@
-roms+=("msx,Redump/Microsoft - MSX,Microsoft - MSX,MSX")
-roms+=("msx2,Redump/Microsoft - MSX2,Microsoft - MSX2,MSX2")
+roms+=("msx,No-Intro/Microsoft - MSX,Microsoft - MSX,MSX")
+roms+=("msx2,No-Intro/Microsoft - MSX2,Microsoft - MSX2,MSX2")
 
 roms+=("atari2600,No-Intro/Atari - 2600,Atari - 2600,Atari 2600")
 roms+=("atari5200,No-Intro/Atari - 5200,Atari - 5200,Atari 5200")
