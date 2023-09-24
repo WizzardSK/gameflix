@@ -26,8 +26,8 @@ for each in "${roms[@]}"; do
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")
         echo "<figure onclick=\"window.location.href='roms/${rom[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${rom[0]}.html
-        echo "<figure onclick=\"window.location.href='https://${location}/${rom[1]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/online/${rom[0]}.html        
-        echo ${line} >> ~/${rom[0]}.txt;
+        #echo "<figure onclick=\"window.location.href='https://${location}/${rom[1]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/online/${rom[0]}.html        
+        #echo ${line} >> ~/${rom[0]}.txt;
         ((pocet++))
         ((total++))
       fi
@@ -35,7 +35,7 @@ for each in "${roms[@]}"; do
   } < <(ls ~/roms/${rom[0]})
   echo "</div><script src=\"script.js\"></script>" >> ~/${rom[0]}.html
   #echo "</div><script src=\"script.js\"></script>" >> ~/online/${rom[0]}.html
-  #echo "<a href='${rom[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${rom[3]}</a> ($pocet)<br />" >> ~/systems.html
+  echo "<a href='${rom[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${rom[3]}</a> ($pocet)<br />" >> ~/systems.html
 done
 for each in "${zips[@]}"; do
   ((platforms++))
@@ -53,8 +53,8 @@ for each in "${zips[@]}"; do
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")    
         echo "<figure onclick=\"window.location.href='roms/${zip[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${zip[0]}.html
-        echo "<figure onclick=\"window.location.href='https://myrient.erista.me/files/${zip[1]}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/online/${zip[0]}.html
-        echo ${line} >> ~/${zip[0]}.txt;        
+        #echo "<figure onclick=\"window.location.href='https://myrient.erista.me/files/${zip[1]}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/online/${zip[0]}.html
+        #echo ${line} >> ~/${zip[0]}.txt;        
         ((pocet++))
         ((total++))
       fi
@@ -62,7 +62,7 @@ for each in "${zips[@]}"; do
   } < <(ls ~/roms/${zip[0]})
   echo "</div><script src=\"script.js\"></script>" >> ~/${zip[0]}.html
   #echo "</div><script src=\"script.js\"></script>" >> ~/online/${zip[0]}.html
-  #echo "<a href='${zip[0]}.html' target='main' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]}</a> ($pocet)<br />" >> ~/systems.html
+  echo "<a href='${zip[0]}.html' target='main' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]}</a> ($pocet)<br />" >> ~/systems.html
 done
 echo "<p><b>Total: $total</b>" >> ~/systems.html
 echo "<p><b>Platforms: $platforms</b>" >> ~/systems.html
