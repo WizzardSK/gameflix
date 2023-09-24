@@ -39,6 +39,7 @@ case "$adresar" in
   "ps2"|"Sony - PlayStation 2")                                 command="umount ~/iso; mount-zip \"$1\" ~/iso; ~/*2.AppImage ~/iso/*.iso" ;;
   "psp"|"Sony - PlayStation Portable")                          command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/ppsspp_libretro.so ~/iso/*.iso" ;;
 
+  "pc98"|"NEC - PC-98 series")                                  command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/nekop2_libretro.so ~/iso/*.cue" ;;
   "pcengine"|"NEC - PC Engine - TurboGrafx-16")                 core="mednafen_pce_fast" ;;
   "pcenginecd"|"NEC - PC Engine CD & TurboGrafx CD")            command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/mednafen_pce_fast_libretro.so ~/iso/*.cue" ;;
   "supergrafx"|"NEC - PC Engine SuperGrafx")                    core="mednafen_supergrafx" ;;  
