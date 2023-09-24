@@ -42,6 +42,8 @@ roms+=("ngpc,No-Intro/SNK - NeoGeo Pocket Color,SNK - Neo Geo Pocket Color,Neo G
 roms+=("neogeocd,Redump/SNK - Neo Geo CD,SNK - Neo Geo CD,Neo Geo CD")
 
 roms+=("dos,eye:Games/eXo/eXoDOS_v5/eXo/eXoDOS,DOS,MS-DOS")
+roms+=("msx,Redump/Microsoft - MSX,Microsoft - MSX,MSX")
+roms+=("msx2,Redump/Microsoft - MSX2,Microsoft - MSX2,MSX2")
 roms+=("xbox,Redump/Microsoft - Xbox,Microsoft - Xbox,XBOX")
 
 zips+=("atari800,TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip,Atari - 8-bit,Atari 8bit")
