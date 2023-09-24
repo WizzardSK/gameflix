@@ -1,6 +1,3 @@
-roms+=("msx,No-Intro/Microsoft - MSX,Microsoft - MSX,MSX")
-roms+=("msx2,No-Intro/Microsoft - MSX2,Microsoft - MSX2,MSX2")
-
 roms+=("atari2600,No-Intro/Atari - 2600,Atari - 2600,Atari 2600")
 roms+=("atari5200,No-Intro/Atari - 5200,Atari - 5200,Atari 5200")
 roms+=("atari7800,No-Intro/Atari - 7800,Atari - 7800,Atari 7800")
@@ -45,6 +42,8 @@ roms+=("ngpc,No-Intro/SNK - NeoGeo Pocket Color,SNK - Neo Geo Pocket Color,Neo G
 roms+=("neogeocd,Redump/SNK - Neo Geo CD,SNK - Neo Geo CD,Neo Geo CD")
 
 roms+=("dos,eye:Games/eXo/eXoDOS_v5/eXo/eXoDOS,DOS,MS-DOS")
+roms+=("msx,No-Intro/Microsoft - MSX,Microsoft - MSX,MSX")
+roms+=("msx2,No-Intro/Microsoft - MSX2,Microsoft - MSX2,MSX2")
 roms+=("xbox,Redump/Microsoft - Xbox,Microsoft - Xbox,XBOX")
 
 zips+=("atari800,TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip,Atari - 8-bit,Atari 8bit")
