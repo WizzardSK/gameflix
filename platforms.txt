@@ -1,3 +1,5 @@
+roms+=("supergrafx,No-Intro/NEC - PC Engine SuperGrafx,NEC - PC Engine SuperGrafx,PC Engine 2")
+
 roms+=("atari2600,No-Intro/Atari - 2600,Atari - 2600,Atari 2600")
 roms+=("atari5200,No-Intro/Atari - 5200,Atari - 5200,Atari 5200")
 roms+=("atari7800,No-Intro/Atari - 7800,Atari - 7800,Atari 7800")
@@ -36,6 +38,7 @@ roms+=("ps2,Redump/Sony - PlayStation 2,Sony - PlayStation 2,PlayStation 2")
 
 roms+=("pcengine,No-Intro/NEC - PC Engine - TurboGrafx-16,NEC - PC Engine - TurboGrafx 16,PC Engine")
 roms+=("pcenginecd,Redump/NEC - PC Engine CD & TurboGrafx CD,NEC - PC Engine CD - TurboGrafx-CD,PC Engine CD")
+
 roms+=("3do,Redump/Panasonic - 3DO Interactive Multiplayer,The 3DO Company - 3DO,Panasonic 3DO")
 roms+=("ngp,No-Intro/SNK - NeoGeo Pocket,SNK - Neo Geo Pocket,Neo Geo Pocket")
 roms+=("ngpc,No-Intro/SNK - NeoGeo Pocket Color,SNK - Neo Geo Pocket Color,Neo Geo Pocket Color")
