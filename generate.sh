@@ -16,16 +16,16 @@ for each in "${roms[@]}"; do
     ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   fi
   > ~/${rom[0]}.html
-  > ~/${rom[0]}.txt
-  wget -O ~/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
-  wget -O ~/online/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+  #> ~/${rom[0]}.txt
+  wget -O ~/gameflix/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+  #wget -O ~/online/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0    
   {
     while IFS= read -r line; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")
-        echo "<figure onclick=\"window.location.href='roms/${rom[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${rom[0]}.html
+        echo "<figure onclick=\"window.location.href='roms/${rom[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/gameflix/${rom[0]}.html
         #echo "<figure onclick=\"window.location.href='https://${location}/${rom[1]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/online/${rom[0]}.html        
         #echo ${line} >> ~/${rom[0]}.txt;
         ((pocet++))
@@ -43,16 +43,16 @@ for each in "${zips[@]}"; do
   mkdir -p ~/roms/${zip[0]}
   mount-zip ~/myrient/${zip[1]} ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   > ~/${zip[0]}.html
-  > ~/${zip[0]}.txt
-  wget -O ~/${zip[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
-  wget -O ~/online/${zip[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+  #> ~/${zip[0]}.txt
+  wget -O ~/gameflix/${zip[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+  #wget -O ~/online/${zip[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0
   {
     while IFS= read -r line; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")    
-        echo "<figure onclick=\"window.location.href='roms/${zip[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${zip[0]}.html
+        echo "<figure onclick=\"window.location.href='roms/${zip[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/gameflix/${zip[0]}.html
         #echo "<figure onclick=\"window.location.href='https://myrient.erista.me/files/${zip[1]}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/online/${zip[0]}.html
         #echo ${line} >> ~/${zip[0]}.txt;        
         ((pocet++))
