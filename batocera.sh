@@ -34,13 +34,13 @@ for each in "${roms[@]}"; do
   fi  
   mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
 done
-for each in "${zips[@]}"; do
-  read -ra zip < <(printf '%s' "$each")
-  echo "Mounting ${zip[0]}"
-  mkdir -p /userdata/roms/${zip[0]}/online
-  mkdir -p /userdata/roms/${zip[0]}/images
-  mount-zip /userdata/rom/${zip[1]} /userdata/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-  mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
-done
+#for each in "${zips[@]}"; do
+#  read -ra zip < <(printf '%s' "$each")
+#  echo "Mounting ${zip[0]}"
+#  mkdir -p /userdata/roms/${zip[0]}/online
+#  mkdir -p /userdata/roms/${zip[0]}/images
+#  mount-zip /userdata/rom/${zip[1]} /userdata/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#  mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
+#done
 
 chvt 2; curl http://127.0.0.1:1234/reloadgames
