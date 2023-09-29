@@ -5,7 +5,7 @@ Project for running retro games directly from public online sources on Linux mac
 
 I made this project for my own personal needs, to have the same setup on all my machines.
 
-All games are stored on public services Myrient and The Eye. Thumbnails are used from https://thumbnails.libretro.com/ configured to use with ES-DE frontend. 
+All games are stored on public services Myrient and The Eye. Thumbnails are used from https://thumbnails.libretro.com/ configured to use with some frontend. 
 
 Why is it better than to have all games on local storage? You may have the access to all your games without the need to have a huge storage. Some PSX, PS2, GameCube or Dreamcast games may be very large and using this script you may run them on a Chromebook with small storage (if it may run those emulators). The disadvantage is that you need fast internet connection and even with that the loading of bigger games may be quite slow.
 
@@ -63,7 +63,7 @@ Run [mount.sh](mount.sh) or `emulationstation.sh` or `bash <(curl -Ls https://ra
 
 The library is mounted into `roms` folder in your home directory. If roms directories do not exist, they are automatically created.
 
-Then use the library with any emulation system like Retroarch. It is up to you how you configure the emulators. I am using https://es-de.org/ on Linux on my arm Chromebook, what is basically EmulationStation Desktop Edition suitable for desktop computers, including arm.
+Then use the library with any emulation system like Retroarch. It is up to you how you configure the emulators. I am using my web version on Linux on my arm Chromebook.
 
 Now you may run the roms directly without copying them to local storage, just like Netflix. 
 
