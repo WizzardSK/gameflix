@@ -5,7 +5,7 @@ Project for running retro games directly from public online sources on Linux mac
 
 I made this project for my own personal needs, to have the same setup on all my machines.
 
-All games are stored on public services Internet Archive and Myrient. Thumbnails are used from https://thumbnails.libretro.com/ configured to use with ES-DE frontend. 
+All games are stored on public services Myrient and The Eye. Thumbnails are used from https://thumbnails.libretro.com/ configured to use with ES-DE frontend. 
 
 Why is it better than to have all games on local storage? You may have the access to all your games without the need to have a huge storage. Some PSX, PS2, GameCube or Dreamcast games may be very large and using this script you may run them on a Chromebook with small storage (if it may run those emulators). The disadvantage is that you need fast internet connection and even with that the loading of bigger games may be quite slow.
 
@@ -51,7 +51,7 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Dreamcast |  [Redump](https://myrient.erista.me/files/Redump/Sega%20-%20Dreamcast) | [libretro](http://thumbnails.libretro.com/Sega%20-%20Dreamcast)
 | PC Engine | [No-Intro](https://myrient.erista.me/files/No-Intro/NEC%20-%20PC%20Engine%20-%20TurboGrafx-16) | [libretro](http://thumbnails.libretro.com/NEC%20-%20PC%20Engine%20-%20TurboGrafx%2016)
 | 3DO | [Redump](https://myrient.erista.me/files/Redump/Panasonic%20-%203DO%20Interactive%20Multiplayer) | [libretro](http://thumbnails.libretro.com/The%203DO%20Company%20-%203D)
-| DOS | [eXoDOS](https://archive.org/download/exov5_2/eXo/eXoDOS) | [libretro](http://thumbnails.libretro.com/DOS)
+| DOS | [eXoDOS](https://the-eye.eu/public/Games/eXo/eXoDOS_v5/eXo/eXoDOS) | [libretro](http://thumbnails.libretro.com/DOS)
 | Neo Geo Pocket | [No-Intro](https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket) | [libretro](https://thumbnails.libretro.com/SNK%20-%20Neo%20Geo%20Pocket)
 | Neo Geo Pocket Color | [No-Intro](https://myrient.erista.me/files/No-Intro/SNK%20-%20NeoGeo%20Pocket%20Color) | [libretro](https://thumbnails.libretro.com/SNK%20-%20Neo%20Geo%20Pocket%20Color)
 | Neo Geo CD | [Redump](https://myrient.erista.me/files/Redump/SNK%20-%20Neo%20Geo%20CD) | [libretro](https://thumbnails.libretro.com/SNK%20-%20Neo%20Geo%20CD)
