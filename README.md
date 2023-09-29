@@ -16,7 +16,7 @@ For BIOS, check this page: https://github.com/Luciano2018
 ## Web version
 `rclone` binary is needed on host system (version 1.60+). Also it is needed to have rclone configured for all the remotes. Attached [rclone.conf](/.config/rclone/rclone.conf) should be placed in `~/.config/rclone/` If your version is not up to date, grab it from here: https://rclone.org/downloads/
 
-Run [mount.sh](mount.sh) or `emulationstation.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/emulationstation.sh)` to mount the library.
+Run [mount.sh](mount.sh) or `webflix.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/webflix.sh)` to mount the library.
 
 The library is mounted into `roms` folder in your home directory. If roms directories do not exist, they are automatically created.
 
