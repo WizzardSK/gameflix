@@ -57,7 +57,7 @@ For BIOS, check this page: https://github.com/Luciano2018
 | Neo Geo CD | [Redump](https://myrient.erista.me/files/Redump/SNK%20-%20Neo%20Geo%20CD) | [libretro](https://thumbnails.libretro.com/SNK%20-%20Neo%20Geo%20CD)
 
 ## Web version
-`rclone` binary is needed on host system (version 1.60+). Also it is needed to have rclone configured for all the remotes. Attached [rclone.conf](/.config/rclone/rclone.conf) should be placed in `~/.config/rclone/` with Archive S3 keys added from https://archive.org/account/s3.php If your version is not up to date, grab it from here: https://rclone.org/downloads/
+`rclone` binary is needed on host system (version 1.60+). Also it is needed to have rclone configured for all the remotes. Attached [rclone.conf](/.config/rclone/rclone.conf) should be placed in `~/.config/rclone/` If your version is not up to date, grab it from here: https://rclone.org/downloads/
 
 Run [mount.sh](mount.sh) or `emulationstation.sh` or `bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/emulationstation.sh)` to mount the library.
 
