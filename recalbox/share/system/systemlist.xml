@@ -871,7 +871,7 @@
     </emulatorList>
   </system>
   <system uuid="f5fd45c4-c18e-4279-90f4-321146dd1677" name="pcfx" fullname="NEC PC-FX">
-    <descriptor path="%ROOT%/pcfx" theme="pcfx" extensions=".cue .ccd .toc .chd" icon="$F2c2" downloader="0"/>
+    <descriptor path="%ROOT%/pcfx" theme="pcfx" extensions=".cue .ccd .toc .chd .zip" icon="$F2c2" downloader="0" command="umount /iso; mount-zip %ROM% /iso; python /usr/bin/emulatorlauncher.pyc %CONTROLLERSCONFIG% -system %SYSTEM% -rom /iso/*.cue -emulator %EMULATOR% -core %CORE% -ratio %RATIO% %NETPLAY% %CRT%" />
     <scraper screenscraper="72"/>
     <properties type="console" pad="mandatory" keyboard="no" mouse="no" lightgun="no" releasedate="1994-12" manufacturer="NEC" retroachievements="1" crt.multiresolution="0" crt.multiregion="0" ignoredfiles=""/>
     <emulatorList>
