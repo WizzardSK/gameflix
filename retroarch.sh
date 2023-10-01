@@ -25,6 +25,7 @@ case "$adresar" in
   "saturn"|"Sega - Saturn")                                     core="yabause" ;;
   "dreamcast"|"Sega - Dreamcast")                               command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/flycast_libretro.so ~/iso/*.cue" ;;
 
+  "fds"|"Nintendo - Family Computer Disk System (FDS)")         core="nestopia" ;;
   "gb"|"Nintendo - Game Boy")                                   core="sameboy" ;;
   "gbc"|"Nintendo - Game Boy Color")                            core="sameboy" ;;
   "gba"|"Nintendo - Game Boy Advance")                          core="mgba" ;;
