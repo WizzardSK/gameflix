@@ -33,6 +33,7 @@ case "$adresar" in
   "nes"|"Nintendo - Nintendo Entertainment System (Headered)")  core="nestopia" ;;
   "snes"|"Nintendo - Super Nintendo Entertainment System")      core="snes9x" ;;
   "n64"|"Nintendo - Nintendo 64 (ByteSwapped)")                 core="mupen64plus_next" ;;
+  "n64dd"|"Nintendo - Nintendo 64DD")                           core="mupen64plus_next" ;;
   "gamecube"|"Nintendo - GameCube - NKit RVZ [zstd-19-128k]")   command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/local/bin/dolphin-emu -b -e ~/iso/*.rvz" ;;
   "wii"|"Nintendo - Wii - NKit RVZ [zstd-19-128k]")             command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/local/bin/dolphin-emu -b -e ~/iso/*.rvz" ;;
 
