@@ -24,7 +24,7 @@ Then use the library with any emulation system like Retroarch. It is up to you h
 
 Now you may run the roms directly without copying them to local storage, just like Netflix. 
 
-You also need `[mount-zip](https://github.com/google/mount-zip)` program to use Amstrad CPC, ZX Spectrum and Atari 800 games. They are stored in zipped libraries on remote place so the program needs to mount it like folder. It is also used to run zipped ISO files for PSP, PS2, PC Engine CD.
+You also need [mount-zip](https://github.com/google/mount-zip) program to use Amstrad CPC, ZX Spectrum and Atari 800 games. They are stored in zipped libraries on remote place so the program needs to mount it like folder. It is also used to run zipped ISO files for PSP, PS2, PC Engine CD.
 
 [mount.sh](mount.sh) script generates a `gameflix.html` web page in your home directory which is automatically opened in default browser. Firefox is recommended. Web page contains links to all the platforms supported with all the games available. The game is launched after clicking on the thumbnail. It is necessary to associate the zip files and other rom files with `retroarch.sh` script, which is also downloaded into home directory. It automatically launches RetroArch with correct core or standalone emulator. You may edit that file according to your needs.
 
