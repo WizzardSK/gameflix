@@ -19,7 +19,6 @@ roms+=("nds,No-Intro/Nintendo - Nintendo DS (Decrypted),Nintendo - Nintendo DS,N
 roms+=("nes,No-Intro/Nintendo - Nintendo Entertainment System (Headered),Nintendo - Nintendo Entertainment System,Nintendo NES")
 roms+=("snes,No-Intro/Nintendo - Super Nintendo Entertainment System,Nintendo - Super Nintendo Entertainment System,Nintendo SNES")
 roms+=("n64,No-Intro/Nintendo - Nintendo 64 (ByteSwapped),Nintendo - Nintendo 64,Nintendo 64")
-roms+=("n64dd,No-Intro/Nintendo - Nintendo 64DD,Nintendo - Nintendo 64DD,Nintendo 64DD")
 roms+=("gamecube,Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k],Nintendo - GameCube,Gamecube")
 roms+=("wii,Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k],Nintendo - Wii,Nintendo Wii")
 
