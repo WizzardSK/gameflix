@@ -10,6 +10,7 @@ case "$adresar" in
   "jaguar"|"Atari - Jaguar (J64)")                              core="virtualjaguar" ;;
   "atarist"|"Atari - ST")                                       core="hatari" ;;
 
+  "vic20"|"Commodore - VIC-20")                                 core="vice_xvic" ;;
   "c64"|"Commodore - Commodore 64")                             core="vice_x64sc" ;;
   "amiga1200"|"Commodore - Amiga")                              core="puae" ;;
   "amigacd32"|"Commodore - Amiga CD32")                         core="puae" ;;
