@@ -9,7 +9,8 @@ roms+=("vic20,No-Intro/Commodore - VIC-20,Commodore - VIC-20,<p>Commodore VIC20"
 roms+=("c64,No-Intro/Commodore - Commodore 64,Commodore - 64,Commodore 64")
 roms+=("amiga1200,No-Intro/Commodore - Amiga,Commodore - Amiga,Amiga 1200")
 roms+=("amigacd32,Redump/Commodore - Amiga CD32,Commodore - CD32,Amiga CD32")
-roms+=("intellivision,No-Intro/Mattel - Intellivision,Mattel - Intellivision,Intellivision")
+
+roms+=("intellivision,No-Intro/Mattel - Intellivision,Mattel - Intellivision,<p>Intellivision")
 roms+=("colecovision,No-Intro/Coleco - ColecoVision,Coleco - ColecoVision,Colecovision")
 
 roms+=("fds,No-Intro/Nintendo - Family Computer Disk System (FDS),Nintendo - Family Computer Disk System,<p>Famicom Disk System")
