@@ -28,6 +28,8 @@ You also need `mount-zip` program to use Amstrad CPC, ZX Spectrum and Atari 800 
 
 [mount.sh](mount.sh) script generates a `gameflix.html` web page in your home directory which is automatically opened in default browser. Firefox is recommended. Web page contains links to all the platforms supported with all the games available. The game is launched after clicking on the thumbnail. It is necessary to associate the zip files and other rom files with `retroarch.sh` script, which is also downloaded into home directory. It automatically launches RetroArch with correct core or standalone emulator. You may edit that file according to your needs.
 
+Then run [gen.sh](gen.sh) to generate or update games collection. It is not necessary to run it all the time, because it takes time, about 30 minutes on my Chromebook.
+
 Demo version is here: https://wizzardsk.github.io/
 
 ## Usage - Batocera Linux
