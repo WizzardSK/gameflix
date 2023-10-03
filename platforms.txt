@@ -1,4 +1,9 @@
-roms+=("atari2600,No-Intro/Atari - 2600,Atari - 2600,Atari 2600")
+roms+=("channelf,No-Intro/Fairchild - Channel F,Fairchild - Channel F,Channel F")
+roms+=("vectrex,No-Intro/GCE - Vectrex,GCE - Vectrex,Vectrex")
+roms+=("o2em,No-Intro/Magnavox - Odyssey 2,Magnavox - Odyssey2,Odyssey 2")
+roms+=("videopacplus,No-Intro/Philips - Videopac+,Philips - Videopac+,Videopac+")
+
+roms+=("atari2600,No-Intro/Atari - 2600,Atari - 2600,<p>Atari 2600")
 roms+=("atari5200,No-Intro/Atari - 5200,Atari - 5200,Atari 5200")
 roms+=("atari7800,No-Intro/Atari - 7800,Atari - 7800,Atari 7800")
 roms+=("lynx,No-Intro/Atari - Lynx,Atari - Lynx,Atari Lynx")
