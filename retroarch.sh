@@ -3,6 +3,11 @@ adresar=$(dirname "$1")
 adresar="${adresar##*/}"
 case "$adresar" in
 
+  "channelf"|"Fairchild - Channel F")                           core="freechaf" ;;
+  "vectrex"|"CGE - Vectrex")                                    core="vecx" ;;
+  "o2em"|"Magnavox - Odyssey 2")                                core="o2em" ;;
+  "videopacplus"|"Philips - Videopac+")                         core="o2em" ;;
+
   "atari2600"|"Atari - 2600")                                   core="stella" ;;
   "atari5200"|"Atari - 5200")                                   core="a5200" ;;
   "atari7800"|"Atari - 7800")                                   core="prosystem" ;;
@@ -34,7 +39,7 @@ case "$adresar" in
   "nes"|"Nintendo - Nintendo Entertainment System (Headered)")  core="nestopia" ;;
   "snes"|"Nintendo - Super Nintendo Entertainment System")      core="snes9x" ;;
   "n64"|"Nintendo - Nintendo 64 (ByteSwapped)")                 core="mupen64plus_next" ;;
-  "n64dd"|"Nintendo - Nintendo 64DD")                           core="mupen64plus_next" ;;
+  "n64dd"|"Nintendo - Nintendo 64DD")                           core="parallel_n64" ;;
   "gamecube"|"Nintendo - GameCube - NKit RVZ [zstd-19-128k]")   command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/local/bin/dolphin-emu -b -e ~/iso/*.rvz" ;;
   "wii"|"Nintendo - Wii - NKit RVZ [zstd-19-128k]")             command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/local/bin/dolphin-emu -b -e ~/iso/*.rvz" ;;
 
