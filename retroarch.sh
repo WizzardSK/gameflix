@@ -60,6 +60,7 @@ case "$adresar" in
 
   "atari800")                                                   command="atari800 \"$1\"" ;;
   "amstradcpc")                                                 core="cap32" ;;
+  "zx81")                                                       core="81" ;;
   "zxspectrum")                                                 core="fuse" ;;
   "dos")                                                        core="dosbox_pure" ;;
   "msx"|"Microsoft - MSX")                                      core="bluemsx" ;;
