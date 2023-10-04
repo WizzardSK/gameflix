@@ -57,6 +57,7 @@ roms+=("msx2,No-Intro/Microsoft - MSX2,Microsoft - MSX2,MSX 2")
 
 zips+=("atari800,TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip,Atari - 8-bit,<p>Atari 8bit")
 zips+=("amstradcpc,TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip,Amstrad - CPC,Amstrad CPC")
+zips+=("zx81,TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip,Sinclair - ZX 81,Sinclair ZX81")
 zips+=("zxspectrum,TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip,Sinclair - ZX Spectrum,ZX Spectrum")
 
 #roms+=("pc98,Redump/NEC - PC-98 series,NEC - PC-98,PC-98")
