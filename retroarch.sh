@@ -40,8 +40,8 @@ case "$adresar" in
   "snes")                      core="snes9x" ;;
   "n64")                       core="mupen64plus_next" ;;
   "n64dd")                     core="parallel_n64" ;;
-  "gamecube")                  command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/local/bin/dolphin-emu -b -e ~/iso/*.rvz" ;;
-  "wii")                       command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/local/bin/dolphin-emu -b -e ~/iso/*.rvz" ;;
+  "gamecube")                  command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/dolphin_libretro.so ~/iso/*.rvz" ;;
+  "wii")                       command="umount ~/iso; mount-zip \"$1\" ~/iso; /usr/bin/retroarch -L ~/.config/retroarch/cores/dolphin_libretro.so ~/iso/*.rvz" ;;
 
   "psx")                       core="pcsx_rearmed" ;;
   "ps2")                       command="umount ~/iso; mount-zip \"$1\" ~/iso; ~/*2.AppImage ~/iso/*.iso" ;;
