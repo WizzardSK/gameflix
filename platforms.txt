@@ -39,7 +39,7 @@ roms+=("dreamcast,Redump/Sega - Dreamcast,Sega - Dreamcast,Sega Dreamcast,flycas
 
 roms+=("psx,Redump/Sony - PlayStation,Sony - PlayStation,<p>PlayStation 1,pcsx_rearmed")
 roms+=("psp,Redump/Sony - PlayStation Portable,Sony - PlayStation Portable,PlayStation Portable,ppsspp,iso")
-roms+=("ps2,Redump/Sony - PlayStation 2,Sony - PlayStation 2,PlayStation 2,pcsx2,iso")
+roms+=("ps2,Redump/Sony - PlayStation 2,Sony - PlayStation 2,PlayStation 2,aethersx2,iso")
 
 roms+=("pcengine,No-Intro/NEC - PC Engine - TurboGrafx-16,NEC - PC Engine - TurboGrafx 16,<p>PC Engine,mednafen_pce_fast")
 roms+=("pcenginecd,Redump/NEC - PC Engine CD & TurboGrafx CD,NEC - PC Engine CD - TurboGrafx-CD,PC Engine CD,mednafen_pce_fast,cue")
