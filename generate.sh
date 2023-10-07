@@ -36,6 +36,7 @@ for each in "${roms[@]}"; do
   echo "</div><script src=\"script.js\"></script>" >> ~/${rom[0]}.html
   #echo "</div><script src=\"script.js\"></script>" >> ~/online/${rom[0]}.html
   echo "<a href='${rom[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${rom[3]}</a> ($pocet)<br />" >> ~/systems.html
+  ext=""
   if [ -n "${rom[5]}" ]; then
     ext="; ext=\"${rom[5]}\""
   fi
@@ -67,6 +68,7 @@ for each in "${zips[@]}"; do
   echo "</div><script src=\"script.js\"></script>" >> ~/${zip[0]}.html
   #echo "</div><script src=\"script.js\"></script>" >> ~/online/${zip[0]}.html
   echo "<a href='${zip[0]}.html' target='main' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]}</a> ($pocet)<br />" >> ~/systems.html
+  ext=""
   if [ -n "${zip[5]}" ]; then
     ext="; ext=\"${zip[5]}\""
   fi
