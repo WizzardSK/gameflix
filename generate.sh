@@ -3,6 +3,7 @@ source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platf
 IFS=","
 echo "<div id=\"topbar\"><h3 id=\"platforma\">gameflix</h3></div><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" /><br /><br /><br />" > ~/systems.html
 echo "<title>gameflix</title><frameset border=0 cols='240, 100%'><frame name='menu' src='systems.html'><frame name='main' src='systems.html'></frameset>" > ~/gameflix.html
+wget -O ~/retroarch.sh https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.1st
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
@@ -40,7 +41,7 @@ for each in "${roms[@]}"; do
   if [ -n "${rom[5]}" ]; then
     ext="; ext=\"${rom[5]}\""
   fi
-  echo "\"${rom[0]}\") core=\"${rom[4]}\"${ext};;" >> ~/retroarch.new
+  echo "\"${rom[0]}\") core=\"${rom[4]}\"${ext};;" >> ~/retroarch.sh
 done
 for each in "${zips[@]}"; do
   ((platforms++))
@@ -72,7 +73,8 @@ for each in "${zips[@]}"; do
   if [ -n "${zip[5]}" ]; then
     ext="; ext=\"${zip[5]}\""
   fi
-  echo "\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/retroarch.new
+  echo "\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/retroarch.sh
 done
+wget --append-output -O ~/retroarch.sh https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.end
 echo "<p><b>Total: $total</b>" >> ~/systems.html
 echo "<p><b>Platforms: $platforms</b>" >> ~/systems.html
