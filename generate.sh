@@ -39,7 +39,7 @@ for each in "${roms[@]}"; do
   if [ -n "${rom[5]}" ]; then
     ext="; ext=\"${rom[5]}\""
   fi
-  echo "\"${rom[0]}\") core=\"${rom[4]}\"${rom};;" >> ~/retroarch.new
+  echo "\"${rom[0]}\") core=\"${rom[4]}\"${ext};;" >> ~/retroarch.new
 done
 for each in "${zips[@]}"; do
   ((platforms++))
