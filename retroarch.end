@@ -1,0 +1,15 @@
+esac
+
+if [ -n "$ext" ]; then
+  umount ~/iso
+  mount-zip "$1" ~/iso
+  rom=$(find ~/iso -type f -name "*.${ext}" | head -n 1)
+else
+  rom="$1"
+fi
+
+if [[ "$core" == *"libretro"* ]]; then
+  retroarch -L ~/.config/retroarch/cores/${core}.so "${rom}"
+else
+  ${core} "${rom}"
+fi
