@@ -3,12 +3,21 @@ const figureList = document.getElementById('figureList');
 const figures = figureList.getElementsByTagName('figure');
 var size = 160;
 filterInput.focus();
+let timerId;
 filterInput.addEventListener('input', function () {
+    clearTimeout(timerId);
     const filterText = filterInput.value.toLowerCase();
-    for (let i = 0; i < figures.length; i++) {
-        const caption = figures[i].getElementsByTagName('figcaption')[0]; const captionText = caption.textContent.toLowerCase();
-        if (captionText.includes(filterText)) { figures[i].style.display = ''; } else { figures[i].style.display = 'none'; }
-    }
+    timerId = setTimeout(function() {
+        for (let i = 0; i < figures.length; i++) {
+            const caption = figures[i].getElementsByTagName('figcaption')[0];
+            const captionText = caption.textContent.toLowerCase();
+            if (captionText.includes(filterText)) {
+                figures[i].style.display = '';
+            } else {
+                figures[i].style.display = 'none';
+            }
+        }
+    }, 1000);
 });
 showHideBeta.addEventListener('change', function () {
     const filterText = "(beta";
