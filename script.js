@@ -11,14 +11,19 @@ filterInput.addEventListener('input', function () {
         for (let i = 0; i < figures.length; i++) {
             const caption = figures[i].getElementsByTagName('figcaption')[0];
             const captionText = caption.textContent.toLowerCase();
-            if (captionText.includes(filterText)) {
-                figures[i].style.display = '';
-            } else {
-                figures[i].style.display = 'none';
-            }
+            if (captionText.includes(filterText)) { figures[i].style.display = ''; } else { figures[i].style.display = 'none'; }
         }
+        showHideBeta.dispatchEvent(new Event('change'));
+        showHideDemo.dispatchEvent(new Event('change'));
+        showHideAftermarket.dispatchEvent(new Event('change'));
+        showHideProto.dispatchEvent(new Event('change'));
+        showHideUnl.dispatchEvent(new Event('change'));
+        showHideProgram.dispatchEvent(new Event('change'));
+        showHideAlt.dispatchEvent(new Event('change'));
+        showHidePirate.dispatchEvent(new Event('change'));
     }, 1000);
 });
+
 showHideBeta.addEventListener('change', function () {
     const filterText = "(beta";
     for (let i = 0; i < figures.length; i++) {
