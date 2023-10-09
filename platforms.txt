@@ -10,7 +10,7 @@ roms+=("atari5200,No-Intro/Atari - 5200,Atari - 5200,Atari 5200,a5200_libretro")
 roms+=("atari7800,No-Intro/Atari - 7800,Atari - 7800,Atari 7800,prosystem_libretro")
 roms+=("lynx,No-Intro/Atari - Lynx,Atari - Lynx,Atari Lynx,mednafen_lynx_libretro")
 roms+=("jaguar,No-Intro/Atari - Jaguar (J64),Atari - Jaguar,Atari Jaguar,virtualjaguar_libretro")
-roms+=("atarist,No-Intro/Atari - ST,Atari - ST,Atari ST,hatari_libretro")
+roms+=("atarist,No-Intro/Atari - ST,Atari - ST,Atari ST,hatari")
 
 roms+=("vic20,No-Intro/Commodore - VIC-20,Commodore - VIC-20,<p>Commodore VIC20,vice_xvic_libretro")
 roms+=("c64,No-Intro/Commodore - Commodore 64,Commodore - 64,Commodore 64,vice_x64sc_libretro")
