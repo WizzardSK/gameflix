@@ -21,6 +21,7 @@ filterInput.addEventListener('input', function () {
         showHideProgram.dispatchEvent(new Event('change'));
         showHideAlt.dispatchEvent(new Event('change'));
         showHidePirate.dispatchEvent(new Event('change'));
+        showHideBrackets.dispatchEvent(new Event('change'));
     }, 1000);
 });
 
@@ -80,6 +81,13 @@ showHidePirate.addEventListener('change', function () {
         if (captionText.includes(filterText)) { if (showHidePirate.checked) { figures[i].style.display = ''; } else { figures[i].style.display = 'none'; } }
     }
 });
+showHideBrackets.addEventListener('change', function () {
+    const filterText = "[";
+    for (let i = 0; i < figures.length; i++) {
+        const caption = figures[i].getElementsByTagName('figcaption')[0]; const captionText = caption.textContent.toLowerCase();
+        if (captionText.includes(filterText)) { if (showHideBrackets.checked) { figures[i].style.display = ''; } else { figures[i].style.display = 'none'; } }
+    }
+});
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         filterInput.value = '';
@@ -92,6 +100,7 @@ document.addEventListener('keydown', function (event) {
         showHideProgram.dispatchEvent(new Event('change'));
         showHideAlt.dispatchEvent(new Event('change'));
         showHidePirate.dispatchEvent(new Event('change'));
+        showHideBrackets.dispatchEvent(new Event('change'));
     } else {
         filterInput.focus();
     }
@@ -193,3 +202,4 @@ showHideUnl.dispatchEvent(new Event('change'));
 showHideProgram.dispatchEvent(new Event('change'));
 showHideAlt.dispatchEvent(new Event('change'));
 showHidePirate.dispatchEvent(new Event('change'));
+showHideBrackets.dispatchEvent(new Event('change'));
