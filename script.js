@@ -32,6 +32,9 @@ function handleCheckboxChange(checkbox, filterText) {
             const captionText = caption.textContent.toLowerCase();
             if (captionText.includes(filterText)) { figures[i].style.display = checkbox.checked ? '' : 'none'; }
         }
+        displayedCount = 0;
+        for (let i = 0; i < figures.length; i++) { if (figures[i].style.display !== 'none') { displayedCount++; } }
+        document.getElementById('pocet').innerHTML = " Games: " + displayedCount;
     });
 }
 handleCheckboxChange(showHideBeta, "(beta");
