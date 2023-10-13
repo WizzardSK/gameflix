@@ -12,7 +12,8 @@ roms+=("lynx,No-Intro/Atari - Lynx,Atari - Lynx,Atari Lynx,mednafen_lynx_libretr
 roms+=("jaguar,No-Intro/Atari - Jaguar (J64),Atari - Jaguar,Atari Jaguar,virtualjaguar_libretro")
 roms+=("atarist,No-Intro/Atari - ST,Atari - ST,Atari ST,hatari")
 
-roms+=("vic20,No-Intro/Commodore - VIC-20,Commodore - VIC-20,<p>Commodore VIC20,vice_xvic_libretro")
+roms+=("cplus4,No-Intro/Commodore - Plus-4,Commodore - Plus-4,<p>Commodore Plus-4,vice_xplus4_libretro")
+roms+=("vic20,No-Intro/Commodore - VIC-20,Commodore - VIC-20,Commodore VIC-20,vice_xvic_libretro")
 roms+=("c64,No-Intro/Commodore - Commodore 64,Commodore - 64,Commodore 64,vice_x64sc_libretro")
 roms+=("amiga1200,No-Intro/Commodore - Amiga,Commodore - Amiga,Amiga 1200,puae_libretro")
 roms+=("amigacd32,Redump/Commodore - Amiga CD32,Commodore - CD32,Amiga CD32,puae_libretro")
