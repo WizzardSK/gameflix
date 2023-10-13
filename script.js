@@ -30,7 +30,7 @@ function handleCheckboxChange(checkbox, filterText) {
         for (let i = 0; i < figures.length; i++) {
             const caption = figures[i].getElementsByTagName('figcaption')[0];
             const captionText = caption.textContent.toLowerCase();
-            if (captionText.includes(filterText)) { figures[i].style.display = checkbox.checked ? '' : 'none'; }
+            if ((captionText.includes(filterText)) && (captionText.includes(filterInput.value.toLowerCase()))) { figures[i].style.display = checkbox.checked ? '' : 'none'; }
         }
         displayedCount = 0;
         for (let i = 0; i < figures.length; i++) { if (figures[i].style.display !== 'none') { displayedCount++; } }
