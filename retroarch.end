@@ -13,3 +13,7 @@ if [[ "$core" == *"libretro"* ]]; then
 else
   ${core} "${rom}"
 fi
+
+if [ -z "$core" ]; then
+  ark "$1"
+fi
