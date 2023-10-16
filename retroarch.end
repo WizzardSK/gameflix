@@ -1,7 +1,7 @@
 esac
 
 if [ -n "$ext" ]; then
-  umount ~/iso
+  umount -l ~/iso
   mount-zip "$1" ~/iso
   rom=$(find ~/iso -type f -name "*.${ext}" | head -n 1)
 else
