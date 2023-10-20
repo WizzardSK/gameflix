@@ -39,7 +39,7 @@ rclone mount myrient:No-Intro /recalbox/share/rom/No-Intro --config=/recalbox/sh
 rclone mount myrient:Redump /recalbox/share/rom/Redump --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 rclone mount myrient:TOSEC /recalbox/share/rom/TOSEC --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 
-IFS=","
+IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "Mounting ${rom[0]}"
