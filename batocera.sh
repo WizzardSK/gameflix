@@ -2,7 +2,7 @@
 mount -o remount,size=1000M /overlay
 mkdir -p /userdata/system/.config/rclone
 wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf
-if [ ! -f /usr/bin/mount-zip ]; then wget -O /usr/bin/mount-zip https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/mount-zip; chmod +x /usr/bin/mount-zip; fi
+if [ ! -f /userdata/system/mount-zip ]; then wget -O /userdata/system/mount-zip https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/mount-zip; chmod +x /userdata/system/mount-zip; fi
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 
@@ -39,7 +39,7 @@ for each in "${zips[@]}"; do
   echo "Mounting ${zip[0]}"
   mkdir -p /userdata/roms/${zip[0]}/online
   mkdir -p /userdata/roms/${zip[0]}/images
-  mount-zip /userdata/rom/${zip[1]} /userdata/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  /userdata/system/mount-zip /userdata/rom/${zip[1]} /userdata/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
 done
 
