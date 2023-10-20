@@ -65,4 +65,4 @@ zips+=("atari800;TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip;Ata
 zips+=("amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<b>Amstrad CPC</b>;cap32_libretro")
 zips+=("zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;<b>Sinclair ZX81</b>;81_libretro")
 zips+=("zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;<b>ZX Spectrum</b>;fuse_libretro")
-zips+=("thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[FD]/Thomson TO8, TO8D, TO9, TO9+ - Games - [FD].zip;Thomson - MOTO;<b>Thomson MOTO</b>;theodore_libretro")
+zips+=("thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[SAP]/Thomson TO8, TO8D, TO9, TO9+ - Games - [SAP].zip;Thomson - MOTO;<b>Thomson MOTO</b>;theodore_libretro")
