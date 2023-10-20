@@ -14,7 +14,7 @@ for each in "${roms[@]}"; do
     rom[1]="${rom[1]/archive:/}"
   else
     location="myrient.erista.me/files"
-    ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
+    #ln -s ~/myrient/${rom[1]} ~/roms/${rom[0]}
   fi
   > ~/${rom[0]}.html
   #> ~/${rom[0]}.txt
