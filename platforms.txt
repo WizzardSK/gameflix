@@ -48,7 +48,6 @@ roms+=("neogeocd,Redump/SNK - Neo Geo CD,SNK - Neo Geo CD,Neo Geo CD,neocd_libre
 roms+=("ngp,No-Intro/SNK - NeoGeo Pocket,SNK - Neo Geo Pocket,<i>Neo Geo Pocket</i>,mednafen_ngp_libretro")
 roms+=("ngpc,No-Intro/SNK - NeoGeo Pocket Color,SNK - Neo Geo Pocket Color,<i>Neo Geo Pocket Color</i>,mednafen_ngp_libretro")
 
-roms+=("dos,eye:Games/eXo/eXoDOS_v5/eXo/eXoDOS,DOS,<p><b>MS-DOS</b>,dosbox_pure_libretro")
 roms+=("msx1,No-Intro/Microsoft - MSX,Microsoft - MSX,<b>MSX 1</b>,bluemsx_libretro")
 roms+=("msx2,No-Intro/Microsoft - MSX2,Microsoft - MSX2,<b>MSX 2</b>,bluemsx_libretro")
 
@@ -58,6 +57,8 @@ roms+=("vic20,No-Intro/Commodore - VIC-20,Commodore - VIC-20,<b>Commodore VIC-20
 roms+=("c64,No-Intro/Commodore - Commodore 64,Commodore - 64,<b>Commodore 64</b>,vice_x64sc_libretro")
 roms+=("amiga1200,No-Intro/Commodore - Amiga,Commodore - Amiga,<b>Amiga 1200</b>,puae_libretro")
 roms+=("amigacd32,Redump/Commodore - Amiga CD32,Commodore - CD32,<b>Amiga CD32</b>,puae_libretro")
+
+dos+=("dos,eye:Games/eXo/eXoDOS_v5/eXo/eXoDOS,DOS,<p><b>MS-DOS</b>,dosbox_pure_libretro")
 
 zips+=("atari800,TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip,Atari - 8-bit,<p><b>Atari 8bit</b>,atari800")
 zips+=("amstradcpc,TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip,Amstrad - CPC,<b>Amstrad CPC</b>,cap32_libretro")
