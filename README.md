@@ -30,8 +30,6 @@ You also need [mount-zip](https://github.com/google/mount-zip) program to use Am
 
 Then run [gen.sh](gen.sh) to generate or update games collection. It is not necessary to run it all the time, because it takes time, about 30 minutes on my Chromebook.
 
-Demo version is here: https://wizzardsk.github.io/
-
 ## Usage - Batocera Linux
 For Batocera, you need to copy [custom.sh](batocera/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone config file in ./config/rclone folder in system folder. Thumbnail folders are mounting too.
 
