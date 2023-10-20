@@ -4,6 +4,8 @@ roms+=("o2em,No-Intro/Magnavox - Odyssey 2,Magnavox - Odyssey2,Odyssey 2,o2em_li
 roms+=("videopacplus,No-Intro/Philips - Videopac+,Philips - Videopac+,Videopac+,o2em_libretro")
 roms+=("intellivision,No-Intro/Mattel - Intellivision,Mattel - Intellivision,Intellivision,freeintv_libretro")
 roms+=("colecovision,No-Intro/Coleco - ColecoVision,Coleco - ColecoVision,Colecovision,bluemsx_libretro")
+roms+=("wswan,No-Intro/Bandai - WonderSwan,Bandai - WonderSwan,WonderSwan,mednafen_wswan_libretro")
+roms+=("wswanc,No-Intro/Bandai - WonderSwan Color,Bandai - WonderSwan Color,WonderSwan Color,mednafen_wswan_libretro")
 roms+=("supervision,No-Intro/Watara - Supervision,Watara - Supervision,<i>Supervision</i>,potator_libretro")
 
 roms+=("atari2600,No-Intro/Atari - 2600,Atari - 2600,<p>Atari 2600,stella_libretro")
