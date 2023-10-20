@@ -33,7 +33,7 @@ for each in "${roms[@]}"; do
         ((total++))
       fi
     done
-  } < <(${rom[0]})
+  } < <(ls ~/myrient/${rom[1]})
   echo "</div><script src=\"script.js\"></script>" >> ~/${rom[0]}.html
   #echo "</div><script src=\"script.js\"></script>" >> ~/online/${rom[0]}.html
   echo "<a href='${rom[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${rom[3]}</a> ($pocet)<br />" >> ~/systems.html
