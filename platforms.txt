@@ -1,3 +1,4 @@
-roms+=("amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CD32;<b>Amiga CDTV</b>;puae_libretro")
+roms+=("amigacd;Redump/Commodore - Amiga CD;Commodore - Amiga;<b>Amiga CD</b>;puae_libretro")
+roms+=("amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - Amiga;<b>Amiga CDTV</b>;puae_libretro")
 
 
