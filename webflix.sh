@@ -3,7 +3,8 @@ source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platf
 wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf
 wget -O ~/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/style.css
 wget -O ~/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
-wget -O ~/.local/share/applications/retroarch.sh.desktop https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.sh.desktop
+
+#wget -O ~/.local/share/applications/retroarch.sh.desktop https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.sh.desktop
 #chmod +x ~/retroarch.sh
 #xdg-mime default ~/.local/share/applications/retroarch.sh.desktop application/zip
 
