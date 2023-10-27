@@ -62,5 +62,6 @@ for each in "${zips[@]}"; do
   echo "\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/retroarch.sh
 done
 curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.end | tee -a ~/retroarch.sh  
+chmod +x ~/retroarch.sh
 echo "<p><b>Total: $total</b>" >> ~/systems.html
 echo "<p><b>Platforms: $platforms</b>" >> ~/systems.html
