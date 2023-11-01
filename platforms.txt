@@ -67,4 +67,4 @@ zips+=("atari800;TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip;Ata
 zips+=("amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<b>Amstrad CPC</b>;cap32_libretro")
 zips+=("zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;<b>Sinclair ZX81</b>;81_libretro")
 zips+=("zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;<b>ZX Spectrum</b>;fuse_libretro")
-zips+=("svi;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo;<b>Spectravideo</b>;bluemsx_libretro")
+zips+=("spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo;<b>Spectravideo</b>;bluemsx_libretro")
