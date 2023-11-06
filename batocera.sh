@@ -43,4 +43,5 @@ for each in "${zips[@]}"; do
   mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
 done
 
-chvt 2; curl http://127.0.0.1:1234/reloadgames; curl http://127.0.0.1:1234/reloadgames
+chvt 2; curl http://127.0.0.1:1234/reloadgames
+curl http://127.0.0.1:1234/reloadgames
