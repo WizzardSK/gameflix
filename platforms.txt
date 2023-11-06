@@ -57,7 +57,7 @@ roms+=("msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<b>MSX 2</b>;bluemsx_lib
 
 roms+=("atarist;No-Intro/Atari - ST;Atari - ST;<p><b>Atari ST</b>;hatari")
 roms+=("cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<b>Commodore Plus-4</b>;vice_xplus4_libretro")
-roms+=("c20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;<b>Commodore VIC-20</b>;vice_xvic_libretro")
+roms+=("vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;<b>Commodore VIC-20</b>;vice_xvic_libretro")
 roms+=("c64;No-Intro/Commodore - Commodore 64;Commodore - 64;<b>Commodore 64</b>;vice_x64sc_libretro")
 roms+=("amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;<b>Amiga 1200</b>;puae_libretro")
 roms+=("amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<b>Amiga CD32</b>;puae_libretro")
