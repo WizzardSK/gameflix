@@ -1,5 +1,3 @@
-roms+=("3ds;No-Intro/Nintendo - Nintendo 3DS (Decrypted);Nintendo - Nintendo 3DS;<i>Nintendo 3DS</i>;flatpak run org.citra_emu.citra;3ds")
-
 roms+=("channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;Channel F;freechaf_libretro")
 roms+=("vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;Vectrex;vecx_libretro")
 roms+=("o2em;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Odyssey 2;o2em_libretro")
@@ -27,6 +25,7 @@ roms+=("gb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;<p><i>Game Boy</i>;s
 roms+=("gbc;No-Intro/Nintendo - Game Boy Color;Nintendo - Game Boy Color;<i>Game Boy Color</i>;sameboy_libretro")
 roms+=("gba;No-Intro/Nintendo - Game Boy Advance;Nintendo - Game Boy Advance;<i>Game Boy Advance</i>;mgba_libretro")
 roms+=("nds;No-Intro/Nintendo - Nintendo DS (Decrypted);Nintendo - Nintendo DS;<i>Nintendo DS</i>;melonds_libretro")
+roms+=("3ds;No-Intro/Nintendo - Nintendo 3DS (Decrypted);Nintendo - Nintendo 3DS;<i>Nintendo 3DS</i>;flatpak run org.citra_emu.citra;3ds")
 
 roms+=("sg1000;No-Intro/Sega - SG-1000;Sega - SG-1000;<p>SG 1000;genesis_plus_gx_libretro")
 roms+=("mastersystem;No-Intro/Sega - Master System - Mark III;Sega - Master System - Mark III;Master System;genesis_plus_gx_libretro")
