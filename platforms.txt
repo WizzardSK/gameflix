@@ -1,3 +1,6 @@
+roms+=("satellaview;No-Intro/Nintendo - Satellaview;Nintendo - Satellaview;Nintendo Satellaview;snes9x_libretro")
+roms+=("sufami;No-Intro/Nintendo - Sufami Turbo;Nintendo - Sufami Turbo;Sufami Turbo;snes9x_libretro")
+
 roms+=("channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;Channel F;freechaf_libretro")
 roms+=("vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;Vectrex;vecx_libretro")
 roms+=("o2em;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Odyssey 2;o2em_libretro")
@@ -14,8 +17,8 @@ roms+=("atari7800;No-Intro/Atari - 7800;Atari - 7800;Atari 7800;prosystem_libret
 roms+=("jaguar;No-Intro/Atari - Jaguar (J64);Atari - Jaguar;Atari Jaguar;virtualjaguar_libretro")
 roms+=("lynx;No-Intro/Atari - Lynx;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
 
-roms+=("fds;No-Intro/Nintendo - Family Computer Disk System (FDS);Nintendo - Family Computer Disk System;<p>Famicom Disk System;nestopia_libretro")
 roms+=("nes;No-Intro/Nintendo - Nintendo Entertainment System (Headered);Nintendo - Nintendo Entertainment System;Nintendo NES;nestopia_libretro")
+roms+=("fds;No-Intro/Nintendo - Family Computer Disk System (FDS);Nintendo - Family Computer Disk System;<p>Famicom Disk System;nestopia_libretro")
 roms+=("snes;No-Intro/Nintendo - Super Nintendo Entertainment System;Nintendo - Super Nintendo Entertainment System;Nintendo SNES;snes9x_libretro")
 roms+=("n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64;Nintendo 64;mupen64plus_next_libretro")
 roms+=("gamecube;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Gamecube;dolphin_libretro;rvz")
