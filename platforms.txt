@@ -4,6 +4,7 @@ roms+=("o2em;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Magnavox Odyssey 
 roms+=("videopacplus;No-Intro/Philips - Videopac+;Philips - Videopac+;Philips Videopac+;o2em_libretro")
 roms+=("intellivision;No-Intro/Mattel - Intellivision;Mattel - Intellivision;Mattel Intellivision;freeintv_libretro")
 roms+=("colecovision;No-Intro/Coleco - ColecoVision;Coleco - ColecoVision;Coleco Colecovision;bluemsx_libretro")
+roms+=("scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Super Cassette Vision;emuscv_libretro")
 roms+=("supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervision</i>;potator_libretro")
 roms+=("wswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i>;mednafen_wswan_libretro")
 roms+=("wswanc;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>WonderSwan Color</i>;mednafen_wswan_libretro")
