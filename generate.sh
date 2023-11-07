@@ -56,7 +56,7 @@ for each in "${zips[@]}"; do
     done
   } < <(ls ~/roms/${zip[0]})
   echo "</div><script src=\"script.js\"></script>" >> ~/${zip[0]}.html
-  echo "<a href='${zip[0]}.html' target='main' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]}</a> ($pocet)<br />" >> ~/systems.html
+  echo "<a href='${zip[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]}</a> ($pocet)<br />" >> ~/systems.html
   ext=""
   if [ -n "${zip[5]}" ]; then ext="; ext=\"${zip[5]}\""; fi
   echo "\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/retroarch.sh
