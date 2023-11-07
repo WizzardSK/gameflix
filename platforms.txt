@@ -1,5 +1,3 @@
-roms+=("virtualboy;No-Intro/Nintendo - Virtual Boy;Nintendo - Virtual Boy;<p><i>Virtual Boy</i>;mednafen_vb_libretro")
-
 roms+=("channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;Channel F;freechaf_libretro")
 roms+=("vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;Vectrex;vecx_libretro")
 roms+=("o2em;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Odyssey 2;o2em_libretro")
@@ -23,7 +21,8 @@ roms+=("n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64
 roms+=("gamecube;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Gamecube;dolphin_libretro;rvz")
 roms+=("wii;Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k];Nintendo - Wii;Nintendo Wii;dolphin_libretro;rvz")
 
-roms+=("gb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;<p><i>Game Boy</i>;sameboy_libretro")
+roms+=("virtualboy;No-Intro/Nintendo - Virtual Boy;Nintendo - Virtual Boy;<p><i>Virtual Boy</i>;mednafen_vb_libretro")
+roms+=("gb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;<i>Game Boy</i>;sameboy_libretro")
 roms+=("gbc;No-Intro/Nintendo - Game Boy Color;Nintendo - Game Boy Color;<i>Game Boy Color</i>;sameboy_libretro")
 roms+=("gba;No-Intro/Nintendo - Game Boy Advance;Nintendo - Game Boy Advance;<i>Game Boy Advance</i>;mgba_libretro")
 roms+=("nds;No-Intro/Nintendo - Nintendo DS (Decrypted);Nintendo - Nintendo DS;<i>Nintendo DS</i>;melonds_libretro")
