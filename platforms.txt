@@ -1,3 +1,5 @@
+roms+=("virtualboy;No-Intro/Nintendo - Virtual Boy;Nintendo - Virtual Boy;<p><i>Virtual Boy</i>;mednafen_vb_libretro")
+
 roms+=("channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;Channel F;freechaf_libretro")
 roms+=("vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;Vectrex;vecx_libretro")
 roms+=("o2em;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Odyssey 2;o2em_libretro")
