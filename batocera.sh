@@ -1,5 +1,5 @@
 #!/bin/bash
-mount -o remount,size=2000M /overlay
+mount -o remount,size=6000M /overlay
 mkdir -p /userdata/system/.config/rclone
 wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf
 if [ ! -f /userdata/system/mount-zip ]; then wget -O /userdata/system/mount-zip https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/mount-zip; chmod +x /userdata/system/mount-zip; fi
