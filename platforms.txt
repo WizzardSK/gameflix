@@ -53,7 +53,7 @@ roms+=("supergrafx;No-Intro/NEC - PC Engine SuperGrafx;NEC - PC Engine SuperGraf
 roms+=("pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX;mednafen_pcfx_libretro_libretro;cue")
 
 roms+=("cdi;Redump/Philips - CD-i;Philips - CD-i;<p>Philips CDi;same_cdi_libretro;cue")
-roms+=("3do;Redump/Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO;opera_libretro;cue")
+roms+=("3do;Redump/Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO;opera_libretro;cue")- 
 roms+=("neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD;neocd_libretro;cue")
 roms+=("ngp;No-Intro/SNK - NeoGeo Pocket;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i>;mednafen_ngp_libretro")
 roms+=("ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;<i>Neo Geo Pocket Color</i>;mednafen_ngp_libretro")
@@ -75,3 +75,4 @@ zips+=("amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip
 zips+=("zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;<b>Sinclair ZX81</b>;81_libretro")
 zips+=("zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;<b>ZX Spectrum</b>;fuse_libretro")
 zips+=("spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo;<b>Spectravideo</b>;bluemsx_libretro")
+zips+=("x1;TOSEC/Sharp/X1/Games/[TAP]/Sharp X1 - Games - [TAP].zip;Sharp - X1;<b>Sharp X1</b>;x1_libretro")
