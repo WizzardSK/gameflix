@@ -53,7 +53,7 @@ roms+=("supergrafx;No-Intro/NEC - PC Engine SuperGrafx;NEC - PC Engine SuperGraf
 roms+=("pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX;mednafen_pcfx_libretro_libretro;cue")
 
 roms+=("cdi;Redump/Philips - CD-i;Philips - CD-i;<p>Philips CDi;same_cdi_libretro;cue")
-roms+=("3do;Redump/Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO;opera_libretro;cue")- 
+roms+=("3do;Redump/Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO;opera_libretro;cue")
 roms+=("neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD;neocd_libretro;cue")
 roms+=("ngp;No-Intro/SNK - NeoGeo Pocket;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i>;mednafen_ngp_libretro")
 roms+=("ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;<i>Neo Geo Pocket Color</i>;mednafen_ngp_libretro")
