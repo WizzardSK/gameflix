@@ -34,10 +34,10 @@ mkdir -p /recalbox/share/rom/No-Intro
 mkdir -p /recalbox/share/rom/Redump
 mkdir -p /recalbox/share/rom/TOSEC
 
-rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
-rclone mount myrient:No-Intro /recalbox/share/rom/No-Intro --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
+rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --vfs-cache-mode full 
+rclone mount myrient:No-Intro /recalbox/share/rom/No-Intro --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --vfs-cache-mode full 
 rclone mount myrient:Redump /recalbox/share/rom/Redump --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
-rclone mount myrient:TOSEC /recalbox/share/rom/TOSEC --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
+rclone mount myrient:TOSEC /recalbox/share/rom/TOSEC --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --vfs-cache-mode full 
 
 IFS=";"
 for each in "${roms[@]}"; do
