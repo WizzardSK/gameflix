@@ -18,7 +18,7 @@ mkdir -p /userdata/rom/TOSEC
 rclone mount thumbnails: /userdata/thumbs --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
 rclone mount myrient:No-Intro /userdata/rom/No-Intro --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --vfs-cache-mode full --daemon --config=/userdata/system/.config/rclone/rclone.conf
 rclone mount myrient:Redump /userdata/rom/Redump --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf
-rclone mount myrienth:TOSEC /userdata/rom/TOSEC --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf
+rclone mount myrienh:TOSEC /userdata/rom/TOSEC --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf
 
 IFS=";"
 for each in "${roms[@]}"; do
