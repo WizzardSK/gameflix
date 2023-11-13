@@ -58,7 +58,7 @@ roms+=("neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD;neocd_libre
 roms+=("ngp;No-Intro/SNK - NeoGeo Pocket;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i>;mednafen_ngp_libretro")
 roms+=("ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;<i>Neo Geo Pocket Color</i>;mednafen_ngp_libretro")
 
-roms+=("dos;eye:Games/eXo/eXoDOS_v5/eXo/eXoDOS;DOS;<p><b>MS-DOS</b>;dosbox_pure_libretro")
+roms+=("dos;eye:Games/eXo/eXoDOS_v5/eXo/eXoDOS/;DOS;<p><b>MS-DOS</b>;dosbox_pure_libretro")
 roms+=("msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;<b>MSX 1</b>;bluemsx_libretro")
 roms+=("msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<b>MSX 2</b>;bluemsx_libretro")
 
