@@ -70,8 +70,8 @@ roms+=("amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;<b>Amiga 1200</b>
 roms+=("amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<b>Amiga CD32</b>;puae_libretro")
 roms+=("amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;<b>Amiga CDTV</b>;puae_libretro")
 
+#zips+=("pc98;TOSEC/NEC/PC-9801/Games/[FDD]/NEC PC-9801 - Games - [FDD].zip;NEC - PC-98;<b>NEC PC-98</b>;np2kai_libretro")
 zips+=("pc88;TOSEC/NEC/PC-8801/Games/[D88]/NEC PC-8801 - Games - [D88].zip;NEC - PC-8001 - PC-8801;<p><b>NEC PC-88</b>;quasi88_libretro")
-zips+=("pc98;TOSEC/NEC/PC-9801/Games/[FDD]/NEC PC-9801 - Games - [FDD].zip;NEC - PC-98;<b>NEC PC-98</b>;np2kai_libretro")
 zips+=("x1;TOSEC/Sharp/X1/Games/[2D]/Sharp X1 - Games - [2D].zip;Sharp - X1;<b>Sharp X1</b>;x1_libretro")
 zips+=("x68000;TOSEC/Sharp/X68000/Games/[DIM]/Sharp X68000 - Games - [DIM].zip;Sharp - X68000;<b>Sharp X68000</b>;px68k_libretro")
 zips+=("atari800;TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip;Atari - 8-bit;<b>Atari 8bit</b>;atari800")
