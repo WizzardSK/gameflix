@@ -73,7 +73,7 @@ roms+=("amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;<b>Amiga CDTV</
 roms+=("pc98;Redump/NEC - PC-98 series;NEC - PC-98;<p><b>NEC PC-98</b>;flatpak run com.dosbox_x.DOSBox-X -set machine=pc98;cue")
 zips+=("pc88;TOSEC/NEC/PC-8801/Games/[D88]/NEC PC-8801 - Games - [D88].zip;NEC - PC-8001 - PC-8801;<b>NEC PC-88</b>;quasi88_libretro")
 zips+=("x1;TOSEC/Sharp/X1/Games/[2D]/Sharp X1 - Games - [2D].zip;Sharp - X1;<b>Sharp X1</b>;x1_libretro")
-zips+=("x68000;TOSEC/Sharp/X68000/Games/[DIM]/Sharp X68000 - Games - [DIM].zip;Sharp - X68000;<b>Sharp X68000</b>;px68k_libretro")
+#zips+=("x68000;TOSEC/Sharp/X68000/Games/[DIM]/Sharp X68000 - Games - [DIM].zip;Sharp - X68000;<b>Sharp X68000</b>;px68k_libretro")
 zips+=("atari800;TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip;Atari - 8-bit;<b>Atari 8bit</b>;atari800")
 zips+=("amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<b>Amstrad CPC</b>;cap32_libretro")
 zips+=("zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;<b>Sinclair ZX81</b>;81_libretro")
