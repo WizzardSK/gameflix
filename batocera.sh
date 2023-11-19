@@ -14,8 +14,8 @@ mkdir -p /userdata/zip
 mkdir -p /userdata/rom/No-Intro
 mkdir -p /userdata/rom/Redump
 
-rclone mount thumbnails: /userdata/thumbs --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf --cache-dir=/userdata/system/cache --vfs-cache-mode full 
-rclone mount myrient:No-Intro /userdata/rom/No-Intro --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf --cache-dir=/userdata/system/cache --vfs-cache-mode full 
+rclone mount thumbnails: /userdata/thumbs --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf --cache-dir=/userdata/system/cache --vfs-cache-mode full --vfs-cache-max-age 10000h
+rclone mount myrient:No-Intro /userdata/rom/No-Intro --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf --cache-dir=/userdata/system/cache --vfs-cache-mode full --vfs-cache-max-age 10000h
 rclone mount myrient:Redump /userdata/rom/Redump --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf
 
 IFS=";"
