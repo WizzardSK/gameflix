@@ -11,6 +11,7 @@ rm -rf /userdata/roms
 mkdir -p /userdata/roms
 mkdir -p /userdata/thumbs
 mkdir -p /userdata/rom
+mkdir -p /userdata/zip
 mkdir -p /userdata/rom/No-Intro
 mkdir -p /userdata/rom/Redump
 mkdir -p /userdata/rom/TOSEC
@@ -38,7 +39,8 @@ for each in "${zips[@]}"; do
   echo "Mounting ${zip[0]}"
   mkdir -p /userdata/roms/${zip[0]}/online
   mkdir -p /userdata/roms/${zip[0]}/images
-  /userdata/system/mount-zip /userdata/rom/${zip[1]} /userdata/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  if [ ! -f /userdata/zip/${zip[1]} ]; then wget -O /userdata/zip/${zip[1]} https://myrient.erista.me/files/${zip[1]}; fi  
+  /userdata/system/mount-zip /userdata/zip/${zip[1]} /userdata/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
 done
 
