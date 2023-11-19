@@ -1,5 +1,4 @@
 #!/bin/bash
-#mount -o remount,size=4000M /overlay
 mkdir -p /userdata/system/.config/rclone
 wget -O /userdata/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf
 if [ ! -f /userdata/system/mount-zip ]; then wget -O /userdata/system/mount-zip https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/mount-zip; chmod +x /userdata/system/mount-zip; fi
@@ -45,5 +44,4 @@ for each in "${zips[@]}"; do
 done
 
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg
-chvt 2; curl http://127.0.0.1:1234/reloadgames
-curl http://127.0.0.1:1234/reloadgames
+chvt 2; curl http://127.0.0.1:1234/reloadgames; curl http://127.0.0.1:1234/reloadgames
