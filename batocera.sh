@@ -13,12 +13,10 @@ mkdir -p /userdata/rom
 mkdir -p /userdata/zip
 mkdir -p /userdata/rom/No-Intro
 mkdir -p /userdata/rom/Redump
-mkdir -p /userdata/rom/TOSEC
 
-rclone mount thumbnails: /userdata/thumbs --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf --vfs-cache-mode full 
-rclone mount myrient:No-Intro /userdata/rom/No-Intro --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf --vfs-cache-mode full 
+rclone mount thumbnails: /userdata/thumbs --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf --cache-dir=/userdata/system/cache --vfs-cache-mode full 
+rclone mount myrient:No-Intro /userdata/rom/No-Intro --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf --cache-dir=/userdata/system/cache --vfs-cache-mode full 
 rclone mount myrient:Redump /userdata/rom/Redump --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf
-rclone mount myrient:TOSEC /userdata/rom/TOSEC --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/.config/rclone/rclone.conf --vfs-cache-mode full 
 
 IFS=";"
 for each in "${roms[@]}"; do
