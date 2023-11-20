@@ -39,5 +39,7 @@ for each in "${zips[@]}"; do
 done
 
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg
-chvt 2; curl http://127.0.0.1:1234/reloadgames
+chvt 2
+curl http://127.0.0.1:1234/reloadgames
+curl http://127.0.0.1:1234/reloadgames
 curl http://127.0.0.1:1234/reloadgames
