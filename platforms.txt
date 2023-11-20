@@ -67,7 +67,7 @@ roms+=("amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;<b>Amiga 1200</b>
 roms+=("amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<b>Amiga CD32</b>;puae_libretro")
 roms+=("amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;<b>Amiga CDTV</b>;puae_libretro")
 
-roms+=("cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<b>Commodore Plus-4</b>;vice_xplus4_libretro")
+roms+=("cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<p><b>Commodore Plus-4</b>;vice_xplus4_libretro")
 roms+=("vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;<b>Commodore VIC-20</b>;vice_xvic_libretro")
 roms+=("c64;No-Intro/Commodore - Commodore 64;Commodore - 64;<b>Commodore 64</b>;vice_x64sc_libretro")
 zips+=("pet;TOSEC/Commodore/PET/Games/[PRG]/Commodore PET - Games - [PRG].zip;Commodore - PET;<b>Commodore PET</b>;vice_xpet_libretro")
