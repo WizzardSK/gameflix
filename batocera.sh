@@ -13,8 +13,11 @@ mkdir -p /userdata/zip
 mkdir -p /userdata/rom/No-Intro
 mkdir -p /userdata/rom/Redump
 
+echo "Mounting thumbs"
 rclone mount thumbnails: /userdata/thumbs --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
+echo "Mounting No-Intro"
 rclone mount myrient:No-Intro /userdata/rom/No-Intro --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
+echo "Mounting Redump"
 rclone mount myrient:Redump /userdata/rom/Redump --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
 
 IFS=";"
