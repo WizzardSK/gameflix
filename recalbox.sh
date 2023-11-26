@@ -21,7 +21,7 @@ fi
 
 wget -O /recalbox/share_init/system/.emulationstation/systemlist.xml https://github.com/WizzardSK/gameflix/raw/main/recalbox/share/system/systemlist.xml
 mkdir -p /recalbox/share/system/.config/rclone
-wget -O /recalbox/share/system/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf
+wget -O /recalbox/share/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 
 es stop; chvt 3; clear
@@ -30,14 +30,10 @@ rm -rf /recalbox/share/roms
 mkdir -p /recalbox/share/roms
 mkdir -p /recalbox/share/thumbs
 mkdir -p /recalbox/share/rom
-mkdir -p /recalbox/share/rom/No-Intro
-mkdir -p /recalbox/share/rom/Redump
-mkdir -p /recalbox/share/rom/TOSEC
+mkdir -p /recalbox/share/zip
 
-rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --vfs-cache-mode full 
-rclone mount myrient:No-Intro /recalbox/share/rom/No-Intro --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --vfs-cache-mode full 
-rclone mount myrient:Redump /recalbox/share/rom/Redump --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
-rclone mount myrient:TOSEC /recalbox/share/rom/TOSEC --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --vfs-cache-mode full 
+rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
+rclone mount myrient: /recalbox/share/rom --config=/recalbox/share/system/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 
 IFS=";"
 for each in "${roms[@]}"; do
@@ -46,9 +42,7 @@ for each in "${roms[@]}"; do
   mkdir -p /recalbox/share/roms/${rom[0]}/online  
   if grep -q ":" <<< "${rom[1]}"; then
     rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/online --config=/recalbox/share/system/.config/rclone/rclone.conf --daemon --vfs-cache-mode full --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
-  else
-    mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/online
-  fi
+  else mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/online; fi
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   ls /recalbox/share/roms/${rom[0]}/online | while read line; do
@@ -63,7 +57,8 @@ for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   echo "Mounting ${zip[0]}"
   mkdir -p /recalbox/share/roms/${zip[0]}/online
-  mount-zip /recalbox/share/rom/${zip[1]} /recalbox/share/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  if [ ! -f /recalbox/share/zip/${zip[0]}.zip ]; then wget -O /recalbox/share/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
+  mount-zip /recalbox/share/zip/${zip[0]}.zip /recalbox/share/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   > /recalbox/share/roms/${zip[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
   ls /recalbox/share/roms/${zip[0]}/online | while read line; do
