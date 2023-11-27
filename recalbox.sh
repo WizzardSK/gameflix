@@ -48,7 +48,7 @@ for each in "${roms[@]}"; do
   ls /recalbox/share/roms/${rom[0]}/online | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
-      echo "<game><path>online/${line}</path><image>../../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+      echo "<game><path>online/${line}</path><name>${line2}</name><image>../../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
@@ -64,7 +64,7 @@ for each in "${zips[@]}"; do
   ls /recalbox/share/roms/${zip[0]}/online | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
       line2=${line%.*}
-      echo "<game><path>online/${line}</path><image>../../thumbs/${zip[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml;
+      echo "<game><path>online/${line}</path><name>${line2}</name><image>../../thumbs/${zip[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml;
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
