@@ -20,7 +20,7 @@ for each in "${roms[@]}"; do
     while IFS= read -r line; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
-        thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")
+        thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g" -e 's/#/%23/g')
         echo "<figure onclick=\"window.location.href='myrient/${rom[1]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${rom[0]}.html
         #echo ${line} >> ~/${rom[0]}.txt;
         ((pocet++))
