@@ -1,4 +1,4 @@
-roms+=("arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy;Arduboy;arduous_libretro")
+roms+=("arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;Arduboy;arduous_libretro")
 roms+=("channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;Fairchild Channel F;freechaf_libretro")
 roms+=("vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;GCE Vectrex;vecx_libretro")
 roms+=("o2em;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Magnavox Odyssey 2;o2em_libretro")
