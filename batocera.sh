@@ -26,6 +26,7 @@ for each in "${roms[@]}"; do
     rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
   else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/online; fi
   mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
+  rm /userdata/roms/${rom[0]}/online/\[BIOS\]*.*
 done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
