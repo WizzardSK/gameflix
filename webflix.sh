@@ -4,10 +4,6 @@ wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK
 wget -O ~/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/style.css
 wget -O ~/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 
-#wget -O ~/.local/share/applications/retroarch.sh.desktop https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.sh.desktop
-#chmod +x ~/retroarch.sh
-#xdg-mime default ~/.local/share/applications/retroarch.sh.desktop application/zip
-
 mkdir -p ~/myrient
 mkdir -p ~/myrient/No-Intro
 mkdir -p ~/myrient/Redump
