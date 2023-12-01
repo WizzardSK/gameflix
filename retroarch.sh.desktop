@@ -1,6 +1,0 @@
-[Desktop Entry]
-Exec=$HOME/retroarch.sh
-MimeType=application/zip;application/XEX;application/x-spectrum-dsk;
-Name=retroarch.sh
-NoDisplay=true
-Type=Application
