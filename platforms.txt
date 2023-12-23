@@ -50,7 +50,7 @@ roms+=("psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Pl
 roms+=("pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;NEC - PC Engine - TurboGrafx 16;<p>PC Engine;mednafen_pce_fast_libretro")
 roms+=("pcenginecd;Redump/NEC - PC Engine CD & TurboGrafx CD;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD;mednafen_pce_fast_libretro;cue")
 roms+=("supergrafx;No-Intro/NEC - PC Engine SuperGrafx;NEC - PC Engine SuperGrafx;PC Engine 2;mednafen_supergrafx_libretro")
-roms+=("pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX;mednafen_pcfx_libretro_libretro;cue")
+roms+=("pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX;mednafen_pcfx_libretro;cue")
 
 roms+=("cdi;Redump/Philips - CD-i;Philips - CD-i;<p>Philips CDi;same_cdi_libretro;cue")
 roms+=("3do;Redump/Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO;opera_libretro;cue")
