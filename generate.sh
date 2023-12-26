@@ -2,7 +2,8 @@
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 IFS=";"
 echo "<div id=\"topbar\"><h3 id=\"platforma\">gameflix</h3></div><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" /><br /><br /><br />" > ~/systems.html
-echo "<title>gameflix</title><frameset border=0 cols='240, 100%'><frame name='menu' src='systems.html'><frame name='main' src='systems.html'></frameset>" > ~/gameflix.html
+cp ~/systems.html ~/main.html
+echo "<title>gameflix</title><frameset border=0 cols='240, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix.html
 wget -O ~/retroarch.sh https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.1st
 for each in "${roms[@]}"; do
   ((platforms++))
@@ -30,6 +31,7 @@ for each in "${roms[@]}"; do
   } < <(ls ~/myrient/${rom[1]})
   echo "</div><script src=\"script.js\"></script>" >> ~/${rom[0]}.html
   echo "<a href='${rom[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${rom[3]}</a> ($pocet)<br />" >> ~/systems.html
+  echo "<figure><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption><a href='${rom[0]}.html' target='main'>${rom[3]}</a> ($pocet)</figcaption></figure>" >> ~/main.html
   ext=""
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
   echo "\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/retroarch.sh
@@ -56,7 +58,8 @@ for each in "${zips[@]}"; do
     done
   } < <(ls ~/roms/${zip[0]})
   echo "</div><script src=\"script.js\"></script>" >> ~/${zip[0]}.html
-  echo "<a href='${zip[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]}</a> ($pocet)<br />" >> ~/systems.html
+  echo "<a href='${zip[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]}</a> ($pocet)<br />" >> ~/systems.html  
+  echo "<figure><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${zip[2]}".png'><figcaption><a href='${zip[0]}.html' target='main'>${zip[3]}</a> ($pocet)</figcaption></figure>" >> ~/main.html  
   ext=""
   if [ -n "${zip[5]}" ]; then ext="; ext=\"${zip[5]}\""; fi
   echo "\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/retroarch.sh
