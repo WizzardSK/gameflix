@@ -59,7 +59,7 @@ roms+=("ngp;No-Intro/SNK - NeoGeo Pocket;SNK - Neo Geo Pocket;<i>Neo Geo Pocket<
 roms+=("ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;<i>Neo Geo Pocket Color</i>;mednafen_ngp_libretro")
 
 roms+=("dos;eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/;DOS;<p><b>eXo DOS</b>;dosbox_pure_libretro")
-roms+=("pc;grandis:Non Amiga/DOS/Total DOS Collection v18/Games/Files/;DOS;<b>Total DOS</b>;dosbox_pure_libretro")
+#roms+=("pc;grandis:Non Amiga/DOS/Total DOS Collection v18/Games/Files/;DOS;<b>Total DOS</b>;dosbox_pure_libretro")
 roms+=("msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;<b>MSX 1</b>;bluemsx_libretro")
 roms+=("msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<b>MSX 2</b>;bluemsx_libretro")
 
