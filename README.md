@@ -11,7 +11,7 @@ Why is it better than to have all games on local storage? You may have the acces
 
 If you need ARM64 libretro cores, try here: https://github.com/christianhaitian/retroarch-cores
 
-For BIOS, check this page: https://github.com/Luciano2018
+For BIOS, check this page: https://github.com/PIBSAS
 
 ## Web version
 `rclone` binary is needed on host system (version 1.60+). Also it is needed to have rclone configured for all the remotes. Attached [rclone.conf](/.config/rclone/rclone.conf) should be placed in `~/.config/rclone/` If your version is not up to date, grab it from here: https://rclone.org/downloads/
