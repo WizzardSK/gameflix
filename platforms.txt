@@ -44,7 +44,7 @@ roms+=("dreamcast;Redump/Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast;flycas
 roms+=("gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i>;genesis_plus_gx_libretro")
 
 roms+=("psx;Redump/Sony - PlayStation;Sony - PlayStation;<p>PlayStation 1;pcsx_rearmed_libretro")
-roms+=("ps2;Redump/Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2;pcsx2;iso")
+roms+=("ps2;Redump/Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2;pcsx2_libretro;iso")
 roms+=("psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>PlayStation Portable</i>;ppsspp_libretro;iso")
 
 roms+=("pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;NEC - PC Engine - TurboGrafx 16;<p>PC Engine;mednafen_pce_fast_libretro")
@@ -76,7 +76,7 @@ zips+=("pc88;TOSEC/NEC/PC-8801/Games/[D88]/NEC PC-8801 - Games - [D88].zip;NEC -
 zips+=("pc98;TOSEC/NEC/PC-9801/Games/[FDD]/NEC PC-9801 - Games - [FDD].zip;NEC - PC-98;<b>NEC PC-98</b>;np2kai_libretro")
 zips+=("x1;TOSEC/Sharp/X1/Games/[2D]/Sharp X1 - Games - [2D].zip;Sharp - X1;<b>Sharp X1</b>;x1_libretro")
 zips+=("x68000;TOSEC/Sharp/X68000/Games/[DIM]/Sharp X68000 - Games - [DIM].zip;Sharp - X68000;<b>Sharp X68000</b>;px68k_libretro")
-zips+=("atari800;TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip;Atari - 8-bit;<b>Atari 8bit</b>;atari800")
+zips+=("atari800;TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip;Atari - 8-bit;<b>Atari 8bit</b>;atari800_libretro")
 zips+=("amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<b>Amstrad CPC</b>;cap32_libretro")
 zips+=("zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;<b>Sinclair ZX81</b>;81_libretro")
 zips+=("zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;<b>ZX Spectrum</b>;fuse_libretro")
