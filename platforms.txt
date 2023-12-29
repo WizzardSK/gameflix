@@ -62,7 +62,7 @@ roms+=("dos;eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/;DOS;<p><b>MS-DOS</b>;dosbox_pu
 roms+=("msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;<b>MSX 1</b>;bluemsx_libretro")
 roms+=("msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<b>MSX 2</b>;bluemsx_libretro")
 
-roms+=("atarist;No-Intro/Atari - ST;Atari - ST;<p><b>Atari ST</b>;hatari")
+roms+=("atarist;No-Intro/Atari - ST;Atari - ST;<p><b>Atari ST</b>;hatari_libretro")
 roms+=("amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;<b>Amiga 1200</b>;puae_libretro")
 roms+=("amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<b>Amiga CD32</b>;puae_libretro")
 roms+=("amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;<b>Amiga CDTV</b>;puae_libretro")
