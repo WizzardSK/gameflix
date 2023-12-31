@@ -5,17 +5,11 @@ wget -O ~/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/st
 wget -O ~/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 
 mkdir -p ~/myrient
-#mkdir -p ~/myrient/No-Intro
-#mkdir -p ~/myrient/Redump
-#mkdir -p ~/myrient/TOSEC
 mkdir -p ~/roms
 mkdir -p ~/iso
 mkdir -p ~/zip
 
 rclone mount myrient: ~/myrient --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon 
-#rclone mount myrient:No-Intro ~/myrient/No-Intro --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon 
-#rclone mount myrient:Redump ~/myrient/Redump --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon
-#rclone mount myrient:TOSEC ~/myrient/TOSEC --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon --vfs-cache-mode full
 
 IFS=";"
 for each in "${roms[@]}"; do
@@ -29,5 +23,5 @@ for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   mkdir -p ~/roms/${zip[0]}
   if [ ! -f ~/zip/${zip[0]}.zip ]; then wget -O ~/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
-  mount-zip ~/myrient/${zip[0]} ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  mount-zip ~/zip/${zip[0]}.zip ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 done
