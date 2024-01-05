@@ -29,7 +29,7 @@ for each in "${roms[@]}"; do
   } < <(ls ~/myrient/${rom[1]})
   echo "</div><script src=\"script.js\"></script>" >> ~/${rom[0]}.html
   echo "<a href='${rom[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${rom[3]}</a> ($pocet)<br />" >> ~/systems.html
-  echo "<figure><a href='${rom[0]}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/systematic/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/main.html
+  echo "<figure><a href='${rom[0]}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/main.html
   ext=""
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
   echo "\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/retroarch.sh
@@ -55,7 +55,7 @@ for each in "${zips[@]}"; do
   } < <(ls ~/roms/${zip[0]})
   echo "</div><script src=\"script.js\"></script>" >> ~/${zip[0]}.html
   echo "<a href='${zip[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]}</a> ($pocet)<br />" >> ~/systems.html  
-  echo "<figure><a href='${zip[0]}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/systematic/png/"${zip[2]}".png'><figcaption>${zip[2]} ($pocet)</figcaption></a></figure>" >> ~/main.html  
+  echo "<figure><a href='${zip[0]}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${zip[2]}".png'><figcaption>${zip[2]} ($pocet)</figcaption></a></figure>" >> ~/main.html  
   ext=""
   if [ -n "${zip[5]}" ]; then ext="; ext=\"${zip[5]}\""; fi
   echo "\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/retroarch.sh
