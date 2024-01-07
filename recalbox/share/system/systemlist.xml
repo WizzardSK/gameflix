@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <systemList>
-  <defaults command="python /usr/bin/emulatorlauncher.pyc %CONTROLLERSCONFIG% -system %SYSTEM% -rom %ROM% -emulator %EMULATOR% -core %CORE% -ratio %RATIO% %NETPLAY% %CRT%"/>
+  <defaults command="head %ROM%; python /usr/bin/emulatorlauncher.pyc %CONTROLLERSCONFIG% -system %SYSTEM% -rom %ROM% -emulator %EMULATOR% -core %CORE% -ratio %RATIO% %NETPLAY% %CRT%"/>
   <system uuid="c47d1c20-ec15-43a4-a4fe-c6f438a64f13" name="2048" fullname="2048">
     <descriptor path="%ROOT%/ports/2048" theme="2048" extensions=".game" icon="$F28c" downloader="0" port="1" readonly="1"/>
     <scraper screenscraper="135"/>
