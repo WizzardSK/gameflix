@@ -1,4 +1,5 @@
 #!/bin/bash
+ln -s /usr/bin/fusermount /usr/bin/fusermount3
 curl https://rclone.org/install.sh | bash
 wget -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf
 if [ ! -f /userdata/system/mount-zip ]; then wget -O /userdata/system/mount-zip https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/mount-zip; chmod +x /userdata/system/mount-zip; fi
