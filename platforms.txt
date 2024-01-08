@@ -39,7 +39,7 @@ roms+=("megadrive;No-Intro/Sega - Mega Drive - Genesis;Sega - Mega Drive - Genes
 roms+=("pico;No-Intro/Sega - PICO;Sega - PICO;Sega PICO;picodrive_libretro")
 roms+=("sega32x;No-Intro/Sega - 32X;Sega - 32X;Sega 32X;picodrive_libretro")
 roms+=("segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;Sega CD;picodrive_libretro")
-roms+=("saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn;yabause_libretro")
+roms+=("saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn;yabause_libretro;cue")
 roms+=("dreamcast;Redump/Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast;flycast_libretro;cue")
 roms+=("gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i>;genesis_plus_gx_libretro")
 
