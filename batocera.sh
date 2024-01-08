@@ -7,7 +7,7 @@ source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platf
 
 emulationstation stop; chvt 3; clear
 
-rm -rf /userdata/roms
+#rm -rf /userdata/roms
 mkdir -p /userdata/roms
 mkdir -p /userdata/thumbs
 mkdir -p /userdata/rom
