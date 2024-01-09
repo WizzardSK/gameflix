@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sleep 5
 now=1980
 while (( $now < 2020 )); do
     sleep 1
