@@ -78,7 +78,7 @@
     </emulatorList>
   </system>
   <system uuid="d7702775-ed5b-4f89-97f1-2c1d0b0fed2c" name="amigacd32" fullname="Amiga CD32">
-    <descriptor path="%ROOT%/amigacd32" theme="amigacd32" extensions=".cue .m3u .mds .uae .ccd .iso .chd .nrg" icon="$F293" downloader="0"/>
+    <descriptor path="%ROOT%/amigacd32" theme="amigacd32" extensions=".cue .m3u .mds .uae .ccd .iso .chd .nrg" icon="$F293" downloader="0" command="head %ROM%; umount /iso; mount-zip %ROM% /iso; python /usr/bin/emulatorlauncher.pyc %CONTROLLERSCONFIG% -system %SYSTEM% -rom /iso/*.cue -emulator %EMULATOR% -core %CORE% -ratio %RATIO% %NETPLAY% %CRT%"/>
     <scraper screenscraper="130"/>
     <properties type="console" pad="mandatory" keyboard="optional" mouse="optional" lightgun="no" releasedate="1993-09" manufacturer="Commodore" retroachievements="0" crt.multiresolution="0" crt.multiregion="0" ignoredfiles=""/>
     <emulatorList>
@@ -92,7 +92,7 @@
     </emulatorList>
   </system>
   <system uuid="3c290260-a94c-47e4-a8f5-cd47d1c0dad6" name="amigacdtv" fullname="Amiga CDTV">
-    <descriptor path="%ROOT%/amigacdtv" theme="amigacdtv" extensions=".cue .m3u .mds .uae .ccd .iso .chd .nrg .zip" icon="$F294" downloader="0"/>
+    <descriptor path="%ROOT%/amigacdtv" theme="amigacdtv" extensions=".cue .m3u .mds .uae .ccd .iso .chd .nrg .zip" icon="$F294" downloader="0" command="head %ROM%; umount /iso; mount-zip %ROM% /iso; python /usr/bin/emulatorlauncher.pyc %CONTROLLERSCONFIG% -system %SYSTEM% -rom /iso/*.cue -emulator %EMULATOR% -core %CORE% -ratio %RATIO% %NETPLAY% %CRT%"/>
     <scraper screenscraper="129"/>
     <properties type="console" pad="mandatory" keyboard="optional" mouse="optional" lightgun="no" releasedate="1991-08" manufacturer="Commodore" retroachievements="0" crt.multiresolution="0" crt.multiregion="0" ignoredfiles=""/>
     <emulatorList>
@@ -924,7 +924,7 @@
     </emulatorList>
   </system>
   <system uuid="3fc6d10e-aec1-41c9-9c84-0da8b0fa26ee" name="psx" fullname="Sony Playstation 1">
-    <descriptor path="%ROOT%/psx" theme="psx" extensions=".img .cue .m3u .ecm .mds .ccd .chd .iso .toc .bin .pbp" icon="$F275" downloader="0"/>
+    <descriptor path="%ROOT%/psx" theme="psx" extensions=".img .cue .m3u .ecm .mds .ccd .chd .iso .toc .bin .pbp" icon="$F275" downloader="0" command="head %ROM%; umount /iso; mount-zip %ROM% /iso; python /usr/bin/emulatorlauncher.pyc %CONTROLLERSCONFIG% -system %SYSTEM% -rom /iso/*.cue -emulator %EMULATOR% -core %CORE% -ratio %RATIO% %NETPLAY% %CRT%"/>
     <scraper screenscraper="57"/>
     <properties type="console" pad="mandatory" keyboard="no" mouse="no" lightgun="optional" releasedate="1994-12" manufacturer="Sony" retroachievements="1" crt.multiresolution="0" crt.multiregion="1" ignoredfiles=""/>
     <emulatorList>
@@ -992,7 +992,7 @@
     </emulatorList>
   </system>
   <system uuid="27be49e9-54df-441b-b66a-5f803d5c4e57" name="saturn" fullname="Sega Saturn">
-    <descriptor path="%ROOT%/saturn" theme="saturn" extensions=".cue .m3u .mds .ccd .chd .iso" icon="$F2d5" downloader="0"/>
+    <descriptor path="%ROOT%/saturn" theme="saturn" extensions=".cue .m3u .mds .ccd .chd .iso" icon="$F2d5" downloader="0" command="head %ROM%; umount /iso; mount-zip %ROM% /iso; python /usr/bin/emulatorlauncher.pyc %CONTROLLERSCONFIG% -system %SYSTEM% -rom /iso/*.cue -emulator %EMULATOR% -core %CORE% -ratio %RATIO% %NETPLAY% %CRT%"/>
     <scraper screenscraper="22"/>
     <properties type="console" pad="mandatory" keyboard="no" mouse="no" lightgun="recommended" releasedate="1994-11" manufacturer="Sega" retroachievements="1" crt.multiresolution="0" crt.multiregion="1" ignoredfiles=""/>
     <emulatorList>
