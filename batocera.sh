@@ -21,7 +21,7 @@ rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --
 IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
-  echo "Setting ${rom[0]}"
+  echo "Setting ${rom[2]}"
   mkdir -p /userdata/roms/${rom[0]}/online
   mkdir -p /userdata/roms/${rom[0]}/images  
   if grep -q ":" <<< "${rom[1]}"; then
@@ -32,7 +32,7 @@ for each in "${roms[@]}"; do
 done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
-  echo "Setting ${zip[0]}"
+  echo "Setting ${zip[2]}"
   mkdir -p /userdata/roms/${zip[0]}/online
   mkdir -p /userdata/roms/${zip[0]}/images
   if [ ! -f /userdata/zip/${zip[0]}.zip ]; then wget -O /userdata/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
