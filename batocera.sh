@@ -28,6 +28,7 @@ for each in "${roms[@]}"; do
     rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --http-no-head --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
   else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/online; fi
   #mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
+  rclone sync thumbnails:${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images --config=/userdata/system/rclone.conf
 done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
@@ -37,20 +38,6 @@ for each in "${zips[@]}"; do
   if [ ! -f /userdata/zip/${zip[0]}.zip ]; then wget -O /userdata/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
   /userdata/system/mount-zip /userdata/zip/${zip[0]}.zip /userdata/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   #mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
-done
-
-for each in "${roms[@]}"; do
-  read -t 0.1 -n 1 key
-  if [ ! -z "$key" ]; then break; fi
-  read -ra rom < <(printf '%s' "$each")
-  echo "Syncing thumbs ${rom[2]}"
-  rclone sync thumbnails:${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images --config=/userdata/system/rclone.conf
-done
-for each2 in "${zips[@]}"; do
-  read -t 0.1 -n 1 key
-  if [ ! -z "$key" ]; then break; fi
-  read -ra zip < <(printf '%s' "$each2")
-  echo "Syncing thumbs ${zip[2]}"
   rclone sync thumbnails:${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images --config=/userdata/system/rclone.conf
 done
 
