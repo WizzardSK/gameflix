@@ -46,10 +46,10 @@ for each in "${roms[@]}"; do
   echo "Syncing thumbs ${rom[2]}"
   rclone sync thumbnails:${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images --config=/userdata/system/rclone.conf
 done
-for each in "${zips[@]}"; do
+for each2 in "${zips[@]}"; do
   read -t 0.1 -n 1 key
   if [ ! -z "$key" ]; then break; fi
-  read -ra zip < <(printf '%s' "$each")
+  read -ra zip < <(printf '%s' "$each2")
   echo "Syncing thumbs ${zip[2]}"
   rclone sync thumbnails:${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images --config=/userdata/system/rclone.conf
 done
