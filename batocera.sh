@@ -28,7 +28,7 @@ for each in "${roms[@]}"; do
     rclone mount ${rom[1]} /userdata/roms/${rom[0]}/online --http-no-head --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
   else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/online; fi
   #mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
-  #rclone sync thumbnails:${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images --config=/userdata/system/rclone.conf
+  rclone sync thumbnails:${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images --ignore-existing --config=/userdata/system/rclone.conf
 done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
@@ -38,24 +38,7 @@ for each in "${zips[@]}"; do
   if [ ! -f /userdata/zip/${zip[0]}.zip ]; then wget -O /userdata/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
   /userdata/system/mount-zip /userdata/zip/${zip[0]}.zip /userdata/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   #mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
-  #rclone sync thumbnails:${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images --config=/userdata/system/rclone.conf
-done
-
-stty -echo
-trap 'stty echo' EXIT
-for each in "${roms[@]}"; do
-  read -ra rom < <(printf '%s' "$each")
-  echo "Setting ${rom[2]}"
-  read -s -n 1 key
-  if [ ! -z "$key" ]; then exit; fi
-  rclone sync thumbnails:${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images --config=/userdata/system/rclone.conf
-done
-for each in "${zips[@]}"; do
-  read -ra zip < <(printf '%s' "$each")
-  echo "Setting ${zip[2]}"
-  read -s -n 1 key
-  if [ ! -z "$key" ]; then exit; fi
-  rclone sync thumbnails:${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images --config=/userdata/system/rclone.conf
+  rclone sync thumbnails:${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images --ignore-existing --config=/userdata/system/rclone.conf
 done
 
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg
