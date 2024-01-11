@@ -41,18 +41,20 @@ for each in "${zips[@]}"; do
   #rclone sync thumbnails:${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images --config=/userdata/system/rclone.conf
 done
 
+stty -echo
+trap 'stty echo' EXIT
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "Setting ${rom[2]}"
-  #read -t 0.1 -n 1 key
-  #if [ ! -z "$key" ]; then break; fi
+  read -s -n 1 key
+  if [ ! -z "$key" ]; then exit; fi
   rclone sync thumbnails:${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images --config=/userdata/system/rclone.conf
 done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   echo "Setting ${zip[2]}"
-  #read -t 0.1 -n 1 key
-  #if [ ! -z "$key" ]; then break; fi
+  read -s -n 1 key
+  if [ ! -z "$key" ]; then exit; fi
   rclone sync thumbnails:${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images --config=/userdata/system/rclone.conf
 done
 
