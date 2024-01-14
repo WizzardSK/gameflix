@@ -17,7 +17,8 @@ zips+=("atari5200;TOSEC/Atari/5200/Games/Atari 5200 - Games.zip;Atari - 5200;<p>
 #roms+=("atari7800;No-Intro/Atari - 7800;Atari - 7800;Atari 7800;prosystem_libretro")
 zips+=("atari7800;TOSEC/Atari/7800/Games/Atari 7800 - Games.zip;Atari - 7800;<p>Atari 7800;prosystem_libretro")
 roms+=("jaguar;No-Intro/Atari - Jaguar (J64);Atari - Jaguar;Atari Jaguar;virtualjaguar_libretro")
-roms+=("lynx;No-Intro/Atari - Lynx;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
+#roms+=("lynx;No-Intro/Atari - Lynx;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
+zips+=("lynx;TOSEC/Atari/Lynx/Games/[LNX]/Atari Lynx - Games - [LNX].zip;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
 
 roms+=("nes;No-Intro/Nintendo - Nintendo Entertainment System (Headered);Nintendo - Nintendo Entertainment System;<p>Nintendo NES;nestopia_libretro")
 roms+=("fds;No-Intro/Nintendo - Family Computer Disk System (FDS);Nintendo - Family Computer Disk System;Famicom Disk System;nestopia_libretro")
