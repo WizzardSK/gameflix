@@ -7,10 +7,11 @@ source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platf
 
 emulationstation stop; chvt 3; clear
 
+rm -rf /userdata/rom
 rm -rf /userdata/roms
+mkdir -p /userdata/rom
 mkdir -p /userdata/roms
 mkdir -p /userdata/thumbs
-mkdir -p /userdata/rom
 #mkdir -p /userdata/rom/No-Intro
 #mkdir -p /userdata/rom/Redump
 #mkdir -p /userdata/rom/TOSEC
