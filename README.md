@@ -26,9 +26,9 @@ Now you may run the roms directly without copying them to local storage, just li
 
 You also need [mount-zip](https://github.com/google/mount-zip) program to use Amstrad CPC, ZX Spectrum and Atari 800 games. They are stored in zipped libraries on remote place so the program needs to mount it like folder. It is also used to run zipped ISO files for PSP, PS2, PC Engine CD.
 
-[mount.sh](mount.sh) script generates a `gameflix.html` web page in your home directory which is automatically opened in default browser. Firefox is recommended. Web page contains links to all the platforms supported with all the games available. The game is launched after clicking on the thumbnail. It is necessary to associate the zip files and other rom files with `retroarch.sh` script, which is also downloaded into home directory. It automatically launches RetroArch with correct core or standalone emulator. You may edit that file according to your needs.
+[mount.sh](mount.sh) mounts the library. The game is launched after clicking on the thumbnail. It is necessary to associate the zip files and other rom files with `retroarch.sh` script, which is also downloaded into home directory. It automatically launches RetroArch with correct core or standalone emulator. You may edit that file according to your needs.
 
-Then run [gen.sh](gen.sh) to generate or update games collection. It is not necessary to run it all the time, because it takes time, about 30 minutes on my Chromebook.
+Then run [gen.sh](gen.sh) to generate or update games collection. The script generates a `gameflix.html` web page in your home directory which is automatically opened in default browser. Firefox is recommended. Web page contains links to all the platforms supported with all the games available. It is not necessary to run it all the time, because it takes time, about 30 minutes on my Chromebook.
 
 ## Usage - Batocera Linux
 For Batocera, you need to copy [custom.sh](batocera/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone config file in system folder. Thumbnail folders are mounting too.
