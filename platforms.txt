@@ -21,9 +21,11 @@ zips+=("jaguar;TOSEC/Atari/Jaguar/Games/[J64]/Atari Jaguar - Games - [J64].zip;A
 #roms+=("lynx;No-Intro/Atari - Lynx;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
 zips+=("lynx;TOSEC/Atari/Lynx/Games/[LNX]/Atari Lynx - Games - [LNX].zip;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
 
-roms+=("nes;No-Intro/Nintendo - Nintendo Entertainment System (Headered);Nintendo - Nintendo Entertainment System;<p>Nintendo NES;nestopia_libretro")
+#roms+=("nes;No-Intro/Nintendo - Nintendo Entertainment System (Headered);Nintendo - Nintendo Entertainment System;<p>Nintendo NES;nestopia_libretro")
+zips+=("nes;TOSEC/Nintendo/Famicom & Entertainment System/Games/[NES]/Nintendo Famicom & Entertainment System - Games - [NES].zip;Nintendo - Nintendo Entertainment System;<p>Nintendo NES;nestopia_libretro")
 roms+=("fds;No-Intro/Nintendo - Family Computer Disk System (FDS);Nintendo - Family Computer Disk System;Famicom Disk System;nestopia_libretro")
-roms+=("snes;No-Intro/Nintendo - Super Nintendo Entertainment System;Nintendo - Super Nintendo Entertainment System;Nintendo SNES;snes9x_libretro")
+#roms+=("snes;No-Intro/Nintendo - Super Nintendo Entertainment System;Nintendo - Super Nintendo Entertainment System;Nintendo SNES;snes9x_libretro")
+zips+=("snes;TOSEC/Nintendo/Super Famicom & Super Entertainment System/Games/Nintendo Super Famicom & Super Entertainment System - Games.zip;Nintendo - Super Nintendo Entertainment System;Nintendo SNES;snes9x_libretro")
 roms+=("satellaview;No-Intro/Nintendo - Satellaview;Nintendo - Satellaview;Nintendo Satellaview;snes9x_libretro")
 roms+=("sufami;No-Intro/Nintendo - Sufami Turbo;Nintendo - Sufami Turbo;Sufami Turbo;snes9x_libretro")
 roms+=("n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64;Nintendo 64;mupen64plus_next_libretro")
