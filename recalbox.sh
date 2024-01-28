@@ -1,6 +1,6 @@
 #!/bin/bash
-ln -s /usr/bin/fusermount /usr/bin/fusermount3
 mount -o remount,rw /
+ln -s /usr/bin/fusermount /usr/bin/fusermount3
 
 case $( uname -m ) in
   armv7l) ziparch="arm"; rclarch="arm-v7" ;;
