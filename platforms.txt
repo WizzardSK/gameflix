@@ -32,8 +32,10 @@ roms+=("n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64
 roms+=("gamecube;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Gamecube;dolphin_libretro;rvz")
 roms+=("wii;Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k];Nintendo - Wii;Nintendo Wii;dolphin_libretro;rvz")
 
-roms+=("pokemini;No-Intro/Nintendo - Pokemon Mini;Nintendo - Pokemon Mini;<p><i>Pokemon Mini</i>;pokemini_libretro")
-roms+=("virtualboy;No-Intro/Nintendo - Virtual Boy;Nintendo - Virtual Boy;<i>Virtual Boy</i>;mednafen_vb_libretro")
+#roms+=("pokemini;No-Intro/Nintendo - Pokemon Mini;Nintendo - Pokemon Mini;<p><i>Pokemon Mini</i>;pokemini_libretro")
+zips+=("pokemini;TOSEC/Nintendo/Pokemon Mini/Games/Nintendo Pokemon Mini - Games.zip;Nintendo - Pokemon Mini;<p><i>Pokemon Mini</i>;pokemini_libretro")
+#roms+=("virtualboy;No-Intro/Nintendo - Virtual Boy;Nintendo - Virtual Boy;<i>Virtual Boy</i>;mednafen_vb_libretro")
+zips+=("virtualboy;TOSEC/Nintendo/Virtual Boy/Games/Nintendo Virtual Boy - Games.zip;Nintendo - Virtual Boy;<i>Virtual Boy</i>;mednafen_vb_libretro")
 #roms+=("gb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;<i>Game Boy</i>;sameboy_libretro")
 zips+=("gb;TOSEC/Nintendo/Game Boy/Games/Nintendo Game Boy - Games.zip;Nintendo - Game Boy;<i>Game Boy</i>;sameboy_libretro")
 #roms+=("gbc;No-Intro/Nintendo - Game Boy Color;Nintendo - Game Boy Color;<i>Game Boy Color</i>;sameboy_libretro")
