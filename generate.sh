@@ -39,23 +39,23 @@ for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   mkdir -p ~/roms/${zip[0]}
   mount-zip ~/myrient/${zip[1]} ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-  > ~/${zip[0]}.html
-  wget -O ~/${zip[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+  > ~/${zip[0]}-zip.html
+  wget -O ~/${zip[0]}-zip.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0
   {
     while IFS= read -r line; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")    
-        echo "<figure onclick=\"window.location.href='roms/${zip[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${zip[0]}.html
+        echo "<figure onclick=\"window.location.href='roms/${zip[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/${zip[0]}-zip.html
         ((pocet++))
         ((total++))
       fi
     done
   } < <(ls ~/roms/${zip[0]})
-  echo "</div><script src=\"script.js\"></script>" >> ~/${zip[0]}.html
-  echo "<a href='${zip[0]}.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]}</a> ($pocet)<br />" >> ~/systems.html  
-  echo "<figure><a href='${zip[0]}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${zip[2]}".png'><figcaption>${zip[2]} ($pocet)</figcaption></a></figure>" >> ~/main.html  
+  echo "</div><script src=\"script.js\"></script>" >> ~/${zip[0]}-zip.html
+  echo "<a href='${zip[0]}-zip.html' target='main' onclick=\"document.getElementById('platforma').innerHTML = this.innerText\">${zip[3]}</a> ($pocet)<br />" >> ~/systems.html  
+  echo "<figure><a href='${zip[0]}-zip.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${zip[2]}".png'><figcaption>${zip[2]} ($pocet)</figcaption></a></figure>" >> ~/main.html  
   ext=""
   if [ -n "${zip[5]}" ]; then ext="; ext=\"${zip[5]}\""; fi
   echo "\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/retroarch.sh
