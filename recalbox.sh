@@ -56,9 +56,9 @@ done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   echo "Mounting ${zip[0]}"
-  mkdir -p /recalbox/share/roms/${zip[0]}/online
+  mkdir -p /recalbox/share/roms/${zip[0]}/zip
   if [ ! -f /recalbox/share/zip/${zip[0]}.zip ]; then wget -O /recalbox/share/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
-  mount-zip /recalbox/share/zip/${zip[0]}.zip /recalbox/share/roms/${zip[O]}/online -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  mount-zip /recalbox/share/zip/${zip[0]}.zip /recalbox/share/roms/${zip[O]}/zip -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   > /recalbox/share/roms/${zip[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
   ls /recalbox/share/roms/${zip[0]}/online | while read line; do
