@@ -10,20 +10,11 @@ roms+=("supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara
 roms+=("wswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i>;mednafen_wswan_libretro")
 roms+=("wswanc;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>WonderSwan Color</i>;mednafen_wswan_libretro")
 
-zips+=("intellivision;TOSEC/Mattel/Intellivision/Games/[BIN]/Mattel Intellivision - Games - [BIN].zip;Mattel - Intellivision;Mattel Intellivision;freeintv_libretro")
-zips+=("colecovision;TOSEC/Coleco/ColecoVision/Games/Coleco ColecoVision - Games.zip;Coleco - ColecoVision;Coleco Colecovision;bluemsx_libretro")
-
 roms+=("atari2600;No-Intro/Atari - 2600;Atari - 2600;<p>Atari 2600;stella_libretro")
 roms+=("atari5200;No-Intro/Atari - 5200;Atari - 5200;Atari 5200;a5200_libretro")
 roms+=("atari7800;No-Intro/Atari - 7800;Atari - 7800;Atari 7800;prosystem_libretro")
 roms+=("jaguar;No-Intro/Atari - Jaguar (J64);Atari - Jaguar;Atari Jaguar;virtualjaguar_libretro")
 roms+=("lynx;No-Intro/Atari - Lynx;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
-
-zips+=("atari2600;TOSEC/Atari/2600 & VCS/Games/Atari 2600 & VCS - Games.zip;Atari - 2600;<p>Atari 2600;stella_libretro")
-zips+=("atari5200;TOSEC/Atari/5200/Games/Atari 5200 - Games.zip;Atari - 5200;Atari 5200;a5200_libretro")
-zips+=("atari7800;TOSEC/Atari/7800/Games/Atari 7800 - Games.zip;Atari - 7800;Atari 7800;prosystem_libretro")
-zips+=("jaguar;TOSEC/Atari/Jaguar/Games/[J64]/Atari Jaguar - Games - [J64].zip;Atari - Jaguar;Atari Jaguar;virtualjaguar_libretro")
-zips+=("lynx;TOSEC/Atari/Lynx/Games/[LNX]/Atari Lynx - Games - [LNX].zip;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
 
 roms+=("nes;No-Intro/Nintendo - Nintendo Entertainment System (Headered);Nintendo - Nintendo Entertainment System;<p>Nintendo NES;nestopia_libretro")
 roms+=("fds;No-Intro/Nintendo - Family Computer Disk System (FDS);Nintendo - Family Computer Disk System;Famicom Disk System;nestopia_libretro")
@@ -34,9 +25,6 @@ roms+=("n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64
 roms+=("gamecube;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Gamecube;dolphin_libretro;rvz")
 roms+=("wii;Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k];Nintendo - Wii;Nintendo Wii;dolphin_libretro;rvz")
 
-zips+=("nes;TOSEC/Nintendo/Famicom & Entertainment System/Games/[NES]/Nintendo Famicom & Entertainment System - Games - [NES].zip;Nintendo - Nintendo Entertainment System;<p>Nintendo NES;nestopia_libretro")
-zips+=("snes;TOSEC/Nintendo/Super Famicom & Super Entertainment System/Games/Nintendo Super Famicom & Super Entertainment System - Games.zip;Nintendo - Super Nintendo Entertainment System;Nintendo SNES;snes9x_libretro")
-
 roms+=("pokemini;No-Intro/Nintendo - Pokemon Mini;Nintendo - Pokemon Mini;<p><i>Pokemon Mini</i>;pokemini_libretro")
 roms+=("virtualboy;No-Intro/Nintendo - Virtual Boy;Nintendo - Virtual Boy;<i>Virtual Boy</i>;mednafen_vb_libretro")
 roms+=("gb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;<i>Game Boy</i>;sameboy_libretro")
@@ -44,12 +32,6 @@ roms+=("gbc;No-Intro/Nintendo - Game Boy Color;Nintendo - Game Boy Color;<i>Game
 roms+=("gba;No-Intro/Nintendo - Game Boy Advance;Nintendo - Game Boy Advance;<i>Game Boy Advance</i>;mgba_libretro")
 roms+=("nds;No-Intro/Nintendo - Nintendo DS (Decrypted);Nintendo - Nintendo DS;<i>Nintendo DS</i>;melonds_libretro")
 roms+=("3ds;No-Intro/Nintendo - Nintendo 3DS (Decrypted);Nintendo - Nintendo 3DS;<i>Nintendo 3DS</i>;citra_libretro;3ds")
-
-zips+=("pokemini;TOSEC/Nintendo/Pokemon Mini/Games/Nintendo Pokemon Mini - Games.zip;Nintendo - Pokemon Mini;<p><i>Pokemon Mini</i>;pokemini_libretro")
-zips+=("virtualboy;TOSEC/Nintendo/Virtual Boy/Games/Nintendo Virtual Boy - Games.zip;Nintendo - Virtual Boy;<i>Virtual Boy</i>;mednafen_vb_libretro")
-zips+=("gb;TOSEC/Nintendo/Game Boy/Games/Nintendo Game Boy - Games.zip;Nintendo - Game Boy;<i>Game Boy</i>;sameboy_libretro")
-zips+=("gbc;TOSEC/Nintendo/Game Boy Color/Games/Nintendo Game Boy Color - Games.zip;Nintendo - Game Boy Color;<i>Game Boy Color</i>;sameboy_libretro")
-zips+=("gba;TOSEC/Nintendo/Game Boy Advance/Games/Nintendo Game Boy Advance - Games.zip;Nintendo - Game Boy Advance;<i>Game Boy Advance</i>;sameboy_libretro")
 
 roms+=("sg1000;No-Intro/Sega - SG-1000;Sega - SG-1000;<p>SG 1000;genesis_plus_gx_libretro")
 roms+=("mastersystem;No-Intro/Sega - Master System - Mark III;Sega - Master System - Mark III;Master System;genesis_plus_gx_libretro")
@@ -60,13 +42,6 @@ roms+=("segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;Sega CD;
 roms+=("saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn;yabasanshiro_libretro;cue")
 roms+=("dreamcast;Redump/Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast;flycast_libretro;cue")
 roms+=("gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i>;genesis_plus_gx_libretro")
-
-zips+=("sg1000;TOSEC/Sega/Game 1000/Games/Sega Game 1000 - Games.zip;Sega - SG-1000;<p>SG 1000;genesis_plus_gx_libretro")
-zips+=("mastersystem;TOSEC/Sega/Mark III & Master System/Games/Sega Mark III & Master System - Games.zip;Sega - Master System - Mark III;Master System;genesis_plus_gx_libretro")
-zips+=("megadrive;TOSEC/Sega/Mega Drive & Genesis/Games/[BIN]/Sega Mega Drive & Genesis - Games - [BIN].zip;Sega - Mega Drive - Genesis;Mega Drive;genesis_plus_gx_libretro")
-zips+=("pico;TOSEC/Sega/Pico/Educational/Sega Pico - Educational.zip;Sega - PICO;Sega PICO;picodrive_libretro")
-zips+=("sega32x;TOSEC/Sega/32X/Games/Sega 32X - Games.zip;Sega - 32X;Sega 32X;picodrive_libretro")
-zips+=("gamegear;TOSEC/Sega/Game Gear/Games/Sega Game Gear - Games.zip;Sega - Game Gear;<i>Game Gear</i>;genesis_plus_gx_libretro")
 
 roms+=("psx;Redump/Sony - PlayStation;Sony - PlayStation;<p>PlayStation 1;pcsx_rearmed_libretro;cue")
 roms+=("ps2;Redump/Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2;pcsx2;iso")
@@ -92,20 +67,45 @@ roms+=("amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;<b>Amiga 1200</b>
 roms+=("amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<b>Amiga CD32</b>;puae_libretro;cue")
 roms+=("amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;<b>Amiga CDTV</b>;puae_libretro;cue")
 
-zips+=("atarist;TOSEC/Atari/ST/Games/[ST]/Atari ST - Games - [ST].zip;Atari - ST;<p><b>Atari ST</b>;hatari_libretro")
-
 roms+=("cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<p><b>Commodore Plus-4</b>;vice_xplus4_libretro")
 roms+=("vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;<b>Commodore VIC-20</b>;vice_xvic_libretro")
 roms+=("c64;No-Intro/Commodore - Commodore 64;Commodore - 64;<b>Commodore 64</b>;vice_x64sc_libretro")
 
-zips+=("pet;TOSEC/Commodore/PET/Games/[PRG]/Commodore PET - Games - [PRG].zip;Commodore - PET;<b>Commodore PET</b>;vice_xpet_libretro")
 
-zips+=("pc88;TOSEC/NEC/PC-8801/Games/[D88]/NEC PC-8801 - Games - [D88].zip;NEC - PC-8001 - PC-8801;<p><b>NEC PC-88</b>;quasi88_libretro")
-zips+=("pc98;TOSEC/NEC/PC-9801/Games/[FDD]/NEC PC-9801 - Games - [FDD].zip;NEC - PC-98;<b>NEC PC-98</b>;np2kai_libretro")
-zips+=("x1;TOSEC/Sharp/X1/Games/[2D]/Sharp X1 - Games - [2D].zip;Sharp - X1;<b>Sharp X1</b>;x1_libretro")
-zips+=("x68000;TOSEC/Sharp/X68000/Games/[DIM]/Sharp X68000 - Games - [DIM].zip;Sharp - X68000;<b>Sharp X68000</b>;px68k_libretro")
-zips+=("atari800;TOSEC/Atari/8bit/Games/[ATR]/Atari 8bit - Games - [ATR].zip;Atari - 8-bit;<b>Atari 8bit</b>;atari800")
-zips+=("amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<b>Amstrad CPC</b>;cap32_libretro")
-zips+=("zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;<b>Sinclair ZX81</b>;81_libretro")
-zips+=("zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;<b>ZX Spectrum</b>;fuse_libretro")
-zips+=("spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo - SVI-318 - SVI-328;<b>Spectravideo</b>;bluemsx_libretro")
+zips+=("intellivision;TOSEC/Mattel/Intellivision/Games/[BIN]/Mattel Intellivision - Games - [BIN].zip;Mattel - Intellivision;Mattel Intellivision;freeintv_libretro")
+zips+=("colecovision;TOSEC/Coleco/ColecoVision/Games/Coleco ColecoVision - Games.zip;Coleco - ColecoVision;Coleco Colecovision;bluemsx_libretro")
+
+zips+=("atari2600;TOSEC/Atari/2600 & VCS/Games/Atari 2600 & VCS - Games.zip;Atari - 2600;<p>Atari 2600;stella_libretro")
+zips+=("atari5200;TOSEC/Atari/5200/Games/Atari 5200 - Games.zip;Atari - 5200;Atari 5200;a5200_libretro")
+zips+=("atari7800;TOSEC/Atari/7800/Games/Atari 7800 - Games.zip;Atari - 7800;Atari 7800;prosystem_libretro")
+zips+=("jaguar;TOSEC/Atari/Jaguar/Games/[J64]/Atari Jaguar - Games - [J64].zip;Atari - Jaguar;Atari Jaguar;virtualjaguar_libretro")
+zips+=("lynx;TOSEC/Atari/Lynx/Games/[LNX]/Atari Lynx - Games - [LNX].zip;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
+
+zips+=("nes;TOSEC/Nintendo/Famicom & Entertainment System/Games/[NES]/Nintendo Famicom & Entertainment System - Games - [NES].zip;Nintendo - Nintendo Entertainment System;<p>Nintendo NES;nestopia_libretro")
+zips+=("snes;TOSEC/Nintendo/Super Famicom & Super Entertainment System/Games/Nintendo Super Famicom & Super Entertainment System - Games.zip;Nintendo - Super Nintendo Entertainment System;Nintendo SNES;snes9x_libretro")
+
+zips+=("pokemini;TOSEC/Nintendo/Pokemon Mini/Games/Nintendo Pokemon Mini - Games.zip;Nintendo - Pokemon Mini;<p><i>Pokemon Mini</i>;pokemini_libretro")
+zips+=("virtualboy;TOSEC/Nintendo/Virtual Boy/Games/Nintendo Virtual Boy - Games.zip;Nintendo - Virtual Boy;<i>Virtual Boy</i>;mednafen_vb_libretro")
+zips+=("gb;TOSEC/Nintendo/Game Boy/Games/Nintendo Game Boy - Games.zip;Nintendo - Game Boy;<i>Game Boy</i>;sameboy_libretro")
+zips+=("gbc;TOSEC/Nintendo/Game Boy Color/Games/Nintendo Game Boy Color - Games.zip;Nintendo - Game Boy Color;<i>Game Boy Color</i>;sameboy_libretro")
+zips+=("gba;TOSEC/Nintendo/Game Boy Advance/Games/Nintendo Game Boy Advance - Games.zip;Nintendo - Game Boy Advance;<i>Game Boy Advance</i>;sameboy_libretro")
+
+zips+=("sg1000;TOSEC/Sega/Game 1000/Games/Sega Game 1000 - Games.zip;Sega - SG-1000;<p>SG 1000;genesis_plus_gx_libretro")
+zips+=("mastersystem;TOSEC/Sega/Mark III & Master System/Games/Sega Mark III & Master System - Games.zip;Sega - Master System - Mark III;Master System;genesis_plus_gx_libretro")
+zips+=("megadrive;TOSEC/Sega/Mega Drive & Genesis/Games/[BIN]/Sega Mega Drive & Genesis - Games - [BIN].zip;Sega - Mega Drive - Genesis;Mega Drive;genesis_plus_gx_libretro")
+zips+=("pico;TOSEC/Sega/Pico/Educational/Sega Pico - Educational.zip;Sega - PICO;Sega PICO;picodrive_libretro")
+zips+=("sega32x;TOSEC/Sega/32X/Games/Sega 32X - Games.zip;Sega - 32X;Sega 32X;picodrive_libretro")
+zips+=("gamegear;TOSEC/Sega/Game Gear/Games/Sega Game Gear - Games.zip;Sega - Game Gear;<i>Game Gear</i>;genesis_plus_gx_libretro")
+
+zips+=("atarist;TOSEC/Atari/ST/Games/[ST]/Atari ST - Games - [ST].zip;Atari - ST;<p>Atari ST;hatari_libretro")
+zips+=("pet;TOSEC/Commodore/PET/Games/[PRG]/Commodore PET - Games - [PRG].zip;Commodore - PET;Commodore PET;vice_xpet_libretro")
+
+zips+=("pc88;TOSEC/NEC/PC-8801/Games/[D88]/NEC PC-8801 - Games - [D88].zip;NEC - PC-8001 - PC-8801;<p>NEC PC-88;quasi88_libretro")
+zips+=("pc98;TOSEC/NEC/PC-9801/Games/[FDD]/NEC PC-9801 - Games - [FDD].zip;NEC - PC-98;NEC PC-98;np2kai_libretro")
+zips+=("x1;TOSEC/Sharp/X1/Games/[2D]/Sharp X1 - Games - [2D].zip;Sharp - X1;Sharp X1;x1_libretro")
+zips+=("x68000;TOSEC/Sharp/X68000/Games/[DIM]/Sharp X68000 - Games - [DIM].zip;Sharp - X68000;Sharp X68000;px68k_libretro")
+zips+=("atari800;TOSEC/Atari/8bit/Games/[ATR]/Atari 8bit - Games - [ATR].zip;Atari - 8-bit;Atari 8bit;atari800")
+zips+=("amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;Amstrad CPC;cap32_libretro")
+zips+=("zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;Sinclair ZX81;81_libretro")
+zips+=("zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;ZX Spectrum;fuse_libretro")
+zips+=("spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo - SVI-318 - SVI-328;Spectravideo;bluemsx_libretro")
