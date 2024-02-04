@@ -83,6 +83,7 @@ zips+=("lynx;TOSEC/Atari/Lynx/Games/[LNX]/Atari Lynx - Games - [LNX].zip;Atari -
 
 zips+=("nes;TOSEC/Nintendo/Famicom & Entertainment System/Games/[NES]/Nintendo Famicom & Entertainment System - Games - [NES].zip;Nintendo - Nintendo Entertainment System;<p>Nintendo NES;nestopia_libretro")
 zips+=("snes;TOSEC/Nintendo/Super Famicom & Super Entertainment System/Games/Nintendo Super Famicom & Super Entertainment System - Games.zip;Nintendo - Super Nintendo Entertainment System;Nintendo SNES;snes9x_libretro")
+zips+=("sufami;TOSEC/Nintendo/Sufami Turbo/Games/Nintendo Sufami Turbo - Games.zip;Nintendo - Nintendo Entertainment System;<p>Nintendo NES;snes9x_libretro")
 
 zips+=("pokemini;TOSEC/Nintendo/Pokemon Mini/Games/Nintendo Pokemon Mini - Games.zip;Nintendo - Pokemon Mini;<p><i>Pokemon Mini</i>;pokemini_libretro")
 zips+=("virtualboy;TOSEC/Nintendo/Virtual Boy/Games/Nintendo Virtual Boy - Games.zip;Nintendo - Virtual Boy;<i>Virtual Boy</i>;mednafen_vb_libretro")
