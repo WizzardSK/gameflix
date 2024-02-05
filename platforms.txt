@@ -98,6 +98,12 @@ zips+=("pico;TOSEC/Sega/Pico/Educational/Sega Pico - Educational.zip;Sega - PICO
 zips+=("sega32x;TOSEC/Sega/32X/Games/Sega 32X - Games.zip;Sega - 32X;Sega 32X;picodrive_libretro")
 zips+=("gamegear;TOSEC/Sega/Game Gear/Games/Sega Game Gear - Games.zip;Sega - Game Gear;<i>Game Gear</i>;genesis_plus_gx_libretro")
 
+zips+=("pcengine;TOSEC/NEC/PC-Engine & TurboGrafx-16/Games/NEC PC-Engine & TurboGrafx-16 - Games.zip;NEC - PC Engine - TurboGrafx 16;<p>PC Engine;mednafen_pce_fast_libretro")
+zips+=("supergrafx;TOSEC/NEC/SuperGrafx/Games/NEC SuperGrafx - Games.zip;NEC - PC Engine SuperGrafx;PC Engine 2;mednafen_supergrafx_libretro")
+
+zips+=("ngp;TOSEC/SNK/Neo-Geo Pocket/Games/SNK Neo-Geo Pocket - Games.zip;SNK - Neo Geo Pocket;<p><i>Neo Geo Pocket</i>;mednafen_ngp_libretro")
+zips+=("ngpc;TOSEC/SNK/Neo-Geo Pocket Color/Games/SNK Neo-Geo Pocket Color - Games.zip;SNK - Neo Geo Pocket Color;<i>Neo Geo Pocket Color</i>;mednafen_ngp_libretro")
+
 zips+=("atarist;TOSEC/Atari/ST/Games/[ST]/Atari ST - Games - [ST].zip;Atari - ST;<p>Atari ST;hatari_libretro")
 zips+=("cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP]/Commodore C16, C116 & Plus-4 - Games - [TAP].zip;Commodore - Plus-4;<p>Commodore Plus-4;vice_xplus4_libretro")
 zips+=("vic20;TOSEC/Commodore/VIC20/Games/[TAP]/Commodore VIC20 - Games - [TAP].zip;Commodore - VIC-20;Commodore VIC-20;vice_xvic_libretro")
