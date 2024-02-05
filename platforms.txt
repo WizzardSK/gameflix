@@ -74,6 +74,10 @@ roms+=("c64;No-Intro/Commodore - Commodore 64;Commodore - 64;Commodore 64;vice_x
 
 zips+=("intellivision;TOSEC/Mattel/Intellivision/Games/[BIN]/Mattel Intellivision - Games - [BIN].zip;Mattel - Intellivision;Mattel Intellivision;freeintv_libretro")
 zips+=("colecovision;TOSEC/Coleco/ColecoVision/Games/Coleco ColecoVision - Games.zip;Coleco - ColecoVision;Coleco Colecovision;bluemsx_libretro")
+zips+=("scv;TOSEC/Epoch/Super Cassette Vision/Games/Epoch Super Cassette Vision - Games.zip;Epoch - Super Cassette Vision;Super Cassette Vision;emuscv_libretro")
+zips+=("supervision;TOSEC/Watara/Supervision/Games/Watara Supervision - Games.zip;Watara - Supervision;<i>Watara Supervision</i>;potator_libretro")
+zips+=("wswan;TOSEC/Bandai/WonderSwan/Games/Bandai WonderSwan - Games.zip;Bandai - WonderSwan;<i>Bandai WonderSwan</i>;mednafen_wswan_libretro")
+zips+=("wswanc;TOSEC/Bandai/WonderSwan Color/Games/Bandai WonderSwan Color - Games.zip;Bandai - WonderSwan Color;<i>WonderSwan Color</i>;mednafen_wswan_libretro")
 
 zips+=("atari2600;TOSEC/Atari/2600 & VCS/Games/Atari 2600 & VCS - Games.zip;Atari - 2600;<p>Atari 2600;stella_libretro")
 zips+=("atari5200;TOSEC/Atari/5200/Games/Atari 5200 - Games.zip;Atari - 5200;Atari 5200;a5200_libretro")
