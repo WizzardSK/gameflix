@@ -34,7 +34,7 @@ for each in "${roms[@]}"; do
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
   echo "\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/retroarch.sh
 done
-echo "<h3>TOSEC</h3>" > ~/systems.html
+echo "<h3>TOSEC</h3>" >> ~/systems.html
 for each in "${zips[@]}"; do
   ((platforms++))
   read -ra zip < <(printf '%s' "$each")
