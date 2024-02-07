@@ -110,6 +110,7 @@ roms+=("cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<p>Commodore Plus-
 roms+=("vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;Commodore VIC-20;vice_xvic_libretro")
   zips+=("vic20;TOSEC/Commodore/VIC20/Games/[TAP]/Commodore VIC20 - Games - [TAP].zip;Commodore - VIC-20;Commodore VIC-20;vice_xvic_libretro")
 roms+=("c64;No-Intro/Commodore - Commodore 64;Commodore - 64;Commodore 64;vice_x64sc_libretro")
+  zips+=("c64;TOSEC/Commodore/C64/Games/Arcade/[D64]/Commodore C64 - Games - Arcade - [D64].zip;Commodore - 64;Commodore 64;vice_x64sc_libretro")
   zips+=("pet;TOSEC/Commodore/PET/Games/[PRG]/Commodore PET - Games - [PRG].zip;Commodore - PET;Commodore PET;vice_xpet_libretro")
 
 zips+=("pc88;TOSEC/NEC/PC-8801/Games/[D88]/NEC PC-8801 - Games - [D88].zip;NEC - PC-8001 - PC-8801;<p>NEC PC-88;quasi88_libretro")
