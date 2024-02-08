@@ -102,6 +102,7 @@ roms+=("msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;MSX 2;bluemsx_libretro")
 roms+=("atarist;No-Intro/Atari - ST;Atari - ST;<p>Atari ST;hatari_libretro")
   zips+=("atarist;TOSEC/Atari/ST/Games/[ST]/Atari ST - Games - [ST].zip;Atari - ST;<p>Atari ST;hatari_libretro")
 roms+=("amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;Amiga 1200;puae_libretro")
+  zips+=("amiga1200;TOSEC/Commodore/Amiga/Games/SPS/Commodore Amiga - Games - SPS.zip;Commodore - Amiga;Amiga 1200;puae_libretro")
 roms+=("amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;Amiga CD32;puae_libretro;cue")
 roms+=("amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;Amiga CDTV;puae_libretro;cue")
 
