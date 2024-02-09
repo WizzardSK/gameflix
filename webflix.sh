@@ -15,8 +15,8 @@ IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if grep -q ":" <<< "${rom[1]}"; then
-    mkdir -p ~/roms/${rom[0]}
-    rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon
+    mkdir -p ~/roms/${rom[0]}-other
+    rclone mount ${rom[1]} ~/roms/${rom[0]}-other --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon
   fi
 done
 for each in "${zips[@]}"; do
