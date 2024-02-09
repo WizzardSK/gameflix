@@ -1,6 +1,7 @@
 #!/bin/bash
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 IFS=";"
+mkdir -p ~/gameflix
 echo "<h3>No-Intro/Redump</h3><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html
 cp ~/gameflix/systems.html ~/gameflix/main.html
 echo "<title>gameflix</title><frameset border=0 cols='240, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/gameflix.html
