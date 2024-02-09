@@ -8,10 +8,10 @@ wget -O ~/retroarch.sh https://raw.githubusercontent.com/WizzardSK/gameflix/main
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
-  if grep -q ":" <<< "${rom[1]}"; then
-    mkdir -p ~/roms/${rom[0]}
-    rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
-  fi
+#  if grep -q ":" <<< "${rom[1]}"; then
+#    mkdir -p ~/roms/${rom[0]}
+#    rclone mount ${rom[1]} ~/roms/${rom[0]} --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --vfs-cache-mode full --allow-non-empty --daemon
+#  fi
   > ~/${rom[0]}.html
   wget -O ~/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0    
@@ -38,8 +38,8 @@ echo "<h3>TOSEC</h3>" >> ~/systems.html
 for each in "${zips[@]}"; do
   ((platforms++))
   read -ra zip < <(printf '%s' "$each")
-  mkdir -p ~/roms/${zip[0]}
-  mount-zip ~/myrient/${zip[1]} ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+#  mkdir -p ~/roms/${zip[0]}
+#  mount-zip ~/myrient/${zip[1]} ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   > ~/${zip[0]}-zip.html
   wget -O ~/${zip[0]}-zip.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0
