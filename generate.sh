@@ -11,7 +11,7 @@ for each in "${roms[@]}"; do
   > ~/gameflix/${rom[0]}.html
   wget -O ~/gameflix/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0    
-  if [ "${rom[0]}" = "dos" ]; then rom[1]="../../roms/dos-other"; fi
+  if [ "${rom[0]}" = "dos" ]; then rom[1]="../roms/dos-other"; fi
   {
     while IFS= read -r line; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
