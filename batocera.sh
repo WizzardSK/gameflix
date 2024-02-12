@@ -15,7 +15,7 @@ mkdir -p /userdata/thumbs
 mkdir -p /userdata/zip
 
 echo "Mounting thumbs"
-rclone mount thumbnails: /userdata/thumbs --http-no-head --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
+rclone mount thumbnails: /userdata/thumbs --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
 echo "Mounting roms"
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
 
