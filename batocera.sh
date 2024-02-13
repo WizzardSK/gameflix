@@ -42,7 +42,7 @@ for each in "${zips[@]}"; do
 done
 for each in "${isos[@]}"; do
   read -ra iso < <(printf '%s' "$each")
-  echo "rom: ${iso[2]}"
+  echo "iso: ${iso[2]}"
   mkdir -p /userdata/roms/${rom[0]}/iso
   mkdir -p /userdata/roms/${rom[0]}/images  
   if grep -q ":" <<< "${iso[1]}"; then
