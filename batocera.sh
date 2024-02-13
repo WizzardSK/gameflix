@@ -13,6 +13,7 @@ mkdir -p /userdata/rom
 mkdir -p /userdata/roms
 mkdir -p /userdata/thumbs
 mkdir -p /userdata/zip
+mkdir -p /userdata/isos
 
 echo "Mounting thumbs"
 rclone mount thumbnails: /userdata/thumbs --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
@@ -38,6 +39,16 @@ for each in "${zips[@]}"; do
   if [ ! -f /userdata/zip/${zip[0]}.zip ]; then wget -O /userdata/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
   /userdata/system/mount-zip /userdata/zip/${zip[0]}.zip /userdata/roms/${zip[O]}/zip -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
+done
+for each in "${isos[@]}"; do
+  read -ra iso < <(printf '%s' "$each")
+  echo "rom: ${iso[2]}"
+  mkdir -p /userdata/roms/${rom[0]}/iso
+  mkdir -p /userdata/roms/${rom[0]}/images  
+  if grep -q ":" <<< "${iso[1]}"; then
+    rclone mount ${iso[1]} /userdata/roms/${iso[0]}/iso --http-no-head --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
+  else mount -o bind /userdata/rom/${iso[1]} /userdata/roms/${iso[0]}/online; fi
+  mount -o bind /userdata/thumbs/${iso[2]}/Named_Snaps /userdata/roms/${iso[0]}/images
 done
 
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg
