@@ -44,9 +44,7 @@ for each in "${isos[@]}"; do
   echo "iso: ${iso[2]}"
   mkdir -p /userdata/roms/${iso[0]}/iso
   mkdir -p /userdata/roms/${iso[0]}/images  
-  if grep -q ":" <<< "${iso[1]}"; then
-    rclone mount ${iso[1]} /userdata/roms/${iso[0]}/iso --http-no-head --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
-  else mount -o bind /userdata/rom/${iso[1]} /userdata/roms/${iso[0]}/online; fi
+  mount -o bind /userdata/rom/${iso[1]} /userdata/roms/${iso[0]}/iso; fi
   mount -o bind /userdata/thumbs/${iso[2]}/Named_Snaps /userdata/roms/${iso[0]}/images
 done
 
