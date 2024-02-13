@@ -13,7 +13,6 @@ mkdir -p /userdata/rom
 mkdir -p /userdata/roms
 mkdir -p /userdata/thumbs
 mkdir -p /userdata/zip
-mkdir -p /userdata/isos
 
 echo "Mounting thumbs"
 rclone mount thumbnails: /userdata/thumbs --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
@@ -43,8 +42,8 @@ done
 for each in "${isos[@]}"; do
   read -ra iso < <(printf '%s' "$each")
   echo "iso: ${iso[2]}"
-  mkdir -p /userdata/roms/${rom[0]}/iso
-  mkdir -p /userdata/roms/${rom[0]}/images  
+  mkdir -p /userdata/roms/${iso[0]}/iso
+  mkdir -p /userdata/roms/${iso[0]}/images  
   if grep -q ":" <<< "${iso[1]}"; then
     rclone mount ${iso[1]} /userdata/roms/${iso[0]}/iso --http-no-head --no-checksum --no-modtime --dir-cache-time 100h --allow-non-empty --attr-timeout 100h --poll-interval 100h --daemon --config=/userdata/system/rclone.conf
   else mount -o bind /userdata/rom/${iso[1]} /userdata/roms/${iso[0]}/online; fi
