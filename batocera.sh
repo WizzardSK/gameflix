@@ -44,7 +44,7 @@ for each in "${isos[@]}"; do
   echo "iso: ${iso[2]}"
   mkdir -p /userdata/roms/${iso[0]}/iso
   mkdir -p /userdata/roms/${iso[0]}/images  
-  mount -o bind /userdata/rom/${iso[1]} /userdata/roms/${iso[0]}/iso; fi
+  mount -o bind /userdata/rom/${iso[1]} /userdata/roms/${iso[0]}/iso
   mount -o bind /userdata/thumbs/${iso[2]}/Named_Snaps /userdata/roms/${iso[0]}/images
 done
 
