@@ -72,7 +72,7 @@ roms+=("segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;Sega CD;
 roms+=("saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn;yabasanshiro_libretro;cue")
   isos+=("saturn;TOSEC-ISO/Sega/Saturn/Games/[ISO];Sega - Saturn;Sega Saturn;yabasanshiro_libretro;cue")
 roms+=("dreamcast;Redump/Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast;flycast_libretro;cue")
-  iso+=("dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/US;Sega - Dreamcast;Sega Dreamcast;flycast_libretro;cue")
+  isos+=("dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/US;Sega - Dreamcast;Sega Dreamcast;flycast_libretro;cue")
 roms+=("gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i>;genesis_plus_gx_libretro")
   zips+=("gamegear;TOSEC/Sega/Game Gear/Games/Sega Game Gear - Games.zip;Sega - Game Gear;<i>Game Gear</i>;genesis_plus_gx_libretro")
 
@@ -83,9 +83,11 @@ roms+=("psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Pl
 roms+=("pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;NEC - PC Engine - TurboGrafx 16;<p>PC Engine;mednafen_pce_fast_libretro")
   zips+=("pcengine;TOSEC/NEC/PC-Engine & TurboGrafx-16/Games/NEC PC-Engine & TurboGrafx-16 - Games.zip;NEC - PC Engine - TurboGrafx 16;<p>PC Engine;mednafen_pce_fast_libretro")
 roms+=("pcenginecd;Redump/NEC - PC Engine CD & TurboGrafx CD;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD;mednafen_pce_fast_libretro;cue")
+  isos+=("pcenginecd;TOSEC-ISO/NEC/PC-Engine CD & TurboGrafx-16 CD/Games/[IMG];NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD;mednafen_pce_fast_libretro;cue")
 roms+=("supergrafx;No-Intro/NEC - PC Engine SuperGrafx;NEC - PC Engine SuperGrafx;PC Engine 2;mednafen_supergrafx_libretro")
   zips+=("supergrafx;TOSEC/NEC/SuperGrafx/Games/NEC SuperGrafx - Games.zip;NEC - PC Engine SuperGrafx;PC Engine 2;mednafen_supergrafx_libretro")
 roms+=("pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX;mednafen_pcfx_libretro;cue")
+  isos+=("pcfx;TOSEC-ISO/NEC/PC-FX/Games;NEC - PC-FX;PC-FX;mednafen_pcfx_libretro;cue")
 
 roms+=("cdi;Redump/Philips - CD-i;Philips - CD-i;<p>Philips CDi;same_cdi_libretro;cue")
 roms+=("3do;Redump/Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO;opera_libretro;cue")
