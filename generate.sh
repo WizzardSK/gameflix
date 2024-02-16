@@ -58,7 +58,7 @@ done
 for each in "${isos[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
-  > ~/gameflix/${rom[0]}.html
+  > ~/gameflix/${rom[0]}-iso.html
   wget -O ~/gameflix/${rom[0]}-iso.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0    
   {
