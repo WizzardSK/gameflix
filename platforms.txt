@@ -72,7 +72,7 @@ roms+=("segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;Sega CD;
 roms+=("saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn;yabasanshiro_libretro;cue")
   isos+=("saturn;TOSEC-ISO/Sega/Saturn/Games/[ISO];Sega - Saturn;Sega Saturn;yabasanshiro_libretro;cue")
 roms+=("dreamcast;Redump/Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast;flycast_libretro;cue")
-  isos+=("dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/US;Sega - Dreamcast;Sega Dreamcast;flycast_libretro;cue")
+  isos+=("dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/US;Sega - Dreamcast;Sega Dreamcast;flycast_libretro;gdi")
 roms+=("gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i>;genesis_plus_gx_libretro")
   zips+=("gamegear;TOSEC/Sega/Game Gear/Games/Sega Game Gear - Games.zip;Sega - Game Gear;<i>Game Gear</i>;genesis_plus_gx_libretro")
 
