@@ -28,7 +28,7 @@ for each in "${roms[@]}"; do
   echo "<figure><a href='${rom[0]}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
   ext=""
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
-  echo "\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
+  echo "*\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
 echo "<h3>TOSEC</h3>" >> ~/gameflix/systems.html
 for each in "${zips[@]}"; do
@@ -53,7 +53,7 @@ for each in "${zips[@]}"; do
   echo "<figure><a href='${zip[0]}-zip.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${zip[2]}".png'><figcaption>${zip[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html  
   ext=""
   if [ -n "${zip[5]}" ]; then ext="; ext=\"${zip[5]}\""; fi
-  echo "\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
+  echo "*\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
 for each in "${isos[@]}"; do
   ((platforms++))
@@ -77,7 +77,7 @@ for each in "${isos[@]}"; do
   echo "<figure><a href='${rom[0]}-iso.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
   ext=""
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
-  echo "*\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
+  echo "*\"${rom[1]}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
 curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.end | tee -a ~/gameflix/retroarch.sh  
 chmod +x ~/gameflix/retroarch.sh
