@@ -11,14 +11,14 @@ wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK
 wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/style.css
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 
-rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon --no-check-certificate 
+rclone mount myrient: ~/myrient --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon --no-check-certificate 
 
 IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if grep -q ":" <<< "${rom[1]}"; then
     mkdir -p ~/roms/${rom[0]}-other
-    rclone mount ${rom[1]} ~/roms/${rom[0]}-other --http-no-head --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon --no-check-certificate 
+    rclone mount ${rom[1]} ~/roms/${rom[0]}-other --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon --no-check-certificate 
   fi
 done
 for each in "${zips[@]}"; do
