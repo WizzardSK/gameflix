@@ -77,7 +77,7 @@ for each in "${isos[@]}"; do
   echo "<figure><a href='${rom[0]}-iso.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
   ext=""
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
-  echo "\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
+  echo "*\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
 curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.end | tee -a ~/gameflix/retroarch.sh  
 chmod +x ~/gameflix/retroarch.sh
