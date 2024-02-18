@@ -72,7 +72,7 @@ for each in "${isos[@]}"; do
       fi
     done
   } < <(ls ~/myrient/${rom[1]})
-  echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom[0]}.html
+  echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom[0]}-iso.html
   echo "<a href='${rom[0]}-iso.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   echo "<figure><a href='${rom[0]}-iso.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
   ext=""
