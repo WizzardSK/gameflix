@@ -55,6 +55,7 @@ for each in "${zips[@]}"; do
   if [ -n "${zip[5]}" ]; then ext="; ext=\"${zip[5]}\""; fi
   echo "*\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
+echo "<h3>TOSEC-ISO</h3>" >> ~/gameflix/systems.html
 for each in "${isos[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
