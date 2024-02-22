@@ -38,17 +38,15 @@ for each in "${zips[@]}"; do
   /userdata/system/mount-zip /userdata/zip/${zip[0]}.zip /userdata/roms/${zip[O]}/zip -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
 done
-
 for each in "${romz[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   echo "zip: ${zip[2]}"
-  mkdir -p /userdata/romz/${zip[0]}/zip
-  mkdir -p /userdata/romz/${zip[0]}/images
+  mkdir -p /userdata/roms/${zip[0]}/zip
+  mkdir -p /userdata/roms/${zip[0]}/images
   if [ ! -f /userdata/romz/${zip[0]}.zip ]; then wget -O /userdata/romz/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]}; fi  
   /userdata/system/mount-zip /userdata/romz/${zip[0]}.zip /userdata/roms/${zip[O]}/romz -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
 done
-
 for each in "${isos[@]}"; do
   read -ra iso < <(printf '%s' "$each")
   echo "iso: ${iso[2]}"
