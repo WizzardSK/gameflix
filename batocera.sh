@@ -29,6 +29,23 @@ for each in "${roms[@]}"; do
   else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/Online; fi
   mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
 done
+for each in "${isos[@]}"; do
+  read -ra iso < <(printf '%s' "$each")
+  echo "iso: ${iso[2]}"
+  mkdir -p /userdata/roms/${iso[0]}/TOSEC-ISO
+  mkdir -p /userdata/roms/${iso[0]}/images  
+  mount -o bind /userdata/rom/${iso[1]} /userdata/roms/${iso[0]}/TOSEC-ISO
+  mount -o bind /userdata/thumbs/${iso[2]}/Named_Snaps /userdata/roms/${iso[0]}/images
+done
+for each in "${romz[@]}"; do
+  read -ra zip < <(printf '%s' "$each")
+  echo "n-i: ${zip[2]}"
+  mkdir -p /userdata/roms/${zip[0]}/No-Intro
+  mkdir -p /userdata/roms/${zip[0]}/images
+  if [ ! -f /userdata/romz/${zip[0]}.zip ]; then wget -O /userdata/romz/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]}; fi  
+  /userdata/system/mount-zip /userdata/romz/${zip[0]}.zip /userdata/roms/${zip[O]}/No-Intro -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
+done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   echo "zip: ${zip[2]}"
@@ -37,23 +54,6 @@ for each in "${zips[@]}"; do
   if [ ! -f /userdata/zip/${zip[0]}.zip ]; then wget -O /userdata/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
   /userdata/system/mount-zip /userdata/zip/${zip[0]}.zip /userdata/roms/${zip[O]}/TOSEC -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
-done
-for each in "${romz[@]}"; do
-  read -ra zip < <(printf '%s' "$each")
-  echo "zip: ${zip[2]}"
-  mkdir -p /userdata/roms/${zip[0]}/No-Intro
-  mkdir -p /userdata/roms/${zip[0]}/images
-  if [ ! -f /userdata/romz/${zip[0]}.zip ]; then wget -O /userdata/romz/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]}; fi  
-  /userdata/system/mount-zip /userdata/romz/${zip[0]}.zip /userdata/roms/${zip[O]}/No-Intro -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-  mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
-done
-for each in "${isos[@]}"; do
-  read -ra iso < <(printf '%s' "$each")
-  echo "iso: ${iso[2]}"
-  mkdir -p /userdata/roms/${iso[0]}/TOSEC-ISO
-  mkdir -p /userdata/roms/${iso[0]}/images  
-  mount -o bind /userdata/rom/${iso[1]} /userdata/roms/${iso[0]}/TOSEC-ISO
-  mount -o bind /userdata/thumbs/${iso[2]}/Named_Snaps /userdata/roms/${iso[0]}/images
 done
 
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg
