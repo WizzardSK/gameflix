@@ -26,11 +26,11 @@ source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platf
 
 es stop; chvt 3; clear
 
-rm -rf /recalbox/share/roms
+mkdir -p /recalbox/share/rom
 mkdir -p /recalbox/share/roms
 mkdir -p /recalbox/share/thumbs
-mkdir -p /recalbox/share/rom
 mkdir -p /recalbox/share/zip
+mkdir -p /recalbox/share/romz
 
 rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 rclone mount myrient: /recalbox/share/rom --config=/recalbox/share/system/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
@@ -39,16 +39,33 @@ IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "Mounting ${rom[0]}"
-  mkdir -p /recalbox/share/roms/${rom[0]}/online  
+  mkdir -p /recalbox/share/roms/${rom[0]}/Online
   if grep -q ":" <<< "${rom[1]}"; then
-    rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/online --config=/recalbox/share/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
-  else mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/online; fi
+    rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/Online --config=/recalbox/share/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
+  else mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/Online; fi
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
-  ls /recalbox/share/roms/${rom[0]}/online | while read line; do
+  ls /recalbox/share/roms/${rom[0]}/Online | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
-      echo "<game><path>online/${line}</path><name>${line2}</name><image>../../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+      echo "<game><path>Online/${line}</path><name>${line2}</name><image>../../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+    fi
+  done
+  echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+done
+for each in "${isos[@]}"; do
+  read -ra rom < <(printf '%s' "$each")
+  echo "Mounting ${rom[0]}"
+  mkdir -p /recalbox/share/roms/${rom[0]}/TOSEC-ISO
+  if grep -q ":" <<< "${rom[1]}"; then
+    rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/TOSEC-ISO --config=/recalbox/share/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
+  else mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/TOSEC-ISO; fi
+  > /recalbox/share/roms/${rom[0]}/gamelist.xml
+  echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+  ls /recalbox/share/roms/${rom[0]}/TOSEC-ISO | while read line; do
+    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
+      line2=${line%.*}
+      echo "<game><path>TOSEC-ISO/${line}</path><name>${line2}</name><image>../../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
@@ -56,15 +73,31 @@ done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   echo "Mounting ${zip[0]}"
-  mkdir -p /recalbox/share/roms/${zip[0]}/zip
+  mkdir -p /recalbox/share/roms/${zip[0]}/TOSEC
   if [ ! -f /recalbox/share/zip/${zip[0]}.zip ]; then wget -O /recalbox/share/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
-  mount-zip /recalbox/share/zip/${zip[0]}.zip /recalbox/share/roms/${zip[O]}/zip -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  mount-zip /recalbox/share/zip/${zip[0]}.zip /recalbox/share/roms/${zip[O]}/TOSEC -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   > /recalbox/share/roms/${zip[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
-  ls /recalbox/share/roms/${zip[0]}/online | while read line; do
+  ls /recalbox/share/roms/${zip[0]}/TOSEC | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
       line2=${line%.*}
-      echo "<game><path>online/${line}</path><name>${line2}</name><image>../../thumbs/${zip[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml;
+      echo "<game><path>TOSEC/${line}</path><name>${line2}</name><image>../../thumbs/${zip[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml;
+    fi
+  done
+  echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
+done
+for each in "${romz[@]}"; do
+  read -ra zip < <(printf '%s' "$each")
+  echo "Mounting ${zip[0]}"
+  mkdir -p /recalbox/share/roms/${zip[0]}/No-Intro
+  if [ ! -f /recalbox/share/zip/${zip[0]}.zip ]; then wget -O /recalbox/share/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
+  mount-zip /recalbox/share/zip/${zip[0]}.zip /recalbox/share/roms/${zip[O]}/No-Intro -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  > /recalbox/share/roms/${zip[0]}/gamelist.xml
+  echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
+  ls /recalbox/share/roms/${zip[0]}/No-Intro | while read line; do
+    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
+      line2=${line%.*}
+      echo "<game><path>No-Intro/${line}</path><name>${line2}</name><image>../../thumbs/${zip[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml;
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
