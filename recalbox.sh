@@ -57,9 +57,7 @@ for each in "${isos[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "Mounting ${rom[0]}"
   mkdir -p /recalbox/share/roms/${rom[0]}/TOSEC-ISO
-  if grep -q ":" <<< "${rom[1]}"; then
-    rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/TOSEC-ISO --config=/recalbox/share/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
-  else mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/TOSEC-ISO; fi
+  mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/TOSEC-ISO; fi
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   ls /recalbox/share/roms/${rom[0]}/TOSEC-ISO | while read line; do
@@ -90,8 +88,8 @@ for each in "${romz[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   echo "Mounting ${zip[0]}"
   mkdir -p /recalbox/share/roms/${zip[0]}/No-Intro
-  if [ ! -f /recalbox/share/zip/${zip[0]}.zip ]; then wget -O /recalbox/share/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
-  mount-zip /recalbox/share/zip/${zip[0]}.zip /recalbox/share/roms/${zip[O]}/No-Intro -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  if [ ! -f /recalbox/share/romz/${zip[0]}.zip ]; then wget -O /recalbox/share/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
+  mount-zip /recalbox/share/romz/${zip[0]}.zip /recalbox/share/roms/${zip[O]}/No-Intro -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   > /recalbox/share/roms/${zip[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
   ls /recalbox/share/roms/${zip[0]}/No-Intro | while read line; do
