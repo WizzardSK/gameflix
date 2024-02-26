@@ -5,6 +5,7 @@ mkdir -p ~/myrient
 mkdir -p ~/roms
 mkdir -p ~/iso
 mkdir -p ~/zip
+mkdir -p ~/romz
 mkdir -p ~/gameflix
 
 wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf
@@ -26,4 +27,10 @@ for each in "${zips[@]}"; do
   mkdir -p ~/roms/${zip[0]}
   if [ ! -f ~/zip/${zip[0]}.zip ]; then wget -O ~/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
   mount-zip ~/zip/${zip[0]}.zip ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+done
+for each in "${zips[@]}"; do
+  read -ra zip < <(printf '%s' "$each")
+  mkdir -p ~/roms/${zip[0]}
+  if [ ! -f ~/romz/${zip[0]}.zip ]; then wget -O ~/romz/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]}; fi  
+  mount-zip ~/romz/${zip[0]}.zip ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 done
