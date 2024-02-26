@@ -28,7 +28,7 @@ for each in "${zips[@]}"; do
   if [ ! -f ~/zip/${zip[0]}.zip ]; then wget -O ~/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
   mount-zip ~/zip/${zip[0]}.zip ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 done
-for each in "${zips[@]}"; do
+for each in "${romz[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   mkdir -p ~/roms/${zip[0]}
   if [ ! -f ~/romz/${zip[0]}.zip ]; then wget -O ~/romz/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]}; fi  
