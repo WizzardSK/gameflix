@@ -63,7 +63,7 @@
   zips+=("sufami;TOSEC/Nintendo/Sufami Turbo/Games/Nintendo Sufami Turbo - Games.zip;Nintendo - Sufami Turbo;Sufami Turbo;snes9x_libretro")
 #roms+=("n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64;Nintendo 64;mupen64plus_next_libretro")
   romz+=("n64;Nintendo - Nintendo 64 (ByteSwapped).zip;Nintendo - Nintendo 64;Nintendo 64;mupen64plus_next_libretro")
-  zips+=("n64;TOSEC/Nintendo/64/Games/Nintendo 64 - Games.zip;Nintendo - Nintendo 64;Nintendo 64;mupen64plus_next_libretro")
+  #zips+=("n64;TOSEC/Nintendo/64/Games/Nintendo 64 - Games.zip;Nintendo - Nintendo 64;Nintendo 64;mupen64plus_next_libretro")
 roms+=("gamecube;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Gamecube;dolphin_libretro;rvz")
   isos+=("gamecube;TOSEC-ISO/Nintendo/GameCube/Games;Nintendo - GameCube;Gamecube;dolphin_libretro;rvz")
 roms+=("wii;Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k];Nintendo - Wii;Nintendo Wii;dolphin_libretro;rvz")
