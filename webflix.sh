@@ -30,7 +30,7 @@ for each in "${zips[@]}"; do
 done
 for each in "${romz[@]}"; do
   read -ra zip < <(printf '%s' "$each")
-  mkdir -p ~/roms/${zip[0]}
+  mkdir -p ~/roms/${zip[0]}-zip
   if [ ! -f ~/romz/${zip[0]}.zip ]; then wget -O ~/romz/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]}; fi  
   mount-zip ~/romz/${zip[0]}.zip ~/roms/${zip[O]}-zip -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 done
