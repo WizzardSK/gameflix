@@ -56,7 +56,7 @@ for each in "${isos[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "Mounting ${rom[0]}"
   mkdir -p /recalbox/share/roms/${rom[0]}/TOSEC-ISO
-  mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/TOSEC-ISO; fi
+  mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/TOSEC-ISO
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   ls /recalbox/share/roms/${rom[0]}/TOSEC-ISO | while read line; do
