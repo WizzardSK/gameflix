@@ -42,7 +42,7 @@ for each in "${romz[@]}"; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g")    
-        echo "<figure onclick=\"window.location.href='../roms/${zip[0]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/gameflix/${zip[0]}-rom.html
+        echo "<figure onclick=\"window.location.href='../roms/${zip[0]}-zip/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${zip[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/gameflix/${zip[0]}-rom.html
         ((pocet++))
         ((total++))
       fi
