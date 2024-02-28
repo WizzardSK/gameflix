@@ -20,7 +20,7 @@ if [ ! -f /usr/bin/rclone ]; then
 fi
 
 wget -O /recalbox/share_init/system/.emulationstation/systemlist.xml https://github.com/WizzardSK/gameflix/raw/main/recalbox/share/system/systemlist.xml
-wget -O /recalbox/share/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf
+wget -O /recalbox/share/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 
 es stop; chvt 3; clear
