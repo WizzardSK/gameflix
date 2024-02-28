@@ -57,7 +57,7 @@ for each in "${romz[@]}"; do
   echo "<figure><a href='${zip[0]}-rom.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${zip[2]}".png'><figcaption>${zip[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html  
   ext=""
   if [ -n "${zip[5]}" ]; then ext="; ext=\"${zip[5]}\""; fi
-  echo "*\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
+  echo "*\"${zip[0]}-zip\") core=\"${zip[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
 
 echo "<h3>TOSEC</h3>" >> ~/gameflix/systems.html
