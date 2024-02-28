@@ -9,9 +9,6 @@ mkdir -p ~/romz
 mkdir -p ~/gameflix
 
 wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/.config/rclone/rclone.conf
-wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/style.css
-wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
-
 rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty --daemon --no-check-certificate 
 
 IFS=";"
