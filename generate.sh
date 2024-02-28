@@ -7,6 +7,7 @@ echo "<title>gameflix</title><frameset border=0 cols='240, 100%'><frame name='me
 wget -O ~/gameflix/retroarch.sh https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.1st
 wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/style.css
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
+
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
@@ -32,6 +33,7 @@ for each in "${roms[@]}"; do
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
   echo "*\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
+
 echo "<h3>No-Intro</h3>" >> ~/gameflix/systems.html
 for each in "${romz[@]}"; do
   ((platforms++))
@@ -57,6 +59,7 @@ for each in "${romz[@]}"; do
   if [ -n "${zip[5]}" ]; then ext="; ext=\"${zip[5]}\""; fi
   echo "*\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
+
 echo "<h3>TOSEC</h3>" >> ~/gameflix/systems.html
 for each in "${zips[@]}"; do
   ((platforms++))
@@ -82,6 +85,7 @@ for each in "${zips[@]}"; do
   if [ -n "${zip[5]}" ]; then ext="; ext=\"${zip[5]}\""; fi
   echo "*\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
+
 echo "<h3>TOSEC-ISO</h3>" >> ~/gameflix/systems.html
 for each in "${isos[@]}"; do
   ((platforms++))
@@ -107,6 +111,7 @@ for each in "${isos[@]}"; do
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
   echo "*\"${rom[1]}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
+
 curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.end | tee -a ~/gameflix/retroarch.sh  
 chmod +x ~/gameflix/retroarch.sh
 echo "<p><b>Total: $total</b>" >> ~/gameflix/systems.html
