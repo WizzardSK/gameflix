@@ -71,7 +71,7 @@ for each in "${romz[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   echo "Mounting ${zip[0]}"
   mkdir -p /recalbox/share/roms/${zip[0]}/No-Intro
-  if [ ! -f /recalbox/share/romz/${zip[0]}.zip ]; then wget -O /recalbox/share/zip/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]}; fi  
+  if [ ! -f /recalbox/share/romz/${zip[0]}.zip ]; then wget -O /recalbox/share/romz/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]}; fi  
   mount-zip /recalbox/share/romz/${zip[0]}.zip /recalbox/share/roms/${zip[O]}/No-Intro -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   > /recalbox/share/roms/${zip[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
