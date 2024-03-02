@@ -1,6 +1,8 @@
 #!/bin/bash
 mount -o remount,rw /
-mount -o remount,size=4000M /tmp
+mount -o remount,size=200M /var
+mount -o remount,size=200M /run
+mount -o remount,size=6000M /tmp
 ln -s /usr/bin/fusermount /usr/bin/fusermount3
 
 case $( uname -m ) in
