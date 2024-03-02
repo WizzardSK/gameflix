@@ -1,5 +1,6 @@
 #!/bin/bash
 mount -o remount,rw /
+mount -o remount,size=4000M /dev/shm
 ln -s /usr/bin/fusermount /usr/bin/fusermount3
 
 case $( uname -m ) in
@@ -67,22 +68,6 @@ for each in "${isos[@]}"; do
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
-for each in "${zips[@]}"; do
-  read -ra zip < <(printf '%s' "$each")
-  echo "Mounting ${zip[0]}"
-  mkdir -p /recalbox/share/roms/${zip[0]}/TOSEC
-  if [ ! -f /recalbox/share/zip/${zip[0]}.zip ]; then wget -O /recalbox/share/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
-  mount-zip /recalbox/share/zip/${zip[0]}.zip /recalbox/share/roms/${zip[O]}/TOSEC -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-  > /recalbox/share/roms/${zip[0]}/gamelist.xml
-  echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
-  ls /recalbox/share/roms/${zip[0]}/TOSEC | while read line; do
-    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
-      line2=${line%.*}
-      echo "<game><path>TOSEC/${line}</path><name>${line2}</name><image>../../thumbs/${zip[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml;
-    fi
-  done
-  echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
-done
 for each in "${romz[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   echo "Mounting ${zip[0]}"
@@ -95,6 +80,22 @@ for each in "${romz[@]}"; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
       line2=${line%.*}
       echo "<game><path>No-Intro/${line}</path><name>${line2}</name><image>../../thumbs/${zip[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml;
+    fi
+  done
+  echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
+done
+for each in "${zips[@]}"; do
+  read -ra zip < <(printf '%s' "$each")
+  echo "Mounting ${zip[0]}"
+  mkdir -p /recalbox/share/roms/${zip[0]}/TOSEC
+  if [ ! -f /recalbox/share/zip/${zip[0]}.zip ]; then wget -O /recalbox/share/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
+  mount-zip /recalbox/share/zip/${zip[0]}.zip /recalbox/share/roms/${zip[O]}/TOSEC -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  > /recalbox/share/roms/${zip[0]}/gamelist.xml
+  echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
+  ls /recalbox/share/roms/${zip[0]}/TOSEC | while read line; do
+    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
+      line2=${line%.*}
+      echo "<game><path>TOSEC/${line}</path><name>${line2}</name><image>../../thumbs/${zip[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml;
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
