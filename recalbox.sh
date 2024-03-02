@@ -38,6 +38,7 @@ rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/
 rclone mount myrient: /recalbox/share/rom --config=/recalbox/share/system/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 
 IFS=";"
+<<comment
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "Mounting ${rom[0]}"
@@ -55,6 +56,7 @@ for each in "${roms[@]}"; do
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
+comment
 for each in "${isos[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "Mounting ${rom[0]}"
@@ -86,6 +88,7 @@ for each in "${romz[@]}"; do
   done
   echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
 done
+<<comment
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   echo "Mounting ${zip[0]}"
@@ -102,5 +105,6 @@ for each in "${zips[@]}"; do
   done
   echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
 done
+comment
 
 chvt 1; es start
