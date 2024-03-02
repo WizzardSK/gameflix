@@ -1,8 +1,5 @@
 #!/bin/bash
 mount -o remount,rw /
-mount -o remount,size=200M /var
-mount -o remount,size=200M /run
-mount -o remount,size=6000M /tmp
 ln -s /usr/bin/fusermount /usr/bin/fusermount3
 
 case $( uname -m ) in
@@ -38,7 +35,6 @@ rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/
 rclone mount myrient: /recalbox/share/rom --config=/recalbox/share/system/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 100h --dir-cache-time 100h --poll-interval 100h --allow-non-empty
 
 IFS=";"
-<<comment
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "Mounting ${rom[0]}"
@@ -52,22 +48,6 @@ for each in "${roms[@]}"; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
       echo "<game><path>Online/${line}</path><name>${line2}</name><image>../../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
-    fi
-  done
-  echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
-done
-comment
-for each in "${isos[@]}"; do
-  read -ra rom < <(printf '%s' "$each")
-  echo "Mounting ${rom[0]}"
-  mkdir -p /recalbox/share/roms/${rom[0]}/TOSEC-ISO
-  mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/TOSEC-ISO
-  > /recalbox/share/roms/${rom[0]}/gamelist.xml
-  echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
-  ls /recalbox/share/roms/${rom[0]}/TOSEC-ISO | while read line; do
-    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
-      line2=${line%.*}
-      echo "<game><path>TOSEC-ISO/${line}</path><name>${line2}</name><image>../../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
@@ -104,6 +84,21 @@ for each in "${zips[@]}"; do
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
+done
+for each in "${isos[@]}"; do
+  read -ra rom < <(printf '%s' "$each")
+  echo "Mounting ${rom[0]}"
+  mkdir -p /recalbox/share/roms/${rom[0]}/TOSEC-ISO
+  mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/TOSEC-ISO
+  > /recalbox/share/roms/${rom[0]}/gamelist.xml
+  echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+  ls /recalbox/share/roms/${rom[0]}/TOSEC-ISO | while read line; do
+    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
+      line2=${line%.*}
+      echo "<game><path>TOSEC-ISO/${line}</path><name>${line2}</name><image>../../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+    fi
+  done
+  echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
 comment
 
