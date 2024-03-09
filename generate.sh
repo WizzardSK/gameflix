@@ -45,6 +45,8 @@ for each in "${romz[@]}"; do
   ((platforms++))
   read -ra zip < <(printf '%s' "$each")
   if [ -e ~/gameflix/${zip[0]}-rom.html ]; then
+    pocet=$(ls ~/myrient/${zip[1]}-zip -1 | wc -l)
+    total=$pocet+$total
     echo "<a href='${zip[0]}-rom.html' target='main'>${zip[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html  
     continue
   fi  
@@ -75,6 +77,8 @@ for each in "${zips[@]}"; do
   ((platforms++))
   read -ra zip < <(printf '%s' "$each")
   if [ -e ~/gameflix/${zip[0]}-zip.html ]; then
+    pocet=$(ls ~/myrient/${zip[1]} -1 | wc -l)
+    total=$pocet+$total
     echo "<a href='${zip[0]}-zip.html' target='main'>${zip[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html  
     continue
   fi
@@ -105,6 +109,8 @@ for each in "${isos[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
   if [ -e ~/gameflix/${rom[0]}-iso.html ]; then
+    pocet=$(ls ~/myrient/${rom[1]} -1 | wc -l)
+    total=$pocet+$total    
     echo "<a href='${rom[0]}-iso.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
     continue
   fi
