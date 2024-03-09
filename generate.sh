@@ -11,7 +11,10 @@ wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gamefli
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
-  if [ -e ~/gameflix/${rom[0]}.html ]; then continue; fi
+  if [ -e ~/gameflix/${rom[0]}.html ]; then
+    echo "<a href='${rom[0]}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
+    continue
+  fi
   > ~/gameflix/${rom[0]}.html
   wget -O ~/gameflix/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0    
@@ -39,7 +42,10 @@ echo "<h3>No-Intro</h3>" >> ~/gameflix/systems.html
 for each in "${romz[@]}"; do
   ((platforms++))
   read -ra zip < <(printf '%s' "$each")
-  if [ -e ~/gameflix/${zip[0]}-rom.html ]; then continue; fi  
+  if [ -e ~/gameflix/${zip[0]}-rom.html ]; then
+    echo "<a href='${zip[0]}-rom.html' target='main'>${zip[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html  
+    continue
+  fi  
   > ~/gameflix/${zip[0]}-rom.html
   wget -O ~/gameflix/${zip[0]}-rom.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0
@@ -66,7 +72,10 @@ echo "<h3>TOSEC</h3>" >> ~/gameflix/systems.html
 for each in "${zips[@]}"; do
   ((platforms++))
   read -ra zip < <(printf '%s' "$each")
-  if [ -e ~/gameflix/${zip[0]}-zip.html ]; then continue; fi
+  if [ -e ~/gameflix/${zip[0]}-zip.html ]; then
+    echo "<a href='${zip[0]}-zip.html' target='main'>${zip[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html  
+    continue
+  fi
   > ~/gameflix/${zip[0]}-zip.html
   wget -O ~/gameflix/${zip[0]}-zip.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0
@@ -93,7 +102,10 @@ echo "<h3>TOSEC-ISO</h3>" >> ~/gameflix/systems.html
 for each in "${isos[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
-  if [ -e ~/gameflix/${rom[0]}-iso.html ]; then continue; fi
+  if [ -e ~/gameflix/${rom[0]}-iso.html ]; then
+    echo "<a href='${rom[0]}-iso.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
+    continue
+  fi
   > ~/gameflix/${rom[0]}-iso.html
   wget -O ~/gameflix/${rom[0]}-iso.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0    
