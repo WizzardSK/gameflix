@@ -12,8 +12,8 @@ for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
   if [ -e ~/gameflix/${rom[0]}.html ]; then
-    pocet++=$(ls ~/myrient/${rom[1]} -1 | wc -l)
-    total++=$pocet
+    pocet=$(ls ~/myrient/${rom[1]} -1 | wc -l)
+    total=$pocet+$total
     echo "<a href='${rom[0]}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
     continue
   fi
