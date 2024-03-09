@@ -11,6 +11,7 @@ wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gamefli
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
+  if [ "${rom[0]}" = "dos" ]; then rom[1]="../roms/dos-other"; fi
   if [ -e ~/gameflix/${rom[0]}.html ]; then
     pocet=$(ls ~/myrient/${rom[1]} -1 | wc -l)
     total=$pocet+$total
@@ -20,7 +21,6 @@ for each in "${roms[@]}"; do
   > ~/gameflix/${rom[0]}.html
   wget -O ~/gameflix/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0    
-  if [ "${rom[0]}" = "dos" ]; then rom[1]="../roms/dos-other"; fi
   {
     while IFS= read -r line; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
