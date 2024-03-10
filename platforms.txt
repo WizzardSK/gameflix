@@ -20,7 +20,7 @@
   romz+=("scv;Epoch - Super Cassette Vision.zip;Epoch - Super Cassette Vision;Super Cassette Vision;emuscv_libretro")
   zips+=("scv;TOSEC/Epoch/Super Cassette Vision/Games/Epoch Super Cassette Vision - Games.zip;Epoch - Super Cassette Vision;Super Cassette Vision;emuscv_libretro")
 #roms+=("supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervision</i>;potator_libretro")
-  romz+=("supervision;Watara - Supervision.zip;Watara - Supervision;<i>Watara Supervision</i>;potator_libretro")
+  romz+=("supervision;Watara - Supervision.zip;Watara - Supervision;<p><i>Watara Supervision</i>;potator_libretro")
   zips+=("supervision;TOSEC/Watara/Supervision/Games/Watara Supervision - Games.zip;Watara - Supervision;<i>Watara Supervision</i>;potator_libretro")
 #roms+=("wswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i>;mednafen_wswan_libretro")
   romz+=("wswan;Bandai - WonderSwan.zip;Bandai - WonderSwan;<i>Bandai WonderSwan</i>;mednafen_wswan_libretro")
