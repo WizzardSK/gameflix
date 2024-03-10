@@ -119,7 +119,7 @@ roms+=("psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Pl
 #roms+=("pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;NEC - PC Engine - TurboGrafx 16;<p>PC Engine;mednafen_pce_fast_libretro")
   romz+=("pcengine;NEC - PC Engine - TurboGrafx-16.zip;NEC - PC Engine - TurboGrafx 16;<p>PC Engine;mednafen_pce_fast_libretro")
   zips+=("pcengine;TOSEC/NEC/PC-Engine & TurboGrafx-16/Games/NEC PC-Engine & TurboGrafx-16 - Games.zip;NEC - PC Engine - TurboGrafx 16;<p>PC Engine;mednafen_pce_fast_libretro")
-roms+=("pcenginecd;Redump/NEC - PC Engine CD & TurboGrafx CD;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD;mednafen_pce_fast_libretro;cue")
+roms+=("pcenginecd;Redump/NEC - PC Engine CD & TurboGrafx CD;NEC - PC Engine CD - TurboGrafx-CD;<p>PC Engine CD;mednafen_pce_fast_libretro;cue")
   isos+=("pcenginecd;TOSEC-ISO/NEC/PC-Engine CD & TurboGrafx-16 CD/Games/[IMG];NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD;mednafen_pce_fast_libretro;cue")
 #roms+=("supergrafx;No-Intro/NEC - PC Engine SuperGrafx;NEC - PC Engine SuperGrafx;PC Engine 2;mednafen_supergrafx_libretro")
   romz+=("supergrafx;NEC - PC Engine SuperGrafx.zip;NEC - PC Engine SuperGrafx;PC Engine 2;mednafen_supergrafx_libretro")
@@ -127,7 +127,7 @@ roms+=("pcenginecd;Redump/NEC - PC Engine CD & TurboGrafx CD;NEC - PC Engine CD 
 roms+=("pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX;mednafen_pcfx_libretro;cue")
   isos+=("pcfx;TOSEC-ISO/NEC/PC-FX/Games;NEC - PC-FX;PC-FX;mednafen_pcfx_libretro;cue")
 
-roms+=("cdi;Redump/Philips - CD-i;Philips - CD-i;<p>Philips CDi;same_cdi_libretro;cue")
+roms+=("cdi;Redump/Philips - CD-i;Philips - CD-i;Philips CDi;same_cdi_libretro;cue")
   isos+=("cdi;TOSEC-ISO/Philips/CD-i/Games;Philips - CD-i;Philips CDi;same_cdi_libretro;cue")
 roms+=("3do;Redump/Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO;opera_libretro;cue")
   isos+=("3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Games;The 3DO Company - 3DO;Panasonic 3DO;opera_libretro;cue")
