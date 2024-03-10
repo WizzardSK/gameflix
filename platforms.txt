@@ -85,7 +85,7 @@ roms+=("wiiu;Redump/Nintendo - Wii U - WUX;Nintendo - Wii U;<i>Nintendo Wii U</i
   romz+=("gba;Nintendo - Game Boy Advance.zip;Nintendo - Game Boy Advance;<i>Game Boy Advance</i>;mgba_libretro")
   zips+=("gba;TOSEC/Nintendo/Game Boy Advance/Games/Nintendo Game Boy Advance - Games.zip;Nintendo - Game Boy Advance;<i>Game Boy Advance</i>;sameboy_libretro")
 roms+=("nds;No-Intro/Nintendo - Nintendo DS (Decrypted);Nintendo - Nintendo DS;<i>Nintendo DS</i>;melonds_libretro")
-roms+=("3ds;No-Intro/Nintendo - Nintendo 3DS (Decrypted);Nintendo - Nintendo 3DS;<i>Nintendo 3DS</i><p>;citra_libretro;3ds")
+roms+=("3ds;No-Intro/Nintendo - Nintendo 3DS (Decrypted);Nintendo - Nintendo 3DS;<i>Nintendo 3DS</i>;citra_libretro;3ds")
 
 #roms+=("sg1000;No-Intro/Sega - SG-1000;Sega - SG-1000;<p>SG 1000;genesis_plus_gx_libretro")
   romz+=("sg1000;Sega - SG-1000.zip;Sega - SG-1000;<p>SG 1000;genesis_plus_gx_libretro")
@@ -102,7 +102,7 @@ roms+=("3ds;No-Intro/Nintendo - Nintendo 3DS (Decrypted);Nintendo - Nintendo 3DS
 #roms+=("sega32x;No-Intro/Sega - 32X;Sega - 32X;Sega 32X;picodrive_libretro")
   romz+=("sega32x;Sega - 32X.zip;Sega - 32X;Sega 32X;picodrive_libretro")
   zips+=("sega32x;TOSEC/Sega/32X/Games/Sega 32X - Games.zip;Sega - 32X;Sega 32X;picodrive_libretro")
-zroms+=("segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;Sega CD;picodrive_libretro;cue")
+zroms+=("segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;<p>Sega CD;picodrive_libretro;cue")
   isos+=("segacd;TOSEC-ISO/Sega/Mega-CD & Sega CD/CD/Games/[ISO];Sega - Mega-CD - Sega CD;<p>Sega CD;picodrive_libretro;cue")
 roms+=("saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn;yabasanshiro_libretro;cue")
   isos+=("saturn;TOSEC-ISO/Sega/Saturn/Games/[ISO];Sega - Saturn;Sega Saturn;yabasanshiro_libretro;cue")
