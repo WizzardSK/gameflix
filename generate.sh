@@ -8,42 +8,6 @@ wget -O ~/gameflix/retroarch.sh https://raw.githubusercontent.com/WizzardSK/game
 wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/style.css
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 
-for each in "${roms[@]}"; do
-  ((platforms++))
-  read -ra rom < <(printf '%s' "$each")
-  if [ "${rom[0]}" = "dos" ]; then rom[1]="../roms/dos-other"; fi
-  if [ -e ~/gameflix/${rom[0]}.html ]; then
-    pocet=$(ls ~/myrient/${rom[1]} -1 | wc -l)
-    total=$((pocet+total))
-    echo "<a href='${rom[0]}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
-    echo "<figure><a href='${rom[0]}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
-    ext=""
-    if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
-    echo "*\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
-    continue
-  fi
-  > ~/gameflix/${rom[0]}.html
-  wget -O ~/gameflix/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
-  pocet=0    
-  {
-    while IFS= read -r line; do
-      if [[ ! ${line} =~ \[BIOS\] ]]; then
-        ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
-        thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g" -e 's/#/%23/g')
-        echo "<figure onclick=\"window.location.href='../myrient/${rom[1]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/gameflix/${rom[0]}.html
-        ((pocet++))
-        ((total++))
-      fi
-    done
-  } < <(ls ~/myrient/${rom[1]})
-  echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom[0]}.html
-  echo "<a href='${rom[0]}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
-  echo "<figure><a href='${rom[0]}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
-  ext=""
-  if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
-  echo "*\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
-done
-
 echo "<h3>No-Intro</h3>" >> ~/gameflix/systems.html
 for each in "${romz[@]}"; do
   ((platforms++))
@@ -78,6 +42,42 @@ for each in "${romz[@]}"; do
   ext=""
   if [ -n "${zip[5]}" ]; then ext="; ext=\"${zip[5]}\""; fi
   echo "*\"${zip[0]}-zip\") core=\"${zip[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
+done
+
+for each in "${roms[@]}"; do
+  ((platforms++))
+  read -ra rom < <(printf '%s' "$each")
+  if [ "${rom[0]}" = "dos" ]; then rom[1]="../roms/dos-other"; fi
+  if [ -e ~/gameflix/${rom[0]}.html ]; then
+    pocet=$(ls ~/myrient/${rom[1]} -1 | wc -l)
+    total=$((pocet+total))
+    echo "<a href='${rom[0]}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
+    echo "<figure><a href='${rom[0]}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
+    ext=""
+    if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
+    echo "*\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
+    continue
+  fi
+  > ~/gameflix/${rom[0]}.html
+  wget -O ~/gameflix/${rom[0]}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+  pocet=0    
+  {
+    while IFS= read -r line; do
+      if [[ ! ${line} =~ \[BIOS\] ]]; then
+        ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
+        thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g" -e 's/#/%23/g')
+        echo "<figure onclick=\"window.location.href='../myrient/${rom[1]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/gameflix/${rom[0]}.html
+        ((pocet++))
+        ((total++))
+      fi
+    done
+  } < <(ls ~/myrient/${rom[1]})
+  echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom[0]}.html
+  echo "<a href='${rom[0]}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
+  echo "<figure><a href='${rom[0]}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
+  ext=""
+  if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
+  echo "*\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
 
 echo "<h3>TOSEC</h3>" >> ~/gameflix/systems.html
