@@ -1,7 +1,6 @@
 #!/bin/bash
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 IFS=";"
-echo "<h3>Redump/online</h3><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html
 cp ~/gameflix/systems.html ~/gameflix/main.html
 echo "<title>gameflix</title><frameset border=0 cols='240, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/gameflix.html
 wget -O ~/gameflix/retroarch.sh https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.1st
@@ -44,6 +43,7 @@ for each in "${romz[@]}"; do
   echo "*\"${zip[0]}-zip\") core=\"${zip[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
 
+echo "<h3>Redump/online</h3><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
