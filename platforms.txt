@@ -45,7 +45,7 @@
   zips+=("jaguar;TOSEC/Atari/Jaguar/Games/[J64]/Atari Jaguar - Games - [J64].zip;Atari - Jaguar;Atari Jaguar;virtualjaguar_libretro")
 #roms+=("lynx;No-Intro/Atari - Lynx;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
   romz+=("lynx;Atari - Lynx (LYX).zip;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro;lyx")
-  zips+=("lynx;TOSEC/Atari/Lynx/Games/[LNX]/Atari Lynx - Games - [LNX].zip;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
+  #zips+=("lynx;TOSEC/Atari/Lynx/Games/[LNX]/Atari Lynx - Games - [LNX].zip;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
 
 #roms+=("nes;No-Intro/Nintendo - Nintendo Entertainment System (Headered);Nintendo - Nintendo Entertainment System;<p>Nintendo NES;nestopia_libretro")
   romz+=("nes;Nintendo - Nintendo Entertainment System (Headered).zip;Nintendo - Nintendo Entertainment System;<p>Nintendo NES;nestopia_libretro")
