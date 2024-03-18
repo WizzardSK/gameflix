@@ -9,6 +9,7 @@ wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gamefli
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 
 echo "<h3>No-Intro</h3>" >> ~/gameflix/systems.html
+echo "<h3>No-Intro</h3>" >> ~/gameflix/main.html
 for each in "${romz[@]}"; do
   ((platforms++))
   read -ra zip < <(printf '%s' "$each")
@@ -45,6 +46,7 @@ for each in "${romz[@]}"; do
 done
 
 echo "<h3>Redump/online</h3>" >> ~/gameflix/systems.html
+echo "<h3>Redump/online</h3>" >> ~/gameflix/main.html
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
@@ -82,6 +84,7 @@ for each in "${roms[@]}"; do
 done
 
 echo "<h3>TOSEC</h3>" >> ~/gameflix/systems.html
+echo "<h3>TOSEC</h3>" >> ~/gameflix/main.html
 for each in "${zips[@]}"; do
   ((platforms++))
   read -ra zip < <(printf '%s' "$each")
@@ -118,6 +121,7 @@ for each in "${zips[@]}"; do
 done
 
 echo "<h3>TOSEC-ISO</h3>" >> ~/gameflix/systems.html
+echo "<h3>TOSEC-ISO</h3>" >> ~/gameflix/main.html
 for each in "${isos[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
