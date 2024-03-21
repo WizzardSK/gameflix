@@ -30,6 +30,7 @@
   zips+=("wswanc;TOSEC/Bandai/WonderSwan Color/Games/Bandai WonderSwan Color - Games.zip;Bandai - WonderSwan Color;<i>WonderSwan Color</i>;mednafen_wswan_libretro")
 #roms+=("arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;<i>Arduboy</i>;arduous_libretro")
   romz+=("arduboy;Arduboy Inc - Arduboy.zip;Arduboy Inc - Arduboy;<i>Arduboy</i>;arduous_libretro")
+zips+=("tic80;https://archive.org/compress/tic80games_202303;TIC-80;TIC-80;tic80_libretro")
 
 #roms+=("atari2600;No-Intro/Atari - 2600;Atari - 2600;<p>Atari 2600;stella_libretro")
   romz+=("atari2600;Atari - 2600.zip;Atari - 2600;<p>Atari 2600;stella_libretro")
