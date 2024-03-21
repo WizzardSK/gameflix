@@ -34,6 +34,12 @@ done
 for each in "${romz[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   mkdir -p ~/roms/${zip[0]}-zip
-  if [ ! -f ~/romz/${zip[0]}.zip ]; then wget -O ~/romz/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]}; fi  
+  if [ ! -f ~/romz/${zip[0]}.zip ]; then
+    if [[ "${zip[1]}" == *://* ]]; then
+      wget -O ~/romz/${zip[0]}.zip ${zip[1]};
+    else
+      wget -O ~/romz/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]};
+    fi
+  fi  
   mount-zip ~/romz/${zip[0]}.zip ~/roms/${zip[O]}-zip -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 done
