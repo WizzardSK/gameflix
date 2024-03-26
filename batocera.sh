@@ -15,7 +15,7 @@ mkdir -p /userdata/zip
 mkdir -p /userdata/romz
 
 echo "Mounting thumbs"
-rclone mount thumbnails: /userdata/thumbs --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
+rclone mount thumbnails: /userdata/thumbs --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
 echo "Mounting roms"
 rclone mount myrient: /userdata/rom --no-check-certificate --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
 
@@ -29,7 +29,6 @@ for each in "${roms[@]}"; do
     rclone mount ${rom[1]} /userdata/roms/${rom[0]}/Redump-online --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
   else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/Redump-online; fi
   mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
-  head /userdata/roms/${rom[0]}/images/* > /dev/null
 done
 for each in "${isos[@]}"; do
   read -ra iso < <(printf '%s' "$each")
@@ -38,7 +37,6 @@ for each in "${isos[@]}"; do
   mkdir -p /userdata/roms/${iso[0]}/images  
   mount -o bind /userdata/rom/${iso[1]} /userdata/roms/${iso[0]}/TOSEC-ISO
   mount -o bind /userdata/thumbs/${iso[2]}/Named_Snaps /userdata/roms/${iso[0]}/images
-  head /userdata/roms/${iso[0]}/images/* > /dev/null
 done
 for each in "${romz[@]}"; do
   read -ra zip < <(printf '%s' "$each")
@@ -48,7 +46,6 @@ for each in "${romz[@]}"; do
   if [ ! -f /userdata/romz/${zip[0]}.zip ]; then wget -O /userdata/romz/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]}; fi  
   /userdata/system/mount-zip /userdata/romz/${zip[0]}.zip /userdata/roms/${zip[O]}/No-Intro -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
-  head /userdata/roms/${zip[0]}/images/* > /dev/null
 done
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
@@ -58,7 +55,6 @@ for each in "${zips[@]}"; do
   if [ ! -f /userdata/zip/${zip[0]}.zip ]; then wget -O /userdata/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]}; fi  
   /userdata/system/mount-zip /userdata/zip/${zip[0]}.zip /userdata/roms/${zip[O]}/TOSEC -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
-  head /userdata/roms/${zip[0]}/images/* > /dev/null
 done
 
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg
