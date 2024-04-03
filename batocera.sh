@@ -1,5 +1,6 @@
 #!/bin/bash
-mount -o remount,size=8000M /tmp
+mount -o remount,size=6000M /tmp
+mount -o remount,size=6000M /overlay
 ln -s /usr/bin/fusermount /usr/bin/fusermount3
 curl https://rclone.org/install.sh | bash
 wget -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
