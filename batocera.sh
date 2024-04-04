@@ -25,11 +25,11 @@ IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "rom: ${rom[2]}"
-  mkdir -p /userdata/roms/${rom[0]}/Redump-online
+  mkdir -p /userdata/roms/${rom[0]}/Online
   mkdir -p /userdata/roms/${rom[0]}/images  
   if grep -q ":" <<< "${rom[1]}"; then
-    rclone mount ${rom[1]} /userdata/roms/${rom[0]}/Redump-online --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
-  else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/Redump-online; fi
+    rclone mount ${rom[1]} /userdata/roms/${rom[0]}/Online --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
+  else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/Online; fi
   mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
 done
 for each in "${isos[@]}"; do
