@@ -141,7 +141,7 @@ roms+=("ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;<i>Ne
   #romz+=("ngpc;SNK - NeoGeo Pocket Color.zip;SNK - Neo Geo Pocket Color;<i>Neo Geo Pocket Color</i>;mednafen_ngp_libretro")
   zips+=("ngpc;TOSEC/SNK/Neo-Geo Pocket Color/Games/SNK Neo-Geo Pocket Color - Games.zip;SNK - Neo Geo Pocket Color;<i>Neo Geo Pocket Color</i>;mednafen_ngp_libretro")
 
-roms+=("dos;https://the-eye.eu/public/Games/eXo/eXoDOS_v5/eXo/eXoDOS;DOS;<p>MS-DOS;dosbox_pure_libretro")
+roms+=("dos;https://the-eye.eu/public/Games/eXo/eXoDOS_v5/eXo;DOS;<p>MS-DOS;dosbox_pure_libretro")
 #roms+=("dos;eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/;DOS;<p>MS-DOS;dosbox_pure_libretro")
   zips+=("dos;TOSEC/IBM/PC Compatibles/Games/[IMG]/IBM PC Compatibles - Games - [IMG].zip;DOS;<p>MS-DOS;dosbox_pure_libretro")
   isos+=("dos;TOSEC-ISO/IBM/PC Compatibles/CD/Games/[ISO];DOS;<p>MS-DOS;dosbox_pure_libretro")
