@@ -29,7 +29,7 @@ for each in "${roms[@]}"; do
   mkdir -p /userdata/roms/${rom[0]}/Online
   mkdir -p /userdata/roms/${rom[0]}/images  
   if grep -q "http" <<< "${rom[1]}"; then
-    /userdata/system/httpdirfs --cache --max-conns 1 --cache-location /userdata/system/.cache/httpdirfs ${rom[1]} /userdata/roms/${rom[0]}/Online
+    /userdata/system/httpdirfs --cache -s --cache-location /userdata/system/.cache/httpdirfs ${rom[1]} /userdata/roms/${rom[0]}/Online
     #mount -o bind /userdata/dos/eXoDOS /userdata/roms/${rom[0]}/Online
     #rclone mount ${rom[1]} /userdata/roms/${rom[0]}/Online --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
   else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/Online; fi
