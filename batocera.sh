@@ -14,7 +14,6 @@ mkdir -p /userdata/roms
 mkdir -p /userdata/thumbs
 mkdir -p /userdata/zip
 mkdir -p /userdata/romz
-mkdir -p /userdata/dos
 
 echo "Mounting thumbs"
 /userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs http://thumbnails.libretro.com /userdata/thumbs
