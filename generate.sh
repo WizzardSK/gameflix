@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir -p ~/gameflix
 source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 IFS=";"
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html
