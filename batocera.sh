@@ -16,7 +16,8 @@ mkdir -p /userdata/zip
 mkdir -p /userdata/romz
 
 echo "Mounting thumbs"
-/userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs http://thumbnails.libretro.com /userdata/thumbs
+/userdata/system/httpdirfs --no-range-check http://thumbnails.libretro.com /userdata/thumbs
+#/userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs http://thumbnails.libretro.com /userdata/thumbs
 echo "Mounting roms"
 /userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs https://myrient.erista.me/files /userdata/rom
 #rclone mount myrient: /userdata/rom --no-check-certificate --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
