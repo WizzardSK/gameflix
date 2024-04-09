@@ -9,8 +9,8 @@ wget -O ~/gameflix/retroarch.sh https://raw.githubusercontent.com/WizzardSK/game
 wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/style.css
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 
-echo "<h3>No-Intro</h3>" >> ~/gameflix/systems.html
-echo "<h3>No-Intro</h3>" >> ~/gameflix/main.html
+#echo "<h3>No-Intro</h3>" >> ~/gameflix/systems.html
+#echo "<h3>No-Intro</h3>" >> ~/gameflix/main.html
 for each in "${romz[@]}"; do
   ((platforms++))
   read -ra zip < <(printf '%s' "$each")
@@ -46,8 +46,8 @@ for each in "${romz[@]}"; do
   echo "*\"${zip[0]}-zip\") core=\"${zip[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
 
-echo "<h3>Redump/online</h3>" >> ~/gameflix/systems.html
-echo "<h3>Redump/online</h3>" >> ~/gameflix/main.html
+echo "<h3>No-Intro/Redump</h3>" >> ~/gameflix/systems.html
+echo "<h3>No-Intro/Redump</h3>" >> ~/gameflix/main.html
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
