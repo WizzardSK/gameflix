@@ -51,7 +51,7 @@ echo "<h3>No-Intro/Redump</h3>" >> ~/gameflix/main.html
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
-  if [ "${rom[0]}" = "dos" ]; then rom[1]="../roms/dos-other"; fi
+  if [ "${rom[3]}" = "<p>MS-DOS" ]; then rom[1]="../roms/dos-other"; fi
   if [ -e ~/gameflix/${rom[3]//<[^>]*>/}.html ]; then
     pocet=$(ls ~/myrient/${rom[1]} -1 | wc -l)
     total=$((pocet+total))
