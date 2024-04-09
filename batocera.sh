@@ -25,19 +25,19 @@ IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "rom: ${rom[2]}"
-  mkdir -p /userdata/roms/${rom[0]}/${rom[3]}
+  mkdir -p /userdata/roms/${rom[0]}/${rom[3]//<[^>]*>/}
   mkdir -p /userdata/roms/${rom[0]}/images  
   if grep -q ":" <<< "${rom[1]}"; then
-    rclone mount ${rom[1]} /userdata/roms/${rom[0]}/${rom[3]} --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
-  else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom[3]}; fi
+    rclone mount ${rom[1]} /userdata/roms/${rom[0]}/${rom[3]//<[^>]*>/} --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
+  else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom[3]//<[^>]*>/}; fi
   mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
 done
 for each in "${isos[@]}"; do
   read -ra iso < <(printf '%s' "$each")
   echo "iso: ${iso[2]}"
-  mkdir -p /userdata/roms/${iso[0]}/${iso[3]}
+  mkdir -p /userdata/roms/${iso[0]}/${iso[3]//<[^>]*>/}
   mkdir -p /userdata/roms/${iso[0]}/images  
-  mount -o bind /userdata/rom/${iso[1]} /userdata/roms/${iso[0]}/${iso[3]}
+  mount -o bind /userdata/rom/${iso[1]} /userdata/roms/${iso[0]}/${iso[3]//<[^>]*>/}
   mount -o bind /userdata/thumbs/${iso[2]}/Named_Snaps /userdata/roms/${iso[0]}/images
 done
 for each in "${romz[@]}"; do
