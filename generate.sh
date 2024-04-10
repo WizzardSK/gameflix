@@ -14,35 +14,35 @@ echo "<h3>No-Intro/Redump</h3>" >> ~/gameflix/main.html
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
-  rom[3]=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
+  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [ "${rom[3]}" = "<p>MS-DOS" ]; then rom[1]="../roms/dos-other"; fi
-  if [ -e ~/gameflix/${rom[3]//<[^>]*>/}.html ]; then
+  if [ -e ~/gameflix/${rom3}.html ]; then
     pocet=$(ls ~/myrient/${rom[1]} -1 | wc -l)
     total=$((pocet+total))
-    echo "<a href='${rom[3]//<[^>]*>/}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
-    echo "<figure><a href='${rom[3]//<[^>]*>/}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
+    echo "<a href='${rom3}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
+    echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
     ext=""
     if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
     echo "*\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
     continue
   fi
-  > ~/gameflix/${rom[3]//<[^>]*>/}.html
-  wget -O ~/gameflix/${rom[3]//<[^>]*>/}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+  > ~/gameflix/${rom3}.html
+  wget -O ~/gameflix/${rom3}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   pocet=0    
   {
     while IFS= read -r line; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
         ahref=$(echo "$line" | sed -e "s/'/\\\'/g")
         thumb=$(echo "$line" | sed -e 's/&/_/g' -e "s/'/\\\'/g" -e 's/#/%23/g')
-        echo "<figure onclick=\"window.location.href='../myrient/${rom[1]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/gameflix/${rom[3]//<[^>]*>/}.html
+        echo "<figure onclick=\"window.location.href='../myrient/${rom[1]}/${ahref}'\"><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${line%.*}.png\"><figcaption>${line%.*}</figcaption></figure>" >> ~/gameflix/${rom3}.html
         ((pocet++))
         ((total++))
       fi
     done
   } < <(ls ~/myrient/${rom[1]})
-  echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom[3]//<[^>]*>/}.html
-  echo "<a href='${rom[3]//<[^>]*>/}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
-  echo "<figure><a href='${rom[3]//<[^>]*>/}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
+  echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
+  echo "<a href='${rom3}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
+  echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
   ext=""
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
   echo "*\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
