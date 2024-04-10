@@ -25,7 +25,7 @@ IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "rom: ${rom[2]}"
-  rom3=$(tr -d '/' <<< "${rom[3]//<[^>]*>/}")
+  rom3=$(echo "${rom[3]//<[^>]*>/}" | tr -d '/')
   mkdir -p /userdata/roms/${rom[0]}/${rom3}
   mkdir -p /userdata/roms/${rom[0]}/images  
   if grep -q ":" <<< "${rom[1]}"; then
