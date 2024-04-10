@@ -14,6 +14,7 @@ echo "<h3>No-Intro/Redump</h3>" >> ~/gameflix/main.html
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
+  rom[3]=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [ "${rom[3]}" = "<p>MS-DOS" ]; then rom[1]="../roms/dos-other"; fi
   if [ -e ~/gameflix/${rom[3]//<[^>]*>/}.html ]; then
     pocet=$(ls ~/myrient/${rom[1]} -1 | wc -l)
