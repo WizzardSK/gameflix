@@ -83,7 +83,7 @@ for each in "${zips[@]}"; do
   echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${zip[2]}".png'><figcaption>${zip[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html  
   ext=""
   if [ -n "${zip[5]}" ]; then ext="; ext=\"${zip[5]}\""; fi
-  echo "*\"${zip[0]}\") core=\"${zip[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
+  echo "*\"${rom3}\") core=\"${zip[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
 
 curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.end | tee -a ~/gameflix/retroarch.sh  
