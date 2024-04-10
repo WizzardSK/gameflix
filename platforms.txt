@@ -30,7 +30,7 @@ roms+=("atari7800;No-Intro/Atari - 7800;Atari - 7800;Atari 7800;prosystem_libret
 roms+=("jaguar;No-Intro/Atari - Jaguar (J64);Atari - Jaguar;Atari Jaguar;virtualjaguar_libretro")
   zips+=("jaguar;TOSEC/Atari/Jaguar/Games/[J64]/Atari Jaguar - Games - [J64].zip;Atari - Jaguar;Atari Jaguar;virtualjaguar_libretro")
 roms+=("lynx;No-Intro/Atari - Lynx (LYX);Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
-  #zips+=("lynx;TOSEC/Atari/Lynx/Games/[LNX]/Atari Lynx - Games - [LNX].zip;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
+  zips+=("lynx;TOSEC/Atari/Lynx/Games/[LNX]/Atari Lynx - Games - [LNX].zip;Atari - Lynx;<i>Atari Lynx</i>;mednafen_lynx_libretro")
 
 roms+=("nes;No-Intro/Nintendo - Nintendo Entertainment System (Headered);Nintendo - Nintendo Entertainment System;<p>Nintendo NES;nestopia_libretro")
   zips+=("nes;TOSEC/Nintendo/Famicom & Entertainment System/Games/[NES]/Nintendo Famicom & Entertainment System - Games - [NES].zip;Nintendo - Nintendo Entertainment System;<p>Nintendo NES;nestopia_libretro")
