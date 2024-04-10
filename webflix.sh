@@ -23,13 +23,14 @@ done
 
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
-  mkdir -p ~/roms/${zip[0]}
-  if [ ! -f ~/zip/${zip[0]}.zip ]; then 
+  rom3=$(sed 's/<[^>]*>//g' <<< "${zip[3]}")
+  mkdir -p ~/roms/${rom3}
+  if [ ! -f ~/zip/${rom3}.zip ]; then 
     if [[ "${zip[1]}" == *://* ]]; then
-      wget -O ~/zip/${zip[0]}.zip ${zip[1]};
+      wget -O ~/zip/${rom3}.zip ${zip[1]};
     else
-      wget -O ~/zip/${zip[0]}.zip https://myrient.erista.me/files/${zip[1]};
+      wget -O ~/zip/${rom3}.zip https://myrient.erista.me/files/${zip[1]};
     fi
   fi  
-  mount-zip ~/zip/${zip[0]}.zip ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+  mount-zip ~/zip/${rom3}.zip ~/roms/${rom3} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 done
