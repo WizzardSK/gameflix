@@ -77,7 +77,7 @@ for each in "${zips[@]}"; do
         ((total++))
       fi
     done
-  } < <(ls ~/roms/${zip[0]})
+  } < <(ls ~/roms/${rom3})
   echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
   echo "<a href='${rom3}.html' target='main'>${zip[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html  
   echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${zip[2]}".png'><figcaption>${zip[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html  
