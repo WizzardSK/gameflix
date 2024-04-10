@@ -20,6 +20,7 @@ for each in "${roms[@]}"; do
     rclone mount ${rom[1]} ~/roms/${rom[0]}-other --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate 
   fi
 done
+
 for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   mkdir -p ~/roms/${zip[0]}
@@ -31,16 +32,4 @@ for each in "${zips[@]}"; do
     fi
   fi  
   mount-zip ~/zip/${zip[0]}.zip ~/roms/${zip[O]} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-done
-for each in "${romz[@]}"; do
-  read -ra zip < <(printf '%s' "$each")
-  mkdir -p ~/roms/${zip[0]}-zip
-  if [ ! -f ~/romz/${zip[0]}.zip ]; then
-    if [[ "${zip[1]}" == *://* ]]; then
-      wget -O ~/romz/${zip[0]}.zip ${zip[1]};
-    else
-      wget -O ~/romz/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]};
-    fi
-  fi  
-  mount-zip ~/romz/${zip[0]}.zip ~/roms/${zip[O]}-zip -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
 done
