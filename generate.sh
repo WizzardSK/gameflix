@@ -55,7 +55,7 @@ for each in "${zips[@]}"; do
   read -ra zip < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${zip[3]}")
   if [ -e ~/gameflix/${rom3}.html ]; then
-    pocet=$(ls ~/roms/${zip[0]} -1 | wc -l)
+    pocet=$(ls ~/roms/${rom3} -1 | wc -l)
     total=$((pocet+total))
     echo "<a href='${rom3}.html' target='main'>${zip[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html  
     echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${zip[2]}".png'><figcaption>${zip[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html  
