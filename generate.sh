@@ -46,7 +46,7 @@ for each in "${roms[@]}"; do
         ((total++))
       fi
     done
-  } < <(ls ~/$romfolder)
+  } < <(ls ~/${romfolder})
   echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
   echo "<a href='${rom3}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
