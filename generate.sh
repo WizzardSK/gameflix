@@ -9,8 +9,6 @@ wget -O ~/gameflix/retroarch.sh https://raw.githubusercontent.com/WizzardSK/game
 wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/style.css
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 
-echo "<h3>No-Intro/Redump</h3>" >> ~/gameflix/systems.html
-echo "<h3>No-Intro/Redump</h3>" >> ~/gameflix/main.html
 for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
