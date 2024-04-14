@@ -16,11 +16,11 @@ for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [[ ${rom[1]} =~ \.zip$ ]]; then
+    romfolder="roms/${rom3}"
+    emufolder="${rom3}"  
+  else 
     romfolder="myrient/${rom[1]}"
     emufolder="${rom[1]##*/}"
-  else 
-    romfolder="roms/${rom3}"
-    emufolder="${rom3}"
   fi
   if [ "${rom[3]}" = "<p>MS-DOS" ]; then rom[1]="../roms/dos-other"; fi
   if [ -e ~/gameflix/${rom3}.html ]; then
