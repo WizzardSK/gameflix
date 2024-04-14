@@ -15,6 +15,7 @@ for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
+  if [ "${rom[3]}" = "<p>MS-DOS" ]; then rom[1]="../roms/dos-other"; fi
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     romfolder="roms/${rom3}"
     emufolder="${rom3}"  
@@ -22,7 +23,6 @@ for each in "${roms[@]}"; do
     romfolder="myrient/${rom[1]}"
     emufolder="${rom[1]##*/}"
   fi
-  if [ "${rom[3]}" = "<p>MS-DOS" ]; then rom[1]="../roms/dos-other"; fi
   if [ -e ~/gameflix/${rom3}.html ]; then
     pocet=$(ls ~/${romfolder} -1 | wc -l)
     total=$((pocet+total))
