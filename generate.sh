@@ -15,16 +15,22 @@ for each in "${roms[@]}"; do
   ((platforms++))
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  if [[ ${rom[1]} =~ \.zip$ ]]; then romfolder="myrient/${rom[1]}"; else romfolder="roms/${rom3}"; fi
+  if [[ ${rom[1]} =~ \.zip$ ]]; then
+    romfolder="myrient/${rom[1]}"
+    emufolder="${rom[1]##*/}"
+  else 
+    romfolder="roms/${rom3}"
+    emufolder="${rom3}"
+  fi
   if [ "${rom[3]}" = "<p>MS-DOS" ]; then rom[1]="../roms/dos-other"; fi
   if [ -e ~/gameflix/${rom3}.html ]; then
-    pocet=$(ls ~/$romfolder -1 | wc -l)
+    pocet=$(ls ~/${romfolder} -1 | wc -l)
     total=$((pocet+total))
     echo "<a href='${rom3}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
     echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
     ext=""
     if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
-    echo "*\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
+    echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
     continue
   fi
   > ~/gameflix/${rom3}.html
@@ -46,7 +52,7 @@ for each in "${roms[@]}"; do
   echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
   ext=""
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
-  echo "*\"${rom[1]##*/}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
+  echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
 
 #echo "<h3>TOSEC</h3>" >> ~/gameflix/systems.html
