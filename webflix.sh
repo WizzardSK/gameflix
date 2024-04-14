@@ -10,7 +10,6 @@ mkdir -p ~/gameflix
 
 wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 httpdirfs --cache --no-range-check https://myrient.erista.me/files ~/myrient
-#rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate 
 
 IFS=";"
 for each in "${roms[@]}"; do
@@ -21,7 +20,7 @@ for each in "${roms[@]}"; do
   fi
 
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  if [[ $filename =~ \.zip$ ]]; then
+  if [[ ${rom[1]} =~ \.zip$ ]]; then
     mkdir -p ~/roms/${rom3}
     if [ ! -f ~/zip/${rom3}.zip ]; then 
       if [[ "${rom[1]}" == *://* ]]; then
