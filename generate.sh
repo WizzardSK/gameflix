@@ -2,7 +2,7 @@
 mkdir -p ~/gameflix
 IFS=";"
 
-url="https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt'"
+url="https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt"
 content=$(curl -s "$url")
 read -ra roms <<< "$content"
 for line in "${roms[@]}"; do
