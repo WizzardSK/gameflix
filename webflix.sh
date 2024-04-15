@@ -1,5 +1,5 @@
 #!/bin/bash
-source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
+IFS=$'\n' read -d '' -ra roms <<< $(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
 
 mkdir -p ~/myrient
 mkdir -p ~/roms
@@ -11,7 +11,6 @@ mkdir -p ~/gameflix
 wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 httpdirfs --cache --no-range-check https://myrient.erista.me/files ~/myrient
 
-IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if grep -q ":" <<< "${rom[1]}"; then
