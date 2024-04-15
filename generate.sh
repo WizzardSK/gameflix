@@ -1,10 +1,14 @@
 #!/bin/bash
 mkdir -p ~/gameflix
 IFS=";"
-read -ra roms <<< "$(curl -s 'https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt')"
+
+url="https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt'"
+content=$(curl -s "$url")
+read -ra roms <<< "$content"
 for line in "${roms[@]}"; do
     echo "$line"
 done
+
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html
 cp ~/gameflix/systems.html ~/gameflix/main.html
 echo "<title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/gameflix.html
