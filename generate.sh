@@ -10,7 +10,8 @@ wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gamefli
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 
 for each in "${roms[@]}"; do
-  ((platforms++))
+  if [ "$platform" == "${rom[0]}" ]; then ((platforms++)); fi
+  platform=${rom[0]}
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [ "${rom[3]}" = "<p>MS-DOS" ]; then rom[1]="../roms/dos-other"; fi
