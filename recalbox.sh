@@ -21,7 +21,7 @@ fi
 
 wget -O /recalbox/share_init/system/.emulationstation/systemlist.xml https://github.com/WizzardSK/gameflix/raw/main/recalbox/share/system/systemlist.xml
 wget -O /recalbox/share/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
-source <(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)
+IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 
 es stop; chvt 3; clear
 
@@ -52,22 +52,5 @@ for each in "${roms[@]}"; do
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
 done
-
-#for each in "${romz[@]}"; do
-#  read -ra zip < <(printf '%s' "$each")
-#  echo "Mounting ${zip[0]}"
-#  mkdir -p /recalbox/share/roms/${zip[0]}/No-Intro
-#  if [ ! -f /recalbox/share/romz/${zip[0]}.zip ]; then wget -O /recalbox/share/romz/${zip[0]}.zip https://archive.org/download/ni-roms/roms/${zip[1]}; fi  
-#  mount-zip /recalbox/share/romz/${zip[0]}.zip /recalbox/share/roms/${zip[O]}/No-Intro -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-#  > /recalbox/share/roms/${zip[0]}/gamelist.xml
-#  echo "<gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
-#  ls /recalbox/share/roms/${zip[0]}/No-Intro | while read line; do
-#    if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then
-#      line2=${line%.*}
-#      echo "<game><path>No-Intro/${line}</path><name>${line2}</name><image>../../thumbs/${zip[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml;
-#    fi
-#  done
-#  echo "</gameList>" >> /recalbox/share/roms/${zip[0]}/gamelist.xml
-#done
 
 chvt 1; es start
