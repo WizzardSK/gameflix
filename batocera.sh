@@ -19,7 +19,6 @@ echo "Mounting thumbs"
 /userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs http://thumbnails.libretro.com /userdata/thumbs
 echo "Mounting roms"
 /userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs https://myrient.erista.me/files /userdata/rom
-#rclone mount myrient: /userdata/rom --no-check-certificate --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
 
 IFS=";"
 for each in "${roms[@]}"; do
@@ -40,17 +39,6 @@ for each in "${roms[@]}"; do
   fi  
   mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
 done
-
-#for each in "${zips[@]}"; do
-#  read -ra zip < <(printf '%s' "$each")
-#  echo "zip: ${zip[2]}"
-#  rom3=$(sed 's/<[^>]*>//g' <<< "${zip[3]}")
-#  mkdir -p /userdata/roms/${zip[0]}/${rom3}
-#  mkdir -p /userdata/roms/${zip[0]}/images
-#  if [ ! -f /userdata/zip/${rom3}.zip ]; then wget -O /userdata/zip/${rom3}.zip https://myrient.erista.me/files/${zip[1]}; fi  
-#  /userdata/system/mount-zip /userdata/zip/${rom3}.zip /userdata/roms/${zip[O]}/${rom3} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-#  mount -o bind /userdata/thumbs/${zip[2]}/Named_Snaps /userdata/roms/${zip[0]}/images
-#done
 
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg
 chvt 2
