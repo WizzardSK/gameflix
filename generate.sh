@@ -9,7 +9,7 @@ wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gamefli
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 IFS=";"
 for each in "${roms[@]}"; do
-  if [ "$platform" == "${rom[0]}" ]; then ((platforms++)); fi
+  if [ "$platform" != "${rom[0]}" ]; then ((platforms++)); fi
   platform=${rom[0]}
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
