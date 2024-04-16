@@ -29,7 +29,7 @@ atari7800;No-Intro/Atari - 7800;Atari - 7800;Atari 7800;prosystem_libretro
 atari7800;TOSEC/Atari/7800/Games/Atari 7800 - Games.zip;Atari - 7800;Atari 7800 TOSEC;prosystem_libretro
 atari800;TOSEC/Atari/8bit/Games/[ATR]/Atari 8bit - Games - [ATR].zip;Atari - 8-bit;Atari 8bit ATR;atari800
 atari800;TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip;Atari - 8-bit;Atari 8bit XEX;atari800
-atarist;No-Intro/Atari - ST;Atari - ST;<p>Atari ST;hatari_libretro
+atarist;No-Intro/Atari - ST;Atari - ST;Atari ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[ST]/Atari ST - Games - [ST].zip;Atari - ST;Atari ST ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[STX]/Atari ST - Games - [STX].zip;Atari - ST;Atari ST STX;hatari_libretro
 jaguar;No-Intro/Atari - Jaguar (J64);Atari - Jaguar;Atari Jaguar;virtualjaguar_libretro
