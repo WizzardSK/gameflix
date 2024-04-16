@@ -121,7 +121,8 @@ cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP]/Commodore C16, C116 & Plus
 vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;Commodore VIC-20;vice_xvic_libretro
 vic20;TOSEC/Commodore/VIC20/Games/[TAP]/Commodore VIC20 - Games - [TAP].zip;Commodore - VIC-20;Commodore VIC-20 TOSEC;vice_xvic_libretro
 c64;No-Intro/Commodore - Commodore 64;Commodore - 64;Commodore 64;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Arcade/[D64]/Commodore C64 - Games - Arcade - [D64].zip;Commodore - 64;Commodore 64 TOSEC;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Arcade/[D64]/Commodore C64 - Games - Arcade - [D64].zip;Commodore - 64;Commodore 64 Arcade;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Shoot'em Up/[D64]/Commodore C64 - Games - Shoot'em Up - [D64].zip;Commodore - 64;Commodore 64 Shoot'em Up;vice_x64sc_libretro
 amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;Amiga 1200;puae_libretro
 amiga1200;TOSEC/Commodore/Amiga/Games/SPS/Commodore Amiga - Games - SPS.zip;Commodore - Amiga;Amiga 1200 TOSEC;puae_libretro
 amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;Amiga CD32;puae_libretro;cue
