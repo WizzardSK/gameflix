@@ -19,7 +19,6 @@ wswan;TOSEC/Bandai/WonderSwan/Games/Bandai WonderSwan - Games.zip;Bandai - Wonde
 wswanc;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>WonderSwan Color</i>;mednafen_wswan_libretro
 wswanc;TOSEC/Bandai/WonderSwan Color/Games/Bandai WonderSwan Color - Games.zip;Bandai - WonderSwan Color;<i>WonderSwan Color</i> TOSEC;mednafen_wswan_libretro
 arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;<i>Arduboy</i>;arduous_libretro
-tic80;https://archive.org/download/TIC-80/tic80.zip;TIC-80;TIC-80;tic80_libretro
 
 atari2600;No-Intro/Atari - 2600;Atari - 2600;<p>Atari 2600;stella_libretro
 atari2600;TOSEC/Atari/2600 & VCS/Games/Atari 2600 & VCS - Games.zip;Atari - 2600;Atari 2600 TOSEC;stella_libretro
