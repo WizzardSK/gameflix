@@ -116,8 +116,8 @@ msx1;TOSEC/MSX/MSX/Games/[DSK]/MSX MSX - Games - [DSK].zip;Microsoft - MSX;MSX 1
 msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;MSX 2;bluemsx_libretro
 msx2;TOSEC/MSX/MSX2/Games/[DSK]/MSX MSX2 - Games - [DSK].zip;Microsoft - MSX2;MSX 2 TOSEC;bluemsx_libretro
 
-pet;TOSEC/Commodore/PET/Games/[PRG]/Commodore PET - Games - [PRG].zip;Commodore - PET;Commodore PET TOSEC;vice_xpet_libretro
-cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<p>Commodore Plus-4;vice_xplus4_libretro
+pet;TOSEC/Commodore/PET/Games/[PRG]/Commodore PET - Games - [PRG].zip;<p>Commodore - PET;Commodore PET TOSEC;vice_xpet_libretro
+cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;Commodore Plus-4;vice_xplus4_libretro
 cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP]/Commodore C16, C116 & Plus-4 - Games - [TAP].zip;Commodore - Plus-4;Commodore Plus-4 TOSEC;vice_xplus4_libretro
 vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;Commodore VIC-20;vice_xvic_libretro
 vic20;TOSEC/Commodore/VIC20/Games/[TAP]/Commodore VIC20 - Games - [TAP].zip;Commodore - VIC-20;Commodore VIC-20 TOSEC;vice_xvic_libretro
