@@ -46,8 +46,8 @@ for each in "${roms[@]}"; do
     done
   } < <(ls ~/${romfolder})
   echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
-  echo "<a href='${rom3}.html' target='main'>${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
-  echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
+  echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
+  echo "<figure><a href=\"${rom3}.html\"><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>${rom[2]} ($pocet)</figcaption></a></figure>" >> ~/gameflix/main.html
   ext=""
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
   echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
