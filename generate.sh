@@ -26,11 +26,11 @@ for each in "${roms[@]}"; do
     echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
     if [ "$platform" != "${rom[0]}" ]; then echo "<figure><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>" >> ~/gameflix/main.html; fi    
     echo "<a href=\"${rom3}.html\">${rom[3]} ($pocet)</a><br>" >> ~/gameflix/main.html  
+    platform=${rom[0]}
     if [ "$platform" != "${rom[0]}" ]; then echo "</figcaption></figure>" >> ~/gameflix/main.html; fi
     ext=""
     if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
     echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
-    platform=${rom[0]}
     continue
   fi
   > ~/gameflix/${rom3}.html
