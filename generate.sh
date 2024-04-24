@@ -24,9 +24,9 @@ for each in "${roms[@]}"; do
     pocet=$(ls ~/${romfolder} -1 | wc -l)
     total=$((pocet+total))
     echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
-    if [ "$platform" != "${rom[0]}" ]; then echo "<figure><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'>" >> ~/gameflix/main.html; fi    
-    echo "<a href=\"${rom3}.html\"><figcaption>${rom[3]} ($pocet)</figcaption></a>" >> ~/gameflix/main.html  
-    if [ "$platform" != "${rom[0]}" ]; then echo "</figure>" >> ~/gameflix/main.html; fi
+    if [ "$platform" != "${rom[0]}" ]; then echo "<figure><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>" >> ~/gameflix/main.html; fi    
+    echo "<a href=\"${rom3}.html\">${rom[3]} ($pocet)</a><br>" >> ~/gameflix/main.html  
+    if [ "$platform" != "${rom[0]}" ]; then echo "</figcaption></figure>" >> ~/gameflix/main.html; fi
     ext=""
     if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
     echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
