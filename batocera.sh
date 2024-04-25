@@ -24,8 +24,8 @@ echo "Mounting roms"
 IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
-  echo "rom: ${rom[2]}"
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
+  echo "${rom3}"
   mkdir -p /userdata/roms/${rom[0]}/${rom3}
   mkdir -p /userdata/roms/${rom[0]}/images  
   if [[ ${rom[1]} =~ \.zip$ ]]; then
