@@ -27,7 +27,7 @@ for each in "${roms[@]}"; do
       echo "</figcaption></figure><figure><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>" >> ~/gameflix/main.html
       ((platforms++))
     fi
-    echo "<a href=\"${rom3}.html\">${rom[3]}</a><br>" >> ~/gameflix/main.html
+    echo "<a href=\"${rom3}.html\">${rom3}</a><br>" >> ~/gameflix/main.html
     platform=${rom[0]}
     ext=""
     if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
@@ -54,7 +54,7 @@ for each in "${roms[@]}"; do
     echo "</figcaption></figure><figure><img src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>" >> ~/gameflix/main.html
     ((platforms++))
   fi
-  echo "<a href=\"${rom3}.html\">${rom[3]}</a><br>" >> ~/gameflix/main.html
+  echo "<a href=\"${rom3}.html\">${rom3}</a><br>" >> ~/gameflix/main.html
   platform=${rom[0]}
   ext=""
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
