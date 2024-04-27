@@ -78,7 +78,7 @@ segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;<p>Sega CD Redum
 segacd;TOSEC-ISO/Sega/Mega-CD & Sega CD/CD/Games/[ISO];Sega - Mega-CD - Sega CD;Sega CD ISO;picodrive_libretro;cue
 saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn Redump;yabasanshiro_libretro;cue
 saturn;TOSEC-ISO/Sega/Saturn/Games/[ISO];Sega - Saturn;Sega Saturn ISO;yabasanshiro_libretro;cue
-dreamcast;Redump/Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast;flycast_libretro;cue
+dreamcast;Redump/Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast Redump;flycast_libretro;cue
 dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/US;Sega - Dreamcast;Sega Dreamcast ISO;flycast_libretro;gdi
 gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i> NoIntro;genesis_plus_gx_libretro
 gamegear;TOSEC/Sega/Game Gear/Games/Sega Game Gear - Games.zip;Sega - Game Gear;<i>Game Gear</i> TOSEC;genesis_plus_gx_libretro
