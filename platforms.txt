@@ -46,6 +46,7 @@ satellaview;No-Intro/Nintendo - Satellaview;Nintendo - Satellaview;Nintendo Sate
 sufami;No-Intro/Nintendo - Sufami Turbo;Nintendo - Sufami Turbo;Sufami Turbo NoIntro;snes9x_libretro
 sufami;TOSEC/Nintendo/Sufami Turbo/Games/Nintendo Sufami Turbo - Games.zip;Nintendo - Sufami Turbo;Sufami Turbo TOSEC;snes9x_libretro
 n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64;Nintendo 64 NoIntro;mupen64plus_next_libretro
+n64;TOSEC/Nintendo/64/Games/Nintendo 64 - Games.zip;Nintendo - Nintendo 64;Nintendo 64 TOSEC;mupen64plus_next_libretro
 gamecube;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Gamecube Redump;dolphin_libretro;rvz
 gamecube;TOSEC-ISO/Nintendo/GameCube/Games;Nintendo - GameCube;Gamecube ISO;dolphin_libretro;iso
 wii;Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k];Nintendo - Wii;Nintendo Wii Redump;dolphin_libretro;rvz
