@@ -26,6 +26,6 @@ for each in "${roms[@]}"; do
     #  fi
     #fi  
     #mount-zip ~/zip/${rom3}.zip ~/roms/${rom3} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
-    mount-zip ~/myrient/${rom[1]} ~/roms/${rom3} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+    ~/ratarmount ~/myrient/${rom[1]} ~/roms/${rom3} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   fi
 done
