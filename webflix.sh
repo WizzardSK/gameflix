@@ -7,7 +7,7 @@ mkdir -p ~/zip
 mkdir -p ~/romz
 mkdir -p ~/gameflix
 wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
-httpdirfs --cache --no-range-check https://myrient.erista.me/files ~/myrient
+httpdirfs --cache --no-range-check --cache-location ~/share/cache https://myrient.erista.me/files ~/myrient
 IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
