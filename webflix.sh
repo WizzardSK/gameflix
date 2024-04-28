@@ -18,13 +18,14 @@ for each in "${roms[@]}"; do
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     mkdir -p ~/roms/${rom3}
-    if [ ! -f ~/zip/${rom3}.zip ]; then 
-      if [[ "${rom[1]}" == *://* ]]; then
-        wget -O ~/zip/${rom3}.zip ${rom[1]};
-      else
-        wget -O ~/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]};
-      fi
-    fi  
-    mount-zip ~/zip/${rom3}.zip ~/roms/${rom3} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+    #if [ ! -f ~/zip/${rom3}.zip ]; then 
+    #  if [[ "${rom[1]}" == *://* ]]; then
+    #    wget -O ~/zip/${rom3}.zip ${rom[1]};
+    #  else
+    #    wget -O ~/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]};
+    #  fi
+    #fi  
+    #mount-zip ~/zip/${rom3}.zip ~/roms/${rom3} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
+    mount-zip ~/myrient/${rom[1]} ~/roms/${rom3} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
   fi
 done
