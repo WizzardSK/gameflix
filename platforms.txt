@@ -147,7 +147,8 @@ amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Games/[ISO];Commodore - CDTV;Amiga CDTV
 
 pc88;TOSEC/NEC/PC-8801/Games/[D88]/NEC PC-8801 - Games - [D88].zip;NEC - PC-8001 - PC-8801;<p>NEC PC-88 TOSEC;quasi88_libretro
 pc98;TOSEC/NEC/PC-9801/Games/[FDD]/NEC PC-9801 - Games - [FDD].zip;NEC - PC-98;NEC PC-98 TOSEC;np2kai_libretro
-x1;TOSEC/Sharp/X1/Games/[2D]/Sharp X1 - Games - [2D].zip;Sharp - X1;Sharp X1 TOSEC;x1_libretro
+x1;TOSEC/Sharp/X1/Games/[2D]/Sharp X1 - Games - [2D].zip;Sharp - X1;Sharp X1 2D;x1_libretro
+x1;TOSEC/Sharp/X1/Games/[D88]/Sharp X1 - Games - [D88].zip;Sharp - X1;Sharp X1 D88;x1_libretro
 x68000;TOSEC/Sharp/X68000/Games/[DIM]/Sharp X68000 - Games - [DIM].zip;Sharp - X68000;Sharp X68000 TOSEC;px68k_libretro
 amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;Amstrad CPC TOSEC;cap32_libretro
 zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;Sinclair ZX81 TOSEC;81_libretro
