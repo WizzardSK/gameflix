@@ -31,8 +31,6 @@ for each in "${roms[@]}"; do
   mkdir -p /userdata/roms/${rom[0]}/${rom3}
   mkdir -p /userdata/roms/${rom[0]}/images  
   if [[ ${rom[1]} =~ \.zip$ ]]; then
-    #if [ ! -f /userdata/zip/${rom3}.zip ]; then wget -O /userdata/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi  
-    #/userdata/system/mount-zip /userdata/zip/${rom3}.zip /userdata/roms/${rom[O]}/${rom3} -o nonempty -omodules=iconv,from_code=$charset1,to_code=$charset2
     /userdata/system/ratarmount /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3} --index-folders /userdata/system/.cache/ratarmount
   else
     if grep -q ":" <<< "${rom[1]}"; then
