@@ -12,8 +12,6 @@ colecovision;No-Intro/Coleco - ColecoVision;Coleco - ColecoVision;Coleco Colecov
 colecovision;TOSEC/Coleco/ColecoVision/Games/Coleco ColecoVision - Games.zip;Coleco - ColecoVision;Coleco Colecovision TOSEC;bluemsx_libretro
 scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Super Cassette Vision NoIntro;emuscv_libretro
 scv;TOSEC/Epoch/Super Cassette Vision/Games/Epoch Super Cassette Vision - Games.zip;Epoch - Super Cassette Vision;Super Cassette Vision TOSEC;emuscv_libretro
-amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;Amstrad CPC TOSEC;cap32_libretro
-gx4000;TOSEC/Amstrad/GX4000/Games/Amstrad GX4000 - Games.zip;Amstrad - GX4000;Amstrad GX4000 TOSEC;cap32_libretro
 supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervision</i> NoIntro;potator_libretro
 supervision;TOSEC/Watara/Supervision/Games/Watara Supervision - Games.zip;Watara - Supervision;<i>Watara Supervision</i> TOSEC;potator_libretro
 wswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> NoIntro;mednafen_wswan_libretro
@@ -21,6 +19,13 @@ wswan;TOSEC/Bandai/WonderSwan/Games/Bandai WonderSwan - Games.zip;Bandai - Wonde
 wswanc;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>WonderSwan Color</i> NoIntro;mednafen_wswan_libretro
 wswanc;TOSEC/Bandai/WonderSwan Color/Games/Bandai WonderSwan Color - Games.zip;Bandai - WonderSwan Color;<i>WonderSwan Color</i> TOSEC;mednafen_wswan_libretro
 arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;<i>Arduboy</i> NoIntro;arduous_libretro
+
+amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<p>Amstrad CPC TOSEC;cap32_libretro
+gx4000;TOSEC/Amstrad/GX4000/Games/Amstrad GX4000 - Games.zip;Amstrad - GX4000;Amstrad GX4000 TOSEC;cap32_libretro
+zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;Sinclair ZX81 TOSEC;81_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;ZX Spectrum DSK;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80]/Sinclair ZX Spectrum - Games - [Z80].zip;Sinclair - ZX Spectrum;ZX Spectrum Z80;fuse_libretro
+spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo - SVI-318 - SVI-328;Spectravideo TOSEC;bluemsx_libretro
 
 atari2600;No-Intro/Atari - 2600;Atari - 2600;<p>Atari 2600 NoIntro;stella_libretro
 atari2600;TOSEC/Atari/2600 & VCS/Games/Atari 2600 & VCS - Games.zip;Atari - 2600;Atari 2600 TOSEC;stella_libretro
@@ -152,7 +157,3 @@ pc98;TOSEC/NEC/PC-9801/Games/[FDD]/NEC PC-9801 - Games - [FDD].zip;NEC - PC-98;N
 x1;TOSEC/Sharp/X1/Games/[2D]/Sharp X1 - Games - [2D].zip;Sharp - X1;Sharp X1 2D;x1_libretro
 x1;TOSEC/Sharp/X1/Games/[D88]/Sharp X1 - Games - [D88].zip;Sharp - X1;Sharp X1 D88;x1_libretro
 x68000;TOSEC/Sharp/X68000/Games/[DIM]/Sharp X68000 - Games - [DIM].zip;Sharp - X68000;Sharp X68000 TOSEC;px68k_libretro
-zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;Sinclair ZX81 TOSEC;81_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;ZX Spectrum DSK;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80]/Sinclair ZX Spectrum - Games - [Z80].zip;Sinclair - ZX Spectrum;ZX Spectrum Z80;fuse_libretro
-spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo - SVI-318 - SVI-328;Spectravideo TOSEC;bluemsx_libretro
