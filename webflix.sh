@@ -6,6 +6,7 @@ mkdir -p ~/iso
 mkdir -p ~/zip
 mkdir -p ~/romz
 mkdir -p ~/gameflix
+mkdir -p ~/share/cache
 wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 httpdirfs --cache --no-range-check --cache-location ~/share/cache https://myrient.erista.me/files ~/myrient
 IFS=";"
