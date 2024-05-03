@@ -20,7 +20,7 @@ for each in "${roms[@]}"; do
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     mkdir -p ~/roms/${rom3}
     if [ -z "$(ls -A ~/roms/${rom3})" ]; then
-      ~/ratarmount ~/myrient/${rom[1]} ~/roms/${rom3} --index-folders /share/system/.cache/ratarmount
+      ~/ratarmount ~/myrient/${rom[1]} ~/roms/${rom3} --index-folders ~/share/system/.cache/ratarmount
     fi
   fi
 done
