@@ -13,8 +13,6 @@ emulationstation stop; chvt 3; clear
 mkdir -p /userdata/rom
 mkdir -p /userdata/roms
 mkdir -p /userdata/thumbs
-mkdir -p /userdata/zip
-mkdir -p /userdata/romz
 mkdir -p /userdata/system/.cache/httpdirfs
 mkdir -p /userdata/system/.cache/ratarmount
 
