@@ -59,7 +59,7 @@ n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64;Nintend
 n64;TOSEC/Nintendo/64/Games/Nintendo 64 - Games.zip;Nintendo - Nintendo 64;Nintendo 64 TOSEC;mupen64plus_next_libretro
 gamecube;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Gamecube Redump;dolphin_libretro;rvz
 gamecube;TOSEC-ISO/Nintendo/GameCube/Games;Nintendo - GameCube;Gamecube ISO;dolphin_libretro;iso
-wii;Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k];Nintendo - Wii;Nintendo Wii Redump;dolphin_libretro;*
+wii;Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k];Nintendo - Wii;Nintendo Wii Redump;dolphin_libretro;rvz
 wiiu;Redump/Nintendo - Wii U - WUX;Nintendo - Wii U;<i>Nintendo Wii U Redump</i>;cemu -g;wux
 
 pokemini;No-Intro/Nintendo - Pokemon Mini;Nintendo - Pokemon Mini;<p><i>Pokemon Mini</i> NoIntro;pokemini_libretro
