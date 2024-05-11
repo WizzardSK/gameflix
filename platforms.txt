@@ -87,7 +87,7 @@ pico;No-Intro/Sega - PICO;Sega - PICO;Sega PICO NoIntro;picodrive_libretro
 pico;TOSEC/Sega/Pico/Educational/Sega Pico - Educational.zip;Sega - PICO;Sega PICO TOSEC;picodrive_libretro
 sega32x;No-Intro/Sega - 32X;Sega - 32X;Sega 32X NoIntro;picodrive_libretro
 sega32x;TOSEC/Sega/32X/Games/Sega 32X - Games.zip;Sega - 32X;Sega 32X TOSEC;picodrive_libretro
-segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;<p>Sega CD Redump;picodrive_libretro;cue
+segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;Sega CD Redump;picodrive_libretro;cue
 segacd;TOSEC-ISO/Sega/Mega-CD & Sega CD/CD/Games/[ISO];Sega - Mega-CD - Sega CD;Sega CD ISO;picodrive_libretro;cue
 saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn Redump;yabasanshiro_libretro;cue
 saturn;TOSEC-ISO/Sega/Saturn/Games/[ISO];Sega - Saturn;Sega Saturn ISO;yabasanshiro_libretro;cue
