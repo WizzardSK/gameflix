@@ -16,9 +16,9 @@ supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervi
 supervision;TOSEC/Watara/Supervision/Games/Watara Supervision - Games.zip;Watara - Supervision;<i>Watara Supervision</i> TOSEC;potator_libretro
 wswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> NoIntro;mednafen_wswan_libretro
 wswan;TOSEC/Bandai/WonderSwan/Games/Bandai WonderSwan - Games.zip;Bandai - WonderSwan;<i>Bandai WonderSwan</i> TOSEC;mednafen_wswan_libretro
+wswan;No-Intro/Benesse - Pocket Challenge V2;Bandai - WonderSwan;<i>Pocket Challenge 2</i> NoIntro;mednafen_wswan_libretro
 wswanc;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>WonderSwan Color</i> NoIntro;mednafen_wswan_libretro
 wswanc;TOSEC/Bandai/WonderSwan Color/Games/Bandai WonderSwan Color - Games.zip;Bandai - WonderSwan Color;<i>WonderSwan Color</i> TOSEC;mednafen_wswan_libretro
-wswan;No-Intro/Benesse - Pocket Challenge V2;Bandai - WonderSwan;<i>Benesse Pocket Challenge 2</i> NoIntro;mednafen_wswan_libretro
 arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;<i>Arduboy</i> NoIntro;arduous_libretro
 
 amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<p>Amstrad CPC TOSEC;cap32_libretro
