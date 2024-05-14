@@ -7,6 +7,7 @@ mkdir -p ~/gameflix
 mkdir -p ~/share/system/.cache/httpdirfs
 mkdir -p ~/share/system/.cache/ratarmount
 
+if [ ! -f ~/ratarmount ]; then wget -O ~/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v0.15.0/ratarmount-0.15.0-x86_64.AppImage; chmod +x ~/ratarmount; fi
 wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 httpdirfs --cache --no-range-check --cache-location ~/share/system/.cache/httpdirfs https://myrient.erista.me/files ~/myrient
 IFS=";"
