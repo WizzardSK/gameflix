@@ -24,7 +24,7 @@ Then use the library with any emulation system like Retroarch. It is up to you h
 
 Now you may run the roms directly without copying them to local storage, just like Netflix. 
 
-You also need [mount-zip](https://github.com/google/mount-zip) program to use Amstrad CPC, ZX Spectrum and Atari 800 games. They are stored in zipped libraries on remote place so the program needs to mount it like folder. It is also used to run zipped ISO files for PSP, PS2, PC Engine CD.
+You also need [ratarmount](https://github.com/mxmlnkn/ratarmount) program to use TOSEC libraries. They are stored in zipped files on remote place so the program needs to mount them like folders. It is also used to run zipped ISO files for PSP, PS2, PC Engine CD and other.
 
 [mount.sh](mount.sh) mounts the library. 
 
