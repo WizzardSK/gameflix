@@ -36,6 +36,7 @@ for each in "${roms[@]}"; do
   fi
   > ~/gameflix/${rom3}.html
   wget -O ~/gameflix/${rom3}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+  echo "<style> figure { background-image: url('https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/${rom[2]}.png'); } </style>" >> ~/gameflix/${rom3}.html
   pocet=0
   {
     while IFS= read -r line; do
