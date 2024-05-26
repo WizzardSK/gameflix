@@ -28,6 +28,7 @@ zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games -
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TZX]/Sinclair ZX Spectrum - Games - [TZX].zip;Sinclair - ZX Spectrum;ZX Spectrum TZX;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80]/Sinclair ZX Spectrum - Games - [Z80].zip;Sinclair - ZX Spectrum;ZX Spectrum Z80;fuse_libretro
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo - SVI-318 - SVI-328;Spectravideo TOSEC;bluemsx_libretro
+thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[FD]/Thomson TO8, TO8D, TO9, TO9+ - Games - [FD].zip;Thomson - MOTO;Thomson MOTO T08 FD;theodore_libretro
 
 atari2600;No-Intro/Atari - 2600;Atari - 2600;<p>Atari 2600 NoIntro;stella_libretro
 atari2600;TOSEC/Atari/2600 & VCS/Games/Atari 2600 & VCS - Games.zip;Atari - 2600;Atari 2600 TOSEC;stella_libretro
