@@ -28,8 +28,14 @@ zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games -
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TZX]/Sinclair ZX Spectrum - Games - [TZX].zip;Sinclair - ZX Spectrum;ZX Spectrum TZX;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80]/Sinclair ZX Spectrum - Games - [Z80].zip;Sinclair - ZX Spectrum;ZX Spectrum Z80;fuse_libretro
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo - SVI-318 - SVI-328;Spectravideo TOSEC;bluemsx_libretro
-thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[FD]/Thomson TO8, TO8D, TO9, TO9+ - Games - [FD].zip;Thomson - MOTO;Thomson MOTO T08 FD;theodore_libretro
-thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[SAP]/Thomson TO8, TO8D, TO9, TO9+ - Games - [SAP].zip;Thomson - MOTO;Thomson MOTO T08 SAP;theodore_libretro
+
+thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p>Thomson MO5 K7;theodore_libretro
+thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;Thomson MO6 K7;theodore_libretro
+thomson;TOSEC/Thomson/TO7/Games/[K7]/Thomson TO7 - Games - [K7].zip;Thomson - MOTO;Thomson TO7 K7;theodore_libretro
+thomson;TOSEC/Thomson/TO7/Games/[M7]/Thomson TO7 - Games - [M7].zip;Thomson - MOTO;Thomson TO7 M7;theodore_libretro
+thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[FD]/Thomson TO8, TO8D, TO9, TO9+ - Games - [FD].zip;Thomson - MOTO;Thomson TO8 FD;theodore_libretro
+thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[K7]/Thomson TO8, TO8D, TO9, TO9+ - Games - [K7].zip;Thomson - MOTO;Thomson TO8 K7;theodore_libretro
+thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[SAP]/Thomson TO8, TO8D, TO9, TO9+ - Games - [SAP].zip;Thomson - MOTO;Thomson TO8 SAP;theodore_libretro
 
 atari2600;No-Intro/Atari - 2600;Atari - 2600;<p>Atari 2600 NoIntro;stella_libretro
 atari2600;TOSEC/Atari/2600 & VCS/Games/Atari 2600 & VCS - Games.zip;Atari - 2600;Atari 2600 TOSEC;stella_libretro
