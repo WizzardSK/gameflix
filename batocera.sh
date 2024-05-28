@@ -30,6 +30,7 @@ for each in "${roms[@]}"; do
   mkdir -p /userdata/roms/${rom[0]}/${rom3}
   mkdir -p /userdata/roms/${rom[0]}/images  
   if [[ ${rom[1]} =~ \.zip$ ]]; then
+    head /userdata/rom/${rom[1]} > /dev/null
     /userdata/system/ratarmount /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3} --index-folders /userdata/system/.cache/ratarmount
   else
     if grep -q ":" <<< "${rom[1]}"; then
