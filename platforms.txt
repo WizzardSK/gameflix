@@ -157,7 +157,7 @@ c64;TOSEC/Commodore/C64/Games/Simulation/[D64]/Commodore C64 - Games - Simulatio
 c64;TOSEC/Commodore/C64/Games/Sports/[D64]/Commodore C64 - Games - Sports - [D64].zip;Commodore - 64;Commodore 64 Sports;vice_x64sc_libretro
 c64;TOSEC/Commodore/C64/Games/Strategy/[D64]/Commodore C64 - Games - Strategy - [D64].zip;Commodore - 64;Commodore 64 Strategy;vice_x64sc_libretro
 c64;TOSEC/Commodore/C64/Educational/[D64]/Commodore C64 - Educational - [D64].zip;Commodore - 64;Commodore 64 Educational;vice_x64sc_libretro
-c128;TOSEC/Commodore/C128/Games/[D64]/Commodore C128 - Games - [D64].zip;Commodore - 128;Commodore 128 D64;vice_x128_libretro
+c128;TOSEC/Commodore/C128/Games/[D64]/Commodore C128 - Games - [D64].zip;Commodore - 64;Commodore 128 D64;vice_x128_libretro
 
 amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;<p>Amiga 1200 NoIntro;puae_libretro
 amiga1200;TOSEC/Commodore/Amiga/Games/[ADF]/Commodore Amiga - Games - [ADF].zip;Commodore - Amiga;Amiga 1200 ADF;puae_libretro
