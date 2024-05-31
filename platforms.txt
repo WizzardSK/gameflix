@@ -143,9 +143,12 @@ pet;TOSEC/Commodore/PET/Games/[PRG]/Commodore PET - Games - [PRG].zip;Commodore 
 cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;Commodore Plus-4 NoIntro;vice_xplus4_libretro
 cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP]/Commodore C16, C116 & Plus-4 - Games - [TAP].zip;Commodore - Plus-4;Commodore Plus-4 TOSEC;vice_xplus4_libretro
 vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;Commodore VIC-20 NoIntro;vice_xvic_libretro
+vic20;TOSEC/Commodore/VIC20/Games/[CRT]/Singlepart/Commodore VIC20 - Games - [CRT] - Singlepart.zip;Commodore - VIC-20;Commodore VIC-20 CRT;vice_xvic_libretro
 vic20;TOSEC/Commodore/VIC20/Games/[D64]/Commodore VIC20 - Games - [D64].zip;Commodore - VIC-20;Commodore VIC-20 D64;vice_xvic_libretro
+vic20;TOSEC/Commodore/VIC20/Games/[PRG]/Singlepart/Commodore VIC20 - Games - [PRG] - Singlepart.zip;Commodore - VIC-20;Commodore VIC-20 PRG;vice_xvic_libretro
 vic20;TOSEC/Commodore/VIC20/Games/[TAP]/Commodore VIC20 - Games - [TAP].zip;Commodore - VIC-20;Commodore VIC-20 TAP;vice_xvic_libretro
-c64;No-Intro/Commodore - Commodore 64;Commodore - 64;Commodore 64 NoIntro;vice_x64sc_libretro
+
+c64;No-Intro/Commodore - Commodore 64;Commodore - 64;<p>Commodore 64 NoIntro;vice_x64sc_libretro
 c64;No-Intro/Commodore - Commodore 64 (PP);Commodore - 64;Commodore 64 PP;vice_x64sc_libretro
 c64;No-Intro/Commodore - Commodore 64 (Tapes);Commodore - 64;Commodore 64 Tapes;vice_x64sc_libretro
 c64;TOSEC/Commodore/C64/Games/Adventure/[D64]/Commodore C64 - Games - Adventure - [D64].zip;Commodore - 64;Commodore 64 Adventure;vice_x64sc_libretro
