@@ -46,6 +46,7 @@ atari7800;TOSEC/Atari/7800/Games/Atari 7800 - Games.zip;Atari - 7800;Atari 7800 
 atari800;TOSEC/Atari/8bit/Games/[ATR]/Atari 8bit - Games - [ATR].zip;Atari - 8-bit;Atari 8bit ATR;atari800
 atari800;TOSEC/Atari/8bit/Games/[ATX]/Atari 8bit - Games - [ATX].zip;Atari - 8-bit;Atari 8bit ATX;atari800
 atari800;TOSEC/Atari/8bit/Games/[BIN]/Atari 8bit - Games - [BIN].zip;Atari - 8-bit;Atari 8bit BIN;atari800
+atari800;TOSEC/Atari/8bit/Games/[CAS]/Atari 8bit - Games - [CAS].zip;Atari - 8-bit;Atari 8bit CAS;atari800
 atari800;TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip;Atari - 8-bit;Atari 8bit XEX;atari800
 atarist;No-Intro/Atari - ST;Atari - ST;Atari ST NoIntro;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[ST]/Atari ST - Games - [ST].zip;Atari - ST;Atari ST ST;hatari_libretro
