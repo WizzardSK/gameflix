@@ -25,6 +25,7 @@ amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad
 gx4000;TOSEC/Amstrad/GX4000/Games/Amstrad GX4000 - Games.zip;Amstrad - GX4000;Amstrad GX4000 TOSEC;cap32_libretro
 zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;Sinclair ZX81 TOSEC;81_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;ZX Spectrum DSK;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[SCL]/Sinclair ZX Spectrum - Games - [SCL].zip;Sinclair - ZX Spectrum;ZX Spectrum SCL;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TAP]/Sinclair ZX Spectrum - Games - [TAP].zip;Sinclair - ZX Spectrum;ZX Spectrum TAP;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TRD]/Sinclair ZX Spectrum - Games - [TRD].zip;Sinclair - ZX Spectrum;ZX Spectrum TRD;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TZX]/Sinclair ZX Spectrum - Games - [TZX].zip;Sinclair - ZX Spectrum;ZX Spectrum TZX;fuse_libretro
