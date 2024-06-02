@@ -172,6 +172,8 @@ c128;TOSEC/Commodore/C128/Games/[D64]/Commodore C128 - Games - [D64].zip;Commodo
 
 amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;<p>Amiga 1200 NoIntro;puae_libretro
 amiga1200;TOSEC/Commodore/Amiga/Games/[ADF]/Commodore Amiga - Games - [ADF].zip;Commodore - Amiga;Amiga 1200 ADF;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Games/[Unofficial IPF]/Commodore Amiga - Games - [Unofficial IPF].zip;Commodore - Amiga;Amiga 1200 IPF;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Games/Public Domain/[ADF]/Commodore Amiga - Games - Public Domain - [ADF].zip;Commodore - Amiga;Amiga 1200 PD;puae_libretro
 amiga1200;TOSEC/Commodore/Amiga/Games/SPS/Commodore Amiga - Games - SPS.zip;Commodore - Amiga;Amiga 1200 SPS;puae_libretro
 amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;Amiga CD32 Redump;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Games/[ISO];Commodore - CD32;Amiga CD32 ISO;puae_libretro;cue
