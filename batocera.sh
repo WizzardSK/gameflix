@@ -44,8 +44,10 @@ for each in "${roms[@]}"; do
   fi  
   #mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
   echo "${rom3}" thumbs
-  rclone mount thumbnails:${rom[2]}/Named_Snaps/ /userdata/roms/${rom[0]}/image --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf --vfs-cache-mode full --cache-dir=/userdata/system/.cache/rclone
-  for file in /userdata/roms/${rom[0]}/image/*; do ln -s "$file" "/userdata/roms/${rom[0]}/images/$(basename "${file%.*}")-image.${file##*.}"; done
+  if [ -z "$(ls -A "/userdata/roms/${rom[0]}/images")" ]; then
+    rclone mount thumbnails:${rom[2]}/Named_Snaps/ /userdata/roms/${rom[0]}/images --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf --vfs-cache-mode full --cache-dir=/userdata/system/.cache/rclone
+  fi
+  #for file in /userdata/roms/${rom[0]}/image/*; do ln -s "$file" "/userdata/roms/${rom[0]}/images/$(basename "${file%.*}")-image.${file##*.}"; done
 done
 
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg
