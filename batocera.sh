@@ -10,7 +10,6 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 
 emulationstation stop; chvt 3; clear
 
-rm -rf /userdata/roms
 mkdir -p /userdata/rom
 mkdir -p /userdata/roms
 mkdir -p /userdata/thumbs
@@ -31,6 +30,7 @@ for each in "${roms[@]}"; do
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   echo "${rom3}"
   mkdir -p /userdata/roms/${rom[0]}/${rom3}
+  rm -rf /userdata/roms/${rom[0]}/images
   mkdir -p /userdata/roms/${rom[0]}/images  
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     head /userdata/rom/${rom[1]} > /dev/null
