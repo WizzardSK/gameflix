@@ -26,6 +26,7 @@ rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --
 
 IFS=";"
 for each in "${roms[@]}"; do
+  read -ra rom < <(printf '%s' "$each")
   > /userdata/roms/${rom[0]}/gamelist.xml
 done
 for each in "${roms[@]}"; do
