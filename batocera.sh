@@ -10,6 +10,7 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 
 emulationstation stop; chvt 3; clear
 
+rm -rf /userdata/roms
 mkdir -p /userdata/rom
 mkdir -p /userdata/roms
 mkdir -p /userdata/thumbs
