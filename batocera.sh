@@ -58,6 +58,7 @@ for each in "${roms[@]}"; do
   #echo "</gameList>" >> /userdata/roms/${rom[0]}/gamelist.xml  
 done
 for each in "${roms[@]}"; do
+  read -ra rom < <(printf '%s' "$each")
   if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
   if ! grep -Fxq "</gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
 done
