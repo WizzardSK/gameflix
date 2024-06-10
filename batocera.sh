@@ -57,6 +57,10 @@ for each in "${roms[@]}"; do
   done
   #echo "</gameList>" >> /userdata/roms/${rom[0]}/gamelist.xml  
 done
+for each in "${roms[@]}"; do
+  if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
+  if ! grep -Fxq "</gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
+done
 
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg
 chvt 2
