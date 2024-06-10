@@ -30,7 +30,6 @@ for each in "${roms[@]}"; do
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   echo "${rom3}"
   mkdir -p /userdata/roms/${rom[0]}/${rom3}
-  rm -rf /userdata/roms/${rom[0]}/images
   mkdir -p /userdata/roms/${rom[0]}/images  
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     head /userdata/rom/${rom[1]} > /dev/null
