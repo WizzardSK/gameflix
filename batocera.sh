@@ -26,6 +26,9 @@ rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --
 
 IFS=";"
 for each in "${roms[@]}"; do
+  > /userdata/roms/${rom[0]}/gamelist.xml
+done
+for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   echo "${rom3}"
@@ -44,15 +47,14 @@ for each in "${roms[@]}"; do
   #mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
   echo "${rom3}" thumbs
   rclone mount thumbnails:${rom[2]}/Named_Snaps/ /userdata/roms/${rom[0]}/images --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf --vfs-cache-mode full --cache-dir=/userdata/system/.cache/rclone
-  > /userdata/roms/${rom[0]}/gamelist.xml
-  echo "<gameList>" >> /userdata/roms/${rom[0]}/gamelist.xml
+  #echo "<gameList>" >> /userdata/roms/${rom[0]}/gamelist.xml
   ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
       echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
     fi
   done
-  echo "</gameList>" >> /userdata/roms/${rom[0]}/gamelist.xml  
+  #echo "</gameList>" >> /userdata/roms/${rom[0]}/gamelist.xml  
 done
 
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg
