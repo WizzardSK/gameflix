@@ -45,7 +45,7 @@ for each in "${roms[@]}"; do
       mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}
     fi
   fi  
-  if ! mountpoint -q /userdata/roms/${rom[0]}/images; then
+  if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
     echo "${rom[2]}" thumbs
     rclone mount thumbnails:${rom[2]}/Named_Snaps/ /userdata/roms/${rom[0]}/images --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf --vfs-cache-mode full --cache-dir=/userdata/system/.cache/rclone
   fi  
