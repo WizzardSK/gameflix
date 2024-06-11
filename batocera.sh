@@ -45,17 +45,16 @@ for each in "${roms[@]}"; do
       mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}
     fi
   fi  
-  #mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
-  echo "${rom3}" thumbs
-  rclone mount thumbnails:${rom[2]}/Named_Snaps/ /userdata/roms/${rom[0]}/images --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf --vfs-cache-mode full --cache-dir=/userdata/system/.cache/rclone
-  #echo "<gameList>" >> /userdata/roms/${rom[0]}/gamelist.xml
+  if ! mountpoint -q /userdata/roms/${rom[0]}/images; then
+    echo "${rom[2]}" thumbs
+    rclone mount thumbnails:${rom[2]}/Named_Snaps/ /userdata/roms/${rom[0]}/images --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf --vfs-cache-mode full --cache-dir=/userdata/system/.cache/rclone
+  fi  
   ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
       echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
     fi
   done
-  #echo "</gameList>" >> /userdata/roms/${rom[0]}/gamelist.xml  
 done
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
