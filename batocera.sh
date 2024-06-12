@@ -53,6 +53,7 @@ for each in "${roms[@]}"; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
       echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
+      head /userdata/roms/${rom[0]}/images/${line2}.png > /dev/null
     fi
   done
 done
