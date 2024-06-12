@@ -17,10 +17,10 @@ mkdir -p /userdata/system/.cache/httpdirfs
 mkdir -p /userdata/system/.cache/ratarmount
 mkdir -p /userdata/system/.cache/rclone
 
-echo "Mounting thumbs"
+#echo "Mounting thumbs"
 #/userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs http://thumbnails.libretro.com /userdata/thumbs
 #rclone mount thumbnails: /userdata/thumbs --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
-echo "Mounting roms"
+#echo "Mounting roms"
 #/userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs https://myrient.erista.me/files /userdata/rom
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 
