@@ -12,6 +12,7 @@ emulationstation stop; chvt 3; clear
 
 mkdir -p /userdata/rom
 mkdir -p /userdata/roms
+mkdir -p /userdata/thumb
 mkdir -p /userdata/thumbs
 mkdir -p /userdata/system/.cache/httpdirfs
 mkdir -p /userdata/system/.cache/ratarmount
@@ -28,6 +29,7 @@ IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   > /userdata/roms/${rom[0]}/gamelist.xml
+  if [ ! -f /userdata/thumb/${rom[2]} ]; then wget -O /userdata/thumb/${rom[2]} https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/${rom[2]}.png; fi
 done
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
