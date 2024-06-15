@@ -58,7 +58,7 @@ for each in "${roms[@]}"; do
       echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
     fi
   done
-  echo "<folder><path>./${rom[3]}</path><name>${rom[3]}</name><image>~/../thumb/${rom[3]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
+  echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[2]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
 done
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
