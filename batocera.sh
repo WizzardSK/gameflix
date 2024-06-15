@@ -29,7 +29,7 @@ IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   > /userdata/roms/${rom[0]}/gamelist.xml
-  if [ ! -f /userdata/thumb/${rom[2]} ]; then wget -O /userdata/thumb/${rom[2]} https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/${rom[2]}.png; fi
+  if [ ! -f /userdata/thumb/${rom[2]}.png ]; then wget -O /userdata/thumb/${rom[2]}.png https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/${rom[2]}.png; fi
 done
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
