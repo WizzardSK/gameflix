@@ -11,6 +11,10 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 emulationstation stop; chvt 3; clear
 
 mkdir -p /userdata/rom
+mkdir -p /userdata/rom/No-Intro
+mkdir -p /userdata/rom/Redump
+mkdir -p /userdata/rom/TOSEC
+mkdir -p /userdata/rom/TOSEC-ISO
 mkdir -p /userdata/roms
 mkdir -p /userdata/thumb
 mkdir -p /userdata/thumbs
@@ -23,7 +27,13 @@ echo "Mounting thumbs"
 rclone mount thumbnails: /userdata/thumbs          --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf --vfs-cache-mode full --cache-dir=/userdata/system/.cache/rclone
 echo "Mounting roms"
 #/userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs https://myrient.erista.me/files /userdata/rom
-rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
+#rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
+rclone mount myrient: /userdata/rom/No-Intro  --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
+rclone mount myrient: /userdata/rom/Redump    --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
+rclone mount myrient: /userdata/rom/TOSEC-ISO --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
+rclone mount myrient: /userdata/rom/TOSEC                    --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf --vfs-cache-mode full --cache-dir=/userdata/system/.cache/rclone
+
+echo "Mounting roms"
 
 IFS=";"
 for each in "${roms[@]}"; do
