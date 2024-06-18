@@ -11,10 +11,10 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 emulationstation stop; chvt 3; clear
 
 mkdir -p /userdata/rom
-mkdir -p /userdata/rom/No-Intro
-mkdir -p /userdata/rom/Redump
-mkdir -p /userdata/rom/TOSEC
-mkdir -p /userdata/rom/TOSEC-ISO
+#mkdir -p /userdata/rom/No-Intro
+#mkdir -p /userdata/rom/Redump
+#mkdir -p /userdata/rom/TOSEC
+#mkdir -p /userdata/rom/TOSEC-ISO
 mkdir -p /userdata/roms
 mkdir -p /userdata/thumb
 mkdir -p /userdata/thumbs
