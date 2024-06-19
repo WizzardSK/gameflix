@@ -60,7 +60,7 @@ for each in "${roms[@]}"; do
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
     #rclone mount thumbnails:${rom[2]}/Named_Snaps/ /userdata/roms/${rom[0]}/images --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf --vfs-cache-mode full --cache-dir=/userdata/system/.cache/rclone
   fi
-  if [ ! -f /userdata/roms/${rom[0]}/gamelist.xml ]; then
+  if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml > /dev/null; then
     ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
       if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
         line2=${line%.*}
