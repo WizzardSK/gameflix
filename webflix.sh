@@ -1,10 +1,6 @@
 #!/bin/bash
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 mkdir -p ~/myrient
-mkdir -p ~/myrient/No-Intro
-mkdir -p ~/myrient/Redump
-mkdir -p ~/myrient/TOSEC
-mkdir -p ~/myrient/TOSEC-ISO
 mkdir -p ~/roms
 mkdir -p ~/iso
 mkdir -p ~/gameflix
@@ -16,10 +12,6 @@ if [ ! -f ~/ratarmount ]; then wget -O ~/ratarmount https://github.com/mxmlnkn/r
 wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 #httpdirfs --cache --no-range-check --cache-location ~/share/system/.cache/httpdirfs https://myrient.erista.me/files ~/myrient
 rclone mount myrient:            ~/myrient           --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate
-#rclone mount myrient:No-Intro/  ~/myrient/No-Intro  --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate 
-#rclone mount myrient:Redump/    ~/myrient/Redump    --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate 
-#rclone mount myrient:TOSEC-ISO/ ~/myrient/TOSEC-ISO --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate 
-#rclone mount myrient:TOSEC/     ~/myrient/TOSEC                    --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --vfs-cache-mode full 
 
 IFS=";"
 for each in "${roms[@]}"; do
