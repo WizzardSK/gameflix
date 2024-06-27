@@ -24,7 +24,7 @@ for each in "${roms[@]}"; do
     mkdir -p ~/roms/${rom3}
     if [ -z "$(ls -A ~/roms/${rom3})" ]; then
       head ~/myrient/${rom[1]} > /dev/null
-      ~/ratarmount ~/myrient/${rom[1]} ~/roms/${rom3} --index-folders ~/share/system/.cache/ratarmount
+      ~/ratarmount ~/myrient/${rom[1]} ~/roms/${rom3} --index-folders ~/share/system/.cache/ratarmount &
     fi
   fi
 done
