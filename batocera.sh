@@ -16,8 +16,9 @@ mkdir -p /userdata/thumbs
 mkdir -p /userdata/system/.cache/ratarmount
 mkdir -p /userdata/system/.cache/rclone
 
-rclone mount thumbnails: /userdata/thumbs          --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf --vfs-cache-mode full --cache-dir=/userdata/system/.cache/rclone
-rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
+rclone mount thumbnails: /userdata/thumbs --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf 
+rclone mount myrient: /userdata/rom       --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
+#--vfs-cache-mode full --cache-dir=/userdata/system/.cache/rclone
 
 IFS=";"
 for each in "${roms[@]}"; do
