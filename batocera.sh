@@ -25,6 +25,13 @@ for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[2]}.png ]; then wget -O /userdata/thumb/${rom[2]}.png https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/${rom[2]}.png; fi
 done
+( for each in "${roms[@]}"; do
+  if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
+    echo "${rom[2]}" thumbs
+    mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
+    ls /userdata/roms/${rom[0]}/images > /dev/null
+  fi
+done ) &
 for each in "${roms[@]}"; do (
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
@@ -40,12 +47,6 @@ for each in "${roms[@]}"; do (
     else
       mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}
     fi
-  fi  
-  if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
-    echo "${rom[2]}" thumbs
-    mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
-    ls /userdata/roms/${rom[0]}/images > /dev/null
-    sleep 2
   fi
   if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml > /dev/null; then
     ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
@@ -56,7 +57,7 @@ for each in "${roms[@]}"; do (
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[2]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi ) &
-  sleep 2
+  sleep 1
 done
 wait
 for each in "${roms[@]}"; do
