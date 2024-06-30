@@ -27,9 +27,9 @@ for each in "${roms[@]}"; do
 done
 (
 for each in "${roms[@]}"; do
+  mkdir -p /userdata/roms/${rom[0]}/images  
   if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
     echo "${rom[2]}" thumbs
-    mkdir -p /userdata/roms/${rom[0]}/images  
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
     ls /userdata/roms/${rom[0]}/images > /dev/null
   fi
