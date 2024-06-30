@@ -25,7 +25,7 @@ for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[2]}.png ]; then wget -O /userdata/thumb/${rom[2]}.png https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/${rom[2]}.png; fi
 done
-(
+{
 for each in "${roms[@]}"; do
   mkdir -p /userdata/roms/${rom[0]}/images  
   if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
@@ -34,7 +34,7 @@ for each in "${roms[@]}"; do
     ls /userdata/roms/${rom[0]}/images > /dev/null
   fi
 done
-) &
+} &
 for each in "${roms[@]}"; do (
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
