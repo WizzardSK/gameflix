@@ -44,6 +44,7 @@ for each in "${roms[@]}"; do (
   if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
     echo "${rom[2]}" thumbs
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
+    ls /userdata/roms/${rom[0]}/images > /dev/null
   fi
   if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml > /dev/null; then
     ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
