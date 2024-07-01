@@ -27,15 +27,6 @@ for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[2]}.png ]; then wget -O /userdata/thumb/${rom[2]}.png https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/${rom[2]}.png; fi
 done
-for each in "${roms[@]}"; do
-  read -ra rom < <(printf '%s' "$each")
-  mkdir -p /userdata/roms/${rom[0]}/images  
-  if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
-    echo "Thumbs ${rom[2]}"
-    mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
-    #ls /userdata/roms/${rom[0]}/images > /dev/null
-  fi
-done
 for each in "${roms[@]}"; do (
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
@@ -62,13 +53,21 @@ for each in "${roms[@]}"; do (
   fi ) &
   sleep 1
 done
-wait
+for each in "${roms[@]}"; do
+  read -ra rom < <(printf '%s' "$each")
+  mkdir -p /userdata/roms/${rom[0]}/images  
+  if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
+    echo "Thumbs for ${rom[2]}"
+    mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
+    #ls /userdata/roms/${rom[0]}/images > /dev/null
+  fi
+done
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
   if ! grep -Fxq "</gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
 done
-
+wait
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg
 chvt 2
 curl http://127.0.0.1:1234/reloadgames
