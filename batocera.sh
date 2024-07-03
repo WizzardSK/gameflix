@@ -53,6 +53,7 @@ for each in "${roms[@]}"; do (
   fi ) &
   sleep 1
 done
+echo " "
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p /userdata/roms/${rom[0]}/images  
