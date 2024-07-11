@@ -43,6 +43,9 @@ pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000;mame_libretro
 supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan;mame_libretro
 vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile;mame_libretro
 
+apple2;No-Intro/Apple - II (A2R);Apple - II;<p>Apple II A2R;mame_libretro
+macintosh;No-Intro/Apple - Macintosh (A2R);Apple - Macintosh;Apple Macintosh A2R;mame_libretro
+
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p>Thomson MO5 K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;Thomson MO6 K7;theodore_libretro
 thomson;TOSEC/Thomson/TO7/Games/[K7]/Thomson TO7 - Games - [K7].zip;Thomson - MOTO;Thomson TO7 K7;theodore_libretro
