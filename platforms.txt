@@ -40,6 +40,8 @@ advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vi
 crvision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision;mame_libretro
 arcadia;No-Intro/Emerson - Arcadia 2001;Emerson - Arcadia 2001;Arcadia 2001;mame_libretro
 pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000;mame_libretro
+supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan;mame_libretro
+vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile;mame_libretro
 
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p>Thomson MO5 K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;Thomson MO6 K7;theodore_libretro
