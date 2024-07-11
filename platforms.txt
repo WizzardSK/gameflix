@@ -44,6 +44,7 @@ supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan;mame_libr
 vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile;mame_libretro
 
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame_libretro
+ti99;TOSEC/Texas Instruments/TI-99 4A/Games/[DSK]/Texas Instruments TI-99 4A - Games - [DSK].zip;Texas Instruments - TI-99;Texas Instruments TI-99;mame_libretro
 
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p>Thomson MO5 K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;Thomson MO6 K7;theodore_libretro
