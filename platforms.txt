@@ -43,7 +43,7 @@ pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000;mame_libretro
 supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan;mame_libretro
 vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile;mame_libretro
 
-atom;TOSEC/Acorn/Atom/Games/[DSK]/Acorn Atom - Games - [DSK].zip;Acorn - Atom;<p>Acorn Atom;mame_libretro
+coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[CAS]/Tandy Radio Shack TRS-80 Color Computer - Games - [CAS].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame_libretro
 
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p>Thomson MO5 K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;Thomson MO6 K7;theodore_libretro
