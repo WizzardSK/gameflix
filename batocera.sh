@@ -23,7 +23,7 @@ rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --
 IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
-  if [ ! -f /userdata/thumb/${rom[2]}.svg ]; then wget -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi                                                                                        
+  if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi                                                                                        
 done
 for each in "${roms[@]}"; do (
   read -ra rom < <(printf '%s' "$each")
