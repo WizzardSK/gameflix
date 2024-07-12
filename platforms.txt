@@ -2,8 +2,8 @@ channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;Fairchild Channel 
 channelf;TOSEC/Fairchild/VES & Channel F/Games/Fairchild VES & Channel F - Games.zip;Fairchild - Channel F;Fairchild Channel F TOSEC;freechaf_libretro
 vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;GCE Vectrex NoIntro;vecx_libretro
 vectrex;TOSEC/GCE/Vectrex/Games/GCE Vectrex - Games.zip;GCE - Vectrex;GCE Vectrex TOSEC;vecx_libretro
-o2em;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Magnavox Odyssey 2 NoIntro;o2em_libretro
-o2em;TOSEC/Magnavox/Odyssey2/Games/Magnavox Odyssey2 - Games.zip;Magnavox - Odyssey2;Magnavox Odyssey 2 TOSEC;o2em_libretro
+odyssey2;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Magnavox Odyssey 2 NoIntro;o2em_libretro
+odyssey2;TOSEC/Magnavox/Odyssey2/Games/Magnavox Odyssey2 - Games.zip;Magnavox - Odyssey2;Magnavox Odyssey 2 TOSEC;o2em_libretro
 videopacplus;No-Intro/Philips - Videopac+;Philips - Videopac+;Philips Videopac+ NoIntro;o2em_libretro
 videopacplus;TOSEC/Philips/Videopac+/Games/Philips Videopac+ - Games.zip;Philips - Videopac+;Philips Videopac+ TOSEC;o2em_libretro
 intellivision;No-Intro/Mattel - Intellivision;Mattel - Intellivision;Mattel Intellivision NoIntro;freeintv_libretro
@@ -14,11 +14,11 @@ scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Super C
 scv;TOSEC/Epoch/Super Cassette Vision/Games/Epoch Super Cassette Vision - Games.zip;Epoch - Super Cassette Vision;Super Cassette Vision TOSEC;emuscv_libretro
 supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervision</i> NoIntro;potator_libretro
 supervision;TOSEC/Watara/Supervision/Games/Watara Supervision - Games.zip;Watara - Supervision;<i>Watara Supervision</i> TOSEC;potator_libretro
-wswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> NoIntro;mednafen_wswan_libretro
-wswan;TOSEC/Bandai/WonderSwan/Games/Bandai WonderSwan - Games.zip;Bandai - WonderSwan;<i>Bandai WonderSwan</i> TOSEC;mednafen_wswan_libretro
-wswan;No-Intro/Benesse - Pocket Challenge V2;Bandai - WonderSwan;<i>Pocket Challenge 2</i> NoIntro;mednafen_wswan_libretro
-wswanc;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>WonderSwan Color</i> NoIntro;mednafen_wswan_libretro
-wswanc;TOSEC/Bandai/WonderSwan Color/Games/Bandai WonderSwan Color - Games.zip;Bandai - WonderSwan Color;<i>WonderSwan Color</i> TOSEC;mednafen_wswan_libretro
+wonderswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> NoIntro;mednafen_wswan_libretro
+wonderswan;TOSEC/Bandai/WonderSwan/Games/Bandai WonderSwan - Games.zip;Bandai - WonderSwan;<i>Bandai WonderSwan</i> TOSEC;mednafen_wswan_libretro
+wonderswan;No-Intro/Benesse - Pocket Challenge V2;Bandai - WonderSwan;<i>Pocket Challenge 2</i> NoIntro;mednafen_wswan_libretro
+wonderswancolor;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>WonderSwan Color</i> NoIntro;mednafen_wswan_libretro
+wonderswancolor;TOSEC/Bandai/WonderSwan Color/Games/Bandai WonderSwan Color - Games.zip;Bandai - WonderSwan Color;<i>WonderSwan Color</i> TOSEC;mednafen_wswan_libretro
 arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;<i>Arduboy</i> NoIntro;arduous_libretro
 
 amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<p>Amstrad CPC TOSEC;cap32_libretro
@@ -34,17 +34,17 @@ spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK]/MGT Sam Coupe - Games - [DSK].zip;Sam Coupé;Sam Coupé DSK;simcoupe
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[SAD]/MGT Sam Coupe - Games - [SAD].zip;Sam Coupé;Sam Coupé SAD;simcoupe
 
-astrocde;No-Intro/Bally - Astrocade;Bally - Astrocade;<p>Bally Astrocade;mame_libretro
+astrocade;No-Intro/Bally - Astrocade;Bally - Astrocade;<p>Bally Astrocade;mame_libretro
 apfm1000;No-Intro/APF - MP-1000;APF - MP-1000;APF MP-1000;mame_libretro
 advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vision;mame_libretro
-crvision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision;mame_libretro
+creativision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision;mame_libretro
 arcadia;No-Intro/Emerson - Arcadia 2001;Emerson - Arcadia 2001;Arcadia 2001;mame_libretro
 pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000;mame_libretro
 supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan;mame_libretro
 vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile;mame_libretro
 
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame_libretro
-bbc;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;Acorn BBC;mame_libretro
+bbcmicro;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;Acorn BBC;mame_libretro
 
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p>Thomson MO5 K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;Thomson MO6 K7;theodore_libretro
@@ -68,10 +68,10 @@ atari800;TOSEC/Atari/8bit/Games/[XEX]/Atari 8bit - Games - [XEX].zip;Atari - 8-b
 atarist;No-Intro/Atari - ST;Atari - ST;Atari ST NoIntro;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[ST]/Atari ST - Games - [ST].zip;Atari - ST;Atari ST ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[STX]/Atari ST - Games - [STX].zip;Atari - ST;Atari ST STX;hatari_libretro
-jaguar;No-Intro/Atari - Jaguar (J64);Atari - Jaguar;Atari Jaguar NoIntro;virtualjaguar_libretro
-jaguar;TOSEC/Atari/Jaguar/Games/[J64]/Atari Jaguar - Games - [J64].zip;Atari - Jaguar;Atari Jaguar TOSEC;virtualjaguar_libretro
-lynx;No-Intro/Atari - Lynx (LYX);Atari - Lynx;<i>Atari Lynx</i> NoIntro;mednafen_lynx_libretro
-lynx;TOSEC/Atari/Lynx/Games/[LNX]/Atari Lynx - Games - [LNX].zip;Atari - Lynx;<i>Atari Lynx</i> TOSEC;mednafen_lynx_libretro
+atarijaguar;No-Intro/Atari - Jaguar (J64);Atari - Jaguar;Atari Jaguar NoIntro;virtualjaguar_libretro
+atarijaguar;TOSEC/Atari/Jaguar/Games/[J64]/Atari Jaguar - Games - [J64].zip;Atari - Jaguar;Atari Jaguar TOSEC;virtualjaguar_libretro
+atarilynx;No-Intro/Atari - Lynx (LYX);Atari - Lynx;<i>Atari Lynx</i> NoIntro;mednafen_lynx_libretro
+atarilynx;TOSEC/Atari/Lynx/Games/[LNX]/Atari Lynx - Games - [LNX].zip;Atari - Lynx;<i>Atari Lynx</i> TOSEC;mednafen_lynx_libretro
 
 nes;No-Intro/Nintendo - Nintendo Entertainment System (Headered);Nintendo - Nintendo Entertainment System;<p>Nintendo NES NoIntro;nestopia_libretro
 nes;TOSEC/Nintendo/Famicom & Entertainment System/Games/[NES]/Nintendo Famicom & Entertainment System - Games - [NES].zip;Nintendo - Nintendo Entertainment System;Nintendo NES TOSEC;nestopia_libretro
@@ -84,8 +84,8 @@ sufami;No-Intro/Nintendo - Sufami Turbo;Nintendo - Sufami Turbo;Sufami Turbo NoI
 sufami;TOSEC/Nintendo/Sufami Turbo/Games/Nintendo Sufami Turbo - Games.zip;Nintendo - Sufami Turbo;Sufami Turbo TOSEC;snes9x_libretro
 n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64;Nintendo 64 NoIntro;mupen64plus_next_libretro
 n64;TOSEC/Nintendo/64/Games/Nintendo 64 - Games.zip;Nintendo - Nintendo 64;Nintendo 64 TOSEC;mupen64plus_next_libretro
-gamecube;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Gamecube Redump;dolphin_libretro;rvz
-gamecube;TOSEC-ISO/Nintendo/GameCube/Games;Nintendo - GameCube;Gamecube ISO;dolphin_libretro;iso
+gc;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Gamecube Redump;dolphin_libretro;rvz
+gc;TOSEC-ISO/Nintendo/GameCube/Games;Nintendo - GameCube;Gamecube ISO;dolphin_libretro;iso
 wii;No-Intro/Unofficial - Nintendo - Wii (Digital) (Deprecated) (WAD);Nintendo - Wii;Nintendo Wii NoIntro;dolphin_libretro;wad
 wii;Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k];Nintendo - Wii;Nintendo Wii Redump;dolphin_libretro;rvz
 wiiu;Redump/Nintendo - Wii U - WUX;Nintendo - Wii U;<i>Nintendo Wii U Redump</i>;cemu -g;wux
@@ -104,8 +104,8 @@ nds;No-Intro/Nintendo - Nintendo DS (Decrypted);Nintendo - Nintendo DS;<i>Ninten
 nds;TOSEC/Nintendo/DS/Games/Nintendo DS - Games.zip;Nintendo - Nintendo DS;<i>Nintendo DS</i> TOSEC;melonds_libretro
 3ds;No-Intro/Nintendo - Nintendo 3DS (Decrypted);Nintendo - Nintendo 3DS;<i>Nintendo 3DS</i> NoIntro;citra_libretro;3ds
 
-sg1000;No-Intro/Sega - SG-1000;Sega - SG-1000;<p>SG 1000 NoIntro;genesis_plus_gx_libretro
-sg1000;TOSEC/Sega/Game 1000/Games/Sega Game 1000 - Games.zip;Sega - SG-1000;SG 1000 TOSEC;genesis_plus_gx_libretro
+sg-1000;No-Intro/Sega - SG-1000;Sega - SG-1000;<p>SG 1000 NoIntro;genesis_plus_gx_libretro
+sg-1000;TOSEC/Sega/Game 1000/Games/Sega Game 1000 - Games.zip;Sega - SG-1000;SG 1000 TOSEC;genesis_plus_gx_libretro
 mastersystem;No-Intro/Sega - Master System - Mark III;Sega - Master System - Mark III;Master System NoIntro;genesis_plus_gx_libretro
 mastersystem;TOSEC/Sega/Mark III & Master System/Games/Sega Mark III & Master System - Games.zip;Sega - Master System - Mark III;Master System TOSEC;genesis_plus_gx_libretro
 megadrive;No-Intro/Sega - Mega Drive - Genesis;Sega - Mega Drive - Genesis;Mega Drive NoIntro;genesis_plus_gx_libretro
