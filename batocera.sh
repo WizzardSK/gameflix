@@ -17,15 +17,13 @@ mkdir -p /userdata/system/.cache/httpdirfs
 mkdir -p /userdata/system/.cache/ratarmount
 mkdir -p /userdata/system/.cache/rclone
 
-#--no-checksum --no-modtime 
 /userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs http://thumbnails.libretro.com /userdata/thumbs > /dev/null
-#rclone mount thumbnails: /userdata/thumbs --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf --vfs-cache-mode full --cache-dir=/userdata/system/.cache/rclone
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 
 IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
-  if [ ! -f /userdata/thumb/${rom[2]}.png ]; then wget -O /userdata/thumb/${rom[2]}.png https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/${rom[2]}.png; fi
+  if [ ! -f /userdata/thumb/${rom[2]}.png ]; then wget -O /userdata/thumb/${rom[2]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/controllers/${rom[0]}.svg; fi                                                                                        
 done
 for each in "${roms[@]}"; do (
   read -ra rom < <(printf '%s' "$each")
