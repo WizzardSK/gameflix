@@ -46,7 +46,7 @@ vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile;mame_libretro
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame_libretro
 bbcmicro;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;Acorn BBC;mame_libretro
 fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;Fujitsu Micro 7;mame_libretro
-tutor;TOSEC/Tomy/Tutor & Pyuuta/Games/Tomy Tutor & Pyuuta - Games.zip;Tomy - Tutor;Tomy Tutor;mame_libretro
+electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Acorn - Electron;Acorn Electron;mame_libretro
 
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p>Thomson MO5 K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;Thomson MO6 K7;theodore_libretro
