@@ -24,7 +24,7 @@ for each in "${roms[@]}"; do
     total=$((pocet+total))
     echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
     if [ "$platform" != "${rom[0]}" ]; then
-      echo "</figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>" >> ~/gameflix/main.html
+      echo "</figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'><figcaption>" >> ~/gameflix/main.html                                                                
       ((platforms++))
     fi
     echo "<a href=\"${rom3}.html\">${rom3}</a><br>" >> ~/gameflix/main.html
@@ -36,22 +36,20 @@ for each in "${roms[@]}"; do
   fi
   > ~/gameflix/${rom3}.html
   wget -O ~/gameflix/${rom3}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
-  echo "<style> figure { background-image: url('https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/${rom[2]}-content.png'); } </style>" >> ~/gameflix/${rom3}.html
+  echo "<style> figure { background-image: url('https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/controllers/${rom[0]}.svg'); } </style>" >> ~/gameflix/${rom3}.html                                                
   pocet=0
-  {
-    while IFS= read -r line; do
+  { while IFS= read -r line; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
         thumb=$(echo "$line" | sed -e 's/#/%23/g')
         echo "<a href=\"../$romfolder/$thumb\" target=main><figure><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${thumb%.*}.png\"><figcaption>${line%.*}</figcaption></figure></a>" >> ~/gameflix/${rom3}.html
         ((pocet++))
         ((total++))
       fi
-    done
-  } < <(ls ~/${romfolder})
+  done } < <(ls ~/${romfolder})
   echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   if [ "$platform" != "${rom[0]}" ]; then
-    echo "</figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/libretro/retroarch-assets/master/xmb/monochrome/png/"${rom[2]}".png'><figcaption>" >> ~/gameflix/main.html
+    echo "</figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'><figcaption>" >> ~/gameflix/main.html
     ((platforms++))
   fi
   echo "<a href=\"${rom3}.html\">${rom3}</a><br>" >> ~/gameflix/main.html
@@ -60,7 +58,6 @@ for each in "${roms[@]}"; do
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi
   echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
-
 curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.end | tee -a ~/gameflix/retroarch.sh
 chmod +x ~/gameflix/retroarch.sh
 echo "<p><b>Total: $total</b>" >> ~/gameflix/systems.html
