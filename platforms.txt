@@ -49,11 +49,6 @@ fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;Fujitsu Micro 7;mame_libr
 tutor;TOSEC/Tomy/Tutor & Pyuuta/Games/Tomy Tutor & Pyuuta - Games.zip;Tomy - Tutor;Tomy Tutor;mame_libretro
 electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Acorn - Electron;Acorn Electron;mame_libretro
 adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame_libretro
-archimedes;TOSEC/Acorn/Archimedes/Games/[ADF]/Acorn Archimedes - Games - [ADF].zip;Acorn - Archimedes;Acorn Archimedes ADF;mame_libretro
-archimedes;TOSEC/Acorn/Archimedes/Games/[JFD]/Acorn Archimedes - Games - [JFD].zip;Acorn - Archimedes;Acorn Archimedes JFD;mame_libretro
-fmtowns;TOSEC/Fujitsu/FM Towns/Games/[BIN]/Fujitsu FM Towns - Games - [BIN].zip;Fujitsu - FM Towns;Fujitsu FM Towns BIN;mame_libretro
-fmtowns;TOSEC/Fujitsu/FM Towns/Games/[D88]/Fujitsu FM Towns - Games - [D88].zip;Fujitsu - FM Towns;Fujitsu FM Towns D88;mame_libretro
-fmtowns;TOSEC/Fujitsu/FM Towns/Games/[HDM]/Fujitsu FM Towns - Games - [HDM].zip;Fujitsu - FM Towns;Fujitsu FM Towns HDM;mame_libretro
 
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p>Thomson MO5 K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;Thomson MO6 K7;theodore_libretro
