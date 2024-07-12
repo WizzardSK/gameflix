@@ -23,7 +23,7 @@ rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --
 IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
-  if [ ! -f /userdata/thumb/${rom[2]}.svg ]; then wget -O /userdata/thumb/${rom[2]}.svg https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/controllers/${rom[0]}.svg; fi                                                                                        
+  if [ ! -f /userdata/thumb/${rom[2]}.svg ]; then wget -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi                                                                                        
 done
 for each in "${roms[@]}"; do (
   read -ra rom < <(printf '%s' "$each")
@@ -47,7 +47,7 @@ for each in "${roms[@]}"; do (
         echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
       fi
     done
-    echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[2]}.svg</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
+    echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi ) &
   sleep 1
 done
