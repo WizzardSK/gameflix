@@ -57,6 +57,8 @@ fmtowns;TOSEC/Fujitsu/FM Towns/Games/[BIN]/Fujitsu FM Towns - Games - [BIN].zip;
 fmtowns;TOSEC/Fujitsu/FM Towns/Games/[D88]/Fujitsu FM Towns - Games - [D88].zip;Fujitsu - FM Towns;Fujitsu FM Towns D88;mame_libretro
 apple2;TOSEC/Apple/II/Games/[DSK]/Apple II - Games - [DSK].zip;Apple - II;Apple II DSK;mame_libretro
 apple2;TOSEC/Apple/II/Games/[WOZ]/Apple II - Games - [WOZ].zip;Apple - II;Apple II WOZ;mame_libretro
+macintosh;TOSEC/Apple/Macintosh/Games/[DSK]/Apple Macintosh - Games - [DSK].zip;Apple - Macintosh;Apple Macintosh DSK;mame_libretro
+macintosh;TOSEC/Apple/Macintosh/Games/[HFE]/Apple Macintosh - Games - [HFE].zip;Apple - Macintosh;Apple Macintosh HFE;mame_libretro
 
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p>Thomson MO5 K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;Thomson MO6 K7;theodore_libretro
