@@ -138,7 +138,6 @@ gamegear;TOSEC/Sega/Game Gear/Games/Sega Game Gear - Games.zip;Sega - Game Gear;
 psx;Redump/Sony - PlayStation;Sony - PlayStation;<p>PlayStation 1;pcsx_rearmed_libretro;cue
 ps2;Redump/Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2;pcsx2;iso
 psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>PlayStation Portable</i>;ppsspp_libretro;iso
-ps3;No-Intro/Sony - PlayStation 3 (PSN) (Content);Sony - PlayStation 3;PlayStation 3;rpcs3;pkg
 
 pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;NEC - PC Engine - TurboGrafx 16;<p>PC Engine NoIntro;mednafen_pce_fast_libretro
 pcengine;TOSEC/NEC/PC-Engine & TurboGrafx-16/Games/NEC PC-Engine & TurboGrafx-16 - Games.zip;NEC - PC Engine - TurboGrafx 16;PC Engine TOSEC;mednafen_pce_fast_libretro
