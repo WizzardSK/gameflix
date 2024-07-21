@@ -55,6 +55,7 @@ electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Aco
 adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame_libretro
 fmtowns;TOSEC/Fujitsu/FM Towns/Games/[BIN]/Fujitsu FM Towns - Games - [BIN].zip;Fujitsu - FM Towns;Fujitsu FM Towns BIN;mame_libretro
 fmtowns;TOSEC/Fujitsu/FM Towns/Games/[D88]/Fujitsu FM Towns - Games - [D88].zip;Fujitsu - FM Towns;Fujitsu FM Towns D88;mame_libretro
+fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;Fujitsu FM Towns Redump;mame_libretro;cue
 apple2;TOSEC/Apple/II/Games/[DSK]/Apple II - Games - [DSK].zip;Apple - II;Apple II DSK;mame_libretro
 apple2;TOSEC/Apple/II/Games/[WOZ]/Apple II - Games - [WOZ].zip;Apple - II;Apple II WOZ;mame_libretro
 
