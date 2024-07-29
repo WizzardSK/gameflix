@@ -98,7 +98,6 @@ sufami;No-Intro/Nintendo - Sufami Turbo;Nintendo - Sufami Turbo;Sufami Turbo NoI
 sufami;TOSEC/Nintendo/Sufami Turbo/Games/Nintendo Sufami Turbo - Games.zip;Nintendo - Sufami Turbo;Sufami Turbo TOSEC;snes9x_libretro
 n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64;Nintendo 64 NoIntro;mupen64plus_next_libretro
 n64;TOSEC/Nintendo/64/Games/Nintendo 64 - Games.zip;Nintendo - Nintendo 64;Nintendo 64 TOSEC;mupen64plus_next_libretro
-n64dd;No-Intro/Nintendo - Nintendo 64DD;Nintendo - Nintendo 64;Nintendo 64 DD;mupen64plus_next_libretro
 gc;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Gamecube Redump;dolphin_libretro;rvz
 gc;TOSEC-ISO/Nintendo/GameCube/Games;Nintendo - GameCube;Gamecube ISO;dolphin_libretro;iso
 wii;No-Intro/Unofficial - Nintendo - Wii (Digital) (Deprecated) (WAD);Nintendo - Wii;Nintendo Wii NoIntro;dolphin_libretro;wad
