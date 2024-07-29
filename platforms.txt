@@ -58,6 +58,7 @@ adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games
 fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;Fujitsu FM Towns;mame_libretro
 apple2;TOSEC/Apple/II/Games/[DSK]/Apple II - Games - [DSK].zip;Apple - II;Apple II DSK;mame_libretro
 apple2;TOSEC/Apple/II/Games/[WOZ]/Apple II - Games - [WOZ].zip;Apple - II;Apple II WOZ;mame_libretro
+archimedes;TOSEC/Acorn/Archimedes/Games/[ADF]/Acorn Archimedes - Games - [ADF].zip;Acorn - Archimedes;Acorn Archimedes;mame_libretro
 
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p>Thomson MO5 K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;Thomson MO6 K7;theodore_libretro
