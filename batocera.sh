@@ -60,7 +60,7 @@ for each in "${roms[@]}"; do (
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
     ls /userdata/roms/${rom[0]}/images > /dev/null
   fi ) &
-  sleep 1
+  sleep 2
 done
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
