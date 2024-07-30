@@ -52,14 +52,14 @@ for each in "${roms[@]}"; do (
   sleep 1
 done
 echo " "
-for each in "${roms[@]}"; do
+for each in "${roms[@]}"; do (
   read -ra rom < <(printf '%s' "$each")
   mkdir -p /userdata/roms/${rom[0]}/images  
   if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
     echo "${rom[0]} thumbs"
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
     ls /userdata/roms/${rom[0]}/images > /dev/null
-  fi
+  fi ) &
   sleep 1
 done
 for each in "${roms[@]}"; do
