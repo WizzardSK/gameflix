@@ -48,6 +48,7 @@ gamate;No-Intro/Bit Corporation - Gamate;Bit Corporation - Gamate;<i>Bitcorp Gam
 gmaster;No-Intro/Hartung - Game Master;Hartung - Game Master;<i>Hartung Game Master</i>;mame_libretro
 gamecom;No-Intro/Tiger - Game.com;Tiger - Game.com;<i>Tiger Game.com NoIntro</i>;mame_libretro
 gamecom;TOSEC/Tiger Electronics/Game.com/Games/Tiger Electronics Game.com - Games.zip;Tiger - Game.com;<i>Tiger Game.com TOSEC</i>;mame_libretro
+gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32</i>;mame_libretro
 
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame_libretro
 bbcmicro;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;Acorn BBC;mame_libretro
