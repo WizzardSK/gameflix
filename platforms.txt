@@ -53,11 +53,14 @@ vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile NoIntro;mame_libre
 vsmile;TOSEC/VTech/V.Smile Motion/Games/[BIN]/VTech V.Smile Motion - Games - [BIN].zip;VTech - V.Smile;VTech V.Smile TOSEC;mame_libretro
 
 megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;<p><i>Welback Mega Duck</i>;mame_libretro
-gamate;No-Intro/Bit Corporation - Gamate;Bit Corporation - Gamate;<i>Bitcorp Gamate</i>;mame_libretro
-gmaster;No-Intro/Hartung - Game Master;Hartung - Game Master;<i>Hartung Game Master</i>;mame_libretro
+gamate;No-Intro/Bit Corporation - Gamate;Bit Corporation - Gamate;<i>Bitcorp Gamate NoIntro</i>;mame_libretro
+gamate;TOSEC/Bit Corporation/Gamate/Games/Bit Corporation Gamate - Games.zip;Bit Corporation - Gamate;<i>Bitcorp Gamate TOSEC</i>;mame_libretro
+gmaster;No-Intro/Hartung - Game Master;Hartung - Game Master;<i>Hartung Game Master NoIntro</i>;mame_libretro
+gmaster;TOSEC/Hartung/Game Master/Games/Hartung Game Master - Games.zip;Hartung - Game Master;<i>Hartung Game Master TOSEC</i>;mame_libretro
 gamecom;No-Intro/Tiger - Game.com;Tiger - Game.com;<i>Tiger Game.com NoIntro</i>;mame_libretro
 gamecom;TOSEC/Tiger Electronics/Game.com/Games/Tiger Electronics Game.com - Games.zip;Tiger - Game.com;<i>Tiger Game.com TOSEC</i>;mame_libretro
-gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32</i>;mame_libretro
+gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32 TOSEC</i>;mame_libretro
+gp32;TOSEC/Game Park/GP32/Games/[SMC]/Game Park GP32 - Games - [SMC].zip;GamePark - GP32;<i>GamePark GP32 TOSEC</i>;mame_libretro
 gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<i>Epoch Game Pocket Computer</i>;mame_libretro
 
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame_libretro
