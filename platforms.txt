@@ -69,7 +69,6 @@ coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack
 bbcmicro;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;Acorn BBC;mame_libretro
 fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;Fujitsu Micro 7 NoIntro;mame_libretro
 fm7;TOSEC/Fujitsu/FM-7/Games/[D77]/Fujitsu FM-7 - Games - [D77].zip;Fujitsu - Micro 7;Fujitsu Micro 7 D77;mame_libretro
-fm7;TOSEC/Fujitsu/FM-7/Games/[T77]/Fujitsu FM-7 - Games - [T77].zip;Fujitsu - Micro 7;Fujitsu Micro 7 T77;mame_libretro
 tutor;TOSEC/Tomy/Tutor & Pyuuta/Games/Tomy Tutor & Pyuuta - Games.zip;Tomy - Tutor;Tomy Tutor;mame_libretro
 electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Acorn - Electron;Acorn Electron;mame_libretro
 adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame_libretro
