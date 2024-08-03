@@ -39,11 +39,16 @@ astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN]/Bally Professi
 astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[PRG]/Bally Professional Arcade & Astrocade - Games - [PRG].zip;Bally - Astrocade;Bally Astrocade PRG;mame_libretro
 apfm1000;No-Intro/APF - MP-1000;APF - MP-1000;APF MP-1000 NoIntro;mame_libretro
 apfm1000;TOSEC/APF/M-1000/Games/APF M-1000 - Games.zip;APF - MP-1000;APF MP-1000 TOSEC;mame_libretro
-advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vision;mame_libretro
-creativision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision;mame_libretro
-arcadia;No-Intro/Emerson - Arcadia 2001;Emerson - Arcadia 2001;Arcadia 2001;mame_libretro
-pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000;mame_libretro
-supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan;mame_libretro
+advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vision NoIntro;mame_libretro
+advision;TOSEC/Entex/Adventure Vision/Games/Entex Adventure Vision - Games.zip;Entex - Adventure Vision;Adventure Vision TOSEC;mame_libretro
+creativision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision NoIntro;mame_libretro
+creativision;TOSEC/VTech/Laser 2001 & CreatiVision/Games/VTech Laser 2001 & CreatiVision - Games.zip;VTech - CreatiVision;CreatiVision TOSEC;mame_libretro
+arcadia;No-Intro/Emerson - Arcadia 2001;Emerson - Arcadia 2001;Arcadia 2001 NoIntro;mame_libretro
+arcadia;TOSEC/Emerson/Arcadia 2001/Games/Emerson Arcadia 2001 - Games.zip;Emerson - Arcadia 2001;Arcadia 2001 TOSEC;mame_libretro
+pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000 NoIntro;mame_libretro
+pv1000;TOSEC/Casio/PV-1000/Games/Casio PV-1000 - Games.zip;Casio - PV-1000;Casio PV-1000 TOSEC;mame_libretro
+supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan NoIntro;mame_libretro
+supracan;TOSEC/Funtech/Super A'can/Games/Funtech Super A'can - Games.zip;Funtech - Super Acan;Super Acan TOSEC;mame_libretro
 vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile;mame_libretro
 
 megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;<p><i>Welback Mega Duck</i>;mame_libretro
