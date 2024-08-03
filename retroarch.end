@@ -9,7 +9,7 @@ else
 fi
 
 if [[ "$core" == *"mame"* ]]; then
-  ${core} -skip_gameinfo -rompath "~/.config/retroarch/system/" -cart "${rom}"
+  ${core} -skip_gameinfo -rompath "$HOME/.config/retroarch/system/" -cart "${rom}"
 fi
 
 if [[ "$core" == *"libretro"* ]]; then
