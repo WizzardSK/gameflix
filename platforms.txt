@@ -39,7 +39,7 @@ astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN]/Bally Professi
 astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[PRG]/Bally Professional Arcade & Astrocade - Games - [PRG].zip;Bally - Astrocade;Bally Astrocade PRG;mame astrocde
 apfm1000;No-Intro/APF - MP-1000;APF - MP-1000;APF MP-1000 NoIntro;mame apfm1000
 apfm1000;TOSEC/APF/M-1000/Games/APF M-1000 - Games.zip;APF - MP-1000;APF MP-1000 TOSEC;mame apfm1000
-advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vision NoIntro;mame apfm1000
+advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vision NoIntro;mame advision
 advision;TOSEC/Entex/Adventure Vision/Games/Entex Adventure Vision - Games.zip;Entex - Adventure Vision;Adventure Vision TOSEC;mame advision
 creativision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision NoIntro;mame crvision
 creativision;TOSEC/VTech/Laser 2001 & CreatiVision/Games/VTech Laser 2001 & CreatiVision - Games.zip;VTech - CreatiVision;CreatiVision TOSEC;mame crvision
