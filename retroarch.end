@@ -8,6 +8,10 @@ else
   rom="$1"
 fi
 
+if [[ "$core" == *"mame"* ]]; then
+  ${core} -skip_gameinfo -rompath "~/.config/retroarch/system/" -cart "${rom}"
+fi
+
 if [[ "$core" == *"libretro"* ]]; then
   retroarch -L ~/.config/retroarch/cores/${core}.so "${rom}"
 else
