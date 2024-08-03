@@ -51,6 +51,8 @@ supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan NoIntro;m
 supracan;TOSEC/Funtech/Super A'can/Games/Funtech Super A'can - Games.zip;Funtech - Super Acan;Super Acan TOSEC;mame_libretro
 vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile NoIntro;mame_libretro
 vsmile;TOSEC/VTech/V.Smile Motion/Games/[BIN]/VTech V.Smile Motion - Games - [BIN].zip;VTech - V.Smile;VTech V.Smile TOSEC;mame_libretro
+vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton - VC 4000;mame_libretro
+multivision;TOSEC/Tsukuda Original/Othello Multivision/Games/Tsukuda Original Othello Multivision - Games.zip;Othello - Multivision;Othello Multivision;gearsystem_libretro
 
 megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;<p><i>Welback Mega Duck</i>;mame_libretro
 gamate;No-Intro/Bit Corporation - Gamate;Bit Corporation - Gamate;<i>Bitcorp Gamate NoIntro</i>;mame_libretro
@@ -65,7 +67,9 @@ gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<i>E
 
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame_libretro
 bbcmicro;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;Acorn BBC;mame_libretro
-fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;Fujitsu Micro 7;mame_libretro
+fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;Fujitsu Micro 7 NoIntro;mame_libretro
+fm7;TOSEC/Fujitsu/FM-7/Games/[D77]/Fujitsu FM-7 - Games - [D77].zip;Fujitsu - Micro 7;Fujitsu Micro 7 D77;mame_libretro
+fm7;TOSEC/Fujitsu/FM-7/Games/[T77]/Fujitsu FM-7 - Games - [T77].zip;Fujitsu - Micro 7;Fujitsu Micro 7 T77;mame_libretro
 tutor;TOSEC/Tomy/Tutor & Pyuuta/Games/Tomy Tutor & Pyuuta - Games.zip;Tomy - Tutor;Tomy Tutor;mame_libretro
 electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Acorn - Electron;Acorn Electron;mame_libretro
 adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame_libretro
@@ -73,8 +77,6 @@ fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;Fujitsu FM Towns;mame_libre
 apple2;TOSEC/Apple/II/Games/[DSK]/Apple II - Games - [DSK].zip;Apple - II;Apple II DSK;mame_libretro
 apple2;TOSEC/Apple/II/Games/[WOZ]/Apple II - Games - [WOZ].zip;Apple - II;Apple II WOZ;mame_libretro
 archimedes;TOSEC/Acorn/Archimedes/Games/[ADF]/Acorn Archimedes - Games - [ADF].zip;Acorn - Archimedes;Acorn Archimedes;mame_libretro
-multivision;TOSEC/Tsukuda Original/Othello Multivision/Games/Tsukuda Original Othello Multivision - Games.zip;Othello - Multivision;Othello Multivision;gearsystem_libretro
-vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton - VC 4000;mame_libretro
 
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p>Thomson MO5 K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;Thomson MO6 K7;theodore_libretro
