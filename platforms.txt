@@ -10,6 +10,7 @@ intellivision;No-Intro/Mattel - Intellivision;Mattel - Intellivision;Mattel Inte
 intellivision;TOSEC/Mattel/Intellivision/Games/[BIN]/Mattel Intellivision - Games - [BIN].zip;Mattel - Intellivision;Mattel Intellivision TOSEC;freeintv_libretro
 colecovision;No-Intro/Coleco - ColecoVision;Coleco - ColecoVision;Coleco Colecovision NoIntro;bluemsx_libretro
 colecovision;TOSEC/Coleco/ColecoVision/Games/Coleco ColecoVision - Games.zip;Coleco - ColecoVision;Coleco Colecovision TOSEC;bluemsx_libretro
+adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame adam -flop1
 scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Super Cassette Vision NoIntro;emuscv_libretro
 scv;TOSEC/Epoch/Super Cassette Vision/Games/Epoch Super Cassette Vision - Games.zip;Epoch - Super Cassette Vision;Super Cassette Vision TOSEC;emuscv_libretro
 supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervision</i> NoIntro;potator_libretro
@@ -43,14 +44,14 @@ advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vi
 advision;TOSEC/Entex/Adventure Vision/Games/Entex Adventure Vision - Games.zip;Entex - Adventure Vision;Adventure Vision TOSEC;mame advision -cart
 creativision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision NoIntro;mame crvision -cart
 creativision;TOSEC/VTech/Laser 2001 & CreatiVision/Games/VTech Laser 2001 & CreatiVision - Games.zip;VTech - CreatiVision;CreatiVision TOSEC;mame crvision -cart
+vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile NoIntro;mame vsmile -cart
+vsmile;TOSEC/VTech/V.Smile Motion/Games/[BIN]/VTech V.Smile Motion - Games - [BIN].zip;VTech - V.Smile;VTech V.Smile TOSEC;mame vsmile -cart
 arcadia;No-Intro/Emerson - Arcadia 2001;Emerson - Arcadia 2001;Arcadia 2001 NoIntro;mame arcadia -cart
 arcadia;TOSEC/Emerson/Arcadia 2001/Games/Emerson Arcadia 2001 - Games.zip;Emerson - Arcadia 2001;Arcadia 2001 TOSEC;mame arcadia -cart
 pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000 NoIntro;mame pv1000 -cart
 pv1000;TOSEC/Casio/PV-1000/Games/Casio PV-1000 - Games.zip;Casio - PV-1000;Casio PV-1000 TOSEC;mame pv1000 -cart
 supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan NoIntro;mame supracan -cart
 supracan;TOSEC/Funtech/Super A'can/Games/Funtech Super A'can - Games.zip;Funtech - Super Acan;Super Acan TOSEC;mame supracan -cart
-vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile NoIntro;mame vsmile -cart
-vsmile;TOSEC/VTech/V.Smile Motion/Games/[BIN]/VTech V.Smile Motion - Games - [BIN].zip;VTech - V.Smile;VTech V.Smile TOSEC;mame vsmile -cart
 vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton - VC 4000;mame vc4000 -cart
 multivision;TOSEC/Tsukuda Original/Othello Multivision/Games/Tsukuda Original Othello Multivision - Games.zip;Othello - Multivision;Othello Multivision;gearsystem_libretro
 
@@ -67,12 +68,11 @@ gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<i>E
 
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame coco3 -cart
 bbcmicro;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;Acorn BBC;mame bbcb -flop1
+electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Acorn - Electron;Acorn Electron;mame electron64 -cass
 fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;Fujitsu Micro 7 NoIntro;mame fm7 -flop1
 fm7;TOSEC/Fujitsu/FM-7/Games/[D77]/Fujitsu FM-7 - Games - [D77].zip;Fujitsu - Micro 7;Fujitsu Micro 7 D77;mame fm7 -flop1
-tutor;TOSEC/Tomy/Tutor & Pyuuta/Games/Tomy Tutor & Pyuuta - Games.zip;Tomy - Tutor;Tomy Tutor;mame tutor -cart
-electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Acorn - Electron;Acorn Electron;mame electron64 -cass
-adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame adam -flop1
 fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;Fujitsu FM Towns;mame fmtmarty -cdrm
+tutor;TOSEC/Tomy/Tutor & Pyuuta/Games/Tomy Tutor & Pyuuta - Games.zip;Tomy - Tutor;Tomy Tutor;mame tutor -cart
 apple2;TOSEC/Apple/II/Games/[DSK]/Apple II - Games - [DSK].zip;Apple - II;Apple II DSK;mame apple2ee -flop1
 apple2;TOSEC/Apple/II/Games/[WOZ]/Apple II - Games - [WOZ].zip;Apple - II;Apple II WOZ;mame apple2ee -flop1
 archimedes;TOSEC/Acorn/Archimedes/Games/[ADF]/Acorn Archimedes - Games - [ADF].zip;Acorn - Archimedes;Acorn Archimedes;mame aa4401 -flop
