@@ -11,7 +11,7 @@ IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  if [ "${rom[3]}" = "<p>MS-DOS eXoDOS" ]; then rom[1]="../roms/dos-other"; fi
+  if [[ "${rom[3]}" == *"eXoDOS"* ]]; then rom[1]="../roms/dos-other"; fi
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     romfolder="roms/${rom3}"
     emufolder="${rom3}"
