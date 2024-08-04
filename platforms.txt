@@ -34,48 +34,48 @@ spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK]/MGT Sam Coupe - Games - [DSK].zip;Sam Coupé;Sam Coupé DSK;simcoupe
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[SAD]/MGT Sam Coupe - Games - [SAD].zip;Sam Coupé;Sam Coupé SAD;simcoupe
 
-astrocade;No-Intro/Bally - Astrocade;Bally - Astrocade;<p>Bally Astrocade NoIntro;mame astrocde
-astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN]/Bally Professional Arcade & Astrocade - Games - [BIN].zip;Bally - Astrocade;Bally Astrocade BIN;mame astrocde
-astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[PRG]/Bally Professional Arcade & Astrocade - Games - [PRG].zip;Bally - Astrocade;Bally Astrocade PRG;mame astrocde
-apfm1000;No-Intro/APF - MP-1000;APF - MP-1000;APF MP-1000 NoIntro;mame apfm1000
-apfm1000;TOSEC/APF/M-1000/Games/APF M-1000 - Games.zip;APF - MP-1000;APF MP-1000 TOSEC;mame apfm1000
-advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vision NoIntro;mame advision
-advision;TOSEC/Entex/Adventure Vision/Games/Entex Adventure Vision - Games.zip;Entex - Adventure Vision;Adventure Vision TOSEC;mame advision
-creativision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision NoIntro;mame crvision
-creativision;TOSEC/VTech/Laser 2001 & CreatiVision/Games/VTech Laser 2001 & CreatiVision - Games.zip;VTech - CreatiVision;CreatiVision TOSEC;mame crvision
-arcadia;No-Intro/Emerson - Arcadia 2001;Emerson - Arcadia 2001;Arcadia 2001 NoIntro;mame arcadia
-arcadia;TOSEC/Emerson/Arcadia 2001/Games/Emerson Arcadia 2001 - Games.zip;Emerson - Arcadia 2001;Arcadia 2001 TOSEC;mame arcadia
-pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000 NoIntro;mame pv1000
-pv1000;TOSEC/Casio/PV-1000/Games/Casio PV-1000 - Games.zip;Casio - PV-1000;Casio PV-1000 TOSEC;mame pv1000
-supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan NoIntro;mame supracan
-supracan;TOSEC/Funtech/Super A'can/Games/Funtech Super A'can - Games.zip;Funtech - Super Acan;Super Acan TOSEC;mame supracan
-vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile NoIntro;mame vsmile
-vsmile;TOSEC/VTech/V.Smile Motion/Games/[BIN]/VTech V.Smile Motion - Games - [BIN].zip;VTech - V.Smile;VTech V.Smile TOSEC;mame vsmile
-vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton - VC 4000;mame vc4000
+astrocade;No-Intro/Bally - Astrocade;Bally - Astrocade;<p>Bally Astrocade NoIntro;mame astrocde -cart
+astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN]/Bally Professional Arcade & Astrocade - Games - [BIN].zip;Bally - Astrocade;Bally Astrocade BIN;mame astrocde -cart
+astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[PRG]/Bally Professional Arcade & Astrocade - Games - [PRG].zip;Bally - Astrocade;Bally Astrocade PRG;mame astrocde -cart
+apfm1000;No-Intro/APF - MP-1000;APF - MP-1000;APF MP-1000 NoIntro;mame apfm1000 -cart
+apfm1000;TOSEC/APF/M-1000/Games/APF M-1000 - Games.zip;APF - MP-1000;APF MP-1000 TOSEC;mame apfm1000 -cart
+advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vision NoIntro;mame advision -cart
+advision;TOSEC/Entex/Adventure Vision/Games/Entex Adventure Vision - Games.zip;Entex - Adventure Vision;Adventure Vision TOSEC;mame advision -cart
+creativision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision NoIntro;mame crvision -cart
+creativision;TOSEC/VTech/Laser 2001 & CreatiVision/Games/VTech Laser 2001 & CreatiVision - Games.zip;VTech - CreatiVision;CreatiVision TOSEC;mame crvision -cart
+arcadia;No-Intro/Emerson - Arcadia 2001;Emerson - Arcadia 2001;Arcadia 2001 NoIntro;mame arcadia -cart
+arcadia;TOSEC/Emerson/Arcadia 2001/Games/Emerson Arcadia 2001 - Games.zip;Emerson - Arcadia 2001;Arcadia 2001 TOSEC;mame arcadia -cart
+pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000 NoIntro;mame pv1000 -cart
+pv1000;TOSEC/Casio/PV-1000/Games/Casio PV-1000 - Games.zip;Casio - PV-1000;Casio PV-1000 TOSEC;mame pv1000 -cart
+supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan NoIntro;mame supracan -cart
+supracan;TOSEC/Funtech/Super A'can/Games/Funtech Super A'can - Games.zip;Funtech - Super Acan;Super Acan TOSEC;mame supracan -cart
+vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile NoIntro;mame vsmile -cart
+vsmile;TOSEC/VTech/V.Smile Motion/Games/[BIN]/VTech V.Smile Motion - Games - [BIN].zip;VTech - V.Smile;VTech V.Smile TOSEC;mame vsmile -cart
+vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton - VC 4000;mame vc4000 -cart
 multivision;TOSEC/Tsukuda Original/Othello Multivision/Games/Tsukuda Original Othello Multivision - Games.zip;Othello - Multivision;Othello Multivision;gearsystem_libretro
 
-megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;<p><i>Welback Mega Duck</i>;mame megaduck
-gamate;No-Intro/Bit Corporation - Gamate;Bit Corporation - Gamate;<i>Bitcorp Gamate NoIntro</i>;mame gamate
-gamate;TOSEC/Bit Corporation/Gamate/Games/Bit Corporation Gamate - Games.zip;Bit Corporation - Gamate;<i>Bitcorp Gamate TOSEC</i>;mame gamate
-gmaster;No-Intro/Hartung - Game Master;Hartung - Game Master;<i>Hartung Game Master NoIntro</i>;mame gmaster
-gmaster;TOSEC/Hartung/Game Master/Games/Hartung Game Master - Games.zip;Hartung - Game Master;<i>Hartung Game Master TOSEC</i>;mame gmaster
-gamecom;No-Intro/Tiger - Game.com;Tiger - Game.com;<i>Tiger Game.com NoIntro</i>;mame gamecom
-gamecom;TOSEC/Tiger Electronics/Game.com/Games/Tiger Electronics Game.com - Games.zip;Tiger - Game.com;<i>Tiger Game.com TOSEC</i>;mame gamecom
-gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32 NoIntro</i>;mame gp32
-gp32;TOSEC/Game Park/GP32/Games/[SMC]/Game Park GP32 - Games - [SMC].zip;GamePark - GP32;<i>GamePark GP32 TOSEC</i>;mame gp32
-gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<i>Epoch Game Pocket Computer</i>;mame gamepock
+megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;<p><i>Welback Mega Duck</i>;mame megaduck -cart
+gamate;No-Intro/Bit Corporation - Gamate;Bit Corporation - Gamate;<i>Bitcorp Gamate NoIntro</i>;mame gamate -cart
+gamate;TOSEC/Bit Corporation/Gamate/Games/Bit Corporation Gamate - Games.zip;Bit Corporation - Gamate;<i>Bitcorp Gamate TOSEC</i>;mame gamate -cart
+gmaster;No-Intro/Hartung - Game Master;Hartung - Game Master;<i>Hartung Game Master NoIntro</i>;mame gmaster -cart
+gmaster;TOSEC/Hartung/Game Master/Games/Hartung Game Master - Games.zip;Hartung - Game Master;<i>Hartung Game Master TOSEC</i>;mame gmaster -cart
+gamecom;No-Intro/Tiger - Game.com;Tiger - Game.com;<i>Tiger Game.com NoIntro</i>;mame gamecom -cart
+gamecom;TOSEC/Tiger Electronics/Game.com/Games/Tiger Electronics Game.com - Games.zip;Tiger - Game.com;<i>Tiger Game.com TOSEC</i>;mame gamecom -cart
+gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32 NoIntro</i>;mame gp32 -cart
+gp32;TOSEC/Game Park/GP32/Games/[SMC]/Game Park GP32 - Games - [SMC].zip;GamePark - GP32;<i>GamePark GP32 TOSEC</i>;mame gp32 -cart
+gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<i>Epoch Game Pocket Computer</i>;mame gamepock -cart
 
-coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame coco
-bbcmicro;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;Acorn BBC;mame bbcb
-fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;Fujitsu Micro 7 NoIntro;mame fm7
-fm7;TOSEC/Fujitsu/FM-7/Games/[D77]/Fujitsu FM-7 - Games - [D77].zip;Fujitsu - Micro 7;Fujitsu Micro 7 D77;mame fm7
-tutor;TOSEC/Tomy/Tutor & Pyuuta/Games/Tomy Tutor & Pyuuta - Games.zip;Tomy - Tutor;Tomy Tutor;mame tutor
-electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Acorn - Electron;Acorn Electron;mame electron
-adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame adam
-fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;Fujitsu FM Towns;mame fmtowns
-apple2;TOSEC/Apple/II/Games/[DSK]/Apple II - Games - [DSK].zip;Apple - II;Apple II DSK;mame apple2
-apple2;TOSEC/Apple/II/Games/[WOZ]/Apple II - Games - [WOZ].zip;Apple - II;Apple II WOZ;mame apple2
-archimedes;TOSEC/Acorn/Archimedes/Games/[ADF]/Acorn Archimedes - Games - [ADF].zip;Acorn - Archimedes;Acorn Archimedes;mame aa4401
+coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame coco -cart
+bbcmicro;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;Acorn BBC;mame bbcb -cart
+fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;Fujitsu Micro 7 NoIntro;mame fm7 -cart
+fm7;TOSEC/Fujitsu/FM-7/Games/[D77]/Fujitsu FM-7 - Games - [D77].zip;Fujitsu - Micro 7;Fujitsu Micro 7 D77;mame fm7 -cart
+tutor;TOSEC/Tomy/Tutor & Pyuuta/Games/Tomy Tutor & Pyuuta - Games.zip;Tomy - Tutor;Tomy Tutor;mame tutor -cart
+electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Acorn - Electron;Acorn Electron;mame electron -cart
+adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame adam -cart
+fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;Fujitsu FM Towns;mame fmtowns -cart
+apple2;TOSEC/Apple/II/Games/[DSK]/Apple II - Games - [DSK].zip;Apple - II;Apple II DSK;mame apple2 -flop
+apple2;TOSEC/Apple/II/Games/[WOZ]/Apple II - Games - [WOZ].zip;Apple - II;Apple II WOZ;mame apple2 -flop
+archimedes;TOSEC/Acorn/Archimedes/Games/[ADF]/Acorn Archimedes - Games - [ADF].zip;Acorn - Archimedes;Acorn Archimedes;mame aa4401 -flop
 
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p>Thomson MO5 K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;Thomson MO6 K7;theodore_libretro
