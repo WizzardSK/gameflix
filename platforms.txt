@@ -178,15 +178,15 @@ ngp;TOSEC/SNK/Neo-Geo Pocket/Games/SNK Neo-Geo Pocket - Games.zip;SNK - Neo Geo 
 ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;<i>NGP Color</i> NoIntro;mednafen_ngp_libretro
 ngpc;TOSEC/SNK/Neo-Geo Pocket Color/Games/SNK Neo-Geo Pocket Color - Games.zip;SNK - Neo Geo Pocket Color;<i>NGP Color</i> TOSEC;mednafen_ngp_libretro
 
-dos;eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/;DOS;<p>MS-DOS eXoDOS;dosbox_pure_libretro
-dos;TOSEC/IBM/PC Compatibles/Games/[IMG]/IBM PC Compatibles - Games - [IMG].zip;DOS;MS-DOS TOSEC;dosbox_pure_libretro
-dos;TOSEC-ISO/IBM/PC Compatibles/CD/Games/[ISO];DOS;MS-DOS ISO;dosbox_pure_libretro
-msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;MSX 1 NoIntro;bluemsx_libretro
-msx1;TOSEC/MSX/MSX/Games/[DSK]/MSX MSX - Games - [DSK].zip;Microsoft - MSX;MSX 1 TOSEC;bluemsx_libretro
-msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;MSX 2 NoIntro;bluemsx_libretro
-msx2;TOSEC/MSX/MSX2/Games/[DSK]/MSX MSX2 - Games - [DSK].zip;Microsoft - MSX2;MSX 2 TOSEC;bluemsx_libretro
-msx2;TOSEC/MSX/MSX2+/Games/MSX MSX2+ - Games.zip;Microsoft - MSX2;MSX 2+ TOSEC;bluemsx_libretro
-msxturbor;TOSEC/MSX/TurboR/Games/MSX TurboR - Games.zip;Microsoft - MSX2;MSX TurboR;bluemsx_libretro
+dos;eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/;DOS;<p><code>MS-DOS</code> eXoDOS;dosbox_pure_libretro
+dos;TOSEC/IBM/PC Compatibles/Games/[IMG]/IBM PC Compatibles - Games - [IMG].zip;DOS;<code>MS-DOS</code> TOSEC;dosbox_pure_libretro
+dos;TOSEC-ISO/IBM/PC Compatibles/CD/Games/[ISO];DOS;<code>MS-DOS</code> ISO;dosbox_pure_libretro
+msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;<code>MSX 1</code> NoIntro;bluemsx_libretro
+msx1;TOSEC/MSX/MSX/Games/[DSK]/MSX MSX - Games - [DSK].zip;Microsoft - MSX;<code>MSX 1</code> TOSEC;bluemsx_libretro
+msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<code>MSX 2</code> NoIntro;bluemsx_libretro
+msx2;TOSEC/MSX/MSX2/Games/[DSK]/MSX MSX2 - Games - [DSK].zip;Microsoft - MSX2;<code>MSX 2</code> TOSEC;bluemsx_libretro
+msx2;TOSEC/MSX/MSX2+/Games/MSX MSX2+ - Games.zip;Microsoft - MSX2;<code>MSX 2+</code> TOSEC;bluemsx_libretro
+msxturbor;TOSEC/MSX/TurboR/Games/MSX TurboR - Games.zip;Microsoft - MSX2;<code>MSX TurboR</code>;bluemsx_libretro
 
 pet;TOSEC/Commodore/PET/Games/[PRG]/Commodore PET - Games - [PRG].zip;Commodore - PET;<p>Commodore PET TOSEC;vice_xpet_libretro
 cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;Commodore Plus-4 NoIntro;vice_xplus4_libretro
@@ -197,6 +197,7 @@ vic20;TOSEC/Commodore/VIC20/Games/[CRT]/Singlepart/Commodore VIC20 - Games - [CR
 vic20;TOSEC/Commodore/VIC20/Games/[D64]/Commodore VIC20 - Games - [D64].zip;Commodore - VIC-20;Commodore VIC-20 D64;vice_xvic_libretro
 vic20;TOSEC/Commodore/VIC20/Games/[PRG]/Singlepart/Commodore VIC20 - Games - [PRG] - Singlepart.zip;Commodore - VIC-20;Commodore VIC-20 PRG;vice_xvic_libretro
 vic20;TOSEC/Commodore/VIC20/Games/[TAP]/Commodore VIC20 - Games - [TAP].zip;Commodore - VIC-20;Commodore VIC-20 TAP;vice_xvic_libretro
+c128;TOSEC/Commodore/C128/Games/[D64]/Commodore C128 - Games - [D64].zip;Commodore - 64;Commodore 128 D64;vice_x128_libretro
 
 c64;No-Intro/Commodore - Commodore 64;Commodore - 64;<p>Commodore 64 NoIntro;vice_x64sc_libretro
 c64;No-Intro/Commodore - Commodore 64 (PP);Commodore - 64;Commodore 64 PP;vice_x64sc_libretro
@@ -213,7 +214,6 @@ c64;TOSEC/Commodore/C64/Games/Simulation/[D64]/Commodore C64 - Games - Simulatio
 c64;TOSEC/Commodore/C64/Games/Sports/[D64]/Commodore C64 - Games - Sports - [D64].zip;Commodore - 64;Commodore 64 Sports;vice_x64sc_libretro
 c64;TOSEC/Commodore/C64/Games/Strategy/[D64]/Commodore C64 - Games - Strategy - [D64].zip;Commodore - 64;Commodore 64 Strategy;vice_x64sc_libretro
 c64;TOSEC/Commodore/C64/Educational/[D64]/Commodore C64 - Educational - [D64].zip;Commodore - 64;Commodore 64 Educational;vice_x64sc_libretro
-c128;TOSEC/Commodore/C128/Games/[D64]/Commodore C128 - Games - [D64].zip;Commodore - 64;Commodore 128 D64;vice_x128_libretro
 
 amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;<p>Amiga 1200 NoIntro;puae_libretro
 amiga1200;TOSEC/Commodore/Amiga/Games/[ADF]/Commodore Amiga - Games - [ADF].zip;Commodore - Amiga;Amiga 1200 ADF;puae_libretro
