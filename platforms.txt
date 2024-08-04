@@ -13,6 +13,8 @@ colecovision;TOSEC/Coleco/ColecoVision/Games/Coleco ColecoVision - Games.zip;Col
 adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame adam -flop1
 scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Super Cassette Vision NoIntro;emuscv_libretro
 scv;TOSEC/Epoch/Super Cassette Vision/Games/Epoch Super Cassette Vision - Games.zip;Epoch - Super Cassette Vision;Super Cassette Vision TOSEC;emuscv_libretro
+
+gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<p><i>Epoch Game Pocket Computer</i>;mame gamepock -cart
 supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervision</i> NoIntro;potator_libretro
 supervision;TOSEC/Watara/Supervision/Games/Watara Supervision - Games.zip;Watara - Supervision;<i>Watara Supervision</i> TOSEC;potator_libretro
 wonderswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> NoIntro;mednafen_wswan_libretro
@@ -21,6 +23,15 @@ wonderswan;No-Intro/Benesse - Pocket Challenge V2;Bandai - WonderSwan;<i>Pocket 
 wonderswancolor;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>WonderSwan Color</i> NoIntro;mednafen_wswan_libretro
 wonderswancolor;TOSEC/Bandai/WonderSwan Color/Games/Bandai WonderSwan Color - Games.zip;Bandai - WonderSwan Color;<i>WonderSwan Color</i> TOSEC;mednafen_wswan_libretro
 arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;<i>Arduboy</i> NoIntro;arduous_libretro
+megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;<p><i>Welback Mega Duck</i>;mame megaduck -cart
+gamate;No-Intro/Bit Corporation - Gamate;Bit Corporation - Gamate;<i>Bitcorp Gamate NoIntro</i>;mame gamate -cart
+gamate;TOSEC/Bit Corporation/Gamate/Games/Bit Corporation Gamate - Games.zip;Bit Corporation - Gamate;<i>Bitcorp Gamate TOSEC</i>;mame gamate -cart
+gmaster;No-Intro/Hartung - Game Master;Hartung - Game Master;<i>Hartung Game Master NoIntro</i>;mame gmaster -cart
+gmaster;TOSEC/Hartung/Game Master/Games/Hartung Game Master - Games.zip;Hartung - Game Master;<i>Hartung Game Master TOSEC</i>;mame gmaster -cart
+gamecom;No-Intro/Tiger - Game.com;Tiger - Game.com;<i>Tiger Game.com NoIntro</i>;mame gamecom -cart1
+gamecom;TOSEC/Tiger Electronics/Game.com/Games/Tiger Electronics Game.com - Games.zip;Tiger - Game.com;<i>Tiger Game.com TOSEC</i>;mame gamecom -cart1
+gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32 NoIntro</i>;mame gp32 -memc
+gp32;TOSEC/Game Park/GP32/Games/[SMC]/Game Park GP32 - Games - [SMC].zip;GamePark - GP32;<i>GamePark GP32 TOSEC</i>;mame gp32 -memc
 
 amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<p>Amstrad CPC TOSEC;cap32_libretro
 gx4000;TOSEC/Amstrad/GX4000/Games/Amstrad GX4000 - Games.zip;Amstrad - GX4000;Amstrad GX4000 TOSEC;cap32_libretro
@@ -54,17 +65,6 @@ supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan NoIntro;m
 supracan;TOSEC/Funtech/Super A'can/Games/Funtech Super A'can - Games.zip;Funtech - Super Acan;Super Acan TOSEC;mame supracan -cart
 vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton - VC 4000;mame vc4000 -cart
 multivision;TOSEC/Tsukuda Original/Othello Multivision/Games/Tsukuda Original Othello Multivision - Games.zip;Othello - Multivision;Othello Multivision;gearsystem_libretro
-
-megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;<p><i>Welback Mega Duck</i>;mame megaduck -cart
-gamate;No-Intro/Bit Corporation - Gamate;Bit Corporation - Gamate;<i>Bitcorp Gamate NoIntro</i>;mame gamate -cart
-gamate;TOSEC/Bit Corporation/Gamate/Games/Bit Corporation Gamate - Games.zip;Bit Corporation - Gamate;<i>Bitcorp Gamate TOSEC</i>;mame gamate -cart
-gmaster;No-Intro/Hartung - Game Master;Hartung - Game Master;<i>Hartung Game Master NoIntro</i>;mame gmaster -cart
-gmaster;TOSEC/Hartung/Game Master/Games/Hartung Game Master - Games.zip;Hartung - Game Master;<i>Hartung Game Master TOSEC</i>;mame gmaster -cart
-gamecom;No-Intro/Tiger - Game.com;Tiger - Game.com;<i>Tiger Game.com NoIntro</i>;mame gamecom -cart1
-gamecom;TOSEC/Tiger Electronics/Game.com/Games/Tiger Electronics Game.com - Games.zip;Tiger - Game.com;<i>Tiger Game.com TOSEC</i>;mame gamecom -cart1
-gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32 NoIntro</i>;mame gp32 -memc
-gp32;TOSEC/Game Park/GP32/Games/[SMC]/Game Park GP32 - Games - [SMC].zip;GamePark - GP32;<i>GamePark GP32 TOSEC</i>;mame gp32 -memc
-gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<i>Epoch Game Pocket Computer</i>;mame gamepock -cart
 
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame coco3 -cart
 bbcmicro;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;Acorn BBC;mame bbcb -flop1
