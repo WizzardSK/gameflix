@@ -71,7 +71,7 @@ fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;Fujitsu Micro 7 NoIntro;m
 fm7;TOSEC/Fujitsu/FM-7/Games/[D77]/Fujitsu FM-7 - Games - [D77].zip;Fujitsu - Micro 7;Fujitsu Micro 7 D77;mame fm7 -flop1
 tutor;TOSEC/Tomy/Tutor & Pyuuta/Games/Tomy Tutor & Pyuuta - Games.zip;Tomy - Tutor;Tomy Tutor;mame tutor -cart
 electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Acorn - Electron;Acorn Electron;mame electron64 -cass
-adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame adam -cart
+adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame adam -flop1
 fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;Fujitsu FM Towns;mame fmtowns -cart
 apple2;TOSEC/Apple/II/Games/[DSK]/Apple II - Games - [DSK].zip;Apple - II;Apple II DSK;mame apple2ee -flop1
 apple2;TOSEC/Apple/II/Games/[WOZ]/Apple II - Games - [WOZ].zip;Apple - II;Apple II WOZ;mame apple2ee -flop1
