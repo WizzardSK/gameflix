@@ -188,45 +188,45 @@ msx2;TOSEC/MSX/MSX2/Games/[DSK]/MSX MSX2 - Games - [DSK].zip;Microsoft - MSX2;<c
 msx2;TOSEC/MSX/MSX2+/Games/MSX MSX2+ - Games.zip;Microsoft - MSX2;<code>MSX 2+</code> TOSEC;bluemsx_libretro
 msxturbor;TOSEC/MSX/TurboR/Games/MSX TurboR - Games.zip;Microsoft - MSX2;<code>MSX TurboR</code>;bluemsx_libretro
 
-pet;TOSEC/Commodore/PET/Games/[PRG]/Commodore PET - Games - [PRG].zip;Commodore - PET;<p>Commodore PET TOSEC;vice_xpet_libretro
-cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;Commodore Plus-4 NoIntro;vice_xplus4_libretro
-cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[PRG]/Commodore C16, C116 & Plus-4 - Games - [PRG].zip;Commodore - Plus-4;Commodore Plus-4 PRG;vice_xplus4_libretro
-cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP]/Commodore C16, C116 & Plus-4 - Games - [TAP].zip;Commodore - Plus-4;Commodore Plus-4 TAP;vice_xplus4_libretro
-vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;Commodore VIC-20 NoIntro;vice_xvic_libretro
-vic20;TOSEC/Commodore/VIC20/Games/[CRT]/Singlepart/Commodore VIC20 - Games - [CRT] - Singlepart.zip;Commodore - VIC-20;Commodore VIC-20 CRT;vice_xvic_libretro
-vic20;TOSEC/Commodore/VIC20/Games/[D64]/Commodore VIC20 - Games - [D64].zip;Commodore - VIC-20;Commodore VIC-20 D64;vice_xvic_libretro
-vic20;TOSEC/Commodore/VIC20/Games/[PRG]/Singlepart/Commodore VIC20 - Games - [PRG] - Singlepart.zip;Commodore - VIC-20;Commodore VIC-20 PRG;vice_xvic_libretro
-vic20;TOSEC/Commodore/VIC20/Games/[TAP]/Commodore VIC20 - Games - [TAP].zip;Commodore - VIC-20;Commodore VIC-20 TAP;vice_xvic_libretro
-c128;TOSEC/Commodore/C128/Games/[D64]/Commodore C128 - Games - [D64].zip;Commodore - 64;Commodore 128 D64;vice_x128_libretro
+pet;TOSEC/Commodore/PET/Games/[PRG]/Commodore PET - Games - [PRG].zip;Commodore - PET;<p><code>Commodore PET</code> TOSEC;vice_xpet_libretro
+cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<code>Commodore Plus-4</code> NoIntro;vice_xplus4_libretro
+cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[PRG]/Commodore C16, C116 & Plus-4 - Games - [PRG].zip;Commodore - Plus-4;<code>Commodore Plus-4</code> PRG;vice_xplus4_libretro
+cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP]/Commodore C16, C116 & Plus-4 - Games - [TAP].zip;Commodore - Plus-4;<code>Commodore Plus-4</code> TAP;vice_xplus4_libretro
+vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;<code>Commodore VIC-20</code> NoIntro;vice_xvic_libretro
+vic20;TOSEC/Commodore/VIC20/Games/[CRT]/Singlepart/Commodore VIC20 - Games - [CRT] - Singlepart.zip;Commodore - VIC-20;<code>Commodore VIC-20</code> CRT;vice_xvic_libretro
+vic20;TOSEC/Commodore/VIC20/Games/[D64]/Commodore VIC20 - Games - [D64].zip;Commodore - VIC-20;<code>Commodore VIC-20</code> D64;vice_xvic_libretro
+vic20;TOSEC/Commodore/VIC20/Games/[PRG]/Singlepart/Commodore VIC20 - Games - [PRG] - Singlepart.zip;Commodore - VIC-20;<code>Commodore VIC-20</code> PRG;vice_xvic_libretro
+vic20;TOSEC/Commodore/VIC20/Games/[TAP]/Commodore VIC20 - Games - [TAP].zip;Commodore - VIC-20;<code>Commodore VIC-20</code> TAP;vice_xvic_libretro
+c128;TOSEC/Commodore/C128/Games/[D64]/Commodore C128 - Games - [D64].zip;Commodore - 64;<code>Commodore 128</code> D64;vice_x128_libretro
 
-c64;No-Intro/Commodore - Commodore 64;Commodore - 64;<p>Commodore 64 NoIntro;vice_x64sc_libretro
-c64;No-Intro/Commodore - Commodore 64 (PP);Commodore - 64;Commodore 64 PP;vice_x64sc_libretro
-c64;No-Intro/Commodore - Commodore 64 (Tapes);Commodore - 64;Commodore 64 Tapes;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Adventure/[D64]/Commodore C64 - Games - Adventure - [D64].zip;Commodore - 64;Commodore 64 Adventure;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Arcade/[D64]/Commodore C64 - Games - Arcade - [D64].zip;Commodore - 64;Commodore 64 Arcade;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Boulder Dash/[D64]/Commodore C64 - Games - Boulder Dash - [D64].zip;Commodore - 64;Commodore 64 Boulder;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Cards/[D64]/Commodore C64 - Games - Cards - [D64].zip;Commodore - 64;Commodore 64 Cards;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Gambling/[D64]/Commodore C64 - Games - Gambling - [D64].zip;Commodore - 64;Commodore 64 Gambling;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Misc/[D64]/Commodore C64 - Games - Misc - [D64].zip;Commodore - 64;Commodore 64 Misc;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Racing/[D64]/Commodore C64 - Games - Racing - [D64].zip;Commodore - 64;Commodore 64 Racing;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Shoot'em Up/[D64]/Commodore C64 - Games - Shoot'em Up - [D64].zip;Commodore - 64;Commodore 64 Shoot'em;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Simulation/[D64]/Commodore C64 - Games - Simulation - [D64].zip;Commodore - 64;Commodore 64 Simulation;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Sports/[D64]/Commodore C64 - Games - Sports - [D64].zip;Commodore - 64;Commodore 64 Sports;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Strategy/[D64]/Commodore C64 - Games - Strategy - [D64].zip;Commodore - 64;Commodore 64 Strategy;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Educational/[D64]/Commodore C64 - Educational - [D64].zip;Commodore - 64;Commodore 64 Educational;vice_x64sc_libretro
+c64;No-Intro/Commodore - Commodore 64;Commodore - 64;<p><code>Commodore 64</code> NoIntro;vice_x64sc_libretro
+c64;No-Intro/Commodore - Commodore 64 (PP);Commodore - 64;<code>Commodore 64</code> PP;vice_x64sc_libretro
+c64;No-Intro/Commodore - Commodore 64 (Tapes);Commodore - 64;<code>Commodore 64</code> Tapes;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Adventure/[D64]/Commodore C64 - Games - Adventure - [D64].zip;Commodore - 64;<code>Commodore 64</code> Adventure;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Arcade/[D64]/Commodore C64 - Games - Arcade - [D64].zip;Commodore - 64;<code>Commodore 64</code> Arcade;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Boulder Dash/[D64]/Commodore C64 - Games - Boulder Dash - [D64].zip;Commodore - 64;<code>Commodore 64</code> Boulder;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Cards/[D64]/Commodore C64 - Games - Cards - [D64].zip;Commodore - 64;<code>Commodore 64</code> Cards;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Gambling/[D64]/Commodore C64 - Games - Gambling - [D64].zip;Commodore - 64;<code>Commodore 64</code> Gambling;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Misc/[D64]/Commodore C64 - Games - Misc - [D64].zip;Commodore - 64;<code>Commodore 64</code> Misc;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Racing/[D64]/Commodore C64 - Games - Racing - [D64].zip;Commodore - 64;<code>Commodore 64</code> Racing;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Shoot'em Up/[D64]/Commodore C64 - Games - Shoot'em Up - [D64].zip;Commodore - 64;<code>Commodore 64</code> Shoot'em;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Simulation/[D64]/Commodore C64 - Games - Simulation - [D64].zip;Commodore - 64;<code>Commodore 64</code> Simulation;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Sports/[D64]/Commodore C64 - Games - Sports - [D64].zip;Commodore - 64;<code>Commodore 64</code> Sports;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Strategy/[D64]/Commodore C64 - Games - Strategy - [D64].zip;Commodore - 64;<code>Commodore 64</code> Strategy;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Educational/[D64]/Commodore C64 - Educational - [D64].zip;Commodore - 64;<code>Commodore 64</code> Educational;vice_x64sc_libretro
 
-amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;<p>Amiga 1200 NoIntro;puae_libretro
-amiga1200;TOSEC/Commodore/Amiga/Games/[ADF]/Commodore Amiga - Games - [ADF].zip;Commodore - Amiga;Amiga 1200 ADF;puae_libretro
-amiga1200;TOSEC/Commodore/Amiga/Games/[Unofficial IPF]/Commodore Amiga - Games - [Unofficial IPF].zip;Commodore - Amiga;Amiga 1200 IPF;puae_libretro
-amiga1200;TOSEC/Commodore/Amiga/Games/Public Domain/[ADF]/Commodore Amiga - Games - Public Domain - [ADF].zip;Commodore - Amiga;Amiga 1200 PD;puae_libretro
-amiga1200;TOSEC/Commodore/Amiga/Games/SPS/Commodore Amiga - Games - SPS.zip;Commodore - Amiga;Amiga 1200 SPS;puae_libretro
-amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;Amiga CD32 Redump;puae_libretro;cue
-amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Games/[ISO];Commodore - CD32;Amiga CD32 ISO;puae_libretro;cue
-amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;Amiga CDTV Redump;puae_libretro;cue
-amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Games/[ISO];Commodore - CDTV;Amiga CDTV ISO;puae_libretro;cue
+amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;<p><code>Amiga 1200</code> NoIntro;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Games/[ADF]/Commodore Amiga - Games - [ADF].zip;Commodore - Amiga;<code>Amiga 1200</code> ADF;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Games/[Unofficial IPF]/Commodore Amiga - Games - [Unofficial IPF].zip;Commodore - Amiga;<code>Amiga 1200</code> IPF;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Games/Public Domain/[ADF]/Commodore Amiga - Games - Public Domain - [ADF].zip;Commodore - Amiga;<code>Amiga 1200</code> PD;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Games/SPS/Commodore Amiga - Games - SPS.zip;Commodore - Amiga;<code>Amiga 1200</code> SPS;puae_libretro
+amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<code>Amiga CD32</code> Redump;puae_libretro;cue
+amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Games/[ISO];Commodore - CD32;<code>Amiga CD32</code> ISO;puae_libretro;cue
+amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;<code>Amiga CDTV</code> Redump;puae_libretro;cue
+amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Games/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> ISO;puae_libretro;cue
 
-pc88;TOSEC/NEC/PC-8801/Games/[D88]/NEC PC-8801 - Games - [D88].zip;NEC - PC-8001 - PC-8801;<p>NEC PC-88 TOSEC;quasi88_libretro
-pc98;TOSEC/NEC/PC-9801/Games/[FDD]/NEC PC-9801 - Games - [FDD].zip;NEC - PC-98;NEC PC-98 TOSEC;np2kai_libretro
-x1;TOSEC/Sharp/X1/Games/[2D]/Sharp X1 - Games - [2D].zip;Sharp - X1;Sharp X1 2D;x1_libretro
-x1;TOSEC/Sharp/X1/Games/[D88]/Sharp X1 - Games - [D88].zip;Sharp - X1;Sharp X1 D88;x1_libretro
-x68000;TOSEC/Sharp/X68000/Games/[DIM]/Sharp X68000 - Games - [DIM].zip;Sharp - X68000;Sharp X68000 TOSEC;px68k_libretro
+pc88;TOSEC/NEC/PC-8801/Games/[D88]/NEC PC-8801 - Games - [D88].zip;NEC - PC-8001 - PC-8801;<p><code>NEC PC-88</code> TOSEC;quasi88_libretro
+pc98;TOSEC/NEC/PC-9801/Games/[FDD]/NEC PC-9801 - Games - [FDD].zip;NEC - PC-98;<code>NEC PC-98</code> TOSEC;np2kai_libretro
+x1;TOSEC/Sharp/X1/Games/[2D]/Sharp X1 - Games - [2D].zip;Sharp - X1;<code>Sharp X1</code> 2D;x1_libretro
+x1;TOSEC/Sharp/X1/Games/[D88]/Sharp X1 - Games - [D88].zip;Sharp - X1;<code>Sharp X1</code> D88;x1_libretro
+x68000;TOSEC/Sharp/X68000/Games/[DIM]/Sharp X68000 - Games - [DIM].zip;Sharp - X68000;<code>Sharp X68000</code> TOSEC;px68k_libretro
