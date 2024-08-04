@@ -61,8 +61,8 @@ gmaster;No-Intro/Hartung - Game Master;Hartung - Game Master;<i>Hartung Game Mas
 gmaster;TOSEC/Hartung/Game Master/Games/Hartung Game Master - Games.zip;Hartung - Game Master;<i>Hartung Game Master TOSEC</i>;mame gmaster -cart
 gamecom;No-Intro/Tiger - Game.com;Tiger - Game.com;<i>Tiger Game.com NoIntro</i>;mame gamecom -cart1
 gamecom;TOSEC/Tiger Electronics/Game.com/Games/Tiger Electronics Game.com - Games.zip;Tiger - Game.com;<i>Tiger Game.com TOSEC</i>;mame gamecom -cart1
-gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32 NoIntro</i>;mame gp32 -cart
-gp32;TOSEC/Game Park/GP32/Games/[SMC]/Game Park GP32 - Games - [SMC].zip;GamePark - GP32;<i>GamePark GP32 TOSEC</i>;mame gp32 -cart
+gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32 NoIntro</i>;mame gp32 -memc
+gp32;TOSEC/Game Park/GP32/Games/[SMC]/Game Park GP32 - Games - [SMC].zip;GamePark - GP32;<i>GamePark GP32 TOSEC</i>;mame gp32 -memc
 gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<i>Epoch Game Pocket Computer</i>;mame gamepock -cart
 
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame coco -cart
