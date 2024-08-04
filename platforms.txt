@@ -10,7 +10,6 @@ intellivision;No-Intro/Mattel - Intellivision;Mattel - Intellivision;Mattel Inte
 intellivision;TOSEC/Mattel/Intellivision/Games/[BIN]/Mattel Intellivision - Games - [BIN].zip;Mattel - Intellivision;Mattel Intellivision TOSEC;freeintv_libretro
 colecovision;No-Intro/Coleco - ColecoVision;Coleco - ColecoVision;Coleco Colecovision NoIntro;bluemsx_libretro
 colecovision;TOSEC/Coleco/ColecoVision/Games/Coleco ColecoVision - Games.zip;Coleco - ColecoVision;Coleco Colecovision TOSEC;bluemsx_libretro
-adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame adam -flop1
 scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Epoch SCV NoIntro;emuscv_libretro
 scv;TOSEC/Epoch/Super Cassette Vision/Games/Epoch Super Cassette Vision - Games.zip;Epoch - Super Cassette Vision;Epoch SCV TOSEC;emuscv_libretro
 
@@ -33,18 +32,18 @@ gamecom;TOSEC/Tiger Electronics/Game.com/Games/Tiger Electronics Game.com - Game
 gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32 NoIntro</i>;mame gp32 -memc
 gp32;TOSEC/Game Park/GP32/Games/[SMC]/Game Park GP32 - Games - [SMC].zip;GamePark - GP32;<i>GamePark GP32 TOSEC</i>;mame gp32 -memc
 
-amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<p>Amstrad CPC TOSEC;cap32_libretro
-gx4000;TOSEC/Amstrad/GX4000/Games/Amstrad GX4000 - Games.zip;Amstrad - GX4000;Amstrad GX4000 TOSEC;cap32_libretro
-zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;Sinclair ZX81 TOSEC;81_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;ZX Spectrum DSK;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[SCL]/Sinclair ZX Spectrum - Games - [SCL].zip;Sinclair - ZX Spectrum;ZX Spectrum SCL;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TAP]/Sinclair ZX Spectrum - Games - [TAP].zip;Sinclair - ZX Spectrum;ZX Spectrum TAP;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TRD]/Sinclair ZX Spectrum - Games - [TRD].zip;Sinclair - ZX Spectrum;ZX Spectrum TRD;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TZX]/Sinclair ZX Spectrum - Games - [TZX].zip;Sinclair - ZX Spectrum;ZX Spectrum TZX;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80]/Sinclair ZX Spectrum - Games - [Z80].zip;Sinclair - ZX Spectrum;ZX Spectrum Z80;fuse_libretro
-spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo - SVI-318 - SVI-328;Spectravideo TOSEC;bluemsx_libretro
-samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK]/MGT Sam Coupe - Games - [DSK].zip;Sam Coupé;Sam Coupé DSK;simcoupe
-samcoupe;TOSEC/MGT/Sam Coupe/Games/[SAD]/MGT Sam Coupe - Games - [SAD].zip;Sam Coupé;Sam Coupé SAD;simcoupe
+amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<p><code>Amstrad CPC</code> TOSEC;cap32_libretro
+gx4000;TOSEC/Amstrad/GX4000/Games/Amstrad GX4000 - Games.zip;Amstrad - GX4000;<code>Amstrad GX4000</code> TOSEC;cap32_libretro
+zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;<code>Sinclair ZX81</code> TOSEC;81_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum DSK</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[SCL]/Sinclair ZX Spectrum - Games - [SCL].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum SCL</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TAP]/Sinclair ZX Spectrum - Games - [TAP].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum TAP</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TRD]/Sinclair ZX Spectrum - Games - [TRD].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum TRD</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TZX]/Sinclair ZX Spectrum - Games - [TZX].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum TZX</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80]/Sinclair ZX Spectrum - Games - [Z80].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum Z80</code>;fuse_libretro
+spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> TOSEC;bluemsx_libretro
+samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK]/MGT Sam Coupe - Games - [DSK].zip;Sam Coupé;<code>Sam Coupé</code> DSK;simcoupe
+samcoupe;TOSEC/MGT/Sam Coupe/Games/[SAD]/MGT Sam Coupe - Games - [SAD].zip;Sam Coupé;<code>Sam Coupé</code> SAD;simcoupe
 
 astrocade;No-Intro/Bally - Astrocade;Bally - Astrocade;<p>Bally Astrocade NoIntro;mame astrocde -cart
 astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN]/Bally Professional Arcade & Astrocade - Games - [BIN].zip;Bally - Astrocade;Bally Astrocade BIN;mame astrocde -cart
@@ -66,6 +65,7 @@ supracan;TOSEC/Funtech/Super A'can/Games/Funtech Super A'can - Games.zip;Funtech
 vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton - VC 4000;mame vc4000 -cart
 multivision;TOSEC/Tsukuda Original/Othello Multivision/Games/Tsukuda Original Othello Multivision - Games.zip;Othello - Multivision;Othello Multivision;gearsystem_libretro
 
+adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;Coleco Adam;mame adam -flop1
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p>TRS-80 Color Computer;mame coco3 -cart
 bbcmicro;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;Acorn BBC;mame bbcb -flop1
 electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Acorn - Electron;Acorn Electron;mame electron64 -cass
