@@ -18,7 +18,7 @@ mkdir -p /userdata/system/.cache/httpdirfs
 mkdir -p /userdata/system/.cache/ratarmount
 mkdir -p /userdata/system/.cache/rclone
 
-/userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs http://thumbnails.libretro.com /userdata/thumbs > /dev/null
+#/userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs http://thumbnails.libretro.com /userdata/thumbs > /dev/null
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 
 IFS=";"
