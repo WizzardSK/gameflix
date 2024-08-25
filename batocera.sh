@@ -50,18 +50,21 @@ for each in "${roms[@]}"; do (
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi ) &
+  rom2="${rom[2]// /_}"
+  git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]}
+  git -C /userdata/thumbs/${rom[2]} checkout
   sleep 1
 done
 echo " "
-for each in "${roms[@]}"; do
-  read -ra rom < <(printf '%s' "$each")
-  mkdir -p /userdata/roms/${rom[0]}/images  
-  if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
-    echo "${rom[0]} thumbs"
-    mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
-    ls /userdata/roms/${rom[0]}/images > /dev/null
-  fi
-done
+#for each in "${roms[@]}"; do
+#  read -ra rom < <(printf '%s' "$each")
+#  mkdir -p /userdata/roms/${rom[0]}/images  
+#  if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
+#    echo "${rom[0]} thumbs"
+#    mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
+#    ls /userdata/roms/${rom[0]}/images > /dev/null
+#  fi
+#done
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
