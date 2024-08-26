@@ -61,6 +61,8 @@ echo " "
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p /userdata/roms/${rom[0]}/images  
+  mkdir -p /userdata/roms/${rom[0]}/titles  
+  mkdir -p /userdata/roms/${rom[0]}/boxes  
   if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
     echo "${rom[0]} thumbs"
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
