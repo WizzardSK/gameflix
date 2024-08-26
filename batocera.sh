@@ -52,7 +52,7 @@ for each in "${roms[@]}"; do (
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi
   rom2="${rom[2]// /_}"
-  if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]}; fi
+  if [ ! -d "/userdata/thumbs/${rom2}" ]; then git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom2}; fi
   git -C /userdata/thumbs/${rom[2]} checkout
   ) &
   sleep 1
