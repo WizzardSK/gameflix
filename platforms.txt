@@ -23,8 +23,8 @@ wonderswancolor;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>
 wonderswancolor;TOSEC/Bandai/WonderSwan Color/Games/Bandai WonderSwan Color - Games.zip;Bandai - WonderSwan Color;<i>WonderSwan Color</i> TOSEC;mednafen_wswan_libretro
 arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;<i>Arduboy</i> NoIntro;arduous_libretro
 megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;<i>Welback Mega Duck</i>;mame megaduck -cart
-gamate;No-Intro/Bit Corporation - Gamate;Bit Corporation - Gamate;<i>Bitcorp Gamate NoIntro</i>;mame gamate -cart
-gamate;TOSEC/Bit Corporation/Gamate/Games/Bit Corporation Gamate - Games.zip;Bit Corporation - Gamate;<i>Bitcorp Gamate TOSEC</i>;mame gamate -cart
+gamate;No-Intro/Bit Corporation - Gamate;Bitcorp - Gamate;<i>Bitcorp Gamate NoIntro</i>;mame gamate -cart
+gamate;TOSEC/Bit Corporation/Gamate/Games/Bit Corporation Gamate - Games.zip;Bitcorp - Gamate;<i>Bitcorp Gamate TOSEC</i>;mame gamate -cart
 gmaster;No-Intro/Hartung - Game Master;Hartung - Game Master;<i>Hartung Game Master NoIntro</i>;mame gmaster -cart
 gmaster;TOSEC/Hartung/Game Master/Games/Hartung Game Master - Games.zip;Hartung - Game Master;<i>Hartung Game Master TOSEC</i>;mame gmaster -cart
 gamecom;No-Intro/Tiger - Game.com;Tiger - Game.com;<i>Tiger Game.com NoIntro</i>;mame gamecom -cart1
