@@ -5,7 +5,7 @@ vectrex;TOSEC/GCE/Vectrex/Games/GCE Vectrex - Games.zip;GCE - Vectrex;GCE Vectre
 odyssey2;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Magnavox Odyssey 2 NoIntro;o2em_libretro
 odyssey2;TOSEC/Magnavox/Odyssey2/Games/Magnavox Odyssey2 - Games.zip;Magnavox - Odyssey2;Magnavox Odyssey 2 TOSEC;o2em_libretro
 videopacplus;No-Intro/Philips - Videopac+;Philips - Videopac;Philips Videopac+ NoIntro;o2em_libretro
-videopacplus;TOSEC/Philips/Videopac+/Games/Philips Videopac+ - Games.zip;Philips - Videopac+;Philips Videopac+ TOSEC;o2em_libretro
+videopacplus;TOSEC/Philips/Videopac+/Games/Philips Videopac+ - Games.zip;Philips - Videopac;Philips Videopac+ TOSEC;o2em_libretro
 intellivision;No-Intro/Mattel - Intellivision;Mattel - Intellivision;Mattel Intellivision NoIntro;freeintv_libretro
 intellivision;TOSEC/Mattel/Intellivision/Games/[BIN]/Mattel Intellivision - Games - [BIN].zip;Mattel - Intellivision;Mattel Intellivision TOSEC;freeintv_libretro
 colecovision;No-Intro/Coleco - ColecoVision;Coleco - ColecoVision;Coleco Colecovision NoIntro;bluemsx_libretro
