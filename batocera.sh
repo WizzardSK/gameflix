@@ -46,7 +46,7 @@ for each in "${roms[@]}"; do (
     ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
       if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
         line2=${line%.*}
-        echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
+        echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><marquee>./titles/${line2}.png</marquee><thumbnail>./boxes/${line2}.png</thumbnail></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
       fi
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
@@ -64,6 +64,8 @@ for each in "${roms[@]}"; do
   if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
     echo "${rom[0]} thumbs"
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
+    mount -o bind /userdata/thumbs/${rom[2]}/Named_Titles /userdata/roms/${rom[0]}/titles
+    mount -o bind /userdata/thumbs/${rom[2]}/Named_Boxarts /userdata/roms/${rom[0]}/boxes
     ls /userdata/roms/${rom[0]}/images > /dev/null
   fi
 done
@@ -76,4 +78,5 @@ wait
 cp /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.bak
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg > /dev/null
 chvt 2
+emulationstation start
 curl http://127.0.0.1:1234/reloadgames
