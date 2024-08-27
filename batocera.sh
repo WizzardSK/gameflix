@@ -19,8 +19,8 @@ mkdir -p /userdata/system/.cache/ratarmount
 mkdir -p /userdata/system/.cache/rclone
 
 /userdata/system/cli/run &
-#/userdata/system/httpdirfs --cache --no-range-check --cache-location /userdata/system/.cache/httpdirfs http://thumbnails.libretro.com /userdata/thumbs > /dev/null
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
+git config pull.rebase false 
 
 IFS=";"
 for each in "${roms[@]}"; do
@@ -57,18 +57,15 @@ for each in "${roms[@]}"; do (
   ) &
   sleep 1
 done
-echo " "
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p /userdata/roms/${rom[0]}/images  
   mkdir -p /userdata/roms/${rom[0]}/titles  
   mkdir -p /userdata/roms/${rom[0]}/boxes  
   if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
-    echo "${rom[0]} thumbs"
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Titles /userdata/roms/${rom[0]}/titles
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Boxarts /userdata/roms/${rom[0]}/boxes
-    #ls /userdata/roms/${rom[0]}/images > /dev/null
   fi
 done
 for each in "${roms[@]}"; do
