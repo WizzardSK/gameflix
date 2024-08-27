@@ -20,7 +20,6 @@ mkdir -p /userdata/system/.cache/rclone
 
 /userdata/system/cli/run &
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
-git config pull.rebase false 
 
 IFS=";"
 for each in "${roms[@]}"; do
@@ -52,6 +51,7 @@ for each in "${roms[@]}"; do (
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi
   rom2="${rom[2]// /_}"
+  git config pull.rebase false
   if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]}; fi
   git -C /userdata/thumbs/${rom[2]} pull
   ) &
