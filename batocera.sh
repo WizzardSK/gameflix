@@ -53,7 +53,7 @@ for each in "${roms[@]}"; do (
   fi
   rom2="${rom[2]// /_}"
   if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]}; fi
-  git -C /userdata/thumbs/${rom[2]} checkout
+  git -C /userdata/thumbs/${rom[2]} pull
   ) &
   sleep 1
 done
