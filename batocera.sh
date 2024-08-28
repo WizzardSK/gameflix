@@ -53,7 +53,7 @@ for each in "${roms[@]}"; do (
   rom2="${rom[2]// /_}"
   if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]}; fi
   git -C /userdata/thumbs/${rom[2]} config pull.rebase false
-  git -C /userdata/thumbs/${rom[2]} pull >> /userdata/system/logs/git.log
+  git -C /userdata/thumbs/${rom[2]} pull &>> /userdata/system/logs/git.log
   ) &
   sleep 1
 done
