@@ -54,15 +54,15 @@ for each in "${roms[@]}"; do (
 done
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
-  rom2="${rom[2]// /_}"
-  echo ${rom[2]} >> /userdata/system/logs/git.log
-  if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]}; fi
-  git -C /userdata/thumbs/${rom[2]} config pull.rebase false
-  git -C /userdata/thumbs/${rom[2]} pull &>> /userdata/system/logs/git.log
   mkdir -p /userdata/roms/${rom[0]}/images  
   mkdir -p /userdata/roms/${rom[0]}/titles  
   mkdir -p /userdata/roms/${rom[0]}/boxes  
   if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
+    rom2="${rom[2]// /_}"
+    echo ${rom[2]} >> /userdata/system/logs/git.log
+    if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]}; fi
+    git -C /userdata/thumbs/${rom[2]} config pull.rebase false
+    git -C /userdata/thumbs/${rom[2]} pull &>> /userdata/system/logs/git.log
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Titles /userdata/roms/${rom[0]}/titles
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Boxarts /userdata/roms/${rom[0]}/boxes
