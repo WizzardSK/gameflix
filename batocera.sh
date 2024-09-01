@@ -6,7 +6,8 @@ wget -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK
 if [ ! -f /userdata/system/httpdirfs ]; then wget -O /userdata/system/httpdirfs https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/httpdirfs; chmod +x /userdata/system/httpdirfs; fi
 if [ ! -f /userdata/system/mount-zip ]; then wget -O /userdata/system/mount-zip https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/mount-zip; chmod +x /userdata/system/mount-zip; fi
 if [ ! -f /userdata/system/ratarmount ]; then wget -O /userdata/system/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v0.15.1/ratarmount-0.15.1-x86_64.AppImage; chmod +x /userdata/system/ratarmount; fi
-if [ ! -f ~/cli.tar.gz ]; then wget -O ~/cli.tar.gz https://batocera.pro/app/cli.tar.gz; tar -xf ~/cli.tar.gz; ~/cli/run; fi
+if [ ! -f /userdata/system/cli.tar.gz ]; then wget -O /userdata/system/cli.tar.gz https://batocera.pro/app/cli.tar.gz; tar -xf /userdata/system/cli.tar.gz; fi
+/userdata/system/cli/run
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 
 emulationstation stop; chvt 3; clear
@@ -20,7 +21,6 @@ mkdir -p /userdata/system/.cache/ratarmount
 mkdir -p /userdata/system/.cache/rclone
 
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
-/userdata/system/cli/run
 
 IFS=";"
 for each in "${roms[@]}"; do
