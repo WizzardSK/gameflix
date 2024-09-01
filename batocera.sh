@@ -62,9 +62,12 @@ for each in "${roms[@]}"; do
   if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
     rom2="${rom[2]// /_}"
     echo ${rom[2]}
-    if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]}; fi
-    git -C /userdata/thumbs/${rom[2]} config pull.rebase false
-    git -C /userdata/thumbs/${rom[2]} pull
+    if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then
+      git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]}
+    else
+      git -C /userdata/thumbs/${rom[2]} config pull.rebase false
+      git -C /userdata/thumbs/${rom[2]} pull
+    fi
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Titles /userdata/roms/${rom[0]}/titles
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Boxarts /userdata/roms/${rom[0]}/boxes
