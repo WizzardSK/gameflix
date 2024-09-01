@@ -27,6 +27,7 @@ for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi                                                                                        
 done
+> /userdata/system/logs/git.log
 for each in "${roms[@]}"; do (
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
@@ -52,11 +53,6 @@ for each in "${roms[@]}"; do (
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi
   ) &
-  sleep 1
-done
-> /userdata/system/logs/git.log
-for each in "${roms[@]}"; do
-  read -ra rom < <(printf '%s' "$each")
   mkdir -p /userdata/roms/${rom[0]}/images  
   mkdir -p /userdata/roms/${rom[0]}/titles  
   mkdir -p /userdata/roms/${rom[0]}/boxes  
@@ -74,6 +70,25 @@ for each in "${roms[@]}"; do
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Boxarts /userdata/roms/${rom[0]}/boxes
   fi
 done
+#for each in "${roms[@]}"; do
+#  read -ra rom < <(printf '%s' "$each")
+#  mkdir -p /userdata/roms/${rom[0]}/images  
+#  mkdir -p /userdata/roms/${rom[0]}/titles  
+#  mkdir -p /userdata/roms/${rom[0]}/boxes  
+#  if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
+#    rom2="${rom[2]// /_}"
+#    echo ${rom[2]} | tee -a /userdata/system/logs/git.log
+#    if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then
+#      git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]} 2>&1 | tee -a /userdata/system/logs/git.log
+#    else
+#      git -C /userdata/thumbs/${rom[2]} config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log
+#      git -C /userdata/thumbs/${rom[2]} pull 2>&1 | tee -a /userdata/system/logs/git.log
+#    fi
+#    mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
+#    mount -o bind /userdata/thumbs/${rom[2]}/Named_Titles /userdata/roms/${rom[0]}/titles
+#    mount -o bind /userdata/thumbs/${rom[2]}/Named_Boxarts /userdata/roms/${rom[0]}/boxes
+#  fi
+#done
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
