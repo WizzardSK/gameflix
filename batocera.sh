@@ -54,6 +54,7 @@ for each in "${roms[@]}"; do (
   ) &
   sleep 1
 done
+> /userdata/system/logs/git.log
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   mkdir -p /userdata/roms/${rom[0]}/images  
@@ -61,8 +62,7 @@ for each in "${roms[@]}"; do
   mkdir -p /userdata/roms/${rom[0]}/boxes  
   if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
     rom2="${rom[2]// /_}"
-    echo ${rom[2]}
-    > /userdata/system/logs/git.log
+    echo ${rom[2]} | tee -a /userdata/system/logs/git.log
     if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then
       git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]} | tee -a /userdata/system/logs/git.log
     else
