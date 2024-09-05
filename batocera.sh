@@ -45,7 +45,7 @@ for each in "${roms[@]}"; do
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Titles /userdata/roms/${rom[0]}/titles
     mount -o bind /userdata/thumbs/${rom[2]}/Named_Boxarts /userdata/roms/${rom[0]}/boxes
-    sleep 2
+    sleep 1
   fi  
   (  
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
