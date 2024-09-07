@@ -70,7 +70,7 @@ for each in "${roms[@]}"; do
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi
   ) &
-  sleep 2.5
+  sleep 3
 done
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
