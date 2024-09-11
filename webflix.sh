@@ -1,4 +1,5 @@
 #!/bin/bash
+export LD_LIBRARY_PATH=/usr/local/lib
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 mkdir -p ~/myrient
 mkdir -p ~/roms
