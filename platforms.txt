@@ -166,6 +166,7 @@ supergrafx;No-Intro/NEC - PC Engine SuperGrafx;NEC - PC Engine SuperGrafx;PC Eng
 supergrafx;TOSEC/NEC/SuperGrafx/Games/NEC SuperGrafx - Games.zip;NEC - PC Engine SuperGrafx;PC Engine 2 TOSEC;mednafen_supergrafx_libretro
 pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX Redump;mednafen_pcfx_libretro;cue
 pcfx;TOSEC-ISO/NEC/PC-FX/Games;NEC - PC-FX;PC-FX ISO;mednafen_pcfx_libretro;cue
+mame;Internet Archive/chadmaster/mame-merged/mame-merged;MAME;MAME;mame
 
 cdi;Redump/Philips - CD-i;Philips - CD-i;Philips CDi Redump;same_cdi_libretro;cue
 cdi;TOSEC-ISO/Philips/CD-i/Games;Philips - CD-i;Philips CDi ISO;same_cdi_libretro;cue
