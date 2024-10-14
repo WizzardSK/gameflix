@@ -1,4 +1,6 @@
 # gameflix
+Demo: https://wizzardsk.github.io/
+
 Discord: https://discord.gg/aJsVfUr6CA
 
 Project for running retro games directly from public online sources on Linux machines.
