@@ -215,7 +215,7 @@ vic20;TOSEC/Commodore/VIC20/Games/[CRT]/Singlepart/Commodore VIC20 - Games - [CR
 vic20;TOSEC/Commodore/VIC20/Games/[D64]/Commodore VIC20 - Games - [D64].zip;Commodore - VIC-20;<code>Commodore VIC-20</code> D64;vice_xvic_libretro
 vic20;TOSEC/Commodore/VIC20/Games/[PRG]/Singlepart/Commodore VIC20 - Games - [PRG] - Singlepart.zip;Commodore - VIC-20;<code>Commodore VIC-20</code> PRG;vice_xvic_libretro
 vic20;TOSEC/Commodore/VIC20/Games/[TAP]/Commodore VIC20 - Games - [TAP].zip;Commodore - VIC-20;<code>Commodore VIC-20</code> TAP;vice_xvic_libretro
-c128;TOSEC/Commodore/C128/Games/[D64]/Commodore C128 - Games - [D64].zip;Commodore - 64;<code>Commodore 128</code> D64;vice_x128_libretro
+c128;TOSEC/Commodore/C128/Games/[D64]/Commodore C128 - Games - [D64].zip;Commodore - 128;<code>Commodore 128</code> D64;vice_x128_libretro
 
 c64;No-Intro/Commodore - Commodore 64;Commodore - 64;<p><code>Commodore 64</code> NoIntro;vice_x64sc_libretro
 c64;No-Intro/Commodore - Commodore 64 (PP);Commodore - 64;<code>Commodore 64</code> PP;vice_x64sc_libretro
