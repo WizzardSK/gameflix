@@ -67,7 +67,7 @@ for each in "${roms[@]}"; do
         if [[ ! ${line} =~ \[BIOS\] ]]; then
           echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><marquee>./titles/${line2}.png</marquee><thumbnail>./boxes/${line2}.png</thumbnail></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
         else
-          echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><marquee>./titles/${line2}.png</marquee><thumbnail>./boxes/${line2}.png</thumbnail><hidden /></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
+          echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><marquee>./titles/${line2}.png</marquee><thumbnail>./boxes/${line2}.png</thumbnail><hidden>true</hidden></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
         fi
       fi
     done
