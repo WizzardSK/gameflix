@@ -64,7 +64,11 @@ for each in "${roms[@]}"; do
     ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
       if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
         line2=${line%.*}
-        echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><marquee>./titles/${line2}.png</marquee><thumbnail>./boxes/${line2}.png</thumbnail></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
+        if [[ ! ${line} =~ \[BIOS\] ]]; then
+          echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><marquee>./titles/${line2}.png</marquee><thumbnail>./boxes/${line2}.png</thumbnail></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
+        else
+          echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><marquee>./titles/${line2}.png</marquee><thumbnail>./boxes/${line2}.png</thumbnail><hidden /></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
+        fi
       fi
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
