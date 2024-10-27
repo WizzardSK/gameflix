@@ -64,7 +64,7 @@ for each in "${roms[@]}"; do
     ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
       if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
         line2=${line%.*}
-        if [[ ! ${line} =~ \[BIOS\] && ! ${line} =~ (Demo) && ! ${line} =~ (Beta) && ! ${line} =~ (Aftermarket) && ! ${line} =~ (Alt) && ! ${line} =~ (Alternate) ]]; then
+        if [[ ! ${line} =~ \[BIOS\] && ! ${line} =~ (Demo) && ! ${line} =~ (Beta) && ! ${line} =~ (beta) && ! ${line} =~ (Aftermarket) && ! ${line} =~ (Alt) && ! ${line} =~ (Alternate) ]]; then
           echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><titleshot>./titles/${line2}.png</titleshot><thumbnail>./boxes/${line2}.png</thumbnail></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
         else
           echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><titleshot>./titles/${line2}.png</titleshot><thumbnail>./boxes/${line2}.png</thumbnail><hidden>true</hidden></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
