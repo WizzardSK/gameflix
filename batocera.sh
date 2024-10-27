@@ -1,4 +1,6 @@
 #!/bin/bash
+emulationstation stop; chvt 3; clear
+echo "Setting up Batocera"
 mount -o remount,size=6000M /tmp
 ln -s /usr/bin/fusermount /usr/bin/fusermount3
 curl https://rclone.org/install.sh | bash
@@ -9,8 +11,6 @@ if [ ! -f /userdata/system/ratarmount ]; then wget -O /userdata/system/ratarmoun
 if [ ! -f /userdata/system/cli.tar.gz ]; then wget -O /userdata/system/cli.tar.gz https://batocera.pro/app/cli.tar.gz; tar -xf /userdata/system/cli.tar.gz -C /userdata/system/; fi
 /userdata/system/cli/run
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
-
-emulationstation stop; chvt 3; clear
 
 mkdir -p /userdata/rom
 mkdir -p /userdata/roms
