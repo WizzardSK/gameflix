@@ -58,14 +58,12 @@ for each in "${roms[@]}"; do
   fi
   if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml > /dev/null; then
     ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
-      if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
-        line2=${line%.*}
-        if ! grep -iqE '\[(bios|a|a2|b|c|o|h)\]|\((demo|beta|alpha|pre-release|aftermarket|alt|alternate|unl)\)' <<< "$line"; then
-          echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><titleshot>./titles/${line2}.png</titleshot><thumbnail>./boxes/${line2}.png</thumbnail></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
-        else
-          echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><titleshot>./titles/${line2}.png</titleshot><thumbnail>./boxes/${line2}.png</thumbnail><hidden>true</hidden></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
-        fi
-      fi
+      line2=${line%.*}
+      if ! grep -iqE '\[(bios|a[0-9]?|b|c|f|h|o|p|t)\]|\((demo|beta|alpha|pre-release|aftermarket|alt|alternate|unl)\)' <<< "$line"; then
+        echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><titleshot>./titles/${line2}.png</titleshot><thumbnail>./boxes/${line2}.png</thumbnail></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
+      else
+        echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><titleshot>./titles/${line2}.png</titleshot><thumbnail>./boxes/${line2}.png</thumbnail><hidden>true</hidden></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
+      fi    
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi
