@@ -43,7 +43,7 @@ for each in "${roms[@]}"; do
       rclone mount ${rom[1]} /userdata/roms/${rom[0]}/${rom3} --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
     else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}; fi
   fi
-  if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml > /dev/null; then
+  if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
       line2=${line%.*}
       hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./Snaps/${line2}.png</image><titleshot>./Titles/${line2}.png</titleshot><thumbnail>./Boxarts/${line2}.png</thumbnail>"
