@@ -20,9 +20,7 @@ done
 > /userdata/system/logs/git.log
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
-  mkdir -p /userdata/roms/${rom[0]}/images  
-  mkdir -p /userdata/roms/${rom[0]}/titles  
-  mkdir -p /userdata/roms/${rom[0]}/boxes  
+  mkdir -p /userdata/roms/${rom[0]}/{images,titles,boxes}
   if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
     rom2="${rom[2]// /_}"
     echo ${rom[2]} | tee -a /userdata/system/logs/git.log
