@@ -10,13 +10,7 @@ if [ ! -f /userdata/system/ratarmount ]; then wget -O /userdata/system/ratarmoun
 if [ ! -f /userdata/system/cli.tar.gz ]; then wget -O /userdata/system/cli.tar.gz https://batocera.pro/app/cli.tar.gz; tar -xf /userdata/system/cli.tar.gz -C /userdata/system/; fi
 /userdata/system/cli/run
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
-mkdir -p /userdata/rom
-mkdir -p /userdata/roms
-mkdir -p /userdata/thumb
-mkdir -p /userdata/thumbs
-mkdir -p /userdata/system/.cache/httpdirfs
-mkdir -p /userdata/system/.cache/ratarmount
-mkdir -p /userdata/system/.cache/rclone
+mkdir -p /userdata/{rom,roms,thumb,thumbs} /userdata/system/.cache/{httpdirfs,ratarmount,rclone}
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 IFS=";"
 for each in "${roms[@]}"; do
