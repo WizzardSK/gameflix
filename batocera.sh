@@ -32,8 +32,7 @@ for each in "${roms[@]}"; do
     fi
     for dir in Snaps Titles Boxarts; do mount -o bind "/userdata/thumbs/${rom[2]}/Named_${dir}" "/userdata/roms/${rom[0]}/${dir}"; done
   fi  
-  (  
-  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
+  ( rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   echo "${rom3}"
   mkdir -p /userdata/roms/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
@@ -53,8 +52,7 @@ for each in "${roms[@]}"; do
       else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/${rom[0]}/gamelist.xml; fi    
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
-  fi
-  ) &
+  fi ) &
   sleep 1
 done
 for each in "${roms[@]}"; do
