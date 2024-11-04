@@ -20,7 +20,7 @@ done
 > /userdata/system/logs/git.log
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
-  mkdir -p /userdata/roms/${rom[0]}/{images,titles,boxes}
+  mkdir -p /userdata/roms/${rom[0]}/{Snaps,Titles,Boxarts}
   if ! findmnt -rn /userdata/roms/${rom[0]}/images > /dev/null; then
     rom2="${rom[2]// /_}"
     echo ${rom[2]} | tee -a /userdata/system/logs/git.log
@@ -30,9 +30,7 @@ for each in "${roms[@]}"; do
       git -C /userdata/thumbs/${rom[2]} config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log
       git -C /userdata/thumbs/${rom[2]} pull 2>&1 | tee -a /userdata/system/logs/git.log
     fi
-    mount -o bind /userdata/thumbs/${rom[2]}/Named_Snaps /userdata/roms/${rom[0]}/images
-    mount -o bind /userdata/thumbs/${rom[2]}/Named_Titles /userdata/roms/${rom[0]}/titles
-    mount -o bind /userdata/thumbs/${rom[2]}/Named_Boxarts /userdata/roms/${rom[0]}/boxes
+    for dir in Snaps Titles Boxarts; do mount -o bind "/userdata/thumbs/${rom[2]}/Named_${dir}" "/userdata/roms/${rom[0]}/${dir}"; done
   fi  
   (  
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
@@ -49,7 +47,7 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml > /dev/null; then
     ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
       line2=${line%.*}
-      hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><titleshot>./titles/${line2}.png</titleshot><thumbnail>./boxes/${line2}.png</thumbnail>"
+      hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./Snaps/${line2}.png</image><titleshot>./Titles/${line2}.png</titleshot><thumbnail>./Boxarts/${line2}.png</thumbnail>"
       if ! grep -iqE '\[(bios|a[0-9]{0,2}|b|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo|beta|alpha|pre-release|aftermarket|alt|alternate|unl)\)' <<< "$line"; then
         echo "${hra}</game>" >> /userdata/roms/${rom[0]}/gamelist.xml
       else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/${rom[0]}/gamelist.xml; fi    
