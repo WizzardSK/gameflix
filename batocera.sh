@@ -63,5 +63,4 @@ done
 wait
 cp /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.bak
 wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg > /dev/null
-chvt 2
-wget http://127.0.0.1:1234/reloadgames
+chvt 2; wget http://127.0.0.1:1234/reloadgames
