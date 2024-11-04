@@ -44,18 +44,15 @@ for each in "${roms[@]}"; do
   else
     if grep -q ":" <<< "${rom[1]}"; then
       rclone mount ${rom[1]} /userdata/roms/${rom[0]}/${rom3} --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
-    else
-      mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}
-    fi
+    else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}; fi
   fi
   if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml > /dev/null; then
     ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
       line2=${line%.*}
+      hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><titleshot>./titles/${line2}.png</titleshot><thumbnail>./boxes/${line2}.png</thumbnail>"
       if ! grep -iqE '\[(bios|a[0-9]{0,2}|b|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo|beta|alpha|pre-release|aftermarket|alt|alternate|unl)\)' <<< "$line"; then
-        echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><titleshot>./titles/${line2}.png</titleshot><thumbnail>./boxes/${line2}.png</thumbnail></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
-      else
-        echo "<game><path>./${rom3}/${line}</path><name>${line2}</name><image>./images/${line2}.png</image><titleshot>./titles/${line2}.png</titleshot><thumbnail>./boxes/${line2}.png</thumbnail><hidden>true</hidden></game>" >> /userdata/roms/${rom[0]}/gamelist.xml
-      fi    
+        echo "${hra}</game>" >> /userdata/roms/${rom[0]}/gamelist.xml
+      else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/${rom[0]}/gamelist.xml; fi    
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi
