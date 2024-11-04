@@ -23,7 +23,7 @@ for each in "${roms[@]}"; do
   mkdir -p /userdata/roms/${rom[0]}/{Snaps,Titles,Boxarts}
   if ! findmnt -rn /userdata/roms/${rom[0]}/Snaps > /dev/null; then
     rom2="${rom[2]// /_}"
-    echo ${rom[2]} | tee -a /userdata/system/logs/git.log
+    echo "Thumbs ${rom[2]}" | tee -a /userdata/system/logs/git.log
     if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then
       git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]} 2>&1 | tee -a /userdata/system/logs/git.log
     else
