@@ -34,7 +34,7 @@ for each in "${roms[@]}"; do
     head /userdata/rom/${rom[1]} > /dev/null
     /userdata/system/ratarmount /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3} --index-folders /userdata/system/.cache/ratarmount > /dev/null
     if [ -z "$(find /userdata/roms/${rom[0]}/${rom3} -mindepth 1)" ]; then
-      wget -O /userdata/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}
+      if [ ! -f /userdata/zip/${rom3}.zip ]; then wget -O /userdata/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
       /userdata/system/ratarmount /userdata/zip/${rom3}.zip /userdata/roms/${rom[0]}/${rom3} --index-folders /userdata/system/.cache/ratarmount > /dev/null
     fi
   else
