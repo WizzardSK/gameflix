@@ -10,7 +10,7 @@ if [ ! -f /userdata/system/ratarmount ]; then wget -O /userdata/system/ratarmoun
 if [ ! -f /userdata/system/cli.tar.gz ]; then wget -O /userdata/system/cli.tar.gz https://batocera.pro/app/cli.tar.gz; tar -xf /userdata/system/cli.tar.gz -C /userdata/system/; fi
 /userdata/system/cli/run
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
-mkdir -p /userdata/{rom,roms,thumb,thumbs} /userdata/system/.cache/{httpdirfs,ratarmount,rclone}
+mkdir -p /userdata/{rom,roms,thumb,thumbs,zip} /userdata/system/.cache/{httpdirfs,ratarmount,rclone}
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 IFS=";"
 > /userdata/system/logs/git.log
@@ -33,6 +33,10 @@ for each in "${roms[@]}"; do
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     head /userdata/rom/${rom[1]} > /dev/null
     /userdata/system/ratarmount /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3} --index-folders /userdata/system/.cache/ratarmount > /dev/null
+    if [ -z "$(find /userdata/roms/${rom[0]}/${rom3} -mindepth 1)" ]; then
+      wget -O /userdata/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}
+      /userdata/system/ratarmount /userdata/zip/${rom3}.zip /userdata/roms/${rom[0]}/${rom3} --index-folders /userdata/system/.cache/ratarmount > /dev/null
+    fi
   else
     if grep -q ":" <<< "${rom[1]}"; then
       rclone mount ${rom[1]} /userdata/roms/${rom[0]}/${rom3} --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
