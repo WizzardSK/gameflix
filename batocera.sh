@@ -13,17 +13,14 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 mkdir -p /userdata/{rom,roms,thumb,thumbs} /userdata/system/.cache/{httpdirfs,ratarmount,rclone}
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 IFS=";"
-for each in "${roms[@]}"; do
-  read -ra rom < <(printf '%s' "$each")
-  if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi                                                                                        
-done
 > /userdata/system/logs/git.log
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
+  if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
   mkdir -p /userdata/roms/${rom[0]}/{Snaps,Titles,Boxarts}
   if ! findmnt -rn /userdata/roms/${rom[0]}/Snaps > /dev/null; then
     rom2="${rom[2]// /_}"
-    echo "Thumbs ${rom[2]}" | tee -a /userdata/system/logs/git.log
+    echo "${rom[2]} thumbs" | tee -a /userdata/system/logs/git.log
     if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then
       git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]} 2>&1 | tee -a /userdata/system/logs/git.log
     else
@@ -54,13 +51,9 @@ for each in "${roms[@]}"; do
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi ) &
   sleep 1
-done
-for each in "${roms[@]}"; do
-  read -ra rom < <(printf '%s' "$each")
   if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
   if ! grep -Fxq "</gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
 done
-wait
-cp /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.bak
-wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg > /dev/null
+wait; cp /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.bak
+wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg > /dev/null 2>&1
 chvt 2; wget http://127.0.0.1:1234/reloadgames
