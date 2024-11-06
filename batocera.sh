@@ -14,10 +14,12 @@ mkdir -p /userdata/{rom,roms,thumb,thumbs,zip} /userdata/system/.cache/{httpdirf
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 IFS=";"
 > /userdata/system/logs/git.log
+declare -A seen
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
-  if ! findmnt -rn /userdata/roms/${rom[0]}/Snaps > /dev/null; then
+  if [[ -z "${seen[${rom[0]}]}" ]]; then
+    seen[${rom[0]}]=1
     rom2="${rom[2]// /_}"
     echo "${rom[2]} thumbs" | tee -a /userdata/system/logs/git.log
     if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then
