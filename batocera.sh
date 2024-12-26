@@ -2,7 +2,7 @@
 emulationstation stop; chvt 3; clear
 mount -o remount,size=6000M /tmp
 ln -s /usr/bin/fusermount /usr/bin/fusermount3
-curl https://rclone.org/install.sh | bash
+curl https://rclone.org/install.sh | bash > /dev/null 2>&1
 wget -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 if [ ! -f /userdata/system/httpdirfs ]; then wget -O /userdata/system/httpdirfs https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/httpdirfs; chmod +x /userdata/system/httpdirfs; fi
 if [ ! -f /userdata/system/mount-zip ]; then wget -O /userdata/system/mount-zip https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/mount-zip; chmod +x /userdata/system/mount-zip; fi
@@ -55,7 +55,7 @@ for each in "${roms[@]}"; do
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi ) &
-  sleep 1
+  sleep 2
 done
 wait
 for each in "${roms[@]}"; do 
