@@ -67,6 +67,7 @@ multivision;TOSEC/Tsukuda Original/Othello Multivision/Games/Tsukuda Original Ot
 
 adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;<p><code>Coleco Adam</code>;mame adam -flop1
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<code>TRS-80 Color Computer</code>;mame coco3 -cart
+vis;Redump/Memorex - Visual Information System;Tandy - Video Information System;<code>Video Information System</code>;mame vis -cdrm
 bbcmicro;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;<code>Acorn BBC</code>;mame bbcb -flop1
 electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Acorn - Electron;<code>Acorn Electron</code>;mame electron64 -cass
 fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;<code>Fujitsu Micro 7</code> NoIntro;mame fm7 -flop1
