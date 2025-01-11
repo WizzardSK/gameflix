@@ -26,8 +26,6 @@ for each in "${roms[@]}"; do
     if [ -z "$(ls -A ~/roms/${rom3})" ]; then
       if [ ! -f ~/share/zip/${rom3}.zip ]; then wget -O ~/share/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
       ~/ratarmount ~/share/zip/${rom3}.zip ~/roms/${rom3} --index-folders ~/share/system/.cache/ratarmount > /dev/null
-      #head ~/myrient/${rom[1]} > /dev/null
-      #~/ratarmount ~/myrient/${rom[1]} ~/roms/${rom3} --index-folders ~/share/system/.cache/ratarmount > /dev/null &
     fi
   fi
 done
