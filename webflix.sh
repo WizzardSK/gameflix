@@ -8,7 +8,7 @@ mkdir -p ~/gameflix
 mkdir -p ~/share/system/.cache/ratarmount
 mkdir -p ~/share/system/.cache/rclone
 
-if [ ! -f ~/ratarmount ]; then wget -O ~/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v1.0.0/ratarmount-1.0.0-x86_64.AppImage; chmod +x ~/ratarmount; fi
+if [ ! -f ~/ratarmount ]; then wget -O ~/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v0.15.2/ratarmount-0.15.2-x86_64.AppImage; chmod +x ~/ratarmount; fi
 wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate
 
