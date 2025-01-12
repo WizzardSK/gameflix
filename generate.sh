@@ -41,7 +41,7 @@ for each in "${roms[@]}"; do
   { while IFS= read -r line; do
       if [[ ! ${line} =~ \[BIOS\] ]]; then
         thumb=$(echo "$line" | sed -e 's/#/%23/g')
-        echo "<a href=\"../$romfolder/$thumb\" target=main><figure><img loading=lazy src=\"http://thumbnails.libretro.com/${rom[2]}/Named_Snaps/${thumb%.*}.png\"><figcaption>${line%.*}</figcaption></figure></a>" >> ~/gameflix/${rom3}.html
+        echo "<a href=\"../$romfolder/$thumb\" target=main><figure><img loading=lazy src=\"https://github.com/WizzardSK/${rom[2]}/Named_Snaps/${thumb%.*}.png\"><figcaption>${line%.*}</figcaption></figure></a>" >> ~/gameflix/${rom3}.html
         ((pocet++))
         ((total++))
       fi
