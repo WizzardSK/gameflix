@@ -13,6 +13,7 @@ filterInput.addEventListener('input', function () {
             const captionText = caption.textContent.toLowerCase();
             if (captionText.includes(filterText)) { figures[i].style.display = ''; } else { figures[i].style.display = 'none'; }
         }
+        showHideAlfa.dispatchEvent(new Event('change'));
         showHideBeta.dispatchEvent(new Event('change'));
         showHideDemo.dispatchEvent(new Event('change'));
         showHideAftermarket.dispatchEvent(new Event('change'));
@@ -52,6 +53,7 @@ document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         filterInput.value = '';
         filterInput.dispatchEvent(new Event('input'));
+        showHideAlfa.dispatchEvent(new Event('change'));
         showHideBeta.dispatchEvent(new Event('change'));
         showHideDemo.dispatchEvent(new Event('change'));
         showHideAftermarket.dispatchEvent(new Event('change'));
