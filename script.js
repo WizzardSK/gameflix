@@ -37,6 +37,7 @@ function handleCheckboxChange(checkbox, filterText) {
         document.getElementById('pocet').innerHTML = " Games: " + displayedCount;
     });
 }
+handleCheckboxChange(showHideAlfa, "(alpha");
 handleCheckboxChange(showHideBeta, "(beta");
 handleCheckboxChange(showHideDemo, "(demo");
 handleCheckboxChange(showHideAftermarket, "(aftermarket");
