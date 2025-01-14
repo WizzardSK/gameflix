@@ -83,9 +83,10 @@ function change320() { changeSize(320); }
 function processImages(operation) {
     var obrazky = document.getElementsByTagName('img');
     var replaceMap = {
-        'boxarts': { from: /_Snaps|_Titles/g, to: '_Boxarts' },
-        'snaps': { from: /_Boxarts|_Titles/g, to: '_Snaps' },
-        'titles': { from: /_Snaps|_Boxarts/g, to: '_Titles' }
+        'boxarts': { from: /_Snaps|_Titles|_Logos/g, to: '_Boxarts' },
+        'snaps': { from: /_Boxarts|_Titles|_Logos/g, to: '_Snaps' },
+        'titles': { from: /_Snaps|_Boxarts|_Logos/g, to: '_Titles' },
+        'logos': { from: /_Snaps|_Boxarts|_Titles/g, to: '_Logos' }
     };
     for (var i = 0; i < obrazky.length; i++) {
         obrazky[i].style.visibility = "visible";
@@ -95,6 +96,7 @@ function processImages(operation) {
 function boxarts() { processImages('boxarts'); }
 function snaps() { processImages('snaps'); }
 function titles() { processImages('titles'); }
+function logos() { processImages('logos'); }
 
 function imgonerror(image) {
     image.src = image.src.replace("&", "_");
