@@ -39,12 +39,10 @@ for each in "${roms[@]}"; do
   echo "<style> figure { background-image: url('https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png'); } </style>" >> ~/gameflix/${rom3}.html                                                
   pocet=0
   { while IFS= read -r line; do
-      if [[ ! ${line} =~ \[BIOS\] ]]; then
-        thumb=$(echo "$line" | sed -e 's/#/%23/g')
-        echo "<a href=\"../$romfolder/$thumb\" target=main><figure><img loading=lazy src=\"https://raw.githubusercontent.com/WizzardSK/${rom[2]// /_}/master/Named_Snaps/${thumb%.*}.png\"><figcaption>${line%.*}</figcaption></figure></a>" >> ~/gameflix/${rom3}.html
-        ((pocet++))
-        ((total++))
-      fi
+    thumb=$(echo "$line" | sed -e 's/#/%23/g')
+    echo "<a href=\"../$romfolder/$thumb\" target=main><figure><img loading=lazy src=\"https://raw.githubusercontent.com/WizzardSK/${rom[2]// /_}/master/Named_Snaps/${thumb%.*}.png\"><figcaption>${line%.*}</figcaption></figure></a>" >> ~/gameflix/${rom3}.html
+    ((pocet++))
+    ((total++))
   done } < <(ls ~/${romfolder})
   echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
