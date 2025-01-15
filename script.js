@@ -31,23 +31,24 @@ function handleCheckboxChange(checkbox, filterText) {
         for (let i = 0; i < figures.length; i++) {
             const caption = figures[i].getElementsByTagName('figcaption')[0];
             const captionText = caption.textContent.toLowerCase();
-            if ((captionText.includes(filterText)) && (captionText.includes(filterInput.value.toLowerCase()))) { figures[i].style.display = checkbox.checked ? '' : 'none'; }
+            if ((new RegExp(filterText).test(captionText)) && (new RegExp(filterInput.value.toLowerCase()).test(captionText))) { figures[i].style.display = checkbox.checked ? '' : 'none'; }
         }
         displayedCount = 0;
         for (let i = 0; i < figures.length; i++) { if (figures[i].style.display !== 'none') { displayedCount++; } }
         document.getElementById('pocet').innerHTML = " Games: " + displayedCount;
     });
 }
-handleCheckboxChange(showHideAlfa, "(alpha");
-handleCheckboxChange(showHideBeta, "(beta");
-handleCheckboxChange(showHideDemo, "(demo");
-handleCheckboxChange(showHideAftermarket, "(aftermarket");
-handleCheckboxChange(showHideProto, "(proto");
-handleCheckboxChange(showHideUnl, "(unl");
-handleCheckboxChange(showHideProgram, "(program");
-handleCheckboxChange(showHideAlt, "(alt");
-handleCheckboxChange(showHidePirate, "(pirate");
-handleCheckboxChange(showHideBrackets, "[");
+
+handleCheckboxChange(showHideAlfa, "\(alpha( [0-9]+)\)");
+handleCheckboxChange(showHideBeta, "\(beta( [0-9]+)\)");
+handleCheckboxChange(showHideDemo, "\(demo( [0-9]+)\)");
+handleCheckboxChange(showHideAftermarket, "\(aftermarket\)");
+handleCheckboxChange(showHideProto, "\(proto\)");
+handleCheckboxChange(showHideUnl, "\(unl\)");
+handleCheckboxChange(showHideProgram, "\(program\)");
+handleCheckboxChange(showHideAlt, "\(alt\)");
+handleCheckboxChange(showHidePirate, "\(pirate\)");
+handleCheckboxChange(showHideBrackets, "\\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\\]");
 
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
@@ -107,6 +108,7 @@ function imgonerror(image) {
 }
 var obrazky = document.querySelectorAll("img");
 for (var i = 0; i < obrazky.length; i++) { obrazky[i].onerror = function() { imgonerror(this); }; }
+showHideAlfa.dispatchEvent(new Event('change'));
 showHideBeta.dispatchEvent(new Event('change'));
 showHideDemo.dispatchEvent(new Event('change'));
 showHideAftermarket.dispatchEvent(new Event('change'));
