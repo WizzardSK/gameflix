@@ -39,9 +39,9 @@ function handleCheckboxChange(checkbox, filterText) {
     });
 }
 
-handleCheckboxChange(showHideAlfa, "\\(alpha( [0-9]+)\\)");
-handleCheckboxChange(showHideBeta, "\\(beta( [0-9]+)\\)");
-handleCheckboxChange(showHideDemo, "\\(demo( [0-9]+)\\)");
+handleCheckboxChange(showHideAlfa, "\\(alpha( [0-9]+)?\\)");
+handleCheckboxChange(showHideBeta, "\\(beta( [0-9]+)?\\)");
+handleCheckboxChange(showHideDemo, "\\(demo( [0-9]+)?\\)");
 handleCheckboxChange(showHideAftermarket, "\\(aftermarket\\)");
 handleCheckboxChange(showHideProto, "\(proto\)");
 handleCheckboxChange(showHideUnl, "\\(unl\\)");
