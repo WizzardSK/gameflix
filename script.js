@@ -39,15 +39,15 @@ function handleCheckboxChange(checkbox, filterText) {
     });
 }
 
-handleCheckboxChange(showHideAlfa, "\(alpha( [0-9]+)\)");
-handleCheckboxChange(showHideBeta, "\(beta( [0-9]+)\)");
-handleCheckboxChange(showHideDemo, "\(demo( [0-9]+)\)");
-handleCheckboxChange(showHideAftermarket, "\(aftermarket\)");
+handleCheckboxChange(showHideAlfa, "\\(alpha( [0-9]+)\\)");
+handleCheckboxChange(showHideBeta, "\\(beta( [0-9]+)\\)");
+handleCheckboxChange(showHideDemo, "\\(demo( [0-9]+)\\)");
+handleCheckboxChange(showHideAftermarket, "\\(aftermarket\\)");
 handleCheckboxChange(showHideProto, "\(proto\)");
-handleCheckboxChange(showHideUnl, "\(unl\)");
-handleCheckboxChange(showHideProgram, "\(program\)");
-handleCheckboxChange(showHideAlt, "\(alt\)");
-handleCheckboxChange(showHidePirate, "\(pirate\)");
+handleCheckboxChange(showHideUnl, "\\(unl\\)");
+handleCheckboxChange(showHideProgram, "\\(program\\)");
+handleCheckboxChange(showHideAlt, "\\(alt\\)");
+handleCheckboxChange(showHidePirate, "\\(pirate\\)");
 handleCheckboxChange(showHideBrackets, "\\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\\]");
 
 document.addEventListener('keydown', function (event) {
