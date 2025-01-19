@@ -13,16 +13,17 @@ filterInput.addEventListener('input', function () {
             const captionText = caption.textContent.toLowerCase();
             if (captionText.includes(filterText)) { figures[i].style.display = ''; } else { figures[i].style.display = 'none'; }
         }
+        showHideProto.dispatchEvent(new Event('change'));
+        showHideProgram.dispatchEvent(new Event('change'));
         showHideAlfa.dispatchEvent(new Event('change'));
         showHideBeta.dispatchEvent(new Event('change'));
         showHideDemo.dispatchEvent(new Event('change'));
         showHideAftermarket.dispatchEvent(new Event('change'));
-        showHideProto.dispatchEvent(new Event('change'));
         showHideUnl.dispatchEvent(new Event('change'));
-        showHideProgram.dispatchEvent(new Event('change'));
         showHideAlt.dispatchEvent(new Event('change'));
         showHidePirate.dispatchEvent(new Event('change'));
         showHideBrackets.dispatchEvent(new Event('change'));
+        showHidePrerelease.dispatchEvent(new Event('change'));
     }, 1000);
 });
 
@@ -39,31 +40,33 @@ function handleCheckboxChange(checkbox, filterText) {
     });
 }
 
+handleCheckboxChange(showHideProto, "\(proto\)");
+handleCheckboxChange(showHideProgram, "\\(program\\)");
 handleCheckboxChange(showHideAlfa, "\\(alpha( [0-9]+)?\\)");
 handleCheckboxChange(showHideBeta, "\\(beta( [0-9]+)?\\)");
 handleCheckboxChange(showHideDemo, "\\(demo( [0-9]+)?\\)");
 handleCheckboxChange(showHideAftermarket, "\\(aftermarket\\)");
-handleCheckboxChange(showHideProto, "\(proto\)");
 handleCheckboxChange(showHideUnl, "\\(unl\\)");
-handleCheckboxChange(showHideProgram, "\\(program\\)");
 handleCheckboxChange(showHideAlt, "\\(alt\\)");
 handleCheckboxChange(showHidePirate, "\\(pirate\\)");
+handleCheckboxChange(showHidePrerelease, "\\(pre-release\\)");
 handleCheckboxChange(showHideBrackets, "\\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\\]");
 
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         filterInput.value = '';
         filterInput.dispatchEvent(new Event('input'));
+        showHideProto.dispatchEvent(new Event('change'));
+        showHideProgram.dispatchEvent(new Event('change'));
         showHideAlfa.dispatchEvent(new Event('change'));
         showHideBeta.dispatchEvent(new Event('change'));
         showHideDemo.dispatchEvent(new Event('change'));
         showHideAftermarket.dispatchEvent(new Event('change'));
-        showHideProto.dispatchEvent(new Event('change'));
         showHideUnl.dispatchEvent(new Event('change'));
-        showHideProgram.dispatchEvent(new Event('change'));
         showHideAlt.dispatchEvent(new Event('change'));
         showHidePirate.dispatchEvent(new Event('change'));
         showHideBrackets.dispatchEvent(new Event('change'));
+        showHidePrerelease.dispatchEvent(new Event('change'));
     } else { filterInput.focus(); }
 });
 
@@ -108,16 +111,17 @@ function imgonerror(image) {
 }
 var obrazky = document.querySelectorAll("img");
 for (var i = 0; i < obrazky.length; i++) { obrazky[i].onerror = function() { imgonerror(this); }; }
+showHideProto.dispatchEvent(new Event('change'));
+showHideProgram.dispatchEvent(new Event('change'));
 showHideAlfa.dispatchEvent(new Event('change'));
 showHideBeta.dispatchEvent(new Event('change'));
 showHideDemo.dispatchEvent(new Event('change'));
 showHideAftermarket.dispatchEvent(new Event('change'));
-showHideProto.dispatchEvent(new Event('change'));
 showHideUnl.dispatchEvent(new Event('change'));
-showHideProgram.dispatchEvent(new Event('change'));
 showHideAlt.dispatchEvent(new Event('change'));
 showHidePirate.dispatchEvent(new Event('change'));
 showHideBrackets.dispatchEvent(new Event('change'));
+showHidePrerelease.dispatchEvent(new Event('change'));
 
 document.addEventListener("DOMContentLoaded", function() {
     const images = document.querySelectorAll('img');
