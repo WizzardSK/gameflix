@@ -1,4 +1,6 @@
 # gameflix
+![obrázok](https://github.com/user-attachments/assets/c90a7c26-1828-481c-a236-f56d0b19f936)
+
 Demo: https://wizzardsk.github.io/
 
 Discord: https://discord.gg/aJsVfUr6CA
