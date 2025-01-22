@@ -3,8 +3,6 @@
 
 Demo: https://wizzardsk.github.io/
 
-Discord: https://discord.gg/aJsVfUr6CA
-
 Project for running retro games directly from public online sources on Linux machines.
 
 I made this project for my own personal needs, to have the same setup on all my machines.
