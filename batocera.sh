@@ -24,7 +24,7 @@ for each in "${roms[@]}"; do
     rom2="${rom[2]// /_}"
     echo "${rom[2]} thumbs" | tee -a /userdata/system/logs/git.log
     if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then
-      git clone "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]} 2>&1 | tee -a /userdata/system/logs/git.log
+      git clone --depth 1 "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]} 2>&1 | tee -a /userdata/system/logs/git.log
     else
       git config --global --add safe.directory /userdata/thumbs/${rom[2]}
       git -C /userdata/thumbs/${rom[2]} config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log
