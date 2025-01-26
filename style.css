@@ -2,7 +2,7 @@ body { background-color: #333333; font-size: 15; font-family: Arial; color: whit
 figure { background-repeat: no-repeat;  background-position: top; background-position-y: 25px; background-size: auto 40%; cursor: pointer; margin: 0; display: inline-block; width: 160; height: 160; font-size: 12px; font-family: Arial; vertical-align: top; transition: transform 0.3s ease; text-align: center; background-color: #333333 }
 img    { width: 160px; height: 120px; object-fit: contain; background-color: #333333; opacity: 0; transition: 1s ease-in; }
 img.loaded { opacity: 1; }
-figure:hover { transform: scale(2); box-shadow: 0 0 20px rgba(0, 0, 0, 1) }
-figure:active { transform: scale(2) translateY(10px) translateX(10px) }
+figure:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(0, 0, 0, 1) }
+figure:active { transform: scale(1.1) translateY(10px) translateX(10px) }
 #topbar { position: fixed; top: 0; left: 0; width: 100%; background-color: #333333; z-index: 999; }
 a { color: cyan; text-decoration: none }
