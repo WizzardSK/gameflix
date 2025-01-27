@@ -32,7 +32,9 @@ gamecom;TOSEC/Tiger Electronics/Game.com/Games/Tiger Electronics Game.com - Game
 gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32 NoIntro</i>;mame gp32 -memc
 gp32;TOSEC/Game Park/GP32/Games/[SMC]/Game Park GP32 - Games - [SMC].zip;GamePark - GP32;<i>GamePark GP32 TOSEC</i>;mame gp32 -memc
 
-amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<p><code>Amstrad CPC</code> TOSEC;cap32_libretro
+amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<p><code>Amstrad CPC</code> DSK;cap32_libretro
+amstradcpc;TOSEC/Amstrad/CPC/Games/[CDT]/Amstrad CPC - Games - [CDT].zip;Amstrad - CPC;<p><code>Amstrad CPC</code> CDT;cap32_libretro
+amstradcpc;TOSEC/Amstrad/CPC/Games/[SNA]/Amstrad CPC - Games - [SNA].zip;Amstrad - CPC;<p><code>Amstrad CPC</code> SNA;cap32_libretro
 gx4000;TOSEC/Amstrad/GX4000/Games/Amstrad GX4000 - Games.zip;Amstrad - GX4000;<code>Amstrad GX4000</code> TOSEC;cap32_libretro
 zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;<code>Sinclair ZX81</code> TOSEC;81_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum DSK</code>;fuse_libretro
