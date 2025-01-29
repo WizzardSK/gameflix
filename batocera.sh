@@ -18,6 +18,10 @@ IFS=";"
 declare -A seen
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
+  > /userdata/roms/${rom[0]}/gamelist.xml;
+done
+for each in "${roms[@]}"; do 
+  read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
   if [[ -z "${seen[${rom[0]}]}" ]]; then
     seen[${rom[0]}]=1
@@ -51,7 +55,7 @@ for each in "${roms[@]}"; do
       else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/${rom[0]}/gamelist.xml; fi    
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
-  else > /userdata/roms/${rom[0]}/gamelist.xml; fi ) &
+  fi ) &
 done
 wait
 for each in "${roms[@]}"; do 
