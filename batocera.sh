@@ -33,6 +33,7 @@ for each in "${roms[@]}"; do
       git config --global --add safe.directory /userdata/thumbs/${rom[2]}
       git -C /userdata/thumbs/${rom[2]} config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log
       git -C /userdata/thumbs/${rom[2]} pull 2>&1 | tee -a /userdata/system/logs/git.log
+      sleep 0.5
     fi
   fi  
   ( rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
@@ -56,7 +57,6 @@ for each in "${roms[@]}"; do
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi ) &
-  sleep 0.5
 done
 wait
 for each in "${roms[@]}"; do 
