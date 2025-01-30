@@ -56,6 +56,7 @@ for each in "${roms[@]}"; do
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi ) &
+  sleep 0.5
 done
 wait
 for each in "${roms[@]}"; do 
