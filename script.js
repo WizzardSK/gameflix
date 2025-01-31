@@ -24,6 +24,7 @@ filterInput.addEventListener('input', function () {
         showHidePirate.dispatchEvent(new Event('change'));
         showHideBrackets.dispatchEvent(new Event('change'));
         showHidePrerelease.dispatchEvent(new Event('change'));
+        showHideDisk.dispatchEvent(new Event('change'));
     }, 1000);
 });
 
@@ -40,7 +41,7 @@ function handleCheckboxChange(checkbox, filterText) {
     });
 }
 
-handleCheckboxChange(showHideProto, "\(proto\)");
+handleCheckboxChange(showHideProto, "\\(proto\\)");
 handleCheckboxChange(showHideProgram, "\\(program\\)");
 handleCheckboxChange(showHideAlfa, "\\(alpha( [0-9]+)?\\)");
 handleCheckboxChange(showHideBeta, "\\(beta( [0-9]+)?\\)");
@@ -51,6 +52,7 @@ handleCheckboxChange(showHideAlt, "\\(alt\\)");
 handleCheckboxChange(showHidePirate, "\\(pirate\\)");
 handleCheckboxChange(showHidePrerelease, "\\(pre-release\\)");
 handleCheckboxChange(showHideBrackets, "\\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\\]");
+handleCheckboxChange(showHideDisk, "\\(disk( [2-9B-Z].*)\\)");
 
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
@@ -67,6 +69,7 @@ document.addEventListener('keydown', function (event) {
         showHidePirate.dispatchEvent(new Event('change'));
         showHideBrackets.dispatchEvent(new Event('change'));
         showHidePrerelease.dispatchEvent(new Event('change'));
+        showHideDisk.dispatchEvent(new Event('change'));
     } else { filterInput.focus(); }
 });
 
@@ -122,6 +125,7 @@ showHideAlt.dispatchEvent(new Event('change'));
 showHidePirate.dispatchEvent(new Event('change'));
 showHideBrackets.dispatchEvent(new Event('change'));
 showHidePrerelease.dispatchEvent(new Event('change'));
+showHideDisk.dispatchEvent(new Event('change'));
 
 document.addEventListener("DOMContentLoaded", function() {
     const images = document.querySelectorAll('img');
