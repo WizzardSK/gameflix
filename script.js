@@ -48,7 +48,7 @@ handleCheckboxChange(showHideBeta, "\\(beta( [0-9]+)?\\)");
 handleCheckboxChange(showHideDemo, "\\(demo( [0-9]+)?\\)");
 handleCheckboxChange(showHideAftermarket, "\\(aftermarket\\)");
 handleCheckboxChange(showHideUnl, "\\(unl\\)");
-handleCheckboxChange(showHideAlt, "\\(alt\\)");
+handleCheckboxChange(showHideAlt, "\\(alt|alternate\\)");
 handleCheckboxChange(showHidePirate, "\\(pirate\\)");
 handleCheckboxChange(showHidePrerelease, "\\(pre-release\\)");
 handleCheckboxChange(showHideBrackets, "\\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\\]");
