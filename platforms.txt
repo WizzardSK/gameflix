@@ -49,8 +49,7 @@ samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK]/MGT Sam Coupe - Games - [DSK].zip;MGT -
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[SAD]/MGT Sam Coupe - Games - [SAD].zip;MGT - Sam Coupe;<code>Sam Coupé</code> SAD;simcoupe
 
 astrocade;No-Intro/Bally - Astrocade;Bally - Astrocade;<p>Bally Astrocade NoIntro;mame astrocde -cart
-astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN]/Bally Professional Arcade & Astrocade - Games - [BIN].zip;Bally - Astrocade;Bally Astrocade BIN;mame astrocde -cart
-astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[PRG]/Bally Professional Arcade & Astrocade - Games - [PRG].zip;Bally - Astrocade;Bally Astrocade PRG;mame astrocde -cart
+astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN]/Bally Professional Arcade & Astrocade - Games - [BIN].zip;Bally - Astrocade;Bally Astrocade TOSEC;mame astrocde -cart
 apfm1000;No-Intro/APF - MP-1000;APF - MP-1000;APF MP-1000 NoIntro;mame apfm1000 -cart
 apfm1000;TOSEC/APF/M-1000/Games/APF M-1000 - Games.zip;APF - MP-1000;APF MP-1000 TOSEC;mame apfm1000 -cart
 advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vision NoIntro;mame advision -cart
