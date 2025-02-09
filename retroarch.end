@@ -9,7 +9,9 @@ else
 fi
 
 if [[ "$core" == *"mame"* ]]; then
-  ${core} "${rom}" -skip_gameinfo -rompath "$HOME/.config/retroarch/system/"
+  filename="${rom##*/}"
+  basename="${filename%.*}"
+  ${core} "${rom}" -skip_gameinfo -snapname "${basename}"
 fi
 
 if [[ "$core" == *"libretro"* ]]; then
