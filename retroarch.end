@@ -12,6 +12,7 @@ if [[ "$core" == *"mame"* ]]; then
   filename="${rom##*/}"
   basename="${filename%.*}"
   ${core} "${rom}" -skip_gameinfo -snapname "${basename}"
+  exit
 fi
 
 if [[ "$core" == *"libretro"* ]]; then
