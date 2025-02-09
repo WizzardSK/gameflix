@@ -104,7 +104,8 @@ atarist;TOSEC/Atari/ST/Games/[ST]/Atari ST - Games - [ST].zip;Atari - ST;<code>A
 atarist;TOSEC/Atari/ST/Games/[STX]/Atari ST - Games - [STX].zip;Atari - ST;<code>Atari ST</code> STX;hatari_libretro
 atarijaguar;No-Intro/Atari - Jaguar (J64);Atari - Jaguar;Atari Jaguar NoIntro;virtualjaguar_libretro
 atarijaguar;TOSEC/Atari/Jaguar/Games/[J64]/Atari Jaguar - Games - [J64].zip;Atari - Jaguar;Atari Jaguar TOSEC;virtualjaguar_libretro
-atarijaguarcd;Redump/Atari - Jaguar CD Interactive Multimedia System;Atari - Jaguar;Atari Jaguar CD;virtualjaguar_libretro
+atarijaguarcd;Redump/Atari - Jaguar CD Interactive Multimedia System;Atari - Jaguar;Jaguar CD Redump;virtualjaguar_libretro
+atarijaguarcd;No-Intro/Non-Redump - Atari - Atari Jaguar CD;Atari - Jaguar;Jaguar CD Non-Redump;virtualjaguar_libretro
 atarilynx;No-Intro/Atari - Lynx (LYX);Atari - Lynx;<i>Atari Lynx</i> NoIntro;mednafen_lynx_libretro
 atarilynx;TOSEC/Atari/Lynx/Games/[LNX]/Atari Lynx - Games - [LNX].zip;Atari - Lynx;<i>Atari Lynx</i> TOSEC;mednafen_lynx_libretro
 
