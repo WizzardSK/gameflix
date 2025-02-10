@@ -154,6 +154,7 @@ segacd;TOSEC-ISO/Sega/Mega-CD & Sega CD/CD/Games/[ISO];Sega - Mega-CD - Sega CD;
 saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn Redump;yabasanshiro_libretro;cue
 saturn;TOSEC-ISO/Sega/Saturn/Games/[ISO];Sega - Saturn;Sega Saturn ISO;yabasanshiro_libretro;cue
 dreamcast;Redump/Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast Redump;flycast_libretro;cue
+dreamcast;No-Intro/Non-Redump - Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast Non-Redump;flycast_libretro;gdi
 dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/US;Sega - Dreamcast;Sega Dreamcast ISO;flycast_libretro;gdi
 gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i> NoIntro;genesis_plus_gx_libretro
 gamegear;TOSEC/Sega/Game Gear/Games/Sega Game Gear - Games.zip;Sega - Game Gear;<i>Game Gear</i> TOSEC;genesis_plus_gx_libretro
@@ -162,8 +163,8 @@ psx;Redump/Sony - PlayStation;Sony - PlayStation;<p>PlayStation 1 Redump;pcsx_re
 psx;No-Intro/Non-Redump - Sony - PlayStation;Sony - PlayStation;PlayStation 1 Non-Redump;pcsx_rearmed_libretro;cue
 ps2;Redump/Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2 Redump;pcsx2;iso
 ps2;No-Intro/Non-Redump - Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2 Non-Redump;pcsx2;iso
-psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>PlayStation Portable</i> Redump;ppsspp_libretro;iso
-psp;No-Intro/Non-Redump - Sony - PlayStation Portable;Sony - PlayStation Portable;<i>PlayStation Portable</i> Non-Redump;ppsspp_libretro;iso
+psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Sony PSP</i> Redump;ppsspp_libretro;iso
+psp;No-Intro/Non-Redump - Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Sony PSP</i> Non-Redump;ppsspp_libretro;iso
 
 pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;NEC - PC Engine - TurboGrafx 16;<p>PC Engine NoIntro;mednafen_pce_fast_libretro
 pcengine;TOSEC/NEC/PC-Engine & TurboGrafx-16/Games/NEC PC-Engine & TurboGrafx-16 - Games.zip;NEC - PC Engine - TurboGrafx 16;PC Engine TOSEC;mednafen_pce_fast_libretro
