@@ -18,7 +18,8 @@ for each in "${roms[@]}"; do
     emufolder="${rom3}"
   else
     romfolder="myrient/${rom[1]}"
-    emufolder="${rom[1]##*/}"
+    emufolder="$(basename "$(dirname "${rom[1]}")")/$(basename "${rom[1]}")"
+    #emufolder="${rom[1]##*/}"
   fi
   if [ -e ~/gameflix/${rom3}.html ]; then
     pocet=$(ls ~/${romfolder} -1 | wc -l)
