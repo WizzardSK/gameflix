@@ -155,8 +155,10 @@ saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn Redump;yabasanshiro_libret
 saturn;No-Intro/Non-Redump - Sega - Sega Saturn;Sega - Saturn;Sega Saturn Non-Redump;yabasanshiro_libretro;cue
 saturn;TOSEC-ISO/Sega/Saturn/Games/[ISO];Sega - Saturn;Sega Saturn ISO;yabasanshiro_libretro;cue
 dreamcast;Redump/Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast Redump;flycast_libretro;cue
-dreamcast;No-Intro/Non-Redump - Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast Non-Redump;flycast_libretro;gdi
-dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/US;Sega - Dreamcast;Sega Dreamcast ISO;flycast_libretro;gdi
+dreamcast;No-Intro/Non-Redump - Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast NonRedump;flycast_libretro;gdi
+dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/US;Sega - Dreamcast;Sega Dreamcast US;flycast_libretro;gdi
+dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/PAL;Sega - Dreamcast;Sega Dreamcast PAL;flycast_libretro;gdi
+dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/JP;Sega - Dreamcast;Sega Dreamcast JP;flycast_libretro;gdi
 gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i> NoIntro;genesis_plus_gx_libretro
 gamegear;TOSEC/Sega/Game Gear/Games/Sega Game Gear - Games.zip;Sega - Game Gear;<i>Game Gear</i> TOSEC;genesis_plus_gx_libretro
 
