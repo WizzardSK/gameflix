@@ -183,7 +183,7 @@ cdi;Redump/Philips - CD-i;Philips - CD-i;Philips CDi Redump;same_cdi_libretro;cu
 cdi;No-Intro/Non-Redump - Philips - CD-i;Philips - CD-i;Philips CDi Non-Redump;same_cdi_libretro;cue
 cdi;TOSEC-ISO/Philips/CD-i/Games;Philips - CD-i;Philips CDi ISO;same_cdi_libretro;cue
 3do;Redump/Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO Redump;opera_libretro;cue
-3do;Non-Redump - Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO NonRedump;opera_libretro;cue
+3do;No-Intro/Non-Redump - Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO NonRedump;opera_libretro;cue
 3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Games;The 3DO Company - 3DO;Panasonic 3DO ISO;opera_libretro;cue
 neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD Redump;neocd_libretro;cue
 neogeocd;TOSEC-ISO/SNK/Neo-Geo CD/Games/[ISO];SNK - Neo Geo CD;Neo Geo CD ISO;neocd_libretro;cue
