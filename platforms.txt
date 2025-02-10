@@ -168,6 +168,7 @@ ps2;Redump/Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2 Redump;pcsx2;
 ps2;No-Intro/Non-Redump - Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2 Non-Redump;pcsx2;iso
 psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Sony PSP</i> Redump;ppsspp_libretro;iso
 psp;No-Intro/Non-Redump - Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Sony PSP</i> Non-Redump;ppsspp_libretro;iso
+psp;No-Intro/Unofficial - Sony - PlayStation Portable (PSN) (Decrypted);Sony - PlayStation Portable;<i>Sony PSP</i> PSN;ppsspp_libretro;iso
 
 pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;NEC - PC Engine - TurboGrafx 16;<p>PC Engine NoIntro;mednafen_pce_fast_libretro
 pcengine;TOSEC/NEC/PC-Engine & TurboGrafx-16/Games/NEC PC-Engine & TurboGrafx-16 - Games.zip;NEC - PC Engine - TurboGrafx 16;PC Engine TOSEC;mednafen_pce_fast_libretro
