@@ -159,10 +159,11 @@ gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i> NoIntro;gen
 gamegear;TOSEC/Sega/Game Gear/Games/Sega Game Gear - Games.zip;Sega - Game Gear;<i>Game Gear</i> TOSEC;genesis_plus_gx_libretro
 
 psx;Redump/Sony - PlayStation;Sony - PlayStation;<p>PlayStation 1 Redump;pcsx_rearmed_libretro;cue
-psx;No-Intro/Non-Redump - Sony - PlayStation;Sony - PlayStation;<p>PlayStation 1 Non-Redump;pcsx_rearmed_libretro;cue
+psx;No-Intro/Non-Redump - Sony - PlayStation;Sony - PlayStation;PlayStation 1 Non-Redump;pcsx_rearmed_libretro;cue
 ps2;Redump/Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2 Redump;pcsx2;iso
 ps2;No-Intro/Non-Redump - Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2 Non-Redump;pcsx2;iso
-psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>PlayStation Portable</i>;ppsspp_libretro;iso
+psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>PlayStation Portable</i> Redump;ppsspp_libretro;iso
+psp;No-Intro/Non-Redump - Sony - PlayStation Portable;Sony - PlayStation Portable;<i>PlayStation Portable</i> Non-Redump;ppsspp_libretro;iso
 
 pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;NEC - PC Engine - TurboGrafx 16;<p>PC Engine NoIntro;mednafen_pce_fast_libretro
 pcengine;TOSEC/NEC/PC-Engine & TurboGrafx-16/Games/NEC PC-Engine & TurboGrafx-16 - Games.zip;NEC - PC Engine - TurboGrafx 16;PC Engine TOSEC;mednafen_pce_fast_libretro
