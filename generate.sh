@@ -18,8 +18,7 @@ for each in "${roms[@]}"; do
     emufolder="${rom3}"
   else
     romfolder="myrient/${rom[1]}"
-    emufolder=$(echo "$rom[1]" | rev | cut -d'/' -f1,2 | rev)
-#    emufolder="${rom[1]##*/}"
+    emufolder="${rom[1]##*/}"
   fi
   if [ -e ~/gameflix/${rom3}.html ]; then
     pocet=$(ls ~/${romfolder} -1 | wc -l)
