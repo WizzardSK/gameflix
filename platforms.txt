@@ -180,6 +180,7 @@ supergrafx;TOSEC/NEC/SuperGrafx/Games/NEC SuperGrafx - Games.zip;NEC - PC Engine
 pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX Redump;mednafen_pcfx_libretro;cue
 pcfx;TOSEC-ISO/NEC/PC-FX/Games;NEC - PC-FX;PC-FX ISO;mednafen_pcfx_libretro;cue
 mame;Internet Archive/chadmaster/mame-merged/mame-merged;MAME;MAME;mame
+model3;Internet Archive/chadmaster/segamodel3;MAME;Sega Model 3;supermodel
 
 cdi;Redump/Philips - CD-i;Philips - CD-i;Philips CDi Redump;same_cdi_libretro;cue
 cdi;No-Intro/Non-Redump - Philips - CD-i;Philips - CD-i;Philips CDi Non-Redump;same_cdi_libretro;cue
