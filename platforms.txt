@@ -199,6 +199,8 @@ ngpc;TOSEC/SNK/Neo-Geo Pocket Color/Games/SNK Neo-Geo Pocket Color - Games.zip;S
 dos;eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/;DOS;<p><code>MS-DOS</code> eXoDOS;dosbox_pure_libretro
 dos;TOSEC/IBM/PC Compatibles/Games/[IMG]/IBM PC Compatibles - Games - [IMG].zip;DOS;<code>MS-DOS</code> TOSEC;dosbox_pure_libretro
 dos;TOSEC-ISO/IBM/PC Compatibles/CD/Games/[ISO];DOS;<code>MS-DOS</code> ISO;dosbox_pure_libretro
+dos;Redump/IBM - PC compatible;DOS;<code>MS-DOS</code> Redump;dosbox_pure_libretro
+
 dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1982;DOS;<code>TDC</code> 1982;dosbox_pure_libretro
 dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1983;DOS;<code>TDC</code> 1983;dosbox_pure_libretro
 dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1985;DOS;<code>TDC</code> 1985;dosbox_pure_libretro
