@@ -78,6 +78,7 @@ fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;<code>Fujitsu FM Towns</cod
 tutor;TOSEC/Tomy/Tutor & Pyuuta/Games/Tomy Tutor & Pyuuta - Games.zip;Tomy - Tutor;<code>Tomy Tutor</code>;mame tutor -cart
 apple2;TOSEC/Apple/II/Games/[DSK]/Apple II - Games - [DSK].zip;Apple - II;<code>Apple II DSK</code>;mame apple2ee -flop1
 apple2;TOSEC/Apple/II/Games/[WOZ]/Apple II - Games - [WOZ].zip;Apple - II;<code>Apple II WOZ</code>;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Games/[EDD]/Apple II - Games - [EDD].zip;Apple - II;<code>Apple II EDD</code>;mame apple2ee -flop1
 
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p><code>Thomson MO5</code> K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;<code>Thomson MO6</code> K7;theodore_libretro
