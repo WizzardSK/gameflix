@@ -43,12 +43,11 @@ for each in "${roms[@]}"; do
   { while IFS= read -r line; do
     thumb=$(echo "$line" | sed -e 's/#/%23/g')
     echo "\"${line%.*}\"," >> ~/gameflix/${rom3}.html
-    #echo "<a href=\"../$romfolder/$thumb\" target=main><figure><img loading=lazy src=\"https://raw.githubusercontent.com/WizzardSK/${rom[2]// /_}/master/Named_Snaps/${thumb%.*}.png\"><figcaption>${line%.*}</figcaption></figure></a>" >> ~/gameflix/${rom3}.html
     ((pocet++))
     ((total++))
   done } < <(ls ~/${romfolder})
   echo "];" >> ~/gameflix/${rom3}.html
-  echo 'fileNames.forEach(fileName => { document.write(`<a href="..' >> ~/gameflix/${rom3}.html
+  echo 'fileNames.forEach(fileName => { document.write(`<a href="../' >> ~/gameflix/${rom3}.html
   echo $romfolder >> ~/gameflix/${rom3}.html
   echo '${fileName}.bin" target="main"><figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/' >> ~/gameflix/${rom3}.html
   echo ${rom[2]// /_} >> ~/gameflix/${rom3}.html
