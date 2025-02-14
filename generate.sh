@@ -47,11 +47,11 @@ for each in "${roms[@]}"; do
     ((total++))
   done } < <(ls ~/${romfolder})
   echo "];" >> ~/gameflix/${rom3}.html
-  echo 'fileNames.forEach(fileName => { document.write(`<a href="../' >> ~/gameflix/${rom3}.html
-  echo $romfolder >> ~/gameflix/${rom3}.html
-  echo "/" >> ~/gameflix/${rom3}.html
-  echo '${fileName}" target="main"><figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/' >> ~/gameflix/${rom3}.html
-  echo ${rom[2]// /_} >> ~/gameflix/${rom3}.html
+  printf 'fileNames.forEach(fileName => { document.write(`<a href="../' >> ~/gameflix/${rom3}.html
+  printf $romfolder >> ~/gameflix/${rom3}.html
+  printf "/" >> ~/gameflix/${rom3}.html
+  printf '${fileName}" target="main"><figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/' >> ~/gameflix/${rom3}.html
+  printf ${rom[2]// /_} >> ~/gameflix/${rom3}.html
   echo '/master/Named_Snaps/${fileName.slice(0, fileName.lastIndexOf("."))}.png" alt="${fileName}"><figcaption>${fileName}</figcaption></figure></a>`); });' >> ~/gameflix/${rom3}.html
   echo "</script></div><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
