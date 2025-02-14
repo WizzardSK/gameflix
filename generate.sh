@@ -37,7 +37,8 @@ for each in "${roms[@]}"; do
   fi
   > ~/gameflix/${rom3}.html
   wget -O ~/gameflix/${rom3}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
-  echo "<style> figure { background-image: url('https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png'); } </style>" >> ~/gameflix/${rom3}.html                                                
+  echo "<style> figure { background-image: url('https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png'); } </style>" >> ~/gameflix/${rom3}.html       
+  #echo "<script>const fileNames = [" >> ~/gameflix/${rom3}.html
   pocet=0
   { while IFS= read -r line; do
     thumb=$(echo "$line" | sed -e 's/#/%23/g')
@@ -46,6 +47,7 @@ for each in "${roms[@]}"; do
     ((pocet++))
     ((total++))
   done } < <(ls ~/${romfolder})
+  #echo "];</script>" >> ~/gameflix/${rom3}.html
   echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   if [ "$platform" != "${rom[0]}" ]; then
