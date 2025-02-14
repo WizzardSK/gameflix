@@ -49,6 +49,7 @@ for each in "${roms[@]}"; do
   echo "];" >> ~/gameflix/${rom3}.html
   echo 'fileNames.forEach(fileName => { document.write(`<a href="../' >> ~/gameflix/${rom3}.html
   echo $romfolder >> ~/gameflix/${rom3}.html
+  echo "/" >> ~/gameflix/${rom3}.html
   echo '${fileName}.bin" target="main"><figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/' >> ~/gameflix/${rom3}.html
   echo ${rom[2]// /_} >> ~/gameflix/${rom3}.html
   echo '/master/Named_Snaps/${fileName}.png" alt="${fileName}"><figcaption>${fileName}</figcaption></figure></a>`); });' >> ~/gameflix/${rom3}.html
