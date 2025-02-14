@@ -42,18 +42,18 @@ for each in "${roms[@]}"; do
   pocet=0
   { while IFS= read -r line; do
     thumb=$(echo "$line" | sed -e 's/#/%23/g')
-    echo "\"$line\"," >> ~/gameflix/${rom3}.html
+    echo "\"${line%.*}\"," >> ~/gameflix/${rom3}.html
     #echo "<a href=\"../$romfolder/$thumb\" target=main><figure><img loading=lazy src=\"https://raw.githubusercontent.com/WizzardSK/${rom[2]// /_}/master/Named_Snaps/${thumb%.*}.png\"><figcaption>${line%.*}</figcaption></figure></a>" >> ~/gameflix/${rom3}.html
     ((pocet++))
     ((total++))
   done } < <(ls ~/${romfolder})
-  echo "];</script>" >> ~/gameflix/${rom3}.html
+  echo "];" >> ~/gameflix/${rom3}.html
   echo 'fileNames.forEach(fileName => { document.write(`<a href="..' >> ~/gameflix/${rom3}.html
   echo $romfolder >> ~/gameflix/${rom3}.html
   echo '${fileName}.bin" target="main"><figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/' >> ~/gameflix/${rom3}.html
   echo ${rom[2]// /_} >> ~/gameflix/${rom3}.html
   echo '/master/Named_Snaps/${fileName}.png" alt="${fileName}"><figcaption>${fileName}</figcaption></figure></a>`); });' >> ~/gameflix/${rom3}.html
-  echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
+  echo "</script></div><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   if [ "$platform" != "${rom[0]}" ]; then
     echo "</figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'><figcaption>" >> ~/gameflix/main.html
