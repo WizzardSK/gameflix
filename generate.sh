@@ -48,6 +48,7 @@ for each in "${roms[@]}"; do
     ((total++))
   done } < <(ls ~/${romfolder})
   #echo "];</script>" >> ~/gameflix/${rom3}.html
+  #echo "<script src=\"platform2.js\"></script>" >> ~/gameflix/${rom3}.html
   echo "</div><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   if [ "$platform" != "${rom[0]}" ]; then
