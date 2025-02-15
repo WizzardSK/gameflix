@@ -26,4 +26,14 @@ let text = `<div id=\"topbar\"><link rel=\"stylesheet\" type=\"text/css\" href=\
 
 document.write(text);
 
-document.addEventListener("DOMContentLoaded", function() { if (location.protocol !== "file:") { document.querySelectorAll("a").forEach(link => { link.addEventListener("click", function(event) { event.preventDefault(); }); }); } });
+document.addEventListener("DOMContentLoaded", function() {
+    if (location.protocol !== "file:") { document.querySelectorAll("a").forEach(link => { link.addEventListener("click", function(event) { event.preventDefault(); }); }); }
+});
+
+function generateFileLinks(romPath, imagePath) {
+    fileNames.forEach(fileName => {
+        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName;
+        document.write(`<a href="../${romPath}/${fileName}" target="main">
+        <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${nameWithoutExt}.png" alt="${fileName}"><figcaption>${fileName}</figcaption></figure></a>`);
+    });
+}
