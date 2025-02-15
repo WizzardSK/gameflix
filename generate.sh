@@ -20,7 +20,7 @@ for each in "${roms[@]}"; do
     romfolder="myrient/${rom[1]}"
     emufolder="${rom[1]}"
   fi
-  if [[ "${rom[3]}" == *"eXoDOS"* ]]; then romfolder="roms/dos-other"; fi
+  if [[ "${rom[3]}" == *"eXoDOS"* ]]; then emufolder="roms/dos-other"; fi
   if [ -e ~/gameflix/${rom3}.html ]; then
     pocet=$(ls ~/${romfolder} -1 | wc -l)
     total=$((pocet+total))
