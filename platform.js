@@ -37,3 +37,7 @@ function generateFileLinks(romPath, imagePath) {
         <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${nameWithoutExt}.png" alt="${fileName}"><figcaption>${fileName}</figcaption></figure></a>`);
     });
 }
+
+function bgImage(platform) {
+    document.write(`<style> figure { background-image: url('https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${platform}.png'); } </style>`);
+}
