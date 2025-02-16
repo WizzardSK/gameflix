@@ -34,7 +34,7 @@ function generateFileLinks(romPath, imagePath) {
     fileNames.forEach(fileName => {
         const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName;
         document.write(`<a href="../${romPath}/${fileName}" target="main">
-        <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${nameWithoutExt}.png" alt="${fileName}"><figcaption>${fileName}</figcaption></figure></a>`);
+        <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${nameWithoutExt}.png" alt="${fileName}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
     });
 }
 
