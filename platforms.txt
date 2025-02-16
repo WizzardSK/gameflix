@@ -138,6 +138,7 @@ gba;TOSEC/Nintendo/Game Boy Advance/Games/Nintendo Game Boy Advance - Games.zip;
 nds;No-Intro/Nintendo - Nintendo DS (Decrypted);Nintendo - Nintendo DS;<i>Nintendo DS</i> NoIntro;melonds_libretro
 nds;No-Intro/Nintendo - Nintendo DS (Download Play);Nintendo - Nintendo DS;<i>Nintendo DS</i> Download;melonds_libretro
 nds;TOSEC/Nintendo/DS/Games/Nintendo DS - Games.zip;Nintendo - Nintendo DS;<i>Nintendo DS</i> TOSEC;melonds_libretro
+nds;No-Intro/Nintendo - Nintendo DSi (Decrypted);Nintendo - Nintendo DS;<i>Nintendo DSi</i> NoIntro;melondsds_libretro
 3ds;No-Intro/Nintendo - Nintendo 3DS (Decrypted);Nintendo - Nintendo 3DS;<i>Nintendo 3DS</i> NoIntro;citra_libretro;3ds
 
 sg-1000;No-Intro/Sega - SG-1000;Sega - SG-1000;<p>SG 1000 NoIntro;genesis_plus_gx_libretro
