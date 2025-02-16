@@ -44,6 +44,9 @@ zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TAP]/Sinclair ZX Spectrum - Games -
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TRD]/Sinclair ZX Spectrum - Games - [TRD].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum TRD</code>;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TZX]/Sinclair ZX Spectrum - Games - [TZX].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum TZX</code>;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80]/Sinclair ZX Spectrum - Games - [Z80].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum Z80</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TAP]/Sinclair ZX Spectrum - Educational - [TAP].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum Edu TAP</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TZX]/Sinclair ZX Spectrum - Educational - [TZX].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum Edu TZX</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[Z80]/Sinclair ZX Spectrum - Educational - [Z80].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum Edu Z80</code>;fuse_libretro
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> TOSEC;bluemsx_libretro
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK]/MGT Sam Coupe - Games - [DSK].zip;MGT - Sam Coupe;<code>Sam Coupé</code> DSK;simcoupe
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[SAD]/MGT Sam Coupe - Games - [SAD].zip;MGT - Sam Coupe;<code>Sam Coupé</code> SAD;simcoupe
