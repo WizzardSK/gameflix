@@ -270,6 +270,7 @@ amiga1200;TOSEC/Commodore/Amiga/Games/[Unofficial IPF]/Commodore Amiga - Games -
 amiga1200;TOSEC/Commodore/Amiga/Games/Public Domain/[ADF]/Commodore Amiga - Games - Public Domain - [ADF].zip;Commodore - Amiga;<code>Amiga 1200</code> PD;puae_libretro
 amiga1200;TOSEC/Commodore/Amiga/Games/SPS/Commodore Amiga - Games - SPS.zip;Commodore - Amiga;<code>Amiga 1200</code> SPS;puae_libretro
 amiga1200;TOSEC/Commodore/Amiga/Educational/[ADF]/Commodore Amiga - Educational - [ADF].zip;Commodore - Amiga;<code>Amiga 1200</code> Edu;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Applications/[ADF]/Commodore Amiga - Applications - [ADF].zip;Commodore - Amiga;<code>Amiga 1200</code> Apps;puae_libretro
 amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<code>Amiga CD32</code> Redump;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Games/[ISO];Commodore - CD32;<code>Amiga CD32</code> ISO;puae_libretro;cue
 amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;<code>Amiga CDTV</code> Redump;puae_libretro;cue
