@@ -22,7 +22,7 @@ let text = `<div id=\"topbar\"><link rel=\"stylesheet\" type=\"text/css\" href=\
 <input type=\"checkbox\" id=\"showHidePirate\"><label for=\"showHidePirate\">Pirate</label>
 <input type=\"checkbox\" id=\"showHideBrackets\"><label for=\"showHideBrackets\">[a][b]</label>
 <input type=\"checkbox\" id=\"showHideDisk\"><label for=\"showHideDisk\">[disk 2]</label>
-</div><br><br><br><div id=\"figureList\">`;
+<br /><br /></div><br /><br /><br />`;
 
 document.write(text);
 
@@ -31,11 +31,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function generateFileLinks(romPath, imagePath) {
+    document.write("<div id=\"figureList\">");
     fileNames.forEach(fileName => {
         const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName;
         document.write(`<a href="../${romPath}/${fileName}" target="main">
         <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${nameWithoutExt}.png" alt="${fileName}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
     });
+    document.write("</div>");
 }
 
 function bgImage(platform) {
