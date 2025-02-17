@@ -86,6 +86,8 @@ apple2;TOSEC/Apple/II/Games/[DSK]/Apple II - Games - [DSK].zip;Apple - II;<code>
 apple2;TOSEC/Apple/II/Games/[WOZ]/Apple II - Games - [WOZ].zip;Apple - II;<code>Apple II WOZ</code>;mame apple2ee -flop1
 apple2;TOSEC/Apple/II/Educational/[DSK]/Apple II - Educational - [DSK].zip;Apple - II;<code>Apple II Edu DSK</code>;mame apple2ee -flop1
 apple2;TOSEC/Apple/II/Educational/[WOZ]/Apple II - Educational - [WOZ].zip;Apple - II;<code>Apple II Edu WOZ</code>;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Applications/[DSK]/Apple II - Applications - [DSK].zip;Apple - II;<code>Apple II App DSK</code>;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Applications/[WOZ]/Apple II - Applications - [WOZ].zip;Apple - II;<code>Apple II App WOZ</code>;mame apple2ee -flop1
 
 thomson;TOSEC/Thomson/MO5/Games/[K7]/Thomson MO5 - Games - [K7].zip;Thomson - MOTO;<p><code>Thomson MO5</code> K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games/Thomson MO6 - Games.zip;Thomson - MOTO;<code>Thomson MO6</code> K7;theodore_libretro
