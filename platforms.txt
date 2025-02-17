@@ -1,4 +1,4 @@
-fchannelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;Fairchild Channel F NoIntro;freechaf_libretro
+channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;Fairchild Channel F NoIntro;freechaf_libretro
 channelf;TOSEC/Fairchild/VES & Channel F/Games/Fairchild VES & Channel F - Games.zip;Fairchild - Channel F;Fairchild Channel F TOSEC;freechaf_libretro
 vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;GCE Vectrex NoIntro;vecx_libretro
 vectrex;TOSEC/GCE/Vectrex/Games/GCE Vectrex - Games.zip;GCE - Vectrex;GCE Vectrex TOSEC;vecx_libretro
