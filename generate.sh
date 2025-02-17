@@ -52,7 +52,7 @@ for each in "${roms[@]}"; do
   printf '", "' >> ~/gameflix/${rom3}.html
   printf ${rom[2]// /_} >> ~/gameflix/${rom3}.html
   echo '");' >> ~/gameflix/${rom3}.html
-  echo "</script></div><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
+  echo "</script><script src=\"script.js\"></script>" >> ~/gameflix/${rom3}.html
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   if [ "$platform" != "${rom[0]}" ]; then
     echo "</figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'><figcaption>" >> ~/gameflix/main.html
