@@ -113,6 +113,8 @@ atari800;TOSEC/Atari/8bit/Applications/[ATR]/Atari 8bit - Applications - [ATR].z
 atarist;No-Intro/Atari - ST;Atari - ST;<code>Atari ST</code> NoIntro;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[ST]/Atari ST - Games - [ST].zip;Atari - ST;<code>Atari ST</code> ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[STX]/Atari ST - Games - [STX].zip;Atari - ST;<code>Atari ST</code> STX;hatari_libretro
+atarist;TOSEC/Atari/ST/Educational/[ST]/Atari ST - Educational - [ST].zip;Atari - ST;<code>Atari ST</code> Edu ST;hatari_libretro
+atarist;TOSEC/Atari/ST/Educational/[STX]/Atari ST - Educational - [STX].zip;Atari - ST;<code>Atari ST</code> Edu STX;hatari_libretro
 atarijaguar;No-Intro/Atari - Jaguar (J64);Atari - Jaguar;Atari Jaguar NoIntro;virtualjaguar_libretro
 atarijaguar;TOSEC/Atari/Jaguar/Games/[J64]/Atari Jaguar - Games - [J64].zip;Atari - Jaguar;Atari Jaguar TOSEC;virtualjaguar_libretro
 atarijaguarcd;Redump/Atari - Jaguar CD Interactive Multimedia System;Atari - Jaguar;Jaguar CD Redump;bigpemu;cue
