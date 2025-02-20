@@ -41,7 +41,6 @@ for each in "${roms[@]}"; do
   echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html
   pocet=0
   { while IFS= read -r line; do
-    line=$(echo "$line" | sed -e 's/#/%23/g')
     echo "\"${line}\"," >> ~/gameflix/${rom3}.html
     ((pocet++))
     ((total++))
