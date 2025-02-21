@@ -45,8 +45,7 @@ for each in "${roms[@]}"; do
     ((pocet++))
     ((total++))
   done } < <(ls ~/${romfolder})
-  echo "];" >> ~/gameflix/${rom3}.html
-  printf 'generateFileLinks("' >> ~/gameflix/${rom3}.html
+  printf ']; generateFileLinks("' >> ~/gameflix/${rom3}.html
   printf $romfolder >> ~/gameflix/${rom3}.html
   printf '", "' >> ~/gameflix/${rom3}.html
   printf ${rom[2]// /_} >> ~/gameflix/${rom3}.html
