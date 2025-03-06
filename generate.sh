@@ -20,7 +20,7 @@ pocet=0
   echo "\"${line}\"," >> ~/gameflix/Atari\ 2600\ ROMS.html
   ((pocet++))
   ((total++))
-done } < <(ls ~/gameflix/Atari\ 2600\ ROMS)
+done } < <(ls ~/roms/Atari\ 2600\ ROMS)
 printf ']; generateFileLinks("' >> ~/gameflix/Atari\ 2600\ ROMS.html
 printf $romfolder >> ~/gameflix/Atari\ 2600\ ROMS.html
 printf '", "' >> ~/gameflix/Atari\ 2600\ ROMS.html
