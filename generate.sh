@@ -17,7 +17,7 @@ wget -O ~/gameflix/Atari\ 2600\ ROMS.html https://raw.githubusercontent.com/Wizz
 echo "<script>bgImage(\"atari2600"); const fileNames = [" >> ~/gameflix/Atari\ 2600\ ROMS.html
 pocet=0
 { while IFS= read -r line; do
-  echo "\"${line}\"," >> ~/gameflix/${rom3}.html
+  echo "\"${line}\"," >> ~/gameflix/Atari\ 2600\ ROMS.html
   ((pocet++))
   ((total++))
 done } < <(ls ~/gameflix/Atari\ 2600\ ROMS)
