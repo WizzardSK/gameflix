@@ -22,13 +22,13 @@ for each in "${roms[@]}"; do
   fi
   if [[ "${rom[3]}" == *"eXoDOS"* ]]; then emufolder="roms/dos-other"; fi
 
-  if [ -e ~/gameflix/Atari\ 2600\ ROMS.html ]; then 
-    pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l)
-    total=$((pocet+total))
-    echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\">Atari 2600 ROMS</a> ($pocet)<br />" >> ~/gameflix/systems.html
-    echo "*\"Atari 2600 ROMS\") core=\"stella_libretro;;" >> ~/gameflix/retroarch.sh
-    continue
-  fi
+  #if [ -e ~/gameflix/Atari\ 2600\ ROMS.html ]; then 
+  pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l)
+  total=$((pocet+total))
+  echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\">Atari 2600 ROMS</a> ($pocet)<br />" >> ~/gameflix/systems.html
+  echo "*\"Atari 2600 ROMS\") core=\"stella_libretro;;" >> ~/gameflix/retroarch.sh
+  #continue
+  #fi
   
   if [ -e ~/gameflix/${rom3}.html ]; then
     pocet=$(ls ~/${romfolder} -1 | wc -l)
