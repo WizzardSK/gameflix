@@ -14,7 +14,7 @@ echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\">Atari 2600 ROMS</a> ($poc
 echo "*\"Atari 2600 ROMS\") core=\"stella_libretro\";;" >> ~/gameflix/retroarch.sh  
 
 wget -O ~/gameflix/Atari\ 2600\ ROMS.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
-echo "<script>bgImage(\"atari2600"); const fileNames = [" >> ~/gameflix/Atari\ 2600\ ROMS.html
+echo "<script>bgImage(\"atari2600\"); const fileNames = [" >> ~/gameflix/Atari\ 2600\ ROMS.html
 pocet=0
 { while IFS= read -r line; do
   echo "\"${line}\"," >> ~/gameflix/Atari\ 2600\ ROMS.html
