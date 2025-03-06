@@ -1,11 +1,11 @@
 #!/bin/bash
 export LD_LIBRARY_PATH=/usr/local/lib
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
-mkdir -p ~/myrient ~/roms ~/iso ~/gameflix ~/share/system/.cache/ratarmount ~/share/system/.cache/rclone ~/share/zip/atari2600roms "~/roms/Atari 2600 ROMS"
+mkdir -p ~/myrient ~/roms ~/iso ~/gameflix ~/share/system/.cache/ratarmount ~/share/system/.cache/rclone ~/share/zip/atari2600roms ~/roms/Atari\ 2600\ ROMS
 
 if [ ! -f ~/share/zip/atari2600roms.zip ]; then wget -O ~/share/zip/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
 fuse-zip ~/share/zip/atari2600roms.zip ~/share/zip/atari2600roms
-bindfs ~/share/zip/atari2600roms/ROMS "~/roms/Atari 2600 ROMS"
+bindfs ~/share/zip/atari2600roms/ROMS ~/roms/Atari\ 2600\ ROMS
 wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate
 
