@@ -11,7 +11,7 @@ wget -O ~/gameflix/platform.js https://raw.githubusercontent.com/WizzardSK/gamef
 pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l)
 total=$((pocet+total))
 echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\">Atari 2600 ROMS</a> ($pocet)<br />" >> ~/gameflix/systems.html
-echo "*\"Atari 2600 ROMS\") core=\"stella_libretro;;" >> ~/gameflix/retroarch.sh  
+echo "*\"Atari 2600 ROMS\") core=\"stella_libretro\";;" >> ~/gameflix/retroarch.sh  
 IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
