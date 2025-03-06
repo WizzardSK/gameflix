@@ -12,7 +12,7 @@ if [ ! -f /userdata/system/cli.tar.gz ]; then wget -O /userdata/system/cli.tar.g
 if [ ! -f /userdata/zip/atari2600roms.zip ]; then wget -O /userdata/zip/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
 /userdata/system/cli/run
 mkdir -p /userdata/roms/atari2600/Atari\ 2600\ ROMS
-fuse-zip /userdata/zip/atari2600roms.zip /userdata/roms/atari2600/Atari\ 2600\ ROMS.zip
+fuse-zip /userdata/zip/atari2600roms.zip /userdata/roms/atari2600/Atari\ 2600\ ROMS
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 mkdir -p /userdata/{rom,roms,thumb,thumbs,zip} /userdata/system/.cache/{httpdirfs,ratarmount,rclone}
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
