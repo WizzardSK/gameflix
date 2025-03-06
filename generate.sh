@@ -12,6 +12,22 @@ pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l)
 total=$((pocet+total))
 echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\">Atari 2600 ROMS</a> ($pocet)<br />" >> ~/gameflix/systems.html
 echo "*\"Atari 2600 ROMS\") core=\"stella_libretro\";;" >> ~/gameflix/retroarch.sh  
+
+wget -O ~/gameflix/Atari\ 2600\ ROMS.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+echo "<script>bgImage(\"atari2600"); const fileNames = [" >> ~/gameflix/Atari\ 2600\ ROMS.html
+pocet=0
+{ while IFS= read -r line; do
+  echo "\"${line}\"," >> ~/gameflix/${rom3}.html
+  ((pocet++))
+  ((total++))
+done } < <(ls ~/gameflix/Atari\ 2600\ ROMS)
+printf ']; generateFileLinks("' >> ~/gameflix/Atari\ 2600\ ROMS.html
+printf $romfolder >> ~/gameflix/Atari\ 2600\ ROMS.html
+printf '", "' >> ~/gameflix/Atari\ 2600\ ROMS.html
+printf "roms/Atari 2600 ROMS" >> ~/gameflix/Atari\ 2600\ ROMS.html
+echo '");' >> ~/gameflix/Atari\ 2600\ ROMS.html
+echo "</script><script src=\"script.js\"></script>" >> ~/gameflix/Atari\ 2600\ ROMS.html
+
 IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
