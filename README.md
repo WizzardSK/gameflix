@@ -37,7 +37,7 @@ For Batocera, you need to copy [custom.sh](batocera/share/system/custom.sh) file
 
 AMD64 version also supports zipped libraries for Atari 800, Amstrad CPC, ZX Spectrum and a lot of others.
 
-## Usage - Recalbox (unmaintaned)
+## Usage - Recalbox (unmaintained)
 For Recalbox, you need to copy [custom.sh](recalbox/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone config file in system folder. Thumbnail folders are mounting too.
 
 Raspberry Pi 4 version also supports zipped libraries for Atari 800, Amstrad CPC and ZX Spectrum.
