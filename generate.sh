@@ -8,12 +8,21 @@ wget -O ~/gameflix/retroarch.sh https://raw.githubusercontent.com/WizzardSK/game
 wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gameflix/main/style.css
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 wget -O ~/gameflix/platform.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.js
+
+pocet=$(ls ~/roms/TIC80 -1 | wc -l)
+total=$((pocet+total))
+echo "<a href=\"TIC80.html\" target=\"main\">TIC80</a> ($pocet)<br />" >> ~/gameflix/systems.html
+echo "*\"TIC80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
+wget -O ~/gameflix/TIC80.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+echo "<script>bgImage(\"tic80\"); const fileNames = [" >> ~/gameflix/TIC80.html
+
 pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l)
 total=$((pocet+total))
 echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\">Atari 2600 ROMS</a> ($pocet)<br />" >> ~/gameflix/systems.html
 echo "*\"Atari 2600 ROMS\") core=\"stella_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/Atari\ 2600\ ROMS.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"atari2600\"); const fileNames = [" >> ~/gameflix/Atari\ 2600\ ROMS.html
+
 pocet=0
 { while IFS= read -r line; do
   echo "\"${line}\"," >> ~/gameflix/Atari\ 2600\ ROMS.html
