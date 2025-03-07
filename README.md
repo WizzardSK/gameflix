@@ -7,7 +7,7 @@ Project for running retro games directly from public online sources on Linux mac
 
 I made this project for my own personal needs, to have the same setup on all my machines.
 
-All games are stored on public services Myrient and The Eye. Thumbnails are used from https://thumbnails.libretro.com/ configured to use with some frontend. 
+All games are stored on public services Myrient and others. Thumbnails are downloaded from github repositories. 
 
 Why is it better than to have all games on local storage? You may have the access to all your games without the need to have a huge storage. Some PSX, PS2, GameCube or Dreamcast games may be very large and using this script you may run them on a Chromebook with small storage (if it may run those emulators). The disadvantage is that you need fast internet connection and even with that the loading of bigger games may be quite slow.
 
@@ -26,7 +26,7 @@ Then use the library with any emulation system like Retroarch. It is up to you h
 
 Now you may run the roms directly without copying them to local storage, just like Netflix. 
 
-You also need fuse-zip program to use TOSEC libraries. They are stored in zipped files on remote place so the program needs to mount them like folders. It is also used to run zipped ISO files for PSP, PS2, PC Engine CD and other.
+You also need fuse-zip program to use TOSEC libraries. They are stored in zipped files, which are downloaded and mounted like folders. Mount-zip is used to run zipped ISO files for PSP, PS2, PC Engine CD and other.
 
 [mount.sh](mount.sh) mounts the library. 
 
@@ -37,7 +37,7 @@ For Batocera, you need to copy [custom.sh](batocera/share/system/custom.sh) file
 
 AMD64 version also supports zipped libraries for Atari 800, Amstrad CPC, ZX Spectrum and a lot of others.
 
-## Usage - Recalbox
+## Usage - Recalbox (unmaintaned)
 For Recalbox, you need to copy [custom.sh](recalbox/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone config file in system folder. Thumbnail folders are mounting too.
 
 Raspberry Pi 4 version also supports zipped libraries for Atari 800, Amstrad CPC and ZX Spectrum.
