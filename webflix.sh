@@ -11,7 +11,7 @@ rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr
 
 API_URL="https://tic80.com/api?fn=dir&path=play/Games"
 BASE_URL="https://tic80.com/cart"
-DOWNLOAD_DIR="~/roms/TIC80"
+DOWNLOAD_DIR="$HOME/roms/TIC80"
 NUM_PARALLEL=5  
 mkdir -p "$DOWNLOAD_DIR"
 RESPONSE=$(curl -s "$API_URL")
