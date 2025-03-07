@@ -9,6 +9,23 @@ bindfs ~/share/zip/atari2600roms/ROMS ~/roms/Atari\ 2600\ ROMS
 wget -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate
 
+API_URL="https://tic80.com/api?fn=dir&path=play/Games"
+BASE_URL="https://tic80.com/cart"
+DOWNLOAD_DIR="~/roms/TIC80"
+NUM_PARALLEL=5  
+mkdir -p "$DOWNLOAD_DIR"
+RESPONSE=$(curl -s "$API_URL")
+FILES=$(echo "$RESPONSE" | grep -oP '{\s*name\s*=\s*"[^"]+",\s*hash\s*=\s*"[^"]+",\s*id\s*=\s*\d+,\s*filename\s*=\s*"[^"]+"\s*}')
+echo "$FILES" | while read -r LINE; do
+    HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p')
+    FILENAME=$(echo "$LINE" | sed -n 's/.*filename\s*=\s*"\([^"]*\)".*/\1/p')
+    FILE_PATH="${DOWNLOAD_DIR}/${FILENAME}"
+    if [ ! -f "$FILE_PATH" ]; then
+        echo "Downloading: $FILENAME..."
+        echo "${BASE_URL}/${HASH}/${FILENAME}"
+    fi
+done | xargs -P $NUM_PARALLEL -I {} wget -q -P "$DOWNLOAD_DIR" {}
+
 IFS=";"
 for each in "${roms[@]}"; do
   echo "${rom3}"
