@@ -21,12 +21,7 @@ pocet=0
   ((pocet++))
   ((total++))
 done } < <(ls ~/roms/TIC80)
-printf ']; generateFileLinks("' >> ~/gameflix/TIC80.html
-printf "roms/TIC80" >> ~/gameflix/TIC80.html
-printf '", "' >> ~/gameflix/TIC80.html
-printf "TIC-80" >> ~/gameflix/TIC80.html
-echo '");' >> ~/gameflix/TIC80.html
-echo "</script><script src=\"script.js\"></script>" >> ~/gameflix/TIC80.html
+printf ']; generateFileLinks("roms/TIC80", "TIC-80"); </script><script src=\"script.js\"></script>' >> ~/gameflix/TIC80.html
 
 pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l)
 total=$((pocet+total))
@@ -40,12 +35,7 @@ pocet=0
   ((pocet++))
   ((total++))
 done } < <(ls ~/roms/Atari\ 2600\ ROMS)
-printf ']; generateFileLinks("' >> ~/gameflix/Atari\ 2600\ ROMS.html
-printf "roms/Atari 2600 ROMS" >> ~/gameflix/Atari\ 2600\ ROMS.html
-printf '", "' >> ~/gameflix/Atari\ 2600\ ROMS.html
-printf "Atari_-_2600" >> ~/gameflix/Atari\ 2600\ ROMS.html
-echo '");' >> ~/gameflix/Atari\ 2600\ ROMS.html
-echo "</script><script src=\"script.js\"></script>" >> ~/gameflix/Atari\ 2600\ ROMS.html
+printf ']; generateFileLinks("roms/Atari 2600 ROMS", "Atari_-_2600"); </script><script src=\"script.js\"></script>' >> ~/gameflix/Atari\ 2600\ ROMS.html
 
 IFS=";"
 for each in "${roms[@]}"; do
