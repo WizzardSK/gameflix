@@ -9,19 +9,19 @@ wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gamefli
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 wget -O ~/gameflix/platform.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.js
 
-pocet=$(ls ~/roms/TIC80 -1 | wc -l)
+pocet=$(ls ~/roms/TIC-80 -1 | wc -l)
 total=$((pocet+total))
-echo "<a href=\"TIC80.html\" target=\"main\">TIC80</a> ($pocet)<br />" >> ~/gameflix/systems.html
-echo "*\"TIC80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
-wget -O ~/gameflix/TIC80.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
-echo "<script>bgImage(\"tic80\"); const fileNames = [" >> ~/gameflix/TIC80.html
+echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> ($pocet)<br />" >> ~/gameflix/systems.html
+echo "*\"TIC-80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
+wget -O ~/gameflix/TIC-80.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+echo "<script>bgImage(\"tic80\"); const fileNames = [" >> ~/gameflix/TIC-80.html
 pocet=0
 { while IFS= read -r line; do
-  echo "\"${line}\"," >> ~/gameflix/TIC80.html
+  echo "\"${line}\"," >> ~/gameflix/TIC-80.html
   ((pocet++))
   ((total++))
-done } < <(ls ~/roms/TIC80)
-printf ']; generateFileLinks("roms/TIC80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC80.html
+done } < <(ls ~/roms/TIC-80)
+printf ']; generateFileLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
 
 pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l)
 total=$((pocet+total))
