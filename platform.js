@@ -30,6 +30,16 @@ document.addEventListener("DOMContentLoaded", function() {
     if (location.protocol !== "file:") { document.querySelectorAll("a").forEach(link => { link.addEventListener("click", function(event) { event.preventDefault(); }); }); }
 });
 
+function generateTicLinks(romPath, imagePath) {
+    document.write("<div id=\"figureList\">");
+    fileNames.forEach(fileName => {
+        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName;
+        document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
+        <figure><img loading="lazy" src="https://tic80.com/cart/${fileName}/cover.gif" alt="${fileName}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
+    });
+    document.write("</div>");
+}
+
 function generateFileLinks(romPath, imagePath) {
     document.write("<div id=\"figureList\">");
     fileNames.forEach(fileName => {
