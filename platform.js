@@ -35,7 +35,7 @@ function generateTicLinks(romPath, imagePath) {
     fileNames.forEach(fileName => {
         const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName;
         document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
-        <figure><img loading="lazy" src="https://tic80.com/cart/${fileName}/cover.gif" alt="${fileName}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
+        <figure><img loading="lazy" src="https://tic80.com/cart/${nameWithoutExt}/cover.gif" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
     });
     document.write("</div>");
 }
@@ -45,7 +45,7 @@ function generateFileLinks(romPath, imagePath) {
     fileNames.forEach(fileName => {
         const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName;
         document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
-        <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutExt)}.png" alt="${fileName}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
+        <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutExt)}.png" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
     });
     document.write("</div>");
 }
