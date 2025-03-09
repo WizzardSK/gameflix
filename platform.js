@@ -35,7 +35,7 @@ function generateTicLinks(romPath, imagePath) {
     fileNames.forEach(fileName => {
         const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName;
         document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
-        <figure><img loading="lazy" src="https://tic80.com/cart/${nameWithoutExt}/cover.gif" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
+        <figure><img loading="lazy" src="https://tic80.com/cart/${nameWithoutExt.slice(0, 32)}/cover.gif" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt.slice(33)}</figcaption></figure></a>`);
     });
     document.write("</div>");
 }
