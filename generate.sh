@@ -9,8 +9,7 @@ wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gamefli
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 wget -O ~/gameflix/platform.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.js
 
-pocet=$(ls ~/roms/TIC-80 -1 | wc -l)
-total=$((pocet+total))
+pocet=$(ls ~/roms/TIC-80 -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> ($pocet)<br />" >> ~/gameflix/systems.html
 echo "*\"TIC-80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/TIC-80.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
@@ -18,13 +17,11 @@ echo "<script>bgImage(\"tic80\"); const fileNames = [" >> ~/gameflix/TIC-80.html
 pocet=0
 { while IFS= read -r line; do
   echo "\"${line}\"," >> ~/gameflix/TIC-80.html
-  ((pocet++))
-  ((total++))
+  ((pocet++)); ((total++))
 done } < <(ls ~/roms/TIC-80)
-printf ']; generateFileLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
+printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
 
-pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l)
-total=$((pocet+total))
+pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\"><p>Atari 2600 ROMS</a> ($pocet)<br />" >> ~/gameflix/systems.html
 echo "*\"Atari 2600 ROMS\") core=\"stella_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/Atari\ 2600\ ROMS.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
@@ -32,8 +29,7 @@ echo "<script>bgImage(\"atari2600\"); const fileNames = [" >> ~/gameflix/Atari\ 
 pocet=0
 { while IFS= read -r line; do
   echo "\"${line}\"," >> ~/gameflix/Atari\ 2600\ ROMS.html
-  ((pocet++))
-  ((total++))
+  ((pocet++)); ((total++))
 done } < <(ls ~/roms/Atari\ 2600\ ROMS)
 printf ']; generateFileLinks("roms/Atari 2600 ROMS", "Atari_-_2600");</script><script src=\"script.js\"></script>' >> ~/gameflix/Atari\ 2600\ ROMS.html
 
@@ -71,8 +67,7 @@ for each in "${roms[@]}"; do
   pocet=0
   { while IFS= read -r line; do
     echo "\"${line}\"," >> ~/gameflix/${rom3}.html
-    ((pocet++))
-    ((total++))
+    ((pocet++)); ((total++))
   done } < <(ls ~/${romfolder})
   echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script><script src="script.js"></script>' >> ~/gameflix/${rom3}.html
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
