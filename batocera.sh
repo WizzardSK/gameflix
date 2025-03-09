@@ -22,14 +22,14 @@ FILES=$(echo "$RESPONSE" | grep -oP '{\s*name\s*=\s*"[^"]+",\s*hash\s*=\s*"[^"]+
 echo "$FILES" | while read -r LINE; do
     HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p'); FILENAME=$(echo "$LINE" | sed -n 's/.*filename\s*=\s*"\([^"]*\)".*/\1/p')
     FILE_PATH="${DOWNLOAD_DIR}/${HASH} ${FILENAME}"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"
-    SNAP_PATH="${DOWNLOAD_DIR}/${FILENAME%.*}.gif";  SNAPSHOT_URL="${BASE_URL}/${HASH}/cover.gif"
+    SNAP_PATH="/userdata/thumbs/TIC-80/${HASH} ${FILENAME%.*}.gif"; SNAPSHOT_URL="${BASE_URL}/${HASH}/cover.gif"
     if [ ! -f "$FILE_PATH" ]; then wget -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
     if [ ! -f "$SNAP_PATH" ]; then wget -O "$SNAP_PATH" "$SNAPSHOT_URL"; fi
 done
 
 echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; ls /userdata/roms/tic80 | while read line; do
   line2=${line%.*}
-  hra="<game><path>./${line}</path><name>${line2:33}</name><image>~/../thumbs/TIC-80/${line2:33}.gif</image>"
+  hra="<game><path>./${line}</path><name>${line2:33}</name><image>~/../thumbs/TIC-80/${line2}.gif</image>"
   if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
     echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
   else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/tic80/gamelist.xml; fi    
