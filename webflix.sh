@@ -13,12 +13,11 @@ API_URL="https://tic80.com/api?fn=dir&path=play/Games"
 BASE_URL="https://tic80.com/cart"
 DOWNLOAD_DIR="$HOME/roms/TIC-80"
 NUM_PARALLEL=5  
-mkdir -p "$DOWNLOAD_DIR"
 RESPONSE=$(curl -s "$API_URL")
 FILES=$(echo "$RESPONSE" | grep -oP '{\s*name\s*=\s*"[^"]+",\s*hash\s*=\s*"[^"]+",\s*id\s*=\s*\d+,\s*filename\s*=\s*"[^"]+"\s*}')
 echo "$FILES" | while read -r LINE; do
     HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p')
-    FILENAME=$(echo "$LINE" | sed -n 's/.*filename\s*=\s*"\([^"]*\)".*/\1/p')
+    FILENAME=$(echo "$LINE" |  sed -n 's/.*id\s*=\s*\([0-9]*\).*/\1/p')
     FILE_PATH="${DOWNLOAD_DIR}/${FILENAME}"
     if [ ! -f "$FILE_PATH" ]; then
         echo "Downloading: $FILENAME..."
