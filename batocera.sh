@@ -17,10 +17,9 @@ mount -o bind /userdata/zip/atari2600roms/ROMS /userdata/roms/atari2600/Atari\ 2
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 mkdir -p /userdata/{rom,roms,thumb,thumbs,zip} /userdata/system/.cache/{httpdirfs,ratarmount,rclone}
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
-
 API_URL="https://tic80.com/api?fn=dir&path=play/Games"
 BASE_URL="https://tic80.com/cart"
-DOWNLOAD_DIR="/userdata/roms/TIC-80"
+DOWNLOAD_DIR="/userdata/roms/tic80"
 NUM_PARALLEL=5  
 mkdir -p "$DOWNLOAD_DIR"
 RESPONSE=$(curl -s "$API_URL")
@@ -34,7 +33,6 @@ echo "$FILES" | while read -r LINE; do
         echo "${BASE_URL}/${HASH}/${FILENAME}"
     fi
 done | xargs -P $NUM_PARALLEL -I {} wget -q -P "$DOWNLOAD_DIR" {}
-
 IFS=";"
 > /userdata/system/logs/git.log
 declare -A seen
