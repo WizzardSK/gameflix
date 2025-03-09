@@ -11,7 +11,7 @@ if [ ! -f /userdata/system/ratarmount ]; then wget -O /userdata/system/ratarmoun
 if [ ! -f /userdata/system/cli.tar.gz ]; then wget -O /userdata/system/cli.tar.gz https://batocera.pro/app/cli.tar.gz; tar -xf /userdata/system/cli.tar.gz -C /userdata/system/; fi
 if [ ! -f /userdata/zip/atari2600roms.zip ]; then wget -O /userdata/zip/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
 /userdata/system/cli/run
-mkdir -p /userdata/zip/atari2600roms /userdata/roms/atari2600/Atari\ 2600\ ROMS /userdata/{rom,roms,thumb,thumbs,zip} /userdata/system/.cache/{httpdirfs,ratarmount,rclone}
+mkdir -p /userdata/zip/atari2600roms /userdata/roms/atari2600/Atari\ 2600\ ROMS /userdata/{rom,roms,thumb,thumbs,zip} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/thumbs/TIC-80
 /userdata/system/fuse-zip /userdata/zip/atari2600roms.zip /userdata/zip/atari2600roms
 mount -o bind /userdata/zip/atari2600roms/ROMS /userdata/roms/atari2600/Atari\ 2600\ ROMS
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
@@ -22,12 +22,14 @@ FILES=$(echo "$RESPONSE" | grep -oP '{\s*name\s*=\s*"[^"]+",\s*hash\s*=\s*"[^"]+
 echo "$FILES" | while read -r LINE; do
     HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p'); FILENAME=$(echo "$LINE" | sed -n 's/.*filename\s*=\s*"\([^"]*\)".*/\1/p')
     FILE_PATH="${DOWNLOAD_DIR}/${HASH} ${FILENAME}"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"
+    SNAP_PATH="${DOWNLOAD_DIR}/${FILENAME%.*}.gif";  SNAPSHOT_URL="${BASE_URL}/${HASH}/cover.gif"
     if [ ! -f "$FILE_PATH" ]; then wget -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
+    if [ ! -f "$SNAP_PATH" ]; then wget -O "$SNAP_PATH" "$SNAPSHOT_URL"; fi
 done
 
 echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; ls /userdata/roms/tic80 | while read line; do
   line2=${line%.*}
-  hra="<game><path>./${line}</path><name>${line2:33}</name><image>~/../thumbs/TIC-80/Named_Snaps/${line2:33}.png</image>"
+  hra="<game><path>./${line}</path><name>${line2:33}</name><image>~/../thumbs/TIC-80/${line2:33}.gif</image>"
   if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
     echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
   else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/tic80/gamelist.xml; fi    
@@ -83,12 +85,12 @@ wait
 
 ls /userdata/roms/atari2600/Atari\ 2600\ ROMS | while read line; do
   line2=${line%.*}
-  hra="<game><path>./Atari\ 2600\ ROMS/${line}</path><name>${line2}</name><image>~/../thumbs/Atari - 2600/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/Atari - 2600/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/Atari - 2600/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/Atari - 2600/Named_Logos/${line2}.png</marquee>"
+  hra="<game><path>./Atari 2600 ROMS/${line}</path><name>${line2}</name><image>~/../thumbs/Atari - 2600/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/Atari - 2600/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/Atari - 2600/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/Atari - 2600/Named_Logos/${line2}.png</marquee>"
   if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
     echo "${hra}</game>" >> /userdata/roms/atari2600/gamelist.xml
   else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/atari2600/gamelist.xml; fi    
 done
-echo "<folder><path>./Atari\ 2600\ ROMS</path><name>Atari\ 2600\ ROMS</name><image>~/../thumb/atari2600.png</image></folder>" >> /userdata/roms/atari2600/gamelist.xml
+echo "<folder><path>./Atari 2600 ROMS</path><name>Atari 2600 ROMS</name><image>~/../thumb/atari2600.png</image></folder>" >> /userdata/roms/atari2600/gamelist.xml
 
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
