@@ -23,7 +23,7 @@ printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"scri
 
 pocet=$(ls ~/roms/LowresNX -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> ($pocet)<br />" >> ~/gameflix/systems.html
-echo "*\"TIC-80\") core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh  
+echo "*\"LowresNX\") core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/LowresNX.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"lowresnx\"); const fileNames = [" >> ~/gameflix/LowresNX.html
 pocet=0
