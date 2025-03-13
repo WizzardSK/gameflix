@@ -212,7 +212,7 @@ ngp;TOSEC/SNK/Neo-Geo Pocket/Games/SNK Neo-Geo Pocket - Games.zip;SNK - Neo Geo 
 ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;<i>NGP Color</i> NoIntro;mednafen_ngp_libretro
 ngpc;TOSEC/SNK/Neo-Geo Pocket Color/Games/SNK Neo-Geo Pocket Color - Games.zip;SNK - Neo Geo Pocket Color;<i>NGP Color</i> TOSEC;mednafen_ngp_libretro
 
-dos;archive:exov5_2/eXo/eXoDOS/;DOS;<p><code>MS-DOS</code> eXoDOS;dosbox_pure_libretro
+dos;eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/;DOS;<p><code>MS-DOS</code> eXoDOS;dosbox_pure_libretro
 dos;TOSEC/IBM/PC Compatibles/Games/[IMG]/IBM PC Compatibles - Games - [IMG].zip;DOS;<code>MS-DOS</code> TOSEC;dosbox_pure_libretro
 dos;TOSEC-ISO/IBM/PC Compatibles/CD/Games/[ISO];DOS;<code>MS-DOS</code> ISO;dosbox_pure_libretro
 
