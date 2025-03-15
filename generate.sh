@@ -21,17 +21,17 @@ pocet=0
 done } < <(ls ~/roms/TIC-80)
 printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
 
-pocet=$(ls ~/roms/LowresNX -1 | wc -l); total=$((pocet+total))
-echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> ($pocet)<br />" >> ~/gameflix/systems.html
-echo "*\"LowresNX\") core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh  
-wget -O ~/gameflix/LowresNX.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
-echo "<script>bgImage(\"lowresnx\"); const fileNames = [" >> ~/gameflix/LowresNX.html
-pocet=0
-{ while IFS= read -r line; do
-  echo "\"${line}\"," >> ~/gameflix/LowresNX.html
-  ((pocet++)); ((total++))
-done } < <(ls ~/roms/LowresNX)
-printf ']; generateLNXLinks("roms/LowresNX", "LowresNX");</script><script src=\"script.js\"></script>' >> ~/gameflix/LowresNX.html
+#pocet=$(ls ~/roms/LowresNX -1 | wc -l); total=$((pocet+total))
+#echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> ($pocet)<br />" >> ~/gameflix/systems.html
+#echo "*\"LowresNX\") core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh  
+#wget -O ~/gameflix/LowresNX.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+#echo "<script>bgImage(\"lowresnx\"); const fileNames = [" >> ~/gameflix/LowresNX.html
+#pocet=0
+#{ while IFS= read -r line; do
+#  echo "\"${line}\"," >> ~/gameflix/LowresNX.html
+#  ((pocet++)); ((total++))
+#done } < <(ls ~/roms/LowresNX)
+#printf ']; generateLNXLinks("roms/LowresNX", "LowresNX");</script><script src=\"script.js\"></script>' >> ~/gameflix/LowresNX.html
 
 pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\"><p>Atari 2600 ROMS</a> ($pocet)<br />" >> ~/gameflix/systems.html
