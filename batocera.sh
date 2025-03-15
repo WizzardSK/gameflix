@@ -38,22 +38,12 @@ curl -s "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -
 done
 
 echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; ls /userdata/roms/tic80 | while read line; do
-  line2=${line%.*}
-  hra="<game><path>./${line}</path><name>${line2:33}</name><image>~/../thumbs/TIC-80/${line2}.gif</image>"
-#  if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
-  echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
-#  else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/tic80/gamelist.xml; fi    
-done
-echo "</gameList>" >> /userdata/roms/tic80/gamelist.xml
+  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2:33}</name><image>~/../thumbs/TIC-80/${line2}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
+done; echo "</gameList>" >> /userdata/roms/tic80/gamelist.xml
 
 echo "<gameList>" > /userdata/roms/wasm4/gamelist.xml; ls /userdata/roms/wasm4 | while read line; do
-  line2=${line%.*}
-  hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/WASM-4/${line2}.png</image>"
-#  if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
-  echo "${hra}</game>" >> /userdata/roms/wasm4/gamelist.xml
-#  else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/wasm4/gamelist.xml; fi    
-done
-echo "</gameList>" >> /userdata/roms/wasm4/gamelist.xml
+  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/WASM-4/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/wasm4/gamelist.xml
+done; echo "</gameList>" >> /userdata/roms/wasm4/gamelist.xml
 
 IFS=";"
 > /userdata/system/logs/git.log
@@ -99,8 +89,7 @@ for each in "${roms[@]}"; do
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   fi ) &
-done
-wait
+done; wait
 
 ls /userdata/roms/atari2600/Atari\ 2600\ ROMS | while read line; do
   line2=${line%.*}
@@ -108,8 +97,7 @@ ls /userdata/roms/atari2600/Atari\ 2600\ ROMS | while read line; do
   if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
     echo "${hra}</game>" >> /userdata/roms/atari2600/gamelist.xml
   else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/atari2600/gamelist.xml; fi    
-done
-echo "<folder><path>./Atari 2600 ROMS</path><name>Atari 2600 ROMS</name><image>~/../thumb/atari2600.png</image></folder>" >> /userdata/roms/atari2600/gamelist.xml
+done; echo "<folder><path>./Atari 2600 ROMS</path><name>Atari 2600 ROMS</name><image>~/../thumb/atari2600.png</image></folder>" >> /userdata/roms/atari2600/gamelist.xml
 
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
