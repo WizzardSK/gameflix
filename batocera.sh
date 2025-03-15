@@ -27,14 +27,33 @@ echo "$FILES" | while read -r LINE; do
     if [ ! -f "$SNAP_PATH" ]; then wget -O "$SNAP_PATH" "$SNAPSHOT_URL"; fi
 done
 
+BASE_URL="https://wasm4.org/play"; CARTS_URL="https://wasm4.org/carts"; ROM_DIR="/userdata/roms/wasm4"; IMG_DIR="/userdata/thumbs/WASM-4"
+mkdir -p "$ROM_DIR" "$IMG_DIR"
+curl -s "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -r GAME; do
+    for EXT in wasm png; do
+        FILE="${ROM_DIR}/$GAME.$EXT"
+        [[ "$EXT" == "png" ]] && FILE="${IMG_DIR}/$GAME.$EXT"
+        [[ -f "$FILE" ]] || wget -O "$FILE" "$CARTS_URL/$GAME.$EXT"
+    done
+done
+
 echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; ls /userdata/roms/tic80 | while read line; do
   line2=${line%.*}
   hra="<game><path>./${line}</path><name>${line2:33}</name><image>~/../thumbs/TIC-80/${line2}.gif</image>"
-  if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
-    echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
-  else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/tic80/gamelist.xml; fi    
+#  if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
+  echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
+#  else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/tic80/gamelist.xml; fi    
 done
 echo "</gameList>" >> /userdata/roms/tic80/gamelist.xml
+
+echo "<gameList>" > /userdata/roms/wasm4/gamelist.xml; ls /userdata/roms/wasm4 | while read line; do
+  line2=${line%.*}
+  hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/WASM-4/${line2}.png</image>"
+#  if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
+  echo "${hra}</game>" >> /userdata/roms/wasm4/gamelist.xml
+#  else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/wasm4/gamelist.xml; fi    
+done
+echo "</gameList>" >> /userdata/roms/wasm4/gamelist.xml
 
 IFS=";"
 > /userdata/system/logs/git.log
