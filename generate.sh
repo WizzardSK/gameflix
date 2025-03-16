@@ -9,9 +9,9 @@ wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gamefli
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 wget -O ~/gameflix/platform.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.js
 
-echo "<figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/tic80.png'><figcaption><a href='TIC-80.html'>TIC-80</a><br></figcaption>
-<figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/wasm4.png'><figcaption><a href='WASM-4.html'>WASM-4</a><br></figcaption>
-" >> ~/gameflix/main.html
+echo "<figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/tic80.png'><figcaption><a href='TIC-80.html'>TIC-80</a><br></figcaption></figure>
+<figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/wasm4.png'><figcaption><a href='WASM-4.html'>WASM-4</a><br></figcaption></figure>"
+>> ~/gameflix/main.html
 
 pocet=$(ls ~/roms/TIC-80 -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> ($pocet)<br />" >> ~/gameflix/systems.html
