@@ -9,29 +9,49 @@ wget -O ~/gameflix/style.css https://raw.githubusercontent.com/WizzardSK/gamefli
 wget -O ~/gameflix/script.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/script.js
 wget -O ~/gameflix/platform.js https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.js
 
-pocet=$(ls ~/roms/TIC-80 -1 | wc -l); total=$((pocet+total))
-echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> ($pocet)<br />" >> ~/gameflix/systems.html
-echo "*\"TIC-80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
-wget -O ~/gameflix/TIC-80.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
-echo "<script>bgImage(\"tic80\"); const fileNames = [" >> ~/gameflix/TIC-80.html
-pocet=0
-{ while IFS= read -r line; do
-  echo "\"${line}\"," >> ~/gameflix/TIC-80.html
-  ((pocet++)); ((total++))
-done } < <(ls ~/roms/TIC-80)
-printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
+total=0
+process_system() {
+    local system="$1"
+    local core="$2"
+    local count=$(ls ~/roms/$system -1 | wc -l)
+    total=$((total + count))
+    echo "<a href=\"$system.html\" target=\"main\">$system</a> ($count)<br />" >> ~/gameflix/systems.html
+    echo "*\"$system\") core=\"$core\";;" >> ~/gameflix/retroarch.sh  
+    wget -O ~/gameflix/$system.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+    echo "<script>bgImage(\"$system\"); const fileNames = [" >> ~/gameflix/$system.html
+    local pocet=0
+    { while IFS= read -r line; do
+        echo "\"${line}\"," >> ~/gameflix/$system.html
+        ((pocet++)); ((total++))
+    done } < <(ls ~/roms/$system)
+    printf ']; generate%sLinks("roms/%s", "%s");</script><script src=\"script.js\"></script>' "$system" "$system" "$system" >> ~/gameflix/$system.html
+}
+process_system "TIC-80" "tic80_libretro"
+process_system "WASM-4" "wasm4_libretro"
 
-pocet=$(ls ~/roms/WASM-4 -1 | wc -l); total=$((pocet+total))
-echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> ($pocet)<br />" >> ~/gameflix/systems.html
-echo "*\"WASM-4\") core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh  
-wget -O ~/gameflix/WASM-4.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
-echo "<script>bgImage(\"wasm4\"); const fileNames = [" >> ~/gameflix/WASM-4.html
-pocet=0
-{ while IFS= read -r line; do
-  echo "\"${line}\"," >> ~/gameflix/WASM-4.html
-  ((pocet++)); ((total++))
-done } < <(ls ~/roms/WASM-4)
-printf ']; generateWasmLinks("roms/WASM-4", "WASM-4");</script><script src=\"script.js\"></script>' >> ~/gameflix/WASM-4.html
+#pocet=$(ls ~/roms/TIC-80 -1 | wc -l); total=$((pocet+total))
+#echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> ($pocet)<br />" >> ~/gameflix/systems.html
+#echo "*\"TIC-80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
+#wget -O ~/gameflix/TIC-80.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+#echo "<script>bgImage(\"tic80\"); const fileNames = [" >> ~/gameflix/TIC-80.html
+#pocet=0
+#{ while IFS= read -r line; do
+#  echo "\"${line}\"," >> ~/gameflix/TIC-80.html
+#  ((pocet++)); ((total++))
+#done } < <(ls ~/roms/TIC-80)
+#printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
+
+#pocet=$(ls ~/roms/WASM-4 -1 | wc -l); total=$((pocet+total))
+#echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> ($pocet)<br />" >> ~/gameflix/systems.html
+#echo "*\"WASM-4\") core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh  
+#wget -O ~/gameflix/WASM-4.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+#echo "<script>bgImage(\"wasm4\"); const fileNames = [" >> ~/gameflix/WASM-4.html
+#pocet=0
+#{ while IFS= read -r line; do
+#  echo "\"${line}\"," >> ~/gameflix/WASM-4.html
+#  ((pocet++)); ((total++))
+#done } < <(ls ~/roms/WASM-4)
+#printf ']; generateWasmLinks("roms/WASM-4", "WASM-4");</script><script src=\"script.js\"></script>' >> ~/gameflix/WASM-4.html
 
 pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\"><p>Atari 2600 ROMS</a> ($pocet)<br />" >> ~/gameflix/systems.html
