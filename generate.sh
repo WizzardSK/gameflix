@@ -16,7 +16,7 @@ echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> ($pocet)<br />" >> ~/ga
 echo "*\"TIC-80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/TIC-80.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"tic80\"); const fileNames = [" >> ~/gameflix/TIC-80.html
-pocet=0
+((platforms++))
 { while IFS= read -r line; do
   echo "\"${line}\"," >> ~/gameflix/TIC-80.html
   ((pocet++)); ((total++))
@@ -28,7 +28,7 @@ echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> ($pocet)<br />" >> ~/ga
 echo "*\"WASM-4\") core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/WASM-4.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"wasm4\"); const fileNames = [" >> ~/gameflix/WASM-4.html
-pocet=0
+((platforms++))
 { while IFS= read -r line; do
   echo "\"${line}\"," >> ~/gameflix/WASM-4.html
   ((pocet++)); ((total++))
