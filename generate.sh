@@ -42,7 +42,7 @@ echo "<script>bgImage(\"uzebox\"); const fileNames = [" >> ~/gameflix/Uzebox.htm
   echo "\"${line}\"," >> ~/gameflix/Uzebox.html
   ((pocet++)); ((total++))
 done } < <(ls *.uze *.UZE ~/roms/Uzebox)
-printf ']; generateWasmLinks("roms/Uzebox", "Uzebox");</script><script src=\"script.js\"></script>' >> ~/gameflix/Uzebox.html
+printf ']; generateUzeLinks("roms/Uzebox", "Uzebox");</script><script src=\"script.js\"></script>' >> ~/gameflix/Uzebox.html
 
 pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\"><p>Atari 2600 ROMS</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Atari 2600 ROMS\") core=\"stella_libretro\";;" >> ~/gameflix/retroarch.sh  
