@@ -55,7 +55,9 @@ done; echo "</gameList>" >> /userdata/roms/uzebox/gamelist.xml
 if [ ! -d "/userdata/thumbs/Uzebox" ]; then
   git clone --depth 1 "https://github.com/WizzardSK/Uzebox.git" /userdata/thumbs/Uzebox 2>&1 | tee -a /userdata/system/logs/git.log
 else
-  git config --global --add safe.directory /userdata/thumbs/Uzebox; git -C /userdata/thumbs/Uzebox config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log; git -C /userdata/thumbs/Uzebox pull 2>&1 | tee -a /userdata/system/logs/git.log
+  git config --global --add safe.directory /userdata/thumbs/Uzebox
+  git -C /userdata/thumbs/Uzebox config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log
+  git -C /userdata/thumbs/Uzebox pull 2>&1 | tee -a /userdata/system/logs/git.log
 fi
 
 IFS=";"
