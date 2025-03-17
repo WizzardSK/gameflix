@@ -16,7 +16,7 @@ echo "$FILES" | while read -r LINE; do
 done
 
 if [ ! -f ~/share/zip/uzebox.zip ]; then wget -O ~/share/zip/uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; fi
-fuse-zip ~/share/zip/uzebox.zip ~/roms/Uzebox
+unzip -j ~/share/zip/uzebox.zip -d ~/roms/Uzebox
 
 IFS=";"
 for each in "${roms[@]}"; do
