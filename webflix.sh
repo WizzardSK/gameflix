@@ -15,8 +15,7 @@ echo "$FILES" | while read -r LINE; do
   FILE_PATH="${DOWNLOAD_DIR}/${HASH} ${FILENAME}"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"; if [ ! -f "$FILE_PATH" ]; then wget -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
 done
 
-if [ ! -f ~/share/zip/uzebox.zip ]; then wget -O ~/share/zip/uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; fi
-unzip -j ~/share/zip/uzebox.zip -d ~/roms/Uzebox
+if [ ! -f ~/share/zip/uzebox.zip ]; then wget -O ~/share/zip/uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; unzip -j ~/share/zip/uzebox.zip -d ~/roms/Uzebox; fi
 
 IFS=";"
 for each in "${roms[@]}"; do
