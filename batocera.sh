@@ -48,18 +48,9 @@ echo "<gameList>" > /userdata/roms/wasm4/gamelist.xml; ls /userdata/roms/wasm4 |
   line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/WASM-4/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/wasm4/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/wasm4/gamelist.xml
 
-echo "<gameList>" > /userdata/roms/uzebox/gamelist.xml
-find /userdata/roms/uzebox/ -maxdepth 1 -type f \( -iname "*.uze" \) -print0 | while IFS= read -r -d '' file; do
-    line=$(basename "$file")
-    line2="${line%.*}"
-    hra="<game><path>./${line}</path><name>${line2}</name><image>${HOME}/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"
-    echo "${hra}</game>" >> /userdata/roms/uzebox/gamelist.xml
-done
-echo "</gameList>" >> /userdata/roms/uzebox/gamelist.xml
-
-#echo "<gameList>" > /userdata/roms/uzebox/gamelist.xml; ls /userdata/roms/uzebox/*.uze /userdata/roms/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
-#  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/uzebox/gamelist.xml
-#done; echo "</gameList>" >> /userdata/roms/uzebox/gamelist.xml
+echo "<gameList>" > /userdata/roms/uzebox/gamelist.xml; ls /userdata/roms/uzebox | while read line; do
+  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/uzebox/gamelist.xml
+done; echo "</gameList>" >> /userdata/roms/uzebox/gamelist.xml
 
 if [ ! -d "/userdata/thumbs/Uzebox" ]; then
   git clone --depth 1 "https://github.com/WizzardSK/Uzebox.git" /userdata/thumbs/Uzebox 2>&1 | tee -a /userdata/system/logs/git.log
