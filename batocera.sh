@@ -38,7 +38,7 @@ curl -s "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -
 done
 
 if [ ! -f /userdata/zip/uzebox.zip ]; then wget -O /userdata/zip/uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; fi
-unzip -j /userdata/zip/uzebox.zip -d /userdata/roms/Uzebox
+unzip -j /userdata/zip/uzebox.zip -d /userdata/roms/uzebox
 
 echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; ls /userdata/roms/tic80 | while read line; do
   line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2:33}</name><image>~/../thumbs/TIC-80/${line2}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
