@@ -46,7 +46,7 @@ function generateWasmLinks(romPath, imagePath) {
 function generateUzeLinks(romPath, imagePath) {
     document.write("<div id=\"figureList\">");
     fileNames.forEach(fileName => {
-        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName; document.write(`<a href="${encodeURIComponent(fileName)}" target="main">
+        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName; document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
         <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutExt)}.png" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
