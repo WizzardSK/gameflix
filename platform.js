@@ -25,41 +25,38 @@ let text = `<div id=\"topbar\"><link rel=\"stylesheet\" type=\"text/css\" href=\
 <br /><br /></div><br /><br /><br />`;
 
 document.write(text);
-
-document.addEventListener("DOMContentLoaded", function() {
-    if (location.protocol !== "file:") { document.querySelectorAll("a").forEach(link => { link.addEventListener("click", function(event) { event.preventDefault(); }); }); }
-});
+document.addEventListener("DOMContentLoaded", function() { if (location.protocol !== "file:") { document.querySelectorAll("a").forEach(link => { link.addEventListener("click", function(event) { event.preventDefault(); }); }); } });
 
 function generateTicLinks(romPath, imagePath) {
     document.write("<div id=\"figureList\">");
     fileNames.forEach(fileName => {
-        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName;
-        document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
+        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName; document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
         <figure><img loading="lazy" src="https://tic80.com/cart/${nameWithoutExt.slice(0, 32)}/cover.gif" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt.slice(33)}</figcaption></figure></a>`);
-    });
-    document.write("</div>");
+    }); document.write("</div>");
 }
 
 function generateWasmLinks(romPath, imagePath) {
     document.write("<div id=\"figureList\">");
     fileNames.forEach(fileName => {
-        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName;
-        document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
+        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName; document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
         <figure><img loading="lazy" src="https://wasm4.org/carts/${nameWithoutExt}.png" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
-    });
-    document.write("</div>");
+    }); document.write("</div>");
+}
+
+function generateUzeLinks(romPath, imagePath) {
+    document.write("<div id=\"figureList\">");
+    fileNames.forEach(fileName => {
+        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName; document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
+        <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutExt)}.png" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
+    }); document.write("</div>");
 }
 
 function generateFileLinks(romPath, imagePath) {
     document.write("<div id=\"figureList\">");
     fileNames.forEach(fileName => {
-        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName;
-        document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
+        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName; document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
         <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutExt)}.png" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
-    });
-    document.write("</div>");
+    }); document.write("</div>");
 }
 
-function bgImage(platform) {
-    document.write(`<style> figure { background-image: url('https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${platform}.png'); } </style>`);
-}
+function bgImage(platform) { document.write(`<style> figure { background-image: url('https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${platform}.png'); } </style>`); }
