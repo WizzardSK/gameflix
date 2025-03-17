@@ -48,6 +48,16 @@ echo "<gameList>" > /userdata/roms/wasm4/gamelist.xml; ls /userdata/roms/wasm4 |
   line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/WASM-4/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/wasm4/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/wasm4/gamelist.xml
 
+echo "<gameList>" > /userdata/roms/uzebox/gamelist.xml; ls /userdata/roms/uzebox/*.uze /userdata/roms/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
+  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/uzebox/gamelist.xml
+done; echo "</gameList>" >> /userdata/roms/uzebox/gamelist.xml
+
+if [ ! -d "/userdata/thumbs/Uzebox" ]; then
+  git clone --depth 1 "https://github.com/WizzardSK/Uzebox.git" /userdata/thumbs/Uzebox 2>&1 | tee -a /userdata/system/logs/git.log
+else
+  git config --global --add safe.directory /userdata/thumbs/Uzebox; git -C /userdata/thumbs/Uzebox config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log; git -C /userdata/thumbs/Uzebox pull 2>&1 | tee -a /userdata/system/logs/git.log
+fi
+
 IFS=";"
 > /userdata/system/logs/git.log
 declare -A seen
