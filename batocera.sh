@@ -20,22 +20,25 @@ rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --
 API_URL="https://tic80.com/api?fn=dir&path=play/Games"; BASE_URL="https://tic80.com/cart"; DOWNLOAD_DIR="/userdata/roms/tic80"; RESPONSE=$(curl -s "$API_URL")
 FILES=$(echo "$RESPONSE" | grep -oP '{\s*name\s*=\s*"[^"]+",\s*hash\s*=\s*"[^"]+",\s*id\s*=\s*\d+,\s*filename\s*=\s*"[^"]+"\s*}')
 echo "$FILES" | while read -r LINE; do
-    HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p'); FILENAME=$(echo "$LINE" | sed -n 's/.*filename\s*=\s*"\([^"]*\)".*/\1/p')
-    FILE_PATH="${DOWNLOAD_DIR}/${HASH} ${FILENAME}"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"
-    SNAP_PATH="/userdata/thumbs/TIC-80/${HASH} ${FILENAME%.*}.gif"; SNAPSHOT_URL="${BASE_URL}/${HASH}/cover.gif"
-    if [ ! -f "$FILE_PATH" ]; then wget -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
-    if [ ! -f "$SNAP_PATH" ]; then wget -O "$SNAP_PATH" "$SNAPSHOT_URL"; fi
+  HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p'); FILENAME=$(echo "$LINE" | sed -n 's/.*filename\s*=\s*"\([^"]*\)".*/\1/p')
+  FILE_PATH="${DOWNLOAD_DIR}/${HASH} ${FILENAME}"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"
+  SNAP_PATH="/userdata/thumbs/TIC-80/${HASH} ${FILENAME%.*}.gif"; SNAPSHOT_URL="${BASE_URL}/${HASH}/cover.gif"
+  if [ ! -f "$FILE_PATH" ]; then wget -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
+  if [ ! -f "$SNAP_PATH" ]; then wget -O "$SNAP_PATH" "$SNAPSHOT_URL"; fi
 done
 
 BASE_URL="https://wasm4.org/play"; CARTS_URL="https://wasm4.org/carts"; ROM_DIR="/userdata/roms/wasm4"; IMG_DIR="/userdata/thumbs/WASM-4"
 mkdir -p "$ROM_DIR" "$IMG_DIR"
 curl -s "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -r GAME; do
-    for EXT in wasm png; do
-        FILE="${ROM_DIR}/$GAME.$EXT"
-        [[ "$EXT" == "png" ]] && FILE="${IMG_DIR}/$GAME.$EXT"
-        [[ -f "$FILE" ]] || wget -O "$FILE" "$CARTS_URL/$GAME.$EXT"
-    done
+  for EXT in wasm png; do
+    FILE="${ROM_DIR}/$GAME.$EXT"
+    [[ "$EXT" == "png" ]] && FILE="${IMG_DIR}/$GAME.$EXT"
+    [[ -f "$FILE" ]] || wget -O "$FILE" "$CARTS_URL/$GAME.$EXT"
+  done
 done
+
+if [ ! -f /userdata/zip/uzebox.zip ]; then wget -O /userdata/zip/uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; fi
+unzip -j /userdata/zip/uzebox.zip -d /userdata/roms/Uzebox
 
 echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; ls /userdata/roms/tic80 | while read line; do
   line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2:33}</name><image>~/../thumbs/TIC-80/${line2}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
