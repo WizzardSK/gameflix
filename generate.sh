@@ -37,7 +37,7 @@ pocet=$(ls ~/roms/LowresNX -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"LowresNX\") core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/LowresNX.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"lowresnx\"); const fileNames = [" >> ~/gameflix/LowresNX.html; ((platforms++))
-tail -n +2 ~/lowresnx.csv | while IFS=, read -r id column2 column3; do if [[ -n "$column2" && -n "$column3" ]]; then echo "$column2,$column3" >> ~/gameflix/LowresNX.html; fi; done
+tail -n +2 ~/lowresnx.csv | while IFS=, read -r id column2 column3; do if [[ -n "$column2" && -n "$column3" ]]; then echo "\"$column2,$column3\"," >> ~/gameflix/LowresNX.html; fi; done
 printf ']; generateLrNXLinks("roms/LowresNX", "LowresNX");</script><script src=\"script.js\"></script>' >> ~/gameflix/LowresNX.html
 
 
