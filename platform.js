@@ -26,6 +26,7 @@ let text = `<div id=\"topbar\"><link rel=\"stylesheet\" type=\"text/css\" href=\
 
 document.write(text);
 document.addEventListener("DOMContentLoaded", function() { if (location.protocol !== "file:") { document.querySelectorAll("a").forEach(link => { link.addEventListener("click", function(event) { event.preventDefault(); }); }); } });
+function bgImage(platform) { document.write(`<style> figure { background-image: url('https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${platform}.png'); } </style>`); }
 
 function generateTicLinks(romPath, imagePath) {
     document.write("<div id=\"figureList\">");
@@ -40,6 +41,14 @@ function generateWasmLinks(romPath, imagePath) {
     fileNames.forEach(fileName => {
         const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName; document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
         <figure><img loading="lazy" src="https://wasm4.org/carts/${nameWithoutExt}.png" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
+    }); document.write("</div>");
+}
+
+function generateLrNXLinks(romPath, imagePath) {
+    document.write("<div id=\"figureList\">");
+    fileNames.forEach(fileName => {
+        const [subor, obrazok] = fileName.split(','); document.write(`<a href="../${romPath}/${encodeURIComponent(subor)}" target="main">
+        <figure><img loading="lazy" src="https://lowresnx.inutilis.com/uploads/${obrazok}" alt="${subor.slice(11)}"><figcaption>${subor.slice(11)}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
 
@@ -58,5 +67,3 @@ function generateFileLinks(romPath, imagePath) {
         <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutExt)}.png" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
-
-function bgImage(platform) { document.write(`<style> figure { background-image: url('https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${platform}.png'); } </style>`); }
