@@ -21,3 +21,10 @@ while true; do
     echo "Stiahnutá stránka $page."
     ((page++))
 done
+
+git config --global user.name "GitHub Actions"
+git config --global user.email "actions@github.com"
+
+git add "$IMAGE_LIST"
+git commit -m "Automatická aktualizácia image_list.txt ($(date +'%Y-%m-%d %H:%M:%S'))"
+git push
