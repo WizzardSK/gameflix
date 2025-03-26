@@ -1,8 +1,9 @@
 name: Run Script Periodically
 
 on:
-  schedule:
-      - cron: "*/5 * * * *"
+  push:  # Spustí sa pri každom pushnutí (teda aj pri commite)
+    branches:
+      - main  # Môžeš zmeniť na inú vetvu
   workflow_dispatch:  # Umožní manuálne spustenie
 
 jobs:
