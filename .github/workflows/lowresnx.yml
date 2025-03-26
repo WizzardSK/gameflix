@@ -2,7 +2,7 @@ name: Run Script Periodically
 
 on:
   schedule:
-    - cron: "0 */1 * * *"  # Spustí sa každých 1 hodín
+      - cron: "*/5 * * * *"
   workflow_dispatch:  # Umožní manuálne spustenie
 
 jobs:
