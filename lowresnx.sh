@@ -21,11 +21,13 @@ while true; do
         nx_file="${image%.png}.nx"  # Nahradíme .png za .nx
         nx_url="https://lowresnx.inutilis.com/uploads/$nx_file"
 
-        # Skontrolujeme, či existuje súbor .nx na serveri
-        if curl --head --silent --fail "$nx_url" > /dev/null; then
-            echo "$image,$nx_file" >> "$IMAGE_LIST"  # Zapíšeme PNG aj NX
+        # Skontrolujeme HTTP kód odpovede servera
+        http_code=$(curl --head --silent --output /dev/null --write-out "%{http_code}" "$nx_url")
+
+        if [[ "$http_code" == "200" ]]; then
+            echo "$image,$nx_file" >> "$IMAGE_LIST"  # Ak existuje, zapíšeme PNG aj NX
         else
-            echo "$image" >> "$IMAGE_LIST"  # Zapíšeme iba PNG
+            echo "$image" >> "$IMAGE_LIST"  # Ak neexistuje, zapíšeme iba PNG
         fi
     done
 
