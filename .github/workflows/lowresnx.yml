@@ -1,0 +1,17 @@
+name: Run Script Periodically
+
+on:
+  schedule:
+    - cron: "0 */1 * * *"  # Spustí sa každých 1 hodín
+  workflow_dispatch:  # Umožní manuálne spustenie
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Stiahne kód repozitára
+
+      - name: Run script
+        run: bash lowresnx.sh  # Spustí tvoj skript
