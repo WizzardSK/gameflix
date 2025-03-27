@@ -12,22 +12,15 @@ CSV_FILE="output.csv"
 # Zápis hlavičky CSV
 echo "ID,Názov,Obrázok" > "$CSV_FILE"
 
-# Parsovanie obsahu stránky
-echo "$CONTENT" | awk '
-    /<a href="topic.php\?id=/ {
-        match($0, /topic.php\?id=([0-9]+)/, id);
-    }
-    /<img class="thumbnail pixelated" src="uploads\// {
-        match($0, /uploads\/([^"]+)/, img);
-    }
-    /<h3>/ {
-        match($0, /<h3>([^<]+)<\/h3>/, title);
-        if (id[1] && title[1] && img[1]) {
-            print id[1] "," title[1] "," img[1];
-            delete id; delete title; delete img;
-        }
-    }
-' >> "$CSV_FILE"
+# Extrakcia ID, názvu a obrázka
+IDs=($(echo "$CONTENT" | grep -oP 'topic.php\?id=\K[0-9]+'))
+Titles=($(echo "$CONTENT" | grep -oP '<h3>\K[^<]+'))
+Images=($(echo "$CONTENT" | grep -oP 'uploads/\K[^"]+'))
+
+# Skombinovanie a uloženie do CSV
+for i in "${!IDs[@]}"; do
+    echo "${IDs[$i]},${Titles[$i]},${Images[$i]}" >> "$CSV_FILE"
+done
 
 echo "Hotovo! Dáta boli uložené do $CSV_FILE"
 
