@@ -1,35 +1,27 @@
 #!/bin/bash
 
-IMAGE_LIST="image_list.txt"
-> "$IMAGE_LIST"
-page=1
+# URL na stiahnutie
+URL="https://lowresnx.inutilis.com/programs.php?category=game&sort=new&page=1"
 
-while true; do
-    echo "Spracovávam stránku $page..."
-    content=$(curl -s "https://lowresnx.inutilis.com/programs.php?category=game&sort=new&page=$page")
-    [[ "$content" == *"No results"* ]] && echo "Koniec stránok." && break
+# Stiahnutie obsahu stránky do pamäte
+CONTENT=$(curl -s "$URL")
 
-    while read -r id image; do
-        nx_file="${image%.png}.nx"
-        nx_url="https://lowresnx.inutilis.com/uploads/$nx_file"
+# Cieľový CSV súbor
+CSV_FILE="output.csv"
 
-        if [[ $(curl --head --silent --output /dev/null --write-out "%{http_code}" "$nx_url") == "200" ]]; then
-            echo "$image,$nx_file" >> "$IMAGE_LIST"
-            continue
-        fi
+# Zápis hlavičky CSV
+echo "ID,Názov,Obrázok" > "$CSV_FILE"
 
-        topic_page=$(curl -s "https://lowresnx.inutilis.com/topic.php?id=$id")
-        found_nx=$(echo "$topic_page" | grep -oP 'href="uploads/\K[^"]+\.nx"' | head -n 1)
-
-        if [[ -n "$found_nx" ]]; then
-            echo "$image,$found_nx" >> "$IMAGE_LIST"
-        else
-            echo "$image" >> "$IMAGE_LIST"
-        fi
-    done < <(echo "$content" | grep -oP '<a href="topic\.php\?id=\K\d+|src="uploads/\K[^"]+\.png"' | paste - -)
-
-    ((page++))
+# Parsovanie obsahu stránky
+echo "$CONTENT" | grep -oP '<a href="topic.php\?id=\K[0-9]+(?=">).*?<h3>\K.*?(?=</h3>).*?src="uploads/\K[^"]+' | \
+while IFS= read -r line; do
+    ID=$(echo "$line" | cut -d' ' -f1)
+    TITLE=$(echo "$line" | cut -d' ' -f2- | rev | cut -d' ' -f2- | rev)
+    IMAGE=$(echo "$line" | awk '{print $NF}')
+    echo "$ID,$TITLE,$IMAGE" >> "$CSV_FILE"
 done
+
+echo "Hotovo! Dáta boli uložené do $CSV_FILE"
 
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
