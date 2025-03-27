@@ -1,0 +1,61 @@
+ID,Názov,Obrázok,NX_Súbor
+3686,The Pasture Of The Other Realm,JR9cvdaf2d_The_Pasture_Of_The_Other_Realm3.png,JR9cvdaf2d_The_Pasture_Of_The_Other_Realm3.nx
+3685,Poptris (Tetris variant),GneYcjdAyP_Poptris_030.png,GneYcjdAyP_Poptris_030.nx
+3684,SumDoku,dRQhEWf3BR_SumDoku.png,dRQhEWf3BR_SumDoku.nx
+3680,DWELLER,AirFvk4MDh_IMG_4BFA44DB07681.jpeg,AirFvk4MDh_Dweller1.1.nx
+3677,SUM SUM,x5idRJ6Ms9_SUMSUM.png,x5idRJ6Ms9_SUMSUM.nx
+3676,sNOw ESCAPE,RcBHijrWxk_sNOw_ESCAPE.png,RcBHijrWxk_sNOw_ESCAPE.nx
+3674,Can&#039;t Sleep,jj5bjWroRM_Cant_Sleep.png,jj5bjWroRM_Cant_Sleep.nx
+3673,Scroller Sampler game,r5p3rx56Z6_Scroller_Sampler_game.png,r5p3rx56Z6_Scroller_Sampler_game.nx
+3671,Moon Zombies v0.1 WIP,JYDmrQumdB_Zombies.png,JYDmrQumdB_Zombies.nx
+3669,Builder,bLufBU9KrD_Builder_remix_Smiley.png,bLufBU9KrD_Builder_remix_Smiley.nx
+3668,Nine Tiles game,qqzDBiFV4J_Nine_Tiles_game.png,qqzDBiFV4J_Nine_Tiles_game.nx
+3664,Etcha Sketch,rbqhnpXyXv_Etcha_Sketch.png,rbqhnpXyXv_Etcha_Sketch.nx
+3657,TerraCraft NX,8Je3jccYxT_TerraCraft_NX_0.1.png,8Je3jccYxT_TerraCraft_NX_0.1.nx
+3655,Chach naano :3,AhnJ6hjXyE_catchnaano_2.png,AhnJ6hjXyE_catchnaano_2.nx
+3647,Blimey Crikey .... test,29SSXMty6G_Blimey_Crikey_...._test.png,29SSXMty6G_Blimey_Crikey_...._test.nx
+3641,Journey in Space,ggmMX2ehPV_IMG_0526.jpeg,ggmMX2ehPV_Journey_In_Space.nx
+3639,Mission Impossible,gkQHzvAqYp_Mission_Impossible.png,gkQHzvAqYp_Mission_Impossible.nx
+3631,Invitation To Balloon Sniper 22,APDDsnrVrM_Birthday_22.png,APDDsnrVrM_Birthday_22.nx
+3630,Star Trek - Explorer (TOS era),exMWYQAVru_Sar_Trek__Explorer_Beta_10.png,exMWYQAVru_Sar_Trek__Explorer_Beta_10.nx
+3629,Tanx vs Tanx ,FSWM8zKACf_Tanx_VS_Tanx_0.02.png,FSWM8zKACf_Tanx_VS_Tanx_0.02.nx
+3617,Dots,s4qhqVh6mt_Dots_1.9.png,s4qhqVh6mt_Dots_1.9.nx
+3616,Simply Golf,JVFo23hr2F_Simply_Golf_1.1.png,JVFo23hr2F_Simply_Golf_1.1.nx
+3615,Hopscotch game,SzEACdPs7U_Hopscotch_Race.png,SzEACdPs7U_Hopscotch_Race.nx
+3614,Darrell Drills,nVntACovux_Darrell_Drills.png,nVntACovux_Darrell_Drills.nx
+3609,Lemniscate,Ev2oDtxAHp_Lemniscate.png,Ev2oDtxAHp_Lemniscate.nx
+3595,Sylveon Game demo.,Ngie9s8Sz5_.png,Ngie9s8Sz5_Sylveon_Game_Demo_2.nx
+3587,Sylveon game demo,U2e82o2fwY_.png,U2e82o2fwY_Sylveon_Game_Demo_2.nx
+3584,Merry christmas \(^_^)/,BifYAy8Une_Christmas_Tree.png,BifYAy8Une_Christmas_Tree.nx
+3576,Retro Runner,sem4K6Jnwe_Retro_Runner.png,sem4K6Jnwe_Retro_Runner.nx
+3573,Noobio Adventure (BETA),Xrz5PfbiP3_Noobio_Adventure_0.0.5d.png,Xrz5PfbiP3_Noobio_Adventure_0.0.5d.nx
+3566,3D Rotating Plate?,fd5Etj5zvT_3D_Plate.png,fd5Etj5zvT_3D_Plate.nx
+3562,Sagrada - lowres version,8FNanM33YB_Dicey_5.0.png,8FNanM33YB_Dicey_5.0.nx
+3561,COIN,5zvGCJe6k5_COIN_1.3d.png,5zvGCJe6k5_COIN_1.3d.nx
+3560,Keep Smiling,Xgh4M557Kd_Keep_Smiling_1.3b.png,Xgh4M557Kd_Keep_Smiling_1.3b.nx
+3554,Guys game :3,Np3vFzzCnN_GUYS.png,Np3vFzzCnN_GUYS.nx
+3550,Brainpower: Numbers and Colors,qastm83pEk_Numchuck_1.2.png,qastm83pEk_Numchuck_1.2.nx
+3533,Kirby Edit :3,HfbXzBy2KY_KIRBY_remix.png,HfbXzBy2KY_KIRBY_remix.nx
+3529,Kirby demo :3,vCve243DZ5_KIRBY.nx.png,vCve243DZ5_KIRBY.nx.nx
+3522,LowRes Galaxy 2 Glitched,LcFF3iaKfN_LowRes_Galaxy_2_1.5_Glitchy.png,LcFF3iaKfN_LowRes_Galaxy_2_1.5_Glitchy.nx
+3516,Racing edit :3,ySxDwYbe34_Racing_Simulator_EDIT_3.png,ySxDwYbe34_Racing_Simulator_EDIT_3.nx
+3506,Just Fall,UDhLrQKe28_Just_Fall.png,UDhLrQKe28_Just_Fall.nx
+3497,Hooho and a Electric maze :3,HvCU6XpbRs_HooHo_and_the_Electric_Maze.png,HvCU6XpbRs_HooHo_and_the_Electric_Maze.nx
+3484,LowBot for LowRes NX :3,gYJYrgaVdg_Lowbot_Demo_1.1.png,gYJYrgaVdg_Lowbot_Demo_1.1.nx
+3480,Mario Lights,Nxh7mMy9Xz_Mario_Lights.png,Nxh7mMy9Xz_Mario_Lights.nx
+3479,Klips,SV6Syy4kwF_Klips.png,SV6Syy4kwF_Klips.nx
+3477,Merry Melody,uBombmLC8c_Merry_Melody_speed_adjust.png,uBombmLC8c_Merry_Melody_speed_adjust.nx
+3474,Hide-N-Seek zones,idvghZnFTJ_HideNSeek_0.20.png,idvghZnFTJ_HideNSeek_0.20.nx
+3472,Hide and Seek,Hcw3xuEHrH_Hide_and_Seek_1.4.png,Hcw3xuEHrH_Hide_and_Seek_1.4.nx
+3470,Sakura kumiki,kQS7QipTef_Kumiki_Sakura.png,kQS7QipTef_Kumiki_Sakura.nx
+3469,Python,uqwtaADds3_python.png,uqwtaADds3_python.nx
+3464,the Treasures of Stratum,gRknqeB5qT_Treasures_of_Stratum.png,gRknqeB5qT_Treasures_of_Stratum.nx
+3463,Alpha Connect,EVdtjrHNRH_Alpha_Strings.png,EVdtjrHNRH_Alpha_Strings.nx
+3458,Plinkie game,HVcpQtvVgV_Plinkie_Pie.png,HVcpQtvVgV_Plinkie_Pie.nx
+3455,Connections Game,taFNATE4yb_Connections_Game.png,taFNATE4yb_Connections_Game.nx
+3452,UNO games,SrwmxWXiDQ_Uno_Games_0.10.png,SrwmxWXiDQ_Uno_Games_0.10.nx
+3450,Word Fill,Xu5VnVzMy3_Word_Fill_4LW.png,Xu5VnVzMy3_Word_Fill_4LW.nx
+3449,Bit Data,GBCHtH5fUS_Bit_Data.png,GBCHtH5fUS_Bit_Data.nx
+3447,Skulky&#039;s escape from hell,D7BNCgwVq5_LowRes.png,D7BNCgwVq5_SKULKY23.nx
+3446,Match Race,Qx5y7BDKfB_Match_Race_0.03.png,Qx5y7BDKfB_Match_Race_0.03.nx
+3442,AlphaMess,vsGVyegPiv_Alpha_Mess.png,vsGVyegPiv_Alpha_Mess.nx
