@@ -1,4 +1,3 @@
-ID,Názov,Obrázok,NX_Súbor
 3686,The Pasture Of The Other Realm,JR9cvdaf2d_The_Pasture_Of_The_Other_Realm3.png,JR9cvdaf2d_The_Pasture_Of_The_Other_Realm3.nx
 3685,Poptris (Tetris variant),GneYcjdAyP_Poptris_030.png,GneYcjdAyP_Poptris_030.nx
 3684,SumDoku,dRQhEWf3BR_SumDoku.png,dRQhEWf3BR_SumDoku.nx
