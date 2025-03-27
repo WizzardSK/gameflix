@@ -13,13 +13,15 @@ CSV_FILE="output.csv"
 echo "ID,Názov,Obrázok" > "$CSV_FILE"
 
 # Parsovanie obsahu stránky
-echo "$CONTENT" | grep -oP '<a href="topic.php\?id=\K[0-9]+(?=">).*?<h3>\K.*?(?=</h3>).*?src="uploads/\K[^"]+' | \
-while IFS= read -r line; do
-    ID=$(echo "$line" | cut -d' ' -f1)
-    TITLE=$(echo "$line" | cut -d' ' -f2- | rev | cut -d' ' -f2- | rev)
-    IMAGE=$(echo "$line" | awk '{print $NF}')
-    echo "$ID,$TITLE,$IMAGE" >> "$CSV_FILE"
-done
+echo "$CONTENT" | awk '
+    /<a href="topic.php\?id=/ { 
+        match($0, /topic.php\?id=([0-9]+)/, id);
+        match($0, /<h3>([^<]+)<\/h3>/, title);
+        match($0, /uploads\/([^"]+)"/, img);
+        if (id[1] && title[1] && img[1]) 
+            print id[1] "," title[1] "," img[1];
+    }
+' >> "$CSV_FILE"
 
 echo "Hotovo! Dáta boli uložené do $CSV_FILE"
 
