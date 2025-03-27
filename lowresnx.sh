@@ -1,6 +1,7 @@
 #!/bin/bash
 BASE_URL="https://lowresnx.inutilis.com/programs.php?category=game&sort=new&page="
 OUTPUT_FILE="lowresnx.txt"
+> "$OUTPUT_FILE"
 page=1
 while true; do
     URL="${BASE_URL}${page}"
@@ -13,6 +14,7 @@ while true; do
         title=$(echo "$topic_page" | grep -oP '(?<=<h1>).*?(?=</h1>)' | head -n 1)
         image=$(echo "$topic_page" | grep -oP '(?<=<img class="screenshot pixelated" src="uploads/)[^"]+')
         nx_url=$(echo "$topic_page" | grep -oP 'href="([^"]+\.nx)"' | head -n 1 | sed 's/href="//;s/"//;s/^uploads\///')
+        echo "$id,$title,$image,$nx_url" >> "$OUTPUT_FILE"
     done
     ((page++)) 
 done
