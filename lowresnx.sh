@@ -9,7 +9,7 @@ while true; do
     content=$(curl -s "https://lowresnx.inutilis.com/programs.php?category=game&sort=new&page=$page")
     [[ "$content" == *"No results"* ]] && echo "Koniec stránok." && break
 
-    while read -r image id; do
+    while read -r id image; do
         nx_file="${image%.png}.nx"
         nx_url="https://lowresnx.inutilis.com/uploads/$nx_file"
 
@@ -26,7 +26,7 @@ while true; do
         else
             echo "$image" >> "$IMAGE_LIST"
         fi
-    done < <(echo "$content" | grep -oP 'src="uploads/\K[^"]+\.png"|topic\.php\?id=\K\d+' | paste - -)
+    done < <(echo "$content" | grep -oP '<a href="topic\.php\?id=\K\d+|src="uploads/\K[^"]+\.png"' | paste - -)
 
     ((page++))
 done
