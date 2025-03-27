@@ -9,20 +9,19 @@ CSV_FILE="output.csv"
 # Zápis hlavičky CSV
 echo "ID,Názov,Obrázok" > "$CSV_FILE"
 
-# Stiahnutie obsahu stránky a extrakcia údajov
-echo "$(curl -s "$URL")" | awk '
-    match($0, /topic.php\?id=([0-9]+)/, id) {
-        getline; getline;
-        match($0, /uploads\/([^\"]+)/, img);
-        getline; getline;
-        match($0, /<h3>([^<]+)/, title);
-        if (id[1] && title[1] && img[1]) {
-            print id[1] "," title[1] "," img[1];
-        }
-    }
-' >> "$CSV_FILE"
+# Stiahnutie a spracovanie obsahu
+curl -s "$URL" | grep -oP '(?<=topic.php\?id=)[0-9]+' > ids.txt
+curl -s "$URL" | grep -oP '(?<=<h3>)[^<]+' > titles.txt
+curl -s "$URL" | grep -oP '(?<=uploads/)[^"]+' > images.txt
+
+# Spojenie dát a uloženie do CSV
+paste -d ',' ids.txt titles.txt images.txt >> "$CSV_FILE"
+
+# Odstránenie dočasných súborov
+rm ids.txt titles.txt images.txt
 
 echo "Hotovo! Dáta boli uložené do $CSV_FILE"
+
 
 
 git config --global user.name "GitHub Actions"
