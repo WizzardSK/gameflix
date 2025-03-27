@@ -12,17 +12,20 @@ CSV_FILE="output.csv"
 # Zápis hlavičky CSV
 echo "ID,Názov,Obrázok" > "$CSV_FILE"
 
-# Extrakcia ID, názvu a obrázka
-IDs=($(echo "$CONTENT" | grep -oP 'topic.php\?id=\K[0-9]+'))
-Titles=($(echo "$CONTENT" | grep -oP '<h3>\K[^<]+'))
-Images=($(echo "$CONTENT" | grep -oP 'uploads/\K[^"]+'))
+# Extrakcia ID
+IDs=$(echo "$CONTENT" | grep -oP 'topic.php\?id=\K[0-9]+')
 
-# Skombinovanie a uloženie do CSV
-for i in "${!IDs[@]}"; do
-    echo "${IDs[$i]},${Titles[$i]},${Images[$i]}" >> "$CSV_FILE"
-done
+# Extrakcia názvov
+Titles=$(echo "$CONTENT" | grep -oP '<h3>\K[^<]+')
+
+# Extrakcia obrázkov
+Images=$(echo "$CONTENT" | grep -oP 'uploads/\K[^"]+')
+
+# Uloženie do CSV
+paste -d ',' <(echo "$IDs") <(echo "$Titles") <(echo "$Images") >> "$CSV_FILE"
 
 echo "Hotovo! Dáta boli uložené do $CSV_FILE"
+
 
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
