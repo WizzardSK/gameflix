@@ -14,12 +14,18 @@ echo "ID,Názov,Obrázok" > "$CSV_FILE"
 
 # Parsovanie obsahu stránky
 echo "$CONTENT" | awk '
-    /<a href="topic.php\?id=/ { 
+    /<a href="topic.php\?id=/ {
         match($0, /topic.php\?id=([0-9]+)/, id);
+    }
+    /<img class="thumbnail pixelated" src="uploads\// {
+        match($0, /uploads\/([^\"]+)/, img);
+    }
+    /<h3>/ {
         match($0, /<h3>([^<]+)<\/h3>/, title);
-        match($0, /uploads\/([^"]+)"/, img);
-        if (id[1] && title[1] && img[1]) 
+        if (id[1] && title[1] && img[1]) {
             print id[1] "," title[1] "," img[1];
+            id[1] = ""; title[1] = ""; img[1] = "";
+        }
     }
 ' >> "$CSV_FILE"
 
