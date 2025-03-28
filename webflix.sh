@@ -17,6 +17,11 @@ done
 
 if [ ! -f ~/share/zip/uzebox.zip ]; then wget -O ~/share/zip/uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; unzip -j ~/share/zip/uzebox.zip -d ~/roms/Uzebox; fi
 
+FILE_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt"; DOWNLOAD_DIR="$HOME/roms/LowresNX"; mkdir -p "$DOWNLOAD_DIR"
+curl "$FILE_URL" | while IFS="|"; read -r id title image nx_file; do
+    if [ ! -s "$DOWNLOAD_DIR/$nx_file" ]; then download_url="https://lowresnx.inutilis.com/uploads/$nx_file"; wget "$download_url" -O "$DOWNLOAD_DIR/$nx_file"; fi
+done
+
 IFS=";"
 for each in "${roms[@]}"; do
   echo "${rom3}"
