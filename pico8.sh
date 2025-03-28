@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BASE_URL="https://www.lexaloffle.com/bbs/?cat=7&carts_tab=1#sub=2&page=1&mode=carts"
-CSV_FILE="pico8.csv"
+CSV_FILE="pico8.txt"
 DETAIL_URL="https://www.lexaloffle.com/bbs/?pid="
 
 # Stiahnutie hlavnej stránky a získanie PID čísel
@@ -18,17 +18,14 @@ echo "$pids" | while read pid; do
     echo "Fetching $url"
     page=$(curl -s "$url")
     
-    img_file=$(echo "$page" | grep -oP 'carts/[^" ]+\.p8\.png' | head -n 1)
+    img_file=$(echo "$page" | grep -oP '(?<=href=")/bbs/cposts/[^" ]+\.p8\.png' | head -n 1)
     
     if [ -n "$img_file" ]; then
-        img_file="https://www.lexaloffle.com/$img_file"
+        img_file="https://www.lexaloffle.com$img_file"
     fi
     
     echo "$pid,$img_file" >> "$CSV_FILE"
 done
-
-echo "Data saved to $CSV_FILE"
-
 
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
