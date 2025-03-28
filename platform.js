@@ -43,9 +43,8 @@ function generateWasmLinks(romPath, imagePath) {
 
 function generateLrNXLinks(romPath, imagePath) {
     document.write("<div id=\"figureList\">"); fileNames.forEach(fileName => {
-        const [subor, obrazok] = fileName.split(','); const suborx = subor.slice(0, subor.lastIndexOf(".")) || subor;
-        document.write(`<a href="../${romPath}/${encodeURIComponent(subor)}" target="main">
-        <figure><img loading="lazy" src="https://lowresnx.inutilis.com/uploads/${obrazok}" alt="${suborx.slice(11)}"><figcaption>${suborx.slice(11)}</figcaption></figure></a>`);
+        const [subor, obrazok, nazov] = fileName.split(','); document.write(`<a href="../${romPath}/${encodeURIComponent(subor)}" target="main">
+        <figure><img loading="lazy" src="https://lowresnx.inutilis.com/uploads/${obrazok}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
 
