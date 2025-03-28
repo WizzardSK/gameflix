@@ -6,7 +6,7 @@ DETAIL_URL="https://www.lexaloffle.com/bbs/?pid="
 
 # Stiahnutie hlavnej stránky a získanie PID čísel
 echo "Fetching PID list..."
-pids=$(curl -s "$BASE_URL" | grep -oP '(?<=tid=)\d+' | sort -u)
+pids=$(curl -s "$BASE_URL" | grep -oP '(?<=<a href="\?tid=)\d+' | sort -u)
 
 echo "Found $(echo "$pids" | wc -l) PIDs"
 
@@ -18,14 +18,17 @@ echo "$pids" | while read pid; do
     echo "Fetching $url"
     page=$(curl -s "$url")
     
-    img_file=$(echo "$page" | grep -oP '(?<=href=")/bbs/cposts/[^" ]+\.p8\.png' | head -n 1)
+    img_file=$(echo "$page" | grep -oP '(?<=href="/bbs/cposts/)[^" ]+\.p8\.png' | head -n 1)
     
     if [ -n "$img_file" ]; then
-        img_file="https://www.lexaloffle.com$img_file"
+        img_file="https://www.lexaloffle.com/bbs/cposts/$img_file"
     fi
     
     echo "$pid,$img_file" >> "$CSV_FILE"
 done
+
+echo "Data saved to $CSV_FILE"
+
 
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
