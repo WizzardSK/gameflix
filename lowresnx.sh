@@ -13,7 +13,7 @@ while true; do
         topic_page=$(curl -s "https://lowresnx.inutilis.com/topic.php?id=$id")
         title=$(echo "$topic_page" | grep -oP '(?<=<h1>).*?(?=</h1>)' | head -n 1)
         image=$(echo "$topic_page" | grep -oP '(?<=<img class="screenshot pixelated" src="uploads/)[^"]+')
-        nx_url=$(echo "$topic_page" | grep -oP 'href="([^"]+\.nx)"' | head -n 1 | sed 's/href="//;s/"//;s/^uploads\///')
+        nx_url=$(echo "$topic_page" | grep -oP 'href="uploads/\K[^"]+\.nx' | head -n 1)
         echo "$id|$title|$image|$nx_url" >> "$OUTPUT_FILE"
     done
     ((page++)) 
