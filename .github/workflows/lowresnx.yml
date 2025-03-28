@@ -1,18 +1,17 @@
-name: Run Script Periodically
+name: LowresNX carts updater
 
 on:
-  push:  # Spustí sa pri každom pushnutí (teda aj pri commite)
-    branches:
-      - main  # Môžeš zmeniť na inú vetvu
-  workflow_dispatch:  # Umožní manuálne spustenie
-
+  schedule:
+    - cron: '0 0 * * *' 
+  workflow_dispatch: 
+  
 jobs:
   run-script:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4  # Stiahne kód repozitára
+        uses: actions/checkout@v4 
 
       - name: Run script
-        run: bash lowresnx.sh  # Spustí tvoj skript
+        run: bash lowresnx.sh 
