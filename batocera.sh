@@ -66,7 +66,7 @@ else
 fi
 
 echo "<gameList>" > /userdata/roms/lowresnx/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt" | while IFS="|" read -r id name picture cart; do
-  hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/LowresNX/${picture}.png</image>"; echo "${hra}</game>" >> /userdata/roms/lowresnx/gamelist.xml
+  hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/LowresNX/${picture}</image>"; echo "${hra}</game>" >> /userdata/roms/lowresnx/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/lowresnx/gamelist.xml
 
 IFS=";"
