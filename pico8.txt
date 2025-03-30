@@ -26,6 +26,6 @@ PID,Image File
 148135,https://www.lexaloffle.com/bbs/cposts/wi/wizard_in_backrooms-1.p8.png
 148136,
 148138,https://www.lexaloffle.com/bbs/cposts/ga/gameboypainter-0.p8.png
+148139,https://www.lexaloffle.com/bbs/cposts/pa/patched-0.p8.png
 31526,https://www.lexaloffle.com/bbs/cposts/3/31786.p8.png
-33730,https://www.lexaloffle.com/bbs/cposts/3/33733.p8.png
 53571,
