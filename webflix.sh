@@ -11,8 +11,8 @@ rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr
 API_URL="https://tic80.com/api?fn=dir&path=play/Games"; BASE_URL="https://tic80.com/cart"; DOWNLOAD_DIR="$HOME/roms/TIC-80"; RESPONSE=$(curl -s "$API_URL")
 FILES=$(echo "$RESPONSE" | grep -oP '{\s*name\s*=\s*"[^"]+",\s*hash\s*=\s*"[^"]+",\s*id\s*=\s*\d+,\s*filename\s*=\s*"[^"]+"\s*}')
 echo "$FILES" | while read -r LINE; do
-  HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p'); FILENAME=$(echo "$LINE" | sed -n 's/.*filename\s*=\s*"\([^"]*\)".*/\1/p')
-  FILE_PATH="${DOWNLOAD_DIR}/${HASH} ${FILENAME}"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"; if [ ! -f "$FILE_PATH" ]; then wget -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
+  HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p'); FILENAME=$(echo "$LINE" | sed -n 's/.* name\s*=\s*"\([^"]*\)".*/\1/p')
+  FILE_PATH="${DOWNLOAD_DIR}/${HASH}.tic"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"; if [ ! -f "$FILE_PATH" ]; then wget -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
 done
 
 if [ ! -f ~/share/zip/uzebox.zip ]; then wget -O ~/share/zip/uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; unzip -j ~/share/zip/uzebox.zip -d ~/roms/Uzebox; fi
