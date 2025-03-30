@@ -19,7 +19,7 @@ echo "<script>bgImage(\"tic80\"); const fileNames = [" >> ~/gameflix/TIC-80.html
 curl -s https://tic80.com/api?fn=dir&path=play/Games | while IFS= read -r line; do
   hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+')
   name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
-  echo "$hash $name" >> ~/gameflix/TIC-80.html
+  echo "\"${hash} {$name}\"," >> ~/gameflix/TIC-80.html
 done
 printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
 
