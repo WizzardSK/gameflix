@@ -15,6 +15,14 @@ echo "$FILES" | while read -r LINE; do
   FILE_PATH="${DOWNLOAD_DIR}/${HASH}.tic"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"; if [ ! -f "$FILE_PATH" ]; then wget -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
 done
 
+BASE_URL="https://wasm4.org/play"; CARTS_URL="https://wasm4.org/carts"; ROM_DIR="~/roms/WASM-4"
+mkdir -p "$ROM_DIR"; curl -s "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -r GAME; do
+  for EXT in wasm png; do
+    FILE="${ROM_DIR}/$GAME.$EXT"
+    [[ -f "$FILE" ]] || wget -O "$FILE" "$CARTS_URL/$GAME.$EXT"
+  done
+done
+
 if [ ! -f ~/share/zip/uzebox.zip ]; then wget -O ~/share/zip/uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; unzip -j ~/share/zip/uzebox.zip -d ~/roms/Uzebox; fi
 
 FILE_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt"; DOWNLOAD_DIR="$HOME/roms/LowresNX"; mkdir -p "$DOWNLOAD_DIR"
