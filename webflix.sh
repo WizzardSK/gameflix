@@ -1,7 +1,7 @@
 #!/bin/bash
 export LD_LIBRARY_PATH=/usr/local/lib
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
-mkdir -p ~/myrient ~/roms ~/iso ~/gameflix ~/share/system/.cache/ratarmount ~/share/system/.cache/rclone ~/share/zip/atari2600roms ~/roms/Atari\ 2600\ ROMS ~/roms/TIC-80 ~/roms/Uzebox
+mkdir -p ~/myrient ~/roms ~/iso ~/gameflix ~/share/system/.cache/ratarmount ~/share/system/.cache/rclone ~/share/zip/atari2600roms ~/roms/Atari\ 2600\ ROMS ~/roms/TIC-80 ~/roms/Uzebox ~/roms/WASM-4
 
 if [ ! -f ~/share/zip/atari2600roms.zip ]; then wget -O ~/share/zip/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
 fuse-zip ~/share/zip/atari2600roms.zip ~/share/zip/atari2600roms; bindfs ~/share/zip/atari2600roms/ROMS ~/roms/Atari\ 2600\ ROMS
