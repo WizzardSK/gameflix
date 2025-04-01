@@ -46,10 +46,8 @@ curl "$FILE_URL" | while IFS="|"; read -r id title image nx_file; do
 done
 
 echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
-  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+')
-  name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
-done
-hra="<game><path>./${hash}.tic</path><name>${name}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
+  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
+  hra="<game><path>./${hash}.tic</path><name>${name}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/tic80/gamelist.xml
 
 echo "<gameList>" > /userdata/roms/wasm4/gamelist.xml; ls /userdata/roms/wasm4 | while read line; do
