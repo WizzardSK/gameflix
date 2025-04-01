@@ -21,8 +21,8 @@ API_URL="https://tic80.com/api?fn=dir&path=play/Games"; BASE_URL="https://tic80.
 FILES=$(echo "$RESPONSE" | grep -oP '{\s*name\s*=\s*"[^"]+",\s*hash\s*=\s*"[^"]+",\s*id\s*=\s*\d+,\s*filename\s*=\s*"[^"]+"\s*}')
 echo "$FILES" | while read -r LINE; do
   HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p'); FILENAME=$(echo "$LINE" | sed -n 's/.*filename\s*=\s*"\([^"]*\)".*/\1/p')
-  FILE_PATH="${DOWNLOAD_DIR}/${HASH} ${FILENAME}"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"
-  SNAP_PATH="/userdata/thumbs/TIC-80/${HASH} ${FILENAME%.*}.gif"; SNAPSHOT_URL="${BASE_URL}/${HASH}/cover.gif"
+  FILE_PATH="${DOWNLOAD_DIR}/${HASH}.tic"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"
+  SNAP_PATH="/userdata/thumbs/TIC-80/${HASH}.gif"; SNAPSHOT_URL="${BASE_URL}/${HASH}/cover.gif"
   if [ ! -f "$FILE_PATH" ]; then wget -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
   if [ ! -f "$SNAP_PATH" ]; then wget -O "$SNAP_PATH" "$SNAPSHOT_URL"; fi
 done
@@ -45,8 +45,11 @@ curl "$FILE_URL" | while IFS="|"; read -r id title image nx_file; do
     if [ ! -s "/userdata/thumbs/LowresNX/$image" ]; then download_url="https://lowresnx.inutilis.com/uploads/$image"; wget "$download_url" -O "/userdata/thumbs/LowresNX/$image"; fi
 done
 
-echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; ls /userdata/roms/tic80 | while read line; do
-  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2:33}</name><image>~/../thumbs/TIC-80/${line2}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
+echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
+  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+')
+  name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
+done
+hra="<game><path>./${hash}.tic</path><name>${name}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/tic80/gamelist.xml
 
 echo "<gameList>" > /userdata/roms/wasm4/gamelist.xml; ls /userdata/roms/wasm4 | while read line; do
