@@ -26,7 +26,10 @@ pocet=$(ls ~/roms/WASM-4 -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"WASM-4\") core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/WASM-4.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"wasm4\"); const fileNames = [" >> ~/gameflix/WASM-4.html; ((platforms++))
-{ while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/WASM-4.html; ((pocet++)); ((total++)); done } < <(ls ~/roms/WASM-4)
+html=$(curl -s "https://wasm4.org/play/")
+echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do
+  image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png); echo "\"$image_name,$title\"," >> ~/gameflix/WASM-4.html
+done
 printf ']; generateWasmLinks("roms/WASM-4", "WASM-4");</script><script src=\"script.js\"></script>' >> ~/gameflix/WASM-4.html
 
 pocet=$(ls ~/roms/Uzebox/*.uze ~/roms/Uzebox/*.UZE -1 | wc -l); total=$((pocet+total))
