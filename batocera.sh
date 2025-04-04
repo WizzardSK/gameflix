@@ -50,8 +50,10 @@ echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; curl -s "https://tic80.co
   hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/tic80/gamelist.xml
 
-echo "<gameList>" > /userdata/roms/wasm4/gamelist.xml; ls /userdata/roms/wasm4 | while read line; do
-  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/WASM-4/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/wasm4/gamelist.xml
+echo "<gameList>" > /userdata/roms/wasm4/gamelist.xml; html=$(curl -s "https://wasm4.org/play/")
+echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do
+  image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png);
+  hra="<game><path>./${image_name}.wasm</path><name>${title}</name><image>~/../thumbs/WASM-4/${image_name}.png</image>"; echo "${hra}</game>" >> /userdata/roms/wasm4/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/wasm4/gamelist.xml
 
 echo "<gameList>" > /userdata/roms/uzebox/gamelist.xml; ls /userdata/roms/uzebox/*.uze /userdata/roms/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
