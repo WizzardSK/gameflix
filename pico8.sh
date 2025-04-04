@@ -11,7 +11,6 @@ while true; do
     echo "$HTML" | grep '<div style="padding:10px; display:table; margin:auto">' | sed -E 's/.*>([^<]+)<.*/\1/' > titles.txt
     echo "$HTML" | grep -oP '<a href="\?tid=\d+"' | grep -oP '\d+' | uniq > tids.txt
     paste tids.txt titles.txt | ( while IFS=$'\t' read -r TID TITLE; do
-        echo "   🔍 Title: $TITLE (TID: $TID)"
         CART_HTML=$(curl -s "${BASE_CART_URL}${TID}")
         PNG_NAME=$(echo "$CART_HTML" | grep -oP 'href="[^"]+\.p8\.png"' | head -n1 | sed -E 's/.*\/([^/]+\.p8\.png)".*/\1/')
         if [[ -z "$PNG_NAME" ]]; then continue; fi
