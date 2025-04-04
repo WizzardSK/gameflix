@@ -1,37 +1,30 @@
 #!/bin/bash
 
-BASE_URL="https://www.lexaloffle.com/bbs/?cat=7&carts_tab=1#sub=2&page=1&mode=carts"
-CSV_FILE="pico8.txt"
-DETAIL_URL="https://www.lexaloffle.com/bbs/?pid="
-
-# Stiahnutie hlavnej stránky a získanie PID čísel
-echo "Fetching PID list..."
-pids=$(curl -s "$BASE_URL" | grep -oP '(?<=<a href="\?tid=)\d+' | sort -u)
-
-echo "Found $(echo "$pids" | wc -l) PIDs"
-
-echo "PID,Image File" > "$CSV_FILE"
-
-# Spracovanie jednotlivých PID
-echo "$pids" | while read pid; do
-    url="${DETAIL_URL}${pid}#p"
-    echo "Fetching $url"
-    page=$(curl -s "$url")
-    
-    img_file=$(echo "$page" | grep -oP '(?<=href="/bbs/cposts/)[^" ]+\.p8\.png' | head -n 1)
-    
-    if [ -n "$img_file" ]; then
-        img_file="https://www.lexaloffle.com/bbs/cposts/$img_file"
-    fi
-    
-    echo "$pid,$img_file" >> "$CSV_FILE"
+OUTPUT_FILE="pico8.txt"
+BASE_LIST_URL="https://www.lexaloffle.com/bbs/lister.php?cat=7&sub=2&mode=carts&page="
+BASE_CART_URL="https://www.lexaloffle.com/bbs/?tid="
+PAGE=1; > "$OUTPUT_FILE"
+while true; do
+    echo "➡️  Page $PAGE..."
+    HTML=$(curl -s "${BASE_LIST_URL}${PAGE}")
+    if echo "$HTML" | grep -q '\[no posts found\]'; then break; fi
+    echo "$HTML" | grep '<div style="padding:10px; display:table; margin:auto">' | sed -E 's/.*>([^<]+)<.*/\1/' > titles.txt
+    echo "$HTML" | grep -oP '<a href="\?tid=\d+"' | grep -oP '\d+' | uniq > tids.txt
+    paste tids.txt titles.txt | ( while IFS=$'\t' read -r TID TITLE; do
+        echo "   🔍 Title: $TITLE (TID: $TID)"
+        CART_HTML=$(curl -s "${BASE_CART_URL}${TID}")
+        PNG_NAME=$(echo "$CART_HTML" | grep -oP 'href="[^"]+\.p8\.png"' | head -n1 | sed -E 's/.*\/([^/]+\.p8\.png)".*/\1/')
+        if [[ -z "$PNG_NAME" ]]; then continue; fi
+        echo "$TITLE|$PNG_NAME" >> "$OUTPUT_FILE"
+    done ) &
+    sleep 1
+    rm -f titles.txt tids.txt
+    PAGE=$((PAGE + 1))
 done
-
-echo "Data saved to $CSV_FILE"
-
+wait
 
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
-git add "$CSV_FILE"
+git add "$OUTPUT_FILE"
 git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
 git push
