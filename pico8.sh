@@ -13,7 +13,7 @@ while true; do
         CART_HTML=$(curl -s "${BASE_CART_URL}${TID}")
         PNG_NAME=$(echo "$CART_HTML" | grep -oP 'href="[^"]+\.p8\.png"' | head -n1 | sed -E 's/.*\/([^/]+\.p8\.png)".*/\1/')
         if [[ -z "$PNG_NAME" ]]; then continue; fi
-        echo "$TITLE\t$PNG_NAME" >> "$OUTPUT_FILE"
+        echo -e "$TITLE\t$PNG_NAME" >> "$OUTPUT_FILE"
     done ) &
     sleep 1
     rm -f titles.txt tids.txt
