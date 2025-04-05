@@ -46,6 +46,13 @@ echo "<script>bgImage(\"lowresnx\"); const fileNames = [" >> ~/gameflix/LowresNX
 curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt" | while IFS="|" read -r id name picture cart; do if [[ -n "$cart" && -n "$picture" ]]; then echo "'$cart|$picture|$name'," >> ~/gameflix/LowresNX.html; fi; done
 printf ']; generateLrNXLinks("roms/LowresNX", "LowresNX");</script><script src=\"script.js\"></script>' >> ~/gameflix/LowresNX.html
 
+pocet=$(curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt" | wc -l); total=$((pocet+total))
+echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"PICO-8\") core=\"retro8_libretro\";;" >> ~/gameflix/retroarch.sh  
+wget -O ~/gameflix/PICO-8.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+echo "<script>bgImage(\"pico8\"); const fileNames = [" >> ~/gameflix/PICO-8.html; ((platforms++))
+curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt" | while IFS=$'\t' read -r id name cart; do if [[ -n "$cart" && -n "$picture" ]]; then echo -e "'$cart\t$cart'," >> ~/gameflix/PICO-8.html; fi; done
+printf ']; generatePicoLinks("roms/PICO-8", "PICO-8");</script><script src=\"script.js\"></script>' >> ~/gameflix/PICO-8.html
+
 pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\"><p>Atari 2600 ROMS</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Atari 2600 ROMS\") core=\"stella_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/Atari\ 2600\ ROMS.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
