@@ -50,7 +50,7 @@ pocet=$(curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads
 echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"PICO-8\") core=\"retro8_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/PICO-8.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"pico8\"); const fileNames = [" >> ~/gameflix/PICO-8.html; ((platforms++))
-curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt" | while IFS=$'\t' read -r id name cart; do if [[ -n "$cart" && -n "$picture" ]]; then echo -e "'$cart\t$cart'," >> ~/gameflix/PICO-8.html; fi; done
+curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt" | while IFS=$'\t' read -r id name cart; do if [[ -n "$cart" && -n "$name" ]]; then echo -e "'$name\t$cart'," >> ~/gameflix/PICO-8.html; fi; done
 printf ']; generatePicoLinks("roms/PICO-8", "PICO-8");</script><script src=\"script.js\"></script>' >> ~/gameflix/PICO-8.html
 
 pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l); total=$((pocet+total))
