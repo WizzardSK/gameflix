@@ -51,9 +51,8 @@ function generateLrNXLinks(romPath, imagePath) {
 
 function generatePicoLinks(romPath, imagePath) {
     document.write("<div id=\"figureList\">"); fileNames.forEach(fileName => {
-        const [nazov, kart] = fileName.split('\t'); let skratka = /^[a-zA-Z]/.test(kart) ? kart.slice(0, 2) : !isNaN(kart.charAt(0)) ? kart.charAt(0) : '';
-        document.write(`<a href="../${romPath}/${encodeURIComponent(kart)}" target="main">
-        <figure><img loading="lazy" src="https://www.lexaloffle.com/bbs/cposts/${skratka}/${kart}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        const [nazov, kart] = fileName.split('\t'); document.write(`<a href="../${romPath}/${encodeURIComponent(kart)}" target="main">
+        <figure><img loading="lazy" src="../${romPath}/${encodeURIComponent(kart)}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
 
