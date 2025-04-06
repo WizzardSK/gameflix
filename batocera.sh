@@ -45,6 +45,15 @@ curl "$FILE_URL" | while IFS="|"; read -r id title image nx_file; do
     if [ ! -s "/userdata/thumbs/LowresNX/$image" ]; then download_url="https://lowresnx.inutilis.com/uploads/$image"; wget "$download_url" -O "/userdata/thumbs/LowresNX/$image"; fi
 done
 
+REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt"; OUTPUT_DIR="/userdata/roms/PICO-8"; mkdir -p "$OUTPUT_DIR"
+LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r NAME FILENAME; do
+    if [[ -n "$FILENAME" ]]; then
+        if [[ $FILENAME =~ ^[0-9] ]]; then PREFIX="${FILENAME:0:1}"; else PREFIX="${FILENAME:0:2}"; fi
+        OUTPUT_PATH="${OUTPUT_DIR}/${FILENAME}"; FILE_URL="https://www.lexaloffle.com/bbs/cposts/${PREFIX}/${FILENAME}"
+        if [[ ! -s "$OUTPUT_PATH" ]]; then wget -nv -O "$OUTPUT_PATH" "$FILE_URL"; fi
+    fi
+done
+
 echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
   hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
   hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
@@ -71,6 +80,10 @@ fi
 echo "<gameList>" > /userdata/roms/lowresnx/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt" | while IFS="|" read -r id name picture cart; do
   hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/LowresNX/${picture}</image>"; echo "${hra}</game>" >> /userdata/roms/lowresnx/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/lowresnx/gamelist.xml
+
+echo "<gameList>" > /userdata/roms/pico8/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt" | while IFS=$'\t' read -r name cart; do
+  hra="<game><path>./${cart}</path><name>${name}</name><image>./${cart}</image>"; echo "${hra}</game>" >> /userdata/roms/pico8/gamelist.xml
+done; echo "</gameList>" >> /userdata/roms/pico8/gamelist.xml
 
 IFS=";"
 > /userdata/system/logs/git.log
