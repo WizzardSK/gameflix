@@ -83,7 +83,8 @@ echo "<gameList>" > /userdata/roms/lowresnx/gamelist.xml; curl -s "https://raw.g
 done; echo "</gameList>" >> /userdata/roms/lowresnx/gamelist.xml
 
 echo "<gameList>" > /userdata/roms/pico8/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt" | while IFS=$'\t' read -r name cart; do
-  hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/PICO-8/pico8_${cart%.p8.png}.png</image>"; echo "${hra}</game>" >> /userdata/roms/pico8/gamelist.xml
+  hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/PICO-8/$( [[ $cart =~ ^[a-zA-Z] ]] && echo pico8_ || echo )${cart%.p8.png}.png</image>";
+  echo "${hra}</game>" >> /userdata/roms/pico8/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/pico8/gamelist.xml
 
 IFS=";"
