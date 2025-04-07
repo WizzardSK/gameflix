@@ -51,7 +51,7 @@ LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r NAME 
         if [[ $FILENAME =~ ^[0-9] ]]; then PREFIX="${FILENAME:0:1}"; else PREFIX="${FILENAME:0:2}"; fi
         OUTPUT_PATH="${OUTPUT_DIR}/${FILENAME}"; FILE_URL="https://www.lexaloffle.com/bbs/cposts/${PREFIX}/${FILENAME}"; SCREEN_PATH="${SCREEN_DIR}/$( [[ $FILENAME =~ ^[a-zA-Z] ]] && echo pico8_ )${FILENAME%.p8.png}.png"
         if [[ ! -s "$OUTPUT_PATH" ]]; then wget -nv -O "$OUTPUT_PATH" "$FILE_URL"; fi
-        if [[ ! -s "$SCREEN_PATH" ]]; then wget -nv -O "$SCREEN_PATH" "https://www.lexaloffle.com/bbs/thumbs/$( [[ $FILENAME =~ ^[a-zA-Z] ]] && echo pico8_ )${FILENAME%.p8.png}.png"; fi
+        if [[ ! -s "$SCREEN_PATH" ]]; then wget -nv -O "$SCREEN_PATH" "https://www.lexaloffle.com/bbs/thumbs/$( [[ $FILENAME =~ ^[0-9] ]] && echo pico )${FILENAME%.p8.png}.png"; fi
     fi
 done
 
