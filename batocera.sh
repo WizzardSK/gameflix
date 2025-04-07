@@ -39,13 +39,13 @@ done
 
 if [ ! -f /userdata/zip/uzebox.zip ]; then wget -O /userdata/zip/uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; unzip -j /userdata/zip/uzebox.zip -d /userdata/roms/uzebox; fi
 
-FILE_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt"; DOWNLOAD_DIR="/userdata/roms/lowresnx"; mkdir -p "$DOWNLOAD_DIR" /userdata/thumbs/LowresNX
+FILE_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt"; DOWNLOAD_DIR="/userdata/roms/lowresnx"; mkdir -p /userdata/thumbs/LowresNX
 curl "$FILE_URL" | while IFS="|"; read -r id title image nx_file; do
     if [ ! -s "$DOWNLOAD_DIR/$nx_file" ]; then download_url="https://lowresnx.inutilis.com/uploads/$nx_file"; wget "$download_url" -O "$DOWNLOAD_DIR/$nx_file"; fi
     if [ ! -s "/userdata/thumbs/LowresNX/$image" ]; then download_url="https://lowresnx.inutilis.com/uploads/$image"; wget "$download_url" -O "/userdata/thumbs/LowresNX/$image"; fi
 done
 
-REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt"; OUTPUT_DIR="/userdata/roms/pico8"; mkdir -p "$OUTPUT_DIR"
+REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt"; OUTPUT_DIR="/userdata/roms/pico8"; SCREEN_DIR="/userdata/thumbs/PICO-8"; mkdir -p $SCREEN_DIR
 LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r NAME FILENAME; do
     if [[ -n "$FILENAME" ]]; then
         if [[ $FILENAME =~ ^[0-9] ]]; then PREFIX="${FILENAME:0:1}"; else PREFIX="${FILENAME:0:2}"; fi
