@@ -501,7 +501,6 @@
 2277|Base Attack|T6Z8699Ufj_BASE_ATTACK.png|T6Z8699Ufj_Base_Attack.nx
 2275|Odds Tester|T7KQAhHuXM_Odds_Tester.png|T7KQAhHuXM_Odds_Tester.nx
 2273|Piano (remix)|7FmEfxncjo_Piano_remix_original_by_G9.png|7FmEfxncjo_Piano_remix_original_by_G9.nx
-2272|Piano|8LTvuEFXiY_Piano.png|8LTvuEFXiY_Piano.nx
 2271|Space Aliens game|vwhrNfoqy8_Space_Aliens.png|vwhrNfoqy8_Space_Aliens.nx
 2269|Fractured Lights Game|fQxz4tuJ25_Fractured_Lights_Game.png|fQxz4tuJ25_Fractured_Lights_Game.nx
 2266|Archer|AXh2uNbXJf_LowRes_NX_20220116_20_06_54.png|AXh2uNbXJf_archer.nx
@@ -525,7 +524,6 @@
 2225|Henasee|WPmSpP9Ro2_Henasee.png|WPmSpP9Ro2_Henasee.nx
 2218|70’s Kaleidoscope |CBJ9EbEoYK_KisslightsDelta.png|CBJ9EbEoYK_KisslightsDelta.nx
 2216|70’s Logo Lights|7JsEgZkzoV_Kisslights.png|7JsEgZkzoV_Kisslights.nx
-2215|Nintendo DS x LowRes NX |v7BpqVscU6_LowRes_Calc.png|v7BpqVscU6_LowRes_Calc.nx
 2213|Lite Brite|L8JnXFH2Pi_Simon.png|L8JnXFH2Pi_Simon.nx
 2212|Wild Animals Championship Race game|K9AsMmeNPN_Etanes.png|K9AsMmeNPN_Etanes.nx
 2211|Ultra Lights-Out|PGKrYLdQh5_Massa.png|PGKrYLdQh5_Massa.nx
@@ -546,7 +544,6 @@
 2188|Poker Smash game (playable on mobile phones)|yjCKtGLvkd_Poker_Smash.png|yjCKtGLvkd_Poker_Smash.nx
 2186|Adv Gfx Edit v0.1|dafom75egH_ADVGFXEDIT.png|dafom75egH_ADVGFXEDIT.nx
 2185|Slide Puzzle game (playable on mobile phones)|M34fwtdS9q_Alpha_Puzzle_Slide.png|M34fwtdS9q_Alpha_Puzzle_Slide.nx
-2180|Flight Simulator Reloaded|DThB7gu26R_Flight_Simulator_Reloaded.png|DThB7gu26R_Flight_Simulator_Reloaded.nx
 2179|Match Mates|KQTbHX2dAM_Match_Mates.png|KQTbHX2dAM_Match_Mates.nx
 2178|DairyDrop|heSiAmY8uP_Lerpy.png|heSiAmY8uP_Lerpy.nx
 2177|MuseHex 2|DErTigvDae_MUSHEX2.png|DErTigvDae_MUSHEX2.nx
@@ -682,7 +679,6 @@
 1836|Dark Dungeon|dDJRtvDYNX_Dark_Dungeon.png|dDJRtvDYNX_Dark_Dungeon.nx
 1834|Sudoku|2yKkBPXmkc_SUDOKUMAS.png|2yKkBPXmkc_SUDOKUMAS.nx
 1831|Penguin - The Desert Runner|pVwAPYvBBj_Penguinthedesert.png|pVwAPYvBBj_Penguinthe_desert_run.nx
-1827|Sound explorer 0.9.2|gy6uLz3VWF_Sound_Explorer.png|gy6uLz3VWF_Sound_Explorer.nx
 1826|Multiweapon|bsgjznrJDg_Multiweapon_with_choice.png|bsgjznrJDg_Multiweapon_with_choice.nx
 1825|Curious lander|AGdiVnxj6n_Lander.png|AGdiVnxj6n_Lander.nx
 1824|Invaders onslaught|Zvtmdje5LJ_Invaders.png|Zvtmdje5LJ_Invaders.nx
@@ -718,12 +714,9 @@
 1737|UFO Fleet|yqehsTqDde_UFO_Fleet.png|yqehsTqDde_UFO_Fleet.nx
 1735|Peg Solitaire|SnY97vogom_LowRes_NX_20210221_16_56_04.png|SnY97vogom_PEGSolitaireV1_1.nx
 1734|Dream ON|9dxuHdDxgZ_Dream_On.png|9dxuHdDxgZ_Dream_On.nx
-1733|Flying Ball Adventures - The 198 coins|RgrvEqRPXt_Fliying_Ball_Adventures__Coin_Minigame.png|RgrvEqRPXt_Fliying_Ball_Adventures__Coin_Minigame.nx
 1729|Slot Machine|a9ttx8CgE6_Slot_Machine.png|a9ttx8CgE6_Slot_Machine.nx
 1728|Dumb Difficult Platformer 2|7z2Sdd57AL_Dumb_Difficult_Platformer_2_1.1.png|7z2Sdd57AL_Dumb_Difficult_Platformer_2_1.1.nx
-1723|Some Math 2.0 !|389fKBXBtf_Some_math_2.0.png|389fKBXBtf_Some_math_2.0.nx
 1722|some music i guess|5sUWKtuR58_D4B571D9EEFF4A619238B4D4AB2204AF.jpeg|5sUWKtuR58_some_music_i_guess.nx
-1721|WIP  Boo Spot|UUv54HHn4V_Escape.png|UUv54HHn4V_Escape.nx
 1719|Carromet|kdiFohREBJ_Carromet_0.4.4.png|kdiFohREBJ_Carromet_0.4.4.nx
 1718|Roo-Bicks Qb|ti99JorXwY_Rubix_0.1.png|ti99JorXwY_Rubix_0.1.nx
 1715|Quad Ludo|DY9z5RVCzN_Quad_Ludos.png|DY9z5RVCzN_Quad_Ludos.nx
@@ -733,7 +726,6 @@
 1709|8Bit Stuff|4vatJ6aa5Y_BFDCDE519CE64B9FAE28F5C813837D61.jpeg|4vatJ6aa5Y_8Bit_Stuff.nx
 1708|MARIO MAYEM|nmrEQvBFXu_Mario_Mayhem.png|nmrEQvBFXu_Mario_Mayhem.nx
 1705|SPACE ANOMALY (NX) ....WARNING |vd6Rygo3u2_Space_Anomaly_NX.png|vd6Rygo3u2_Space_Anomaly_NX.nx
-1704|Pink plumber Run|YhqWiPySmS_Mario_Engine_0.6.png|YhqWiPySmS_Mario_Engine_0.6.nx
 1703|Moving Art|4vCyWxRGC6_Artsy_Lights.png|4vCyWxRGC6_Artsy_Lights.nx
 1700|Crator|Rq6Vi6Ysjw_Crator_Val.png|Rq6Vi6Ysjw_Crator_Val.nx
 1699|Space Harrier LowRes|2iVptfBn8m_Space_Harrier_Intent_V0.4.png|2iVptfBn8m_Space_Harrier_Intent_V0.4.nx
@@ -804,12 +796,9 @@
 1483|Flip|jmkf37s4vJ_LowRes_NX_20201023_19_14_34.png|jmkf37s4vJ_puzzle.nx
 1482|Darkness (maze game)|9JvMDjsfUR_Darkness.png|9JvMDjsfUR_Darkness.nx
 1480|Dumb Difficult Platformer|rM9v3phxqN_Dumb_Difficult_Platformer_1.25.png|rM9v3phxqN_Dumb_Difficult_Platformer_1.25.nx
-1479|Paint|jxawsrBxbe_Paint.png|jxawsrBxbe_Paint.nx
 1476|Migration|hRayiyiFcg_LowRes_NX_20201021_12_33_06.png|hRayiyiFcg_Migration.nx
-1473|Block Blast !|h6r4fmPjkd_Block_Blast.png|h6r4fmPjkd_Block_Blast.nx
 1472|Castlevania demo (only backup)|ZMYXdmopHM_Castlevania_Demo.png|ZMYXdmopHM_Castlevania_Demo.nx
 1465|Pacman Dungeon Adventure|q5yrEsDvXv_Pacman_Dungeon_Adventure_1.33.png|q5yrEsDvXv_Pacman_Dungeon_Adventure_1.33.nx
-1457|Motocross 2.0|irQYt8HW9X_Motocross_2.0.png|irQYt8HW9X_Motocross_2.0.nx
 1456|More Insanity|XbGZy93QD9_More_Insanity.png|XbGZy93QD9_More_Insanity.nx
 1455|Paint by Number|WtRkxRwe5h_Paint_by_Number.png|WtRkxRwe5h_Paint_by_Number.nx
 1454|Speedy Speller game|FHYGsyS6xi_Speedy_Speller.png|FHYGsyS6xi_Speedy_Speller.nx
@@ -821,8 +810,6 @@
 1422|Football Arcade|aSH73TriUn_Football_Arcade.png|aSH73TriUn_Football_Arcade.nx
 1411|Tiny Tactical Tanks! Discontinued |E23DASUV9w_09F72C466C0341C39972C9BB61B24061.jpeg|E23DASUV9w_Tiny_Tactical_Tanks.nx
 1404|Super--Bit game|3iF6Rtgx66_SuperBit.png|3iF6Rtgx66_SuperBit.nx
-1402|Speedway |eEofeMxJtQ_Speedway.png|eEofeMxJtQ_Speedway.nx
-1401|LowRes Adventure - Baguette !|H8xm7CtmSZ_Laventure_LowRes_V1.1.png|H8xm7CtmSZ_Laventure_LowRes_V1.1.nx
 1400|Guns with legs|Yn5JMfu4yM_C3A3E916DD4742119EC206A7634B46F1.jpeg|Yn5JMfu4yM_GUNS_WITH_LEGS.nx
 1395|LowRes Fight|t4oYqAVTPG_LowRes_NX_20200901_16_20_00.png|t4oYqAVTPG_LowresFightV3.3.2.nx
 1392|SinRide|fpHkJpopdS_LowRes_NX_20200829_14_49_04.png|fpHkJpopdS_SinRide.nx
@@ -836,16 +823,12 @@
 1355|The forgotten treasure|hXBVvekytH_The_Forgotten_Treasure.png|hXBVvekytH_The_Forgotten_Treasure.nx
 1353|FreeSkate|JVJBYxQDu6_screenshot.png|JVJBYxQDu6_FreeSkate3.nx
 1351|Polly-quest discontinuined|nCoqCuyCy4_FBBC8906B15D43D29547AE2AB446DA9D.jpeg|nCoqCuyCy4_Adventure_Quest.nx
-1349|Fortune telling|pvmGyJSZHq_Fortune_Telling.png|pvmGyJSZHq_Fortune_Telling.nx
 1348|Bombman|uoMvbeDZx2_BombMan_1.0.png|uoMvbeDZx2_BombMan_1.0.nx
-1347|Road Dash|PANM8YeAgA_Road_Dash.png|PANM8YeAgA_Road_Dash.nx
 1346|Epic Walk|ZeWRoythvE_LowRes_NX_20200811_16_39_03.png|ZeWRoythvE_Epic_Walk.nx
 1344|Dungeon Master|DSPJGKVuBo_Dungeon_Master.png|DSPJGKVuBo_Dungeon_Master.nx
 1339|Gravity Simulator 0.3|3rXqYQuDq5_Unnamed_Program_2.png|3rXqYQuDq5_Unnamed_Program_2.nx
 1338|Space Toy|o2igJVG84d_Space_Toy.png|o2igJVG84d_Space_Toy.nx
-1337|Disk browser|7qKDSKBXwo_Disk_Size.png|7qKDSKBXwo_Disk_Size.nx
 1336|Basically, you run from a little yellow death monster|rEo5395Njp_DF388FE3D872468C9068D78021914DAD.jpeg|rEo5395Njp_Dont_Know_Dont_Ask..nx
-1331|Gravity|WrxtCzuptx_Gravity.png|WrxtCzuptx_Gravity.nx
 1328|DnD game|ywwDRAsu7u_DnD_0.83.png|ywwDRAsu7u_DnD_0.83.nx
 1327|Orbital swing|bx733oucYK_78B98678D69D462D99C164F368D74B02.jpeg|bx733oucYK_Orbital_Swing_Final.nx
 1326|MATCH CHALLENGE game|kMkbvMDQKq_Matchup.png|kMkbvMDQKq_Matchup.nx
@@ -856,9 +839,7 @@
 1311|Zounds|A5xn3NcBML_Zounds_0.1.png|A5xn3NcBML_Zounds_0.1.nx
 1310|Skip N Slide|HkTDeQrUkC_Slip_N_Slide.png|HkTDeQrUkC_Slip_N_Slide.nx
 1308|Zombies|XevXdFa2bX_Zombies_V1.5.png|XevXdFa2bX_Zombies_V1.5.nx
-1307|SSBNX|2oYHiQNb9k_SSBNX.png|2oYHiQNb9k_SSBNX.nx
 1306|Mission Impossible: Training Mission (game)|3GbBaUF8Fj_Mission_Impossible_M0.png|3GbBaUF8Fj_Mission_Impossible_M0.nx
-1305|Char designer 1.6.1|2WMWsmHMpR_Char_Designer_1.6.1.png|2WMWsmHMpR_Char_Designer_1.6.1.nx
 1300|Rain Drop 20|nSGZhLQLRR_Rain_Drop_20.png|nSGZhLQLRR_Rain_Drop_20.nx
 1297|String Theory game|ZJuBx46yNC_String_Theory.png|ZJuBx46yNC_String_Theory.nx
 1293|Oregon trail remade (v 1.2.0) |Zb8grVrQyf_Oregon_Trail_Remade.png|Zb8grVrQyf_Oregon_Trail_Remade.nx
@@ -921,20 +902,17 @@
 1128|Remix failed, then fixed|kq6jExFVcX_The_Landscape_Remix_2.png|kq6jExFVcX_The_Landscape_Remix_2.nx
 1125|Settlement|hErMizkGLB_Settlement_0.21.png|hErMizkGLB_Settlement_0.21.nx
 1118|Art of Noise: Beatbox (wip)|wZuRmK3RWT_Art_of_Noise_Beatbox.png|wZuRmK3RWT_Art_of_Noise_Beatbox.nx
-1117|G9 OS 0.3.4|L2MKHdrmom_G9_OS.png|L2MKHdrmom_G9_OS.nx
 1116|Project SPACE 0.6|WexW6PxpUM_Project_SPACE_0.6.png|WexW6PxpUM_Project_SPACE_0.6.nx
 1114|BLAST2!!|98o9YXtyFJ_BLAST2.png|98o9YXtyFJ_BLAST2.nx
 1110|MinimalOS 0.4.1|DMAsK9nMFL_MinimalOS_0.4.1.png|DMAsK9nMFL_MinimalOS_0.4.1.nx
 1109|EYEBALLS (2 player test)|rajtifMVJv_Eyeballs..._2_Player_Test.png|rajtifMVJv_Eyeballs..._2_Player_Test.nx
 1108|The World We Know Today|b5YJzuagnW_The_World_We_Know_Today.png|b5YJzuagnW_The_World_We_Know_Today.nx
-1107|G_9 console|Ra8o9xLsqd_G_3_Console.png|Ra8o9xLsqd_G_3_Console.nx
 1106|Tetris Puzzler|H9dX6XFRVZ_Tetris_Puzzler.png|H9dX6XFRVZ_Tetris_Puzzler.nx
 1100|626:827627627:66:|rwwrgF6WjN_Animal_Zoo_Puzzle.png|rwwrgF6WjN_Animal_Zoo_Puzzle.nx
 1097|smooth max|caPLy247aN_smoothmax.png|caPLy247aN_smoothmax.nx
 1096|Jdjejsnduehdhansb|9WWMEcoF2p_LowRes_Racing_3_0.1.png|9WWMEcoF2p_LowRes_Racing_3_0.1.nx
 1095|Fidget Spinner|tNHX5n7Htu_Fidgit.png|tNHX5n7Htu_Fidgit.nx
 1094|Chicken Blaster|ddZNUjNpLq_unnamed.png|ddZNUjNpLq_Chicken_Blasterimproved.nx
-1093|The most funny thing I never made|ntr7WahAq2_LowRes_Galaxy_3.png|ntr7WahAq2_LowRes_Galaxy_3.nx
 1092|Weed Tycoon|7vRp6yzfim_Weed_Tycoon_v1.1.png|7vRp6yzfim_Weed_Tycoon_v1.1.nx
 1091|Auditory Visual Input Overload|YqaXfW8JwE_Auditory_Visual_Input_Overload.png|YqaXfW8JwE_Auditory_Visual_Input_Overload.nx
 1090|Rider in black|aHuzXSCSTJ_Rider_In_Black_Beta.png|aHuzXSCSTJ_Rider_In_Black_Beta.nx
@@ -977,8 +955,6 @@
 1013|Zombie shooter|fxovyXk2G3_Zombie_Shooter.png|fxovyXk2G3_Zombie_Shooter.nx
 1012|The REAL SUDOKU game|BWk6z5qSeu_The_REAL_Sudoku.png|BWk6z5qSeu_The_REAL_Sudoku.nx
 1007|Musical thing|D5MzpTonf2_Musicthing.png|D5MzpTonf2_Musicthing.nx
-1004|GameBoy Classic|6R4MXzb6Ci_GameBoy_Classic.png|6R4MXzb6Ci_GameBoy_Classic.nx
-1002|Sprint !|JAWF5eSFLc_Sprint_.png|JAWF5eSFLc_Sprint_.nx
 1000|Acey Duecy game|UmwXhMLWY2_Acey_Duecy_game.png|UmwXhMLWY2_Acey_Duecy_game.nx
 995|Shuttle|MnQzKxYEQv_Shuttle.png|MnQzKxYEQv_Shuttle.nx
 991|Magic Square game|RqvAWXenBp_Magic_Square.png|RqvAWXenBp_Magic_Square.nx
@@ -1016,14 +992,11 @@
 905|Finger Runner Workout Day 2|PxTV4U5ZHg_Finger_Runner_Workout_Day_2.png|PxTV4U5ZHg_Finger_Runner_Workout_Day_2.nx
 904|Finger runner workout day|FKfgrHQCkj_Finger_Runner_Workout_Day.png|FKfgrHQCkj_Finger_Runner_Workout_Day.nx
 903|(A)!|97qNtDEYSF_A.png|97qNtDEYSF_A.nx
-902|Disk Reader|i3NYYkNr2q_Disk.png|i3NYYkNr2q_Disk.nx
 900|3D Raytracing Demo|CAY6WPWK86_3d_Raycasting_Demo.png|CAY6WPWK86_3d_Raycasting_Demo.nx
 896|Dungeon RougeLike what game will kind of look like|jcbvdfqPXx_RougeLike.png|jcbvdfqPXx_RougeLike.nx
 894|Binaural|bbmpH2macc_Binaural.png|bbmpH2macc_Binaural.nx
-891|Mini-Race !|X43hY4arHL_MiniRace.png|X43hY4arHL_MiniRace.nx
 884|Digital Clock|dVWzjD8qMq_Digital_Clock.png|dVWzjD8qMq_Digital_Clock.nx
 881|Big Text Game|2Fd4V9vpQu_Big_Text_Game.png|2Fd4V9vpQu_Big_Text_Game.nx
-879|Mario Run|SwJF2QrAVR_Mario_Run_.png|SwJF2QrAVR_Mario_Run_.nx
 878|Tinkertown|zLVe7CkMqw_Tinkertown.png|zLVe7CkMqw_Tinkertown.nx
 875|Tinker|LxHMMQTM5u_Tinker.png|LxHMMQTM5u_Tinker.nx
 874|Bunnies|ZVSw4GF44w_Bunnies.png|ZVSw4GF44w_Bunnies.nx
@@ -1060,7 +1033,6 @@
 823|What have I done|SWbqQva3oS_Char_Designer.png|SWbqQva3oS_Char_Designer.nx
 821|Treasure Hunt|JVdontwpDt_Treasure_Hunt_0.3.png|JVdontwpDt_Treasure_Hunt_0.3.nx
 820|8bit Gaming System|YwFCZZK36u_8bit_GS.png|YwFCZZK36u_8bit_GS.nx
-819|Green VS Red|yYsq2GvSZn_Green_VS_Red.png|yYsq2GvSZn_Green_VS_Red.nx
 818|Leonardo Pisano Bigollo Bonacci|dYoFmussXW_Fibonacci.png|dYoFmussXW_Fibonacci.nx
 814|Square Moiré|Gwk5dAyptJ_Square_Moire.png|Gwk5dAyptJ_Square_Moire.nx
 813|Circle Moiré|YVkJDnYp9K_Circle_Moire.png|YVkJDnYp9K_Circle_Moire.nx
@@ -1072,14 +1044,9 @@
 803|Pxl (was8bit inkblot)|TQikPbxMoz_Pxl_was8bit_Inkblot_.png|TQikPbxMoz_Pxl_was8bit_Inkblot_.nx
 802|Drag and Drop|ih7XrZYVTm_Drag_And_Drop_Coder.png|ih7XrZYVTm_Drag_And_Drop_Coder.nx
 798|Testing PERSISTENT MEMORY|MnDrUxezUH_Testing_PERSISTENT_MEMORY_02.01.png|MnDrUxezUH_Testing_PERSISTENT_MEMORY_02.01.nx
-795|Tap game !|arf6oBT9x9_Tap_game.png|arf6oBT9x9_Tap_game.nx
-792|Battle !|fNKbJ6qegh_Battle_.png|fNKbJ6qegh_Battle_.nx
 787|Robot arena|DhT8q8ZVkE_Robot_Arena.png|DhT8q8ZVkE_Robot_Arena.nx
 786|Emoji Party Puzzle|XPPCxhgapX_Emoji_Party_Puzzle.png|XPPCxhgapX_Emoji_Party_Puzzle.nx
 784|Animal Zoo Puzzle|xCTxQNLqKY_Animal_Zoo_Puzzle.png|xCTxQNLqKY_Animal_Zoo_Puzzle.nx
-781|Website|bRdPAmGfA4_Website.png|bRdPAmGfA4_Website.nx
-780|Gif of lights !|qQCTALGSYv_Movie_Lights_gamer_12321_remix.png|qQCTALGSYv_Movie_Lights_gamer_12321_remix.nx
-775|Some math ...|uEZj5rwMfv_Some_math_....png|uEZj5rwMfv_Some_math_....nx
 772|Shhh.. secret game...|CV5yHMmfcj_Secret_Game.png|CV5yHMmfcj_Secret_Game.nx
 771|Four million bottles of beer on the wall!|rgLJQV7WaG_4000000bottles.png|rgLJQV7WaG_4000000bottles.nx
 770|Chatbot (this is cool, plz read!)|4isv7NiqDc_Nxnxkl.png|4isv7NiqDc_Yayeet.nx
@@ -1088,12 +1055,10 @@
 764|99 bottles of beer on the wall!|BVmEnkcEAk_Disk.png|BVmEnkcEAk_99bottles.nx
 762|Color My Color|kVfvkzQHK4_Color_My_Color.png|kVfvkzQHK4_Color_My_Color.nx
 758|Emily chatbot|7dgcYUh7Ce_Chatbot_Emily.png|7dgcYUh7Ce_Chatbot_Emily.nx
-756|TEST OF RPG|Ld5WF4PRnJ_Test_of_RPG.png|Ld5WF4PRnJ_Test_of_RPG.nx
 752|REAL PAD|4pPzPi5GAd_REAL_PAD.png|4pPzPi5GAd_REAL_PAD.nx
 751|Motocross (DJMoffinz remix)|gFTmWthqd6_Motocross.png|gFTmWthqd6_Motocross.nx
 750|The Natac Island music (unfinished)|vh8LTtKzG9_Natac_Music.png|vh8LTtKzG9_Natac_Music.nx
 749|Tic tac toe|yas8aBvFo4_Yeti.png|yas8aBvFo4_Yeti.nx
-748|Text editor |jf54vAUBsX_Text_editor.png|jf54vAUBsX_Text_editor.nx
 746|Duel|uzVoyQLErb_D_U_E_L.png|uzVoyQLErb_D_U_E_L.nx
 744|Blackjack|TCJ7WKxX38_LowRes_Adventure_1.1.png|TCJ7WKxX38_Blackjack.nx
 743|Brainf**k interperter|yPyzfRoCDV_Char_Designer_1.6.png|yPyzfRoCDV_Brainfuck.nx
@@ -1106,9 +1071,6 @@
 730|Warp Speed|qAvGv6GX3F_Warp_Speed.png|qAvGv6GX3F_Warp_Speed.nx
 729|Firecrackers (toy)|TKa7ydKkDq_Firecrackers_toy.png|TKa7ydKkDq_Firecrackers_toy.nx
 728|Natac Island |4TQNTEiUdG_Natac_Island_1.7b.png|4TQNTEiUdG_Natac_Island_1.7b.nx
-727|Disk|GCvE9MXvWz_Disk.png|GCvE9MXvWz_Disk.nx
-725|Flight stimulator|hMYWYpCHkL_Flight_simulator.png|hMYWYpCHkL_Flight_simulator.nx
-722|Motocross|xtrfGZS47S_Motocross.png|xtrfGZS47S_Motocross.nx
 717|Bacteria|epPy2HJCJS_Bacteria.png|epPy2HJCJS_Bacteria.nx
 709|Fungí war|unPJWgzjqh_Fungi_War.png|unPJWgzjqh_Fungi_War.nx
 708|Squiggles|MXQohEdQLW_Squiggles_2.1.png|MXQohEdQLW_Squiggles_2.1.nx
