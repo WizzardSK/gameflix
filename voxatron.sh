@@ -21,6 +21,7 @@ while true; do
     PAGE=$((PAGE + 1))
     sleep 1
 done
+wait
 sort -nr "$TEMP_FILE" > "$OUTPUT_FILE"
 rm -f "$TEMP_FILE"
 
