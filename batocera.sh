@@ -23,8 +23,8 @@ echo "$FILES" | while read -r LINE; do
   HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p'); FILENAME=$(echo "$LINE" | sed -n 's/.*filename\s*=\s*"\([^"]*\)".*/\1/p')
   FILE_PATH="${DOWNLOAD_DIR}/${HASH}.tic"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"
   SNAP_PATH="/userdata/thumbs/TIC-80/${HASH}.gif"; SNAPSHOT_URL="${BASE_URL}/${HASH}/cover.gif"
-  if [ ! -f "$FILE_PATH" ]; then wget -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
-  if [ ! -f "$SNAP_PATH" ]; then wget -O "$SNAP_PATH" "$SNAPSHOT_URL"; fi
+  if [ ! -f "$FILE_PATH" ]; then wget -nv -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
+  if [ ! -f "$SNAP_PATH" ]; then wget -nv -O "$SNAP_PATH" "$SNAPSHOT_URL"; fi
 done
 
 BASE_URL="https://wasm4.org/play"; CARTS_URL="https://wasm4.org/carts"; ROM_DIR="/userdata/roms/wasm4"; IMG_DIR="/userdata/thumbs/WASM-4"
@@ -33,7 +33,7 @@ curl -s "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -
   for EXT in wasm png; do
     FILE="${ROM_DIR}/$GAME.$EXT"
     [[ "$EXT" == "png" ]] && FILE="${IMG_DIR}/$GAME.$EXT"
-    [[ -f "$FILE" ]] || wget -O "$FILE" "$CARTS_URL/$GAME.$EXT"
+    [[ -f "$FILE" ]] || wget -nv -O "$FILE" "$CARTS_URL/$GAME.$EXT"
   done
 done
 
@@ -41,8 +41,8 @@ if [ ! -f /userdata/zip/uzebox.zip ]; then wget -O /userdata/zip/uzebox.zip http
 
 FILE_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt"; DOWNLOAD_DIR="/userdata/roms/lowresnx"; mkdir -p /userdata/thumbs/LowresNX
 curl "$FILE_URL" | while IFS="|"; read -r id title image nx_file; do
-    if [ ! -s "$DOWNLOAD_DIR/$nx_file" ]; then download_url="https://lowresnx.inutilis.com/uploads/$nx_file"; wget "$download_url" -O "$DOWNLOAD_DIR/$nx_file"; fi
-    if [ ! -s "/userdata/thumbs/LowresNX/$image" ]; then download_url="https://lowresnx.inutilis.com/uploads/$image"; wget "$download_url" -O "/userdata/thumbs/LowresNX/$image"; fi
+    if [ ! -s "$DOWNLOAD_DIR/$nx_file" ]; then download_url="https://lowresnx.inutilis.com/uploads/$nx_file"; wget -nv "$download_url" -O "$DOWNLOAD_DIR/$nx_file"; fi
+    if [ ! -s "/userdata/thumbs/LowresNX/$image" ]; then download_url="https://lowresnx.inutilis.com/uploads/$image"; wget -nv "$download_url" -O "/userdata/thumbs/LowresNX/$image"; fi
 done
 
 REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt"; OUTPUT_DIR="/userdata/roms/pico8"; SCREEN_DIR="/userdata/thumbs/PICO-8"; mkdir -p $SCREEN_DIR
@@ -83,7 +83,8 @@ echo "<gameList>" > /userdata/roms/lowresnx/gamelist.xml; curl -s "https://raw.g
 done; echo "</gameList>" >> /userdata/roms/lowresnx/gamelist.xml
 
 echo "<gameList>" > /userdata/roms/pico8/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt" | while IFS=$'\t' read -r id name cart; do
-  hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/PICO-8/$( [[ $cart =~ ^[a-zA-Z] ]] && echo pico8_ || echo )${cart%.p8.png}.png</image>";
+  #hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/PICO-8/$( [[ $cart =~ ^[a-zA-Z] ]] && echo pico8_ || echo )${cart%.p8.png}.png</image>";
+  hra="<game><path>./${cart}</path><name>${name}</name>";
   echo "${hra}</game>" >> /userdata/roms/pico8/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/pico8/gamelist.xml
 
@@ -147,5 +148,5 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
 done
 cp /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.bak
-wget -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg > /dev/null 2>&1
+wget -nv -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg > /dev/null 2>&1
 chvt 2; wget http://127.0.0.1:1234/reloadgames > /dev/null 2>&1
