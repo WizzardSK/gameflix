@@ -11,17 +11,16 @@ while true; do
     if echo "$HTML" | grep -q '\[no posts found\]'; then break; fi
     echo "$HTML" | grep '<div style="padding:10px; display:table; margin:auto">' | sed -E 's/.*>([^<]+)<.*/\1/' > titles.txt
     echo "$HTML" | grep -oP '<a href="\?tid=\d+"' | grep -oP '\d+' | uniq > tids.txt
-    paste tids.txt titles.txt | ( while IFS=$'\t' read -r TID TITLE; do
+    paste tids.txt titles.txt | while IFS=$'\t' read -r TID TITLE; do
         CART_HTML=$(curl -s "${BASE_CART_URL}${TID}")
         PNG_NAME=$(echo "$CART_HTML" | grep -oP 'href="[^"]+/(?:[^"/]+\.vx\.png|cpost[0-9]+\.png)"' | head -n1 | sed -E 's/.*\/([^/]+\.png)".*/\1/')
         if [[ -z "$PNG_NAME" ]]; then continue; fi
         echo -e "$TID\t$TITLE\t$PNG_NAME" >> "$TEMP_FILE"
-    done ) &
+    done
     rm -f titles.txt tids.txt
     PAGE=$((PAGE + 1))
     sleep 1
 done
-wait
 sort -nr "$TEMP_FILE" > "$OUTPUT_FILE"
 rm -f "$TEMP_FILE"
 
