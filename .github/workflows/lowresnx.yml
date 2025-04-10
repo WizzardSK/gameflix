@@ -1,4 +1,4 @@
-name: LowresNX carts updater
+name: LowresNX cart updater
 
 on:
   schedule:
