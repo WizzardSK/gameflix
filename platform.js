@@ -55,7 +55,7 @@ function generatePicoLinks(romPath, imagePath) {
         const [id, nazov, kart] = fileName.split('\t');
         let screen;
         if (/^\d/.test(kart)) { screen = "pico" + kart.replace(/\.p8\.png$/, '.png'); } else { screen = kart.replace(/^(.*)\.p8\.png$/, 'pico8_$1.png'); }
-        document.write(`https://www.lexaloffle.com/bbs/?pid=${id}#p" target="main">
+        document.write(`<a href="https://www.lexaloffle.com/bbs/?pid=${kart}#p" target="main">
         <figure><img loading="lazy" src="https://www.lexaloffle.com/bbs/thumbs/${screen}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
