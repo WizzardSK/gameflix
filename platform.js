@@ -60,6 +60,16 @@ function generatePicoLinks(romPath, imagePath) {
     }); document.write("</div>");
 }
 
+function generateVoxLinks(romPath, imagePath) {
+    document.write("<div id=\"figureList\">"); fileNames.forEach(fileName => {
+        const [id, nazov, kart] = fileName.split('\t');
+        let screen;
+        if (/^\d/.test(kart)) { screen = "vox" + kart.replace(/\.vx\.png$/, '.png'); } else { screen = kart.replace(/^(.*)\.vx\.png$/, 'vox_$1.png'); }
+        document.write(`<a href="https://www.lexaloffle.com/bbs/?pid=${kart}#p" target="main">
+        <figure><img loading="lazy" src="https://www.lexaloffle.com/bbs/thumbs/${screen}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+    }); document.write("</div>");
+}
+
 function generateUzeLinks(romPath, imagePath) {
     document.write("<div id=\"figureList\">"); fileNames.forEach(fileName => {
         const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName; document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
