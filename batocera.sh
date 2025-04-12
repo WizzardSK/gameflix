@@ -1,8 +1,5 @@
 #!/bin/bash
-emulationstation stop; chvt 3; clear
-mount -o remount,size=6000M /tmp
-ln -s /usr/bin/fusermount /usr/bin/fusermount3
-curl https://rclone.org/install.sh | bash > /dev/null 2>&1
+emulationstation stop; chvt 3; clear; mount -o remount,size=6000M /tmp; ln -s /usr/bin/fusermount /usr/bin/fusermount3; curl https://rclone.org/install.sh | bash > /dev/null 2>&1
 wget -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf > /dev/null 2>&1
 if [ ! -f /userdata/system/httpdirfs ];  then wget -O /userdata/system/httpdirfs  https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/httpdirfs; chmod +x /userdata/system/httpdirfs; fi
 if [ ! -f /userdata/system/fuse-zip ];   then wget -O /userdata/system/fuse-zip   https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/fuse-zip;  chmod +x /userdata/system/fuse-zip; fi
@@ -23,18 +20,12 @@ echo "$FILES" | while read -r LINE; do
   HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p'); FILENAME=$(echo "$LINE" | sed -n 's/.*filename\s*=\s*"\([^"]*\)".*/\1/p')
   FILE_PATH="${DOWNLOAD_DIR}/${HASH}.tic"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"
   SNAP_PATH="/userdata/thumbs/TIC-80/${HASH}.gif"; SNAPSHOT_URL="${BASE_URL}/${HASH}/cover.gif"
-  if [ ! -f "$FILE_PATH" ]; then wget -nv -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
-  if [ ! -f "$SNAP_PATH" ]; then wget -nv -O "$SNAP_PATH" "$SNAPSHOT_URL"; fi
+  if [ ! -f "$FILE_PATH" ]; then wget -nv -O "$FILE_PATH" "$DOWNLOAD_URL"; fi; if [ ! -f "$SNAP_PATH" ]; then wget -nv -O "$SNAP_PATH" "$SNAPSHOT_URL"; fi
 done
 
 BASE_URL="https://wasm4.org/play"; CARTS_URL="https://wasm4.org/carts"; ROM_DIR="/userdata/roms/wasm4"; IMG_DIR="/userdata/thumbs/WASM-4"
-mkdir -p "$ROM_DIR" "$IMG_DIR"
-curl -s "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -r GAME; do
-  for EXT in wasm png; do
-    FILE="${ROM_DIR}/$GAME.$EXT"
-    [[ "$EXT" == "png" ]] && FILE="${IMG_DIR}/$GAME.$EXT"
-    [[ -f "$FILE" ]] || wget -nv -O "$FILE" "$CARTS_URL/$GAME.$EXT"
-  done
+mkdir -p "$ROM_DIR" "$IMG_DIR"; curl -s "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -r GAME; do
+  for EXT in wasm png; do FILE="${ROM_DIR}/$GAME.$EXT"; [[ "$EXT" == "png" ]] && FILE="${IMG_DIR}/$GAME.$EXT"; [[ -f "$FILE" ]] || wget -nv -O "$FILE" "$CARTS_URL/$GAME.$EXT"; done
 done
 
 if [ ! -f /userdata/zip/uzebox.zip ]; then wget -O /userdata/zip/uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; unzip -j /userdata/zip/uzebox.zip -d /userdata/roms/uzebox; fi
@@ -78,9 +69,7 @@ echo "<gameList>" > /userdata/roms/uzebox/gamelist.xml; ls /userdata/roms/uzebox
   line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/uzebox/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/uzebox/gamelist.xml
 
-if [ ! -d "/userdata/thumbs/Uzebox" ]; then
-  git clone --depth 1 "https://github.com/WizzardSK/Uzebox.git" /userdata/thumbs/Uzebox 2>&1 | tee -a /userdata/system/logs/git.log
-else
+if [ ! -d "/userdata/thumbs/Uzebox" ]; then git clone --depth 1 "https://github.com/WizzardSK/Uzebox.git" /userdata/thumbs/Uzebox 2>&1 | tee -a /userdata/system/logs/git.log; else
   git config --global --add safe.directory /userdata/thumbs/Uzebox
   git -C /userdata/thumbs/Uzebox config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log
   git -C /userdata/thumbs/Uzebox pull 2>&1 | tee -a /userdata/system/logs/git.log
@@ -91,32 +80,21 @@ echo "<gameList>" > /userdata/roms/lowresnx/gamelist.xml; curl -s "https://raw.g
 done; echo "</gameList>" >> /userdata/roms/lowresnx/gamelist.xml
 
 echo "<gameList>" > /userdata/roms/pico8/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt" | while IFS=$'\t' read -r id name cart; do
-  hra="<game><path>./${cart}</path><name>${name}</name>";
-  echo "${hra}</game>" >> /userdata/roms/pico8/gamelist.xml
+  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> /userdata/roms/pico8/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/pico8/gamelist.xml
 
 echo "<gameList>" > /userdata/roms/voxatron/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/voxatron.txt" | while IFS=$'\t' read -r id name cart; do
-  hra="<game><path>./${cart}</path><name>${name}</name>";
-  echo "${hra}</game>" >> /userdata/roms/voxatron/gamelist.xml
+  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> /userdata/roms/voxatron/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/voxatron/gamelist.xml
 
-IFS=";"
-> /userdata/system/logs/git.log
-declare -A seen
+IFS=";"; > /userdata/system/logs/git.log; declare -A seen
+for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); > /userdata/roms/${rom[0]}/gamelist.xml; done
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
-  > /userdata/roms/${rom[0]}/gamelist.xml;
-done
-for each in "${roms[@]}"; do 
-  read -ra rom < <(printf '%s' "$each")
-  if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
+  if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
   if [[ -z "${seen[${rom[0]}]}" ]]; then
-    seen[${rom[0]}]=1
-    rom2="${rom[2]// /_}"
-    echo "${rom[2]} thumbs" | tee -a /userdata/system/logs/git.log
-    if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then
-      git clone --depth 1 "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]} 2>&1 | tee -a /userdata/system/logs/git.log
-    else
+    seen[${rom[0]}]=1; rom2="${rom[2]// /_}"; echo "${rom[2]} thumbs" | tee -a /userdata/system/logs/git.log
+    if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then git clone --depth 1 "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]} 2>&1 | tee -a /userdata/system/logs/git.log; else
       git config --global --add safe.directory /userdata/thumbs/${rom[2]}
       git -C /userdata/thumbs/${rom[2]} config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log
       git -C /userdata/thumbs/${rom[2]} pull 2>&1 | tee -a /userdata/system/logs/git.log
@@ -124,8 +102,7 @@ for each in "${roms[@]}"; do
     fi
   fi  
   ( rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  echo "${rom3}"
-  mkdir -p /userdata/roms/${rom[0]}/${rom3}
+  echo "${rom3}"; mkdir -p /userdata/roms/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     if [ ! -f /userdata/zip/${rom3}.zip ]; then wget -O /userdata/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
     /userdata/system/fuse-zip /userdata/zip/${rom3}.zip /userdata/roms/${rom[0]}/${rom3}
