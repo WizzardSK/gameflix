@@ -15,11 +15,11 @@ pocet=$(ls ~/roms/TIC-80 -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"TIC-80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/TIC-80.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"tic80\"); const fileNames = [" >> ~/gameflix/TIC-80.html; ((platforms++))
-curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
-  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+')
-  name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
-  if [[ -n "$hash" && -n "$name" ]]; then echo "\"$hash $name\"," >> ~/gameflix/TIC-80.html; fi
-done
+records=(); while IFS= read -r line; do
+  id=$(echo "$line" | grep -oP 'id\s*=\s*\K[0-9]+'); hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
+  if [[ -n "$id" && -n "$hash" && -n "$name" ]]; then records+=("$id $hash $name"); fi
+done < <(curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g')
+printf "%s\n" "${records[@]}" | sort -nr | while IFS=' ' read -r id hash name; do echo "\"$hash $name\"," >> ~/gameflix/TIC-80.html; done
 printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
 
 pocet=$(ls ~/roms/WASM-4 -1 | wc -l); total=$((pocet+total))
