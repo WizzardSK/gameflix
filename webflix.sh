@@ -28,15 +28,6 @@ curl "$FILE_URL" | while IFS="|"; read -r id title image nx_file; do
     if [ ! -s "$DOWNLOAD_DIR/$nx_file" ]; then download_url="https://lowresnx.inutilis.com/uploads/$nx_file"; wget "$download_url" -O "$DOWNLOAD_DIR/$nx_file"; fi
 done
 
-REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt"; OUTPUT_DIR="$HOME/roms/PICO-8"; mkdir -p "$OUTPUT_DIR"
-LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r ID NAME FILENAME; do
-    if [[ -n "$FILENAME" ]]; then
-        if [[ $FILENAME =~ ^[0-9] ]]; then PREFIX="${FILENAME:0:1}"; else PREFIX="${FILENAME:0:2}"; fi
-        OUTPUT_PATH="${OUTPUT_DIR}/${FILENAME}"; FILE_URL="https://www.lexaloffle.com/bbs/cposts/${PREFIX}/${FILENAME}"
-        if [[ ! -s "$OUTPUT_PATH" ]]; then wget -nv -O "$OUTPUT_PATH" "$FILE_URL"; fi
-    fi
-done
-
 IFS=";"
 for each in "${roms[@]}"; do
   echo "${rom3}"
