@@ -78,8 +78,6 @@ zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[Z80]/Sinclair ZX Spectrum - 
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> TOSEC;bluemsx_libretro
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK]/MGT Sam Coupe - Games - [DSK].zip;MGT - Sam Coupe;<code>Sam Coupé</code> DSK;simcoupe
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[SAD]/MGT Sam Coupe - Games - [SAD].zip;MGT - Sam Coupe;<code>Sam Coupé</code> SAD;simcoupe
-oricatmos;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[DSK]/Tangerine Oric-1 & Oric Atmos - Games - [DSK].zip;Oric - Atmos;Oric Atmos DSK;clksignal
-oricatmos;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[TAP]/Tangerine Oric-1 & Oric Atmos - Games - [TAP].zip;Oric - Atmos;Oric Atmos TAP;clksignal
 
 astrocade;No-Intro/Bally - Astrocade;Bally - Astrocade;<p>Bally Astrocade NoIntro;mame astrocde -cart
 astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN]/Bally Professional Arcade & Astrocade - Games - [BIN].zip;Bally - Astrocade;Bally Astrocade TOSEC;mame astrocde -cart
