@@ -19,6 +19,7 @@ records=(); while IFS= read -r line; do
   id=$(echo "$line" | grep -oP 'id\s*=\s*\K[0-9]+'); hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
   if [[ -n "$id" && -n "$hash" && -n "$name" ]]; then records+=("$id $hash $name"); fi
 done < <(curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g')
+echo "writing TIC80"
 printf "%s\n" "${records[@]}" | sort -nr | while IFS=' ' read -r id hash name; do echo "\"$hash $name\"," >> ~/gameflix/TIC-80.html; done
 printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
 
