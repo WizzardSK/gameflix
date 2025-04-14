@@ -15,16 +15,15 @@ pocet=$(curl -s "https://tic80.com/api?fn=dir&path=play/Games" | grep -o 'id = [
 echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"TIC-80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/TIC-80.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"tic80\"); const fileNames = [" >> ~/gameflix/TIC-80.html; ((platforms++))
-records=(); data=$(curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g')
-while IFS= read -r line; do
-  if [[ "$line" =~ id\s*=\s*([0-9]+) ]]; then id="${BASH_REMATCH[1]}"; else id=""; fi
-  if [[ "$line" =~ hash\s*=\s*\"([a-f0-9]+)\" ]]; then hash="${BASH_REMATCH[1]}"; else hash=""; fi
-  if [[ "$line" =~ name\s*=\s*\"([^\"]+)\" ]]; then name="${BASH_REMATCH[1]}"; else name=""; fi
-  if [[ -n "$id" && -n "$hash" && -n "$name" ]]; then records+=("$id $hash $name"); fi
+data=$(curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g')
+records=(); while IFS= read -r line; do
+  if [[ "$line" =~ id[[:space:]]*=[[:space:]]*([0-9]+) ]]; then id="${BASH_REMATCH[1]}"; else continue; fi
+  if [[ "$line" =~ hash[[:space:]]*=[[:space:]]*\"([a-f0-9]+)\" ]]; then hash="${BASH_REMATCH[1]}"; else continue; fi
+  if [[ "$line" =~ name[[:space:]]*=[[:space:]]*\"([^\"]+)\" ]]; then name="${BASH_REMATCH[1]}"; else continue; fi
+  records+=("$id $hash $name")
 done <<< "$data"
-printf "%s\n" "${records[@]}" | sort -nr | while IFS=' ' read -r id hash name; do echo "\"$hash $name\"," >> ~/gameflix/TIC-80.html; done
+printf "%s\n" "${records[@]}" | sort -nr -k1,1 >> ~/gameflix/TIC-80.html
 printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
-
 pocet=$(ls ~/roms/WASM-4 -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"WASM-4\") core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/WASM-4.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
