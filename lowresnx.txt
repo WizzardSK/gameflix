@@ -1,3 +1,4 @@
+3692|TRI MATCH|xkV2Xbu8pd_Tri_Match.png|xkV2Xbu8pd_Tri_Match.nx
 3689|Guess The Number|82okJqG7vZ_Guess_The_Number.png|82okJqG7vZ_Guess_The_Number.nx
 3686|The Pasture Of The Other Realm|2sijuadZjL_The_Pasture_Of_The_Other_Realm3.png|2sijuadZjL_The_Pasture_Of_The_Other_Realm3.nx
 3685|Poptris (Tetris variant)|TrRKUHDM5K_Poptris_050.png|TrRKUHDM5K_Poptris_050.nx
@@ -413,7 +414,7 @@
 2516|A Commodore 64 remake in Nx (demo)|NUbmomMNJf_Commodore_64.png|NUbmomMNJf_Commodore_64.nx
 2512|Paint Splat game|QwnvcgD7pn_Paint_Splat.png|QwnvcgD7pn_Paint_Splat.nx
 2510|Crazy Lights Out game|9VttTs5zMi_Crazy_Lights_Out.png|9VttTs5zMi_Crazy_Lights_Out.nx
-2509|||
+2509|Super Lights Out game|D3etiijdAC_Super_Lights_Out.png|D3etiijdAC_Super_Lights_Out.nx
 2506|Coffe|58vk8ntPTb_LowRes_NX_20220719_10_52_37.png|58vk8ntPTb_Coffee.nx
 2504|Chess Battle|CoeCDNjka9_Chess_Battle_V0.83.png|CoeCDNjka9_Chess_Battle_V0.83.nx
 2498|Actor Heap|R6qohRJuS6_Actor_Heap.png|R6qohRJuS6_Actor_Heap.nx
