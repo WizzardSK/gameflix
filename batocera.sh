@@ -8,7 +8,7 @@ if [ ! -f /userdata/system/ratarmount ]; then wget -O /userdata/system/ratarmoun
 if [ ! -f /userdata/system/cli.tar.gz ]; then wget -O /userdata/system/cli.tar.gz https://batocera.pro/app/cli.tar.gz; tar -xf /userdata/system/cli.tar.gz -C /userdata/system/; fi
 if [ ! -f /userdata/zip/atari2600roms.zip ]; then wget -O /userdata/zip/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
 
-curl -L install.batoaddons.app | bash
+curl -fsSL install.batoaddons.app | bash
 
 #/userdata/system/cli/run
 
