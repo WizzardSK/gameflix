@@ -7,11 +7,7 @@ if [ ! -f /userdata/system/mount-zip ];  then wget -O /userdata/system/mount-zip
 if [ ! -f /userdata/system/ratarmount ]; then wget -O /userdata/system/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v0.15.2/ratarmount-0.15.2-x86_64.AppImage; chmod +x /userdata/system/ratarmount; fi
 if [ ! -f /userdata/system/cli.tar.gz ]; then wget -O /userdata/system/cli.tar.gz https://batocera.pro/app/cli.tar.gz; tar -xf /userdata/system/cli.tar.gz -C /userdata/system/; fi
 if [ ! -f /userdata/zip/atari2600roms.zip ]; then wget -O /userdata/zip/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
-
-curl -fsSL install.batoaddons.app | bash
-
-#/userdata/system/cli/run
-
+/userdata/system/cli/run
 mkdir -p /userdata/zip/atari2600roms /userdata/roms/atari2600/Atari\ 2600\ ROMS /userdata/{rom,roms,thumb,thumbs,zip} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/thumbs/TIC-80
 /userdata/system/fuse-zip /userdata/zip/atari2600roms.zip /userdata/zip/atari2600roms
 mount -o bind /userdata/zip/atari2600roms/ROMS /userdata/roms/atari2600/Atari\ 2600\ ROMS
@@ -75,8 +71,7 @@ done; echo "</gameList>" >> /userdata/roms/uzebox/gamelist.xml
 
 if [ ! -d "/userdata/thumbs/Uzebox" ]; then git clone --depth 1 "https://github.com/WizzardSK/Uzebox.git" /userdata/thumbs/Uzebox 2>&1 | tee -a /userdata/system/logs/git.log; else
   git config --global --add safe.directory /userdata/thumbs/Uzebox
-  git -C /userdata/thumbs/Uzebox config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log
-  git -C /userdata/thumbs/Uzebox pull 2>&1 | tee -a /userdata/system/logs/git.log
+  git -C /userdata/thumbs/Uzebox config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log; git -C /userdata/thumbs/Uzebox pull 2>&1 | tee -a /userdata/system/logs/git.log
 fi
 
 echo "<gameList>" > /userdata/roms/lowresnx/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt" | while IFS="|" read -r id name picture cart; do
