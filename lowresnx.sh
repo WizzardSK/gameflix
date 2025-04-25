@@ -9,7 +9,6 @@ while true; do
     page_content=$(curl -s "$URL")
     if echo "$page_content" | grep -q "No results"; then break; fi
     echo "$page_content" | grep -oP 'topic.php\?id=\K[0-9]+' | while read id; do
-        echo "  -> ID $id"
         topic_page=$(curl -s "https://lowresnx.inutilis.com/topic.php?id=$id")
         title=$(echo "$topic_page" | grep -oP '(?<=<h1>).*?(?=</h1>)' | head -n 1)
         image=$(echo "$topic_page" | grep -oP '(?<=<img class="screenshot pixelated" src="uploads/)[^"]+')
