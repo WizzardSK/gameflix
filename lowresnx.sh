@@ -14,7 +14,7 @@ while true; do
         title=$(echo "$topic_page" | grep -oP '(?<=<h1>).*?(?=</h1>)' | head -n 1)
         image=$(echo "$topic_page" | grep -oP '(?<=<img class="screenshot pixelated" src="uploads/)[^"]+')
         nx_url=$(echo "$topic_page" | grep -oP 'href="uploads/\K[^"]+\.nx' | head -n 1)
-        echo "$id|$title|$image|$nx_url" >> "$OUTPUT_FILE"
+        echo -e "$id\t$title\t$image\t$nx_url" >> "$OUTPUT_FILE"
     done
     ((page++)) 
 done
