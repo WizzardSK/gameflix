@@ -31,7 +31,7 @@ done
 if [ ! -f /userdata/zip/uzebox.zip ]; then wget -O /userdata/zip/uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; unzip -j /userdata/zip/uzebox.zip -d /userdata/roms/uzebox; fi
 
 FILE_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt"; DOWNLOAD_DIR="/userdata/roms/lowresnx"; mkdir -p /userdata/thumbs/LowresNX
-curl "$FILE_URL" | while IFS="|"; read -r id title image nx_file; do
+curl "$FILE_URL" | while IFS=$'\t' read -r id title image nx_file; do
     if [ ! -s "$DOWNLOAD_DIR/$nx_file" ]; then download_url="https://lowresnx.inutilis.com/uploads/$nx_file"; wget -nv "$download_url" -O "$DOWNLOAD_DIR/$nx_file"; fi
     if [ ! -s "/userdata/thumbs/LowresNX/$image" ]; then download_url="https://lowresnx.inutilis.com/uploads/$image"; wget -nv "$download_url" -O "/userdata/thumbs/LowresNX/$image"; fi
 done
