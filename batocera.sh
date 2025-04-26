@@ -136,5 +136,5 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
 done
 cp /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.bak
-wget -nv -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/share/system/es_systems.cfg > /dev/null 2>&1
+wget -nv -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems.cfg > /dev/null 2>&1
 chvt 2; wget http://127.0.0.1:1234/reloadgames > /dev/null 2>&1
