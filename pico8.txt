@@ -1,5 +1,7 @@
+148639	doubletrouble1	doubletrouble-0.p8.png
+148638	Ninja Garden	ninja_garden-0.p8.png
+148630	Game Elements	game_elements_jstr8-0.p8.png
 148626	A little halfway gift	lil_heart_gift-0.p8.png
-148622	bullet survive	survival_1-0.p8.png
 148619	picoanimator v0.1	picoanimator-0.p8.png
 148618	Flap Together	bafwipeme-0.p8.png
 148615	Pwordle	pwordle_words-0.p8.png
@@ -37,7 +39,7 @@
 148467	SSPR sandbox	sspr_sandbox-0.p8.png
 148458	gameformelike	gameformelike-0.p8.png
 148456	Flappy Fetus	flappy_fetus-1.p8.png
-148450	8SH	ash1337-5.p8.png
+148450	8SH	ash1337-6.p8.png
 148448	elizabethoyunu	elizabethoyunu-0.p8.png
 148446	Platform Basics 	platform_basics_jstr8-0.p8.png
 148441	ekreminoyunu	ekonunoyunu-0.p8.png
@@ -7375,8 +7377,8 @@
 32101	Signed by '89	58247.p8.png
 32098	My Maze- Complete	58216.p8.png
 32096	Monster of The Universe	58210.p8.png
-32094	Lightweight particle system	58205.p8.png
-32089	Devil's Paddle	58154.p8.png
+32094	Devil's Paddle	58205.p8.png
+32089	Apodynia	58154.p8.png
 32082	Spacey	58076.p8.png
 32074	Tabetaro the hedgehog	57998.p8.png
 32072	Helicopter	helicopter-0.p8.png
@@ -7733,9 +7735,9 @@
 30881	Pico-Sokoban	49887.p8.png
 30873	Picopolis	50162.p8.png
 30872	Cover Tactics	49849.p8.png
-30871	Spousal Abuse	49843.p8.png
 30871	Shinkansen	49843.p8.png
-30868	&quot;Low Nibble Overflow&quot; (Pro-Tracker MOD cover)	50606.p8.png
+30871	&quot;Low Nibble Overflow&quot; (Pro-Tracker MOD cover)	49843.p8.png
+30868	Mazeborn - Gymcrash - A soulslike inspired game.	50606.p8.png
 30865	SPRINGBEAR	49811.p8.png
 30864	Minute Apocalypse	49800.p8.png
 30859	Race For Gold	58523.p8.png
@@ -7792,8 +7794,8 @@
 30695	Nobody Cares About Your Dreams	48726.p8.png
 30680	8-bit Slalom (for Der Standard)	56599.p8.png
 30677	So-Gnar	48637.p8.png
-30676	Archimedes!!	48635.p8.png
-30675	HELLO WO#?!	48633.p8.png
+30676	HELLO WO#?!	48635.p8.png
+30675	Ego Vos	48633.p8.png
 30670	Icosahedron	48610.p8.png
 30669	Tiny Platformer (Tutorial/Example Project)	48605.p8.png
 30659	Test	48557.p8.png
@@ -8508,8 +8510,8 @@
 28357	Moonrace	34470.p8.png
 28349	Lode 8	34434.p8.png
 28348	Tron Bikes (Tutorial by Rabidgremlin)	35239.p8.png
-28343	Cir-ne Music Submission	34393.p8.png
-28341	Robot Waltz	37562.p8.png
+28343	Robot Waltz	34393.p8.png
+28341	We are Number One but it's remade in pico-8	37562.p8.png
 28340	Spirograph	34371.p8.png
 28339	i_editor 2.0 + manual(english+french)	35750.p8.png
 28335	Lifedraw	34355.p8.png
@@ -8536,8 +8538,8 @@
 28264	Omega Catapult Of The Dead	33778.p8.png
 28262	Cheetahmen music	33760.p8.png
 28259	Wave Text	33750.p8.png
-28258	Post Apocalyptic Prime Time TV	33748.p8.png
-28242	Jedi Training	33649.p8.png
+28258	Jedi Training	33748.p8.png
+28242	Picocross	33649.p8.png
 28241	WaGa	33647.p8.png
 28241	Pico Of The Beast	33647.p8.png
 28240	Tetris	33644.p8.png
@@ -8902,7 +8904,6 @@
 3483	Gears of Gear	21736.p8.png
 3482	blaast.r	21627.p8.png
 3480	Ryukyu Circuit	21731.p8.png
-3479	Armada	21605.p8.png
 3479	Armada	21605.p8.png
 3471	Magnetic switches	21546.p8.png
 3470	VCT	21543.p8.png
