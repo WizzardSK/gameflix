@@ -104,7 +104,7 @@ done
 
 ROMLIST="neogeo.dat"
 curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/neogeo.dat" -o $ROMLIST
-HTMLFILES=("~/gameflix/Neo Geo AES.html" "~/gameflix/Neo Geo MVS.html")
+HTMLFILES=("$HOME/gameflix/Neo Geo AES.html" "$HOME/gameflix/Neo Geo MVS.html")
 for HTMLFILE in "${HTMLFILES[@]}"; do
   while IFS=$'\t' read -r filename title; do base="${filename%.*}"; zipname="${base}.zip"; sed -i "s|\\b${zipname}\\b|${zipname}\t${title}|g" "$HTMLFILE"; done < "$ROMLIST"
 done
