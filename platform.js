@@ -80,7 +80,10 @@ function generateUzeLinks(romPath, imagePath) {
 
 function generateFileLinks(romPath, imagePath) {
     document.write("<div id=\"figureList\">"); fileNames.forEach(fileName => {
-        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName; document.write(`<a href="../${romPath}/${encodeURIComponent(fileName)}" target="main">
-        <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutExt)}.png" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt}</figcaption></figure></a>`);
+        const subor = fileName.includes("\t") ? fileName.split("\t")[0] : fileName;
+        const nameWithoutExt = subor.slice(0, subor.lastIndexOf(".")) || subor;
+        const nazov = fileName.includes("\t") ? fileName.split("\t")[1] : fileName.replace(/\.[^.]+$/, "");
+        document.write(`<a href="../${romPath}/${encodeURIComponent(subor)}" target="main">
+        <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutExt)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
