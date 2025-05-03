@@ -101,5 +101,13 @@ for each in "${roms[@]}"; do
   platform=${rom[0]}; ext="";
   if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
+
+ROMLIST="neogeo.dat"
+curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/neogeo.dat" -o $ROMLIST
+HTMLFILES=("~/gameflix/Neo Geo AES.html" "~/gameflix/Neo Geo MVS.html")
+for HTMLFILE in "${HTMLFILES[@]}"; do
+  while IFS=$'\t' read -r filename title; do base="${filename%.*}"; zipname="${base}.zip"; sed -i "s|\\b${zipname}\\b|${zipname}\t${title}|g" "$HTMLFILE"; done < "$ROMLIST"
+done
+
 curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.end | tee -a ~/gameflix/retroarch.sh
 chmod +x ~/gameflix/retroarch.sh; echo "<p><b>Total: $total</b>" >> ~/gameflix/systems.html; echo "<p><b>Platforms: $platforms</b>" >> ~/gameflix/systems.html
