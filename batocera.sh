@@ -140,8 +140,8 @@ ROMLIST="neogeo.dat"; curl -s "https://raw.githubusercontent.com/WizzardSK/gamef
 HTMLFILES=("/userdata/roms/neogeo/gamelist.xml")
 for HTMLFILE in "${HTMLFILES[@]}"; do
   while IFS=$'\t' read -r filename title; do
-    base="${filename%.*}"; zipname="${base}.zip"; pngname="${base}.png"
-    sed -i -E "s|\\b(${base}|${pngname})\\b|${title}|g" "$HTMLFILE"
+    base="${filename%.*}"; escaped_title=$(printf '%s\n' "$title" | sed 's/[&/\]/\\&/g')
+    sed -i -E "s/${base}</${escaped_title}</g" "$HTMLFILE"; sed -i -E "s/\b${base}\.png\b/${escaped_title}.png/g" "$HTMLFILE"
   done < "$ROMLIST"
 done
 
