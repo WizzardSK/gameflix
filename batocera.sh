@@ -141,7 +141,7 @@ HTMLFILES=("/userdata/roms/neogeo/gamelist.xml")
 for HTMLFILE in "${HTMLFILES[@]}"; do
   while IFS=$'\t' read -r filename title; do
     base="${filename%.*}"; escaped_title=$(printf '%s\n' "$title" | sed 's/[&/\]/\\&/g')
-    sed -i -E "s/${base}</${escaped_title}</g" "$HTMLFILE"; sed -i -E "s/\b${base}\.png\b/${escaped_title}.png/g" "$HTMLFILE"
+    sed -i -E "s/${base}</${escaped_title}</g" "$HTMLFILE"
   done < "$ROMLIST"
 done
 
