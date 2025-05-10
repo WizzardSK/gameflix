@@ -47,6 +47,7 @@ LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r ID NA
 done
 
 REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/voxatron.txt"; OUTPUT_DIR="/userdata/roms/voxatron"; 
+mkdir -p "$OUTPUT_DIR"
 LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r ID NAME FILENAME; do
     if [[ -n "$FILENAME" ]]; then
         if [[ $FILENAME == cpost* ]]; then number=${FILENAME//[^0-9]/}; PREFIX=$(( number / 10000 )); else PREFIX="${FILENAME:0:2}"; fi
