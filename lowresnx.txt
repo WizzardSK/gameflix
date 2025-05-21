@@ -1,4 +1,4 @@
-3697	Personal Computer Boot Menu	HRuG5ZrnU9_PC_Boot_BIOS.png	HRuG5ZrnU9_PC_Boot_BIOS.nx
+3697	Personal Computer Boot Menu	cmFrJpypNu_PC_Boot_BIOS.png	cmFrJpypNu_PC_Boot_BIOS.nx
 3696	Smooth Brain The Game	DeFbyViohS_Smooth_Brain.png	DeFbyViohS_Smooth_Brain.nx
 3695	BC Tire Run (w/cheats)	BNu4Bj42vG_BCs_Tire_Run_cheat.png	BNu4Bj42vG_BCs_Tire_Run_cheat.nx
 3692	TRI MATCH	xkV2Xbu8pd_Tri_Match.png	xkV2Xbu8pd_Tri_Match.nx
