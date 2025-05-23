@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ ! -f ~/share/zip/atari2600roms.zip ]; then wget -O ~/share/zip/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
 fuse-zip ~/share/zip/atari2600roms.zip ~/share/zip/atari2600roms -o allow_other; bindfs ~/share/zip/atari2600roms/ROMS ~/roms/Atari\ 2600\ ROMS
 
