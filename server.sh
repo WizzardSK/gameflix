@@ -19,3 +19,17 @@ FILE_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/l
 curl "$FILE_URL" | while IFS=$'\t'; read -r id title image nx_file; do
   if [ ! -s "$DOWNLOAD_DIR/$nx_file" ]; then download_url="https://lowresnx.inutilis.com/uploads/$nx_file"; wget -nv "$download_url" -O "$DOWNLOAD_DIR/$nx_file"; fi
 done
+
+IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
+IFS=";"; for each in "${roms[@]}"; do
+  echo "${rom3}"; read -ra rom < <(printf '%s' "$each")
+  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
+  if [[ ${rom[1]} =~ \.zip$ ]]; then
+    mkdir -p ~/roms/${rom3}
+    if [ -z "$(ls -A ~/roms/${rom3})" ]; then
+      if [ ! -f ~/share/zip/${rom3}.zip ]; then wget -O ~/share/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi; fuse-zip ~/share/zip/${rom3}.zip ~/roms/${rom3} -o allow_other
+    fi
+  fi
+done
+wait
+
