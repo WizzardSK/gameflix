@@ -9,7 +9,7 @@ echo "$FILES" | while read -r LINE; do
   if [ ! -f "$FILE_PATH" ]; then wget -nv -O "$FILE_PATH" "$DOWNLOAD_URL"; fi; if [ ! -f "$SNAP_PATH" ]; then wget -nv -O "$SNAP_PATH" "$SNAPSHOT_URL"; fi
 done
 
-BASE_URL="https://wasm4.org/play"; CRTS_URL="https://wasm4.org/carts"; ROM_DIR="$HOME/roms/wasm4"; IMG_DIR="$HOME/share/thumbs/WASM-4"
+BASE_URL="https://wasm4.org/play"; CARTS_URL="https://wasm4.org/carts"; ROM_DIR="$HOME/roms/wasm4"; IMG_DIR="$HOME/share/thumbs/WASM-4"
 mkdir -p "$ROM_DIR" "$IMG_DIR"; curl -s "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -r GAME; do
   for EXT in wasm png; do FILE="${ROM_DIR}/$GAME.$EXT"; [[ "$EXT" == "png" ]] && FILE="${IMG_DIR}/$GAME.$EXT"; [[ -f "$FILE" ]] || wget -nv -O "$FILE" "$CARTS_URL/$GAME.$EXT"; done
 done
