@@ -7,8 +7,8 @@ if [ ! -f /userdata/system/mount-zip ];  then wget -O /userdata/system/mount-zip
 if [ ! -f /userdata/system/ratarmount ]; then wget -O /userdata/system/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v0.15.2/ratarmount-0.15.2-x86_64.AppImage; chmod +x /userdata/system/ratarmount; fi
 if [ ! -f /userdata/system/cli.tar.gz ]; then wget -O /userdata/system/cli.tar.gz https://batocera.pro/app/cli.tar.gz; tar -xf /userdata/system/cli.tar.gz -C /userdata/system/; fi
 if [ ! -f /userdata/zip/atari2600roms.zip ]; then wget -O /userdata/zip/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
-/userdata/system/cli/run
-#curl -fsSL install.batoaddons.app | bash
+#/userdata/system/cli/run
+rclone mount thumbs:Data/share/thumbs /userdata/thumbs --vfs-cache-mode full --daemon --config=/userdata/system/rclone.conf --allow-non-empty
 mkdir -p /userdata/zip/atari2600roms /userdata/roms/atari2600/Atari\ 2600\ ROMS /userdata/{rom,roms,thumb,thumbs,zip} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/thumbs/TIC-80
 /userdata/system/fuse-zip /userdata/zip/atari2600roms.zip /userdata/zip/atari2600roms
 mount -o bind /userdata/zip/atari2600roms/ROMS /userdata/roms/atari2600/Atari\ 2600\ ROMS
@@ -95,12 +95,12 @@ for each in "${roms[@]}"; do
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
   if [[ -z "${seen[${rom[0]}]}" ]]; then
     seen[${rom[0]}]=1; rom2="${rom[2]// /_}"; echo "${rom[2]} thumbs" | tee -a /userdata/system/logs/git.log
-    if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then git clone --depth 1 "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]} 2>&1 | tee -a /userdata/system/logs/git.log; else
-      git config --global --add safe.directory /userdata/thumbs/${rom[2]}
-      git -C /userdata/thumbs/${rom[2]} config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log
-      git -C /userdata/thumbs/${rom[2]} pull 2>&1 | tee -a /userdata/system/logs/git.log
-      sleep 0.5
-    fi
+#    if [ ! -d "/userdata/thumbs/${rom[2]}" ]; then git clone --depth 1 "https://github.com/WizzardSK/${rom2}.git" /userdata/thumbs/${rom[2]} 2>&1 | tee -a /userdata/system/logs/git.log; else
+#      git config --global --add safe.directory /userdata/thumbs/${rom[2]}
+#      git -C /userdata/thumbs/${rom[2]} config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log
+#      git -C /userdata/thumbs/${rom[2]} pull 2>&1 | tee -a /userdata/system/logs/git.log
+#      sleep 0.5
+#    fi
   fi  
   ( rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   echo "${rom3}"; mkdir -p /userdata/roms/${rom[0]}/${rom3}
