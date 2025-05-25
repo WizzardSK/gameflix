@@ -15,6 +15,10 @@ mkdir -p "$ROM_DIR" "$IMG_DIR"; curl -s "$BASE_URL" | grep -oP '(?<=href="/play/
 done
 
 if [ ! -f "$HOME/share/zip/uzebox.zip" ]; then wget -O /userdata/zip/uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; unzip -j "$HOME/share/zip/uzebox.zip" -d "$HOME/roms/uzebox"; fi
+if [ ! -d "$HOME/share/thumbs/Uzebox" ]; then git clone --depth 1 "https://github.com/WizzardSK/Uzebox.git" "$HOME/share/thumbs/Uzebox" 2>&1 | tee -a "$HOME/git.log"; else
+  git config --global --add safe.directory "$HOME/share/thumbs/Uzebox"
+  git -C "$HOME/share/thumbs/Uzebox" config pull.rebase false 2>&1 | tee -a "$HOME/git.log"; git -C "$HOME/share/thumbs/Uzebox" pull 2>&1 | tee -a "$HOME/git.log"
+fi
 
 FILE_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt"; DOWNLOAD_DIR="$HOME/roms/lowresnx"; mkdir -p "$HOME/share/thumbs/LowresNX"
 curl "$FILE_URL" | while IFS=$'\t' read -r id title image nx_file; do
