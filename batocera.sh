@@ -56,6 +56,11 @@ rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --
 #    fi
 #done
 
+#if [ ! -d "/userdata/thumbs/Uzebox" ]; then git clone --depth 1 "https://github.com/WizzardSK/Uzebox.git" /userdata/thumbs/Uzebox 2>&1 | tee -a /userdata/system/logs/git.log; else
+#  git config --global --add safe.directory /userdata/thumbs/Uzebox
+#  git -C /userdata/thumbs/Uzebox config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log; git -C /userdata/thumbs/Uzebox pull 2>&1 | tee -a /userdata/system/logs/git.log
+#fi
+
 echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
   hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
   hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
@@ -70,11 +75,6 @@ done; echo "</gameList>" >> /userdata/roms/wasm4/gamelist.xml
 echo "<gameList>" > /userdata/roms/uzebox/gamelist.xml; ls /userdata/roms/uzebox/*.uze /userdata/roms/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
   line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/uzebox/gamelist.xml
 done; echo "</gameList>" >> /userdata/roms/uzebox/gamelist.xml
-
-if [ ! -d "/userdata/thumbs/Uzebox" ]; then git clone --depth 1 "https://github.com/WizzardSK/Uzebox.git" /userdata/thumbs/Uzebox 2>&1 | tee -a /userdata/system/logs/git.log; else
-  git config --global --add safe.directory /userdata/thumbs/Uzebox
-  git -C /userdata/thumbs/Uzebox config pull.rebase false 2>&1 | tee -a /userdata/system/logs/git.log; git -C /userdata/thumbs/Uzebox pull 2>&1 | tee -a /userdata/system/logs/git.log
-fi
 
 echo "<gameList>" > /userdata/roms/lowresnx/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt" | while IFS=$'\t' read -r id name picture cart; do
   hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/LowresNX/${picture}</image>"; echo "${hra}</game>" >> /userdata/roms/lowresnx/gamelist.xml
