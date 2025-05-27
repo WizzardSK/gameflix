@@ -1,12 +1,10 @@
 #!/bin/bash
 
 wget -O rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf > /dev/null 2>&1
-sudo -v ; curl https://rclone.org/install.sh | sudo bash
-sudo apt install fuse-zip
+sudo -v ; curl https://rclone.org/install.sh | sudo bash  > /dev/null 2>&1
+sudo apt install fuse-zip  > /dev/null 2>&1
 mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/dos ~/roms/neogeo 
 rclone mount myrient: ~/rom --config=rclone.conf --daemon
-cd ~/rom
-ls
 
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/roms/${rom[0]}; done
@@ -27,25 +25,10 @@ for each in "${roms[@]}"; do
   fi
 done
 
-ls ~/roms/atari2600 | while read line; do
-  line2=${line%.*}
-  hra="<game><path>./Atari 2600 ROMS/${line}</path><name>${line2}</name><image>~/../thumbs/Atari - 2600/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/Atari - 2600/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/Atari - 2600/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/Atari - 2600/Named_Logos/${line2}.png</marquee>"
-  if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
-    echo "${hra}</game>" >> ~/roms/atari2600/gamelist.xml
-  else echo "${hra}<hidden>true</hidden></game>" >> ~/roms/atari2600/gamelist.xml; fi    
-done; echo "<folder><path>./Atari 2600 ROMS</path><name>Atari 2600 ROMS</name><image>~/../thumb/atari2600.png</image></folder>" >> ~/roms/atari2600/gamelist.xml
-
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-ROMLIST="~/neogeo.dat"; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/neogeo.dat" -o "$ROMLIST"
-HTMLFILES=("~/roms/neogeo/gamelist.xml")
-for HTMLFILE in "${HTMLFILES[@]}"; do
-  while IFS=$'\t' read -r filename title; do
-    base="${filename%.*}"; escaped_title=$(printf '%s\n' "$title" | sed 's/[&/\]/\\&/g')
-    sed -i -E "s/${base}</${escaped_title}</g" "$HTMLFILE"
-  done < "$ROMLIST"
-done
+ls
