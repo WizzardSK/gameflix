@@ -4,7 +4,8 @@ sudo -v ; curl https://rclone.org/install.sh | sudo bash
 sudo apt install fuse-zip
 mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/dos ~/roms/neogeo 
 rclone mount ":http,urls=https://myrient.erista.me/files/" ~/rom --daemon
-ls ~/rom
+cd ~/rom
+ls
 
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/roms/${rom[0]}; done
