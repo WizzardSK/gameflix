@@ -10,6 +10,7 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
+  echo ${rom[3]}
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   mkdir -p ~/roms/${rom[0]}/${rom3}
   #sudo mount -o bind ~/rom/${rom[1]} ~/roms/${rom[0]}/${rom3}
@@ -23,7 +24,6 @@ for each in "${roms[@]}"; do
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/roms/${rom[0]}/gamelist.xml
   fi
-  cat ~/roms/${rom[0]}/gamelist.xml
 done
 
 for each in "${roms[@]}"; do 
@@ -32,5 +32,9 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-tree ~/roms
-cat ~/roms/atari2600/gamelist.xml
+zip -r gamelist.zip ~/roms/
+git config --global user.name "GitHub Actions"
+git config --global user.email "actions@github.com"
+git add gamelist.zip
+git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
+git push
