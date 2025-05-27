@@ -4,7 +4,7 @@ wget -O rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rc
 sudo -v ; curl https://rclone.org/install.sh | sudo bash  > /dev/null 2>&1
 sudo apt install fuse-zip  > /dev/null 2>&1
 mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/dos ~/roms/neogeo 
-rclone mount myrient: rom --config=rclone.conf --daemon
+rclone mount myrient: ~/rom --config=rclone.conf --daemon
 
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/roms/${rom[0]}; done
@@ -30,4 +30,4 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-ls ~
+ls ~/roms
