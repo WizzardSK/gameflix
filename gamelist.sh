@@ -3,7 +3,7 @@
 sudo -v ; curl https://rclone.org/install.sh | sudo bash
 sudo apt install fuse-zip
 mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/dos ~/roms/neogeo 
-rclone mount ":http,urls=https://myrient.erista.me/files/" ~/rom --daemon
+rclone mount ":http,url=https://myrient.erista.me/files/" ~/rom --daemon
 cd ~/rom
 ls
 
