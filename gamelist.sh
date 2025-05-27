@@ -31,3 +31,4 @@ for each in "${roms[@]}"; do
 done
 
 tree ~/roms
+cat ~/roms/atari2600/gamelist.xml
