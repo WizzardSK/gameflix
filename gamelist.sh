@@ -1,41 +1,15 @@
 #!/bin/bash
 
-if [ ! -f ~/fuse-zip ];   then wget -O ~/fuse-zip   https://github.com/WizzardSK/gameflix/raw/main/batocera/fuse-zip;  chmod +x ~/fuse-zip; fi
+#if [ ! -f ~/fuse-zip ];   then wget -O ~/fuse-zip   https://github.com/WizzardSK/gameflix/raw/main/batocera/fuse-zip;  chmod +x ~/fuse-zip; fi
 if [ ! -f ~/atari2600roms.zip ]; then wget -O ~/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
 
 sudo -v ; curl https://rclone.org/install.sh | sudo bash
+sudo apt install fuse-zip
 mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/dos
 rclone mount ":http,urls=https://myrient.erista.me/files/" ~/rom --daemon
 
-~/fuse-zip ~/atari2600roms.zip ~/zip/atari2600roms
+fuse-zip ~/atari2600roms.zip ~/zip/atari2600roms
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
-
-#echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
-#  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
-#  hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
-#done; echo "</gameList>" >> /userdata/roms/tic80/gamelist.xml
-
-#echo "<gameList>" > /userdata/roms/wasm4/gamelist.xml; html=$(curl -s "https://wasm4.org/play/")
-#echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do
-#  image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png);
-#  hra="<game><path>./${image_name}.wasm</path><name>${title}</name><image>~/../thumbs/WASM-4/${image_name}.png</image>"; echo "${hra}</game>" >> /userdata/roms/wasm4/gamelist.xml
-#done; echo "</gameList>" >> /userdata/roms/wasm4/gamelist.xml
-
-#echo "<gameList>" > /userdata/roms/uzebox/gamelist.xml; ls /userdata/roms/uzebox/*.uze /userdata/roms/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
-#  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/uzebox/gamelist.xml
-#done; echo "</gameList>" >> /userdata/roms/uzebox/gamelist.xml
-
-#echo "<gameList>" > /userdata/roms/lowresnx/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt" | while IFS=$'\t' read -r id name picture cart; do
-#  hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/LowresNX/${picture}</image>"; echo "${hra}</game>" >> /userdata/roms/lowresnx/gamelist.xml
-#done; echo "</gameList>" >> /userdata/roms/lowresnx/gamelist.xml
-
-#echo "<gameList>" > /userdata/roms/pico8/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt" | while IFS=$'\t' read -r id name cart; do
-#  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> /userdata/roms/pico8/gamelist.xml
-#done; echo "</gameList>" >> /userdata/roms/pico8/gamelist.xml
-
-#echo "<gameList>" > /userdata/roms/voxatron/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/voxatron.txt" | while IFS=$'\t' read -r id name cart; do
-#  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> /userdata/roms/voxatron/gamelist.xml
-#done; echo "</gameList>" >> /userdata/roms/voxatron/gamelist.xml
 
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
@@ -45,7 +19,7 @@ for each in "${roms[@]}"; do
   echo "${rom3}"; mkdir -p ~/roms/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     if [ ! -f ~/zip/${rom3}.zip ]; then wget -O ~/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
-    ~/fuse-zip ~/zip/${rom3}.zip ~/roms/${rom[0]}/${rom3}
+    fuse-zip ~/zip/${rom3}.zip ~/roms/${rom[0]}/${rom3}
   else
     if grep -q ":" <<< "${rom[1]}"; then
       rclone mount ${rom[1]} ~/roms/${rom[0]}/${rom3} --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
