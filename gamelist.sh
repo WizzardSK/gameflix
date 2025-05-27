@@ -15,7 +15,7 @@ for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   #if [ ! -f ~/userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  echo "${rom3}"; mkdir -p ~/roms/${rom[0]}/${rom3}
+  mkdir -p ~/roms/${rom[0]}/${rom3}
 #  if [[ ${rom[1]} =~ \.zip$ ]]; then
 #    if [ ! -f ~/zip/${rom3}.zip ]; then wget -O ~/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
 #    fuse-zip ~/zip/${rom3}.zip ~/roms/${rom[0]}/${rom3}
@@ -50,7 +50,7 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-ROMLIST="neogeo.dat"; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/neogeo.dat" -o "$ROMLIST"
+ROMLIST="~/neogeo.dat"; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/neogeo.dat" -o "$ROMLIST"
 HTMLFILES=("~/roms/neogeo/gamelist.xml")
 for HTMLFILE in "${HTMLFILES[@]}"; do
   while IFS=$'\t' read -r filename title; do
