@@ -30,4 +30,4 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-ls ~/roms
+tree ~/roms
