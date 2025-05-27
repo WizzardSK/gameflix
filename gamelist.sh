@@ -2,7 +2,7 @@
 
 wget -O rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf > /dev/null 2>&1
 sudo -v ; curl https://rclone.org/install.sh | sudo bash  > /dev/null 2>&1
-sudo apt install fuse-zip  > /dev/null 2>&1
+sudo apt install fuse-zip bindfs > /dev/null 2>&1
 mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/dos ~/roms/neogeo 
 rclone mount myrient: ~/rom --config=rclone.conf --daemon
 
