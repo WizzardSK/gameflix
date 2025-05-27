@@ -1,16 +1,15 @@
 #!/bin/bash
 
 #if [ ! -f ~/fuse-zip ];   then wget -O ~/fuse-zip   https://github.com/WizzardSK/gameflix/raw/main/batocera/fuse-zip;  chmod +x ~/fuse-zip; fi
-if [ ! -f ~/atari2600roms.zip ]; then wget -O ~/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
+#if [ ! -f ~/atari2600roms.zip ]; then wget -O ~/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
 
 sudo -v ; curl https://rclone.org/install.sh | sudo bash
 sudo apt install fuse-zip
 mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/dos
 rclone mount ":http,urls=https://myrient.erista.me/files/" ~/rom --daemon
 
-fuse-zip ~/atari2600roms.zip ~/zip/atari2600roms
+#fuse-zip ~/atari2600roms.zip ~/zip/atari2600roms
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
-
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
