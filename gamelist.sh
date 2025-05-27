@@ -5,7 +5,7 @@ if [ ! -f ~/atari2600roms.zip ]; then wget -O ~/atari2600roms.zip https://www.at
 
 sudo -v ; curl https://rclone.org/install.sh | sudo bash
 mkdir -p ~/myrient ~/roms ~/zip
-rclone mount ":http,urls=https://myrient.erista.me/files/" ~/myrient
+rclone mount ":http,urls=https://myrient.erista.me/files/" ~/myrient --daemon
 
 ~/fuse-zip ~/atari2600roms.zip ~/zip/atari2600roms
 mount -o bind ~/zip/atari2600roms/ROMS ~/roms/atari2600/Atari\ 2600\ ROMS
