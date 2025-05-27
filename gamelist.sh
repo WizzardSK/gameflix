@@ -37,7 +37,7 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 #  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> /userdata/roms/voxatron/gamelist.xml
 #done; echo "</gameList>" >> /userdata/roms/voxatron/gamelist.xml
 
-IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir ~/roms/${rom[0]}; done
+IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   #if [ ! -f ~/userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
@@ -49,7 +49,7 @@ for each in "${roms[@]}"; do
   else
     if grep -q ":" <<< "${rom[1]}"; then
       rclone mount ${rom[1]} ~/roms/${rom[0]}/${rom3} --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
-    else mount -o bind ~/rom/${rom[1]} ~/roms/${rom[0]}/${rom3}; fi
+    else sudo mount -o bind ~/rom/${rom[1]} ~/roms/${rom[0]}/${rom3}; fi
   fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls ~/roms/${rom[0]}/${rom3} | while read line; do
