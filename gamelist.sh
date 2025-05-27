@@ -1,14 +1,11 @@
 #!/bin/bash
 
-#if [ ! -f ~/fuse-zip ];   then wget -O ~/fuse-zip   https://github.com/WizzardSK/gameflix/raw/main/batocera/fuse-zip;  chmod +x ~/fuse-zip; fi
-#if [ ! -f ~/atari2600roms.zip ]; then wget -O ~/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
-
 sudo -v ; curl https://rclone.org/install.sh | sudo bash
 sudo apt install fuse-zip
 mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/dos ~/roms/neogeo 
 rclone mount ":http,urls=https://myrient.erista.me/files/" ~/rom --daemon
+ls ~/rom
 
-#fuse-zip ~/atari2600roms.zip ~/zip/atari2600roms
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
@@ -16,14 +13,6 @@ for each in "${roms[@]}"; do
   #if [ ! -f ~/userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   mkdir -p ~/roms/${rom[0]}/${rom3}
-#  if [[ ${rom[1]} =~ \.zip$ ]]; then
-#    if [ ! -f ~/zip/${rom3}.zip ]; then wget -O ~/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
-#    fuse-zip ~/zip/${rom3}.zip ~/roms/${rom[0]}/${rom3}
-#  else
-#    if grep -q ":" <<< "${rom[1]}"; then
-#      rclone mount ${rom[1]} ~/roms/${rom[0]}/${rom3} --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
-#    else sudo mount -o bind ~/rom/${rom[1]} ~/roms/${rom[0]}/${rom3}; fi
-#  fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls ~/roms/${rom[0]}/${rom3} | while read line; do
       line2=${line%.*}
