@@ -12,6 +12,7 @@ for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   mkdir -p ~/roms/${rom[0]}/${rom3}
+  sudo mount -o bind ~/rom/${rom[1]} ~/roms/${rom[0]}/${rom3}
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls ~/roms/${rom[0]}/${rom3} | while read line; do
       line2=${line%.*}
