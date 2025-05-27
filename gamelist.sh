@@ -1,45 +1,45 @@
 #!/bin/bash
 
-if [ ! -f ~/fuse-zip ];   then wget -O ~/fuse-zip   https://github.com/WizzardSK/gameflix/raw/main/batocera/fuse-zip;  chmod +x /userdata/system/fuse-zip; fi
+if [ ! -f ~/fuse-zip ];   then wget -O ~/fuse-zip   https://github.com/WizzardSK/gameflix/raw/main/batocera/fuse-zip;  chmod +x ~/fuse-zip; fi
 if [ ! -f ~/atari2600roms.zip ]; then wget -O ~/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
 
-curl https://rclone.org/install.sh | bash 
-mkdir -p ~/myrient
+sudo -v ; curl https://rclone.org/install.sh | sudo bash
+mkdir -p ~/myrient ~/roms ~/zip
 rclone mount ":http,urls=https://myrient.erista.me/files/" ~/myrient
 
 ~/fuse-zip ~/atari2600roms.zip ~/zip/atari2600roms
 mount -o bind ~/zip/atari2600roms/ROMS ~/roms/atari2600/Atari\ 2600\ ROMS
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 
-echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
-  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
-  hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
-done; echo "</gameList>" >> /userdata/roms/tic80/gamelist.xml
+#echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
+#  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
+#  hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
+#done; echo "</gameList>" >> /userdata/roms/tic80/gamelist.xml
 
-echo "<gameList>" > /userdata/roms/wasm4/gamelist.xml; html=$(curl -s "https://wasm4.org/play/")
-echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do
-  image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png);
-  hra="<game><path>./${image_name}.wasm</path><name>${title}</name><image>~/../thumbs/WASM-4/${image_name}.png</image>"; echo "${hra}</game>" >> /userdata/roms/wasm4/gamelist.xml
-done; echo "</gameList>" >> /userdata/roms/wasm4/gamelist.xml
+#echo "<gameList>" > /userdata/roms/wasm4/gamelist.xml; html=$(curl -s "https://wasm4.org/play/")
+#echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do
+#  image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png);
+#  hra="<game><path>./${image_name}.wasm</path><name>${title}</name><image>~/../thumbs/WASM-4/${image_name}.png</image>"; echo "${hra}</game>" >> /userdata/roms/wasm4/gamelist.xml
+#done; echo "</gameList>" >> /userdata/roms/wasm4/gamelist.xml
 
-echo "<gameList>" > /userdata/roms/uzebox/gamelist.xml; ls /userdata/roms/uzebox/*.uze /userdata/roms/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
-  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/uzebox/gamelist.xml
-done; echo "</gameList>" >> /userdata/roms/uzebox/gamelist.xml
+#echo "<gameList>" > /userdata/roms/uzebox/gamelist.xml; ls /userdata/roms/uzebox/*.uze /userdata/roms/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
+#  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/uzebox/gamelist.xml
+#done; echo "</gameList>" >> /userdata/roms/uzebox/gamelist.xml
 
-echo "<gameList>" > /userdata/roms/lowresnx/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt" | while IFS=$'\t' read -r id name picture cart; do
-  hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/LowresNX/${picture}</image>"; echo "${hra}</game>" >> /userdata/roms/lowresnx/gamelist.xml
-done; echo "</gameList>" >> /userdata/roms/lowresnx/gamelist.xml
+#echo "<gameList>" > /userdata/roms/lowresnx/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt" | while IFS=$'\t' read -r id name picture cart; do
+#  hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/LowresNX/${picture}</image>"; echo "${hra}</game>" >> /userdata/roms/lowresnx/gamelist.xml
+#done; echo "</gameList>" >> /userdata/roms/lowresnx/gamelist.xml
 
-echo "<gameList>" > /userdata/roms/pico8/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt" | while IFS=$'\t' read -r id name cart; do
-  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> /userdata/roms/pico8/gamelist.xml
-done; echo "</gameList>" >> /userdata/roms/pico8/gamelist.xml
+#echo "<gameList>" > /userdata/roms/pico8/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt" | while IFS=$'\t' read -r id name cart; do
+#  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> /userdata/roms/pico8/gamelist.xml
+#done; echo "</gameList>" >> /userdata/roms/pico8/gamelist.xml
 
-echo "<gameList>" > /userdata/roms/voxatron/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/voxatron.txt" | while IFS=$'\t' read -r id name cart; do
-  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> /userdata/roms/voxatron/gamelist.xml
-done; echo "</gameList>" >> /userdata/roms/voxatron/gamelist.xml
+#echo "<gameList>" > /userdata/roms/voxatron/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/voxatron.txt" | while IFS=$'\t' read -r id name cart; do
+#  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> /userdata/roms/voxatron/gamelist.xml
+#done; echo "</gameList>" >> /userdata/roms/voxatron/gamelist.xml
 
 IFS=";"
-for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); > /userdata/roms/${rom[0]}/gamelist.xml; done
+for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); > ~/roms/${rom[0]}/gamelist.xml; done
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
