@@ -37,12 +37,11 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 #  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> /userdata/roms/voxatron/gamelist.xml
 #done; echo "</gameList>" >> /userdata/roms/voxatron/gamelist.xml
 
-IFS=";"
-for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); > ~/roms/${rom[0]}/gamelist.xml; done
+IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   #if [ ! -f ~/userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
-  ( rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
+  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   echo "${rom3}"; mkdir -p ~/roms/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     if [ ! -f ~/zip/${rom3}.zip ]; then wget -O ~/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
@@ -61,8 +60,8 @@ for each in "${roms[@]}"; do
       else echo "${hra}<hidden>true</hidden></game>" >> ~/roms/${rom[0]}/gamelist.xml; fi    
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/roms/${rom[0]}/gamelist.xml
-  fi ) &
-done; wait
+  fi
+done
 
 ls ~/roms/atari2600/Atari\ 2600\ ROMS | while read line; do
   line2=${line%.*}
