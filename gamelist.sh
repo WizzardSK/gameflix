@@ -2,7 +2,7 @@
 
 wget -O rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf > /dev/null 2>&1
 sudo -v ; curl https://rclone.org/install.sh | sudo bash  > /dev/null 2>&1
-sudo apt install fuse-zip bindfs
+sudo apt install fuse-zip  > /dev/null 2>&1
 mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/dos ~/roms/neogeo 
 rclone mount myrient: ~/rom --config=rclone.conf --daemon
 
@@ -15,7 +15,8 @@ for each in "${roms[@]}"; do
   mkdir -p ~/roms/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     #if [ ! -f ~/zip/${rom3}.zip ]; then wget -nv -O ~/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
-    fuse-zip ~/rom/${rom[1]} ~/roms/${rom[0]}/${rom3}
+    #fuse-zip ~/rom/${rom[1]} ~/roms/${rom[0]}/${rom3}
+    ./batocera/ratarmount ~/rom/${rom[1]} ~/roms/${rom[0]}/${rom3}
   fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls ~/rom/${rom[1]} | while read line; do
