@@ -11,11 +11,11 @@ IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkd
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  echo ${rom[3]}
+  echo ${rom3}
   mkdir -p ~/roms/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
-    if [ ! -f ~/zip/${rom3}.zip ]; then wget -nv -O ~/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
-    fuse-zip ~/zip/${rom3}.zip ~/roms/${rom[0]}/${rom3}
+    #if [ ! -f ~/zip/${rom3}.zip ]; then wget -nv -O ~/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
+    fuse-zip ~/rom/${rom[1]} ~/roms/${rom[0]}/${rom3}
   fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls ~/rom/${rom[1]} | while read line; do
