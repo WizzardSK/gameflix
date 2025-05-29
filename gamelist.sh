@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sudo -v ; curl https://rclone.org/install.sh | sudo bash > 2>&1
+sudo -v ; curl https://rclone.org/install.sh | sudo bash 2>&1
 mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/roms/neogeo ~/mount
-sudo apt install fuse-zip > 2>&1
+sudo apt install fuse-zip 2>&1
 rclone mount myrient: ~/rom --config=rclone.conf --daemon
 
 IFS=$'\n' read -d '' -ra roms < platforms.txt
