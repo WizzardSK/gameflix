@@ -5,6 +5,30 @@ mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/roms/neogeo ~/mount
 sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/rom --config=rclone.conf --daemon
 
+echo "<gameList>" > ~/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
+  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
+  hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> ~/roms/tic80/gamelist.xml
+done; echo "</gameList>" >> ~/roms/tic80/gamelist.xml
+
+#echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/roms/uzebox/*.uze ~/roms/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
+#  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/uzebox/gamelist.xml
+#done; echo "</gameList>" >> ~/roms/uzebox/gamelist.xml
+
+echo "<gameList>" > ~/roms/wasm4/gamelist.xml; html=$(curl -s "https://wasm4.org/play/")
+echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do
+  image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png);
+  hra="<game><path>./${image_name}.wasm</path><name>${title}</name><image>~/../thumbs/WASM-4/${image_name}.png</image>"; echo "${hra}</game>" >> ~/roms/wasm4/gamelist.xml
+done; echo "</gameList>" >> ~/roms/wasm4/gamelist.xml
+echo "<gameList>" > ~/roms/lowresnx/gamelist.xml; cat lowresnx.txt | while IFS=$'\t' read -r id name picture cart; do
+  hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/LowresNX/${picture}</image>"; echo "${hra}</game>" >> ~/roms/lowresnx/gamelist.xml
+done; echo "</gameList>" >> ~/roms/lowresnx/gamelist.xml
+echo "<gameList>" > ~/roms/pico8/gamelist.xml; cat pico8.txt | while IFS=$'\t' read -r id name cart; do
+  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/roms/pico8/gamelist.xml
+done; echo "</gameList>" >> ~/roms/pico8/gamelist.xml
+echo "<gameList>" > ~/roms/voxatron/gamelist.xml; cat voxatron.txt | while IFS=$'\t' read -r id name cart; do
+  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/roms/voxatron/gamelist.xml
+done; echo "</gameList>" >> ~/roms/voxatron/gamelist.xml
+
 IFS=$'\n' read -d '' -ra roms < platforms.txt
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/mount/${rom[0]} ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
