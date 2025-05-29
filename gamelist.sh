@@ -1,19 +1,18 @@
 #!/bin/bash
 
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
-mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/roms/neogeo ~/mount
+mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/roms/neogeo ~/mount ~/roms/uzebox ~/roms/tic80 ~/roms/wasm4 ~/roms/lowresnx ~/roms/pico8 ~/roms/voxatron
 sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/rom --config=rclone.conf --daemon
-
-echo "<gameList>" > ~/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
-  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
-  hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> ~/roms/tic80/gamelist.xml
-done; echo "</gameList>" >> ~/roms/tic80/gamelist.xml
 
 #echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/roms/uzebox/*.uze ~/roms/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
 #  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/uzebox/gamelist.xml
 #done; echo "</gameList>" >> ~/roms/uzebox/gamelist.xml
 
+echo "<gameList>" > ~/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
+  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
+  hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> ~/roms/tic80/gamelist.xml
+done; echo "</gameList>" >> ~/roms/tic80/gamelist.xml
 echo "<gameList>" > ~/roms/wasm4/gamelist.xml; html=$(curl -s "https://wasm4.org/play/")
 echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do
   image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png);
