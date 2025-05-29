@@ -1,24 +1,14 @@
 #!/bin/bash
 
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
-mkdir -p ~/rom ~/roms ~/zip ~/atari2600roms ~/roms/neogeo ~/mount ~/roms/uzebox ~/roms/tic80 ~/roms/wasm4 ~/roms/lowresnx ~/roms/pico8 ~/roms/voxatron
+mkdir -p ~/rom ~/roms ~/zip ~/atari2600roms ~/roms/neogeo ~/mount ~/uzebox ~/roms/uzebox ~/roms/tic80 ~/roms/wasm4 ~/roms/lowresnx ~/roms/pico8 ~/roms/voxatron
 sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/rom --config=rclone.conf --daemon
 
-wget -nv -O atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip
-fuse-zip atari2600roms.zip ~/atari2600roms
-ls ~/atari2600roms | while read line; do
-  line2=${line%.*}
-  hra="<game><path>./Atari 2600 ROMS/${line}</path><name>${line2}</name><image>~/../thumbs/Atari - 2600/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/Atari - 2600/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/Atari - 2600/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/Atari - 2600/Named_Logos/${line2}.png</marquee>"
-  if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
-    echo "${hra}</game>" >> ~/roms/atari2600/gamelist.xml
-  else echo "${hra}<hidden>true</hidden></game>" >> ~/roms/atari2600/gamelist.xml; fi
-done; echo "<folder><path>./Atari 2600 ROMS</path><name>Atari 2600 ROMS</name><image>~/../thumb/atari2600.png</image></folder>" >> ~/roms/atari2600/gamelist.xml
-
-#echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/roms/uzebox/*.uze ~/roms/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
-#  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/uzebox/gamelist.xml
-#done; echo "</gameList>" >> ~/roms/uzebox/gamelist.xml
-
+wget -nv -O uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; unzip -j uzebox.zip -d ~/uzebox
+echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
+  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/uzebox/gamelist.xml
+done; echo "</gameList>" >> ~/roms/uzebox/gamelist.xml
 echo "<gameList>" > ~/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
   hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
   hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> ~/roms/tic80/gamelist.xml
@@ -68,6 +58,16 @@ for each in "${roms[@]}"; do
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/roms/${rom[0]}/gamelist.xml
   fi
 done
+
+wget -nv -O atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip
+fuse-zip atari2600roms.zip ~/atari2600roms
+ls ~/atari2600roms | while read line; do
+  line2=${line%.*}
+  hra="<game><path>./Atari 2600 ROMS/${line}</path><name>${line2}</name><image>~/../thumbs/Atari - 2600/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/Atari - 2600/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/Atari - 2600/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/Atari - 2600/Named_Logos/${line2}.png</marquee>"
+  if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
+    echo "${hra}</game>" >> ~/roms/atari2600/gamelist.xml
+  else echo "${hra}<hidden>true</hidden></game>" >> ~/roms/atari2600/gamelist.xml; fi
+done; echo "<folder><path>./Atari 2600 ROMS</path><name>Atari 2600 ROMS</name><image>~/../thumb/atari2600.png</image></folder>" >> ~/roms/atari2600/gamelist.xml
 
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
