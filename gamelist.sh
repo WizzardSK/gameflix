@@ -5,25 +5,31 @@ mkdir -p ~/rom ~/roms ~/zip ~/atari2600roms ~/roms/neogeo ~/mount ~/uzebox ~/rom
 sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/rom --config=rclone.conf --daemon
 
-wget -nv -O uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; unzip -j uzebox.zip -d ~/uzebox
+echo "Uzebox"
+wget -nv -O uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip; unzip -j uzebox.zip -d ~/uzebox > /dev/null
 echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
   line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/uzebox/gamelist.xml
 done; echo "</gameList>" >> ~/roms/uzebox/gamelist.xml
+echo "TIC-80"
 echo "<gameList>" > ~/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
   hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
   hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> ~/roms/tic80/gamelist.xml
 done; echo "</gameList>" >> ~/roms/tic80/gamelist.xml
+echo "WASM-4"
 echo "<gameList>" > ~/roms/wasm4/gamelist.xml; html=$(curl -s "https://wasm4.org/play/")
 echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do
   image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png);
   hra="<game><path>./${image_name}.wasm</path><name>${title}</name><image>~/../thumbs/WASM-4/${image_name}.png</image>"; echo "${hra}</game>" >> ~/roms/wasm4/gamelist.xml
 done; echo "</gameList>" >> ~/roms/wasm4/gamelist.xml
+echo "LowresNX"
 echo "<gameList>" > ~/roms/lowresnx/gamelist.xml; cat lowresnx.txt | while IFS=$'\t' read -r id name picture cart; do
   hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/LowresNX/${picture}</image>"; echo "${hra}</game>" >> ~/roms/lowresnx/gamelist.xml
 done; echo "</gameList>" >> ~/roms/lowresnx/gamelist.xml
+echo "Pico-8"
 echo "<gameList>" > ~/roms/pico8/gamelist.xml; cat pico8.txt | while IFS=$'\t' read -r id name cart; do
   hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/roms/pico8/gamelist.xml
 done; echo "</gameList>" >> ~/roms/pico8/gamelist.xml
+echo "Voxatron"
 echo "<gameList>" > ~/roms/voxatron/gamelist.xml; cat voxatron.txt | while IFS=$'\t' read -r id name cart; do
   hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/roms/voxatron/gamelist.xml
 done; echo "</gameList>" >> ~/roms/voxatron/gamelist.xml
@@ -59,9 +65,10 @@ for each in "${roms[@]}"; do
   fi
 done
 
-wget -nv -O atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip
+echo "Atari 2600 ROMS"
+wget -nv -O atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip > /dev/null
 fuse-zip atari2600roms.zip ~/atari2600roms
-ls ~/atari2600roms | while read line; do
+ls ~/atari2600roms/ROMS | while read line; do
   line2=${line%.*}
   hra="<game><path>./Atari 2600 ROMS/${line}</path><name>${line2}</name><image>~/../thumbs/Atari - 2600/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/Atari - 2600/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/Atari - 2600/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/Atari - 2600/Named_Logos/${line2}.png</marquee>"
   if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
