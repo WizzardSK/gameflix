@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sudo -v ; curl https://rclone.org/install.sh | sudo bash 2>&1
+sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
 mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/roms/neogeo ~/mount
-sudo apt install fuse-zip 2>&1
+sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/rom --config=rclone.conf --daemon
 
 IFS=$'\n' read -d '' -ra roms < platforms.txt
@@ -42,7 +42,7 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-zip -r gamelist.zip ~/roms/
+zip -r gamelist.zip ~/roms/*
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git add gamelist.zip
