@@ -15,9 +15,9 @@ for each in "${roms[@]}"; do
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     chmod +x ./batocera/ratarmount
     ./batocera/ratarmount ~/rom/${rom[1]} ~/mount/${rom[0]}/${rom3}
-    folder="~/mount/${rom[0]}/${rom3}"
+    folder="$HOME/mount/${rom[0]}/${rom3}"
   else
-    folder="~/rom/${rom[1]}"
+    folder="$HOME/rom/${rom[1]}"
   fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls ${folder} | while read line; do
