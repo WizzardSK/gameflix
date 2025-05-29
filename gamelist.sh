@@ -1,11 +1,11 @@
 #!/bin/bash
 
-sudo -v ; curl https://rclone.org/install.sh | sudo bash  > /dev/null 2>&1
-mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/dos ~/roms/neogeo ~/mount
-sudo apt install fuse-zip > /dev/null 2>&1
+sudo -v ; curl https://rclone.org/install.sh | sudo bash > 2>&1
+mkdir -p ~/rom ~/roms ~/zip ~/zip/atari2600roms ~/roms/neogeo ~/mount
+sudo apt install fuse-zip > 2>&1
 rclone mount myrient: ~/rom --config=rclone.conf --daemon
 
-IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
+IFS=$'\n' read -d '' -ra roms < platforms.txt
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/mount/${rom[0]} ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
@@ -18,6 +18,11 @@ for each in "${roms[@]}"; do
     folder="$HOME/mount/${rom[0]}/${rom3}"
   else
     folder="$HOME/rom/${rom[1]}"
+  fi
+  if grep -q ":" <<< "${rom[1]}"; then
+    mkdir -p ~/mount/${rom[0]}/${rom3}
+    folder="$HOME/mount/${rom[0]}/${rom3}"
+    rclone mount ${rom[1]} ~/mount/${rom[0]}/${rom3} --daemon --config=rclone.conf
   fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls "${folder}" | while read line; do
