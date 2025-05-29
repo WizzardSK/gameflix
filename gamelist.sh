@@ -14,7 +14,7 @@ for each in "${roms[@]}"; do
   mkdir -p ~/mount/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     chmod +x ./batocera/ratarmount
-    ./batocera/ratarmount ~/rom/${rom[1]} ~/mount/${rom[0]}/${rom3}
+    ./batocera/ratarmount ~/rom/${rom[1]} ~/mount/${rom[0]}/${rom3} > /dev/null
     folder="$HOME/mount/${rom[0]}/${rom3}"
   else
     folder="$HOME/rom/${rom[1]}"
