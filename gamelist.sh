@@ -75,6 +75,6 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-cd ~/roms && zip -r gamelist.zip *
+cd ~/roms && zip -r gamelist.zip *; cd ~
 git config --global user.name "GitHub Actions"; git config --global user.email "actions@github.com"
 git add gamelist.zip; git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"; git push
