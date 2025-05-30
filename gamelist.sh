@@ -59,8 +59,7 @@ for each in "${roms[@]}"; do
   fi
 done
 
-echo "Atari 2600 ROMS"
-wget -nv -O atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip > /dev/null
+echo "Atari 2600 ROMS"; wget -nv -O atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip > /dev/null
 fuse-zip atari2600roms.zip ~/atari2600roms
 ls ~/atari2600roms/ROMS | while read line; do
   line2=${line%.*}
@@ -76,9 +75,6 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-zip -r gamelist.zip ~/roms/*
-git config --global user.name "GitHub Actions"
-git config --global user.email "actions@github.com"
-git add gamelist.zip
-git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
-git push
+cd ~/roms && zip -r ~/gamelist.zip *
+git config --global user.name "GitHub Actions"; git config --global user.email "actions@github.com"
+git add gamelist.zip; git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"; git push
