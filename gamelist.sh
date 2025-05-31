@@ -1,5 +1,4 @@
 #!/bin/bash
-
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
 mkdir -p ~/rom ~/roms ~/zip ~/atari2600roms ~/roms/neogeo ~/mount ~/uzebox ~/roms/uzebox ~/roms/tic80 ~/roms/wasm4 ~/roms/lowresnx ~/roms/pico8 ~/roms/voxatron
 sudo apt install fuse-zip > /dev/null
@@ -74,6 +73,12 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-zip -r gamelist.zip ~/roms/*
-git config --global user.name "GitHub Actions"; git config --global user.email "actions@github.com"
-git add gamelist.zip; git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"; git push
+rm gamelist.zip
+cd roms
+zip -r ../gamelist.zip *
+cd ..
+git config --global user.name "GitHub Actions"
+git config --global user.email "actions@github.com"
+git add gamelist.zip
+git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
+git push
