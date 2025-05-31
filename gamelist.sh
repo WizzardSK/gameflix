@@ -36,8 +36,7 @@ for each in "${roms[@]}"; do
   echo ${rom3}
   mkdir -p ~/mount/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
-    chmod +x ./batocera/ratarmount
-    ./batocera/ratarmount ~/rom/${rom[1]} ~/mount/${rom[0]}/${rom3} > /dev/null
+    ./batocera/ratarmount1 ~/rom/${rom[1]} ~/mount/${rom[0]}/${rom3} > /dev/null
     folder="$HOME/mount/${rom[0]}/${rom3}"
   else
     folder="$HOME/rom/${rom[1]}"
@@ -75,6 +74,6 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-zip -r gamelist.zip roms/*
+zip -r gamelist.zip ~/roms/*
 git config --global user.name "GitHub Actions"; git config --global user.email "actions@github.com"
 git add gamelist.zip; git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"; git push
