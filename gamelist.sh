@@ -3,7 +3,7 @@
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
 mkdir -p ~/rom ~/roms ~/zip ~/atari2600roms ~/roms/neogeo ~/mount ~/uzebox ~/roms/uzebox ~/roms/tic80 ~/roms/wasm4 ~/roms/lowresnx ~/roms/pico8 ~/roms/voxatron
 sudo apt install fuse-zip > /dev/null
-rclone mount myrient: ~/rom --config=rclone.conf --daemon
+rclone mount myrient: ~/rom --config=rclone.conf --daemon --http-no-head
 
 echo "Uzebox"; wget -nv -O uzebox.zip https://nicksen782.net/a_demos/downloads/games_20180105.zip > /dev/null; unzip -j uzebox.zip -d ~/uzebox > /dev/null
 echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
@@ -45,7 +45,7 @@ for each in "${roms[@]}"; do
   if grep -q ":" <<< "${rom[1]}"; then
     mkdir -p ~/mount/${rom[0]}/${rom3}
     folder="$HOME/mount/${rom[0]}/${rom3}"
-    rclone mount ${rom[1]} ~/mount/${rom[0]}/${rom3} --daemon --config=rclone.conf
+    rclone mount ${rom[1]} ~/mount/${rom[0]}/${rom3} --daemon --config=rclone.conf --http-no-head
   fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls "${folder}" | while read line; do
@@ -75,6 +75,6 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-cd ~/roms && zip -r gamelist.zip *; cd ~
+zip -r gamelist.zip roms/*
 git config --global user.name "GitHub Actions"; git config --global user.email "actions@github.com"
 git add gamelist.zip; git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"; git push
