@@ -74,9 +74,9 @@ for each in "${roms[@]}"; do
 done
 
 rm gamelist.zip
-cd roms
+cd ~/roms
 zip -r ../gamelist.zip *
-cd ..
+cd ~
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git add gamelist.zip
