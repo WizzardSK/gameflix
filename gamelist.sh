@@ -76,7 +76,7 @@ done
 rm gamelist.zip
 cd ~/roms
 zip -r ../gamelist.zip *
-cd ~
+cd "$GITHUB_WORKSPACE"
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git add gamelist.zip
