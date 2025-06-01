@@ -4,7 +4,7 @@
 3692	TRI MATCH	xkV2Xbu8pd_Tri_Match.png	xkV2Xbu8pd_Tri_Match.nx
 3689	Guess The Number	82okJqG7vZ_Guess_The_Number.png	82okJqG7vZ_Guess_The_Number.nx
 3686	The Pasture Of The Other Realm	2sijuadZjL_The_Pasture_Of_The_Other_Realm3.png	2sijuadZjL_The_Pasture_Of_The_Other_Realm3.nx
-3685	Poptris (Tetris variant)	jLXbzd89kg_Poptris_056.png	jLXbzd89kg_Poptris_056.nx
+3685	Poptris (Tetris variant)	oKxUmWceGe_Poptris_062.png	oKxUmWceGe_Poptris_062.nx
 3684	SumDoku	dRQhEWf3BR_SumDoku.png	dRQhEWf3BR_SumDoku.nx
 3680	DWELLER	AirFvk4MDh_IMG_4BFA44DB07681.jpeg	AirFvk4MDh_Dweller1.1.nx
 3677	SUM SUM	x5idRJ6Ms9_SUMSUM.png	x5idRJ6Ms9_SUMSUM.nx
