@@ -73,7 +73,7 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-ROMLIST="neogeo.dat"; HTMLFILES=("~/roms/neogeo/gamelist.xml")
+ROMLIST="neogeo.dat"; HTMLFILES=("$HOME/roms/neogeo/gamelist.xml")
 for HTMLFILE in "${HTMLFILES[@]}"; do
   while IFS=$'\t' read -r filename title; do
     base="${filename%.*}"; escaped_title=$(printf '%s\n' "$title" | sed 's/[&/\]/\\&/g')
