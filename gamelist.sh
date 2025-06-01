@@ -35,7 +35,7 @@ for each in "${roms[@]}"; do
   echo ${rom3}
   mkdir -p ~/mount/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
-    ./batocera/ratarmount1 ~/rom/${rom[1]} ~/mount/${rom[0]}/${rom3} > /dev/null
+    ./batocera/ratarmount ~/rom/${rom[1]} ~/mount/${rom[0]}/${rom3} > /dev/null
     folder="$HOME/mount/${rom[0]}/${rom3}"
   else
     folder="$HOME/rom/${rom[1]}"
