@@ -14,7 +14,7 @@ mount -o bind /userdata/zip/atari2600roms/ROMS /userdata/roms/atari2600/Atari\ 2
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 
-wget -O /userdata/system/gamelist.zip  https://github.com/WizzardSK/gameflix/raw/main/gamepist.zip
+wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/gamelist.zip
 unzip -o /userdata/system/gamelist.zip -d /userdata/roms
 
 #echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
