@@ -14,9 +14,6 @@ mount -o bind /userdata/zip/atari2600roms/ROMS /userdata/roms/atari2600/Atari\ 2
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 
-wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/gamelist.zip
-unzip -o /userdata/system/gamelist.zip -d /userdata/roms
-
 #echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
 #  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
 #  hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; echo "${hra}</game>" >> /userdata/roms/tic80/gamelist.xml
@@ -49,7 +46,7 @@ IFS=";"
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
-  (
+  #(
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   echo "${rom3}"; mkdir -p /userdata/roms/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
@@ -71,7 +68,7 @@ for each in "${roms[@]}"; do
   #  done
   #  echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   #fi
-  ) &
+  #) &
 done
 wait
 
@@ -97,6 +94,9 @@ wait
 #    sed -i -E "s/${base}</${escaped_title}</g" "$HTMLFILE"
 #  done < "$ROMLIST"
 #done
+
+wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/gamelist.zip
+unzip -o /userdata/system/gamelist.zip -d /userdata/roms
 
 cp /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.bak
 wget -nv -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems.cfg > /dev/null 2>&1
