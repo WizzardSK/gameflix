@@ -89,4 +89,5 @@ git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git add gamelist.zip
 git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
+git pull
 git push
