@@ -1,3 +1,4 @@
+3704	Minesweep Solitaire	fZ3XimP2sr_Minesweep_Solitaire.png	fZ3XimP2sr_Minesweep_Solitaire.nx
 3697	Personal Computer Boot Menu	cmFrJpypNu_PC_Boot_BIOS.png	cmFrJpypNu_PC_Boot_BIOS.nx
 3696	Smooth Brain The Game	DeFbyViohS_Smooth_Brain.png	DeFbyViohS_Smooth_Brain.nx
 3695	BC Tire Run (w/cheats)	BNu4Bj42vG_BCs_Tire_Run_cheat.png	BNu4Bj42vG_BCs_Tire_Run_cheat.nx
