@@ -15,7 +15,7 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 
 wget -O /userdata/system/gamelist.zip  https://github.com/WizzardSK/gameflix/raw/main/gamepist.zip
-unzip -o gamelist.zip -d /userdata/roms
+unzip -o /userdata/system/gamelist.zip -d /userdata/roms
 
 #echo "<gameList>" > /userdata/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g' | while IFS= read -r line; do
 #  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+')
@@ -45,11 +45,12 @@ unzip -o gamelist.zip -d /userdata/roms
 #done; echo "</gameList>" >> /userdata/roms/voxatron/gamelist.xml
 
 IFS=";"
-for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); > /userdata/roms/${rom[0]}/gamelist.xml; done
+#for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); > /userdata/roms/${rom[0]}/gamelist.xml; done
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
-  ( rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
+  (
+  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   echo "${rom3}"; mkdir -p /userdata/roms/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     if [ ! -f /userdata/zip/${rom3}.zip ]; then wget -O /userdata/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
@@ -60,16 +61,17 @@ for each in "${roms[@]}"; do
       rclone mount ${rom[1]} /userdata/roms/${rom[0]}/${rom3} --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
     else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}; fi
   fi
-  if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
-    ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
-      line2=${line%.*}
-      hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${line2}.png</marquee>"
-      if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
-        echo "${hra}</game>" >> /userdata/roms/${rom[0]}/gamelist.xml
-      else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/${rom[0]}/gamelist.xml; fi    
-    done
-    echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
-  fi ) &
+  #if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
+  #  ls /userdata/roms/${rom[0]}/${rom3} | while read line; do
+  #    line2=${line%.*}
+  #    hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${line2}.png</marquee>"
+  #    if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
+  #      echo "${hra}</game>" >> /userdata/roms/${rom[0]}/gamelist.xml
+  #    else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/${rom[0]}/gamelist.xml; fi    
+  #  done
+  #  echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
+  #fi
+  ) &
 done; wait
 
 #ls /userdata/roms/atari2600/Atari\ 2600\ ROMS | while read line; do
