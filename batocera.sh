@@ -53,7 +53,7 @@ for each in "${roms[@]}"; do
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   echo "${rom3}"; mkdir -p /userdata/roms/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
-    if [ ! -f /userdata/zip/${rom3}.zip ]; then wget -O /userdata/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
+    #if [ ! -f /userdata/zip/${rom3}.zip ]; then wget -O /userdata/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
     #/userdata/system/fuse-zip /userdata/zip/${rom3}.zip /userdata/roms/${rom[0]}/${rom3}
     /userdata/system/ratarmount /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}
   else
@@ -72,7 +72,8 @@ for each in "${roms[@]}"; do
   #  echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> /userdata/roms/${rom[0]}/gamelist.xml
   #fi
   ) &
-done; wait
+done
+wait
 
 #ls /userdata/roms/atari2600/Atari\ 2600\ ROMS | while read line; do
 #  line2=${line%.*}
