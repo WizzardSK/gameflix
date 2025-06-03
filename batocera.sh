@@ -24,19 +24,15 @@ rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --
 #  image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png);
 #  hra="<game><path>./${image_name}.wasm</path><name>${title}</name><image>~/../thumbs/WASM-4/${image_name}.png</image>"; echo "${hra}</game>" >> /userdata/roms/wasm4/gamelist.xml
 #done; echo "</gameList>" >> /userdata/roms/wasm4/gamelist.xml
-
 #echo "<gameList>" > /userdata/roms/uzebox/gamelist.xml; ls /userdata/roms/uzebox/*.uze /userdata/roms/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
 #  line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> /userdata/roms/uzebox/gamelist.xml
 #done; echo "</gameList>" >> /userdata/roms/uzebox/gamelist.xml
-
 #echo "<gameList>" > /userdata/roms/lowresnx/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt" | while IFS=$'\t' read -r id name picture cart; do
 #  hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/LowresNX/${picture}</image>"; echo "${hra}</game>" >> /userdata/roms/lowresnx/gamelist.xml
 #done; echo "</gameList>" >> /userdata/roms/lowresnx/gamelist.xml
-
 #echo "<gameList>" > /userdata/roms/pico8/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt" | while IFS=$'\t' read -r id name cart; do
 #  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> /userdata/roms/pico8/gamelist.xml
 #done; echo "</gameList>" >> /userdata/roms/pico8/gamelist.xml
-
 #echo "<gameList>" > /userdata/roms/voxatron/gamelist.xml; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/voxatron.txt" | while IFS=$'\t' read -r id name cart; do
 #  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> /userdata/roms/voxatron/gamelist.xml
 #done; echo "</gameList>" >> /userdata/roms/voxatron/gamelist.xml
@@ -52,7 +48,6 @@ for each in "${roms[@]}"; do
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     #if [ ! -f /userdata/zip/${rom3}.zip ]; then wget -O /userdata/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi
     #/userdata/system/fuse-zip /userdata/zip/${rom3}.zip /userdata/roms/${rom[0]}/${rom3}
-    head /userdata/rom/${rom[1]} > /dev/null
     /userdata/system/ratarmount /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3} --index-folders /userdata/system/.cache/ratarmount > /dev/null &
   else
     if grep -q ":" <<< "${rom[1]}"; then
@@ -80,13 +75,11 @@ wait
 #    echo "${hra}</game>" >> /userdata/roms/atari2600/gamelist.xml
 #  else echo "${hra}<hidden>true</hidden></game>" >> /userdata/roms/atari2600/gamelist.xml; fi    
 #done; echo "<folder><path>./Atari 2600 ROMS</path><name>Atari 2600 ROMS</name><image>~/../thumb/atari2600.png</image></folder>" >> /userdata/roms/atari2600/gamelist.xml
-
 #for each in "${roms[@]}"; do 
 #  read -ra rom < <(printf '%s' "$each")
 #  if ! grep -Fxq "<gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
 #  if ! grep -Fxq "</gameList>" /userdata/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" /userdata/roms/${rom[0]}/gamelist.xml; fi
 #done
-
 #ROMLIST="neogeo.dat"; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/neogeo.dat" -o "$ROMLIST"
 #HTMLFILES=("/userdata/roms/neogeo/gamelist.xml")
 #for HTMLFILE in "${HTMLFILES[@]}"; do
