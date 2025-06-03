@@ -15,7 +15,6 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 
 IFS=";"
-#for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); > /userdata/roms/${rom[0]}/gamelist.xml; done
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
