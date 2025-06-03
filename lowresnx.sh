@@ -3,12 +3,12 @@ BASE_URL="https://lowresnx.inutilis.com/programs.php?category=game&sort=new&page
 OUTPUT_FILE="lowresnx.txt"
 > "$OUTPUT_FILE"
 page=1
+mkdir lowresnx
 while true; do
     URL="${BASE_URL}${page}"
     echo "Page $page..."
     page_content=$(curl -s "$URL")
     if echo "$page_content" | grep -q "No results"; then break; fi
-    mkdir lowresnx
     echo "$page_content" | grep -oP 'topic.php\?id=\K[0-9]+' | while read id; do
         topic_page=$(curl -s "https://lowresnx.inutilis.com/topic.php?id=$id")
         title=$(echo "$topic_page" | grep -oP '(?<=<h1>).*?(?=</h1>)' | head -n 1)
