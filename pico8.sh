@@ -28,5 +28,4 @@ git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git add "$OUTPUT_FILE"
 git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
-git pull
 git push
