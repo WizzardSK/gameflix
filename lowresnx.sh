@@ -3,7 +3,7 @@ BASE_URL="https://lowresnx.inutilis.com/programs.php?category=game&sort=new&page
 OUTPUT_FILE="lowresnx.txt"
 > "$OUTPUT_FILE"
 page=1
-mkdir lowresnx
+mkdir ~/lowresnx
 while true; do
     URL="${BASE_URL}${page}"
     echo "Page $page..."
@@ -15,7 +15,7 @@ while true; do
         image=$(echo "$topic_page" | grep -oP '(?<=<img class="screenshot pixelated" src="uploads/)[^"]+')
         nx_url=$(echo "$topic_page" | grep -oP 'href="uploads/\K[^"]+\.nx' | head -n 1)
         echo -e "$id\t$title\t$image\t$nx_url" >> "$OUTPUT_FILE"
-        wget -nv -O lowresnx/$nx_url https://lowresnx.inutilis.com/upload/$nx_url
+        wget -nv -O lowresnx/$nx_url https://lowresnx.inutilis.com/upload/$nx_url &
     done
     ((page++)) 
 done
