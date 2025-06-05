@@ -10,7 +10,7 @@ echo "$FILES" | while read -r LINE; do
     HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p')
     FILENAME=$(echo "$LINE" | sed -n 's/.*filename\s*=\s*"\([^"]*\)".*/\1/p')
     FILE_PATH="${DOWNLOAD_DIR}/${HASH} ${FILENAME}"; DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"
-    if [ ! -f "$FILE_PATH" ]; then wget -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
+    if [ ! -f "$FILE_PATH" ]; then wget -nv -O "$FILE_PATH" "$DOWNLOAD_URL"; fi
 done
 
 rm tic80.zip
