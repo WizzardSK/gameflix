@@ -29,6 +29,7 @@ rm -f "$TEMP_FILE"
 rm voxatron.zip
 cd ~/voxatron
 zip -r "$GITHUB_WORKSPACE/voxatron.zip" *
+cd "$GITHUB_WORKSPACE"
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git add "$OUTPUT_FILE"
