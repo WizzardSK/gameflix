@@ -4,10 +4,7 @@ OUTPUT_FILE="voxatron.txt"
 TEMP_FILE="voxatron_temp.txt"
 BASE_LIST_URL="https://www.lexaloffle.com/bbs/lister.php?cat=6&sub=2&mode=carts&page="
 BASE_CART_URL="https://www.lexaloffle.com/bbs/?tid="
-
-DOWNLOAD_DIR="voxatron"
-mkdir -p "$DOWNLOAD_DIR"
-
+mkdir ~/voxatron
 PAGE=1; > "$TEMP_FILE"
 while true; do
     echo "➡️ Page $PAGE..."
@@ -19,10 +16,8 @@ while true; do
         CART_HTML=$(curl -s "${BASE_CART_URL}${TID}")
         PNG_NAME=$(echo "$CART_HTML" | grep -oP 'href="[^"]+/(?:[^"/]+\.vx\.png|cpost[0-9]+\.png)"' | head -n1 | sed -E 's/.*\/([^/]+\.png)".*/\1/')
         if [[ -z "$PNG_NAME" ]]; then continue; fi
-
         FILE_URL="https://www.lexaloffle.com/bbs/files/${PNG_NAME}"
-        curl -s -o "${DOWNLOAD_DIR}/${PNG_NAME}" "$FILE_URL"
-        
+        wget -nv -O ~/voxatron/${PNG_NAME} $FILE_URL
         echo -e "$TID\t$TITLE\t$PNG_NAME" >> "$TEMP_FILE"
     done
     rm -f titles.txt tids.txt
