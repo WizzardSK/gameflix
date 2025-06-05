@@ -15,9 +15,7 @@ while true; do
     paste tids.txt titles.txt | while IFS=$'\t' read -r TID TITLE; do
         CART_HTML=$(curl -s "${BASE_CART_URL}${TID}")
         PNG_NAME=$(echo "$CART_HTML" | grep -oP 'href="[^"]+/(?:[^"/]+\.vx\.png|cpost[0-9]+\.png)"' | head -n1 | sed -E 's/.*\/([^/]+\.png)".*/\1/')
-        PNG_URL=$(echo "$CART_HTML" | grep -oP 'href="\K(/bbs/files/[^"]+\.(vx\.png|png))' | head -n1 | awk '{print "https://www.lexaloffle.com"$0}')
         if [[ -z "$PNG_NAME" ]]; then continue; fi
-        wget -nv -O ~/voxatron/${PNG_NAME} ${PNG_URL}
         echo -e "$TID\t$TITLE\t$PNG_NAME" >> "$TEMP_FILE"
     done
     rm -f titles.txt tids.txt
@@ -26,12 +24,12 @@ while true; do
 done
 sort -nr "$TEMP_FILE" > "$OUTPUT_FILE"
 rm -f "$TEMP_FILE"
-rm voxatron.zip
-cd ~/voxatron
-zip -r "$GITHUB_WORKSPACE/voxatron.zip" *
+#rm voxatron.zip
+#cd ~/voxatron
+#zip -r "$GITHUB_WORKSPACE/voxatron.zip" *
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git add "$OUTPUT_FILE"
-git add voxatron.zip
+#git add voxatron.zip
 git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
 git push
