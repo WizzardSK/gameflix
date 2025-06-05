@@ -28,7 +28,7 @@ sort -nr "$TEMP_FILE" > "$OUTPUT_FILE"
 rm -f "$TEMP_FILE"
 rm pico8.zip
 cd ~/pico8
-zip -r "$GITHUB_WORKSPACE/pico8.zip" *
+zip -s 100m -r "$GITHUB_WORKSPACE/pico8.zip" *
 cd "$GITHUB_WORKSPACE"
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
