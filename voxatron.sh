@@ -15,8 +15,8 @@ while true; do
     paste tids.txt titles.txt | while IFS=$'\t' read -r TID TITLE; do
         CART_HTML=$(curl -s "${BASE_CART_URL}${TID}")
         PNG_NAME=$(echo "$CART_HTML" | grep -oP 'href="[^"]+/(?:[^"/]+\.vx\.png|cpost[0-9]+\.png)"' | head -n1 | sed -E 's/.*\/([^/]+\.png)".*/\1/')
+        FILE_URL=$(echo "$CART_HTML" | grep -oP 'href="\K(/bbs/files/[^"]+\.vx\.png|/bbs/files/cpost[0-9]+\.png)' | head -n1)
         if [[ -z "$PNG_NAME" ]]; then continue; fi
-        FILE_URL="https://www.lexaloffle.com/bbs/files/${CART_HTML}"
         wget -nv -O ~/voxatron/${PNG_NAME} $FILE_URL
         echo -e "$TID\t$TITLE\t$PNG_NAME" >> "$TEMP_FILE"
     done
