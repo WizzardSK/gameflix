@@ -1,0 +1,17 @@
+name: TIC-80 cart downloader
+
+on:
+  schedule:
+    - cron: '0 4 * * *' 
+  workflow_dispatch: 
+  
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 
+
+      - name: Run script
+        run: bash tic80.sh 
