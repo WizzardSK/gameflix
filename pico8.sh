@@ -26,13 +26,13 @@ while true; do
 done
 sort -nr "$TEMP_FILE" > "$OUTPUT_FILE"
 rm -f "$TEMP_FILE"
-rm pico8.zip
+rm pico8.zip pico8.z01
 cd ~/pico8
 zip -s 100m -r "$GITHUB_WORKSPACE/pico8.zip" *
 cd "$GITHUB_WORKSPACE"
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git add "$OUTPUT_FILE"
-git add pico8.zip
+git add pico8.zip pico8.z01
 git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
 git push
