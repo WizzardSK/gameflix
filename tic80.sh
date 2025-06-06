@@ -14,7 +14,7 @@ echo "$FILES" | while read -r LINE; do
     COVER_URL="${BASE_URL}/${HASH}/cover.gif"
     if [ ! -f "$FILE_PATH" ]; then 
         wget -nv -O "$FILE_PATH" "$DOWNLOAD_URL"
-        wget -nv -O "${FILENAME%.tic}.gif" "$COVER_URL"
+        wget -nv -O "${FILE_PATH%.tic}.gif" "$COVER_URL"
     fi
 done
 
