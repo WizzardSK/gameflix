@@ -26,24 +26,25 @@ curl "$FILE_URL" | while IFS=$'\t' read -r id title image nx_file; do
     if [ ! -s "$HOME/share/thumbs/LowresNX/$image" ]; then download_url="https://lowresnx.inutilis.com/uploads/$image"; wget -nv "$download_url" -O "$HOME/share/thumbs/LowresNX/$image"; fi
 done
 
-#REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt"; OUTPUT_DIR="$HOME/roms/pico8"; 
-#LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r ID NAME FILENAME; do
-#    if [[ -n "$FILENAME" ]]; then
-#        if [[ $FILENAME =~ ^[0-9] ]]; then number="${BASH_REMATCH[1]}"; PREFIX=$(( number / 10000 )); else PREFIX="${FILENAME:0:2}"; fi
-#        OUTPUT_PATH="${OUTPUT_DIR}/${FILENAME}"; FILE_URL="https://www.lexaloffle.com/bbs/cposts/${PREFIX}/${FILENAME}"; 
-#        if [[ ! -s "$OUTPUT_PATH" ]]; then wget -nv -O "$OUTPUT_PATH" "$FILE_URL"; fi
-#    fi
-#done
+REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt"; OUTPUT_DIR="$HOME/roms/pico8"; 
+mkdir -p "$OUTPUT_DIR"
+LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r ID NAME FILENAME; do
+    if [[ -n "$FILENAME" ]]; then
+        if [[ $FILENAME =~ ^[0-9] ]]; then number="${BASH_REMATCH[1]}"; PREFIX=$(( number / 10000 )); else PREFIX="${FILENAME:0:2}"; fi
+        OUTPUT_PATH="${OUTPUT_DIR}/${FILENAME}"; FILE_URL="https://www.lexaloffle.com/bbs/cposts/${PREFIX}/${FILENAME}"; 
+        if [[ ! -s "$OUTPUT_PATH" ]]; then wget -nv -O "$OUTPUT_PATH" "$FILE_URL"; fi
+    fi
+done
 
-#REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/voxatron.txt"; OUTPUT_DIR="$HOME/roms/voxatron"; 
-#mkdir -p "$OUTPUT_DIR"
-#LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r ID NAME FILENAME; do
-#    if [[ -n "$FILENAME" ]]; then
-#        if [[ $FILENAME == cpost* ]]; then number=${FILENAME//[^0-9]/}; PREFIX=$(( number / 10000 )); else PREFIX="${FILENAME:0:2}"; fi
-#        OUTPUT_PATH="${OUTPUT_DIR}/${FILENAME}"; FILE_URL="https://www.lexaloffle.com/bbs/cposts/${PREFIX}/${FILENAME}"; 
-#        if [[ ! -s "$OUTPUT_PATH" ]]; then wget -nv -O "$OUTPUT_PATH" "$FILE_URL"; fi
-#    fi
-#done
+REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/voxatron.txt"; OUTPUT_DIR="$HOME/roms/voxatron"; 
+mkdir -p "$OUTPUT_DIR"
+LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r ID NAME FILENAME; do
+    if [[ -n "$FILENAME" ]]; then
+        if [[ $FILENAME == cpost* ]]; then number=${FILENAME//[^0-9]/}; PREFIX=$(( number / 10000 )); else PREFIX="${FILENAME:0:2}"; fi
+        OUTPUT_PATH="${OUTPUT_DIR}/${FILENAME}"; FILE_URL="https://www.lexaloffle.com/bbs/cposts/${PREFIX}/${FILENAME}"; 
+        if [[ ! -s "$OUTPUT_PATH" ]]; then wget -nv -O "$OUTPUT_PATH" "$FILE_URL"; fi
+    fi
+done
 
 if [ ! -f ~/share/zip/atari2600roms.zip ]; then wget -O ~/share/zip/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
 fuse-zip ~/share/zip/atari2600roms.zip ~/share/zip/atari2600roms -o allow_other; bindfs ~/share/zip/atari2600roms/ROMS ~/roms/Atari\ 2600\ ROMS
@@ -53,7 +54,6 @@ mkdir -p "$HOME/share/thumbs"
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 IFS=";"; for each in "${roms[@]}"; do
   echo "${rom3}"; read -ra rom < <(printf '%s' "$each")
-
   if [[ -z "${seen[${rom[0]}]}" ]]; then
     seen[${rom[0]}]=1; rom2="${rom[2]// /_}"; echo "${rom[2]} thumbs" | tee -a "$HOME/git.log"
     if [ ! -d "$HOME/share/thumbs/${rom[2]}" ]; then git clone --depth 1 "https://github.com/WizzardSK/${rom2}.git" "$HOME/share/thumbs/${rom[2]}" 2>&1 | tee -a "$HOME/git.log"; else
@@ -63,7 +63,6 @@ IFS=";"; for each in "${roms[@]}"; do
       sleep 0.5
     fi
   fi  
-  
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     mkdir -p ~/roms/${rom3}
@@ -72,6 +71,3 @@ IFS=";"; for each in "${roms[@]}"; do
     fi
   fi
 done
-
-wait
-
