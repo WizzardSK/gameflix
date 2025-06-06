@@ -2,7 +2,7 @@ name: Pico-8 cart updater
 
 on:
   schedule:
-    - cron: '0 4 * * *' 
+    - cron: '0 5 * * *' 
   workflow_dispatch: 
 
 jobs:
