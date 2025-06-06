@@ -1,4 +1,4 @@
-name: Generate gamelists
+name: Batocera gamelists updater
 
 on:
   schedule:
