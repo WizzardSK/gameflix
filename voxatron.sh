@@ -22,7 +22,6 @@ while true; do
     done
     rm -f titles.txt tids.txt
     PAGE=$((PAGE + 1))
-    sleep 1
 done
 sort -nr "$TEMP_FILE" > "$OUTPUT_FILE"
 rm -f "$TEMP_FILE"
