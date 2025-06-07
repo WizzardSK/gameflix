@@ -17,6 +17,7 @@ while true; do
         echo -e "$id\t$title\t$image\t$nx_url" >> "$OUTPUT_FILE"
         wget -nv -O ~/lowresnx/$nx_url https://lowresnx.inutilis.com/upload/$nx_url
         wget -nv -O ~/lowresnx/$image https://lowresnx.inutilis.com/upload/$image
+        sleep 1
     done
     ((page++)) 
 done
