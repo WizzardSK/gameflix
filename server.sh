@@ -65,11 +65,11 @@ IFS=";"; for each in "${roms[@]}"; do
       sleep 0.5
     fi
   fi  
-  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  if [[ ${rom[1]} =~ \.zip$ ]]; then
-    mkdir -p ~/roms/${rom3}
-    if [ -z "$(ls -A ~/roms/${rom3})" ]; then
-      ratarmount ~/myrient/${rom1} ~/roms/${rom3}
-    fi
-  fi
+  #rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
+  #if [[ ${rom[1]} =~ \.zip$ ]]; then
+  #  mkdir -p ~/roms/${rom3}
+  #  if [ -z "$(ls -A ~/roms/${rom3})" ]; then
+  #    ratarmount ~/myrient/${rom1} ~/roms/${rom3}
+  #  fi
+  #fi
 done
