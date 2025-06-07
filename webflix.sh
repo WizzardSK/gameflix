@@ -18,6 +18,7 @@ IFS=";"; for each in "${roms[@]}"; do
     mkdir -p ~/roms/${rom3}
     if [ -z "$(ls -A ~/roms/${rom3})" ]; then
       #ratarmount ~/myrient/${rom[1]} ~/roms/${rom3}
+      head ~/myrient/${rom[1]}
       mount-zip ~/myrient/${rom[1]} ~/roms/${rom3}
     fi
   fi
