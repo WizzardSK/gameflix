@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rclone mount myrient: ~/myrient --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other
+
 API_URL="https://tic80.com/api?fn=dir&path=play/Games"; BASE_URL="https://tic80.com/cart"; DOWNLOAD_DIR="$HOME/roms/tic80"; RESPONSE=$(curl -s "$API_URL")
 FILES=$(echo "$RESPONSE" | grep -oP '{\s*name\s*=\s*"[^"]+",\s*hash\s*=\s*"[^"]+",\s*id\s*=\s*\d+,\s*filename\s*=\s*"[^"]+"\s*}'); mkdir -p "$HOME/share/thumbs/TIC-80"
 echo "$FILES" | while read -r LINE; do
@@ -67,7 +69,7 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     mkdir -p ~/roms/${rom3}
     if [ -z "$(ls -A ~/roms/${rom3})" ]; then
-      if [ ! -f ~/share/zip/${rom3}.zip ]; then wget -O ~/share/zip/${rom3}.zip https://myrient.erista.me/files/${rom[1]}; fi; fuse-zip ~/share/zip/${rom3}.zip ~/roms/${rom3} -o allow_other
+      ratarmount ~/myrient/${rom1} ~/roms/${rom3}
     fi
   fi
 done
