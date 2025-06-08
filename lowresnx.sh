@@ -16,8 +16,9 @@ while true; do
         nx_url=$(echo "$topic_page" | grep -oP 'href="uploads/\K[^"]+\.nx' | head -n 1)
         echo -e "$id\t$title\t$image\t$nx_url" >> "$OUTPUT_FILE"
         wget -nv -O ~/lowresnx/$nx_url https://lowresnx.inutilis.com/upload/$nx_url
+        sleep 0.5
         wget -nv -O ~/lowresnx/$image https://lowresnx.inutilis.com/upload/$image
-        sleep 1
+        sleep 0.5
     done
     ((page++)) 
 done
