@@ -18,9 +18,8 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     mkdir -p ~/roms/${rom3}
     if [ -z "$(ls -A ~/roms/${rom3})" ]; then
-      #head ~/myrient/${rom[1]} > /dev/null
       ratarmount https://myrient.erista.me/files/${rom[1]} ~/roms/${rom3} -f &
-      #mount-zip ~/myrient/${rom[1]} ~/roms/${rom3}
+      sleep 1
     fi
   fi
 done
