@@ -19,7 +19,7 @@ IFS=";"; for each in "${roms[@]}"; do
     mkdir -p ~/roms/${rom3}
     if [ -z "$(ls -A ~/roms/${rom3})" ]; then
       ratarmount https://myrient.erista.me/files/${rom[1]} ~/roms/${rom3} -f &
-      sleep 2
+      sleep 3
     fi
   fi
 done
