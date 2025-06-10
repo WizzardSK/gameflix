@@ -23,7 +23,9 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
 done
 
-urlencode() { jq -nr --arg v "$1" '$v|@uri' }
+urlencode() { 
+  jq -nr --arg v "$1" '$v|@uri' 
+}
 ratarmount --disable-union-mount $(urlencode "$archives") ~/zips -f &
 
 wait
