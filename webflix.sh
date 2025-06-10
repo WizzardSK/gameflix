@@ -17,8 +17,8 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     rom[1]="${rom[1]//&/%26}"    
     rom[1]="${rom[1]// /%20}"
-    rom[1]="${rom[1]//[/%%5B}"
-    rom[1]="${rom[1]//]/%%5D}"
+    rom[1]="${rom[1]//[/%5B}"
+    rom[1]="${rom[1]//]/%5D}"
     archives+=" https://myrient.erista.me/files/${rom[1]} "
 #    mkdir -p ~/roms/${rom3}
 #    if [ -z "$(ls -A ~/roms/${rom3})" ]; then
