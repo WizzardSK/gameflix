@@ -15,7 +15,7 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [[ ${rom[1]} =~ \.zip$ ]]; then
-    archives+=" \"https://myrient.erista.me/files/${rom[1]}\" "
+    archives+=" https://myrient.erista.me/files/${rom[1]} "
 #    mkdir -p ~/roms/${rom3}
 #    if [ -z "$(ls -A ~/roms/${rom3})" ]; then
 #      ratarmount https://myrient.erista.me/files/${rom[1]} ~/roms/${rom3} -f &
@@ -23,6 +23,7 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
 done
 
-ratarmount --disable-union-mount $archives ~/zips -f &
+urlencode() { jq -nr --arg v "$1" '$v|@uri' }
+ratarmount --disable-union-mount $(urlencode "$archives") ~/zips -f &
 
 wait
