@@ -23,3 +23,5 @@ done
 nohup ratarmount --disable-union-mount "${archives[@]}" ~/zips -f &
 
 wait
+
+mount -o bind "~/roms/Atari 2600 ROMS" ~/zips/Atari-2600-VCS-ROM-Collection.zip/ROM
