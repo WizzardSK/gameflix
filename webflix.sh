@@ -20,8 +20,8 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
 done
 
-nohup ratarmount --disable-union-mount "${archives[@]}" ~/zips -f &
+if ! mountpoint -q ~/zips then nohup ratarmount --disable-union-mount "${archives[@]}" ~/zips -f &; fi
 
 wait
 
-mount -o bind "~/roms/Atari 2600 ROMS" ~/zips/Atari-2600-VCS-ROM-Collection.zip/ROM
+mount -o bind ~/zips/Atari-2600-VCS-ROM-Collection.zip/ROM "~/roms/Atari 2600 ROMS"
