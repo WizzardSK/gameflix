@@ -19,5 +19,5 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
 done
 
-nohup ratarmount --disable-union-mount $archives ~/zips -f &
+ratarmount --disable-union-mount $archives ~/zips -f &
 wait
