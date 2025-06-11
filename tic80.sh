@@ -1,5 +1,4 @@
 #!/bin/bash
-
 API_URL="https://tic80.com/api?fn=dir&path=play/Games"
 BASE_URL="https://tic80.com/cart"
 DOWNLOAD_DIR="$HOME/tic80"
@@ -17,13 +16,11 @@ echo "$FILES" | while read -r LINE; do
         wget -nv -O "${FILE_PATH%.tic}.gif" "$COVER_URL"
     fi
 done
-
-rm tic80.zip
 cd $DOWNLOAD_DIR
-zip -r "$GITHUB_WORKSPACE/tic80.zip" *
+zip -r "$GITHUB_WORKSPACE/fantasy/tic80.zip" *
 cd "$GITHUB_WORKSPACE"
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
-git add tic80.zip
+git add "$GITHUB_WORKSPACE/fantasy/tic80.zip"
 git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
 git push
