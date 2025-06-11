@@ -1,5 +1,4 @@
 #!/bin/bash
-
 OUTPUT_FILE="voxatron.txt"
 TEMP_FILE="voxatron_temp.txt"
 BASE_LIST_URL="https://www.lexaloffle.com/bbs/lister.php?cat=6&sub=2&mode=carts&page="
@@ -25,13 +24,12 @@ while true; do
 done
 sort -nr "$TEMP_FILE" > "$OUTPUT_FILE"
 rm -f "$TEMP_FILE"
-rm voxatron.zip
 cd ~/voxatron
-zip -r "$GITHUB_WORKSPACE/voxatron.zip" *
+zip -r "$GITHUB_WORKSPACE/fantasy/voxatron.zip" *
 cd "$GITHUB_WORKSPACE"
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git add "$OUTPUT_FILE"
-git add voxatron.zip
+git add "$GITHUB_WORKSPACE/fantasy/voxatron.zip"
 git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
 git push
