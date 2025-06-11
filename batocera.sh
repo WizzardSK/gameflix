@@ -29,7 +29,7 @@ for each in "${roms[@]}"; do
 done
 wait
 
-wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/gamelist.zip
+wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/batocera/gamelist.zip
 unzip -o /userdata/system/gamelist.zip -d /userdata/roms
 
 cp /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.bak
