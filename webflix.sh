@@ -8,7 +8,7 @@ archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
   
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 IFS=";"; for each in "${roms[@]}"; do
-  echo "${rom3}"; read -ra rom < <(printf '%s' "$each")
+  read -ra rom < <(printf '%s' "$each")
   if grep -q ":" <<< "${rom[1]}"; then
     mkdir -p ~/${rom[0]}
     rclone mount ${rom[1]} ~/${rom[0]} --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other
