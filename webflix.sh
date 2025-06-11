@@ -4,7 +4,7 @@ mkdir -p ~/myrient ~/roms ~/dos ~/iso ~/zips ~/gameflix ~/share/system/.cache/ra
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other
 
-archives="https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip"
+archives="--disable-union-mount https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip"
   
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 IFS=";"; for each in "${roms[@]}"; do
@@ -20,5 +20,8 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
 done
 
-ratarmount --disable-union-mount $archives ~/zips -f &
+archives+=" ~/zips -f &"
+ratarmount $archives
+#ratarmount --disable-union-mount $archives ~/zips -f &
+
 wait
