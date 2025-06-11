@@ -26,4 +26,4 @@ fi
 
 wait
 
-mount -o bind ~/zips/Atari-2600-VCS-ROM-Collection.zip/ROM "~/roms/Atari 2600 ROMS"
+mount -o bind ~/zips/Atari-2600-VCS-ROM-Collection.zip/ROM "$HOME/roms/Atari 2600 ROMS"
