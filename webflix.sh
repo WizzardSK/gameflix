@@ -21,7 +21,7 @@ IFS=";"; for each in "${roms[@]}"; do
 done
 
 if ! mountpoint -q "$HOME/zips"; then 
-  nohup ratarmount --disable-union-mount "${archives[@]}" ~/zips -f &
+  nohup ratarmount -o kernel_cache,negative_timeout=60,entry_timeout=60 --disable-union-mount "${archives[@]}" ~/zips -f &
 fi
 
 wait
