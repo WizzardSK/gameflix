@@ -18,12 +18,11 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     rom[1]="${rom[1]//&/%26}"; rom[1]="${rom[1]// /%20}"; rom[1]="${rom[1]//[/%5B}"; rom[1]="${rom[1]//]/%5D}"; rom[1]="${rom[1]//\'/%27}"
     archives+=( "https://myrient.erista.me/files/${rom[1]}" )
-    ln -s $HOME/zips/${rom[1]} "$HOME/roms/$rom3"
+    ln -s $HOME/zips/${rom[1]} "$HOME/roms/${rom3##*/}"
   fi
 done
 
 if ! mountpoint -q "$HOME/zips"; then 
   nohup ratarmount -o kernel_cache,negative_timeout=60,entry_timeout=60 --disable-union-mount "${archives[@]}" ~/zips -f &
 fi
-
 wait
