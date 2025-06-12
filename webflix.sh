@@ -27,6 +27,6 @@ for each in "${roms[@]}"; do
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
-    ln -s $HOME/zips/${rom1} $HOME/roms/${rom[1]}
+    ln -s $HOME/zips/${rom1} $HOME/roms/${rom3}
   fi
 done
