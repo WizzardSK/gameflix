@@ -19,13 +19,14 @@ IFS=";"; for each in "${roms[@]}"; do
 done
 
 if ! mountpoint -q "$HOME/zips"; then nohup ratarmount --disable-union-mount "${archives[@]}" ~/zips -f & fi; wait
-bindfs $HOME/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "$HOME/roms/Atari 2600 ROMS"
+bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "$HOME/roms/Atari 2600 ROMS"
 
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
-    bindfs $HOME/zips/${rom1##*/} $HOME/roms/${rom3}
+    mkdir -p $HOME/roms/${rom3}
+    bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/${rom1##*/} $HOME/roms/${rom3}
   fi
 done
