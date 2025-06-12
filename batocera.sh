@@ -43,7 +43,7 @@ for each in "${roms[@]}"; do
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
-    mkdir -p $HOME/roms/${rom3}
+    mkdir -p /userdata/roms/${rom[0]}/${rom3}
     mount -o bind /userdata/zips/${rom1##*/} /userdata/roms/${rom[0]}/${rom3}
   fi
 done
