@@ -14,8 +14,8 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if grep -q ":" <<< "${rom[1]}"; then
-    mkdir -p ~/${rom[0]}
-    rclone mount ${rom[1]} ~/${rom[0]} --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other
+    mkdir -p $HOME/roms/${rom3}
+    if ! mountpoint -q "$HOME/roms/${rom3}"; then rclone mount ${rom[1]} ~/roms/${rom3} --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
   fi
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
