@@ -12,7 +12,6 @@ IFS=";"; for each in "${roms[@]}"; do
     mkdir -p ~/${rom[0]}
     rclone mount ${rom[1]} ~/${rom[0]} --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other
   fi
-  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
     archives+=( "https://myrient.erista.me/files/${rom1}" )
@@ -20,13 +19,13 @@ IFS=";"; for each in "${roms[@]}"; do
 done
 
 if ! mountpoint -q "$HOME/zips"; then nohup ratarmount --disable-union-mount "${archives[@]}" ~/zips -f & fi; wait
-ln -s $HOME/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "$HOME/roms/Atari 2600 ROMS"
+bindfs $HOME/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "$HOME/roms/Atari 2600 ROMS"
 
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
-    ln -s $HOME/zips/${rom1##*/} $HOME/roms/${rom3}
+    bindfs $HOME/zips/${rom1##*/} $HOME/roms/${rom3}
   fi
 done
