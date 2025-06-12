@@ -23,7 +23,7 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
 done
 
-if ! mountpoint -q "$HOME/zips"; then nohup ratarmount --disable-union-mount "${archives[@]}" ~/zips -f & fi; wait
+if ! mountpoint -q "$HOME/zips"; then nohup ratarmount -o kernel_cache,negative_timeout=60,entry_timeout=60 --disable-union-mount "${archives[@]}" ~/zips -f & fi; wait
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "$HOME/roms/Atari 2600 ROMS"
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/games_20180105.zip "$HOME/roms/Uzebox"
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/lowresnx.zip "$HOME/roms/LowresNX"
