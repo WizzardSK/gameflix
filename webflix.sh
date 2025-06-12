@@ -13,6 +13,7 @@ archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/w
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
+  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if grep -q ":" <<< "${rom[1]}"; then
     mkdir -p $HOME/roms/${rom3}
     if ! mountpoint -q "$HOME/roms/${rom3}"; then rclone mount ${rom[1]} ~/roms/${rom3} --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
