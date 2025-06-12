@@ -36,7 +36,7 @@ for each in "${roms[@]}"; do
   fi
 done
 /userdata/system/ratarmount -o attr_timeout=60 --disable-union-mount "${archives[@]}" /userdata/zips -f & 
-wait
+#wait
 
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
