@@ -19,9 +19,7 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
 done
 
-if ! mountpoint -q "$HOME/zips"; then 
-  nohup ratarmount -o kernel_cache,negative_timeout=60,entry_timeout=60 --disable-union-mount "${archives[@]}" ~/zips -f &
-fi
+if ! mountpoint -q "$HOME/zips"; then nohup ratarmount --disable-union-mount "${archives[@]}" ~/zips -f &; fi
 wait
 
 ln -s $HOME/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "$HOME/roms/Atari 2600 ROMS"
