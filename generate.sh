@@ -72,9 +72,9 @@ rm "$HOME/gameflix/Neo Geo AES.html" "$HOME/gameflix/Neo Geo MVS.html"
 IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  #if [[ "${rom[3]}" == *"eXoDOS"* ]]; then rom[1]="../dos"; fi
+  if [[ "${rom[3]}" == *"eXoDOS"* ]]; then rom[1]="MS-DOS eXoDOS"; fi
   if [[ ${rom[1]} =~ \.zip$ ]]; then romfolder="roms/${rom3}"; emufolder="${rom3}"; else romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}"; fi
-  if [[ "${rom[3]}" == *"eXoDOS"* ]]; then emufolder="roms/MS-DOS eXoDO"; fi
+  if [[ "${rom[3]}" == *"eXoDOS"* ]]; then emufolder="roms/MS-DOS eXoDOS"; fi
   if [ -e ~/gameflix/${rom3}.html ]; then
     pocet=$(ls ~/${romfolder} -1 | wc -l); total=$((pocet+total))
     echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
