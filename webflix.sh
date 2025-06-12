@@ -16,9 +16,9 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [[ ${rom[1]} =~ \.zip$ ]]; then
-    rom[1]="${rom[1]//&/%26}"; rom[1]="${rom[1]// /%20}"; rom[1]="${rom[1]//[/%5B}"; rom[1]="${rom[1]//]/%5D}"; rom[1]="${rom[1]//\'/%27}"
-    archives+=( "https://myrient.erista.me/files/${rom[1]}" )
-    ln -s $HOME/zips/${rom[1]} "$HOME/roms/${rom3##*/}"
+    rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
+    archives+=( "https://myrient.erista.me/files/${rom1}" )
+    ln -s $HOME/zips/${rom[1]} "$HOME/roms/${rom1}"
   fi
 done
 
