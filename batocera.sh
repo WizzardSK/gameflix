@@ -35,7 +35,7 @@ for each in "${roms[@]}"; do
     else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}; fi
   fi
 done
-/userdata/system/ratarmount -o attr_timeout=60 --disable-union-mount "${archives[@]}" ~/zips -f & 
+/userdata/system/ratarmount -o attr_timeout=60 --disable-union-mount "${archives[@]}" /userdata/zips -f & 
 wait
 
 for each in "${roms[@]}"; do
