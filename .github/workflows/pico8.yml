@@ -1,4 +1,4 @@
-name: Pico-8 cart updater
+name: 0:5 Pico-8 cart updater
 
 on:
   schedule:
@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v4 
 
       - name: Run script
-        run: bash pico8.sh  
+        run: bash fantasy/pico8.sh  
