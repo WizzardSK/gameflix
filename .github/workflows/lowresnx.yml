@@ -1,4 +1,4 @@
-name: LowresNX cart updater
+name: 0:0 LowresNX cart updater
 
 on:
   schedule:
@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v4 
 
       - name: Run script
-        run: bash lowresnx.sh 
+        run: bash fantasy/lowresnx.sh 
