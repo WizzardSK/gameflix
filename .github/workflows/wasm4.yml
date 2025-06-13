@@ -1,4 +1,4 @@
-name: WASM-4 cart downloader
+name: 0:4 WASM-4 cart downloader
 
 on:
   schedule:
@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v4 
 
       - name: Run script
-        run: bash wasm4.sh  
+        run: bash fantasy/wasm4.sh  
