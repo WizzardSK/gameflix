@@ -22,13 +22,13 @@ if [ ! -d "$HOME/share/thumbs/Uzebox" ]; then git clone --depth 1 "https://githu
   git -C "$HOME/share/thumbs/Uzebox" config pull.rebase false 2>&1 | tee -a "$HOME/git.log"; git -C "$HOME/share/thumbs/Uzebox" pull 2>&1 | tee -a "$HOME/git.log"
 fi
 
-FILE_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/lowresnx.txt"; DOWNLOAD_DIR="$HOME/roms/lowresnx"; mkdir -p "$HOME/share/thumbs/LowresNX"
+FILE_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/lowresnx.txt"; DOWNLOAD_DIR="$HOME/roms/lowresnx"; mkdir -p "$HOME/share/thumbs/LowresNX"
 curl "$FILE_URL" | while IFS=$'\t' read -r id title image nx_file; do
     if [ ! -s "$DOWNLOAD_DIR/$nx_file" ]; then download_url="https://lowresnx.inutilis.com/uploads/$nx_file"; wget -nv "$download_url" -O "$DOWNLOAD_DIR/$nx_file"; fi
     if [ ! -s "$HOME/share/thumbs/LowresNX/$image" ]; then download_url="https://lowresnx.inutilis.com/uploads/$image"; wget -nv "$download_url" -O "$HOME/share/thumbs/LowresNX/$image"; fi
 done
 
-REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/pico8.txt"; OUTPUT_DIR="$HOME/roms/pico8"; 
+REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/pico8.txt"; OUTPUT_DIR="$HOME/roms/pico8"; 
 mkdir -p "$OUTPUT_DIR"
 LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r ID NAME FILENAME; do
     if [[ -n "$FILENAME" ]]; then
@@ -38,7 +38,7 @@ LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r ID NA
     fi
 done
 
-REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/voxatron.txt"; OUTPUT_DIR="$HOME/roms/voxatron"; 
+REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/voxatron.txt"; OUTPUT_DIR="$HOME/roms/voxatron"; 
 mkdir -p "$OUTPUT_DIR"
 LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r ID NAME FILENAME; do
     if [[ -n "$FILENAME" ]]; then
