@@ -1,4 +1,4 @@
-name: Voxatron cart updater
+name: 0:2 Voxatron cart updater
 
 on:
   schedule:
@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v4 
 
       - name: Run script
-        run: bash voxatron.sh  
+        run: bash fantasy/voxatron.sh  
