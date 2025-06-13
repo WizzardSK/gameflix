@@ -17,13 +17,13 @@ echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read 
   image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png);
   hra="<game><path>./${image_name}.wasm</path><name>${title}</name><image>~/../thumbs/WASM-4/${image_name}.png</image>"; echo "${hra}</game>" >> ~/roms/wasm4/gamelist.xml
 done; echo "</gameList>" >> ~/roms/wasm4/gamelist.xml
-echo "LowresNX"; echo "<gameList>" > ~/roms/lowresnx/gamelist.xml; cat lowresnx.txt | while IFS=$'\t' read -r id name picture cart; do
+echo "LowresNX"; echo "<gameList>" > ~/roms/lowresnx/gamelist.xml; cat fantasy/lowresnx.txt | while IFS=$'\t' read -r id name picture cart; do
   hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/LowresNX/${picture}</image>"; echo "${hra}</game>" >> ~/roms/lowresnx/gamelist.xml
 done; echo "</gameList>" >> ~/roms/lowresnx/gamelist.xml
-echo "Pico-8"; echo "<gameList>" > ~/roms/pico8/gamelist.xml; cat pico8.txt | while IFS=$'\t' read -r id name cart; do
+echo "Pico-8"; echo "<gameList>" > ~/roms/pico8/gamelist.xml; cat fantasy/pico8.txt | while IFS=$'\t' read -r id name cart; do
   hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/roms/pico8/gamelist.xml
 done; echo "</gameList>" >> ~/roms/pico8/gamelist.xml
-echo "Voxatron"; echo "<gameList>" > ~/roms/voxatron/gamelist.xml; cat voxatron.txt | while IFS=$'\t' read -r id name cart; do
+echo "Voxatron"; echo "<gameList>" > ~/roms/voxatron/gamelist.xml; cat fantasy/voxatron.txt | while IFS=$'\t' read -r id name cart; do
   hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/roms/voxatron/gamelist.xml
 done; echo "</gameList>" >> ~/roms/voxatron/gamelist.xml
 
@@ -37,9 +37,7 @@ for each in "${roms[@]}"; do
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     ./batocera/ratarmount ~/rom/${rom[1]} ~/mount/${rom[0]}/${rom3} > /dev/null
     folder="$HOME/mount/${rom[0]}/${rom3}"
-  else
-    folder="$HOME/rom/${rom[1]}"
-  fi
+  else folder="$HOME/rom/${rom[1]}"; fi
   if grep -q ":" <<< "${rom[1]}"; then
     mkdir -p ~/mount/${rom[0]}/${rom3}
     folder="$HOME/mount/${rom[0]}/${rom3}"
