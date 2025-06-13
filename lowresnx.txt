@@ -968,7 +968,7 @@
 984	BASICS - a Simple Shooter game	t8LwvKitXR_Basics__Simple_Shooter_game.png	t8LwvKitXR_Basics__Simple_Shooter_game.nx
 981	GUNS N’ ARSENAL	LDMmNuBaQt_GUNS_N_ARSENAL.png	LDMmNuBaQt_GUNS_N_ARSENAL.nx
 979	FBI terminal (Work in progress)	EX4YCKmvw4_FBI_CONSOLE.png	EX4YCKmvw4_FBI_CONSOLE.nx
-976	Pinball	6fPsaqmbXz_Pinball_vector_remake_0.03.png	6fPsaqmbXz_Pinball_vector_remake_0.03.nx
+976			
 968	Pling plong	gz9oXH8tAZ_Pling_Plong.png	gz9oXH8tAZ_Pling_Plong.nx
 967	Alice	tJSinCongA_Alice03.png	tJSinCongA_Alice03.nx
 965	Air racer	xJCKeAhf2E_Air_Racer_revamped.png	xJCKeAhf2E_Air_Racer_revamped.nx
