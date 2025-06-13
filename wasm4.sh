@@ -1,4 +1,4 @@
-#!/bin/bash
+f#!/bin/bash
 BASE_URL="https://wasm4.org/play"
 CARTS_URL="https://wasm4.org/carts"
 ROM_DIR="$HOME/wasm4"
@@ -13,7 +13,6 @@ zip -r "$GITHUB_WORKSPACE/fantasy/wasm4.zip" *
 cd "$GITHUB_WORKSPACE"
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
-git add "$OUTPUT_FILE"
 git add "$GITHUB_WORKSPACE/fantasy/wasm4.zip"
 git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
 git push
