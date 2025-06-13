@@ -1,5 +1,5 @@
 #!/bin/bash
-OUTPUT_FILE="pico8.txt"
+OUTPUT_FILE="$GITHUB_WORKSPACE/fantasy/pico8.txt"
 TEMP_FILE="pico8_temp.txt"
 BASE_LIST_URL="https://www.lexaloffle.com/bbs/lister.php?cat=7&sub=2&mode=carts&page="
 BASE_CART_URL="https://www.lexaloffle.com/bbs/?tid="
