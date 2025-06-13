@@ -1,4 +1,4 @@
-name: TIC-80 cart downloader
+name: 0:1 TIC-80 cart downloader
 
 on:
   schedule:
@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v4 
 
       - name: Run script
-        run: bash tic80.sh 
+        run: bash fantasy/tic80.sh 
