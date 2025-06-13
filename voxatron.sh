@@ -1,5 +1,5 @@
 #!/bin/bash
-OUTPUT_FILE="voxatron.txt"
+OUTPUT_FILE="$GITHUB_WORKSPACE/fantasy/voxatron.txt"
 TEMP_FILE="voxatron_temp.txt"
 BASE_LIST_URL="https://www.lexaloffle.com/bbs/lister.php?cat=6&sub=2&mode=carts&page="
 BASE_CART_URL="https://www.lexaloffle.com/bbs/?tid="
