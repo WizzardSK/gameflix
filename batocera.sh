@@ -15,8 +15,10 @@ rclone mount thumbs:Data/share/thumbs /userdata/thumbs --vfs-cache-mode full --d
 archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
 archives+=( "https://nicksen782.net/a_demos/downloads/games_20180105.zip" )
 archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/lowresnx.zip" )
-archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip" )
+archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80aj.zip" )
+archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80jz.zip" )
 archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/wasm4.zip" )
+archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/voxatron.zip" )
 
 IFS=";"
 for each in "${roms[@]}"; do 
