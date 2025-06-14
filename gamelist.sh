@@ -8,23 +8,28 @@ echo "Uzebox"; wget -nv -O uzebox.zip https://nicksen782.net/a_demos/downloads/g
 echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
   line2=${line%.*}; hra="<game><path>./${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/uzebox/gamelist.xml
 done; echo "</gameList>" >> ~/roms/uzebox/gamelist.xml
+
 echo "TIC-80"; echo "<gameList>" > ~/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | while read -r line; do
   hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+');
-  hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>~/../thumbs/TIC-80/${hash}.gif</image>"; if [ -n "$hash" ]; then echo "${hra}</game>" >> ~/roms/tic80/gamelist.xml; fi;
+  hra="<game><path>./TIC-80/${hash}.tic</path><name>${name%.*}</name><image>./TIC-80/${hash}.gif</image>"; if [ -n "$hash" ]; then echo "${hra}</game>" >> ~/roms/tic80/gamelist.xml; fi;
 done; echo "</gameList>" >> ~/roms/tic80/gamelist.xml
+
 echo "WASM-4"; echo "<gameList>" > ~/roms/wasm4/gamelist.xml; html=$(curl -s "https://wasm4.org/play/")
 echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do
   image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png);
-  hra="<game><path>./${image_name}.wasm</path><name>${title}</name><image>~/../thumbs/WASM-4/${image_name}.png</image>"; echo "${hra}</game>" >> ~/roms/wasm4/gamelist.xml
+  hra="<game><path>./WASM-4/${image_name}.wasm</path><name>${title}</name><image>./WASM-4/${image_name}.png</image>"; echo "${hra}</game>" >> ~/roms/wasm4/gamelist.xml
 done; echo "</gameList>" >> ~/roms/wasm4/gamelist.xml
+
 echo "LowresNX"; echo "<gameList>" > ~/roms/lowresnx/gamelist.xml; cat fantasy/lowresnx.txt | while IFS=$'\t' read -r id name picture cart; do
-  hra="<game><path>./${cart}</path><name>${name}</name><image>~/../thumbs/LowresNX/${picture}</image>"; echo "${hra}</game>" >> ~/roms/lowresnx/gamelist.xml
+  hra="<game><path>./LowresNX/${cart}</path><name>${name}</name><image>./LowresNX/${picture}</image>"; echo "${hra}</game>" >> ~/roms/lowresnx/gamelist.xml
 done; echo "</gameList>" >> ~/roms/lowresnx/gamelist.xml
+
 echo "Pico-8"; echo "<gameList>" > ~/roms/pico8/gamelist.xml; cat fantasy/pico8.txt | while IFS=$'\t' read -r id name cart; do
-  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/roms/pico8/gamelist.xml
+  hra="<game><path>./PICO-8/${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/roms/pico8/gamelist.xml
 done; echo "</gameList>" >> ~/roms/pico8/gamelist.xml
+
 echo "Voxatron"; echo "<gameList>" > ~/roms/voxatron/gamelist.xml; cat fantasy/voxatron.txt | while IFS=$'\t' read -r id name cart; do
-  hra="<game><path>./${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/roms/voxatron/gamelist.xml
+  hra="<game><path>./Voxatron/${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/roms/voxatron/gamelist.xml
 done; echo "</gameList>" >> ~/roms/voxatron/gamelist.xml
 
 IFS=$'\n' read -d '' -ra roms < platforms.txt
