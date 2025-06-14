@@ -8,7 +8,7 @@ FILES=$(echo "$RESPONSE" | grep -oP '{\s*name\s*=\s*"[^"]+",\s*hash\s*=\s*"[^"]+
 echo "$FILES" | while read -r LINE; do
     HASH=$(echo "$LINE" | sed -n 's/.*hash\s*=\s*"\([^"]*\)".*/\1/p')
     FILENAME=$(echo "$LINE" | sed -n 's/.*filename\s*=\s*"\([^"]*\)".*/\1/p')
-    FILE_PATH="${DOWNLOAD_DIR}/${HASH}"
+    FILE_PATH="${DOWNLOAD_DIR}/${HASH}.tic"
     DOWNLOAD_URL="${BASE_URL}/${HASH}/cart.tic"
     COVER_URL="${BASE_URL}/${HASH}/cover.gif"
     if [ ! -f "$FILE_PATH" ]; then 
