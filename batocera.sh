@@ -7,6 +7,7 @@ if [ ! -f /userdata/system/mount-zip ];  then wget -O /userdata/system/mount-zip
 if [ ! -f /userdata/system/ratarmount ]; then wget -O /userdata/system/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v0.15.2/ratarmount-0.15.2-x86_64.AppImage; chmod +x /userdata/system/ratarmount; fi
 
 mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone}
+mkdir -p /userdata/roms/tic80/TIC-80 /userdata/roms/pico8/PICO-8-AI /userdata/roms/pico8/PICO-8-JZ /userdata/roms/voxatron/Voxatron /userdata/roms/lowresNX/LowresNX /userdata/roms/wasm4/WASM-4 
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 rclone mount thumbs:Data/share/thumbs /userdata/thumbs --vfs-cache-mode full --daemon --config=/userdata/system/rclone.conf --cache-dir=/userdata/system/.cache/rclone --allow-non-empty --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h
@@ -35,6 +36,13 @@ for each in "${roms[@]}"; do
 done
 /userdata/system/ratarmount -o attr_timeout=60 --disable-union-mount "${archives[@]}" /userdata/zips -f & 
 while ! grep -q " /userdata/zips " /proc/mounts; do sleep 5; done
+mount -o bind /userdata/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "/userdata/roms/atari2600/Atari 2600 ROMS"
+mount -o bind /userdata/zips/tic80.zip "/userdata/roms/tic80/TIC-80"
+mount -o bind /userdata/zips/pico8ai.zip "/userdata/roms/pico8/PICO-8-AI"
+mount -o bind /userdata/zips/pico8jz.zip "/userdata/roms/pico8/PICO-8-JZ"
+mount -o bind /userdata/zips/voxatron.zip "/userdata/roms/voxatron/Voxatron"
+mount -o bind /userdata/zips/lowresnx.zip "/userdata/roms/lowresnx/LowresNX"
+mount -o bind /userdata/zips/wasm4.zip "/userdata/roms/wasm4/WASM-4"
 
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
