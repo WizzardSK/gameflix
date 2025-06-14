@@ -17,6 +17,7 @@ echo "$FILES" | while read -r LINE; do
     fi
 done
 cd $DOWNLOAD_DIR
+rm -f "$GITHUB_WORKSPACE/fantasy/tic80.zip" 
 zip -r "$GITHUB_WORKSPACE/fantasy/tic80.zip" *
 cd "$GITHUB_WORKSPACE"
 git config --global user.name "GitHub Actions"
