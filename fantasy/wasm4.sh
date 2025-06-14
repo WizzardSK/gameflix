@@ -1,4 +1,4 @@
-f#!/bin/bash
+#!/bin/bash
 BASE_URL="https://wasm4.org/play"
 CARTS_URL="https://wasm4.org/carts"
 ROM_DIR="$HOME/wasm4"
