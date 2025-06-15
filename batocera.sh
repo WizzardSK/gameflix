@@ -18,8 +18,6 @@ archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/l
 archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip" )
 archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/wasm4.zip" )
 archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/voxatron.zip" )
-archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8ai.zip" )
-archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8jz.zip" )
 
 IFS=";"
 for each in "${roms[@]}"; do 
@@ -37,12 +35,11 @@ for each in "${roms[@]}"; do
     else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}; fi
   fi
 done
+/userdata/system/ratarmount -o attr_timeout=60 https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8ai.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8jz.zip /userdata/roms/pico8/PICO-8 -f & 
 /userdata/system/ratarmount -o attr_timeout=60 --disable-union-mount "${archives[@]}" /userdata/zips -f & 
 while ! grep -q " /userdata/zips " /proc/mounts; do sleep 5; done
 mount -o bind /userdata/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "/userdata/roms/atari2600/Atari 2600 ROMS"
 mount -o bind /userdata/zips/tic80.zip "/userdata/roms/tic80/TIC-80"
-mount -o bind /userdata/zips/pico8ai.zip "/userdata/roms/pico8/PICO-8-AI"
-mount -o bind /userdata/zips/pico8jz.zip "/userdata/roms/pico8/PICO-8-JZ"
 mount -o bind /userdata/zips/voxatron.zip "/userdata/roms/voxatron/Voxatron"
 mount -o bind /userdata/zips/lowresnx.zip "/userdata/roms/lowresnx/LowresNX"
 mount -o bind /userdata/zips/wasm4.zip "/userdata/roms/wasm4/WASM-4"
