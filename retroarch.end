@@ -2,8 +2,7 @@ esac
 
 if [ -n "$ext" ]; then
   umount -l ~/iso
-  nohup ratarmount "$1" ~/iso -f &
-  while !  grep -q " $HOME/iso " /proc/mounts; do sleep 1; done
+  mount-zip "$1" ~/iso
   rom=$(find ~/iso -type f -name "*.${ext}" | head -n 1)
 else
   rom="$1"
