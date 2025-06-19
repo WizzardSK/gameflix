@@ -1,4 +1,4 @@
-name: Batocera gamelists updater
+name: 0:3 Batocera gamelists updater
 
 on:
   schedule:
