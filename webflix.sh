@@ -5,7 +5,6 @@ wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/Wizza
 if ! mountpoint -q "$HOME/myrient"; then rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
 
 archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
-archives+=( "https://nicksen782.net/a_demos/downloads/games_20180105.zip" )
 archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/lowresnx.zip" )
 archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip" )
 archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/wasm4.zip" )
@@ -29,7 +28,6 @@ if ! mountpoint -q "$HOME/zips"; then nohup ratarmount -o attr_timeout=300 --dis
 while ! mountpoint -q "$HOME/zips"; do sleep 5; done
 
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "$HOME/roms/Atari 2600 ROMS"
-bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/games_20180105.zip "$HOME/roms/Uzebox"
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/lowresnx.zip "$HOME/roms/LowresNX"
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/tic80.zip "$HOME/roms/TIC-80"
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/wasm4.zip "$HOME/roms/WASM-4"
