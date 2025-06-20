@@ -36,8 +36,8 @@ for each in "${roms[@]}"; do
     else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}; fi
   fi
 done
-/userdata/system/ratarmount -o attr_timeout=300 https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8ai.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8jz.zip /userdata/roms/pico8/PICO-8 -f & 
-/userdata/system/ratarmount -o attr_timeout=300 --disable-union-mount "${archives[@]}" /userdata/zips -f & 
+/userdata/system/ratarmount -o attr_timeout=3600 https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8ai.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8jz.zip /userdata/roms/pico8/PICO-8 -f & 
+/userdata/system/ratarmount -o attr_timeout=3600 --disable-union-mount "${archives[@]}" /userdata/zips -f & 
 while ! grep -q " /userdata/zips " /proc/mounts; do sleep 5; done
 mount -o bind /userdata/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "/userdata/roms/atari2600/Atari 2600 ROMS"
 mount -o bind /userdata/zips/tic80.zip "/userdata/roms/tic80/TIC-80"
