@@ -13,7 +13,6 @@ rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --
 rclone mount thumbs:Data/share/thumbs /userdata/thumbs --vfs-cache-mode full --daemon --config=/userdata/system/rclone.conf --cache-dir=/userdata/system/.cache/rclone --allow-non-empty --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h
 
 archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
-archives+=( "https://nicksen782.net/a_demos/downloads/games_20180105.zip" )
 archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/lowresnx.zip" )
 archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip" )
 archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/wasm4.zip" )
@@ -24,10 +23,8 @@ IFS=";"
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
-  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  mkdir -p /userdata/roms/${rom[0]}/${rom3}
+  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); mkdir -p /userdata/roms/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
-    #/userdata/system/ratarmount /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3} --index-folders /userdata/system/.cache/ratarmount > /dev/null &
     rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
     archives+=( "https://myrient.erista.me/files/${rom1}" )
   else
