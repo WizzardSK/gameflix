@@ -11,7 +11,7 @@ wget -nv -O ~/gameflix/platform.js https://raw.githubusercontent.com/WizzardSK/g
 
 echo "<figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/tic80.png'><figcaption><a href='TIC-80.html'>TIC-80</a></figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/wasm4.png'><figcaption><a href='WASM-4.html'>WASM-4</a></figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/uzebox.png'><figcaption><a href='Uzebox.html'>Uzebox</a></figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/lowresnx.png'><figcaption><a href='LowresNX.html'>LowresNX</a></figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/pico8.png'><figcaption><a href='PICO-8.html'>PICO-8</a></figcaption></figure><figure><img class=loaded src='https://wiki.batocera.org/_media/systems:voxatron.png'><figcaption><a href='Voxatron.html'>Voxatron</a>" >> ~/gameflix/main.html
 
-pocet=$(curl -s "https://tic80.com/api?fn=dir&path=play/Games" | grep -o 'id = [0-9]\+' | wc -l); total=$((pocet+total))
+pocet=$(ls ~/roms/TIC-80/*.tic | wc -l); total=$((pocet+total))
 echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"TIC-80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/TIC-80.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"tic80\"); const fileNames = [" >> ~/gameflix/TIC-80.html; ((platforms++))
@@ -24,7 +24,7 @@ done <<< "$data"
 printf "%s\n" "${records[@]}" | sort -nr -t'|' -k1,1 | cut -d'|' -f2- >> ~/gameflix/TIC-80.html
 printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
 
-pocet=$(ls ~/roms/WASM-4 -1 | wc -l); total=$((pocet+total))
+pocet=$(ls ~/roms/WASM-4/*.wasm | wc -l); total=$((pocet+total))
 echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"WASM-4\") core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/WASM-4.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"wasm4\"); const fileNames = [" >> ~/gameflix/WASM-4.html; ((platforms++))
@@ -40,7 +40,7 @@ echo "<script>bgImage(\"uzebox\"); const fileNames = [" >> ~/gameflix/Uzebox.htm
 { while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/Uzebox.html; ((pocet++)); ((total++)); done } < <(ls ~/roms/Uzebox/*.uze ~/roms/Uzebox/*.UZE 2>/dev/null | xargs -I {} basename {})
 printf ']; generateUzeLinks("roms/Uzebox", "Uzebox");</script><script src=\"script.js\"></script>' >> ~/gameflix/Uzebox.html
 
-pocet=$(curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/lowresnx.txt" | wc -l); total=$((pocet+total))
+pocet=$(ls ~/roms/LowresNX/*.nx | wc -l); total=$((pocet+total))
 echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"LowresNX\") core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -O ~/gameflix/LowresNX.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"lowresnx\"); const fileNames = [" >> ~/gameflix/LowresNX.html; ((platforms++))
