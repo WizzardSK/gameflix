@@ -37,7 +37,7 @@ function handleCheckboxChange(checkbox, filterText) {
         }
         displayedCount = 0;
         for (let i = 0; i < figures.length; i++) { if (figures[i].style.display !== 'none') { displayedCount++; } }
-        document.getElementById('pocet').innerHTML = " Games: " + displayedCount;
+        document.getElementById('pocet').innerHTML = " Games: " + displayedCount + "/" + figures.length;
     });
 }
 
