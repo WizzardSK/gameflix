@@ -1,3 +1,6 @@
+3722	Quad Ludo II	BxSmqEr5Ah_Quad_Ludos_II_02.png	BxSmqEr5Ah_Quad_Ludos_II_02.nx
+3713	Flower Power	yEMVg8BuLa_Flower_Power_0.03.png	yEMVg8BuLa_Flower_Power_0.03.nx
+3712	Star Run	KXBLacA6G8_Star_Run_0.014.png	KXBLacA6G8_Star_Run_0.014.nx
 3705	Kokono Checkers	5MpygrRU94_Kokono_Checkers_021.png	5MpygrRU94_Kokono_Checkers_021.nx
 3704	Minesweep Solitaire	fZ3XimP2sr_Minesweep_Solitaire.png	fZ3XimP2sr_Minesweep_Solitaire.nx
 3697	Personal Computer Boot Menu	cmFrJpypNu_PC_Boot_BIOS.png	cmFrJpypNu_PC_Boot_BIOS.nx
@@ -968,7 +971,7 @@
 984	BASICS - a Simple Shooter game	t8LwvKitXR_Basics__Simple_Shooter_game.png	t8LwvKitXR_Basics__Simple_Shooter_game.nx
 981	GUNS N’ ARSENAL	LDMmNuBaQt_GUNS_N_ARSENAL.png	LDMmNuBaQt_GUNS_N_ARSENAL.nx
 979	FBI terminal (Work in progress)	EX4YCKmvw4_FBI_CONSOLE.png	EX4YCKmvw4_FBI_CONSOLE.nx
-976			
+976	Pinball	6fPsaqmbXz_Pinball_vector_remake_0.03.png	6fPsaqmbXz_Pinball_vector_remake_0.03.nx
 968	Pling plong	gz9oXH8tAZ_Pling_Plong.png	gz9oXH8tAZ_Pling_Plong.nx
 967	Alice	tJSinCongA_Alice03.png	tJSinCongA_Alice03.nx
 965	Air racer	xJCKeAhf2E_Air_Racer_revamped.png	xJCKeAhf2E_Air_Racer_revamped.nx
