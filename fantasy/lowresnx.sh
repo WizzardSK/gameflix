@@ -1,6 +1,6 @@
 #!/bin/bash
 BASE_URL="https://lowresnx.inutilis.com/programs.php?category=game&sort=new&page="
-OUTPUT_FILE="lowresnx.txt"
+OUTPUT_FILE="$GITHUB_WORKSPACE/fantasy/lowresnx.zip"
 > "$GITHUB_WORKSPACE/fantasy/$OUTPUT_FILE"
 page=1
 mkdir ~/lowresnx
