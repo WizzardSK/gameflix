@@ -26,10 +26,10 @@ for each in "${roms[@]}"; do
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); mkdir -p /userdata/roms/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
-    if [ ! -f /userdata/system/offline]; then
+    if [ ! -f /userdata/system/offline ]; then
       archives+=( "https://myrient.erista.me/files/${rom1}" )
     else
-      if [ ! -f /userdata/zip/${rom3}]; then wget -O /userdata/zip/${rom3} https://myrient.erista.me/files/${rom1}; fi
+      if [ ! -f /userdata/zip/${rom3} ]; then wget -O /userdata/zip/${rom3} https://myrient.erista.me/files/${rom1}; fi
       archives+=( "/userdata/zip/${rom3}" )
     fi
   else
