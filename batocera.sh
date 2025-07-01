@@ -29,8 +29,8 @@ for each in "${roms[@]}"; do
     if [ ! -f /userdata/system/offline ]; then
       archives+=( "https://myrient.erista.me/files/${rom1}" )
     else
-      if [ ! -f /userdata/zip/${rom3} ]; then wget -O /userdata/zip/${rom3} https://myrient.erista.me/files/${rom1}; fi
-      archives+=( "/userdata/zip/${rom3}" )
+      if [ ! -f /userdata/zip/${rom3}.zip ]; then wget -O /userdata/zip/${rom3}.zip https://myrient.erista.me/files/${rom1}; fi
+      archives+=( "/userdata/zip/${rom3}.zip" )
     fi
   else
     if grep -q ":" <<< "${rom[1]}"; then
