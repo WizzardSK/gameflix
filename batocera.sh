@@ -12,12 +12,27 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 rclone mount thumbs:Data/share/thumbs /userdata/thumbs --vfs-cache-mode full --daemon --config=/userdata/system/rclone.conf --cache-dir=/userdata/system/.cache/rclone --allow-non-empty --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h
 
-archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
-archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/lowresnx.zip" )
-archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip" )
-archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/wasm4.zip" )
-archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/voxatron.zip" )
-archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/uzebox.zip" )
+if [ ! -f /userdata/system/offline ]; then
+  archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
+  archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip" )
+  archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/wasm4.zip" )
+  archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/uzebox.zip" )
+  archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/voxatron.zip" )
+  archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/lowresnx.zip" )
+else
+  if [ ! -f /userdata/zip/Atari-2600-VCS-ROM-Collection.zip ]; then wget -nv -O /userdata/zip/Atari-2600-VCS-ROM-Collection.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
+  if [ ! -f /userdata/zip/tic80.zip ]; then wget -nv -O /userdata/zip/tic80.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip; fi
+  if [ ! -f /userdata/zip/wasm4.zip ]; then wget -nv -O /userdata/zip/wasm4.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/wasm4.zip; fi
+  if [ ! -f /userdata/zip/uzebox.zip ]; then wget -nv -O /userdata/zip/uzebox.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/uzebox.zip; fi
+  if [ ! -f /userdata/zip/voxatron.zip ]; then wget -nv -O /userdata/zip/voxatron.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/voxatron.zip; fi
+  if [ ! -f /userdata/zip/lowresnx.zip ]; then wget -nv -O /userdata/zip/lowresnx.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/lowresnx.zip; fi    
+  archives=( "/userdata/zip/Atari-2600-VCS-ROM-Collection.zip" )
+  archives+=( "/userdata/zip/tic80.zip" )
+  archives+=( "/userdata/zip/wasm4.zip" )
+  archives+=( "/userdata/zip/uzebox.zip" )
+  archives+=( "/userdata/zip/voxatron.zip" )
+  archives+=( "/userdata/zip/lowresnx.zip" )
+fi
 
 IFS=";"
 for each in "${roms[@]}"; do 
