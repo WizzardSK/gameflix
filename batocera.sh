@@ -43,8 +43,8 @@ done
 if [ ! -f /userdata/system/offline ]; then
   /userdata/system/ratarmount -o attr_timeout=3600 https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8ai.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8jz.zip /userdata/roms/pico8/PICO-8 -f & 
 else
-  wget -O -nv /userdata/zip/pico8ai.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8ai.zip; fi
-  wget -O -nv /userdata/zip/pico8jz.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8jz.zip; fi
+  wget -nv -O /userdata/zip/pico8ai.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8ai.zip
+  wget -nv -O /userdata/zip/pico8jz.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8jz.zip
   /userdata/system/ratarmount -o attr_timeout=3600 /userdata/zip/pico8ai.zip /userdata/zip/pico8jz.zip /userdata/roms/pico8/PICO-8 -f & 
 fi
 
