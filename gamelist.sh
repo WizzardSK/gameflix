@@ -4,7 +4,7 @@ mkdir -p ~/rom ~/roms ~/zip ~/zips ~/atari2600roms ~/roms/neogeo ~/mount ~/uzebo
 sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/rom --config=rclone.conf --daemon --http-no-head
 
-echo "Uzebox"; unzip -j ~/fantasy/uzebox.zip -d ~/uzebox > /dev/null
+echo "Uzebox"; unzip -j $HOME/fantasy/uzebox.zip -d ~/uzebox > /dev/null
 echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
   line2=${line%.*}; hra="<game><path>./Uzebox/${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/uzebox/gamelist.xml
 done; echo "</gameList>" >> ~/roms/uzebox/gamelist.xml
