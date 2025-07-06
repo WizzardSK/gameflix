@@ -33,9 +33,9 @@ videopacplus;No-Intro/Philips - Videopac+;Philips - Videopac;Philips Videopac+ N
 videopacplus;TOSEC/Philips/Videopac+/Games/Philips Videopac+ - Games.zip;Philips - Videopac;Philips Videopac+ TOSEC;o2em_libretro
 intellivision;No-Intro/Mattel - Intellivision;Mattel - Intellivision;Mattel Intellivision NoIntro;freeintv_libretro
 intellivision;TOSEC/Mattel/Intellivision/Games/[BIN]/Mattel Intellivision - Games - [BIN].zip;Mattel - Intellivision;Mattel Intellivision TOSEC;freeintv_libretro
-adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK]/Coleco ColecoVision ADAM - Games - [DSK].zip;Coleco - Adam;<code>Coleco Adam</code>;mame adam -flop1
+adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK];Coleco - Adam;<code>Coleco Adam</code>;mame adam -flop1
 colecovision;No-Intro/Coleco - ColecoVision;Coleco - ColecoVision;Coleco Colecovision NoIntro;bluemsx_libretro
-colecovision;TOSEC/Coleco/ColecoVision/Games/Coleco ColecoVision - Games.zip;Coleco - ColecoVision;Coleco Colecovision TOSEC;bluemsx_libretro
+colecovision;TOSEC/Coleco/ColecoVision/Games;Coleco - ColecoVision;Coleco Colecovision TOSEC;bluemsx_libretro
 scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Epoch SCV NoIntro;emuscv_libretro
 scv;TOSEC/Epoch/Super Cassette Vision/Games/Epoch Super Cassette Vision - Games.zip;Epoch - Super Cassette Vision;Epoch SCV TOSEC;emuscv_libretro
 
