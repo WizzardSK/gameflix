@@ -142,18 +142,18 @@ wii;Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k];Nintendo - Wii;Nintendo Wii 
 wiiu;Redump/Nintendo - Wii U - WUX;Nintendo - Wii U;<i>Nintendo Wii U Redump</i>;cemu -g;wux
 
 pokemini;No-Intro/Nintendo - Pokemon Mini;Nintendo - Pokemon Mini;<p><i>Pokemon Mini</i> NoIntro;pokemini_libretro
-pokemini;TOSEC/Nintendo/Pokemon Mini/Games/Nintendo Pokemon Mini - Games.zip;Nintendo - Pokemon Mini;<i>Pokemon Mini</i> TOSEC;pokemini_libretro
+pokemini;TOSEC/Nintendo/Pokemon Mini/Games;Nintendo - Pokemon Mini;<i>Pokemon Mini</i> TOSEC;pokemini_libretro
 virtualboy;No-Intro/Nintendo - Virtual Boy;Nintendo - Virtual Boy;<i>Virtual Boy</i> NoIntro;mednafen_vb_libretro
-virtualboy;TOSEC/Nintendo/Virtual Boy/Games/Nintendo Virtual Boy - Games.zip;Nintendo - Virtual Boy;<i>Virtual Boy</i> TOSEC;mednafen_vb_libretro
+virtualboy;TOSEC/Nintendo/Virtual Boy/Games;Nintendo - Virtual Boy;<i>Virtual Boy</i> TOSEC;mednafen_vb_libretro
 gb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;<i>Game Boy</i> NoIntro;sameboy_libretro
-gb;TOSEC/Nintendo/Game Boy/Games/Nintendo Game Boy - Games.zip;Nintendo - Game Boy;<i>Game Boy</i> TOSEC;sameboy_libretro
+gb;TOSEC/Nintendo/Game Boy/Games;Nintendo - Game Boy;<i>Game Boy</i> TOSEC;sameboy_libretro
 gbc;No-Intro/Nintendo - Game Boy Color;Nintendo - Game Boy Color;<i>Game Boy Color</i> NoIntro;sameboy_libretro
-gbc;TOSEC/Nintendo/Game Boy Color/Games/Nintendo Game Boy Color - Games.zip;Nintendo - Game Boy Color;<i>Game Boy Color</i> TOSEC;sameboy_libretro
+gbc;TOSEC/Nintendo/Game Boy Color/Games;Nintendo - Game Boy Color;<i>Game Boy Color</i> TOSEC;sameboy_libretro
 gba;No-Intro/Nintendo - Game Boy Advance;Nintendo - Game Boy Advance;<i>Game Boy Advance</i> NoIntro;mgba_libretro
-gba;TOSEC/Nintendo/Game Boy Advance/Games/Nintendo Game Boy Advance - Games.zip;Nintendo - Game Boy Advance;<i>Game Boy Advance</i> TOSEC;sameboy_libretro
+gba;TOSEC/Nintendo/Game Boy Advance/Games;Nintendo - Game Boy Advance;<i>Game Boy Advance</i> TOSEC;sameboy_libretro
 nds;No-Intro/Nintendo - Nintendo DS (Decrypted);Nintendo - Nintendo DS;<i>Nintendo DS</i> NoIntro;melonds_libretro
 nds;No-Intro/Nintendo - Nintendo DS (Download Play);Nintendo - Nintendo DS;<i>Nintendo DS</i> Download;melonds_libretro
-nds;TOSEC/Nintendo/DS/Games/Nintendo DS - Games.zip;Nintendo - Nintendo DS;<i>Nintendo DS</i> TOSEC;melonds_libretro
+nds;TOSEC/Nintendo/DS/Games;Nintendo - Nintendo DS;<i>Nintendo DS</i> TOSEC;melonds_libretro
 nds;No-Intro/Nintendo - Nintendo DSi (Decrypted);Nintendo - Nintendo DS;<i>Nintendo DSi</i> NoIntro;melondsds_libretro
 3ds;No-Intro/Nintendo - Nintendo 3DS (Decrypted);Nintendo - Nintendo 3DS;<i>Nintendo 3DS</i> NoIntro;citra_libretro;3ds
 
