@@ -158,15 +158,15 @@ nds;No-Intro/Nintendo - Nintendo DSi (Decrypted);Nintendo - Nintendo DS;<i>Ninte
 3ds;No-Intro/Nintendo - Nintendo 3DS (Decrypted);Nintendo - Nintendo 3DS;<i>Nintendo 3DS</i> NoIntro;citra_libretro;3ds
 
 sg-1000;No-Intro/Sega - SG-1000;Sega - SG-1000;<p>SG 1000 NoIntro;genesis_plus_gx_libretro
-sg-1000;TOSEC/Sega/Game 1000/Games/Sega Game 1000 - Games.zip;Sega - SG-1000;SG 1000 TOSEC;genesis_plus_gx_libretro
+sg-1000;TOSEC/Sega/Game 1000/Games;Sega - SG-1000;SG 1000 TOSEC;genesis_plus_gx_libretro
 mastersystem;No-Intro/Sega - Master System - Mark III;Sega - Master System - Mark III;Master System NoIntro;genesis_plus_gx_libretro
-mastersystem;TOSEC/Sega/Mark III & Master System/Games/Sega Mark III & Master System - Games.zip;Sega - Master System - Mark III;Master System TOSEC;genesis_plus_gx_libretro
+mastersystem;TOSEC/Sega/Mark III & Master System/Games;Sega - Master System - Mark III;Master System TOSEC;genesis_plus_gx_libretro
 megadrive;No-Intro/Sega - Mega Drive - Genesis;Sega - Mega Drive - Genesis;Mega Drive NoIntro;genesis_plus_gx_libretro
-megadrive;TOSEC/Sega/Mega Drive & Genesis/Games/[BIN]/Sega Mega Drive & Genesis - Games - [BIN].zip;Sega - Mega Drive - Genesis;Mega Drive TOSEC;genesis_plus_gx_libretro
+megadrive;TOSEC/Sega/Mega Drive & Genesis/Games/[BIN];Sega - Mega Drive - Genesis;Mega Drive TOSEC;genesis_plus_gx_libretro
 pico;No-Intro/Sega - PICO;Sega - PICO;Sega PICO NoIntro;picodrive_libretro
-pico;TOSEC/Sega/Pico/Educational/Sega Pico - Educational.zip;Sega - PICO;Sega PICO TOSEC;picodrive_libretro
+pico;TOSEC/Sega/Pico/Educational;Sega - PICO;Sega PICO TOSEC;picodrive_libretro
 sega32x;No-Intro/Sega - 32X;Sega - 32X;Sega 32X NoIntro;picodrive_libretro
-sega32x;TOSEC/Sega/32X/Games/Sega 32X - Games.zip;Sega - 32X;Sega 32X TOSEC;picodrive_libretro
+sega32x;TOSEC/Sega/32X/Games;Sega - 32X;Sega 32X TOSEC;picodrive_libretro
 segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;Sega CD Redump;picodrive_libretro;cue
 segacd;TOSEC-ISO/Sega/Mega-CD & Sega CD/CD/Games/[ISO];Sega - Mega-CD - Sega CD;Sega CD ISO;picodrive_libretro;cue
 saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn Redump;yabasanshiro_libretro;cue
@@ -178,7 +178,7 @@ dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/US;Sega - Dreamcast;Sega Dreamcast US;f
 dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/PAL;Sega - Dreamcast;Sega Dreamcast PAL;flycast_libretro;gdi
 dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/JP;Sega - Dreamcast;Sega Dreamcast JP;flycast_libretro;gdi
 gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i> NoIntro;genesis_plus_gx_libretro
-gamegear;TOSEC/Sega/Game Gear/Games/Sega Game Gear - Games.zip;Sega - Game Gear;<i>Game Gear</i> TOSEC;genesis_plus_gx_libretro
+gamegear;TOSEC/Sega/Game Gear/Games;Sega - Game Gear;<i>Game Gear</i> TOSEC;genesis_plus_gx_libretro
 
 psx;Redump/Sony - PlayStation;Sony - PlayStation;<p>PlayStation 1 Redump;pcsx_rearmed_libretro;cue
 psx;No-Intro/Non-Redump - Sony - PlayStation;Sony - PlayStation;PlayStation 1 Non-Redump;pcsx_rearmed_libretro;cue
