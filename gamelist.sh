@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
-mkdir -p ~/rom ~/roms ~/zip ~/atari2600roms ~/roms/neogeo ~/mount ~/uzebox ~/roms/uzebox ~/roms/tic80 ~/roms/wasm4 ~/roms/lowresnx ~/roms/pico8 ~/roms/voxatron
+mkdir -p ~/rom ~/roms ~/zip ~/zips ~/atari2600roms ~/roms/neogeo ~/mount ~/uzebox ~/roms/uzebox ~/roms/tic80 ~/roms/wasm4 ~/roms/lowresnx ~/roms/pico8 ~/roms/voxatron
 sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/rom --config=rclone.conf --daemon --http-no-head
 
@@ -40,7 +40,7 @@ for each in "${roms[@]}"; do
   echo ${rom3}
   mkdir -p ~/mount/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
-    ./batocera/ratarmount ~/rom/${rom[1]} ~/mount/${rom[0]}/${rom3} > /dev/null
+    ./batocera/ratarmount1 "https://myrient.erista.me/files/${rom[1]}" ~/mount/${rom[0]}/${rom3} -f &
     folder="$HOME/mount/${rom[0]}/${rom3}"
   else folder="$HOME/rom/${rom[1]}"; fi
   if grep -q ":" <<< "${rom[1]}"; then
@@ -58,6 +58,7 @@ for each in "${roms[@]}"; do
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/roms/${rom[0]}/gamelist.xml
   fi
+  fusermount -u ~/mount/${rom[0]}/${rom3}
 done
 
 echo "Atari 2600 ROMS"; wget -nv -O atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip > /dev/null
@@ -84,6 +85,7 @@ for HTMLFILE in "${HTMLFILES[@]}"; do
 done
 
 cd ~/roms
+rm -f "$GITHUB_WORKSPACE/batocera/gamelist.zip"
 zip -r "$GITHUB_WORKSPACE/batocera/gamelist.zip" *
 cd "$GITHUB_WORKSPACE"
 git config --global user.name "GitHub Actions"
