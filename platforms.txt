@@ -125,16 +125,16 @@ thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[K7];Thomson - MOTO;<code>Thoms
 thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[SAP];Thomson - MOTO;<code>Thomson TO8</code> SAP;theodore_libretro
 
 nes;No-Intro/Nintendo - Nintendo Entertainment System (Headered);Nintendo - Nintendo Entertainment System;<p>Nintendo NES NoIntro;nestopia_libretro
-nes;TOSEC/Nintendo/Famicom & Entertainment System/Games/[NES]/Nintendo Famicom & Entertainment System - Games - [NES].zip;Nintendo - Nintendo Entertainment System;Nintendo NES TOSEC;nestopia_libretro
+nes;TOSEC/Nintendo/Famicom & Entertainment System/Games/[NES];Nintendo - Nintendo Entertainment System;Nintendo NES TOSEC;nestopia_libretro
 fds;No-Intro/Nintendo - Family Computer Disk System (FDS);Nintendo - Family Computer Disk System;Famicom Disk System NoIntro;nestopia_libretro
-fds;TOSEC/Nintendo/Famicom Disk System/Games/[FDS]/Nintendo Famicom Disk System - Games - [FDS].zip;Nintendo - Family Computer Disk System;Famicom Disk System TOSEC;nestopia_libretro
+fds;TOSEC/Nintendo/Famicom Disk System/Games/[FDS];Nintendo - Family Computer Disk System;Famicom Disk System TOSEC;nestopia_libretro
 snes;No-Intro/Nintendo - Super Nintendo Entertainment System;Nintendo - Super Nintendo Entertainment System;Nintendo SNES NoIntro;snes9x_libretro
-snes;TOSEC/Nintendo/Super Famicom & Super Entertainment System/Games/Nintendo Super Famicom & Super Entertainment System - Games.zip;Nintendo - Super Nintendo Entertainment System;Nintendo SNES TOSEC;snes9x_libretro
+snes;TOSEC/Nintendo/Super Famicom & Super Entertainment System/Games;Nintendo - Super Nintendo Entertainment System;Nintendo SNES TOSEC;snes9x_libretro
 satellaview;No-Intro/Nintendo - Satellaview;Nintendo - Satellaview;Nintendo Satellaview NoIntro;snes9x_libretro
 sufami;No-Intro/Nintendo - Sufami Turbo;Nintendo - Sufami Turbo;Sufami Turbo NoIntro;snes9x_libretro
-sufami;TOSEC/Nintendo/Sufami Turbo/Games/Nintendo Sufami Turbo - Games.zip;Nintendo - Sufami Turbo;Sufami Turbo TOSEC;snes9x_libretro
+sufami;TOSEC/Nintendo/Sufami Turbo/Games;Nintendo - Sufami Turbo;Sufami Turbo TOSEC;snes9x_libretro
 n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64;Nintendo 64 NoIntro;mupen64plus_next_libretro
-n64;TOSEC/Nintendo/64/Games/Nintendo 64 - Games.zip;Nintendo - Nintendo 64;Nintendo 64 TOSEC;mupen64plus_next_libretro
+n64;TOSEC/Nintendo/64/Games;Nintendo - Nintendo 64;Nintendo 64 TOSEC;mupen64plus_next_libretro
 gc;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Gamecube Redump;dolphin_libretro;rvz
 gc;TOSEC-ISO/Nintendo/GameCube/Games;Nintendo - GameCube;Gamecube ISO;dolphin_libretro;iso
 wii;No-Intro/Unofficial - Nintendo - Wii (Digital) (Deprecated) (WAD);Nintendo - Wii;Nintendo Wii NoIntro;dolphin_libretro;wad
