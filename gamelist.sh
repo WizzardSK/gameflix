@@ -41,6 +41,7 @@ for each in "${roms[@]}"; do
   mkdir -p ~/mount/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     ./batocera/ratarmount1 "https://myrient.erista.me/files/${rom[1]}" ~/mount/${rom[0]}/${rom3} -f &
+    sleep 1
     while ! mount | grep -q "on /home/runner/mount/${rom[0]}/${rom3} "; do sleep 1; done
     folder="$HOME/mount/${rom[0]}/${rom3}"
   else folder="$HOME/rom/${rom[1]}"; fi
