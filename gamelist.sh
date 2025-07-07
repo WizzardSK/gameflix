@@ -41,7 +41,7 @@ for each in "${roms[@]}"; do
   mkdir -p ~/mount/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     ./batocera/ratarmount1 "https://myrient.erista.me/files/${rom[1]}" ~/mount/${rom[0]}/${rom3} -f &
-    while ! mount | grep -q "on /home/runner/mount/${rom[0]}/${rom3} "; do sleep 2; done
+    while ! mount | grep -q "on /home/runner/mount/${rom[0]}/${rom3} "; do sleep 1; done
     folder="$HOME/mount/${rom[0]}/${rom3}"
   else folder="$HOME/rom/${rom[1]}"; fi
   if grep -q ":" <<< "${rom[1]}"; then
@@ -62,8 +62,8 @@ for each in "${roms[@]}"; do
   fusermount -u ~/mount/${rom[0]}/${rom3} > /dev/null 2>&1
 done
 
-echo "Atari 2600 ROMS"; wget -nv -O atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip > /dev/null
-fuse-zip atari2600roms.zip ~/atari2600roms
+echo "Atari 2600 ROMS"; ./batocera/ratarmount1 https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip ~/atari2600roms -f &
+while ! mount | grep -q "on /home/runner/atari2600roms "; do sleep 1; done
 ls ~/atari2600roms/ROMS | while read line; do
   line2=${line%.*}
   hra="<game><path>./Atari 2600 ROMS/${line}</path><name>${line2}</name><image>~/../thumbs/Atari - 2600/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/Atari - 2600/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/Atari - 2600/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/Atari - 2600/Named_Logos/${line2}.png</marquee>"
