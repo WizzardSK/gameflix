@@ -1,7 +1,5 @@
 #!/bin/bash
 emulationstation stop; chvt 3; clear; mount -o remount,size=6000M /tmp
-#ln -s /usr/bin/fusermount /usr/bin/fusermount3
-#curl https://rclone.org/install.sh | bash > /dev/null 2>&1
 wget -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf > /dev/null 2>&1
 if [ ! -f /userdata/system/httpdirfs ];  then wget -O /userdata/system/httpdirfs  https://github.com/WizzardSK/gameflix/raw/main/batocera/httpdirfs; chmod +x /userdata/system/httpdirfs; fi
 if [ ! -f /userdata/system/fuse-zip ];   then wget -O /userdata/system/fuse-zip   https://github.com/WizzardSK/gameflix/raw/main/batocera/fuse-zip;  chmod +x /userdata/system/fuse-zip; fi
