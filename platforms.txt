@@ -48,6 +48,7 @@ wonderswan;No-Intro/Benesse - Pocket Challenge V2;Bandai - WonderSwan;<i>Pocket 
 wonderswancolor;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>WonderSwan Color</i> NoIntro;mednafen_wswan_libretro
 wonderswancolor;TOSEC/Bandai/WonderSwan Color/Games;Bandai - WonderSwan Color;<i>WonderSwan Color</i> TOSEC;mednafen_wswan_libretro
 arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;<i>Arduboy</i> NoIntro;arduous_libretro
+arduboy;TOSEC/Arduboy/Arduboy/Games/[HEX];Arduboy Inc - Arduboy;<i>Arduboy</i> TOSEC;arduous_libretro
 megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;<i>Welback Mega Duck</i>;mame megaduck -cart
 gamate;No-Intro/Bit Corporation - Gamate;Bitcorp - Gamate;<i>Bitcorp Gamate NoIntro</i>;mame gamate -cart
 gamate;TOSEC/Bit Corporation/Gamate/Games;Bitcorp - Gamate;<i>Bitcorp Gamate TOSEC</i>;mame gamate -cart
