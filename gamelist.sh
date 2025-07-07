@@ -59,7 +59,7 @@ for each in "${roms[@]}"; do
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/roms/${rom[0]}/gamelist.xml
   fi
-  fusermount -u ~/mount/${rom[0]}/${rom3} /dev/null 2>&1
+  fusermount -u ~/mount/${rom[0]}/${rom3} > /dev/null 2>&1
 done
 
 echo "Atari 2600 ROMS"; wget -nv -O atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip > /dev/null
