@@ -24,7 +24,7 @@ atarilynx;No-Intro/Atari - Lynx (LYX);Atari - Lynx;<i>Atari Lynx</i> NoIntro;med
 atarilynx;TOSEC/Atari/Lynx/Games/[LNX];Atari - Lynx;<i>Atari Lynx</i> TOSEC;mednafen_lynx_libretro
 
 channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;<p>Fairchild Channel F NoIntro;freechaf_libretro
-channelf;TOSEC/Fairchild/VES & Channel F/Games/Fairchild VES & Channel F - Games.zip;Fairchild - Channel F;Fairchild Channel F TOSEC;freechaf_libretro
+channelf;TOSEC/Fairchild/VES & Channel F/Games;Fairchild - Channel F;Fairchild Channel F TOSEC;freechaf_libretro
 vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;GCE Vectrex NoIntro;vecx_libretro
 vectrex;TOSEC/GCE/Vectrex/Games/GCE Vectrex - Games.zip;GCE - Vectrex;GCE Vectrex TOSEC;vecx_libretro
 odyssey2;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Magnavox Odyssey 2 NoIntro;o2em_libretro
