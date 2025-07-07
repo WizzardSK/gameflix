@@ -41,80 +41,80 @@ scv;TOSEC/Epoch/Super Cassette Vision/Games;Epoch - Super Cassette Vision;Epoch 
 
 gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<p><i>Epoch Game Pocket Computer</i>;mame gamepock -cart
 supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervision</i> NoIntro;potator_libretro
-supervision;TOSEC/Watara/Supervision/Games/Watara Supervision - Games.zip;Watara - Supervision;<i>Watara Supervision</i> TOSEC;potator_libretro
+supervision;TOSEC/Watara/Supervision/Games;Watara - Supervision;<i>Watara Supervision</i> TOSEC;potator_libretro
 wonderswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> NoIntro;mednafen_wswan_libretro
-wonderswan;TOSEC/Bandai/WonderSwan/Games/Bandai WonderSwan - Games.zip;Bandai - WonderSwan;<i>Bandai WonderSwan</i> TOSEC;mednafen_wswan_libretro
+wonderswan;TOSEC/Bandai/WonderSwan/Games;Bandai - WonderSwan;<i>Bandai WonderSwan</i> TOSEC;mednafen_wswan_libretro
 wonderswan;No-Intro/Benesse - Pocket Challenge V2;Bandai - WonderSwan;<i>Pocket Challenge 2</i> NoIntro;mednafen_wswan_libretro
 wonderswancolor;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>WonderSwan Color</i> NoIntro;mednafen_wswan_libretro
-wonderswancolor;TOSEC/Bandai/WonderSwan Color/Games/Bandai WonderSwan Color - Games.zip;Bandai - WonderSwan Color;<i>WonderSwan Color</i> TOSEC;mednafen_wswan_libretro
+wonderswancolor;TOSEC/Bandai/WonderSwan Color/Games;Bandai - WonderSwan Color;<i>WonderSwan Color</i> TOSEC;mednafen_wswan_libretro
 arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;<i>Arduboy</i> NoIntro;arduous_libretro
 megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;<i>Welback Mega Duck</i>;mame megaduck -cart
 gamate;No-Intro/Bit Corporation - Gamate;Bitcorp - Gamate;<i>Bitcorp Gamate NoIntro</i>;mame gamate -cart
-gamate;TOSEC/Bit Corporation/Gamate/Games/Bit Corporation Gamate - Games.zip;Bitcorp - Gamate;<i>Bitcorp Gamate TOSEC</i>;mame gamate -cart
+gamate;TOSEC/Bit Corporation/Gamate/Games;Bitcorp - Gamate;<i>Bitcorp Gamate TOSEC</i>;mame gamate -cart
 gmaster;No-Intro/Hartung - Game Master;Hartung - Game Master;<i>Hartung Game Master NoIntro</i>;mame gmaster -cart
-gmaster;TOSEC/Hartung/Game Master/Games/Hartung Game Master - Games.zip;Hartung - Game Master;<i>Hartung Game Master TOSEC</i>;mame gmaster -cart
+gmaster;TOSEC/Hartung/Game Master/Games;Hartung - Game Master;<i>Hartung Game Master TOSEC</i>;mame gmaster -cart
 gamecom;No-Intro/Tiger - Game.com;Tiger - Game.com;<i>Tiger Game.com NoIntro</i>;mame gamecom -cart1
-gamecom;TOSEC/Tiger Electronics/Game.com/Games/Tiger Electronics Game.com - Games.zip;Tiger - Game.com;<i>Tiger Game.com TOSEC</i>;mame gamecom -cart1
+gamecom;TOSEC/Tiger Electronics/Game.com/Games;Tiger - Game.com;<i>Tiger Game.com TOSEC</i>;mame gamecom -cart1
 gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32 NoIntro</i>;mame gp32 -memc
-gp32;TOSEC/Game Park/GP32/Games/[SMC]/Game Park GP32 - Games - [SMC].zip;GamePark - GP32;<i>GamePark GP32 TOSEC</i>;mame gp32 -memc
+gp32;TOSEC/Game Park/GP32/Games/[SMC];GamePark - GP32;<i>GamePark GP32 TOSEC</i>;mame gp32 -memc
 
-amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK]/Amstrad CPC - Games - [DSK].zip;Amstrad - CPC;<p><code>Amstrad CPC</code> DSK;cap32_libretro
-amstradcpc;TOSEC/Amstrad/CPC/Games/[CDT]/Amstrad CPC - Games - [CDT].zip;Amstrad - CPC;<code>Amstrad CPC</code> CDT;cap32_libretro
-amstradcpc;TOSEC/Amstrad/CPC/Games/[SNA]/Amstrad CPC - Games - [SNA].zip;Amstrad - CPC;<code>Amstrad CPC</code> SNA;cap32_libretro
-gx4000;TOSEC/Amstrad/GX4000/Games/Amstrad GX4000 - Games.zip;Amstrad - GX4000;<code>Amstrad GX4000</code> TOSEC;cap32_libretro
-zx81;TOSEC/Sinclair/ZX81/Games/[P]/Sinclair ZX81 - Games - [P].zip;Sinclair - ZX 81;<code>Sinclair ZX81</code> TOSEC;81_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK]/Sinclair ZX Spectrum - Games - [DSK].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum DSK</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[SCL]/Sinclair ZX Spectrum - Games - [SCL].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum SCL</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TAP]/Sinclair ZX Spectrum - Games - [TAP].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum TAP</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TRD]/Sinclair ZX Spectrum - Games - [TRD].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum TRD</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TZX]/Sinclair ZX Spectrum - Games - [TZX].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum TZX</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80]/Sinclair ZX Spectrum - Games - [Z80].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum Z80</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TAP]/Sinclair ZX Spectrum - Educational - [TAP].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum Edu TAP</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TZX]/Sinclair ZX Spectrum - Educational - [TZX].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum Edu TZX</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[Z80]/Sinclair ZX Spectrum - Educational - [Z80].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum Edu Z80</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TAP]/Sinclair ZX Spectrum - Applications - [TAP].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum App TAP</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TZX]/Sinclair ZX Spectrum - Applications - [TZX].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum App TZX</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[Z80]/Sinclair ZX Spectrum - Applications - [Z80].zip;Sinclair - ZX Spectrum;<code>ZX Spectrum App Z80</code>;fuse_libretro
-spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS]/Spectravideo SVI-318 & SVI-328 - Various - [CAS].zip;Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> TOSEC;bluemsx_libretro
-samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK]/MGT Sam Coupe - Games - [DSK].zip;MGT - Sam Coupe;<code>Sam Coupé</code> DSK;simcoupe
-samcoupe;TOSEC/MGT/Sam Coupe/Games/[SAD]/MGT Sam Coupe - Games - [SAD].zip;MGT - Sam Coupe;<code>Sam Coupé</code> SAD;simcoupe
-oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[DSK]/Tangerine Oric-1 & Oric Atmos - Games - [DSK].zip;Tangerine - Oric Atmos;<code>Oric Atmos</code> DSK;clksignal --quickload
-oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[TAP]/Tangerine Oric-1 & Oric Atmos - Games - [TAP].zip;Tangerine - Oric Atmos;<code>Oric Atmos</code> TAP;clksignal --quickload
+amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK];Amstrad - CPC;<p><code>Amstrad CPC</code> DSK;cap32_libretro
+amstradcpc;TOSEC/Amstrad/CPC/Games/[CDT];Amstrad - CPC;<code>Amstrad CPC</code> CDT;cap32_libretro
+amstradcpc;TOSEC/Amstrad/CPC/Games/[SNA];Amstrad - CPC;<code>Amstrad CPC</code> SNA;cap32_libretro
+gx4000;TOSEC/Amstrad/GX4000/Games;Amstrad - GX4000;<code>Amstrad GX4000</code> TOSEC;cap32_libretro
+zx81;TOSEC/Sinclair/ZX81/Games/[P];Sinclair - ZX 81;<code>Sinclair ZX81</code> TOSEC;81_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK];Sinclair - ZX Spectrum;<code>ZX Spectrum DSK</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[SCL];Sinclair - ZX Spectrum;<code>ZX Spectrum SCL</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TAP];Sinclair - ZX Spectrum;<code>ZX Spectrum TAP</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TRD];Sinclair - ZX Spectrum;<code>ZX Spectrum TRD</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TZX];Sinclair - ZX Spectrum;<code>ZX Spectrum TZX</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80];Sinclair - ZX Spectrum;<code>ZX Spectrum Z80</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TAP];Sinclair - ZX Spectrum;<code>ZX Spectrum Edu TAP</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TZX];Sinclair - ZX Spectrum;<code>ZX Spectrum Edu TZX</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[Z80];Sinclair - ZX Spectrum;<code>ZX Spectrum Edu Z80</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TAP];Sinclair - ZX Spectrum;<code>ZX Spectrum App TAP</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TZX];Sinclair - ZX Spectrum;<code>ZX Spectrum App TZX</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[Z80];Sinclair - ZX Spectrum;<code>ZX Spectrum App Z80</code>;fuse_libretro
+spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> TOSEC;bluemsx_libretro
+samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK];MGT - Sam Coupe;<code>Sam Coupé</code> DSK;simcoupe
+samcoupe;TOSEC/MGT/Sam Coupe/Games/[SAD];MGT - Sam Coupe;<code>Sam Coupé</code> SAD;simcoupe
+oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[DSK];Tangerine - Oric Atmos;<code>Oric Atmos</code> DSK;clksignal --quickload
+oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[TAP];Tangerine - Oric Atmos;<code>Oric Atmos</code> TAP;clksignal --quickload
 
 astrocade;No-Intro/Bally - Astrocade;Bally - Astrocade;<p>Bally Astrocade NoIntro;mame astrocde -cart
-astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN]/Bally Professional Arcade & Astrocade - Games - [BIN].zip;Bally - Astrocade;Bally Astrocade TOSEC;mame astrocde -cart
+astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN];Bally - Astrocade;Bally Astrocade TOSEC;mame astrocde -cart
 apfm1000;No-Intro/APF - MP-1000;APF - MP-1000;APF MP-1000 NoIntro;mame apfm1000 -cart
-apfm1000;TOSEC/APF/M-1000/Games/APF M-1000 - Games.zip;APF - MP-1000;APF MP-1000 TOSEC;mame apfm1000 -cart
+apfm1000;TOSEC/APF/M-1000/Games;APF - MP-1000;APF MP-1000 TOSEC;mame apfm1000 -cart
 advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vision NoIntro;mame advision -cart
-advision;TOSEC/Entex/Adventure Vision/Games/Entex Adventure Vision - Games.zip;Entex - Adventure Vision;Adventure Vision TOSEC;mame advision -cart
+advision;TOSEC/Entex/Adventure Vision/Games;Entex - Adventure Vision;Adventure Vision TOSEC;mame advision -cart
 creativision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision NoIntro;mame crvision -cart
-creativision;TOSEC/VTech/Laser 2001 & CreatiVision/Games/VTech Laser 2001 & CreatiVision - Games.zip;VTech - CreatiVision;CreatiVision TOSEC;mame crvision -cart
+creativision;TOSEC/VTech/Laser 2001 & CreatiVision/Games;VTech - CreatiVision;CreatiVision TOSEC;mame crvision -cart
 vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile NoIntro;mame vsmile -cart
-vsmile;TOSEC/VTech/V.Smile Motion/Games/[BIN]/VTech V.Smile Motion - Games - [BIN].zip;VTech - V.Smile;VTech V.Smile TOSEC;mame vsmile -cart
+vsmile;TOSEC/VTech/V.Smile Motion/Games/[BIN];VTech - V.Smile;VTech V.Smile TOSEC;mame vsmile -cart
 arcadia;No-Intro/Emerson - Arcadia 2001;Emerson - Arcadia 2001;Arcadia 2001 NoIntro;mame arcadia -cart
-arcadia;TOSEC/Emerson/Arcadia 2001/Games/Emerson Arcadia 2001 - Games.zip;Emerson - Arcadia 2001;Arcadia 2001 TOSEC;mame arcadia -cart
+arcadia;TOSEC/Emerson/Arcadia 2001/Games;Emerson - Arcadia 2001;Arcadia 2001 TOSEC;mame arcadia -cart
 pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000 NoIntro;mame pv1000 -cart
-pv1000;TOSEC/Casio/PV-1000/Games/Casio PV-1000 - Games.zip;Casio - PV-1000;Casio PV-1000 TOSEC;mame pv1000 -cart
+pv1000;TOSEC/Casio/PV-1000/Games;Casio - PV-1000;Casio PV-1000 TOSEC;mame pv1000 -cart
 supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan NoIntro;mame supracan -cart
-supracan;TOSEC/Funtech/Super A'can/Games/Funtech Super A'can - Games.zip;Funtech - Super Acan;Super Acan TOSEC;mame supracan -cart
+supracan;TOSEC/Funtech/Super A'can/Games;Funtech - Super Acan;Super Acan TOSEC;mame supracan -cart
 vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton - VC 4000;mame vc4000 -cart
-multivision;TOSEC/Tsukuda Original/Othello Multivision/Games/Tsukuda Original Othello Multivision - Games.zip;Othello - Multivision;Othello Multivision;gearsystem_libretro
+multivision;TOSEC/Tsukuda Original/Othello Multivision/Games;Othello - Multivision;Othello Multivision;gearsystem_libretro
 
-coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM]/Tandy Radio Shack TRS-80 Color Computer - Games - [ROM].zip;Tandy - TRS-80 Color Computer;<p><code>Tandy TRS-80 CoCo</code>;mame coco3 -cart
+coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM];Tandy - TRS-80 Color Computer;<p><code>Tandy TRS-80 CoCo</code>;mame coco3 -cart
 vis;Redump/Memorex - Visual Information System;Tandy - Video Information System;<code>Tandy-Memorex VIS</code>;mame vis -cdrm;cue
-bbcmicro;TOSEC/Acorn/BBC/Games/[SSD]/Acorn BBC - Games - [SSD].zip;Acorn - BBC;<code>Acorn BBC</code>;mame bbcb -flop1
-electron;TOSEC/Acorn/Electron/Games/[UEF]/Acorn Electron - Games - [UEF].zip;Acorn - Electron;<code>Acorn Electron</code>;mame electron64 -cass
-archimedes;TOSEC/Acorn/Archimedes/Games/[ADF]/Acorn Archimedes - Games - [ADF].zip;Acorn - Archimedes;<code>Acorn Archimedes</code>;mame aa4401 -flop
+bbcmicro;TOSEC/Acorn/BBC/Games/[SSD];Acorn - BBC;<code>Acorn BBC</code>;mame bbcb -flop1
+electron;TOSEC/Acorn/Electron/Games/[UEF];Acorn - Electron;<code>Acorn Electron</code>;mame electron64 -cass
+archimedes;TOSEC/Acorn/Archimedes/Games/[ADF];Acorn - Archimedes;<code>Acorn Archimedes</code>;mame aa4401 -flop
 fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;<code>Fujitsu Micro 7</code> NoIntro;mame fm7 -flop1
-fm7;TOSEC/Fujitsu/FM-7/Games/[D77]/Fujitsu FM-7 - Games - [D77].zip;Fujitsu - Micro 7;<code>Fujitsu Micro 7</code> D77;mame fm7 -flop1
+fm7;TOSEC/Fujitsu/FM-7/Games/[D77];Fujitsu - Micro 7;<code>Fujitsu Micro 7</code> D77;mame fm7 -flop1
 fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;<code>Fujitsu FM Towns</code>;mame fmtmarty -cdrm
-tutor;TOSEC/Tomy/Tutor & Pyuuta/Games/Tomy Tutor & Pyuuta - Games.zip;Tomy - Tutor;<code>Tomy Tutor</code>;mame tutor -cart
-apple2;TOSEC/Apple/II/Games/[DSK]/Apple II - Games - [DSK].zip;Apple - II;<code>Apple II DSK</code>;mame apple2ee -flop1
-apple2;TOSEC/Apple/II/Games/[WOZ]/Apple II - Games - [WOZ].zip;Apple - II;<code>Apple II WOZ</code>;mame apple2ee -flop1
-apple2;TOSEC/Apple/II/Educational/[DSK]/Apple II - Educational - [DSK].zip;Apple - II;<code>Apple II Edu DSK</code>;mame apple2ee -flop1
-apple2;TOSEC/Apple/II/Educational/[WOZ]/Apple II - Educational - [WOZ].zip;Apple - II;<code>Apple II Edu WOZ</code>;mame apple2ee -flop1
-apple2;TOSEC/Apple/II/Applications/[DSK]/Apple II - Applications - [DSK].zip;Apple - II;<code>Apple II App DSK</code>;mame apple2ee -flop1
-apple2;TOSEC/Apple/II/Applications/[WOZ]/Apple II - Applications - [WOZ].zip;Apple - II;<code>Apple II App WOZ</code>;mame apple2ee -flop1
+tutor;TOSEC/Tomy/Tutor & Pyuuta/Games;Tomy - Tutor;<code>Tomy Tutor</code>;mame tutor -cart
+apple2;TOSEC/Apple/II/Games/[DSK];Apple - II;<code>Apple II DSK</code>;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Games/[WOZ];Apple - II;<code>Apple II WOZ</code>;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Educational/[DSK];Apple - II;<code>Apple II Edu DSK</code>;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Educational/[WOZ];Apple - II;<code>Apple II Edu WOZ</code>;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Applications/[DSK];Apple - II;<code>Apple II App DSK</code>;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Applications/[WOZ];Apple - II;<code>Apple II App WOZ</code>;mame apple2ee -flop1
 
 thomson;TOSEC/Thomson/MO5/Games/[K7];Thomson - MOTO;<p><code>Thomson MO5</code> K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games;Thomson - MOTO;<code>Thomson MO6</code> K7;theodore_libretro
@@ -190,11 +190,11 @@ psp;No-Intro/Unofficial - Sony - PlayStation Portable (PSN) (Decrypted);Sony - P
 psp;TOSEC-ISO/Sony/PlayStation Portable/Games/[ISO];Sony - PlayStation Portable;<i>Sony PSP</i> TOSEC;ppsspp_libretro;iso
 
 pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;NEC - PC Engine - TurboGrafx 16;<p>PC Engine NoIntro;mednafen_pce_fast_libretro
-pcengine;TOSEC/NEC/PC-Engine & TurboGrafx-16/Games/NEC PC-Engine & TurboGrafx-16 - Games.zip;NEC - PC Engine - TurboGrafx 16;PC Engine TOSEC;mednafen_pce_fast_libretro
+pcengine;TOSEC/NEC/PC-Engine & TurboGrafx-16/Games;NEC - PC Engine - TurboGrafx 16;PC Engine TOSEC;mednafen_pce_fast_libretro
 pcenginecd;Redump/NEC - PC Engine CD & TurboGrafx CD;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD Redump;mednafen_pce_fast_libretro;cue
 pcenginecd;TOSEC-ISO/NEC/PC-Engine CD & TurboGrafx-16 CD/Games/[IMG];NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD ISO;mednafen_pce_fast_libretro;cue
 supergrafx;No-Intro/NEC - PC Engine SuperGrafx;NEC - PC Engine SuperGrafx;PC Engine 2 NoIntro;mednafen_supergrafx_libretro
-supergrafx;TOSEC/NEC/SuperGrafx/Games/NEC SuperGrafx - Games.zip;NEC - PC Engine SuperGrafx;PC Engine 2 TOSEC;mednafen_supergrafx_libretro
+supergrafx;TOSEC/NEC/SuperGrafx/Games;NEC - PC Engine SuperGrafx;PC Engine 2 TOSEC;mednafen_supergrafx_libretro
 pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX Redump;mednafen_pcfx_libretro;cue
 pcfx;TOSEC-ISO/NEC/PC-FX/Games;NEC - PC-FX;PC-FX ISO;mednafen_pcfx_libretro;cue
 mame;Internet Archive/chadmaster/mame-merged/mame-merged;MAME;MAME;mame
@@ -217,7 +217,7 @@ ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;<i>NGP Color<
 ngpc;TOSEC/SNK/Neo-Geo Pocket Color/Games;SNK - Neo Geo Pocket Color;<i>NGP Color</i> TOSEC;mednafen_ngp_libretro
 
 dos;eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/;DOS;<p><code>MS-DOS</code> eXoDOS;dosbox_pure_libretro
-dos;TOSEC/IBM/PC Compatibles/Games/[IMG]/IBM PC Compatibles - Games - [IMG].zip;DOS;<code>MS-DOS</code> TOSEC;dosbox_pure_libretro
+dos;TOSEC/IBM/PC Compatibles/Games/[IMG];DOS;<code>MS-DOS</code> TOSEC;dosbox_pure_libretro
 dos;TOSEC-ISO/IBM/PC Compatibles/CD/Games/[ISO];DOS;<code>MS-DOS</code> ISO;dosbox_pure_libretro
 
 dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1982;DOS;<code>TDC</code> 1982;dosbox_pure_libretro
@@ -244,48 +244,48 @@ msx2;TOSEC/MSX/MSX2/Games/[DSK];Microsoft - MSX2;<code>MSX 2</code> TOSEC;bluems
 msx2;TOSEC/MSX/MSX2+/Games;Microsoft - MSX2;<code>MSX 2+</code> TOSEC;bluemsx_libretro
 msxturbor;TOSEC/MSX/TurboR/Games;Microsoft - MSX2;<code>MSX TurboR</code>;bluemsx_libretro
 
-pet;TOSEC/Commodore/PET/Games/[PRG]/Commodore PET - Games - [PRG].zip;Commodore - PET;<p><code>Commodore PET</code> TOSEC;vice_xpet_libretro
+pet;TOSEC/Commodore/PET/Games/[PRG];Commodore - PET;<p><code>Commodore PET</code> TOSEC;vice_xpet_libretro
 cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<code>Commodore Plus-4</code> NoIntro;vice_xplus4_libretro
-cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[PRG]/Commodore C16, C116 & Plus-4 - Games - [PRG].zip;Commodore - Plus-4;<code>Commodore Plus-4</code> PRG;vice_xplus4_libretro
-cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP]/Commodore C16, C116 & Plus-4 - Games - [TAP].zip;Commodore - Plus-4;<code>Commodore Plus-4</code> TAP;vice_xplus4_libretro
+cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[PRG];Commodore - Plus-4;<code>Commodore Plus-4</code> PRG;vice_xplus4_libretro
+cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP];Commodore - Plus-4;<code>Commodore Plus-4</code> TAP;vice_xplus4_libretro
 vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;<code>Commodore VIC-20</code> NoIntro;vice_xvic_libretro
-vic20;TOSEC/Commodore/VIC20/Games/[CRT]/Singlepart/Commodore VIC20 - Games - [CRT] - Singlepart.zip;Commodore - VIC-20;<code>Commodore VIC-20</code> CRT;vice_xvic_libretro
-vic20;TOSEC/Commodore/VIC20/Games/[D64]/Commodore VIC20 - Games - [D64].zip;Commodore - VIC-20;<code>Commodore VIC-20</code> D64;vice_xvic_libretro
-vic20;TOSEC/Commodore/VIC20/Games/[PRG]/Singlepart/Commodore VIC20 - Games - [PRG] - Singlepart.zip;Commodore - VIC-20;<code>Commodore VIC-20</code> PRG;vice_xvic_libretro
-vic20;TOSEC/Commodore/VIC20/Games/[TAP]/Commodore VIC20 - Games - [TAP].zip;Commodore - VIC-20;<code>Commodore VIC-20</code> TAP;vice_xvic_libretro
-c128;TOSEC/Commodore/C128/Games/[D64]/Commodore C128 - Games - [D64].zip;Commodore - 128;<code>Commodore 128</code> D64;vice_x128_libretro
+vic20;TOSEC/Commodore/VIC20/Games/[CRT]/Singlepart;Commodore - VIC-20;<code>Commodore VIC-20</code> CRT;vice_xvic_libretro
+vic20;TOSEC/Commodore/VIC20/Games/[D64];Commodore - VIC-20;<code>Commodore VIC-20</code> D64;vice_xvic_libretro
+vic20;TOSEC/Commodore/VIC20/Games/[PRG]/Singlepart;Commodore - VIC-20;<code>Commodore VIC-20</code> PRG;vice_xvic_libretro
+vic20;TOSEC/Commodore/VIC20/Games/[TAP];Commodore - VIC-20;<code>Commodore VIC-20</code> TAP;vice_xvic_libretro
+c128;TOSEC/Commodore/C128/Games/[D64];Commodore - 128;<code>Commodore 128</code> D64;vice_x128_libretro
 
 c64;No-Intro/Commodore - Commodore 64;Commodore - 64;<p><code>Commodore 64</code> NoIntro;vice_x64sc_libretro
 c64;No-Intro/Commodore - Commodore 64 (PP);Commodore - 64;<code>Commodore 64</code> PP;vice_x64sc_libretro
 c64;No-Intro/Commodore - Commodore 64 (Tapes);Commodore - 64;<code>Commodore 64</code> Tapes;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Adventure/[D64]/Commodore C64 - Games - Adventure - [D64].zip;Commodore - 64;<code>Commodore 64</code> Adventure;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Arcade/[D64]/Commodore C64 - Games - Arcade - [D64].zip;Commodore - 64;<code>Commodore 64</code> Arcade;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Boulder Dash/[D64]/Commodore C64 - Games - Boulder Dash - [D64].zip;Commodore - 64;<code>Commodore 64</code> Boulder;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Cards/[D64]/Commodore C64 - Games - Cards - [D64].zip;Commodore - 64;<code>Commodore 64</code> Cards;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Gambling/[D64]/Commodore C64 - Games - Gambling - [D64].zip;Commodore - 64;<code>Commodore 64</code> Gambling;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Misc/[D64]/Commodore C64 - Games - Misc - [D64].zip;Commodore - 64;<code>Commodore 64</code> Misc;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Racing/[D64]/Commodore C64 - Games - Racing - [D64].zip;Commodore - 64;<code>Commodore 64</code> Racing;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Shoot'em Up/[D64]/Commodore C64 - Games - Shoot'em Up - [D64].zip;Commodore - 64;<code>Commodore 64</code> Shoot'em;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Simulation/[D64]/Commodore C64 - Games - Simulation - [D64].zip;Commodore - 64;<code>Commodore 64</code> Simulation;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Sports/[D64]/Commodore C64 - Games - Sports - [D64].zip;Commodore - 64;<code>Commodore 64</code> Sports;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Strategy/[D64]/Commodore C64 - Games - Strategy - [D64].zip;Commodore - 64;<code>Commodore 64</code> Strategy;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Educational/[D64]/Commodore C64 - Educational - [D64].zip;Commodore - 64;<code>Commodore 64</code> Edu;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Applications/[D64]/Commodore C64 - Applications - [D64].zip;Commodore - 64;<code>Commodore 64</code> Apps;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Adventure/[D64];Commodore - 64;<code>Commodore 64</code> Adventure;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Arcade/[D64];Commodore - 64;<code>Commodore 64</code> Arcade;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Boulder Dash/[D64];Commodore - 64;<code>Commodore 64</code> Boulder;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Cards/[D64];Commodore - 64;<code>Commodore 64</code> Cards;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Gambling/[D64];Commodore - 64;<code>Commodore 64</code> Gambling;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Misc/[D64];Commodore - 64;<code>Commodore 64</code> Misc;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Racing/[D64];Commodore - 64;<code>Commodore 64</code> Racing;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Shoot'em Up/[D64];Commodore - 64;<code>Commodore 64</code> Shoot'em;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Simulation/[D64];Commodore - 64;<code>Commodore 64</code> Simulation;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Sports/[D64];Commodore - 64;<code>Commodore 64</code> Sports;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Games/Strategy/[D64];Commodore - 64;<code>Commodore 64</code> Strategy;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Educational/[D64];Commodore - 64;<code>Commodore 64</code> Edu;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Applications/[D64];Commodore - 64;<code>Commodore 64</code> Apps;vice_x64sc_libretro
 
 amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;<p><code>Amiga 1200</code> NoIntro;puae_libretro
-amiga1200;TOSEC/Commodore/Amiga/Games/[ADF]/Commodore Amiga - Games - [ADF].zip;Commodore - Amiga;<code>Amiga 1200</code> ADF;puae_libretro
-amiga1200;TOSEC/Commodore/Amiga/Games/[Unofficial IPF]/Commodore Amiga - Games - [Unofficial IPF].zip;Commodore - Amiga;<code>Amiga 1200</code> IPF;puae_libretro
-amiga1200;TOSEC/Commodore/Amiga/Games/Public Domain/[ADF]/Commodore Amiga - Games - Public Domain - [ADF].zip;Commodore - Amiga;<code>Amiga 1200</code> PD;puae_libretro
-amiga1200;TOSEC/Commodore/Amiga/Games/SPS/Commodore Amiga - Games - SPS.zip;Commodore - Amiga;<code>Amiga 1200</code> SPS;puae_libretro
-amiga1200;TOSEC/Commodore/Amiga/Educational/[ADF]/Commodore Amiga - Educational - [ADF].zip;Commodore - Amiga;<code>Amiga 1200</code> Edu;puae_libretro
-amiga1200;TOSEC/Commodore/Amiga/Applications/[ADF]/Commodore Amiga - Applications - [ADF].zip;Commodore - Amiga;<code>Amiga 1200</code> Apps;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Games/[ADF];Commodore - Amiga;<code>Amiga 1200</code> ADF;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Games/[Unofficial IPF];Commodore - Amiga;<code>Amiga 1200</code> IPF;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Games/Public Domain/[ADF];Commodore - Amiga;<code>Amiga 1200</code> PD;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Games/SPS;Commodore - Amiga;<code>Amiga 1200</code> SPS;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Educational/[ADF];Commodore - Amiga;<code>Amiga 1200</code> Edu;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Applications/[ADF];Commodore - Amiga;<code>Amiga 1200</code> Apps;puae_libretro
 amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<code>Amiga CD32</code> Redump;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Games/[ISO];Commodore - CD32;<code>Amiga CD32</code> ISO;puae_libretro;cue
 amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;<code>Amiga CDTV</code> Redump;puae_libretro;cue
 amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Games/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> ISO;puae_libretro;cue
 
-pc88;TOSEC/NEC/PC-8801/Games/[D88]/NEC PC-8801 - Games - [D88].zip;NEC - PC-8001 - PC-8801;<p><code>NEC PC-88</code> TOSEC;quasi88_libretro
-pc98;TOSEC/NEC/PC-9801/Games/[FDD]/NEC PC-9801 - Games - [FDD].zip;NEC - PC-98;<code>NEC PC-98</code> TOSEC;np2kai_libretro
-x1;TOSEC/Sharp/X1/Games/[2D]/Sharp X1 - Games - [2D].zip;Sharp - X1;<code>Sharp X1</code> 2D;x1_libretro
-x1;TOSEC/Sharp/X1/Games/[D88]/Sharp X1 - Games - [D88].zip;Sharp - X1;<code>Sharp X1</code> D88;x1_libretro
-x68000;TOSEC/Sharp/X68000/Games/[DIM]/Sharp X68000 - Games - [DIM].zip;Sharp - X68000;<code>Sharp X68000</code> TOSEC;px68k_libretro
+pc88;TOSEC/NEC/PC-8801/Games/[D88];NEC - PC-8001 - PC-8801;<p><code>NEC PC-88</code> TOSEC;quasi88_libretro
+pc98;TOSEC/NEC/PC-9801/Games/[FDD];NEC - PC-98;<code>NEC PC-98</code> TOSEC;np2kai_libretro
+x1;TOSEC/Sharp/X1/Games/[2D];Sharp - X1;<code>Sharp X1</code> 2D;x1_libretro
+x1;TOSEC/Sharp/X1/Games/[D88];Sharp - X1;<code>Sharp X1</code> D88;x1_libretro
+x68000;TOSEC/Sharp/X68000/Games/[DIM];Sharp - X68000;<code>Sharp X68000</code> TOSEC;px68k_libretro
