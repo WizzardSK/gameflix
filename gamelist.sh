@@ -78,21 +78,14 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-echo "Neo Geo"; echo "<gameList>" > ~/roms/neogeo/gamelist.xml;
-ROMLIST="neogeo.dat";
+echo "Neo Geo"; echo "<gameList>" > ~/roms/neogeo/gamelist.xml; ROMLIST="neogeo.dat";
 while IFS= read -r riadok; do
   prvy="${riadok%%[[:space:]]*}"; ostatok="${riadok#*[[:space:]]}"; zip="${prvy%.neo}.zip"
   hra="<game><path>./Neo Geo/${zip}</path><name>${ostatok}</name><image>~/../thumbs/MAME/Named_Snaps/${ostatok}.png</image><titleshot>~/../thumbs/MAME/Named_Titles/${ostatok}.png</titleshot><thumbnail>~/../thumbs/MAME/Named_Boxarts/${ostatok}.png</thumbnail><marquee>~/../thumbs/MAME/Named_Logos/${ostatok}.png</marquee>"
   echo "${hra}</game>" >> ~/roms/neogeo/gamelist.xml  
 done < "$ROMLIST"
+echo "<folder><path>./Neo Geo</path><name>Neo Geo</name><image>~/../thumb/neogeo.png</image></folder>" >> ~/roms/neogeo/gamelist.xml
 echo "</gameList>" >> ~/roms/neogeo/gamelist.xml;
-
-#HTMLFILES=("$HOME/roms/neogeo/gamelist.xml")
-#for HTMLFILE in "${HTMLFILES[@]}"; do
-#  while IFS=$'\t' read -r filename title; do
-#    base="${filename%.*}"; escaped_title=$(printf '%s\n' "$title" | sed 's/[&/\]/\\&/g'); sed -i -E "s/${base}</${escaped_title}</g" "$HTMLFILE"
-#  done < "$ROMLIST"
-#done
 
 cd ~/roms
 rm -f "$GITHUB_WORKSPACE/batocera/gamelist.zip"
