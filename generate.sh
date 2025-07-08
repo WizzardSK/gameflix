@@ -109,9 +109,10 @@ for HTMLFILE in "${HTMLFILES[@]}"; do
   while IFS=$'\t' read -r filename title; do base="${filename%.*}"; zipname="${base}.zip"; sed -i "s|\\b${zipname}\\b|${zipname}\t${title}|g" "$HTMLFILE"; done < "$ROMLIST"
 done
 
+pocet=0
 wget -O ~/gameflix/Neo\ Geo.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"neogeo\"); const fileNames = [" >> ~/gameflix/Neo\ Geo.html
-while IFS= read -r riadok; do echo "\"$riadok\"," >> ~/gameflix/Neo\ Geo.html; ((pocet++)); done < "$ROMLIST"
+while IFS= read -r riadok; do upraveny="${riadok%.neo}.zip"; echo "\"$upraveny\"," >> ~/gameflix/Neo\ Geo.html; ((pocet++)); done < "$ROMLIST"
 printf ']; generateFileLinks("roms/Neo Geo", "MAME");</script><script src=\"script.js\"></script>' >> ~/gameflix/Neo\ Geo.html
 echo "<a href=\"Neo Geo.html\" target=\"main\">Neo Geo</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Neo Geo\") core=\"fbneo_libretro\";;" >> ~/gameflix/retroarch.sh  
 
