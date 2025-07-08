@@ -81,7 +81,7 @@ done
 echo "Neo Geo"; echo "<gameList>" > ~/roms/neogeo/gamelist.xml; ROMLIST="neogeo.dat";
 while IFS= read -r riadok; do
   prvy="${riadok%%[[:space:]]*}"; ostatok="${riadok#*[[:space:]]}"; zip="${prvy%.neo}.zip"
-  hra="<game><path>./Neo Geo/${zip}</path><name>${ostatok}</name><image>~/../thumbs/MAME/Named_Snaps/${ostatok}.png</image><titleshot>~/../thumbs/MAME/Named_Titles/${ostatok}.png</titleshot><thumbnail>~/../thumbs/MAME/Named_Boxarts/${ostatok}.png</thumbnail><marquee>~/../thumbs/MAME/Named_Logos/${ostatok}.png</marquee>"
+  hra="<game><path>./Neo Geo/${zip}</path><name>${ostatok}</name><image>~/../thumbs/MAME/Named_Snaps/${prvy%.neo}.png</image><titleshot>~/../thumbs/MAME/Named_Titles/${prvy%.neo}.png</titleshot><thumbnail>~/../thumbs/MAME/Named_Boxarts/${prvy%.neo}.png</thumbnail><marquee>~/../thumbs/MAME/Named_Logos/${prvy%.neo}.png</marquee>"
   echo "${hra}</game>" >> ~/roms/neogeo/gamelist.xml  
 done < "$ROMLIST"
 echo "<folder><path>./Neo Geo</path><name>Neo Geo</name><image>~/../thumb/neogeo.png</image></folder>" >> ~/roms/neogeo/gamelist.xml
