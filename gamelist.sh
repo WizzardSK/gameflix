@@ -78,11 +78,10 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/roms/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/roms/${rom[0]}/gamelist.xml; fi
 done
 
-echo "Neo Geo";
-echo "<gameList>" > ~/roms/neogeo/gamelist.xml;
+echo "Neo Geo"; echo "<gameList>" > ~/roms/neogeo/gamelist.xml;
 ROMLIST="neogeo.dat";
 while IFS= read -r riadok; do
-  prvy="${riadok%%[[:space:]]*}"; ostatok="${riadok#*[[:space:]]}"; zip="${prvy%.neo}.zip"; printf '"%s\t%s",\n' "$zip" "$ostatok" >> ~/gameflix/Neo\ Geo.html; ((pocet++)); 
+  prvy="${riadok%%[[:space:]]*}"; ostatok="${riadok#*[[:space:]]}"; zip="${prvy%.neo}.zip"
   hra="<game><path>./Neo Geo/${zip}</path><name>${ostatok}</name><image>~/../thumbs/MAME/Named_Snaps/${ostatok}.png</image><titleshot>~/../thumbs/MAME/Named_Titles/${ostatok}.png</titleshot><thumbnail>~/../thumbs/MAME/Named_Boxarts/${ostatok}.png</thumbnail><marquee>~/../thumbs/MAME/Named_Logos/${ostatok}.png</marquee>"
   echo "${hra}</game>" >> ~/roms/neogeo/gamelist.xml  
 done < "$ROMLIST"
