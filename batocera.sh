@@ -7,7 +7,7 @@ if [ ! -f /userdata/system/mount-zip ];  then wget -O /userdata/system/mount-zip
 if [ ! -f /userdata/system/ratarmount ]; then wget -O /userdata/system/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v1.1.0/ratarmount-1.1.0-full-x86_64.AppImage; chmod +x /userdata/system/ratarmount; fi
 if [ ! -f /userdata/system/configs/emulationstation/es_systems_voxatron.cfg ]; then wget -O /userdata/system/configs/emulationstation/es_systems_voxatron.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems_voxatron.cfg; fi
 
-mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} "/userdata/roms/neogeo/Neo Geo"
+mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone}
 mkdir -p /userdata/roms/tic80/TIC-80 /userdata/roms/voxatron/Voxatron /userdata/roms/lowresnx/LowresNX /userdata/roms/wasm4/WASM-4 /userdata/roms/uzebox/Uzebox "/userdata/roms/atari2600/Atari 2600 ROMS"
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
@@ -81,6 +81,19 @@ for each in "${roms[@]}"; do
     mkdir -p /userdata/roms/${rom[0]}/${rom3}; mount -o bind /userdata/zips/${rom1##*/} /userdata/roms/${rom[0]}/${rom3}
   fi
 done
+
+DAT_URL="https://github.com/WizzardSK/gameflix/raw/refs/heads/main/neogeo.dat"; DAT_FILE="/tmp/neogeo.dat"
+SRC_DIR="/userdata/rom/Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade"; DEST_DIR="/userdata/roms/neogeo/Neo Geo"
+curl -s -L "$DAT_URL" -o "$DAT_FILE"; mkdir -p "$DEST_DIR"
+while IFS= read -r line; do
+    neo_file="${line%%[[:space:]]*}"
+    [[ -z "$neo_file" || "$neo_file" != *.neo ]] && continue
+    base_name="${neo_file%.neo}"
+    zip_name="$base_name.zip"
+    src_file="$SRC_DIR/$zip_name"
+    dest_link="$DEST_DIR/$zip_name"
+    if [[ -f "$src_file" ]]; then ln -sf "$src_file" "$dest_link"; fi
+done < "$DAT_FILE"
 
 wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/batocera/gamelist.zip; unzip -o /userdata/system/gamelist.zip -d /userdata/roms
 
