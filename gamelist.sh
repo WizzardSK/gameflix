@@ -86,7 +86,7 @@ while IFS= read -r riadok; do
   hra="<game><path>./Neo Geo/${zip}</path><name>${ostatok}</name><image>~/../thumbs/MAME/Named_Snaps/${ostatok}.png</image><titleshot>~/../thumbs/MAME/Named_Titles/${ostatok}.png</titleshot><thumbnail>~/../thumbs/MAME/Named_Boxarts/${ostatok}.png</thumbnail><marquee>~/../thumbs/MAME/Named_Logos/${ostatok}.png</marquee>"
   echo "${hra}</game>" >> ~/roms/neogeo/gamelist.xml  
 done < "$ROMLIST"
-echo "</gameList>" > ~/roms/neogeo/gamelist.xml;
+echo "</gameList>" >> ~/roms/neogeo/gamelist.xml;
 
 #HTMLFILES=("$HOME/roms/neogeo/gamelist.xml")
 #for HTMLFILE in "${HTMLFILES[@]}"; do
