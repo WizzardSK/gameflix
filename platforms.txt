@@ -1,9 +1,9 @@
-atari2600;No-Intro/Atari - 2600;Atari - 2600;Atari 2600 NoIntro;stella_libretro
+atari2600;No-Intro/Atari - Atari 2600;Atari - 2600;Atari 2600 NoIntro;stella_libretro
 atari2600;TOSEC/Atari/2600 & VCS/Games;Atari - 2600;Atari 2600 TOSEC;stella_libretro
 atari2600;TOSEC/Atari/2600 & VCS/Homebrew/Games/[BIN];Atari - 2600;Atari 2600 homebrew;stella_libretro
-atari5200;No-Intro/Atari - 5200;Atari - 5200;Atari 5200 NoIntro;a5200_libretro
+atari5200;No-Intro/Atari - Atari 5200;Atari - 5200;Atari 5200 NoIntro;a5200_libretro
 atari5200;TOSEC/Atari/5200/Games;Atari - 5200;Atari 5200 TOSEC;a5200_libretro
-atari7800;No-Intro/Atari - 7800;Atari - 7800;Atari 7800 NoIntro;prosystem_libretro
+atari7800;No-Intro/Atari - Atari 7800 (BIN);Atari - 7800;Atari 7800 NoIntro;prosystem_libretro
 atari7800;TOSEC/Atari/7800/Games;Atari - 7800;Atari 7800 TOSEC;prosystem_libretro
 atari800;TOSEC/Atari/8bit/Games/[ATR];Atari - 8-bit;<code>Atari 8bit</code> ATR;atari800
 atari800;TOSEC/Atari/8bit/Games/[ATX];Atari - 8-bit;<code>Atari 8bit</code> ATX;atari800
@@ -12,16 +12,16 @@ atari800;TOSEC/Atari/8bit/Games/[CAS];Atari - 8-bit;<code>Atari 8bit</code> CAS;
 atari800;TOSEC/Atari/8bit/Games/[XEX];Atari - 8-bit;<code>Atari 8bit</code> XEX;atari800
 atari800;TOSEC/Atari/8bit/Educational/[ATR];Atari - 8-bit;<code>Atari 8bit</code> Edu;atari800
 atari800;TOSEC/Atari/8bit/Applications/[ATR];Atari - 8-bit;<code>Atari 8bit</code> Apps;atari800
-atarist;No-Intro/Atari - ST;Atari - ST;<code>Atari ST</code> NoIntro;hatari_libretro
+atarist;No-Intro/Atari - Atari ST;Atari - ST;<code>Atari ST</code> NoIntro;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[ST];Atari - ST;<code>Atari ST</code> ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[STX];Atari - ST;<code>Atari ST</code> STX;hatari_libretro
 atarist;TOSEC/Atari/ST/Educational/[ST];Atari - ST;<code>Atari ST</code> Edu ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Educational/[STX];Atari - ST;<code>Atari ST</code> Edu STX;hatari_libretro
-atarijaguar;No-Intro/Atari - Jaguar (J64);Atari - Jaguar;Atari Jaguar NoIntro;virtualjaguar_libretro
+atarijaguar;No-Intro/Atari - Atari Jaguar (J64);Atari - Jaguar;Atari Jaguar NoIntro;virtualjaguar_libretro
 atarijaguar;TOSEC/Atari/Jaguar/Games/[J64];Atari - Jaguar;Atari Jaguar TOSEC;virtualjaguar_libretro
 atarijaguarcd;Redump/Atari - Jaguar CD Interactive Multimedia System;Atari - Jaguar;Jaguar CD Redump;bigpemu;cue
 atarijaguarcd;No-Intro/Non-Redump - Atari - Atari Jaguar CD;Atari - Jaguar;Jaguar CD Non-Redump;bigpemu;cdi
-atarilynx;No-Intro/Atari - Lynx (LYX);Atari - Lynx;<i>Atari Lynx</i> NoIntro;mednafen_lynx_libretro
+atarilynx;No-Intro/Atari - Atari Lynx (LYX);Atari - Lynx;<i>Atari Lynx</i> NoIntro;mednafen_lynx_libretro
 atarilynx;TOSEC/Atari/Lynx/Games/[LNX];Atari - Lynx;<i>Atari Lynx</i> TOSEC;mednafen_lynx_libretro
 
 channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;<p>Fairchild Channel F NoIntro;freechaf_libretro
