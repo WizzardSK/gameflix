@@ -43,3 +43,19 @@ for each in "${roms[@]}"; do
     bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/${rom1##*/} $HOME/roms/${rom3}
   fi
 done
+
+DAT_URL="https://github.com/WizzardSK/gameflix/raw/refs/heads/main/neogeo.dat"
+DAT_FILE="/tmp/neogeo.dat"
+SRC_DIR="$HOME/myrient/Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade"
+DEST_DIR="$HOME/roms/Neo Geo"
+curl -s -L "$DAT_URL" -o "$DAT_FILE"
+mkdir -p "$DEST_DIR"
+while IFS= read -r line; do
+    neo_file="${line%%[[:space:]]*}"
+    [[ -z "$neo_file" || "$neo_file" != *.neo ]] && continue
+    base_name="${neo_file%.neo}"
+    zip_name="$base_name.zip"
+    src_file="$SRC_DIR/$zip_name"
+    dest_link="$DEST_DIR/$zip_name"
+    if [[ -f "$src_file" ]]; then ln -sf "$src_file" "$dest_link"; fi
+done < "$DAT_FILE"
