@@ -68,7 +68,6 @@ echo "<script>bgImage(\"atari2600\"); const fileNames = [" >> ~/gameflix/Atari\ 
 { while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/Atari\ 2600\ ROMS.html; ((pocet++)); ((total++)); done } < <(ls ~/roms/Atari\ 2600\ ROMS)
 printf ']; generateFileLinks("roms/Atari 2600 ROMS", "Atari_-_2600");</script><script src=\"script.js\"></script>' >> ~/gameflix/Atari\ 2600\ ROMS.html
 
-rm "$HOME/gameflix/Neo Geo AES.html" "$HOME/gameflix/Neo Geo MVS.html"
 IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
@@ -104,11 +103,6 @@ done
 
 ROMLIST="neogeo.dat"
 curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/neogeo.dat" -o $ROMLIST
-HTMLFILES=("$HOME/gameflix/Neo Geo AES.html" "$HOME/gameflix/Neo Geo MVS.html")
-for HTMLFILE in "${HTMLFILES[@]}"; do
-  while IFS=$'\t' read -r filename title; do base="${filename%.*}"; zipname="${base}.zip"; sed -i "s|\\b${zipname}\\b|${zipname}\t${title}|g" "$HTMLFILE"; done < "$ROMLIST"
-done
-
 pocet=0
 wget -O ~/gameflix/Neo\ Geo.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"neogeo\"); const fileNames = [" >> ~/gameflix/Neo\ Geo.html
