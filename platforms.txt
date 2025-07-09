@@ -280,7 +280,7 @@ x1;TOSEC/Sharp/X1/Games/[2D];Sharp - X1;<code>Sharp X1</code> 2D;x1_libretro
 x1;TOSEC/Sharp/X1/Games/[D88];Sharp - X1;<code>Sharp X1</code> D88;x1_libretro
 x68000;TOSEC/Sharp/X68000/Games/[DIM];Sharp - X68000;<code>Sharp X68000</code> TOSEC;px68k_libretro
 
-mame;Internet Archive/chadmaster/mame-merged/mame-merged;<p>MAME;MAME;mame
+mame;Internet Archive/chadmaster/mame-merged/mame-merged;MAME;<p>MAME;mame
 fbneo;Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade;MAME;FinalBurn Neo;fbneo_libretro
 model3;Internet Archive/chadmaster/segamodel3/ROMs;MAME;Sega Model 3;supermodel
 neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD Redump;neocd_libretro;cue
