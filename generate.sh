@@ -73,7 +73,7 @@ wget -nv -O ~/gameflix/Neo\ Geo.html https://raw.githubusercontent.com/WizzardSK
 echo "<script>bgImage(\"neogeo\"); const fileNames = [" >> ~/gameflix/Neo\ Geo.html
 while IFS= read -r riadok; do prvy="${riadok%%[[:space:]]*}"; ostatok="${riadok#*[[:space:]]}"; zip="${prvy%.neo}.zip"; printf '"%s\t%s",\n' "$zip" "$ostatok" >> ~/gameflix/Neo\ Geo.html; ((pocet++)); done < "$ROMLIST"
 printf ']; generateFileLinks("roms/Neo Geo", "MAME");</script><script src=\"script.js\"></script>' >> ~/gameflix/Neo\ Geo.html
-echo "<a href=\"Neo Geo.html\" target=\"main\">Neo Geo</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Neo Geo\") core=\"fbneo_libretro\";;" >> ~/gameflix/retroarch.sh  
+echo "<p><a href=\"Neo Geo.html\" target=\"main\">Neo Geo</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Neo Geo\") core=\"fbneo_libretro\";;" >> ~/gameflix/retroarch.sh  
 
 IFS=";"
 for each in "${roms[@]}"; do
