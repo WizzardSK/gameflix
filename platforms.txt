@@ -1,13 +1,3 @@
-neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD Redump;neocd_libretro;cue
-neogeocd;TOSEC-ISO/SNK/Neo-Geo CD/Games/[ISO];SNK - Neo Geo CD;Neo Geo CD ISO;neocd_libretro;cue
-ngp;No-Intro/SNK - NeoGeo Pocket;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> NoIntro;mednafen_ngp_libretro
-ngp;TOSEC/SNK/Neo-Geo Pocket/Games;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> TOSEC;mednafen_ngp_libretro
-ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;<i>NGP Color</i> NoIntro;mednafen_ngp_libretro
-ngpc;TOSEC/SNK/Neo-Geo Pocket Color/Games;SNK - Neo Geo Pocket Color;<i>NGP Color</i> TOSEC;mednafen_ngp_libretro
-mame;Internet Archive/chadmaster/mame-merged/mame-merged;MAME;MAME;mame
-fbneo;Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade;MAME;FinalBurn Neo;fbneo_libretro
-model3;Internet Archive/chadmaster/segamodel3/ROMs;MAME;Sega Model 3;supermodel
-
 atari2600;No-Intro/Atari - Atari 2600;Atari - 2600;Atari 2600 NoIntro;stella_libretro
 atari2600;TOSEC/Atari/2600 & VCS/Games;Atari - 2600;Atari 2600 TOSEC;stella_libretro
 atari2600;TOSEC/Atari/2600 & VCS/Homebrew/Games/[BIN];Atari - 2600;Atari 2600 homebrew;stella_libretro
@@ -289,3 +279,13 @@ pc98;TOSEC/NEC/PC-9801/Games/[FDD];NEC - PC-98;<code>NEC PC-98</code> TOSEC;np2k
 x1;TOSEC/Sharp/X1/Games/[2D];Sharp - X1;<code>Sharp X1</code> 2D;x1_libretro
 x1;TOSEC/Sharp/X1/Games/[D88];Sharp - X1;<code>Sharp X1</code> D88;x1_libretro
 x68000;TOSEC/Sharp/X68000/Games/[DIM];Sharp - X68000;<code>Sharp X68000</code> TOSEC;px68k_libretro
+
+mame;Internet Archive/chadmaster/mame-merged/mame-merged;MAME;MAME;mame
+fbneo;Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade;MAME;FinalBurn Neo;fbneo_libretro
+model3;Internet Archive/chadmaster/segamodel3/ROMs;MAME;Sega Model 3;supermodel
+neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD Redump;neocd_libretro;cue
+neogeocd;TOSEC-ISO/SNK/Neo-Geo CD/Games/[ISO];SNK - Neo Geo CD;Neo Geo CD ISO;neocd_libretro;cue
+ngp;No-Intro/SNK - NeoGeo Pocket;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> NoIntro;mednafen_ngp_libretro
+ngp;TOSEC/SNK/Neo-Geo Pocket/Games;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> TOSEC;mednafen_ngp_libretro
+ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;<i>NGP Color</i> NoIntro;mednafen_ngp_libretro
+ngpc;TOSEC/SNK/Neo-Geo Pocket Color/Games;SNK - Neo Geo Pocket Color;<i>NGP Color</i> TOSEC;mednafen_ngp_libretro
