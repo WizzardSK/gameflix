@@ -13,7 +13,7 @@ echo "<figure><img class=loaded src='https://raw.githubusercontent.com/fabriceca
 
 pocet=$(ls ~/roms/TIC-80/*.tic | wc -l); total=$((pocet+total))
 echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"TIC-80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
-wget -O ~/gameflix/TIC-80.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+wget -nv -O ~/gameflix/TIC-80.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"tic80\"); const fileNames = [" >> ~/gameflix/TIC-80.html; ((platforms++))
 data=$(curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g'); records=(); while IFS= read -r line; do
   if [[ "$line" =~ id[[:space:]]*=[[:space:]]*([0-9]+) ]]; then id="${BASH_REMATCH[1]}"; else continue; fi
@@ -26,7 +26,7 @@ printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"scri
 
 pocet=$(ls ~/roms/WASM-4/*.wasm | wc -l); total=$((pocet+total))
 echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"WASM-4\") core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh  
-wget -O ~/gameflix/WASM-4.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+wget -nv -O ~/gameflix/WASM-4.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"wasm4\"); const fileNames = [" >> ~/gameflix/WASM-4.html; ((platforms++))
 html=$(curl -s "https://wasm4.org/play/")
 echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do
@@ -35,41 +35,41 @@ done; printf ']; generateWasmLinks("roms/WASM-4", "WASM-4");</script><script src
 
 pocet=$(ls ~/roms/Uzebox/*.uze ~/roms/Uzebox/*.UZE -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"Uzebox.html\" target=\"main\">Uzebox</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Uzebox\") core=\"uzem_libretro\";;" >> ~/gameflix/retroarch.sh  
-wget -O ~/gameflix/Uzebox.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+wget -nv -O ~/gameflix/Uzebox.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"uzebox\"); const fileNames = [" >> ~/gameflix/Uzebox.html; ((platforms++))
 { while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/Uzebox.html; ((pocet++)); ((total++)); done } < <(ls ~/roms/Uzebox/*.uze ~/roms/Uzebox/*.UZE 2>/dev/null | xargs -I {} basename {})
 printf ']; generateUzeLinks("roms/Uzebox", "Uzebox");</script><script src=\"script.js\"></script>' >> ~/gameflix/Uzebox.html
 
 pocet=$(ls ~/roms/LowresNX/*.nx | wc -l); total=$((pocet+total))
 echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"LowresNX\") core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh  
-wget -O ~/gameflix/LowresNX.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+wget -nv -O ~/gameflix/LowresNX.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"lowresnx\"); const fileNames = [" >> ~/gameflix/LowresNX.html; ((platforms++))
 curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/lowresnx.txt" | while IFS=$'\t' read -r id name picture cart; do if [[ -n "$cart" && -n "$picture" ]]; then echo "'$cart|$picture|$name'," >> ~/gameflix/LowresNX.html; fi; done
 printf ']; generateLrNXLinks("roms/LowresNX", "LowresNX");</script><script src=\"script.js\"></script>' >> ~/gameflix/LowresNX.html
 
 pocet=$(curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/pico8.txt" | wc -l); total=$((pocet+total))
 echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"PICO-8\") core=\"pico8 -run\";;" >> ~/gameflix/retroarch.sh  
-wget -O ~/gameflix/PICO-8.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+wget -nv -O ~/gameflix/PICO-8.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"pico8\"); const fileNames = [" >> ~/gameflix/PICO-8.html; ((platforms++))
 curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/pico8.txt" | while IFS=$'\t' read -r id name cart; do echo -e "\"$id\t$name\t$cart\"," >> ~/gameflix/PICO-8.html; done
 printf ']; generatePicoLinks("roms/PICO-8", "PICO-8");</script><script src=\"script.js\"></script>' >> ~/gameflix/PICO-8.html
 
 pocet=$(curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/voxatron.txt" | wc -l); total=$((pocet+total))
 echo "<a href=\"Voxatron.html\" target=\"main\">Voxatron</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Voxatron\") core=\"vox\";;" >> ~/gameflix/retroarch.sh  
-wget -O ~/gameflix/Voxatron.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+wget -nv -O ~/gameflix/Voxatron.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"voxatron\"); const fileNames = [" >> ~/gameflix/Voxatron.html; ((platforms++))
 curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/voxatron.txt" | while IFS=$'\t' read -r id name cart; do echo -e "\"$id\t$name\t$cart\"," >> ~/gameflix/Voxatron.html; done
 printf ']; generateVoxLinks("roms/Voxatron", "Voxatron");</script><script src=\"script.js\"></script>' >> ~/gameflix/Voxatron.html
 
 pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\"><p>Atari 2600 ROMS</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Atari 2600 ROMS\") core=\"stella_libretro\";;" >> ~/gameflix/retroarch.sh  
-wget -O ~/gameflix/Atari\ 2600\ ROMS.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+wget -nv -O ~/gameflix/Atari\ 2600\ ROMS.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"atari2600\"); const fileNames = [" >> ~/gameflix/Atari\ 2600\ ROMS.html
 { while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/Atari\ 2600\ ROMS.html; ((pocet++)); ((total++)); done } < <(ls ~/roms/Atari\ 2600\ ROMS)
 printf ']; generateFileLinks("roms/Atari 2600 ROMS", "Atari_-_2600");</script><script src=\"script.js\"></script>' >> ~/gameflix/Atari\ 2600\ ROMS.html
 
 ROMLIST="neogeo.dat"; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/neogeo.dat" -o $ROMLIST; pocet=0
-wget -O ~/gameflix/Neo\ Geo.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+wget -nv -O ~/gameflix/Neo\ Geo.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"neogeo\"); const fileNames = [" >> ~/gameflix/Neo\ Geo.html
 while IFS= read -r riadok; do prvy="${riadok%%[[:space:]]*}"; ostatok="${riadok#*[[:space:]]}"; zip="${prvy%.neo}.zip"; printf '"%s\t%s",\n' "$zip" "$ostatok" >> ~/gameflix/Neo\ Geo.html; ((pocet++)); done < "$ROMLIST"
 printf ']; generateFileLinks("roms/Neo Geo", "MAME");</script><script src=\"script.js\"></script>' >> ~/gameflix/Neo\ Geo.html
@@ -93,7 +93,7 @@ for each in "${roms[@]}"; do
     continue
   fi
   > ~/gameflix/${rom3}.html
-  wget -O ~/gameflix/${rom3}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+  wget -nv -O ~/gameflix/${rom3}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html
   pocet=0
   { while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++)); done } < <(ls ~/${romfolder})
