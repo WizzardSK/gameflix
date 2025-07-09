@@ -1,5 +1,4 @@
 #!/bin/bash
-
 rclone mount myrient: ~/myrient --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other
 
 API_URL="https://tic80.com/api?fn=dir&path=play/Games"; BASE_URL="https://tic80.com/cart"; DOWNLOAD_DIR="$HOME/roms/tic80"; RESPONSE=$(curl -s "$API_URL")
@@ -51,8 +50,7 @@ done
 if [ ! -f ~/share/zip/atari2600roms.zip ]; then wget -O ~/share/zip/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
 fuse-zip ~/share/zip/atari2600roms.zip ~/share/zip/atari2600roms -o allow_other; bindfs ~/share/zip/atari2600roms/ROMS ~/roms/Atari\ 2600\ ROMS
 
-declare -A seen
-mkdir -p "$HOME/share/thumbs"
+declare -A seen; mkdir -p "$HOME/share/thumbs"
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 IFS=";"; for each in "${roms[@]}"; do
   echo "${rom3}"; read -ra rom < <(printf '%s' "$each")
@@ -65,11 +63,4 @@ IFS=";"; for each in "${roms[@]}"; do
       sleep 0.5
     fi
   fi  
-  #rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  #if [[ ${rom[1]} =~ \.zip$ ]]; then
-  #  mkdir -p ~/roms/${rom3}
-  #  if [ -z "$(ls -A ~/roms/${rom3})" ]; then
-  #    ratarmount ~/myrient/${rom1} ~/roms/${rom3}
-  #  fi
-  #fi
 done
