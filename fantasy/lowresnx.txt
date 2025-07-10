@@ -1198,6 +1198,7 @@
 401	Lost Heights	6LamKTeM8y_Lost_Heights.png	6LamKTeM8y_Lost_Heights.nx
 400	Lose Your Marbles	2cJDi2GX8b_Lose_Your_Marbles.png	2cJDi2GX8b_Lose_Your_Marbles.nx
 394	Homeless Simulator (Original)	PDBGNGFMYG_Homeless_Simulator_City_Edition.png	PDBGNGFMYG_Homeless_Simulator_City_Edition.nx
+394	Homeless Simulator (Original)	PDBGNGFMYG_Homeless_Simulator_City_Edition.png	PDBGNGFMYG_Homeless_Simulator_City_Edition.nx
 393	Pac Dug game	xDPerYhGCp_Pac_Dug_2.2.png	xDPerYhGCp_Pac_Dug_2.2.nx
 391	Freecell	6JqcLd24iW_freecell1.3.png	6JqcLd24iW_freecell1.4.nx
 390	Yache Solitaire dice game	6SihrEAshg_Yache_Solitaire_Game_2.0.png	6SihrEAshg_Yache_Solitaire_Game_2.0.nx
@@ -1257,7 +1258,6 @@
 260	 Ping music toy	fkSXXmTBHi_Ping.png	fkSXXmTBHi_Ping.nx
 257	Seven Seas Solitaire card game	f4WpKcKa6y_7seas.png	f4WpKcKa6y_7seas.nx
 254	Free range golf game	dUsokDhYDP_Free_Range_Golf_Game_2.1.png	dUsokDhYDP_Free_Range_Golf_Game_2.1.nx
-250	1000-7	T4GfodT74F_10007English_Version.png	T4GfodT74F_10007English_Version.nx
 249	Space explorer	qMGe4ceQ3C_Space_Explorer_1.0.png	qMGe4ceQ3C_Space_Explorer_1.0.nx
 248	Mandlebrot toy	HJ3UFgVS6k_Mandlebrot.png	HJ3UFgVS6k_Mandlebrot.nx
 247	Space sampler and explorer toy	aNQ7FrLZc4_Panetary_Worlds_3.png	aNQ7FrLZc4_Panetary_Worlds_3.nx
