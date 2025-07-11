@@ -10,7 +10,7 @@ if [ ! -f /userdata/roms/voxatron/splore.png ]; then wget -nv -O /userdata/roms/
 if [ ! -f /userdata/roms/pico8/splore.png ];    then wget -nv -O /userdata/roms/pico8/splore.png    https://github.com/WizzardSK/gameflix/raw/main/fantasy/pico8.png; fi
 
 mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone}
-mkdir -p /userdata/roms/tic80/TIC-80 /userdata/roms/voxatron/Voxatron /userdata/roms/lowresnx/LowresNX /userdata/roms/wasm4/WASM-4 /userdata/roms/uzebox/Uzebox "/userdata/roms/atari2600/Atari 2600 ROMS"
+mkdir -p /userdata/roms/tic80/TIC-80 /userdata/roms/lowresnx/LowresNX /userdata/roms/wasm4/WASM-4 /userdata/roms/uzebox/Uzebox "/userdata/roms/atari2600/Atari 2600 ROMS"
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 rclone mount thumbs:Data/share/thumbs /userdata/thumbs --vfs-cache-mode full --daemon --config=/userdata/system/rclone.conf --cache-dir=/userdata/system/.cache/rclone --allow-non-empty --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h
@@ -20,20 +20,17 @@ if [ ! -f /userdata/system/offline ]; then
   archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip" )
   archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/wasm4.zip" )
   archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/uzebox.zip" )
-  archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/voxatron.zip" )
   archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/lowresnx.zip" )
 else
   if [ ! -f /userdata/zip/Atari-2600-VCS-ROM-Collection.zip ]; then wget -nv -O /userdata/zip/Atari-2600-VCS-ROM-Collection.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
   if [ ! -f /userdata/zip/tic80.zip ]; then wget -nv -O /userdata/zip/tic80.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip; fi
   if [ ! -f /userdata/zip/wasm4.zip ]; then wget -nv -O /userdata/zip/wasm4.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/wasm4.zip; fi
   if [ ! -f /userdata/zip/uzebox.zip ]; then wget -nv -O /userdata/zip/uzebox.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/uzebox.zip; fi
-  if [ ! -f /userdata/zip/voxatron.zip ]; then wget -nv -O /userdata/zip/voxatron.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/voxatron.zip; fi
   if [ ! -f /userdata/zip/lowresnx.zip ]; then wget -nv -O /userdata/zip/lowresnx.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/lowresnx.zip; fi    
   archives=( "/userdata/zip/Atari-2600-VCS-ROM-Collection.zip" )
   archives+=( "/userdata/zip/tic80.zip" )
   archives+=( "/userdata/zip/wasm4.zip" )
   archives+=( "/userdata/zip/uzebox.zip" )
-  archives+=( "/userdata/zip/voxatron.zip" )
   archives+=( "/userdata/zip/lowresnx.zip" )
 fi
 
@@ -58,19 +55,10 @@ for each in "${roms[@]}"; do
   fi
 done
 
-if [ ! -f /userdata/system/offline ]; then
-  /userdata/system/ratarmount -o attr_timeout=3600 https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8ai.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8jz.zip /userdata/roms/pico8/PICO-8 -f & 
-else
-  wget -nv -O /userdata/zip/pico8ai.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8ai.zip
-  wget -nv -O /userdata/zip/pico8jz.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/pico8jz.zip
-  /userdata/system/ratarmount -o attr_timeout=3600 /userdata/zip/pico8ai.zip /userdata/zip/pico8jz.zip /userdata/roms/pico8/PICO-8 -f & 
-fi
-
 /userdata/system/ratarmount -o attr_timeout=3600 --disable-union-mount "${archives[@]}" /userdata/zips -f & 
 while ! grep -q " /userdata/zips " /proc/mounts; do sleep 5; done
 mount -o bind /userdata/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "/userdata/roms/atari2600/Atari 2600 ROMS"
 mount -o bind /userdata/zips/tic80.zip "/userdata/roms/tic80/TIC-80"
-mount -o bind /userdata/zips/voxatron.zip "/userdata/roms/voxatron/Voxatron"
 mount -o bind /userdata/zips/lowresnx.zip "/userdata/roms/lowresnx/LowresNX"
 mount -o bind /userdata/zips/wasm4.zip "/userdata/roms/wasm4/WASM-4"
 mount -o bind /userdata/zips/uzebox.zip "/userdata/roms/uzebox/Uzebox"
