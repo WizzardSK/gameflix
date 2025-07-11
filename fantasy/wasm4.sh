@@ -1,9 +1,9 @@
 #!/bin/bash
 BASE_URL="https://wasm4.org/play"
 CARTS_URL="https://wasm4.org/carts"
-ROM_DIR="$HOME/wasm4"
-IMG_DIR="$HOME/wasm4"
-mkdir "$HOME/wasm4"
+ROM_DIR="$GITHUB_WORKSPACE/wasm4"
+IMG_DIR="$GITHUB_WORKSPACE/wasm4"
+mkdir "$GITHUB_WORKSPACE/wasm4"
 mkdir -p "$ROM_DIR" "$IMG_DIR"; curl -s "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -r GAME; do
   for EXT in wasm png; do FILE="${ROM_DIR}/$GAME.$EXT"; [[ "$EXT" == "png" ]] && FILE="${IMG_DIR}/$GAME.$EXT"; [[ -f "$FILE" ]] || wget -nv -O "$FILE" "$CARTS_URL/$GAME.$EXT"; done
 done
