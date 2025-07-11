@@ -3,7 +3,7 @@ BASE_URL="https://wasm4.org/play"
 CARTS_URL="https://wasm4.org/carts"
 DIR="$GITHUB_WORKSPACE/wasm4"
 mkdir "$DIR"
-curl -s "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -r GAME; do
+curl -sL "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -r GAME; do
   for EXT in wasm png; do
     FILE="$DIR/$GAME.$EXT"; 
     [[ "$EXT" == "png" ]] && FILE="$DIR/$GAME.$EXT"; 
