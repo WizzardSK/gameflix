@@ -1,11 +1,13 @@
 #!/bin/bash
 emulationstation stop; chvt 3; clear; mount -o remount,size=6000M /tmp
 wget -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf > /dev/null 2>&1
-if [ ! -f /userdata/system/httpdirfs ];  then wget -O /userdata/system/httpdirfs  https://github.com/WizzardSK/gameflix/raw/main/batocera/httpdirfs; chmod +x /userdata/system/httpdirfs; fi
-if [ ! -f /userdata/system/fuse-zip ];   then wget -O /userdata/system/fuse-zip   https://github.com/WizzardSK/gameflix/raw/main/batocera/fuse-zip;  chmod +x /userdata/system/fuse-zip; fi
-if [ ! -f /userdata/system/mount-zip ];  then wget -O /userdata/system/mount-zip  https://github.com/WizzardSK/gameflix/raw/main/batocera/mount-zip; chmod +x /userdata/system/mount-zip; fi
-if [ ! -f /userdata/system/ratarmount ]; then wget -O /userdata/system/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v1.1.0/ratarmount-1.1.0-full-x86_64.AppImage; chmod +x /userdata/system/ratarmount; fi
-if [ ! -f /userdata/system/configs/emulationstation/es_systems_voxatron.cfg ]; then wget -O /userdata/system/configs/emulationstation/es_systems_voxatron.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems_voxatron.cfg; fi
+if [ ! -f /userdata/system/httpdirfs ];  then wget -nv -O /userdata/system/httpdirfs  https://github.com/WizzardSK/gameflix/raw/main/batocera/httpdirfs; chmod +x /userdata/system/httpdirfs; fi
+if [ ! -f /userdata/system/fuse-zip ];   then wget -nv -O /userdata/system/fuse-zip   https://github.com/WizzardSK/gameflix/raw/main/batocera/fuse-zip;  chmod +x /userdata/system/fuse-zip; fi
+if [ ! -f /userdata/system/mount-zip ];  then wget -nv -O /userdata/system/mount-zip  https://github.com/WizzardSK/gameflix/raw/main/batocera/mount-zip; chmod +x /userdata/system/mount-zip; fi
+if [ ! -f /userdata/system/ratarmount ]; then wget -nv -O /userdata/system/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v1.1.0/ratarmount-1.1.0-full-x86_64.AppImage; chmod +x /userdata/system/ratarmount; fi
+if [ ! -f /userdata/system/configs/emulationstation/es_systems_voxatron.cfg ]; then wget -nv -O /userdata/system/configs/emulationstation/es_systems_voxatron.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems_voxatron.cfg; fi
+if [ ! -f /userdata/roms/voxatron/splore.png ]; then wget -nv -O /userdata/roms/voxatron/splore.png https://github.com/WizzardSK/gameflix/raw/main/fantasy/voxatron.png; fi
+if [ ! -f /userdata/roms/pico8/splore.png ];    then wget -nv -O /userdata/roms/pico8/splore.png    https://github.com/WizzardSK/gameflix/raw/main/fantasy/pico8.png; fi
 
 mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone}
 mkdir -p /userdata/roms/tic80/TIC-80 /userdata/roms/voxatron/Voxatron /userdata/roms/lowresnx/LowresNX /userdata/roms/wasm4/WASM-4 /userdata/roms/uzebox/Uzebox "/userdata/roms/atari2600/Atari 2600 ROMS"
@@ -86,13 +88,13 @@ DAT_URL="https://github.com/WizzardSK/gameflix/raw/refs/heads/main/neogeo.dat"; 
 SRC_DIR="/userdata/rom/Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade"; DEST_DIR="/userdata/roms/neogeo/Neo Geo"
 curl -s -L "$DAT_URL" -o "$DAT_FILE"; mkdir -p "$DEST_DIR"
 while IFS= read -r line; do
-    neo_file="${line%%[[:space:]]*}"
-    [[ -z "$neo_file" || "$neo_file" != *.neo ]] && continue
-    base_name="${neo_file%.neo}"
-    zip_name="$base_name.zip"
-    src_file="$SRC_DIR/$zip_name"
-    dest_link="$DEST_DIR/$zip_name"
-    if [[ -f "$src_file" ]]; then ln -sf "$src_file" "$dest_link"; fi
+  neo_file="${line%%[[:space:]]*}"
+  [[ -z "$neo_file" || "$neo_file" != *.neo ]] && continue
+  base_name="${neo_file%.neo}"
+  zip_name="$base_name.zip"
+  src_file="$SRC_DIR/$zip_name"
+  dest_link="$DEST_DIR/$zip_name"
+  if [[ -f "$src_file" ]]; then ln -sf "$src_file" "$dest_link"; fi
 done < "$DAT_FILE"
 
 wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/batocera/gamelist.zip; unzip -o /userdata/system/gamelist.zip -d /userdata/roms
