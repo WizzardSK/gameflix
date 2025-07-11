@@ -8,7 +8,7 @@ mkdir -p "$ROM_DIR" "$IMG_DIR"; curl -s "$BASE_URL" | grep -oP '(?<=href="/play/
   for EXT in wasm png; do FILE="${ROM_DIR}/$GAME.$EXT"; [[ "$EXT" == "png" ]] && FILE="${IMG_DIR}/$GAME.$EXT"; [[ -f "$FILE" ]] || wget -nv -O "$FILE" "$CARTS_URL/$GAME.$EXT"; done
 done
 
-cd ~/wasm4
+cd "$GITHUB_WORKSPACE/wasm4"
 zip -r "$GITHUB_WORKSPACE/fantasy/wasm4.zip" *
 cd "$GITHUB_WORKSPACE"
 git config --global user.name "GitHub Actions"
