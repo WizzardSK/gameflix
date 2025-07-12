@@ -21,30 +21,35 @@ if [ ! -d "$HOME/share/thumbs/Uzebox" ]; then git clone --depth 1 "https://githu
   git -C "$HOME/share/thumbs/Uzebox" config pull.rebase false 2>&1 | tee -a "$HOME/git.log"; git -C "$HOME/share/thumbs/Uzebox" pull 2>&1 | tee -a "$HOME/git.log"
 fi
 
+if [ ! -d "$HOME/share/thumbs/Vircon32" ]; then git clone --depth 1 "https://github.com/WizzardSK/Vircon32.git" "$HOME/share/thumbs/Vircon32" 2>&1 | tee -a "$HOME/git.log"; else
+  git config --global --add safe.directory "$HOME/share/thumbs/Vircon32"
+  git -C "$HOME/share/thumbs/Vircon32" config pull.rebase false 2>&1 | tee -a "$HOME/git.log"; git -C "$HOME/share/thumbs/Vircon32" pull 2>&1 | tee -a "$HOME/git.log"
+fi
+
 FILE_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/lowresnx.txt"; DOWNLOAD_DIR="$HOME/roms/lowresnx"; mkdir -p "$HOME/share/thumbs/LowresNX"
 curl "$FILE_URL" | while IFS=$'\t' read -r id title image nx_file; do
-    if [ ! -s "$DOWNLOAD_DIR/$nx_file" ]; then download_url="https://lowresnx.inutilis.com/uploads/$nx_file"; wget -nv "$download_url" -O "$DOWNLOAD_DIR/$nx_file"; fi
-    if [ ! -s "$HOME/share/thumbs/LowresNX/$image" ]; then download_url="https://lowresnx.inutilis.com/uploads/$image"; wget -nv "$download_url" -O "$HOME/share/thumbs/LowresNX/$image"; fi
+  if [ ! -s "$DOWNLOAD_DIR/$nx_file" ]; then download_url="https://lowresnx.inutilis.com/uploads/$nx_file"; wget -nv "$download_url" -O "$DOWNLOAD_DIR/$nx_file"; fi
+  if [ ! -s "$HOME/share/thumbs/LowresNX/$image" ]; then download_url="https://lowresnx.inutilis.com/uploads/$image"; wget -nv "$download_url" -O "$HOME/share/thumbs/LowresNX/$image"; fi
 done
 
 REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/pico8.txt"; OUTPUT_DIR="$HOME/roms/pico8"; 
 mkdir -p "$OUTPUT_DIR"
 LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r ID NAME FILENAME; do
-    if [[ -n "$FILENAME" ]]; then
-        if [[ $FILENAME =~ ^[0-9] ]]; then number="${BASH_REMATCH[1]}"; PREFIX=$(( number / 10000 )); else PREFIX="${FILENAME:0:2}"; fi
-        OUTPUT_PATH="${OUTPUT_DIR}/${FILENAME}"; FILE_URL="https://www.lexaloffle.com/bbs/cposts/${PREFIX}/${FILENAME}"; 
-        if [[ ! -s "$OUTPUT_PATH" ]]; then wget -nv -O "$OUTPUT_PATH" "$FILE_URL"; fi
-    fi
+  if [[ -n "$FILENAME" ]]; then
+    if [[ $FILENAME =~ ^[0-9] ]]; then number="${BASH_REMATCH[1]}"; PREFIX=$(( number / 10000 )); else PREFIX="${FILENAME:0:2}"; fi
+    OUTPUT_PATH="${OUTPUT_DIR}/${FILENAME}"; FILE_URL="https://www.lexaloffle.com/bbs/cposts/${PREFIX}/${FILENAME}"; 
+    if [[ ! -s "$OUTPUT_PATH" ]]; then wget -nv -O "$OUTPUT_PATH" "$FILE_URL"; fi
+  fi
 done
 
 REMOTE_LIST_URL="https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/voxatron.txt"; OUTPUT_DIR="$HOME/roms/voxatron"; 
 mkdir -p "$OUTPUT_DIR"
 LIST=$(curl -s "$REMOTE_LIST_URL"); echo "$LIST" | while IFS=$'\t' read -r ID NAME FILENAME; do
-    if [[ -n "$FILENAME" ]]; then
-        if [[ $FILENAME == cpost* ]]; then number=${FILENAME//[^0-9]/}; PREFIX=$(( number / 10000 )); else PREFIX="${FILENAME:0:2}"; fi
-        OUTPUT_PATH="${OUTPUT_DIR}/${FILENAME}"; FILE_URL="https://www.lexaloffle.com/bbs/cposts/${PREFIX}/${FILENAME}"; 
-        if [[ ! -s "$OUTPUT_PATH" ]]; then wget -nv -O "$OUTPUT_PATH" "$FILE_URL"; fi
-    fi
+  if [[ -n "$FILENAME" ]]; then
+    if [[ $FILENAME == cpost* ]]; then number=${FILENAME//[^0-9]/}; PREFIX=$(( number / 10000 )); else PREFIX="${FILENAME:0:2}"; fi
+    OUTPUT_PATH="${OUTPUT_DIR}/${FILENAME}"; FILE_URL="https://www.lexaloffle.com/bbs/cposts/${PREFIX}/${FILENAME}"; 
+    if [[ ! -s "$OUTPUT_PATH" ]]; then wget -nv -O "$OUTPUT_PATH" "$FILE_URL"; fi
+  fi
 done
 
 if [ ! -f ~/share/zip/atari2600roms.zip ]; then wget -O ~/share/zip/atari2600roms.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
