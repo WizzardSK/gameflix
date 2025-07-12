@@ -26,7 +26,7 @@ IFS=";"; for each in "${roms[@]}"; do
 done
 
 if ! mountpoint -q "$HOME/zips"; then nohup ratarmount -o attr_timeout=3600 --disable-union-mount "${archives[@]}" ~/zips -f & fi
-if ! mountpoint -q "$HOME/roms/Vircon32"; then rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media $HOME/roms/Vircon32 --daemon
+if ! mountpoint -q "$HOME/roms/Vircon32"; then rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media $HOME/roms/Vircon32 --daemon; fi
 while ! mountpoint -q "$HOME/zips"; do sleep 5; done
 
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "$HOME/roms/Atari 2600 ROMS"
