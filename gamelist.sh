@@ -1,8 +1,9 @@
 #!/bin/bash
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
-mkdir -p ~/rom ~/roms ~/zip ~/zips ~/atari2600roms ~/roms/neogeo ~/mount ~/uzebox ~/roms/uzebox ~/roms/tic80 ~/roms/wasm4 ~/roms/lowresnx ~/roms/vircon32
+mkdir -p ~/rom ~/roms ~/zip ~/zips ~/atari2600roms ~/roms/neogeo ~/mount ~/uzebox ~/roms/uzebox ~/roms/tic80 ~/roms/wasm4 ~/roms/lowresnx ~/roms/vircon32 ~/vircon32
 sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/rom --config=rclone.conf --daemon --http-no-head
+rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media ~/vircon32 --daemon --config=rclone.conf
 
 echo "Uzebox"; unzip -j fantasy/uzebox.zip -d ~/uzebox > /dev/null
 echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
@@ -24,7 +25,7 @@ echo "LowresNX"; echo "<gameList>" > ~/roms/lowresnx/gamelist.xml; cat fantasy/l
   hra="<game><path>./LowresNX/${cart}</path><name>${name}</name><image>./LowresNX/${picture}</image>"; echo "${hra}</game>" >> ~/roms/lowresnx/gamelist.xml
 done; echo "</gameList>" >> ~/roms/lowresnx/gamelist.xml
 
-echo "Vircon32"; echo "<gameList>" > ~/roms/vircon32/gamelist.xml; basename -a ~/roms/vircon32/*.zip | while read line; do
+echo "Vircon32"; echo "<gameList>" > ~/roms/vircon32/gamelist.xml; basename -a ~/vircon32/*.zip | while read line; do
   line2=${line%.*}; hra="<game><path>./Vircon32/${line}</path><name>${line2}</name><image>./Vircon32/media/screenshot/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/vircon32/gamelist.xml
 done; echo "</gameList>" >> ~/roms/vircon32/gamelist.xml
 
