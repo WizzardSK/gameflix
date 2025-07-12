@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
-mkdir -p ~/rom ~/roms ~/zip ~/zips ~/atari2600roms ~/roms/neogeo ~/mount ~/uzebox ~/roms/uzebox ~/roms/tic80 ~/roms/wasm4 ~/roms/lowresnx
+mkdir -p ~/rom ~/roms ~/zip ~/zips ~/atari2600roms ~/roms/neogeo ~/mount ~/uzebox ~/roms/uzebox ~/roms/tic80 ~/roms/wasm4 ~/roms/lowresnx ~/roms/vircon32
 sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/rom --config=rclone.conf --daemon --http-no-head
 
