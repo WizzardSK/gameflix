@@ -1,7 +1,7 @@
 #!/bin/bash
 while ! ping -c 1 8.8.8.8 >/dev/null 2>&1; do sleep 5; done
 export LD_LIBRARY_PATH=/usr/local/lib
-mkdir -p ~/myrient ~/roms ~/iso ~/zips ~/gameflix ~/roms/Atari\ 2600\ ROMS ~/roms/TIC-80 ~/roms/LowresNX ~/roms/Uzebox ~/roms/WASM-4
+mkdir -p ~/myrient ~/roms ~/iso ~/zips ~/gameflix ~/roms/Atari\ 2600\ ROMS ~/roms/TIC-80 ~/roms/LowresNX ~/roms/Uzebox ~/roms/WASM-4 ~/roms/Vircon32
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 if ! mountpoint -q "$HOME/myrient"; then rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
 
@@ -26,6 +26,7 @@ IFS=";"; for each in "${roms[@]}"; do
 done
 
 if ! mountpoint -q "$HOME/zips"; then nohup ratarmount -o attr_timeout=3600 --disable-union-mount "${archives[@]}" ~/zips -f & fi
+if ! mountpoint -q "$HOME/roms/Vircon32"; then rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media $HOME/roms/Vircon32 --daemon
 while ! mountpoint -q "$HOME/zips"; do sleep 5; done
 
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "$HOME/roms/Atari 2600 ROMS"
@@ -46,12 +47,10 @@ done
 
 DAT_URL="https://github.com/WizzardSK/gameflix/raw/refs/heads/main/neogeo.dat"; DAT_FILE="/tmp/neogeo.dat"
 SRC_DIR="$HOME/myrient/Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade"; DEST_DIR="$HOME/roms/Neo Geo"
-curl -s -L "$DAT_URL" -o "$DAT_FILE"
-mkdir -p "$DEST_DIR"
+curl -s -L "$DAT_URL" -o "$DAT_FILE"; mkdir -p "$DEST_DIR"
 while IFS= read -r line; do
-    neo_file="${line%%[[:space:]]*}"
-    [[ -z "$neo_file" || "$neo_file" != *.neo ]] && continue
-    base_name="${neo_file%.neo}"; zip_name="$base_name.zip"
-    src_file="$SRC_DIR/$zip_name"; dest_link="$DEST_DIR/$zip_name"
-    if [[ -f "$src_file" ]]; then ln -sf "$src_file" "$dest_link"; fi
+  neo_file="${line%%[[:space:]]*}"
+  [[ -z "$neo_file" || "$neo_file" != *.neo ]] && continue
+  base_name="${neo_file%.neo}"; zip_name="$base_name.zip"; src_file="$SRC_DIR/$zip_name"; dest_link="$DEST_DIR/$zip_name"
+  if [[ -f "$src_file" ]]; then ln -sf "$src_file" "$dest_link"; fi
 done < "$DAT_FILE"
