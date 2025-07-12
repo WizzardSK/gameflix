@@ -26,7 +26,7 @@ echo "LowresNX"; echo "<gameList>" > ~/roms/lowresnx/gamelist.xml; cat fantasy/l
 done; echo "</gameList>" >> ~/roms/lowresnx/gamelist.xml
 
 echo "Vircon32"; echo "<gameList>" > ~/roms/vircon32/gamelist.xml; basename -a ~/vircon32/*.zip | while read line; do
-  line2=${line%.*}; hra="<game><path>./Vircon32/${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/vircon32/gamelist.xml
+  line2=${line%.*}; hra="<game><path>./Vircon32/${line}</path><name>${line2}</name><image>~/../thumbs/Vircon32/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/vircon32/gamelist.xml
 done; echo "</gameList>" >> ~/roms/vircon32/gamelist.xml
 
 IFS=$'\n' read -d '' -ra roms < platforms.txt
