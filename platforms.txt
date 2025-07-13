@@ -5,6 +5,7 @@ atari5200;No-Intro/Atari - Atari 5200;Atari - 5200;Atari 5200 NoIntro;a5200_libr
 atari5200;TOSEC/Atari/5200/Games;Atari - 5200;Atari 5200 TOSEC;a5200_libretro
 atari7800;No-Intro/Atari - Atari 7800 (BIN);Atari - 7800;Atari 7800 NoIntro;prosystem_libretro
 atari7800;TOSEC/Atari/7800/Games;Atari - 7800;Atari 7800 TOSEC;prosystem_libretro
+atari800;No-Intro/Atari - 8-bit Family;Atari - 8-bit;<code>Atari 8bit</code> No-Intro;atari800
 atari800;TOSEC/Atari/8bit/Games/[ATR];Atari - 8-bit;<code>Atari 8bit</code> ATR;atari800
 atari800;TOSEC/Atari/8bit/Games/[ATX];Atari - 8-bit;<code>Atari 8bit</code> ATX;atari800
 atari800;TOSEC/Atari/8bit/Games/[BIN];Atari - 8-bit;<code>Atari 8bit</code> BIN;atari800
