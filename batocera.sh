@@ -18,10 +18,7 @@ rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media /us
 
 if [ ! -f /userdata/system/offline ]; then
   archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
-  archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip" )
-  archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/wasm4.zip" )
-  archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/uzebox.zip" )
-  archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/lowresnx.zip" )
+  archives+=( https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/{tic80,wasm4,uzebox,lowresnx}.zip )
 else
   if [ ! -f /userdata/zip/Atari-2600-VCS-ROM-Collection.zip ]; then wget -nv -O /userdata/zip/Atari-2600-VCS-ROM-Collection.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
   if [ ! -f /userdata/zip/tic80.zip ]; then wget -nv -O /userdata/zip/tic80.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip; fi
@@ -29,10 +26,7 @@ else
   if [ ! -f /userdata/zip/uzebox.zip ]; then wget -nv -O /userdata/zip/uzebox.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/uzebox.zip; fi
   if [ ! -f /userdata/zip/lowresnx.zip ]; then wget -nv -O /userdata/zip/lowresnx.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/lowresnx.zip; fi    
   archives=( "/userdata/zip/Atari-2600-VCS-ROM-Collection.zip" )
-  archives+=( "/userdata/zip/tic80.zip" )
-  archives+=( "/userdata/zip/wasm4.zip" )
-  archives+=( "/userdata/zip/uzebox.zip" )
-  archives+=( "/userdata/zip/lowresnx.zip" )
+  archives+=( /userdata/zip/{tic80,wasm4,uzebox,lowresnx}.zip )
 fi
 
 IFS=";"
