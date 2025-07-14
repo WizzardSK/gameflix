@@ -9,22 +9,18 @@ echo "Uzebox"; unzip -j fantasy/uzebox.zip -d ~/uzebox > /dev/null
 echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
   line2=${line%.*}; hra="<game><path>./Uzebox/${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/uzebox/gamelist.xml
 done; echo "</gameList>" >> ~/roms/uzebox/gamelist.xml
-
 echo "TIC-80"; echo "<gameList>" > ~/roms/tic80/gamelist.xml; curl -s "https://tic80.com/api?fn=dir&path=play/Games" | while read -r line; do
   hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+');
   hra="<game><path>./TIC-80/${hash}.tic</path><name>${name%.*}</name><image>./TIC-80/${hash}.gif</image>"; if [ -n "$hash" ]; then echo "${hra}</game>" >> ~/roms/tic80/gamelist.xml; fi;
 done; echo "</gameList>" >> ~/roms/tic80/gamelist.xml
-
 echo "WASM-4"; echo "<gameList>" > ~/roms/wasm4/gamelist.xml; html=$(curl -s "https://wasm4.org/play/")
 echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do
   image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png);
   hra="<game><path>./WASM-4/${image_name}.wasm</path><name>${title}</name><image>./WASM-4/${image_name}.png</image>"; echo "${hra}</game>" >> ~/roms/wasm4/gamelist.xml
 done; echo "</gameList>" >> ~/roms/wasm4/gamelist.xml
-
 echo "LowresNX"; echo "<gameList>" > ~/roms/lowresnx/gamelist.xml; cat fantasy/lowresnx.txt | while IFS=$'\t' read -r id name picture cart; do
   hra="<game><path>./LowresNX/${cart}</path><name>${name}</name><image>./LowresNX/${picture}</image>"; echo "${hra}</game>" >> ~/roms/lowresnx/gamelist.xml
 done; echo "</gameList>" >> ~/roms/lowresnx/gamelist.xml
-
 echo "Vircon32"; echo "<gameList>" > ~/roms/vircon32/gamelist.xml; basename -a ~/vircon32/*.zip | while read line; do
   line2=${line%.*}; hra="<game><path>./Vircon32/${line}</path><name>${line2}</name><image>~/../thumbs/Vircon32/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/vircon32/gamelist.xml
 done; echo "</gameList>" >> ~/roms/vircon32/gamelist.xml
