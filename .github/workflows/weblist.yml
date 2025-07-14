@@ -14,4 +14,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run script
-        run: bash weblist.sh 
+        run: |
+          bash webflix.sh
+          bash generate.sh
