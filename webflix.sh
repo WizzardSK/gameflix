@@ -6,10 +6,7 @@ wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/Wizza
 if ! mountpoint -q "$HOME/myrient"; then rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
 
 archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
-archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/lowresnx.zip" )
-archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip" )
-archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/wasm4.zip" )
-archives+=( "https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/uzebox.zip" )
+archives+=( https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/{lowresnx,tic80,wasm4,uzebox}.zip )
 
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 IFS=";"; for each in "${roms[@]}"; do
