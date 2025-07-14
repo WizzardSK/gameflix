@@ -4,5 +4,6 @@ chmod +x batocera/ratarmount1
 sudo ln -s batocera/ratarmount1 /usr/bin/ratarmount
 mkdir -p $HOME/.config/rclone
 cp rclone.conf $HOME/.config/rclone/
+echo "user_allow_other" | sudo tee -a /etc/fuse.conf
 bash ./webflix.sh
 bash ./generate.sh
