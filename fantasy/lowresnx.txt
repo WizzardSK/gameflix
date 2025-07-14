@@ -1,3 +1,5 @@
+3759	Carrom test remix	48g9C32D24_Carrom_Circles_test_3.png	48g9C32D24_Carrom_Circles_test_3.nx
+3757	Shut the Box - cards	MTYXm2LvXb_Shut_the_Box_cards.png	MTYXm2LvXb_Shut_the_Box_cards.nx
 3755	Moon Scroller	5uNeup7Uzg_moonscroller.png	5uNeup7Uzg_moonscroller.nx
 3734	CELL.C Demo Game	9CKoSDY69B_CELL.C_DEMO_GAME.png	9CKoSDY69B_CELL.C_DEMO_GAME.nx
 3722	Quad Ludo II	BxSmqEr5Ah_Quad_Ludos_II_02.png	BxSmqEr5Ah_Quad_Ludos_II_02.nx
