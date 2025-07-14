@@ -1,5 +1,4 @@
 #!/bin/bash
-#while ! ping -c 1 8.8.8.8 >/dev/null 2>&1; do sleep 5; done
 export LD_LIBRARY_PATH=/usr/local/lib
 mkdir -p ~/myrient ~/roms ~/iso ~/zips ~/gameflix ~/roms/Atari\ 2600\ ROMS ~/roms/TIC-80 ~/roms/LowresNX ~/roms/Uzebox ~/roms/WASM-4 ~/roms/Vircon32
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
