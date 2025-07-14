@@ -2,6 +2,7 @@
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
 chmod +x batocera/ratarmount1
 sudo ln -s batocera/ratarmount1 /bin/ratarmount
+chmod +x /bin/ratarmount
 mkdir -p $HOME/.config/rclone
 cp rclone.conf $HOME/.config/rclone/
 echo "user_allow_other" | sudo tee -a /etc/fuse.conf
