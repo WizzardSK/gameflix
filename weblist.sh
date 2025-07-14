@@ -1,3 +1,3 @@
 #!/bin/bash
-./webflix.sh
-./generate.sh
+bash ./webflix.sh
+bash ./generate.sh
