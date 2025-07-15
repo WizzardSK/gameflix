@@ -9,8 +9,7 @@ if [ ! -f /userdata/system/configs/emulationstation/es_systems_voxatron.cfg ]; t
 if [ ! -f /userdata/roms/voxatron/splore.png ]; then wget -nv -O /userdata/roms/voxatron/splore.png https://github.com/WizzardSK/gameflix/raw/main/fantasy/voxatron.png; fi
 if [ ! -f /userdata/roms/pico8/splore.png ];    then wget -nv -O /userdata/roms/pico8/splore.png    https://github.com/WizzardSK/gameflix/raw/main/fantasy/pico8.png; fi
 
-mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone}
-mkdir -p /userdata/roms/tic80/TIC-80 /userdata/roms/lowresnx/LowresNX /userdata/roms/wasm4/WASM-4 /userdata/roms/uzebox/Uzebox /userdata/roms/vircon32/Vircon32 "/userdata/roms/atari2600/Atari 2600 ROMS"
+mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/roms/{tic80/TIC-80,lowresnx/LowresNX,wasm4/WASM-4,uzebox/Uzebox,vircon32/Vircon32,"atari2600/Atari 2600 ROMS"}
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 rclone mount thumbs:Data/share/thumbs /userdata/thumbs --vfs-cache-mode full --daemon --config=/userdata/system/rclone.conf --cache-dir=/userdata/system/.cache/rclone --allow-non-empty --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h
