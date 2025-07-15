@@ -26,7 +26,7 @@ Then use the library with any emulation system like Retroarch. It is up to you h
 
 Now you may run the roms directly without copying them to local storage, just like Netflix. 
 
-You also need fuse-zip program to use TOSEC libraries. They are stored in zipped files, which are downloaded and mounted like folders. Mount-zip is used to run zipped ISO files for PSP, PS2, PC Engine CD and other.
+You also need fuse-zip program to use some libraries stored in zipped files, which are mounted like folders. Mount-zip is used to run zipped ISO files for PSP, PS2, PC Engine CD and other.
 
 [mount.sh](mount.sh) mounts the library. 
 
@@ -39,7 +39,5 @@ AMD64 version also supports zipped libraries for Atari 800, Amstrad CPC, ZX Spec
 
 ## Usage - Recalbox (unmaintained)
 For Recalbox, you need to copy [custom.sh](recalbox/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone config file in system folder. Thumbnail folders are mounting too.
-
-Raspberry Pi 4 version also supports zipped libraries for Atari 800, Amstrad CPC and ZX Spectrum.
 
 Recalbox version is no longer maintained cause I do not use it anymore and don't have time to maintain it now.
