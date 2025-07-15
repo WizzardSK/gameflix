@@ -24,12 +24,7 @@ wget -O /recalbox/share/system/rclone.conf https://raw.githubusercontent.com/Wiz
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 
 es stop; chvt 3; clear
-
-mkdir -p /recalbox/share/rom
-mkdir -p /recalbox/share/roms
-mkdir -p /recalbox/share/thumbs
-mkdir -p /recalbox/share/zip
-mkdir -p /recalbox/share/romz
+mkdir -p /recalbox/share/{rom,roms,thumbs,zip,romz}
 
 rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty
 rclone mount myrient: /recalbox/share/rom --config=/recalbox/share/system/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty
