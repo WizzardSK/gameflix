@@ -1,13 +1,10 @@
 #!/bin/bash
 emulationstation stop; chvt 3; clear; mount -o remount,size=6000M /tmp
 wget -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf > /dev/null 2>&1
-if [ ! -f /userdata/system/httpdirfs ];  then wget -nv -O /userdata/system/httpdirfs  https://github.com/WizzardSK/gameflix/raw/main/batocera/httpdirfs; chmod +x /userdata/system/httpdirfs; fi
-if [ ! -f /userdata/system/fuse-zip ];   then wget -nv -O /userdata/system/fuse-zip   https://github.com/WizzardSK/gameflix/raw/main/batocera/fuse-zip;  chmod +x /userdata/system/fuse-zip; fi
-if [ ! -f /userdata/system/mount-zip ];  then wget -nv -O /userdata/system/mount-zip  https://github.com/WizzardSK/gameflix/raw/main/batocera/mount-zip; chmod +x /userdata/system/mount-zip; fi
+for file in httpdirfs fuse-zip mount-zip; do [ ! -f /userdata/system/$file ] && wget -nv -O /userdata/system/$file https://github.com/WizzardSK/gameflix/raw/main/batocera/$file && chmod +x /userdata/system/$file; done
 if [ ! -f /userdata/system/ratarmount ]; then wget -nv -O /userdata/system/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v1.1.0/ratarmount-1.1.0-full-x86_64.AppImage; chmod +x /userdata/system/ratarmount; fi
 if [ ! -f /userdata/system/configs/emulationstation/es_systems_voxatron.cfg ]; then wget -nv -O /userdata/system/configs/emulationstation/es_systems_voxatron.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems_voxatron.cfg; fi
-if [ ! -f /userdata/roms/voxatron/splore.png ]; then wget -nv -O /userdata/roms/voxatron/splore.png https://github.com/WizzardSK/gameflix/raw/main/fantasy/voxatron.png; fi
-if [ ! -f /userdata/roms/pico8/splore.png ];    then wget -nv -O /userdata/roms/pico8/splore.png    https://github.com/WizzardSK/gameflix/raw/main/fantasy/pico8.png; fi
+for name in voxatron pico8; do [ ! -f /userdata/roms/$name/splore.png ] && wget -nv -O /userdata/roms/$name/splore.png https://github.com/WizzardSK/gameflix/raw/main/fantasy/$name.png; done
 
 mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/roms/{tic80/TIC-80,lowresnx/LowresNX,wasm4/WASM-4,uzebox/Uzebox,vircon32/Vircon32,"atari2600/Atari 2600 ROMS"}
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
@@ -20,10 +17,7 @@ if [ ! -f /userdata/system/offline ]; then
   archives+=( https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/{tic80,wasm4,uzebox,lowresnx}.zip )
 else
   if [ ! -f /userdata/zip/Atari-2600-VCS-ROM-Collection.zip ]; then wget -nv -O /userdata/zip/Atari-2600-VCS-ROM-Collection.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
-  if [ ! -f /userdata/zip/tic80.zip ]; then wget -nv -O /userdata/zip/tic80.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/tic80.zip; fi
-  if [ ! -f /userdata/zip/wasm4.zip ]; then wget -nv -O /userdata/zip/wasm4.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/wasm4.zip; fi
-  if [ ! -f /userdata/zip/uzebox.zip ]; then wget -nv -O /userdata/zip/uzebox.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/uzebox.zip; fi
-  if [ ! -f /userdata/zip/lowresnx.zip ]; then wget -nv -O /userdata/zip/lowresnx.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/lowresnx.zip; fi    
+  for name in tic80 wasm4 uzebox lowresnx; do [ ! -f /userdata/zip/$name.zip ] && wget -nv -O /userdata/zip/$name.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/$name.zip; done 
   archives=( "/userdata/zip/Atari-2600-VCS-ROM-Collection.zip" )
   archives+=( /userdata/zip/{tic80,wasm4,uzebox,lowresnx}.zip )
 fi
