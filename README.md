@@ -35,7 +35,7 @@ Then run [gen.sh](gen.sh) to generate or update games collection. The script gen
 ## Usage - Batocera Linux
 For Batocera, you need to copy [custom.sh](batocera/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone config file in system folder. Thumbnail folders are mounting too.
 
-AMD64 version also supports zipped libraries for Atari 800, Amstrad CPC, ZX Spectrum and a lot of others.
+AMD64 version also supports zipped libraries for some fantasy platforms.
 
 ## Usage - Recalbox (unmaintained)
 For Recalbox, you need to copy [custom.sh](recalbox/share/system/custom.sh) file to your system folder in shared drive. It will launch automatically at system boot. It should also install rclone config file in system folder. Thumbnail folders are mounting too.
