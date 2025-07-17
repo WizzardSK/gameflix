@@ -5,7 +5,7 @@ for file in httpdirfs fuse-zip mount-zip; do [ ! -f /userdata/system/$file ] && 
 if [ ! -f /userdata/system/ratarmount ]; then wget -nv -O /userdata/system/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v1.1.0/ratarmount-1.1.0-full-x86_64.AppImage; chmod +x /userdata/system/ratarmount; fi
 if [ ! -f /userdata/system/configs/emulationstation/es_systems_voxatron.cfg ]; then wget -nv -O /userdata/system/configs/emulationstation/es_systems_voxatron.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems_voxatron.cfg; fi
 for name in voxatron pico8; do [ ! -f /userdata/roms/$name/splore.png ] && wget -nv -O /userdata/roms/$name/splore.png https://github.com/WizzardSK/gameflix/raw/main/fantasy/$name.png; done
-ln -sf /userdata/system/.lexaloffle/Voxatron/bbs/carts /userdata/roms/voxatron/carts; ln -sf /userdata/system/.lexaloffle/pico-8/bbs/carts /userdata/roms/pico8/carts
+ln -sf /userdata/system/.lexaloffle/Voxatron/bbs/carts /userdata/roms/voxatron/Voxatron; ln -sf /userdata/system/.lexaloffle/pico-8/bbs/carts /userdata/roms/pico8/PICO-8
 
 mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/roms/{tic80/TIC-80,lowresnx/LowresNX,wasm4/WASM-4,uzebox/Uzebox,vircon32/Vircon32,"atari2600/Atari 2600 ROMS"}
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
