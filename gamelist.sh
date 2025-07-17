@@ -43,23 +43,13 @@ for each in "${roms[@]}"; do
     rclone mount ${rom[1]} ~/mount/${rom[0]}/${rom3} --daemon --config=rclone.conf --http-no-head
   fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
-    
-  output=~/roms/${rom[0]}/gamelist.xml; : > "$output"
-  for file in "${folder}"/*; do
-    [ -f "$file" ] || continue; name="${file##*/}"; name2="${name%.*}"
-    hra="<game><path>./${rom3}/${name}</path><name>${name2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${name2}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${name2}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${name2}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${name2}.png</marquee>"
-    [[ "$name" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]] && hra+="<hidden>true</hidden>"
-    echo "${hra}</game>" >> "$output"
-  done
-    
-#    ls "${folder}" | while read line; do
-#      line2=${line%.*}
-#      hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${line2}.png</marquee>"
-#      if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
-#        echo "${hra}</game>" >> ~/roms/${rom[0]}/gamelist.xml
-#      else echo "${hra}<hidden>true</hidden></game>" >> ~/roms/${rom[0]}/gamelist.xml; fi    
-#    done
-    
+    ls "${folder}" | while read line; do
+      line2=${line%.*}
+      hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${line2}.png</marquee>"
+      if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
+        echo "${hra}</game>" >> ~/roms/${rom[0]}/gamelist.xml
+      else echo "${hra}<hidden>true</hidden></game>" >> ~/roms/${rom[0]}/gamelist.xml; fi    
+    done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/roms/${rom[0]}/gamelist.xml
   fi
   fusermount -u ~/mount/${rom[0]}/${rom3} > /dev/null 2>&1
