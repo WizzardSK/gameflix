@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run script
-        run: bash gamelist.sh 
+        run: bash batocera/gamelist.sh 
