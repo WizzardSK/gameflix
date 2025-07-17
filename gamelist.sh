@@ -1,4 +1,5 @@
 #!/bin/bash
+shopt -s nocasematch
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
 mkdir -p ~/{rom,roms,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/roms/{neogeo,uzebox,tic80,wasm4,lowresnx,vircon32}
 sudo apt install fuse-zip > /dev/null
@@ -28,27 +29,21 @@ done; echo "</gameList>" >> ~/roms/vircon32/gamelist.xml
 IFS=$'\n' read -d '' -ra roms < platforms.txt
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/mount/${rom[0]} ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
-  read -ra rom < <(printf '%s' "$each")
-  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  echo ${rom3}
-  mkdir -p ~/mount/${rom[0]}/${rom3}
+  read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); echo ${rom3}; mkdir -p ~/mount/${rom[0]}/${rom3}
   if [[ ${rom[1]} =~ \.zip$ ]]; then
     ./batocera/ratarmount1 "https://myrient.erista.me/files/${rom[1]}" ~/mount/${rom[0]}/${rom3} -f &
     while ! mount | grep -q "on /home/runner/mount/${rom[0]}/${rom3} "; do sleep 1; done
     folder="$HOME/mount/${rom[0]}/${rom3}"
   else folder="$HOME/rom/${rom[1]}"; fi
   if grep -q ":" <<< "${rom[1]}"; then
-    mkdir -p ~/mount/${rom[0]}/${rom3}
-    folder="$HOME/mount/${rom[0]}/${rom3}"
+    mkdir -p ~/mount/${rom[0]}/${rom3}; folder="$HOME/mount/${rom[0]}/${rom3}"
     rclone mount ${rom[1]} ~/mount/${rom[0]}/${rom3} --daemon --config=rclone.conf --http-no-head
   fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls "${folder}" | while read line; do
       line2=${line%.*}
       hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${line2}.png</marquee>"
-      shopt -s nocasematch
-      if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then
-      #if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
+      if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then      
         echo "${hra}</game>" >> ~/roms/${rom[0]}/gamelist.xml
       else echo "${hra}<hidden>true</hidden></game>" >> ~/roms/${rom[0]}/gamelist.xml; fi    
     done
@@ -62,7 +57,7 @@ while ! mount | grep -q "on /home/runner/atari2600roms "; do sleep 1; done
 ls ~/atari2600roms/ROMS | while read line; do
   line2=${line%.*}
   hra="<game><path>./Atari 2600 ROMS/${line}</path><name>${line2}</name><image>~/../thumbs/Atari - 2600/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/Atari - 2600/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/Atari - 2600/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/Atari - 2600/Named_Logos/${line2}.png</marquee>"
-  if ! grep -iqE '\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)' <<< "$line"; then
+  if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then      
     echo "${hra}</game>" >> ~/roms/atari2600/gamelist.xml
   else echo "${hra}<hidden>true</hidden></game>" >> ~/roms/atari2600/gamelist.xml; fi
 done; echo "<folder><path>./Atari 2600 ROMS</path><name>Atari 2600 ROMS</name><image>~/../thumb/atari2600.png</image></folder>" >> ~/roms/atari2600/gamelist.xml
