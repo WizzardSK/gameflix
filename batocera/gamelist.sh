@@ -27,10 +27,10 @@ echo "Vircon32"; echo "<gameList>" > ~/roms/vircon32/gamelist.xml; basename -a ~
 done; echo "</gameList>" >> ~/roms/vircon32/gamelist.xml
 echo "Pico-8"; echo "<gameList>" > ~/roms/pico8/gamelist.xml; cat fantasy/pico8.txt | while IFS=$'\t' read -r id name cart; do
   hra="<game><path>./PICO-8/${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/roms/pico8/gamelist.xml
-done; echo "</gameList>" >> ~/roms/pico8/gamelist.xml
+done; echo "<folder><path>./PICO-8</path><name>PICO-8</name><image>./splore.png</image></folder></gameList>" >> ~/roms/pico8/gamelist.xml
 echo "Voxatron"; echo "<gameList>" > ~/roms/voxatron/gamelist.xml; cat fantasy/voxatron.txt | while IFS=$'\t' read -r id name cart; do
   hra="<game><path>./Voxatron/${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/roms/voxatron/gamelist.xml
-done; echo "</gameList>" >> ~/roms/voxatron/gamelist.xml
+done; echo "<folder><path>./Voxatron</path><name>Voxatron</name><image>./splore.png</image></folder></gameList>" >> ~/roms/voxatron/gamelist.xml
 
 IFS=$'\n' read -d '' -ra roms < platforms.txt
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/mount/${rom[0]} ~/roms/${rom[0]}; done
@@ -80,8 +80,7 @@ while IFS= read -r riadok; do
   hra="<game><path>./Neo Geo/${zip}</path><name>${ostatok}</name><image>~/../thumbs/MAME/Named_Snaps/${prvy%.neo}.png</image><titleshot>~/../thumbs/MAME/Named_Titles/${prvy%.neo}.png</titleshot><thumbnail>~/../thumbs/MAME/Named_Boxarts/${prvy%.neo}.png</thumbnail><marquee>~/../thumbs/MAME/Named_Logos/${prvy%.neo}.png</marquee>"
   echo "${hra}</game>" >> ~/roms/neogeo/gamelist.xml  
 done < "$ROMLIST"
-echo "<folder><path>./Neo Geo</path><name>Neo Geo</name><image>~/../thumb/neogeo.png</image></folder>" >> ~/roms/neogeo/gamelist.xml
-echo "</gameList>" >> ~/roms/neogeo/gamelist.xml;
+echo "<folder><path>./Neo Geo</path><name>Neo Geo</name><image>~/../thumb/neogeo.png</image></folder></gameList>" >> ~/roms/neogeo/gamelist.xml
 
 cd ~/roms
 rm -f "$GITHUB_WORKSPACE/batocera/gamelist.zip"
