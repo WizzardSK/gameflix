@@ -15,7 +15,8 @@ data=$(curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g'
   if [[ "$line" =~ id[[:space:]]*=[[:space:]]*([0-9]+) ]]; then id="${BASH_REMATCH[1]}"; else continue; fi
   if [[ "$line" =~ hash[[:space:]]*=[[:space:]]*\"([a-f0-9]+)\" ]]; then hash="${BASH_REMATCH[1]}"; else continue; fi
   if [[ "$line" =~ name[[:space:]]*=[[:space:]]*\"([^\"]+)\" ]]; then name="${BASH_REMATCH[1]}"; else continue; fi
-  records+=("\"$id\t$hash\t$name\",")
+#  records+=("\"$id\t$hash\t$name\",")
+  records+=("\"$id"$'\t'"$hash"$'\t'"$name\",")
 done <<< "$data"
 printf "%s\n" "${records[@]}" | sort -nr -k1,1 >> ~/gameflix/TIC-80.html
 printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
