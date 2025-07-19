@@ -28,9 +28,13 @@ document.write(text);
 function bgImage(platform) { document.write(`<style> figure { background-image: url('https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${platform}.png'); } </style>`); }
 
 function generateTicLinks(romPath, imagePath) {
-    document.write("<div id=\"figureList\">"); fileNames.forEach(fileName => {
-        const nameWithoutExt = fileName.slice(0, fileName.lastIndexOf(".")) || fileName; document.write(`<a href="../${romPath}/${nameWithoutExt.slice(0, 32)}.tic" target="main">
-        <figure><img loading="lazy" src="https://tic80.com/cart/${nameWithoutExt.slice(0, 32)}/cover.gif" alt="${nameWithoutExt}"><figcaption>${nameWithoutExt.slice(33)}</figcaption></figure></a>`);
+    document.write("<div id=\"figureList\">");
+    if (location.protocol !== "file:" && romPath.includes("roms/TIC-80")) { romPath = romPath.replace("roms/TIC-80", "https://tic80.com/play?cart="); web = true; }
+    else { romPath = `../${romPath}/`; web = false; }
+    fileNames.forEach(fileName => {
+        let [id, hash, nazov] = fileName.split('\t'); if (web) { cart = `${id}`; } else { cart = `${hash}.tic`; }
+        document.write(`<a href="${romPath}${cart}" target="main">
+        <figure><img loading="lazy" src="https://tic80.com/cart/${hash}/cover.gif" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
 
@@ -85,13 +89,12 @@ function generateUzeLinks(romPath, imagePath) {
 function generateFileLinks(romPath, imagePath) {
     document.write("<div id=\"figureList\">");
     if (location.protocol !== "file:" && romPath.includes("eXoDOS")) { romPath = romPath.replace("myrient/../roms/MS-DOS eXoDOS", "https://the-eye.eu/public/Games/eXo/eXoDOS_v6r2/eXo/eXoDOS"); }
-        if (location.protocol !== "file:" && romPath.startsWith("myrient/")) { romPath = romPath.replace(/^myrient\/?/, "https://myrient.erista.me/files/"); }
-            fileNames.forEach(fileName => {
-                const subor = fileName.includes("\t") ? fileName.split("\t")[0] : fileName;
-                const nameWithoutExt = subor.slice(0, subor.lastIndexOf(".")) || subor;
-                const nazov = fileName.includes("\t") ? fileName.split("\t")[1] : fileName.replace(/\.[^.]+$/, "");
-                document.write(`<a href="${romPath}/${encodeURIComponent(subor)}" target="main">
-                <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutExt)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
-            });
-            document.write("</div>");
+    if (location.protocol !== "file:" && romPath.startsWith("myrient/")) { romPath = romPath.replace(/^myrient\/?/, "https://myrient.erista.me/files/"); }
+    fileNames.forEach(fileName => {
+        const subor = fileName.includes("\t") ? fileName.split("\t")[0] : fileName;
+        const nameWithoutExt = subor.slice(0, subor.lastIndexOf(".")) || subor;
+        const nazov = fileName.includes("\t") ? fileName.split("\t")[1] : fileName.replace(/\.[^.]+$/, "");
+        document.write(`<a href="${romPath}/${encodeURIComponent(subor)}" target="main">
+        <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutExt)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
+    }); document.write("</div>");
 }
