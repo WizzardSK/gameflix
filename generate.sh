@@ -17,7 +17,7 @@ data=$(curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g'
   if [[ "$line" =~ name[[:space:]]*=[[:space:]]*\"([^\"]+)\" ]]; then name="${BASH_REMATCH[1]}"; else continue; fi
   records+=("$id|\"$hash $name\",")
 done <<< "$data"
-printf "%s\n" "${records[@]}" | sort -nr -t'|' -k1,1 | cut -d'|' -f2- >> ~/gameflix/TIC-80.html
+printf "%s\n" "${records[@]}" | sort -nr -t'|' -k1,1 >> ~/gameflix/TIC-80.html
 printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
 
 pocet=$(ls ~/roms/WASM-4/*.wasm | wc -l); total=$((pocet+total))
