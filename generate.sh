@@ -12,8 +12,8 @@ echo "
 <figure><a href='LowresNX.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/lowresnx.png'></a><figcaption>LowresNX</figcaption></figure>
 <figure><a href='PICO-8.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/pico8.png'></a><figcaption>PICO-8</figcaption></figure>
 <figure><a href='Voxatron.html'><img class=loaded src='https://wiki.batocera.org/_media/systems:voxatron.png'></a><figcaption>Voxatron</figcaption></figure>
-<figure><a href='Vircon32.html'><img class=loaded src='https://fantasyconsoles.org/w/images/9/9c/Vircon32-logo.png'></a><figcaption>Vircon32</figcaption>
-</figure>" >> ~/gameflix/main.html
+<figure><a href='Vircon32.html'><img class=loaded src='https://fantasyconsoles.org/w/images/9/9c/Vircon32-logo.png'></a><figcaption>Vircon32
+" >> ~/gameflix/main.html
 
 pocet=$(ls ~/roms/TIC-80/*.tic | wc -l); total=$((pocet+total))
 echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"TIC-80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
@@ -89,7 +89,7 @@ for each in "${roms[@]}"; do
     pocet=$(ls ~/${romfolder} -1 | wc -l); total=$((pocet+total))
     echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
     if [ "$platform" != "${rom[0]}" ]; then
-      echo "</figcaption></figure><figure><a href=\"${rom3}.html\"><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'></a><figcaption>" >> ~/gameflix/main.html
+      echo "</figcaption></figure><figure><a href='"${rom3}".html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'></a><figcaption>" >> ~/gameflix/main.html
       ((platforms++))
     fi
     echo "<a href=\"${rom3}.html\">${rom3}</a><br>" >> ~/gameflix/main.html
@@ -119,7 +119,7 @@ while IFS= read -r riadok; do prvy="${riadok%%[[:space:]]*}"; ostatok="${riadok#
 printf ']; generateFileLinks("roms/Neo Geo", "MAME");</script><script src=\"script.js\"></script>' >> ~/gameflix/Neo\ Geo.html; ((platforms++))
 echo "<a href=\"Neo Geo.html\" target=\"main\">Neo Geo</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Neo Geo\") core=\"fbneo_libretro\";;" >> ~/gameflix/retroarch.sh  
 
-echo "<figure><a href='Neo Geo.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/neogeo.png'></a><figcaption>Neo Geo</figcaption></figure>" >> ~/gameflix/main.html
+echo "</figcaption></figure><figure><a href='Neo Geo.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/neogeo.png'></a><figcaption>Neo Geo</figcaption></figure>" >> ~/gameflix/main.html
 
 curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.end >> ~/gameflix/retroarch.sh
 chmod +x ~/gameflix/retroarch.sh; echo "<p><b>Total: $total</b>" >> ~/gameflix/systems.html; echo "<p><b>Platforms: $platforms</b>" >> ~/gameflix/systems.html
