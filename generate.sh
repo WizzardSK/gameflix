@@ -5,15 +5,13 @@ echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/game
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do wget -nv -O ~/gameflix/$file https://raw.githubusercontent.com/WizzardSK/gameflix/main/$file; done
 
-echo "
-<figure><a href='TIC-80.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/tic80.png'></a><figcaption>TIC-80</figcaption></figure>
+echo "<figure><a href='TIC-80.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/tic80.png'></a><figcaption>TIC-80</figcaption></figure>
 <figure><a href='WASM-4.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/wasm4.png'></a><figcaption>WASM-4</figcaption></figure>
 <figure><a href='Uzebox.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/uzebox.png'></a><figcaption>Uzebox</figcaption></figure>
 <figure><a href='LowresNX.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/lowresnx.png'></a><figcaption>LowresNX</figcaption></figure>
 <figure><a href='PICO-8.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/pico8.png'></a><figcaption>PICO-8</figcaption></figure>
 <figure><a href='Voxatron.html'><img class=loaded src='https://wiki.batocera.org/_media/systems:voxatron.png'></a><figcaption>Voxatron</figcaption></figure>
-<figure><a href='Vircon32.html'><img class=loaded src='https://fantasyconsoles.org/w/images/9/9c/Vircon32-logo.png'></a><figcaption>Vircon32
-" >> ~/gameflix/main.html
+<figure><a href='Vircon32.html'><img class=loaded src='https://fantasyconsoles.org/w/images/9/9c/Vircon32-logo.png'></a><figcaption>Vircon32" >> ~/gameflix/main.html
 
 pocet=$(ls ~/roms/TIC-80/*.tic | wc -l); total=$((pocet+total))
 echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"TIC-80\") core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
@@ -25,7 +23,6 @@ data=$(curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g'
   if [[ "$line" =~ name[[:space:]]*=[[:space:]]*\"([^\"]+)\" ]]; then name="${BASH_REMATCH[1]%.tic}"; else continue; fi
   records+=("$id"$'\t'"$hash"$'\t'"$name")
 done <<< "$data"
-#printf "%s\n" "${records[@]}" | sort -nr -k1,1 >> ~/gameflix/TIC-80.html
 printf "%s\n" "${records[@]}" | sort -nr -k1,1 | awk '{ print "\"" $0 "\"," }' >> ~/gameflix/TIC-80.html
 printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html
 
@@ -83,18 +80,16 @@ IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   if [[ "${rom[3]}" == *"eXoDOS"* ]]; then rom[1]="../roms/MS-DOS eXoDOS"; fi
-  if [[ ${rom[1]} =~ \.zip$ ]]; then romfolder="roms/${rom3}"; emufolder="${rom3}"; else romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}"; fi
   if [[ "${rom[3]}" == *"eXoDOS"* ]]; then emufolder="roms/MS-DOS eXoDOS"; fi
+  if [[ ${rom[1]} =~ \.zip$ ]]; then romfolder="roms/${rom3}"; emufolder="${rom3}"; else romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}"; fi
   if [ -e ~/gameflix/${rom3}.html ]; then
     pocet=$(ls ~/${romfolder} -1 | wc -l); total=$((pocet+total))
     echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
     if [ "$platform" != "${rom[0]}" ]; then
-      echo "</figcaption></figure><figure><a href='"${rom3}".html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'></a><figcaption>" >> ~/gameflix/main.html
-      ((platforms++))
+      echo "</figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'><figcaption>" >> ~/gameflix/main.html; ((platforms++))
     fi
     echo "<a href=\"${rom3}.html\">${rom3}</a><br>" >> ~/gameflix/main.html
-    platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
-    continue
+    platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh; continue
   fi
   > ~/gameflix/${rom3}.html
   wget -nv -O ~/gameflix/${rom3}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
@@ -104,8 +99,7 @@ for each in "${roms[@]}"; do
   echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script><script src="script.js"></script>' >> ~/gameflix/${rom3}.html
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   if [ "$platform" != "${rom[0]}" ]; then
-    echo "</figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'><figcaption>" >> ~/gameflix/main.html
-    ((platforms++))
+    echo "</figcaption></figure><figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'></a><figcaption>" >> ~/gameflix/main.html; ((platforms++))
   fi
   echo "<a href=\"${rom3}.html\">${rom3}</a><br>" >> ~/gameflix/main.html
   platform=${rom[0]}; ext="";
