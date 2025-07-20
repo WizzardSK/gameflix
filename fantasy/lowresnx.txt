@@ -1,4 +1,6 @@
-3761	Doom Room	TveMZZw73t_IMG_1356.jpeg	TveMZZw73t_Project_Doom_Room_2.nx
+3773	CARDS	jVLfdf2hyB_Cards.png	jVLfdf2hyB_Cards.nx
+3772	Digital Pacman	wkErTGY6bM_Digital_Pacman_1.0.png	wkErTGY6bM_Digital_Pacman_1.0.nx
+3761	Doom Room	6gf2AeTSAn_IMG_1360.jpeg	6gf2AeTSAn_Project_Doom_Room.nx
 3759	Carrom test remix	48g9C32D24_Carrom_Circles_test_3.png	48g9C32D24_Carrom_Circles_test_3.nx
 3757	Shut the Box - cards	MTYXm2LvXb_Shut_the_Box_cards.png	MTYXm2LvXb_Shut_the_Box_cards.nx
 3755	Moon Scroller	5uNeup7Uzg_moonscroller.png	5uNeup7Uzg_moonscroller.nx
@@ -57,7 +59,6 @@
 3497	Hooho and a Electric maze :3	HvCU6XpbRs_HooHo_and_the_Electric_Maze.png	HvCU6XpbRs_HooHo_and_the_Electric_Maze.nx
 3484	LowBot for LowRes NX :3	gYJYrgaVdg_Lowbot_Demo_1.1.png	gYJYrgaVdg_Lowbot_Demo_1.1.nx
 3480	Mario Lights	Nxh7mMy9Xz_Mario_Lights.png	Nxh7mMy9Xz_Mario_Lights.nx
-3479	Klips	SV6Syy4kwF_Klips.png	SV6Syy4kwF_Klips.nx
 3479	Klips	SV6Syy4kwF_Klips.png	SV6Syy4kwF_Klips.nx
 3477	Merry Melody	uBombmLC8c_Merry_Melody_speed_adjust.png	uBombmLC8c_Merry_Melody_speed_adjust.nx
 3474	Hide-N-Seek zones	idvghZnFTJ_HideNSeek_0.20.png	idvghZnFTJ_HideNSeek_0.20.nx
