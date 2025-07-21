@@ -79,6 +79,7 @@ printf ']; generateFileLinks("roms/Atari 2600 ROMS", "Atari_-_2600");</script><s
 IFS=";"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
+  romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   if [[ "${rom[3]}" == *"eXoDOS"* ]]; then rom[1]="../roms/MS-DOS eXoDOS"; emufolder="roms/MS-DOS eXoDOS"; fi
   if [[ "${rom[3]}" == *"TDC"* ]]; then emufolder="roms/TDC"; fi
   if [ -e ~/gameflix/${rom3}.html ]; then
