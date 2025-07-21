@@ -5,7 +5,7 @@ mkdir -p ~/{rom,roms,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/roms/{neoge
 sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/rom --config=rclone.conf --daemon --http-no-head
 rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media ~/vircon32 --daemon --config=rclone.conf
-ratarmount ~/rom/Internet\ Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/*/ ~/TDC
+./batocera/ratarmount1 ~/rom/Internet\ Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/*/ ~/TDC
 
 echo "Uzebox"; unzip -j fantasy/uzebox.zip -d ~/uzebox > /dev/null
 echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
