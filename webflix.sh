@@ -1,8 +1,9 @@
 #!/bin/bash
 export LD_LIBRARY_PATH=/usr/local/lib
-mkdir -p ~/myrient ~/roms ~/iso ~/zips ~/gameflix ~/roms/Atari\ 2600\ ROMS ~/roms/TIC-80 ~/roms/LowresNX ~/roms/Uzebox ~/roms/WASM-4 ~/roms/Vircon32
+mkdir -p ~/myrient ~/roms/{Atari\ 2600\ ROMS,TIC-80,LowresNX,Uzebox,WASM-4,Vircon32,TDC} ~/iso ~/zips ~/gameflix
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 if ! mountpoint -q "$HOME/myrient"; then rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
+ratarmount ~/myrient/Internet\ Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/*/ ~/roms/TDC
 
 archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
 archives+=( https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/{lowresnx,tic80,wasm4,uzebox}.zip )
