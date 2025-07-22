@@ -12,7 +12,7 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 rclone mount thumbs:Data/share/thumbs /userdata/thumbs --vfs-cache-mode full --daemon --config=/userdata/system/rclone.conf --cache-dir=/userdata/system/.cache/rclone --allow-non-empty --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h
 rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media /userdata/roms/vircon32/Vircon32 --daemon --config=/userdata/system/rclone.conf
-ratarmount /userdata/rom/Internet\ Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/*/ "/userdata/roms/dos/MS-DOS TDC"
+/userdata/system/ratarmount /userdata/rom/Internet\ Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/*/ "/userdata/roms/dos/MS-DOS TDC"
 
 if [ ! -f /userdata/system/offline ]; then
   archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
