@@ -233,17 +233,7 @@ c128;TOSEC/Commodore/C128/Games/[D64];Commodore - 128;<code>Commodore 128</code>
 c64;No-Intro/Commodore - Commodore 64;Commodore - 64;<p><code>Commodore 64</code> NoIntro;vice_x64sc_libretro
 c64;No-Intro/Commodore - Commodore 64 (PP);Commodore - 64;<code>Commodore 64</code> PP;vice_x64sc_libretro
 c64;No-Intro/Commodore - Commodore 64 (Tapes);Commodore - 64;<code>Commodore 64</code> Tapes;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Adventure/[D64];Commodore - 64;<code>Commodore 64</code> Adventure;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Arcade/[D64];Commodore - 64;<code>Commodore 64</code> Arcade;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Boulder Dash/[D64];Commodore - 64;<code>Commodore 64</code> Boulder;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Cards/[D64];Commodore - 64;<code>Commodore 64</code> Cards;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Gambling/[D64];Commodore - 64;<code>Commodore 64</code> Gambling;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Misc/[D64];Commodore - 64;<code>Commodore 64</code> Misc;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Racing/[D64];Commodore - 64;<code>Commodore 64</code> Racing;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Shoot'em Up/[D64];Commodore - 64;<code>Commodore 64</code> Shootem;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Simulation/[D64];Commodore - 64;<code>Commodore 64</code> Simulation;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Sports/[D64];Commodore - 64;<code>Commodore 64</code> Sports;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Games/Strategy/[D64];Commodore - 64;<code>Commodore 64</code> Strategy;vice_x64sc_libretro
+c64;../roms/TDC;Commodore - 64;<code>Commodore 64</code> D64;vice_x64sc_libretro
 c64;TOSEC/Commodore/C64/Educational/[D64];Commodore - 64;<code>Commodore 64</code> Edu;vice_x64sc_libretro
 c64;TOSEC/Commodore/C64/Applications/[D64];Commodore - 64;<code>Commodore 64</code> Apps;vice_x64sc_libretro
 
