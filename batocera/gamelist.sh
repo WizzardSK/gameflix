@@ -46,7 +46,7 @@ for each in "${roms[@]}"; do
     mkdir -p ~/mount/${rom[0]}/${rom3}; folder="$HOME/mount/${rom[0]}/${rom3}"
     rclone mount ${rom[1]} ~/mount/${rom[0]}/${rom3} --daemon --config=rclone.conf --http-no-head
   fi
-  if [[ "${rom[1]}" == "../roms/TDC" ]]; then rom[1]="$HOME/TDC"; fi
+  if [[ "${rom[1]}" == "../roms/TDC" ]]; then folder="$HOME/TDC"; fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls "${folder}" | while read line; do
       line2=${line%.*}
