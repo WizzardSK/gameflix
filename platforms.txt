@@ -211,23 +211,23 @@ cdi;TOSEC-ISO/Philips/CD-i/Games;Philips - CD-i;Philips CDi ISO;same_cdi_libretr
 dos;eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/;DOS;<p><code>MS-DOS</code> eXoDOS;dosbox_pure_libretro
 dos;TOSEC/IBM/PC Compatibles/Games/[IMG];DOS;<code>MS-DOS</code> TOSEC;dosbox_pure_libretro
 dos;TOSEC-ISO/IBM/PC Compatibles/CD/Games/[ISO];DOS;<code>MS-DOS</code> ISO;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1982;DOS;<code>TDC</code> 1982;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1983;DOS;<code>TDC</code> 1983;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1985;DOS;<code>TDC</code> 1985;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1988;DOS;<code>TDC</code> 1988;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1990;DOS;<code>TDC</code> 1990;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1991;DOS;<code>TDC</code> 1991;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1996;DOS;<code>TDC</code> 1996;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1997;DOS;<code>TDC</code> 1997;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1999;DOS;<code>TDC</code> 1999;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/199x;DOS;<code>TDC</code> 199x;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2002;DOS;<code>TDC</code> 2002;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2003;DOS;<code>TDC</code> 2003;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2008;DOS;<code>TDC</code> 2008;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2009;DOS;<code>TDC</code> 2009;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2011;DOS;<code>TDC</code> 2011;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2014;DOS;<code>TDC</code> 2014;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2015;DOS;<code>TDC</code> 2015;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1982;DOS;<code>MS-DOS</code> TDC 1982;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1983;DOS;<code>MS-DOS</code> TDC 1983;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1985;DOS;<code>MS-DOS</code> TDC 1985;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1988;DOS;<code>MS-DOS</code> TDC 1988;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1990;DOS;<code>MS-DOS</code> TDC 1990;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1991;DOS;<code>MS-DOS</code> TDC 1991;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1996;DOS;<code>MS-DOS</code> TDC 1996;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1997;DOS;<code>MS-DOS</code> TDC 1997;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1999;DOS;<code>MS-DOS</code> TDC 1999;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/199x;DOS;<code>MS-DOS</code> TDC 199x;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2002;DOS;<code>MS-DOS</code> TDC 2002;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2003;DOS;<code>MS-DOS</code> TDC 2003;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2008;DOS;<code>MS-DOS</code> TDC 2008;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2009;DOS;<code>MS-DOS</code> TDC 2009;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2011;DOS;<code>MS-DOS</code> TDC 2011;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2014;DOS;<code>MS-DOS</code> TDC 2014;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2015;DOS;<code>MS-DOS</code> TDC 2015;dosbox_pure_libretro
 msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;<code>MSX 1</code> NoIntro;bluemsx_libretro
 msx1;TOSEC/MSX/MSX/Games/[DSK];Microsoft - MSX;<code>MSX 1</code> TOSEC;bluemsx_libretro
 msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<code>MSX 2</code> NoIntro;bluemsx_libretro
