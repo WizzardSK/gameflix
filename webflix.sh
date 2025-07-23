@@ -3,8 +3,6 @@ export LD_LIBRARY_PATH=/usr/local/lib
 mkdir -p ~/myrient ~/roms/{Atari\ 2600\ ROMS,TIC-80,LowresNX,Uzebox,WASM-4,Vircon32,TDC} ~/iso ~/zips ~/gameflix
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 if ! mountpoint -q "$HOME/myrient"; then rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
-ratarmount ~/myrient/Internet\ Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/*/ ~/roms/TDC
-ratarmount ~/myrient/TOSEC/Commodore/C64/Games/Adventure/[D64] ~/myrient/TOSEC/Commodore/C64/Games/Arcade/[D64] ~/myrient/TOSEC/Commodore/C64/Games/Boulder\ Dash/[D64] ~/myrient/TOSEC/Commodore/C64/Games/Cards/[D64] ~/myrient/TOSEC/Commodore/C64/Games/Gambling/[D64] ~/myrient/TOSEC/Commodore/C64/Games/Misc/[D64] ~/myrient/TOSEC/Commodore/C64/Games/Racing/[D64] ~/myrient/TOSEC/Commodore/C64/Games/Simulation/[D64] ~/myrient/TOSEC/Commodore/C64/Games/Sports/[D64] ~/myrient/TOSEC/Commodore/C64/Games/Strategy/[D64] "$HOME/myrient/TOSEC/Commodore/C64/Games/Shoot'em Up/[D64]" ~/roms/C64
 
 archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
 archives+=( https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/{lowresnx,tic80,wasm4,uzebox}.zip )
@@ -16,10 +14,6 @@ IFS=";"; for each in "${roms[@]}"; do
   if grep -q ":" <<< "${rom[1]}"; then
     mkdir -p $HOME/roms/${rom3}
     if ! mountpoint -q "$HOME/roms/${rom3}"; then rclone mount ${rom[1]} ~/roms/${rom3} --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
-  fi
-  if [[ ${rom[1]} =~ \.zip$ ]]; then
-    rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
-    archives+=( "https://myrient.erista.me/files/${rom1}" )
   fi
 done
 
