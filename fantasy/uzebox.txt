@@ -32,3 +32,43 @@
 219	IROS_2_0.UZE	Iros
 220	IROS_2_0GM.UZE	Iros (Godmode)
 132	kismet.uze	Kismet
+133	lander.uze	Lander
+214	laser.uze	Laser Puzzle
+215	laser2.uze	Laser Puzzle II
+134	loderunner-v2.uze	Lode Runner v2
+138	mega-sokoban.uze	MegaSokoban
+139	megatris.uze	Megatris
+140	mellis-retro-land.uze	Melli's Retro Land
+141	memory.uze	Memory
+172	ninjabeatdown.hex	Ninja Beatdown
+204	pacman.hex	Pacman
+144	pacman-lite.uze	Pacman-lite
+145	pengo.uze	Pengo
+146	pentago.uze	Pentago
+147	pipes.uze	Pipes
+148	pong.uze	Pong
+181	REDBULL.HEX	Red Bull Creation
+149	ruby-crush.uze	Ruby Crush
+150	simon.uze	Simon
+264	smokeyAndTheBandit.uze	Smokey and the Bandit
+223	Snake.uze	Snake! (Bytesquid)
+151	snakes.uze	Snakes
+153	sokoban.uze	Sokoban
+152	sokoban-world.uze	Sokoban World
+182	SOLITAIR.UZE	Solitaire
+154	space-age.uze	Space Age
+155	space-invaders.uze	Space Invaders
+196	sumbarine.uze	Submarine
+197	TankFu.uze	Tank Fu
+207	TOORUMSQ.UZE	Toorum's Quest
+157	uze-feud.uze	Uze Feud
+199	Uzekickers.uze	Uze Kickers
+158	uze-snakes.uze	Uze Snakes
+209	Uzetherm.uze	Uze Therm
+159	uze8.uze	Uze8
+143	music-demo.uze	UzeSynth
+160	uzeamp.uze	Uzeamp
+161	uzepede.uze	Uzepede
+162	uzesweeper.uze	Uzesweeper
+164	videopoker.uze	Video Poker
+165	whack-a-mole.uze	Whack-A-Mole
