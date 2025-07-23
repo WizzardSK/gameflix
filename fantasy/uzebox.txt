@@ -1,8 +1,8 @@
-100 2048.uze	2048
+100	2048.uze	2048
 169	ae.uze	Alter Ego
-105 arkanoid.uze	Arkanoid
-108 atomix.uze	Atomix
-109 bc-dash.uze	BC-Dash
+105	arkanoid.uze	Arkanoid
+108	atomix.uze	Atomix
+109	bc-dash.uze	BC-Dash
 188	BABTOWER.UZE	Babylon Tower
 216	BLOCKBOY.UZE	Block Boy
 200	bomber.uze	Bomber
@@ -15,11 +15,11 @@
 275	circuit.uze	Circuit Puzzle
 118	columns.uze	Columns
 119	controller-tester.uze	Controller Tester
-274 CRLTEST2.UZE	Controller Tester 2
-120 corrida-nebososa.uze	Corrida Nebososa
-201 daleks.hex	Daleks
-121 donkey-kong.uze	Donkey Kong
-122 dr-mario.uze	Dr. Mario
+274	CRLTEST2.UZE	Controller Tester 2
+120	corrida-nebososa.uze	Corrida Nebososa
+201	daleks.hex	Daleks
+121	donkey-kong.uze	Donkey Kong
+122	dr-mario.uze	Dr. Mario
 125	esd-attack.uze	E.S.D. Attack
 124	emuze.uze  Emuze
 269	FinalBlood.uze	Final Blood
@@ -72,3 +72,5 @@
 162	uzesweeper.uze	Uzesweeper
 164	videopoker.uze	Video Poker
 165	whack-a-mole.uze	Whack-A-Mole
+167	xor.uze	XOR
+168	zombienator.uze	Zombienator
