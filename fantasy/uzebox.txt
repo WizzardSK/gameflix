@@ -1,1 +1,23 @@
-
+100 2048.uze	2048
+169	ae.uze	Alter Ego
+105 arkanoid.uze	Arkanoid
+108 atomix.uze	Atomix
+109 bc-dash.uze	BC-Dash
+188	BABTOWER.UZE	Babylon Tower
+216	BLOCKBOY.UZE	Block Boy
+200	bomber.uze	Bomber
+111	boulderdash.uze	Boulder Dash
+113	bugz.uze	Bugz
+174	Calculator.hex	Calculator
+114	candle-burner.uze	Candle Burner
+116	chess4uzebox.uze	Chess 4 Uzebox
+117	chucie-egg.uze	Chuckie Egg
+275	circuit.uze	Circuit Puzzle
+118	columns.uze	Columns
+119	controller-tester.uze	Controller Tester
+274	CRLTEST2.UZE	Controller Tester 2
+120	corrida-nebososa.uze	Corrida Nebososa
+201 daleks.hex	Daleks
+121	donkey-kong.uze	Donkey Kong
+122	dr-mario.uze	Dr. Mario
+125	esd-attack.uze	E.S.D. Attack
