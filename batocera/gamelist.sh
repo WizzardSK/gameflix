@@ -5,7 +5,6 @@ mkdir -p ~/{rom,roms,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/roms/{neoge
 sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/rom --config=rclone.conf --daemon --http-no-head
 rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media ~/vircon32 --daemon --config=rclone.conf
-./batocera/ratarmount1 ~/rom/Internet\ Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/*/ ~/TDC
 
 echo "Uzebox"; unzip -j fantasy/uzebox.zip -d ~/uzebox > /dev/null
 echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
@@ -43,10 +42,8 @@ for each in "${roms[@]}"; do
     folder="$HOME/mount/${rom[0]}/${rom3}"
   else folder="$HOME/rom/${rom[1]}"; fi
   if grep -q ":" <<< "${rom[1]}"; then
-    mkdir -p ~/mount/${rom[0]}/${rom3}; folder="$HOME/mount/${rom[0]}/${rom3}"
-    rclone mount ${rom[1]} ~/mount/${rom[0]}/${rom3} --daemon --config=rclone.conf --http-no-head
+    mkdir -p ~/mount/${rom[0]}/${rom3}; folder="$HOME/mount/${rom[0]}/${rom3}"; rclone mount ${rom[1]} ~/mount/${rom[0]}/${rom3} --daemon --config=rclone.conf --http-no-head
   fi
-  if [[ "${rom[1]}" == "../roms/TDC" ]]; then folder="$HOME/TDC"; fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls "${folder}" | while read line; do
       line2=${line%.*}
