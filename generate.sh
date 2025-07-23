@@ -38,7 +38,8 @@ pocet=$(ls ~/roms/Uzebox/*.uze ~/roms/Uzebox/*.UZE -1 | wc -l); total=$((pocet+t
 echo "<a href=\"Uzebox.html\" target=\"main\">Uzebox</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Uzebox\") core=\"uzem_libretro\";;" >> ~/gameflix/retroarch.sh  
 wget -nv -O ~/gameflix/Uzebox.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
 echo "<script>bgImage(\"uzebox\"); const fileNames = [" >> ~/gameflix/Uzebox.html; ((platforms++))
-{ while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/Uzebox.html; ((pocet++)); ((total++)); done } < <(ls ~/roms/Uzebox/*.uze ~/roms/Uzebox/*.UZE 2>/dev/null | xargs -I {} basename {})
+curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/uzebox.txt" | while IFS=$'\t' read -r id cart name; do echo -e "\"$id\t$cart\t$name\"," >> ~/gameflix/Uzebox.html; fi; done
+//{ while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/Uzebox.html; ((pocet++)); ((total++)); done } < <(ls ~/roms/Uzebox/*.uze ~/roms/Uzebox/*.UZE 2>/dev/null | xargs -I {} basename {})
 printf ']; generateUzeLinks("roms/Uzebox", "Uzebox");</script><script src=\"script.js\"></script>' >> ~/gameflix/Uzebox.html
 
 pocet=$(ls ~/roms/LowresNX/*.nx | wc -l); total=$((pocet+total))
