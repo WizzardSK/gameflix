@@ -15,9 +15,16 @@
 275	circuit.uze	Circuit Puzzle
 118	columns.uze	Columns
 119	controller-tester.uze	Controller Tester
-274	CRLTEST2.UZE	Controller Tester 2
-120	corrida-nebososa.uze	Corrida Nebososa
+274 CRLTEST2.UZE	Controller Tester 2
+120 corrida-nebososa.uze	Corrida Nebososa
 201 daleks.hex	Daleks
-121	donkey-kong.uze	Donkey Kong
-122	dr-mario.uze	Dr. Mario
+121 donkey-kong.uze	Donkey Kong
+122 dr-mario.uze	Dr. Mario
 125	esd-attack.uze	E.S.D. Attack
+124	emuze.uze  Emuze
+269	FinalBlood.uze	Final Blood
+222	D_foad.uze	Flight of a Dragon
+194	FRGFEAST.UZE	Frog Feast
+127	frogger.uze	Frogger
+128	gameoflife.uze	Game of Life
+211	GGHOST.HEX	Ghosty Ghost
