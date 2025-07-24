@@ -124,3 +124,16 @@
 186	tron-bmp.hex	tron-bmp
 187	tron-music-demo.hex	tronmusicdemo
 260	zelda2.uze	zelda2-wip (blueknight)
+173	AirHockey.hex	Air Hockey
+115	castlevania-wip.uze	Castlevania
+203	g-force.uze	G Force
+135	lolo-wip.uze	Lolo
+137	mega-bomber-wip.uze	Mega Bomber
+142	moon-patrol-wip.uze	Moon Patrol
+276	utype-wip.uze	UTYPE
+166	wuergertime-2.0.uze	Wurger Time 2.0
+221	ZoomingSecretary.uze	Zooming Secretary
+270	RLE_Demo.uze	RLE Demo
+272	K_Reels.uze	Reels of Fortune
+271	K_Tetris.uze	Tetris
+273	UzeboxTactics.uze	Uzebox Tactics
