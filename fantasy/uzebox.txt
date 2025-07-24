@@ -94,3 +94,33 @@
 246	SpaceAge.uze	Spaceage (UCC2013)
 208	mario.uze	UzeMario (UCC2013)
 163	CunningFellow-VectorGameFinal.hex	VectorGame (UCC2013)
+217	ALGMUSIC.UZE	Algorithmic Music Demo
+259	Bomberman2-wip.uze	Bomberman II
+112	buddha.uze	Buddha
+218	ZeldaLinksAwakening.uze	Link's Awakening
+123	dungeon-slash-demo.uze	Dungeon Slash
+177	halloween2008.hex	Hallowween 2008
+191	easter.uze	Happy Easter
+178	matrix.hex	Matrix Screensaver
+136	maze.uze	Maze
+213	Mode13Demo.hex	Mode 13 Demo
+179	mode9.hex	Mode 9 demo
+261	MUSICDEM.UZE	Music Demo
+180	race.hex	Race
+262	SHADOWGT.UZE	Shadowgate music demo
+183	sonic.hex	Sonic
+185	spriteEngineDemo.hex	Sprite Engine V1 Demo
+184	SpriteDemo.hex	Sprite Engine V2 Demo
+156	super-mario-demo.uze	Super Mario (demo)
+198	tron.uze	Tron Music Demo
+263	VectorDemo.uze	Vector Demo
+210	Win8.uze	Windows 8
+110	bitmap-demo.uze	bitmap-demo
+189	brokenscreen.uze	brokenscreen
+175	claydemo.hex	claydemo
+266	SQImage.uze	sq_kernel - imgview
+267	SQBoptst.uze	sq_kernel - test_swide
+268	SQSprtst.uze	sq_kernel - test_titles
+186	tron-bmp.hex	tron-bmp
+187	tron-music-demo.hex	tronmusicdemo
+260	zelda2.uze	zelda2-wip (blueknight)
