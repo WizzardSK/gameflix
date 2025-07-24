@@ -51,7 +51,7 @@
 149	ruby-crush.uze	Ruby Crush
 150	simon.uze	Simon
 264	smokeyAndTheBandit.uze	Smokey and the Bandit
-223	Snake.uze	Snake! (Bytesquid)
+223	Snake.uze	Snake!
 151	snakes.uze	Snakes
 153	sokoban.uze	Sokoban
 152	sokoban-world.uze	Sokoban World
@@ -74,3 +74,15 @@
 165	whack-a-mole.uze	Whack-A-Mole
 167	xor.uze	XOR
 168	zombienator.uze	Zombienator
+255	65536in1.uze	65536-in-1 (UCC2016)
+171	cchopper.uze	Chickens in Choppers (UCC2016)
+102	foaddemo.uze	Flight of a Dragon (UCC2016)
+103	roguze.uze	Roguze (UCC2016)
+104	stormforce.uze	Stormforce (UCC2016)
+130	Ellipsis-HoleyMoley.uze	Holey Moley (UCC2014)
+131	Jhhoward-Joyrider.uze	Joyrider (UCC2014)
+249	Grobian99-Mellis Retro Land.uze	Mellis Retro Land (UCC2014)
+235	CunningFellow-Tornado2000.uze	Tornado 2000 (UCC2014)
+205	Schepers_cp-UzeBeats.uze	UzeBeats (UCC2014)
+206	Stache-UzeWars.uze	UzeWars (UCC2014)
+170	Nicksen782-UzeZelda.uze	UzeZelda (2014)
