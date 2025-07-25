@@ -37,15 +37,7 @@ IFS=$'\n' read -d '' -ra roms < platforms.txt
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/mount/${rom[0]} ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); echo ${rom3}; mkdir -p ~/mount/${rom[0]}/${rom3}
-#  if [[ ${rom[1]} =~ \.zip$ ]]; then
-#    ./batocera/ratarmount1 "https://myrient.erista.me/files/${rom[1]}" ~/mount/${rom[0]}/${rom3} -f &
-#    while ! mount | grep -q "on /home/runner/mount/${rom[0]}/${rom3} "; do sleep 1; done
-#    folder="$HOME/mount/${rom[0]}/${rom3}"
-#  else 
-  folder="$HOME/rom/${rom[1]}"
-#  if grep -q ":" <<< "${rom[1]}"; then
-#    mkdir -p ~/mount/${rom[0]}/${rom3}; folder="$HOME/mount/${rom[0]}/${rom3}"; rclone mount ${rom[1]} ~/mount/${rom[0]}/${rom3} --daemon --config=rclone.conf --http-no-head
-#  fi
+  folder="$HOME/rom/${rom[1]}"; if [[ "${rom[1]}" == "../roms/MS-DOS eXoDOS" ]]; then folder="$HOME/MS-DOS eXoDOS"; fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls "${folder}" | while read line; do
       line2=${line%.*}
