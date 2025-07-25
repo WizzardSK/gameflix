@@ -39,11 +39,6 @@ mount -o bind /userdata/zips/lowresnx.zip "/userdata/roms/lowresnx/LowresNX"
 mount -o bind /userdata/zips/wasm4.zip "/userdata/roms/wasm4/WASM-4"
 mount -o bind /userdata/zips/uzebox.zip "/userdata/roms/uzebox/Uzebox"
 
-#for each in "${roms[@]}"; do
-#  read -ra rom < <(printf '%s' "$each")
-#  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-#done
-
 DAT_URL="https://github.com/WizzardSK/gameflix/raw/refs/heads/main/neogeo.dat"; DAT_FILE="/tmp/neogeo.dat"
 SRC_DIR="/userdata/rom/Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade"; DEST_DIR="/userdata/roms/neogeo/Neo Geo"
 curl -s -L "$DAT_URL" -o "$DAT_FILE"; mkdir -p "$DEST_DIR"
