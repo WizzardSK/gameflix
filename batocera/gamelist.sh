@@ -5,6 +5,7 @@ mkdir -p ~/{rom,roms,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/roms/{neoge
 sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/rom --config=rclone.conf --daemon --http-no-head
 rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media ~/vircon32 --daemon --config=rclone.conf
+rclone mount eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/ ~/mount/dos/MS-DOS\ eXoDOS --daemon --config=rclone.conf --http-no-head
 
 echo "Uzebox"; unzip -j fantasy/uzebox.zip -d ~/uzebox > /dev/null
 echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
@@ -36,14 +37,15 @@ IFS=$'\n' read -d '' -ra roms < platforms.txt
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/mount/${rom[0]} ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); echo ${rom3}; mkdir -p ~/mount/${rom[0]}/${rom3}
-  if [[ ${rom[1]} =~ \.zip$ ]]; then
-    ./batocera/ratarmount1 "https://myrient.erista.me/files/${rom[1]}" ~/mount/${rom[0]}/${rom3} -f &
-    while ! mount | grep -q "on /home/runner/mount/${rom[0]}/${rom3} "; do sleep 1; done
-    folder="$HOME/mount/${rom[0]}/${rom3}"
-  else folder="$HOME/rom/${rom[1]}"; fi
-  if grep -q ":" <<< "${rom[1]}"; then
-    mkdir -p ~/mount/${rom[0]}/${rom3}; folder="$HOME/mount/${rom[0]}/${rom3}"; rclone mount ${rom[1]} ~/mount/${rom[0]}/${rom3} --daemon --config=rclone.conf --http-no-head
-  fi
+#  if [[ ${rom[1]} =~ \.zip$ ]]; then
+#    ./batocera/ratarmount1 "https://myrient.erista.me/files/${rom[1]}" ~/mount/${rom[0]}/${rom3} -f &
+#    while ! mount | grep -q "on /home/runner/mount/${rom[0]}/${rom3} "; do sleep 1; done
+#    folder="$HOME/mount/${rom[0]}/${rom3}"
+#  else 
+  folder="$HOME/rom/${rom[1]}"; fi
+#  if grep -q ":" <<< "${rom[1]}"; then
+#    mkdir -p ~/mount/${rom[0]}/${rom3}; folder="$HOME/mount/${rom[0]}/${rom3}"; rclone mount ${rom[1]} ~/mount/${rom[0]}/${rom3} --daemon --config=rclone.conf --http-no-head
+#  fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls "${folder}" | while read line; do
       line2=${line%.*}
