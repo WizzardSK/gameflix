@@ -42,7 +42,7 @@ for each in "${roms[@]}"; do
 #    while ! mount | grep -q "on /home/runner/mount/${rom[0]}/${rom3} "; do sleep 1; done
 #    folder="$HOME/mount/${rom[0]}/${rom3}"
 #  else 
-  folder="$HOME/rom/${rom[1]}"; fi
+  folder="$HOME/rom/${rom[1]}"
 #  if grep -q ":" <<< "${rom[1]}"; then
 #    mkdir -p ~/mount/${rom[0]}/${rom3}; folder="$HOME/mount/${rom[0]}/${rom3}"; rclone mount ${rom[1]} ~/mount/${rom[0]}/${rom3} --daemon --config=rclone.conf --http-no-head
 #  fi
