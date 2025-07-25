@@ -12,6 +12,7 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 rclone mount thumbs:Data/share/thumbs /userdata/thumbs --vfs-cache-mode full --daemon --config=/userdata/system/rclone.conf --cache-dir=/userdata/system/.cache/rclone --allow-non-empty --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h
 rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media /userdata/roms/vircon32/Vircon32 --daemon --config=/userdata/system/rclone.conf
+rclone mount eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/ "/userdata/roms/dos/MS-DOS eXoDOS" --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
 
 if [ ! -f /userdata/system/offline ]; then
   archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
@@ -28,20 +29,21 @@ for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom[0]}.png; fi
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); mkdir -p /userdata/roms/${rom[0]}/${rom3}
-  if [[ ${rom[1]} =~ \.zip$ ]]; then
-    rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
-    if [ ! -f /userdata/system/offline ]; then
-      archives+=( "https://myrient.erista.me/files/${rom1}" )
-    else
-      romfile=$(basename "${rom1}")
-      if [ ! -f /userdata/zip/${romfile} ]; then wget -O /userdata/zip/${romfile} https://myrient.erista.me/files/${rom1}; fi
-      archives+=( "/userdata/zip/${romfile}" )
-    fi
-  else
-    if grep -q ":" <<< "${rom[1]}"; then
-      rclone mount ${rom[1]} /userdata/roms/${rom[0]}/${rom3} --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
-    else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}; fi
-  fi
+#  if [[ ${rom[1]} =~ \.zip$ ]]; then
+#    rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
+#    if [ ! -f /userdata/system/offline ]; then
+#      archives+=( "https://myrient.erista.me/files/${rom1}" )
+#    else
+#      romfile=$(basename "${rom1}")
+#      if [ ! -f /userdata/zip/${romfile} ]; then wget -O /userdata/zip/${romfile} https://myrient.erista.me/files/${rom1}; fi
+#      archives+=( "/userdata/zip/${romfile}" )
+#    fi
+#  else
+#    if grep -q ":" <<< "${rom[1]}"; then
+#      rclone mount ${rom[1]} /userdata/roms/${rom[0]}/${rom3} --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
+#    else
+  mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}; fi
+#  fi
 done
 
 /userdata/system/ratarmount -o attr_timeout=3600 --disable-union-mount "${archives[@]}" /userdata/zips -f & 
@@ -55,10 +57,10 @@ mount -o bind /userdata/zips/uzebox.zip "/userdata/roms/uzebox/Uzebox"
 for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  if [[ ${rom[1]} =~ \.zip$ ]]; then
-    rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
-    mkdir -p /userdata/roms/${rom[0]}/${rom3}; mount -o bind /userdata/zips/${rom1##*/} /userdata/roms/${rom[0]}/${rom3}
-  fi
+#  if [[ ${rom[1]} =~ \.zip$ ]]; then
+#    rom1="${rom[1]//&/%26}"; rom1="${rom1// /%20}"; rom1="${rom1//[/%5B}"; rom1="${rom1//]/%5D}"; rom1="${rom1//\'/%27}"
+#    mkdir -p /userdata/roms/${rom[0]}/${rom3}; mount -o bind /userdata/zips/${rom1##*/} /userdata/roms/${rom[0]}/${rom3}
+#  fi
 done
 
 DAT_URL="https://github.com/WizzardSK/gameflix/raw/refs/heads/main/neogeo.dat"; DAT_FILE="/tmp/neogeo.dat"
