@@ -92,7 +92,7 @@ function generateUzeLinks(romPath, imagePath) {
 function generateFileLinks(romPath, imagePath) {
     document.write("<div id=\"figureList\">");
     if (location.protocol !== "file:") {
-        if (romPath.includes("eXoDOS")) { romPath = romPath.replace("myrient/../roms/MS-DOS eXoDOS", "https://the-eye.eu/public/Games/eXo/eXoDOS_v6r2/eXo/eXoDOS"); }
+        if (romPath.includes("eXoDOS")) { romPath = romPath.replace("roms/MS-DOS eXoDOS", "https://the-eye.eu/public/Games/eXo/eXoDOS_v6r2/eXo/eXoDOS"); }
         if (romPath.startsWith("myrient/")) { romPath = romPath.replace("myrient", "https://myrient.erista.me/files"); }
         if (romPath.startsWith("roms/Vircon32")) { romPath = romPath.replace("roms/Vircon32", "https://archive.org/download/all_vircon32_roms_and_media/all_vircon32_roms_and_media"); }
         if (romPath.startsWith("roms/Neo Geo")) { romPath = romPath.replace("roms/Neo Geo", "https://myrient.erista.me/files/Internet%20Archive/chadmaster/mame-merged/mame-merged"); }
