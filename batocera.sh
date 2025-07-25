@@ -14,15 +14,8 @@ rclone mount thumbs:Data/share/thumbs /userdata/thumbs --vfs-cache-mode full --d
 rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media /userdata/roms/vircon32/Vircon32 --daemon --config=/userdata/system/rclone.conf
 rclone mount eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/ "/userdata/roms/dos/MS-DOS eXoDOS" --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
 
-if [ ! -f /userdata/system/offline ]; then
-  archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
-  archives+=( https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/{tic80,wasm4,uzebox,lowresnx}.zip )
-else
-  if [ ! -f /userdata/zip/Atari-2600-VCS-ROM-Collection.zip ]; then wget -nv -O /userdata/zip/Atari-2600-VCS-ROM-Collection.zip https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip; fi
-  for name in tic80 wasm4 uzebox lowresnx; do [ ! -f /userdata/zip/$name.zip ] && wget -nv -O /userdata/zip/$name.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/$name.zip; done 
-  archives=( "/userdata/zip/Atari-2600-VCS-ROM-Collection.zip" )
-  archives+=( /userdata/zip/{tic80,wasm4,uzebox,lowresnx}.zip )
-fi
+archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
+archives+=( https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/{tic80,wasm4,uzebox,lowresnx}.zip )
 
 IFS=";"; for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
