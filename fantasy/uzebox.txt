@@ -28,7 +28,7 @@
 127	frogger.uze	Frogger
 128	gameoflife.uze	Game of Life
 211	GGHOST.uze	Ghosty Ghost
-129	gorillas.uze  Gorillas
+129	gorillas.uze	Gorillas
 219	IROS_2_0.UZE	Iros
 220	IROS_2_0GM.UZE	Iros (Godmode)
 132	kismet.uze	Kismet
