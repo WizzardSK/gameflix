@@ -8,11 +8,11 @@ if ! mountpoint -q "$HOME/MS-DOS eXoDOS"; then rclone mount eye:Games/eXo/eXoDOS
 archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
 archives+=( https://github.com/WizzardSK/gameflix/raw/refs/heads/main/fantasy/{lowresnx,tic80,wasm4,uzebox}.zip )
 
-IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
-IFS=";"; for each in "${roms[@]}"; do
-  read -ra rom < <(printf '%s' "$each")
-  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-done
+#IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
+#IFS=";"; for each in "${roms[@]}"; do
+#  read -ra rom < <(printf '%s' "$each")
+#  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
+#done
 
 if ! mountpoint -q "$HOME/zips"; then nohup ratarmount -o attr_timeout=3600 --disable-union-mount "${archives[@]}" ~/zips -f & fi
 if ! mountpoint -q "$HOME/roms/Vircon32"; then rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media $HOME/roms/Vircon32 --daemon; fi
