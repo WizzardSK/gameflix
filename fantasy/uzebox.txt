@@ -8,7 +8,7 @@
 200	bomber.uze	Bomber
 111	boulderdash.uze	Boulder Dash
 113	bugz.uze	Bugz
-174	Calculator.hex	Calculator
+174	Calculator.uze	Calculator
 114	candle-burner.uze	Candle Burner
 116	chess4uzebox.uze	Chess 4 Uzebox
 117	chucie-egg.uze	Chuckie Egg
@@ -17,17 +17,17 @@
 119	controller-tester.uze	Controller Tester
 274	CRLTEST2.UZE	Controller Tester 2
 120	corrida-nebososa.uze	Corrida Nebososa
-201	daleks.hex	Daleks
+201	daleks.uze	Daleks
 121	donkey-kong.uze	Donkey Kong
 122	dr-mario.uze	Dr. Mario
 125	esd-attack.uze	E.S.D. Attack
-124	emuze.uze  Emuze
+124	emuze.uze	Emuze
 269	FinalBlood.uze	Final Blood
 222	D_foad.uze	Flight of a Dragon
 194	FRGFEAST.UZE	Frog Feast
 127	frogger.uze	Frogger
 128	gameoflife.uze	Game of Life
-211	GGHOST.HEX	Ghosty Ghost
+211	GGHOST.uze	Ghosty Ghost
 129	gorillas.uze  Gorillas
 219	IROS_2_0.UZE	Iros
 220	IROS_2_0GM.UZE	Iros (Godmode)
@@ -40,14 +40,14 @@
 139	megatris.uze	Megatris
 140	mellis-retro-land.uze	Melli's Retro Land
 141	memory.uze	Memory
-172	ninjabeatdown.hex	Ninja Beatdown
-204	pacman.hex	Pacman
+172	ninjabeatdown.uze	Ninja Beatdown
+204	pacman.uze	Pacman
 144	pacman-lite.uze	Pacman-lite
 145	pengo.uze	Pengo
 146	pentago.uze	Pentago
 147	pipes.uze	Pipes
 148	pong.uze	Pong
-181	REDBULL.HEX	Red Bull Creation
+181	REDBULL.uze	Red Bull Creation
 149	ruby-crush.uze	Ruby Crush
 150	simon.uze	Simon
 264	smokeyAndTheBandit.uze	Smokey and the Bandit
@@ -86,45 +86,45 @@
 205	Schepers_cp-UzeBeats.uze	UzeBeats (UCC2014)
 206	Stache-UzeWars.uze	UzeWars (UCC2014)
 170	Nicksen782-UzeZelda.uze	UzeZelda (UCC2014)
-226	D3thAdd3r-Columns.hex	Columns (UCC2013)
-176	Kilo-DasBoot.hex	DasBoot (UCC2013)
+226	D3thAdd3r-Columns.uze	Columns (UCC2013)
+176	Kilo-DasBoot.uze	DasBoot (UCC2013)
 192	Flecko-EscapeFromDungeon.uze	Escape From Dungeon (UCC2013)
 126	FifteenPuzzle.uze	FifteenPuzzle (UCC2013)
 193	Arlof-FiremanRescue.uze	FiremanRescue (UCC2013)
 246	SpaceAge.uze	Spaceage (UCC2013)
 208	mario.uze	UzeMario (UCC2013)
-163	CunningFellow-VectorGameFinal.hex	VectorGame (UCC2013)
+163	CunningFellow-VectorGameFinal.uze	VectorGame (UCC2013)
 217	ALGMUSIC.UZE	Algorithmic Music Demo
 259	Bomberman2-wip.uze	Bomberman II
 112	buddha.uze	Buddha
 218	ZeldaLinksAwakening.uze	Link's Awakening
 123	dungeon-slash-demo.uze	Dungeon Slash
-177	halloween2008.hex	Hallowween 2008
+177	halloween2008.uze	Hallowween 2008
 191	easter.uze	Happy Easter
-178	matrix.hex	Matrix Screensaver
+178	matrix.uze	Matrix Screensaver
 136	maze.uze	Maze
-213	Mode13Demo.hex	Mode 13 Demo
-179	mode9.hex	Mode 9 demo
+213	Mode13Demo.uze	Mode 13 Demo
+179	mode9.uze	Mode 9 demo
 261	MUSICDEM.UZE	Music Demo
-180	race.hex	Race
+180	race.uze	Race
 262	SHADOWGT.UZE	Shadowgate music demo
-183	sonic.hex	Sonic
-185	spriteEngineDemo.hex	Sprite Engine V1 Demo
-184	SpriteDemo.hex	Sprite Engine V2 Demo
+183	sonic.uze	Sonic
+185	spriteEngineDemo.uze	Sprite Engine V1 Demo
+184	SpriteDemo.uze	Sprite Engine V2 Demo
 156	super-mario-demo.uze	Super Mario (demo)
 198	tron.uze	Tron Music Demo
 263	VectorDemo.uze	Vector Demo
 210	Win8.uze	Windows 8
 110	bitmap-demo.uze	bitmap-demo
 189	brokenscreen.uze	brokenscreen
-175	claydemo.hex	claydemo
+175	claydemo.uze	claydemo
 266	SQImage.uze	sq_kernel - imgview
 267	SQBoptst.uze	sq_kernel - test_swide
 268	SQSprtst.uze	sq_kernel - test_titles
-186	tron-bmp.hex	tron-bmp
-187	tron-music-demo.hex	tronmusicdemo
+186	tron-bmp.uze	tron-bmp
+187	tron-music-demo.uze	tronmusicdemo
 260	zelda2.uze	zelda2-wip (blueknight)
-173	AirHockey.hex	Air Hockey
+173	AirHockey.uze	Air Hockey
 115	castlevania-wip.uze	Castlevania
 203	g-force.uze	G Force
 135	lolo-wip.uze	Lolo
