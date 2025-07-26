@@ -58,7 +58,7 @@
 182	SOLITAIR.UZE	Solitaire
 154	space-age.uze	Space Age
 155	space-invaders.uze	Space Invaders
-196	sumbarine.uze	Submarine
+196	submarine.uze	Submarine
 197	TankFu.uze	Tank Fu
 207	TOORUMSQ.UZE	Toorum's Quest
 157	uze-feud.uze	Uze Feud
