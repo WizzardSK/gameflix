@@ -47,7 +47,7 @@
 146	pentago.uze	Pentago
 147	pipes.uze	Pipes
 148	pong.uze	Pong
-181	REDBULL.uze	Red Bull Creation
+181	REDBULL.UZE	Red Bull Creation
 149	ruby-crush.uze	Ruby Crush
 150	simon.uze	Simon
 264	smokeyAndTheBandit.uze	Smokey and the Bandit
