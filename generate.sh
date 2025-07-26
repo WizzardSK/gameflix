@@ -80,15 +80,6 @@ IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
   romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   if [[ "${rom[1]}" == *"eXoDOS"* ]]; then romfolder="roms/MS-DOS eXoDOS"; emufolder="roms/MS-DOS eXoDOS"; fi
-#  if [ -e ~/gameflix/${rom3}.html ]; then
-#    pocet=$(ls ~/${romfolder} -1 | wc -l); total=$((pocet+total))
-#    echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
-#    if [ "$platform" != "${rom[0]}" ]; then
-#      echo "</figcaption></figure><figure><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'><figcaption>" >> ~/gameflix/main.html; ((platforms++))
-#    fi
-#    echo "<a href=\"${rom3}.html\">${rom3}</a><br>" >> ~/gameflix/main.html
-#    platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh; continue
-#  fi
   > ~/gameflix/${rom3}.html
   wget -nv -O ~/gameflix/${rom3}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
   echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html
@@ -99,7 +90,6 @@ IFS=";"; for each in "${roms[@]}"; do
   if [ "$platform" != "${rom[0]}" ]; then
     echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'></a><figcaption>${rom[2]}</figcaption></figure>" >> ~/gameflix/main.html; ((platforms++))
   fi
-#  echo "<a href=\"${rom3}.html\">${rom3}</a><br>" >> ~/gameflix/main.html
   platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 done
 
