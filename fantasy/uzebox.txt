@@ -11,7 +11,7 @@
 174	Calculator.uze	Calculator
 114	candle-burner.uze	Candle Burner
 116	chess4uzebox.uze	Chess 4 Uzebox
-117	chucie-egg.uze	Chuckie Egg
+117	chuckie-egg.uze	Chuckie Egg
 275	circuit.uze	Circuit Puzzle
 118	columns.uze	Columns
 119	controller-tester.uze	Controller Tester
