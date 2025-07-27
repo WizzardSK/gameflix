@@ -12,10 +12,7 @@ curl -sL "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read 
 done
 
 cd "$GITHUB_WORKSPACE/wasm4"
+rm -f "$GITHUB_WORKSPACE/fantasy/wasm4.zip" 
 zip -r "$GITHUB_WORKSPACE/fantasy/wasm4.zip" *
 cd "$GITHUB_WORKSPACE"
-git config --global user.name "GitHub Actions"
-git config --global user.email "actions@github.com"
 git add "$GITHUB_WORKSPACE/fantasy/wasm4.zip"
-git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
-git push
