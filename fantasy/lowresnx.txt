@@ -14,7 +14,7 @@
 3722	Quad Ludo II	BxSmqEr5Ah_Quad_Ludos_II_02.png	BxSmqEr5Ah_Quad_Ludos_II_02.nx
 3713	Flower Power	yEMVg8BuLa_Flower_Power_0.03.png	yEMVg8BuLa_Flower_Power_0.03.nx
 3712	Star Run	KXBLacA6G8_Star_Run_0.014.png	KXBLacA6G8_Star_Run_0.014.nx
-3705	Kokono Checkers	E9xrgfmUxa_Kokono_Checkers_033.png	E9xrgfmUxa_Kokono_Checkers_033.nx
+3705	Kokono Checkers	myipAzccDD_Kokono_Checkers_034.png	myipAzccDD_Kokono_Checkers_034.nx
 3704	Minesweep Solitaire	fZ3XimP2sr_Minesweep_Solitaire.png	fZ3XimP2sr_Minesweep_Solitaire.nx
 3697	Personal Computer Boot Menu	cmFrJpypNu_PC_Boot_BIOS.png	cmFrJpypNu_PC_Boot_BIOS.nx
 3696	Smooth Brain The Game	DeFbyViohS_Smooth_Brain.png	DeFbyViohS_Smooth_Brain.nx
