@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run script
-        run: bash fantasy.sh
+        run: bash fantasy/fantasy.sh
