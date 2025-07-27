@@ -20,8 +20,4 @@ cd $DOWNLOAD_DIR
 rm -f "$GITHUB_WORKSPACE/fantasy/tic80.zip" 
 zip -r "$GITHUB_WORKSPACE/fantasy/tic80.zip" *
 cd "$GITHUB_WORKSPACE"
-git config --global user.name "GitHub Actions"
-git config --global user.email "actions@github.com"
 git add "$GITHUB_WORKSPACE/fantasy/tic80.zip"
-git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
-git push
