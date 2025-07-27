@@ -36,7 +36,7 @@ done; echo "<folder><path>./Voxatron</path><name>Voxatron</name><image>./splore.
 IFS=$'\n' read -d '' -ra roms < platforms.txt
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/mount/${rom[0]} ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
-  read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); echo ${rom3}; mkdir -p ~/mount/${rom[0]}/${rom3}
+  read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); echo ${rom3}
   folder="$HOME/rom/${rom[1]}"; if [[ "${rom[1]}" == "../roms/dos/MS-DOS eXoDOS" ]]; then folder=~/mount/dos/MS-DOS\ eXoDOS; fi
   if ! grep -Fxq "<gameList>" ~/roms/${rom[0]}/gamelist.xml > /dev/null 2>&1; then
     ls "${folder}" | while read line; do
@@ -48,7 +48,6 @@ for each in "${roms[@]}"; do
     done
     echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/roms/${rom[0]}/gamelist.xml
   fi
-  fusermount -u ~/mount/${rom[0]}/${rom3} > /dev/null 2>&1
 done
 
 echo "Atari 2600 ROMS"; ./batocera/ratarmount1 https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip ~/atari2600roms -f &
