@@ -1,0 +1,17 @@
+name: 0:7 Fantasy gamelists updater
+
+on:
+  schedule:
+    - cron: '0 7 * * *' 
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run script
+        run: bash fantasy.sh
