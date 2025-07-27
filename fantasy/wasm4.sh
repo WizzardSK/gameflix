@@ -10,7 +10,6 @@ curl -sL "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read 
     [[ -f "$FILE" ]] || wget -nv -O "$FILE" "$CARTS_URL/$GAME.$EXT"; 
   done
 done
-
 cd "$GITHUB_WORKSPACE/wasm4"
 rm -f "$GITHUB_WORKSPACE/fantasy/wasm4.zip" 
 zip -r "$GITHUB_WORKSPACE/fantasy/wasm4.zip" *
