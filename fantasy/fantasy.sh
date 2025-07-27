@@ -1,3 +1,3 @@
 #!/bin/bash
-bash ./wasm4.sh
-bash ./voxatron.sh
+bash ./fantasy/wasm4.sh
+bash ./fantasy/voxatron.sh
