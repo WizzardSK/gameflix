@@ -1,8 +1,8 @@
-name: 0:2 Batocera gamelists updater
+name: 0:4 Batocera gamelists updater
 
 on:
   schedule:
-    - cron: '0 2 * * *' 
+    - cron: '0 4 * * *' 
   workflow_dispatch: 
 
 jobs:
