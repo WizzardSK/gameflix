@@ -1,4 +1,7 @@
 #!/bin/bash
+
+bash ./batocera/gamelist.sh
+
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
 chmod +x $GITHUB_WORKSPACE/batocera/ratarmount1
 sudo ln -s $GITHUB_WORKSPACE/batocera/ratarmount1 /bin/ratarmount
@@ -19,5 +22,3 @@ git config --global user.email "actions@github.com"
 git add "$GITHUB_WORKSPACE/gameflix.zip"
 git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
 git push
-
-bash ./batocera/gamelist.sh
