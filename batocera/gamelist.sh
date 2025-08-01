@@ -47,7 +47,7 @@ for each in "${roms[@]}"; do
   echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/gamelists/${rom[0]}/gamelist.xml
 done
 
-echo "Atari 2600 ROMS"; ./batocera/ratarmount1 https://www.atarimania.com/gamelists/Atari-2600-VCS-ROM-Collection.zip ~/atari2600roms -f &
+echo "Atari 2600 ROMS"; ./batocera/ratarmount1 https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip ~/atari2600roms -f &
 while ! mount | grep -q "on /home/runner/atari2600roms "; do sleep 1; done
 ls ~/atari2600roms/gamelists | while read line; do
   line2=${line%.*}
