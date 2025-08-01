@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s nocasematch
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
-mkdir -p ~/{rom,roms,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/roms/{neogeo,uzebox,tic80,wasm4,lowresnx,vircon32,Vircon32,pico8,voxatron,dos} ~/mount/dos/MS-DOS\ eXoDOS
+mkdir -p ~/{rom,roms,zip,zips,atari2600roms,mount,myrient,uzebox,vircon32} ~/roms/{neogeo,uzebox,tic80,wasm4,lowresnx,vircon32,Vircon32,pico8,voxatron,dos} ~/MS-DOS\ eXoDOS
 sudo apt install fuse-zip > /dev/null
 rclone mount myrient: ~/myrient --config=rclone.conf --daemon --http-no-head
 rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media ~/roms/vircon32 --daemon --config=rclone.conf
