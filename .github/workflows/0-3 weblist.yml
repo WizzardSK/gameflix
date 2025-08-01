@@ -1,4 +1,4 @@
-name: 0:3 Gameflix gamelists updater
+name: 0:3 Gamelists updater
 
 on:
   schedule:
