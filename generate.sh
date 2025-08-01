@@ -81,7 +81,8 @@ IFS=";"; for each in "${roms[@]}"; do
   romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   if [[ "${rom[1]}" == *"eXoDOS"* ]]; then romfolder="roms/MS-DOS eXoDOS"; emufolder="roms/MS-DOS eXoDOS"; fi
   > ~/gameflix/${rom3}.html
-  wget -nv -O ~/gameflix/${rom3}.html https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform.html
+  echo ${rom3}
+  cp platform.html ~/gameflix/${rom3}.html
   echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html
   pocet=0
   { while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++)); done } < <(ls ~/${romfolder})
