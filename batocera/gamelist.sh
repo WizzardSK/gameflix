@@ -1,11 +1,11 @@
 #!/bin/bash
 shopt -s nocasematch
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
-mkdir -p ~/{rom,roms,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/roms/{neogeo,uzebox,tic80,wasm4,lowresnx,vircon32,pico8,voxatron,dos} ~/mount/dos/MS-DOS\ eXoDOS
+mkdir -p ~/{rom,roms,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/roms/{neogeo,uzebox,tic80,wasm4,lowresnx,vircon32,Vircon32,pico8,voxatron,dos} ~/mount/dos/MS-DOS\ eXoDOS
 sudo apt install fuse-zip > /dev/null
-rclone mount myrient: ~/rom --config=rclone.conf --daemon --http-no-head
-rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media ~/vircon32 --daemon --config=rclone.conf
-rclone mount eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/ ~/mount/dos/MS-DOS\ eXoDOS --daemon --config=rclone.conf --http-no-head
+rclone mount myrient: ~/myrient --config=rclone.conf --daemon --http-no-head
+rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media ~/roms/vircon32 --daemon --config=rclone.conf
+rclone mount eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/ ~/MS-DOS\ eXoDOS --daemon --config=rclone.conf --http-no-head
 
 echo "Uzebox"; unzip -j fantasy/uzebox.zip -d ~/uzebox > /dev/null
 echo "<gameList>" > ~/roms/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
@@ -23,7 +23,7 @@ done; echo "</gameList>" >> ~/roms/wasm4/gamelist.xml
 echo "LowresNX"; echo "<gameList>" > ~/roms/lowresnx/gamelist.xml; cat fantasy/lowresnx.txt | while IFS=$'\t' read -r id name picture cart; do
   hra="<game><path>./LowresNX/${cart}</path><name>${name}</name><image>./LowresNX/${picture}</image>"; echo "${hra}</game>" >> ~/roms/lowresnx/gamelist.xml
 done; echo "</gameList>" >> ~/roms/lowresnx/gamelist.xml
-echo "Vircon32"; echo "<gameList>" > ~/roms/vircon32/gamelist.xml; basename -a ~/vircon32/*.zip | while read line; do
+echo "Vircon32"; echo "<gameList>" > ~/roms/vircon32/gamelist.xml; basename -a ~/roms/Vircon32/*.zip | while read line; do
   line2=${line%.*}; hra="<game><path>./Vircon32/${line}</path><name>${line2}</name><image>~/../thumbs/Vircon32/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/roms/vircon32/gamelist.xml
 done; echo "</gameList>" >> ~/roms/vircon32/gamelist.xml
 echo "Pico-8"; echo "<gameList>" > ~/roms/pico8/gamelist.xml; cat fantasy/pico8.txt | while IFS=$'\t' read -r id name cart; do
@@ -37,7 +37,7 @@ IFS=$'\n' read -d '' -ra roms < platforms.txt
 IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/mount/${rom[0]} ~/roms/${rom[0]}; done
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); echo ${rom3}
-  folder="$HOME/rom/${rom[1]}"; if [[ "${rom[1]}" == "../roms/dos/MS-DOS eXoDOS" ]]; then folder=~/mount/dos/MS-DOS\ eXoDOS; fi
+  folder="$HOME/myrient/${rom[1]}"; if [[ "${rom[1]}" == "../MS-DOS eXoDOS" ]]; then folder=~/MS-DOS\ eXoDOS; fi
   ls "${folder}" | while read line; do
     line2=${line%.*}
     hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${line2}.png</marquee>"
