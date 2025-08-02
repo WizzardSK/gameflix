@@ -39,12 +39,6 @@ ls ~/atari2600roms/ROMS | while read line; do
   else echo "${hra}<hidden>true</hidden></game>" >> ~/gamelists/atari2600/gamelist.xml; fi
 done; echo "<folder><path>./Atari 2600 ROMS</path><name>Atari 2600 ROMS</name><image>~/../thumb/atari2600.png</image></folder>" >> ~/gamelists/atari2600/gamelist.xml
 
-IFS=";"; for each in "${roms[@]}"; do 
-  read -ra rom < <(printf '%s' "$each")
-  if ! grep -Fxq "<gameList>" ~/gamelists/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" ~/gamelists/${rom[0]}/gamelist.xml; fi
-  if ! grep -Fxq "</gameList>" ~/gamelists/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/gamelists/${rom[0]}/gamelist.xml; fi
-done
-
 echo "Neo Geo"; echo "<gameList>" > ~/gamelists/neogeo/gamelist.xml; ROMLIST="neogeo.dat";
 while IFS= read -r riadok; do
   prvy="${riadok%%[[:space:]]*}"; ostatok="${riadok#*[[:space:]]}"; zip="${prvy%.neo}.zip"
