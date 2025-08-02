@@ -49,7 +49,7 @@ done
 
 echo "Atari 2600 ROMS"; ./batocera/ratarmount1 https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip ~/atari2600roms -f &
 while ! mount | grep -q "on /home/runner/atari2600roms "; do sleep 1; done
-ls ~/atari2600roms/gamelists | while read line; do
+ls ~/atari2600roms/ROMS | while read line; do
   line2=${line%.*}
   hra="<game><path>./Atari 2600 ROMS/${line}</path><name>${line2}</name><image>~/../thumbs/Atari - 2600/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/Atari - 2600/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/Atari - 2600/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/Atari - 2600/Named_Logos/${line2}.png</marquee>"
   if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then      
@@ -70,13 +70,3 @@ while IFS= read -r riadok; do
   echo "${hra}</game>" >> ~/gamelists/neogeo/gamelist.xml  
 done < "$ROMLIST"
 echo "<folder><path>./Neo Geo</path><name>Neo Geo</name><image>~/../thumb/neogeo.png</image></folder></gameList>" >> ~/gamelists/neogeo/gamelist.xml
-
-cd ~/gamelists
-rm -f "$GITHUB_WORKSPACE/batocera/gamelist.zip"
-zip -r "$GITHUB_WORKSPACE/batocera/gamelist.zip" *
-cd "$GITHUB_WORKSPACE"
-git config --global user.name "GitHub Actions"
-git config --global user.email "actions@github.com"
-git add "$GITHUB_WORKSPACE/batocera/gamelist.zip"
-git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
-git push
