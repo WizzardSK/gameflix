@@ -70,6 +70,7 @@ printf ']; generateFileLinks("roms/Atari 2600 ROMS", "Atari_-_2600");</script><s
 
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
+  mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; 
   romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   if [[ "${rom[1]}" == *"eXoDOS"* ]]; then romfolder="roms/MS-DOS eXoDOS"; emufolder="roms/MS-DOS eXoDOS"; fi
   > ~/gameflix/${rom3}.html; echo ${rom3}; cp platform.html ~/gameflix/${rom3}.html
@@ -94,7 +95,7 @@ IFS=";"; for each in "${roms[@]}"; do
 done
 
 for each in "${roms[@]}"; do 
-  read -ra rom < <(printf '%s' "$each"); mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); echo ${rom3}
+  read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); echo ${rom3}
   romfolder="$HOME/myrient/${rom[1]}"; if [[ "${rom[1]}" == "../roms/dos/MS-DOS eXoDOS" ]]; then romfolder=~/roms/MS-DOS\ eXoDOS; fi
   #ls "${romfolder}" | while read line; do
   #  line2=${line%.*}
