@@ -29,8 +29,6 @@ echo "Voxatron"; echo "<gameList>" > ~/gamelists/voxatron/gamelist.xml; cat fant
   hra="<game><path>./Voxatron/${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/gamelists/voxatron/gamelist.xml
 done; echo "<folder><path>./Voxatron</path><name>Voxatron</name><image>./splore.png</image></folder></gameList>" >> ~/gamelists/voxatron/gamelist.xml
 
-
-
 echo "Atari 2600 ROMS"; ./batocera/ratarmount1 https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip ~/atari2600roms -f &
 while ! mount | grep -q "on /home/runner/atari2600roms "; do sleep 1; done
 ls ~/atari2600roms/ROMS | while read line; do
