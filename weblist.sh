@@ -9,7 +9,6 @@ sudo apt install bindfs > /dev/null
 
 bash ./webflix.sh
 bash ./generate.sh
-bash ./batocera/gamelist.sh
 
 cd ~/gamelists
 rm -f "$GITHUB_WORKSPACE/batocera/gamelist.zip"
