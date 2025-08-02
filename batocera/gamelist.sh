@@ -1,5 +1,6 @@
 #!/bin/bash
 shopt -s nocasematch
+IFS=$'\n' read -d '' -ra roms < platforms.txt
 mkdir -p ~/{rom,gamelists,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/gamelists/{neogeo,uzebox,tic80,wasm4,lowresnx,vircon32,pico8,voxatron,dos}
 sudo apt install fuse-zip > /dev/null
 
