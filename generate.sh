@@ -84,18 +84,19 @@ printf ']; generateFileLinks("roms/Atari 2600 ROMS", "Atari_-_2600");</script><s
 #  platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
 #done
 
-IFS=$'\n'; platform=""; platforms=0; total=0
+IFS=$'\n'; platform=""; total=0; platforms=0
 for each in "${roms[@]}"; do
   IFS=";" read -ra rom <<< "$each"
   rom0="${rom[0]}"; rom1="${rom[1]}"; rom2="${rom[2]}"; rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); rom4="${rom[4]}"; rom5="${rom[5]}"
   romfolder="myrient/$rom1"; emufolder="$rom1"
   [[ "$rom1" == *"eXoDOS"* ]] && romfolder="roms/MS-DOS eXoDOS" && emufolder="roms/MS-DOS eXoDOS"
   [[ "$rom1" == "../roms/dos/MS-DOS eXoDOS" ]] && romfolder="roms/MS-DOS eXoDOS"
-  html="$HOME/gameflix/${rom3}.html"; > "$html"; cp platform.html "$html"
-  echo "$rom3"; echo "<script>bgImage(\"$rom0\"); const fileNames = [" >> "$html"
-  mkdir -p ~/mount/$rom0 ~/gamelists/$rom0; pocet=0
+  html="$HOME/gameflix/${rom3}.html"; > "$html"; cp platform.html "$html"; echo "$rom3"
+  echo "<script>bgImage(\"$rom0\"); const fileNames = [" >> "$html"; mkdir -p ~/mount/$rom0 ~/gamelists/$rom0
+  pocet=0
   for f in ~/"$romfolder"/*; do
-    fn=$(basename "$f"); base="${fn%.*}"; echo "\"$fn\"," >> "$html"; ((pocet++)); ((total++))
+    fn=$(basename "$f"); base="${fn%.*}"
+    echo "\"$fn\"," >> "$html"; ((pocet++)); ((total++))
     hra="<game><path>./${rom3}/${fn}</path><name>${base}</name><image>~/../thumbs/${rom2}/Named_Snaps/${base}.png</image><titleshot>~/../thumbs/${rom2}/Named_Titles/${base}.png</titleshot><thumbnail>~/../thumbs/${rom2}/Named_Boxarts/${base}.png</thumbnail><marquee>~/../thumbs/${rom2}/Named_Logos/${base}.png</marquee>"
     if [[ ! "$fn" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then
       echo "$hra</game>" >> ~/gamelists/$rom0/gamelist.xml
@@ -103,9 +104,14 @@ for each in "${roms[@]}"; do
   done
   echo "]; generateFileLinks(\"$romfolder\", \"${rom2// /_}\");</script><script src=\"script.js\"></script>" >> "$html"
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
-  [[ "$platform" != "$rom0" ]] && echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom0}.png'></a><figcaption>${rom2}</figcaption></figure>" >> ~/gameflix/main.html && ((platforms++))
+  if [[ "$platform" != "$rom0" ]]; then
+    echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom0}.png'></a><figcaption>${rom2}</figcaption></figure>" >> ~/gameflix/main.html
+    ((platforms++))
+  fi
   echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom0}.png</image></folder>" >> ~/gamelists/$rom0/gamelist.xml
-  platform="$rom0"; ext=""; [[ -n "$rom5" ]] && ext="; ext=\"$rom5\""; echo "*\"$emufolder\") core=\"$rom4\"$ext;;" >> ~/gameflix/retroarch.sh
+  ext=""; [[ -n "$rom5" ]] && ext="; ext=\"$rom5\""
+  echo "*\"$emufolder\") core=\"$rom4\"$ext;;" >> ~/gameflix/retroarch.sh
+  platform="$rom0"
 done
 
 #IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; done
