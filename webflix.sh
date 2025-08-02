@@ -6,7 +6,7 @@ archives=( "https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" )
 archives+=( https://wizzardsk.github.io/{lowresnx,tic80,wasm4,uzebox}.zip )
 
 if ! mountpoint -q "$HOME/myrient"; then rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
-if ! mountpoint -q "$HOME/MS-DOS eXoDOS"; then rclone mount eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/ "$HOME/roms/MS-DOS eXoDOS" --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
+if ! mountpoint -q "$HOME/roms/MS-DOS eXoDOS"; then rclone mount eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/ "$HOME/roms/MS-DOS eXoDOS" --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
 if ! mountpoint -q "$HOME/zips"; then nohup ratarmount -o attr_timeout=3600 --disable-union-mount "${archives[@]}" ~/zips -f & fi
 if ! mountpoint -q "$HOME/roms/Vircon32"; then rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media $HOME/roms/Vircon32 --daemon; fi
 while ! mountpoint -q "$HOME/zips"; do sleep 5; done
