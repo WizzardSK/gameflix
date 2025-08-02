@@ -68,35 +68,59 @@ echo "Atari 2600 ROMS"; cp platform.html ~/gameflix/Atari\ 2600\ ROMS.html; echo
 { while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/Atari\ 2600\ ROMS.html; ((pocet++)); ((total++)); done } < <(ls ~/roms/Atari\ 2600\ ROMS)
 printf ']; generateFileLinks("roms/Atari 2600 ROMS", "Atari_-_2600");</script><script src=\"script.js\"></script>' >> ~/gameflix/Atari\ 2600\ ROMS.html
 
-IFS=";"; for each in "${roms[@]}"; do
-  read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
-  if [[ "${rom[1]}" == *"eXoDOS"* ]]; then romfolder="roms/MS-DOS eXoDOS"; emufolder="roms/MS-DOS eXoDOS"; fi
-  > ~/gameflix/${rom3}.html; echo ${rom3}; cp platform.html ~/gameflix/${rom3}.html
-  echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html
-  pocet=0
-  { while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++)); done } < <(ls ~/${romfolder})
-  echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script><script src="script.js"></script>' >> ~/gameflix/${rom3}.html
+#IFS=";"; for each in "${roms[@]}"; do
+#  read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
+#  romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
+#  if [[ "${rom[1]}" == *"eXoDOS"* ]]; then romfolder="roms/MS-DOS eXoDOS"; emufolder="roms/MS-DOS eXoDOS"; fi
+#  > ~/gameflix/${rom3}.html; echo ${rom3}; cp platform.html ~/gameflix/${rom3}.html
+#  echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html
+#  pocet=0
+#  { while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++)); done } < <(ls ~/${romfolder})
+#  echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script><script src="script.js"></script>' >> ~/gameflix/${rom3}.html
+#  echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
+#  if [ "$platform" != "${rom[0]}" ]; then
+#    echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'></a><figcaption>${rom[2]}</figcaption></figure>" >> ~/gameflix/main.html; ((platforms++))
+#  fi
+#  platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
+#done
+
+IFS=$'\n'; platform=""; platforms=0; total=0
+for each in "${roms[@]}"; do
+  IFS=";" read -ra rom <<< "$each"
+  rom0="${rom[0]}"; rom1="${rom[1]}"; rom2="${rom[2]}"; rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); rom4="${rom[4]}"; rom5="${rom[5]}"
+  romfolder="myrient/$rom1"; emufolder="$rom1"
+  [[ "$rom1" == *"eXoDOS"* ]] && romfolder="roms/MS-DOS eXoDOS" && emufolder="roms/MS-DOS eXoDOS"
+  [[ "$rom1" == "../roms/dos/MS-DOS eXoDOS" ]] && romfolder="roms/MS-DOS eXoDOS"
+  html="$HOME/gameflix/${rom3}.html"; > "$html"; cp platform.html "$html"
+  echo "$rom3"; echo "<script>bgImage(\"$rom0\"); const fileNames = [" >> "$html"
+  mkdir -p ~/mount/$rom0 ~/gamelists/$rom0; pocet=0
+  for f in ~/"$romfolder"/*; do
+    fn=$(basename "$f"); base="${fn%.*}"; echo "\"$fn\"," >> "$html"; ((pocet++)); ((total++))
+    hra="<game><path>./${rom3}/${fn}</path><name>${base}</name><image>~/../thumbs/${rom2}/Named_Snaps/${base}.png</image><titleshot>~/../thumbs/${rom2}/Named_Titles/${base}.png</titleshot><thumbnail>~/../thumbs/${rom2}/Named_Boxarts/${base}.png</thumbnail><marquee>~/../thumbs/${rom2}/Named_Logos/${base}.png</marquee>"
+    if [[ ! "$fn" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then
+      echo "$hra</game>" >> ~/gamelists/$rom0/gamelist.xml
+    else echo "$hra<hidden>true</hidden></game>" >> ~/gamelists/$rom0/gamelist.xml; fi
+  done
+  echo "]; generateFileLinks(\"$romfolder\", \"${rom2// /_}\");</script><script src=\"script.js\"></script>" >> "$html"
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
-  if [ "$platform" != "${rom[0]}" ]; then
-    echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'></a><figcaption>${rom[2]}</figcaption></figure>" >> ~/gameflix/main.html; ((platforms++))
-  fi
-  platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
+  [[ "$platform" != "$rom0" ]] && echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${rom0}.png'></a><figcaption>${rom2}</figcaption></figure>" >> ~/gameflix/main.html && ((platforms++))
+  echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom0}.png</image></folder>" >> ~/gamelists/$rom0/gamelist.xml
+  platform="$rom0"; ext=""; [[ -n "$rom5" ]] && ext="; ext=\"$rom5\""; echo "*\"$emufolder\") core=\"$rom4\"$ext;;" >> ~/gameflix/retroarch.sh
 done
 
-IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; done
-for each in "${roms[@]}"; do 
-  read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); echo ${rom3}
-  folder="$HOME/myrient/${rom[1]}"; if [[ "${rom[1]}" == "../roms/dos/MS-DOS eXoDOS" ]]; then folder=~/roms/MS-DOS\ eXoDOS; fi
-  ls "${folder}" | while read line; do
-    line2=${line%.*}
-    hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${line2}.png</marquee>"
-    if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then      
-      echo "${hra}</game>" >> ~/gamelists/${rom[0]}/gamelist.xml
-    else echo "${hra}<hidden>true</hidden></game>" >> ~/gamelists/${rom[0]}/gamelist.xml; fi    
-  done
-  echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/gamelists/${rom[0]}/gamelist.xml
-done
+#IFS=";"; for each in "${roms[@]}"; do read -ra rom < <(printf '%s' "$each"); mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; done
+#for each in "${roms[@]}"; do 
+#  read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); echo ${rom3}
+#  folder="$HOME/myrient/${rom[1]}"; if [[ "${rom[1]}" == "../roms/dos/MS-DOS eXoDOS" ]]; then folder=~/roms/MS-DOS\ eXoDOS; fi
+#  ls "${folder}" | while read line; do
+#    line2=${line%.*}
+#    hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${line2}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${line2}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${line2}.png</marquee>"
+#    if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then      
+#      echo "${hra}</game>" >> ~/gamelists/${rom[0]}/gamelist.xml
+#    else echo "${hra}<hidden>true</hidden></game>" >> ~/gamelists/${rom[0]}/gamelist.xml; fi    
+#  done
+#  echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/gamelists/${rom[0]}/gamelist.xml
+#done
 
 ROMLIST="neogeo.dat"; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/neogeo.dat" -o $ROMLIST; pocet=0
 echo "Neo Geo"; cp platform.html ~/gameflix/Neo\ Geo.html; echo "<script>bgImage(\"neogeo\"); const fileNames = [" >> ~/gameflix/Neo\ Geo.html
