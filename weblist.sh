@@ -19,6 +19,7 @@ cd ~/gameflix
 rm -f "$GITHUB_WORKSPACE/gameflix.zip"
 zip -r "$GITHUB_WORKSPACE/gameflix.zip" *
 git add "$GITHUB_WORKSPACE/gameflix.zip"
+cd "$GITHUB_WORKSPACE"
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
