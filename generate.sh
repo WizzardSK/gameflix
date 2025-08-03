@@ -1,7 +1,6 @@
 #!/bin/bash
-shopt -s nocasematch
+shopt -s nocasematch; IFS=$'\n' read -d '' -ra roms < platforms.txt
 mkdir -p ~/{gameflix,rom,gamelists,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/gamelists/{neogeo,uzebox,tic80,wasm4,lowresnx,vircon32,pico8,voxatron,dos}
-IFS=$'\n' read -d '' -ra roms < platforms.txt
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html; cp ~/gameflix/systems.html ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
@@ -21,8 +20,7 @@ echo "<gameList>" > ~/gamelists/tic80/gamelist.xml; data=$(curl -s "https://tic8
   if [[ "$line" =~ id[[:space:]]*=[[:space:]]*([0-9]+) ]]; then id="${BASH_REMATCH[1]}"; else continue; fi
   if [[ "$line" =~ hash[[:space:]]*=[[:space:]]*\"([a-f0-9]+)\" ]]; then hash="${BASH_REMATCH[1]}"; else continue; fi
   if [[ "$line" =~ name[[:space:]]*=[[:space:]]*\"([^\"]+)\" ]]; then name="${BASH_REMATCH[1]%.tic}"; else continue; fi
-  records+=("$id"$'\t'"$hash"$'\t'"$name")
-  hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+');
+  records+=("$id"$'\t'"$hash"$'\t'"$name"); hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+');
   hra="<game><path>./TIC-80/${hash}.tic</path><name>${name%.*}</name><image>./TIC-80/${hash}.gif</image>"; if [ -n "$hash" ]; then echo "${hra}</game>" >> ~/gamelists/tic80/gamelist.xml; fi;
 done <<< "$data"; printf "%s\n" "${records[@]}" | sort -nr -k1,1 | awk '{ print "\"" $0 "\"," }' >> ~/gameflix/TIC-80.html
 printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html; echo "</gameList>" >> ~/gamelists/tic80/gamelist.xml
@@ -49,7 +47,7 @@ echo "<a href=\"Uzebox.html\" target=\"main\">Uzebox</a> ($pocet)<br />" >> ~/ga
 echo "Uzebox"; cp platform.html ~/gameflix/Uzebox.html; echo "<script>bgImage(\"uzebox\"); const fileNames = [" >> ~/gameflix/Uzebox.html; ((platforms++)); echo "<gameList>" > ~/gamelists/uzebox/gamelist.xml; 
 cat fantasy/uzebox.txt | while IFS=$'\t' read -r id cart name; do 
   echo -e "\"$id\t$cart\t$name\"," >> ~/gameflix/Uzebox.html; 
-  hra="<game><path>./Uzebox/${cart}</path><name>${name}</name><image>~/../thumbs/Uzebox/Named_Snaps/${cart%.*}.png</image>"; echo "${hra}</game>" >> ~/gamelists/uzebox/gamelist.xm
+  hra="<game><path>./Uzebox/${cart}</path><name>${name}</name><image>~/../thumbs/Uzebox/Named_Snaps/${cart%.*}.png</image>"; echo "${hra}</game>" >> ~/gamelists/uzebox/gamelist.xml
 done; printf ']; generateUzeLinks("roms/Uzebox", "Uzebox");</script><script src=\"script.js\"></script>' >> ~/gameflix/Uzebox.html
 unzip -j fantasy/uzebox.zip -d ~/uzebox > /dev/null; echo "</gameList>" >> ~/gamelists/uzebox/gamelist.xml
 
@@ -86,8 +84,7 @@ printf ']; generateFileLinks("roms/Atari 2600 ROMS", "Atari_-_2600");</script><s
 
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}")
-  mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; 
-  romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
+  mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   if [[ "${rom[1]}" == *"eXoDOS"* ]]; then romfolder="roms/MS-DOS eXoDOS"; emufolder="roms/MS-DOS eXoDOS"; fi
   > ~/gameflix/${rom3}.html; echo ${rom3}; cp platform.html ~/gameflix/${rom3}.html
   echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html; pocet=0  
