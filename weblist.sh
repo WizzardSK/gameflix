@@ -5,7 +5,7 @@ sudo ln -s $GITHUB_WORKSPACE/batocera/ratarmount1 /bin/ratarmount
 mkdir -p $HOME/.config/rclone
 cp rclone.conf $HOME/.config/rclone/
 echo "user_allow_other" | sudo tee -a /etc/fuse.conf
-sudo apt install bindfs > /dev/null
+sudo apt install bindfs fuse-zip > /dev/null
 
 bash ./webflix.sh
 bash ./generate.sh
