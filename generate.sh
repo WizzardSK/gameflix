@@ -53,7 +53,7 @@ unzip -j fantasy/uzebox.zip -d ~/uzebox > /dev/null; echo "</gameList>" >> ~/gam
 
 pocet=$(ls ~/roms/Vircon32/*.zip | wc -l); total=$((pocet+total))
 echo "<a href=\"Vircon32.html\" target=\"main\">Vircon32</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Vircon32\") core=\"vircon32_libretro\";;" >> ~/gameflix/retroarch.sh  
-echo "Vircon32"; cp platform.html ~/gameflix/Vircon32.html; echo "<script>bgImage(\"vircon32\"); const fileNames = [" >> ~/gameflix/Vircon32.html
+echo "Vircon32"; cp platform.html ~/gameflix/Vircon32.html; echo "<script>bgImage(\"vircon32\"); const fileNames = [" >> ~/gameflix/Vircon32.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/vircon32/gamelist.xml; { while IFS= read -r line; do 
   echo "\"${line}\"," >> ~/gameflix/Vircon32.html; ((pocet++)); ((total++)); 
   line2=${line%.*}; hra="<game><path>./Vircon32/${line}</path><name>${line2}</name><image>~/../thumbs/Vircon32/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/gamelists/vircon32/gamelist.xml
