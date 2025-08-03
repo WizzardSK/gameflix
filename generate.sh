@@ -44,15 +44,14 @@ echo "<gameList>" > ~/gamelists/lowresnx/gamelist.xml; cat fantasy/lowresnx.txt 
 done; printf ']; generateLrNXLinks("roms/LowresNX", "LowresNX");</script><script src=\"script.js\"></script>' >> ~/gameflix/LowresNX.html
 echo "</gameList>" >> ~/gamelists/lowresnx/gamelist.xml
 
-pocet=$(curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/uzebox.txt" | wc -l); total=$((pocet+total))
+pocet=$(wc -l < fantasy/uzebox.txt); total=$((pocet+total))
 echo "<a href=\"Uzebox.html\" target=\"main\">Uzebox</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Uzebox\") core=\"uzem_libretro\";;" >> ~/gameflix/retroarch.sh  
-echo "Uzebox"; cp platform.html ~/gameflix/Uzebox.html; echo "<script>bgImage(\"uzebox\"); const fileNames = [" >> ~/gameflix/Uzebox.html; ((platforms++))
-curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/uzebox.txt" | while IFS=$'\t' read -r id cart name; do echo -e "\"$id\t$cart\t$name\"," >> ~/gameflix/Uzebox.html; done
-printf ']; generateUzeLinks("roms/Uzebox", "Uzebox");</script><script src=\"script.js\"></script>' >> ~/gameflix/Uzebox.html
-unzip -j fantasy/uzebox.zip -d ~/uzebox > /dev/null
-echo "<gameList>" > ~/gamelists/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/*.UZE 2>/dev/null | xargs -I {} basename {} | while read line; do
-  line2=${line%.*}; hra="<game><path>./Uzebox/${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/gamelists/uzebox/gamelist.xml
-done; echo "</gameList>" >> ~/gamelists/uzebox/gamelist.xml
+echo "Uzebox"; cp platform.html ~/gameflix/Uzebox.html; echo "<script>bgImage(\"uzebox\"); const fileNames = [" >> ~/gameflix/Uzebox.html; ((platforms++)); echo "<gameList>" > ~/gamelists/uzebox/gamelist.xml; 
+cat fantasy/uzebox.txt | while IFS=$'\t' read -r id cart name; do 
+  echo -e "\"$id\t$cart\t$name\"," >> ~/gameflix/Uzebox.html; 
+  hra="<game><path>./Uzebox/${cart}</path><name>${name}</name><image>~/../thumbs/Uzebox/Named_Snaps/${cart%.*}.png</image>"; echo "${hra}</game>" >> ~/gamelists/uzebox/gamelist.xm
+done; printf ']; generateUzeLinks("roms/Uzebox", "Uzebox");</script><script src=\"script.js\"></script>' >> ~/gameflix/Uzebox.html
+unzip -j fantasy/uzebox.zip -d ~/uzebox > /dev/null; echo "</gameList>" >> ~/gamelists/uzebox/gamelist.xml
 
 pocet=$(ls ~/roms/Vircon32/*.zip | wc -l); total=$((pocet+total))
 echo "<a href=\"Vircon32.html\" target=\"main\">Vircon32</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Vircon32\") core=\"vircon32_libretro\";;" >> ~/gameflix/retroarch.sh  
@@ -63,7 +62,7 @@ echo "<gameList>" > ~/gamelists/vircon32/gamelist.xml; { while IFS= read -r line
 done } < <(basename -a ~/roms/Vircon32/*.zip); printf ']; generateFileLinks("roms/Vircon32", "Vircon32");</script><script src=\"script.js\"></script>' >> ~/gameflix/Vircon32.html
 echo "</gameList>" >> ~/gamelists/vircon32/gamelist.xml
 
-pocet=$(curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/pico8.txt" | wc -l); total=$((pocet+total))
+pocet=$(wc -l < fantasy/pico8.txt); total=$((pocet+total))
 echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"PICO-8\") core=\"pico8 -run\";;" >> ~/gameflix/retroarch.sh  
 echo "PICO-8"; cp platform.html ~/gameflix/PICO-8.html; echo "<script>bgImage(\"pico8\"); const fileNames = [" >> ~/gameflix/PICO-8.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/pico8/gamelist.xml; cat fantasy/pico8.txt | while IFS=$'\t' read -r id name cart; do 
@@ -71,7 +70,7 @@ echo "<gameList>" > ~/gamelists/pico8/gamelist.xml; cat fantasy/pico8.txt | whil
 done; printf ']; generatePicoLinks("roms/PICO-8", "PICO-8");</script><script src=\"script.js\"></script>' >> ~/gameflix/PICO-8.html
 echo "<folder><path>./PICO-8</path><name>PICO-8</name><image>./splore.png</image></folder></gameList>" >> ~/gamelists/pico8/gamelist.xml
 
-pocet=$(curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/voxatron.txt" | wc -l); total=$((pocet+total))
+pocet=$(wc -l < fantasy/voxatron.txt); total=$((pocet+total))
 echo "<a href=\"Voxatron.html\" target=\"main\">Voxatron</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Voxatron\") core=\"vox\";;" >> ~/gameflix/retroarch.sh  
 echo "Voxatron"; cp platform.html ~/gameflix/Voxatron.html; echo "<script>bgImage(\"voxatron\"); const fileNames = [" >> ~/gameflix/Voxatron.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/voxatron/gamelist.xml; cat fantasy/voxatron.txt | while IFS=$'\t' read -r id name cart; do 
@@ -124,8 +123,7 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "</gameList>" ~/gamelists/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/gamelists/${rom[0]}/gamelist.xml; fi
 done
 
-ROMLIST="neogeo.dat"; curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/neogeo.dat" -o $ROMLIST; pocet=0
-echo "Neo Geo"; cp platform.html ~/gameflix/Neo\ Geo.html; echo "<script>bgImage(\"neogeo\"); const fileNames = [" >> ~/gameflix/Neo\ Geo.html
+echo "Neo Geo"; ROMLIST="neogeo.dat"; pocet=0; cp platform.html ~/gameflix/Neo\ Geo.html; echo "<script>bgImage(\"neogeo\"); const fileNames = [" >> ~/gameflix/Neo\ Geo.html
 echo "<gameList>" > ~/gamelists/neogeo/gamelist.xml; while IFS= read -r riadok; do 
   prvy="${riadok%%[[:space:]]*}"; ostatok="${riadok#*[[:space:]]}"; zip="${prvy%.neo}.zip"; printf '"%s\t%s",\n' "$zip" "$ostatok" >> ~/gameflix/Neo\ Geo.html; ((pocet++)); 
   hra="<game><path>./Neo Geo/${zip}</path><name>${ostatok}</name><image>~/../thumbs/MAME/Named_Snaps/${prvy%.neo}.png</image><titleshot>~/../thumbs/MAME/Named_Titles/${prvy%.neo}.png</titleshot><thumbnail>~/../thumbs/MAME/Named_Boxarts/${prvy%.neo}.png</thumbnail><marquee>~/../thumbs/MAME/Named_Logos/${prvy%.neo}.png</marquee>"
@@ -135,5 +133,5 @@ echo "<a href=\"Neo Geo.html\" target=\"main\">Neo Geo</a> ($pocet)<br />" >> ~/
 echo "<figure><a href='Neo Geo.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/neogeo.png'></a><figcaption>Neo Geo</figcaption></figure>" >> ~/gameflix/main.html
 echo "<folder><path>./Neo Geo</path><name>Neo Geo</name><image>~/../thumb/neogeo.png</image></folder></gameList>" >> ~/gamelists/neogeo/gamelist.xml
 
-curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/retroarch.end >> ~/gameflix/retroarch.sh; cp favicon.png ~/gameflix/
+cp retroarch.end ~/gameflix/retroarch.sh; cp favicon.png ~/gameflix/
 chmod +x ~/gameflix/retroarch.sh; echo "<p><b>Total: $total</b>" >> ~/gameflix/systems.html; echo "<p><b>Platforms: $platforms</b>" >> ~/gameflix/systems.html
