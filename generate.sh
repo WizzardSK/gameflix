@@ -1,6 +1,5 @@
 #!/bin/bash
 shopt -s nocasematch
-sudo apt install fuse-zip > /dev/null
 mkdir -p ~/{gameflix,rom,gamelists,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/gamelists/{neogeo,uzebox,tic80,wasm4,lowresnx,vircon32,pico8,voxatron,dos}
 IFS=$'\n' read -d '' -ra roms < platforms.txt
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html; cp ~/gameflix/systems.html ~/gameflix/main.html
