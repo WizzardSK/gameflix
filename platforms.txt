@@ -192,7 +192,7 @@ psp;No-Intro/Non-Redump - Sony - PlayStation Portable;Sony - PlayStation Portabl
 psp;No-Intro/Unofficial - Sony - PlayStation Portable (PSN) (Decrypted);Sony - PlayStation Portable;<i>Sony PSP</i> PSN;ppsspp_libretro;iso
 psp;TOSEC-ISO/Sony/PlayStation Portable/Games/[ISO];Sony - PlayStation Portable;<i>Sony PSP</i> TOSEC;ppsspp_libretro;iso
 
-pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;<p>NEC - PC Engine - TurboGrafx 16;<p>PC Engine NoIntro;mednafen_pce_fast_libretro
+pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;NEC - PC Engine - TurboGrafx 16;<p>PC Engine NoIntro;mednafen_pce_fast_libretro
 pcengine;TOSEC/NEC/PC-Engine & TurboGrafx-16/Games;NEC - PC Engine - TurboGrafx 16;PC Engine TOSEC;mednafen_pce_fast_libretro
 pcenginecd;Redump/NEC - PC Engine CD & TurboGrafx CD;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD Redump;mednafen_pce_fast_libretro;cue
 pcenginecd;TOSEC-ISO/NEC/PC-Engine CD & TurboGrafx-16 CD/Games/[IMG];NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD ISO;mednafen_pce_fast_libretro;cue
