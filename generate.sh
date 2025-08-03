@@ -55,6 +55,15 @@ echo "<gameList>" > ~/gamelists/uzebox/gamelist.xml; ls ~/uzebox/*.uze ~/uzebox/
   line2=${line%.*}; hra="<game><path>./Uzebox/${line}</path><name>${line2}</name><image>~/../thumbs/Uzebox/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/gamelists/uzebox/gamelist.xml
 done; echo "</gameList>" >> ~/gamelists/uzebox/gamelist.xml
 
+pocet=$(ls ~/roms/Vircon32/*.zip | wc -l); total=$((pocet+total))
+echo "<a href=\"Vircon32.html\" target=\"main\">Vircon32</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Vircon32\") core=\"vircon32_libretro\";;" >> ~/gameflix/retroarch.sh  
+echo "Vircon32"; cp platform.html ~/gameflix/Vircon32.html; echo "<script>bgImage(\"vircon32\"); const fileNames = [" >> ~/gameflix/Vircon32.html
+echo "<gameList>" > ~/gamelists/vircon32/gamelist.xml; { while IFS= read -r line; do 
+  echo "\"${line}\"," >> ~/gameflix/Vircon32.html; ((pocet++)); ((total++)); 
+  line2=${line%.*}; hra="<game><path>./Vircon32/${line}</path><name>${line2}</name><image>~/../thumbs/Vircon32/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/gamelists/vircon32/gamelist.xml
+done } < <(basename -a ~/roms/Vircon32/*.zip); printf ']; generateFileLinks("roms/Vircon32", "Vircon32");</script><script src=\"script.js\"></script>' >> ~/gameflix/Vircon32.html
+echo "</gameList>" >> ~/gamelists/vircon32/gamelist.xml
+
 pocet=$(curl -s "https://raw.githubusercontent.com/WizzardSK/gameflix/refs/heads/main/fantasy/pico8.txt" | wc -l); total=$((pocet+total))
 echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"PICO-8\") core=\"pico8 -run\";;" >> ~/gameflix/retroarch.sh  
 echo "PICO-8"; cp platform.html ~/gameflix/PICO-8.html; echo "<script>bgImage(\"pico8\"); const fileNames = [" >> ~/gameflix/PICO-8.html; ((platforms++))
@@ -72,15 +81,6 @@ printf ']; generateVoxLinks("roms/Voxatron", "Voxatron");</script><script src=\"
 echo "<gameList>" > ~/gamelists/voxatron/gamelist.xml; cat fantasy/voxatron.txt | while IFS=$'\t' read -r id name cart; do
   hra="<game><path>./Voxatron/${cart}</path><name>${name}</name>"; echo "${hra}</game>" >> ~/gamelists/voxatron/gamelist.xml
 done; echo "<folder><path>./Voxatron</path><name>Voxatron</name><image>./splore.png</image></folder></gameList>" >> ~/gamelists/voxatron/gamelist.xml
-
-pocet=$(ls ~/roms/Vircon32/*.zip | wc -l); total=$((pocet+total))
-echo "<a href=\"Vircon32.html\" target=\"main\">Vircon32</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Vircon32\") core=\"vircon32_libretro\";;" >> ~/gameflix/retroarch.sh  
-echo "Vircon32"; cp platform.html ~/gameflix/Vircon32.html; echo "<script>bgImage(\"vircon32\"); const fileNames = [" >> ~/gameflix/Vircon32.html
-{ while IFS= read -r line; do echo "\"${line}\"," >> ~/gameflix/Vircon32.html; ((pocet++)); ((total++)); done } < <(basename -a ~/roms/Vircon32/*.zip)
-printf ']; generateFileLinks("roms/Vircon32", "Vircon32");</script><script src=\"script.js\"></script>' >> ~/gameflix/Vircon32.html
-echo "<gameList>" > ~/gamelists/vircon32/gamelist.xml; basename -a ~/roms/Vircon32/*.zip | while read line; do
-  line2=${line%.*}; hra="<game><path>./Vircon32/${line}</path><name>${line2}</name><image>~/../thumbs/Vircon32/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/gamelists/vircon32/gamelist.xml
-done; echo "</gameList>" >> ~/gamelists/vircon32/gamelist.xml
 
 pocet=$(ls ~/roms/Atari\ 2600\ ROMS -1 | wc -l); total=$((pocet+total))
 echo "<a href=\"Atari 2600 ROMS.html\" target=\"main\"><p>Atari 2600 ROMS</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Atari 2600 ROMS\") core=\"stella_libretro\";;" >> ~/gameflix/retroarch.sh  
