@@ -8,8 +8,7 @@ curl -sL "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read 
   for EXT in wasm png; do
     FILE="$DIR/$GAME.$EXT"; 
     [[ "$EXT" == "png" ]] && FILE="$DIR/$GAME.$EXT"; 
-#    [[ -f "$FILE" ]] || wget -nv -O "$FILE" "$CARTS_URL/$GAME.$EXT"; 
-    [[ -f "$FILE" ]] || cp "backup/$FILE" "$FILE" || wget -nv -O "$FILE" "$CARTS_URL/$GAME.$EXT"
+    [[ -f "$FILE" ]] || cp "~/backup/$FILE" "$FILE" || wget -nv -O "$FILE" "$CARTS_URL/$GAME.$EXT"
   done
 done
 cd "$GITHUB_WORKSPACE/wasm4"
