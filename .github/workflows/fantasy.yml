@@ -1,8 +1,6 @@
-name: 0:0 Fantasy gamelists updater
+name: Fantasy gamelists updater
 
 on:
-  schedule:
-    - cron: '0 0 * * *' 
   workflow_dispatch: 
 
 jobs:
