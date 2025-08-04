@@ -3,7 +3,7 @@ BASE_URL="https://wasm4.org/play"
 CARTS_URL="https://wasm4.org/carts"
 DIR="$GITHUB_WORKSPACE/wasm4"
 mkdir "$DIR" ~/backup
-unzip "$GITHUB_WORKSPACE/fantasy/wasm4.zip" ~/backup/
+unzip "$GITHUB_WORKSPACE/fantasy/wasm4.zip" -d ~/backup/
 curl -sL "$BASE_URL" | grep -oP '(?<=href="/play/)[^"]+' | sort -u | while read -r GAME; do
   for EXT in wasm png; do
     FILE="$DIR/$GAME.$EXT"; 
