@@ -1,3 +1,4 @@
+150728	Jeri II: Tower's End	jeri2-1.p8.png
 150722	Love in Falling (Jam Ed.)	loveinfallingjam-0.p8.png
 150721	Saving Doctor Smithy	savingdoctorsmithy-0.p8.png
 150717	simple sprint (shadow print) function	nmoyeriwa-0.p8.png
@@ -7855,7 +7856,7 @@
 32072	Tabetaro the hedgehog	helicopter-0.p8.png
 32071	Helicopter	57947.p8.png
 32068	Wizard duels	redblack-0.p8.png
-32067	Red//Black: Two Horror Short Stories	57920.p8.png
+32067	BGHOULED	57920.p8.png
 32066	Fencing	bugugobiwi-0.p8.png
 32065	Letterworks	58127.p8.png
 32060	Langton's ant with states	57855.p8.png
@@ -8184,7 +8185,7 @@
 30958	Endless Breakout	50480.p8.png
 30953	Endless Breakout	50450.p8.png
 30947	avalanche dodge	51519.p8.png
-30934	Daruma Crusher	50640.p8.png
+30934	Space-a-tron	50640.p8.png
 30931	Cat Bandit	50300.p8.png
 30929	Study Hall	50290.p8.png
 30928	Juggle Panic	50260.p8.png
@@ -8272,7 +8273,7 @@
 30659	Tiny Platformer (Tutorial/Example Project)	48557.p8.png
 30655	Test	48530.p8.png
 30652	Jupiter	50452.p8.png
-30647	Nuklear Klone	48489.p8.png
+30647	Spirals	48489.p8.png
 30643	MetroCUBEvania	cubevania12-0.p8.png
 30632	Nudge Nudge	48421.p8.png
 30631	DeFacto	48406.p8.png
@@ -8989,7 +8990,7 @@
 28332	Lifedraw	34347.p8.png
 28331	Melting Snow: Hide and Seek	34343.p8.png
 28327	Trollmeister	42267.p8.png
-28327	Hello Pong	42267.p8.png
+28327	CIR-NE	42267.p8.png
 28326	The Excuse Machine	34313.p8.png
 28323	Knubbel Adventure	34828.p8.png
 28321	Mountains of Demise II Music Cart	34297.p8.png
@@ -9017,7 +9018,7 @@
 28239	Tetris	33640.p8.png
 28238	Cups	33667.p8.png
 28231	Blackjack	33616.p8.png
-28230	Swamp Trek	33578.p8.png
+28230	Colours and Cool Stuff	33578.p8.png
 28225	VOID	35267.p8.png
 28221	Time return	33522.p8.png
 28220	Sine rainbow	33517.p8.png
