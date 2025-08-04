@@ -14,10 +14,12 @@ atari800;TOSEC/Atari/8bit/Games/[BIN];Atari - 8-bit;<code>Atari 8bit</code> BIN;
 atari800;TOSEC/Atari/8bit/Games/[CAS];Atari - 8-bit;<code>Atari 8bit</code> CAS;atari800_libretro
 atari800;TOSEC/Atari/8bit/Games/[XEX];Atari - 8-bit;<code>Atari 8bit</code> XEX;atari800_libretro
 atari800;TOSEC/Atari/8bit/Educational/[ATR];Atari - 8-bit;<code>Atari 8bit</code> Edu;atari800_libretro
-atari800;TOSEC/Atari/8bit/Applications/[ATR];Atari - 8-bit;<code>Atari 8bit</code> Apps;atari800_libretro
+atari800;TOSEC/Atari/8bit/Applications/[ATR];Atari - 8-bit;<code>Atari 8bit</code> App;atari800_libretro
 atarist;No-Intro/Atari - Atari ST;Atari - ST;<code>Atari ST</code> NoIntro;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[ST];Atari - ST;<code>Atari ST</code> ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[STX];Atari - ST;<code>Atari ST</code> STX;hatari_libretro
+atarist;TOSEC/Atari/ST/Applications/[ST];Atari - ST;<code>Atari ST</code> App ST;hatari_libretro
+atarist;TOSEC/Atari/ST/Applications/[STX];Atari - ST;<code>Atari ST</code> App STX;hatari_libretro
 atarist;TOSEC/Atari/ST/Educational/[ST];Atari - ST;<code>Atari ST</code> Edu ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Educational/[STX];Atari - ST;<code>Atari ST</code> Edu STX;hatari_libretro
 atarijaguar;No-Intro/Atari - Atari Jaguar (J64);Atari - Jaguar;Atari Jaguar NoIntro;virtualjaguar_libretro
@@ -264,7 +266,7 @@ c64;TOSEC/Commodore/C64/Games/Simulation/[D64];Commodore - 64;<code>Commodore 64
 c64;TOSEC/Commodore/C64/Games/Sports/[D64];Commodore - 64;<code>Commodore 64</code> Sports;vice_x64sc_libretro
 c64;TOSEC/Commodore/C64/Games/Strategy/[D64];Commodore - 64;<code>Commodore 64</code> Strategy;vice_x64sc_libretro
 c64;TOSEC/Commodore/C64/Educational/[D64];Commodore - 64;<code>Commodore 64</code> Edu;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Applications/[D64];Commodore - 64;<code>Commodore 64</code> Apps;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Applications/[D64];Commodore - 64;<code>Commodore 64</code> App;vice_x64sc_libretro
 c128;TOSEC/Commodore/C128/Games/[D64];Commodore - 128;<code>Commodore 128</code> D64;vice_x128_libretro
 
 amiga1200;No-Intro/Commodore - Amiga;Commodore - Amiga;<p><code>Amiga 1200</code> NoIntro;puae_libretro
@@ -273,7 +275,7 @@ amiga1200;TOSEC/Commodore/Amiga/Games/[Unofficial IPF];Commodore - Amiga;<code>A
 amiga1200;TOSEC/Commodore/Amiga/Games/Public Domain/[ADF];Commodore - Amiga;<code>Amiga 1200</code> PD;puae_libretro
 amiga1200;TOSEC/Commodore/Amiga/Games/SPS;Commodore - Amiga;<code>Amiga 1200</code> SPS;puae_libretro
 amiga1200;TOSEC/Commodore/Amiga/Educational/[ADF];Commodore - Amiga;<code>Amiga 1200</code> Edu;puae_libretro
-amiga1200;TOSEC/Commodore/Amiga/Applications/[ADF];Commodore - Amiga;<code>Amiga 1200</code> Apps;puae_libretro
+amiga1200;TOSEC/Commodore/Amiga/Applications/[ADF];Commodore - Amiga;<code>Amiga 1200</code> App;puae_libretro
 amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<code>Amiga CD32</code> Redump;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Games/[ISO];Commodore - CD32;<code>Amiga CD32</code> ISO;puae_libretro;cue
 amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;<code>Amiga CDTV</code> Redump;puae_libretro;cue
