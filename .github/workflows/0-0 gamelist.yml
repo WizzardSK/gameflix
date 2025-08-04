@@ -1,4 +1,4 @@
-name: 0:0 Gamelists updater
+name: 0:0 Fantasy/Gamelists updater
 
 on:
   schedule:
