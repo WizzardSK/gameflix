@@ -80,7 +80,10 @@ zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[Z80];Sinclair - ZX Spectrum;<
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TAP];Sinclair - ZX Spectrum;<code>ZX Spectrum App TAP</code>;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TZX];Sinclair - ZX Spectrum;<code>ZX Spectrum App TZX</code>;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[Z80];Sinclair - ZX Spectrum;<code>ZX Spectrum App Z80</code>;fuse_libretro
-spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> TOSEC;bluemsx_libretro
+spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Games/[BIN];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Games BIN;bluemsx_libretro
+spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Games/[CAS];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Games CAS;bluemsx_libretro
+spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[BIN];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Various BIN;bluemsx_libretro
+spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Various CAS;bluemsx_libretro
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK];MGT - Sam Coupe;<code>Sam Coupé</code> DSK;simcoupe
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[SAD];MGT - Sam Coupe;<code>Sam Coupé</code> SAD;simcoupe
 oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[DSK];Tangerine - Oric Atmos;<code>Oric Atmos</code> DSK;clksignal --quickload
