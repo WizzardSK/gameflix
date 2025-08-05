@@ -13,8 +13,14 @@ atari800;TOSEC/Atari/8bit/Games/[ATX];Atari - 8-bit;<code>Atari 8bit</code> ATX;
 atari800;TOSEC/Atari/8bit/Games/[BIN];Atari - 8-bit;<code>Atari 8bit</code> BIN;atari800_libretro
 atari800;TOSEC/Atari/8bit/Games/[CAS];Atari - 8-bit;<code>Atari 8bit</code> CAS;atari800_libretro
 atari800;TOSEC/Atari/8bit/Games/[XEX];Atari - 8-bit;<code>Atari 8bit</code> XEX;atari800_libretro
-atari800;TOSEC/Atari/8bit/Educational/[ATR];Atari - 8-bit;<code>Atari 8bit</code> Edu;atari800_libretro
-atari800;TOSEC/Atari/8bit/Applications/[ATR];Atari - 8-bit;<code>Atari 8bit</code> App;atari800_libretro
+atari800;TOSEC/Atari/8bit/Applications/[ATR];Atari - 8-bit;<code>Atari 8bit</code> App ATR;atari800_libretro
+atari800;TOSEC/Atari/8bit/Applications/[BIN];Atari - 8-bit;<code>Atari 8bit</code> App BIN;atari800_libretro
+atari800;TOSEC/Atari/8bit/Applications/[CAS];Atari - 8-bit;<code>Atari 8bit</code> App CAS;atari800_libretro
+atari800;TOSEC/Atari/8bit/Applications/[XEX];Atari - 8-bit;<code>Atari 8bit</code> App XEX;atari800_libretro
+atari800;TOSEC/Atari/8bit/Educational/[ATR];Atari - 8-bit;<code>Atari 8bit</code> Edu ATR;atari800_libretro
+atari800;TOSEC/Atari/8bit/Educational/[BIN];Atari - 8-bit;<code>Atari 8bit</code> Edu BIN;atari800_libretro
+atari800;TOSEC/Atari/8bit/Educational/[CAS];Atari - 8-bit;<code>Atari 8bit</code> Edu CAS;atari800_libretro
+atari800;TOSEC/Atari/8bit/Educational/[XEX];Atari - 8-bit;<code>Atari 8bit</code> Edu XEX;atari800_libretro
 atarist;No-Intro/Atari - Atari ST;Atari - ST;<code>Atari ST</code> NoIntro;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[ST];Atari - ST;<code>Atari ST</code> ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[STX];Atari - ST;<code>Atari ST</code> STX;hatari_libretro
