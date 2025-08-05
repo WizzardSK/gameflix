@@ -48,7 +48,7 @@ cat fantasy/uzebox.txt | while IFS=$'\t' read -r id cart name; do
   echo -e "\"$id\t$cart\t$name\"," >> ~/gameflix/Uzebox.html; 
   hra="<game><path>./Uzebox/${cart}</path><name>${name}</name><image>~/../thumbs/Uzebox/Named_Snaps/${cart%.*}.png</image>"; echo "${hra}</game>" >> ~/gamelists/uzebox/gamelist.xml
 done; printf ']; generateUzeLinks("roms/Uzebox", "Uzebox");</script><script src=\"script.js\"></script>' >> ~/gameflix/Uzebox.html
-unzip -j fantasy/uzebox.zip -d ~/uzebox > /dev/null; echo "</gameList>" >> ~/gamelists/uzebox/gamelist.xml
+echo "</gameList>" >> ~/gamelists/uzebox/gamelist.xml
 
 pocet=$(wc -l < fantasy/pico8.txt); total=$((pocet+total))
 echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"PICO-8\") core=\"pico8 -run\";;" >> ~/gameflix/retroarch.sh  
