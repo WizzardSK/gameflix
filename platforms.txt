@@ -252,11 +252,13 @@ pet;TOSEC/Commodore/PET/Games/[PRG];Commodore - PET;<p><code>Commodore PET</code
 cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<code>Commodore Plus-4</code> NoIntro;vice_xplus4_libretro
 cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[PRG];Commodore - Plus-4;<code>Commodore Plus-4</code> PRG;vice_xplus4_libretro
 cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP];Commodore - Plus-4;<code>Commodore Plus-4</code> TAP;vice_xplus4_libretro
+cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Utilities/[PRG];Commodore - Plus-4;<code>Commodore Plus-4</code> Utils;vice_xplus4_libretro
 vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;<code>Commodore VIC-20</code> NoIntro;vice_xvic_libretro
 vic20;TOSEC/Commodore/VIC20/Games/[CRT]/Singlepart;Commodore - VIC-20;<code>Commodore VIC-20</code> CRT;vice_xvic_libretro
 vic20;TOSEC/Commodore/VIC20/Games/[D64];Commodore - VIC-20;<code>Commodore VIC-20</code> D64;vice_xvic_libretro
 vic20;TOSEC/Commodore/VIC20/Games/[PRG]/Singlepart;Commodore - VIC-20;<code>Commodore VIC-20</code> PRG;vice_xvic_libretro
 vic20;TOSEC/Commodore/VIC20/Games/[TAP];Commodore - VIC-20;<code>Commodore VIC-20</code> TAP;vice_xvic_libretro
+vic20;TOSEC/Commodore/VIC20/Applications/[PRG]/Singlepart;Commodore - VIC-20;<code>Commodore VIC-20</code> App;vice_xvic_libretro
 c64;No-Intro/Commodore - Commodore 64;Commodore - 64;<code>Commodore 64</code> NoIntro;vice_x64sc_libretro
 c64;No-Intro/Commodore - Commodore 64 (PP);Commodore - 64;<code>Commodore 64</code> PP;vice_x64sc_libretro
 c64;No-Intro/Commodore - Commodore 64 (Tapes);Commodore - 64;<code>Commodore 64</code> Tapes;vice_x64sc_libretro
