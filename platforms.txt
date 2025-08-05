@@ -74,7 +74,7 @@ gp32;TOSEC/Game Park/GP32/Games/[SMC];GamePark - GP32;<i>GamePark GP32 TOSEC</i>
 amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK];Amstrad - CPC;<p><code>Amstrad CPC</code> DSK;cap32_libretro
 amstradcpc;TOSEC/Amstrad/CPC/Games/[CDT];Amstrad - CPC;<code>Amstrad CPC</code> CDT;cap32_libretro
 amstradcpc;TOSEC/Amstrad/CPC/Games/[SNA];Amstrad - CPC;<code>Amstrad CPC</code> SNA;cap32_libretro
-amstradcpc;TOSEC/Amstrad/CPC/Applications/[DSK];Amstrad - CPC;<p><code>Amstrad CPC</code> App;cap32_libretro
+amstradcpc;TOSEC/Amstrad/CPC/Applications/[DSK];Amstrad - CPC;<code>Amstrad CPC</code> App;cap32_libretro
 gx4000;TOSEC/Amstrad/GX4000/Games;Amstrad - GX4000;<code>Amstrad GX4000</code> TOSEC;cap32_libretro
 zx81;TOSEC/Sinclair/ZX81/Games/[P];Sinclair - ZX 81;<code>Sinclair ZX81</code> TOSEC;81_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK];Sinclair - ZX Spectrum;<code>ZX Spectrum DSK</code>;fuse_libretro
