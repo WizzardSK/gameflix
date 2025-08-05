@@ -77,6 +77,7 @@ amstradcpc;TOSEC/Amstrad/CPC/Games/[SNA];Amstrad - CPC;<code>Amstrad CPC</code> 
 amstradcpc;TOSEC/Amstrad/CPC/Applications/[DSK];Amstrad - CPC;<code>Amstrad CPC</code> App;cap32_libretro
 gx4000;TOSEC/Amstrad/GX4000/Games;Amstrad - GX4000;<code>Amstrad GX4000</code> TOSEC;cap32_libretro
 zx81;TOSEC/Sinclair/ZX81/Games/[P];Sinclair - ZX 81;<code>Sinclair ZX81</code> TOSEC;81_libretro
+zx81;TOSEC/Sinclair/ZX81/Applications/[P];Sinclair - ZX 81;<code>Sinclair ZX81</code> App;81_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK];Sinclair - ZX Spectrum;<code>ZX Spectrum DSK</code>;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[SCL];Sinclair - ZX Spectrum;<code>ZX Spectrum SCL</code>;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TAP];Sinclair - ZX Spectrum;<code>ZX Spectrum TAP</code>;fuse_libretro
