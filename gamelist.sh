@@ -10,7 +10,7 @@ bash ./generate.sh
 
 cd ~/gamelists
 rm -f "$GITHUB_WORKSPACE/batocera/gamelist.zip"
-zip -r "$GITHUB_WORKSPACE/batocera/gamelist.zip" *
+zip -q -r "$GITHUB_WORKSPACE/batocera/gamelist.zip" *
 cd "$GITHUB_WORKSPACE"
 git add "$GITHUB_WORKSPACE/batocera/gamelist.zip"
 cd ~/gameflix
