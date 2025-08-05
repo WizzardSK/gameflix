@@ -50,15 +50,6 @@ cat fantasy/uzebox.txt | while IFS=$'\t' read -r id cart name; do
 done; printf ']; generateUzeLinks("roms/Uzebox", "Uzebox");</script><script src=\"script.js\"></script>' >> ~/gameflix/Uzebox.html
 unzip -j fantasy/uzebox.zip -d ~/uzebox > /dev/null; echo "</gameList>" >> ~/gamelists/uzebox/gamelist.xml
 
-pocet=$(ls ~/roms/Vircon32/*.zip | wc -l); total=$((pocet+total))
-echo "<a href=\"Vircon32.html\" target=\"main\">Vircon32</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Vircon32\") core=\"vircon32_libretro\";;" >> ~/gameflix/retroarch.sh  
-echo "Vircon32"; cp platform.html ~/gameflix/Vircon32.html; echo "<script>bgImage(\"vircon32\"); const fileNames = [" >> ~/gameflix/Vircon32.html; ((platforms++))
-echo "<gameList>" > ~/gamelists/vircon32/gamelist.xml; { while IFS= read -r line; do 
-  echo "\"${line}\"," >> ~/gameflix/Vircon32.html; ((pocet++)); ((total++)); 
-  line2=${line%.*}; hra="<game><path>./Vircon32/${line}</path><name>${line2}</name><image>~/../thumbs/Vircon32/Named_Snaps/${line2}.png</image>"; echo "${hra}</game>" >> ~/gamelists/vircon32/gamelist.xml
-done } < <(basename -a ~/roms/Vircon32/*.zip); printf ']; generateFileLinks("roms/Vircon32", "Vircon32");</script><script src=\"script.js\"></script>' >> ~/gameflix/Vircon32.html
-echo "</gameList>" >> ~/gamelists/vircon32/gamelist.xml
-
 pocet=$(wc -l < fantasy/pico8.txt); total=$((pocet+total))
 echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"PICO-8\") core=\"pico8 -run\";;" >> ~/gameflix/retroarch.sh  
 echo "PICO-8"; cp platform.html ~/gameflix/PICO-8.html; echo "<script>bgImage(\"pico8\"); const fileNames = [" >> ~/gameflix/PICO-8.html; ((platforms++))
@@ -79,6 +70,7 @@ IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   if [[ "${rom[1]}" == *"eXoDOS"* ]];    then romfolder="roms/MS-DOS eXoDOS";   emufolder="roms/MS-DOS eXoDOS"; fi
   if [[ "${rom[1]}" == *"2600 ROMS"* ]]; then romfolder="roms/Atari 2600 ROMS"; emufolder="roms/Atari 2600 ROMS"; fi
+  if [[ "${rom[1]}" == *"Vircon32"* ]];  then romfolder="roms/Vircon32";        emufolder="roms/Vircon32"; fi
   > ~/gameflix/${rom3}.html; echo ${rom3}; cp platform.html ~/gameflix/${rom3}.html
   echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html; pocet=0; while IFS= read -r line; do
     line2="${line%.*}"; echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++))
