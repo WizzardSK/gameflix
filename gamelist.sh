@@ -15,7 +15,7 @@ cd "$GITHUB_WORKSPACE"
 git add "$GITHUB_WORKSPACE/batocera/gamelist.zip"
 cd ~/gameflix
 rm -f "$GITHUB_WORKSPACE/gameflix.zip"
-zip -r "$GITHUB_WORKSPACE/gameflix.zip" *
+zip -q -r "$GITHUB_WORKSPACE/gameflix.zip" *
 cd "$GITHUB_WORKSPACE"
 git add "$GITHUB_WORKSPACE/gameflix.zip"
 git config --global user.name "GitHub Actions"
