@@ -1,4 +1,5 @@
 vircon32;../roms/vircon32/Vircon32;Vircon32;Vircon32;vircon32_libretro
+lutro;../roms/lutro/Lutro;Lutro;Lutro;lutro_libretro
 
 atari2600;../roms/atari2600/Atari 2600 ROMS;Atari - 2600;<p>Atari 2600 ROMS;stella_libretro
 atari2600;No-Intro/Atari - Atari 2600;Atari - 2600;Atari 2600 NoIntro;stella_libretro
