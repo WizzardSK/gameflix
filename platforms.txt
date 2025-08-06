@@ -117,7 +117,7 @@ pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000 NoIntro;mame pv100
 pv1000;TOSEC/Casio/PV-1000/Games;Casio - PV-1000;Casio PV-1000 TOSEC;mame pv1000 -cart
 supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan NoIntro;mame supracan -cart
 supracan;TOSEC/Funtech/Super A'can/Games;Funtech - Super Acan;Super Acan TOSEC;mame supracan -cart
-vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton - VC 4000;mame vc4000 -cart
+vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton VC 4000;mame vc4000 -cart
 multivision;TOSEC/Tsukuda Original/Othello Multivision/Games;Othello - Multivision;Othello Multivision;gearsystem_libretro
 
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM];Tandy - TRS-80 Color Computer;<p><code>Tandy TRS-80 CoCo</code>;mame coco3 -cart
