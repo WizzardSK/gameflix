@@ -5,11 +5,11 @@ echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/game
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
 
-echo "<figure><a href='TIC-80.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/tic80.png'></a><figcaption>TIC-80</figcaption></figure>
-<figure><a href='WASM-4.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/wasm4.png'></a><figcaption>WASM-4</figcaption></figure>
-<figure><a href='Uzebox.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/uzebox.png'></a><figcaption>Uzebox</figcaption></figure>
-<figure><a href='LowresNX.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/lowresnx.png'></a><figcaption>LowresNX</figcaption></figure>
-<figure><a href='PICO-8.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/pico8.png'></a><figcaption>PICO-8</figcaption></figure>
+echo "<figure><a href='TIC-80.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/background/tic80.png'></a><figcaption>TIC-80</figcaption></figure>
+<figure><a href='WASM-4.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/background/wasm4.png'></a><figcaption>WASM-4</figcaption></figure>
+<figure><a href='Uzebox.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/background/uzebox.png'></a><figcaption>Uzebox</figcaption></figure>
+<figure><a href='LowresNX.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/background/lowresnx.png'></a><figcaption>LowresNX</figcaption></figure>
+<figure><a href='PICO-8.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/background/pico8.png'></a><figcaption>PICO-8</figcaption></figure>
 <figure><a href='Voxatron.html'><img class=loaded src='https://wiki.batocera.org/_media/systems:voxatron.png'></a><figcaption>Voxatron</figcaption></figure>" >> ~/gameflix/main.html
 
 pocet=$(ls ~/roms/TIC-80/*.tic | wc -l); total=$((pocet+total))
@@ -81,7 +81,7 @@ IFS=";"; for each in "${roms[@]}"; do
   echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script><script src="script.js"></script>' >> ~/gameflix/${rom3}.html
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   if [ "$platform" != "${rom[0]}" ]; then
-    echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/"${rom[0]}".png'></a><figcaption>${rom[2]}</figcaption></figure>" >> ~/gameflix/main.html; ((platforms++))
+    echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/background/"${rom[0]}".png'></a><figcaption>${rom[2]}</figcaption></figure>" >> ~/gameflix/main.html; ((platforms++))
   fi
   platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}\") core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
   echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/gamelists/${rom[0]}/gamelist.xml
@@ -100,7 +100,7 @@ echo "<gameList>" > ~/gamelists/neogeo/gamelist.xml; while IFS= read -r riadok; 
   echo "${hra}</game>" >> ~/gamelists/neogeo/gamelist.xml  
 done < "$ROMLIST"; printf ']; generateFileLinks("roms/Neo Geo", "MAME");</script><script src=\"script.js\"></script>' >> ~/gameflix/Neo\ Geo.html; ((platforms++))
 echo "<a href=\"Neo Geo.html\" target=\"main\">Neo Geo</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Neo Geo\") core=\"fbneo_libretro\";;" >> ~/gameflix/retroarch.sh  
-echo "<figure><a href='Neo Geo.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/neogeo.png'></a><figcaption>Neo Geo</figcaption></figure>" >> ~/gameflix/main.html
+echo "<figure><a href='Neo Geo.html'><img class=loaded src='https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/background/neogeo.png'></a><figcaption>Neo Geo</figcaption></figure>" >> ~/gameflix/main.html
 echo "<folder><path>./Neo Geo</path><name>Neo Geo</name><image>~/../thumb/neogeo.png</image></folder></gameList>" >> ~/gamelists/neogeo/gamelist.xml
 
 cat retroarch.end >> ~/gameflix/retroarch.sh; cp favicon.png ~/gameflix/
