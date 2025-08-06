@@ -293,8 +293,14 @@ amiga1200;TOSEC/Commodore/Amiga/Educational/[ADF];Commodore - Amiga;<code>Amiga 
 amiga1200;TOSEC/Commodore/Amiga/Applications/[ADF];Commodore - Amiga;<code>Amiga 1200</code> App;puae_libretro
 amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<code>Amiga CD32</code> Redump;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Games/[ISO];Commodore - CD32;<code>Amiga CD32</code> ISO;puae_libretro;cue
+amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Applications;Commodore - CD32;<code>Amiga CD32</code> App;puae_libretro;cue
+amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Educational/[ISO];Commodore - CD32;<code>Amiga CD32</code> Edu;puae_libretro;cue
+amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Multimedia/[ISO];Commodore - CD32;<code>Amiga CD32</code> Multimedia;puae_libretro;cue
 amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;<code>Amiga CDTV</code> Redump;puae_libretro;cue
 amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Games/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> ISO;puae_libretro;cue
+amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Applications/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> App;puae_libretro;cue
+amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Educational/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> Edu;puae_libretro;cue
+amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Multimedia/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> Multimedia;puae_libretro;cue
 
 pc88;TOSEC/NEC/PC-8801/Games/[D88];NEC - PC-8001 - PC-8801;<p><code>NEC PC-88</code> TOSEC;quasi88_libretro
 pc98;TOSEC/NEC/PC-9801/Games/[FDD];NEC - PC-98;<code>NEC PC-98</code> TOSEC;np2kai_libretro
