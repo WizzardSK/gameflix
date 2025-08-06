@@ -1,3 +1,5 @@
+3809	Fly Sim (First game i made, August 29 2024)	MhDxYqKxUs_fly_sim.png	MhDxYqKxUs_fly_sim.nx
+3808	Digi-Astro	zfdWTf5Yg2_DigiAstro.png	zfdWTf5Yg2_DigiAstro.nx
 3804	Gear Racer	sk2Znob6mJ_fETXCHmU9D_Gear_Racer.png	sk2Znob6mJ_my_program1.nx
 3798	Fishing preview	DPMm4FS2NM_Fishing_Preview.png	DPMm4FS2NM_Fishing_Preview.nx
 3794	Tetnis engine	CXHDJsjqT7_tn2thumb.png	CXHDJsjqT7_tetnis2.nx
