@@ -14,7 +14,14 @@ atari7800;No-Intro/Atari - Atari 7800 (BIN);Atari - 7800;Atari 7800 NoIntro;pros
 atari7800;TOSEC/Atari/7800/Games;Atari - 7800;Atari 7800 TOSEC;prosystem_libretro
 atari7800;TOSEC/Atari/7800/Homebrew/Games;Atari - 7800;Atari 7800 Homebrew;prosystem_libretro
 atari7800;TOSEC/Atari/7800/Applications;Atari - 7800;Atari 7800 App;prosystem_libretro
-atari800;No-Intro/Atari - 8-bit Family;Atari - 8-bit;<code>Atari 800</code> NoIntro;atari800_libretro
+atarijaguar;No-Intro/Atari - Atari Jaguar (J64);Atari - Jaguar;Atari Jaguar NoIntro;virtualjaguar_libretro
+atarijaguar;TOSEC/Atari/Jaguar/Games/[J64];Atari - Jaguar;Atari Jaguar TOSEC;virtualjaguar_libretro
+atarijaguarcd;Redump/Atari - Jaguar CD Interactive Multimedia System;Atari - Jaguar;Jaguar CD Redump;bigpemu;cue
+atarijaguarcd;No-Intro/Non-Redump - Atari - Atari Jaguar CD;Atari - Jaguar;Jaguar CD Non-Redump;bigpemu;cdi
+atarilynx;No-Intro/Atari - Atari Lynx (LYX);Atari - Lynx;<i>Atari Lynx</i> NoIntro;mednafen_lynx_libretro
+atarilynx;TOSEC/Atari/Lynx/Games/[LNX];Atari - Lynx;<i>Atari Lynx</i> TOSEC;mednafen_lynx_libretro
+
+atari800;No-Intro/Atari - 8-bit Family;Atari - 8-bit;<p><code>Atari 800</code> NoIntro;atari800_libretro
 atari800;TOSEC/Atari/8bit/Games/[ATR];Atari - 8-bit;<code>Atari 800</code> ATR;atari800_libretro
 atari800;TOSEC/Atari/8bit/Games/[ATX];Atari - 8-bit;<code>Atari 800</code> ATX;atari800_libretro
 atari800;TOSEC/Atari/8bit/Games/[BIN];Atari - 8-bit;<code>Atari 800</code> BIN;atari800_libretro
@@ -35,12 +42,6 @@ atarist;TOSEC/Atari/ST/Applications/[ST];Atari - ST;<code>Atari ST</code> App ST
 atarist;TOSEC/Atari/ST/Applications/[STX];Atari - ST;<code>Atari ST</code> App STX;hatari_libretro
 atarist;TOSEC/Atari/ST/Educational/[ST];Atari - ST;<code>Atari ST</code> Edu ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Educational/[STX];Atari - ST;<code>Atari ST</code> Edu STX;hatari_libretro
-atarijaguar;No-Intro/Atari - Atari Jaguar (J64);Atari - Jaguar;Atari Jaguar NoIntro;virtualjaguar_libretro
-atarijaguar;TOSEC/Atari/Jaguar/Games/[J64];Atari - Jaguar;Atari Jaguar TOSEC;virtualjaguar_libretro
-atarijaguarcd;Redump/Atari - Jaguar CD Interactive Multimedia System;Atari - Jaguar;Jaguar CD Redump;bigpemu;cue
-atarijaguarcd;No-Intro/Non-Redump - Atari - Atari Jaguar CD;Atari - Jaguar;Jaguar CD Non-Redump;bigpemu;cdi
-atarilynx;No-Intro/Atari - Atari Lynx (LYX);Atari - Lynx;<i>Atari Lynx</i> NoIntro;mednafen_lynx_libretro
-atarilynx;TOSEC/Atari/Lynx/Games/[LNX];Atari - Lynx;<i>Atari Lynx</i> TOSEC;mednafen_lynx_libretro
 
 channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;<p>Fairchild Channel F NoIntro;freechaf_libretro
 channelf;TOSEC/Fairchild/VES & Channel F/Games;Fairchild - Channel F;Fairchild Channel F TOSEC;freechaf_libretro
@@ -52,7 +53,6 @@ videopacplus;No-Intro/Philips - Videopac+;Philips - Videopac;Philips Videopac+ N
 videopacplus;TOSEC/Philips/Videopac+/Games;Philips - Videopac;Philips Videopac+ TOSEC;o2em_libretro
 intellivision;No-Intro/Mattel - Intellivision;Mattel - Intellivision;Mattel Intellivision NoIntro;freeintv_libretro
 intellivision;TOSEC/Mattel/Intellivision/Games/[BIN];Mattel - Intellivision;Mattel Intellivision TOSEC;freeintv_libretro
-adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK];Coleco - Adam;<code>Coleco Adam</code>;mame adam -flop1
 colecovision;No-Intro/Coleco - ColecoVision;Coleco - ColecoVision;Coleco Colecovision NoIntro;bluemsx_libretro
 colecovision;TOSEC/Coleco/ColecoVision/Games;Coleco - ColecoVision;Coleco Colecovision TOSEC;bluemsx_libretro
 scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Epoch SCV NoIntro;emuscv_libretro
@@ -124,7 +124,8 @@ supracan;TOSEC/Funtech/Super A'can/Games;Funtech - Super Acan;Super Acan TOSEC;m
 vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton VC 4000;mame vc4000 -cart
 multivision;TOSEC/Tsukuda Original/Othello Multivision/Games;Othello - Multivision;Othello Multivision;gearsystem_libretro
 
-coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM];Tandy - TRS-80 Color Computer;<p><code>Tandy TRS-80 CoCo</code>;mame coco3 -cart
+adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK];Coleco - Adam;<p><code>Coleco Adam</code>;mame adam -flop1
+coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM];Tandy - TRS-80 Color Computer;<code>Tandy TRS-80 CoCo</code>;mame coco3 -cart
 vis;Redump/Memorex - Visual Information System;Tandy - Video Information System;<code>Tandy-Memorex VIS</code>;mame vis -cdrm;cue
 bbcmicro;TOSEC/Acorn/BBC/Games/[SSD];Acorn - BBC;<code>Acorn BBC</code>;mame bbcb -flop1
 electron;TOSEC/Acorn/Electron/Games/[UEF];Acorn - Electron;<code>Acorn Electron</code>;mame electron64 -cass
@@ -163,7 +164,6 @@ gc;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Game
 gc;TOSEC-ISO/Nintendo/GameCube/Games;Nintendo - GameCube;Gamecube ISO;dolphin_libretro;iso
 wii;No-Intro/Unofficial - Nintendo - Wii (Digital) (Deprecated) (WAD);Nintendo - Wii;Nintendo Wii NoIntro;dolphin_libretro;wad
 wii;Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k];Nintendo - Wii;Nintendo Wii Redump;dolphin_libretro;rvz
-wiiu;Redump/Nintendo - Wii U - WUX;Nintendo - Wii U;<i>Nintendo Wii U Redump</i>;cemu -g;wux
 
 pokemini;No-Intro/Nintendo - Pokemon Mini;Nintendo - Pokemon Mini;<p><i>Pokemon Mini</i> NoIntro;pokemini_libretro
 pokemini;TOSEC/Nintendo/Pokemon Mini/Games;Nintendo - Pokemon Mini;<i>Pokemon Mini</i> TOSEC;pokemini_libretro
@@ -180,6 +180,7 @@ nds;No-Intro/Nintendo - Nintendo DS (Download Play);Nintendo - Nintendo DS;<i>Ni
 nds;TOSEC/Nintendo/DS/Games;Nintendo - Nintendo DS;<i>Nintendo DS</i> TOSEC;melonds_libretro
 nds;No-Intro/Nintendo - Nintendo DSi (Decrypted);Nintendo - Nintendo DS;<i>Nintendo DSi</i> NoIntro;melondsds_libretro
 3ds;No-Intro/Nintendo - Nintendo 3DS (Decrypted);Nintendo - Nintendo 3DS;<i>Nintendo 3DS</i> NoIntro;citra_libretro;3ds
+wiiu;Redump/Nintendo - Wii U - WUX;Nintendo - Wii U;<i>Nintendo Wii U Redump</i>;cemu -g;wux
 
 sg-1000;No-Intro/Sega - SG-1000;Sega - SG-1000;<p>SG 1000 NoIntro;genesis_plus_gx_libretro
 sg-1000;TOSEC/Sega/Game 1000/Games;Sega - SG-1000;SG 1000 TOSEC;genesis_plus_gx_libretro
@@ -318,7 +319,7 @@ x1;TOSEC/Sharp/X1/Games/[D88];Sharp - X1;<code>Sharp X1</code> D88;x1_libretro
 x68000;TOSEC/Sharp/X68000/Games/[DIM];Sharp - X68000;<code>Sharp X68000</code> DIM;px68k_libretro
 x68000;TOSEC/Sharp/X68000/Applications;Sharp - X68000;<code>Sharp X68000</code> App;px68k_libretro
 
-mame;Internet Archive/chadmaster/mame-merged/mame-merged;MAME;<p>MAME;mame
+mame;Internet Archive/chadmaster/mame-merged/mame-merged;Arcade MAME;<p>MAME;mame
 fbneo;Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade;MAME;FinalBurn Neo;fbneo_libretro
 model3;Internet Archive/chadmaster/segamodel3/ROMs;MAME;Sega Model 3;supermodel
 neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD Redump;neocd_libretro;cue
