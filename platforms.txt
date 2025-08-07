@@ -131,7 +131,10 @@ coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Applications/[ROM];Tandy - TR
 vis;Redump/Memorex - Visual Information System;Tandy - Video Information System;<code>Tandy-Memorex VIS</code>;mame vis -cdrm;cue
 bbcmicro;TOSEC/Acorn/BBC/Games/[SSD];Acorn - BBC;<code>Acorn BBC</code>;mame bbcb -flop1
 electron;TOSEC/Acorn/Electron/Games/[UEF];Acorn - Electron;<code>Acorn Electron</code>;mame electron64 -cass
+electron;TOSEC/Acorn/Electron/Applications/[UEF];Acorn - Electron;<code>Acorn Electron</code> App;mame electron64 -cass
+electron;TOSEC/Acorn/Electron/Educational/[UEF];Acorn - Electron;<code>Acorn Electron</code> Edu;mame electron64 -cass
 archimedes;TOSEC/Acorn/Archimedes/Games/[ADF];Acorn - Archimedes;<code>Acorn Archimedes</code>;mame aa4401 -flop
+archimedes;TOSEC/Acorn/Archimedes/Applications/[ADF];Acorn - Archimedes;<code>Acorn Archimedes</code> App;mame aa4401 -flop
 fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;<code>Fujitsu Micro 7</code> NoIntro;mame fm7 -flop1
 fm7;TOSEC/Fujitsu/FM-7/Games/[D77];Fujitsu - Micro 7;<code>Fujitsu Micro 7</code> D77;mame fm7 -flop1
 fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;<code>Fujitsu FM Towns</code>;mame fmtmarty -cdrm
