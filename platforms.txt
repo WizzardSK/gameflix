@@ -127,6 +127,7 @@ multivision;TOSEC/Tsukuda Original/Othello Multivision/Games;Othello - Multivisi
 adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK];Coleco - Adam;<p><code>Coleco Adam</code>;mame adam -flop1
 adam;TOSEC/Coleco/ColecoVision ADAM/Applications/[DSK];Coleco - Adam;<p><code>Coleco Adam</code> App;mame adam -flop1
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM];Tandy - TRS-80 Color Computer;<code>Tandy TRS-80 CoCo</code>;mame coco3 -cart
+coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Applications/[ROM];Tandy - TRS-80 Color Computer;<code>Tandy TRS-80 CoCo</code> App;mame coco3 -cart
 vis;Redump/Memorex - Visual Information System;Tandy - Video Information System;<code>Tandy-Memorex VIS</code>;mame vis -cdrm;cue
 bbcmicro;TOSEC/Acorn/BBC/Games/[SSD];Acorn - BBC;<code>Acorn BBC</code>;mame bbcb -flop1
 electron;TOSEC/Acorn/Electron/Games/[UEF];Acorn - Electron;<code>Acorn Electron</code>;mame electron64 -cass
