@@ -13,7 +13,7 @@ rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --
 rclone mount thumbs:Data/share/thumbs /userdata/thumbs --vfs-cache-mode full --daemon --config=/userdata/system/rclone.conf --cache-dir=/userdata/system/.cache/rclone --allow-non-empty --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h
 rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media /userdata/roms/vircon32/Vircon32 --daemon --config=/userdata/system/rclone.conf
 rclone mount eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/ "/userdata/roms/dos/MS-DOS eXoDOS" --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
-rclone mount whtech:MAME/rpk /userdata/roms/ti99/TI99 --daemon --config=/userdata/system/rclone.conf
+rclone mount whtech:MAME/rpk "/userdata/roms/ti99/Texas Instruments TI99"  --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
 
 archives=("https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" https://wizzardsk.github.io/{tic80,wasm4,uzebox,lowresnx,socrates}.zip)
 
@@ -30,7 +30,7 @@ mount -o bind /userdata/zips/tic80.zip "/userdata/roms/tic80/TIC-80"
 mount -o bind /userdata/zips/lowresnx.zip "/userdata/roms/lowresnx/LowresNX"
 mount -o bind /userdata/zips/wasm4.zip "/userdata/roms/wasm4/WASM-4"
 mount -o bind /userdata/zips/uzebox.zip "/userdata/roms/uzebox/Uzebox"
-mount -o bind /userdata/zips/socrates.zip "/userdata/roms/socrates/Socrates"
+mount -o bind /userdata/zips/socrates.zip "/userdata/roms/socrates/VTech Socrates"
 
 DAT_URL="https://github.com/WizzardSK/gameflix/raw/refs/heads/main/neogeo.dat"; DAT_FILE="/tmp/neogeo.dat"
 SRC_DIR="/userdata/rom/Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade"; DEST_DIR="/userdata/roms/neogeo/Neo Geo"
