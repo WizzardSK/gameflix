@@ -149,7 +149,7 @@ laser310;TOSEC/VTech/Laser 200/Games/[VZ];VTech - Laser 310;<code>VTech Laser 20
 laser310;TOSEC/VTech/Laser 200/Applications;VTech - Laser 310;<code>VTech Laser 200</code> App;mame laser310 -dump
 laser310;TOSEC/VTech/Laser 310/Applications;VTech - Laser 310;<code>VTech Laser 310</code> App;mame laser310 -dump
 socrates;../roms/socrates/Socrates;VTech - Socrates;<code>VTech Socrates</code>;mame socrates -cart
-ti99;../roms/ti99/TI99;Texas Instruments - TI-99<code>Texas Instruments TI-99</code>;mame ti99 -cart
+ti99;../roms/ti99/TI99;Texas Instruments - TI-99;<code>Texas Instruments TI-99</code>;mame ti99 -cart
 
 thomson;TOSEC/Thomson/MO5/Games/[K7];Thomson - MOTO;<p><code>Thomson MO5</code> K7;theodore_libretro
 thomson;TOSEC/Thomson/MO6/Games;Thomson - MOTO;<code>Thomson MO6</code> K7;theodore_libretro
