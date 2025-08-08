@@ -29,6 +29,7 @@ mount -o bind /userdata/zips/tic80.zip "/userdata/roms/tic80/TIC-80"
 mount -o bind /userdata/zips/lowresnx.zip "/userdata/roms/lowresnx/LowresNX"
 mount -o bind /userdata/zips/wasm4.zip "/userdata/roms/wasm4/WASM-4"
 mount -o bind /userdata/zips/uzebox.zip "/userdata/roms/uzebox/Uzebox"
+mount -o bind /userdata/zips/socrates.zip "/userdata/roms/socrates/Socrates"
 
 DAT_URL="https://github.com/WizzardSK/gameflix/raw/refs/heads/main/neogeo.dat"; DAT_FILE="/tmp/neogeo.dat"
 SRC_DIR="/userdata/rom/Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade"; DEST_DIR="/userdata/roms/neogeo/Neo Geo"
