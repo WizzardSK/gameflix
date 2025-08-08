@@ -15,6 +15,7 @@ bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/lo
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/tic80.zip "$HOME/roms/TIC-80"
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/wasm4.zip "$HOME/roms/WASM-4"
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/uzebox.zip "$HOME/roms/Uzebox"
+bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/socrates.zip "$HOME/roms/Socrates"
 
 DAT_URL="https://github.com/WizzardSK/gameflix/raw/refs/heads/main/neogeo.dat"; DAT_FILE="/tmp/neogeo.dat"
 SRC_DIR="$HOME/myrient/Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade"; DEST_DIR="$HOME/roms/Neo Geo"
