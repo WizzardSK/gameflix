@@ -1,8 +1,8 @@
 #!/bin/bash
 export LD_LIBRARY_PATH=/usr/local/lib
-mkdir -p ~/myrient ~/roms/{Atari\ 2600\ ROMS,TIC-80,LowresNX,Uzebox,WASM-4,Vircon32,Lutro,MS-DOS\ eXoDOS} ~/iso ~/zips ~/gameflix
+mkdir -p ~/myrient ~/roms/{Atari\ 2600\ ROMS,TIC-80,LowresNX,Uzebox,WASM-4,Vircon32,Lutro,MS-DOS\ eXoDOS,Socrates} ~/iso ~/zips ~/gameflix
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
-archives=("https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" https://wizzardsk.github.io/{lowresnx,tic80,wasm4,uzebox}.zip)
+archives=("https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" https://wizzardsk.github.io/{lowresnx,tic80,wasm4,uzebox,socrates}.zip)
 
 if ! mountpoint -q "$HOME/myrient"; then rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
 if ! mountpoint -q "$HOME/roms/MS-DOS eXoDOS"; then rclone mount eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/ "$HOME/roms/MS-DOS eXoDOS" --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
