@@ -1,5 +1,5 @@
 3809	Fly Sim (First game i made, August 29 2024)	MhDxYqKxUs_fly_sim.png	MhDxYqKxUs_fly_sim.nx
-3808	Digi-Astro	zfdWTf5Yg2_DigiAstro.png	zfdWTf5Yg2_DigiAstro.nx
+3808	Asteroids on Steroids !!!	uBddLGvVDD_DigiAstro.png	uBddLGvVDD_DigiAstro.nx
 3804	Gear Racer	sk2Znob6mJ_fETXCHmU9D_Gear_Racer.png	sk2Znob6mJ_my_program1.nx
 3798	Fishing preview	DPMm4FS2NM_Fishing_Preview.png	DPMm4FS2NM_Fishing_Preview.nx
 3794	Tetnis engine	CXHDJsjqT7_tn2thumb.png	CXHDJsjqT7_tetnis2.nx
@@ -7,7 +7,7 @@
 3791	GRINDSET	VexjwVzBqM_GRINDSET.png	VexjwVzBqM_GRINDSET.nx
 3789	Jenga*	mAYMcYFEAy_LowRes_NX_20250725_20_05_27.png	mAYMcYFEAy_jenga.nx
 3786	PoleMaster	Lz3GzvJBAS_Fishing_Pole_Physics_Optimized.png	Lz3GzvJBAS_Fishing_Pole_Physics_Optimized.nx
-3781	Space invaders Match game	F4f5QiKmKa_Space_Invaders_Match_Game_2.3.png	F4f5QiKmKa_Space_Invaders_Match_Game_2.3.nx
+3781	Space invaders Match game	ekAuEsu9Ft_Space_Invaders_Match_Game_2.4.png	ekAuEsu9Ft_Space_Invaders_Match_Game_2.4.nx
 3780	Lowres Galaxy 1 (Unfinished Port to Lowres NX)	oXHWSDFLcx_Lowres_Coder_1_NX_Edition.png	oXHWSDFLcx_Lowres_Coder_1_NX_Edition.nx
 3777	Dodo	mqiXJPNmYT_LowRes_NX_20250721_12_14_59.png	mqiXJPNmYT_dodo.nx
 3773	CARDS	jVLfdf2hyB_Cards.png	jVLfdf2hyB_Cards.nx
