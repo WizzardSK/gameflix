@@ -64,7 +64,7 @@ echo "<gameList>" > ~/gamelists/voxatron/gamelist.xml; cat fantasy/voxatron.txt 
 done; printf ']; generateVoxLinks("roms/Voxatron", "Voxatron");</script><script src=\"script.js\"></script>' >> ~/gameflix/Voxatron.html
 echo "<folder><path>./Voxatron</path><name>Voxatron</name><image>./splore.png</image></folder></gameList>" >> ~/gamelists/voxatron/gamelist.xml
 
-echo "<gameList>" > ~/gamelists/switch/gamelist.xml; cat switch.txt | while IFS= read -r name; do echo "<game><path>./${name}</path><name>${name}</name><image>~/../thumbs/Nintendo - Nintendo Switch/Named_Snaps/${NAME}.png</image></game>" >> ~/gamelists/switch/gamelist.xml
+echo "<gameList>" > ~/gamelists/switch/gamelist.xml; cat switch.txt | while IFS= read -r name; do echo "<game><path>./${name}</path><name>${name}</name><image>~/../thumbs/Nintendo - Nintendo Switch/Named_Snaps/${name}.png</image></game>" >> ~/gamelists/switch/gamelist.xml
 done; echo "</gameList>" >> ~/gamelists/switch/gamelist.xml
 
 IFS=";"; for each in "${roms[@]}"; do
