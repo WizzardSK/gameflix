@@ -14,9 +14,9 @@ if [ ! -d "$HOME/share/thumbs/Vircon32" ]; then git clone --depth 1 "https://git
 fi
 
 echo "Switch"
-if [ ! -d "$HOME/share/thumbs/Nintendo - Nindendo Switch" ]; then git clone --depth 1 "https://github.com/WizzardSK/Nintendo_-_Nindendo_Switch.git" "$HOME/share/thumbs/Nintendo - Nindendo Switch" 2>&1 | tee -a "$HOME/git.log"; else
-  git config --global --add safe.directory "$HOME/share/thumbs/Nintendo - Nindendo Switch"
-  git -C "$HOME/share/thumbs/Nintendo - Nindendo Switch" config pull.rebase false 2>&1 | tee -a "$HOME/git.log"; git -C "$HOME/share/thumbs/Nintendo - Nindendo Switch" pull 2>&1 | tee -a "$HOME/git.log"
+if [ ! -d "$HOME/share/thumbs/Nintendo - Nintendo Switch" ]; then git clone --depth 1 "https://github.com/WizzardSK/Nintendo_-_Nintendo_Switch.git" "$HOME/share/thumbs/Nintendo - Nintendo Switch" 2>&1 | tee -a "$HOME/git.log"; else
+  git config --global --add safe.directory "$HOME/share/thumbs/Nintendo - Nintendo Switch"
+  git -C "$HOME/share/thumbs/Nintendo - Nintendo Switch" config pull.rebase false 2>&1 | tee -a "$HOME/git.log"; git -C "$HOME/share/thumbs/Nintendo - Nintendo Switch" pull 2>&1 | tee -a "$HOME/git.log"
 fi
 
 declare -A seen; mkdir -p "$HOME/share/thumbs"
