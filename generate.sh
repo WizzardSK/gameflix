@@ -1,6 +1,6 @@
 #!/bin/bash
 shopt -s nocasematch; IFS=$'\n' read -d '' -ra roms < platforms.txt
-mkdir -p ~/{gameflix,rom,gamelists,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/gamelists/{atari2600,neogeo,uzebox,tic80,wasm4,lowresnx,vircon32,pico8,voxatron,dos}
+mkdir -p ~/{gameflix,rom,gamelists,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/gamelists/{atari2600,neogeo,uzebox,tic80,wasm4,lowresnx,vircon32,pico8,voxatron,dos,switch}
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html; cp ~/gameflix/systems.html ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
