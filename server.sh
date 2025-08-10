@@ -30,7 +30,7 @@ IFS=";"; for each in "${roms[@]}"; do
       git config --global --add safe.directory $HOME/share/thumbs/${rom[2]}
       git -C "$HOME/share/thumbs/${rom[2]}" config pull.rebase false 2>&1 | tee -a "$HOME/git.log"
       git -C "$HOME/share/thumbs/${rom[2]}" pull 2>&1 | tee -a "$HOME/git.log"
-      sleep 0.5
+      sleep 1
     fi
   fi  
 done
