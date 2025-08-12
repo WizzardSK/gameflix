@@ -4,7 +4,7 @@ OUTPUT_FILE="$GITHUB_WORKSPACE/fantasy/lowresnx.txt"
 > "$OUTPUT_FILE"
 page=1
 mkdir ~/lowresnx ~/backup
-unzip "$GITHUB_WORKSPACE/fantasy/lowresnx.zip" -d ~/backup/
+unzip -q "$GITHUB_WORKSPACE/fantasy/lowresnx.zip" -d ~/backup/
 while true; do
   URL="${BASE_URL}${page}"
   echo "Page $page..."
@@ -23,7 +23,7 @@ while true; do
 done
 cd ~/lowresnx
 rm -f "$GITHUB_WORKSPACE/fantasy/lowresnx.zip" 
-zip -r "$GITHUB_WORKSPACE/fantasy/lowresnx.zip" *
+zip -q -r "$GITHUB_WORKSPACE/fantasy/lowresnx.zip" *
 cd "$GITHUB_WORKSPACE"
 git add "$OUTPUT_FILE"
 git add "$GITHUB_WORKSPACE/fantasy/lowresnx.zip"
