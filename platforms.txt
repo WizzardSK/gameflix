@@ -311,6 +311,7 @@ amiga500;TOSEC/Commodore/Amiga/Games/Public Domain/[ADF];Commodore - Amiga;<code
 amiga500;TOSEC/Commodore/Amiga/Games/SPS;Commodore - Amiga;<code>Amiga</code> SPS;puae_libretro
 amiga500;TOSEC/Commodore/Amiga/Educational/[ADF];Commodore - Amiga;<code>Amiga</code> Edu;puae_libretro
 amiga500;TOSEC/Commodore/Amiga/Applications/[ADF];Commodore - Amiga;<code>Amiga</code> App;puae_libretro
+amiga1200;Redump/Commodore - Amiga CD;Commodore - Amiga;<code>Amiga CD</code> Redump;puae_libretro
 amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<code>Amiga CD32</code> Redump;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Games/[ISO];Commodore - CD32;<code>Amiga CD32</code> ISO;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Applications;Commodore - CD32;<code>Amiga CD32</code> App;puae_libretro;cue
