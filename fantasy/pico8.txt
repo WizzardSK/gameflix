@@ -1,3 +1,7 @@
+151106	Hungry Hungry	hungry_hungry-0.p8.png
+151104	Space Gold Rush	space_gold_rush-1.p8.png
+151100	picobomino	picobomino-0.p8.png
+151098	tic_tac_two	tic_tac_two-1.p8.png
 151083	station_7	station_7-0.p8.png
 151076	For Jason	fegiyokoga-0.p8.png
 151065	Fast Full Screen Noise	fastnoise-0.p8.png
@@ -3025,7 +3029,6 @@
 52121	Pond Squid	pond_squid-0.p8.png
 52117	Innerleste	innerleste-0.p8.png
 52113	Systems Pico-K	systemspico_k_final-0.p8.png
-52110	CloudOps v1	cloudops-0.p8.png
 52096	Twotris	twotris-0.p8.png
 52094	Perfect Fit	perfectfit-1.p8.png
 52092	Sakura by the seashore	mudebeguso-1.p8.png
@@ -6049,7 +6052,6 @@
 39726	Bitmasking tweetcart	somuneyetu-0.p8.png
 39725	some adventure (alpha)	some_adventure-1.p8.png
 39721	crea tu mapa 0.0.0	creatumapa-3.p8.png
-39720	crea tu mapa 0.0.1	creatumapa-2.p8.png
 39706	ASTEROID MISSION V2	asteroidmission200-0.p8.png
 39705	Dialog Box Library	dialog_box-0.p8.png
 39704	Raid On Fort Knox	jufesemeka-4.p8.png
@@ -7942,10 +7944,10 @@
 32089	Devil's Paddle	58154.p8.png
 32082	Apodynia	58076.p8.png
 32074	Spacey	57998.p8.png
-32072	Tabetaro the hedgehog	helicopter-0.p8.png
-32071	Helicopter	57947.p8.png
-32068	Wizard duels	redblack-0.p8.png
-32067	Red//Black: Two Horror Short Stories	57920.p8.png
+32072	Helicopter	helicopter-0.p8.png
+32071	Wizard duels	57947.p8.png
+32068	Red//Black: Two Horror Short Stories	redblack-0.p8.png
+32067	BGHOULED	57920.p8.png
 32066	Fencing	bugugobiwi-0.p8.png
 32065	Letterworks	58127.p8.png
 32060	Langton's ant with states	57855.p8.png
@@ -8272,9 +8274,10 @@
 30966	Orbiter Suite	51156.p8.png
 30963	Quest for Blue	51269.p8.png
 30958	Endless Breakout	50480.p8.png
-30953	Endless Breakout	50450.p8.png
-30947	avalanche dodge	51519.p8.png
-30934	Daruma Crusher	50640.p8.png
+30958	Endless Breakout	50480.p8.png
+30953	avalanche dodge	50450.p8.png
+30947	Daruma Crusher	51519.p8.png
+30934	Space-a-tron	50640.p8.png
 30931	Cat Bandit	50300.p8.png
 30929	Study Hall	50290.p8.png
 30928	Juggle Panic	50260.p8.png
@@ -8359,10 +8362,10 @@
 30675	HELLO WO#?!	48633.p8.png
 30670	Ego Vos	48610.p8.png
 30669	Icosahedron	48605.p8.png
-30659	Tiny Platformer (Tutorial/Example Project)	48557.p8.png
-30655	Test	48530.p8.png
-30652	Jupiter	50452.p8.png
-30647	Nuklear Klone	48489.p8.png
+30659	Test	48557.p8.png
+30655	Jupiter	48530.p8.png
+30652	Nuklear Klone	50452.p8.png
+30647	Spirals	48489.p8.png
 30643	MetroCUBEvania	cubevania12-0.p8.png
 30632	Nudge Nudge	48421.p8.png
 30631	DeFacto	48406.p8.png
@@ -9075,11 +9078,11 @@
 28341	Robot Waltz	37562.p8.png
 28340	We are Number One but it's remade in pico-8	34371.p8.png
 28339	Spirograph	35750.p8.png
-28335	i_editor 2.0 + manual(english+french)	34355.p8.png
-28332	Lifedraw	34347.p8.png
-28331	Melting Snow: Hide and Seek	34343.p8.png
+28335	Lifedraw	34355.p8.png
+28332	Melting Snow: Hide and Seek	34347.p8.png
+28331	Hello Pong	34343.p8.png
 28327	Trollmeister	42267.p8.png
-28327	Hello Pong	42267.p8.png
+28327	CIR-NE	42267.p8.png
 28326	The Excuse Machine	34313.p8.png
 28323	Knubbel Adventure	34828.p8.png
 28321	Mountains of Demise II Music Cart	34297.p8.png
@@ -9104,10 +9107,10 @@
 28241	Picocross	33647.p8.png
 28241	Pico Of The Beast	33647.p8.png
 28240	WaGa	33644.p8.png
-28239	Tetris	33640.p8.png
-28238	Cups	33667.p8.png
-28231	Blackjack	33616.p8.png
-28230	Swamp Trek	33578.p8.png
+28239	Cups	33640.p8.png
+28238	Blackjack	33667.p8.png
+28231	Swamp Trek	33616.p8.png
+28230	Colours and Cool Stuff	33578.p8.png
 28225	VOID	35267.p8.png
 28221	Time return	33522.p8.png
 28220	Sine rainbow	33517.p8.png
@@ -9275,7 +9278,6 @@
 27657	Pico-8 Binary Functions Set	28897.p8.png
 27656	Bobs Adventure	32316.p8.png
 27653	Shadow Techniques	28633.p8.png
-27652	Treasure Hunt Submarine	28496.p8.png
 27647	Against Capitalism by jumalauta (Demo)	28453.p8.png
 27645	Legends of Pizza Night	59130.p8.png
 27644	Funzrey's logo	28432.p8.png
