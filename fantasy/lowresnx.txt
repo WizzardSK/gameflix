@@ -1,6 +1,8 @@
-3824	Red Green - Mountain	U4ahz7KfWh_Red_Green_Mountain_0.03.png	U4ahz7KfWh_Red_Green_Mountain_0.03.nx
+3826	Hacker POV Demo	Penz2tf8dD_HackerPOV_DEMO.png	Penz2tf8dD_HackerPOV_DEMO.nx
+3825	High Seas	8fVgAmG5st_High_Seas.png	8fVgAmG5st_High_Seas.nx
+3824	Red Green - Mountain	RLo5wxHt9J_Red_Green_Mountain_0.05.png	RLo5wxHt9J_Red_Green_Mountain_0.05.nx
 3816	Marisol	HRWEKEitZg_MARISOL.png	HRWEKEitZg_MARISOL.nx
-3815	Red Green - Battle	FgLYQgqVdM_Red_Green_Battle_2.10.png	FgLYQgqVdM_Red_Green_Battle_2.10.nx
+3815	Red Green - Battle	tMR2paHQ4d_Red_Green_Battle_2.10.png	tMR2paHQ4d_Red_Green_Battle_2.10.nx
 3809	Fly Sim (First game i made, August 29 2024)	MhDxYqKxUs_fly_sim.png	MhDxYqKxUs_fly_sim.nx
 3808	Asteroids on Steroids !!!	uBddLGvVDD_DigiAstro.png	uBddLGvVDD_DigiAstro.nx
 3804	Gear Racer	sk2Znob6mJ_fETXCHmU9D_Gear_Racer.png	sk2Znob6mJ_my_program1.nx
