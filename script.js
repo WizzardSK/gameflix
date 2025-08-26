@@ -109,9 +109,11 @@ function titles() { processImages('titles'); }
 function logos() { processImages('logos'); }
 
 function imgonerror(image) {
-    image.src = image.src.replace("&", "_");
+    //image.src = image.src.replace("&", "_");
+    image.src = image.src.replace(/^([^)]*\([^)]*\)).*(\.[^.]+)$/, "$1$2");
     image.onerror = function() { this.style.visibility = "hidden"; }
 }
+
 var obrazky = document.querySelectorAll("img");
 for (var i = 0; i < obrazky.length; i++) { obrazky[i].onerror = function() { imgonerror(this); }; }
 showHideProto.dispatchEvent(new Event('change'));
