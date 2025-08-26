@@ -11,6 +11,7 @@ for dir in Named_Snaps Named_Titles Named_Boxarts Named_Logos; do
     done
 done
 
+rm thumbs.sh
 git add .
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
