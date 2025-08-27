@@ -182,7 +182,7 @@ virtualboy;TOSEC/Nintendo/Virtual Boy/Games;Nintendo - Virtual Boy;<i>Virtual Bo
 gb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;<i>Game Boy</i> NoIntro;sameboy_libretro
 gb;TOSEC/Nintendo/Game Boy/Games;Nintendo - Game Boy;<i>Game Boy</i> TOSEC;sameboy_libretro
 gbc;No-Intro/Nintendo - Game Boy Color;Nintendo - Game Boy Color;<i>Game Boy Color</i> NoIntro;sameboy_libretro
-gbc;TOSEC/Nintendo/Game Boy Color/Games;Nintendo - Game Boy Color;<i>Game Boy Color</i> TOSEC;sameboy_libretro
+gbc;TOSEC/Nintendo/Game Boy Color/Games/[GBC];Nintendo - Game Boy Color;<i>Game Boy Color</i> TOSEC;sameboy_libretro
 gba;No-Intro/Nintendo - Game Boy Advance;Nintendo - Game Boy Advance;<i>Game Boy Advance</i> NoIntro;mgba_libretro
 gba;TOSEC/Nintendo/Game Boy Advance/Games;Nintendo - Game Boy Advance;<i>Game Boy Advance</i> TOSEC;sameboy_libretro
 nds;No-Intro/Nintendo - Nintendo DS (Decrypted);Nintendo - Nintendo DS;<i>Nintendo DS</i> NoIntro;melonds_libretro
