@@ -80,7 +80,7 @@ IFS=";"; for each in "${roms[@]}"; do
   > ~/gameflix/${rom3}.html; echo ${rom3}; cp platform.html ~/gameflix/${rom3}.html
   echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html; pocet=0; while IFS= read -r line; do
     line2="${line%.*}"; echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++))
-    thumb="${line2:0:$(expr index "$line2" ')')}"
+    thumb="${line2:0:$(expr index "$line2" \))}"
     hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${thumb}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${thumb}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${thumb}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${thumb}.png</marquee>"
     if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then
       echo "${hra}</game>" >> ~/gamelists/${rom[0]}/gamelist.xml
