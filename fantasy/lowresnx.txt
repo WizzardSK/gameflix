@@ -1,4 +1,4 @@
-3830	Tamagotchi Gen 2 0.01 (WIP)	Un8jewbxe5_Tamagotchi_Gen_2_0.01.png	Un8jewbxe5_Tamagotchi_Gen_2_0.01.nx
+3830	Tamagotchi Gen 2 0.02 (WIP)	bKXhQzmyzP_Tamagotchi_Gen_2_0.01.png	bKXhQzmyzP_Tamagotchi_Gen_2_0.01.nx
 3829	Numatch	sZZE8BwEPj_Numatch.png	sZZE8BwEPj_Numatch.nx
 3827	Mokipan Big version	xZdbCSHhGX_Mokipan_2.0.png	xZdbCSHhGX_Mokipan_2.0.nx
 3826	Hacker POV Demo	Penz2tf8dD_HackerPOV_DEMO.png	Penz2tf8dD_HackerPOV_DEMO.nx
