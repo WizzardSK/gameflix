@@ -1,3 +1,7 @@
+151225	Rolling Bones	hurupafama-0.p8.png
+151219	Crossing Paths	crossing_paths-0.p8.png
+151216	wiiz	wiiz-1.p8.png
+151211	Math Sword	mamec-2.p8.png
 151207	Mission Scorpion	scorpion-0.p8.png
 151206	BrkOut P8 1.0	fibekawju-0.p8.png
 151205	Mandala Generator	mandala-0.p8.png
@@ -19,7 +23,7 @@
 151170	Mini Commando	minicommando-0.p8.png
 151167	chris coin collecting	chris100coinsv1-0.p8.png
 151166	Asher's Big Toy Trouble	toytrouble-1.p8.png
-151164	Hex Die	hexdie-1.p8.png
+151164	Hex Die	hexdie-2.p8.png
 151163	Tetro 8	tetro8-0.p8.png
 151160	Wizard's Folly	wizards_folly-2.p8.png
 151159	Simple Life	simplelife-0.p8.png
@@ -28,7 +32,7 @@
 151137	1500 3d particles at 60fps	fast3dspace1000-0.p8.png
 151133	Level 30	zoltan_level30-0.p8.png
 151131	Psonic WIP	suwajumazi-0.p8.png
-151129	STAR SPLORE	star_splore-0.p8.png
+151129	STAR SPLORE	star_splore-1.p8.png
 151125	madeline did something	madelineisdying-0.p8.png
 151121	Arto	arto_oortcloudchamber_v1-0.p8.png
 151106	Hungry Hungry	hungry_hungry-0.p8.png
@@ -256,7 +260,7 @@
 150187	Autopong: an idle game	autopong-0.p8.png
 150166	Hockey Pong	nitofapuya-0.p8.png
 150164	Fire Keeper	fire_keeper-5.p8.png
-150161	Bye Bye Bunny	yibahuwuma-0.p8.png
+150161	Bye Bye Bunny	fudugitay-0.p8.png
 150143	The Last Shift	thelastshift-1.p8.png
 150142	Pico Hero - A Guitar Hero demake	picohero-5.p8.png
 150140	Heaven or Hell	heavenorhell-1.p8.png
@@ -7219,6 +7223,7 @@
 35086	Platformer engine with crates and moving platforms	cratesncrushers-1.p8.png
 35083	Tri-twister	hisebbeno-0.p8.png
 35081	Puzl	puzl-0.p8.png
+35081	Puzl	puzl-0.p8.png
 35077	Conway	conway-0.p8.png
 35073	Rooty tooty point and shooty	bahemumizi-0.p8.png
 35066	Sweep the mines	hakegefiso-0.p8.png
@@ -7971,11 +7976,11 @@
 32117	Monster Mix and Match Jam Gallery Cart	58326.p8.png
 32114	3D Picoh Mummy	58320.p8.png
 32107	Canyon Bomber	58284.p8.png
-32106	pigdog	58272.p8.png
-32101	Signed by '89	58247.p8.png
-32098	My Maze- Complete	58216.p8.png
-32096	Monster of The Universe	58210.p8.png
-32094	Lightweight particle system	58205.p8.png
+32106	Signed by '89	58272.p8.png
+32101	My Maze- Complete	58247.p8.png
+32098	Monster of The Universe	58216.p8.png
+32096	Lightweight particle system	58210.p8.png
+32094	Devil's Paddle	58205.p8.png
 32089	Apodynia	58154.p8.png
 32082	Spacey	58076.p8.png
 32074	Tabetaro the hedgehog	57998.p8.png
@@ -8329,12 +8334,12 @@
 30909	3D Material Capture	50120.p8.png
 30901	Picoban	50316.p8.png
 30896	Platformer Base	49975.p8.png
-30884	1D Heat Diffusion	picosokoban-0.p8.png
-30881	Pico-Sokoban	49887.p8.png
-30873	Picopolis	50162.p8.png
-30872	Cover Tactics	49849.p8.png
-30871	Spousal Abuse	49843.p8.png
+30884	Pico-Sokoban	picosokoban-0.p8.png
+30881	Picopolis	49887.p8.png
+30873	Cover Tactics	50162.p8.png
+30872	Spousal Abuse	49849.p8.png
 30871	Shinkansen	49843.p8.png
+30871	&quot;Low Nibble Overflow&quot; (Pro-Tracker MOD cover)	49843.p8.png
 30868	Mazeborn - Gymcrash - A soulslike inspired game.	50606.p8.png
 30865	SPRINGBEAR	49811.p8.png
 30864	Minute Apocalypse	49800.p8.png
@@ -8388,11 +8393,11 @@
 30700	GLIDER	49282.p8.png
 30699	Loto the Avatar (1.01)	48752.p8.png
 30698	Wire IT!	48913.p8.png
-30696	Picolele	48731.p8.png
-30695	Nobody Cares About Your Dreams	48726.p8.png
-30680	8-bit Slalom (for Der Standard)	56599.p8.png
-30677	So-Gnar	48637.p8.png
-30676	Archimedes!!	48635.p8.png
+30696	Nobody Cares About Your Dreams	48731.p8.png
+30695	8-bit Slalom (for Der Standard)	48726.p8.png
+30680	So-Gnar	56599.p8.png
+30677	Archimedes!!	48637.p8.png
+30676	HELLO WO#?!	48635.p8.png
 30675	Ego Vos	48633.p8.png
 30670	Icosahedron	48610.p8.png
 30669	Tiny Platformer (Tutorial/Example Project)	48605.p8.png
@@ -9105,17 +9110,17 @@
 28368	v0.82	34525.p8.png
 28365	loves	34504.p8.png
 28364	Very Very Little Adventure	34499.p8.png
-28357	Moonrace	34470.p8.png
-28349	Lode 8	34434.p8.png
-28348	Tron Bikes (Tutorial by Rabidgremlin)	35239.p8.png
-28343	Cir-ne Music Submission	34393.p8.png
+28357	Lode 8	34470.p8.png
+28349	Tron Bikes (Tutorial by Rabidgremlin)	34434.p8.png
+28348	Trollmeister	35239.p8.png
+28343	Robot Waltz	34393.p8.png
 28341	We are Number One but it's remade in pico-8	37562.p8.png
 28340	Spirograph	34371.p8.png
 28339	i_editor 2.0 + manual(english+french)	35750.p8.png
 28335	Lifedraw	34355.p8.png
 28332	Melting Snow: Hide and Seek	34347.p8.png
 28331	Hello Pong	34343.p8.png
-28327	Trollmeister	42267.p8.png
+28327	Cir-ne Music Submission	42267.p8.png
 28327	CIR-NE	42267.p8.png
 28326	The Excuse Machine	34313.p8.png
 28323	Knubbel Adventure	34828.p8.png
@@ -9132,11 +9137,11 @@
 28292	picomaze	34018.p8.png
 28273	Art Curator	33833.p8.png
 28272	PiCAD (vector gfx authoring/display)	34530.p8.png
-28266	Heliopause Title Concept	34025.p8.png
-28264	Omega Catapult Of The Dead	33778.p8.png
-28262	Cheetahmen music	33760.p8.png
-28259	Wave Text	33750.p8.png
-28258	Post Apocalyptic Prime Time TV	33748.p8.png
+28266	Omega Catapult Of The Dead	34025.p8.png
+28264	Cheetahmen music	33778.p8.png
+28262	Wave Text	33760.p8.png
+28259	Post Apocalyptic Prime Time TV	33750.p8.png
+28258	Jedi Training	33748.p8.png
 28242	Picocross	33649.p8.png
 28241	WaGa	33647.p8.png
 28241	Pico Of The Beast	33647.p8.png
@@ -9555,6 +9560,7 @@
 3276	Shoot Stuff!	20134.p8.png
 3263	Bad Apple v1.2.0	badapp12-0.p8.png
 3258	Picomino	20003.p8.png
+3255	Chie no Magari Ita	20080.p8.png
 3245	A82-Recon 3038	19909.p8.png
 3241	We must play the fox	19892.p8.png
 3239	Object-Oriented Programming (sample 0.1.6)	19886.p8.png
