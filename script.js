@@ -110,7 +110,7 @@ function logos() { processImages('logos'); }
 
 function imgonerror(image) {
     //image.src = image.src.replace("&", "_");
-    image.src = image.src.replace(/^([^)]*\([^)]*\)).*(\.[^.]+)$/, "$1$2");
+    //image.src = image.src.replace(/^([^)]*\([^)]*\)).*(\.[^.]+)$/, "$1$2");
     image.onerror = function() { this.style.visibility = "hidden"; }
 }
 
