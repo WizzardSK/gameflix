@@ -1,5 +1,6 @@
+3842	sneak peek (Depth Charge)	U2piio97yL_Depth_Charge_0.1.png	U2piio97yL_Depth_Charge_0.1.nx
 3840	Quarto 2D	BFMBbwmhtM_LowRes_NX_20250830_21_30_59.png	BFMBbwmhtM_quarto.nx
-3839	Pacman DX (WIP)	mtJxfjooBb_Pacman_DX_3.png	mtJxfjooBb_Pacman_DX_3.nx
+3839	Pacman DX 0.5 (WIP)	mtJxfjooBb_Pacman_DX_3.png	mtJxfjooBb_Pacman_DX_3.nx
 3830	Tamagotchi Gen 2 0.03 (WIP)	vgFgYfhpuS_Tamagotchi_Gen_2_0.03.png	vgFgYfhpuS_Tamagotchi_Gen_2_0.03.nx
 3829	Numatch	wDC6yV38xh_Numatch_2.22.png	wDC6yV38xh_Numatch_2.22.nx
 3827	Mokipan Big version	xZdbCSHhGX_Mokipan_2.0.png	xZdbCSHhGX_Mokipan_2.0.nx
