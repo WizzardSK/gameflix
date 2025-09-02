@@ -1,6 +1,8 @@
-151294	The Picky Horror Show	picky_horror_show-0.p8.png
+151310	sillyshmup	sillyshmup-0.p8.png
+151308	silly shmup	bagels-0.p8.png
+151305	Pico Ninja	marascaats_pico_ninja-0.p8.png
+151294	The Picky Horror Show	picky_horror_show-1.p8.png
 151290	colour_circles	colour_circles-0.p8.png
-151289	elias first game	segepituza-0.p8.png
 151288	Snake	hanurijuha-0.p8.png
 151287	PICO-WEDDING	pico_wedding-3.p8.png
 151278	Rabbit Hunt 1.0	rabbit_hunt_snake-0.p8.png
@@ -9,9 +11,9 @@
 151255	3d engine i made	threedotp8-0.p8.png
 151252	GARBAGE CAN IN THE DUMPSTER | Early Demo	binarath-0.p8.png
 151251	Weight Loss Tracker	purdy_weight_loss-0.p8.png
-151249	Should the Louvre Be Burned Down?	louvre1921-0.p8.png
+151249	Should the Louvre Be Burned Down?	louvre1921-1.p8.png
 151241	Alphabet Rush	alphabet_rush-0.p8.png
-151235	My Game: Deep (Early Prototype)	hikikfan-0.p8.png
+151235	My Game: Deep (Early Prototype)	hikikfan-1.p8.png
 151234	Flip Tower	rbojopipu-0.p8.png
 151232	rustlung	rustlung-0.p8.png
 151231	Libryinth	libryinth-0.p8.png
@@ -207,7 +209,7 @@
 150462	SUUJANG	suujan-0.p8.png
 150461	rayna_edition	rayna_edition-0.p8.png
 150460	siqi_pewpew	siqi_rayna_pewpew-0.p8.png
-150459	fireworks_command_redux	fireworks_command_redux-0.p8.png
+150459	fireworks_command_redux	fireworks_command_redux-1.p8.png
 150455	Darkest Hour (A Celeste Mod)	celestedarkesthour-2.p8.png
 150452	Carrot Catcher	carrotcatcher-1.p8.png
 150447	My very first game with Pico8	aylakadam_space_shooter-0.p8.png
@@ -8003,9 +8005,9 @@
 32089	Devil's Paddle	58154.p8.png
 32082	Apodynia	58076.p8.png
 32074	Spacey	57998.p8.png
-32072	Tabetaro the hedgehog	helicopter-0.p8.png
-32071	Helicopter	57947.p8.png
-32068	Wizard duels	redblack-0.p8.png
+32072	Helicopter	helicopter-0.p8.png
+32071	Wizard duels	57947.p8.png
+32068	Red//Black: Two Horror Short Stories	redblack-0.p8.png
 32067	BGHOULED	57920.p8.png
 32066	Fencing	bugugobiwi-0.p8.png
 32065	Letterworks	58127.p8.png
@@ -8333,8 +8335,9 @@
 30966	Orbiter Suite	51156.p8.png
 30963	Quest for Blue	51269.p8.png
 30958	Endless Breakout	50480.p8.png
-30953	Endless Breakout	50450.p8.png
-30947	avalanche dodge	51519.p8.png
+30958	Endless Breakout	50480.p8.png
+30953	avalanche dodge	50450.p8.png
+30947	Daruma Crusher	51519.p8.png
 30934	Space-a-tron	50640.p8.png
 30931	Cat Bandit	50300.p8.png
 30929	Study Hall	50290.p8.png
@@ -8420,9 +8423,9 @@
 30675	HELLO WO#?!	48633.p8.png
 30670	Ego Vos	48610.p8.png
 30669	Icosahedron	48605.p8.png
-30659	Tiny Platformer (Tutorial/Example Project)	48557.p8.png
-30655	Test	48530.p8.png
-30652	Jupiter	50452.p8.png
+30659	Test	48557.p8.png
+30655	Jupiter	48530.p8.png
+30652	Nuklear Klone	50452.p8.png
 30647	Spirals	48489.p8.png
 30643	MetroCUBEvania	cubevania12-0.p8.png
 30632	Nudge Nudge	48421.p8.png
@@ -9136,9 +9139,9 @@
 28341	Robot Waltz	37562.p8.png
 28340	We are Number One but it's remade in pico-8	34371.p8.png
 28339	Spirograph	35750.p8.png
-28335	i_editor 2.0 + manual(english+french)	34355.p8.png
-28332	Lifedraw	34347.p8.png
-28331	Melting Snow: Hide and Seek	34343.p8.png
+28335	Lifedraw	34355.p8.png
+28332	Melting Snow: Hide and Seek	34347.p8.png
+28331	Hello Pong	34343.p8.png
 28327	Trollmeister	42267.p8.png
 28327	CIR-NE	42267.p8.png
 28326	The Excuse Machine	34313.p8.png
@@ -9165,9 +9168,9 @@
 28241	Picocross	33647.p8.png
 28241	Pico Of The Beast	33647.p8.png
 28240	WaGa	33644.p8.png
-28239	Tetris	33640.p8.png
-28238	Cups	33667.p8.png
-28231	Blackjack	33616.p8.png
+28239	Cups	33640.p8.png
+28238	Blackjack	33667.p8.png
+28231	Swamp Trek	33616.p8.png
 28230	Colours and Cool Stuff	33578.p8.png
 28225	VOID	35267.p8.png
 28221	Time return	33522.p8.png
