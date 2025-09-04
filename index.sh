@@ -4,7 +4,13 @@ set -euo pipefail
 ROOT="${1:-.}"          # koreňový adresár
 ZIP_NAME="${2:-indexes.zip}"
 
-echo "Generujem indexy pre všetky adresáre v: $ROOT (bez skrytých a .github/workflows)"
+# Automaticky získať názov repa a vetvy z GitHub Actions env premenných
+OWNER_REPO="${GITHUB_REPOSITORY:-}"
+BRANCH="${GITHUB_REF_NAME:-master}"
+BASE_URL="https://raw.githubusercontent.com/$OWNER_REPO/refs/heads/$BRANCH"
+
+echo "Generujem indexy pre repozitár: $OWNER_REPO ($BRANCH)"
+echo "BASE_URL = $BASE_URL"
 echo "Výsledný ZIP: $ZIP_NAME"
 
 # --- HTML escape ---
@@ -23,6 +29,8 @@ url_safe() {
   local s="$1"
   s="${s// /%20}"
   s="${s//#/%23}"
+  s="${s//\?/%3F}"
+  s="${s//:/%3A}"
   printf '%s' "$s"
 }
 
@@ -39,16 +47,18 @@ generate_index() {
     echo "<h1>Index of $(html_escape "$rel")</h1>"
     echo '<ul>'
 
-    [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../">../</a></li>'
-
     for entry in "$dir"/*; do
       [[ -e "$entry" ]] || continue
       name=$(basename "$entry")
       [[ "$name" == .* ]] && continue
       [[ "$dir/$name" == "$ROOT/.github/workflows" ]] && continue
-      href=$(url_safe "$name")
+
+      relpath=$(realpath --relative-to="$ROOT" "$entry")
+      href="$BASE_URL/$(url_safe "$relpath")"
+
       if [[ -d "$entry" ]]; then
-        echo '<li>📁 <a href="'"$href"'/">'"$(html_escape "$name")"'/</a></li>'
+        # priečinok = klikateľný odkaz na jeho vlastný index.html
+        echo '<li>📁 <a href="'"$href/index.html"'">'"$(html_escape "$name")"'/</a></li>'
       elif [[ -f "$entry" ]]; then
         echo '<li>📄 <a href="'"$href"'">'"$(html_escape "$name")"'</a></li>'
       fi
@@ -67,13 +77,14 @@ while IFS= read -r -d '' d; do
 done < <(find "$ROOT" -type d -print0)
 
 # --- ZIP so štruktúrou ---
-echo "Vytváram ZIP so štruktúrou: $ZIP_NAME"
+echo "Vytváram ZIP: $ZIP_NAME"
 (cd "$ROOT" && zip -r "$ZIP_NAME" $(find . -name "index.html"))
 
 # --- Vymazať všetky index.html ---
 find "$ROOT" -name "index.html" -delete
 
-echo "Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME, indexy zmazané."
+echo "✅ Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME, indexy zmazané."
+
 
 rm index.sh
 git add .
