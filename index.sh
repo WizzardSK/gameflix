@@ -31,6 +31,11 @@ url_safe() {
 
 generate_index() {
   local dir="$1"
+  local base=$(basename "$dir")
+
+  # preskoč priečinky začínajúce bodkou
+  [[ "$base" == .* ]] && return
+
   local rel="${dir#$ROOT}"
   [[ -z "$rel" ]] && rel=""
 
@@ -51,6 +56,7 @@ generate_index() {
 
       if [[ -d "$entry" ]]; then
         echo '<li>📁 <a href="'"$(url_safe "$name")/index.html"'">'"$(html_escape "$name")"'/</a></li>'
+        generate_index "$entry"
       elif [[ -f "$entry" ]]; then
         [[ "$dir" == "$ROOT" ]] && continue
         fullpath=$(realpath --relative-to="$ROOT" "$entry")
@@ -63,19 +69,18 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# --- Použijeme find s -prune ---
-while IFS= read -r -d '' dir; do
-  generate_index "$dir"
-done < <(find "$ROOT" -type d \( -name '.*' -prune \) -o -type d -print0)
+# spusti generovanie od ROOT
+generate_index "$ROOT"
 
-# --- ZIP so štruktúrou ---
+# ZIP so štruktúrou
 echo "Vytváram ZIP: $ZIP_NAME"
 (cd "$ROOT" && zip -r "$ZIP_NAME" $(find . -name "index.html"))
 
-# --- Vymazať všetky index.html ---
+# vymazať všetky index.html
 find "$ROOT" -name "index.html" -delete
 
 echo "✅ Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME"
+
 
 
 
