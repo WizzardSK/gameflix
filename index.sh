@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="${1:-.}"   # koreňový adresár, ak nezadáš, použije sa aktuálny
-echo "Generujem indexy pre všetky adresáre v: $ROOT (bez skrytých priečinkov)"
+echo "Generujem indexy pre všetky adresáre v: $ROOT (bez skrytých a .github/workflows)"
 
 # --- HTML escape ---
 html_escape() {
@@ -42,11 +42,12 @@ generate_index() {
     # Odkaz na nadradený adresár (ak nie sme v root)
     [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../">../</a></li>'
 
-    # Pre každý súbor a priečinok, vynechať skryté
+    # Pre každý súbor a priečinok, vynechať skryté a .github/workflows
     for entry in "$dir"/*; do
       [[ -e "$entry" ]] || continue
       name=$(basename "$entry")
-      [[ "$name" == .* ]] && continue   # vynechaj skryté
+      [[ "$name" == .* ]] && continue
+      [[ "$dir/$name" == "$ROOT/.github/workflows" ]] && continue
       href=$(url_safe "$name")
       if [[ -d "$entry" ]]; then
         echo '<li>📁 <a href="'"$href"'/">'"$(html_escape "$name")"'/</a></li>'
@@ -59,14 +60,19 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# --- Pre každý adresár vrátane ROOT, vynechať skryté priečinky ---
+# --- Pre každý adresár vrátane ROOT, vynechať skryté a .github/workflows ---
 while IFS= read -r -d '' d; do
+  # Vynechať skryté priečinky (okrem ROOT)
   dir_name=$(basename "$d")
   [[ "$dir_name" == .* && "$d" != "$ROOT" ]] && continue
+  # Vynechať presne .github/workflows
+  [[ "$d" == "$ROOT/.github/workflows" ]] && continue
+
   generate_index "$d"
 done < <(find "$ROOT" -type d -print0)
 
-echo "Hotovo. Vygenerované index.html vo všetkých adresároch (bez skrytých)."
+echo "Hotovo. Vygenerované index.html vo všetkých adresároch (bez skrytých a .github/workflows)."
+
 
 rm index.sh
 git add .
