@@ -1,20 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="${1:-.}"          # koreňový adresár
+ROOT="${1:-.}"          
 ZIP_NAME="${2:-indexes.zip}"
-
-# Repo a branch z GitHub Actions (alebo fallback)
 OWNER_REPO="${GITHUB_REPOSITORY:-WizzardSK/Atari_-_2600}"
 BRANCH="${GITHUB_REF_NAME:-master}"
-
 BASE_URL="https://raw.githubusercontent.com/$OWNER_REPO/refs/heads/$BRANCH"
 
 echo "Generujem indexy pre repozitár: $OWNER_REPO ($BRANCH)"
-echo "BASE_URL = $BASE_URL"
 echo "Výsledný ZIP: $ZIP_NAME"
 
-# --- HTML escape ---
 html_escape() {
   local s="$1"
   s="${s//&/&amp;}"
@@ -25,7 +20,6 @@ html_escape() {
   printf '%s' "$s"
 }
 
-# --- URL-safe odkazy ---
 url_safe() {
   local s="$1"
   s="${s// /%20}"
@@ -35,7 +29,6 @@ url_safe() {
   printf '%s' "$s"
 }
 
-# --- Generovanie indexu pre adresár ---
 generate_index() {
   local dir="$1"
   local rel="${dir#$ROOT}"
@@ -48,24 +41,19 @@ generate_index() {
     echo "<h1>Index of $(html_escape "$rel")</h1>"
     echo '<ul>'
 
-    # odkaz na nadriadený priečinok
     [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../index.html">../</a></li>'
 
     for entry in "$dir"/*; do
       [[ -e "$entry" ]] || continue
       name=$(basename "$entry")
-
-      # vynechať skryté súbory a priečinky
       [[ "$name" == .* ]] && continue
       [[ "$name" == "index.html" ]] && continue
 
       if [[ -d "$entry" ]]; then
         echo '<li>📁 <a href="'"$(url_safe "$name")/index.html"'">'"$(html_escape "$name")"'/</a></li>'
+        generate_index "$entry"
       elif [[ -f "$entry" ]]; then
-        # vynechať súbory v koreňovom adresári
-        if [[ "$dir" == "$ROOT" ]]; then
-          continue
-        fi
+        [[ "$dir" == "$ROOT" ]] && continue
         fullpath=$(realpath --relative-to="$ROOT" "$entry")
         href="$BASE_URL/$(url_safe "$fullpath")"
         echo '<li>📄 <a href="'"$href"'">'"$(html_escape "$name")"'</a></li>'
@@ -76,12 +64,8 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# --- Nájdeme všetky priečinky, vynecháme tie čo začínajú bodkou (aj ich podadresáre) ---
-mapfile -t dirs < <(find "$ROOT" -type d \( -name '.*' -prune -o -print \))
-
-for d in "${dirs[@]}"; do
-  generate_index "$d"
-done
+# --- Spusti generovanie od ROOT ---
+generate_index "$ROOT"
 
 # --- ZIP so štruktúrou ---
 echo "Vytváram ZIP: $ZIP_NAME"
@@ -90,7 +74,7 @@ echo "Vytváram ZIP: $ZIP_NAME"
 # --- Vymazať všetky index.html ---
 find "$ROOT" -name "index.html" -delete
 
-echo "✅ Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME, indexy zmazané."
+echo "✅ Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME"
 
 rm index.sh
 git add .
