@@ -54,9 +54,8 @@ generate_index() {
       [[ -e "$entry" ]] || continue
       name=$(basename "$entry")
 
-      # vynechať skryté a workflows
+      # vynechať skryté súbory a priečinky
       [[ "$name" == .* ]] && continue
-      [[ "$dir/$name" == "$ROOT/.github/workflows" ]] && continue
 
       # vynechať samotný index.html
       [[ "$name" == "index.html" ]] && continue
@@ -81,9 +80,11 @@ generate_index() {
 
 # --- Generovanie indexov ---
 while IFS= read -r -d '' d; do
-  dir_name=$(basename "$d")
-  [[ "$dir_name" == .* && "$d" != "$ROOT" ]] && continue
-  [[ "$d" == "$ROOT/.github/workflows" ]] && continue
+  base=$(basename "$d")
+  # preskočiť všetky priečinky, ktoré začínajú bodkou, aj s ich obsahom
+  if [[ "$base" == .* ]]; then
+    continue
+  fi
   generate_index "$d"
 done < <(find "$ROOT" -type d -print0)
 
