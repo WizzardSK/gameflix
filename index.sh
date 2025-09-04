@@ -53,18 +53,22 @@ generate_index() {
     for entry in "$dir"/*; do
       [[ -e "$entry" ]] || continue
       name=$(basename "$entry")
+
+      # vynechať skryté a workflows
       [[ "$name" == .* ]] && continue
       [[ "$dir/$name" == "$ROOT/.github/workflows" ]] && continue
+
+      # vynechať samotný index.html
+      [[ "$name" == "index.html" ]] && continue
 
       if [[ -d "$entry" ]]; then
         # priečinok → relatívny odkaz na jeho index.html
         echo '<li>📁 <a href="'"$(url_safe "$name")/index.html"'">'"$(html_escape "$name")"'/</a></li>'
       elif [[ -f "$entry" ]]; then
-        # v koreňovom adresári súbory vynechať
+        # súbor → raw.githubusercontent link (okrem root súborov)
         if [[ "$dir" == "$ROOT" ]]; then
           continue
         fi
-        # súbor → raw.githubusercontent link
         fullpath=$(realpath --relative-to="$ROOT" "$entry")
         href="$BASE_URL/$(url_safe "$fullpath")"
         echo '<li>📄 <a href="'"$href"'">'"$(html_escape "$name")"'</a></li>'
