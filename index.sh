@@ -7,12 +7,6 @@ ZIP_NAME="${2:-indexes.zip}"
 # Repo a branch z GitHub Actions (alebo fallback)
 OWNER_REPO="${GITHUB_REPOSITORY:-}"
 BRANCH="${GITHUB_REF_NAME:-master}"
-
-if [[ -z "$OWNER_REPO" ]]; then
-  echo "⚠️ Varovanie: GITHUB_REPOSITORY nie je nastavené, použijem fallback"
-  OWNER_REPO="WizzardSK/Atari_-_2600"
-fi
-
 BASE_URL="https://raw.githubusercontent.com/$OWNER_REPO/refs/heads/$BRANCH"
 
 echo "Generujem indexy pre repozitár: $OWNER_REPO ($BRANCH)"
@@ -66,6 +60,10 @@ generate_index() {
         # priečinok → relatívny odkaz na jeho index.html
         echo '<li>📁 <a href="'"$(url_safe "$name")/index.html"'">'"$(html_escape "$name")"'/</a></li>'
       elif [[ -f "$entry" ]]; then
+        # v koreňovom adresári súbory vynechať
+        if [[ "$dir" == "$ROOT" ]]; then
+          continue
+        fi
         # súbor → raw.githubusercontent link
         fullpath=$(realpath --relative-to="$ROOT" "$entry")
         href="$BASE_URL/$(url_safe "$fullpath")"
@@ -93,8 +91,6 @@ echo "Vytváram ZIP: $ZIP_NAME"
 find "$ROOT" -name "index.html" -delete
 
 echo "✅ Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME, indexy zmazané."
-
-
 
 rm index.sh
 git add .
