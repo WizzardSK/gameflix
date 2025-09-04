@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="${1:-.}"   # koreňový adresár, ak nezadáš, použije sa aktuálny
-echo "Generujem indexy pre všetky adresáre v: $ROOT"
+echo "Generujem indexy pre všetky adresáre v: $ROOT (bez skrytých priečinkov)"
 
 # --- HTML escape ---
 html_escape() {
@@ -42,10 +42,11 @@ generate_index() {
     # Odkaz na nadradený adresár (ak nie sme v root)
     [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../">../</a></li>'
 
-    # Pre každý súbor a priečinok
+    # Pre každý súbor a priečinok, vynechať skryté
     for entry in "$dir"/*; do
       [[ -e "$entry" ]] || continue
       name=$(basename "$entry")
+      [[ "$name" == .* ]] && continue   # vynechaj skryté
       href=$(url_safe "$name")
       if [[ -d "$entry" ]]; then
         echo '<li>📁 <a href="'"$href"'/">'"$(html_escape "$name")"'/</a></li>'
@@ -58,12 +59,14 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# --- Pre každý adresár vrátane ROOT ---
+# --- Pre každý adresár vrátane ROOT, vynechať skryté priečinky ---
 while IFS= read -r -d '' d; do
+  dir_name=$(basename "$d")
+  [[ "$dir_name" == .* && "$d" != "$ROOT" ]] && continue
   generate_index "$d"
 done < <(find "$ROOT" -type d -print0)
 
-echo "Hotovo. Vygenerované index.html vo všetkých adresároch."
+echo "Hotovo. Vygenerované index.html vo všetkých adresároch (bez skrytých)."
 
 rm index.sh
 git add .
