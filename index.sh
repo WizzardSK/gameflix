@@ -2,7 +2,9 @@
 set -euo pipefail
 
 ROOT="${1:-.}"   # koreňový adresár, ak nezadáš, použije sa aktuálny
+ZIP_NAME="${2:-indexes.zip}"
 echo "Generujem indexy pre všetky adresáre v: $ROOT (bez skrytých a .github/workflows)"
+echo "Výsledný ZIP: $ZIP_NAME"
 
 # --- HTML escape ---
 html_escape() {
@@ -15,14 +17,11 @@ html_escape() {
   printf '%s' "$s"
 }
 
-# --- URL-safe pre odkazy ---
+# --- URL-safe pre odkazy (minimalistické) ---
 url_safe() {
   local s="$1"
-  s="${s//%/%25}"
   s="${s// /%20}"
   s="${s//#/%23}"
-  s="${s//?/%3F}"
-  s="${s//&/%26}"
   printf '%s' "$s"
 }
 
@@ -39,10 +38,8 @@ generate_index() {
     echo "<h1>Index of $(html_escape "$rel")</h1>"
     echo '<ul>'
 
-    # Odkaz na nadradený adresár (ak nie sme v root)
     [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../">../</a></li>'
 
-    # Pre každý súbor a priečinok, vynechať skryté a .github/workflows
     for entry in "$dir"/*; do
       [[ -e "$entry" ]] || continue
       name=$(basename "$entry")
@@ -60,18 +57,19 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# --- Pre každý adresár vrátane ROOT, vynechať skryté a .github/workflows ---
+# --- Vygenerovať index pre každý adresár ---
 while IFS= read -r -d '' d; do
-  # Vynechať skryté priečinky (okrem ROOT)
   dir_name=$(basename "$d")
   [[ "$dir_name" == .* && "$d" != "$ROOT" ]] && continue
-  # Vynechať presne .github/workflows
   [[ "$d" == "$ROOT/.github/workflows" ]] && continue
-
   generate_index "$d"
 done < <(find "$ROOT" -type d -print0)
 
-echo "Hotovo. Vygenerované index.html vo všetkých adresároch (bez skrytých a .github/workflows)."
+# --- Všetky index.html spakovať do ZIP ---
+echo "Vytváram ZIP súbor: $ZIP_NAME"
+find "$ROOT" -name "index.html" -print | zip -j "$ZIP_NAME" -@
+
+echo "Hotovo! Všetky index.html sú v ZIP: $ZIP_NAME"
 
 
 rm index.sh
