@@ -43,7 +43,6 @@ generate_index() {
 
     [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../index.html">../</a></li>'
 
-    # súbory a priečinky
     for entry in "$dir"/*; do
       [[ -e "$entry" ]] || continue
       name=$(basename "$entry")
@@ -64,13 +63,10 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# --- Nájdeme všetky viditeľné priečinky ---
-# find bez -prune, iba tie čo nezačínajú bodkou
-mapfile -d '' dirs < <(find "$ROOT" -type d ! -name '.*' -print0)
-
-for dir in "${dirs[@]}"; do
+# --- Použijeme find s -prune ---
+while IFS= read -r -d '' dir; do
   generate_index "$dir"
-done
+done < <(find "$ROOT" -type d \( -name '.*' -prune \) -o -type d -print0)
 
 # --- ZIP so štruktúrou ---
 echo "Vytváram ZIP: $ZIP_NAME"
@@ -80,6 +76,7 @@ echo "Vytváram ZIP: $ZIP_NAME"
 find "$ROOT" -name "index.html" -delete
 
 echo "✅ Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME"
+
 
 
 rm index.sh
