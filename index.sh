@@ -80,13 +80,10 @@ generate_index() {
 
 # --- Generovanie indexov ---
 while IFS= read -r -d '' d; do
-  base=$(basename "$d")
-  # preskočiť všetky priečinky, ktoré začínajú bodkou, aj s ich obsahom
-  if [[ "$base" == .* ]]; then
-    continue
-  fi
   generate_index "$d"
-done < <(find "$ROOT" -type d -print0)
+done < <(find "$ROOT" \
+  -type d \
+  -name '.*' -prune -o -print0)
 
 # --- ZIP so štruktúrou ---
 echo "Vytváram ZIP: $ZIP_NAME"
