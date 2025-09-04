@@ -4,15 +4,8 @@ set -euo pipefail
 ROOT="${1:-.}"          # koreňový adresár
 ZIP_NAME="${2:-indexes.zip}"
 
-# Automaticky získať názov repa a vetvy z GitHub Actions env premenných
 OWNER_REPO="${GITHUB_REPOSITORY:-}"
 BRANCH="${GITHUB_REF_NAME:-master}"
-
-if [[ -z "$OWNER_REPO" ]]; then
-  echo "⚠️ Varovanie: GITHUB_REPOSITORY nie je nastavené, použijem fallback"
-  OWNER_REPO="WizzardSK/Atari_-_2600"
-fi
-
 BASE_URL="https://raw.githubusercontent.com/$OWNER_REPO/refs/heads/$BRANCH"
 
 echo "Generujem indexy pre repozitár: $OWNER_REPO ($BRANCH)"
@@ -53,6 +46,8 @@ generate_index() {
     echo "<h1>Index of $(html_escape "$rel")</h1>"
     echo '<ul>'
 
+    [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../index.html">../</a></li>'
+
     for entry in "$dir"/*; do
       [[ -e "$entry" ]] || continue
       name=$(basename "$entry")
@@ -60,12 +55,11 @@ generate_index() {
       [[ "$dir/$name" == "$ROOT/.github/workflows" ]] && continue
 
       relpath=$(realpath --relative-to="$ROOT" "$entry")
-      href="$BASE_URL/$(url_safe "$relpath")"
-
       if [[ -d "$entry" ]]; then
-        # priečinok = odkaz na jeho index.html
-        echo '<li>📁 <a href="'"$href/index.html"'">'"$(html_escape "$name")"'/</a></li>'
+        # priečinok → relatívny odkaz na podindex
+        echo '<li>📁 <a href="'"$name/index.html"'">'"$(html_escape "$name")"'/</a></li>'
       elif [[ -f "$entry" ]]; then
+        href="$BASE_URL/$(url_safe "$relpath")"
         echo '<li>📄 <a href="'"$href"'">'"$(html_escape "$name")"'</a></li>'
       fi
     done
