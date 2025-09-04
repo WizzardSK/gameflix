@@ -1,85 +1,41 @@
-#!/usr/bin/env bash
-set -euo pipefail
-
-ROOT="${1:-.}"
-ZIP_NAME="${2:-indexes.zip}"
-OWNER_REPO="${GITHUB_REPOSITORY:-WizzardSK/Atari_-_2600}"
-BRANCH="${GITHUB_REF_NAME:-master}"
-BASE_URL="https://raw.githubusercontent.com/$OWNER_REPO/refs/heads/$BRANCH"
-
-echo "Generujem indexy pre repozitár: $OWNER_REPO ($BRANCH)"
-echo "Výsledný ZIP: $ZIP_NAME"
-
-html_escape() {
-  local s="$1"
-  s="${s//&/&amp;}"
-  s="${s//</&lt;}"
-  s="${s//>/&gt;}"
-  s="${s//\"/&quot;}"
-  s="${s//\'/&#39;}"
-  printf '%s' "$s"
-}
-
-url_safe() {
-  local s="$1"
-  s="${s// /%20}"
-  s="${s//#/%23}"
-  s="${s//\?/%3F}"
-  s="${s//:/%3A}"
-  printf '%s' "$s"
-}
-
 generate_index() {
-  local dir="$1"
-  local rel="${dir#$ROOT}"
-  [[ -z "$rel" ]] && rel=""
+    local dir="$1"
 
-  {
-    echo '<!doctype html>'
-    echo '<meta charset="utf-8">'
-    echo "<title>Index of $(html_escape "$rel")</title>"
-    echo "<h1>Index of $(html_escape "$rel")</h1>"
-    echo '<ul>'
+    # Preskočiť .git a .github/workflows úplne
+    if [[ "$dir" == "$ROOT/.git"* ]]; then
+        return
+    fi
 
-    [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../index.html">../</a></li>'
+    local rel="${dir#$ROOT}"
+    [[ -z "$rel" ]] && rel=""
 
-    for entry in "$dir"/*; do
-      [[ -e "$entry" ]] || continue
-      name=$(basename "$entry")
+    {
+        echo '<!doctype html>'
+        echo '<meta charset="utf-8">'
+        echo "<title>Index of $(html_escape "$rel")</title>"
+        echo "<h1>Index of $(html_escape "$rel")</h1>"
+        echo '<ul>'
+        [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../index.html">../</a></li>'
 
-      # vynechať zakázané adresáre
-      if [[ -d "$entry" && ( "$name" == ".git" || "$name" == ".github" ) ]]; then
-        continue
-      fi
+        for entry in "$dir"/*; do
+            [[ -e "$entry" ]] || continue
+            name=$(basename "$entry")
+            [[ "$name" == "index.html" ]] && continue
 
-      [[ "$name" == "index.html" ]] && continue
+            if [[ -d "$entry" ]]; then
+                echo '<li>📁 <a href="'"$(url_safe "$name")/index.html"'">'"$(html_escape "$name")"'/</a></li>'
+                generate_index "$entry"
+            elif [[ -f "$entry" ]]; then
+                [[ "$dir" == "$ROOT" ]] && continue
+                fullpath=$(realpath --relative-to="$ROOT" "$entry")
+                href="$BASE_URL/$(url_safe "$fullpath")"
+                echo '<li>📄 <a href="'"$href"'">'"$(html_escape "$name")"'</a></li>'
+            fi
+        done
 
-      if [[ -d "$entry" ]]; then
-        echo '<li>📁 <a href="'"$(url_safe "$name")/index.html"'">'"$(html_escape "$name")"'/</a></li>'
-        generate_index "$entry"
-      elif [[ -f "$entry" ]]; then
-        [[ "$dir" == "$ROOT" ]] && continue
-        fullpath=$(realpath --relative-to="$ROOT" "$entry")
-        href="$BASE_URL/$(url_safe "$fullpath")"
-        echo '<li>📄 <a href="'"$href"'">'"$(html_escape "$name")"'</a></li>'
-      fi
-    done
-
-    echo '</ul>'
-  } > "$dir/index.html"
+        echo '</ul>'
+    } > "$dir/index.html"
 }
-
-# --- Spusti generovanie od ROOT ---
-generate_index "$ROOT"
-
-# --- ZIP so štruktúrou ---
-echo "Vytváram ZIP: $ZIP_NAME"
-(cd "$ROOT" && zip -r "$ZIP_NAME" $(find . -name "index.html"))
-
-# --- Vymazať všetky index.html ---
-find "$ROOT" -name "index.html" -delete
-
-echo "✅ Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME"
 
 
 
