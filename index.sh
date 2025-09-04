@@ -57,8 +57,6 @@ generate_index() {
 
       # vynechať skryté súbory a priečinky
       [[ "$name" == .* ]] && continue
-
-      # vynechať samotný index.html
       [[ "$name" == "index.html" ]] && continue
 
       if [[ -d "$entry" ]]; then
@@ -78,8 +76,8 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# --- Nájdeme všetky priečinky, vynecháme tie čo začínajú bodkou ---
-mapfile -d '' dirs < <(find "$ROOT" -type d -print0 | grep -zv '/\.')
+# --- Nájdeme všetky priečinky, vynecháme tie čo začínajú bodkou (aj ich podadresáre) ---
+mapfile -t dirs < <(find "$ROOT" -type d \( -name '.*' -prune -o -print \))
 
 for d in "${dirs[@]}"; do
   generate_index "$d"
