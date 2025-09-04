@@ -5,8 +5,9 @@ ROOT="${1:-.}"          # koreňový adresár
 ZIP_NAME="${2:-indexes.zip}"
 
 # Repo a branch z GitHub Actions (alebo fallback)
-OWNER_REPO="${GITHUB_REPOSITORY:-}"
+OWNER_REPO="${GITHUB_REPOSITORY:-WizzardSK/Atari_-_2600}"
 BRANCH="${GITHUB_REF_NAME:-master}"
+
 BASE_URL="https://raw.githubusercontent.com/$OWNER_REPO/refs/heads/$BRANCH"
 
 echo "Generujem indexy pre repozitár: $OWNER_REPO ($BRANCH)"
@@ -61,10 +62,9 @@ generate_index() {
       [[ "$name" == "index.html" ]] && continue
 
       if [[ -d "$entry" ]]; then
-        # priečinok → relatívny odkaz na jeho index.html
         echo '<li>📁 <a href="'"$(url_safe "$name")/index.html"'">'"$(html_escape "$name")"'/</a></li>'
       elif [[ -f "$entry" ]]; then
-        # súbor → raw.githubusercontent link (okrem root súborov)
+        # vynechať súbory v koreňovom adresári
         if [[ "$dir" == "$ROOT" ]]; then
           continue
         fi
@@ -78,10 +78,12 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# --- Generovanie indexov ---
-while IFS= read -r -d '' d; do
+# --- Nájdeme všetky priečinky, vynecháme tie čo začínajú bodkou ---
+mapfile -d '' dirs < <(find "$ROOT" -type d -print0 | grep -zv '/\.')
+
+for d in "${dirs[@]}"; do
   generate_index "$d"
-done < <(find "$ROOT" \( -type d -name '.*' -prune \) -o \( -type d -print0 \))
+done
 
 # --- ZIP so štruktúrou ---
 echo "Vytváram ZIP: $ZIP_NAME"
