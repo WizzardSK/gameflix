@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="${1:-.}"          
+ROOT="${1:-.}"
 ZIP_NAME="${2:-indexes.zip}"
 OWNER_REPO="${GITHUB_REPOSITORY:-WizzardSK/Atari_-_2600}"
 BRANCH="${GITHUB_REF_NAME:-master}"
@@ -51,7 +51,6 @@ generate_index() {
 
       if [[ -d "$entry" ]]; then
         echo '<li>📁 <a href="'"$(url_safe "$name")/index.html"'">'"$(html_escape "$name")"'/</a></li>'
-        generate_index "$entry"
       elif [[ -f "$entry" ]]; then
         [[ "$dir" == "$ROOT" ]] && continue
         fullpath=$(realpath --relative-to="$ROOT" "$entry")
@@ -64,8 +63,10 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# --- Spusti generovanie od ROOT ---
-generate_index "$ROOT"
+# --- Použijeme find s -prune na ignorovanie všetkých adresárov začínajúcich bodkou ---
+while IFS= read -r -d '' dir; do
+  generate_index "$dir"
+done < <(find "$ROOT" -type d \( -name '.*' -prune \) -o \( -type d -print0 \))
 
 # --- ZIP so štruktúrou ---
 echo "Vytváram ZIP: $ZIP_NAME"
