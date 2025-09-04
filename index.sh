@@ -31,11 +31,6 @@ url_safe() {
 
 generate_index() {
   local dir="$1"
-  local base=$(basename "$dir")
-
-  # preskoč priečinky začínajúce bodkou
-  [[ "$base" == .* ]] && return
-
   local rel="${dir#$ROOT}"
   [[ -z "$rel" ]] && rel=""
 
@@ -51,7 +46,12 @@ generate_index() {
     for entry in "$dir"/*; do
       [[ -e "$entry" ]] || continue
       name=$(basename "$entry")
-      [[ "$name" == .* ]] && continue
+
+      # vynechať zakázané adresáre
+      if [[ -d "$entry" && ( "$name" == ".git" || "$name" == ".github" ) ]]; then
+        continue
+      fi
+
       [[ "$name" == "index.html" ]] && continue
 
       if [[ -d "$entry" ]]; then
@@ -69,18 +69,17 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# spusti generovanie od ROOT
+# --- Spusti generovanie od ROOT ---
 generate_index "$ROOT"
 
-# ZIP so štruktúrou
+# --- ZIP so štruktúrou ---
 echo "Vytváram ZIP: $ZIP_NAME"
 (cd "$ROOT" && zip -r "$ZIP_NAME" $(find . -name "index.html"))
 
-# vymazať všetky index.html
+# --- Vymazať všetky index.html ---
 find "$ROOT" -name "index.html" -delete
 
 echo "✅ Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME"
-
 
 
 
