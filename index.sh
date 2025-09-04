@@ -10,7 +10,6 @@ BASE_URL="https://raw.githubusercontent.com/$OWNER_REPO/refs/heads/$BRANCH"
 echo "Generujem indexy pre repozitár: $OWNER_REPO ($BRANCH)"
 echo "Výsledný ZIP: $ZIP_NAME"
 
-# --- HTML escape ---
 html_escape() {
   local s="$1"
   s="${s//&/&amp;}"
@@ -21,7 +20,6 @@ html_escape() {
   printf '%s' "$s"
 }
 
-# --- URL-safe odkazy ---
 url_safe() {
   local s="$1"
   s="${s// /%20}"
@@ -31,7 +29,6 @@ url_safe() {
   printf '%s' "$s"
 }
 
-# --- Generovanie indexu pre adresár ---
 generate_index() {
   local dir="$1"
   local rel="${dir#$ROOT}"
@@ -46,21 +43,16 @@ generate_index() {
 
     [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../index.html">../</a></li>'
 
+    # súbory a priečinky
     for entry in "$dir"/*; do
       [[ -e "$entry" ]] || continue
       name=$(basename "$entry")
-
-      # vynechať skryté súbory a index.html
       [[ "$name" == .* ]] && continue
       [[ "$name" == "index.html" ]] && continue
 
       if [[ -d "$entry" ]]; then
-        # priečinok → odkaz na jeho index
         echo '<li>📁 <a href="'"$(url_safe "$name")/index.html"'">'"$(html_escape "$name")"'/</a></li>'
-        # rekurzia len pre priečinky, ktoré nezačínajú bodkou
-        generate_index "$entry"
       elif [[ -f "$entry" ]]; then
-        # súbory v koreňovom adresári vynechať
         [[ "$dir" == "$ROOT" ]] && continue
         fullpath=$(realpath --relative-to="$ROOT" "$entry")
         href="$BASE_URL/$(url_safe "$fullpath")"
@@ -72,8 +64,13 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# --- Spusti generovanie od ROOT ---
-generate_index "$ROOT"
+# --- Nájdeme všetky viditeľné priečinky ---
+# find bez -prune, iba tie čo nezačínajú bodkou
+mapfile -d '' dirs < <(find "$ROOT" -type d ! -name '.*' -print0)
+
+for dir in "${dirs[@]}"; do
+  generate_index "$dir"
+done
 
 # --- ZIP so štruktúrou ---
 echo "Vytváram ZIP: $ZIP_NAME"
@@ -83,7 +80,6 @@ echo "Vytváram ZIP: $ZIP_NAME"
 find "$ROOT" -name "index.html" -delete
 
 echo "✅ Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME"
-
 
 
 rm index.sh
