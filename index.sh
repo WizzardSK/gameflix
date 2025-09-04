@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DIR="${1:-.}"   # cieľový adresár
-OUT="$DIR/index.html"
+ROOT="${1:-.}"   # koreňový adresár, ak nezadáš, použije sa aktuálny
+echo "Generujem indexy pre všetky adresáre v: $ROOT"
 
+# --- HTML escape ---
 html_escape() {
   local s="$1"
   s="${s//&/&amp;}"
@@ -14,6 +15,7 @@ html_escape() {
   printf '%s' "$s"
 }
 
+# --- URL-safe pre odkazy ---
 url_safe() {
   local s="$1"
   s="${s//%/%25}"
@@ -24,29 +26,44 @@ url_safe() {
   printf '%s' "$s"
 }
 
-{
-  echo '<!doctype html>'
-  echo '<meta charset="utf-8">'
-  echo '<title>Index of '"$(html_escape "$DIR")"'</title>'
-  echo '<h1>Index of '"$(html_escape "$DIR")"'</h1>'
-  echo '<ul>'
+# --- Funkcia generuje index.html pre jeden adresár ---
+generate_index() {
+  local dir="$1"
+  local rel="${dir#$ROOT}"
+  [[ -z "$rel" ]] && rel="/"
 
-  [[ "$DIR" != "." ]] && echo '<li><a href="../">../</a></li>'
+  {
+    echo '<!doctype html>'
+    echo '<meta charset="utf-8">'
+    echo '<title>Index of '"$(html_escape "$rel")"'</title>'
+    echo "<h1>Index of $(html_escape "$rel")</h1>"
+    echo '<ul>'
 
-  for entry in "$DIR"/*; do
-    name=$(basename "$entry")
-    href=$(url_safe "$name")
-    if [[ -d "$entry" ]]; then
-      echo '<li>📁 <a href="'"$href"'/">'"$(html_escape "$name")"'/</a></li>'
-    elif [[ -f "$entry" ]]; then
-      echo '<li>📄 <a href="'"$href"'">'"$(html_escape "$name")"'</a></li>'
-    fi
-  done
+    # Odkaz na nadradený adresár (ak nie sme v root)
+    [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../">../</a></li>'
 
-  echo '</ul>'
-} > "$OUT"
+    # Pre každý súbor a priečinok
+    for entry in "$dir"/*; do
+      [[ -e "$entry" ]] || continue
+      name=$(basename "$entry")
+      href=$(url_safe "$name")
+      if [[ -d "$entry" ]]; then
+        echo '<li>📁 <a href="'"$href"'/">'"$(html_escape "$name")"'/</a></li>'
+      elif [[ -f "$entry" ]]; then
+        echo '<li>📄 <a href="'"$href"'">'"$(html_escape "$name")"'</a></li>'
+      fi
+    done
 
-echo "Hotovo. Vygenerovaný index: $OUT"
+    echo '</ul>'
+  } > "$dir/index.html"
+}
+
+# --- Pre každý adresár vrátane ROOT ---
+while IFS= read -r -d '' d; do
+  generate_index "$d"
+done < <(find "$ROOT" -type d -print0)
+
+echo "Hotovo. Vygenerované index.html vo všetkých adresároch."
 
 rm index.sh
 git add .
