@@ -7,6 +7,12 @@ ZIP_NAME="${2:-indexes.zip}"
 # Automaticky získať názov repa a vetvy z GitHub Actions env premenných
 OWNER_REPO="${GITHUB_REPOSITORY:-}"
 BRANCH="${GITHUB_REF_NAME:-master}"
+
+if [[ -z "$OWNER_REPO" ]]; then
+  echo "⚠️ Varovanie: GITHUB_REPOSITORY nie je nastavené, použijem fallback"
+  OWNER_REPO="WizzardSK/Atari_-_2600"
+fi
+
 BASE_URL="https://raw.githubusercontent.com/$OWNER_REPO/refs/heads/$BRANCH"
 
 echo "Generujem indexy pre repozitár: $OWNER_REPO ($BRANCH)"
@@ -38,7 +44,7 @@ url_safe() {
 generate_index() {
   local dir="$1"
   local rel="${dir#$ROOT}"
-  [[ -z "$rel" ]] && rel="/"
+  [[ -z "$rel" ]] && rel=""
 
   {
     echo '<!doctype html>'
@@ -57,7 +63,7 @@ generate_index() {
       href="$BASE_URL/$(url_safe "$relpath")"
 
       if [[ -d "$entry" ]]; then
-        # priečinok = klikateľný odkaz na jeho vlastný index.html
+        # priečinok = odkaz na jeho index.html
         echo '<li>📁 <a href="'"$href/index.html"'">'"$(html_escape "$name")"'/</a></li>'
       elif [[ -f "$entry" ]]; then
         echo '<li>📄 <a href="'"$href"'">'"$(html_escape "$name")"'</a></li>'
