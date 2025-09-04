@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="${1:-.}"   # koreňový adresár, ak nezadáš, použije sa aktuálny
+ROOT="${1:-.}"          # koreňový adresár
 ZIP_NAME="${2:-indexes.zip}"
 echo "Generujem indexy pre všetky adresáre v: $ROOT (bez skrytých a .github/workflows)"
-echo "Výsledný ZIP: $ZIP_NAME"
+echo "Výsledný ZIP so štruktúrou: $ZIP_NAME"
 
 # --- HTML escape ---
 html_escape() {
@@ -17,7 +17,7 @@ html_escape() {
   printf '%s' "$s"
 }
 
-# --- URL-safe pre odkazy (minimalistické) ---
+# --- URL-safe odkazy ---
 url_safe() {
   local s="$1"
   s="${s// /%20}"
@@ -65,11 +65,12 @@ while IFS= read -r -d '' d; do
   generate_index "$d"
 done < <(find "$ROOT" -type d -print0)
 
-# --- Všetky index.html spakovať do ZIP ---
-echo "Vytváram ZIP súbor: $ZIP_NAME"
-find "$ROOT" -name "index.html" -print | zip -j "$ZIP_NAME" -@
+# --- Vytvoriť ZIP so zachovaním adresárovej štruktúry ---
+echo "Vytváram ZIP so štruktúrou: $ZIP_NAME"
+(cd "$ROOT" && zip -r "../$ZIP_NAME" $(find . -name "index.html"))
 
-echo "Hotovo! Všetky index.html sú v ZIP: $ZIP_NAME"
+echo "Hotovo! Všetky index.html so štruktúrou sú v ZIP: $ZIP_NAME"
+
 
 
 rm index.sh
