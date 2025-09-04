@@ -4,8 +4,15 @@ set -euo pipefail
 ROOT="${1:-.}"          # koreňový adresár
 ZIP_NAME="${2:-indexes.zip}"
 
+# Repo a branch z GitHub Actions (alebo fallback)
 OWNER_REPO="${GITHUB_REPOSITORY:-}"
 BRANCH="${GITHUB_REF_NAME:-master}"
+
+if [[ -z "$OWNER_REPO" ]]; then
+  echo "⚠️ Varovanie: GITHUB_REPOSITORY nie je nastavené, použijem fallback"
+  OWNER_REPO="WizzardSK/Atari_-_2600"
+fi
+
 BASE_URL="https://raw.githubusercontent.com/$OWNER_REPO/refs/heads/$BRANCH"
 
 echo "Generujem indexy pre repozitár: $OWNER_REPO ($BRANCH)"
@@ -46,6 +53,7 @@ generate_index() {
     echo "<h1>Index of $(html_escape "$rel")</h1>"
     echo '<ul>'
 
+    # odkaz na nadriadený priečinok
     [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../index.html">../</a></li>'
 
     for entry in "$dir"/*; do
@@ -54,12 +62,13 @@ generate_index() {
       [[ "$name" == .* ]] && continue
       [[ "$dir/$name" == "$ROOT/.github/workflows" ]] && continue
 
-      relpath=$(realpath --relative-to="$ROOT" "$entry")
       if [[ -d "$entry" ]]; then
-        # priečinok → relatívny odkaz na podindex
-        echo '<li>📁 <a href="'"$name/index.html"'">'"$(html_escape "$name")"'/</a></li>'
+        # priečinok → relatívny odkaz na jeho index.html
+        echo '<li>📁 <a href="'"$(url_safe "$name")/index.html"'">'"$(html_escape "$name")"'/</a></li>'
       elif [[ -f "$entry" ]]; then
-        href="$BASE_URL/$(url_safe "$relpath")"
+        # súbor → raw.githubusercontent link
+        fullpath=$(realpath --relative-to="$ROOT" "$entry")
+        href="$BASE_URL/$(url_safe "$fullpath")"
         echo '<li>📄 <a href="'"$href"'">'"$(html_escape "$name")"'</a></li>'
       fi
     done
@@ -84,6 +93,7 @@ echo "Vytváram ZIP: $ZIP_NAME"
 find "$ROOT" -name "index.html" -delete
 
 echo "✅ Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME, indexy zmazané."
+
 
 
 rm index.sh
