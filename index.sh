@@ -3,8 +3,9 @@ set -euo pipefail
 
 ROOT="${1:-.}"          # koreňový adresár
 ZIP_NAME="${2:-indexes.zip}"
+
 echo "Generujem indexy pre všetky adresáre v: $ROOT (bez skrytých a .github/workflows)"
-echo "Výsledný ZIP so štruktúrou: $ZIP_NAME"
+echo "Výsledný ZIP: $ZIP_NAME"
 
 # --- HTML escape ---
 html_escape() {
@@ -25,7 +26,7 @@ url_safe() {
   printf '%s' "$s"
 }
 
-# --- Funkcia generuje index.html pre jeden adresár ---
+# --- Generovanie indexu pre adresár ---
 generate_index() {
   local dir="$1"
   local rel="${dir#$ROOT}"
@@ -57,7 +58,7 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# --- Vygenerovať index pre každý adresár ---
+# --- Generovanie indexov ---
 while IFS= read -r -d '' d; do
   dir_name=$(basename "$d")
   [[ "$dir_name" == .* && "$d" != "$ROOT" ]] && continue
@@ -65,13 +66,14 @@ while IFS= read -r -d '' d; do
   generate_index "$d"
 done < <(find "$ROOT" -type d -print0)
 
-# --- Vytvoriť ZIP so zachovaním adresárovej štruktúry ---
+# --- ZIP so štruktúrou ---
 echo "Vytváram ZIP so štruktúrou: $ZIP_NAME"
-(cd "$ROOT" && zip -r "../$ZIP_NAME" $(find . -name "index.html"))
+(cd "$ROOT" && zip -r "$ZIP_NAME" $(find . -name "index.html"))
 
-echo "Hotovo! Všetky index.html so štruktúrou sú v ZIP: $ZIP_NAME"
+# --- Vymazať všetky index.html ---
+find "$ROOT" -name "index.html" -delete
 
-
+echo "Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME, indexy zmazané."
 
 rm index.sh
 git add .
