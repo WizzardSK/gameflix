@@ -37,20 +37,24 @@ generate_index() {
   {
     echo '<!doctype html>'
     echo '<meta charset="utf-8">'
-    echo '<title>Index of '"$(html_escape "$rel")"'</title>'
+    echo "<title>Index of $(html_escape "$rel")</title>"
     echo "<h1>Index of $(html_escape "$rel")</h1>"
     echo '<ul>'
 
     [[ "$dir" != "$ROOT" ]] && echo '<li><a href="../index.html">../</a></li>'
 
+    # súbory a priečinky
     for entry in "$dir"/*; do
       [[ -e "$entry" ]] || continue
       name=$(basename "$entry")
+
+      # vynechať skryté súbory a priečinky
       [[ "$name" == .* ]] && continue
       [[ "$name" == "index.html" ]] && continue
 
       if [[ -d "$entry" ]]; then
         echo '<li>📁 <a href="'"$(url_safe "$name")/index.html"'">'"$(html_escape "$name")"'/</a></li>'
+        generate_index "$entry"  # rekurzia
       elif [[ -f "$entry" ]]; then
         [[ "$dir" == "$ROOT" ]] && continue
         fullpath=$(realpath --relative-to="$ROOT" "$entry")
@@ -63,10 +67,8 @@ generate_index() {
   } > "$dir/index.html"
 }
 
-# --- Použijeme find s -prune na ignorovanie všetkých adresárov začínajúcich bodkou ---
-while IFS= read -r -d '' dir; do
-  generate_index "$dir"
-done < <(find "$ROOT" -type d \( -name '.*' -prune \) -o \( -type d -print0 \))
+# --- Spusti generovanie od ROOT ---
+generate_index "$ROOT"
 
 # --- ZIP so štruktúrou ---
 echo "Vytváram ZIP: $ZIP_NAME"
@@ -76,6 +78,7 @@ echo "Vytváram ZIP: $ZIP_NAME"
 find "$ROOT" -name "index.html" -delete
 
 echo "✅ Hotovo! ZIP uložený v: $ROOT/$ZIP_NAME"
+
 
 rm index.sh
 git add .
