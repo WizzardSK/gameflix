@@ -81,9 +81,7 @@ generate_index() {
 # --- Generovanie indexov ---
 while IFS= read -r -d '' d; do
   generate_index "$d"
-done < <(find "$ROOT" \
-  -type d \
-  -name '.*' -prune -o -print0)
+done < <(find "$ROOT" \( -type d -name '.*' -prune \) -o \( -type d -print0 \))
 
 # --- ZIP so štruktúrou ---
 echo "Vytváram ZIP: $ZIP_NAME"
