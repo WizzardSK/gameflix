@@ -16,19 +16,21 @@ mkdir -p "$DIR"
 
 BASENAME=$(basename "$GAMENAME")
 BASENAME="${BASENAME%.*}"
-TMP="$BASENAME"
-FIRST_PART=""
-count=0
-for (( i=0; i<${#TMP}; i++ )); do
-    c="${TMP:i:1}"
-    if [[ "$c" == "(" ]]; then ((count++)); fi
-    if [[ "$count" -gt 1 ]]; then break; fi
-    FIRST_PART+="$c"
-done
 
-FIRST_PART="${FIRST_PART%"${FIRST_PART##*[![:space:]~]}"}"
-URL_NAME="${FIRST_PART// /%20}"
-FILENAME="$FIRST_PART.png"
+#TMP="$BASENAME"
+#FIRST_PART=""
+#count=0
+#for (( i=0; i<${#TMP}; i++ )); do
+#    c="${TMP:i:1}"
+#    if [[ "$c" == "(" ]]; then ((count++)); fi
+#    if [[ "$count" -gt 1 ]]; then break; fi
+#    FIRST_PART+="$c"
+#done
+#FIRST_PART="${FIRST_PART%"${FIRST_PART##*[![:space:]~]}"}"
+#URL_NAME="${FIRST_PART// /%20}"
+#FILENAME="$FIRST_PART.png"
+
+if [[ "$BASENAME" == *")"* ]]; then FILENAME="${BASENAME%%)*})"; else FILENAME="$BASENAME"; fi
 FULLPATH="$DIR/$FILENAME"
 
 if [ -f "$FULLPATH" ]; then exit 0; fi
