@@ -25,5 +25,5 @@ if [ -f "$FULLPATH" ]; then exit 0; fi
 ENCODED_NAME="${FILENAME// /%20}"
 ENCODED_NAME="${ENCODED_NAME//#/%23}"
 
-URL="https://raw.githubusercontent.com/WizzardSK/$REPO_NAME/refs/heads/master/Named_Snaps/$ENCODED_NAME"
+URL="https://raw.githubusercontent.com/WizzardSK/$REPO_NAME/refs/heads/master/Named_Snaps/$ENCODED_NAME.png"
 curl -s -L -f "$URL" -o "$FULLPATH"
