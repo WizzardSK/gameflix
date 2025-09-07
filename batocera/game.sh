@@ -1,4 +1,5 @@
 #!/bin/bash
+if [ -d "$2" ]; then exit 0; fi
 SYSTEM="$1"
 GAMENAME="$2"
 
