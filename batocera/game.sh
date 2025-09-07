@@ -1,7 +1,6 @@
 #!/bin/bash
 if [ -d "$2" ]; then exit 0; fi
-if [[ "$SYSTEM" =~ ^(lowresnx|pico8|steam|tic80|voxatron|wasm4)$ ]]; then exit 0; fi
-
+if [[ "$1" =~ ^(lowresnx|pico8|steam|tic80|voxatron|wasm4)$ ]]; then exit 0; fi
 SYSTEM="$1"
 GAMENAME="$2"
 
