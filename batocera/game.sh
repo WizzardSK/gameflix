@@ -17,22 +17,13 @@ mkdir -p "$DIR"
 BASENAME=$(basename "$GAMENAME")
 BASENAME="${BASENAME%.*}"
 
-#TMP="$BASENAME"
-#FIRST_PART=""
-#count=0
-#for (( i=0; i<${#TMP}; i++ )); do
-#    c="${TMP:i:1}"
-#    if [[ "$c" == "(" ]]; then ((count++)); fi
-#    if [[ "$count" -gt 1 ]]; then break; fi
-#    FIRST_PART+="$c"
-#done
-#FIRST_PART="${FIRST_PART%"${FIRST_PART##*[![:space:]~]}"}"
-#URL_NAME="${FIRST_PART// /%20}"
-#FILENAME="$FIRST_PART.png"
-
 if [[ "$BASENAME" == *")"* ]]; then FILENAME="${BASENAME%%)*})"; else FILENAME="$BASENAME"; fi
-FULLPATH="$DIR/$FILENAME"
 
+FULLPATH="$DIR/$FILENAME.png"
 if [ -f "$FULLPATH" ]; then exit 0; fi
-URL="https://raw.githubusercontent.com/WizzardSK/$REPO_NAME/refs/heads/master/Named_Snaps/$FILENAME.png"
-curl -s -L -f "$URL" -o "$FULLPATH.png"
+
+ENCODED_NAME="${FILENAME// /%20}"
+ENCODED_NAME="${ENCODED_NAME//#/%23}"
+
+URL="https://raw.githubusercontent.com/WizzardSK/$REPO_NAME/refs/heads/master/Named_Snaps/$ENCODED_NAME"
+curl -s -L -f "$URL" -o "$FULLPATH"
