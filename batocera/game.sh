@@ -34,5 +34,5 @@ if [[ "$BASENAME" == *")"* ]]; then FILENAME="${BASENAME%%)*})"; else FILENAME="
 FULLPATH="$DIR/$FILENAME"
 
 if [ -f "$FULLPATH" ]; then exit 0; fi
-URL="https://raw.githubusercontent.com/WizzardSK/$REPO_NAME/refs/heads/master/Named_Snaps/$URL_NAME.png"
-curl -s -L -f "$URL" -o "$FULLPATH"
+URL="https://raw.githubusercontent.com/WizzardSK/$REPO_NAME/refs/heads/master/Named_Snaps/$FILENAME.png"
+curl -s -L -f "$URL" -o "$FULLPATH.png"
