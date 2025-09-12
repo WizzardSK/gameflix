@@ -16,6 +16,7 @@ echo "$FILES" | while read -r LINE; do
   [[ -f "${FILE_PATH%.tic}.gif" ]] || ([[ -f "$HOME/backup/${HASH}.gif" ]] && cp "$HOME/backup/${HASH}.gif" "${FILE_PATH%.tic}.gif") || wget -nv -O "${FILE_PATH%.tic}.gif" "$COVER_URL"
 done
 cd $DOWNLOAD_DIR
+mogrify -format png *.gif
 rm -f "$GITHUB_WORKSPACE/fantasy/tic80.zip" 
 zip -q -r "$GITHUB_WORKSPACE/fantasy/tic80.zip" *
 cd "$GITHUB_WORKSPACE"
