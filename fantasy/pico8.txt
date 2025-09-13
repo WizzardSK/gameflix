@@ -8,7 +8,7 @@
 151469	Sparkle Orbit 1k	sparkle_orbit_1k-0.p8.png
 151456	Flappymeat	flappymeat-0.p8.png
 151454	BRGR Boss 1.0	brgrboss-0.p8.png
-151451	KROOM-8 (3D Among Us)	kroom8-6.p8.png
+151451	KROOM-8 (3D Among Us)	kroom8-7.p8.png
 151445	Etris	etris-0.p8.png
 151430	Snail's Gold	jiyoyiwesi-0.p8.png
 151422	cutegameiguess	cutegameiguess-0.p8.png
