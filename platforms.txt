@@ -17,7 +17,7 @@ atari7800;TOSEC/Atari/7800/Applications;Atari - 7800;Atari 7800 App;prosystem_li
 atarijaguar;No-Intro/Atari - Atari Jaguar (J64);Atari - Jaguar;Atari Jaguar NoIntro;virtualjaguar_libretro
 atarijaguar;TOSEC/Atari/Jaguar/Games/[J64];Atari - Jaguar;Atari Jaguar TOSEC;virtualjaguar_libretro
 atarijaguarcd;Redump/Atari - Jaguar CD Interactive Multimedia System;Atari - Jaguar;Jaguar CD Redump;bigpemu;cue
-atarijaguarcd;No-Intro/Non-Redump - Atari - Atari Jaguar CD;Atari - Jaguar;Jaguar CD Non-Redump;bigpemu;cdi
+atarijaguarcd;No-Intro/Non-Redump - Atari - Atari Jaguar CD;Atari - Jaguar;Jaguar CD NonRedump;bigpemu;cdi
 atarilynx;No-Intro/Atari - Atari Lynx (LYX);Atari - Lynx;<i>Atari Lynx</i> NoIntro;mednafen_lynx_libretro
 atarilynx;TOSEC/Atari/Lynx/Games/[LNX];Atari - Lynx;<i>Atari Lynx</i> TOSEC;mednafen_lynx_libretro
 
@@ -209,7 +209,7 @@ sega32x;TOSEC/Sega/32X/Games;Sega - 32X;Sega 32X TOSEC;picodrive_libretro
 segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;Sega CD Redump;picodrive_libretro;cue
 segacd;TOSEC-ISO/Sega/Mega-CD & Sega CD/CD/Games/[ISO];Sega - Mega-CD - Sega CD;Sega CD ISO;picodrive_libretro;cue
 saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn Redump;yabasanshiro_libretro;cue
-saturn;No-Intro/Non-Redump - Sega - Sega Saturn;Sega - Saturn;Sega Saturn Non-Redump;yabasanshiro_libretro;cue
+saturn;No-Intro/Non-Redump - Sega - Sega Saturn;Sega - Saturn;Sega Saturn NonRedump;yabasanshiro_libretro;cue
 saturn;TOSEC-ISO/Sega/Saturn/Games/[ISO];Sega - Saturn;Sega Saturn ISO;yabasanshiro_libretro;cue
 dreamcast;Redump/Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast Redump;flycast_libretro;cue
 dreamcast;No-Intro/Non-Redump - Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast NonRedump;flycast_libretro;gdi
@@ -220,11 +220,11 @@ gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i> NoIntro;gen
 gamegear;TOSEC/Sega/Game Gear/Games;Sega - Game Gear;<i>Game Gear</i> TOSEC;genesis_plus_gx_libretro
 
 psx;Redump/Sony - PlayStation;Sony - PlayStation;<p>PlayStation 1 Redump;pcsx_rearmed_libretro;cue
-psx;No-Intro/Non-Redump - Sony - PlayStation;Sony - PlayStation;PlayStation 1 Non-Redump;pcsx_rearmed_libretro;cue
+psx;No-Intro/Non-Redump - Sony - PlayStation;Sony - PlayStation;PlayStation 1 NonRedump;pcsx_rearmed_libretro;cue
 ps2;Redump/Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2 Redump;pcsx2;iso
-ps2;No-Intro/Non-Redump - Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2 Non-Redump;pcsx2;iso
+ps2;No-Intro/Non-Redump - Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2 NonRedump;pcsx2;iso
 psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Sony PSP</i> Redump;ppsspp_libretro;iso
-psp;No-Intro/Non-Redump - Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Sony PSP</i> Non-Redump;ppsspp_libretro;iso
+psp;No-Intro/Non-Redump - Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Sony PSP</i> NonRedump;ppsspp_libretro;iso
 psp;No-Intro/Unofficial - Sony - PlayStation Portable (PSN) (Decrypted);Sony - PlayStation Portable;<i>Sony PSP</i> PSN;ppsspp_libretro;iso
 psp;TOSEC-ISO/Sony/PlayStation Portable/Games/[ISO];Sony - PlayStation Portable;<i>Sony PSP</i> TOSEC;ppsspp_libretro;iso
 
@@ -238,7 +238,7 @@ pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX Redump;mednafen_pcfx_libretr
 pcfx;TOSEC-ISO/NEC/PC-FX/Games;NEC - PC-FX;PC-FX ISO;mednafen_pcfx_libretro;cue
 
 cdi;Redump/Philips - CD-i;Philips - CD-i;Philips CDi Redump;same_cdi_libretro;cue
-cdi;No-Intro/Non-Redump - Philips - CD-i;Philips - CD-i;Philips CDi Non-Redump;same_cdi_libretro;cue
+cdi;No-Intro/Non-Redump - Philips - CD-i;Philips - CD-i;Philips CDi NonRedump;same_cdi_libretro;cue
 cdi;TOSEC-ISO/Philips/CD-i/Games;Philips - CD-i;Philips CDi TOSEC;same_cdi_libretro;cue
 cdi;TOSEC-ISO/Philips/CD-i/Applications;Philips - CD-i;Philips CDi App;same_cdi_libretro;cue
 cdi;TOSEC-ISO/Philips/CD-i/Educational;Philips - CD-i;Philips CDi Edu;same_cdi_libretro;cue
