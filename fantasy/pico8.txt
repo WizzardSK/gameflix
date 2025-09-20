@@ -1,5 +1,5 @@
 151598	Tetromino	tetromino_thibaut-0.p8.png
-151597	2048 by Gorff	tzfe-0.p8.png
+151597	2048 by Gorff	tzfe-1.p8.png
 151593	drawn to kill 1.0.1	drawntokill2-0.p8.png
 151587	Nico Pico MVS Boot Sequence	nicopico-0.p8.png
 151580	 Plonk in space (PICO-1K Jam 2025)	plonk_in_space-2.p8.png
@@ -11,7 +11,7 @@
 151573	Obsessive	ocd-0.p8.png
 151569	Crappy Bird	bahugimafu-1.p8.png
 151568	Experimenting with menger sponges.	mengerspongetest-2.p8.png
-151567	My Soul Got Lost In A Dungeon	my_soul_got_lost_in_a_dungeon-2.p8.png
+151567	My Soul Got Lost In A Dungeon	my_soul_got_lost_in_a_dungeon-5.p8.png
 151565	Ghosted - the walk home v0.1	fuyehabofu-0.p8.png
 151559	Zombulance	zombulance_v103-3.p8.png
 151558	Semiotron	semiotron-0.p8.png
