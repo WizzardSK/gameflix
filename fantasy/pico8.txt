@@ -1,3 +1,7 @@
+151634	Fruit Snake	tidifegone-1.p8.png
+151626	protoSTG v1.3xx Final	regojotewa-1.p8.png
+151622	Robot Vacuum Simulator!	robot_vacuum_sim_1_0_1-0.p8.png
+151620	SET!	set-2.p8.png
 151598	Tetromino	tetromino_thibaut-0.p8.png
 151597	2048 by Gorff	tzfe-1.p8.png
 151593	drawn to kill 1.0.1	drawntokill2-0.p8.png
@@ -7,7 +11,6 @@
 151578	Pico-8 Clock	pico8clock-1.p8.png
 151576	simple breakout sample	simple_breakout_sample_kkp-0.p8.png
 151575	Space 8	space_8-2.p8.png
-151574	ProtoSTG v1.3 vertical shmup by Thinkrs	regojotewa-0.p8.png
 151573	Obsessive	ocd-0.p8.png
 151569	Crappy Bird	bahugimafu-1.p8.png
 151568	Experimenting with menger sponges.	mengerspongetest-2.p8.png
@@ -1709,7 +1712,7 @@
 142742	Smol Airship Demo	airship-0.p8.png
 142741	10PRINT&quot;NOVA&quot; (256b Tiny Intro)	print_nova-0.p8.png
 142735	Mini Mancala	mini_mancala-3.p8.png
-142732	Loom 1.3	loom-3.p8.png
+142732	Loom 1.3	loom-4.p8.png
 142717	Woodworm	woodworm-0.p8.png
 142712	Splode 'Em Up	splode_em_up-2.p8.png
 142711	Scrib 1.0	kmojiworo-0.p8.png
@@ -3449,7 +3452,7 @@
 50939	Scrap Runner	hugubenoho-0.p8.png
 50934	Countdown to New Years!	countdown_to_newyears-1.p8.png
 50921	Pyramid Chase - Alpha Prototype	zagowugati-1.p8.png
-50918	TEGZER 1.3	tegzer-3.p8.png
+50918	TEGZER - Hyper dual armor	tegzer-5.p8.png
 50916	Pomodoro Timer	pomodorotimerv1-3.p8.png
 50912	coingrab	coingrab2-1.p8.png
 50911	AITAG	cbazaz12firstgame-0.p8.png
@@ -3986,7 +3989,6 @@
 48754	Castleste	castleste-0.p8.png
 48750	Pico-8 Adventure Game	jizerewafo-3.p8.png
 48746	Item Sorter	sorter-7.p8.png
-48744	Celeste: Woodland Wonders	bfwutese-0.p8.png
 48740	Pico-GUI	picogui_demo-1.p8.png
 48739	Shmup in 1hr, 2hrs, 3hrs	shmup60-0.p8.png
 48735	Shooting Star	shootingstar-2.p8.png
@@ -5466,7 +5468,6 @@
 42738	lonelyswamp	lonelyswamp-1.p8.png
 42734	grimmrobe_lilbugger_1	grimmrobe_lilbugger_1-1.p8.png
 42733	dodger_0cs	dodger_0cs-0.p8.png
-42726	Astro	kesuhboji-0.p8.png
 42723	Simple Starfield + tweetcart	pitarubesu-0.p8.png
 42717	cliffside_practice_mod	cliffside_practice_mod-0.p8.png
 42715	Pico Night Punkin' - FNF Demake	fnf_menu-6.p8.png
@@ -8064,7 +8065,7 @@
 32162	Now rotating @60fps	58624.p8.png
 32158	[TweetCart280]3d fractal kleinian sphere	58596.p8.png
 32157	Hazel May Saves The Halloween Monster Soiree	elias_grey_104-2.p8.png
-32150	Elias Grey	58559.p8.png
+32150	Lefty	58559.p8.png
 32135	PlusWave	58603.p8.png
 32131	Color War	58466.p8.png
 32124	A selection of easing functions	58411.p8.png
@@ -8423,7 +8424,7 @@
 30924	Swarm	50343.p8.png
 30923	Robo Duel	50206.p8.png
 30923	Juggle Panic	50206.p8.png
-30922	Diamond Ghost	50253.p8.png
+30922	Rally-P8	50253.p8.png
 30921	Pico Wars	50168.p8.png
 30919	Get Dis Money - Community Edition	50156.p8.png
 30916	Shinkansen	50132.p8.png
@@ -8482,7 +8483,7 @@
 30730	Double pendulum	48983.p8.png
 30727	My Pet Virus	48972.p8.png
 30724	Desert Road (generated animation)	48953.p8.png
-30722	PICO Fireplace	48946.p8.png
+30722	PORG	48946.p8.png
 30719	Throw Punch!!	throwpunch1_2-0.p8.png
 30714	Pico Of The Beast	48883.p8.png
 30711	Binary Save System	48830.p8.png
@@ -9198,7 +9199,7 @@
 28383	v0.83	34615.p8.png
 28382	Killer Ball	34605.p8.png
 28381	Happy New Year!	34600.p8.png
-28380	Corn Dog Catcher	34595.p8.png
+28380	Dragoncave final	34595.p8.png
 28376	It Is What It Is	34620.p8.png
 28372	(Untitled)	58774.p8.png
 28371	Forever Lost In The Never Ending Museum Of Still Life	34543.p8.png
@@ -9260,7 +9261,7 @@
 28203	One Room Quest	teniyowune-0.p8.png
 28203	Heliopause Title Concept	teniyowune-0.p8.png
 28202	Heliopause	35079.p8.png
-28197	One Room Dungeon ~ Post-Jam-Updated	33356.p8.png
+28197	keturi (LD37)	33356.p8.png
 28196	Reckless Redecoration	33354.p8.png
 28195	Eskargool	34604.p8.png
 28192	Pico Factory	35159.p8.png
