@@ -1,6 +1,6 @@
-3862	Cookie Clicker	npJB254AkB_Cookie_Clicker_V0.1.png	npJB254AkB_Cookie_Clicker_V0.1.nx
+3862	Cookie Clicker	WTWhygYXPj_A8171E950CF14ECF97383775F5273207.jpeg	WTWhygYXPj_Cookie_Clicker_V0.2.nx
 3860	Star Trek Fleet War	aZoFN36Kr6_Star_Trek_Fleet_War_V1.0.png	aZoFN36Kr6_Star_Trek_Fleet_War_V1.0.nx
-3859	Speed Tictactoe	f8rHXsPp9i_Speed_Tictactoe.png	f8rHXsPp9i_Speed_Tictactoe.nx
+3859	Speed Tictactoe	i4V4AtHUeK_Speed_Tictactoe.png	i4V4AtHUeK_Speed_Tictactoe.nx
 3854	Super Genius 	JLn8iZmVXZ_Super_Genius_0.56.png	JLn8iZmVXZ_Super_Genius_0.56.nx
 3844	bloxoR pre-release	rYUXK3FgiZ_bloxoR_prerelease_v1.1.png	rYUXK3FgiZ_bloxoR_prerelease_v1.1.nx
 3842	sneak peek (Depth Charge)	U2piio97yL_Depth_Charge_0.1.png	U2piio97yL_Depth_Charge_0.1.nx
