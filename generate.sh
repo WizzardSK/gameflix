@@ -74,7 +74,6 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ "${rom[1]}" == *"eXoDOS"* ]];    then romfolder="roms/MS-DOS eXoDOS"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"2600 ROMS"* ]]; then romfolder="roms/Atari 2600 ROMS"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"Vircon32"* ]];  then romfolder="roms/Vircon32"; emufolder=$romfolder; fi
-  if [[ "${rom[1]}" == *"Lutro"* ]];     then romfolder="roms/Lutro"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"Socrates"* ]];  then romfolder="roms/Socrates"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"TI99"* ]];      then romfolder="roms/TI99"; emufolder=$romfolder; fi
   > ~/gameflix/${rom3}.html; echo ${rom3}; cp platform.html ~/gameflix/${rom3}.html
