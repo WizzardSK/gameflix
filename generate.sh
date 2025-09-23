@@ -76,6 +76,7 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ "${rom[1]}" == *"Vircon32"* ]];  then romfolder="roms/Vircon32"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"Socrates"* ]];  then romfolder="roms/Socrates"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"TI99"* ]];      then romfolder="roms/TI99"; emufolder=$romfolder; fi
+  if [[ "${rom[1]}" =~ TDC\ 22\ ([0-9]{4}) ]]; then year="${BASH_REMATCH[1]}"; romfolder="roms/TDC$year"; emufolder="$romfolder"; fi
   > ~/gameflix/${rom3}.html; echo ${rom3}; cp platform.html ~/gameflix/${rom3}.html
   echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html; pocet=0; while IFS= read -r line; do
     line2="${line%.*}"; echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++))
