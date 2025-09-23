@@ -8,6 +8,12 @@ else
   rom="$1"
 fi
 
+if [[ "$1" == *.rar ]]; then
+  umount -l ~/iso
+  ratarmount "$1" ~/iso
+  rom=~/iso
+fi
+
 if [[ "$core" == *"mame"* ]]; then
   filename="${rom##*/}"
   basename="${filename%.*}"
