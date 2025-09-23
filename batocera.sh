@@ -25,7 +25,7 @@ IFS=";"; for each in "${roms[@]}"; do
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); mkdir -p /userdata/roms/${rom[0]}/${rom3}; mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}
 done
 
-/userdata/system/ratarmount -o attr_timeout=3600 --disable-union-mount "${archives[@]}" /userdata/zips -f & 
+/userdata/system/ratarmount-full -o attr_timeout=3600 --disable-union-mount "${archives[@]}" /userdata/zips -f & 
 while ! grep -q " /userdata/zips " /proc/mounts; do sleep 5; done
 mount -o bind /userdata/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "/userdata/roms/atari2600/Atari 2600 ROMS"
 mount -o bind /userdata/zips/tic80.zip "/userdata/roms/tic80/TIC-80"
