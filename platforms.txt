@@ -252,7 +252,7 @@ cdi;TOSEC-ISO/Philips/CD-i/Multimedia;Philips - CD-i;Philips CDi Multimedia;same
 
 dos;../roms/dos/MS-DOS eXoDOS;DOS;<p><code>MS-DOS</code> eXoDOS;dosbox_pure_libretro
 dos;TOSEC/IBM/PC Compatibles/Games/[IMG];DOS;<code>MS-DOS</code> TOSEC;dosbox_pure_libretro
-dos;TOSEC-ISO/IBM/PC Compatibles/CD/Games/[ISO];DOS;<code>MS-DOS</code> ISO;dosbox_pure_libretro
+dos;TOSEC-ISO/IBM/PC Compatibles/CD/Games/[ISO];DOS;<code>MS-DOS</code> TOSEC-ISO;dosbox_pure_libretro
 dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1982;DOS;<code>MS-DOS</code> TDC 16 1982;dosbox_pure_libretro
 dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1983;DOS;<code>MS-DOS</code> TDC 16 1983;dosbox_pure_libretro
 dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/1985;DOS;<code>MS-DOS</code> TDC 16 1985;dosbox_pure_libretro
