@@ -347,6 +347,7 @@
 2834	CUBES!	y6APrrt3xj_CUBES.png	y6APrrt3xj_CUBES.nx
 2828	Rails and Roads	vg5NHbRuP7_Rails_and_Roads.png	vg5NHbRuP7_Rails_and_Roads.nx
 2822	Connect 4 (polished)	v7MyDED569_Connect_4.png	v7MyDED569_Connect_4.nx
+2820	Connect 4 made in 30 minutes	krqrKrgcxD_Connect_4.png	krqrKrgcxD_Connect_4.nx
 2819	2048 Classic	8AR48ECGE3_2048_Classic.png	8AR48ECGE3_2048_Classic.nx
 2815	The Cone	daHTcZXD8Y_The_Cone.png	daHTcZXD8Y_The_Cone.nx
 2814	My Etude	WqHriwTWrd_myetude.png	WqHriwTWrd_myetude.nx
