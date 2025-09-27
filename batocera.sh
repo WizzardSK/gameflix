@@ -14,7 +14,6 @@ mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips,tdc} /userdata/system/.cache/
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media /userdata/roms/vircon32/Vircon32 --daemon --config=/userdata/system/rclone.conf
-rclone mount eye:Games/eXo/eXoDOS_v6r2/eXo/eXoDOS/ "/userdata/roms/dos/MS-DOS eXoDOS" --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
 rclone mount whtech:MAME/rpk/ "/userdata/roms/ti99/Texas Instruments TI99" --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
 rclone mount "turran:Non Amiga/DOS/Total.DOS.Collection.v22/Games/Files" /userdata/tdc --vfs-cache-mode full --config=/userdata/system/rclone.conf &
 
