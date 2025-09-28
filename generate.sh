@@ -1,6 +1,6 @@
 #!/bin/bash
 shopt -s nocasematch; IFS=$'\n' read -d '' -ra roms < platforms.txt
-mkdir -p ~/{gameflix,rom,gamelists,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/gamelists/{atari2600,neogeo,uzebox,tic80,wasm4,lowresnx,vircon32,pico8,voxatron,dos,switch}
+mkdir -p ~/{gameflix,rom,gamelists,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/gamelists/{atari2600,neogeo,uzebox,tic80,wasm4,lowresnx,vircon32,pico8,voxatron,dos,switch,xegs}
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html; cp ~/gameflix/systems.html ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
@@ -74,6 +74,7 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ "${rom[1]}" == *"2600 ROMS"* ]]; then romfolder="roms/Atari 2600 ROMS"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"Vircon32"* ]];  then romfolder="roms/Vircon32"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"Socrates"* ]];  then romfolder="roms/Socrates"; emufolder=$romfolder; fi
+  if [[ "${rom[1]}" == *"XEGS"* ]];      then romfolder="roms/XEGS"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"TI99"* ]];      then romfolder="roms/TI99"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" =~ TDC\ 22\ ([0-9]{4}) ]]; then year="${BASH_REMATCH[1]}"; romfolder="roms/TDC/$year"; emufolder="$romfolder"; fi
   > ~/gameflix/${rom3}.html; echo ${rom3}; cp platform.html ~/gameflix/${rom3}.html
