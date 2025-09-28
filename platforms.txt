@@ -282,12 +282,6 @@ dos;../roms/dos/MS-DOS TDC 22 1998;DOS;<code>MS-DOS</code> TDC 22 1998;dosbox_pu
 dos;../roms/dos/MS-DOS TDC 22 1999;DOS;<code>MS-DOS</code> TDC 22 1999;dosbox_pure_libretro
 dos;../roms/dos/MS-DOS TDC 22 2000;DOS;<code>MS-DOS</code> TDC 22 2000;dosbox_pure_libretro
 dos;../roms/dos/MS-DOS TDC 22 2001;DOS;<code>MS-DOS</code> TDC 22 2001;dosbox_pure_libretro
-msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;<code>MSX 1</code> NoIntro;bluemsx_libretro
-msx1;TOSEC/MSX/MSX/Games/[DSK];Microsoft - MSX;<code>MSX 1</code> TOSEC;bluemsx_libretro
-msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<code>MSX 2</code> NoIntro;bluemsx_libretro
-msx2;TOSEC/MSX/MSX2/Games/[DSK];Microsoft - MSX2;<code>MSX 2</code> TOSEC;bluemsx_libretro
-msx2;TOSEC/MSX/MSX2+/Games;Microsoft - MSX2;<code>MSX 2+</code> TOSEC;bluemsx_libretro
-msxturbor;TOSEC/MSX/TurboR/Games;Microsoft - MSX2;<code>MSX TurboR</code>;bluemsx_libretro
 
 pet;TOSEC/Commodore/PET/Games/[PRG];Commodore - PET;<p><code>Commodore PET</code> TOSEC;vice_xpet_libretro
 cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<code>Commodore Plus-4</code> NoIntro;vice_xplus4_libretro
@@ -331,18 +325,25 @@ amiga1200;Redump/Commodore - Amiga CD;Commodore - Amiga;<code>Amiga CD</code> Re
 amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Games/[ISO];Commodore - Amiga;<code>Amiga CD</code> ISO;puae_libretro;cue
 amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Applications/[ISO];Commodore - Amiga;<code>Amiga CD</code> App;puae_libretro;cue
 amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Multimedia/[ISO];Commodore - Amiga;<code>Amiga CD</code> Multimedia;puae_libretro;cue
+
+amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;<p><code>Amiga CDTV</code> Redump;puae_libretro;cue
+amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Games/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> ISO;puae_libretro;cue
+amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Applications/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> App;puae_libretro;cue
+amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Educational/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> Edu;puae_libretro;cue
+amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Multimedia/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> Multimedia;puae_libretro;cue
 amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<code>Amiga CD32</code> Redump;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Games/[ISO];Commodore - CD32;<code>Amiga CD32</code> ISO;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Applications;Commodore - CD32;<code>Amiga CD32</code> App;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Educational/[ISO];Commodore - CD32;<code>Amiga CD32</code> Edu;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Multimedia/[ISO];Commodore - CD32;<code>Amiga CD32</code> Multimedia;puae_libretro;cue
-amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;<code>Amiga CDTV</code> Redump;puae_libretro;cue
-amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Games/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> ISO;puae_libretro;cue
-amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Applications/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> App;puae_libretro;cue
-amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Educational/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> Edu;puae_libretro;cue
-amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Multimedia/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> Multimedia;puae_libretro;cue
 
-pc88;TOSEC/NEC/PC-8801/Games/[D88];NEC - PC-8001 - PC-8801;<p><code>NEC PC-88</code> TOSEC;quasi88_libretro
+msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;<p><code>MSX 1</code> NoIntro;bluemsx_libretro
+msx1;TOSEC/MSX/MSX/Games/[DSK];Microsoft - MSX;<code>MSX 1</code> TOSEC;bluemsx_libretro
+msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<code>MSX 2</code> NoIntro;bluemsx_libretro
+msx2;TOSEC/MSX/MSX2/Games/[DSK];Microsoft - MSX2;<code>MSX 2</code> TOSEC;bluemsx_libretro
+msx2;TOSEC/MSX/MSX2+/Games;Microsoft - MSX2;<code>MSX 2+</code> TOSEC;bluemsx_libretro
+msxturbor;TOSEC/MSX/TurboR/Games;Microsoft - MSX2;<code>MSX TurboR</code>;bluemsx_libretro
+pc88;TOSEC/NEC/PC-8801/Games/[D88];NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> TOSEC;quasi88_libretro
 pc98;TOSEC/NEC/PC-9801/Games/[FDD];NEC - PC-98;<code>NEC PC-98</code> TOSEC;np2kai_libretro
 x1;TOSEC/Sharp/X1/Games/[2D];Sharp - X1;<code>Sharp X1</code> 2D;x1_libretro
 x1;TOSEC/Sharp/X1/Games/[D88];Sharp - X1;<code>Sharp X1</code> D88;x1_libretro
