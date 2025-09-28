@@ -5,7 +5,7 @@ wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/Wizza
 archives=("https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" https://wizzardsk.github.io/{lowresnx,tic80,wasm4,uzebox,socrates,xegs}.zip)
 
 if ! mountpoint -q "$HOME/myrient"; then rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
-if ! mountpoint -q "$HOME/zips"; then nohup ratarmount -o attr_timeout=3600 --disable-union-mount "${archives[@]}" ~/zips -f & fi
+if ! mountpoint -q "$HOME/zips"; then nohup ratarmount-full -o attr_timeout=3600 --disable-union-mount "${archives[@]}" ~/zips -f & fi
 if ! mountpoint -q "$HOME/roms/Vircon32"; then rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media $HOME/roms/Vircon32 --daemon; fi
 if ! mountpoint -q "$HOME/roms/TI99"; then rclone mount whtech:MAME/rpk $HOME/roms/TI99 --daemon; fi
 if ! mountpoint -q "$HOME/roms/TDC"; then rclone mount "turran:Non Amiga/DOS/Total.DOS.Collection.v22/Games/Files" $HOME/roms/TDC --vfs-cache-mode full & fi
