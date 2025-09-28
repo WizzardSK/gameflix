@@ -10,14 +10,14 @@ wget -nv -O /userdata/system/configs/emulationstation/scripts/game-selected/game
 for name in voxatron pico8; do [ ! -f /userdata/roms/$name/splore.png ] && wget -nv -O /userdata/roms/$name/splore.png https://github.com/WizzardSK/gameflix/raw/main/fantasy/$name.png; done
 ln -sf /userdata/system/.lexaloffle/Voxatron/bbs/carts /userdata/roms/voxatron/Voxatron; ln -sf /userdata/system/.lexaloffle/pico-8/bbs/carts /userdata/roms/pico8/PICO-8
 
-mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips,tdc} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/roms/{"ti99/Texas Instruments TI99","socrates/VTech Socrates",tic80/TIC-80,lowresnx/LowresNX,wasm4/WASM-4,uzebox/Uzebox,vircon32/Vircon32,"atari2600/Atari 2600 ROMS"}
+mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips,tdc} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/roms/{"ti99/Texas Instruments TI99","socrates/VTech Socrates",tic80/TIC-80,lowresnx/LowresNX,wasm4/WASM-4,uzebox/Uzebox,vircon32/Vircon32,"xegs/Atari XEGS","atari2600/Atari 2600 ROMS"}
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media /userdata/roms/vircon32/Vircon32 --daemon --config=/userdata/system/rclone.conf
 rclone mount whtech:MAME/rpk/ "/userdata/roms/ti99/Texas Instruments TI99" --http-no-head --no-checksum --no-modtime --dir-cache-time 1000h --allow-non-empty --attr-timeout 1000h --poll-interval 1000h --daemon --config=/userdata/system/rclone.conf
 rclone mount "turran:Non Amiga/DOS/Total.DOS.Collection.v22/Games/Files" /userdata/tdc --vfs-cache-mode full --config=/userdata/system/rclone.conf &
 
-archives=("https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" https://wizzardsk.github.io/{tic80,wasm4,uzebox,lowresnx,socrates}.zip)
+archives=("https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" https://wizzardsk.github.io/{tic80,wasm4,uzebox,lowresnx,socrates,xegs}.zip)
 
 IFS=";"; for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
@@ -33,6 +33,7 @@ mount -o bind /userdata/zips/lowresnx.zip "/userdata/roms/lowresnx/LowresNX"
 mount -o bind /userdata/zips/wasm4.zip "/userdata/roms/wasm4/WASM-4"
 mount -o bind /userdata/zips/uzebox.zip "/userdata/roms/uzebox/Uzebox"
 mount -o bind /userdata/zips/socrates.zip "/userdata/roms/socrates/VTech Socrates"
+mount -o bind /userdata/zips/xegs.zip "/userdata/roms/xegs/Atari XEGS"
 for rok in {1991..2001}; do mount -o bind "/userdata/tdc/$rok" "/userdata/roms/dos/MS-DOS TDC 22 $rok"; done
 
 DAT_URL="https://github.com/WizzardSK/gameflix/raw/refs/heads/main/neogeo.dat"; DAT_FILE="/tmp/neogeo.dat"
