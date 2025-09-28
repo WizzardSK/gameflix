@@ -312,7 +312,6 @@
 2935	Rhythm Maker	NzckKdtGKc_Rythmn_Maker.png	NzckKdtGKc_Rythmn_Maker.nx
 2934	Hiragana Tracing	nZ3MVZwcFg_Gata.png	nZ3MVZwcFg_Gata.nx
 2931	Almost HillClimb Racing	gpZowjYde8_Climb_Race.png	gpZowjYde8_Climb_Race.nx
-2930	The mess of merging programs :)	kpVNxrJtJs_Merging_Some_Programs_.png	kpVNxrJtJs_Merging_Some_Programs_.nx
 2926	MAGE	f7LjN2zsf3_Mage_splash.png	f7LjN2zsf3_Mage4.nx
 2923	BOMBER	fwtv22X2k7_BOMBER.png	fwtv22X2k7_BOMBER.nx
 2919	PinBall HyperDrive	zNWytsdXRw_PinBall_HyperDrive.png	zNWytsdXRw_PinBall_HyperDrive.nx
