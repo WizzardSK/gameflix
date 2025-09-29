@@ -35,7 +35,7 @@ atari800;TOSEC/Atari/8bit/Educational/[ATR];Atari - 8-bit;<code>Atari 800</code>
 atari800;TOSEC/Atari/8bit/Educational/[BIN];Atari - 8-bit;<code>Atari 800</code> Edu BIN;atari800_libretro
 atari800;TOSEC/Atari/8bit/Educational/[CAS];Atari - 8-bit;<code>Atari 800</code> Edu CAS;atari800_libretro
 atari800;TOSEC/Atari/8bit/Educational/[XEX];Atari - 8-bit;<code>Atari 800</code> Edu XEX;atari800_libretro
-xegs;../roms/xegs/Atari XEGS;Atari - 8-bit;<code>Atari XEGS</code>;mame xegs -cart
+xegs;Internet Archive/megaarch1996/Atari-XEGS-Romset;MAME;<code>Atari XEGS</code>;mame xegs -cart
 atarist;No-Intro/Atari - Atari ST;Atari - ST;<code>Atari ST</code> NoIntro;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[ST];Atari - ST;<code>Atari ST</code> ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[STX];Atari - ST;<code>Atari ST</code> STX;hatari_libretro
@@ -353,6 +353,8 @@ x68000;TOSEC/Sharp/X68000/Applications;Sharp - X68000;<code>Sharp X68000</code> 
 mame;Internet Archive/chadmaster/mame-merged/mame-merged;MAME;<p>Arcade MAME;mame
 fbneo;Internet Archive/chadmaster/fbnarcade-fullnonmerged/arcade;MAME;FinalBurn Neo;fbneo_libretro
 model3;Internet Archive/chadmaster/segamodel3/ROMs;MAME;Sega Model 3;supermodel
+neogeo;Internet Archive/megaarch1996/neo-geo-aes-romset;MAME;Neo Geo AES;fbneo_libretro
+neogeo;Internet Archive/megaarch1996/neo-geo-mvs-romset;MAME;Neo Geo MVS;fbneo_libretro
 neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD Redump;neocd_libretro;cue
 neogeocd;TOSEC-ISO/SNK/Neo-Geo CD/Games/[ISO];SNK - Neo Geo CD;Neo Geo CD ISO;neocd_libretro;cue
 ngp;No-Intro/SNK - NeoGeo Pocket;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> NoIntro;mednafen_ngp_libretro
