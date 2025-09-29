@@ -1,6 +1,6 @@
 #!/bin/bash
 shopt -s nocasematch; IFS=$'\n' read -d '' -ra roms < platforms.txt
-mkdir -p ~/{gameflix,rom,gamelists,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/gamelists/{atari2600,neogeo,uzebox,tic80,wasm4,lowresnx,vircon32,pico8,voxatron,dos,switch,xegs}
+mkdir -p ~/{gameflix,rom,gamelists,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/gamelists/{atari2600,uzebox,tic80,wasm4,lowresnx,vircon32,pico8,voxatron,dos,switch}
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html; cp ~/gameflix/systems.html ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
@@ -74,7 +74,6 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ "${rom[1]}" == *"2600 ROMS"* ]]; then romfolder="roms/Atari 2600 ROMS"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"Vircon32"* ]];  then romfolder="roms/Vircon32"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"Socrates"* ]];  then romfolder="roms/Socrates"; emufolder=$romfolder; fi
-  if [[ "${rom[1]}" == *"XEGS"* ]];      then romfolder="roms/XEGS"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"TI99"* ]];      then romfolder="roms/TI99"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" =~ TDC\ 22\ ([0-9]{4}) ]]; then year="${BASH_REMATCH[1]}"; romfolder="roms/TDC/$year"; emufolder="$romfolder"; fi
   > ~/gameflix/${rom3}.html; echo ${rom3}; cp platform.html ~/gameflix/${rom3}.html
@@ -100,16 +99,6 @@ for each in "${roms[@]}"; do
   if ! grep -Fxq "<gameList>" ~/gamelists/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" ~/gamelists/${rom[0]}/gamelist.xml; fi
   if ! grep -Fxq "</gameList>" ~/gamelists/${rom[0]}/gamelist.xml; then sed -i "\$a </gameList>" ~/gamelists/${rom[0]}/gamelist.xml; fi
 done
-
-echo "Neo Geo"; ROMLIST="neogeo.dat"; pocet=0; cp platform.html ~/gameflix/Neo\ Geo.html; echo "<script>bgImage(\"neogeo\"); const fileNames = [" >> ~/gameflix/Neo\ Geo.html
-echo "<gameList>" > ~/gamelists/neogeo/gamelist.xml; while IFS= read -r riadok; do 
-  prvy="${riadok%%[[:space:]]*}"; ostatok="${riadok#*[[:space:]]}"; zip="${prvy%.neo}.zip"; printf '"%s\t%s",\n' "$zip" "$ostatok" >> ~/gameflix/Neo\ Geo.html; ((pocet++)); 
-  hra="<game><path>./Neo Geo/${zip}</path><name>${ostatok}</name><image>~/../thumbs/MAME/Named_Snaps/${prvy%.neo}.png</image><titleshot>~/../thumbs/MAME/Named_Titles/${prvy%.neo}.png</titleshot><thumbnail>~/../thumbs/MAME/Named_Boxarts/${prvy%.neo}.png</thumbnail><marquee>~/../thumbs/MAME/Named_Logos/${prvy%.neo}.png</marquee>"
-  echo "${hra}</game>" >> ~/gamelists/neogeo/gamelist.xml  
-done < "$ROMLIST"; printf ']; generateFileLinks("roms/Neo Geo", "MAME");</script><script src=\"script.js\"></script>' >> ~/gameflix/Neo\ Geo.html; ((platforms++))
-echo "<a href=\"Neo Geo.html\" target=\"main\">Neo Geo</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Neo Geo\") core=\"fbneo_libretro\";;" >> ~/gameflix/retroarch.sh  
-echo "<figure><a href='Neo Geo.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/neogeo.jpg'></a><figcaption>Neo Geo</figcaption></figure>" >> ~/gameflix/main.html
-echo "<folder><path>./Neo Geo</path><name>Neo Geo</name><image>~/../thumb/neogeo.png</image></folder></gameList>" >> ~/gamelists/neogeo/gamelist.xml
 
 cat retroarch.end >> ~/gameflix/retroarch.sh; cp favicon.png ~/gameflix/
 chmod +x ~/gameflix/retroarch.sh; echo "<p><b>Total: $total</b>" >> ~/gameflix/systems.html; echo "<p><b>Platforms: $platforms</b>" >> ~/gameflix/systems.html
