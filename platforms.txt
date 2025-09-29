@@ -265,7 +265,7 @@ dos;Total DOS Collection/Games/Files/1987;DOS;<code>MS-DOS</code> TDC 1987;dosbo
 dos;Total DOS Collection/Games/Files/1988;DOS;<code>MS-DOS</code> TDC 1988;dosbox_pure_libretro
 dos;Total DOS Collection/Games/Files/1989;DOS;<code>MS-DOS</code> TDC 1989;dosbox_pure_libretro
 dos;Total DOS Collection/Games/Files/1990;DOS;<code>MS-DOS</code> TDC 1990;dosbox_pure_libretro
-dos;../roms/dos/MS-DOS TDC 22 199x;DOS;<code>MS-DOS</code> TDC 199x;dosbox_pure_libretro
+dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/199x;DOS;<code>MS-DOS</code> TDC 199x;dosbox_pure_libretro
 dos;../roms/dos/MS-DOS TDC 22 1991;DOS;<code>MS-DOS</code> TDC 1991;dosbox_pure_libretro
 dos;../roms/dos/MS-DOS TDC 22 1992;DOS;<code>MS-DOS</code> TDC 1992;dosbox_pure_libretro
 dos;../roms/dos/MS-DOS TDC 22 1993;DOS;<code>MS-DOS</code> TDC 1993;dosbox_pure_libretro
