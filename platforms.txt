@@ -254,7 +254,6 @@ cdi;TOSEC-ISO/Philips/CD-i/Multimedia;Philips - CD-i;Philips CDi Multimedia;same
 dos;eXo/eXoDOS/Full Release/eXo/eXoDOS;DOS;<p><code>MS-DOS</code> eXoDOS;dosbox_pure_libretro
 dos;TOSEC/IBM/PC Compatibles/Games/[IMG];DOS;<code>MS-DOS</code> TOSEC;dosbox_pure_libretro
 dos;TOSEC-ISO/IBM/PC Compatibles/CD/Games/[ISO];DOS;<code>MS-DOS</code> TOSEC-ISO;dosbox_pure_libretro
-dos;Total DOS Collection/Games/Files/198x;DOS;<code>MS-DOS</code> TDC 198x;dosbox_pure_libretro
 dos;Total DOS Collection/Games/Files/1981;DOS;<code>MS-DOS</code> TDC 1981;dosbox_pure_libretro
 dos;Total DOS Collection/Games/Files/1982;DOS;<code>MS-DOS</code> TDC 1982;dosbox_pure_libretro
 dos;Total DOS Collection/Games/Files/1983;DOS;<code>MS-DOS</code> TDC 1983;dosbox_pure_libretro
@@ -264,26 +263,45 @@ dos;Total DOS Collection/Games/Files/1986;DOS;<code>MS-DOS</code> TDC 1986;dosbo
 dos;Total DOS Collection/Games/Files/1987;DOS;<code>MS-DOS</code> TDC 1987;dosbox_pure_libretro
 dos;Total DOS Collection/Games/Files/1988;DOS;<code>MS-DOS</code> TDC 1988;dosbox_pure_libretro
 dos;Total DOS Collection/Games/Files/1989;DOS;<code>MS-DOS</code> TDC 1989;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/198x;DOS;<code>MS-DOS</code> TDC 198x;dosbox_pure_libretro
 dos;Total DOS Collection/Games/Files/1990;DOS;<code>MS-DOS</code> TDC 1990;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/199x;DOS;<code>MS-DOS</code> TDC 199x;dosbox_pure_libretro
-dos;../roms/dos/MS-DOS TDC 22 1991;DOS;<code>MS-DOS</code> TDC 1991;dosbox_pure_libretro
-dos;../roms/dos/MS-DOS TDC 22 1992;DOS;<code>MS-DOS</code> TDC 1992;dosbox_pure_libretro
-dos;../roms/dos/MS-DOS TDC 22 1993;DOS;<code>MS-DOS</code> TDC 1993;dosbox_pure_libretro
-dos;../roms/dos/MS-DOS TDC 22 1994;DOS;<code>MS-DOS</code> TDC 1994;dosbox_pure_libretro
-dos;../roms/dos/MS-DOS TDC 22 1995;DOS;<code>MS-DOS</code> TDC 1995;dosbox_pure_libretro
-dos;../roms/dos/MS-DOS TDC 22 1996;DOS;<code>MS-DOS</code> TDC 1996;dosbox_pure_libretro
-dos;../roms/dos/MS-DOS TDC 22 1997;DOS;<code>MS-DOS</code> TDC 1997;dosbox_pure_libretro
-dos;../roms/dos/MS-DOS TDC 22 1998;DOS;<code>MS-DOS</code> TDC 1998;dosbox_pure_libretro
-dos;../roms/dos/MS-DOS TDC 22 1999;DOS;<code>MS-DOS</code> TDC 1999;dosbox_pure_libretro
-dos;../roms/dos/MS-DOS TDC 22 2000;DOS;<code>MS-DOS</code> TDC 2000;dosbox_pure_libretro
-dos;../roms/dos/MS-DOS TDC 22 2001;DOS;<code>MS-DOS</code> TDC 2001;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2002;DOS;<code>MS-DOS</code> TDC 2002;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2003;DOS;<code>MS-DOS</code> TDC 2003;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2008;DOS;<code>MS-DOS</code> TDC 2008;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2009;DOS;<code>MS-DOS</code> TDC 2009;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2011;DOS;<code>MS-DOS</code> TDC 2011;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2014;DOS;<code>MS-DOS</code> TDC 2014;dosbox_pure_libretro
-dos;Internet Archive/sketch_the_cow/Total_DOS_Collection_Release_16_March_2019/Games/Files/2015;DOS;<code>MS-DOS</code> TDC 2015;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/1991;DOS;<code>MS-DOS</code> TDC 1991;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/1992;DOS;<code>MS-DOS</code> TDC 1992;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/1993;DOS;<code>MS-DOS</code> TDC 1993;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/1994;DOS;<code>MS-DOS</code> TDC 1994;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/1995;DOS;<code>MS-DOS</code> TDC 1995;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/1996;DOS;<code>MS-DOS</code> TDC 1996;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/1997;DOS;<code>MS-DOS</code> TDC 1997;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/1998;DOS;<code>MS-DOS</code> TDC 1998;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/1999;DOS;<code>MS-DOS</code> TDC 1999;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/199x;DOS;<code>MS-DOS</code> TDC 199x;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/19xx;DOS;<code>MS-DOS</code> TDC 19xx;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2000;DOS;<code>MS-DOS</code> TDC 2000;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2001;DOS;<code>MS-DOS</code> TDC 2001;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2002;DOS;<code>MS-DOS</code> TDC 2002;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2003;DOS;<code>MS-DOS</code> TDC 2003;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2004;DOS;<code>MS-DOS</code> TDC 2004;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2005;DOS;<code>MS-DOS</code> TDC 2005;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2006;DOS;<code>MS-DOS</code> TDC 2006;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2007;DOS;<code>MS-DOS</code> TDC 2007;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2008;DOS;<code>MS-DOS</code> TDC 2008;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2009;DOS;<code>MS-DOS</code> TDC 2009;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2010;DOS;<code>MS-DOS</code> TDC 2010;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2011;DOS;<code>MS-DOS</code> TDC 2011;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2012;DOS;<code>MS-DOS</code> TDC 2012;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2013;DOS;<code>MS-DOS</code> TDC 2013;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2014;DOS;<code>MS-DOS</code> TDC 2014;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2015;DOS;<code>MS-DOS</code> TDC 2015;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2016;DOS;<code>MS-DOS</code> TDC 2016;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2017;DOS;<code>MS-DOS</code> TDC 2017;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2018;DOS;<code>MS-DOS</code> TDC 2018;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2019;DOS;<code>MS-DOS</code> TDC 2019;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2020;DOS;<code>MS-DOS</code> TDC 2020;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2021;DOS;<code>MS-DOS</code> TDC 2021;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2022;DOS;<code>MS-DOS</code> TDC 2022;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2023;DOS;<code>MS-DOS</code> TDC 2023;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2024;DOS;<code>MS-DOS</code> TDC 2024;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Files/2025;DOS;<code>MS-DOS</code> TDC 2025;dosbox_pure_libretro
 
 pet;TOSEC/Commodore/PET/Games/[PRG];Commodore - PET;<p><code>Commodore PET</code> TOSEC;vice_xpet_libretro
 cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<code>Commodore Plus-4</code> NoIntro;vice_xplus4_libretro
