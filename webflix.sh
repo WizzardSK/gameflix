@@ -1,6 +1,6 @@
 #!/bin/bash
 export LD_LIBRARY_PATH=/usr/local/lib
-mkdir -p ~/myrient ~/roms/{Atari\ 2600\ ROMS,TIC-80,LowresNX,Uzebox,WASM-4,Vircon32,TDC,Socrates,TI99} ~/iso ~/zips ~/gameflix
+mkdir -p ~/myrient ~/roms/{Atari\ 2600\ ROMS,TIC-80,LowresNX,Uzebox,WASM-4,Vircon32,Socrates,TI99} ~/iso ~/zips ~/gameflix
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 archives=("https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip" https://wizzardsk.github.io/{lowresnx,tic80,wasm4,uzebox,socrates}.zip)
 
@@ -8,7 +8,6 @@ if ! mountpoint -q "$HOME/myrient"; then rclone mount myrient: ~/myrient --http-
 if ! mountpoint -q "$HOME/zips"; then nohup ratarmount-full -o attr_timeout=3600 --disable-union-mount "${archives[@]}" ~/zips -f & fi
 if ! mountpoint -q "$HOME/roms/Vircon32"; then rclone mount archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media $HOME/roms/Vircon32 --daemon; fi
 if ! mountpoint -q "$HOME/roms/TI99"; then rclone mount whtech:MAME/rpk $HOME/roms/TI99 --daemon; fi
-if ! mountpoint -q "$HOME/roms/TDC"; then rclone mount "turran:Non Amiga/DOS/Total.DOS.Collection.v22/Games/Files" $HOME/roms/TDC --vfs-cache-mode full & fi
 while ! mountpoint -q "$HOME/zips"; do sleep 5; done
 
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/Atari-2600-VCS-ROM-Collection.zip/ROMS "$HOME/roms/Atari 2600 ROMS"
