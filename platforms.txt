@@ -370,9 +370,9 @@ x1;TOSEC/Sharp/X1/Games/[D88];Sharp - X1;<code>Sharp X1</code> D88;x1_libretro
 x68000;TOSEC/Sharp/X68000/Games/[DIM];Sharp - X68000;<code>Sharp X68000</code> DIM;px68k_libretro
 x68000;TOSEC/Sharp/X68000/Applications;Sharp - X68000;<code>Sharp X68000</code> App;px68k_libretro
 
-mame;MAME/ROMs (merged);MAME;<p>MAME merged;mame
-mame;MAME/ROMs (non-merged);MAME;<p>MAME non-merged;mame
-mame;MAME/ROMs (split);MAME;<p>MAME split;mame
+mame;MAME/ROMs (merged);MAME;<p>MAME Merged;mame
+mame;MAME/ROMs (non-merged);MAME;MAME Non-Merged;mame
+mame;MAME/ROMs (split);MAME;MAME Split;mame
 fbneo;FinalBurn Neo/arcade;MAME;FinalBurn Neo;fbneo_libretro
 model3;Internet Archive/chadmaster/segamodel3/ROMs;MAME;Sega Model 3;supermodel
 neogeo;Internet Archive/megaarch1996/neo-geo-aes-romset;MAME;Neo Geo AES;fbneo_libretro
