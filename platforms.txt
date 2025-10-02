@@ -153,7 +153,7 @@ apple2;TOSEC/Apple/II/Applications/[WOZ];Apple - II;<code>Apple II App WOZ</code
 laser310;TOSEC/VTech/Laser 200/Games/[VZ];VTech - Laser 310;<code>VTech Laser 200</code>;mame laser310 -dump
 laser310;TOSEC/VTech/Laser 200/Applications;VTech - Laser 310;<code>VTech Laser 200</code> App;mame laser310 -dump
 laser310;TOSEC/VTech/Laser 310/Applications;VTech - Laser 310;<code>VTech Laser 310</code> App;mame laser310 -dump
-socrates;../roms/socrates/VTech Socrates;VTech - Socrates;<code>VTech Socrates</code>;mame socrates -cart
+socrates;MAME/Software List ROMs (merged)/socrates;VTech - Socrates;<code>VTech Socrates</code>;mame socrates -cart
 ti99;../roms/ti99/Texas Instruments TI99;Texas Instruments - TI-99;<code>Texas Instruments TI99</code>;mame ti99_4a -cart
 
 thomson;TOSEC/Thomson/MO5/Games/[K7];Thomson - MOTO;<p><code>Thomson MO5</code> K7;theodore_libretro
