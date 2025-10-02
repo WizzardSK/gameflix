@@ -73,7 +73,6 @@ IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   if [[ "${rom[1]}" == *"2600 ROMS"* ]]; then romfolder="roms/Atari 2600 ROMS"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"Vircon32"* ]];  then romfolder="roms/Vircon32"; emufolder=$romfolder; fi
-  if [[ "${rom[1]}" == *"Socrates"* ]];  then romfolder="roms/Socrates"; emufolder=$romfolder; fi
   if [[ "${rom[1]}" == *"TI99"* ]];      then romfolder="roms/TI99";     emufolder=$romfolder; fi
   > ~/gameflix/${rom3}.html; echo ${rom3}; cp platform.html ~/gameflix/${rom3}.html
   echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html; pocet=0; while IFS= read -r line; do
