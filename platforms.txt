@@ -1,5 +1,5 @@
-uzebox;MAME/Software List ROMs (merged)/uzebox;MAME;<code>Uzebox</code> Merged;mame uzebox -cart
-uzebox;MAME/Software List ROMs (split)/uzebox;MAME;<code>Uzebox</code> Split;mame uzebox -cart
+uzebox;MAME/Software List ROMs (merged)/uzebox;MAME;Uzebox Merged;mame uzebox -cart
+uzebox;MAME/Software List ROMs (split)/uzebox;MAME;Uzebox Split;mame uzebox -cart
 vircon32;../roms/vircon32/Vircon32;Vircon32;Vircon32;vircon32_libretro
 
 atari2600;../roms/atari2600/Atari 2600 ROMS;Atari - 2600;<p>Atari 2600 ROMS;stella_libretro
@@ -376,6 +376,13 @@ x68000;TOSEC/Sharp/X68000/Applications;Sharp - X68000;<code>Sharp X68000</code> 
 mame;MAME/ROMs (merged);MAME;<p>MAME Merged;mame
 mame;MAME/ROMs (non-merged);MAME;MAME Non-Merged;mame
 mame;MAME/ROMs (split);MAME;MAME Split;mame
+mame;MAME/Reference Sets/0.37b5 ROMs (non-merged);MAME;MAME 2000;mame
+mame;MAME/Reference Sets/0.78 ROMs (non-merged);MAME;MAME 2003;mame
+mame;MAME/Reference Sets/0.94 ROMs (non-merged);MAME;MAME 2005;mame
+mame;MAME/Reference Sets/0.106 ROMs (non-merged);MAME;MAME 2006;mame
+mame;MAME/Reference Sets/0.139 ROMs (non-merged);MAME;MAME 2010;mame
+mame;MAME/Reference Sets/0.160 ROMs (non-merged);MAME;MAME 2015;mame
+mame;MAME/Reference Sets/0.174 ROMs (non-merged);MAME;MAME 2016;mame
 fbneo;FinalBurn Neo/arcade;MAME;FinalBurn Neo;fbneo_libretro
 model3;Internet Archive/chadmaster/segamodel3/ROMs;MAME;Sega Model 3;supermodel
 neogeo;MAME/Software List ROMs (merged)/neogeo;MAME;Neo Geo Merged;fbneo_libretro
