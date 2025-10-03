@@ -1,13 +1,12 @@
 #!/bin/bash
 shopt -s nocasematch; IFS=$'\n' read -d '' -ra roms < platforms.txt
-mkdir -p ~/{gameflix,rom,gamelists,zip,zips,atari2600roms,mount,uzebox,vircon32} ~/gamelists/{atari2600,uzebox,tic80,wasm4,lowresnx,vircon32,pico8,voxatron,dos,switch}
+mkdir -p ~/{gameflix,rom,gamelists,zip,zips,atari2600roms,mount,vircon32} ~/gamelists/{atari2600,tic80,wasm4,lowresnx,vircon32,pico8,voxatron,dos,switch}
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html; cp ~/gameflix/systems.html ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
 
 echo "<figure><a href='TIC-80.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/tic80.jpg'></a><figcaption>TIC-80</figcaption></figure>
 <figure><a href='WASM-4.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/wasm4.jpg'></a><figcaption>WASM-4</figcaption></figure>
-<figure><a href='Uzebox.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/uzebox.jpg'></a><figcaption>Uzebox</figcaption></figure>
 <figure><a href='LowresNX.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/lowresnx.jpg'></a><figcaption>LowresNX</figcaption></figure>
 <figure><a href='PICO-8.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/pico8.jpg'></a><figcaption>PICO-8</figcaption></figure>
 <figure><a href='Voxatron.html'><img class=loaded src='https://wiki.batocera.org/_media/systems:voxatron.png'></a><figcaption>Voxatron</figcaption></figure>" >> ~/gameflix/main.html
@@ -39,14 +38,6 @@ echo "<gameList>" > ~/gamelists/lowresnx/gamelist.xml; cat fantasy/lowresnx.txt 
   if [[ -n "$cart" && -n "$picture" ]]; then echo -e "\"$cart\t$picture\t$name\t$id\"," >> ~/gameflix/LowresNX.html; fi; 
   hra="<game><path>./LowresNX/${cart}</path><name>${name}</name><image>./LowresNX/${picture}</image>"; echo "${hra}</game>" >> ~/gamelists/lowresnx/gamelist.xml
 done; printf ']; generateLrNXLinks("roms/LowresNX", "LowresNX");</script><script src=\"script.js\"></script>' >> ~/gameflix/LowresNX.html; echo "</gameList>" >> ~/gamelists/lowresnx/gamelist.xml
-
-pocet=$(wc -l < fantasy/uzebox.txt); total=$((pocet+total))
-echo "<a href=\"Uzebox.html\" target=\"main\">Uzebox</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"Uzebox\") core=\"uzem_libretro\";;" >> ~/gameflix/retroarch.sh  
-echo "Uzebox"; cp platform.html ~/gameflix/Uzebox.html; echo "<script>bgImage(\"uzebox\"); const fileNames = [" >> ~/gameflix/Uzebox.html; ((platforms++)); echo "<gameList>" > ~/gamelists/uzebox/gamelist.xml; 
-cat fantasy/uzebox.txt | while IFS=$'\t' read -r id cart name; do 
-  echo -e "\"$id\t$cart\t$name\"," >> ~/gameflix/Uzebox.html; 
-  hra="<game><path>./Uzebox/${cart}</path><name>${name}</name><image>~/../thumbs/Uzebox/Named_Snaps/${cart%.*}.png</image>"; echo "${hra}</game>" >> ~/gamelists/uzebox/gamelist.xml
-done; printf ']; generateUzeLinks("roms/Uzebox", "Uzebox");</script><script src=\"script.js\"></script>' >> ~/gameflix/Uzebox.html; echo "</gameList>" >> ~/gamelists/uzebox/gamelist.xml
 
 pocet=$(wc -l < fantasy/pico8.txt); total=$((pocet+total))
 echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> ($pocet)<br />" >> ~/gameflix/systems.html; echo "*\"PICO-8\") core=\"pico8 -run\";;" >> ~/gameflix/retroarch.sh  
