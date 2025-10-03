@@ -1,3 +1,5 @@
+151869	FLOCK THE FLOCK OFF!!	flock_the_flock_off-1.p8.png
+151862	Seinfeld Simulator: Fast-iary Edition	seinsim_fastiary-0.p8.png
 151851	A Puzzle A Day	puzzle_a_day-0.p8.png
 151849	STAKBLOK	stakblok-0.p8.png
 151848	🔴	redcircle-0.p8.png
@@ -6,7 +8,7 @@
 151837	Jelpi's Little Adventure	jla-0.p8.png
 151835	Blue and Lefty (PICO-1k)	bnl-1.p8.png
 151834	Pilgrimage (1K)	koz_pilgrimage-0.p8.png
-151829	CowVenture	cowventure_moooves-3.p8.png
+151829	CowVenture	cowventure_moooves-6.p8.png
 151828	arrival_radar	arrival_radar-0.p8.png
 151824	Lady Knight	ladyknight123-0.p8.png
 151821	Shmup try	mayziyowo-0.p8.png
@@ -8123,8 +8125,8 @@
 32171	RUBBISH	58696.p8.png
 32162	Now rotating @60fps	58624.p8.png
 32158	[TweetCart280]3d fractal kleinian sphere	58596.p8.png
-32157	Hazel May Saves The Halloween Monster Soiree	elias_grey_104-2.p8.png
-32150	Elias Grey	58559.p8.png
+32157	Elias Grey	elias_grey_104-2.p8.png
+32150	Lefty	58559.p8.png
 32135	PlusWave	58603.p8.png
 32131	Color War	58466.p8.png
 32124	A selection of easing functions	58411.p8.png
@@ -8481,9 +8483,9 @@
 30927	Diamond Ghost 1.1	50234.p8.png
 30925	Spook and thunder	50224.p8.png
 30924	Swarm	50343.p8.png
-30923	Robo Duel	50206.p8.png
 30923	Juggle Panic	50206.p8.png
-30922	Diamond Ghost	50253.p8.png
+30923	Diamond Ghost	50206.p8.png
+30922	Rally-P8	50253.p8.png
 30921	Pico Wars	50168.p8.png
 30919	Get Dis Money - Community Edition	50156.p8.png
 30916	Shinkansen	50132.p8.png
@@ -8541,8 +8543,8 @@
 30734	Spike Dislike Pico-8 Demake	49163.p8.png
 30730	Double pendulum	48983.p8.png
 30727	My Pet Virus	48972.p8.png
-30724	Desert Road (generated animation)	48953.p8.png
-30722	PICO Fireplace	48946.p8.png
+30724	PICO Fireplace	48953.p8.png
+30722	PORG	48946.p8.png
 30719	Throw Punch!!	throwpunch1_2-0.p8.png
 30714	Pico Of The Beast	48883.p8.png
 30711	Binary Save System	48830.p8.png
@@ -9257,8 +9259,8 @@
 28387	2017	34644.p8.png
 28383	v0.83	34615.p8.png
 28382	Killer Ball	34605.p8.png
-28381	Happy New Year!	34600.p8.png
-28380	Corn Dog Catcher	34595.p8.png
+28381	Corn Dog Catcher	34600.p8.png
+28380	Dragoncave final	34595.p8.png
 28376	It Is What It Is	34620.p8.png
 28372	(Untitled)	58774.p8.png
 28371	Forever Lost In The Never Ending Museum Of Still Life	34543.p8.png
@@ -9319,8 +9321,8 @@
 28203	v0.8	teniyowune-0.p8.png
 28203	One Room Quest	teniyowune-0.p8.png
 28203	Heliopause Title Concept	teniyowune-0.p8.png
-28202	Heliopause	35079.p8.png
-28197	One Room Dungeon ~ Post-Jam-Updated	33356.p8.png
+28202	One Room Dungeon ~ Post-Jam-Updated	35079.p8.png
+28197	keturi (LD37)	33356.p8.png
 28196	Reckless Redecoration	33354.p8.png
 28195	Eskargool	34604.p8.png
 28192	Pico Factory	35159.p8.png
