@@ -1,3 +1,5 @@
+uzebox;MAME/Software List ROMs (merged)/uzebox;MAME;<code>Uzebox</code> Merged;mame uzebox -cart
+uzebox;MAME/Software List ROMs (split)/uzebox;MAME;<code>Uzebox</code> Split;mame uzebox -cart
 vircon32;../roms/vircon32/Vircon32;Vircon32;Vircon32;vircon32_libretro
 
 atari2600;../roms/atari2600/Atari 2600 ROMS;Atari - 2600;<p>Atari 2600 ROMS;stella_libretro
