@@ -35,7 +35,8 @@ atari800;TOSEC/Atari/8bit/Educational/[ATR];Atari - 8-bit;<code>Atari 800</code>
 atari800;TOSEC/Atari/8bit/Educational/[BIN];Atari - 8-bit;<code>Atari 800</code> Edu BIN;atari800_libretro
 atari800;TOSEC/Atari/8bit/Educational/[CAS];Atari - 8-bit;<code>Atari 800</code> Edu CAS;atari800_libretro
 atari800;TOSEC/Atari/8bit/Educational/[XEX];Atari - 8-bit;<code>Atari 800</code> Edu XEX;atari800_libretro
-xegs;Internet Archive/megaarch1996/Atari-XEGS-Romset;MAME;<code>Atari XEGS</code>;mame xegs -cart
+xegs;MAME/Software List ROMs (merged)/xegs;MAME;<code>Atari XEGS</code> Merged;mame xegs -cart
+xegs;MAME/Software List ROMs (split)/xegs;MAME;<code>Atari XEGS</code> Split;mame xegs -cart
 atarist;No-Intro/Atari - Atari ST;Atari - ST;<code>Atari ST</code> NoIntro;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[ST];Atari - ST;<code>Atari ST</code> ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Games/[STX];Atari - ST;<code>Atari ST</code> STX;hatari_libretro
