@@ -2,7 +2,7 @@ uzebox;MAME/Software List ROMs (merged)/uzebox;MAME;Uzebox Merged;mame uzebox -c
 uzebox;MAME/Software List ROMs (split)/uzebox;MAME;Uzebox Split;mame uzebox -cart
 vircon32;../roms/vircon32/Vircon32;Vircon32;Vircon32;vircon32_libretro
 
-atari2600;../roms/atari2600/Atari 2600 ROMS;Atari - 2600;<p>Atari 2600 ROMS;stella_libretro
+atari2600;Miscellaneous/Atari Mania/Atari-2600-VCS-ROM-Collection/ROMS;Atari - 2600;<p>Atari 2600 ROMS;stella_libretro
 atari2600;No-Intro/Atari - Atari 2600;Atari - 2600;Atari 2600 NoIntro;stella_libretro
 atari2600;TOSEC/Atari/2600 & VCS/Games;Atari - 2600;Atari 2600 TOSEC;stella_libretro
 atari2600;TOSEC/Atari/2600 & VCS/Homebrew/Games/[BIN];Atari - 2600;Atari 2600 Homebrew;stella_libretro
