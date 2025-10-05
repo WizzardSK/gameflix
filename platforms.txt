@@ -385,8 +385,8 @@ mame;MAME/Reference Sets/0.160 ROMs (non-merged);MAME;MAME 2015;mame
 mame;MAME/Reference Sets/0.174 ROMs (non-merged);MAME;MAME 2016;mame
 fbneo;FinalBurn Neo/arcade;MAME;FinalBurn Neo;fbneo_libretro
 model3;Internet Archive/chadmaster/segamodel3/ROMs;MAME;Sega Model 3;supermodel
-neogeo;MAME/Software List ROMs (merged)/neogeo;MAME;Neo Geo Merged;fbneo_libretro
-neogeo;MAME/Software List ROMs (split)/neogeo;MAME;Neo Geo Split;fbneo_libretro
+neogeo;MAME/Software List ROMs (merged)/neogeo;SNK - Neo Geo;Neo Geo Merged;fbneo_libretro
+neogeo;MAME/Software List ROMs (split)/neogeo;SNK - Neo Geo;Neo Geo Split;fbneo_libretro
 neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD Redump;neocd_libretro;cue
 neogeocd;TOSEC-ISO/SNK/Neo-Geo CD/Games/[ISO];SNK - Neo Geo CD;Neo Geo CD ISO;neocd_libretro;cue
 ngp;No-Intro/SNK - NeoGeo Pocket;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> NoIntro;mednafen_ngp_libretro
