@@ -107,7 +107,8 @@ samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK];MGT - Sam Coupe;<code>Sam Coupé</code>
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[SAD];MGT - Sam Coupe;<code>Sam Coupé</code> SAD;simcoupe
 oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[DSK];Tangerine - Oric Atmos;<code>Oric Atmos</code> DSK;clksignal --quickload
 oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[TAP];Tangerine - Oric Atmos;<code>Oric Atmos</code> TAP;clksignal --quickload
-camplynx;TOSEC/Camputers/Lynx/Games/[TAP];Camputers - Lynx;<code>Camputers Lynx</code> TAP;mame lynx48k -cass
+camplynx;MAME/Software List ROMs (merged)/camplynx_cass;Camputers - Lynx;<code>Camputers Lynx</code> Merged;mame lynx48k -cass
+camplynx;MAME/Software List ROMs (split)/camplynx_cass;Camputers - Lynx;<code>Camputers Lynx</code> Split;mame lynx48k -cass
 
 astrocade;No-Intro/Bally - Astrocade;Bally - Astrocade;<p>Bally Astrocade NoIntro;mame astrocde -cart
 astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN];Bally - Astrocade;Bally Astrocade TOSEC;mame astrocde -cart
