@@ -105,8 +105,9 @@ spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Games/[BIN];Spectravideo - SVI
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Various;bluemsx_libretro
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK];MGT - Sam Coupe;<code>Sam Coupé</code> DSK;simcoupe
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[SAD];MGT - Sam Coupe;<code>Sam Coupé</code> SAD;simcoupe
-oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[DSK];Tangerine - Oric Atmos;<code>Oric Atmos</code> DSK;clksignal --quickload
-oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[TAP];Tangerine - Oric Atmos;<code>Oric Atmos</code> TAP;clksignal --quickload
+oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[TAP];Tangerine - Oric Atmos;<code>Oric Atmos</code> TAP;mame orica -cass
+oric;MAME/Software List ROMs (merged)/oric1_cass;Tangerine - Oric Atmos;<code>Oric Atmos</code> Merged;mame orica -cass
+oric;MAME/Software List ROMs (split)/oric1_cass;Tangerine - Oric Atmos;<code>Oric Atmos</code> Split;mame orica -cass
 camplynx;MAME/Software List ROMs (merged)/camplynx_cass;Camputers - Lynx;<code>Camputers Lynx</code> Merged;mame lynx48k -cass
 camplynx;MAME/Software List ROMs (split)/camplynx_cass;Camputers - Lynx;<code>Camputers Lynx</code> Split;mame lynx48k -cass
 
