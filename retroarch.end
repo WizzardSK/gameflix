@@ -1,8 +1,7 @@
 esac
 
 if [ -n "$ext" ]; then
-  umount -l ~/iso
-  mount-zip "$1" ~/iso
+  umount -l ~/iso; mount-zip "$1" ~/iso
   rom=$(find ~/iso -type f -name "*.${ext}" | head -n 1)
 else
   rom="$1"
@@ -11,8 +10,7 @@ fi
 if [[ "$1" == *"ti99_cart"* ]]; then rom="$(basename "${1%.*}")"; fi
 
 if [[ "$core" == *"mame"* ]]; then
-  filename="${rom##*/}"
-  basename="${filename%.*}"
+  filename="${rom##*/}"; basename="${filename%.*}"
   ${core} "${rom}" -skip_gameinfo -snapname "${basename}"
   exit
 fi
