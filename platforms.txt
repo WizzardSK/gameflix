@@ -47,6 +47,16 @@ atarist;TOSEC/Atari/ST/Applications/[STX];Atari - ST;<code>Atari ST</code> App S
 atarist;TOSEC/Atari/ST/Educational/[ST];Atari - ST;<code>Atari ST</code> Edu ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Educational/[STX];Atari - ST;<code>Atari ST</code> Edu STX;hatari_libretro
 
+macintosh;MAME/Software List ROMs (merged)/mac_flop;Apple - Macintosh;<p><code>Apple Mac</code> Flop;mame macplus -flop1
+macintosh;MAME/Software List ROMs (merged)/mac_flop_orig;Apple - Macintosh;<code>Apple Mac</code> Orig;mame macplus -flop1
+macintosh;MAME/Software List ROMs (merged)/mac_flop_clcracked;Apple - Macintosh;Apple Mac</code> Cracked;mame macplus -flop1
+apple2;TOSEC/Apple/II/Games/[DSK];Apple - II;<code>Apple II</code> DSK;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Games/[WOZ];Apple - II;<code>Apple II</code> WOZ;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Educational/[DSK];Apple - II;<code>Apple II</code> Edu DSK;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Educational/[WOZ];Apple - II;<code>Apple II</code> Edu WOZ;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Applications/[DSK];Apple - II;<code>Apple II</code> App DSK;mame apple2ee -flop1
+apple2;TOSEC/Apple/II/Applications/[WOZ];Apple - II;<code>Apple II</code> App WOZ;mame apple2ee -flop1
+
 channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;<p>Fairchild Channel F NoIntro;freechaf_libretro
 channelf;TOSEC/Fairchild/VES & Channel F/Games;Fairchild - Channel F;Fairchild Channel F TOSEC;freechaf_libretro
 vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;GCE Vectrex NoIntro;vecx_libretro
@@ -149,12 +159,6 @@ fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;<code>Fujitsu Micro 7</co
 fm7;TOSEC/Fujitsu/FM-7/Games/[D77];Fujitsu - Micro 7;<code>Fujitsu Micro 7</code> D77;mame fm7 -flop1
 fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;<code>Fujitsu FM Towns</code>;mame fmtmarty -cdrm
 tutor;TOSEC/Tomy/Tutor & Pyuuta/Games;Tomy - Tutor;<code>Tomy Tutor</code>;mame tutor -cart
-apple2;TOSEC/Apple/II/Games/[DSK];Apple - II;<code>Apple II DSK</code>;mame apple2ee -flop1
-apple2;TOSEC/Apple/II/Games/[WOZ];Apple - II;<code>Apple II WOZ</code>;mame apple2ee -flop1
-apple2;TOSEC/Apple/II/Educational/[DSK];Apple - II;<code>Apple II Edu DSK</code>;mame apple2ee -flop1
-apple2;TOSEC/Apple/II/Educational/[WOZ];Apple - II;<code>Apple II Edu WOZ</code>;mame apple2ee -flop1
-apple2;TOSEC/Apple/II/Applications/[DSK];Apple - II;<code>Apple II App DSK</code>;mame apple2ee -flop1
-apple2;TOSEC/Apple/II/Applications/[WOZ];Apple - II;<code>Apple II App WOZ</code>;mame apple2ee -flop1
 laser310;TOSEC/VTech/Laser 200/Games/[VZ];VTech - Laser 310;<code>VTech Laser 200</code>;mame laser310 -dump
 laser310;TOSEC/VTech/Laser 200/Applications;VTech - Laser 310;<code>VTech Laser 200</code> App;mame laser310 -dump
 laser310;TOSEC/VTech/Laser 310/Applications;VTech - Laser 310;<code>VTech Laser 310</code> App;mame laser310 -dump
