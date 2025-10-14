@@ -1,3 +1,4 @@
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 3873	Heaven&#039;s Burger	vy7cdsz3g8_IMG_975A60F8C42F1.jpeg	vy7cdsz3g8_Heavens_Burger.nx
 3872	iCloud Multiplayer! Guess The Number Game	CwvmTQQy2h_abLDUUGjRg_Test_Multiplayer_V2.png	CwvmTQQy2h_Test_Multiplayer_V2.nx
 3869	Something Pig is Coming!	22fokGQiyJ_IllBehaved_Swines.png	22fokGQiyJ_IllBehaved_Swines.nx
@@ -58,6 +59,7 @@
 3674	Can&#039;t Sleep	jj5bjWroRM_Cant_Sleep.png	jj5bjWroRM_Cant_Sleep.nx
 3673	Scroller Sampler game	r5p3rx56Z6_Scroller_Sampler_game.png	r5p3rx56Z6_Scroller_Sampler_game.nx
 3671	Moon Zombies v0.1 WIP	JYDmrQumdB_Zombies.png	JYDmrQumdB_Zombies.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 3669	Builder	bLufBU9KrD_Builder_remix_Smiley.png	bLufBU9KrD_Builder_remix_Smiley.nx
 3668	Nine Tiles game	qqzDBiFV4J_Nine_Tiles_game.png	qqzDBiFV4J_Nine_Tiles_game.nx
 3664	Etcha Sketch	rbqhnpXyXv_Etcha_Sketch.png	rbqhnpXyXv_Etcha_Sketch.nx
@@ -118,6 +120,7 @@
 3430	Orbital Flight Test v0.1	59sBsG7cuD_Orbital_Flight_Test.png	59sBsG7cuD_Orbital_Flight_Test.nx
 3429	Multi dimensional Mario Maze	TQXqJz8ihM_Multi_Dimensional_Maze_0.30.png	TQXqJz8ihM_Multi_Dimensional_Maze_0.30.nx
 3427	Keyboard Rally	UiNmwSQx8Q_Keyboard_Rally.png	UiNmwSQx8Q_Keyboard_Rally.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 3425	Flower Power	Zhnd8GujxR_Flower_Power_2.0.png	Zhnd8GujxR_Flower_Power_2.0.nx
 3424	END TRAILS	stWB7kmNo3_1DF5C69605404ED3B4CC19401A28E1D7.jpeg	stWB7kmNo3_End_Trails.nx
 3423	Ace Flyer	xyK6reiMb3_Ace_Flyer.png	xyK6reiMb3_Ace_Flyer.nx
@@ -178,6 +181,7 @@
 3260	SHOTGUN  DUNGEON	EBRDEXYfHs_71719FD6ED1240F582B453DAB5872FBA.jpeg	EBRDEXYfHs_Shotgun_Dungeon.nx
 3254	Pokemon 5-in-a-row	DSX4DjSKJT_Pokemon_FIVEINAROW_C2P.png	DSX4DjSKJT_Pokemon_FIVEINAROW_C2P.nx
 3250	Doodle Jump	SwKt65Q2yk_Doodle_Jump.png	SwKt65Q2yk_Doodle_Jump.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 3247	Choose your own adventure ... test...	aXCVCSYy9R_CYOA_book_test_0.52.1.png	aXCVCSYy9R_CYOA_book_test_0.52.1.nx
 3246	Last Minute Present Making	3ZsD4isno7_Image1.jpeg	3ZsD4isno7_Last_Minute_Present_Making.nx
 3242	Dungeon Crawl	FfothgLiVz_Dungeon_Crawl.png	FfothgLiVz_Dungeon_Crawl.nx
@@ -238,6 +242,7 @@
 3129	Square Lives	jqyB3ZkLC8_Square_Lives.png	jqyB3ZkLC8_Square_Lives.nx
 3123	Arcade games 4LW	4nXJ8YivNk_Arcade_Games_4LW_v0.36.png	4nXJ8YivNk_Arcade_Games_4LW_v0.36.nx
 3122	Search 4LW	Y9Q5Zsviad_Search_4LW.png	Y9Q5Zsviad_Search_4LW.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 3117	Mastermind 4LW strategy game 	jowTqZqTPc_Mastermind_4LW_V0.8.png	jowTqZqTPc_Mastermind_4LW_V0.8.nx
 3111	Trap Tic-Tac-Toe	Zb8eXkdhzE_Trap_TicTacToe.png	Zb8eXkdhzE_Trap_TicTacToe.nx
 3102	M.M.M.M.M.	rvoVfW57G8_Marvelous_Mega_Micro_Match_Mayhem_2.png	rvoVfW57G8_Marvelous_Mega_Micro_Match_Mayhem_2.nx
@@ -298,6 +303,7 @@
 2979	Putput Golf	Xhq4wwk56v_Putput_Golf.png	Xhq4wwk56v_Putput_Golf.nx
 2975	Super Slider Set	YVRefLDXNW_Super_Slider_Set.png	YVRefLDXNW_Super_Slider_Set.nx
 2974	Dice Roller	2i8Jnodad2_Dice_Roller.png	2i8Jnodad2_Dice_Roller.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 2973	Magic Number Square	JDjMn666WW_Magic_Number_Square.png	JDjMn666WW_Magic_Number_Square.nx
 2971	Block Bonus game #2.1	MKsXrEeVb6_Block_Bonus_2.11.png	MKsXrEeVb6_Block_Bonus_2.11.nx
 2970	Block Bonus game #1	fQm33feYWJ_Block_Bonus_1.png	fQm33feYWJ_Block_Bonus_1.nx
@@ -358,6 +364,7 @@
 2814	My Etude	WqHriwTWrd_myetude.png	WqHriwTWrd_myetude.nx
 2812	2048	aeLnJLWJkW_2048.png	aeLnJLWJkW_2048.nx
 2809	Simple Calculator	iUnrhhUKJV_Calculator_with_INKEY.png	iUnrhhUKJV_Calculator_with_INKEY.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 2803	Cybernoid	qEp6VnEpzz_Cybernoid.png	qEp6VnEpzz_Cybernoid.nx
 2802	More Pokemon	5jRQoVnxdj_LowRes_NX_20230106_14_17_53.png	5jRQoVnxdj_Pokemon.nx
 2801	Calculator 1a	veSzgDUa8S_Calculator_1d.png	veSzgDUa8S_Calculator_1d.nx
@@ -418,6 +425,7 @@
 2633	Save the games (solitaire game)	ziFbSAM8w5_8bit_Gamechips_Solitaire.png	ziFbSAM8w5_8bit_Gamechips_Solitaire.nx
 2630	Note Trainer	oyvfd8Z8o7_Note_Trainer.png	oyvfd8Z8o7_Note_Trainer.nx
 2627	Hello!	XgzVHW7HKB_Hi.png	XgzVHW7HKB_Hi.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 2625	A chatbot Beta… sorta.	4cKFDfUZAP_PNG_image.png	4cKFDfUZAP_Arthur_4.0.nx
 2624	Note Guesser game	GvykWuz4zD_Note_Guesser_Game.png	GvykWuz4zD_Note_Guesser_Game.nx
 2623	Pitch Perfect? - guess the musical note	rWPah5pYWx_Note_Guesser.png	rWPah5pYWx_Note_Guesser.nx
@@ -478,6 +486,7 @@
 2470	Cowboy Man	NNLtEv9Ag7_Cowboy_Man.png	NNLtEv9Ag7_Cowboy_Man.nx
 2465	Treasure Ahoy	UGapUyKxwU_Treasure_Ahoy.png	UGapUyKxwU_Treasure_Ahoy.nx
 2463	Avatar Generator	FbQTk8TLWF_Avatar_Generator.png	FbQTk8TLWF_Avatar_Generator.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 2460	Tyler Bros. Game &amp; Watch Style	sdPcZpHzwt_Tyler_Bros._Game__Watch_Style.png	sdPcZpHzwt_Tyler_Bros._Game__Watch_Style.nx
 2458	Reflex game	mL9eb7aGhv_Reflex_game.png	mL9eb7aGhv_Reflex_game.nx
 2455	Snek	Ec2KRcMaDj_snek2.png	Ec2KRcMaDj_snek2.nx
@@ -538,6 +547,7 @@
 2308	Garden Landscape puzzler	ab8otkY9eo_Garden_Landscape.png	ab8otkY9eo_Garden_Landscape.nx
 2302	I_Collect coin game	Qace8w9Lqb_I_Collect_game.png	Qace8w9Lqb_I_Collect_game.nx
 2300	Bubble&amp;Squeak	YcqtPvGvC7_moveit.png	YcqtPvGvC7_moveit.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 2298	Escape MCP	Dvz34Jw6ou_escapeMCP.png	Dvz34Jw6ou_Escape_MCP.nx
 2297	Spy vs Spy	zfkpkiyXRU_Spy_vs_Spy_2.png	zfkpkiyXRU_Spy_vs_Spy_2.nx
 2296	STUDY: Spherical Contact via Math	MXVYq4Md63_Spherical_Contact_by_Math.png	MXVYq4Md63_Spherical_Contact_by_Math.nx
@@ -598,6 +608,7 @@
 2176	MuseHex	qFbmfoNYHi_MUSHEX1.png	qFbmfoNYHi_MUSHEX1.nx
 2175	Empires game	V2MeNRt7UJ_Empires.png	V2MeNRt7UJ_Empires.nx
 2173	Hex Gameboard System	9VYyi2CzNz_Hex_Gameboard_System_1.0.png	9VYyi2CzNz_Hex_Gameboard_System_1.0.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 2172	Thermosphere	DTbaUc4YWZ_LowRes_NX_20211115_17_44_05.png	DTbaUc4YWZ_Thermosphere_1.0.nx
 2169	&quot;Can&#039;t Stop Me Now&quot; game	jUGdjqY7Ui_Cant_Stop_Me_Now.png	jUGdjqY7Ui_Cant_Stop_Me_Now.nx
 2168	Legend of the Half Pixel	saUcPF2E8A_Lerpy.png	saUcPF2E8A_Lerpy.nx
@@ -658,6 +669,7 @@
 2001	Micro Ants	FcuiF3D9eR_Micro_Ants.png	FcuiF3D9eR_Micro_Ants.nx
 1999	Micro Stratego	5oV8nfEejn_Micro_Stratego.png	5oV8nfEejn_Micro_Stratego.nx
 1998	But Wait There’s More	FhsE4doLEp_ButWaitTheresMore.png	FhsE4doLEp_ButWaitTheresMore.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 1997	Seaquest	6R7PhaHqBb_Seaquest.png	6R7PhaHqBb_Seaquest.nx
 1991	July 20, 1969	pM5gexrGhL_July20.png	pM5gexrGhL_July20.nx
 1985	Tetris Twist	PFNHdxJHbc_Tetris_Twist_0.1.png	PFNHdxJHbc_Tetris_Twist_0.1.nx
@@ -718,6 +730,7 @@
 1854	My favorite animation from an up coming game is:	NaTJbfxh3Q_My_Favorite_Animation_Is....png	NaTJbfxh3Q_My_Favorite_Animation_Is....nx
 1852	BIRDHEAD	7L4zdwG4Ek_LowRes_NX_20210507_19_24_36.png	7L4zdwG4Ek_Bird_head.nx
 1847	Tanks	i7JwfzBHf5_Tank.png	i7JwfzBHf5_Tank.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 1843	Undertale Shooter 6.2	Ab4NVcmJHX_image.jpeg	Ab4NVcmJHX_Undertale_6.2_shooter_Use_This_One.nx
 1841	The Space of Sounds (game)	CwYSPqXfSX_The_Space_of_Sounds.png	CwYSPqXfSX_The_Space_of_Sounds.nx
 1840	Life Of Fly V1.1	DDMNpGcNqP_Life_Of_Fly.png	DDMNpGcNqP_Life_Of_Fly.nx
@@ -778,6 +791,7 @@
 1699	Space Harrier LowRes	2iVptfBn8m_Space_Harrier_Intent_V0.4.png	2iVptfBn8m_Space_Harrier_Intent_V0.4.nx
 1696	Battlestar Vipers VS Cylon robots	NGBsKbXTmf_Battlestar_Vipers_VS_Cylon_Robots.png	NGBsKbXTmf_Battlestar_Vipers_VS_Cylon_Robots.nx
 1695	Wiggle Toy	J7wJZze7xk_Wiggles.png	J7wJZze7xk_Wiggles.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 1694	Satisfaction 2.0	NexxZN78hq_satisfy1.png	NexxZN78hq_satisfy1.nx
 1691	Fate Decider	M8LKvDT3wm_09C6B90AFCB8447682783F4C11CF1A43.jpeg	M8LKvDT3wm_Fate_Decider.nx
 1690	Mario Master (logic game)	UshvFT3FcD_Mario_Master.png	UshvFT3FcD_Mario_Master.nx
@@ -838,6 +852,7 @@
 1506	Lights Lights (puzzle game)	sbDYujGffk_Lights_Lights.png	sbDYujGffk_Lights_Lights.nx
 1505	Ant (sandbox toy)	6WzGJ2NTGG_Ant.png	6WzGJ2NTGG_Ant.nx
 1494	EpicWalk Racing	kBvWatNbRK_Screenshot.png	kBvWatNbRK_EpicWalkRacing.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 1492	Math Rush ... Make 5&#039;s (puzzle game)	NtYydRbTYq_MathRush__Make5s.png	NtYydRbTYq_MathRush__Make5s.nx
 1487	Tribute to Final Fantasy	5uQVyvXFv2_FFCombat.png	5uQVyvXFv2_FFCombat.nx
 1483	Flip	jmkf37s4vJ_LowRes_NX_20201023_19_14_34.png	jmkf37s4vJ_puzzle.nx
@@ -898,6 +913,7 @@
 1278	Space Swarm	XcNDRmvDz6_Space_Swarm_0.14.png	XcNDRmvDz6_Space_Swarm_0.14.nx
 1271	Pong Recharged	macbN7yGzc_Pong_Recharged.png	macbN7yGzc_Pong_Recharged.nx
 1270	Sheep pong (touch)	x7BaiL3JqD_PONG_PASTURE__touch.png	x7BaiL3JqD_PONG_PASTURE__touch.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 1269	Sheep Pong (gamepad 0,1,2 players)	t8nFVR9jPQ_PONG_PASTURE.png	t8nFVR9jPQ_PONG_PASTURE.nx
 1266	Kingdoms	xu6JWgYvuR_Kingdoms.png	xu6JWgYvuR_Kingdoms.nx
 1259	Crypt Coder Software	YW5BRbr3xg_Crypt_Coder_Software.png	YW5BRbr3xg_Crypt_Coder_Software.nx
@@ -958,6 +974,7 @@
 1100	626:827627627:66:	rwwrgF6WjN_Animal_Zoo_Puzzle.png	rwwrgF6WjN_Animal_Zoo_Puzzle.nx
 1097	smooth max	caPLy247aN_smoothmax.png	caPLy247aN_smoothmax.nx
 1096	Jdjejsnduehdhansb	9WWMEcoF2p_LowRes_Racing_3_0.1.png	9WWMEcoF2p_LowRes_Racing_3_0.1.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 1095	Fidget Spinner	tNHX5n7Htu_Fidgit.png	tNHX5n7Htu_Fidgit.nx
 1094	Chicken Blaster	ddZNUjNpLq_unnamed.png	ddZNUjNpLq_Chicken_Blasterimproved.nx
 1092	Weed Tycoon	7vRp6yzfim_Weed_Tycoon_v1.1.png	7vRp6yzfim_Weed_Tycoon_v1.1.nx
@@ -1018,6 +1035,7 @@
 959	boxman	WDVhfd6wia_box_mover.png	WDVhfd6wia_box_mover.nx
 954	Eewwww.....	rpzAoZYbrw_Eewww.....png	rpzAoZYbrw_Eewww.....nx
 953	Lightning storm avoider	krPowaZhaw_Lighting_Strom.png	krPowaZhaw_Lighting_Strom.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 952	Catch Them All	bWHQLCacYa_Catch_Them_All_1.0.png	bWHQLCacYa_Catch_Them_All_1.0.nx
 950	Catch’in and slid’in	6iMB9pay9g_Catcher.png	6iMB9pay9g_Catcher.nx
 949	Sound Chip Bits	2GLoDJXoFW_Sound_Chip_Bits.png	2GLoDJXoFW_Sound_Chip_Bits.nx
@@ -1078,6 +1096,7 @@
 828	Theramin	djrrrXTmP7_Theramin.png	djrrrXTmP7_Theramin.nx
 824	Train	DB3fS2HgYH_Train.png	DB3fS2HgYH_Train.nx
 823	What have I done	SWbqQva3oS_Char_Designer.png	SWbqQva3oS_Char_Designer.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 821	Treasure Hunt	JVdontwpDt_Treasure_Hunt_0.3.png	JVdontwpDt_Treasure_Hunt_0.3.nx
 820	8bit Gaming System	YwFCZZK36u_8bit_GS.png	YwFCZZK36u_8bit_GS.nx
 818	Leonardo Pisano Bigollo Bonacci	dYoFmussXW_Fibonacci.png	dYoFmussXW_Fibonacci.nx
@@ -1138,6 +1157,7 @@
 669	Deep space	mLp4zHYrQr_Deep_Space.png	mLp4zHYrQr_Deep_Space.nx
 668	Balls of Fun toy	hS2QQfC8iB_Balls_of_Fun_toy.png	hS2QQfC8iB_Balls_of_Fun_toy.nx
 667	MazeGenerator	pfJvE5RA84_Maze.png	pfJvE5RA84_Maze.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 658	Drop and Pop	iq2Nkxtppu_Drop_and_Pop_.06.png	iq2Nkxtppu_Drop_and_Pop_.06.nx
 655	Dark Night game	u2DRYsgGDh_Dark_Night_game_0.1.png	u2DRYsgGDh_Dark_Night_game_0.1.nx
 652	(= SUPER STICK FIGHTERS =)	XSas4RA68P_Super_Stick_Fighters.png	XSas4RA68P_Super_Stick_Fighters.nx
@@ -1198,6 +1218,7 @@
 499	go 4x4	ySHnM5XUKu_go4x4.png	ySHnM5XUKu_go4x4.nx
 495	C Dogs	KmRHSn2F4c_C_Dogs_0.002.png	KmRHSn2F4c_C_Dogs_0.002.nx
 491	Lowres NX time	axcBPVVxw9_Lowres_NX_time.png	axcBPVVxw9_Lowres_NX_time.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 490	Othello	wcC7ybJ4ze_othello.png	wcC7ybJ4ze_othello.nx
 489	Car racer	SK8HU6tAJr_Car_Race.png	SK8HU6tAJr_Car_Race.nx
 488	Factogonz	6Bt8ErmLmw_Factogonz.png	6Bt8ErmLmw_Factogonz.nx
@@ -1258,6 +1279,7 @@
 348	Tinker Town Toy	5sfREKnJWk_Tinker_Town_Toy_1.2.png	5sfREKnJWk_Tinker_Town_Toy_1.2.nx
 347	PranXter’s game	ni9LU364vt_PranXters_game.png	ni9LU364vt_PranXters_game.nx
 346	Apple Catcher	jFE7ackCw6_Unnamed_Program_52.png	jFE7ackCw6_Unnamed_Program_52.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 345	Treasure Islands	6BnSBQTViL_Treasure_Islands.png	6BnSBQTViL_Treasure_Islands.nx
 344	Spark Toy (desbyc Remix)	EiyLCwX5jB_Spark_Toy_desbyc_Remix.png	EiyLCwX5jB_Spark_Toy_desbyc_Remix.nx
 343	Spark Toy	BATJQP7c8z_Spark_Toy.png	BATJQP7c8z_Spark_Toy.nx
@@ -1318,6 +1340,7 @@
 169	Dodge the Sound!	ov6rYRsSzY_Dodge_The_Sound.png	ov6rYRsSzY_Dodge_The_Sound.nx
 167	Star Defense NX 0.2	VrhubHgSWe_LRSDNX.JPG	VrhubHgSWe_Star_Defense_NX_0.2.nx
 161	Sea Dogs	HAjgGQuBae_Sea_Dogs_0.7.png	HAjgGQuBae_Sea_Dogs_0.7.nx
+3878	Off-topic: Looking for testers for our adventure game Ermentrud (english and Italian)		
 160	Tank Arcade game	M3qKShhEiQ_Tank_Arcade_1.1.png	M3qKShhEiQ_Tank_Arcade_1.1.nx
 159	Runner	Q5nRnAG5Mc_Runner.png	Q5nRnAG5Mc_Runner.nx
 154	Music Box toy	CNBEyei9PG_Music_Box_2.1.png	CNBEyei9PG_Music_Box_2.1.nx
