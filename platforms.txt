@@ -56,10 +56,10 @@ apple2;TOSEC/Apple/II/Applications/[WOZ];Apple - II;<code>Apple II</code> App WO
 apple2gs;TOSEC/Apple/IIGS/Games/[2MG];Apple - IIGS;<code>Apple IIGS</code> 2MG;mame apple2gs -flop3
 apple2gs;TOSEC/Apple/IIGS/Educational/[2MG];Apple - IIGS;<code>Apple IIGS</code> Edu;mame apple2gs -flop3
 apple2gs;TOSEC/Apple/IIGS/Applications/[2MG];Apple - IIGS;<code>Apple IIGS</code> App;mame apple2gs -flop3
-macintosh;MAME/Software List ROMs (merged)/mac_flop;Apple - Macintosh;<code>Apple Mac</code> Flop;mame maclc3 -flop1
-macintosh;MAME/Software List ROMs (merged)/mac_flop_orig;Apple - Macintosh;<code>Apple Mac</code> Orig;mame maclc3 -flop1
-macintosh;MAME/Software List ROMs (merged)/mac_flop_clcracked;Apple - Macintosh;<code>Apple Mac</code> Cracked;mame maclc3 -flop1
-macintosh;MAME/Software List ROMs (merged)/mac_hdflop;Apple - Macintosh;<code>Apple Mac</code> HDflop;mame maclc3 -flop1
+macintosh;MAME/Software List ROMs (merged)/mac_flop;Apple - Macintosh;<code>Apple Mac</code> Flop;mame macse -flop1
+macintosh;MAME/Software List ROMs (merged)/mac_flop_orig;Apple - Macintosh;<code>Apple Mac</code> Orig;mame macse -flop1
+macintosh;MAME/Software List ROMs (merged)/mac_flop_clcracked;Apple - Macintosh;<code>Apple Mac</code> Cracked;mame macse -flop1
+macintosh;MAME/Software List ROMs (merged)/mac_hdflop;Apple - Macintosh;<code>Apple Mac</code> HDflop;mame macse -flop1
 
 channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;<p>Fairchild Channel F NoIntro;freechaf_libretro
 channelf;TOSEC/Fairchild/VES & Channel F/Games;Fairchild - Channel F;Fairchild Channel F TOSEC;freechaf_libretro
