@@ -59,7 +59,6 @@ apple2gs;TOSEC/Apple/IIGS/Applications/[2MG];Apple - IIGS;<code>Apple IIGS</code
 macintosh;MAME/Software List ROMs (merged)/mac_flop;Apple - Macintosh;<code>Apple Mac</code> Flop;mame macse -flop1
 macintosh;MAME/Software List ROMs (merged)/mac_flop_orig;Apple - Macintosh;<code>Apple Mac</code> Orig;mame macse -flop1
 macintosh;MAME/Software List ROMs (merged)/mac_flop_clcracked;Apple - Macintosh;<code>Apple Mac</code> Cracked;mame macse -flop1
-macintosh;MAME/Software List ROMs (merged)/mac_hdflop;Apple - Macintosh;<code>Apple Mac</code> HDflop;mame macse -flop1
 
 channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;<p>Fairchild Channel F NoIntro;freechaf_libretro
 channelf;TOSEC/Fairchild/VES & Channel F/Games;Fairchild - Channel F;Fairchild Channel F TOSEC;freechaf_libretro
