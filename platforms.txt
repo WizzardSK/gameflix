@@ -3,6 +3,7 @@ uzebox;MAME/Software List ROMs (split)/uzebox;Uzebox;Uzebox Split;mame uzebox -c
 vircon32;Internet Archive/joyrider3774/all_vircon32_roms_and_media/all_vircon32_roms_and_media;Vircon32;Vircon32;vircon32_libretro
 commanderx16;TOSEC/8-Bit Productions/Commander X16/Games/[IMG];Commander - X16;X16 IMG;x16emu;img
 commanderx16;TOSEC/8-Bit Productions/Commander X16/Games/[PRG];Commander - X16;X16 PRG;x16emu;prg
+pdp1;MAME/Software List ROMs (merged)/pdp1_ptp;PDP-1;PDP-1;mame pdp1 -ptap1
 
 atari2600;Miscellaneous/Atari Mania/Atari-2600-VCS-ROM-Collection/ROMS;Atari - 2600;<p>Atari 2600 ROMS;stella_libretro
 atari2600;No-Intro/Atari - Atari 2600;Atari - 2600;Atari 2600 NoIntro;stella_libretro
