@@ -57,9 +57,21 @@ apple2;TOSEC/Apple/II/Educational/[DSK];Apple - II;<code>Apple II</code> Edu DSK
 apple2;TOSEC/Apple/II/Educational/[WOZ];Apple - II;<code>Apple II</code> Edu WOZ;mame apple2ee -flop1
 apple2;TOSEC/Apple/II/Applications/[DSK];Apple - II;<code>Apple II</code> App DSK;mame apple2ee -flop1
 apple2;TOSEC/Apple/II/Applications/[WOZ];Apple - II;<code>Apple II</code> App WOZ;mame apple2ee -flop1
+apple2;MAME/Software List ROMs (merged)/apple2_flop_clcracked;Apple - II;<code>Apple II</code> Cracked Merged;mame apple2ee -flop1
+apple2;MAME/Software List ROMs (merged)/apple2_flop_misc;Apple - II;<code>Apple II</code> Misc Merged;mame apple2ee -flop1
+apple2;MAME/Software List ROMs (merged)/apple2_flop_orig;Apple - II;<code>Apple II</code> Orig Merged;mame apple2ee -flop1
+apple2;MAME/Software List ROMs (split)/apple2_flop_clcracked;Apple - II;<code>Apple II</code> Cracked Split;mame apple2ee -flop1
+apple2;MAME/Software List ROMs (split)/apple2_flop_misc;Apple - II;<code>Apple II</code> Misc Split;mame apple2ee -flop1
+apple2;MAME/Software List ROMs (split)/apple2_flop_orig;Apple - II;<code>Apple II</code> Orig Split;mame apple2ee -flop1
 apple2gs;TOSEC/Apple/IIGS/Games/[2MG];Apple - IIGS;<code>Apple IIGS</code> 2MG;mame apple2gs -flop3
 apple2gs;TOSEC/Apple/IIGS/Educational/[2MG];Apple - IIGS;<code>Apple IIGS</code> Edu;mame apple2gs -flop3
 apple2gs;TOSEC/Apple/IIGS/Applications/[2MG];Apple - IIGS;<code>Apple IIGS</code> App;mame apple2gs -flop3
+apple2;MAME/Software List ROMs (merged)/apple2gs_flop_clcracked;Apple - II;<code>Apple II</code> Cracked Merged;mame apple2gs -flop3
+apple2;MAME/Software List ROMs (merged)/apple2gs_flop_misc;Apple - II;<code>Apple II</code> Misc Merged;mame apple2gs -flop3
+apple2;MAME/Software List ROMs (merged)/apple2gs_flop_orig;Apple - II;<code>Apple II</code> Orig Merged;mame apple2gs -flop3
+apple2;MAME/Software List ROMs (split)/apple2gs_flop_clcracked;Apple - II;<code>Apple II</code> Cracked Split;mame apple2gs -flop3
+apple2;MAME/Software List ROMs (split)/apple2gs_flop_misc;Apple - II;<code>Apple II</code> Misc Split;mame apple2gs -flop3
+apple2;MAME/Software List ROMs (split)/apple2gs_flop_orig;Apple - II;<code>Apple II</code> Orig Split;mame apple2gs -flop3
 macintosh;MAME/Software List ROMs (merged)/mac_flop;Apple - Macintosh;<code>Apple Mac</code> Flop;mame macse -flop1
 macintosh;MAME/Software List ROMs (merged)/mac_flop_orig;Apple - Macintosh;<code>Apple Mac</code> Orig;mame macse -flop1
 macintosh;MAME/Software List ROMs (merged)/mac_flop_clcracked;Apple - Macintosh;<code>Apple Mac</code> Cracked;mame macse -flop1
