@@ -7,7 +7,7 @@ else
   rom="$1"
 fi
 
-if [[ "$1" == *"ti99_cart"* ]]; then rom="$(basename "${1%.*}")"; fi
+if [[ "$1" == *"ti99_cart"* || "$1" == *"a7800"* ]]; then rom="$(basename "${1%.*}")"; fi
 
 if [[ "$core" == *"mame"* ]]; then
   filename="${rom##*/}"; basename="${filename%.*}"
