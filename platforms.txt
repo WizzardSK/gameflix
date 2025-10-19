@@ -12,14 +12,20 @@ atari2600;TOSEC/Atari/2600 & VCS/Games;Atari - 2600;Atari 2600 TOSEC;stella_libr
 atari2600;TOSEC/Atari/2600 & VCS/Homebrew/Games/[BIN];Atari - 2600;Atari 2600 Homebrew;stella_libretro
 atari2600;TOSEC/Atari/2600 & VCS/Applications;Atari - 2600;Atari 2600 Applications;stella_libretro
 atari2600;TOSEC/Atari/2600 & VCS/Educational;Atari - 2600;Atari 2600 Educational;stella_libretro
+atari2600;MAME/Software List ROMs (merged)/a2600;Atari - 2600;Atari 2600 Merged;mame a2600 -cart1
+atari2600;MAME/Software List ROMs (split)/a2600;Atari - 2600;Atari 2600 Split;mame a2600 -cart1
 atari5200;No-Intro/Atari - Atari 5200;Atari - 5200;Atari 5200 NoIntro;a5200_libretro
 atari5200;TOSEC/Atari/5200/Games;Atari - 5200;Atari 5200 TOSEC;a5200_libretro
 atari5200;TOSEC/Atari/5200/Homebrew/Games;Atari - 5200;Atari 5200 Homebrew;a5200_libretro
 atari5200;TOSEC/Atari/5200/Applications;Atari - 5200;Atari 5200 App;a5200_libretro
+atari5200;MAME/Software List ROMs (merged)/a5200;Atari - 5200;Atari 5200 Merged;mame a5200 -cart1
+atari5200;MAME/Software List ROMs (split)/a5200;Atari - 5200;Atari 5200 Split;mame a5200 -cart1
 atari7800;No-Intro/Atari - Atari 7800 (BIN);Atari - 7800;Atari 7800 NoIntro;prosystem_libretro
 atari7800;TOSEC/Atari/7800/Games;Atari - 7800;Atari 7800 TOSEC;prosystem_libretro
 atari7800;TOSEC/Atari/7800/Homebrew/Games;Atari - 7800;Atari 7800 Homebrew;prosystem_libretro
 atari7800;TOSEC/Atari/7800/Applications;Atari - 7800;Atari 7800 App;prosystem_libretro
+atari7800;MAME/Software List ROMs (merged)/a7800;Atari - 7800;Atari 7800 Merged;mame a7800
+atari7800;MAME/Software List ROMs (split)/a7800;Atari - 7800;Atari 7800 Split;mame a7800
 atarijaguar;No-Intro/Atari - Atari Jaguar (J64);Atari - Jaguar;Atari Jaguar NoIntro;virtualjaguar_libretro
 atarijaguar;TOSEC/Atari/Jaguar/Games/[J64];Atari - Jaguar;Atari Jaguar TOSEC;virtualjaguar_libretro
 atarijaguarcd;Redump/Atari - Jaguar CD Interactive Multimedia System;Atari - Jaguar;Jaguar CD Redump;bigpemu;cue
@@ -41,6 +47,8 @@ atari800;TOSEC/Atari/8bit/Educational/[ATR];Atari - 8-bit;<code>Atari 800</code>
 atari800;TOSEC/Atari/8bit/Educational/[BIN];Atari - 8-bit;<code>Atari 800</code> Edu BIN;atari800_libretro
 atari800;TOSEC/Atari/8bit/Educational/[CAS];Atari - 8-bit;<code>Atari 800</code> Edu CAS;atari800_libretro
 atari800;TOSEC/Atari/8bit/Educational/[XEX];Atari - 8-bit;<code>Atari 800</code> Edu XEX;atari800_libretro
+atari800;MAME/Software List ROMs (merged)/a800;Atari - 8-bit;<code>Atari 800</code> Merged;mame a800 -cart1
+atari800;MAME/Software List ROMs (split)/a800;Atari - 8-bit;<code>Atari 800</code> Split;mame a800 -cart1
 xegs;MAME/Software List ROMs (merged)/xegs;Atari - XEGS;<code>Atari XEGS</code> Merged;mame xegs -cart
 xegs;MAME/Software List ROMs (split)/xegs;Atari - XEGS;<code>Atari XEGS</code> Split;mame xegs -cart
 atarist;No-Intro/Atari - Atari ST;Atari - ST;<code>Atari ST</code> NoIntro;hatari_libretro
