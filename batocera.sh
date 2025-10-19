@@ -11,11 +11,11 @@ wget -nv -O /usr/share/batocera/configgen/data/mame/messSystems.csv https://gith
 for name in voxatron pico8; do [ ! -f /userdata/roms/$name/splore.png ] && wget -nv -O /userdata/roms/$name/splore.png https://github.com/WizzardSK/gameflix/raw/main/fantasy/$name.png; done
 ln -sf /userdata/system/.lexaloffle/Voxatron/bbs/carts /userdata/roms/voxatron/Voxatron; ln -sf /userdata/system/.lexaloffle/pico-8/bbs/carts /userdata/roms/pico8/PICO-8
 
-mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/roms/{tic80/TIC-80,lowresnx/LowresNX,wasm4/WASM-4}
+mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/roms/{tic80/TIC-80,lowresnx/LowresNX,wasm4/WASM-4,dice/DICE}
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 
-archives=(https://wizzardsk.github.io/{tic80,wasm4,lowresnx}.zip)
+archives=(https://wizzardsk.github.io/{tic80,wasm4,lowresnx,dice}.zip)
 
 IFS=";"; for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
@@ -28,6 +28,7 @@ while ! grep -q " /userdata/zips " /proc/mounts; do sleep 5; done
 mount -o bind /userdata/zips/tic80.zip "/userdata/roms/tic80/TIC-80"
 mount -o bind /userdata/zips/lowresnx.zip "/userdata/roms/lowresnx/LowresNX"
 mount -o bind /userdata/zips/wasm4.zip "/userdata/roms/wasm4/WASM-4"
+mount -o bind /userdata/zips/dice.zip "/userdata/roms/dice/DICE"
 
 wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/batocera/gamelist.zip; unzip -q -o /userdata/system/gamelist.zip -d /userdata/roms
 
