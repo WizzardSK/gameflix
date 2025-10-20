@@ -28,10 +28,14 @@ atari7800;MAME/Software List ROMs (merged)/a7800;Atari - 7800;Atari 7800 Merged;
 atari7800;MAME/Software List ROMs (split)/a7800;Atari - 7800;Atari 7800 Split;mame a7800
 atarijaguar;No-Intro/Atari - Atari Jaguar (J64);Atari - Jaguar;Atari Jaguar NoIntro;virtualjaguar_libretro
 atarijaguar;TOSEC/Atari/Jaguar/Games/[J64];Atari - Jaguar;Atari Jaguar TOSEC;virtualjaguar_libretro
+atarijaguar;MAME/Software List ROMs (merged)/jaguar;Atari - Jaguar;Atari Jaguar Merged;mame jaguar -cart1
+atarijaguar;MAME/Software List ROMs (split)/jaguar;Atari - Jaguar;Atari Jaguar Split;mame jaguar -cart1
 atarijaguarcd;Redump/Atari - Jaguar CD Interactive Multimedia System;Atari - Jaguar;Jaguar CD Redump;bigpemu;cue
 atarijaguarcd;No-Intro/Non-Redump - Atari - Atari Jaguar CD;Atari - Jaguar;Jaguar CD NonRedump;bigpemu;cdi
 atarilynx;No-Intro/Atari - Atari Lynx (LYX);Atari - Lynx;<i>Atari Lynx</i> NoIntro;mednafen_lynx_libretro
 atarilynx;TOSEC/Atari/Lynx/Games/[LNX];Atari - Lynx;<i>Atari Lynx</i> TOSEC;mednafen_lynx_libretro
+atarilynx;MAME/Software List ROMs (merged)/jaguar;Atari - Lynx;<i>Atari Lynx</i> Merged;mame lynx -cart1
+atarilynx;MAME/Software List ROMs (split)/jaguar;Atari - Lynx;<i>Atari Lynx</i> Split;mame lynx -cart1
 
 atari800;No-Intro/Atari - 8-bit Family;Atari - 8-bit;<p><code>Atari 800</code> NoIntro;atari800_libretro
 atari800;TOSEC/Atari/8bit/Games/[ATR];Atari - 8-bit;<code>Atari 800</code> ATR;atari800_libretro
@@ -58,6 +62,8 @@ atarist;TOSEC/Atari/ST/Applications/[ST];Atari - ST;<code>Atari ST</code> App ST
 atarist;TOSEC/Atari/ST/Applications/[STX];Atari - ST;<code>Atari ST</code> App STX;hatari_libretro
 atarist;TOSEC/Atari/ST/Educational/[ST];Atari - ST;<code>Atari ST</code> Edu ST;hatari_libretro
 atarist;TOSEC/Atari/ST/Educational/[STX];Atari - ST;<code>Atari ST</code> Edu STX;hatari_libretro
+atarist;MAME/Software List ROMs (merged)/st_flop;Atari - ST;<code>Atari ST</code> Merged;mame st -flop1
+atarist;MAME/Software List ROMs (split)/st_flop;Atari - ST;<code>Atari ST</code> Split;mame st -flop1
 
 apple2;TOSEC/Apple/II/Games/[DSK];Apple - II;<p><code>Apple II</code> DSK;mame apple2ee -flop1
 apple2;TOSEC/Apple/II/Games/[WOZ];Apple - II;<code>Apple II</code> WOZ;mame apple2ee -flop1
