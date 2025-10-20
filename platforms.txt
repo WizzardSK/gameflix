@@ -34,8 +34,8 @@ atarijaguarcd;Redump/Atari - Jaguar CD Interactive Multimedia System;Atari - Jag
 atarijaguarcd;No-Intro/Non-Redump - Atari - Atari Jaguar CD;Atari - Jaguar;Jaguar CD NonRedump;bigpemu;cdi
 atarilynx;No-Intro/Atari - Atari Lynx (LYX);Atari - Lynx;<i>Atari Lynx</i> NoIntro;mednafen_lynx_libretro
 atarilynx;TOSEC/Atari/Lynx/Games/[LNX];Atari - Lynx;<i>Atari Lynx</i> TOSEC;mednafen_lynx_libretro
-atarilynx;MAME/Software List ROMs (merged)/jaguar;Atari - Lynx;<i>Atari Lynx</i> Merged;mame lynx -cart1
-atarilynx;MAME/Software List ROMs (split)/jaguar;Atari - Lynx;<i>Atari Lynx</i> Split;mame lynx -cart1
+atarilynx;MAME/Software List ROMs (merged)/lynx;Atari - Lynx;<i>Atari Lynx</i> Merged;mame lynx -cart1
+atarilynx;MAME/Software List ROMs (split)/lynx;Atari - Lynx;<i>Atari Lynx</i> Split;mame lynx -cart1
 
 atari800;No-Intro/Atari - 8-bit Family;Atari - 8-bit;<p><code>Atari 800</code> NoIntro;atari800_libretro
 atari800;TOSEC/Atari/8bit/Games/[ATR];Atari - 8-bit;<code>Atari 800</code> ATR;atari800_libretro
