@@ -384,12 +384,12 @@ amiga500;TOSEC/Commodore/Amiga/Games/Public Domain/[ADF];Commodore - Amiga;<code
 amiga500;TOSEC/Commodore/Amiga/Games/SPS;Commodore - Amiga;<code>Amiga</code> SPS;puae_libretro
 amiga500;TOSEC/Commodore/Amiga/Educational/[ADF];Commodore - Amiga;<code>Amiga</code> Edu;puae_libretro
 amiga500;TOSEC/Commodore/Amiga/Applications/[ADF];Commodore - Amiga;<code>Amiga</code> App;puae_libretro
-amiga500;MAME/Software List ROMs (merged)/amiga_flop;Commodore - Amiga;<code>Amiga</code> Flop Merged;mame -a500 -flop1
-amiga500;MAME/Software List ROMs (split)/amiga_flop;Commodore - Amiga;<code>Amiga</code> Flop Split;mame -a500 -flop1
-amiga500;MAME/Software List ROMs (merged)/amigaecs_flop;Commodore - Amiga;<code>Amiga</code> ECS Flop Merged;mame -a500 -flop1
-amiga500;MAME/Software List ROMs (split)/amigaecs_flop;Commodore - Amiga;<code>Amiga</code> ECS Flop Split;mame -a500 -flop1
-amiga500;MAME/Software List ROMs (merged)/amigaocs_flop;Commodore - Amiga;<code>Amiga</code> OCS Flop Merged;mame -a500 -flop1
-amiga500;MAME/Software List ROMs (split)/amigaocs_flop;Commodore - Amiga;<code>Amiga</code> OCS Flop Split;mame -a500 -flop1
+amiga500;MAME/Software List ROMs (merged)/amiga_flop;Commodore - Amiga;<code>Amiga</code> Flop Merged;mame a500 -flop1
+amiga500;MAME/Software List ROMs (split)/amiga_flop;Commodore - Amiga;<code>Amiga</code> Flop Split;mame a500 -flop1
+amiga500;MAME/Software List ROMs (merged)/amigaecs_flop;Commodore - Amiga;<code>Amiga</code> ECS Flop Merged;mame a500 -flop1
+amiga500;MAME/Software List ROMs (split)/amigaecs_flop;Commodore - Amiga;<code>Amiga</code> ECS Flop Split;mame a500 -flop1
+amiga500;MAME/Software List ROMs (merged)/amigaocs_flop;Commodore - Amiga;<code>Amiga</code> OCS Flop Merged;mame a500 -flop1
+amiga500;MAME/Software List ROMs (split)/amigaocs_flop;Commodore - Amiga;<code>Amiga</code> OCS Flop Split;mame a500 -flop1
 amiga1200;Redump/Commodore - Amiga CD;Commodore - Amiga;<code>Amiga CD</code> Redump;puae_libretro;cue
 amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Games/[ISO];Commodore - Amiga;<code>Amiga CD</code> ISO;puae_libretro;cue
 amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Applications/[ISO];Commodore - Amiga;<code>Amiga CD</code> App;puae_libretro;cue
