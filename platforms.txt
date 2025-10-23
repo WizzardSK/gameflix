@@ -242,6 +242,8 @@ wiiu;Redump/Nintendo - Wii U - WUX;Nintendo - Wii U;<i>Nintendo Wii U Redump</i>
 
 sg-1000;No-Intro/Sega - SG-1000 - SC-3000;Sega - SG-1000;<p>SG 1000 NoIntro;genesis_plus_gx_libretro
 sg-1000;TOSEC/Sega/Game 1000/Games;Sega - SG-1000;SG 1000 TOSEC;genesis_plus_gx_libretro
+sg-1000;MAME/Software List ROMs (merged)/sg1000;Sega - SG-1000;SG 1000 Merged;mame sg1000 -cart1
+sg-1000;MAME/Software List ROMs (split)/sg1000;Sega - SG-1000;SG 1000 Split;mame sg1000 -cart1
 mastersystem;No-Intro/Sega - Master System - Mark III;Sega - Master System - Mark III;Master System NoIntro;genesis_plus_gx_libretro
 mastersystem;TOSEC/Sega/Mark III & Master System/Games;Sega - Master System - Mark III;Master System TOSEC;genesis_plus_gx_libretro
 megadrive;No-Intro/Sega - Mega Drive - Genesis;Sega - Mega Drive - Genesis;Mega Drive NoIntro;genesis_plus_gx_libretro
