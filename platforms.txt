@@ -254,6 +254,8 @@ megadrive;MAME/Software List ROMs (merged)/megadriv;Sega - Mega Drive - Genesis;
 megadrive;MAME/Software List ROMs (split)/megadriv;Sega - Mega Drive - Genesis;Mega Drive Split;mame megadrij -cart1
 pico;No-Intro/Sega - PICO;Sega - PICO;Sega PICO NoIntro;picodrive_libretro
 pico;TOSEC/Sega/Pico/Educational;Sega - PICO;Sega PICO TOSEC;picodrive_libretro
+pico;MAME/Software List ROMs (merged)/pico;Sega - PICO;Sega Pico Merged;mame pico -cart1
+pico;MAME/Software List ROMs (split)/pico;Sega - PICO;Sega Pico Split;mame pico -cart1
 sega32x;No-Intro/Sega - 32X;Sega - 32X;Sega 32X NoIntro;picodrive_libretro
 sega32x;TOSEC/Sega/32X/Games;Sega - 32X;Sega 32X TOSEC;picodrive_libretro
 segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;Sega CD Redump;picodrive_libretro;cue
