@@ -250,6 +250,8 @@ mastersystem;MAME/Software List ROMs (merged)/sms;Sega - Master System - Mark II
 mastersystem;MAME/Software List ROMs (split)/sms;Sega - Master System - Mark III;Master System Split;mame sms -cart1
 megadrive;No-Intro/Sega - Mega Drive - Genesis;Sega - Mega Drive - Genesis;Mega Drive NoIntro;genesis_plus_gx_libretro
 megadrive;TOSEC/Sega/Mega Drive & Genesis/Games/[BIN];Sega - Mega Drive - Genesis;Mega Drive TOSEC;genesis_plus_gx_libretro
+megadrive;MAME/Software List ROMs (merged)/megadriv;Sega - Mega Drive - Genesis;Mega Drive Merged;mame megadrij -cart1
+megadrive;MAME/Software List ROMs (split)/megadriv;Sega - Mega Drive - Genesis;Mega Drive Split;mame megadrij -cart1
 pico;No-Intro/Sega - PICO;Sega - PICO;Sega PICO NoIntro;picodrive_libretro
 pico;TOSEC/Sega/Pico/Educational;Sega - PICO;Sega PICO TOSEC;picodrive_libretro
 sega32x;No-Intro/Sega - 32X;Sega - 32X;Sega 32X NoIntro;picodrive_libretro
