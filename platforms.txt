@@ -272,8 +272,8 @@ dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/PAL;Sega - Dreamcast;Sega Dreamcast PAL
 dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/JP;Sega - Dreamcast;Sega Dreamcast JP;flycast_libretro;gdi
 gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i> NoIntro;gearsystem_libretro
 gamegear;TOSEC/Sega/Game Gear/Games;Sega - Game Gear;<i>Game Gear</i> TOSEC;gearsystem_libretro
-gamegear;MAME/Software List ROMs (merged)/gamegear;Sega - Game Gear;Game Gear Merged;mame gamegear -cart1
-gamegear;MAME/Software List ROMs (split)/gamegear;Sega - Game Gear;Game Gear Split;mame gamegear -cart1
+gamegear;MAME/Software List ROMs (merged)/gamegear;Sega - Game Gear;<i>Game Gear</i> Merged;mame gamegear -cart1
+gamegear;MAME/Software List ROMs (split)/gamegear;Sega - Game Gear;<i>Game Gear</i> Split;mame gamegear -cart1
 
 psx;Redump/Sony - PlayStation;Sony - PlayStation;<p>PlayStation 1 Redump;pcsx_rearmed_libretro;cue
 psx;No-Intro/Non-Redump - Sony - PlayStation;Sony - PlayStation;PlayStation 1 NonRedump;pcsx_rearmed_libretro;cue
