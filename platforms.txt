@@ -135,18 +135,20 @@ amstradcpc;MAME/Software List ROMs (split)/cpc_flop;Amstrad - CPC;<code>Amstrad 
 gx4000;TOSEC/Amstrad/GX4000/Games;Amstrad - GX4000;<code>Amstrad GX4000</code> TOSEC;cap32_libretro
 zx81;TOSEC/Sinclair/ZX81/Games/[P];Sinclair - ZX 81;<code>Sinclair ZX81</code> TOSEC;81_libretro
 zx81;TOSEC/Sinclair/ZX81/Applications/[P];Sinclair - ZX 81;<code>Sinclair ZX81</code> App;81_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK];Sinclair - ZX Spectrum;<code>ZX Spectrum DSK</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[SCL];Sinclair - ZX Spectrum;<code>ZX Spectrum SCL</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TAP];Sinclair - ZX Spectrum;<code>ZX Spectrum TAP</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TRD];Sinclair - ZX Spectrum;<code>ZX Spectrum TRD</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TZX];Sinclair - ZX Spectrum;<code>ZX Spectrum TZX</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80];Sinclair - ZX Spectrum;<code>ZX Spectrum Z80</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TAP];Sinclair - ZX Spectrum;<code>ZX Spectrum Edu TAP</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TZX];Sinclair - ZX Spectrum;<code>ZX Spectrum Edu TZX</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[Z80];Sinclair - ZX Spectrum;<code>ZX Spectrum Edu Z80</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TAP];Sinclair - ZX Spectrum;<code>ZX Spectrum App TAP</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TZX];Sinclair - ZX Spectrum;<code>ZX Spectrum App TZX</code>;fuse_libretro
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[Z80];Sinclair - ZX Spectrum;<code>ZX Spectrum App Z80</code>;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> DSK;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[SCL];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> SCL;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TAP];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> TAP;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TRD];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> TRD;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TZX];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> TZX;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> Z80;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TAP];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> Edu TAP;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TZX];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> Edu TZX;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[Z80];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> Edu Z80;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TAP];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> App TAP;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TZX];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> App TZX;fuse_libretro
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[Z80];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> App Z80;fuse_libretro
+zxspectrum;MAME/Software List ROMs (merged)/spectrum_cass;Sinclair - ZX Spectrum;<code>ZX Spectrum</code> Merged;mame spec128 -cass1
+zxspectrum;MAME/Software List ROMs (split)/spectrum_cass;Sinclair - ZX Spectrum;<code>ZX Spectrum</code> Split;mame spec128 -cass1
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Games/[BIN];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Games;bluemsx_libretro
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Various;bluemsx_libretro
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK];MGT - Sam Coupe;<code>Sam Coupé</code> DSK;mame samcoupe -flop1
