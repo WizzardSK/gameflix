@@ -235,10 +235,16 @@ virtualboy;No-Intro/Nintendo - Virtual Boy;Nintendo - Virtual Boy;<i>Virtual Boy
 virtualboy;TOSEC/Nintendo/Virtual Boy/Games;Nintendo - Virtual Boy;<i>Virtual Boy</i> TOSEC;mednafen_vb_libretro
 gb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;<i>Game Boy</i> NoIntro;sameboy_libretro
 gb;TOSEC/Nintendo/Game Boy/Games;Nintendo - Game Boy;<i>Game Boy</i> TOSEC;sameboy_libretro
+gb;MAME/Software List ROMs (merged)/gameboy;Nintendo - Game Boy;<i>Game Boy</i> Merged;mame gameboy -cart1
+gb;MAME/Software List ROMs (split)/gameboy;Nintendo - Game Boy;<i>Game Boy</i> Split;mame gameboy -cart1
 gbc;No-Intro/Nintendo - Game Boy Color;Nintendo - Game Boy Color;<i>Game Boy Color</i> NoIntro;sameboy_libretro
 gbc;TOSEC/Nintendo/Game Boy Color/Games/[GBC];Nintendo - Game Boy Color;<i>Game Boy Color</i> TOSEC;sameboy_libretro
+gbc;MAME/Software List ROMs (merged)/gbcolor;Nintendo - Game Boy Color;<i>Game Boy Color</i> Merged;mame gbcolor -cart1
+gbc;MAME/Software List ROMs (split)/gbcolor;Nintendo - Game Boy Color;<i>Game Boy Color</i> Split;mame gbcolor -cart1
 gba;No-Intro/Nintendo - Game Boy Advance;Nintendo - Game Boy Advance;<i>Game Boy Advance</i> NoIntro;mgba_libretro
 gba;TOSEC/Nintendo/Game Boy Advance/Games;Nintendo - Game Boy Advance;<i>Game Boy Advance</i> TOSEC;sameboy_libretro
+gba;MAME/Software List ROMs (merged)/gba;Nintendo - Game Boy Advance;<i>Game Boy Advance</i> Merged;mame gba -cart1
+gba;MAME/Software List ROMs (split)/gba;Nintendo - Game Boy Advance;<i>Game Boy Advance</i> Split;mame gba -cart1
 nds;No-Intro/Nintendo - Nintendo DS (Decrypted);Nintendo - Nintendo DS;<i>Nintendo DS</i> NoIntro;melonds_libretro
 nds;No-Intro/Nintendo - Nintendo DS (Download Play);Nintendo - Nintendo DS;<i>Nintendo DS</i> Download;melonds_libretro
 nds;TOSEC/Nintendo/DS/Games;Nintendo - Nintendo DS;<i>Nintendo DS</i> TOSEC;melonds_libretro
