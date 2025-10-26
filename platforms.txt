@@ -226,7 +226,7 @@ snes;TOSEC/Nintendo/Super Famicom & Super Entertainment System/Games;Nintendo - 
 snes;MAME/Software List ROMs (merged)/snes;Nintendo - Super Nintendo Entertainment System;Nintendo SNES Merged;mame snes -cart1
 snes;MAME/Software List ROMs (split)/snes;Nintendo - Super Nintendo Entertainment System;Nintendo SNES Split;mame snes -cart1
 snes-msu1;T-En Collection/Nintendo - Super Famicom - MSU1;Nintendo - Super Nintendo Entertainment System;Nintendo SNES MSU-1 CD;snes9x_libretro
-snes-msu1;T-En Collection/Nintendo - Super Famicom - MSU1 [roms only];Nintendo - Super Nintendo Entertainment System;Nintendo SNES MSI-1 roms;snes9x_libretro
+snes-msu1;T-En Collection/Nintendo - Super Famicom - MSU1 [roms only];Nintendo - Super Nintendo Entertainment System;Nintendo SNES MSU-1 roms;snes9x_libretro
 satellaview;No-Intro/Nintendo - Satellaview;Nintendo - Satellaview;Nintendo Satellaview NoIntro;snes9x_libretro
 sufami;No-Intro/Nintendo - Sufami Turbo;Nintendo - Sufami Turbo;Sufami Turbo NoIntro;snes9x_libretro
 sufami;TOSEC/Nintendo/Sufami Turbo/Games;Nintendo - Sufami Turbo;Sufami Turbo TOSEC;snes9x_libretro
