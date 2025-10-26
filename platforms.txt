@@ -151,6 +151,8 @@ zxspectrum;MAME/Software List ROMs (merged)/spectrum_cass;Sinclair - ZX Spectrum
 zxspectrum;MAME/Software List ROMs (split)/spectrum_cass;Sinclair - ZX Spectrum;<code>ZX Spectrum</code> Split;mame spec128 -cass1
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Games/[BIN];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Games;bluemsx_libretro
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Various;bluemsx_libretro
+spectravideo;MAME/Software List ROMs (merged)/svi318_cass;Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Merged;mame svi328 -cass1
+spectravideo;MAME/Software List ROMs (split)/svi318_cass;Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Split;mame svi328 -cass1
 samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK];MGT - Sam Coupe;<code>Sam Coupé</code> DSK;mame samcoupe -flop1
 samcoupe;MAME/Software List ROMs (merged)/samcoupe_flop;MGT - Sam Coupe;<code>Sam Coupé</code> SL;mame samcoupe -flop1
 oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[TAP];Tangerine - Oric Atmos;<code>Oric Atmos</code> TAP;mame orica -cass
