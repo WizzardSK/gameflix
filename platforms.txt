@@ -135,6 +135,8 @@ amstradcpc;MAME/Software List ROMs (split)/cpc_flop;Amstrad - CPC;<code>Amstrad 
 gx4000;TOSEC/Amstrad/GX4000/Games;Amstrad - GX4000;<code>Amstrad GX4000</code> TOSEC;cap32_libretro
 zx81;TOSEC/Sinclair/ZX81/Games/[P];Sinclair - ZX 81;<code>Sinclair ZX81</code> TOSEC;81_libretro
 zx81;TOSEC/Sinclair/ZX81/Applications/[P];Sinclair - ZX 81;<code>Sinclair ZX81</code> App;81_libretro
+zx81;MAME/Software List ROMs (merged)/zx81_cass;Sinclair - ZX 81;<code>Sinclair ZX81</code> Merged;mame zx81 -cass1
+zx81;MAME/Software List ROMs (split)/zx81_cass;Sinclair - ZX 81;<code>Sinclair ZX81</code> Split;mame zx81 -cass1
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> DSK;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[SCL];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> SCL;fuse_libretro
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TAP];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> TAP;fuse_libretro
