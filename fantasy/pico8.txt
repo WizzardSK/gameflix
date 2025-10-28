@@ -1,7 +1,10 @@
+152345	shmuppy	shmuppy-0.p8.png
+152343	Protect Your Piercings	protectyourpiercings-1.p8.png
+152338	Hakoiri Musume	bodafkiku-0.p8.png
+152335	Zappin' Time	zappin_time-0.p8.png
 152325	About RRECT	about_rrect-1.p8.png
 152322	Campanella-8	campanella8-0.p8.png
 152321	Bunny B. 1.0	higekonize-1.p8.png
-152319	LUMA8	fih8_prelude-0.p8.png
 152315	Pico City Builder	pico_city_builder-0.p8.png
 152313	Match &amp; Catch	matchcatch-2.p8.png
 152312	ROTI.express	roti-1.p8.png
@@ -2945,7 +2948,7 @@
 53725	lokity	lokity-0.p8.png
 53724	Reflex Test	reflextest-0.p8.png
 53719	Grow |DEMOCART|	grow-1.p8.png
-53717	Too Much Land	toomuchland-5.p8.png
+53717	Too Much Land	toomuchland-7.p8.png
 53706	Encryption	encryption-0.p8.png
 53705	Cat Coma	cat_coma-0.p8.png
 53700	Crate Girl	crategirl-0.p8.png
@@ -8242,9 +8245,9 @@
 32173	Eternal Tower	58707.p8.png
 32171	RUBBISH	58696.p8.png
 32162	Now rotating @60fps	58624.p8.png
-32158	[TweetCart280]3d fractal kleinian sphere	58596.p8.png
-32157	Hazel May Saves The Halloween Monster Soiree	elias_grey_104-2.p8.png
-32150	Elias Grey	58559.p8.png
+32158	Hazel May Saves The Halloween Monster Soiree	58596.p8.png
+32157	Elias Grey	elias_grey_104-2.p8.png
+32150	Lefty	58559.p8.png
 32135	PlusWave	58603.p8.png
 32131	Color War	58466.p8.png
 32124	A selection of easing functions	58411.p8.png
@@ -8600,10 +8603,10 @@
 30928	Study Hall	50260.p8.png
 30927	Diamond Ghost 1.1	50234.p8.png
 30925	Spook and thunder	50224.p8.png
-30924	Swarm	50343.p8.png
-30923	Robo Duel	50206.p8.png
+30924	Robo Duel	50343.p8.png
 30923	Juggle Panic	50206.p8.png
-30922	Diamond Ghost	50253.p8.png
+30923	Diamond Ghost	50206.p8.png
+30922	Rally-P8	50253.p8.png
 30921	Pico Wars	50168.p8.png
 30919	Get Dis Money - Community Edition	50156.p8.png
 30916	Shinkansen	50132.p8.png
@@ -8660,9 +8663,9 @@
 30737	Pivy (proto sin cos)	49042.p8.png
 30734	Spike Dislike Pico-8 Demake	49163.p8.png
 30730	Double pendulum	48983.p8.png
-30727	My Pet Virus	48972.p8.png
-30724	Desert Road (generated animation)	48953.p8.png
-30722	PICO Fireplace	48946.p8.png
+30727	Desert Road (generated animation)	48972.p8.png
+30724	PICO Fireplace	48953.p8.png
+30722	PORG	48946.p8.png
 30719	Throw Punch!!	throwpunch1_2-0.p8.png
 30714	Pico Of The Beast	48883.p8.png
 30711	Binary Save System	48830.p8.png
@@ -9376,9 +9379,9 @@
 28389	Where do you go this year?	34654.p8.png
 28387	2017	34644.p8.png
 28383	v0.83	34615.p8.png
-28382	Killer Ball	34605.p8.png
-28381	Happy New Year!	34600.p8.png
-28380	Corn Dog Catcher	34595.p8.png
+28382	Happy New Year!	34605.p8.png
+28381	Corn Dog Catcher	34600.p8.png
+28380	Dragoncave final	34595.p8.png
 28376	It Is What It Is	34620.p8.png
 28372	(Untitled)	58774.p8.png
 28371	Forever Lost In The Never Ending Museum Of Still Life	34543.p8.png
@@ -9437,10 +9440,10 @@
 28203	v0.9	teniyowune-0.p8.png
 28203	v0.82	teniyowune-0.p8.png
 28203	v0.8	teniyowune-0.p8.png
-28203	One Room Quest	teniyowune-0.p8.png
 28203	Heliopause Title Concept	teniyowune-0.p8.png
-28202	Heliopause	35079.p8.png
-28197	One Room Dungeon ~ Post-Jam-Updated	33356.p8.png
+28203	Heliopause	teniyowune-0.p8.png
+28202	One Room Dungeon ~ Post-Jam-Updated	35079.p8.png
+28197	keturi (LD37)	33356.p8.png
 28196	Reckless Redecoration	33354.p8.png
 28195	Eskargool	34604.p8.png
 28192	Pico Factory	35159.p8.png
