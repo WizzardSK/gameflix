@@ -230,6 +230,8 @@ snes-msu1;T-En Collection/Nintendo - Super Famicom - MSU1 [roms only];Nintendo -
 satellaview;No-Intro/Nintendo - Satellaview;Nintendo - Satellaview;Nintendo Satellaview NoIntro;snes9x_libretro
 sufami;No-Intro/Nintendo - Sufami Turbo;Nintendo - Sufami Turbo;Sufami Turbo NoIntro;snes9x_libretro
 sufami;TOSEC/Nintendo/Sufami Turbo/Games;Nintendo - Sufami Turbo;Sufami Turbo TOSEC;snes9x_libretro
+sgb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;Super Game Boy NoIntro;mesen-s_libretro
+sgb;TOSEC/Nintendo/Game Boy/Games;Nintendo - Game Boy;Super Game Boy TOSEC;mesen-s_libretro
 n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64;Nintendo 64 NoIntro;mupen64plus_next_libretro
 n64;TOSEC/Nintendo/64/Games;Nintendo - Nintendo 64;Nintendo 64 TOSEC;mupen64plus_next_libretro
 n64;MAME/Software List ROMs (merged)/n64;Nintendo - Nintendo 64;Nintendo 64 Merged;mame n64 -cart1
