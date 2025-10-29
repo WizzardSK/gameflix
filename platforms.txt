@@ -274,7 +274,7 @@ megadrive;No-Intro/Sega - Mega Drive - Genesis;Sega - Mega Drive - Genesis;Mega 
 megadrive;TOSEC/Sega/Mega Drive & Genesis/Games/[BIN];Sega - Mega Drive - Genesis;Mega Drive TOSEC;genesis_plus_gx_libretro
 megadrive;MAME/Software List ROMs (merged)/megadriv;Sega - Mega Drive - Genesis;Mega Drive Merged;mame megadrij -cart1
 megadrive;MAME/Software List ROMs (split)/megadriv;Sega - Mega Drive - Genesis;Mega Drive Split;mame megadrij -cart1
-msu-md;Internet Archive/chadmaster/SegaMD-Enhanced-ROMs/ROMs/Sega - Mega Drive - MSU-MD;Sega - Mega Drive - Genesis;Sega MSU-MD;picodrive_libretro;cue
+msu-md;Internet Archive/chadmaster/SegaMD-Enhanced-ROMs/ROMs/Sega - Mega Drive - MSU-MD;Sega - Mega Drive - Genesis;Sega MSU-MD;picodrive_libretro;md
 pico;No-Intro/Sega - PICO;Sega - PICO;Sega PICO NoIntro;picodrive_libretro
 pico;TOSEC/Sega/Pico/Educational;Sega - PICO;Sega PICO TOSEC;picodrive_libretro
 pico;MAME/Software List ROMs (merged)/pico;Sega - PICO;Sega Pico Merged;mame pico -cart1
