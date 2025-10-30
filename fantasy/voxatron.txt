@@ -6,7 +6,6 @@
 145130	abandoned	abandoned-1.vx.png
 145101	forgottenv2	forgottenv2-0.vx.png
 144994	graveyardgame002	graveyardgame002-1.vx.png
-144978	Abandoned Prototype	jogafasete-0.vx.png
 140404	shoot_game	shoot_game-0.vx.png
 140259	firstdownfight	firstdownfight-0.vx.png
 139802	figglepot	figglepot-0.vx.png
