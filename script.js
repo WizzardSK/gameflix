@@ -51,7 +51,7 @@ handleCheckboxChange(showHideUnl, "\\(unl\\)");
 handleCheckboxChange(showHideAlt, "\\(alt|alternate\\)");
 handleCheckboxChange(showHidePirate, "\\(pirate\\)");
 handleCheckboxChange(showHidePrerelease, "\\(pre-release\\)");
-handleCheckboxChange(showHideBrackets, "\\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h ?.*|o ?.*|p ?.*|t ?.*|cr ?.*)\\]");
+handleCheckboxChange(showHideBrackets, "\\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|[Hh] [^\\]]*|o ?.*|p ?.*|t ?.*|cr ?.*)\\]");
 handleCheckboxChange(showHideDisk, "\\((disk|side)( [2-9b-z].*)\\)");
 
 document.addEventListener('keydown', function (event) {
@@ -109,8 +109,6 @@ function titles() { processImages('titles'); }
 function logos() { processImages('logos'); }
 
 function imgonerror(image) {
-    //image.src = image.src.replace("&", "_");
-    //image.src = image.src.replace(/^([^)]*\([^)]*\)).*(\.[^.]+)$/, "$1$2");
     image.onerror = function() { this.style.visibility = "hidden"; }
 }
 
