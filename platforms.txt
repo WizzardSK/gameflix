@@ -429,6 +429,8 @@ amiga500;MAME/Software List ROMs (merged)/amigaecs_flop;Commodore - Amiga;<code>
 amiga500;MAME/Software List ROMs (split)/amigaecs_flop;Commodore - Amiga;<code>Amiga</code> ECS Flop Split;puae_libretro
 amiga500;MAME/Software List ROMs (merged)/amigaocs_flop;Commodore - Amiga;<code>Amiga</code> OCS Flop Merged;puae_libretro
 amiga500;MAME/Software List ROMs (split)/amigaocs_flop;Commodore - Amiga;<code>Amiga</code> OCS Flop Split;puae_libretro
+amiga500;MAME/Software List ROMs (merged)/amigaaga_flop;Commodore - Amiga;<code>Amiga</code> AGA Flop Merged;puae_libretro
+amiga500;MAME/Software List ROMs (split)/amigaaga_flop;Commodore - Amiga;<code>Amiga</code> AGA Flop Split;puae_libretro
 amiga1200;Redump/Commodore - Amiga CD;Commodore - Amiga;<code>Amiga CD</code> Redump;puae_libretro;cue
 amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Games/[ISO];Commodore - Amiga;<code>Amiga CD</code> ISO;puae_libretro;cue
 amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Applications/[ISO];Commodore - Amiga;<code>Amiga CD</code> App;puae_libretro;cue
