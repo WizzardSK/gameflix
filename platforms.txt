@@ -268,10 +268,10 @@ sg-1000;No-Intro/Sega - SG-1000 - SC-3000;Sega - SG-1000;<p>SG 1000 NoIntro;gear
 sg-1000;TOSEC/Sega/Game 1000/Games;Sega - SG-1000;SG 1000 TOSEC;gearsystem_libretro
 sg-1000;MAME/Software List ROMs (merged)/sg1000;Sega - SG-1000;SG 1000 Merged;gearsystem_libretro
 sg-1000;MAME/Software List ROMs (split)/sg1000;Sega - SG-1000;SG 1000 Split;gearsystem_libretro
-mastersystem;No-Intro/Sega - Master System - Mark III;Sega - Master System - Mark III;Master System NoIntro;genesis_plus_gx_libretro
-mastersystem;TOSEC/Sega/Mark III & Master System/Games;Sega - Master System - Mark III;Master System TOSEC;genesis_plus_gx_libretro
-mastersystem;MAME/Software List ROMs (merged)/sms;Sega - Master System - Mark III;Master System Merged;genesis_plus_gx_libretro
-mastersystem;MAME/Software List ROMs (split)/sms;Sega - Master System - Mark III;Master System Split;genesis_plus_gx_libretro
+mastersystem;No-Intro/Sega - Master System - Mark III;Sega - Master System - Mark III;Master System NoIntro;gearsystem_libretro
+mastersystem;TOSEC/Sega/Mark III & Master System/Games;Sega - Master System - Mark III;Master System TOSEC;gearsystem_libretro
+mastersystem;MAME/Software List ROMs (merged)/sms;Sega - Master System - Mark III;Master System Merged;gearsystem_libretro
+mastersystem;MAME/Software List ROMs (split)/sms;Sega - Master System - Mark III;Master System Split;gearsystem_libretro
 megadrive;No-Intro/Sega - Mega Drive - Genesis;Sega - Mega Drive - Genesis;Mega Drive NoIntro;genesis_plus_gx_libretro
 megadrive;TOSEC/Sega/Mega Drive & Genesis/Games/[BIN];Sega - Mega Drive - Genesis;Mega Drive TOSEC;genesis_plus_gx_libretro
 megadrive;MAME/Software List ROMs (merged)/megadriv;Sega - Mega Drive - Genesis;Mega Drive Merged;genesis_plus_gx_libretro
