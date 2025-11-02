@@ -504,8 +504,8 @@ x1;MAME/Software List ROMs (merged)/x1_flop;Sharp - X1;<code>Sharp X1</code> Flo
 x1;MAME/Software List ROMs (split)/x1_flop;Sharp - X1;<code>Sharp X1</code> Flop Split;x1_libretro
 x68000;TOSEC/Sharp/X68000/Games/[DIM];Sharp - X68000;<code>Sharp X68000</code> DIM;px68k_libretro
 x68000;TOSEC/Sharp/X68000/Applications;Sharp - X68000;<code>Sharp X68000</code> App;px68k_libretro
-x68000;/home/wizzard/myrient/MAME/Software List ROMs (merged)/x68k_flop;Sharp - X68000;<code>Sharp X68000</code> Merged;px68k_libretro
-x68000;/home/wizzard/myrient/MAME/Software List ROMs (split)/x68k_flop;Sharp - X68000;<code>Sharp X68000</code> Split;px68k_libretro
+x68000;MAME/Software List ROMs (merged)/x68k_flop;Sharp - X68000;<code>Sharp X68000</code> Merged;px68k_libretro
+x68000;MAME/Software List ROMs (split)/x68k_flop;Sharp - X68000;<code>Sharp X68000</code> Split;px68k_libretro
 
 mame;MAME/ROMs (merged);MAME;<p>MAME Merged;mame
 mame;MAME/ROMs (non-merged);MAME;MAME Non-Merged;mame
