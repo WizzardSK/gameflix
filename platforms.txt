@@ -472,16 +472,40 @@ amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Multimedia/[ISO];Commodore - CD32;<code
 
 msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;<p><code>MSX 1</code> NoIntro;bluemsx_libretro
 msx1;TOSEC/MSX/MSX/Games/[DSK];Microsoft - MSX;<code>MSX 1</code> TOSEC;bluemsx_libretro
+msx1;MAME/Software List ROMs (merged)/msx1_cart;Microsoft - MSX;<code>MSX 1</code> Cart Merged;bluemsx_libretro
+msx1;MAME/Software List ROMs (split)/msx1_cart;Microsoft - MSX;<code>MSX 1</code> Cart Split;bluemsx_libretro
+msx1;MAME/Software List ROMs (merged)/msx1_cass;Microsoft - MSX;<code>MSX 1</code> Cass Merged;bluemsx_libretro
+msx1;MAME/Software List ROMs (split)/msx1_cass;Microsoft - MSX;<code>MSX 1</code> Cass Split;bluemsx_libretro
+msx1;MAME/Software List ROMs (merged)/msx1_flop;Microsoft - MSX;<code>MSX 1</code> Flop Merged;bluemsx_libretro
+msx1;MAME/Software List ROMs (split)/msx1_flop;Microsoft - MSX;<code>MSX 1</code> Flop Split;bluemsx_libretro
 msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<code>MSX 2</code> NoIntro;bluemsx_libretro
 msx2;TOSEC/MSX/MSX2/Games/[DSK];Microsoft - MSX2;<code>MSX 2</code> TOSEC;bluemsx_libretro
+msx2;MAME/Software List ROMs (merged)/msx2_cart;Microsoft - MSX2;<code>MSX 2</code> Cart Merged;bluemsx_libretro
+msx2;MAME/Software List ROMs (split)/msx2_cart;Microsoft - MSX2;<code>MSX 2</code> Cart Split;bluemsx_libretro
+msx2;MAME/Software List ROMs (merged)/msx2_flop;Microsoft - MSX2;<code>MSX 2</code> Flop Merged;bluemsx_libretro
+msx2;MAME/Software List ROMs (split)/msx2_flop;Microsoft - MSX2;<code>MSX 2</code> Flop Split;bluemsx_libretro
 msx2+;TOSEC/MSX/MSX2+/Games;Microsoft - MSX2;<code>MSX 2+</code> TOSEC;bluemsx_libretro
+msx2+;MAME/Software List ROMs (merged)/msx2p_flop;Microsoft - MSX2;<code>MSX 2+</code> Flop Merged;bluemsx_libretro
+msx2+;MAME/Software List ROMs (split)/msx2p_flop;Microsoft - MSX2;<code>MSX 2+</code> Flop Split;bluemsx_libretro
 msxturbor;TOSEC/MSX/TurboR/Games;Microsoft - MSX2;<code>MSX TurboR</code>;bluemsx_libretro
+msxturbor;MAME/Software List ROMs (merged)/msxr_flop;Microsoft - MSX2;<code>MSX TurboR</code> Flop Merged;bluemsx_libretro
+msxturbor;MAME/Software List ROMs (split)/msxr_flop;Microsoft - MSX2;<code>MSX TurboR</code> Flop Split;bluemsx_libretro
 pc88;TOSEC/NEC/PC-8801/Games/[D88];NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> TOSEC;quasi88_libretro
+pc88;MAME/Software List ROMs (merged)/pc8801_flop;NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> Flop Merged;quasi88_libretro
+pc88;MAME/Software List ROMs (split)/pc8801_flop;NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> Flop Split;quasi88_libretro
 pc98;TOSEC/NEC/PC-9801/Games/[FDD];NEC - PC-98;<code>NEC PC-98</code> TOSEC;np2kai_libretro
+pc98;/home/wizzard/myrient/MAME/Software List ROMs (merged)/pc98;NEC - PC-98;<code>NEC PC-98</code> Merged;np2kai_libretro
+pc98;/home/wizzard/myrient/MAME/Software List ROMs (split)/pc98;NEC - PC-98;<code>NEC PC-98</code> Split;np2kai_libretro
 x1;TOSEC/Sharp/X1/Games/[2D];Sharp - X1;<code>Sharp X1</code> 2D;x1_libretro
 x1;TOSEC/Sharp/X1/Games/[D88];Sharp - X1;<code>Sharp X1</code> D88;x1_libretro
+x1;/home/wizzard/myrient/MAME/Software List ROMs (merged)/x1_cass;Sharp - X1;<code>Sharp X1</code> Cass Merged;x1_libretro
+x1;/home/wizzard/myrient/MAME/Software List ROMs (split)/x1_cass;Sharp - X1;<code>Sharp X1</code> Cass Split;x1_libretro
+x1;/home/wizzard/myrient/MAME/Software List ROMs (merged)/x1_flop;Sharp - X1;<code>Sharp X1</code> Flop Merged;x1_libretro
+x1;/home/wizzard/myrient/MAME/Software List ROMs (split)/x1_flop;Sharp - X1;<code>Sharp X1</code> Flop Split;x1_libretro
 x68000;TOSEC/Sharp/X68000/Games/[DIM];Sharp - X68000;<code>Sharp X68000</code> DIM;px68k_libretro
 x68000;TOSEC/Sharp/X68000/Applications;Sharp - X68000;<code>Sharp X68000</code> App;px68k_libretro
+x68000;/home/wizzard/myrient/MAME/Software List ROMs (merged)/x68k_flop;Sharp - X68000;<code>Sharp X68000</code> Merged;px68k_libretro
+x68000;/home/wizzard/myrient/MAME/Software List ROMs (split)/x68k_flop;Sharp - X68000;<code>Sharp X68000</code> Split;px68k_libretro
 
 mame;MAME/ROMs (merged);MAME;<p>MAME Merged;mame
 mame;MAME/ROMs (non-merged);MAME;MAME Non-Merged;mame
