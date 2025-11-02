@@ -494,14 +494,14 @@ pc88;TOSEC/NEC/PC-8801/Games/[D88];NEC - PC-8001 - PC-8801;<code>NEC PC-88</code
 pc88;MAME/Software List ROMs (merged)/pc8801_flop;NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> Flop Merged;quasi88_libretro
 pc88;MAME/Software List ROMs (split)/pc8801_flop;NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> Flop Split;quasi88_libretro
 pc98;TOSEC/NEC/PC-9801/Games/[FDD];NEC - PC-98;<code>NEC PC-98</code> TOSEC;np2kai_libretro
-pc98;/home/wizzard/myrient/MAME/Software List ROMs (merged)/pc98;NEC - PC-98;<code>NEC PC-98</code> Merged;np2kai_libretro
-pc98;/home/wizzard/myrient/MAME/Software List ROMs (split)/pc98;NEC - PC-98;<code>NEC PC-98</code> Split;np2kai_libretro
+pc98;MAME/Software List ROMs (merged)/pc98;NEC - PC-98;<code>NEC PC-98</code> Merged;np2kai_libretro
+pc98;MAME/Software List ROMs (split)/pc98;NEC - PC-98;<code>NEC PC-98</code> Split;np2kai_libretro
 x1;TOSEC/Sharp/X1/Games/[2D];Sharp - X1;<code>Sharp X1</code> 2D;x1_libretro
 x1;TOSEC/Sharp/X1/Games/[D88];Sharp - X1;<code>Sharp X1</code> D88;x1_libretro
-x1;/home/wizzard/myrient/MAME/Software List ROMs (merged)/x1_cass;Sharp - X1;<code>Sharp X1</code> Cass Merged;x1_libretro
-x1;/home/wizzard/myrient/MAME/Software List ROMs (split)/x1_cass;Sharp - X1;<code>Sharp X1</code> Cass Split;x1_libretro
-x1;/home/wizzard/myrient/MAME/Software List ROMs (merged)/x1_flop;Sharp - X1;<code>Sharp X1</code> Flop Merged;x1_libretro
-x1;/home/wizzard/myrient/MAME/Software List ROMs (split)/x1_flop;Sharp - X1;<code>Sharp X1</code> Flop Split;x1_libretro
+x1;MAME/Software List ROMs (merged)/x1_cass;Sharp - X1;<code>Sharp X1</code> Cass Merged;x1_libretro
+x1;MAME/Software List ROMs (split)/x1_cass;Sharp - X1;<code>Sharp X1</code> Cass Split;x1_libretro
+x1;MAME/Software List ROMs (merged)/x1_flop;Sharp - X1;<code>Sharp X1</code> Flop Merged;x1_libretro
+x1;MAME/Software List ROMs (split)/x1_flop;Sharp - X1;<code>Sharp X1</code> Flop Split;x1_libretro
 x68000;TOSEC/Sharp/X68000/Games/[DIM];Sharp - X68000;<code>Sharp X68000</code> DIM;px68k_libretro
 x68000;TOSEC/Sharp/X68000/Applications;Sharp - X68000;<code>Sharp X68000</code> App;px68k_libretro
 x68000;/home/wizzard/myrient/MAME/Software List ROMs (merged)/x68k_flop;Sharp - X68000;<code>Sharp X68000</code> Merged;px68k_libretro
