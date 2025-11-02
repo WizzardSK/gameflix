@@ -93,8 +93,12 @@ macintosh;MAME/Software List ROMs (merged)/mac_hdflop;Apple - Macintosh;<code>Ap
 
 channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;<p>Fairchild Channel F NoIntro;freechaf_libretro
 channelf;TOSEC/Fairchild/VES & Channel F/Games;Fairchild - Channel F;Fairchild Channel F TOSEC;freechaf_libretro
+channelf;MAME/Software List ROMs (merged)/channelf;Fairchild - Channel F;Fairchild Channel F Merged;freechaf_libretro
+channelf;MAME/Software List ROMs (split)/channelf;Fairchild - Channel F;Fairchild Channel F Split;freechaf_libretro
 vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;GCE Vectrex NoIntro;vecx_libretro
 vectrex;TOSEC/GCE/Vectrex/Games;GCE - Vectrex;GCE Vectrex TOSEC;vecx_libretro
+vectrex;MAME/Software List ROMs (merged)/vectrex;GCE - Vectrex;GCE Vectrex Merged;vecx_libretro
+vectrex;MAME/Software List ROMs (split)/vectrex;GCE - Vectrex;GCE Vectrex Split;vecx_libretro  
 odyssey2;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Magnavox Odyssey 2 NoIntro;o2em_libretro
 odyssey2;TOSEC/Magnavox/Odyssey2/Games;Magnavox - Odyssey2;Magnavox Odyssey 2 TOSEC;o2em_libretro
 videopacplus;No-Intro/Philips - Videopac+;Philips - Videopac;Philips Videopac+ NoIntro;o2em_libretro
