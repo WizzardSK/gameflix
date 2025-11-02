@@ -101,14 +101,22 @@ vectrex;MAME/Software List ROMs (merged)/vectrex;GCE - Vectrex;GCE Vectrex Merge
 vectrex;MAME/Software List ROMs (split)/vectrex;GCE - Vectrex;GCE Vectrex Split;vecx_libretro  
 odyssey2;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Magnavox Odyssey 2 NoIntro;o2em_libretro
 odyssey2;TOSEC/Magnavox/Odyssey2/Games;Magnavox - Odyssey2;Magnavox Odyssey 2 TOSEC;o2em_libretro
+odyssey2;MAME/Software List ROMs (merged)/videopac;Magnavox - Odyssey2;Philips Videopac Merged;o2em_libretro
+odyssey2;MAME/Software List ROMs (split)/videopac;Magnavox - Odyssey2;Philips Videopac Split;o2em_libretro
 videopacplus;No-Intro/Philips - Videopac+;Philips - Videopac;Philips Videopac+ NoIntro;o2em_libretro
 videopacplus;TOSEC/Philips/Videopac+/Games;Philips - Videopac;Philips Videopac+ TOSEC;o2em_libretro
 intellivision;No-Intro/Mattel - Intellivision;Mattel - Intellivision;Mattel Intellivision NoIntro;freeintv_libretro
 intellivision;TOSEC/Mattel/Intellivision/Games/[BIN];Mattel - Intellivision;Mattel Intellivision TOSEC;freeintv_libretro
+intellivision;MAME/Software List ROMs (merged)/intv;Mattel - Intellivision;Mattel Intellivision Merged;freeintv_libretro
+intellivision;MAME/Software List ROMs (split)/intv;Mattel - Intellivision;Mattel Intellivision Split;freeintv_libretro
 colecovision;No-Intro/Coleco - ColecoVision;Coleco - ColecoVision;Coleco Colecovision NoIntro;bluemsx_libretro
 colecovision;TOSEC/Coleco/ColecoVision/Games;Coleco - ColecoVision;Coleco Colecovision TOSEC;bluemsx_libretro
+colecovision;MAME/Software List ROMs (merged)/coleco;Coleco - ColecoVision;Coleco Colecovision Merged;bluemsx_libretro
+colecovision;MAME/Software List ROMs (split)/coleco;Coleco - ColecoVision;Coleco Colecovision Split;bluemsx_libretro
 scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Epoch SCV NoIntro;emuscv_libretro
 scv;TOSEC/Epoch/Super Cassette Vision/Games;Epoch - Super Cassette Vision;Epoch SCV TOSEC;emuscv_libretro
+scv;MAME/Software List ROMs (merged)/scv;Epoch - Super Cassette Vision;Epoch SCV Merged;emuscv_libretro
+scv;MAME/Software List ROMs (split)/scv;Epoch - Super Cassette Vision;Epoch SCV Split;emuscv_libretro
 
 gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<p><i>Epoch Game Pocket Computer</i>;mame gamepock -cart
 supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervision</i> NoIntro;potator_libretro
