@@ -214,6 +214,24 @@ thomson;TOSEC/Thomson/TO7/Games/[M7];Thomson - MOTO;<code>Thomson TO7</code> M7;
 thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[FD];Thomson - MOTO;<code>Thomson TO8</code> FD;theodore_libretro
 thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[K7];Thomson - MOTO;<code>Thomson TO8</code> K7;theodore_libretro
 thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[SAP];Thomson - MOTO;<code>Thomson TO8</code> SAP;theodore_libretro
+thomson;MAME/Software List ROMs (merged)/mo5_cart;Thomson - MOTO;<code>Thomson MO5</code> Cart Merged;theodore_libretro
+thomson;MAME/Software List ROMs (merged)/mo5_cass;Thomson - MOTO;<code>Thomson MO5</code> Cass Merged;theodore_libretro
+thomson;MAME/Software List ROMs (merged)/mo5_flop;Thomson - MOTO;<code>Thomson MO5</code> Flop Merged;theodore_libretro
+thomson;MAME/Software List ROMs (merged)/mo6_cass;Thomson - MOTO;<code>Thomson MO6</code> Cass Merged;theodore_libretro
+thomson;MAME/Software List ROMs (merged)/mo6_flop;Thomson - MOTO;<code>Thomson MO6</code> Flop Merged;theodore_libretro
+thomson;MAME/Software List ROMs (merged)/to_flop;Thomson - MOTO;<code>Thomson TO</code> Flop Merged;theodore_libretro
+thomson;MAME/Software List ROMs (merged)/to7_cart;Thomson - MOTO;<code>Thomson TO7</code> Cart Merged;theodore_libretro
+thomson;MAME/Software List ROMs (merged)/to7_cass;Thomson - MOTO;<code>Thomson TO7</code> Cass Merged;theodore_libretro
+thomson;MAME/Software List ROMs (merged)/to8_cass;Thomson - MOTO;<code>Thomson TO8</code> Cass Merged;theodore_libretro
+thomson;MAME/Software List ROMs (split)/mo5_cart;Thomson - MOTO;<code>Thomson MO5</code> Cart Split;theodore_libretro
+thomson;MAME/Software List ROMs (split)/mo5_cass;Thomson - MOTO;<code>Thomson MO5</code> Cass Split;theodore_libretro
+thomson;MAME/Software List ROMs (split)/mo5_flop;Thomson - MOTO;<code>Thomson MO5</code> Flop Split;theodore_libretro
+thomson;MAME/Software List ROMs (split)/mo6_cass;Thomson - MOTO;<code>Thomson MO6</code> Cass Split;theodore_libretro
+thomson;MAME/Software List ROMs (split)/mo6_flop;Thomson - MOTO;<code>Thomson MO6</code> Flop Split;theodore_libretro
+thomson;MAME/Software List ROMs (split)/to_flop;Thomson - MOTO;<code>Thomson TO</code> Flop Split;theodore_libretro
+thomson;MAME/Software List ROMs (split)/to7_cart;Thomson - MOTO;<code>Thomson TO7</code> Cart Split;theodore_libretro
+thomson;MAME/Software List ROMs (split)/to7_cass;Thomson - MOTO;<code>Thomson TO7</code> Cass Split;theodore_libretro
+thomson;MAME/Software List ROMs (split)/to8_cass;Thomson - MOTO;<code>Thomson TO8</code> Cass Split;theodore_libretro
 
 nes;No-Intro/Nintendo - Nintendo Entertainment System (Headered);Nintendo - Nintendo Entertainment System;<p>Nintendo NES NoIntro;nestopia_libretro
 nes;TOSEC/Nintendo/Famicom & Entertainment System/Games/[NES];Nintendo - Nintendo Entertainment System;Nintendo NES TOSEC;nestopia_libretro
