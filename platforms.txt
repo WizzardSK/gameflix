@@ -109,10 +109,10 @@ intellivision;No-Intro/Mattel - Intellivision;Mattel - Intellivision;Mattel Inte
 intellivision;TOSEC/Mattel/Intellivision/Games/[BIN];Mattel - Intellivision;Mattel Intellivision TOSEC;freeintv_libretro
 intellivision;MAME/Software List ROMs (merged)/intv;Mattel - Intellivision;Mattel Intellivision Merged;freeintv_libretro
 intellivision;MAME/Software List ROMs (split)/intv;Mattel - Intellivision;Mattel Intellivision Split;freeintv_libretro
-colecovision;No-Intro/Coleco - ColecoVision;Coleco - ColecoVision;Coleco Colecovision NoIntro;bluemsx_libretro
-colecovision;TOSEC/Coleco/ColecoVision/Games;Coleco - ColecoVision;Coleco Colecovision TOSEC;bluemsx_libretro
-colecovision;MAME/Software List ROMs (merged)/coleco;Coleco - ColecoVision;Coleco Colecovision Merged;bluemsx_libretro
-colecovision;MAME/Software List ROMs (split)/coleco;Coleco - ColecoVision;Coleco Colecovision Split;bluemsx_libretro
+colecovision;No-Intro/Coleco - ColecoVision;Coleco - ColecoVision;Coleco Colecovision NoIntro;gearcoleco_libretro
+colecovision;TOSEC/Coleco/ColecoVision/Games;Coleco - ColecoVision;Coleco Colecovision TOSEC;gearcoleco_libretro
+colecovision;MAME/Software List ROMs (merged)/coleco;Coleco - ColecoVision;Coleco Colecovision Merged;gearcoleco_libretro
+colecovision;MAME/Software List ROMs (split)/coleco;Coleco - ColecoVision;Coleco Colecovision Split;gearcoleco_libretro
 scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Epoch SCV NoIntro;emuscv_libretro
 scv;TOSEC/Epoch/Super Cassette Vision/Games;Epoch - Super Cassette Vision;Epoch SCV TOSEC;emuscv_libretro
 scv;MAME/Software List ROMs (merged)/scv;Epoch - Super Cassette Vision;Epoch SCV Merged;emuscv_libretro
