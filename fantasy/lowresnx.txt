@@ -1,3 +1,6 @@
+3887	Plants VS Zombies for Lowres NX (0.1)	jWM8AcMioa_Untitled1549_20251101082025min.png	jWM8AcMioa_Greenery_VS_The_Undead.nx
+3886	The beast	CyUS7t32WG_The_Beast.png	CyUS7t32WG_The_Beast.nx
+3885	Redline	kWZGG8jpLU_Redline.png	kWZGG8jpLU_Redline.nx
 3883	Shady poker match game	TEavCUJvSp_Shady_Poker.png	TEavCUJvSp_Shady_Poker.nx
 3882	Shady	fnp6coTEcw_Shady.png	fnp6coTEcw_Shady.nx
 3881	WIP PPGW	2DHXjNmYPT_PPGW_0.1.png	2DHXjNmYPT_PPGW_0.1.nx
@@ -984,9 +987,9 @@
 1048	Bitmon 2	vCGnX6AWU8_Bitmon_2.png	vCGnX6AWU8_Bitmon_2.nx
 1047	(Just started)Custom Console	PiWnMrAmz2_Custom_Console.png	PiWnMrAmz2_Custom_Console.nx
 1044	BETWEEN WORLDS starting screen WILL BE DELETED WHEN FULL GAME COMES OUT	djuWPHo29E_Between_Worlds_Loading_Screen.png	djuWPHo29E_Between_Worlds_Loading_Screen.nx
-1042	FBI CONSOLE Update 0.3	vQMBzBZvWD_FBI_Console_Update_0.2.png	vQMBzBZvWD_FBI_Console_Update_0.2.nx
-1041	BETWEEN WORLDS  beta version of skills WILL BE DELETED WHEN FULL GAME COMES OUT	6gwaNMrbSV_RPGNAME_.png	6gwaNMrbSV_RPGNAME_.nx
-1040	FBI Console Update 0.2	gGMTWqB8r8_FBI_Console_Update_0.2.png	gGMTWqB8r8_FBI_Console_Update_0.2.nx
+1042			
+1041			
+1040			
 1038	Go to sleep.... Zzzzzz......	Xg2rDAhi7N_Go_To_Sleep.png	Xg2rDAhi7N_Go_To_Sleep.nx
 1035	A wizard game	WdTT88NyPC_Magic_Duels.png	WdTT88NyPC_Magic_Duels.nx
 1034	Purple Guy (WIP)	LkawveXDmK_LowRes_NX_20200302_15_50_32.png	LkawveXDmK_sprite_test_v1.4.nx
