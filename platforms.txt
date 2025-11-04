@@ -122,6 +122,8 @@ gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<p><
 gamepock;MAME/Software List ROMs (merged)/gamepock;Epoch - Game Pocket Computer;<p><i>Epoch Game Pocket</i> MAME;mame gamepock -cart
 supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervision</i> NoIntro;potator_libretro
 supervision;TOSEC/Watara/Supervision/Games;Watara - Supervision;<i>Watara Supervision</i> TOSEC;potator_libretro
+supervision;MAME/Software List ROMs (merged)/svision;Watara - Supervision;<i>Watara Supervision</i> Merged;potator_libretro
+supervision;MAME/Software List ROMs (split)/svision;Watara - Supervision;<i>Watara Supervision</i> Split;potator_libretro
 wonderswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> NoIntro;mednafen_wswan_libretro
 wonderswan;TOSEC/Bandai/WonderSwan/Games;Bandai - WonderSwan;<i>Bandai WonderSwan</i> TOSEC;mednafen_wswan_libretro
 wonderswan;No-Intro/Benesse - Pocket Challenge V2;Bandai - WonderSwan;<i>Pocket Challenge 2</i> NoIntro;mednafen_wswan_libretro
