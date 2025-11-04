@@ -118,7 +118,8 @@ scv;TOSEC/Epoch/Super Cassette Vision/Games;Epoch - Super Cassette Vision;Epoch 
 scv;MAME/Software List ROMs (merged)/scv;Epoch - Super Cassette Vision;Epoch SCV Merged;emuscv_libretro
 scv;MAME/Software List ROMs (split)/scv;Epoch - Super Cassette Vision;Epoch SCV Split;emuscv_libretro
 
-gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<p><i>Epoch Game Pocket Computer</i>;mame gamepock -cart
+gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<p><i>Epoch Game Pocket</i> NoIntro;mame gamepock -cart
+gamepock;MAME/Software List ROMs (merged)/gamepock;Epoch - Game Pocket Computer;<p><i>Epoch Game Pocket</i> MAME;mame gamepock -cart
 supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervision</i> NoIntro;potator_libretro
 supervision;TOSEC/Watara/Supervision/Games;Watara - Supervision;<i>Watara Supervision</i> TOSEC;potator_libretro
 wonderswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> NoIntro;mednafen_wswan_libretro
