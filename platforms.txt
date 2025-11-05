@@ -119,16 +119,20 @@ scv;MAME/Software List ROMs (merged)/scv;Epoch - Super Cassette Vision;Epoch SCV
 scv;MAME/Software List ROMs (split)/scv;Epoch - Super Cassette Vision;Epoch SCV Split;emuscv_libretro
 
 gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<p><i>Epoch Game Pocket</i> NoIntro;mame gamepock -cart
-gamepock;MAME/Software List ROMs (merged)/gamepock;Epoch - Game Pocket Computer;<p><i>Epoch Game Pocket</i> MAME;mame gamepock -cart
+gamepock;MAME/Software List ROMs (merged)/gamepock;Epoch - Game Pocket Computer;<i>Epoch Game Pocket</i> MAME;mame gamepock -cart
 supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervision</i> NoIntro;potator_libretro
 supervision;TOSEC/Watara/Supervision/Games;Watara - Supervision;<i>Watara Supervision</i> TOSEC;potator_libretro
 supervision;MAME/Software List ROMs (merged)/svision;Watara - Supervision;<i>Watara Supervision</i> Merged;potator_libretro
 supervision;MAME/Software List ROMs (split)/svision;Watara - Supervision;<i>Watara Supervision</i> Split;potator_libretro
 wonderswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> NoIntro;mednafen_wswan_libretro
 wonderswan;TOSEC/Bandai/WonderSwan/Games;Bandai - WonderSwan;<i>Bandai WonderSwan</i> TOSEC;mednafen_wswan_libretro
+wonderswan;MAME/Software List ROMs (merged)/wswan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> Merged;mednafen_wswan_libretro
+wonderswan;MAME/Software List ROMs (split)/wswan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> Split;mednafen_wswan_libretro
 wonderswan;No-Intro/Benesse - Pocket Challenge V2;Bandai - WonderSwan;<i>Pocket Challenge 2</i> NoIntro;mednafen_wswan_libretro
 wonderswancolor;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>WonderSwan Color</i> NoIntro;mednafen_wswan_libretro
 wonderswancolor;TOSEC/Bandai/WonderSwan Color/Games;Bandai - WonderSwan Color;<i>WonderSwan Color</i> TOSEC;mednafen_wswan_libretro
+wonderswancolor;MAME/Software List ROMs (merged)/wscolor;Bandai - WonderSwan Color;<i>WonderSwan Color</i> Merged;mednafen_wswan_libretro
+wonderswancolor;MAME/Software List ROMs (split)/wscolor;Bandai - WonderSwan Color;<i>WonderSwan Color</i> Split;mednafen_wswan_libretro
 arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;<i>Arduboy</i> NoIntro;arduous_libretro
 arduboy;TOSEC/Arduboy/Arduboy/Games/[HEX];Arduboy Inc - Arduboy;<i>Arduboy</i> TOSEC;arduous_libretro
 megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;<i>Welback Mega Duck</i>;mame megaduck -cart
