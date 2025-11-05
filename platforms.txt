@@ -129,6 +129,8 @@ wonderswan;TOSEC/Bandai/WonderSwan/Games;Bandai - WonderSwan;<i>Bandai WonderSwa
 wonderswan;MAME/Software List ROMs (merged)/wswan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> Merged;mednafen_wswan_libretro
 wonderswan;MAME/Software List ROMs (split)/wswan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> Split;mednafen_wswan_libretro
 wonderswan;No-Intro/Benesse - Pocket Challenge V2;Bandai - WonderSwan;<i>Pocket Challenge 2</i> NoIntro;mednafen_wswan_libretro
+wonderswan;MAME/Software List ROMs (merged)/pockchalv2;Bandai - WonderSwan;<i>Pocket Challenge 2</i> Merged;mednafen_wswan_libretro
+wonderswan;MAME/Software List ROMs (split)/pockchalv2;Bandai - WonderSwan;<i>Pocket Challenge 2</i> Split;mednafen_wswan_libretro
 wonderswancolor;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;<i>WonderSwan Color</i> NoIntro;mednafen_wswan_libretro
 wonderswancolor;TOSEC/Bandai/WonderSwan Color/Games;Bandai - WonderSwan Color;<i>WonderSwan Color</i> TOSEC;mednafen_wswan_libretro
 wonderswancolor;MAME/Software List ROMs (merged)/wscolor;Bandai - WonderSwan Color;<i>WonderSwan Color</i> Merged;mednafen_wswan_libretro
