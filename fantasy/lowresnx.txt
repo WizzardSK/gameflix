@@ -686,12 +686,12 @@
 1937	Meow 2	oL7HYHufXD_Meow2.png	oL7HYHufXD_Meow2.nx
 1935	BANDITS	YtdtLB354z_Bandits.png	YtdtLB354z_Bandits.nx
 1929	Background Warp Thing (Dumb Difficult Platformer Older Demo Edited)	yKTyY2b7vH_BG_Effect_Warp_Testing_Program.png	yKTyY2b7vH_BG_Effect_Warp_Testing_Program.nx
-1924	DuoL	YQxp9Snwam_LowRes_NX_20210530_12_31_05.png	YQxp9Snwam_DuoL.nx
-1922	Game of Life 1.2	KUiF9jUiRQ_5488B26028AC498DAC7A0BDED41540E2.jpeg	KUiF9jUiRQ_Game_of_Life_1.2.nx
-1920	My first NX Program	P5DxLKdGei_Unnamed_Program_18_2.png	P5DxLKdGei_Unnamed_Program_18_2.nx
-1919	Othello (Apple II remix)	sMi3DQTXQm_othello_apple_ii_remix.png	sMi3DQTXQm_othello_Bgelais_APPLE_II_MIX.nx
-1914	Docking simulator	8q3pUrk224_ThrustAway.png	8q3pUrk224_ThrustAway.nx
-1913	Rocket Launch Simulator	inANE7sNaE_ThrustAway.png	inANE7sNaE_ThrustAway.nx
+1924			
+1922			
+1920			
+1919			
+1914			
+1913			
 1911	SPACE INVADERS (Classic 78&#039;s style)	drhbiF84R5_Invaders.png	drhbiF84R5_Invaders.nx
 1908	Orbit Simulator 0.6	FEQ7dG56fo_Orbit_Simulator.png	FEQ7dG56fo_Orbit_Simulator.nx
 1907	DICEJACK (with Toe)	xaVkHBb3pG_Dicejack.png	xaVkHBb3pG_dicejack.nx
@@ -992,9 +992,9 @@
 1040	FBI Console Update 0.2	gGMTWqB8r8_FBI_Console_Update_0.2.png	gGMTWqB8r8_FBI_Console_Update_0.2.nx
 1038	Go to sleep.... Zzzzzz......	Xg2rDAhi7N_Go_To_Sleep.png	Xg2rDAhi7N_Go_To_Sleep.nx
 1035	A wizard game	WdTT88NyPC_Magic_Duels.png	WdTT88NyPC_Magic_Duels.nx
-1034			
-1031			
-1030			
+1034	Purple Guy (WIP)	LkawveXDmK_LowRes_NX_20200302_15_50_32.png	LkawveXDmK_sprite_test_v1.4.nx
+1031	Spring ball	XRPFpFR4RY_Spring_Ball.png	XRPFpFR4RY_Spring_Ball.nx
+1030	Luck, Chance, or Fate	Vo5AvWcYYZ_Luck_Chance_or_Fate_0.5.png	Vo5AvWcYYZ_Luck_Chance_or_Fate_0.5.nx
 1029	IDK	iARrZAHrit_IDK.png	iARrZAHrit_IDK.nx
 1028	LowResArka	aLrg7MGFBp_95BE6632230B4B27A15E86D00B7C423C.jpeg	aLrg7MGFBp_Arkanoid.nx
 1026	A Gravity Platform Game	HyAbk8jYpw_Gravity.png	HyAbk8jYpw_Gravity.nx
