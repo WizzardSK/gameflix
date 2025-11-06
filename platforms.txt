@@ -194,21 +194,34 @@ camplynx;MAME/Software List ROMs (split)/camplynx_cass;Camputers - Lynx;<code>Ca
 
 astrocade;No-Intro/Bally - Astrocade;Bally - Astrocade;<p>Bally Astrocade NoIntro;mame astrocde -cart
 astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN];Bally - Astrocade;Bally Astrocade TOSEC;mame astrocde -cart
+astrocade;MAME/Software List ROMs (merged)/astrocde;Bally - Astrocade;Bally Astrocade Merged;mame astrocde -cart
+astrocade;MAME/Software List ROMs (split)/astrocde;Bally - Astrocade;Bally Astrocade Split;mame astrocde -cart
 apfm1000;No-Intro/APF - MP-1000;APF - MP-1000;APF MP-1000 NoIntro;mame apfm1000 -cart
 apfm1000;TOSEC/APF/M-1000/Games;APF - MP-1000;APF MP-1000 TOSEC;mame apfm1000 -cart
+apfm1000;MAME/Software List ROMs (merged)/apfm1000;APF - MP-1000;APF MP-1000 MAME;mame apfm1000 -cart
 advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vision NoIntro;mame advision -cart
 advision;TOSEC/Entex/Adventure Vision/Games;Entex - Adventure Vision;Adventure Vision TOSEC;mame advision -cart
+advision;MAME/Software List ROMs (merged)/advision;Entex - Adventure Vision;Adventure Vision MAME;mame advision -cart
 creativision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision NoIntro;mame crvision -cart
 creativision;TOSEC/VTech/Laser 2001 & CreatiVision/Games;VTech - CreatiVision;CreatiVision TOSEC;mame crvision -cart
+creativision;MAME/Software List ROMs (merged)/crvision;VTech - CreatiVision;CreatiVision Merged;mame crvision -cart
+creativision;MAME/Software List ROMs (split)/crvision;VTech - CreatiVision;CreatiVision Split;mame crvision -cart
 vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile NoIntro;mame vsmile -cart
 vsmile;TOSEC/VTech/V.Smile Motion/Games/[BIN];VTech - V.Smile;VTech V.Smile TOSEC;mame vsmile -cart
+vsmile;MAME/Software List ROMs (merged)/vsmile_cart;VTech - V.Smile;VTech V.Smile Merged;mame vsmile -cart
+vsmile;MAME/Software List ROMs (split)/vsmile_cart;VTech - V.Smile;VTech V.Smile Split;mame vsmile -cart
 arcadia;No-Intro/Emerson - Arcadia 2001;Emerson - Arcadia 2001;Arcadia 2001 NoIntro;mame arcadia -cart
 arcadia;TOSEC/Emerson/Arcadia 2001/Games;Emerson - Arcadia 2001;Arcadia 2001 TOSEC;mame arcadia -cart
+arcadia;MAME/Software List ROMs (merged)/arcadia;Emerson - Arcadia 2001;Arcadia 2001 Merged;mame arcadia -cart
+arcadia;MAME/Software List ROMs (split)/arcadia;Emerson - Arcadia 2001;Arcadia 2001 Split;mame arcadia -cart
 pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000 NoIntro;mame pv1000 -cart
 pv1000;TOSEC/Casio/PV-1000/Games;Casio - PV-1000;Casio PV-1000 TOSEC;mame pv1000 -cart
+pv1000;MAME/Software List ROMs (merged)/pv1000;Casio - PV-1000;Casio PV-1000 MAME;mame pv1000 -cart
 supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan NoIntro;mame supracan -cart
 supracan;TOSEC/Funtech/Super A'can/Games;Funtech - Super Acan;Super Acan TOSEC;mame supracan -cart
-vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton VC 4000;mame vc4000 -cart
+supracan;MAME/Software List ROMs (merged)/supracan;Funtech - Super Acan;Super Acan MAME;mame supracan -cart
+vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton VC 4000 NoIntro;mame vc4000 -cart
+vc4000;MAME/Software List ROMs (merged)/vc4000;Interton - VC 4000;Interton VC 4000 MAME;mame vc4000 -cart
 multivision;TOSEC/Tsukuda Original/Othello Multivision/Games;Othello - Multivision;Othello Multivision;gearsystem_libretro
 
 adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK];Coleco - Adam;<p><code>Coleco Adam</code>;mame adam -flop1
