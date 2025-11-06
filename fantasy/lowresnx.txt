@@ -686,12 +686,12 @@
 1937	Meow 2	oL7HYHufXD_Meow2.png	oL7HYHufXD_Meow2.nx
 1935	BANDITS	YtdtLB354z_Bandits.png	YtdtLB354z_Bandits.nx
 1929	Background Warp Thing (Dumb Difficult Platformer Older Demo Edited)	yKTyY2b7vH_BG_Effect_Warp_Testing_Program.png	yKTyY2b7vH_BG_Effect_Warp_Testing_Program.nx
-1924			
-1922			
-1920			
-1919			
-1914			
-1913			
+1924	DuoL	YQxp9Snwam_LowRes_NX_20210530_12_31_05.png	YQxp9Snwam_DuoL.nx
+1922	Game of Life 1.2	KUiF9jUiRQ_5488B26028AC498DAC7A0BDED41540E2.jpeg	KUiF9jUiRQ_Game_of_Life_1.2.nx
+1920	My first NX Program	P5DxLKdGei_Unnamed_Program_18_2.png	P5DxLKdGei_Unnamed_Program_18_2.nx
+1919	Othello (Apple II remix)	sMi3DQTXQm_othello_apple_ii_remix.png	sMi3DQTXQm_othello_Bgelais_APPLE_II_MIX.nx
+1914	Docking simulator	8q3pUrk224_ThrustAway.png	8q3pUrk224_ThrustAway.nx
+1913	Rocket Launch Simulator	inANE7sNaE_ThrustAway.png	inANE7sNaE_ThrustAway.nx
 1911	SPACE INVADERS (Classic 78&#039;s style)	drhbiF84R5_Invaders.png	drhbiF84R5_Invaders.nx
 1908	Orbit Simulator 0.6	FEQ7dG56fo_Orbit_Simulator.png	FEQ7dG56fo_Orbit_Simulator.nx
 1907	DICEJACK (with Toe)	xaVkHBb3pG_Dicejack.png	xaVkHBb3pG_dicejack.nx
@@ -1097,10 +1097,10 @@
 798	Testing PERSISTENT MEMORY	MnDrUxezUH_Testing_PERSISTENT_MEMORY_02.01.png	MnDrUxezUH_Testing_PERSISTENT_MEMORY_02.01.nx
 787	Robot arena	DhT8q8ZVkE_Robot_Arena.png	DhT8q8ZVkE_Robot_Arena.nx
 786	Emoji Party Puzzle	XPPCxhgapX_Emoji_Party_Puzzle.png	XPPCxhgapX_Emoji_Party_Puzzle.nx
-784	Animal Zoo Puzzle	xCTxQNLqKY_Animal_Zoo_Puzzle.png	xCTxQNLqKY_Animal_Zoo_Puzzle.nx
-772	Shhh.. secret game...	CV5yHMmfcj_Secret_Game.png	CV5yHMmfcj_Secret_Game.nx
-771	Four million bottles of beer on the wall!	rgLJQV7WaG_4000000bottles.png	rgLJQV7WaG_4000000bottles.nx
-770	Chatbot (this is cool, plz read!)	4isv7NiqDc_Nxnxkl.png	4isv7NiqDc_Yayeet.nx
+784			
+772			
+771			
+770			
 769	Math Quiz (WIP)	ysdJzqsSny_Math_Quiz_wip.png	ysdJzqsSny_Math_Quiz_wip.nx
 767	Coders &amp; Artists (C&amp;A)	9NraEePKzh_Coders__Artists_CA.png	9NraEePKzh_Coders__Artists_CA.nx
 764	99 bottles of beer on the wall!	BVmEnkcEAk_Disk.png	BVmEnkcEAk_99bottles.nx
