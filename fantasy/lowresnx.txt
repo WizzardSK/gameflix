@@ -1222,7 +1222,7 @@
 501	OneBits Treasures game	cC5RzwHXAY_Onebits_Treaures.png	cC5RzwHXAY_Onebits_Treaures.nx
 499	go 4x4	ySHnM5XUKu_go4x4.png	ySHnM5XUKu_go4x4.nx
 495	C Dogs	KmRHSn2F4c_C_Dogs_0.002.png	KmRHSn2F4c_C_Dogs_0.002.nx
-491			
+491	Lowres NX time	axcBPVVxw9_Lowres_NX_time.png	axcBPVVxw9_Lowres_NX_time.nx
 490	Othello	wcC7ybJ4ze_othello.png	wcC7ybJ4ze_othello.nx
 489	Car racer	SK8HU6tAJr_Car_Race.png	SK8HU6tAJr_Car_Race.nx
 488	Factogonz	6Bt8ErmLmw_Factogonz.png	6Bt8ErmLmw_Factogonz.nx
