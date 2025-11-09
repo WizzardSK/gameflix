@@ -401,7 +401,7 @@ gamegear;MAME/Software List ROMs (split)/gamegear;Sega - Game Gear;<i>Game Gear<
 
 psx;Redump/Sony - PlayStation;Sony - PlayStation;<p>PlayStation 1 Redump;pcsx_rearmed_libretro;cue
 psx;No-Intro/Non-Redump - Sony - PlayStation;Sony - PlayStation;PlayStation 1 NonRedump;pcsx_rearmed_libretro;cue
-psx;MAME/Software List CHDs (merged)/psx;Sony - PlayStation;PlayStation 1 CHD;pcsx_rearmed_libretro;cue
+psx;MAME/Software List CHDs (merged)/psx;Sony - PlayStation;PlayStation 1 CHD;pcsx_rearmed_libretro
 ps2;Redump/Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2 Redump;pcsx2;iso
 ps2;No-Intro/Non-Redump - Sony - PlayStation 2;Sony - PlayStation 2;PlayStation 2 NonRedump;pcsx2;iso
 psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Sony PSP</i> Redump;ppsspp_libretro;iso
