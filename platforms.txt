@@ -386,6 +386,7 @@ sega32x;MAME/Software List ROMs (merged)/32x;Sega - 32X;Sega 32X Merged;picodriv
 sega32x;MAME/Software List ROMs (split)/32x;Sega - 32X;Sega 32X Split;picodrive_libretro
 segacd;Redump/Sega - Mega CD & Sega CD;Sega - Mega-CD - Sega CD;Sega CD Redump;picodrive_libretro;cue
 segacd;TOSEC-ISO/Sega/Mega-CD & Sega CD/CD/Games/[ISO];Sega - Mega-CD - Sega CD;Sega CD ISO;picodrive_libretro;cue
+segacd;MAME/Software List CHDs (merged)/megacd;Sega - Mega-CD - Sega CD;Sega CD CHD;picodrive_libretro
 saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn Redump;yabasanshiro_libretro;cue
 saturn;No-Intro/Non-Redump - Sega - Sega Saturn;Sega - Saturn;Sega Saturn NonRedump;yabasanshiro_libretro;cue
 saturn;TOSEC-ISO/Sega/Saturn/Games/[ISO];Sega - Saturn;Sega Saturn ISO;yabasanshiro_libretro;cue
