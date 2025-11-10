@@ -550,11 +550,13 @@ amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Games/[ISO];Commodore - CDTV;<code>Amig
 amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Applications/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> App;puae_libretro;cue
 amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Educational/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> Edu;puae_libretro;cue
 amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Multimedia/[ISO];Commodore - CDTV;<code>Amiga CDTV</code> Multimedia;puae_libretro;cue
+amigacdtv;MAME/Software List CHDs (merged)/cdtv;Commodore - CDTV;<code>Amiga CDTV</code> CHD;puae_libretro
 amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;<code>Amiga CD32</code> Redump;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Games/[ISO];Commodore - CD32;<code>Amiga CD32</code> ISO;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Applications;Commodore - CD32;<code>Amiga CD32</code> App;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Educational/[ISO];Commodore - CD32;<code>Amiga CD32</code> Edu;puae_libretro;cue
 amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Multimedia/[ISO];Commodore - CD32;<code>Amiga CD32</code> Multimedia;puae_libretro;cue
+amigacd32;MAME/Software List CHDs (merged)/cd32;Commodore - CD32;<code>Amiga CD32</code> CHD;puae_libretro;cue
 
 msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;<p><code>MSX 1</code> NoIntro;bluemsx_libretro
 msx1;TOSEC/MSX/MSX/Games/[DSK];Microsoft - MSX;<code>MSX 1</code> TOSEC;bluemsx_libretro
