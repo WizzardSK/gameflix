@@ -101,9 +101,9 @@
 3506	Just Fall	UDhLrQKe28_Just_Fall.png	UDhLrQKe28_Just_Fall.nx
 3497	Hooho and a Electric maze :3	HvCU6XpbRs_HooHo_and_the_Electric_Maze.png	HvCU6XpbRs_HooHo_and_the_Electric_Maze.nx
 3484	LowBot for LowRes NX :3	gYJYrgaVdg_Lowbot_Demo_1.1.png	gYJYrgaVdg_Lowbot_Demo_1.1.nx
-3480	Mario Lights	Nxh7mMy9Xz_Mario_Lights.png	Nxh7mMy9Xz_Mario_Lights.nx
-3479	Klips	SV6Syy4kwF_Klips.png	SV6Syy4kwF_Klips.nx
-3477	Merry Melody	uBombmLC8c_Merry_Melody_speed_adjust.png	uBombmLC8c_Merry_Melody_speed_adjust.nx
+3480			
+3479			
+3477			
 3474	Hide-N-Seek zones	idvghZnFTJ_HideNSeek_0.20.png	idvghZnFTJ_HideNSeek_0.20.nx
 3472	Hide and Seek	Hcw3xuEHrH_Hide_and_Seek_1.4.png	Hcw3xuEHrH_Hide_and_Seek_1.4.nx
 3470	Sakura kumiki	kQS7QipTef_Kumiki_Sakura.png	kQS7QipTef_Kumiki_Sakura.nx
