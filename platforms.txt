@@ -275,6 +275,7 @@ fm7;MAME/Software List ROMs (split)/fm7_disk;Fujitsu - Micro 7;<code>Fujitsu Mic
 fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;<code>Fujitsu FM Towns</code> Redump;mame fmtmarty -cdrm
 fmtowns;MAME/Software List ROMs (merged)/fmtowns_cd;Fujitsu - FM Towns;<code>Fujitsu FM Towns</code> Merged;mame fmtmarty -cdrm
 fmtowns;MAME/Software List ROMs (split)/fmtowns_cd;Fujitsu - FM Towns;<code>Fujitsu FM Towns</code> Split;mame fmtmarty -cdrm
+fmtowns;MAME/Software List CHDs (merged)/fmtowns_cd;Fujitsu - FM Towns;<code>Fujitsu FM Towns</code> CHD;mame fmtmarty -cdrm
 tutor;TOSEC/Tomy/Tutor & Pyuuta/Games;Tomy - Tutor;<code>Tomy Tutor</code> TOSEC;mame tutor -cart
 tutor;MAME/Software List ROMs (merged)/tutor;Tomy - Tutor;<code>Tomy Tutor</code> Merged;mame tutor -cart
 tutor;MAME/Software List ROMs (split)/tutor;Tomy - Tutor;<code>Tomy Tutor</code> Split;mame tutor -cart
