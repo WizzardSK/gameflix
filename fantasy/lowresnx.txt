@@ -101,9 +101,9 @@
 3506	Just Fall	UDhLrQKe28_Just_Fall.png	UDhLrQKe28_Just_Fall.nx
 3497	Hooho and a Electric maze :3	HvCU6XpbRs_HooHo_and_the_Electric_Maze.png	HvCU6XpbRs_HooHo_and_the_Electric_Maze.nx
 3484	LowBot for LowRes NX :3	gYJYrgaVdg_Lowbot_Demo_1.1.png	gYJYrgaVdg_Lowbot_Demo_1.1.nx
-3480			
-3479			
-3477			
+3480	Mario Lights	Nxh7mMy9Xz_Mario_Lights.png	Nxh7mMy9Xz_Mario_Lights.nx
+3479	Klips	SV6Syy4kwF_Klips.png	SV6Syy4kwF_Klips.nx
+3477	Merry Melody	uBombmLC8c_Merry_Melody_speed_adjust.png	uBombmLC8c_Merry_Melody_speed_adjust.nx
 3474	Hide-N-Seek zones	idvghZnFTJ_HideNSeek_0.20.png	idvghZnFTJ_HideNSeek_0.20.nx
 3472	Hide and Seek	Hcw3xuEHrH_Hide_and_Seek_1.4.png	Hcw3xuEHrH_Hide_and_Seek_1.4.nx
 3470	Sakura kumiki	kQS7QipTef_Kumiki_Sakura.png	kQS7QipTef_Kumiki_Sakura.nx
@@ -673,12 +673,12 @@
 2004	Snake NX	UAoGXY6E4C_Snake.png	UAoGXY6E4C_Snake.nx
 2003	Visit Counter	GoDwm7h9A6_Visit_Counter.png	GoDwm7h9A6_Visit_Counter.nx
 2001	Micro Ants	FcuiF3D9eR_Micro_Ants.png	FcuiF3D9eR_Micro_Ants.nx
-1999	Micro Stratego	5oV8nfEejn_Micro_Stratego.png	5oV8nfEejn_Micro_Stratego.nx
-1998	But Wait There’s More	FhsE4doLEp_ButWaitTheresMore.png	FhsE4doLEp_ButWaitTheresMore.nx
-1997	Seaquest	6R7PhaHqBb_Seaquest.png	6R7PhaHqBb_Seaquest.nx
-1991	July 20, 1969	pM5gexrGhL_July20.png	pM5gexrGhL_July20.nx
-1985	Tetris Twist	PFNHdxJHbc_Tetris_Twist_0.1.png	PFNHdxJHbc_Tetris_Twist_0.1.nx
-1984	Walking	9C9QzehYSZ_Walk.png	9C9QzehYSZ_Walk.nx
+1999			
+1998			
+1997			
+1991			
+1985			
+1984			
 1979	Bit Art Redux	EJHKKq2N7X_Bit_Art_Redux.png	EJHKKq2N7X_Bit_Art_Redux.nx
 1976	GAMEBOOK maker	3hTHeqwFVQ_Gamebook_Maker_0.05.png	3hTHeqwFVQ_Gamebook_Maker_0.05.nx
 1971	pong (with bats)	46LjdkAiBo_LowRes_NX_20210620_10_38_41.png	46LjdkAiBo_pong.nx
