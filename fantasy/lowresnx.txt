@@ -1,4 +1,3 @@
-3888	App will disappear again from App Store		
 3887	Plants VS Zombies for Lowres NX (0.1)	jWM8AcMioa_Untitled1549_20251101082025min.png	jWM8AcMioa_Greenery_VS_The_Undead.nx
 3886	The beast	CyUS7t32WG_The_Beast.png	CyUS7t32WG_The_Beast.nx
 3885	Redline	kWZGG8jpLU_Redline.png	kWZGG8jpLU_Redline.nx
@@ -59,7 +58,6 @@
 3689	Guess The Number	82okJqG7vZ_Guess_The_Number.png	82okJqG7vZ_Guess_The_Number.nx
 3686	The Pasture Of The Other Realm	2sijuadZjL_The_Pasture_Of_The_Other_Realm3.png	2sijuadZjL_The_Pasture_Of_The_Other_Realm3.nx
 3685	Poptris (Tetris variant)	jbX6jyo346_Poptris_063.png	jbX6jyo346_Poptris_063.nx
-3888	App will disappear again from App Store		
 3684	SumDoku	dRQhEWf3BR_SumDoku.png	dRQhEWf3BR_SumDoku.nx
 3680	DWELLER	AirFvk4MDh_IMG_4BFA44DB07681.jpeg	AirFvk4MDh_Dweller1.1.nx
 3677	SUM SUM	x5idRJ6Ms9_SUMSUM.png	x5idRJ6Ms9_SUMSUM.nx
@@ -120,7 +118,6 @@
 3442	AlphaMess	vsGVyegPiv_Alpha_Mess.png	vsGVyegPiv_Alpha_Mess.nx
 3439	Chess Master Training Academy	Gf2x6bbmdq_Chess_Master_Training_Academy_3.0.png	Gf2x6bbmdq_Chess_Master_Training_Academy_3.0.nx
 3438	Top Shop	qExwCwGwb7_Top_Shop_0.10.png	qExwCwGwb7_Top_Shop_0.10.nx
-3888	App will disappear again from App Store		
 3437	Spin Clock Solitaire	F6mQthsu4z_Clock_Solitaire.png	F6mQthsu4z_Clock_Solitaire.nx
 3436	Kokonotsu	VtHTKjfGGy_Kokonotsu.png	VtHTKjfGGy_Kokonotsu.nx
 3434	Tetris Demolition	NBtLPE8bud_Tetris_Demolition.png	NBtLPE8bud_Tetris_Demolition.nx
@@ -181,7 +178,6 @@
 3277	River Crossing	QrAFrrRS2C_River_Crossing.png	QrAFrrRS2C_River_Crossing.nx
 3273	Balloon Sniper 21	nKDvy37dVP_Copy_of_Baloons.png	nKDvy37dVP_Copy_of_Baloons.nx
 3270	Planes test	3K5nJRaew6_Planes_0.12.png	3K5nJRaew6_Planes_0.12.nx
-3888	App will disappear again from App Store		
 3267	Space Bounce	9TzrPa6rQx_Bounce_0.3.png	9TzrPa6rQx_Bounce_0.3.nx
 3266	Cookie Sweeper 	DjrvdzRkkm_05E38A9F984D4308BBBD05F17EC0E80B.jpeg	DjrvdzRkkm_Cookie_Swiper.nx
 3265	Star Wars Vector Tie Wave (infinite) UPDATE 	HFRQoxEnCN_Star_Wars_Rev0.02.png	HFRQoxEnCN_Star_Wars_Rev0.02.nx
@@ -242,7 +238,6 @@
 3148	Mesmerized Maze game	huyMQv8Dtk_Mezmerized_Maze_game.png	huyMQv8Dtk_Mezmerized_Maze_game.nx
 3146	Royal Solitaire card game	6XW8KtTmzF_Royal_Solitaire.png	6XW8KtTmzF_Royal_Solitaire.nx
 3143	NebyooSkate	bPXJ85e7Qq_Nebyooskate.png	bPXJ85e7Qq_Nebyooskate.nx
-3888	App will disappear again from App Store		
 3136	Word Shuffle game	uADz3Qdnsg_Word_Shuffle_4LW.png	uADz3Qdnsg_Word_Shuffle_4LW.nx
 3135	Word Chain game	M5XMd2dMAX_Word_Chain_4LW.png	M5XMd2dMAX_Word_Chain_4LW.nx
 3131	UDownWitDCT?	N4QgdFxkQL_dctsupre.png	N4QgdFxkQL_dctsupre.nx
@@ -303,7 +298,6 @@
 2989	(Converted) MOD Player thing	8j3AVBgeY8_LowRes_NX_20230519_15_43_08.png	8j3AVBgeY8_music.nx
 2988	Scatterplot maker	DXVYFBjvTu_LowRes_NX_20230518_18_13_29.png	DXVYFBjvTu_Scatterplot.nx
 2987	Jump PAC	Vo8CVPDwNk_JumpPac.png	Vo8CVPDwNk_Jump_Pac.nx
-3888	App will disappear again from App Store		
 2985	Fruit Drop Bot	3ougRmaPtv_LowRes_NX_20230515_18_09_51.png	3ougRmaPtv_FruitDropBot.nx
 2984	Breakout Battle	LfNRK7JkyF_Breakout_Battle_0.7.png	LfNRK7JkyF_Breakout_Battle_0.7.nx
 2981	Mystery message	mnKfBUBEQR_Mystery_Message.png	mnKfBUBEQR_Mystery_Message.nx
@@ -364,7 +358,6 @@
 2834	CUBES!	y6APrrt3xj_CUBES.png	y6APrrt3xj_CUBES.nx
 2828	Rails and Roads	vg5NHbRuP7_Rails_and_Roads.png	vg5NHbRuP7_Rails_and_Roads.nx
 2822	Connect 4 (polished)	v7MyDED569_Connect_4.png	v7MyDED569_Connect_4.nx
-3888	App will disappear again from App Store		
 2820	Connect 4 made in 30 minutes	krqrKrgcxD_Connect_4.png	krqrKrgcxD_Connect_4.nx
 2819	2048 Classic	8AR48ECGE3_2048_Classic.png	8AR48ECGE3_2048_Classic.nx
 2815	The Cone	daHTcZXD8Y_The_Cone.png	daHTcZXD8Y_The_Cone.nx
@@ -425,7 +418,6 @@
 2645	BIGYARDS	BLusrSPzE7_BigYards.png	BLusrSPzE7_BigYards.nx
 2644	Heads-N-Butts	Vx4xdE5qRF_Heads_N_Butts.png	Vx4xdE5qRF_Heads_N_Butts.nx
 2642	BILL&#039;s YARDS	qLBwZ84N3F_BILLs_YARDS.png	qLBwZ84N3F_BILLs_YARDS.nx
-3888	App will disappear again from App Store		
 2638	Floppy burd	aw7CMa3iim_LowRes_NX_20221001_18_23_58.png	aw7CMa3iim_Floppy_burd.nx
 2635	Timer	GmeW9nSdUj_Timer.png	GmeW9nSdUj_Timer.nx
 2633	Save the games (solitaire game)	ziFbSAM8w5_8bit_Gamechips_Solitaire.png	ziFbSAM8w5_8bit_Gamechips_Solitaire.nx
@@ -486,7 +478,6 @@
 2483	SPIT game	7umugR8Xms_Spit_game.png	7umugR8Xms_Spit_game.nx
 2477	Dice Connect game	Qy539GdgHD_Dice_Connect_2.png	Qy539GdgHD_Dice_Connect_2.nx
 2476	Zelda OoT	6ZaDDbbzGt_Zelda_OoT.png	6ZaDDbbzGt_Zelda_OoT.nx
-3888	App will disappear again from App Store		
 2475	O.R.D.E.R. - Death to the Illuminati	s4fmVdK2V6_LowRes_NX_20220710_19_36_05.png	s4fmVdK2V6_ORDERconcept_v0.4.nx
 2471	SPRITES used as a small background	CeopkDiRXW_Sprite_as_a_small_window_2.png	CeopkDiRXW_Sprite_as_a_small_window_2.nx
 2470	Cowboy Man	NNLtEv9Ag7_Cowboy_Man.png	NNLtEv9Ag7_Cowboy_Man.nx
@@ -547,7 +538,6 @@
 2325	THE game	pvdC5MiPQE_THE_game.png	pvdC5MiPQE_THE_game.nx
 2320	Disk Payload Injector	wsD6Bwbxuk_Payload_Injector.png	wsD6Bwbxuk_Payload_Injector.nx
 2317	Snake	25VzsbLpTQ_Snake.png	25VzsbLpTQ_Snake.nx
-3888	App will disappear again from App Store		
 2311	Cyber Attack game (not finished) playable on MOBILE PHONES	aCzcGoSaiD_First_Shooter.png	aCzcGoSaiD_First_Shooter.nx
 2310	Bub 	WivuPYrKMq_bub.png	WivuPYrKMq_bub.nx
 2308	Garden Landscape puzzler	ab8otkY9eo_Garden_Landscape.png	ab8otkY9eo_Garden_Landscape.nx
@@ -608,7 +598,6 @@
 2186	Adv Gfx Edit v0.1	dafom75egH_ADVGFXEDIT.png	dafom75egH_ADVGFXEDIT.nx
 2185	Slide Puzzle game (playable on mobile phones)	M34fwtdS9q_Alpha_Puzzle_Slide.png	M34fwtdS9q_Alpha_Puzzle_Slide.nx
 2179	Match Mates	KQTbHX2dAM_Match_Mates.png	KQTbHX2dAM_Match_Mates.nx
-3888	App will disappear again from App Store		
 2178	DairyDrop	heSiAmY8uP_Lerpy.png	heSiAmY8uP_Lerpy.nx
 2177	MuseHex 2	DErTigvDae_MUSHEX2.png	DErTigvDae_MUSHEX2.nx
 2176	MuseHex	qFbmfoNYHi_MUSHEX1.png	qFbmfoNYHi_MUSHEX1.nx
@@ -669,16 +658,15 @@
 2012	Isometric Toy	5vyoJRb4XR_IsometricHighres0.2.png	5vyoJRb4XR_IsometricHighres0.2.nx
 2011	Micro Text - (YAMTM)	cNvM6xn5wH_LowRes_NX_20210721_20_23_27.png	cNvM6xn5wH_Micro_Text_YAMTMInput_3.nx
 2007	Night Lights game	H6MBex2s2V_Night_Lights_Game.png	H6MBex2s2V_Night_Lights_Game.nx
-3888	App will disappear again from App Store		
 2004	Snake NX	UAoGXY6E4C_Snake.png	UAoGXY6E4C_Snake.nx
 2003	Visit Counter	GoDwm7h9A6_Visit_Counter.png	GoDwm7h9A6_Visit_Counter.nx
 2001	Micro Ants	FcuiF3D9eR_Micro_Ants.png	FcuiF3D9eR_Micro_Ants.nx
-1999			
-1998			
-1997			
-1991			
-1985			
-1984			
+1999	Micro Stratego	5oV8nfEejn_Micro_Stratego.png	5oV8nfEejn_Micro_Stratego.nx
+1998	But Wait There’s More	FhsE4doLEp_ButWaitTheresMore.png	FhsE4doLEp_ButWaitTheresMore.nx
+1997	Seaquest	6R7PhaHqBb_Seaquest.png	6R7PhaHqBb_Seaquest.nx
+1991	July 20, 1969	pM5gexrGhL_July20.png	pM5gexrGhL_July20.nx
+1985	Tetris Twist	PFNHdxJHbc_Tetris_Twist_0.1.png	PFNHdxJHbc_Tetris_Twist_0.1.nx
+1984	Walking	9C9QzehYSZ_Walk.png	9C9QzehYSZ_Walk.nx
 1979	Bit Art Redux	EJHKKq2N7X_Bit_Art_Redux.png	EJHKKq2N7X_Bit_Art_Redux.nx
 1976	GAMEBOOK maker	3hTHeqwFVQ_Gamebook_Maker_0.05.png	3hTHeqwFVQ_Gamebook_Maker_0.05.nx
 1971	pong (with bats)	46LjdkAiBo_LowRes_NX_20210620_10_38_41.png	46LjdkAiBo_pong.nx
@@ -730,7 +718,6 @@
 1866	hexapawn	sg6svrFUyK_SY4h5McZQR_LowRes_NX_20210425_18_30_27.png	sg6svrFUyK_hexapawn2.nx
 1865	Gun Mechanics Big Map	p7i2F6xjkw_Gun_Mechanics_Big_Map.png	p7i2F6xjkw_Gun_Mechanics_Big_Map.nx
 1861	Funny Face (toy)	UMVjv5W6k2_Potato_Face.png	UMVjv5W6k2_Potato_Face.nx
-3888	App will disappear again from App Store		
 1860	Raid On Fort Knox	ZUE3m6BpBf_raid_on_fort_knox.png	ZUE3m6BpBf_RaidOnFortKnox.nx
 1858	A Game Made On Raspberry Pi	JXbZtd9pjT_LowRes_NX_20210420_16_01_16.png	JXbZtd9pjT_A_Game_Made_With_Raspberry_Pi.nx
 1854	My favorite animation from an up coming game is:	NaTJbfxh3Q_My_Favorite_Animation_Is....png	NaTJbfxh3Q_My_Favorite_Animation_Is....nx
@@ -791,7 +778,6 @@
 1708	MARIO MAYEM	nmrEQvBFXu_Mario_Mayhem.png	nmrEQvBFXu_Mario_Mayhem.nx
 1705	SPACE ANOMALY (NX) ....WARNING 	vd6Rygo3u2_Space_Anomaly_NX.png	vd6Rygo3u2_Space_Anomaly_NX.nx
 1703	Moving Art	4vCyWxRGC6_Artsy_Lights.png	4vCyWxRGC6_Artsy_Lights.nx
-3888	App will disappear again from App Store		
 1700	Crator	Rq6Vi6Ysjw_Crator_Val.png	Rq6Vi6Ysjw_Crator_Val.nx
 1699	Space Harrier LowRes	2iVptfBn8m_Space_Harrier_Intent_V0.4.png	2iVptfBn8m_Space_Harrier_Intent_V0.4.nx
 1696	Battlestar Vipers VS Cylon robots	NGBsKbXTmf_Battlestar_Vipers_VS_Cylon_Robots.png	NGBsKbXTmf_Battlestar_Vipers_VS_Cylon_Robots.nx
@@ -852,7 +838,6 @@
 1525	Tiny Timo Text - Display more text on your screen	9DmzHCENNN_Tiny_Timo_Text.png	9DmzHCENNN_Tiny_Timo_Text.nx
 1523	Dash Arena	4wkiBib7BE_DashArenaV10.png	4wkiBib7BE_DashArenaV10.nx
 1517	TETRIS NX (puzzle game)	YwdCX8HQZ3_Tetris_NX.png	YwdCX8HQZ3_Tetris_NX.nx
-3888	App will disappear again from App Store		
 1507	moving test	5VGD98Q2Mc_EppSh9pZxH_LowRes_Galaxy_2_1.5.png	5VGD98Q2Mc_moving_test.nx
 1506	Lights Lights (puzzle game)	sbDYujGffk_Lights_Lights.png	sbDYujGffk_Lights_Lights.nx
 1505	Ant (sandbox toy)	6WzGJ2NTGG_Ant.png	6WzGJ2NTGG_Ant.nx
@@ -913,7 +898,6 @@
 1288	Texet Town	bQ6ptFKnzq_Texet_Town_V0.10.png	bQ6ptFKnzq_Texet_Town_V0.10.nx
 1287	Disco Lights	mJqnv5hPoV_Disco_Lights.png	mJqnv5hPoV_Disco_Lights.nx
 1284	Battle Deck	DMfHudgbPb_Battle_Deck.png	DMfHudgbPb_Battle_Deck.nx
-3888	App will disappear again from App Store		
 1282	Forbronwts	woJ8NgUB2G_Nrtsforbrother.png	woJ8NgUB2G_Nrtsforbrother.nx
 1278	Space Swarm	XcNDRmvDz6_Space_Swarm_0.14.png	XcNDRmvDz6_Space_Swarm_0.14.nx
 1271	Pong Recharged	macbN7yGzc_Pong_Recharged.png	macbN7yGzc_Pong_Recharged.nx
@@ -974,7 +958,6 @@
 1110	MinimalOS 0.4.1	DMAsK9nMFL_MinimalOS_0.4.1.png	DMAsK9nMFL_MinimalOS_0.4.1.nx
 1109	EYEBALLS (2 player test)	rajtifMVJv_Eyeballs..._2_Player_Test.png	rajtifMVJv_Eyeballs..._2_Player_Test.nx
 1108	The World We Know Today	b5YJzuagnW_The_World_We_Know_Today.png	b5YJzuagnW_The_World_We_Know_Today.nx
-3888	App will disappear again from App Store		
 1106	Tetris Puzzler	H9dX6XFRVZ_Tetris_Puzzler.png	H9dX6XFRVZ_Tetris_Puzzler.nx
 1100	626:827627627:66:	rwwrgF6WjN_Animal_Zoo_Puzzle.png	rwwrgF6WjN_Animal_Zoo_Puzzle.nx
 1097	smooth max	caPLy247aN_smoothmax.png	caPLy247aN_smoothmax.nx
@@ -1035,7 +1018,6 @@
 967	Alice	tJSinCongA_Alice03.png	tJSinCongA_Alice03.nx
 965	Air racer	xJCKeAhf2E_Air_Racer_revamped.png	xJCKeAhf2E_Air_Racer_revamped.nx
 964	Commander	Si9V7eNLYN_Commander.png	Si9V7eNLYN_Commander.nx
-3888	App will disappear again from App Store		
 960	Simple Ball	u2SmNFCRxK_Ball.png	u2SmNFCRxK_Ball.nx
 959	boxman	WDVhfd6wia_box_mover.png	WDVhfd6wia_box_mover.nx
 954	Eewwww.....	rpzAoZYbrw_Eewww.....png	rpzAoZYbrw_Eewww.....nx
@@ -1096,7 +1078,6 @@
 835	Vertical Scroller Demo	2TTmug3fES_8bit_Vertical_Scroller.png	2TTmug3fES_8bit_Vertical_Scroller.nx
 833	Mines	8bupP6HMeD_Mines.png	8bupP6HMeD_Mines.nx
 832	Vampire Ghost	6yxFvsxzZg_Vampire_Ghost.png	6yxFvsxzZg_Vampire_Ghost.nx
-3888	App will disappear again from App Store		
 830	Knight game WIP	76khApzL26_KnightGame.png	76khApzL26_KnightGame.nx
 828	Theramin	djrrrXTmP7_Theramin.png	djrrrXTmP7_Theramin.nx
 824	Train	DB3fS2HgYH_Train.png	DB3fS2HgYH_Train.nx
@@ -1157,7 +1138,6 @@
 677	Robot strike	zNaroP5UMj_Robot_Strike_2.png	zNaroP5UMj_Robot_Strike_2.nx
 673	Night	ANsK3qdUsK_Night.png	ANsK3qdUsK_Night.nx
 672	Tank Attack	9UeABY7J4Y_Tank_Attack.png	9UeABY7J4Y_Tank_Attack.nx
-3888	App will disappear again from App Store		
 671	Secret Cipher Alphabet	2ZYAm453G6_Secret_Cipher_Alphabet.png	2ZYAm453G6_Secret_Cipher_Alphabet.nx
 669	Deep space	mLp4zHYrQr_Deep_Space.png	mLp4zHYrQr_Deep_Space.nx
 668	Balls of Fun toy	hS2QQfC8iB_Balls_of_Fun_toy.png	hS2QQfC8iB_Balls_of_Fun_toy.nx
@@ -1218,7 +1198,6 @@
 512	ORBIT by HAMTARO	6B9yMDU6Ex_ORBIT_by_HAMTARO.png	6B9yMDU6Ex_ORBIT_by_HAMTARO.nx
 511	Dog Fight game	wHZYPp7WpE_Dog_Fight_game.png	wHZYPp7WpE_Dog_Fight_game.nx
 508	The ART of Attribute	kqJH4T7thU_The_Art_of_Attribute.png	kqJH4T7thU_The_Art_of_Attribute.nx
-3888	App will disappear again from App Store		
 501	OneBits Treasures game	cC5RzwHXAY_Onebits_Treaures.png	cC5RzwHXAY_Onebits_Treaures.nx
 499	go 4x4	ySHnM5XUKu_go4x4.png	ySHnM5XUKu_go4x4.nx
 495	C Dogs	KmRHSn2F4c_C_Dogs_0.002.png	KmRHSn2F4c_C_Dogs_0.002.nx
@@ -1279,7 +1258,6 @@
 360	Boost Battle	4fhpYvbJFo_Boost_Battle.png	4fhpYvbJFo_Boost_Battle.nx
 354	Infiltrator 2000	fvGejXEjDd_Infiltrator.png	fvGejXEjDd_Infiltrator.nx
 350	Star Warp	FBjwZBTEpj_Star_Warp.png	FBjwZBTEpj_Star_Warp.nx
-3888	App will disappear again from App Store		
 349	Spike 2 (V0.2)	x3myk3mFP6_Spike_2_V0.2.png	x3myk3mFP6_Spike_2_V0.2.nx
 348	Tinker Town Toy	5sfREKnJWk_Tinker_Town_Toy_1.2.png	5sfREKnJWk_Tinker_Town_Toy_1.2.nx
 347	PranXter’s game	ni9LU364vt_PranXters_game.png	ni9LU364vt_PranXters_game.nx
@@ -1340,7 +1318,6 @@
 177	Doredesuka game	2zXxGZyJmj_Doredesuka_0.3.png	2zXxGZyJmj_Doredesuka_0.3.nx
 175	Boulder Dash	diEdLpJXra_Bildschirmfoto_20181210_um_10.27.11.png	bEW8Ruzn7H_BD.nx
 173	Space Hive (Connect) game	6tQSa7Tn9A_Space_Hive.png	6tQSa7Tn9A_Space_Hive.nx
-3888	App will disappear again from App Store		
 170	Rift and Rythm	aWuKjbTp5a_Rift_and_Rythm_0.1.png	aWuKjbTp5a_Rift_and_Rythm_0.1.nx
 169	Dodge the Sound!	ov6rYRsSzY_Dodge_The_Sound.png	ov6rYRsSzY_Dodge_The_Sound.nx
 167	Star Defense NX 0.2	VrhubHgSWe_LRSDNX.JPG	VrhubHgSWe_Star_Defense_NX_0.2.nx
