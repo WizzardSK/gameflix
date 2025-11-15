@@ -616,7 +616,7 @@ neogeo;MAME/Software List ROMs (merged)/neogeo;SNK - Neo Geo;Neo Geo Merged;fbne
 neogeo;MAME/Software List ROMs (split)/neogeo;SNK - Neo Geo;Neo Geo Split;fbneo_libretro
 neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD Redump;neocd_libretro;cue
 neogeocd;TOSEC-ISO/SNK/Neo-Geo CD/Games/[ISO];SNK - Neo Geo CD;Neo Geo CD ISO;neocd_libretro;cue
-neogeocd;MAME/Software List CHDs (merged)/neocd;SNK - Neo Geo CD;Neo Geo CD CHD;neocd_libretro;cue
+neogeocd;MAME/Software List CHDs (merged)/neocd;SNK - Neo Geo CD;Neo Geo CD CHD;neocd_libretro
 ngp;No-Intro/SNK - NeoGeo Pocket;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> NoIntro;mednafen_ngp_libretro
 ngp;TOSEC/SNK/Neo-Geo Pocket/Games;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> TOSEC;mednafen_ngp_libretro
 ngp;MAME/Software List ROMs (merged)/ngp;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> Merged;mednafen_ngp_libretro;bin
