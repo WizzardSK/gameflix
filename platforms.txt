@@ -101,6 +101,7 @@ channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;<p>Fairchild Chann
 channelf;TOSEC/Fairchild/VES & Channel F/Games;Fairchild - Channel F;Fairchild Channel F TOSEC;freechaf_libretro
 channelf;MAME/Software List ROMs (merged)/channelf;Fairchild - Channel F;Fairchild Channel F Merged;freechaf_libretro
 channelf;MAME/Software List ROMs (split)/channelf;Fairchild - Channel F;Fairchild Channel F Split;freechaf_libretro
+channelf;FinalBurn Neo/channelf;Fairchild - Channel F;Fairchild Channel F FBN;freechaf_libretro
 vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;GCE Vectrex NoIntro;vecx_libretro
 vectrex;TOSEC/GCE/Vectrex/Games;GCE - Vectrex;GCE Vectrex TOSEC;vecx_libretro
 vectrex;MAME/Software List ROMs (merged)/vectrex;GCE - Vectrex;GCE Vectrex Merged;vecx_libretro
