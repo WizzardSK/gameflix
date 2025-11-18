@@ -406,6 +406,7 @@ gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i> NoIntro;gea
 gamegear;TOSEC/Sega/Game Gear/Games;Sega - Game Gear;<i>Game Gear</i> TOSEC;gearsystem_libretro
 gamegear;MAME/Software List ROMs (merged)/gamegear;Sega - Game Gear;<i>Game Gear</i> Merged;gearsystem_libretro
 gamegear;MAME/Software List ROMs (split)/gamegear;Sega - Game Gear;<i>Game Gear</i> Split;gearsystem_libretro
+gamegear;FinalBurn Neo/gamegear;Sega - Game Gear;<i>Game Gear</i> FBN;gearsystem_libretro
 
 psx;Redump/Sony - PlayStation;Sony - PlayStation;<p>PlayStation 1 Redump;pcsx_rearmed_libretro;cue
 psx;No-Intro/Non-Redump - Sony - PlayStation;Sony - PlayStation;PlayStation 1 NonRedump;pcsx_rearmed_libretro;cue
