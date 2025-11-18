@@ -320,6 +320,9 @@ nes;MAME/Software List ROMs (merged)/nes;Nintendo - Nintendo Entertainment Syste
 nes;MAME/Software List ROMs (split)/nes;Nintendo - Nintendo Entertainment System;Nintendo NES Split;nestopia_libretro
 fds;No-Intro/Nintendo - Family Computer Disk System (FDS);Nintendo - Family Computer Disk System;Famicom Disk System NoIntro;nestopia_libretro
 fds;TOSEC/Nintendo/Famicom Disk System/Games/[FDS];Nintendo - Family Computer Disk System;Famicom Disk System TOSEC;nestopia_libretro
+fds;MAME/Software List ROMs (merged)/famicom_flop;Nintendo - Family Computer Disk System;Famicom Disk System Merged;nestopia_libretro
+fds;MAME/Software List ROMs (split)/famicom_flop;Nintendo - Family Computer Disk System;Famicom Disk System Split;nestopia_libretro
+fds;FinalBurn Neo/fds;Nintendo - Family Computer Disk System;Famicom Disk System FBN;nestopia_libretro
 snes;No-Intro/Nintendo - Super Nintendo Entertainment System;Nintendo - Super Nintendo Entertainment System;Nintendo SNES NoIntro;snes9x_libretro
 snes;TOSEC/Nintendo/Super Famicom & Super Entertainment System/Games;Nintendo - Super Nintendo Entertainment System;Nintendo SNES TOSEC;snes9x_libretro
 snes;MAME/Software List ROMs (merged)/snes;Nintendo - Super Nintendo Entertainment System;Nintendo SNES Merged;snes9x_libretro
