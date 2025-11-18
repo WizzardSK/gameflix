@@ -191,6 +191,7 @@ zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TZX];Sinclair - ZX Spectrum;
 zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[Z80];Sinclair - ZX Spectrum;<code>ZX Spectrum</code> App Z80;fuse_libretro
 zxspectrum;MAME/Software List ROMs (merged)/spectrum_cass;Sinclair - ZX Spectrum;<code>ZX Spectrum</code> Merged;fuse_libretro
 zxspectrum;MAME/Software List ROMs (split)/spectrum_cass;Sinclair - ZX Spectrum;<code>ZX Spectrum</code> Split;fuse_libretro
+zxspectrum;FinalBurn Neo/spectrum;Sinclair - ZX Spectrum;<code>ZX Spectrum</code> FBN;fuse_libretro
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Games/[BIN];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Games;bluemsx_libretro
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Various;bluemsx_libretro
 spectravideo;MAME/Software List ROMs (merged)/svi318_cass;Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Merged;bluemsx_libretro
@@ -430,6 +431,7 @@ pcengine;MAME/Software List ROMs (merged)/pce;NEC - PC Engine - TurboGrafx 16;PC
 pcengine;MAME/Software List ROMs (split)/pce;NEC - PC Engine - TurboGrafx 16;PC Engine Split;mednafen_pce_fast_libretro
 pcengine;MAME/Software List ROMs (merged)/tg16;NEC - PC Engine - TurboGrafx 16;TurboGrafx Merged;mednafen_pce_fast_libretro
 pcengine;MAME/Software List ROMs (split)/tg16;NEC - PC Engine - TurboGrafx 16;TurboGrafx Split;mednafen_pce_fast_libretro
+pcengine;FinalBurn Neo/tg16;NEC - PC Engine - TurboGrafx 16;TurboGrafx FBN;mednafen_pce_fast_libretro
 pcengine;MAME/Software List ROMs (merged)/pce_tourvision;NEC - PC Engine - TurboGrafx 16;PCE TourVision Merged;mednafen_pce_fast_libretro
 pcengine;MAME/Software List ROMs (split)/pce_tourvision;NEC - PC Engine - TurboGrafx 16;PCE TourVision Split;mednafen_pce_fast_libretro
 pcengine;FinalBurn Neo/pce;NEC - PC Engine - TurboGrafx 16;PC Engine FBN;mednafen_pce_fast_libretro
