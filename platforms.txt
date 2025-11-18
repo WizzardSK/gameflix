@@ -329,6 +329,7 @@ snes;No-Intro/Nintendo - Super Nintendo Entertainment System;Nintendo - Super Ni
 snes;TOSEC/Nintendo/Super Famicom & Super Entertainment System/Games;Nintendo - Super Nintendo Entertainment System;Nintendo SNES TOSEC;snes9x_libretro
 snes;MAME/Software List ROMs (merged)/snes;Nintendo - Super Nintendo Entertainment System;Nintendo SNES Merged;snes9x_libretro
 snes;MAME/Software List ROMs (split)/snes;Nintendo - Super Nintendo Entertainment System;Nintendo SNES Split;snes9x_libretro
+snes;FinalBurn Neo/snes;Nintendo - Super Nintendo Entertainment System;Nintendo SNES FBN;snes9x_libretro
 snes-msu1;T-En Collection/Nintendo - Super Famicom - MSU1;Nintendo - Super Nintendo Entertainment System;Nintendo SNES MSU-1 CD;snes9x_libretro
 snes-msu1;T-En Collection/Nintendo - Super Famicom - MSU1 [roms only];Nintendo - Super Nintendo Entertainment System;Nintendo SNES MSU-1 roms;snes9x_libretro
 satellaview;No-Intro/Nintendo - Satellaview;Nintendo - Satellaview;Nintendo Satellaview NoIntro;snes9x_libretro
@@ -379,6 +380,7 @@ mastersystem;No-Intro/Sega - Master System - Mark III;Sega - Master System - Mar
 mastersystem;TOSEC/Sega/Mark III & Master System/Games;Sega - Master System - Mark III;Master System TOSEC;gearsystem_libretro
 mastersystem;MAME/Software List ROMs (merged)/sms;Sega - Master System - Mark III;Master System Merged;gearsystem_libretro
 mastersystem;MAME/Software List ROMs (split)/sms;Sega - Master System - Mark III;Master System Split;gearsystem_libretro
+mastersystem;FinalBurn Neo/sms;Sega - Master System - Mark III;Master System FBN;gearsystem_libretro
 megadrive;No-Intro/Sega - Mega Drive - Genesis;Sega - Mega Drive - Genesis;Mega Drive NoIntro;genesis_plus_gx_libretro
 megadrive;TOSEC/Sega/Mega Drive & Genesis/Games/[BIN];Sega - Mega Drive - Genesis;Mega Drive TOSEC;genesis_plus_gx_libretro
 megadrive;MAME/Software List ROMs (merged)/megadriv;Sega - Mega Drive - Genesis;Mega Drive Merged;genesis_plus_gx_libretro
