@@ -319,6 +319,7 @@ nes;No-Intro/Nintendo - Nintendo Entertainment System (Headered);Nintendo - Nint
 nes;TOSEC/Nintendo/Famicom & Entertainment System/Games/[NES];Nintendo - Nintendo Entertainment System;Nintendo NES TOSEC;nestopia_libretro
 nes;MAME/Software List ROMs (merged)/nes;Nintendo - Nintendo Entertainment System;Nintendo NES Merged;nestopia_libretro
 nes;MAME/Software List ROMs (split)/nes;Nintendo - Nintendo Entertainment System;Nintendo NES Split;nestopia_libretro
+nes;FinalBurn Neo/nes;Nintendo - Nintendo Entertainment System;Nintendo NES FBN;nestopia_libretro
 fds;No-Intro/Nintendo - Family Computer Disk System (FDS);Nintendo - Family Computer Disk System;Famicom Disk System NoIntro;nestopia_libretro
 fds;TOSEC/Nintendo/Famicom Disk System/Games/[FDS];Nintendo - Family Computer Disk System;Famicom Disk System TOSEC;nestopia_libretro
 fds;MAME/Software List ROMs (merged)/famicom_flop;Nintendo - Family Computer Disk System;Famicom Disk System Merged;nestopia_libretro
@@ -373,6 +374,7 @@ sg-1000;No-Intro/Sega - SG-1000 - SC-3000;Sega - SG-1000;<p>SG 1000 NoIntro;gear
 sg-1000;TOSEC/Sega/Game 1000/Games;Sega - SG-1000;SG 1000 TOSEC;gearsystem_libretro
 sg-1000;MAME/Software List ROMs (merged)/sg1000;Sega - SG-1000;SG 1000 Merged;gearsystem_libretro
 sg-1000;MAME/Software List ROMs (split)/sg1000;Sega - SG-1000;SG 1000 Split;gearsystem_libretro
+sg-1000;FinalBurn Neo/sg1000;Sega - SG-1000;SG 1000 FBN;gearsystem_libretro
 mastersystem;No-Intro/Sega - Master System - Mark III;Sega - Master System - Mark III;Master System NoIntro;gearsystem_libretro
 mastersystem;TOSEC/Sega/Mark III & Master System/Games;Sega - Master System - Mark III;Master System TOSEC;gearsystem_libretro
 mastersystem;MAME/Software List ROMs (merged)/sms;Sega - Master System - Mark III;Master System Merged;gearsystem_libretro
@@ -428,6 +430,7 @@ pcengine;MAME/Software List ROMs (merged)/tg16;NEC - PC Engine - TurboGrafx 16;T
 pcengine;MAME/Software List ROMs (split)/tg16;NEC - PC Engine - TurboGrafx 16;TurboGrafx Split;mednafen_pce_fast_libretro
 pcengine;MAME/Software List ROMs (merged)/pce_tourvision;NEC - PC Engine - TurboGrafx 16;PCE TourVision Merged;mednafen_pce_fast_libretro
 pcengine;MAME/Software List ROMs (split)/pce_tourvision;NEC - PC Engine - TurboGrafx 16;PCE TourVision Split;mednafen_pce_fast_libretro
+pcengine;FinalBurn Neo/pce;NEC - PC Engine - TurboGrafx 16;PC Engine FBN;mednafen_pce_fast_libretro
 pcenginecd;Redump/NEC - PC Engine CD & TurboGrafx CD;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD Redump;mednafen_pce_fast_libretro;cue
 pcenginecd;TOSEC-ISO/NEC/PC-Engine CD & TurboGrafx-16 CD/Games/[IMG];NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD ISO;mednafen_pce_fast_libretro;cue
 pcenginecd;MAME/Software List CHDs (merged)/pcecd;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD CHD;mednafen_pce_fast_libretro
@@ -435,7 +438,6 @@ supergrafx;No-Intro/NEC - PC Engine SuperGrafx;NEC - PC Engine SuperGrafx;PC Eng
 supergrafx;TOSEC/NEC/SuperGrafx/Games;NEC - PC Engine SuperGrafx;PC Engine 2 TOSEC;mednafen_supergrafx_libretro
 pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX Redump;mednafen_pcfx_libretro;cue
 pcfx;TOSEC-ISO/NEC/PC-FX/Games;NEC - PC-FX;PC-FX ISO;mednafen_pcfx_libretro;cue
-
 cdi;Redump/Philips - CD-i;Philips - CD-i;Philips CDi Redump;same_cdi_libretro;cue
 cdi;No-Intro/Non-Redump - Philips - CD-i;Philips - CD-i;Philips CDi NonRedump;same_cdi_libretro;cue
 cdi;TOSEC-ISO/Philips/CD-i/Games;Philips - CD-i;Philips CDi TOSEC;same_cdi_libretro;cue
@@ -630,6 +632,7 @@ ngp;No-Intro/SNK - NeoGeo Pocket;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> NoIn
 ngp;TOSEC/SNK/Neo-Geo Pocket/Games;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> TOSEC;mednafen_ngp_libretro
 ngp;MAME/Software List ROMs (merged)/ngp;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> Merged;mednafen_ngp_libretro;bin
 ngp;MAME/Software List ROMs (split)/ngp;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> Split;mednafen_ngp_libretro;bin
+ngp;FinalBurn Neo/ngp;SNK - Neo Geo Pocket;<i>Neo Geo Pocket</i> FBN;mednafen_ngp_libretro;bin
 ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;<i>NGP Color</i> NoIntro;mednafen_ngp_libretro
 ngpc;TOSEC/SNK/Neo-Geo Pocket Color/Games;SNK - Neo Geo Pocket Color;<i>NGP Color</i> TOSEC;mednafen_ngp_libretro
 ngpc;MAME/Software List ROMs (merged)/ngpc;SNK - Neo Geo Pocket Color;<i>NGP Color</i> Merged;mednafen_ngp_libretro;bin
