@@ -436,6 +436,9 @@ pcenginecd;TOSEC-ISO/NEC/PC-Engine CD & TurboGrafx-16 CD/Games/[IMG];NEC - PC En
 pcenginecd;MAME/Software List CHDs (merged)/pcecd;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD CHD;mednafen_pce_fast_libretro
 supergrafx;No-Intro/NEC - PC Engine SuperGrafx;NEC - PC Engine SuperGrafx;PC Engine 2 NoIntro;mednafen_supergrafx_libretro
 supergrafx;TOSEC/NEC/SuperGrafx/Games;NEC - PC Engine SuperGrafx;PC Engine 2 TOSEC;mednafen_supergrafx_libretro
+supergrafx;MAME/Software List ROMs (merged)/sgx;NEC - PC Engine SuperGrafx;PC Engine 2 Merged;mednafen_supergrafx_libretro
+supergrafx;MAME/Software List ROMs (split)/sgx;NEC - PC Engine SuperGrafx;PC Engine 2 Split;mednafen_supergrafx_libretro
+supergrafx;FinalBurn Neo/sgx;NEC - PC Engine SuperGrafx;PC Engine 2 FBN;mednafen_supergrafx_libretro
 pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX Redump;mednafen_pcfx_libretro;cue
 pcfx;TOSEC-ISO/NEC/PC-FX/Games;NEC - PC-FX;PC-FX ISO;mednafen_pcfx_libretro;cue
 cdi;Redump/Philips - CD-i;Philips - CD-i;Philips CDi Redump;same_cdi_libretro;cue
