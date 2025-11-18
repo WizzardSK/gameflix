@@ -577,6 +577,7 @@ msx1;MAME/Software List ROMs (merged)/msx1_cass;Microsoft - MSX;<code>MSX 1</cod
 msx1;MAME/Software List ROMs (split)/msx1_cass;Microsoft - MSX;<code>MSX 1</code> Cass Split;bluemsx_libretro
 msx1;MAME/Software List ROMs (merged)/msx1_flop;Microsoft - MSX;<code>MSX 1</code> Flop Merged;bluemsx_libretro
 msx1;MAME/Software List ROMs (split)/msx1_flop;Microsoft - MSX;<code>MSX 1</code> Flop Split;bluemsx_libretro
+msx1;FinalBurn Neo/msx;Microsoft - MSX;<code>MSX 1</code> FBN;bluemsx_libretro
 msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<code>MSX 2</code> NoIntro;bluemsx_libretro
 msx2;TOSEC/MSX/MSX2/Games/[DSK];Microsoft - MSX2;<code>MSX 2</code> TOSEC;bluemsx_libretro
 msx2;MAME/Software List ROMs (merged)/msx2_cart;Microsoft - MSX2;<code>MSX 2</code> Cart Merged;bluemsx_libretro
