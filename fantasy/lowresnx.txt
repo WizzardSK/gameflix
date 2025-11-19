@@ -1,3 +1,4 @@
+3895	ZinZin	8rQfq6mGMT_Zinzin.png	8rQfq6mGMT_Zinzin.nx
 3894	Tech Attack Preview	8DGCdEvv2T_Tech_Attack_Preview.png	8DGCdEvv2T_Tech_Attack_Preview.nx
 3887	Plants VS Zombies for Lowres NX (0.1)	jWM8AcMioa_Untitled1549_20251101082025min.png	jWM8AcMioa_Greenery_VS_The_Undead.nx
 3886	The beast	CyUS7t32WG_The_Beast.png	CyUS7t32WG_The_Beast.nx
@@ -1119,12 +1120,12 @@
 736	The PRIME DIRECTIVE (challenge)	WNqPm3CF9K_The_PRIME_DIRECTIVE.png	WNqPm3CF9K_The_PRIME_DIRECTIVE.nx
 735	The SLITHERING (game)	b6iBYahdvD_EZ_Snake.png	b6iBYahdvD_EZ_Snake.nx
 732	Touchy Tapper by CubicleHead	DxxQJ2Tquo_Unnamed_Program_2.png	DxxQJ2Tquo_Unnamed_Program_2.nx
-731			
-730			
-729			
-728			
-717			
-709			
+731	SPACE SHOOTER 4 version	6Z9SgMCRGV_SPACE_SHOOTER.png	6Z9SgMCRGV_SPACE_SHOOTER.nx
+730	Warp Speed	qAvGv6GX3F_Warp_Speed.png	qAvGv6GX3F_Warp_Speed.nx
+729	Firecrackers (toy)	TKa7ydKkDq_Firecrackers_toy.png	TKa7ydKkDq_Firecrackers_toy.nx
+728	Natac Island 	4TQNTEiUdG_Natac_Island_1.7b.png	4TQNTEiUdG_Natac_Island_1.7b.nx
+717	Bacteria	epPy2HJCJS_Bacteria.png	epPy2HJCJS_Bacteria.nx
+709	Fungí war	unPJWgzjqh_Fungi_War.png	unPJWgzjqh_Fungi_War.nx
 708	Squiggles	MXQohEdQLW_Squiggles_2.1.png	MXQohEdQLW_Squiggles_2.1.nx
 706	Analog TV	U4UqUWvGps_Analog_TV.png	U4UqUWvGps_Analog_TV.nx
 703	Untitled.io	togSTsFKFT_Untitled.io_1.3.png	togSTsFKFT_Untitled.io_1.3.nx
@@ -1346,9 +1347,9 @@
 106	Super Simon game	H9WnksaETQ_Super_Simon_1.1.png	H9WnksaETQ_Super_Simon_1.1.nx
 105	Baller game	LduRVF2ceX_Baller_Puzzler_NX.png	LduRVF2ceX_Baller_Puzzler_NX.nx
 98	Geometry Dash Alpha 3.0	9zQmzSF2D5_Geometry_Dash_Alpha_3.0.png	9zQmzSF2D5_Geometry_Dash_Alpha_3.0.nx
-95	Kingmaker, Three Crowns	7UjSTTRHLo_Kingmaker__3Crowns_V0.1.png	7UjSTTRHLo_Kingmaker__3Crowns_V0.1.nx
-90	Rubiks Race game	NnZWFCqboX_NX_Rubix_Race_Game.png	NnZWFCqboX_NX_Rubix_Race_Game.nx
-86	Car Tag game	L2KuAJKhu8_NX_Car_Tag.png	L2KuAJKhu8_NX_Car_Tag.nx
+95			
+90			
+86			
 82	Some New Songs (Playlist small)	NQajKwM3wu_LowRes_NX_20190212_09_18_32.png	NQajKwM3wu_LowFi_Player.nx
 76	The Entertainer NX	3aNBs4tWkY_The_Entertainer_NX.png	3aNBs4tWkY_The_Entertainer_NX.nx
 73	Hamurabi	qfCf8VgmH6_Hamurabi.png	qfCf8VgmH6_Hamurabi.nx
