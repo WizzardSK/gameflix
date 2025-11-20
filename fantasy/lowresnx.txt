@@ -1347,9 +1347,9 @@
 106	Super Simon game	H9WnksaETQ_Super_Simon_1.1.png	H9WnksaETQ_Super_Simon_1.1.nx
 105	Baller game	LduRVF2ceX_Baller_Puzzler_NX.png	LduRVF2ceX_Baller_Puzzler_NX.nx
 98	Geometry Dash Alpha 3.0	9zQmzSF2D5_Geometry_Dash_Alpha_3.0.png	9zQmzSF2D5_Geometry_Dash_Alpha_3.0.nx
-95			
-90			
-86			
+95	Kingmaker, Three Crowns	7UjSTTRHLo_Kingmaker__3Crowns_V0.1.png	7UjSTTRHLo_Kingmaker__3Crowns_V0.1.nx
+90	Rubiks Race game	NnZWFCqboX_NX_Rubix_Race_Game.png	NnZWFCqboX_NX_Rubix_Race_Game.nx
+86	Car Tag game	L2KuAJKhu8_NX_Car_Tag.png	L2KuAJKhu8_NX_Car_Tag.nx
 82	Some New Songs (Playlist small)	NQajKwM3wu_LowRes_NX_20190212_09_18_32.png	NQajKwM3wu_LowFi_Player.nx
 76	The Entertainer NX	3aNBs4tWkY_The_Entertainer_NX.png	3aNBs4tWkY_The_Entertainer_NX.nx
 73	Hamurabi	qfCf8VgmH6_Hamurabi.png	qfCf8VgmH6_Hamurabi.nx
