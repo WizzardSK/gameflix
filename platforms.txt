@@ -340,6 +340,8 @@ sgb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;Super Game Boy NoIntro;mese
 sgb;TOSEC/Nintendo/Game Boy/Games;Nintendo - Game Boy;Super Game Boy TOSEC;mesen-s_libretro
 sgb;MAME/Software List ROMs (merged)/gameboy;Nintendo - Game Boy;Super Game Boy Merged;mesen-s_libretro
 sgb;MAME/Software List ROMs (split)/gameboy;Nintendo - Game Boy;Super Game Boy Split;mesen-s_libretro
+sgb-msu1;T-En Collection/Nintendo - Super Famicom - MSU1;Nintendo - Super Nintendo Entertainment System;Super Game Boy MSU-1 CD;bsnes_libretro
+sgb-msu1;T-En Collection/Nintendo - Super Famicom - MSU1 [roms only];Nintendo - Super Nintendo Entertainment System;Super Game Boy MSU-1 roms;bsnes_libretro
 n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64;Nintendo 64 NoIntro;mupen64plus_next_libretro
 n64;TOSEC/Nintendo/64/Games;Nintendo - Nintendo 64;Nintendo 64 TOSEC;mupen64plus_next_libretro
 n64;MAME/Software List ROMs (merged)/n64;Nintendo - Nintendo 64;Nintendo 64 Merged;mupen64plus_next_libretro
