@@ -170,9 +170,13 @@ amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK];Amstrad - CPC;<p><code>Amstrad CPC</cod
 amstradcpc;TOSEC/Amstrad/CPC/Games/[CDT];Amstrad - CPC;<code>Amstrad CPC</code> CDT;cap32_libretro
 amstradcpc;TOSEC/Amstrad/CPC/Games/[SNA];Amstrad - CPC;<code>Amstrad CPC</code> SNA;cap32_libretro
 amstradcpc;TOSEC/Amstrad/CPC/Applications/[DSK];Amstrad - CPC;<code>Amstrad CPC</code> App;cap32_libretro
-amstradcpc;MAME/Software List ROMs (merged)/cpc_flop;Amstrad - CPC;<code>Amstrad CPC</code> Merged;cap32_libretro
-amstradcpc;MAME/Software List ROMs (split)/cpc_flop;Amstrad - CPC;<code>Amstrad CPC</code> Split;cap32_libretro
+amstradcpc;MAME/Software List ROMs (merged)/cpc_cass;Amstrad - CPC;<code>Amstrad CPC</code> Cass Merged;cap32_libretro
+amstradcpc;MAME/Software List ROMs (split)/cpc_cass;Amstrad - CPC;<code>Amstrad CPC</code> Cass Split;cap32_libretro
+amstradcpc;MAME/Software List ROMs (merged)/cpc_flop;Amstrad - CPC;<code>Amstrad CPC</code> Flop Merged;cap32_libretro
+amstradcpc;MAME/Software List ROMs (split)/cpc_flop;Amstrad - CPC;<code>Amstrad CPC</code> Flop Split;cap32_libretro
 gx4000;TOSEC/Amstrad/GX4000/Games;Amstrad - GX4000;<code>Amstrad GX4000</code> TOSEC;cap32_libretro
+gx4000;MAME/Software List ROMs (merged)/gx4000;Amstrad - GX4000;<code>Amstrad GX4000</code> Merged;cap32_libretro
+gx4000;MAME/Software List ROMs (split)/gx4000;Amstrad - GX4000;<code>Amstrad GX4000</code> Split;cap32_libretro
 zx81;TOSEC/Sinclair/ZX81/Games/[P];Sinclair - ZX 81;<code>Sinclair ZX81</code> TOSEC;81_libretro
 zx81;TOSEC/Sinclair/ZX81/Applications/[P];Sinclair - ZX 81;<code>Sinclair ZX81</code> App;81_libretro
 zx81;MAME/Software List ROMs (merged)/zx81_cass;Sinclair - ZX 81;<code>Sinclair ZX81</code> Merged;81_libretro
