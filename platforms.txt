@@ -545,8 +545,12 @@ c64;TOSEC/Commodore/C64/Games/Shoot'em Up/[D64];Commodore - 64;<code>Commodore 6
 c64;TOSEC/Commodore/C64/Games/Simulation/[D64];Commodore - 64;<code>Commodore 64</code> Simulation;vice_x64sc_libretro
 c64;TOSEC/Commodore/C64/Games/Sports/[D64];Commodore - 64;<code>Commodore 64</code> Sports;vice_x64sc_libretro
 c64;TOSEC/Commodore/C64/Games/Strategy/[D64];Commodore - 64;<code>Commodore 64</code> Strategy;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Educational/[D64];Commodore - 64;<code>Commodore 64</code> Edu;vice_x64sc_libretro
-c64;TOSEC/Commodore/C64/Applications/[D64];Commodore - 64;<code>Commodore 64</code> App;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Educational/[D64];Commodore - 64;<code>Commodore 64</code> Edu D64;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Educational/[PRG];Commodore - 64;<code>Commodore 64</code> Edu PRG;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Educational/[T64];Commodore - 64;<code>Commodore 64</code> Edu T64;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Applications/[D64];Commodore - 64;<code>Commodore 64</code> App D64;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Applications/[PRG];Commodore - 64;<code>Commodore 64</code> App PRG;vice_x64sc_libretro
+c64;TOSEC/Commodore/C64/Applications/[T64];Commodore - 64;<code>Commodore 64</code> App T64;vice_x64sc_libretro
 c64;MAME/Software List ROMs (merged)/c64_cass;Commodore - 64;<code>Commodore 64</code> Merged;vice_x64sc_libretro
 c64;MAME/Software List ROMs (split)/c64_cass;Commodore - 64;<code>Commodore 64</code> Split;vice_x64sc_libretro
 c128;TOSEC/Commodore/C128/Games/[D64];Commodore - 128;<code>Commodore 128</code> D64;vice_x128_libretro
