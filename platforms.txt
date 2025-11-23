@@ -196,6 +196,8 @@ zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[Z80];Sinclair - ZX Spectrum;
 zxspectrum;MAME/Software List ROMs (merged)/spectrum_cass;Sinclair - ZX Spectrum;<code>ZX Spectrum</code> Merged;fuse_libretro
 zxspectrum;MAME/Software List ROMs (split)/spectrum_cass;Sinclair - ZX Spectrum;<code>ZX Spectrum</code> Split;fuse_libretro
 zxspectrum;FinalBurn Neo/spectrum;Sinclair - ZX Spectrum;<code>ZX Spectrum</code> FBN;fuse_libretro
+zxspectrum;MAME/Software List ROMs (merged)/specpls3_flop;Sinclair - ZX Spectrum;<code>ZX Spectrum+3</code> Merged;fuse_libretro
+zxspectrum;MAME/Software List ROMs (split)/specpls3_flop;Sinclair - ZX Spectrum;<code>ZX Spectrum+3/code> Split;fuse_libretro
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Games/[BIN];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Games;bluemsx_libretro
 spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS];Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Various;bluemsx_libretro
 spectravideo;MAME/Software List ROMs (merged)/svi318_cass;Spectravideo - SVI-318 - SVI-328;<code>Spectravideo</code> Merged;bluemsx_libretro
