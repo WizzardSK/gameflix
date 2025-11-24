@@ -591,7 +591,9 @@ amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Multimedia/[ISO];Commodore - CD32;<code
 amigacd32;MAME/Software List CHDs (merged)/cd32;Commodore - CD32;<code>Amiga CD32</code> CHD;puae_libretro
 
 msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;<p><code>MSX 1</code> NoIntro;bluemsx_libretro
-msx1;TOSEC/MSX/MSX/Games/[DSK];Microsoft - MSX;<code>MSX 1</code> TOSEC;bluemsx_libretro
+msx1;TOSEC/MSX/MSX/Games/[CAS];Microsoft - MSX;<code>MSX 1</code> TOSEC CAS;bluemsx_libretro
+msx1;TOSEC/MSX/MSX/Games/[DSK];Microsoft - MSX;<code>MSX 1</code> TOSEC DSK;bluemsx_libretro
+msx1;TOSEC/MSX/MSX/Games/[ROM];Microsoft - MSX;<code>MSX 1</code> TOSEC ROM;bluemsx_libretro
 msx1;MAME/Software List ROMs (merged)/msx1_cart;Microsoft - MSX;<code>MSX 1</code> Cart Merged;bluemsx_libretro
 msx1;MAME/Software List ROMs (split)/msx1_cart;Microsoft - MSX;<code>MSX 1</code> Cart Split;bluemsx_libretro
 msx1;MAME/Software List ROMs (merged)/msx1_cass;Microsoft - MSX;<code>MSX 1</code> Cass Merged;bluemsx_libretro
@@ -600,7 +602,8 @@ msx1;MAME/Software List ROMs (merged)/msx1_flop;Microsoft - MSX;<code>MSX 1</cod
 msx1;MAME/Software List ROMs (split)/msx1_flop;Microsoft - MSX;<code>MSX 1</code> Flop Split;bluemsx_libretro
 msx1;FinalBurn Neo/msx;Microsoft - MSX;<code>MSX 1</code> FBN;bluemsx_libretro
 msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<code>MSX 2</code> NoIntro;bluemsx_libretro
-msx2;TOSEC/MSX/MSX2/Games/[DSK];Microsoft - MSX2;<code>MSX 2</code> TOSEC;bluemsx_libretro
+msx2;TOSEC/MSX/MSX2/Games/[DSK];Microsoft - MSX2;<code>MSX 2</code> TOSEC DSK;bluemsx_libretro
+msx2;TOSEC/MSX/MSX2/Games/[ROM];Microsoft - MSX2;<code>MSX 2</code> TOSEC ROM;bluemsx_libretro
 msx2;MAME/Software List ROMs (merged)/msx2_cart;Microsoft - MSX2;<code>MSX 2</code> Cart Merged;bluemsx_libretro
 msx2;MAME/Software List ROMs (split)/msx2_cart;Microsoft - MSX2;<code>MSX 2</code> Cart Split;bluemsx_libretro
 msx2;MAME/Software List ROMs (merged)/msx2_flop;Microsoft - MSX2;<code>MSX 2</code> Flop Merged;bluemsx_libretro
