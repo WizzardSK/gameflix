@@ -769,12 +769,12 @@
 1734	Dream ON	9dxuHdDxgZ_Dream_On.png	9dxuHdDxgZ_Dream_On.nx
 1729	Slot Machine	a9ttx8CgE6_Slot_Machine.png	a9ttx8CgE6_Slot_Machine.nx
 1728	Dumb Difficult Platformer 2	7z2Sdd57AL_Dumb_Difficult_Platformer_2_1.1.png	7z2Sdd57AL_Dumb_Difficult_Platformer_2_1.1.nx
-1722			
-1719			
-1718			
-1715			
-1714			
-1711			
+1722	some music i guess	5sUWKtuR58_D4B571D9EEFF4A619238B4D4AB2204AF.jpeg	5sUWKtuR58_some_music_i_guess.nx
+1719	Carromet	kdiFohREBJ_Carromet_0.4.4.png	kdiFohREBJ_Carromet_0.4.4.nx
+1718	Roo-Bicks Qb	ti99JorXwY_Rubix_0.1.png	ti99JorXwY_Rubix_0.1.nx
+1715	Quad Ludo	DY9z5RVCzN_Quad_Ludos.png	DY9z5RVCzN_Quad_Ludos.nx
+1714	CubikZirconium 1.1	8xFCd3s8hx_RUBCUB.png	8xFCd3s8hx_RUBCUB.nx
+1711	Single Prop Fighter	ossXtrgaQe_Single_Prop_Fighter.png	ossXtrgaQe_Single_Prop_Fighter.nx
 1710	Air Dog	pFFWzsFJJf_Air_Dog.png	pFFWzsFJJf_Air_Dog.nx
 1709	8Bit Stuff	4vatJ6aa5Y_BFDCDE519CE64B9FAE28F5C813837D61.jpeg	4vatJ6aa5Y_8Bit_Stuff.nx
 1708	MARIO MAYEM	nmrEQvBFXu_Mario_Mayhem.png	nmrEQvBFXu_Mario_Mayhem.nx
@@ -1000,11 +1000,11 @@
 1029	IDK	iARrZAHrit_IDK.png	iARrZAHrit_IDK.nx
 1028	LowResArka	aLrg7MGFBp_95BE6632230B4B27A15E86D00B7C423C.jpeg	aLrg7MGFBp_Arkanoid.nx
 1026	A Gravity Platform Game	HyAbk8jYpw_Gravity.png	HyAbk8jYpw_Gravity.nx
-1024	NX Bowling	NFQAJacH24_LowRes_NX_20200219_00_57_05.png	NFQAJacH24_NX_Bowling.nx
-1023	Plague.co	ifkEgAaEU6_Plague.co.png	ifkEgAaEU6_Plague.co.nx
-1019	The WALKING TREAD	Mq2N3gtBa5_Walking_Text.png	Mq2N3gtBa5_Walking_Text.nx
-1017	CHALLENGE TO ALL	H4HHHHCdKS_Bowling.png	H4HHHHCdKS_Bowling.nx
-1014	Pokemon Dreamscape	2avL5iPMzp_Pokemon_Dreamscape.png	2avL5iPMzp_Pokemon_Dreamscape.nx
+1024			
+1023			
+1019			
+1017			
+1014			
 1013	Zombie shooter	fxovyXk2G3_Zombie_Shooter.png	fxovyXk2G3_Zombie_Shooter.nx
 1012	The REAL SUDOKU game	BWk6z5qSeu_The_REAL_Sudoku.png	BWk6z5qSeu_The_REAL_Sudoku.nx
 1007	Musical thing	D5MzpTonf2_Musicthing.png	D5MzpTonf2_Musicthing.nx
