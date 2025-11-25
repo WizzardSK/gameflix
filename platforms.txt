@@ -519,6 +519,22 @@ dos;Total DOS Collection/Games/Files/2022;DOS;<code>MS-DOS</code> TDC 2022;dosbo
 dos;Total DOS Collection/Games/Files/2023;DOS;<code>MS-DOS</code> TDC 2023;dosbox_pure_libretro
 dos;Total DOS Collection/Games/Files/2024;DOS;<code>MS-DOS</code> TDC 2024;dosbox_pure_libretro
 dos;Total DOS Collection/Games/Files/2025;DOS;<code>MS-DOS</code> TDC 2025;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/1990;DOS;<code>MS-DOS</code> TDC CD 1990;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/1991;DOS;<code>MS-DOS</code> TDC CD 1991;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/1992;DOS;<code>MS-DOS</code> TDC CD 1992;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/1993;DOS;<code>MS-DOS</code> TDC CD 1993;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/1994;DOS;<code>MS-DOS</code> TDC CD 1994;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/1995;DOS;<code>MS-DOS</code> TDC CD 1995;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/1996;DOS;<code>MS-DOS</code> TDC CD 1996;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/1997;DOS;<code>MS-DOS</code> TDC CD 1997;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/1998;DOS;<code>MS-DOS</code> TDC CD 1998;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/1999;DOS;<code>MS-DOS</code> TDC CD 1999;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/2000;DOS;<code>MS-DOS</code> TDC CD 2000;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/2001;DOS;<code>MS-DOS</code> TDC CD 2001;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/2003;DOS;<code>MS-DOS</code> TDC CD 2003;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/2006;DOS;<code>MS-DOS</code> TDC CD 2006;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/2016;DOS;<code>MS-DOS</code> TDC CD 2016;dosbox_pure_libretro
+dos;Total DOS Collection/Games/Images/CD/2018;DOS;<code>MS-DOS</code> TDC CD 2018;dosbox_pure_libretro
 
 pet;TOSEC/Commodore/PET/Games/[PRG];Commodore - PET;<p><code>Commodore PET</code> TOSEC;vice_xpet_libretro
 cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<code>Commodore Plus-4</code> NoIntro;vice_xplus4_libretro
