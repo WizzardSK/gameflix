@@ -475,129 +475,9 @@
 2497	Dungeon master	X4Jc94ieFB_IMG_8762.jpeg	X4Jc94ieFB_DUNGEON_MASTER_DLC.nx
 2495	SPACE ODD-ESSY	iKYc6ZjTHU_Space_Oddessy_V0.17.png	iKYc6ZjTHU_Space_Oddessy_V0.17.nx
 2491	Flamer (v1.1)	wWMYvAeb6c_Flamer_V1.1.png	wWMYvAeb6c_Flamer_V1.1.nx
-2488	Memory Chain	araU7bmxvP_Memory_Chain_V0.2.png	araU7bmxvP_Memory_Chain_V0.2.nx
-2485	Really BAD text generator and even worse point giver	6CJCXbGJau_LowRes_NX_20220705_20_26_37.png	6CJCXbGJau_Textgen.nx
-2483	SPIT game	7umugR8Xms_Spit_game.png	7umugR8Xms_Spit_game.nx
-2477	Dice Connect game	Qy539GdgHD_Dice_Connect_2.png	Qy539GdgHD_Dice_Connect_2.nx
-2476	Zelda OoT	6ZaDDbbzGt_Zelda_OoT.png	6ZaDDbbzGt_Zelda_OoT.nx
-2475	O.R.D.E.R. - Death to the Illuminati	s4fmVdK2V6_LowRes_NX_20220710_19_36_05.png	s4fmVdK2V6_ORDERconcept_v0.4.nx
-2471	SPRITES used as a small background	CeopkDiRXW_Sprite_as_a_small_window_2.png	CeopkDiRXW_Sprite_as_a_small_window_2.nx
-2470	Cowboy Man	NNLtEv9Ag7_Cowboy_Man.png	NNLtEv9Ag7_Cowboy_Man.nx
-2465	Treasure Ahoy	UGapUyKxwU_Treasure_Ahoy.png	UGapUyKxwU_Treasure_Ahoy.nx
-2463	Avatar Generator	FbQTk8TLWF_Avatar_Generator.png	FbQTk8TLWF_Avatar_Generator.nx
-2460	Tyler Bros. Game &amp; Watch Style	sdPcZpHzwt_Tyler_Bros._Game__Watch_Style.png	sdPcZpHzwt_Tyler_Bros._Game__Watch_Style.nx
-2458	Reflex game	mL9eb7aGhv_Reflex_game.png	mL9eb7aGhv_Reflex_game.nx
-2455	Snek	Ec2KRcMaDj_snek2.png	Ec2KRcMaDj_snek2.nx
-2454	Micro Trax	R5Mi8yeSrc_Micro_Trax.png	R5Mi8yeSrc_Micro_Trax.nx
-2450	Game and Watch demo game	UViivhddT6_Game_and_Watch_demo.png	UViivhddT6_Game_and_Watch_demo.nx
-2440	Colorless	n56bRdFgAQ_Copy_of_Colorless.png	n56bRdFgAQ_Copy_of_Colorless.nx
-2438	Word Race XII	rj7rGjAno9_Word_Race_XII.png	rj7rGjAno9_Word_Race_XII.nx
-2437	Minesweeper	MjdULZcryp_minesweeper.png	MjdULZcryp_minesweeper.nx
-2433	Rend The Dark	JVPBGsiqJ6_LowRes_NX_20220612_15_22_19.png	JVPBGsiqJ6_Game.nx
-2424	Snak	sJQ3GHbDai_LowRes_NX_20220608_08_50_17.png	sJQ3GHbDai_snak.nx
-2423	Theremin Bagpipe	TeqnD4KJDA_Theramin_Bagpipe.png	TeqnD4KJDA_Theramin_Bagpipe.nx
-2422	Dr fourD game	28Vnv2Yygc_Dr_fourD.png	28Vnv2Yygc_Dr_fourD.nx
-2413	UByte Demo 0.5	6rDTBNP9f6_UBite_2.png	6rDTBNP9f6_UBite_2.nx
-2412	Match Master	rURVRSsfQv_Match_Master.png	rURVRSsfQv_Match_Master.nx
-2409	Atari Man (to the max)	tE6f6zX9Eo_Atari_Man_to_the_max.png	tE6f6zX9Eo_Atari_Man_to_the_max.nx
-2407	Wolf3D	hCWY4U8drp_wolf3D.png	hCWY4U8drp_wolf3D.nx
-2403	TETNIS - Very Early Test	g8Epmd5qbB_LowRes_NX_20220526_16_52_30.png	g8Epmd5qbB_tetnis.nx
-2402	Ignorant Fledglings	jAKJSGUvNe_LowRes_NX_20220526_20_23_40.png	jAKJSGUvNe_Ignorant_Fledlings.nx
-2401	Birthday crush 	VmNejmgYzc_Birthday_Crush.png	VmNejmgYzc_Birthday_Crush.nx
-2399	Radar Rat Race	6QrSYGWsC8_radar_rat_race.png	6QrSYGWsC8_radar_rat_race.nx
-2398	David Quest : Dungeon of Goblins	g9tjVHsAE5_LowRes_NX_20220505_21_36_05.png	g9tjVHsAE5_David_Quest.nx
-2396	Impossible Maze game	kfQcjvA9Vp_Impossible_Maze_2.png	kfQcjvA9Vp_Impossible_Maze_2.nx
-2391	Wormy	EbbKzZU6j8_Wormy2.png	EbbKzZU6j8_Wormy2.nx
-2388	My version of Macintosh Classic Boot Screen	cKa6VZ887W_Macintosh_Remade_Boot.png	cKa6VZ887W_Macintosh_Remade_Boot.nx
-2386	UBite (Bite-sized UbiArt)	3J4RacC6ph_UBite_2.png	3J4RacC6ph_UBite_2.nx
-2385	Ima Board	xaS9s8jEmF_Ima_Bored.png	xaS9s8jEmF_Ima_Bored.nx
-2384	Your king Adventure :)	Vo8DnK5yHP_Your_King_Adventure__Unfinished.png	Vo8DnK5yHP_Your_King_Adventure__Unfinished.nx
-2383	Telepo	aH9fvB86b2_LowRes_NX_20220512_19_04_32.png	aH9fvB86b2_telepo.nx
-2382	TWO by TWO	wocXXCnTks_Two_By_Two.png	wocXXCnTks_Two_By_Two.nx
-2380	Snake puzzle	eaBCs88BVc_LowRes_NX_20220511_00_06_12.png	eaBCs88BVc_snakepuzzle.nx
-2378	Fuzzy Logic	7yeDczEyxm_Fuzzy_Logic.png	7yeDczEyxm_Fuzzy_Logic.nx
-2377	Bit Bit (flash warning)	ygVqxQeAVm_Bit_Bit_flash_warning.png	ygVqxQeAVm_Bit_Bit_flash_warning.nx
-2376	desertscroller Remix	3LRVj7QKmh_desertscroller_Remix.png	3LRVj7QKmh_desertscroller_Remix.nx
-2375	Desert Scroller	NPm57M4Ucn_LowRes_NX_20220505_07_30_56.png	NPm57M4Ucn_desertscroller.nx
-2372	Bataille navale sur l’Arctique (aka Iceberg) 2.4	LF2BsVvYYK_BNA_aka_Iceberg_2.4.png	LF2BsVvYYK_BNA_aka_Iceberg_2.4.nx
-2371	Zomber NX (v1.1)	ygMyfd8nkZ_Zomber_NX_V1.1.png	ygMyfd8nkZ_Zomber_NX_V1.1.nx
-2370	Alien Attack game	WKK8duyxZP_Alien_Attack.png	WKK8duyxZP_Alien_Attack.nx
-2369	PONG (Autentic 70&#039;s Console style)	gDZbkH3qSJ_PONG.png	gDZbkH3qSJ_PONG.nx
-2361	PIRATE TREASURE game	L4YgSDMYcD_Pirate_Treasure.png	L4YgSDMYcD_Pirate_Treasure.nx
-2357	Pokémon Demo	Mg6UND4YFm_Pokemon_Demo.png	Mg6UND4YFm_Pokemon_Demo.nx
-2355	Sliding	4Ywh2KDNMo_LowRes_NX_20220618_07_23_02.png	4Ywh2KDNMo_slide.nx
-2353	Flowtext	tVZZuKaUtm_Flowtext2.png	tVZZuKaUtm_Flowtext2.nx
-2352	Mezmerized	y7oafSEun2_Mezmerized.png	y7oafSEun2_Mezmerized.nx
-2351	Caverns Test 3	ZesJUUfGuC_Caverns_3.1.png	ZesJUUfGuC_Caverns_3.1.nx
-2350	Molecular Flip game	7Up7sMBZ4s_Molecular_Flip_game.png	7Up7sMBZ4s_Molecular_Flip_game.nx
-2349	LOX BOX game	GrpckJeNHF_Lox_Box.png	GrpckJeNHF_Lox_Box.nx
-2344	What have I done wrong?	2o2mqo3n5G_What_Have_I_Done_Wrong.png	2o2mqo3n5G_What_Have_I_Done_Wrong.nx
-2341	FIGHT!	JFFbzuhB2M_Fight.png	JFFbzuhB2M_Fight.nx
-2332	EAT COW!	V2nRazNZST_EAT_COW.png	V2nRazNZST_EAT_COW.nx
-2331	SQUARES IN-A-ROW game	r8A5cte7ju_Squares_Inarow_game.png	r8A5cte7ju_Squares_Inarow_game.nx
-2329	Pls don“ forget me :(	kqYgJ2nWym_Unnamed_Program_25.png	kqYgJ2nWym_Unnamed_Program_25.nx
-2328	(KATA)KANA DRILL	huHNbLCsjN_KANADRILL.png	huHNbLCsjN_KANADRILL.nx
-2325	THE game	pvdC5MiPQE_THE_game.png	pvdC5MiPQE_THE_game.nx
-2320	Disk Payload Injector	wsD6Bwbxuk_Payload_Injector.png	wsD6Bwbxuk_Payload_Injector.nx
-2317	Snake	25VzsbLpTQ_Snake.png	25VzsbLpTQ_Snake.nx
-2311	Cyber Attack game (not finished) playable on MOBILE PHONES	aCzcGoSaiD_First_Shooter.png	aCzcGoSaiD_First_Shooter.nx
-2310	Bub 	WivuPYrKMq_bub.png	WivuPYrKMq_bub.nx
-2308	Garden Landscape puzzler	ab8otkY9eo_Garden_Landscape.png	ab8otkY9eo_Garden_Landscape.nx
-2302	I_Collect coin game	Qace8w9Lqb_I_Collect_game.png	Qace8w9Lqb_I_Collect_game.nx
-2300	Bubble&amp;Squeak	YcqtPvGvC7_moveit.png	YcqtPvGvC7_moveit.nx
-2298	Escape MCP	Dvz34Jw6ou_escapeMCP.png	Dvz34Jw6ou_Escape_MCP.nx
-2297	Spy vs Spy	zfkpkiyXRU_Spy_vs_Spy_2.png	zfkpkiyXRU_Spy_vs_Spy_2.nx
-2296	STUDY: Spherical Contact via Math	MXVYq4Md63_Spherical_Contact_by_Math.png	MXVYq4Md63_Spherical_Contact_by_Math.nx
-2294	STAR FIRE	uosE9phKpa_Star_Fire.png	uosE9phKpa_Star_Fire.nx
-2286	Jupiter Lander	vABaeQCxMc_LowRes_NX_20220208_11_41_05.png	vABaeQCxMc_JupiterLander.nx
-2285	Cloudy Mountain	3moDrZUwFG_Cloudy_Mountain_Twa_Corbies_0.58c.png	3moDrZUwFG_Cloudy_Mountain_Twa_Corbies_0.58c.nx
-2283	Connections	g2KP8mx7EE_Connections.png	g2KP8mx7EE_Connections.nx
-2281	Platformer Engine	2oARR4V9sx_Platformer_Engine.png	2oARR4V9sx_Platformer_Engine.nx
-2277	Base Attack	T6Z8699Ufj_BASE_ATTACK.png	T6Z8699Ufj_Base_Attack.nx
-2275	Odds Tester	T7KQAhHuXM_Odds_Tester.png	T7KQAhHuXM_Odds_Tester.nx
-2273	Piano (remix)	7FmEfxncjo_Piano_remix_original_by_G9.png	7FmEfxncjo_Piano_remix_original_by_G9.nx
-2271	Space Aliens game	vwhrNfoqy8_Space_Aliens.png	vwhrNfoqy8_Space_Aliens.nx
-2269	Fractured Lights Game	fQxz4tuJ25_Fractured_Lights_Game.png	fQxz4tuJ25_Fractured_Lights_Game.nx
-2266	Archer	AXh2uNbXJf_LowRes_NX_20220116_20_06_54.png	AXh2uNbXJf_archer.nx
-2265	ATLANTIS	divYuLbJAr_ATLANTIS.png	divYuLbJAr_Atlantis.nx
-2263	Mover (customizable)	qF5LsW3E95_Mover.png	qF5LsW3E95_Mover.nx
-2262	JGOS 1.3.1use version (with lowres adventure in bootloader)	UJRcFEMXAN_JGOS_1.3.1.png	UJRcFEMXAN_JGOS_1.3.1.nx
-2261	Latitude	inFgeDEyRa_IMG_4860.jpg	inFgeDEyRa_Latitude1.1.nx
-2260	Power Puzzles game set	HkwuQVvX7N_Power_Puzzles_V0.303.png	HkwuQVvX7N_Power_Puzzles_V0.303.nx
-2257	Matchabet Game	pWdpvT6LfM_Matchabet.png	pWdpvT6LfM_Matchabet.nx
-2249	Power Poker game	7eWyhPegNu_Power_Poker_0.4.png	7eWyhPegNu_Power_Poker_0.4.nx
-2246	HUNGEE FROG	RP4w4Q5B3g_D8AAE8C839574D6CB6A7E61CB9E72D1A.jpeg	RP4w4Q5B3g_HUNGEE_FROGCurrent12122.nx
-2244	Sprite Draw	LhGR8xjnkZ_Sprite_Draw.png	LhGR8xjnkZ_Sprite_Draw.nx
-2243	Swipey Yatzey game	GDNUZ8oRGk_Swipy_Yatchy.png	GDNUZ8oRGk_Swipy_Yatchy.nx
-2242	Swipe Demo	NVAvCx563t_Swipe_Demo.png	NVAvCx563t_Swipe_Demo.nx
-2240	Happy Newyears 2022	LjyDUEhFNV_Happy_Newyears_2022.png	LjyDUEhFNV_Happy_Newyears_2022.nx
-2239	Balls O’ Steel	pDoCjzZ2Dc_BallsOSteel.png	pDoCjzZ2Dc_BallsOSteel.nx
-2236	Sheet Music Editor 2	L85Xd3o8Qd_Sheet_Music_Editor_2.01.png	L85Xd3o8Qd_Sheet_Music_Editor_2.01.nx
-2233	Santa Assault	TSxC5wCsrK_Santa_Assult.png	TSxC5wCsrK_Santa_Assult.nx
-2231	C.T.A.	JuY8uCi8zn_Grit.png	JuY8uCi8zn_Grit.nx
-2226	ConX	SgJp9Pa2xg_ConX.png	SgJp9Pa2xg_ConX.nx
-2225	Henasee	WPmSpP9Ro2_Henasee.png	WPmSpP9Ro2_Henasee.nx
-2218	70’s Kaleidoscope 	CBJ9EbEoYK_KisslightsDelta.png	CBJ9EbEoYK_KisslightsDelta.nx
-2216	70’s Logo Lights	7JsEgZkzoV_Kisslights.png	7JsEgZkzoV_Kisslights.nx
-2213	Lite Brite	L8JnXFH2Pi_Simon.png	L8JnXFH2Pi_Simon.nx
-2212	Wild Animals Championship Race game	K9AsMmeNPN_Etanes.png	K9AsMmeNPN_Etanes.nx
-2211	Ultra Lights-Out	PGKrYLdQh5_Massa.png	PGKrYLdQh5_Massa.nx
-2210	Puker 	WbosqdVqLH_Puker.png	WbosqdVqLH_Puker.nx
-2208	Blox 2	WCMHUNrfsk_Blox2.png	WCMHUNrfsk_Blox2.nx
-2206	VIMNX	wXAKrLPf4d_VIMNX.png	wXAKrLPf4d_VIMNX.nx
-2205	BC&#039;S TIRE RUN	Es2VTbwC6F_BCs_Tire_Run.png	Es2VTbwC6F_BCs_Tire_Run.nx
-2203	Mapping Test	5ti5znYT2i_Mapping_Test.png	5ti5znYT2i_Mapping_Test.nx
-2202	Freestyle Card Table	PYaVK6QaAG_Freestyle_Cards.png	PYaVK6QaAG_Freestyle_Cards.nx
-2201	Test: scrollable map	mpKVf8QyMp_fanesia.png	mpKVf8QyMp_fanesia.nx
-2199	Hollow Knight Prototype	dEdCZsDxjt_Hollow_Knight.png	dEdCZsDxjt_Hollow_Knight.nx
-2198	Drawing with Flashing lights 	XnTmxSyzxr_Flash_Patterns_Draw.png	XnTmxSyzxr_Flash_Patterns_Draw.nx
-2197	Guitar Villain 1.0	kXShm9kbxF_Gtr.png	kXShm9kbxF_Gtr.nx
-2194	Tetris Treasures game   (playable on mobile phones)	KrbhNuEpoN_Spelunk.png	KrbhNuEpoN_Spelunk.nx
-2192	Don’t touch dog	PGGqUEKWAJ_Dont_Touch_Dog.png	PGGqUEKWAJ_Dont_Touch_Dog.nx
-2191	Airplane Duel game (for mobile phones)	Rsv5iU8ghy_Blue_Hogs.png	Rsv5iU8ghy_Blue_Hogs.nx
-2190	Lights Out game (playable on mobile phones)	KPauERKYFz_Lights_Out.png	KPauERKYFz_Lights_Out.nx
-2188	Poker Smash game (playable on mobile phones)	yjCKtGLvkd_Poker_Smash.png	yjCKtGLvkd_Poker_Smash.nx
-2186	Adv Gfx Edit v0.1	dafom75egH_ADVGFXEDIT.png	dafom75egH_ADVGFXEDIT.nx
+2488			
+2485			
+2483			
 2185	Slide Puzzle game (playable on mobile phones)	M34fwtdS9q_Alpha_Puzzle_Slide.png	M34fwtdS9q_Alpha_Puzzle_Slide.nx
 2179	Match Mates	KQTbHX2dAM_Match_Mates.png	KQTbHX2dAM_Match_Mates.nx
 2178	DairyDrop	heSiAmY8uP_Lerpy.png	heSiAmY8uP_Lerpy.nx
@@ -1000,11 +880,11 @@
 1029	IDK	iARrZAHrit_IDK.png	iARrZAHrit_IDK.nx
 1028	LowResArka	aLrg7MGFBp_95BE6632230B4B27A15E86D00B7C423C.jpeg	aLrg7MGFBp_Arkanoid.nx
 1026	A Gravity Platform Game	HyAbk8jYpw_Gravity.png	HyAbk8jYpw_Gravity.nx
-1024			
-1023			
-1019			
-1017			
-1014			
+1024	NX Bowling	NFQAJacH24_LowRes_NX_20200219_00_57_05.png	NFQAJacH24_NX_Bowling.nx
+1023	Plague.co	ifkEgAaEU6_Plague.co.png	ifkEgAaEU6_Plague.co.nx
+1019	The WALKING TREAD	Mq2N3gtBa5_Walking_Text.png	Mq2N3gtBa5_Walking_Text.nx
+1017	CHALLENGE TO ALL	H4HHHHCdKS_Bowling.png	H4HHHHCdKS_Bowling.nx
+1014	Pokemon Dreamscape	2avL5iPMzp_Pokemon_Dreamscape.png	2avL5iPMzp_Pokemon_Dreamscape.nx
 1013	Zombie shooter	fxovyXk2G3_Zombie_Shooter.png	fxovyXk2G3_Zombie_Shooter.nx
 1012	The REAL SUDOKU game	BWk6z5qSeu_The_REAL_Sudoku.png	BWk6z5qSeu_The_REAL_Sudoku.nx
 1007	Musical thing	D5MzpTonf2_Musicthing.png	D5MzpTonf2_Musicthing.nx
