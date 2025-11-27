@@ -1,6 +1,5 @@
-153025	Space Tonbow	spacetonbow-0.p8.png
+153025	Space Tonbow	spacetonbow-1.p8.png
 153021	Knifight 1.0	twixmaster_knifight-0.p8.png
-153013	abes_world_1	abes_world_1-0.p8.png
 153006	Cool Sexy Vampires	juhakohodi-0.p8.png
 152997	new platformer in progress	yirowunozu-0.p8.png
 152995	metal_drummer_sim	metal_drummer_sim-0.p8.png
@@ -332,7 +331,7 @@
 151579	Garden Days	wipepetina-0.p8.png
 151578	Pico-8 Clock	pico8clock-1.p8.png
 151576	simple breakout sample	simple_breakout_sample_kkp-0.p8.png
-151575	Space 8	space_8-2.p8.png
+151575	Space 8	space_8-3.p8.png
 151573	Obsessive	ocd-0.p8.png
 151569	Crappy Bird	bahugimafu-1.p8.png
 151568	Experimenting with menger sponges.	mengerspongetest-2.p8.png
@@ -8395,7 +8394,7 @@
 32123	A selection of easing functions	58400.p8.png
 32119	Tillykke!	58361.p8.png
 32118	Two Minutes To Sunset	58355.p8.png
-32117	3D Picoh Mummy	58326.p8.png
+32117	Monster Mix and Match Jam Gallery Cart	58326.p8.png
 32114	Canyon Bomber	58320.p8.png
 32107	pigdog	58284.p8.png
 32106	Signed by '89	58272.p8.png
@@ -8635,6 +8634,7 @@
 31316	Pilot8	53240.p8.png
 31313	pico-nn	52918.p8.png
 31312	Pico On-Ice	52910.p8.png
+31309	Topos	52900.p8.png
 31309	Topos	52900.p8.png
 31308	Bumble Bots Low Rez	bumble_bots-0.p8.png
 31304	Official Royale Wedding Sim	52867.p8.png
