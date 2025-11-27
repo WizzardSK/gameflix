@@ -582,7 +582,7 @@ amiga500;TOSEC/Commodore/Amiga/Games/Public Domain/[ADF];Commodore - Amiga;<code
 amiga500;TOSEC/Commodore/Amiga/Games/SPS;Commodore - Amiga;<code>Amiga</code> SPS;puae_libretro
 amiga500;TOSEC/Commodore/Amiga/Educational/[ADF];Commodore - Amiga;<code>Amiga</code> Edu;puae_libretro
 amiga500;TOSEC/Commodore/Amiga/Applications/[ADF];Commodore - Amiga;<code>Amiga</code> App;puae_libretro
-amiga500;TOSEC/Commodore/Amiga/Applications/Public Domain/[ADF];Commodore - Amiga;<code>Amiga</code> PD ADF;puae_libretro
+amiga500;TOSEC/Commodore/Amiga/Applications/Public Domain/[ADF];Commodore - Amiga;<code>Amiga</code> App PD;puae_libretro
 amiga500;MAME/Software List ROMs (merged)/amiga_flop;Commodore - Amiga;<code>Amiga</code> Flop Merged;puae_libretro
 amiga500;MAME/Software List ROMs (split)/amiga_flop;Commodore - Amiga;<code>Amiga</code> Flop Split;puae_libretro
 amiga500;MAME/Software List ROMs (merged)/amigaecs_flop;Commodore - Amiga;<code>Amiga</code> ECS Flop Merged;puae_libretro
