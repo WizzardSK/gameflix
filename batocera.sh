@@ -12,7 +12,7 @@ for name in voxatron pico8; do [ ! -f /userdata/roms/$name/splore.png ] && wget 
 ln -sf /userdata/system/.lexaloffle/Voxatron/bbs/carts /userdata/roms/voxatron/Voxatron; ln -sf /userdata/system/.lexaloffle/pico-8/bbs/carts /userdata/roms/pico8/PICO-8
 
 mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/roms/{tic80/TIC-80,lowresnx/LowresNX,wasm4/WASM-4}
-IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
+IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv)"
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 
 archives=(https://wizzardsk.github.io/{tic80,wasm4,lowresnx}.zip)
