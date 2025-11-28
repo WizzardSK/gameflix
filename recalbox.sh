@@ -22,7 +22,7 @@ fi
 
 wget -nv -O /recalbox/share_init/system/.emulationstation/systemlist.xml https://github.com/WizzardSK/gameflix/raw/main/recalbox/systemlist.xml
 wget -nv -O /recalbox/share/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
-IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.txt)"
+IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv)"
 
 es stop; chvt 3; clear
 
