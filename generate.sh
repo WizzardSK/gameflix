@@ -6,8 +6,8 @@ echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gamefli
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
 
 echo "<figure><a href='TIC-80.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/tic80.jpg'></a><figcaption>TIC-80</figcaption></figure>
-<figure><a href='WASM-4.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/wasm4.jpg'></a><figcaption>WASM-4</figcaption></figure>
 <figure><a href='LowresNX.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/lowresnx.jpg'></a><figcaption>LowresNX</figcaption></figure>
+<figure><a href='WASM-4.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/wasm4.jpg'></a><figcaption>WASM-4</figcaption></figure>
 <figure><a href='PICO-8.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/pico8.jpg'></a><figcaption>PICO-8</figcaption></figure>
 <figure><a href='Voxatron.html'><img class=loaded src='https://wiki.batocera.org/_media/systems:voxatron.png'></a><figcaption>Voxatron</figcaption></figure>" >> ~/gameflix/main.html
 
