@@ -1266,11 +1266,11 @@
 346	Apple Catcher	jFE7ackCw6_Unnamed_Program_52.png	jFE7ackCw6_Unnamed_Program_52.nx
 345	Treasure Islands	6BnSBQTViL_Treasure_Islands.png	6BnSBQTViL_Treasure_Islands.nx
 344	Spark Toy (desbyc Remix)	EiyLCwX5jB_Spark_Toy_desbyc_Remix.png	EiyLCwX5jB_Spark_Toy_desbyc_Remix.nx
-343			
-337			
-332			
-327			
-323			
+343	Spark Toy	BATJQP7c8z_Spark_Toy.png	BATJQP7c8z_Spark_Toy.nx
+337	Pacbit Life toy	v7N2gZYDBq_Pacbit_Life.png	v7N2gZYDBq_Pacbit_Life.nx
+332	Puzzle This? (game)	eyU9VHrtFJ_Puzzle_This.png	eyU9VHrtFJ_Puzzle_This.nx
+327	Pac-Man	Hy4tcMDouc_Single_Ghost_Pac.png	Hy4tcMDouc_Single_Ghost_Pac.nx
+323	UFO ATTACK game	VQJna4YXYr_UFO_Attack.png	VQJna4YXYr_UFO_Attack.nx
 322	Beat The Clock game	6Utuya6DYY_Beat_The_Clock_game.png	6Utuya6DYY_Beat_The_Clock_game.nx
 319	Timo&#039;s 3D maze NX	dTeGUFaHqW_IMG_6613.JPG	dTeGUFaHqW_Unnamed_Program_12.nx
 316	(Need help with BG)	Bypas2iRE6_IMG_6614.JPG	Bypas2iRE6_Unnamed_Program_7.nx
