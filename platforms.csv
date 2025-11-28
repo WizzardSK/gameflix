@@ -291,9 +291,9 @@ thomson;TOSEC/Thomson/MO5/Games/[K7];Thomson - MOTO;<p><code>Thomson MO5</code> 
 thomson;TOSEC/Thomson/MO6/Games;Thomson - MOTO;<code>Thomson MO6</code> K7;theodore_libretro;
 thomson;TOSEC/Thomson/TO7/Games/[K7];Thomson - MOTO;<code>Thomson TO7</code> K7;theodore_libretro;
 thomson;TOSEC/Thomson/TO7/Games/[M7];Thomson - MOTO;<code>Thomson TO7</code> M7;theodore_libretro;
-thomson;TOSEC/Thomson/TO8%2C TO8D%2C TO9%2C TO9+/Games/[FD];Thomson - MOTO;<code>Thomson TO8</code> FD;theodore_libretro;
-thomson;TOSEC/Thomson/TO8%2C TO8D%2C TO9%2C TO9+/Games/[K7];Thomson - MOTO;<code>Thomson TO8</code> K7;theodore_libretro;
-thomson;TOSEC/Thomson/TO8%2C TO8D%2C TO9%2C TO9+/Games/[SAP];Thomson - MOTO;<code>Thomson TO8</code> SAP;theodore_libretro;
+thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[FD];Thomson - MOTO;<code>Thomson TO8</code> FD;theodore_libretro;
+thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[K7];Thomson - MOTO;<code>Thomson TO8</code> K7;theodore_libretro;
+thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[SAP];Thomson - MOTO;<code>Thomson TO8</code> SAP;theodore_libretro;
 thomson;MAME/Software List ROMs (merged)/mo5_cart;Thomson - MOTO;<code>Thomson MO5</code> Cart Merged;theodore_libretro;
 thomson;MAME/Software List ROMs (split)/mo5_cart;Thomson - MOTO;<code>Thomson MO5</code> Cart Split;theodore_libretro;
 thomson;MAME/Software List ROMs (merged)/mo5_cass;Thomson - MOTO;<code>Thomson MO5</code> Cass Merged;theodore_libretro;
@@ -521,9 +521,9 @@ dos;Total DOS Collection/Games/Images/CD/2016;DOS;<code>MS-DOS</code> TDC CD 201
 dos;Total DOS Collection/Games/Images/CD/2018;DOS;<code>MS-DOS</code> TDC CD 2018;dosbox_pure_libretro;
 pet;TOSEC/Commodore/PET/Games/[PRG];Commodore - PET;<p><code>Commodore PET</code> TOSEC;vice_xpet_libretro;
 cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<code>Commodore Plus-4</code> NoIntro;vice_xplus4_libretro;
-cplus4;TOSEC/Commodore/C16%2C C116 & Plus-4/Games/[PRG];Commodore - Plus-4;<code>Commodore Plus-4</code> PRG;vice_xplus4_libretro;
-cplus4;TOSEC/Commodore/C16%2C C116 & Plus-4/Games/[TAP];Commodore - Plus-4;<code>Commodore Plus-4</code> TAP;vice_xplus4_libretro;
-cplus4;TOSEC/Commodore/C16%2C C116 & Plus-4/Utilities/[PRG];Commodore - Plus-4;<code>Commodore Plus-4</code> Utils;vice_xplus4_libretro;
+cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[PRG];Commodore - Plus-4;<code>Commodore Plus-4</code> PRG;vice_xplus4_libretro;
+cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP];Commodore - Plus-4;<code>Commodore Plus-4</code> TAP;vice_xplus4_libretro;
+cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Utilities/[PRG];Commodore - Plus-4;<code>Commodore Plus-4</code> Utils;vice_xplus4_libretro;
 vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;<code>Commodore VIC-20</code> NoIntro;vice_xvic_libretro;
 vic20;TOSEC/Commodore/VIC20/Games/[CRT]/Singlepart;Commodore - VIC-20;<code>Commodore VIC-20</code> CRT;vice_xvic_libretro;
 vic20;TOSEC/Commodore/VIC20/Games/[D64];Commodore - VIC-20;<code>Commodore VIC-20</code> D64;vice_xvic_libretro;
