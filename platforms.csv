@@ -586,6 +586,12 @@ c64;MAME/Software List ROMs (split)/c64_cass;Commodore - 64;<code>Commodore 64</
 c128;TOSEC/Commodore/C128/Games/[D64];Commodore - 128;<code>Commodore 128</code> D64;vice_x128_libretro;
 c128;TOSEC/Commodore/C128/Games/[PRG];Commodore - 128;<code>Commodore 128</code> PRG;vice_x128_libretro;
 c128;TOSEC/Commodore/C128/Applications/[D64];Commodore - 128;<code>Commodore 128</code> App;vice_x128_libretro;
+c128;MAME/Software List ROMs (merged)/c128_cart;Commodore - 128;<code>Commodore 128</code> Cart Merged;vice_x128_libretro;
+c128;MAME/Software List ROMs (split)/c128_cart;Commodore - 128;<code>Commodore 128</code> Cart Split;vice_x128_libretro;
+c128;MAME/Software List ROMs (merged)/c128_flop;Commodore - 128;<code>Commodore 128</code> Flop Merged;vice_x128_libretro;
+c128;MAME/Software List ROMs (split)/c128_flop;Commodore - 128;<code>Commodore 128</code> Flop Split;vice_x128_libretro;
+c128;MAME/Software List ROMs (merged)/c128_rom;Commodore - 128;<code>Commodore 128</code> Rom Merged;vice_x128_libretro;
+c128;MAME/Software List ROMs (split)/c128_rom;Commodore - 128;<code>Commodore 128</code> Rom Split;vice_x128_libretro;
 amiga500;No-Intro/Commodore - Amiga;Commodore - Amiga;<p><code>Amiga</code> NoIntro;puae_libretro;
 amiga500;TOSEC/Commodore/Amiga/Games/[ADF];Commodore - Amiga;<code>Amiga</code> ADF;puae_libretro;
 amiga500;TOSEC/Commodore/Amiga/Games/[Unofficial IPF];Commodore - Amiga;<code>Amiga</code> IPF;puae_libretro;
