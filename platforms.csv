@@ -454,6 +454,8 @@ cdi;MAME/Software List CHDs (merged)/cdi;Philips - CD-i;Philips CDi CHD;same_cdi
 3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Multimedia;The 3DO Company - 3DO;Panasonic 3DO Multimedia;opera_libretro;cue
 dos;eXo/eXoDOS/Full Release/eXo/eXoDOS;DOS;<p><code>MS-DOS</code> eXoDOS;dosbox_pure_libretro;
 dos;TOSEC/IBM/PC Compatibles/Games/[IMG];DOS;<code>MS-DOS</code> TOSEC;dosbox_pure_libretro;
+dos;TOSEC/IBM/PC Compatibles/Applications/[IMG];DOS;<code>MS-DOS</code> App TOSEC;dosbox_pure_libretro;
+dos;TOSEC/IBM/PC Compatibles/Educational/[IMG];DOS;<code>MS-DOS</code> Edu TOSEC;dosbox_pure_libretro;
 dos;TOSEC-ISO/IBM/PC Compatibles/CD/Games/[ISO];DOS;<code>MS-DOS</code> TOSEC-ISO;dosbox_pure_libretro;
 dos;Total DOS Collection/Games/Files/1981;DOS;<code>MS-DOS</code> TDC 1981;dosbox_pure_libretro;
 dos;Total DOS Collection/Games/Files/1982;DOS;<code>MS-DOS</code> TDC 1982;dosbox_pure_libretro;
