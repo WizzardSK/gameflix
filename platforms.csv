@@ -348,6 +348,8 @@ wii;No-Intro/Unofficial - Nintendo - Wii (Digital) (Deprecated) (WAD);Nintendo -
 wii;Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k];Nintendo - Wii;Nintendo Wii Redump;dolphin_libretro;rvz
 pokemini;No-Intro/Nintendo - Pokemon Mini;Nintendo - Pokemon Mini;<p><i>Pokemon Mini</i> NoIntro;pokemini_libretro;
 pokemini;TOSEC/Nintendo/Pokemon Mini/Games;Nintendo - Pokemon Mini;<i>Pokemon Mini</i> TOSEC;pokemini_libretro;
+pokemini;MAME/Software List ROMs (merged)/pokemini;Nintendo - Pokemon Mini;<i>Pokemon Mini</i> Merged;pokemini_libretro;
+pokemini;MAME/Software List ROMs (split)/pokemini;Nintendo - Pokemon Mini;<i>Pokemon Mini</i> Split;pokemini_libretro;
 virtualboy;No-Intro/Nintendo - Virtual Boy;Nintendo - Virtual Boy;<i>Virtual Boy</i> NoIntro;mednafen_vb_libretro;
 virtualboy;TOSEC/Nintendo/Virtual Boy/Games;Nintendo - Virtual Boy;<i>Virtual Boy</i> TOSEC;mednafen_vb_libretro;
 gb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;<i>Game Boy</i> NoIntro;sameboy_libretro;
@@ -386,8 +388,8 @@ megadrive;FinalBurn Neo/megadrive;Sega - Mega Drive - Genesis;Mega Drive FBN;gen
 msu-md;T-En Collection/Sega - Mega Drive - MSU-MD;Sega - Mega Drive - Genesis;Sega MSU-MD;genesis_plus_gx_libretro;md
 pico;No-Intro/Sega - PICO;Sega - PICO;Sega PICO NoIntro;picodrive_libretro;
 pico;TOSEC/Sega/Pico/Educational;Sega - PICO;Sega PICO TOSEC;picodrive_libretro;
-pico;MAME/Software List ROMs (merged)/pico;Sega - PICO;Sega Pico Merged;picodrive_libretro;
-pico;MAME/Software List ROMs (split)/pico;Sega - PICO;Sega Pico Split;picodrive_libretro;
+pico;MAME/Software List ROMs (merged)/pico;Sega - PICO;Sega PICO Merged;picodrive_libretro;
+pico;MAME/Software List ROMs (split)/pico;Sega - PICO;Sega PICO Split;picodrive_libretro;
 sega32x;No-Intro/Sega - 32X;Sega - 32X;Sega 32X NoIntro;picodrive_libretro;
 sega32x;TOSEC/Sega/32X/Games;Sega - 32X;Sega 32X TOSEC;picodrive_libretro;
 sega32x;MAME/Software List ROMs (merged)/32x;Sega - 32X;Sega 32X Merged;picodrive_libretro;
