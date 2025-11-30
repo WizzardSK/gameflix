@@ -352,6 +352,8 @@ pokemini;MAME/Software List ROMs (merged)/pokemini;Nintendo - Pokemon Mini;<i>Po
 pokemini;MAME/Software List ROMs (split)/pokemini;Nintendo - Pokemon Mini;<i>Pokemon Mini</i> Split;pokemini_libretro;
 virtualboy;No-Intro/Nintendo - Virtual Boy;Nintendo - Virtual Boy;<i>Virtual Boy</i> NoIntro;mednafen_vb_libretro;
 virtualboy;TOSEC/Nintendo/Virtual Boy/Games;Nintendo - Virtual Boy;<i>Virtual Boy</i> TOSEC;mednafen_vb_libretro;
+virtualboy;MAME/Software List ROMs (merged)/vboy;Nintendo - Virtual Boy;<i>Virtual Boy</i> Merged;mednafen_vb_libretro;
+virtualboy;MAME/Software List ROMs (split)/vboy;Nintendo - Virtual Boy;<i>Virtual Boy</i> Split;mednafen_vb_libretro;
 gb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;<i>Game Boy</i> NoIntro;sameboy_libretro;
 gb;TOSEC/Nintendo/Game Boy/Games;Nintendo - Game Boy;<i>Game Boy</i> TOSEC;sameboy_libretro;
 gb;MAME/Software List ROMs (merged)/gameboy;Nintendo - Game Boy;<i>Game Boy</i> Merged;sameboy_libretro;
