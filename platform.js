@@ -97,7 +97,7 @@ function generateFileLinks(romPath, imagePath) {
     } else { romPath = "../" + romPath }
     fileNames.forEach(fileName => {
         const subor = fileName.includes("\t") ? fileName.split("\t")[0] : fileName;
-        const nameWithoutExt = subor.slice(0, subor.lastIndexOf(".")) || subor;
+        const nameWithoutExt = subor.includes(".") ? subor.slice(0, subor.lastIndexOf(".")) : subor;
         const nameWithoutBrackets = nameWithoutExt.replace(/^([^)]*\([^)]*\)).*$/, "$1");
         const nazov = fileName.includes("\t") ? fileName.split("\t")[1] : fileName.replace(/\.[^.]+$/, "");
         document.write(`<a href="${romPath}/${encodeURIComponent(subor)}" target="main">
