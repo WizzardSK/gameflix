@@ -252,6 +252,8 @@ vis;Redump/Memorex - Visual Information System;Tandy - Video Information System;
 vis;TOSEC-ISO/Memorex/Video Information System/Educational;Tandy - Video Information System;<code>Tandy VIS</code> Edu;mame vis -cdrm;cue
 vis;TOSEC-ISO/Memorex/Video Information System/Games;Tandy - Video Information System;<code>Tandy VIS</code> Games;mame vis -cdrm;cue
 vis;TOSEC-ISO/Memorex/Video Information System/Multimedia;Tandy - Video Information System;<code>Tandy VIS</code> Multimedia;mame vis -cdrm;cue
+vis;MAME/Software List CHDs (merged)/vis;Tandy - Video Information System;<code>Tandy VIS</code> Merged;mame vis -cdrm;
+vis;MAME/Software List CHDs (split)/vis;Tandy - Video Information System;<code>Tandy VIS</code> Split;mame vis -cdrm;
 atom;TOSEC/Acorn/Atom/Games/[DSK];Acorn - Atom;<code>Acorn Atom</code> TOSEC;mame atom -flop1;
 atom;MAME/Software List ROMs (merged)/atom_flop;Acorn - Atom;<code>Acorn Atom</code> Merged;mame atom -flop1;
 atom;MAME/Software List ROMs (split)/atom_flop;Acorn - Atom;<code>Acorn Atom</code> Split;mame atom -flop1;
