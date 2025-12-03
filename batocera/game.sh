@@ -20,7 +20,7 @@ BASENAME="${BASENAME%.*}"
 if [[ "$BASENAME" == *")"* ]]; then FILENAME="${BASENAME%%)*})"; else FILENAME="$BASENAME"; fi
 
 FULLPATH="$DIR/$FILENAME.png"
-if [ -f "$FULLPATH" ]; then exit 0; fi
+if [ -e "$FULLPATH" ]; then exit 0; fi
 
 ENCODED_NAME="${FILENAME// /%20}"
 ENCODED_NAME="${ENCODED_NAME//#/%23}"
