@@ -66,10 +66,11 @@ IFS=";"; for each in "${roms[@]}"; do
   echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html; pocet=0; while IFS= read -r line; do
     line2="${line%.*}"; echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++))
     if [[ "$line2" == *")"* ]]; then thumb="${line2%%)*})"; else thumb="$line2"; fi
-    hra="<game><path>./${rom3}/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${thumb}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${thumb}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${thumb}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${thumb}.png</marquee>"
+    if [ -d ~/"${romfolder}/${line}" ]; then polozka="folder"; else polozka="game"; fi    
+    hra="<$polozka><path>./${rom3}/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${thumb}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${thumb}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${thumb}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${thumb}.png</marquee>"
     if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h [^]]*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then
-      echo "${hra}</game>" >> ~/gamelists/${rom[0]}/gamelist.xml
-    else echo "${hra}<hidden>true</hidden></game>" >> ~/gamelists/${rom[0]}/gamelist.xml; fi
+      echo "${hra}</$polozka>" >> ~/gamelists/${rom[0]}/gamelist.xml
+    else echo "${hra}<hidden>true</hidden></$polozka>" >> ~/gamelists/${rom[0]}/gamelist.xml; fi
   done < <(ls ~/"${romfolder}")
   echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script><script src="script.js"></script>' >> ~/gameflix/${rom3}.html
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[3]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
