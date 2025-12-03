@@ -565,6 +565,8 @@ vic20;TOSEC/Commodore/VIC20/Games/[D64];Commodore - VIC-20;<code>Commodore VIC-2
 vic20;TOSEC/Commodore/VIC20/Games/[PRG]/Singlepart;Commodore - VIC-20;<code>Commodore VIC-20</code> PRG;vice_xvic_libretro;
 vic20;TOSEC/Commodore/VIC20/Games/[TAP];Commodore - VIC-20;<code>Commodore VIC-20</code> TAP;vice_xvic_libretro;
 vic20;TOSEC/Commodore/VIC20/Applications/[PRG]/Singlepart;Commodore - VIC-20;<code>Commodore VIC-20</code> App;vice_xvic_libretro;
+vic20;MAME/Software List ROMs (merged)/vic1001_cart;Commodore - VIC-20;<code>Commodore VIC-20</code> Merged;vice_xvic_libretro;
+vic20;MAME/Software List ROMs (split)/vic1001_cart;Commodore - VIC-20;<code>Commodore VIC-20</code> Split;vice_xvic_libretro;
 c64;No-Intro/Commodore - Commodore 64;Commodore - 64;<code>Commodore 64</code> NoIntro;vice_x64sc_libretro;
 c64;No-Intro/Commodore - Commodore 64 (PP);Commodore - 64;<code>Commodore 64</code> PP;vice_x64sc_libretro;
 c64;No-Intro/Commodore - Commodore 64 (Tapes);Commodore - 64;<code>Commodore 64</code> Tapes;vice_x64sc_libretro;
