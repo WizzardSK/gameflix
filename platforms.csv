@@ -555,6 +555,8 @@ dos;Total DOS Collection/Applications/Files/2005;DOS;<code>MS-DOS</code> TDC App
 dos;Total DOS Collection/Applications/Files/2006;DOS;<code>MS-DOS</code> TDC App 2006;dosbox_pure_libretro;
 dos;Total DOS Collection/Applications/Files/2009;DOS;<code>MS-DOS</code> TDC App 2009;dosbox_pure_libretro;
 pet;TOSEC/Commodore/PET/Games/[PRG];Commodore - PET;<p><code>Commodore PET</code> TOSEC;vice_xpet_libretro;
+pet;MAME/Software List ROMs (merged)/pet_cass;Commodore - PET;<p><code>Commodore PET</code> Merged;vice_xpet_libretro;
+pet;MAME/Software List ROMs (split)/pet_cass;Commodore - PET;<p><code>Commodore PET</code> Split;vice_xpet_libretro;
 cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;<code>Commodore Plus-4</code> NoIntro;vice_xplus4_libretro;
 cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[PRG];Commodore - Plus-4;<code>Commodore Plus-4</code> PRG;vice_xplus4_libretro;
 cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP];Commodore - Plus-4;<code>Commodore Plus-4</code> TAP;vice_xplus4_libretro;
