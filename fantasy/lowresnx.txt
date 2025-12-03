@@ -807,10 +807,10 @@
 1638	Kombat Arkade (shooter game)	Eh8tMaWhpz_Kombat_Arkade.png	Eh8tMaWhpz_Kombat_Arkade.nx
 1634	Lol	swT9VXFH7n_Lol.png	swT9VXFH7n_Lol.nx
 1633	Mana World	4JDcdGdcMN_MANAWORLD2.png	4JDcdGdcMN_MANAWORLD2.nx
-1632			
-1628			
-1624			
-1623			
+1632	Crash! 8bit rescue (solitaire card game)	uccCtZi5DG_Computer_Chips_Solitaire_card_game.png	uccCtZi5DG_Computer_Chips_Solitaire_card_game.nx
+1628	Solitaire (card game with touch control)	wVS7h6waKJ_Touch_Solitaire_2.1.png	wVS7h6waKJ_Touch_Solitaire_2.1.nx
+1624	P.S.D. Brickout Game	Gp8rcYx6Sq_PSD.png	Gp8rcYx6Sq_PSD.nx
+1623	Flying waka	HQFW48JPj4_Flying_Waka.png	HQFW48JPj4_Flying_Waka.nx
 1622	GRUE	pPMfLCaFS7_Copy_of_GRUE_0.12.png	pPMfLCaFS7_Copy_of_GRUE_0.12.nx
 1620	Epic Walk II	LhDpAt4uGr_Copy_of_Epic_Walk_II_V0.9.png	LhDpAt4uGr_Epic_Walk_II_V0.9.2.nx
 1619	Sudoku Blocks (puzzle game)	C2nj9j8AMu_Sudoku_Blocks.png	C2nj9j8AMu_Sudoku_Blocks.nx
@@ -1031,11 +1031,11 @@
 949	Sound Chip Bits	2GLoDJXoFW_Sound_Chip_Bits.png	2GLoDJXoFW_Sound_Chip_Bits.nx
 948	DDR BUTTON BASHER	HTLJVeEo5K_DDR_BUTTON_BASHER.png	HTLJVeEo5K_DDR_BUTTON_BASHER.nx
 942	Where Are My Eggs?	hZBQuE3dPb_Where_Are_My_Eggs.png	hZBQuE3dPb_Where_Are_My_Eggs.nx
-941	Space Warp	woMGiThNGR_Space_Warp.png	woMGiThNGR_Space_Warp.nx
-938	Finger Runner (remixed with cars) 	4RZCYtGymG_Finger_Runner_with_Cars.png	4RZCYtGymG_Finger_Runner_with_Cars.nx
-934	CASH IT	vb7R4bVoZ4_Cash_It.png	vb7R4bVoZ4_Cash_It.nx
-933	Hand Ball (Tennis Remix)	jDQhZsxv6R_Hand_Ball.png	jDQhZsxv6R_Hand_Ball.nx
-931	LowRes tennis	YLLd6rVA9F_Tennis.png	YLLd6rVA9F_Tennis.nx
+941			
+938			
+934			
+933			
+931			
 925	Goblin’s fortress 	pmCB5vCgXK_Goblins_Fortress.png	pmCB5vCgXK_Goblins_Fortress.nx
 919	Points Breaker	PXrBHRkPS9_Points_Breaker.png	PXrBHRkPS9_Points_Breaker.nx
 915	Lost	4WiGH5HTEJ_Lost.png	4WiGH5HTEJ_Lost.nx
