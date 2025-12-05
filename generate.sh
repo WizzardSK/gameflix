@@ -80,7 +80,7 @@ IFS=";"; for each in "${roms[@]}"; do
     else echo "${hra}<hidden>true</hidden></$polozka>" >> ~/gamelists/${rom[0]}/gamelist.xml; fi
   done < <(ls ~/"${romfolder}")
   echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script>' >> ~/gameflix/${rom3}.html
-  if [[ "$rom3" != "${rom[0]}" ]]; then echo "<script src="script.js"></script>" >> ~/gameflix/${rom3}.html; fi
+  echo "<script src="script.js"></script>" >> ~/gameflix/${rom3}.html; fi
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[0]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   if [ "$platform" != "${rom[0]}" ]; then
     echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom[0]}".jpg'></a><figcaption>${rom[2]}</figcaption></figure>" >> ~/gameflix/main.html; ((platforms++))
