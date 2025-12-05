@@ -61,9 +61,12 @@ echo "<gameList>" > ~/gamelists/switch/gamelist.xml; cat switch.txt | while read
 done; echo "</gameList>" >> ~/gamelists/switch/gamelist.xml
 
 IFS=";"; for each in "${roms[@]}"; do
-  cp platform.html ~/gameflix/${rom3}.html
   read -ra rom < <(printf '%s' "$each"); 
-  if [[ "$rom3" != "${rom[0]}" ]]; then echo ${rom3}; echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html; pocet=0; fi
+  if [[ "$rom3" != "${rom[0]}" ]]; then
+    echo ${rom3}; echo "<script>bgImage(\"${rom[0]}\"); 
+    cp platform.html ~/gameflix/${rom3}.html
+    const fileNames = [" >> ~/gameflix/${rom3}.html; pocet=0; 
+  fi
   rom3="${rom[0]}"; mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   while IFS= read -r line; do
     line2="${line%.*}"; echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++))
