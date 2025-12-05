@@ -61,9 +61,10 @@ echo "<gameList>" > ~/gamelists/switch/gamelist.xml; cat switch.txt | while read
 done; echo "</gameList>" >> ~/gamelists/switch/gamelist.xml
 
 IFS=";"; for each in "${roms[@]}"; do
-  read -ra rom < <(printf '%s' "$each"); rom3=$(sed 's/<[^>]*>//g' <<< "${rom[0]}"); mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
-  > ~/gameflix/${rom3}.html; echo ${rom3}; cp platform.html ~/gameflix/${rom3}.html
-  echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html; pocet=0; while IFS= read -r line; do
+  cp platform.html ~/gameflix/${rom3}.html
+  read -ra rom < <(printf '%s' "$each"); rom3="${rom[0]}"; mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
+  if [[ "$rom3" != "${rom[0]}" ]]; then echo ${rom3}; echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html; pocet=0; fi
+  while IFS= read -r line; do
     line2="${line%.*}"; echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++))
     if [[ "$line2" == *")"* ]]; then thumb="${line2%%)*})"; else thumb="$line2"; fi
     if [ -d ~/"${romfolder}/${line}" ]; then polozka="folder"; else polozka="game"; fi    
@@ -72,7 +73,8 @@ IFS=";"; for each in "${roms[@]}"; do
       echo "${hra}</$polozka>" >> ~/gamelists/${rom[0]}/gamelist.xml
     else echo "${hra}<hidden>true</hidden></$polozka>" >> ~/gamelists/${rom[0]}/gamelist.xml; fi
   done < <(ls ~/"${romfolder}")
-  echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script><script src="script.js"></script>' >> ~/gameflix/${rom3}.html
+  echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script>' >> ~/gameflix/${rom3}.html
+  if [[ "$rom3" != "${rom[0]}" ]]; then echo "<script src="script.js"></script>" >> ~/gameflix/${rom3}.html; fi
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[0]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   if [ "$platform" != "${rom[0]}" ]; then
     echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom[0]}".jpg'></a><figcaption>${rom[2]}</figcaption></figure>" >> ~/gameflix/main.html; ((platforms++))
