@@ -65,7 +65,7 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ "$rom3" != "${rom[0]}" ]]; then
     echo ${rom3};
     echo "<script>bgImage(\"${rom[0]}\")" >> ~/gameflix/${rom3}.html;
-    cp platform.html ~/gameflix/${rom3}.html
+    cp platform.html ~/gameflix/${rom[0]}.html
     echo "const fileNames = [" >> ~/gameflix/${rom3}.html;
     pocet=0; 
   fi
