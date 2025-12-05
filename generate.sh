@@ -63,9 +63,9 @@ done; echo "</gameList>" >> ~/gamelists/switch/gamelist.xml
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); 
   if [[ "$rom3" != "${rom[0]}" ]]; then
-    echo ${rom3};
-    echo "<script>bgImage(\"${rom[0]}\")" >> ~/gameflix/${rom[0]}.html;
+    echo ${rom[0]};
     cp platform.html ~/gameflix/${rom[0]}.html
+    echo "<script>bgImage(\"${rom[0]}\")" >> ~/gameflix/${rom[0]}.html;
     echo "const fileNames = [" >> ~/gameflix/${rom[0]}.html;
     pocet=0; 
   fi
