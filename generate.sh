@@ -62,8 +62,8 @@ done; echo "</gameList>" >> ~/gamelists/switch/gamelist.xml
 
 IFS=";"; for each in "${roms[@]}"; do
   cp platform.html ~/gameflix/${rom3}.html
-  read -ra rom < <(printf '%s' "$each"); rom3="${rom[0]}"; mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   if [[ "$rom3" != "${rom[0]}" ]]; then echo ${rom3}; echo "<script>bgImage(\"${rom[0]}\"); const fileNames = [" >> ~/gameflix/${rom3}.html; pocet=0; fi
+  read -ra rom < <(printf '%s' "$each"); rom3="${rom[0]}"; mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   while IFS= read -r line; do
     line2="${line%.*}"; echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++))
     if [[ "$line2" == *")"* ]]; then thumb="${line2%%)*})"; else thumb="$line2"; fi
