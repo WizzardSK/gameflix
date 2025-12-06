@@ -28,7 +28,7 @@ document.write(text);
 function bgImage(platform) { document.write(`<style> figure { background-image: url('https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${platform}.png'); } </style>`); }
 
 function generateTicLinks(romPath, imagePath) {
-    document.write("<div id=\"figureList\">");
+    document.write("<div class=\"figureList\">");
     if (location.protocol !== "file:" && romPath.includes("roms/TIC-80")) { romPath = romPath.replace("roms/TIC-80", "https://tic80.com/play?cart="); web = true; } else { romPath = `../${romPath}/`; web = false; }
     fileNames.forEach(fileName => {
         let [id, hash, nazov] = fileName.split('\t'); if (web) { cart = `${id}`; } else { cart = `${hash}.tic`; }
@@ -38,7 +38,7 @@ function generateTicLinks(romPath, imagePath) {
 }
 
 function generateWasmLinks(romPath, imagePath) {
-    document.write("<div id=\"figureList\">");
+    document.write("<div class=\"figureList\">");
     if (location.protocol !== "file:" && romPath.includes("roms/WASM-4")) { romPath = romPath.replace("roms/WASM-4", "https://wasm4.org/play"); wasm = ``; } else { romPath = `../${romPath}`; wasm = `.wasm`; }
     fileNames.forEach(fileName => {
         const [subor, nazov] = fileName.split('\t');
@@ -48,7 +48,7 @@ function generateWasmLinks(romPath, imagePath) {
 }
 
 function generateLrNXLinks(romPath, imagePath) {
-    document.write("<div id=\"figureList\">");
+    document.write("<div class=\"figureList\">");
     if (location.protocol !== "file:" && romPath.includes("roms/LowresNX")) { romPath = romPath.replace("roms/LowresNX", "https://lowresnx.inutilis.com/topic.php?id="); web = true; } else { romPath = `../${romPath}/`; web = false; }
     fileNames.forEach(fileName => {
         let [subor, obrazok, nazov, id] = fileName.split('\t'); if (web) { subor = `${id}`; }
@@ -58,7 +58,7 @@ function generateLrNXLinks(romPath, imagePath) {
 }
 
 function generatePicoLinks(romPath, imagePath) {
-    document.write("<div id=\"figureList\">"); fileNames.forEach(fileName => {
+    document.write("<div class=\"figureList\">"); fileNames.forEach(fileName => {
         const [id, nazov, kart] = fileName.split('\t'); let screen;
         if (/^\d/.test(kart)) { screen = "pico" + kart.replace(/\.p8\.png$/, '.png'); } else { screen = kart.replace(/^(.*)\.p8\.png$/, 'pico8_$1.png'); }
         let cart = kart.replace(/\.p8.png$/, "");
@@ -68,7 +68,7 @@ function generatePicoLinks(romPath, imagePath) {
 }
 
 function generateVoxLinks(romPath, imagePath) {
-    document.write("<div id=\"figureList\">"); fileNames.forEach(fileName => {
+    document.write("<div class=\"figureList\">"); fileNames.forEach(fileName => {
         const [id, nazov, kart] = fileName.split('\t');
         let screen; screen = kart.replace(/^(.*)\.vx\.png$/, 'vox_$1.png'); screen = screen.replace(/^cpost/, "vox");
         let cart = kart.replace(/^cpost/, ""); cart = cart.replace(/\.png$/, "");
@@ -78,7 +78,7 @@ function generateVoxLinks(romPath, imagePath) {
 }
 
 function generateUzeLinks(romPath, imagePath) {
-    document.write("<div id=\"figureList\">");
+    document.write("<div class=\"figureList\">");
     if (location.protocol !== "file:" && romPath.includes("roms/Uzebox")) { romPath = romPath.replace("roms/Uzebox", "https://nicksen782.net/UAM/APP_emu/emu.php?gameid="); web = true; } else { romPath = `../${romPath}/`; web = false; }
     fileNames.forEach(fileName => {
         let [id, subor, nazov] = fileName.split('\t'); 
