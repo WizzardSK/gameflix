@@ -64,13 +64,15 @@ IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); 
   if [[ "$rom3" != "${rom[0]}" ]]; then
     echo ${rom[0]};
+    echo "<script src="script.js"></script>" >> ~/gameflix/${rom3}.html;    
     cp platform.html ~/gameflix/${rom[0]}.html
     echo "<script>bgImage(\"${rom[0]}\")" >> ~/gameflix/${rom[0]}.html;
     echo "fileNames = [" >> ~/gameflix/${rom[0]}.html;
     pocet=0; 
+  else
+    echo "<script>bgImage(\"${rom3}\")" >> ~/gameflix/${rom3}.html;
+    echo "fileNames = [" >> ~/gameflix/${rom3}.html;
   fi
-  echo "<script>bgImage(\"${rom3}\")" >> ~/gameflix/${rom3}.html;
-  echo "fileNames = [" >> ~/gameflix/${rom3}.html;
   rom3="${rom[0]}"; mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   while IFS= read -r line; do
     line2="${line%.*}"; echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++))
