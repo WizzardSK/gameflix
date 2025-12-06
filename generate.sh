@@ -66,11 +66,13 @@ IFS=";"; for each in "${roms[@]}"; do
     echo ${rom[0]};
     echo "<script src="script.js"></script>" >> ~/gameflix/${rom3}.html;    
     cp platform.html ~/gameflix/${rom[0]}.html
+    echo "${rom[3]}"
     echo "<script>bgImage(\"${rom[0]}\")" >> ~/gameflix/${rom[0]}.html;
     echo "fileNames = [" >> ~/gameflix/${rom[0]}.html;
-    echo "<a href=\"${rom3}.html\" target=\"main\">${rom3}</a> ($pocet)<br />" >> ~/gameflix/systems.html
+    if [ -n "$rom3" ]; then echo "<a href=\"${rom3}.html\" target=\"main\">${rom3}</a> ($pocet)<br />" >> ~/gameflix/systems.html; fi
     pocet=0; 
   else
+    echo "${rom[3]}"
     echo "<script>bgImage(\"${rom3}\")" >> ~/gameflix/${rom3}.html;
     echo "fileNames = [" >> ~/gameflix/${rom3}.html;
   fi
