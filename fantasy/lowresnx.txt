@@ -586,11 +586,11 @@
 2211	Ultra Lights-Out	PGKrYLdQh5_Massa.png	PGKrYLdQh5_Massa.nx
 2210	Puker 	WbosqdVqLH_Puker.png	WbosqdVqLH_Puker.nx
 2208	Blox 2	WCMHUNrfsk_Blox2.png	WCMHUNrfsk_Blox2.nx
-2206			
-2205			
-2203			
-2202			
-2201			
+2206	VIMNX	wXAKrLPf4d_VIMNX.png	wXAKrLPf4d_VIMNX.nx
+2205	BC&#039;S TIRE RUN	Es2VTbwC6F_BCs_Tire_Run.png	Es2VTbwC6F_BCs_Tire_Run.nx
+2203	Mapping Test	5ti5znYT2i_Mapping_Test.png	5ti5znYT2i_Mapping_Test.nx
+2202	Freestyle Card Table	PYaVK6QaAG_Freestyle_Cards.png	PYaVK6QaAG_Freestyle_Cards.nx
+2201	Test: scrollable map	mpKVf8QyMp_fanesia.png	mpKVf8QyMp_fanesia.nx
 2199	Hollow Knight Prototype	dEdCZsDxjt_Hollow_Knight.png	dEdCZsDxjt_Hollow_Knight.nx
 2198	Drawing with Flashing lights 	XnTmxSyzxr_Flash_Patterns_Draw.png	XnTmxSyzxr_Flash_Patterns_Draw.nx
 2197	Guitar Villain 1.0	kXShm9kbxF_Gtr.png	kXShm9kbxF_Gtr.nx
