@@ -64,6 +64,8 @@ IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); 
   if [[ "$rom3" != "${rom[0]}" ]]; then
     echo ${rom[0]};
+    echo "<script>bgImage(\"${rom3}\")" >> ~/gameflix/${rom3}.html;
+    echo "fileNames = [" >> ~/gameflix/${rom3}.html;
     cp platform.html ~/gameflix/${rom[0]}.html
     echo "<script>bgImage(\"${rom[0]}\")" >> ~/gameflix/${rom[0]}.html;
     echo "fileNames = [" >> ~/gameflix/${rom[0]}.html;
@@ -80,8 +82,6 @@ IFS=";"; for each in "${roms[@]}"; do
     else echo "${hra}<hidden>true</hidden></$polozka>" >> ~/gamelists/${rom[0]}/gamelist.xml; fi
   done < <(ls ~/"${romfolder}")
   echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script>' >> ~/gameflix/${rom3}.html
-  echo "<script>bgImage(\"${rom[0]}\")" >> ~/gameflix/${rom[0]}.html;
-  echo "fileNames = [" >> ~/gameflix/${rom[0]}.html;
   echo "<a href=\"${rom3}.html\" target=\"main\">${rom[0]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   if [ "$platform" != "${rom[0]}" ]; then
     echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom[0]}".jpg'></a><figcaption>${rom[2]}</figcaption></figure>" >> ~/gameflix/main.html; ((platforms++))
