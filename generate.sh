@@ -91,7 +91,7 @@ IFS=";"; for each in "${roms[@]}"; do
   platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}/\"*) core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
   echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/gamelists/${rom[0]}/gamelist.xml
 done
-
+echo "<script src="script.js"></script>" >> ~/gameflix/${rom3}.html;    
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   if ! grep -Fxq "<gameList>" ~/gamelists/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" ~/gamelists/${rom[0]}/gamelist.xml; fi
