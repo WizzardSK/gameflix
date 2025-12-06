@@ -68,6 +68,7 @@ IFS=";"; for each in "${roms[@]}"; do
     cp platform.html ~/gameflix/${rom[0]}.html
     echo "<script>bgImage(\"${rom[0]}\")" >> ~/gameflix/${rom[0]}.html;
     echo "fileNames = [" >> ~/gameflix/${rom[0]}.html;
+    echo "<a href=\"${rom3}.html\" target=\"main\">${rom[0]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
     pocet=0; 
   else
     echo "<script>bgImage(\"${rom3}\")" >> ~/gameflix/${rom3}.html;
@@ -84,12 +85,12 @@ IFS=";"; for each in "${roms[@]}"; do
     else echo "${hra}<hidden>true</hidden></$polozka>" >> ~/gamelists/${rom[0]}/gamelist.xml; fi
   done < <(ls ~/"${romfolder}")
   echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script>' >> ~/gameflix/${rom3}.html
-  echo "<a href=\"${rom3}.html\" target=\"main\">${rom[0]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
   if [ "$platform" != "${rom[0]}" ]; then
     echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom[0]}".jpg'></a><figcaption>${rom[2]}</figcaption></figure>" >> ~/gameflix/main.html; ((platforms++))
   fi
   platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}/\"*) core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
   echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/gamelists/${rom[0]}/gamelist.xml
+  echo "<a href=\"${rom3}.html\" target=\"main\">${rom[0]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
 done
 echo "<script src="script.js"></script>" >> ~/gameflix/${rom3}.html;    
 for each in "${roms[@]}"; do 
