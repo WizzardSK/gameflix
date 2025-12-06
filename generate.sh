@@ -68,7 +68,7 @@ IFS=";"; for each in "${roms[@]}"; do
     cp platform.html ~/gameflix/${rom[0]}.html
     echo "<script>bgImage(\"${rom[0]}\")" >> ~/gameflix/${rom[0]}.html;
     echo "fileNames = [" >> ~/gameflix/${rom[0]}.html;
-    echo "<a href=\"${rom3}.html\" target=\"main\">${rom[0]}</a> ($pocet)<br />" >> ~/gameflix/systems.html
+    echo "<a href=\"${rom3}.html\" target=\"main\">${rom3}</a> ($pocet)<br />" >> ~/gameflix/systems.html
     pocet=0; 
   else
     echo "<script>bgImage(\"${rom3}\")" >> ~/gameflix/${rom3}.html;
@@ -92,6 +92,7 @@ IFS=";"; for each in "${roms[@]}"; do
   echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/gamelists/${rom[0]}/gamelist.xml
 done
 echo "<script src="script.js"></script>" >> ~/gameflix/${rom3}.html;
+echo "<a href=\"${rom3}.html\" target=\"main\">${rom3}</a> ($pocet)<br />" >> ~/gameflix/systems.html
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   if ! grep -Fxq "<gameList>" ~/gamelists/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" ~/gamelists/${rom[0]}/gamelist.xml; fi
