@@ -72,7 +72,7 @@ IFS=";"; for each in "${roms[@]}"; do
     if [ -n "$rom3" ]; then echo "<a href=\"${rom3}.html\" target=\"main\">${rom3}</a> ($pocet)<br />" >> ~/gameflix/systems.html; fi
     pocet=0; 
   else
-    echo "<br>${rom[3]}" >> ~/gameflix/${rom3}.html;
+    echo "<br><br>${rom[3]}" >> ~/gameflix/${rom3}.html;
     echo "<script>bgImage(\"${rom3}\")" >> ~/gameflix/${rom3}.html;
     echo "fileNames = [" >> ~/gameflix/${rom3}.html;
   fi
