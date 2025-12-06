@@ -1,6 +1,6 @@
 const filterInput = document.getElementById('filterInput');
-const figureList = document.getElementById('figureList');
-const figures = figureList.getElementsByTagName('figure');
+const figureList = document.getElementsByClassName('figureList');
+const figures = document.querySelectorAll('.figureList figure');
 var size = 160;
 filterInput.focus();
 let timerId;

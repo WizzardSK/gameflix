@@ -90,7 +90,7 @@ function generateUzeLinks(romPath, imagePath) {
 }
 
 function generateFileLinks(romPath, imagePath) {
-    document.write("<div id=\"figureList\">");
+    document.write("<div class=\"figureList\">");
     if (location.protocol !== "file:") {
         if (romPath.startsWith("myrient/")) { romPath = romPath.replace("myrient", "https://myrient.erista.me/files"); }
         if (romPath.startsWith("roms/Vircon32")) { romPath = romPath.replace("roms/Vircon32", "https://archive.org/download/all_vircon32_roms_and_media/all_vircon32_roms_and_media"); }
