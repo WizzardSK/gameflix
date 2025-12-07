@@ -89,3 +89,32 @@ segacd,Sega CD
 saturn,Sega Saturn
 dreamcast,Sega Dreamcast
 gamegear,Sega Game Gear
+psx,Sony PlayStation 1
+ps2,Sony PlayStation 2
+psp,Sony PlayStation Portable
+pcengine,NEC PC Engine 1
+pcenginecd,NEC PC Engine CD
+supergrafx,NEC PC Engine 2
+pcfx,NEC PC-FX
+cdi,Philips CD-i
+3do,Panasonic 3DO
+dos,Microsoft MS-DOS
+pet,Commodore PET
+cplus4,Commodore Plus-4
+vic20,Commodore VIC-20
+c64,Commodore 64
+c128,Commodore 128
+amiga500,Commodore Amiga
+amiga1200,Commodore Amiga CD
+amigacdtv,Commodore Amiga CDTV
+amigacd32,Commodore Amiga CD32
+msx1,Microsoft MSX1
+msx2,Microsoft MSX2
+msx2+,Microsoft MSX2+
+msxturbor,Microsoft MSX TurboR
+pc88,NEC PC-88
+pc98,NEC PC-98
+x1,Sharp X1
+x68000,Sharp X68000
+mame,MAME Arcade
+fbneo,FinalBurn Neo
