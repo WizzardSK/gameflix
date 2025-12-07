@@ -1,4 +1,4 @@
-uzebox,Uzebox
+euzebox,Uzebox
 vircon32,Vircon32
 commanderx16,Commander X16
 pdp1,PDP-1
@@ -118,3 +118,9 @@ x1,Sharp X1
 x68000,Sharp X68000
 mame,MAME Arcade
 fbneo,FinalBurn Neo
+model2,Sega Model 2
+model3,Sega Model 3
+neogeo,SNK Neo Geo
+neogeocd,SNK Neo Geo CD
+ngp,Neo Geo Pocket
+ngpc,Neo Geo Pocket Color
