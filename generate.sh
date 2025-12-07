@@ -1,5 +1,11 @@
 #!/bin/bash
-shopt -s nocasematch; IFS=$'\n' read -d '' -ra roms < platforms.csv
+shopt -s nocasematch; 
+
+#IFS=$'\n' read -d '' -ra roms < platforms.csv
+
+declare -A sys; while IFS=',' read -r k v; do sys[$k]="$v"; done < systems.csv
+roms=(); while IFS=';' read -r k rest; do roms+=("$k;$rest;${sys[$k]}"); done < platforms.csv
+
 mkdir -p ~/{gameflix,rom,gamelists,zip,zips,mount} ~/gamelists/{tic80,wasm4,lowresnx,pico8,voxatron,switch}
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html; cp ~/gameflix/systems.html ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
@@ -69,14 +75,15 @@ IFS=";"; for each in "${roms[@]}"; do
     echo "${rom[3]}" >> ~/gameflix/${rom[0]}.html;
     echo "<script>bgImage(\"${rom[0]}\")" >> ~/gameflix/${rom[0]}.html;
     echo "fileNames = [" >> ~/gameflix/${rom[0]}.html;
-    if [ -n "$rom3" ]; then echo "<a href=\"${rom3}.html\" target=\"main\">${rom3}</a> ($pocet)<br />" >> ~/gameflix/systems.html; fi
+    if [ -n "$rom3" ]; then echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> ($pocet)<br />" >> ~/gameflix/systems.html; fi
     pocet=0; 
   else
     echo "<br><br>${rom[3]}" >> ~/gameflix/${rom3}.html;
     echo "<script>bgImage(\"${rom3}\")" >> ~/gameflix/${rom3}.html;
     echo "fileNames = [" >> ~/gameflix/${rom3}.html;
   fi
-  rom3="${rom[0]}"; mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
+  rom3="${rom[0]}"; rom6="${rom[6]}"; 
+  mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   while IFS= read -r line; do
     line2="${line%.*}"; echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++))
     if [[ "$line2" == *")"* ]]; then thumb="${line2%%)*})"; else thumb="$line2"; fi
@@ -94,7 +101,7 @@ IFS=";"; for each in "${roms[@]}"; do
   echo "<folder><path>./${rom3}</path><name>${rom3}</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/gamelists/${rom[0]}/gamelist.xml
 done
 echo "<script src="script.js"></script>" >> ~/gameflix/${rom3}.html;
-echo "<a href=\"${rom3}.html\" target=\"main\">${rom3}</a> ($pocet)<br />" >> ~/gameflix/systems.html
+echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> ($pocet)<br />" >> ~/gameflix/systems.html
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
   if ! grep -Fxq "<gameList>" ~/gamelists/${rom[0]}/gamelist.xml; then sed -i "1i <gameList>" ~/gamelists/${rom[0]}/gamelist.xml; fi
