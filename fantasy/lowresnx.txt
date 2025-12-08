@@ -563,9 +563,9 @@
 2266	Archer	AXh2uNbXJf_LowRes_NX_20220116_20_06_54.png	AXh2uNbXJf_archer.nx
 2265	ATLANTIS	divYuLbJAr_ATLANTIS.png	divYuLbJAr_Atlantis.nx
 2263	Mover (customizable)	qF5LsW3E95_Mover.png	qF5LsW3E95_Mover.nx
-2262	JGOS 1.3.1use version (with lowres adventure in bootloader)	UJRcFEMXAN_JGOS_1.3.1.png	UJRcFEMXAN_JGOS_1.3.1.nx
-2261	Latitude	inFgeDEyRa_IMG_4860.jpg	inFgeDEyRa_Latitude1.1.nx
-2260	Power Puzzles game set	HkwuQVvX7N_Power_Puzzles_V0.303.png	HkwuQVvX7N_Power_Puzzles_V0.303.nx
+2262			
+2261			
+2260			
 2257	Matchabet Game	pWdpvT6LfM_Matchabet.png	pWdpvT6LfM_Matchabet.nx
 2249	Power Poker game	7eWyhPegNu_Power_Poker_0.4.png	7eWyhPegNu_Power_Poker_0.4.nx
 2246	HUNGEE FROG	RP4w4Q5B3g_D8AAE8C839574D6CB6A7E61CB9E72D1A.jpeg	RP4w4Q5B3g_HUNGEE_FROGCurrent12122.nx
