@@ -65,7 +65,7 @@ done; echo "</gameList>" >> ~/gamelists/switch/gamelist.xml
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each"); 
   if [[ "$rom3" != "${rom[0]}" ]]; then
-    echo ${rom[0]};
+    echo ${rom[6]};
     echo "<script src="script.js"></script>" >> ~/gameflix/${rom3}.html;    
     cp platform.html ~/gameflix/${rom[0]}.html
     echo "${rom[3]}" >> ~/gameflix/${rom[0]}.html;
