@@ -29,7 +29,9 @@ function bgImage(platform) { document.write(`<style> figure { background-image: 
 
 function generateTicLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">");
-    if (location.protocol !== "file:" && romPath.includes("roms/TIC-80")) { romPath = romPath.replace("roms/TIC-80", "https://tic80.com/play?cart="); web = true; } else { romPath = `../${romPath}/`; web = false; }
+    //if (location.protocol !== "file:" && romPath.includes("roms/TIC-80")) {
+    romPath = romPath.replace("roms/TIC-80", "https://tic80.com/play?cart="); web = true;
+    //} else { romPath = `../${romPath}/`; web = false; }
     fileNames.forEach(fileName => {
         let [id, hash, nazov] = fileName.split('\t'); if (web) { cart = `${id}`; } else { cart = `${hash}.tic`; }
         document.write(`<a href="${romPath}${cart}" target="main">
@@ -39,7 +41,9 @@ function generateTicLinks(romPath, imagePath) {
 
 function generateWasmLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">");
-    if (location.protocol !== "file:" && romPath.includes("roms/WASM-4")) { romPath = romPath.replace("roms/WASM-4", "https://wasm4.org/play"); wasm = ``; } else { romPath = `../${romPath}`; wasm = `.wasm`; }
+    //if (location.protocol !== "file:" && romPath.includes("roms/WASM-4")) {
+    romPath = romPath.replace("roms/WASM-4", "https://wasm4.org/play"); wasm = ``;
+    //} else { romPath = `../${romPath}`; wasm = `.wasm`; }
     fileNames.forEach(fileName => {
         const [subor, nazov] = fileName.split('\t');
         document.write(`<a href="${romPath}/${encodeURIComponent(subor)}${wasm}" target="main">
@@ -49,7 +53,9 @@ function generateWasmLinks(romPath, imagePath) {
 
 function generateLrNXLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">");
-    if (location.protocol !== "file:" && romPath.includes("roms/LowresNX")) { romPath = romPath.replace("roms/LowresNX", "https://lowresnx.inutilis.com/topic.php?id="); web = true; } else { romPath = `../${romPath}/`; web = false; }
+    //if (location.protocol !== "file:" && romPath.includes("roms/LowresNX")) {
+    romPath = romPath.replace("roms/LowresNX", "https://lowresnx.inutilis.com/topic.php?id="); web = true;
+    //} else { romPath = `../${romPath}/`; web = false; }
     fileNames.forEach(fileName => {
         let [subor, obrazok, nazov, id] = fileName.split('\t'); if (web) { subor = `${id}`; }
         document.write(`<a href="${romPath}${encodeURIComponent(subor)}" target="main">
