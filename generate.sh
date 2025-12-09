@@ -68,16 +68,10 @@ IFS=";"; for each in "${roms[@]}"; do
     echo ${rom[6]};
     echo "<script src="script.js"></script>" >> ~/gameflix/${rom3}.html;    
     cp platform.html ~/gameflix/${rom[0]}.html
-    echo "${rom[3]}" >> ~/gameflix/${rom[0]}.html;
-    echo "<script>bgImage(\"${rom[0]}\")" >> ~/gameflix/${rom[0]}.html;
-    echo "fileNames = [" >> ~/gameflix/${rom[0]}.html;
+    echo -e "${rom[3]}\n<script>bgImage(\"${rom[0]}\")\nfileNames = [" >> ~/gameflix/${rom[0]}.html
     if [ -n "$rom3" ]; then echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> ($pocet)<br />" >> ~/gameflix/systems.html; fi
     pocet=0; 
-  else
-    echo "<br><br>${rom[3]}" >> ~/gameflix/${rom3}.html;
-    echo "<script>bgImage(\"${rom3}\")" >> ~/gameflix/${rom3}.html;
-    echo "fileNames = [" >> ~/gameflix/${rom3}.html;
-  fi
+  else echo -e "<br><br>${rom[3]}\n<script>bgImage(\"${rom3}\")\nfileNames = [" >> ~/gameflix/${rom3}.html; fi
   rom3="${rom[0]}"; rom6="${rom[6]}"; 
   mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   while IFS= read -r line; do
