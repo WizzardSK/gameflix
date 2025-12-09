@@ -77,18 +77,6 @@ function generateVoxLinks(romPath, imagePath) {
     }); document.write("</div>");
 }
 
-function generateUzeLinks(romPath, imagePath) {
-    document.write("<div class=\"figureList\">");
-    if (location.protocol !== "file:" && romPath.includes("roms/Uzebox")) { romPath = romPath.replace("roms/Uzebox", "https://nicksen782.net/UAM/APP_emu/emu.php?gameid="); web = true; } else { romPath = `../${romPath}/`; web = false; }
-    fileNames.forEach(fileName => {
-        let [id, subor, nazov] = fileName.split('\t'); 
-        const nameWithoutExt = subor.slice(0, subor.lastIndexOf(".")) || subor; 
-        if (web) { cart = `${id}`; } else { cart = `${subor}`; }
-        document.write(`<a href="${romPath}${encodeURIComponent(cart)}" target="main">
-        <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutExt)}.png" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
-    }); document.write("</div>");
-}
-
 function generateFileLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">");
     if (location.protocol !== "file:") {
