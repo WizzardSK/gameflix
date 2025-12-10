@@ -87,7 +87,7 @@ function generateFileLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">");
     if (location.protocol !== "file:") {
         if (romPath.startsWith("myrient/")) { romPath = romPath.replace("myrient", "https://myrient.erista.me/files"); }
-        if (romPath.startsWith("roms/Vircon32")) { romPath = romPath.replace("roms/Vircon32", "https://archive.org/download/all_vircon32_roms_and_media/all_vircon32_roms_and_media"); }
+        //if (romPath.startsWith("roms/Vircon32")) { romPath = romPath.replace("roms/Vircon32", "https://archive.org/download/all_vircon32_roms_and_media/all_vircon32_roms_and_media"); }
     } else { romPath = "../" + romPath }
     fileNames.forEach(fileName => {
         const subor = fileName.includes("\t") ? fileName.split("\t")[0] : fileName;
@@ -98,3 +98,4 @@ function generateFileLinks(romPath, imagePath) {
         <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutBrackets)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
+
