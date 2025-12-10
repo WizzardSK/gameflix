@@ -972,12 +972,12 @@
 1091	Auditory Visual Input Overload	YqaXfW8JwE_Auditory_Visual_Input_Overload.png	YqaXfW8JwE_Auditory_Visual_Input_Overload.nx
 1090	Rider in black	aHuzXSCSTJ_Rider_In_Black_Beta.png	aHuzXSCSTJ_Rider_In_Black_Beta.nx
 1089	Drug Wars	KSSohMHxnc_Drug_Wars.png	KSSohMHxnc_Drug_Wars.nx
-1081	Dungeon of Doom (turn-based game)	TZoRhBK5u2_Dungeon_of_Doom.png	TZoRhBK5u2_Dungeon_of_Doom.nx
-1080	Low res galaxy III reverse 😈	dSWnti3kvW_Copy_of_LowRes_Galaxy_2_1.5_2.png	dSWnti3kvW_Copy_of_LowRes_Galaxy_2_1.5_2.nx
-1079	The Backrooms	kptUXXmv3n_The_Backrooms.png	kptUXXmv3n_The_Backrooms.nx
-1078	LowRes galaxy NX  update 	sHC3DgX7Ex_LowRes_Galaxy_2_1.2.png	sHC3DgX7Ex_LowRes_Galaxy_2_1.2.nx
-1077	Gallus Gallas Domesticus	WEXrsDRMzY_Gallus_Gallus_Domesticus.png	WEXrsDRMzY_Gallus_Gallus_Domesticus.nx
-1075	Fruit Blender game	Fs72Chrpth_Fruit_Blender.png	Fs72Chrpth_Fruit_Blender.nx
+1081			
+1080			
+1079			
+1078			
+1077			
+1075			
 1070	A fully customizable casino (Free to use)	UZ2zRuBrLW_Lucky_Casino0.1.png	UZ2zRuBrLW_Lucky_Casino0.1.nx
 1067	Laser Tag game	ttCxW4Mvys_Laser_Tag.png	ttCxW4Mvys_Laser_Tag.nx
 1066	Search and Rescue game	PMcx9fVpPK_Search_and_Rescue_2.png	PMcx9fVpPK_Search_and_Rescue_2.nx
@@ -1143,10 +1143,10 @@
 673	Night	ANsK3qdUsK_Night.png	ANsK3qdUsK_Night.nx
 672	Tank Attack	9UeABY7J4Y_Tank_Attack.png	9UeABY7J4Y_Tank_Attack.nx
 671	Secret Cipher Alphabet	2ZYAm453G6_Secret_Cipher_Alphabet.png	2ZYAm453G6_Secret_Cipher_Alphabet.nx
-669			
-668			
-667			
-658			
+669	Deep space	mLp4zHYrQr_Deep_Space.png	mLp4zHYrQr_Deep_Space.nx
+668	Balls of Fun toy	hS2QQfC8iB_Balls_of_Fun_toy.png	hS2QQfC8iB_Balls_of_Fun_toy.nx
+667	MazeGenerator	pfJvE5RA84_Maze.png	pfJvE5RA84_Maze.nx
+658	Drop and Pop	iq2Nkxtppu_Drop_and_Pop_.06.png	iq2Nkxtppu_Drop_and_Pop_.06.nx
 655	Dark Night game	u2DRYsgGDh_Dark_Night_game_0.1.png	u2DRYsgGDh_Dark_Night_game_0.1.nx
 652	(= SUPER STICK FIGHTERS =)	XSas4RA68P_Super_Stick_Fighters.png	XSas4RA68P_Super_Stick_Fighters.nx
 651	Super Chess	KiwceYkkWS_Super_Chess.png	KiwceYkkWS_Super_Chess.nx
