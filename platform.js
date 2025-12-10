@@ -79,8 +79,7 @@ function generateVoxLinks(romPath, imagePath) {
 
 function generateFileLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">");
-    if (location.protocol !== "file:") {
-        if (romPath.startsWith("myrient/")) { romPath = romPath.replace("myrient", "https://myrient.erista.me/files"); }
+    if (location.protocol !== "file:") { if (romPath.startsWith("myrient/")) { romPath = romPath.replace("myrient", "https://myrient.erista.me/files"); }
     } else { romPath = "../" + romPath }
     fileNames.forEach(fileName => {
         const subor = fileName.includes("\t") ? fileName.split("\t")[0] : fileName;
