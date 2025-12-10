@@ -29,11 +29,9 @@ function bgImage(platform) { document.write(`<style> figure { background-image: 
 
 function generateTicLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">");
-    //if (location.protocol !== "file:" && romPath.includes("roms/TIC-80")) {
-    romPath = romPath.replace("roms/TIC-80", "https://tic80.com/play?cart="); web = true;
-    //} else { romPath = `../${romPath}/`; web = false; }
+    romPath = romPath.replace("roms/TIC-80", "https://tic80.com/play?cart=");
     fileNames.forEach(fileName => {
-        let [id, hash, nazov] = fileName.split('\t'); if (web) { cart = `${id}`; } else { cart = `${hash}.tic`; }
+        let [id, hash, nazov] = fileName.split('\t'); cart = `${id}`; 
         document.write(`<a href="${romPath}${cart}" target="main">
         <figure><img loading="lazy" src="https://tic80.com/cart/${hash}/cover.gif" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
@@ -41,23 +39,19 @@ function generateTicLinks(romPath, imagePath) {
 
 function generateWasmLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">");
-    //if (location.protocol !== "file:" && romPath.includes("roms/WASM-4")) {
-    romPath = romPath.replace("roms/WASM-4", "https://wasm4.org/play"); wasm = ``;
-    //} else { romPath = `../${romPath}`; wasm = `.wasm`; }
+    romPath = romPath.replace("roms/WASM-4", "https://wasm4.org/play"); 
     fileNames.forEach(fileName => {
         const [subor, nazov] = fileName.split('\t');
-        document.write(`<a href="${romPath}/${encodeURIComponent(subor)}${wasm}" target="main">
+        document.write(`<a href="${romPath}/${encodeURIComponent(subor)}" target="main">
         <figure><img loading="lazy" src="https://wasm4.org/carts/${subor}.png" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
 
 function generateLrNXLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">");
-    //if (location.protocol !== "file:" && romPath.includes("roms/LowresNX")) {
-    romPath = romPath.replace("roms/LowresNX", "https://lowresnx.inutilis.com/topic.php?id="); web = true;
-    //} else { romPath = `../${romPath}/`; web = false; }
+    romPath = romPath.replace("roms/LowresNX", "https://lowresnx.inutilis.com/topic.php?id="); 
     fileNames.forEach(fileName => {
-        let [subor, obrazok, nazov, id] = fileName.split('\t'); if (web) { subor = `${id}`; }
+        let [subor, obrazok, nazov, id] = fileName.split('\t'); subor = `${id}`; 
         document.write(`<a href="${romPath}${encodeURIComponent(subor)}" target="main">
         <figure><img loading="lazy" src="https://lowresnx.inutilis.com/uploads/${obrazok}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
@@ -87,7 +81,6 @@ function generateFileLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">");
     if (location.protocol !== "file:") {
         if (romPath.startsWith("myrient/")) { romPath = romPath.replace("myrient", "https://myrient.erista.me/files"); }
-        //if (romPath.startsWith("roms/Vircon32")) { romPath = romPath.replace("roms/Vircon32", "https://archive.org/download/all_vircon32_roms_and_media/all_vircon32_roms_and_media"); }
     } else { romPath = "../" + romPath }
     fileNames.forEach(fileName => {
         const subor = fileName.includes("\t") ? fileName.split("\t")[0] : fileName;
@@ -98,4 +91,3 @@ function generateFileLinks(romPath, imagePath) {
         <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutBrackets)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
-
