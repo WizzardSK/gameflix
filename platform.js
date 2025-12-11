@@ -28,8 +28,7 @@ document.write(text);
 function bgImage(platform) { document.write(`<style> figure { background-image: url('https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/${platform}.png'); } </style>`); }
 
 function generateTicLinks(romPath, imagePath) {
-    document.write("<div class=\"figureList\">");
-    romPath = romPath.replace("roms/TIC-80", "https://tic80.com/play?cart=");
+    document.write("<div class=\"figureList\">"); romPath = romPath.replace("roms/TIC-80", "https://tic80.com/play?cart=");
     fileNames.forEach(fileName => {
         let [id, hash, nazov] = fileName.split('\t'); cart = `${id}`; 
         document.write(`<a href="${romPath}${cart}" target="main">
@@ -38,8 +37,7 @@ function generateTicLinks(romPath, imagePath) {
 }
 
 function generateWasmLinks(romPath, imagePath) {
-    document.write("<div class=\"figureList\">");
-    romPath = romPath.replace("roms/WASM-4", "https://wasm4.org/play"); 
+    document.write("<div class=\"figureList\">"); romPath = romPath.replace("roms/WASM-4", "https://wasm4.org/play"); 
     fileNames.forEach(fileName => {
         const [subor, nazov] = fileName.split('\t');
         document.write(`<a href="${romPath}/${encodeURIComponent(subor)}" target="main">
@@ -48,8 +46,7 @@ function generateWasmLinks(romPath, imagePath) {
 }
 
 function generateLrNXLinks(romPath, imagePath) {
-    document.write("<div class=\"figureList\">");
-    romPath = romPath.replace("roms/LowresNX", "https://lowresnx.inutilis.com/topic.php?id="); 
+    document.write("<div class=\"figureList\">"); romPath = romPath.replace("roms/LowresNX", "https://lowresnx.inutilis.com/topic.php?id="); 
     fileNames.forEach(fileName => {
         let [subor, obrazok, nazov, id] = fileName.split('\t'); subor = `${id}`; 
         document.write(`<a href="${romPath}${encodeURIComponent(subor)}" target="main">
