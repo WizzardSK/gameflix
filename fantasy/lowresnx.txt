@@ -863,13 +863,13 @@
 1447	Insanity	ZA4vYKRWuC_Insanity.png	ZA4vYKRWuC_Insanity.nx
 1431	Clapping Music	89dULqB4Dz_D3dfLUDfBJ_E5fKXAKtQ7_LowRes_NX_20200915_21_05_06.png	89dULqB4Dz_clapping_music_2.nx
 1422	Football Arcade	aSH73TriUn_Football_Arcade.png	aSH73TriUn_Football_Arcade.nx
-1411			
-1404			
-1400			
-1395			
-1392			
-1389			
-1381			
+1411	Tiny Tactical Tanks! Discontinued 	E23DASUV9w_09F72C466C0341C39972C9BB61B24061.jpeg	E23DASUV9w_Tiny_Tactical_Tanks.nx
+1404	Super--Bit game	3iF6Rtgx66_SuperBit.png	3iF6Rtgx66_SuperBit.nx
+1400	Guns with legs	Yn5JMfu4yM_C3A3E916DD4742119EC206A7634B46F1.jpeg	Yn5JMfu4yM_GUNS_WITH_LEGS.nx
+1395	LowRes Fight	t4oYqAVTPG_LowRes_NX_20200901_16_20_00.png	t4oYqAVTPG_LowresFightV3.3.2.nx
+1392	SinRide	fpHkJpopdS_LowRes_NX_20200829_14_49_04.png	fpHkJpopdS_SinRide.nx
+1389	Lowres Space Invaders	HULGZwexhG_Lowres_Space_Invaders.png	HULGZwexhG_Lowres_Space_Invaders.nx
+1381	Travesties of War	nHUvAGwKZC_ToW_0.2.png	nHUvAGwKZC_ToW_0.2.nx
 1378	Sound Composer 1.5	Af2tUYynqa_LowRes_NX_20200821_23_46_18_2.png	Af2tUYynqa_Sound_Composer_1.5.nx
 1377	Shots Fired(Release)	zCNuRrBLUW_Shots_Fired_0.1.png	zCNuRrBLUW_Shots_Fired_0.1.nx
 1371	PongLaPong	8RyE73VBGe_PongLaPong_1.0.1.png	8RyE73VBGe_PongLaPong_1.0.1.nx
