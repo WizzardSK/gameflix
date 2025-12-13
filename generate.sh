@@ -74,11 +74,11 @@ IFS=";"; for each in "${roms[@]}"; do
   else echo -e "<br><br>${rom[3]}\n<script>bgImage(\"${rom3}\")\nfileNames = [" >> ~/gameflix/${rom3}.html; fi
   rom3="${rom[0]}"; rom6="${rom[6]}"; 
   mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
+  foldername=$(sed 's/<[^>]*>//g' <<< "${rom[3]}");
   while IFS= read -r line; do
     line2="${line%.*}"; echo "\"${line}\"," >> ~/gameflix/${rom3}.html; ((pocet++)); ((total++))
     if [[ "$line2" == *")"* ]]; then thumb="${line2%%)*})"; else thumb="$line2"; fi
     if [ -d ~/"${romfolder}/${line}" ]; then polozka="folder"; else polozka="game"; fi    
-    foldername=$(sed 's/<[^>]*>//g' <<< "${rom[3]}");
     hra="<$polozka><path>./$foldername/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[2]}/Named_Snaps/${thumb}.png</image><titleshot>~/../thumbs/${rom[2]}/Named_Titles/${thumb}.png</titleshot><thumbnail>~/../thumbs/${rom[2]}/Named_Boxarts/${thumb}.png</thumbnail><marquee>~/../thumbs/${rom[2]}/Named_Logos/${thumb}.png</marquee>"
     if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h [^]]*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then
       echo "${hra}</$polozka>" >> ~/gamelists/${rom[0]}/gamelist.xml
