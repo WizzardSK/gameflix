@@ -124,7 +124,7 @@ mame,MAME Arcade
 fbneo,FinalBurn Neo
 model2,Sega Model 2
 model3,Sega Model 3
-neogeo,SNK Neo Geo
+neogeo,SNK Neo Geo AES
 neogeocd,SNK Neo Geo CD
-ngp,Neo Geo Pocket
-ngpc,Neo Geo Pocket Color
+ngp,SNK Neo Geo Pocket
+ngpc,SNK Neo Geo Pocket Color
