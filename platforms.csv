@@ -226,6 +226,12 @@ vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile NoIntro;mame vsmil
 vsmile;TOSEC/VTech/V.Smile Motion/Games/[BIN];VTech - V.Smile;VTech V.Smile TOSEC;mame vsmile -cart;
 vsmile;MAME/Software List ROMs (merged)/vsmile_cart;VTech - V.Smile;VTech V.Smile Merged;mame vsmile -cart;
 vsmile;MAME/Software List ROMs (split)/vsmile_cart;VTech - V.Smile;VTech V.Smile Split;mame vsmile -cart;
+laser310;TOSEC/VTech/Laser 200/Games/[VZ];VTech - Laser 310;<code>VTech Laser 200</code>;mame laser310 -dump;
+laser310;TOSEC/VTech/Laser 200/Applications;VTech - Laser 310;<code>VTech Laser 200</code> App;mame laser310 -dump;
+laser310;TOSEC/VTech/Laser 310/Applications;VTech - Laser 310;<code>VTech Laser 310</code> App;mame laser310 -dump;
+laser310;MAME/Software List ROMs (merged)/vz_snap;VTech - Laser 310;<code>VTech Laser</code> Merged;mame laser310 -dump;
+laser310;MAME/Software List ROMs (split)/vz_snap;VTech - Laser 310;<code>VTech Laser</code> Split;mame laser310 -dump;
+socrates;MAME/Software List ROMs (merged)/socrates;VTech - Socrates;<code>VTech Socrates</code>;mame socrates -cart;
 arcadia;No-Intro/Emerson - Arcadia 2001;Emerson - Arcadia 2001;Arcadia 2001 NoIntro;mame arcadia -cart;
 arcadia;TOSEC/Emerson/Arcadia 2001/Games;Emerson - Arcadia 2001;Arcadia 2001 TOSEC;mame arcadia -cart;
 arcadia;MAME/Software List ROMs (merged)/arcadia;Emerson - Arcadia 2001;Arcadia 2001 Merged;mame arcadia -cart;
@@ -279,12 +285,6 @@ fmtowns;MAME/Software List CHDs (merged)/fmtowns_cd;Fujitsu - FM Towns;<code>Fuj
 tutor;TOSEC/Tomy/Tutor & Pyuuta/Games;Tomy - Tutor;<code>Tomy Tutor</code> TOSEC;mame tutor -cart;
 tutor;MAME/Software List ROMs (merged)/tutor;Tomy - Tutor;<code>Tomy Tutor</code> Merged;mame tutor -cart;
 tutor;MAME/Software List ROMs (split)/tutor;Tomy - Tutor;<code>Tomy Tutor</code> Split;mame tutor -cart;
-laser310;TOSEC/VTech/Laser 200/Games/[VZ];VTech - Laser 310;<code>VTech Laser 200</code>;mame laser310 -dump;
-laser310;TOSEC/VTech/Laser 200/Applications;VTech - Laser 310;<code>VTech Laser 200</code> App;mame laser310 -dump;
-laser310;TOSEC/VTech/Laser 310/Applications;VTech - Laser 310;<code>VTech Laser 310</code> App;mame laser310 -dump;
-laser310;MAME/Software List ROMs (merged)/vz_snap;VTech - Laser 310;<code>VTech Laser</code> Merged;mame laser310 -dump;
-laser310;MAME/Software List ROMs (split)/vz_snap;VTech - Laser 310;<code>VTech Laser</code> Split;mame laser310 -dump;
-socrates;MAME/Software List ROMs (merged)/socrates;VTech - Socrates;<code>VTech Socrates</code>;mame socrates -cart;
 ti99;MAME/Software List ROMs (merged)/ti99_cart;Texas Instruments - TI-99;<code>Texas Instruments TI99</code> Merged;mame ti99_4a;
 ti99;MAME/Software List ROMs (split)/ti99_cart;Texas Instruments - TI-99;<code>Texas Instruments TI99</code> Split;mame ti99_4a;
 thomson;TOSEC/Thomson/MO5/Games/[K7];Thomson - MOTO;<p><code>Thomson MO5</code> K7;theodore_libretro;
