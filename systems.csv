@@ -18,7 +18,7 @@ macintosh,Apple Macintosh
 channelf,Fairchild Channel F
 vectrex,GCE Vectrex
 odyssey2,Magnavox Odyssey²
-videopacplus,Philips Videopac+
+videopacplus,Magnavox Odyssey³
 intellivision,Mattel Intellivision
 colecovision,Coleco Colecovision
 scv,Epoch Super Casette Vision
@@ -105,10 +105,10 @@ pcfx,NEC PC-FX
 cdi,Philips CD-i
 3do,Panasonic 3DO
 dos,Microsoft MS-DOS
-msx1,Microsoft MSX1
-msx2,Microsoft MSX2
-msx2+,Microsoft MSX2+
-msxturbor,Microsoft MSX TurboR
+msx1,Panasonic MSX1
+msx2,Panasonic MSX2
+msx2+,Panasonic MSX2+
+msxturbor,Panasonic MSX TurboR
 pet,Commodore PET
 cplus4,Commodore Plus-4
 vic20,Commodore VIC-20
