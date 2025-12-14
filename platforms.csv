@@ -409,6 +409,8 @@ dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/US;Sega - Dreamcast;Sega Dreamcast US;f
 dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/PAL;Sega - Dreamcast;Sega Dreamcast PAL;flycast_libretro;gdi
 dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/JP;Sega - Dreamcast;Sega Dreamcast JP;flycast_libretro;gdi
 dreamcast;MAME/Software List CHDs (merged)/dc;Sega - Dreamcast;Sega Dreamcast CHD;flycast_libretro;
+model2;Internet Archive/chadmaster/m2emu1.1a/Sega Model 2 Emu 1.1a and Full Romset/Model 2 Romset (Merged);MAME;Sega Model 2;mame;
+model3;Internet Archive/chadmaster/segamodel3/ROMs;MAME;Sega Model 3;mame;
 gamegear;No-Intro/Sega - Game Gear;Sega - Game Gear;<i>Game Gear</i> NoIntro;gearsystem_libretro;
 gamegear;TOSEC/Sega/Game Gear/Games;Sega - Game Gear;<i>Game Gear</i> TOSEC;gearsystem_libretro;
 gamegear;MAME/Software List ROMs (merged)/gamegear;Sega - Game Gear;<i>Game Gear</i> Merged;gearsystem_libretro;
@@ -688,8 +690,6 @@ mame;MAME/Reference Sets/0.174 ROMs (non-merged);MAME;MAME 2016;mame;
 vgmplay;MAME/Software List ROMs (merged)/vgmplay;MAME;VGMPlay Merged;mame vgmplay -quik;
 vgmplay;MAME/Software List ROMs (split)/vgmplay;MAME;VGMPlay Split;mame vgmplay -quik;
 fbneo;FinalBurn Neo/arcade;MAME;FinalBurn Neo;fbneo_libretro;
-model2;Internet Archive/chadmaster/m2emu1.1a/Sega Model 2 Emu 1.1a and Full Romset/Model 2 Romset (Merged);MAME;Sega Model 2;mame;
-model3;Internet Archive/chadmaster/segamodel3/ROMs;MAME;Sega Model 3;mame;
 neogeo;MAME/Software List ROMs (merged)/neogeo;SNK - Neo Geo;Neo Geo Merged;fbneo_libretro;
 neogeo;MAME/Software List ROMs (split)/neogeo;SNK - Neo Geo;Neo Geo Split;fbneo_libretro;
 neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD Redump;neocd_libretro;cue
