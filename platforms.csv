@@ -425,6 +425,43 @@ psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Sony PSP</
 psp;No-Intro/Non-Redump - Sony - PlayStation Portable;Sony - PlayStation Portable;<i>Sony PSP</i> NonRedump;ppsspp_libretro;iso
 psp;No-Intro/Unofficial - Sony - PlayStation Portable (PSN) (Decrypted);Sony - PlayStation Portable;<i>Sony PSP</i> PSN;ppsspp_libretro;iso
 psp;TOSEC-ISO/Sony/PlayStation Portable/Games/[ISO];Sony - PlayStation Portable;<i>Sony PSP</i> TOSEC;ppsspp_libretro;iso
+cdi;Redump/Philips - CD-i;Philips - CD-i;Philips CDi Redump;same_cdi_libretro;cue
+cdi;No-Intro/Non-Redump - Philips - CD-i;Philips - CD-i;Philips CDi NonRedump;same_cdi_libretro;cue
+cdi;TOSEC-ISO/Philips/CD-i/Games;Philips - CD-i;Philips CDi TOSEC;same_cdi_libretro;cue
+cdi;TOSEC-ISO/Philips/CD-i/Applications;Philips - CD-i;Philips CDi App;same_cdi_libretro;cue
+cdi;TOSEC-ISO/Philips/CD-i/Educational;Philips - CD-i;Philips CDi Edu;same_cdi_libretro;cue
+cdi;TOSEC-ISO/Philips/CD-i/Multimedia;Philips - CD-i;Philips CDi Multimedia;same_cdi_libretro;cue
+cdi;MAME/Software List CHDs (merged)/cdi;Philips - CD-i;Philips CDi CHD;same_cdi_libretro;
+3do;Redump/Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO Redump;opera_libretro;cue
+3do;No-Intro/Non-Redump - Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO NonRedump;opera_libretro;cue
+3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Games;The 3DO Company - 3DO;Panasonic 3DO TOSEC;opera_libretro;cue
+3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Applications/[ISO];The 3DO Company - 3DO;Panasonic 3DO App;opera_libretro;cue
+3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Educational/[ISO];The 3DO Company - 3DO;Panasonic 3DO Edu;opera_libretro;cue
+3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Multimedia;The 3DO Company - 3DO;Panasonic 3DO Multimedia;opera_libretro;cue
+msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;<p><code>MSX 1</code> NoIntro;bluemsx_libretro;
+msx1;TOSEC/MSX/MSX/Games/[CAS];Microsoft - MSX;<code>MSX 1</code> TOSEC CAS;bluemsx_libretro;
+msx1;TOSEC/MSX/MSX/Games/[DSK];Microsoft - MSX;<code>MSX 1</code> TOSEC DSK;bluemsx_libretro;
+msx1;TOSEC/MSX/MSX/Games/[ROM];Microsoft - MSX;<code>MSX 1</code> TOSEC ROM;bluemsx_libretro;
+msx1;MAME/Software List ROMs (merged)/msx1_cart;Microsoft - MSX;<code>MSX 1</code> Cart Merged;bluemsx_libretro;
+msx1;MAME/Software List ROMs (split)/msx1_cart;Microsoft - MSX;<code>MSX 1</code> Cart Split;bluemsx_libretro;
+msx1;MAME/Software List ROMs (merged)/msx1_cass;Microsoft - MSX;<code>MSX 1</code> Cass Merged;bluemsx_libretro;
+msx1;MAME/Software List ROMs (split)/msx1_cass;Microsoft - MSX;<code>MSX 1</code> Cass Split;bluemsx_libretro;
+msx1;MAME/Software List ROMs (merged)/msx1_flop;Microsoft - MSX;<code>MSX 1</code> Flop Merged;bluemsx_libretro;
+msx1;MAME/Software List ROMs (split)/msx1_flop;Microsoft - MSX;<code>MSX 1</code> Flop Split;bluemsx_libretro;
+msx1;FinalBurn Neo/msx;Microsoft - MSX;<code>MSX 1</code> FBN;bluemsx_libretro;
+msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<code>MSX 2</code> NoIntro;bluemsx_libretro;
+msx2;TOSEC/MSX/MSX2/Games/[DSK];Microsoft - MSX2;<code>MSX 2</code> TOSEC DSK;bluemsx_libretro;
+msx2;TOSEC/MSX/MSX2/Games/[ROM];Microsoft - MSX2;<code>MSX 2</code> TOSEC ROM;bluemsx_libretro;
+msx2;MAME/Software List ROMs (merged)/msx2_cart;Microsoft - MSX2;<code>MSX 2</code> Cart Merged;bluemsx_libretro;
+msx2;MAME/Software List ROMs (split)/msx2_cart;Microsoft - MSX2;<code>MSX 2</code> Cart Split;bluemsx_libretro;
+msx2;MAME/Software List ROMs (merged)/msx2_flop;Microsoft - MSX2;<code>MSX 2</code> Flop Merged;bluemsx_libretro;
+msx2;MAME/Software List ROMs (split)/msx2_flop;Microsoft - MSX2;<code>MSX 2</code> Flop Split;bluemsx_libretro;
+msx2+;TOSEC/MSX/MSX2+/Games;Microsoft - MSX2;<code>MSX 2+</code> TOSEC;bluemsx_libretro;
+msx2+;MAME/Software List ROMs (merged)/msx2p_flop;Microsoft - MSX2;<code>MSX 2+</code> Flop Merged;bluemsx_libretro;
+msx2+;MAME/Software List ROMs (split)/msx2p_flop;Microsoft - MSX2;<code>MSX 2+</code> Flop Split;bluemsx_libretro;
+msxturbor;TOSEC/MSX/TurboR/Games;Microsoft - MSX2;<code>MSX TurboR</code>;bluemsx_libretro;
+msxturbor;MAME/Software List ROMs (merged)/msxr_flop;Microsoft - MSX2;<code>MSX TurboR</code> Flop Merged;bluemsx_libretro;
+msxturbor;MAME/Software List ROMs (split)/msxr_flop;Microsoft - MSX2;<code>MSX TurboR</code> Flop Split;bluemsx_libretro;
 pc88;TOSEC/NEC/PC-8801/Games/[D88];NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> TOSEC;quasi88_libretro;
 pc88;MAME/Software List ROMs (merged)/pc8801_flop;NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> Flop Merged;quasi88_libretro;
 pc88;MAME/Software List ROMs (split)/pc8801_flop;NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> Flop Split;quasi88_libretro;
@@ -452,19 +489,6 @@ pcenginecd;TOSEC-ISO/NEC/PC-Engine CD & TurboGrafx-16 CD/Games/[IMG];NEC - PC En
 pcenginecd;MAME/Software List CHDs (merged)/pcecd;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD CHD;mednafen_pce_fast_libretro;
 pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX Redump;mednafen_pcfx_libretro;cue
 pcfx;TOSEC-ISO/NEC/PC-FX/Games;NEC - PC-FX;PC-FX ISO;mednafen_pcfx_libretro;cue
-cdi;Redump/Philips - CD-i;Philips - CD-i;Philips CDi Redump;same_cdi_libretro;cue
-cdi;No-Intro/Non-Redump - Philips - CD-i;Philips - CD-i;Philips CDi NonRedump;same_cdi_libretro;cue
-cdi;TOSEC-ISO/Philips/CD-i/Games;Philips - CD-i;Philips CDi TOSEC;same_cdi_libretro;cue
-cdi;TOSEC-ISO/Philips/CD-i/Applications;Philips - CD-i;Philips CDi App;same_cdi_libretro;cue
-cdi;TOSEC-ISO/Philips/CD-i/Educational;Philips - CD-i;Philips CDi Edu;same_cdi_libretro;cue
-cdi;TOSEC-ISO/Philips/CD-i/Multimedia;Philips - CD-i;Philips CDi Multimedia;same_cdi_libretro;cue
-cdi;MAME/Software List CHDs (merged)/cdi;Philips - CD-i;Philips CDi CHD;same_cdi_libretro;
-3do;Redump/Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO Redump;opera_libretro;cue
-3do;No-Intro/Non-Redump - Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO NonRedump;opera_libretro;cue
-3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Games;The 3DO Company - 3DO;Panasonic 3DO TOSEC;opera_libretro;cue
-3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Applications/[ISO];The 3DO Company - 3DO;Panasonic 3DO App;opera_libretro;cue
-3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Educational/[ISO];The 3DO Company - 3DO;Panasonic 3DO Edu;opera_libretro;cue
-3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Multimedia;The 3DO Company - 3DO;Panasonic 3DO Multimedia;opera_libretro;cue
 dos;eXo/eXoDOS/Full Release/eXo/eXoDOS;DOS;<p><code>MS-DOS</code> eXoDOS;dosbox_pure_libretro;
 dos;TOSEC/IBM/PC Compatibles/Games/[IMG];DOS;<code>MS-DOS</code> TOSEC;dosbox_pure_libretro;
 dos;TOSEC/IBM/PC Compatibles/Applications/[IMG];DOS;<code>MS-DOS</code> App TOSEC;dosbox_pure_libretro;
@@ -561,30 +585,6 @@ dos;Total DOS Collection/Applications/Files/2004;DOS;<code>MS-DOS</code> TDC App
 dos;Total DOS Collection/Applications/Files/2005;DOS;<code>MS-DOS</code> TDC App 2005;dosbox_pure_libretro;
 dos;Total DOS Collection/Applications/Files/2006;DOS;<code>MS-DOS</code> TDC App 2006;dosbox_pure_libretro;
 dos;Total DOS Collection/Applications/Files/2009;DOS;<code>MS-DOS</code> TDC App 2009;dosbox_pure_libretro;
-msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;<p><code>MSX 1</code> NoIntro;bluemsx_libretro;
-msx1;TOSEC/MSX/MSX/Games/[CAS];Microsoft - MSX;<code>MSX 1</code> TOSEC CAS;bluemsx_libretro;
-msx1;TOSEC/MSX/MSX/Games/[DSK];Microsoft - MSX;<code>MSX 1</code> TOSEC DSK;bluemsx_libretro;
-msx1;TOSEC/MSX/MSX/Games/[ROM];Microsoft - MSX;<code>MSX 1</code> TOSEC ROM;bluemsx_libretro;
-msx1;MAME/Software List ROMs (merged)/msx1_cart;Microsoft - MSX;<code>MSX 1</code> Cart Merged;bluemsx_libretro;
-msx1;MAME/Software List ROMs (split)/msx1_cart;Microsoft - MSX;<code>MSX 1</code> Cart Split;bluemsx_libretro;
-msx1;MAME/Software List ROMs (merged)/msx1_cass;Microsoft - MSX;<code>MSX 1</code> Cass Merged;bluemsx_libretro;
-msx1;MAME/Software List ROMs (split)/msx1_cass;Microsoft - MSX;<code>MSX 1</code> Cass Split;bluemsx_libretro;
-msx1;MAME/Software List ROMs (merged)/msx1_flop;Microsoft - MSX;<code>MSX 1</code> Flop Merged;bluemsx_libretro;
-msx1;MAME/Software List ROMs (split)/msx1_flop;Microsoft - MSX;<code>MSX 1</code> Flop Split;bluemsx_libretro;
-msx1;FinalBurn Neo/msx;Microsoft - MSX;<code>MSX 1</code> FBN;bluemsx_libretro;
-msx2;No-Intro/Microsoft - MSX2;Microsoft - MSX2;<code>MSX 2</code> NoIntro;bluemsx_libretro;
-msx2;TOSEC/MSX/MSX2/Games/[DSK];Microsoft - MSX2;<code>MSX 2</code> TOSEC DSK;bluemsx_libretro;
-msx2;TOSEC/MSX/MSX2/Games/[ROM];Microsoft - MSX2;<code>MSX 2</code> TOSEC ROM;bluemsx_libretro;
-msx2;MAME/Software List ROMs (merged)/msx2_cart;Microsoft - MSX2;<code>MSX 2</code> Cart Merged;bluemsx_libretro;
-msx2;MAME/Software List ROMs (split)/msx2_cart;Microsoft - MSX2;<code>MSX 2</code> Cart Split;bluemsx_libretro;
-msx2;MAME/Software List ROMs (merged)/msx2_flop;Microsoft - MSX2;<code>MSX 2</code> Flop Merged;bluemsx_libretro;
-msx2;MAME/Software List ROMs (split)/msx2_flop;Microsoft - MSX2;<code>MSX 2</code> Flop Split;bluemsx_libretro;
-msx2+;TOSEC/MSX/MSX2+/Games;Microsoft - MSX2;<code>MSX 2+</code> TOSEC;bluemsx_libretro;
-msx2+;MAME/Software List ROMs (merged)/msx2p_flop;Microsoft - MSX2;<code>MSX 2+</code> Flop Merged;bluemsx_libretro;
-msx2+;MAME/Software List ROMs (split)/msx2p_flop;Microsoft - MSX2;<code>MSX 2+</code> Flop Split;bluemsx_libretro;
-msxturbor;TOSEC/MSX/TurboR/Games;Microsoft - MSX2;<code>MSX TurboR</code>;bluemsx_libretro;
-msxturbor;MAME/Software List ROMs (merged)/msxr_flop;Microsoft - MSX2;<code>MSX TurboR</code> Flop Merged;bluemsx_libretro;
-msxturbor;MAME/Software List ROMs (split)/msxr_flop;Microsoft - MSX2;<code>MSX TurboR</code> Flop Split;bluemsx_libretro;
 pet;TOSEC/Commodore/PET/Games/[PRG];Commodore - PET;<p><code>Commodore PET</code> TOSEC;vice_xpet_libretro;
 pet;MAME/Software List ROMs (merged)/pet_cass;Commodore - PET;<code>Commodore PET</code> Merged;vice_xpet_libretro;
 pet;MAME/Software List ROMs (split)/pet_cass;Commodore - PET;<code>Commodore PET</code> Split;vice_xpet_libretro;
