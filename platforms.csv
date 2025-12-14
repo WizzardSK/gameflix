@@ -117,6 +117,10 @@ colecovision;TOSEC/Coleco/ColecoVision/Games;Coleco - ColecoVision;Coleco Coleco
 colecovision;MAME/Software List ROMs (merged)/coleco;Coleco - ColecoVision;Coleco Colecovision Merged;gearcoleco_libretro;
 colecovision;MAME/Software List ROMs (split)/coleco;Coleco - ColecoVision;Coleco Colecovision Split;gearcoleco_libretro;
 colecovision;FinalBurn Neo/coleco;Coleco - ColecoVision;Coleco Colecovision FBN;gearcoleco_libretro;
+adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK];Coleco - Adam;<p><code>Coleco Adam</code> TOSEC;mame adam -flop1;
+adam;TOSEC/Coleco/ColecoVision ADAM/Applications/[DSK];Coleco - Adam;<code>Coleco Adam</code> App;mame adam -flop1;
+adam;MAME/Software List ROMs (merged)/adam_flop;Coleco - Adam;<code>Coleco Adam</code> Merged;mame adam -flop1;
+adam;MAME/Software List ROMs (split)/adam_flop;Coleco - Adam;<code>Coleco Adam</code> Split;mame adam -flop1;
 scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Epoch SCV NoIntro;emuscv_libretro;
 scv;TOSEC/Epoch/Super Cassette Vision/Games;Epoch - Super Cassette Vision;Epoch SCV TOSEC;emuscv_libretro;
 scv;MAME/Software List ROMs (merged)/scv;Epoch - Super Cassette Vision;Epoch SCV Merged;emuscv_libretro;
@@ -238,10 +242,6 @@ vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton VC 4000 NoIntro;m
 vc4000;MAME/Software List ROMs (merged)/vc4000;Interton - VC 4000;Interton VC 4000 Merged;mame vc4000 -cart;
 vc4000;MAME/Software List ROMs (split)/vc4000;Interton - VC 4000;Interton VC 4000 Split;mame vc4000 -cart;
 multivision;TOSEC/Tsukuda Original/Othello Multivision/Games;Othello - Multivision;Othello Multivision;gearsystem_libretro;
-adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK];Coleco - Adam;<p><code>Coleco Adam</code> TOSEC;mame adam -flop1;
-adam;TOSEC/Coleco/ColecoVision ADAM/Applications/[DSK];Coleco - Adam;<code>Coleco Adam</code> App;mame adam -flop1;
-adam;MAME/Software List ROMs (merged)/adam_flop;Coleco - Adam;<code>Coleco Adam</code> Merged;mame adam -flop1;
-adam;MAME/Software List ROMs (split)/adam_flop;Coleco - Adam;<code>Coleco Adam</code> Split;mame adam -flop1;
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM];Tandy - TRS-80 Color Computer;<code>Tandy TRS-80 CoCo</code> TOSEC;mame coco3 -cart;
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Applications/[ROM];Tandy - TRS-80 Color Computer;<code>Tandy TRS-80 CoCo</code> App;mame coco3 -cart;
 coco;MAME/Software List ROMs (merged)/coco_cart;Tandy - TRS-80 Color Computer;<code>Tandy TRS-80 CoCo</code> Merged;mame coco3 -cart;
