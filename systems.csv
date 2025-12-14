@@ -36,7 +36,7 @@ amstradcpc,Amstrad CPC
 gx4000,Amstrad GX4000
 zx81,Sinclair ZX81
 zxspectrum,Sinclair ZX Spectrum
-spectravideo,Spectravideo
+spectravideo,Spectravideo SV-318/SV-328
 samcoupe,SAM Coupé
 oric,Oric Atmos
 camplynx,Camputers Lynx
@@ -51,8 +51,8 @@ supracan,Super Acan
 vc4000,Interton VC 4000
 multivision,Othello Multivision
 adam,Coleco Adam
-coco,Tandy TRS-80 CoCo
-vis,Video Information System
+coco,Tandy TRS-80 Color Computer
+vis,Tandy Video Information System
 atom,Acorn Atom
 bbcmicro,Acorn BBS
 electron,Acorn Electron
@@ -62,7 +62,7 @@ fmtowns,Fujitsu FM Towns
 tutor,Tomy Tutor
 laser310,VTech Laser
 socrates,VTech Socrates
-ti99,Texas Instruments TI99
+ti99,Texas Instruments TI-99/4A
 thomson,Thomson MO/TO
 nes,Nintendo NES
 fds,Nintendo FDS
