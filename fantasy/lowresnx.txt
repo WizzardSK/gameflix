@@ -682,11 +682,11 @@
 1946	Spidy	4jqsMJugge_Spidy.png	4jqsMJugge_Spidy.nx
 1945	L-LIBS	SMDCeDZCV3_LLIBS.png	SMDCeDZCV3_LLIBS.nx
 1944	InfBattler	oFF2zgywCc_InfBattler.png	oFF2zgywCc_InfBattler.nx
-1943	L-CALC	8hTZqVKKrE_LCALC.png	8hTZqVKKrE_LCALC.nx
-1942	Trapped	Yi8F4Di88M_LowRes_NX_20210605_10_00_08.png	Yi8F4Di88M_test9000.nx
-1941	TalkBox	YMS9kXXpew_TalkBox.png	YMS9kXXpew_TalkBox.nx
-1940	Soul Stealin’	s3pwTL7ojQ_Soul_Stealin.png	s3pwTL7ojQ_Soul_Stealin.nx
-1938	Soul Stealers	iBoMp8WUiK_Soul_Stealers.png	iBoMp8WUiK_Soul_Stealers.nx
+1943			
+1942			
+1941			
+1940			
+1938			
 1937	Meow 2	oL7HYHufXD_Meow2.png	oL7HYHufXD_Meow2.nx
 1935	BANDITS	YtdtLB354z_Bandits.png	YtdtLB354z_Bandits.nx
 1929	Background Warp Thing (Dumb Difficult Platformer Older Demo Edited)	yKTyY2b7vH_BG_Effect_Warp_Testing_Program.png	yKTyY2b7vH_BG_Effect_Warp_Testing_Program.nx
