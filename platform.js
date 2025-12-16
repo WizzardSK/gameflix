@@ -1,4 +1,6 @@
 let text = `<div id=\"topbar\"><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />
+<img align=left style="margin-right:5px;padding:0px;height:50px;width:200px;" 
+src="https://github.com/fabricecaruso/es-theme-carbon/raw/refs/heads/master/art/logos/${location.pathname.split('/').pop().replace(/\.html?$/, '')}.svg">
 <input type=\"text\" id=\"filterInput\" placeholder=\"Filter...\">
 <input type=\"radio\" name=\"thumbtype\" id=\"Snaps\" value=\"Snaps\" checked onclick=\"snaps()\"><label for=\"Snaps\">Snaps</label>
 <input type=\"radio\" name=\"thumbtype\" id=\"Titles\" value=\"Titles\" onclick=\"titles()\"><label for=\"Titles\">Titles</label>
@@ -90,3 +92,4 @@ function generateFileLinks(romPath, imagePath) {
         <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutBrackets)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
+
