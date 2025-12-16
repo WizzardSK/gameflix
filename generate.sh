@@ -85,12 +85,13 @@ IFS=";"; for each in "${roms[@]}"; do
   done < <(ls ~/"${romfolder}")
   echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script>' >> ~/gameflix/${rom3}.html
   if [ "$platform" != "${rom[0]}" ]; then
-    echo "<figure><a href='${rom3}.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom[0]}".jpg'><figcaption>${rom[6]}</figcaption></a></figure>" >> ~/gameflix/main.html; ((platforms++))
+    echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom[0]}".jpg'><figcaption>${rom[6]}</figcaption></a></figure>" >> ~/gameflix/main.html; ((platforms++))
   fi
   platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}/\"*) core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
   echo "<folder><path>./$foldername</path><name>$foldername</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/gamelists/${rom[0]}/gamelist.xml
 done
-echo "<script src="script.js"></script>" >> ~/gameflix/${rom3}.html;
+echo "<script src="script.js"></script><script src="script2.js"></script>" >> ~/gameflix/${rom3}.html;
+echo "<script src="script2.js"></script>" >> ~/gameflix/main.html;
 echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
