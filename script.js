@@ -37,7 +37,7 @@ function handleCheckboxChange(checkbox, filterText) {
         }
         displayedCount = 0;
         for (let i = 0; i < figures.length; i++) { if (figures[i].style.display !== 'none') { displayedCount++; } }
-        document.getElementById('pocet').innerHTML = " Games: " + displayedCount + "/" + figures.length;
+        document.getElementById('pocet').innerHTML = displayedCount + "/" + figures.length;
     });
 }
 
@@ -107,10 +107,7 @@ function boxarts() { processImages('boxarts'); }
 function snaps() { processImages('snaps'); }
 function titles() { processImages('titles'); }
 function logos() { processImages('logos'); }
-
-function imgonerror(image) {
-    image.onerror = function() { this.style.visibility = "hidden"; }
-}
+function imgonerror(image) { image.onerror = function() { this.style.visibility = "hidden"; } }
 
 var obrazky = document.querySelectorAll("img");
 for (var i = 0; i < obrazky.length; i++) { obrazky[i].onerror = function() { imgonerror(this); }; }
