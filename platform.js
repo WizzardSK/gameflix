@@ -22,7 +22,7 @@ let text = `<div id=\"topbar\"><link rel=\"stylesheet\" type=\"text/css\" href=\
 <input type=\"checkbox\" id=\"showHideAlt\"><label for=\"showHideAlt\">Alt</label>
 <input type=\"checkbox\" id=\"showHidePirate\"><label for=\"showHidePirate\">Pirate</label>
 <input type=\"checkbox\" id=\"showHideBrackets\"><label for=\"showHideBrackets\">[a][b]</label>
-<input type=\"checkbox\" id=\"showHideDisk\"><label for=\"showHideDisk\">[disk 2]</label>
+<input type=\"checkbox\" id=\"showHideDisk\"><label for=\"showHideDisk\">[disk2]</label>
 <br /><br /></div><br /><br /><br />`;
 
 document.write(text);
@@ -90,4 +90,3 @@ function generateFileLinks(romPath, imagePath) {
         <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutBrackets)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
-
