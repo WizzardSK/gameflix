@@ -5,7 +5,7 @@ roms=(); while IFS=';' read -r k rest; do roms+=("$k;$rest;${sys[$k]}"); done < 
 mkdir -p ~/{gameflix,rom,gamelists,zip,zips,mount} ~/gamelists/{tic80,wasm4,lowresnx,pico8,voxatron,switch}
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html; cp ~/gameflix/systems.html ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
-for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
+for file in retroarch.sh style.css script.js script2.js platform.js; do cp $file ~/gameflix/$file; done
 
 echo "<figure><a href='TIC-80.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/tic80.jpg'><figcaption>TIC-80</figcaption></a></figure>
 <figure><a href='LowresNX.html'><img class=loaded src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/lowresnx.jpg'><figcaption>LowresNX</figcaption></a></figure>
