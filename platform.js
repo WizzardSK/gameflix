@@ -33,24 +33,27 @@ function bgImage(platform) { document.write(`<style> figure { background-image: 
 function generateTicLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">"); romPath = romPath.replace("roms/TIC-80", "https://tic80.com/play?cart=");
     fileNames.forEach(fileName => {
-        let [id, hash, nazov] = fileName.split('\t'); cart = `${id}`; document.write(`<a href="${romPath}${cart}" target="main">
-        <figure><img src="https://tic80.com/cart/${hash}/cover.gif" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        let [id, hash, nazov] = fileName.split('\t'); cart = `${id}`; 
+        document.write(`<a href="${romPath}${cart}" target="main">
+        <figure><img loading="lazy" src="https://tic80.com/cart/${hash}/cover.gif" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
 
 function generateWasmLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">"); romPath = romPath.replace("roms/WASM-4", "https://wasm4.org/play"); 
     fileNames.forEach(fileName => {
-        const [subor, nazov] = fileName.split('\t'); document.write(`<a href="${romPath}/${encodeURIComponent(subor)}" target="main">
-        <figure><img src="https://wasm4.org/carts/${subor}.png" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        const [subor, nazov] = fileName.split('\t');
+        document.write(`<a href="${romPath}/${encodeURIComponent(subor)}" target="main">
+        <figure><img loading="lazy" src="https://wasm4.org/carts/${subor}.png" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
 
 function generateLrNXLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">"); romPath = romPath.replace("roms/LowresNX", "https://lowresnx.inutilis.com/topic.php?id="); 
     fileNames.forEach(fileName => {
-        let [subor, obrazok, nazov, id] = fileName.split('\t'); subor = `${id}`; document.write(`<a href="${romPath}${encodeURIComponent(subor)}" target="main">
-        <figure><img src="https://lowresnx.inutilis.com/uploads/${obrazok}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        let [subor, obrazok, nazov, id] = fileName.split('\t'); subor = `${id}`; 
+        document.write(`<a href="${romPath}${encodeURIComponent(subor)}" target="main">
+        <figure><img loading="lazy" src="https://lowresnx.inutilis.com/uploads/${obrazok}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
 
@@ -58,8 +61,9 @@ function generatePicoLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">"); fileNames.forEach(fileName => {
         const [id, nazov, kart] = fileName.split('\t'); let screen;
         if (/^\d/.test(kart)) { screen = "pico" + kart.replace(/\.p8\.png$/, '.png'); } else { screen = kart.replace(/^(.*)\.p8\.png$/, 'pico8_$1.png'); }
-        let cart = kart.replace(/\.p8.png$/, ""); document.write(`<a href="https://www.lexaloffle.com/bbs/?pid=${cart}#p" target="main">
-        <figure><img src="https://www.lexaloffle.com/bbs/thumbs/${screen}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        let cart = kart.replace(/\.p8.png$/, "");
+        document.write(`<a href="https://www.lexaloffle.com/bbs/?pid=${cart}#p" target="main">
+        <figure><img loading="lazy" src="https://www.lexaloffle.com/bbs/thumbs/${screen}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
 
@@ -67,8 +71,9 @@ function generateVoxLinks(romPath, imagePath) {
     document.write("<div class=\"figureList\">"); fileNames.forEach(fileName => {
         const [id, nazov, kart] = fileName.split('\t');
         let screen; screen = kart.replace(/^(.*)\.vx\.png$/, 'vox_$1.png'); screen = screen.replace(/^cpost/, "vox");
-        let cart = kart.replace(/^cpost/, ""); cart = cart.replace(/\.png$/, ""); document.write(`<a href="https://www.lexaloffle.com/bbs/?pid=${cart}#p" target="main">
-        <figure><img src="https://www.lexaloffle.com/bbs/thumbs/${screen}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        let cart = kart.replace(/^cpost/, ""); cart = cart.replace(/\.png$/, "");
+        document.write(`<a href="https://www.lexaloffle.com/bbs/?pid=${cart}#p" target="main">
+        <figure><img loading="lazy" src="https://www.lexaloffle.com/bbs/thumbs/${screen}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
 
@@ -84,6 +89,6 @@ function generateFileLinks(romPath, imagePath) {
         const nameWithoutBrackets = nameWithoutExt.replace(/^([^)]*\([^)]*\)).*$/, "$1");
         const nazov = fileName.includes("\t") ? fileName.split("\t")[1] : fileName.replace(/\.[^.]+$/, "");
         document.write(`<a href="${encodeURI(romPath)}/${encodeURIComponent(subor)}" target="main">
-        <figure><img src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutBrackets)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
+        <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutBrackets)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
