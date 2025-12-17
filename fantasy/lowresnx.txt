@@ -877,13 +877,13 @@
 1360	The World Perpetually Struggles	7mKfKnfdne_The_World_Perpetually_Struggles.png	7mKfKnfdne_The_World_Perpetually_Struggles.nx
 1357	The crash (WIP) 0.3	cXC4rBzWnh_The_CrashGameplay_Update.png	cXC4rBzWnh_The_CrashGameplay_Update.nx
 1355	The forgotten treasure	hXBVvekytH_The_Forgotten_Treasure.png	hXBVvekytH_The_Forgotten_Treasure.nx
-1353			
-1351			
-1348			
-1346			
-1344			
-1339			
-1338			
+1353	FreeSkate	JVJBYxQDu6_screenshot.png	JVJBYxQDu6_FreeSkate3.nx
+1351	Polly-quest discontinuined	nCoqCuyCy4_FBBC8906B15D43D29547AE2AB446DA9D.jpeg	nCoqCuyCy4_Adventure_Quest.nx
+1348	Bombman	uoMvbeDZx2_BombMan_1.0.png	uoMvbeDZx2_BombMan_1.0.nx
+1346	Epic Walk	ZeWRoythvE_LowRes_NX_20200811_16_39_03.png	ZeWRoythvE_Epic_Walk.nx
+1344	Dungeon Master	DSPJGKVuBo_Dungeon_Master.png	DSPJGKVuBo_Dungeon_Master.nx
+1339	Gravity Simulator 0.3	3rXqYQuDq5_Unnamed_Program_2.png	3rXqYQuDq5_Unnamed_Program_2.nx
+1338	Space Toy	o2igJVG84d_Space_Toy.png	o2igJVG84d_Space_Toy.nx
 1336	Basically, you run from a little yellow death monster	rEo5395Njp_DF388FE3D872468C9068D78021914DAD.jpeg	rEo5395Njp_Dont_Know_Dont_Ask..nx
 1328	DnD game	ywwDRAsu7u_DnD_0.83.png	ywwDRAsu7u_DnD_0.83.nx
 1327	Orbital swing	bx733oucYK_78B98678D69D462D99C164F368D74B02.jpeg	bx733oucYK_Orbital_Swing_Final.nx
