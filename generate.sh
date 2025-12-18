@@ -7,13 +7,8 @@ echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/game
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js script2.js platform.js; do cp $file ~/gameflix/$file; done
 
-echo "<figure><a href='TIC-80.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/tic80.jpg'><figcaption>TIC-80</figcaption></a></figure>
-<figure><a href='LowresNX.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/lowresnx.jpg'><figcaption>LowresNX</figcaption></a></figure>
-<figure><a href='WASM-4.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/wasm4.jpg'><figcaption>WASM-4</figcaption></a></figure>
-<figure><a href='PICO-8.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/pico8.jpg'><figcaption>PICO-8</figcaption></a></figure>
-<figure><a href='Voxatron.html'><img src='https://wiki.batocera.org/_media/systems:voxatron.png'><figcaption>Voxatron</figcaption></a></figure>" >> ~/gameflix/main.html
-
 pocet=$(ls ~/roms/TIC-80/*.tic | wc -l); total=$((pocet+total))
+echo "<figure><a href='TIC-80.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/tic80.jpg'><figcaption>TIC-80</figcaption></a><br>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"TIC-80/\"*) core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh  
 echo "TIC-80"; cp platform.html ~/gameflix/TIC-80.html; echo "<script>bgImage(\"tic80\"); fileNames = [" >> ~/gameflix/TIC-80.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/tic80/gamelist.xml; data=$(curl -s "https://tic80.com/api?fn=dir&path=play/Games" | sed 's/},/}\n/g'); records=(); while IFS= read -r line; do
@@ -27,6 +22,7 @@ printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"scri
 echo "</gameList>" >> ~/gamelists/tic80/gamelist.xml
 
 pocet=$(ls ~/roms/LowresNX/*.nx | wc -l); total=$((pocet+total))
+echo "<figure><a href='LowresNX.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/lowresnx.jpg'><figcaption>LowresNX</figcaption></a><br>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"LowresNX/\"*) core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh  
 echo "LowresNX"; cp platform.html ~/gameflix/LowresNX.html; echo "<script>bgImage(\"lowresnx\"); fileNames = [" >> ~/gameflix/LowresNX.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/lowresnx/gamelist.xml; cat fantasy/lowresnx.txt | while IFS=$'\t' read -r id name picture cart; do 
@@ -36,6 +32,7 @@ done; printf ']; generateLrNXLinks("roms/LowresNX", "LowresNX");</script><script
 echo "</gameList>" >> ~/gamelists/lowresnx/gamelist.xml
 
 pocet=$(ls ~/roms/WASM-4/*.wasm | wc -l); total=$((pocet+total))
+echo "<figure><a href='WASM-4.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/wasm4.jpg'><figcaption>WASM-4</figcaption></a><br>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"WASM-4/\"*) core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh  
 echo "WASM-4"; cp platform.html ~/gameflix/WASM-4.html; echo "<script>bgImage(\"wasm4\"); fileNames = [" >> ~/gameflix/WASM-4.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/wasm4/gamelist.xml; html=$(curl -s "https://wasm4.org/play/"); echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do 
@@ -45,6 +42,7 @@ done; printf ']; generateWasmLinks("roms/WASM-4", "WASM-4");</script><script src
 echo "</gameList>" >> ~/gamelists/wasm4/gamelist.xml
 
 pocet=$(wc -l < fantasy/pico8.txt); total=$((pocet+total))
+echo "<figure><a href='PICO-8.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/pico8.jpg'><figcaption>PICO-8</figcaption></a><br>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"PICO-8/\"*) core=\"pico8 -run\";;" >> ~/gameflix/retroarch.sh  
 echo "PICO-8"; cp platform.html ~/gameflix/PICO-8.html; echo "<script>bgImage(\"pico8\"); fileNames = [" >> ~/gameflix/PICO-8.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/pico8/gamelist.xml; cat fantasy/pico8.txt | while IFS=$'\t' read -r id name cart; do 
@@ -53,6 +51,7 @@ done; printf ']; generatePicoLinks("roms/PICO-8", "PICO-8");</script><script src
 echo "<folder><path>./PICO-8</path><name>PICO-8</name><image>./splore.png</image></folder></gameList>" >> ~/gamelists/pico8/gamelist.xml
 
 pocet=$(wc -l < fantasy/voxatron.txt); total=$((pocet+total))
+echo "<figure><a href='Voxatron.html'><img src='https://wiki.batocera.org/_media/systems:voxatron.png'><figcaption>Voxatron</figcaption></a><br>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"Voxatron.html\" target=\"main\">Voxatron</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"Voxatron/\"*) core=\"vox\";;" >> ~/gameflix/retroarch.sh  
 echo "Voxatron"; cp platform.html ~/gameflix/Voxatron.html; echo "<script>bgImage(\"voxatron\"); fileNames = [" >> ~/gameflix/Voxatron.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/voxatron/gamelist.xml; cat fantasy/voxatron.txt | while IFS=$'\t' read -r id name cart; do 
@@ -88,7 +87,7 @@ IFS=";"; for each in "${roms[@]}"; do
   done < <(ls ~/"${romfolder}")
   echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script>' >> ~/gameflix/${rom3}.html
   if [ "$platform" != "${rom[0]}" ]; then
-    echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom[0]}".jpg'><figcaption>${rom[6]}</figcaption></a></figure>" >> ~/gameflix/main.html; ((platforms++))
+    echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom[0]}".jpg'><figcaption>${rom[6]}</figcaption></a><br>$pocet</figure>" >> ~/gameflix/main.html; ((platforms++))
   fi
   platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}/\"*) core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
   echo "<folder><path>./$foldername</path><name>$foldername</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/gamelists/${rom[0]}/gamelist.xml
