@@ -70,8 +70,10 @@ IFS=";"; for each in "${roms[@]}"; do
     echo ${rom[6]}; echo "<script src="script.js"></script><script src="script2.js"></script>" >> ~/gameflix/${rom3}.html;
     cp platform.html ~/gameflix/${rom[0]}.html
     echo -e "${rom[3]}\n<script>bgImage(\"${rom[0]}\")\nfileNames = [" >> ~/gameflix/${rom[0]}.html
-    echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom3}".jpg'><figcaption>${rom6}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html; ((platforms++))
-    if [ -n "$rom3" ]; then echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; fi
+    if [ -n "$rom3" ]; then 
+      echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom3}".jpg'><figcaption>${rom6}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html;
+      echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; ((platforms++));
+    fi
     pocet=0; 
   else echo -e "<br><br>${rom[3]}\n<script>bgImage(\"${rom3}\")\nfileNames = [" >> ~/gameflix/${rom3}.html; fi
   rom3="${rom[0]}"; rom6="${rom[6]}"; 
@@ -87,9 +89,6 @@ IFS=";"; for each in "${roms[@]}"; do
     else echo "${hra}<hidden>true</hidden></$polozka>" >> ~/gamelists/${rom[0]}/gamelist.xml; fi
   done < <(ls ~/"${romfolder}")
   echo ']; generateFileLinks("'"$romfolder"'", "'"${rom[2]// /_}"'");</script>' >> ~/gameflix/${rom3}.html
-#  if [ "$platform" != "${rom[0]}" ]; then
-#    echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom[0]}".jpg'><figcaption>${rom[6]}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html; ((platforms++))
-#  fi
   platform=${rom[0]}; ext=""; if [ -n "${rom[5]}" ]; then ext="; ext=\"${rom[5]}\""; fi; echo "*\"${emufolder}/\"*) core=\"${rom[4]}\"${ext};;" >> ~/gameflix/retroarch.sh
   echo "<folder><path>./$foldername</path><name>$foldername</name><image>~/../thumb/${rom[0]}.png</image></folder>" >> ~/gamelists/${rom[0]}/gamelist.xml
 done
