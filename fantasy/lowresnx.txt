@@ -1,3 +1,4 @@
+3915	Sum Sudoku	QrDJmEvqXL_Sum_Sudoku_Test_2.png	QrDJmEvqXL_Sum_Sudoku_Test_2.nx
 3913	Sail the Seas	WjXXorQ6f4_Sailing_the_Seas.png	WjXXorQ6f4_Sailing_the_Seas.nx
 3904	Starfleet Battles beta ver.1.0	JVt6oSSANc_IMG_0098.jpeg	JVt6oSSANc_Starfleet_Battles_Ver.B1.0.nx
 3903	Free monopoly -WIP-	GMEyZigHQy_Free_Monopoly_0.4.png	GMEyZigHQy_Free_Monopoly_0.4.nx
@@ -1114,11 +1115,11 @@
 752	REAL PAD	4pPzPi5GAd_REAL_PAD.png	4pPzPi5GAd_REAL_PAD.nx
 751	Motocross (DJMoffinz remix)	gFTmWthqd6_Motocross.png	gFTmWthqd6_Motocross.nx
 750	The Natac Island music (unfinished)	vh8LTtKzG9_Natac_Music.png	vh8LTtKzG9_Natac_Music.nx
-749	Tic tac toe	yas8aBvFo4_Yeti.png	yas8aBvFo4_Yeti.nx
-746	Duel	uzVoyQLErb_D_U_E_L.png	uzVoyQLErb_D_U_E_L.nx
-744	Blackjack	TCJ7WKxX38_LowRes_Adventure_1.1.png	TCJ7WKxX38_Blackjack.nx
-743	Brainf**k interperter	yPyzfRoCDV_Char_Designer_1.6.png	yPyzfRoCDV_Brainfuck.nx
-742	Memo pad	H56y9vsQre_BG_Designer_1.7.png	H56y9vsQre_Memo_Pad.nx
+749			
+746			
+744			
+743			
+742			
 740	PONG PASTURE	jAHRFujB7Z_PONG_PASTURE.png	jAHRFujB7Z_PONG_PASTURE.nx
 736	The PRIME DIRECTIVE (challenge)	WNqPm3CF9K_The_PRIME_DIRECTIVE.png	WNqPm3CF9K_The_PRIME_DIRECTIVE.nx
 735	The SLITHERING (game)	b6iBYahdvD_EZ_Snake.png	b6iBYahdvD_EZ_Snake.nx
