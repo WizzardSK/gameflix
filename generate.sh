@@ -70,6 +70,7 @@ IFS=";"; for each in "${roms[@]}"; do
     echo ${rom[6]}; echo "<script src="script.js"></script><script src="script2.js"></script>" >> ~/gameflix/${rom3}.html;
     cp platform.html ~/gameflix/${rom[0]}.html
     echo -e "${rom[3]}\n<script>bgImage(\"${rom[0]}\")\nfileNames = [" >> ~/gameflix/${rom[0]}.html
+    echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom3}".jpg'><figcaption>${rom6}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html; ((platforms++))
     if [ -n "$rom3" ]; then echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; fi
     pocet=0; 
   else echo -e "<br><br>${rom[3]}\n<script>bgImage(\"${rom3}\")\nfileNames = [" >> ~/gameflix/${rom3}.html; fi
@@ -94,9 +95,7 @@ IFS=";"; for each in "${roms[@]}"; do
 done
 echo "<script src="script.js"></script><script src="script2.js"></script>" >> ~/gameflix/${rom3}.html;
 echo "<script src="script2.js"></script>" >> ~/gameflix/main.html;
-
 echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom3}".jpg'><figcaption>${rom6}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html; ((platforms++))
-
 echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 for each in "${roms[@]}"; do 
   read -ra rom < <(printf '%s' "$each")
