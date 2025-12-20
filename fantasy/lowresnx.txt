@@ -1,4 +1,4 @@
-3915	Sum Sudoku	dacpczoPPJ_Sum_Sudoku_Test_2.1.png	dacpczoPPJ_Sum_Sudoku_Test_2.1.nx
+3915	Sum Sudoku	iAWHb8ScaN_Sum_Sudoku_Test_2.5.png	iAWHb8ScaN_Sum_Sudoku_Test_2.5.nx
 3913	Sail the Seas	WjXXorQ6f4_Sailing_the_Seas.png	WjXXorQ6f4_Sailing_the_Seas.nx
 3904	Starfleet Battles beta ver.1.0	JVt6oSSANc_IMG_0098.jpeg	JVt6oSSANc_Starfleet_Battles_Ver.B1.0.nx
 3903	Free monopoly -WIP-	GMEyZigHQy_Free_Monopoly_0.4.png	GMEyZigHQy_Free_Monopoly_0.4.nx
@@ -1149,11 +1149,11 @@
 668	Balls of Fun toy	hS2QQfC8iB_Balls_of_Fun_toy.png	hS2QQfC8iB_Balls_of_Fun_toy.nx
 667	MazeGenerator	pfJvE5RA84_Maze.png	pfJvE5RA84_Maze.nx
 658	Drop and Pop	iq2Nkxtppu_Drop_and_Pop_.06.png	iq2Nkxtppu_Drop_and_Pop_.06.nx
-655			
-652			
-651			
-646			
-643			
+655	Dark Night game	u2DRYsgGDh_Dark_Night_game_0.1.png	u2DRYsgGDh_Dark_Night_game_0.1.nx
+652	(= SUPER STICK FIGHTERS =)	XSas4RA68P_Super_Stick_Fighters.png	XSas4RA68P_Super_Stick_Fighters.nx
+651	Super Chess	KiwceYkkWS_Super_Chess.png	KiwceYkkWS_Super_Chess.nx
+646	River current sim	cETcq3YU7v_River_Current_Simulator.png	cETcq3YU7v_River_Current_Simulator.nx
+643	One Byte Display SYSTEM	695eMxQQn5_One_Byte_Display_System.png	695eMxQQn5_One_Byte_Display_System.nx
 640	Treasure Hunters - A Sailing Adventure	ZnzSwXpKxy_Treasure_Hunters_0.07.png	ZnzSwXpKxy_Treasure_Hunters_0.07.nx
 639	My Pet Bugs (toy)	nqVCMYAPsu_My_Pet_Bugs.png	nqVCMYAPsu_My_Pet_Bugs.nx
 632	Treasure Hunters	xHFtFHWLxm_Treasure_Hunters.png	xHFtFHWLxm_Treasure_Hunters.nx
