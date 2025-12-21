@@ -1,4 +1,4 @@
-3915	Sum Sudoku	iAWHb8ScaN_Sum_Sudoku_Test_2.5.png	iAWHb8ScaN_Sum_Sudoku_Test_2.5.nx
+3915	Sum Sudoku	w3NdEUrE9A_Sum_Sudoku_1.20.png	w3NdEUrE9A_Sum_Sudoku_1.20.nx
 3913	Sail the Seas	WjXXorQ6f4_Sailing_the_Seas.png	WjXXorQ6f4_Sailing_the_Seas.nx
 3904	Starfleet Battles beta ver.1.0	JVt6oSSANc_IMG_0098.jpeg	JVt6oSSANc_Starfleet_Battles_Ver.B1.0.nx
 3903	Free monopoly -WIP-	GMEyZigHQy_Free_Monopoly_0.4.png	GMEyZigHQy_Free_Monopoly_0.4.nx
