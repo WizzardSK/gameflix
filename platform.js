@@ -88,7 +88,8 @@ function generateFileLinks(romPath, imagePath) {
         const nameWithoutExt = subor.includes(".") ? subor.slice(0, subor.lastIndexOf(".")) : subor;
         const nameWithoutBrackets = nameWithoutExt.replace(/^([^)]*\([^)]*\)).*$/, "$1");
         const nazov = fileName.includes("\t") ? fileName.split("\t")[1] : fileName.replace(/\.[^.]+$/, "");
-        document.write(`<a href="${encodeURI(romPath)}/${encodeURIComponent(subor)}" target="main">
+        document.write(`<a href="${encodeURI(romPath)}/${encodeURIComponent(subor)}" target="main" rel="noreferrer">
         <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutBrackets)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
     }); document.write("</div>");
 }
+
