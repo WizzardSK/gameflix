@@ -5,7 +5,8 @@ wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/Wizza
 archives=(https://wizzardsk.github.io/{lowresnx,tic80,wasm4}.zip)
 
 if ! mountpoint -q "$HOME/myrient"; then rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
-if ! mountpoint -q "$HOME/zips"; then nohup ratarmount-full -o attr_timeout=3600 --disable-union-mount "${archives[@]}" ~/zips -f & fi
+if [ ! -f $HOME/ratarmount-full ]; then wget -nv -O $HOME/ratarmount-full https://github.com/mxmlnkn/ratarmount/releases/download/v1.2.0/ratarmount-1.2.0-x86_64.AppImage; chmod +x $HOME/ratarmount-full; fi
+if ! mountpoint -q "$HOME/zips"; then nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount "${archives[@]}" ~/zips -f & fi
 while ! mountpoint -q "$HOME/zips"; do sleep 5; done
 
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/lowresnx.zip "$HOME/roms/LowresNX"
