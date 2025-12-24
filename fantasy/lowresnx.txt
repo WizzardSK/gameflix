@@ -438,10 +438,10 @@
 2611	Super Mario Bros. Demo	nJswoMSF6b_MarioGame.png	nJswoMSF6b_MarioGame.nx
 2610	Hexa Lights Out game	mCKyXzBj8D_Hexa_Lights_Out.png	mCKyXzBj8D_Hexa_Lights_Out.nx
 2609	Vehicle Builder	fpLrZ7rMS3_Build_Rotated_Characters.png	fpLrZ7rMS3_Build_Rotated_Characters.nx
-2606			
-2604			
-2599			
-2596			
+2606	non suspicious platformer	HDA28zNHVg_B649330F7611429A9301AD2B2F9899EC.jpeg	HDA28zNHVg_Mario_NX.nx
+2604	Bubble Pop game	6JwzEueugQ_Bubble_Pop.png	6JwzEueugQ_Bubble_Pop.nx
+2599	Shall we play a game?	ATMzCT7AAL_PNG_image.png	ATMzCT7AAL_Joshua.nx
+2596	WhyCity	5BF8b2qDKq_PNG_image.png	5BF8b2qDKq_WhyCity.nx
 2595	A puzzle text adventure 	GigwsFEjP2_PNG_image.png	GigwsFEjP2_Copy_of_New_Text_Adventure.nx
 2592	Sort of HillClimb Racing	BgaQsiXTi6_HillClimb.png	BgaQsiXTi6_HillClimb.nx
 2591	Digital Dilemma game	TwKw9zPP6p_Digital_Dilemma.png	TwKw9zPP6p_Digital_Dilemma.nx
