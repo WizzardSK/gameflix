@@ -858,12 +858,12 @@
 1465	Pacman Dungeon Adventure	q5yrEsDvXv_Pacman_Dungeon_Adventure_1.33.png	q5yrEsDvXv_Pacman_Dungeon_Adventure_1.33.nx
 1456	More Insanity	XbGZy93QD9_More_Insanity.png	XbGZy93QD9_More_Insanity.nx
 1455	Paint by Number	WtRkxRwe5h_Paint_by_Number.png	WtRkxRwe5h_Paint_by_Number.nx
-1454	Speedy Speller game	FHYGsyS6xi_Speedy_Speller.png	FHYGsyS6xi_Speedy_Speller.nx
-1452	Touch Grid Test	vref6fpkDi_Touch_Grid_Test.png	vref6fpkDi_Touch_Grid_Test.nx
-1450	Solitaire game 	pFoeuCAhAZ_8bit_Solitaire.png	pFoeuCAhAZ_8bit_Solitaire.nx
-1448	8bit solitaire cards - BASIC CONTROLS	eBCUuyzjtz_8bit_Cards.png	eBCUuyzjtz_8bit_Cards.nx
-1447	Insanity	ZA4vYKRWuC_Insanity.png	ZA4vYKRWuC_Insanity.nx
-1431	Clapping Music	89dULqB4Dz_D3dfLUDfBJ_E5fKXAKtQ7_LowRes_NX_20200915_21_05_06.png	89dULqB4Dz_clapping_music_2.nx
+1454			
+1452			
+1450			
+1448			
+1447			
+1431			
 1422	Football Arcade	aSH73TriUn_Football_Arcade.png	aSH73TriUn_Football_Arcade.nx
 1411	Tiny Tactical Tanks! Discontinued 	E23DASUV9w_09F72C466C0341C39972C9BB61B24061.jpeg	E23DASUV9w_Tiny_Tactical_Tanks.nx
 1404	Super--Bit game	3iF6Rtgx66_SuperBit.png	3iF6Rtgx66_SuperBit.nx
