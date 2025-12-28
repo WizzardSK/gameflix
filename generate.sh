@@ -16,7 +16,7 @@ echo "<gameList>" > ~/gamelists/tic80/gamelist.xml; data=$(curl -s "https://tic8
   if [[ "$line" =~ hash[[:space:]]*=[[:space:]]*\"([a-f0-9]+)\" ]]; then hash="${BASH_REMATCH[1]}"; else continue; fi
   if [[ "$line" =~ name[[:space:]]*=[[:space:]]*\"([^\"]+)\" ]]; then name="${BASH_REMATCH[1]%.tic}"; else continue; fi
   records+=("$id"$'\t'"$hash"$'\t'"$name"); hash=$(echo "$line" | grep -oP 'hash\s*=\s*"\K[a-f0-9]+'); name=$(echo "$line" | grep -oP ' name\s*=\s*"\K[^"]+');
-  hra="<game><path>./TIC-80/${hash}.tic</path><name>${name%.*}</name><image>./TIC-80/${hash}.png</image>"; if [ -n "$hash" ]; then echo "${hra}</game>" >> ~/gamelists/tic80/gamelist.xml; fi;
+  hra="<game><path>./${hash}.tic</path><name>${name%.*}</name><image>./${hash}.png</image>"; if [ -n "$hash" ]; then echo "${hra}</game>" >> ~/gamelists/tic80/gamelist.xml; fi;
 done <<< "$data"; printf "%s\n" "${records[@]}" | sort -nr -k1,1 | awk '{ print "\"" $0 "\"," }' >> ~/gameflix/TIC-80.html
 printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script><script src="script2.js"></script>' >> ~/gameflix/TIC-80.html; 
 echo "</gameList>" >> ~/gamelists/tic80/gamelist.xml
@@ -27,7 +27,7 @@ echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> <small>$pocet</smal
 echo "LowresNX"; cp platform.html ~/gameflix/LowresNX.html; echo "<script>bgImage(\"lowresnx\"); fileNames = [" >> ~/gameflix/LowresNX.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/lowresnx/gamelist.xml; cat fantasy/lowresnx.txt | while IFS=$'\t' read -r id name picture cart; do 
   if [[ -n "$cart" && -n "$picture" ]]; then echo -e "\"$cart\t$picture\t$name\t$id\"," >> ~/gameflix/LowresNX.html; fi; 
-  hra="<game><path>./LowresNX/${cart}</path><name>${name}</name><image>./LowresNX/${picture}</image>"; echo "${hra}</game>" >> ~/gamelists/lowresnx/gamelist.xml
+  hra="<game><path>./${cart}</path><name>${name}</name><image>./${picture}</image>"; echo "${hra}</game>" >> ~/gamelists/lowresnx/gamelist.xml
 done; printf ']; generateLrNXLinks("roms/LowresNX", "LowresNX");</script><script src=\"script.js\"></script><script src="script2.js"></script>' >> ~/gameflix/LowresNX.html; 
 echo "</gameList>" >> ~/gamelists/lowresnx/gamelist.xml
 
@@ -37,7 +37,7 @@ echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> <small>$pocet</small><b
 echo "WASM-4"; cp platform.html ~/gameflix/WASM-4.html; echo "<script>bgImage(\"wasm4\"); fileNames = [" >> ~/gameflix/WASM-4.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/wasm4/gamelist.xml; html=$(curl -s "https://wasm4.org/play/"); echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"' | while read -r line; do 
   image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png); echo -e "\"$image_name\t$title\"," >> ~/gameflix/WASM-4.html; 
-  hra="<game><path>./WASM-4/${image_name}.wasm</path><name>${title}</name><image>./WASM-4/${image_name}.png</image>"; echo "${hra}</game>" >> ~/gamelists/wasm4/gamelist.xml
+  hra="<game><path>./${image_name}.wasm</path><name>${title}</name><image>./${image_name}.png</image>"; echo "${hra}</game>" >> ~/gamelists/wasm4/gamelist.xml
 done; printf ']; generateWasmLinks("roms/WASM-4", "WASM-4");</script><script src=\"script.js\"></script><script src="script2.js"></script>' >> ~/gameflix/WASM-4.html; 
 echo "</gameList>" >> ~/gamelists/wasm4/gamelist.xml
 
