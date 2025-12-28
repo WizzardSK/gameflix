@@ -27,13 +27,6 @@ for name in "${archives[@]}"; do
     unzip -oq "/userdata/system/$name.zip" -d "/userdata/roms/$name"
 done
 
-#archives=(https://wizzardsk.github.io/{tic80,wasm4,lowresnx}.zip)
-#/userdata/system/ratarmount-full -o attr_timeout=3600 --disable-union-mount "${archives[@]}" /userdata/zips -f & 
-#while ! grep -q " /userdata/zips " /proc/mounts; do sleep 5; done
-#mount -o bind /userdata/zips/tic80.zip "/userdata/roms/tic80/TIC-80"
-#mount -o bind /userdata/zips/lowresnx.zip "/userdata/roms/lowresnx/LowresNX"
-#mount -o bind /userdata/zips/wasm4.zip "/userdata/roms/wasm4/WASM-4"
-
 wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/batocera/gamelist.zip; unzip -q -o /userdata/system/gamelist.zip -d /userdata/roms
 cp /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.bak
 wget -nv -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems.cfg > /dev/null 2>&1
