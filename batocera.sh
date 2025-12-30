@@ -9,6 +9,8 @@ mkdir -p /userdata/system/configs/emulationstation/scripts/game-selected
 wget -nv -O /userdata/system/configs/emulationstation/scripts/game-selected/game.sh https://github.com/WizzardSK/gameflix/raw/main/batocera/game.sh > /dev/null 2>&1; chmod +x /userdata/system/configs/emulationstation/scripts/game-selected/game.sh
 wget -nv -O /usr/share/batocera/configgen/data/mame/messSystems.csv https://github.com/WizzardSK/gameflix/raw/main/batocera/messSystems.csv > /dev/null 2>&1
 for name in voxatron pico8; do [ ! -f /userdata/roms/$name/splore.png ] && wget -nv -O /userdata/roms/$name/splore.png https://github.com/WizzardSK/gameflix/raw/main/fantasy/$name.png; done
+mkdir /usr/lib/python3.12/site-packages/configgen/generators/nesbox
+wget -nv -O /usr/lib/python3.12/site-packages/configgen/generators/nesbox/nesboxGenerator.py https://github.com/WizzardSK/gameflix/raw/refs/heads/main/batocera/nesboxGenerator.py
 
 mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/roms/{tic80/TIC-80,lowresnx/LowresNX,wasm4/WASM-4}
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv)"
@@ -20,7 +22,7 @@ IFS=";"; for each in "${roms[@]}"; do
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[3]}"); mkdir -p /userdata/roms/${rom[0]}/${rom3}; mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}
 done
 
-archives=(tic80 wasm4 lowresnx)
+archives=(wasm4 lowresnx)
 for name in "${archives[@]}"; do
     wget -q "https://wizzardsk.github.io/$name.zip" -O "/userdata/system/$name.zip"
     rm -rf "/userdata/roms/$name/*"
