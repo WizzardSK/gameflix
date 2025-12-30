@@ -13,7 +13,7 @@ touch /userdata/roms/tic80/surf.tic; mkdir /usr/lib/python3.12/site-packages/con
 wget -nv -O /userdata/roms/tic80/tic80.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/tic80.png
 wget -nv -O /usr/lib/python3.12/site-packages/configgen/generators/nesbox/nesboxGenerator.py https://github.com/WizzardSK/gameflix/raw/refs/heads/main/batocera/nesboxGenerator.py
 
-mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/roms/{tic80/TIC-80,lowresnx/LowresNX,wasm4/WASM-4}
+mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/roms/{lowresnx/LowresNX,wasm4/WASM-4}
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv)"
 rclone mount myrient: /userdata/rom --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --config=/userdata/system/rclone.conf
 
