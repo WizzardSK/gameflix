@@ -240,10 +240,10 @@ pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000 NoIntro;mame pv100
 pv1000;TOSEC/Casio/PV-1000/Games;Casio - PV-1000;Casio PV-1000 TOSEC;mame pv1000 -cart;
 pv1000;MAME/Software List ROMs (merged)/pv1000;Casio - PV-1000;Casio PV-1000 Merged;mame pv1000 -cart;
 pv1000;MAME/Software List ROMs (split)/pv1000;Casio - PV-1000;Casio PV-1000 Split;mame pv1000 -cart;
-casloopy;No-Intro/Casio - Loopy (LittleEndian);Casio - Loopy;Casio Loopy NoIntro;mame casloopy -cart;
-casloopy;TOSEC/Casio/Loopy/Games/[BIN];Casio - Loopy;Casio Loopy TOSEC;mame casloopy -cart;
-casloopy;MAME/Software List ROMs (merged)/casloopy;Casio - Loopy;Casio Loopy Merged;mame casloopy -cart;
-casloopy;MAME/Software List ROMs (split)/casloopy;Casio - Loopy;Casio Loopy Split;mame casloopy -cart;
+loopy;No-Intro/Casio - Loopy (LittleEndian);Casio - Loopy;Casio Loopy NoIntro;mame casloopy -cart;
+loopy;TOSEC/Casio/Loopy/Games/[BIN];Casio - Loopy;Casio Loopy TOSEC;mame casloopy -cart;
+loopy;MAME/Software List ROMs (merged)/casloopy;Casio - Loopy;Casio Loopy Merged;mame casloopy -cart;
+loopy;MAME/Software List ROMs (split)/casloopy;Casio - Loopy;Casio Loopy Split;mame casloopy -cart;
 supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan NoIntro;mame supracan -cart;
 supracan;TOSEC/Funtech/Super A'can/Games;Funtech - Super Acan;Super Acan TOSEC;mame supracan -cart;
 supracan;MAME/Software List ROMs (merged)/supracan;Funtech - Super Acan;Super Acan Merged;mame supracan -cart;
