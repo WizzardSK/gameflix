@@ -990,10 +990,10 @@
 1060	JumpMan{0.9}	BHgMAfnqR6_Jumpman_0.9.png	BHgMAfnqR6_Jumpman_0.9.nx
 1057	Tic Toc	QnCXH4heE7_Tick_Tock.png	QnCXH4heE7_Tick_Tock.nx
 1053	Remjin Spyky Thyngy	VGW4c4kCNT_LowRes_NX_20200307_15_22_48.png	VGW4c4kCNT_rtts1.nx
-1051			
-1050			
-1048			
-1047			
+1051	Platformer (WIP)	W9S9z28Hqe_LowRes_NX_20200311_07_36_32.png	W9S9z28Hqe_platformer_v3_.nx
+1050	Population 1.0	pRsEC58nZ9_Population.png	pRsEC58nZ9_Population.nx
+1048	Bitmon 2	vCGnX6AWU8_Bitmon_2.png	vCGnX6AWU8_Bitmon_2.nx
+1047	(Just started)Custom Console	PiWnMrAmz2_Custom_Console.png	PiWnMrAmz2_Custom_Console.nx
 1044	BETWEEN WORLDS starting screen WILL BE DELETED WHEN FULL GAME COMES OUT	djuWPHo29E_Between_Worlds_Loading_Screen.png	djuWPHo29E_Between_Worlds_Loading_Screen.nx
 1042	FBI CONSOLE Update 0.3	vQMBzBZvWD_FBI_Console_Update_0.2.png	vQMBzBZvWD_FBI_Console_Update_0.2.nx
 1041	BETWEEN WORLDS  beta version of skills WILL BE DELETED WHEN FULL GAME COMES OUT	6gwaNMrbSV_RPGNAME_.png	6gwaNMrbSV_RPGNAME_.nx
