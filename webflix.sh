@@ -2,7 +2,7 @@
 export LD_LIBRARY_PATH=/usr/local/lib
 mkdir -p ~/myrient ~/roms/{TIC-80,LowresNX,WASM-4} ~/iso ~/zips ~/gameflix
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
-archives=(https://wizzardsk.github.io/{lowresnx,tic80,wasm4}.zip)
+archives=(https://wizzardsk.github.io/{lowresnx,wasm4}.zip)
 
 if ! mountpoint -q "$HOME/myrient"; then rclone mount myrient: ~/myrient --http-no-head --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --daemon --no-check-certificate --allow-other; fi
 if [ ! -f $HOME/ratarmount-full ]; then wget -nv -O $HOME/ratarmount-full https://github.com/mxmlnkn/ratarmount/releases/download/v1.2.0/ratarmount-1.2.0-x86_64.AppImage; chmod +x $HOME/ratarmount-full; fi
