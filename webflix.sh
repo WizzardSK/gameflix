@@ -1,6 +1,6 @@
 #!/bin/bash
 export LD_LIBRARY_PATH=/usr/local/lib
-mkdir -p ~/myrient ~/roms/{TIC-80,LowresNX,WASM-4} ~/iso ~/zips ~/gameflix
+mkdir -p ~/myrient ~/roms/{LowresNX,WASM-4} ~/iso ~/zips ~/gameflix
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 archives=(https://wizzardsk.github.io/{lowresnx,wasm4}.zip)
 
