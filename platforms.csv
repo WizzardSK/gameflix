@@ -467,6 +467,8 @@ msxturbor;TOSEC/MSX/TurboR/Games;Microsoft - MSX2;<code>MSX TurboR</code>;bluems
 msxturbor;MAME/Software List ROMs (merged)/msxr_flop;Microsoft - MSX2;<code>MSX TurboR</code> Flop Merged;bluemsx_libretro;
 msxturbor;MAME/Software List ROMs (split)/msxr_flop;Microsoft - MSX2;<code>MSX TurboR</code> Flop Split;bluemsx_libretro;
 pc88;TOSEC/NEC/PC-8801/Games/[D88];NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> TOSEC;quasi88_libretro;
+pc88;MAME/Software List ROMs (merged)/pc8001_flop;NEC - PC-8001 - PC-8801;<code>NEC PC-80</code> Flop Merged;quasi88_libretro;
+pc88;MAME/Software List ROMs (split)/pc8001_flop;NEC - PC-8001 - PC-8801;<code>NEC PC-80</code> Flop Split;quasi88_libretro;
 pc88;MAME/Software List ROMs (merged)/pc8801_flop;NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> Flop Merged;quasi88_libretro;
 pc88;MAME/Software List ROMs (split)/pc8801_flop;NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> Flop Split;quasi88_libretro;
 pc98;TOSEC/NEC/PC-9801/Games/[FDD];NEC - PC-98;<code>NEC PC-98</code> TOSEC;np2kai_libretro;
