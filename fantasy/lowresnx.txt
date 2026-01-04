@@ -2,7 +2,7 @@
 3919	Tombstone Raider	E8vihGMbiu_Konnekt.png	E8vihGMbiu_Konnekt.nx
 3915	Sum Sudoku	bKMcJgmHSu_Sum_Sudoku.png	bKMcJgmHSu_Sum_Sudoku.nx
 3913	Sail the Seas	WjXXorQ6f4_Sailing_the_Seas.png	WjXXorQ6f4_Sailing_the_Seas.nx
-3904	Starfleet Battles beta ver.1.0	JVt6oSSANc_IMG_0098.jpeg	JVt6oSSANc_Starfleet_Battles_Ver.B1.0.nx
+3904	Starfleet Battles beta ver.1.0	iFLhPG9HzD_IMG_0098.jpeg	iFLhPG9HzD_Starfleet_Battles_V1.20.nx
 3903	Free monopoly -WIP-	GMEyZigHQy_Free_Monopoly_0.4.png	GMEyZigHQy_Free_Monopoly_0.4.nx
 3895	ZinZin	8rQfq6mGMT_Zinzin.png	8rQfq6mGMT_Zinzin.nx
 3894	Tech Attack Preview	8DGCdEvv2T_Tech_Attack_Preview.png	8DGCdEvv2T_Tech_Attack_Preview.nx
