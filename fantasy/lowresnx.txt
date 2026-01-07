@@ -123,11 +123,11 @@
 3449	Bit Data	GBCHtH5fUS_Bit_Data.png	GBCHtH5fUS_Bit_Data.nx
 3447	Skulky&#039;s escape from hell	D7BNCgwVq5_LowRes.png	D7BNCgwVq5_SKULKY23.nx
 3446	Match Race	Qx5y7BDKfB_Match_Race_0.03.png	Qx5y7BDKfB_Match_Race_0.03.nx
-3442			
-3439			
-3438			
-3437			
-3436			
+3442	AlphaMess	vsGVyegPiv_Alpha_Mess.png	vsGVyegPiv_Alpha_Mess.nx
+3439	Chess Master Training Academy	Gf2x6bbmdq_Chess_Master_Training_Academy_3.0.png	Gf2x6bbmdq_Chess_Master_Training_Academy_3.0.nx
+3438	Top Shop	qExwCwGwb7_Top_Shop_0.10.png	qExwCwGwb7_Top_Shop_0.10.nx
+3437	Spin Clock Solitaire	F6mQthsu4z_Clock_Solitaire.png	F6mQthsu4z_Clock_Solitaire.nx
+3436	Kokonotsu	VtHTKjfGGy_Kokonotsu.png	VtHTKjfGGy_Kokonotsu.nx
 3434	Tetris Demolition	NBtLPE8bud_Tetris_Demolition.png	NBtLPE8bud_Tetris_Demolition.nx
 3432	Racing simulator	gFM22zp7Cr_Racing_Simulator.png	gFM22zp7Cr_Racing_Simulator.nx
 3430	Orbital Flight Test v0.1	59sBsG7cuD_Orbital_Flight_Test.png	59sBsG7cuD_Orbital_Flight_Test.nx
@@ -1085,10 +1085,10 @@
 836	RACER game	CpZ6R5LnHd_Racer.png	CpZ6R5LnHd_Racer.nx
 835	Vertical Scroller Demo	2TTmug3fES_8bit_Vertical_Scroller.png	2TTmug3fES_8bit_Vertical_Scroller.nx
 833	Mines	8bupP6HMeD_Mines.png	8bupP6HMeD_Mines.nx
-832	Vampire Ghost	6yxFvsxzZg_Vampire_Ghost.png	6yxFvsxzZg_Vampire_Ghost.nx
-830	Knight game WIP	76khApzL26_KnightGame.png	76khApzL26_KnightGame.nx
-828	Theramin	djrrrXTmP7_Theramin.png	djrrrXTmP7_Theramin.nx
-824	Train	DB3fS2HgYH_Train.png	DB3fS2HgYH_Train.nx
+832			
+830			
+828			
+824			
 823	What have I done	SWbqQva3oS_Char_Designer.png	SWbqQva3oS_Char_Designer.nx
 821	Treasure Hunt	JVdontwpDt_Treasure_Hunt_0.3.png	JVdontwpDt_Treasure_Hunt_0.3.nx
 820	8bit Gaming System	YwFCZZK36u_8bit_GS.png	YwFCZZK36u_8bit_GS.nx
