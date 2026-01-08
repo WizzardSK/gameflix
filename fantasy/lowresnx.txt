@@ -1,8 +1,9 @@
+3929	Gamepad Hero v1	FYFMW8nF7y_IMG_6385.png	FYFMW8nF7y_Gamepad_Hero_v1.nx
 3923	Scavenger	MYHZgrENdY_Scavenger_0.231.png	MYHZgrENdY_Scavenger_0.231.nx
 3919	Tombstone Raider	E8vihGMbiu_Konnekt.png	E8vihGMbiu_Konnekt.nx
 3915	Sum Sudoku	bKMcJgmHSu_Sum_Sudoku.png	bKMcJgmHSu_Sum_Sudoku.nx
 3913	Sail the Seas	WjXXorQ6f4_Sailing_the_Seas.png	WjXXorQ6f4_Sailing_the_Seas.nx
-3904	Starfleet Battles beta ver.1.0	iFLhPG9HzD_IMG_0098.jpeg	iFLhPG9HzD_Starfleet_Battles_V1.20.nx
+3904	Starfleet Battles	iFLhPG9HzD_IMG_0098.jpeg	iFLhPG9HzD_Starfleet_Battles_V1.20.nx
 3903	Free monopoly -WIP-	GMEyZigHQy_Free_Monopoly_0.4.png	GMEyZigHQy_Free_Monopoly_0.4.nx
 3895	ZinZin	8rQfq6mGMT_Zinzin.png	8rQfq6mGMT_Zinzin.nx
 3894	Tech Attack Preview	8DGCdEvv2T_Tech_Attack_Preview.png	8DGCdEvv2T_Tech_Attack_Preview.nx
@@ -1085,10 +1086,10 @@
 836	RACER game	CpZ6R5LnHd_Racer.png	CpZ6R5LnHd_Racer.nx
 835	Vertical Scroller Demo	2TTmug3fES_8bit_Vertical_Scroller.png	2TTmug3fES_8bit_Vertical_Scroller.nx
 833	Mines	8bupP6HMeD_Mines.png	8bupP6HMeD_Mines.nx
-832			
-830			
-828			
-824			
+832	Vampire Ghost	6yxFvsxzZg_Vampire_Ghost.png	6yxFvsxzZg_Vampire_Ghost.nx
+830	Knight game WIP	76khApzL26_KnightGame.png	76khApzL26_KnightGame.nx
+828	Theramin	djrrrXTmP7_Theramin.png	djrrrXTmP7_Theramin.nx
+824	Train	DB3fS2HgYH_Train.png	DB3fS2HgYH_Train.nx
 823	What have I done	SWbqQva3oS_Char_Designer.png	SWbqQva3oS_Char_Designer.nx
 821	Treasure Hunt	JVdontwpDt_Treasure_Hunt_0.3.png	JVdontwpDt_Treasure_Hunt_0.3.nx
 820	8bit Gaming System	YwFCZZK36u_8bit_GS.png	YwFCZZK36u_8bit_GS.nx
