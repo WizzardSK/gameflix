@@ -162,6 +162,9 @@ gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32</i> NoIntro;mame 
 gp32;TOSEC/Game Park/GP32/Games/[SMC];GamePark - GP32;<i>GamePark GP32</i> TOSEC;mame gp32 -memc;
 gp32;MAME/Software List ROMs (merged)/gp32;GamePark - GP32;<i>GamePark GP32</i> Merged;mame gp32 -memc;
 gp32;MAME/Software List ROMs (split)/gp32;GamePark - GP32;<i>GamePark GP32</i> Split;mame gp32 -memc;
+enterprise;TOSEC/Enterprise/64 & 128/Games/[BAS];Enterprise - Enterprise;<code>Enterprise 64 & 128</code> BAS;ep128emu_core_libretro;
+enterprise;TOSEC/Enterprise/64 & 128/Games/[COM];Enterprise - Enterprise;<code>Enterprise 64 & 128</code> COM;ep128emu_core_libretro;
+enterprise;TOSEC/Enterprise/64 & 128/Games/[DTF];Enterprise - Enterprise;<code>Enterprise 64 & 128</code> DTF;ep128emu_core_libretro;
 enterprise;TOSEC/Enterprise/64 & 128/Games/[Multipart];Enterprise - Enterprise;<code>Enterprise 64 & 128</code> Multipart;ep128emu_core_libretro;
 amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK];Amstrad - CPC;<code>Amstrad CPC</code> DSK;cap32_libretro;
 amstradcpc;TOSEC/Amstrad/CPC/Games/[CDT];Amstrad - CPC;<code>Amstrad CPC</code> CDT;cap32_libretro;
