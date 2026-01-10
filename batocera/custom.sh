@@ -1,12 +1,10 @@
 #!/bin/bash
-sleep 5
-now=1980
-while (( $now < 2020 )); do
-    sleep 1
-    now=$(date '+%Y')
+
+URL="https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera.sh"
+until curl -fsI "$URL" >/dev/null 2>&1; do
+    sleep 2
 done
 
-if [ $1 == "start" ]
-then 
-	curl -s -L https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera.sh | bash
+if [ "$1" = "start" ]; then
+    curl -s -L "$URL" | bash
 fi
