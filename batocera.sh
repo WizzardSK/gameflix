@@ -29,6 +29,7 @@ for name in "${archives[@]}"; do
 done
 
 wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/batocera/gamelist.zip; unzip -q -o /userdata/system/gamelist.zip -d /userdata/roms
-cp /usr/share/emulationstation/es_systems.cfg /usr/share/emulationstation/es_systems.bak
+cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.bak
 wget -nv -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems.cfg > /dev/null 2>&1
+cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.cfg
 chvt 2; wget http://127.0.0.1:1234/reloadgames > /dev/null 2>&1
