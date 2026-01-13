@@ -1,4 +1,5 @@
-3931	Number Match	R587G84KPu_Number_Match_0.3.png	R587G84KPu_Number_Match_0.3.nx
+3933	Coinmania	C8nVVtikGs_cover.png	C8nVVtikGs_Coinmania.nx
+3931	Number Match	vBeSW3t78T_Number_Match_0.33.png	vBeSW3t78T_Number_Match_0.33.nx
 3929	Gamepad Hero v1	FYFMW8nF7y_IMG_6385.png	FYFMW8nF7y_Gamepad_Hero_v1.nx
 3923	Scavenger	MYHZgrENdY_Scavenger_0.231.png	MYHZgrENdY_Scavenger_0.231.nx
 3919	Tombstone Raider	E8vihGMbiu_Konnekt.png	E8vihGMbiu_Konnekt.nx
