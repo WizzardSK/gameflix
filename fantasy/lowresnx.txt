@@ -308,12 +308,12 @@
 2992	Alphabet Solitaire game	hhpPNTx4y8_Alphabet_Game_2.png	hhpPNTx4y8_Alphabet_Game_2.nx
 2990	Hex Viewer	b3KjUr5P9v_Hex_Viewer.png	b3KjUr5P9v_Hex_Viewer.nx
 2989	(Converted) MOD Player thing	8j3AVBgeY8_LowRes_NX_20230519_15_43_08.png	8j3AVBgeY8_music.nx
-2988			
-2987			
-2985			
-2984			
-2981			
-2980			
+2988	Scatterplot maker	DXVYFBjvTu_LowRes_NX_20230518_18_13_29.png	DXVYFBjvTu_Scatterplot.nx
+2987	Jump PAC	Vo8CVPDwNk_JumpPac.png	Vo8CVPDwNk_Jump_Pac.nx
+2985	Fruit Drop Bot	3ougRmaPtv_LowRes_NX_20230515_18_09_51.png	3ougRmaPtv_FruitDropBot.nx
+2984	Breakout Battle	LfNRK7JkyF_Breakout_Battle_0.7.png	LfNRK7JkyF_Breakout_Battle_0.7.nx
+2981	Mystery message	mnKfBUBEQR_Mystery_Message.png	mnKfBUBEQR_Mystery_Message.nx
+2980	Even or Odd Detector	5N4eLNcBfK_Even_Or_Odd_Detector.png	5N4eLNcBfK_Even_Or_Odd_Detector.nx
 2979	Putput Golf	Xhq4wwk56v_Putput_Golf.png	Xhq4wwk56v_Putput_Golf.nx
 2975	Super Slider Set	YVRefLDXNW_Super_Slider_Set.png	YVRefLDXNW_Super_Slider_Set.nx
 2974	Dice Roller	2i8Jnodad2_Dice_Roller.png	2i8Jnodad2_Dice_Roller.nx
