@@ -1,5 +1,6 @@
+3937	In Dream	YwEjFC9LAV_In_Dream.png	YwEjFC9LAV_In_Dream.nx
 3935	sNOw: REDEMPTION	M3eXhh9W92_sNOw_REDEMPTION.png	M3eXhh9W92_sNOw_REDEMPTION.nx
-3933	Coinmania	C8nVVtikGs_cover.png	C8nVVtikGs_Coinmania.nx
+3933	Coinmania	byQkuuEjwB_cover.png	byQkuuEjwB_Coinmania.nx
 3931	Number Match	2jiAP2HXV7_Number_Match_0.33.png	2jiAP2HXV7_Number_Match_0.33.nx
 3929	Gamepad Hero v1	FYFMW8nF7y_IMG_6385.png	FYFMW8nF7y_Gamepad_Hero_v1.nx
 3923	Scavenger	MYHZgrENdY_Scavenger_0.231.png	MYHZgrENdY_Scavenger_0.231.nx
@@ -308,9 +309,9 @@
 2992	Alphabet Solitaire game	hhpPNTx4y8_Alphabet_Game_2.png	hhpPNTx4y8_Alphabet_Game_2.nx
 2990	Hex Viewer	b3KjUr5P9v_Hex_Viewer.png	b3KjUr5P9v_Hex_Viewer.nx
 2989	(Converted) MOD Player thing	8j3AVBgeY8_LowRes_NX_20230519_15_43_08.png	8j3AVBgeY8_music.nx
-2988	Scatterplot maker	DXVYFBjvTu_LowRes_NX_20230518_18_13_29.png	DXVYFBjvTu_Scatterplot.nx
-2987	Jump PAC	Vo8CVPDwNk_JumpPac.png	Vo8CVPDwNk_Jump_Pac.nx
-2985	Fruit Drop Bot	3ougRmaPtv_LowRes_NX_20230515_18_09_51.png	3ougRmaPtv_FruitDropBot.nx
+2988			
+2987			
+2985			
 2984	Breakout Battle	LfNRK7JkyF_Breakout_Battle_0.7.png	LfNRK7JkyF_Breakout_Battle_0.7.nx
 2981	Mystery message	mnKfBUBEQR_Mystery_Message.png	mnKfBUBEQR_Mystery_Message.nx
 2980	Even or Odd Detector	5N4eLNcBfK_Even_Or_Odd_Detector.png	5N4eLNcBfK_Even_Or_Odd_Detector.nx
