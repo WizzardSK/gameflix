@@ -472,6 +472,8 @@ msx2+;MAME/Software List ROMs (split)/msx2p_flop;Microsoft - MSX2;<code>MSX 2+</
 msxturbor;TOSEC/MSX/TurboR/Games;Microsoft - MSX2;<code>MSX TurboR</code>;bluemsx_libretro;
 msxturbor;MAME/Software List ROMs (merged)/msxr_flop;Microsoft - MSX2;<code>MSX TurboR</code> Flop Merged;bluemsx_libretro;
 msxturbor;MAME/Software List ROMs (split)/msxr_flop;Microsoft - MSX2;<code>MSX TurboR</code> Flop Split;bluemsx_libretro;
+pc60;MAME/Software List ROMs (merged)/pc6001_cart;NEC - PC-6000 - PC-6001;<code>NEC PC-60</code> Merged;mame pc6001 -cart1;
+pc60;MAME/Software List ROMs (split)/pc6001_cart;NEC - PC-6000 - PC-6001;<code>NEC PC-60</code> Split;mame pc6001 -cart1;
 pc88;TOSEC/NEC/PC-8801/Games/[D88];NEC - PC-8001 - PC-8801;<code>NEC PC-88</code> TOSEC;quasi88_libretro;
 pc88;MAME/Software List ROMs (merged)/pc8001_flop;NEC - PC-8001 - PC-8801;<code>NEC PC-80</code> Flop Merged;quasi88_libretro;
 pc88;MAME/Software List ROMs (split)/pc8001_flop;NEC - PC-8001 - PC-8801;<code>NEC PC-80</code> Flop Split;quasi88_libretro;
