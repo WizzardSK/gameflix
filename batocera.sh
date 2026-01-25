@@ -9,9 +9,9 @@ mkdir -p /userdata/system/configs/emulationstation/scripts/game-selected
 wget -nv -O /userdata/system/configs/emulationstation/scripts/game-selected/game.sh https://github.com/WizzardSK/gameflix/raw/main/batocera/game.sh > /dev/null 2>&1; chmod +x /userdata/system/configs/emulationstation/scripts/game-selected/game.sh
 wget -nv -O /usr/share/batocera/configgen/data/mame/messSystems.csv https://github.com/WizzardSK/gameflix/raw/main/batocera/messSystems.csv > /dev/null 2>&1
 for name in voxatron pico8; do [ ! -f /userdata/roms/$name/splore.png ] && wget -nv -O /userdata/roms/$name/splore.png https://github.com/WizzardSK/gameflix/raw/main/fantasy/$name.png; done
-touch /userdata/roms/tic80/surf.tic; mkdir /usr/lib/python3.12/site-packages/configgen/generators/nesbox
+touch /userdata/roms/tic80/surf.tic; mkdir /usr/lib/python3.12/site-packages/configgen/generators/tic80
 if [ ! -f /userdata/roms/tic80/tic80.png ]; then wget -nv -O /userdata/roms/tic80/tic80.png https://raw.githubusercontent.com/fabricecaruso/es-theme-carbon/master/art/consoles/tic80.png; fi
-wget -nv -O /usr/lib/python3.12/site-packages/configgen/generators/nesbox/nesboxGenerator.py https://github.com/WizzardSK/gameflix/raw/refs/heads/main/batocera/nesboxGenerator.py
+wget -nv -O /usr/lib/python3.12/site-packages/configgen/generators/tic80/tic80Generator.py https://github.com/WizzardSK/gameflix/raw/refs/heads/main/batocera/tic80Generator.py
 
 mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{httpdirfs,ratarmount,rclone} /userdata/roms/{lowresnx/LowresNX,wasm4/WASM-4}
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv)"
