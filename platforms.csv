@@ -162,6 +162,10 @@ gp32;No-Intro/GamePark - GP32;GamePark - GP32;<i>GamePark GP32</i> NoIntro;mame 
 gp32;TOSEC/Game Park/GP32/Games/[SMC];GamePark - GP32;<i>GamePark GP32</i> TOSEC;mame gp32 -memc;
 gp32;MAME/Software List ROMs (merged)/gp32;GamePark - GP32;<i>GamePark GP32</i> Merged;mame gp32 -memc;
 gp32;MAME/Software List ROMs (split)/gp32;GamePark - GP32;<i>GamePark GP32</i> Split;mame gp32 -memc;
+bk;TOSEC/Elektronika/BK-0011-411/Games;Elektronika - BK;<code>Elektronika BK</code> TOSEC;bk_libretro;
+bk;TOSEC/Elektronika/BK-0010-0011M/Applications;Elektronika - BK;<code>Elektronika BK</code> App;bk_libretro;
+bk;MAME/Software List ROMs (merged)/bk0010;Elektronika - BK;<code>Elektronika BK</code> Merged;bk_libretro;
+bk;MAME/Software List ROMs (split)/bk0010;Elektronika - BK;<code>Elektronika BK</code> Split;bk_libretro;
 enterprise;TOSEC/Enterprise/64 & 128/Games/[BAS];Enterprise - Enterprise;<code>Enterprise 64 & 128</code> BAS;ep128emu_core_libretro;
 enterprise;TOSEC/Enterprise/64 & 128/Games/[COM];Enterprise - Enterprise;<code>Enterprise 64 & 128</code> COM;ep128emu_core_libretro;
 enterprise;TOSEC/Enterprise/64 & 128/Games/[DTF];Enterprise - Enterprise;<code>Enterprise 64 & 128</code> DTF;ep128emu_core_libretro;
