@@ -130,5 +130,6 @@ neogeo,SNK Neo Geo AES
 neogeocd,SNK Neo Geo CD
 ngp,SNK Neo Geo Pocket
 ngpc,SNK Neo Geo Pocket Color
-enterprise,Enterprise
+enterprise,Enterprise 64/128
+tvc,Videoton TV Computer
 bk,Elektronika BK
