@@ -172,6 +172,9 @@ enterprise;TOSEC/Enterprise/64 & 128/Games/[DTF];Enterprise - Enterprise;<code>E
 enterprise;TOSEC/Enterprise/64 & 128/Games/[Multipart];Enterprise - Enterprise;<code>Enterprise 64 & 128</code> Multipart;ep128emu_core_libretro;
 enterprise;MAME/Software List ROMs (merged)/ep64_flop;Enterprise - Enterprise;<code>Enterprise 64 & 128</code> Flop Merged;ep128emu_core_libretro;
 enterprise;MAME/Software List ROMs (split)/ep64_flop;Enterprise - Enterprise;<code>Enterprise 64 & 128</code> Flop Split;ep128emu_core_libretro;
+tvc;TOSEC/Videoton/TV-Computer/Games/[CAS];Enterprise - Enterprise;<code>Videoton TC Computer</code> CAS;ep128emu_core_libretro;
+tvc;MAME/Software List ROMs (merged)/tvc_flop;Enterprise - Enterprise;<code>Videoton TC Computer</code> Flop Merged;ep128emu_core_libretro;
+tvc;MAME/Software List ROMs (split)/tvc_flop;Enterprise - Enterprise;<code>Videoton TC Computer</code> Flop Split;ep128emu_core_libretro;
 amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK];Amstrad - CPC;<code>Amstrad CPC</code> DSK;cap32_libretro;
 amstradcpc;TOSEC/Amstrad/CPC/Games/[CDT];Amstrad - CPC;<code>Amstrad CPC</code> CDT;cap32_libretro;
 amstradcpc;TOSEC/Amstrad/CPC/Games/[SNA];Amstrad - CPC;<code>Amstrad CPC</code> SNA;cap32_libretro;
