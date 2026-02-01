@@ -265,6 +265,10 @@ vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton VC 4000 NoIntro;m
 vc4000;MAME/Software List ROMs (merged)/vc4000;Interton - VC 4000;Interton VC 4000 Merged;mame vc4000 -cart;
 vc4000;MAME/Software List ROMs (split)/vc4000;Interton - VC 4000;Interton VC 4000 Split;mame vc4000 -cart;
 multivision;TOSEC/Tsukuda Original/Othello Multivision/Games;Othello - Multivision;Othello Multivision;gearsystem_libretro;
+coco;TOSEC/Tandy Radio Shack/TRS-80 Model III/Games/[CMD];Tandy - TRS-80;<code>Tandy TRS-80</code> Model III;mame trs80m3 -quik;
+coco;TOSEC/Tandy Radio Shack/TRS-80 Model 4/Games/[CMD];Tandy - TRS-80;<code>Tandy TRS-80</code> Model 4;mame trs80m3 -quik;
+coco;MAME/Software List ROMs (merged)/trs80_quik;Tandy - TRS-80;<code>Tandy TRS-80</code> Merged;mame trs80m3 -quik;
+coco;MAME/Software List ROMs (split)/trs80_quik;Tandy - TRS-80;<code>Tandy TRS-80</code> Split;mame trs80m3 -quik;
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM];Tandy - TRS-80 Color Computer;<code>Tandy TRS-80 CoCo</code> TOSEC;mame coco3 -cart;
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Applications/[ROM];Tandy - TRS-80 Color Computer;<code>Tandy TRS-80 CoCo</code> App;mame coco3 -cart;
 coco;MAME/Software List ROMs (merged)/coco_cart;Tandy - TRS-80 Color Computer;<code>Tandy TRS-80 CoCo</code> Merged;mame coco3 -cart;
