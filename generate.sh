@@ -49,7 +49,7 @@ printf ']; generatePicoLinks("roms/PICO-8", "PICO-8");</script><script src=\"scr
 echo "</gameList>" >> ~/gamelists/pico8/gamelist.xml
 
 pocet=$(wc -l < fantasy/voxatron.txt); total=$((pocet+total))
-echo "<figure><a href='Voxatron.html'><img src='https://wiki.batocera.org/_media/systems:voxatron.png'><figcaption>Voxatron</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
+echo "<figure><a href='Voxatron.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/voxatron.jpg'><figcaption>Voxatron</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"Voxatron.html\" target=\"main\">Voxatron</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"Voxatron/\"*) core=\"vox\";;" >> ~/gameflix/retroarch.sh  
 echo "Voxatron"; cp platform.html ~/gameflix/Voxatron.html; echo "<script>bgImage(\"voxatron\"); fileNames = [" >> ~/gameflix/Voxatron.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/voxatron/gamelist.xml; cat fantasy/voxatron.txt | while IFS=$'\t' read -r id name cart; do echo -e "\"$id\t$name\t$cart\"," >> ~/gameflix/Voxatron.html; done
