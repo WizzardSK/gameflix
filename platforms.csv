@@ -253,6 +253,9 @@ pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000 NoIntro;mame pv100
 pv1000;TOSEC/Casio/PV-1000/Games;Casio - PV-1000;Casio PV-1000 TOSEC;mame pv1000 -cart;
 pv1000;MAME/Software List ROMs (merged)/pv1000;Casio - PV-1000;Casio PV-1000 Merged;mame pv1000 -cart;
 pv1000;MAME/Software List ROMs (split)/pv1000;Casio - PV-1000;Casio PV-1000 Split;mame pv1000 -cart;
+pv2000;TOSEC/Casio/PV-2000/Games;Casio - PV-2000;Casio PV-2000 TOSEC;mame pv2000 -cart;
+pv2000;MAME/Software List ROMs (merged)/pv2000;Casio - PV-2000;Casio PV-2000 Merged;mame pv2000 -cart;
+pv2000;MAME/Software List ROMs (split)/pv2000;Casio - PV-2000;Casio PV-2000 Split;mame pv2000 -cart;
 loopy;No-Intro/Casio - Loopy (LittleEndian);Casio - Loopy;Casio Loopy NoIntro;mame casloopy -cart;
 loopy;TOSEC/Casio/Loopy/Games/[BIN];Casio - Loopy;Casio Loopy TOSEC;mame casloopy -cart;
 loopy;MAME/Software List ROMs (merged)/casloopy;Casio - Loopy;Casio Loopy Merged;mame casloopy -cart;
