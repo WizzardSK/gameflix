@@ -132,6 +132,8 @@ supervision;No-Intro/Watara - Supervision;Watara - Supervision;<i>Watara Supervi
 supervision;TOSEC/Watara/Supervision/Games;Watara - Supervision;<i>Watara Supervision</i> TOSEC;potator_libretro;
 supervision;MAME/Software List ROMs (merged)/svision;Watara - Supervision;<i>Watara Supervision</i> Merged;potator_libretro;
 supervision;MAME/Software List ROMs (split)/svision;Watara - Supervision;<i>Watara Supervision</i> Split;potator_libretro;
+sv8000;MAME/Software List ROMs (merged)/sv8000;Bandai - Super Vision 8000;<i>Bandai Super Vision 8000</i> Merged;mame sv8000 -cart;
+sv8000;MAME/Software List ROMs (split)/sv8000;Bandai - Super Vision 8000;<i>Bandai Super Vision 8000</i> Split;mame sv8000 -cart;
 wonderswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> NoIntro;mednafen_wswan_libretro;
 wonderswan;TOSEC/Bandai/WonderSwan/Games;Bandai - WonderSwan;<i>Bandai WonderSwan</i> TOSEC;mednafen_wswan_libretro;
 wonderswan;MAME/Software List ROMs (merged)/wswan;Bandai - WonderSwan;<i>Bandai WonderSwan</i> Merged;mednafen_wswan_libretro;
