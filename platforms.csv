@@ -125,6 +125,8 @@ scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Epoch S
 scv;TOSEC/Epoch/Super Cassette Vision/Games;Epoch - Super Cassette Vision;Epoch SCV TOSEC;emuscv_libretro;
 scv;MAME/Software List ROMs (merged)/scv;Epoch - Super Cassette Vision;Epoch SCV Merged;emuscv_libretro;
 scv;MAME/Software List ROMs (split)/scv;Epoch - Super Cassette Vision;Epoch SCV Split;emuscv_libretro;
+ctvboy;MAME/Software List ROMs (merged)/ctvboy;Gakken - Compact Vision TV Boy;Gakken Compact Vision TV Boy Merged;mame ctvboy -cart;
+ctvboy;MAME/Software List ROMs (split)/ctvboy;Gakken - Compact Vision TV Boy;Gakken Compact Vision TV Boy Split;mame ctvboy -cart;
 gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;<i>Epoch Game Pocket</i> NoIntro;mame gamepock -cart;
 gamepock;MAME/Software List ROMs (merged)/gamepock;Epoch - Game Pocket Computer;<i>Epoch Game Pocket</i> Merged;mame gamepock -cart;
 gamepock;MAME/Software List ROMs (split)/gamepock;Epoch - Game Pocket Computer;<i>Epoch Game Pocket</i> Split;mame gamepock -cart;
