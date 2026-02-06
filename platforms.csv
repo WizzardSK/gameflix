@@ -1,12 +1,16 @@
-arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;Arduboy NoIntro;arduous_libretro;
-arduboy;TOSEC/Arduboy/Arduboy/Games/[HEX];Arduboy Inc - Arduboy;Arduboy TOSEC;arduous_libretro;
-uzebox;MAME/Software List ROMs (merged)/uzebox;Uzebox;Uzebox Merged;mame uzebox -cart;
-uzebox;MAME/Software List ROMs (split)/uzebox;Uzebox;Uzebox Split;mame uzebox -cart;
-commanderx16;TOSEC/8-Bit Productions/Commander X16/Games/[IMG];Commander - X16;X16 IMG;x16emu;img
-commanderx16;TOSEC/8-Bit Productions/Commander X16/Games/[PRG];Commander - X16;X16 PRG;x16emu;prg
-vircon32;Internet Archive/joyrider3774/all_vircon32_roms_and_media/all_vircon32_roms_and_media;Vircon32;Vircon32;vircon32_libretro;
-pdp1;MAME/Software List ROMs (merged)/pdp1_ptp;PDP-1;PDP-1 Merged;mame pdp1 -ptap1;
-pdp1;MAME/Software List ROMs (split)/pdp1_ptp;PDP-1;PDP-1 Split;mame pdp1 -ptap1;
+mame;MAME/ROMs (merged);MAME;MAME Merged;mame;
+mame;MAME/ROMs (non-merged);MAME;MAME Non-Merged;mame;
+mame;MAME/ROMs (split);MAME;MAME Split;mame;
+mame;MAME/Reference Sets/0.37b5 ROMs (non-merged);MAME;MAME 2000;mame;
+mame;MAME/Reference Sets/0.78 ROMs (non-merged);MAME;MAME 2003;mame;
+mame;MAME/Reference Sets/0.94 ROMs (non-merged);MAME;MAME 2005;mame;
+mame;MAME/Reference Sets/0.106 ROMs (non-merged);MAME;MAME 2006;mame;
+mame;MAME/Reference Sets/0.139 ROMs (non-merged);MAME;MAME 2010;mame;
+mame;MAME/Reference Sets/0.160 ROMs (non-merged);MAME;MAME 2015;mame;
+mame;MAME/Reference Sets/0.174 ROMs (non-merged);MAME;MAME 2016;mame;
+fbneo;FinalBurn Neo/arcade;MAME;FinalBurn Neo;fbneo_libretro;
+vgmplay;MAME/Software List ROMs (merged)/vgmplay;MAME;VGMPlay Merged;mame vgmplay -quik;
+vgmplay;MAME/Software List ROMs (split)/vgmplay;MAME;VGMPlay Split;mame vgmplay -quik;
 atari2600;Miscellaneous/Atari Mania/Atari-2600-VCS-ROM-Collection/ROMS;Atari - 2600;Atari 2600 ROMS;stella_libretro;
 atari2600;No-Intro/Atari - Atari 2600;Atari - 2600;Atari 2600 NoIntro;stella_libretro;
 atari2600;TOSEC/Atari/2600 & VCS/Games;Atari - 2600;Atari 2600 TOSEC;stella_libretro;
@@ -64,288 +68,6 @@ atarist;TOSEC/Atari/ST/Educational/[ST];Atari - ST;Atari ST Edu ST;hatari_libret
 atarist;TOSEC/Atari/ST/Educational/[STX];Atari - ST;Atari ST Edu STX;hatari_libretro;
 atarist;MAME/Software List ROMs (merged)/st_flop;Atari - ST;Atari ST Merged;hatari_libretro;
 atarist;MAME/Software List ROMs (split)/st_flop;Atari - ST;Atari ST Split;hatari_libretro;
-apple2;TOSEC/Apple/II/Games/[DSK];Apple - II;Apple II DSK;mame apple2ee -flop1;
-apple2;TOSEC/Apple/II/Games/[WOZ];Apple - II;Apple II WOZ;mame apple2ee -flop1;
-apple2;TOSEC/Apple/II/Educational/[DSK];Apple - II;Apple II Edu DSK;mame apple2ee -flop1;
-apple2;TOSEC/Apple/II/Educational/[WOZ];Apple - II;Apple II Edu WOZ;mame apple2ee -flop1;
-apple2;TOSEC/Apple/II/Applications/[DSK];Apple - II;Apple II App DSK;mame apple2ee -flop1;
-apple2;TOSEC/Apple/II/Applications/[WOZ];Apple - II;Apple II App WOZ;mame apple2ee -flop1;
-apple2;MAME/Software List ROMs (merged)/apple2_flop_clcracked;Apple - II;Apple II Cracked Merged;mame apple2ee -flop1;
-apple2;MAME/Software List ROMs (split)/apple2_flop_clcracked;Apple - II;Apple II Cracked Split;mame apple2ee -flop1;
-apple2;MAME/Software List ROMs (merged)/apple2_flop_misc;Apple - II;Apple II Misc Merged;mame apple2ee -flop1;
-apple2;MAME/Software List ROMs (split)/apple2_flop_misc;Apple - II;Apple II Misc Split;mame apple2ee -flop1;
-apple2;MAME/Software List ROMs (merged)/apple2_flop_orig;Apple - II;Apple II Orig Merged;mame apple2ee -flop1;
-apple2;MAME/Software List ROMs (split)/apple2_flop_orig;Apple - II;Apple II Orig Split;mame apple2ee -flop1;
-apple2gs;TOSEC/Apple/IIGS/Games/[2MG];Apple - IIGS;Apple IIGS 2MG;mame apple2gs -flop3;
-apple2gs;TOSEC/Apple/IIGS/Educational/[2MG];Apple - IIGS;Apple IIGS Edu;mame apple2gs -flop3;
-apple2gs;TOSEC/Apple/IIGS/Applications/[2MG];Apple - IIGS;Apple IIGS App;mame apple2gs -flop3;
-apple2gs;MAME/Software List ROMs (merged)/apple2gs_flop_clcracked;Apple - IIGS;Apple IIGS Cracked Merged;mame apple2gs -flop3;
-apple2gs;MAME/Software List ROMs (split)/apple2gs_flop_clcracked;Apple - IIGS;Apple IIGS Cracked Split;mame apple2gs -flop3;
-apple2gs;MAME/Software List ROMs (merged)/apple2gs_flop_misc;Apple - IIGS;Apple IIGS Misc Merged;mame apple2gs -flop3;
-apple2gs;MAME/Software List ROMs (split)/apple2gs_flop_misc;Apple - IIGS;Apple IIGS Misc Split;mame apple2gs -flop3;
-apple2gs;MAME/Software List ROMs (merged)/apple2gs_flop_orig;Apple - IIGS;Apple IIGS Orig Merged;mame apple2gs -flop3;
-apple2gs;MAME/Software List ROMs (split)/apple2gs_flop_orig;Apple - IIGS;Apple IIGS Orig Split;mame apple2gs -flop3;
-macintosh;MAME/Software List ROMs (merged)/mac_flop;Apple - Macintosh;Apple Mac Flop Merged;mame macse -flop1;
-macintosh;MAME/Software List ROMs (split)/mac_flop;Apple - Macintosh;Apple Mac Flop Split;mame macse -flop1;
-macintosh;MAME/Software List ROMs (merged)/mac_flop_orig;Apple - Macintosh;Apple Mac Orig Merged;mame macse -flop1;
-macintosh;MAME/Software List ROMs (split)/mac_flop_orig;Apple - Macintosh;Apple Mac Orig Split;mame macse -flop1;
-macintosh;MAME/Software List ROMs (merged)/mac_flop_clcracked;Apple - Macintosh;Apple Mac Cracked Merged;mame macse -flop1;
-macintosh;MAME/Software List ROMs (split)/mac_flop_clcracked;Apple - Macintosh;Apple Mac Cracked Split;mame macse -flop1;
-macintosh;MAME/Software List ROMs (merged)/mac_hdflop;Apple - Macintosh;Apple Mac HDflop Merged;mame macse -flop1;
-macintosh;MAME/Software List ROMs (split)/mac_hdflop;Apple - Macintosh;Apple Mac HDflop Split;mame macse -flop1;
-channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;Fairchild Channel F NoIntro;freechaf_libretro;
-channelf;TOSEC/Fairchild/VES & Channel F/Games;Fairchild - Channel F;Fairchild Channel F TOSEC;freechaf_libretro;
-channelf;MAME/Software List ROMs (merged)/channelf;Fairchild - Channel F;Fairchild Channel F Merged;freechaf_libretro;
-channelf;MAME/Software List ROMs (split)/channelf;Fairchild - Channel F;Fairchild Channel F Split;freechaf_libretro;
-channelf;FinalBurn Neo/channelf;Fairchild - Channel F;Fairchild Channel F FBN;freechaf_libretro;
-vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;GCE Vectrex NoIntro;vecx_libretro;
-vectrex;TOSEC/GCE/Vectrex/Games;GCE - Vectrex;GCE Vectrex TOSEC;vecx_libretro;
-vectrex;MAME/Software List ROMs (merged)/vectrex;GCE - Vectrex;GCE Vectrex Merged;vecx_libretro;
-vectrex;MAME/Software List ROMs (split)/vectrex;GCE - Vectrex;GCE Vectrex Split;vecx_libretro;
-odyssey2;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Magnavox Odyssey 2 NoIntro;o2em_libretro;
-odyssey2;TOSEC/Magnavox/Odyssey2/Games;Magnavox - Odyssey2;Magnavox Odyssey 2 TOSEC;o2em_libretro;
-odyssey2;MAME/Software List ROMs (merged)/videopac;Magnavox - Odyssey2;Philips Videopac Merged;o2em_libretro;
-odyssey2;MAME/Software List ROMs (split)/videopac;Magnavox - Odyssey2;Philips Videopac Split;o2em_libretro;
-videopacplus;No-Intro/Philips - Videopac+;Philips - Videopac;Philips Videopac+ NoIntro;o2em_libretro;
-videopacplus;TOSEC/Philips/Videopac+/Games;Philips - Videopac;Philips Videopac+ TOSEC;o2em_libretro;
-intellivision;No-Intro/Mattel - Intellivision;Mattel - Intellivision;Mattel Intellivision NoIntro;freeintv_libretro;
-intellivision;TOSEC/Mattel/Intellivision/Games/[BIN];Mattel - Intellivision;Mattel Intellivision TOSEC;freeintv_libretro;
-intellivision;MAME/Software List ROMs (merged)/intv;Mattel - Intellivision;Mattel Intellivision Merged;freeintv_libretro;
-intellivision;MAME/Software List ROMs (split)/intv;Mattel - Intellivision;Mattel Intellivision Split;freeintv_libretro;
-colecovision;No-Intro/Coleco - ColecoVision;Coleco - ColecoVision;Coleco Colecovision NoIntro;gearcoleco_libretro;
-colecovision;TOSEC/Coleco/ColecoVision/Games;Coleco - ColecoVision;Coleco Colecovision TOSEC;gearcoleco_libretro;
-colecovision;MAME/Software List ROMs (merged)/coleco;Coleco - ColecoVision;Coleco Colecovision Merged;gearcoleco_libretro;
-colecovision;MAME/Software List ROMs (split)/coleco;Coleco - ColecoVision;Coleco Colecovision Split;gearcoleco_libretro;
-colecovision;FinalBurn Neo/coleco;Coleco - ColecoVision;Coleco Colecovision FBN;gearcoleco_libretro;
-adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK];Coleco - Adam;Coleco Adam TOSEC;mame adam -flop1;
-adam;TOSEC/Coleco/ColecoVision ADAM/Applications/[DSK];Coleco - Adam;Coleco Adam App;mame adam -flop1;
-adam;MAME/Software List ROMs (merged)/adam_flop;Coleco - Adam;Coleco Adam Merged;mame adam -flop1;
-adam;MAME/Software List ROMs (split)/adam_flop;Coleco - Adam;Coleco Adam Split;mame adam -flop1;
-scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Epoch SCV NoIntro;emuscv_libretro;
-scv;TOSEC/Epoch/Super Cassette Vision/Games;Epoch - Super Cassette Vision;Epoch SCV TOSEC;emuscv_libretro;
-scv;MAME/Software List ROMs (merged)/scv;Epoch - Super Cassette Vision;Epoch SCV Merged;emuscv_libretro;
-scv;MAME/Software List ROMs (split)/scv;Epoch - Super Cassette Vision;Epoch SCV Split;emuscv_libretro;
-ctvboy;MAME/Software List ROMs (merged)/ctvboy;Gakken - Compact Vision TV Boy;Gakken Compact Vision TV Boy Merged;mame ctvboy -cart;
-ctvboy;MAME/Software List ROMs (split)/ctvboy;Gakken - Compact Vision TV Boy;Gakken Compact Vision TV Boy Split;mame ctvboy -cart;
-gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;Epoch Game Pocket NoIntro;mame gamepock -cart;
-gamepock;MAME/Software List ROMs (merged)/gamepock;Epoch - Game Pocket Computer;Epoch Game Pocket Merged;mame gamepock -cart;
-gamepock;MAME/Software List ROMs (split)/gamepock;Epoch - Game Pocket Computer;Epoch Game Pocket Split;mame gamepock -cart;
-supervision;No-Intro/Watara - Supervision;Watara - Supervision;Watara Supervision NoIntro;potator_libretro;
-supervision;TOSEC/Watara/Supervision/Games;Watara - Supervision;Watara Supervision TOSEC;potator_libretro;
-supervision;MAME/Software List ROMs (merged)/svision;Watara - Supervision;Watara Supervision Merged;potator_libretro;
-supervision;MAME/Software List ROMs (split)/svision;Watara - Supervision;Watara Supervision Split;potator_libretro;
-sv8000;MAME/Software List ROMs (merged)/sv8000;Bandai - Super Vision 8000;Bandai Super Vision 8000 Merged;mame sv8000 -cart;
-sv8000;MAME/Software List ROMs (split)/sv8000;Bandai - Super Vision 8000;Bandai Super Vision 8000 Split;mame sv8000 -cart;
-wonderswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;Bandai WonderSwan NoIntro;mednafen_wswan_libretro;
-wonderswan;TOSEC/Bandai/WonderSwan/Games;Bandai - WonderSwan;Bandai WonderSwan TOSEC;mednafen_wswan_libretro;
-wonderswan;MAME/Software List ROMs (merged)/wswan;Bandai - WonderSwan;Bandai WonderSwan Merged;mednafen_wswan_libretro;
-wonderswan;MAME/Software List ROMs (split)/wswan;Bandai - WonderSwan;Bandai WonderSwan Split;mednafen_wswan_libretro;
-wonderswan;No-Intro/Benesse - Pocket Challenge V2;Bandai - WonderSwan;Pocket Challenge 2 NoIntro;mednafen_wswan_libretro;
-wonderswan;MAME/Software List ROMs (merged)/pockchalv2;Bandai - WonderSwan;Pocket Challenge 2 Merged;mednafen_wswan_libretro;
-wonderswan;MAME/Software List ROMs (split)/pockchalv2;Bandai - WonderSwan;Pocket Challenge 2 Split;mednafen_wswan_libretro;
-wonderswancolor;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;WonderSwan Color NoIntro;mednafen_wswan_libretro;
-wonderswancolor;TOSEC/Bandai/WonderSwan Color/Games;Bandai - WonderSwan Color;WonderSwan Color TOSEC;mednafen_wswan_libretro;
-wonderswancolor;MAME/Software List ROMs (merged)/wscolor;Bandai - WonderSwan Color;WonderSwan Color Merged;mednafen_wswan_libretro;
-wonderswancolor;MAME/Software List ROMs (split)/wscolor;Bandai - WonderSwan Color;WonderSwan Color Split;mednafen_wswan_libretro;
-megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;Welback Mega Duck NoIntro;mame megaduck -cart;
-megaduck;MAME/Software List ROMs (merged)/megaduck;Welback - Mega Duck;Welback Mega Duck Merged;mame megaduck -cart;
-megaduck;MAME/Software List ROMs (split)/megaduck;Welback - Mega Duck;Welback Mega Duck Split;mame megaduck -cart;
-gamate;No-Intro/Bit Corporation - Gamate;Bitcorp - Gamate;Bitcorp Gamate NoIntro;mame gamate -cart;
-gamate;TOSEC/Bit Corporation/Gamate/Games;Bitcorp - Gamate;Bitcorp Gamate TOSEC;mame gamate -cart;
-gamate;MAME/Software List ROMs (merged)/gamate;Bitcorp - Gamate;Bitcorp Gamate Merged;mame gamate -cart;
-gamate;MAME/Software List ROMs (split)/gamate;Bitcorp - Gamate;Bitcorp Gamate Split;mame gamate -cart;
-gmaster;No-Intro/Hartung - Game Master;Hartung - Game Master;Hartung Game Master NoIntro;mame gmaster -cart;
-gmaster;TOSEC/Hartung/Game Master/Games;Hartung - Game Master;Hartung Game Master TOSEC;mame gmaster -cart;
-gmaster;MAME/Software List ROMs (merged)/gmaster;Hartung - Game Master;Hartung Game Master Merged;mame gmaster -cart;
-gmaster;MAME/Software List ROMs (split)/gmaster;Hartung - Game Master;Hartung Game Master Split;mame gmaster -cart;
-gamecom;No-Intro/Tiger - Game.com;Tiger - Game.com;Tiger Game.com NoIntro;mame gamecom -cart1;
-gamecom;TOSEC/Tiger Electronics/Game.com/Games;Tiger - Game.com;Tiger Game.com TOSEC;mame gamecom -cart1;
-gamecom;MAME/Software List ROMs (merged)/gamecom;Tiger - Game.com;Tiger Game.com Merged;mame gamecom -cart1;
-gamecom;MAME/Software List ROMs (split)/gamecom;Tiger - Game.com;Tiger Game.com Split;mame gamecom -cart1;
-gp32;No-Intro/GamePark - GP32;GamePark - GP32;GamePark GP32 NoIntro;mame gp32 -memc;
-gp32;TOSEC/Game Park/GP32/Games/[SMC];GamePark - GP32;GamePark GP32 TOSEC;mame gp32 -memc;
-gp32;MAME/Software List ROMs (merged)/gp32;GamePark - GP32;GamePark GP32 Merged;mame gp32 -memc;
-gp32;MAME/Software List ROMs (split)/gp32;GamePark - GP32;GamePark GP32 Split;mame gp32 -memc;
-bk;TOSEC/Elektronika/BK-0011-411/Games;Elektronika - BK;Elektronika BK TOSEC;bk_libretro;
-bk;TOSEC/Elektronika/BK-0010-0011M/Applications;Elektronika - BK;Elektronika BK App;bk_libretro;
-bk;MAME/Software List ROMs (merged)/bk0010;Elektronika - BK;Elektronika BK Merged;bk_libretro;
-bk;MAME/Software List ROMs (split)/bk0010;Elektronika - BK;Elektronika BK Split;bk_libretro;
-enterprise;TOSEC/Enterprise/64 & 128/Games/[BAS];Enterprise - Enterprise;Enterprise 64 & 128 BAS;ep128emu_core_libretro;
-enterprise;TOSEC/Enterprise/64 & 128/Games/[COM];Enterprise - Enterprise;Enterprise 64 & 128 COM;ep128emu_core_libretro;
-enterprise;TOSEC/Enterprise/64 & 128/Games/[DTF];Enterprise - Enterprise;Enterprise 64 & 128 DTF;ep128emu_core_libretro;
-enterprise;TOSEC/Enterprise/64 & 128/Games/[Multipart];Enterprise - Enterprise;Enterprise 64 & 128 Multipart;ep128emu_core_libretro;
-enterprise;MAME/Software List ROMs (merged)/ep64_flop;Enterprise - Enterprise;Enterprise 64 & 128 Flop Merged;ep128emu_core_libretro;
-enterprise;MAME/Software List ROMs (split)/ep64_flop;Enterprise - Enterprise;Enterprise 64 & 128 Flop Split;ep128emu_core_libretro;
-tvc;TOSEC/Videoton/TV-Computer/Games/[CAS];Enterprise - Enterprise;Videoton TC Computer CAS;ep128emu_core_libretro;
-tvc;MAME/Software List ROMs (merged)/tvc_flop;Enterprise - Enterprise;Videoton TC Computer Flop Merged;ep128emu_core_libretro;
-tvc;MAME/Software List ROMs (split)/tvc_flop;Enterprise - Enterprise;Videoton TC Computer Flop Split;ep128emu_core_libretro;
-amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK];Amstrad - CPC;Amstrad CPC DSK;cap32_libretro;
-amstradcpc;TOSEC/Amstrad/CPC/Games/[CDT];Amstrad - CPC;Amstrad CPC CDT;cap32_libretro;
-amstradcpc;TOSEC/Amstrad/CPC/Games/[SNA];Amstrad - CPC;Amstrad CPC SNA;cap32_libretro;
-amstradcpc;TOSEC/Amstrad/CPC/Applications/[DSK];Amstrad - CPC;Amstrad CPC App;cap32_libretro;
-amstradcpc;MAME/Software List ROMs (merged)/cpc_cass;Amstrad - CPC;Amstrad CPC Cass Merged;cap32_libretro;
-amstradcpc;MAME/Software List ROMs (split)/cpc_cass;Amstrad - CPC;Amstrad CPC Cass Split;cap32_libretro;
-amstradcpc;MAME/Software List ROMs (merged)/cpc_flop;Amstrad - CPC;Amstrad CPC Flop Merged;cap32_libretro;
-amstradcpc;MAME/Software List ROMs (split)/cpc_flop;Amstrad - CPC;Amstrad CPC Flop Split;cap32_libretro;
-gx4000;TOSEC/Amstrad/GX4000/Games;Amstrad - GX4000;Amstrad GX4000 TOSEC;cap32_libretro;
-gx4000;MAME/Software List ROMs (merged)/gx4000;Amstrad - GX4000;Amstrad GX4000 Merged;cap32_libretro;
-gx4000;MAME/Software List ROMs (split)/gx4000;Amstrad - GX4000;Amstrad GX4000 Split;cap32_libretro;
-zx81;TOSEC/Sinclair/ZX81/Games/[P];Sinclair - ZX 81;Sinclair ZX81 TOSEC;81_libretro;
-zx81;TOSEC/Sinclair/ZX81/Applications/[P];Sinclair - ZX 81;Sinclair ZX81 App;81_libretro;
-zx81;MAME/Software List ROMs (merged)/zx81_cass;Sinclair - ZX 81;Sinclair ZX81 Merged;81_libretro;
-zx81;MAME/Software List ROMs (split)/zx81_cass;Sinclair - ZX 81;Sinclair ZX81 Split;81_libretro;
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK];Sinclair - ZX Spectrum;ZX Spectrum DSK;fuse_libretro;
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[SCL];Sinclair - ZX Spectrum;ZX Spectrum SCL;fuse_libretro;
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TAP];Sinclair - ZX Spectrum;ZX Spectrum TAP;fuse_libretro;
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TRD];Sinclair - ZX Spectrum;ZX Spectrum TRD;fuse_libretro;
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TZX];Sinclair - ZX Spectrum;ZX Spectrum TZX;fuse_libretro;
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80];Sinclair - ZX Spectrum;ZX Spectrum Z80;fuse_libretro;
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TAP];Sinclair - ZX Spectrum;ZX Spectrum Edu TAP;fuse_libretro;
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TZX];Sinclair - ZX Spectrum;ZX Spectrum Edu TZX;fuse_libretro;
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[Z80];Sinclair - ZX Spectrum;ZX Spectrum Edu Z80;fuse_libretro;
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TAP];Sinclair - ZX Spectrum;ZX Spectrum App TAP;fuse_libretro;
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TZX];Sinclair - ZX Spectrum;ZX Spectrum App TZX;fuse_libretro;
-zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[Z80];Sinclair - ZX Spectrum;ZX Spectrum App Z80;fuse_libretro;
-zxspectrum;MAME/Software List ROMs (merged)/spectrum_cass;Sinclair - ZX Spectrum;ZX Spectrum Merged;fuse_libretro;
-zxspectrum;MAME/Software List ROMs (split)/spectrum_cass;Sinclair - ZX Spectrum;ZX Spectrum Split;fuse_libretro;
-zxspectrum;FinalBurn Neo/spectrum;Sinclair - ZX Spectrum;ZX Spectrum FBN;fuse_libretro;
-zxspectrum;MAME/Software List ROMs (merged)/specpls3_flop;Sinclair - ZX Spectrum;ZX Spectrum+3 Merged;fuse_libretro;
-zxspectrum;MAME/Software List ROMs (split)/specpls3_flop;Sinclair - ZX Spectrum;ZX Spectrum+3 Split;fuse_libretro;
-spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Games/[BIN];Spectravideo - SVI-318 - SVI-328;Spectravideo Games;bluemsx_libretro;
-spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS];Spectravideo - SVI-318 - SVI-328;Spectravideo Various;bluemsx_libretro;
-spectravideo;MAME/Software List ROMs (merged)/svi318_cass;Spectravideo - SVI-318 - SVI-328;Spectravideo Merged;bluemsx_libretro;
-spectravideo;MAME/Software List ROMs (split)/svi318_cass;Spectravideo - SVI-318 - SVI-328;Spectravideo Split;bluemsx_libretro;
-samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK];MGT - Sam Coupe;Sam Coupé DSK;mame samcoupe -flop1;
-samcoupe;MAME/Software List ROMs (merged)/samcoupe_flop;MGT - Sam Coupe;Sam Coupé Merged;mame samcoupe -flop1;
-samcoupe;MAME/Software List ROMs (split)/samcoupe_flop;MGT - Sam Coupe;Sam Coupé Split;mame samcoupe -flop1;
-oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[TAP];Tangerine - Oric Atmos;Oric Atmos TAP;mame orica -cass;
-oric;MAME/Software List ROMs (merged)/oric1_cass;Tangerine - Oric Atmos;Oric Atmos Merged;mame orica -cass;
-oric;MAME/Software List ROMs (split)/oric1_cass;Tangerine - Oric Atmos;Oric Atmos Split;mame orica -cass;
-camplynx;MAME/Software List ROMs (merged)/camplynx_cass;Camputers - Lynx;Camputers Lynx Merged;mame lynx48k -cass;
-camplynx;MAME/Software List ROMs (split)/camplynx_cass;Camputers - Lynx;Camputers Lynx Split;mame lynx48k -cass;
-astrocade;No-Intro/Bally - Astrocade;Bally - Astrocade;Bally Astrocade NoIntro;mame astrocde -cart;
-astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN];Bally - Astrocade;Bally Astrocade TOSEC;mame astrocde -cart;
-astrocade;MAME/Software List ROMs (merged)/astrocde;Bally - Astrocade;Bally Astrocade Merged;mame astrocde -cart;
-astrocade;MAME/Software List ROMs (split)/astrocde;Bally - Astrocade;Bally Astrocade Split;mame astrocde -cart;
-apfm1000;No-Intro/APF - MP-1000;APF - MP-1000;APF MP-1000 NoIntro;mame apfm1000 -cart;
-apfm1000;TOSEC/APF/M-1000/Games;APF - MP-1000;APF MP-1000 TOSEC;mame apfm1000 -cart;
-apfm1000;MAME/Software List ROMs (merged)/apfm1000;APF - MP-1000;APF MP-1000 Merged;mame apfm1000 -cart;
-apfm1000;MAME/Software List ROMs (split)/apfm1000;APF - MP-1000;APF MP-1000 Split;mame apfm1000 -cart;
-advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vision NoIntro;mame advision -cart;
-advision;TOSEC/Entex/Adventure Vision/Games;Entex - Adventure Vision;Adventure Vision TOSEC;mame advision -cart;
-advision;MAME/Software List ROMs (merged)/advision;Entex - Adventure Vision;Adventure Vision Merged;mame advision -cart;
-advision;MAME/Software List ROMs (split)/advision;Entex - Adventure Vision;Adventure Vision Split;mame advision -cart;
-creativision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision NoIntro;mame crvision -cart;
-creativision;TOSEC/VTech/Laser 2001 & CreatiVision/Games;VTech - CreatiVision;CreatiVision TOSEC;mame crvision -cart;
-creativision;MAME/Software List ROMs (merged)/crvision;VTech - CreatiVision;CreatiVision Merged;mame crvision -cart;
-creativision;MAME/Software List ROMs (split)/crvision;VTech - CreatiVision;CreatiVision Split;mame crvision -cart;
-vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile NoIntro;mame vsmile -cart;
-vsmile;TOSEC/VTech/V.Smile Motion/Games/[BIN];VTech - V.Smile;VTech V.Smile TOSEC;mame vsmile -cart;
-vsmile;MAME/Software List ROMs (merged)/vsmile_cart;VTech - V.Smile;VTech V.Smile Merged;mame vsmile -cart;
-vsmile;MAME/Software List ROMs (split)/vsmile_cart;VTech - V.Smile;VTech V.Smile Split;mame vsmile -cart;
-laser310;TOSEC/VTech/Laser 200/Games/[VZ];VTech - Laser 310;VTech Laser 200;mame laser310 -dump;
-laser310;TOSEC/VTech/Laser 200/Applications;VTech - Laser 310;VTech Laser 200 App;mame laser310 -dump;
-laser310;TOSEC/VTech/Laser 310/Applications;VTech - Laser 310;VTech Laser 310 App;mame laser310 -dump;
-laser310;MAME/Software List ROMs (merged)/vz_snap;VTech - Laser 310;VTech Laser Merged;mame laser310 -dump;
-laser310;MAME/Software List ROMs (split)/vz_snap;VTech - Laser 310;VTech Laser Split;mame laser310 -dump;
-socrates;MAME/Software List ROMs (merged)/socrates;VTech - Socrates;VTech Socrates;mame socrates -cart;
-arcadia;No-Intro/Emerson - Arcadia 2001;Emerson - Arcadia 2001;Arcadia 2001 NoIntro;mame arcadia -cart;
-arcadia;TOSEC/Emerson/Arcadia 2001/Games;Emerson - Arcadia 2001;Arcadia 2001 TOSEC;mame arcadia -cart;
-arcadia;MAME/Software List ROMs (merged)/arcadia;Emerson - Arcadia 2001;Arcadia 2001 Merged;mame arcadia -cart;
-arcadia;MAME/Software List ROMs (split)/arcadia;Emerson - Arcadia 2001;Arcadia 2001 Split;mame arcadia -cart;
-pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000 NoIntro;mame pv1000 -cart;
-pv1000;TOSEC/Casio/PV-1000/Games;Casio - PV-1000;Casio PV-1000 TOSEC;mame pv1000 -cart;
-pv1000;MAME/Software List ROMs (merged)/pv1000;Casio - PV-1000;Casio PV-1000 Merged;mame pv1000 -cart;
-pv1000;MAME/Software List ROMs (split)/pv1000;Casio - PV-1000;Casio PV-1000 Split;mame pv1000 -cart;
-pv2000;TOSEC/Casio/PV-2000/Games;Casio - PV-2000;Casio PV-2000 TOSEC;mame pv2000 -cart;
-pv2000;MAME/Software List ROMs (merged)/pv2000;Casio - PV-2000;Casio PV-2000 Merged;mame pv2000 -cart;
-pv2000;MAME/Software List ROMs (split)/pv2000;Casio - PV-2000;Casio PV-2000 Split;mame pv2000 -cart;
-loopy;No-Intro/Casio - Loopy (LittleEndian);Casio - Loopy;Casio Loopy NoIntro;mame casloopy -cart;
-loopy;TOSEC/Casio/Loopy/Games/[BIN];Casio - Loopy;Casio Loopy TOSEC;mame casloopy -cart;
-loopy;MAME/Software List ROMs (merged)/casloopy;Casio - Loopy;Casio Loopy Merged;mame casloopy -cart;
-loopy;MAME/Software List ROMs (split)/casloopy;Casio - Loopy;Casio Loopy Split;mame casloopy -cart;
-supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan NoIntro;mame supracan -cart;
-supracan;TOSEC/Funtech/Super A'can/Games;Funtech - Super Acan;Super Acan TOSEC;mame supracan -cart;
-supracan;MAME/Software List ROMs (merged)/supracan;Funtech - Super Acan;Super Acan Merged;mame supracan -cart;
-supracan;MAME/Software List ROMs (split)/supracan;Funtech - Super Acan;Super Acan Split;mame supracan -cart;
-vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton VC 4000 NoIntro;mame vc4000 -cart;
-vc4000;MAME/Software List ROMs (merged)/vc4000;Interton - VC 4000;Interton VC 4000 Merged;mame vc4000 -cart;
-vc4000;MAME/Software List ROMs (split)/vc4000;Interton - VC 4000;Interton VC 4000 Split;mame vc4000 -cart;
-multivision;TOSEC/Tsukuda Original/Othello Multivision/Games;Othello - Multivision;Othello Multivision;gearsystem_libretro;
-trs80;TOSEC/Tandy Radio Shack/TRS-80 Model III/Games/[CMD];Tandy - TRS-80;Tandy TRS-80 Model III;mame trs80m3 -quik;
-trs80;TOSEC/Tandy Radio Shack/TRS-80 Model 4/Games/[CMD];Tandy - TRS-80;Tandy TRS-80 Model 4;mame trs80m3 -quik;
-trs80;MAME/Software List ROMs (merged)/trs80_quik;Tandy - TRS-80;Tandy TRS-80 Merged;mame trs80m3 -quik;
-trs80;MAME/Software List ROMs (split)/trs80_quik;Tandy - TRS-80;Tandy TRS-80 Split;mame trs80m3 -quik;
-coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM];Tandy - TRS-80 Color Computer;Tandy TRS-80 CoCo TOSEC;mame coco3 -cart;
-coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Applications/[ROM];Tandy - TRS-80 Color Computer;Tandy TRS-80 CoCo App;mame coco3 -cart;
-coco;MAME/Software List ROMs (merged)/coco_cart;Tandy - TRS-80 Color Computer;Tandy TRS-80 CoCo Merged;mame coco3 -cart;
-coco;MAME/Software List ROMs (split)/coco_cart;Tandy - TRS-80 Color Computer;Tandy TRS-80 CoCo Split;mame coco3 -cart;
-mc10;TOSEC/Tandy Radio Shack/TRS-80 MC-10/Various;Tandy - MC-10;Tandy MC-10 TOSEC;mame mc10 -cass;
-mc10;MAME/Software List ROMs (merged)/mc10;Tandy - MC-10;Tandy MC-10 Merged;mame mc10 -cass;
-mc10;MAME/Software List ROMs (split)/mc10;Tandy - MC-10;Tandy MC-10 Split;mame mc10 -cass;
-dragon64;TOSEC/Dragon Data/Dragon/Games/[CAS];Dragon - Dragon 64;Dragon 32/64 TOSEC;mame dragon64 -cass;
-dragon64;MAME/Software List ROMs (merged)/dragon_cass;Dragon - Dragon 64;Dragon 32/64 Merged;mame dragon64 -cass;
-dragon64;MAME/Software List ROMs (split)/dragon_cass;Dragon - Dragon 64;Dragon 32/64 Split;mame dragon64 -cass;
-vis;Redump/Memorex - Visual Information System;Tandy - Video Information System;Tandy VIS Redump;mame vis -cdrm;cue
-vis;TOSEC-ISO/Memorex/Video Information System/Educational;Tandy - Video Information System;Tandy VIS Edu;mame vis -cdrm;cue
-vis;TOSEC-ISO/Memorex/Video Information System/Games;Tandy - Video Information System;Tandy VIS Games;mame vis -cdrm;cue
-vis;TOSEC-ISO/Memorex/Video Information System/Multimedia;Tandy - Video Information System;Tandy VIS Multimedia;mame vis -cdrm;cue
-vis;MAME/Software List CHDs (merged)/vis;Tandy - Video Information System;Tandy VIS Merged;mame vis -cdrm;
-atom;TOSEC/Acorn/Atom/Games/[DSK];Acorn - Atom;Acorn Atom TOSEC;mame atom -flop1;
-atom;MAME/Software List ROMs (merged)/atom_flop;Acorn - Atom;Acorn Atom Merged;mame atom -flop1;
-atom;MAME/Software List ROMs (split)/atom_flop;Acorn - Atom;Acorn Atom Split;mame atom -flop1;
-bbcmicro;TOSEC/Acorn/BBC/Games/[SSD];Acorn - BBC;Acorn BBC TOSEC;mame bbcb -flop1;
-bbcmicro;MAME/Software List ROMs (merged)/bbcb_flop;Acorn - BBC;Acorn BBC Flop Merged;mame bbcb -flop1;
-bbcmicro;MAME/Software List ROMs (split)/bbcb_flop;Acorn - BBC;Acorn BBC Flop Split;mame bbcb -flop1;
-bbcmicro;MAME/Software List ROMs (merged)/bbcb_flop_orig;Acorn - BBC;Acorn BBC Orig Merged;mame bbcb -flop1;
-bbcmicro;MAME/Software List ROMs (split)/bbcb_flop_orig;Acorn - BBC;Acorn BBC Orig Split;mame bbcb -flop1;
-electron;TOSEC/Acorn/Electron/Games/[UEF];Acorn - Electron;Acorn Electron TOSEC;mame electron64 -cass;
-electron;TOSEC/Acorn/Electron/Applications/[UEF];Acorn - Electron;Acorn Electron App;mame electron64 -cass;
-electron;TOSEC/Acorn/Electron/Educational/[UEF];Acorn - Electron;Acorn Electron Edu;mame electron64 -cass;
-electron;MAME/Software List ROMs (merged)/electron_cass;Acorn - Electron;Acorn Electron Merged;mame electron64 -cass;
-electron;MAME/Software List ROMs (split)/electron_cass;Acorn - Electron;Acorn Electron Split;mame electron64 -cass;
-archimedes;TOSEC/Acorn/Archimedes/Games/[ADF];Acorn - Archimedes;Acorn Archimedes TOSEC;mame aa4401 -flop;
-archimedes;TOSEC/Acorn/Archimedes/Applications/[ADF];Acorn - Archimedes;Acorn Archimedes App;mame aa4401 -flop;
-archimedes;MAME/Software List ROMs (merged)/archimedes;Acorn - Archimedes;Acorn Archimedes Merged;mame aa4401 -flop;
-archimedes;MAME/Software List ROMs (split)/archimedes;Acorn - Archimedes;Acorn Archimedes Split;mame aa4401 -flop;
-fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;Fujitsu Micro 7 NoIntro;mame fm7 -flop1;
-fm7;TOSEC/Fujitsu/FM-7/Games/[D77];Fujitsu - Micro 7;Fujitsu Micro 7 D77;mame fm7 -flop1;
-fm7;MAME/Software List ROMs (merged)/fm7_disk;Fujitsu - Micro 7;Fujitsu Micro 7 Merged;mame fm7 -flop1;
-fm7;MAME/Software List ROMs (split)/fm7_disk;Fujitsu - Micro 7;Fujitsu Micro 7 Split;mame fm7 -flop1;
-fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;Fujitsu FM Towns Redump;mame fmtmarty -cdrm;
-fmtowns;MAME/Software List ROMs (merged)/fmtowns_cd;Fujitsu - FM Towns;Fujitsu FM Towns Merged;mame fmtmarty -cdrm;
-fmtowns;MAME/Software List ROMs (split)/fmtowns_cd;Fujitsu - FM Towns;Fujitsu FM Towns Split;mame fmtmarty -cdrm;
-fmtowns;MAME/Software List CHDs (merged)/fmtowns_cd;Fujitsu - FM Towns;Fujitsu FM Towns CHD;mame fmtmarty -cdrm;
-tutor;TOSEC/Tomy/Tutor & Pyuuta/Games;Tomy - Tutor;Tomy Tutor TOSEC;mame tutor -cart;
-tutor;MAME/Software List ROMs (merged)/tutor;Tomy - Tutor;Tomy Tutor Merged;mame tutor -cart;
-tutor;MAME/Software List ROMs (split)/tutor;Tomy - Tutor;Tomy Tutor Split;mame tutor -cart;
-ti99;MAME/Software List ROMs (merged)/ti99_cart;Texas Instruments - TI-99;Texas Instruments TI99 Merged;mame ti99_4a;
-ti99;MAME/Software List ROMs (split)/ti99_cart;Texas Instruments - TI-99;Texas Instruments TI99 Split;mame ti99_4a;
-thomson;TOSEC/Thomson/MO5/Games/[K7];Thomson - MOTO;Thomson MO5 K7;theodore_libretro;
-thomson;TOSEC/Thomson/MO6/Games;Thomson - MOTO;Thomson MO6 K7;theodore_libretro;
-thomson;TOSEC/Thomson/TO7/Games/[K7];Thomson - MOTO;Thomson TO7 K7;theodore_libretro;
-thomson;TOSEC/Thomson/TO7/Games/[M7];Thomson - MOTO;Thomson TO7 M7;theodore_libretro;
-thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[FD];Thomson - MOTO;Thomson TO8 FD;theodore_libretro;
-thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[K7];Thomson - MOTO;Thomson TO8 K7;theodore_libretro;
-thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[SAP];Thomson - MOTO;Thomson TO8 SAP;theodore_libretro;
-thomson;MAME/Software List ROMs (merged)/mo5_cart;Thomson - MOTO;Thomson MO5 Cart Merged;theodore_libretro;
-thomson;MAME/Software List ROMs (split)/mo5_cart;Thomson - MOTO;Thomson MO5 Cart Split;theodore_libretro;
-thomson;MAME/Software List ROMs (merged)/mo5_cass;Thomson - MOTO;Thomson MO5 Cass Merged;theodore_libretro;
-thomson;MAME/Software List ROMs (split)/mo5_cass;Thomson - MOTO;Thomson MO5 Cass Split;theodore_libretro;
-thomson;MAME/Software List ROMs (merged)/mo5_flop;Thomson - MOTO;Thomson MO5 Flop Merged;theodore_libretro;
-thomson;MAME/Software List ROMs (split)/mo5_flop;Thomson - MOTO;Thomson MO5 Flop Split;theodore_libretro;
-thomson;MAME/Software List ROMs (merged)/mo6_cass;Thomson - MOTO;Thomson MO6 Cass Merged;theodore_libretro;
-thomson;MAME/Software List ROMs (split)/mo6_cass;Thomson - MOTO;Thomson MO6 Cass Split;theodore_libretro;
-thomson;MAME/Software List ROMs (merged)/mo6_flop;Thomson - MOTO;Thomson MO6 Flop Merged;theodore_libretro;
-thomson;MAME/Software List ROMs (split)/mo6_flop;Thomson - MOTO;Thomson MO6 Flop Split;theodore_libretro;
-thomson;MAME/Software List ROMs (merged)/to_flop;Thomson - MOTO;Thomson TO Flop Merged;theodore_libretro;
-thomson;MAME/Software List ROMs (split)/to_flop;Thomson - MOTO;Thomson TO Flop Split;theodore_libretro;
-thomson;MAME/Software List ROMs (merged)/to7_cart;Thomson - MOTO;Thomson TO7 Cart Merged;theodore_libretro;
-thomson;MAME/Software List ROMs (split)/to7_cart;Thomson - MOTO;Thomson TO7 Cart Split;theodore_libretro;
-thomson;MAME/Software List ROMs (merged)/to7_cass;Thomson - MOTO;Thomson TO7 Cass Merged;theodore_libretro;
-thomson;MAME/Software List ROMs (split)/to7_cass;Thomson - MOTO;Thomson TO7 Cass Split;theodore_libretro;
-thomson;MAME/Software List ROMs (merged)/to8_cass;Thomson - MOTO;Thomson TO8 Cass Merged;theodore_libretro;
-thomson;MAME/Software List ROMs (split)/to8_cass;Thomson - MOTO;Thomson TO8 Cass Split;theodore_libretro;
 nes;No-Intro/Nintendo - Nintendo Entertainment System (Headered);Nintendo - Nintendo Entertainment System;Nintendo NES NoIntro;nestopia_libretro;
 nes;TOSEC/Nintendo/Famicom & Entertainment System/Games/[NES];Nintendo - Nintendo Entertainment System;Nintendo NES TOSEC;nestopia_libretro;
 nes;MAME/Software List ROMs (merged)/nes;Nintendo - Nintendo Entertainment System;Nintendo NES Merged;nestopia_libretro;
@@ -380,14 +102,7 @@ gc;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Game
 gc;TOSEC-ISO/Nintendo/GameCube/Games;Nintendo - GameCube;Gamecube ISO;dolphin_libretro;iso
 wii;No-Intro/Unofficial - Nintendo - Wii (Digital) (Deprecated) (WAD);Nintendo - Wii;Nintendo Wii NoIntro;dolphin_libretro;wad
 wii;Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k];Nintendo - Wii;Nintendo Wii Redump;dolphin_libretro;rvz
-pokemini;No-Intro/Nintendo - Pokemon Mini;Nintendo - Pokemon Mini;Pokemon Mini NoIntro;pokemini_libretro;
-pokemini;TOSEC/Nintendo/Pokemon Mini/Games;Nintendo - Pokemon Mini;Pokemon Mini TOSEC;pokemini_libretro;
-pokemini;MAME/Software List ROMs (merged)/pokemini;Nintendo - Pokemon Mini;Pokemon Mini Merged;pokemini_libretro;
-pokemini;MAME/Software List ROMs (split)/pokemini;Nintendo - Pokemon Mini;Pokemon Mini Split;pokemini_libretro;
-virtualboy;No-Intro/Nintendo - Virtual Boy;Nintendo - Virtual Boy;Virtual Boy NoIntro;mednafen_vb_libretro;
-virtualboy;TOSEC/Nintendo/Virtual Boy/Games;Nintendo - Virtual Boy;Virtual Boy TOSEC;mednafen_vb_libretro;
-virtualboy;MAME/Software List ROMs (merged)/vboy;Nintendo - Virtual Boy;Virtual Boy Merged;mednafen_vb_libretro;
-virtualboy;MAME/Software List ROMs (split)/vboy;Nintendo - Virtual Boy;Virtual Boy Split;mednafen_vb_libretro;
+wiiu;Redump/Nintendo - Wii U - WUX;Nintendo - Wii U;Nintendo Wii U Redump;cemu -g;wux
 gb;No-Intro/Nintendo - Game Boy;Nintendo - Game Boy;Game Boy NoIntro;sameboy_libretro;
 gb;TOSEC/Nintendo/Game Boy/Games;Nintendo - Game Boy;Game Boy TOSEC;sameboy_libretro;
 gb;MAME/Software List ROMs (merged)/gameboy;Nintendo - Game Boy;Game Boy Merged;sameboy_libretro;
@@ -405,7 +120,14 @@ nds;No-Intro/Nintendo - Nintendo DS (Download Play);Nintendo - Nintendo DS;Ninte
 nds;TOSEC/Nintendo/DS/Games;Nintendo - Nintendo DS;Nintendo DS TOSEC;melonds_libretro;
 nds;No-Intro/Nintendo - Nintendo DSi (Decrypted);Nintendo - Nintendo DS;Nintendo DSi NoIntro;melondsds_libretro;
 3ds;No-Intro/Nintendo - Nintendo 3DS (Decrypted);Nintendo - Nintendo 3DS;Nintendo 3DS NoIntro;citra_libretro;3ds
-wiiu;Redump/Nintendo - Wii U - WUX;Nintendo - Wii U;Nintendo Wii U Redump;cemu -g;wux
+pokemini;No-Intro/Nintendo - Pokemon Mini;Nintendo - Pokemon Mini;Pokemon Mini NoIntro;pokemini_libretro;
+pokemini;TOSEC/Nintendo/Pokemon Mini/Games;Nintendo - Pokemon Mini;Pokemon Mini TOSEC;pokemini_libretro;
+pokemini;MAME/Software List ROMs (merged)/pokemini;Nintendo - Pokemon Mini;Pokemon Mini Merged;pokemini_libretro;
+pokemini;MAME/Software List ROMs (split)/pokemini;Nintendo - Pokemon Mini;Pokemon Mini Split;pokemini_libretro;
+virtualboy;No-Intro/Nintendo - Virtual Boy;Nintendo - Virtual Boy;Virtual Boy NoIntro;mednafen_vb_libretro;
+virtualboy;TOSEC/Nintendo/Virtual Boy/Games;Nintendo - Virtual Boy;Virtual Boy TOSEC;mednafen_vb_libretro;
+virtualboy;MAME/Software List ROMs (merged)/vboy;Nintendo - Virtual Boy;Virtual Boy Merged;mednafen_vb_libretro;
+virtualboy;MAME/Software List ROMs (split)/vboy;Nintendo - Virtual Boy;Virtual Boy Split;mednafen_vb_libretro;
 sg-1000;No-Intro/Sega - SG-1000 - SC-3000;Sega - SG-1000;SG 1000 NoIntro;gearsystem_libretro;
 sg-1000;TOSEC/Sega/Game 1000/Games;Sega - SG-1000;SG 1000 TOSEC;gearsystem_libretro;
 sg-1000;MAME/Software List ROMs (merged)/sg1000;Sega - SG-1000;SG 1000 Merged;gearsystem_libretro;
@@ -459,19 +181,165 @@ psp;Redump/Sony - PlayStation Portable;Sony - PlayStation Portable;Sony PSP Redu
 psp;No-Intro/Non-Redump - Sony - PlayStation Portable;Sony - PlayStation Portable;Sony PSP NonRedump;ppsspp_libretro;iso
 psp;No-Intro/Unofficial - Sony - PlayStation Portable (PSN) (Decrypted);Sony - PlayStation Portable;Sony PSP PSN;ppsspp_libretro;iso
 psp;TOSEC-ISO/Sony/PlayStation Portable/Games/[ISO];Sony - PlayStation Portable;Sony PSP TOSEC;ppsspp_libretro;iso
-cdi;Redump/Philips - CD-i;Philips - CD-i;Philips CDi Redump;same_cdi_libretro;cue
-cdi;No-Intro/Non-Redump - Philips - CD-i;Philips - CD-i;Philips CDi NonRedump;same_cdi_libretro;cue
-cdi;TOSEC-ISO/Philips/CD-i/Games;Philips - CD-i;Philips CDi TOSEC;same_cdi_libretro;cue
-cdi;TOSEC-ISO/Philips/CD-i/Applications;Philips - CD-i;Philips CDi App;same_cdi_libretro;cue
-cdi;TOSEC-ISO/Philips/CD-i/Educational;Philips - CD-i;Philips CDi Edu;same_cdi_libretro;cue
-cdi;TOSEC-ISO/Philips/CD-i/Multimedia;Philips - CD-i;Philips CDi Multimedia;same_cdi_libretro;cue
-cdi;MAME/Software List CHDs (merged)/cdi;Philips - CD-i;Philips CDi CHD;same_cdi_libretro;
-3do;Redump/Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO Redump;opera_libretro;cue
-3do;No-Intro/Non-Redump - Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO NonRedump;opera_libretro;cue
-3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Games;The 3DO Company - 3DO;Panasonic 3DO TOSEC;opera_libretro;cue
-3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Applications/[ISO];The 3DO Company - 3DO;Panasonic 3DO App;opera_libretro;cue
-3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Educational/[ISO];The 3DO Company - 3DO;Panasonic 3DO Edu;opera_libretro;cue
-3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Multimedia;The 3DO Company - 3DO;Panasonic 3DO Multimedia;opera_libretro;cue
+neogeo;MAME/Software List ROMs (merged)/neogeo;SNK - Neo Geo;Neo Geo Merged;fbneo_libretro;
+neogeo;MAME/Software List ROMs (split)/neogeo;SNK - Neo Geo;Neo Geo Split;fbneo_libretro;
+neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD Redump;neocd_libretro;cue
+neogeocd;TOSEC-ISO/SNK/Neo-Geo CD/Games/[ISO];SNK - Neo Geo CD;Neo Geo CD ISO;neocd_libretro;cue
+neogeocd;MAME/Software List CHDs (merged)/neocd;SNK - Neo Geo CD;Neo Geo CD CHD;neocd_libretro;
+ngp;No-Intro/SNK - NeoGeo Pocket;SNK - Neo Geo Pocket;Neo Geo Pocket NoIntro;mednafen_ngp_libretro;
+ngp;TOSEC/SNK/Neo-Geo Pocket/Games;SNK - Neo Geo Pocket;Neo Geo Pocket TOSEC;mednafen_ngp_libretro;
+ngp;MAME/Software List ROMs (merged)/ngp;SNK - Neo Geo Pocket;Neo Geo Pocket Merged;mednafen_ngp_libretro;bin
+ngp;MAME/Software List ROMs (split)/ngp;SNK - Neo Geo Pocket;Neo Geo Pocket Split;mednafen_ngp_libretro;bin
+ngp;FinalBurn Neo/ngp;SNK - Neo Geo Pocket;Neo Geo Pocket FBN;mednafen_ngp_libretro;bin
+ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;NGP Color NoIntro;mednafen_ngp_libretro;
+ngpc;TOSEC/SNK/Neo-Geo Pocket Color/Games;SNK - Neo Geo Pocket Color;NGP Color TOSEC;mednafen_ngp_libretro;
+ngpc;MAME/Software List ROMs (merged)/ngpc;SNK - Neo Geo Pocket Color;NGP Color Merged;mednafen_ngp_libretro;bin
+ngpc;MAME/Software List ROMs (split)/ngpc;SNK - Neo Geo Pocket Color;NGP Color Split;mednafen_ngp_libretro;bin
+pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;NEC - PC Engine - TurboGrafx 16;PC Engine NoIntro;mednafen_pce_fast_libretro;
+pcengine;TOSEC/NEC/PC-Engine & TurboGrafx-16/Games;NEC - PC Engine - TurboGrafx 16;PC Engine TOSEC;mednafen_pce_fast_libretro;
+pcengine;MAME/Software List ROMs (merged)/pce;NEC - PC Engine - TurboGrafx 16;PC Engine Merged;mednafen_pce_fast_libretro;
+pcengine;MAME/Software List ROMs (split)/pce;NEC - PC Engine - TurboGrafx 16;PC Engine Split;mednafen_pce_fast_libretro;
+pcengine;MAME/Software List ROMs (merged)/tg16;NEC - PC Engine - TurboGrafx 16;TurboGrafx Merged;mednafen_pce_fast_libretro;
+pcengine;MAME/Software List ROMs (split)/tg16;NEC - PC Engine - TurboGrafx 16;TurboGrafx Split;mednafen_pce_fast_libretro;
+pcengine;FinalBurn Neo/tg16;NEC - PC Engine - TurboGrafx 16;TurboGrafx FBN;mednafen_pce_fast_libretro;
+pcengine;MAME/Software List ROMs (merged)/pce_tourvision;NEC - PC Engine - TurboGrafx 16;PCE TourVision Merged;mednafen_pce_fast_libretro;
+pcengine;MAME/Software List ROMs (split)/pce_tourvision;NEC - PC Engine - TurboGrafx 16;PCE TourVision Split;mednafen_pce_fast_libretro;
+pcengine;FinalBurn Neo/pce;NEC - PC Engine - TurboGrafx 16;PC Engine FBN;mednafen_pce_fast_libretro;
+supergrafx;No-Intro/NEC - PC Engine SuperGrafx;NEC - PC Engine SuperGrafx;PC Engine 2 NoIntro;mednafen_supergrafx_libretro;
+supergrafx;TOSEC/NEC/SuperGrafx/Games;NEC - PC Engine SuperGrafx;PC Engine 2 TOSEC;mednafen_supergrafx_libretro;
+supergrafx;MAME/Software List ROMs (merged)/sgx;NEC - PC Engine SuperGrafx;PC Engine 2 Merged;mednafen_supergrafx_libretro;
+supergrafx;MAME/Software List ROMs (split)/sgx;NEC - PC Engine SuperGrafx;PC Engine 2 Split;mednafen_supergrafx_libretro;
+supergrafx;FinalBurn Neo/sgx;NEC - PC Engine SuperGrafx;PC Engine 2 FBN;mednafen_supergrafx_libretro;
+pcenginecd;Redump/NEC - PC Engine CD & TurboGrafx CD;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD Redump;mednafen_pce_fast_libretro;cue
+pcenginecd;TOSEC-ISO/NEC/PC-Engine CD & TurboGrafx-16 CD/Games/[IMG];NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD ISO;mednafen_pce_fast_libretro;cue
+pcenginecd;MAME/Software List CHDs (merged)/pcecd;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD CHD;mednafen_pce_fast_libretro;
+pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX Redump;mednafen_pcfx_libretro;cue
+pcfx;TOSEC-ISO/NEC/PC-FX/Games;NEC - PC-FX;PC-FX ISO;mednafen_pcfx_libretro;cue
+pc60;MAME/Software List ROMs (merged)/pc6001_cart;NEC - PC-6000 - PC-6001;NEC PC-60 Merged;mame pc6001 -cart1;
+pc60;MAME/Software List ROMs (split)/pc6001_cart;NEC - PC-6000 - PC-6001;NEC PC-60 Split;mame pc6001 -cart1;
+pc88;TOSEC/NEC/PC-8801/Games/[D88];NEC - PC-8001 - PC-8801;NEC PC-88 TOSEC;quasi88_libretro;
+pc88;MAME/Software List ROMs (merged)/pc8001_flop;NEC - PC-8001 - PC-8801;NEC PC-80 Flop Merged;quasi88_libretro;
+pc88;MAME/Software List ROMs (split)/pc8001_flop;NEC - PC-8001 - PC-8801;NEC PC-80 Flop Split;quasi88_libretro;
+pc88;MAME/Software List ROMs (merged)/pc8801_flop;NEC - PC-8001 - PC-8801;NEC PC-88 Flop Merged;quasi88_libretro;
+pc88;MAME/Software List ROMs (split)/pc8801_flop;NEC - PC-8001 - PC-8801;NEC PC-88 Flop Split;quasi88_libretro;
+pc98;TOSEC/NEC/PC-9801/Games/[FDD];NEC - PC-98;NEC PC-98 TOSEC;np2kai_libretro;
+pc98;MAME/Software List ROMs (merged)/pc98;NEC - PC-98;NEC PC-98 Merged;np2kai_libretro;
+pc98;MAME/Software List ROMs (split)/pc98;NEC - PC-98;NEC PC-98 Split;np2kai_libretro;
+pc98;MAME/Software List CHDs (merged)/pc98_cd;NEC - PC-98;NEC PC-98 CHD;mame pc9821 -cdrm;
+pet;TOSEC/Commodore/PET/Games/[PRG];Commodore - PET;Commodore PET TOSEC;vice_xpet_libretro;
+pet;MAME/Software List ROMs (merged)/pet_cass;Commodore - PET;Commodore PET Merged;vice_xpet_libretro;
+pet;MAME/Software List ROMs (split)/pet_cass;Commodore - PET;Commodore PET Split;vice_xpet_libretro;
+vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;Commodore VIC-20 NoIntro;vice_xvic_libretro;
+vic20;TOSEC/Commodore/VIC20/Games/[CRT]/Singlepart;Commodore - VIC-20;Commodore VIC-20 CRT;vice_xvic_libretro;
+vic20;TOSEC/Commodore/VIC20/Games/[D64];Commodore - VIC-20;Commodore VIC-20 D64;vice_xvic_libretro;
+vic20;TOSEC/Commodore/VIC20/Games/[PRG]/Singlepart;Commodore - VIC-20;Commodore VIC-20 PRG;vice_xvic_libretro;
+vic20;TOSEC/Commodore/VIC20/Games/[TAP];Commodore - VIC-20;Commodore VIC-20 TAP;vice_xvic_libretro;
+vic20;TOSEC/Commodore/VIC20/Applications/[PRG]/Singlepart;Commodore - VIC-20;Commodore VIC-20 App;vice_xvic_libretro;
+vic20;MAME/Software List ROMs (merged)/vic1001_cart;Commodore - VIC-20;Commodore VIC-20 Merged;vice_xvic_libretro;
+vic20;MAME/Software List ROMs (split)/vic1001_cart;Commodore - VIC-20;Commodore VIC-20 Split;vice_xvic_libretro;
+c64;No-Intro/Commodore - Commodore 64;Commodore - 64;Commodore 64 NoIntro;vice_x64sc_libretro;
+c64;No-Intro/Commodore - Commodore 64 (PP);Commodore - 64;Commodore 64 PP;vice_x64sc_libretro;
+c64;No-Intro/Commodore - Commodore 64 (Tapes);Commodore - 64;Commodore 64 Tapes;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Games/Adventure/[D64];Commodore - 64;Commodore 64 Adventure;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Games/Arcade/[D64];Commodore - 64;Commodore 64 Arcade;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Games/Boulder Dash/[D64];Commodore - 64;Commodore 64 Boulder;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Games/Cards/[D64];Commodore - 64;Commodore 64 Cards;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Games/Gambling/[D64];Commodore - 64;Commodore 64 Gambling;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Games/Misc/[D64];Commodore - 64;Commodore 64 Misc;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Games/Racing/[D64];Commodore - 64;Commodore 64 Racing;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Games/Shoot'em Up/[D64];Commodore - 64;Commodore 64 Shootem;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Games/Simulation/[D64];Commodore - 64;Commodore 64 Simulation;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Games/Sports/[D64];Commodore - 64;Commodore 64 Sports;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Games/Strategy/[D64];Commodore - 64;Commodore 64 Strategy;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Educational/[D64];Commodore - 64;Commodore 64 Edu D64;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Educational/[PRG];Commodore - 64;Commodore 64 Edu PRG;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Educational/[T64];Commodore - 64;Commodore 64 Edu T64;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Applications/[D64];Commodore - 64;Commodore 64 App D64;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Applications/[PRG];Commodore - 64;Commodore 64 App PRG;vice_x64sc_libretro;
+c64;TOSEC/Commodore/C64/Applications/[T64];Commodore - 64;Commodore 64 App T64;vice_x64sc_libretro;
+c64;MAME/Software List ROMs (merged)/c64_cart;Commodore - 64;Commodore 64 Cart Merged;vice_x64sc_libretro;
+c64;MAME/Software List ROMs (split)/c64_cart;Commodore - 64;Commodore 64 Cart Split;vice_x64sc_libretro;
+c64;MAME/Software List ROMs (merged)/c64_cass;Commodore - 64;Commodore 64 Cass Merged;vice_x64sc_libretro;
+c64;MAME/Software List ROMs (split)/c64_cass;Commodore - 64;Commodore 64 Cass Split;vice_x64sc_libretro;
+c128;TOSEC/Commodore/C128/Games/[D64];Commodore - 128;Commodore 128 D64;vice_x128_libretro;
+c128;TOSEC/Commodore/C128/Games/[PRG];Commodore - 128;Commodore 128 PRG;vice_x128_libretro;
+c128;TOSEC/Commodore/C128/Applications/[D64];Commodore - 128;Commodore 128 App;vice_x128_libretro;
+c128;MAME/Software List ROMs (merged)/c128_cart;Commodore - 128;Commodore 128 Cart Merged;vice_x128_libretro;
+c128;MAME/Software List ROMs (split)/c128_cart;Commodore - 128;Commodore 128 Cart Split;vice_x128_libretro;
+c128;MAME/Software List ROMs (merged)/c128_flop;Commodore - 128;Commodore 128 Flop Merged;vice_x128_libretro;
+c128;MAME/Software List ROMs (split)/c128_flop;Commodore - 128;Commodore 128 Flop Split;vice_x128_libretro;
+c128;MAME/Software List ROMs (merged)/c128_rom;Commodore - 128;Commodore 128 Rom Merged;vice_x128_libretro;
+c128;MAME/Software List ROMs (split)/c128_rom;Commodore - 128;Commodore 128 Rom Split;vice_x128_libretro;
+cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;Commodore Plus-4 NoIntro;vice_xplus4_libretro;
+cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[PRG];Commodore - Plus-4;Commodore Plus-4 PRG;vice_xplus4_libretro;
+cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP];Commodore - Plus-4;Commodore Plus-4 TAP;vice_xplus4_libretro;
+cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Utilities/[PRG];Commodore - Plus-4;Commodore Plus-4 Utils;vice_xplus4_libretro;
+cplus4;MAME/Software List ROMs (merged)/plus4_cart;Commodore - Plus-4;Commodore Plus-4 Merged;vice_xplus4_libretro;
+cplus4;MAME/Software List ROMs (split)/plus4_cart;Commodore - Plus-4;Commodore Plus-4 Split;vice_xplus4_libretro;
+amiga500;No-Intro/Commodore - Amiga;Commodore - Amiga;Amiga NoIntro;puae_libretro;
+amiga500;TOSEC/Commodore/Amiga/Games/[ADF];Commodore - Amiga;Amiga ADF;puae_libretro;
+amiga500;TOSEC/Commodore/Amiga/Games/[Unofficial IPF];Commodore - Amiga;Amiga IPF;puae_libretro;
+amiga500;TOSEC/Commodore/Amiga/Games/Public Domain/[ADF];Commodore - Amiga;Amiga PD;puae_libretro;
+amiga500;TOSEC/Commodore/Amiga/Games/SPS;Commodore - Amiga;Amiga SPS;puae_libretro;
+amiga500;TOSEC/Commodore/Amiga/Educational/[ADF];Commodore - Amiga;Amiga Edu;puae_libretro;
+amiga500;TOSEC/Commodore/Amiga/Applications/[ADF];Commodore - Amiga;Amiga App;puae_libretro;
+amiga500;TOSEC/Commodore/Amiga/Applications/Public Domain/[ADF];Commodore - Amiga;Amiga App PD;puae_libretro;
+amiga500;MAME/Software List ROMs (merged)/amiga_flop;Commodore - Amiga;Amiga Flop Merged;puae_libretro;
+amiga500;MAME/Software List ROMs (split)/amiga_flop;Commodore - Amiga;Amiga Flop Split;puae_libretro;
+amiga500;MAME/Software List ROMs (merged)/amigaecs_flop;Commodore - Amiga;Amiga ECS Flop Merged;puae_libretro;
+amiga500;MAME/Software List ROMs (split)/amigaecs_flop;Commodore - Amiga;Amiga ECS Flop Split;puae_libretro;
+amiga500;MAME/Software List ROMs (merged)/amigaocs_flop;Commodore - Amiga;Amiga OCS Flop Merged;puae_libretro;
+amiga500;MAME/Software List ROMs (split)/amigaocs_flop;Commodore - Amiga;Amiga OCS Flop Split;puae_libretro;
+amiga500;MAME/Software List ROMs (merged)/amigaaga_flop;Commodore - Amiga;Amiga AGA Flop Merged;puae_libretro;
+amiga500;MAME/Software List ROMs (split)/amigaaga_flop;Commodore - Amiga;Amiga AGA Flop Split;puae_libretro;
+amiga1200;Redump/Commodore - Amiga CD;Commodore - Amiga;Amiga CD Redump;puae_libretro;cue
+amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Games/[ISO];Commodore - Amiga;Amiga CD ISO;puae_libretro;cue
+amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Applications/[ISO];Commodore - Amiga;Amiga CD App;puae_libretro;cue
+amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Multimedia/[ISO];Commodore - Amiga;Amiga CD Multimedia;puae_libretro;cue
+amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;Amiga CDTV Redump;puae_libretro;cue
+amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Games/[ISO];Commodore - CDTV;Amiga CDTV ISO;puae_libretro;cue
+amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Applications/[ISO];Commodore - CDTV;Amiga CDTV App;puae_libretro;cue
+amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Educational/[ISO];Commodore - CDTV;Amiga CDTV Edu;puae_libretro;cue
+amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Multimedia/[ISO];Commodore - CDTV;Amiga CDTV Multimedia;puae_libretro;cue
+amigacdtv;MAME/Software List CHDs (merged)/cdtv;Commodore - CDTV;Amiga CDTV CHD;puae_libretro;
+amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;Amiga CD32 Redump;puae_libretro;cue
+amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Games/[ISO];Commodore - CD32;Amiga CD32 ISO;puae_libretro;cue
+amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Applications;Commodore - CD32;Amiga CD32 App;puae_libretro;cue
+amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Educational/[ISO];Commodore - CD32;Amiga CD32 Edu;puae_libretro;cue
+amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Multimedia/[ISO];Commodore - CD32;Amiga CD32 Multimedia;puae_libretro;cue
+amigacd32;MAME/Software List CHDs (merged)/cd32;Commodore - CD32;Amiga CD32 CHD;puae_libretro;
+zx81;TOSEC/Sinclair/ZX81/Games/[P];Sinclair - ZX 81;Sinclair ZX81 TOSEC;81_libretro;
+zx81;TOSEC/Sinclair/ZX81/Applications/[P];Sinclair - ZX 81;Sinclair ZX81 App;81_libretro;
+zx81;MAME/Software List ROMs (merged)/zx81_cass;Sinclair - ZX 81;Sinclair ZX81 Merged;81_libretro;
+zx81;MAME/Software List ROMs (split)/zx81_cass;Sinclair - ZX 81;Sinclair ZX81 Split;81_libretro;
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[DSK];Sinclair - ZX Spectrum;ZX Spectrum DSK;fuse_libretro;
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[SCL];Sinclair - ZX Spectrum;ZX Spectrum SCL;fuse_libretro;
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TAP];Sinclair - ZX Spectrum;ZX Spectrum TAP;fuse_libretro;
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TRD];Sinclair - ZX Spectrum;ZX Spectrum TRD;fuse_libretro;
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[TZX];Sinclair - ZX Spectrum;ZX Spectrum TZX;fuse_libretro;
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Games/[Z80];Sinclair - ZX Spectrum;ZX Spectrum Z80;fuse_libretro;
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TAP];Sinclair - ZX Spectrum;ZX Spectrum Edu TAP;fuse_libretro;
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[TZX];Sinclair - ZX Spectrum;ZX Spectrum Edu TZX;fuse_libretro;
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Educational/[Z80];Sinclair - ZX Spectrum;ZX Spectrum Edu Z80;fuse_libretro;
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TAP];Sinclair - ZX Spectrum;ZX Spectrum App TAP;fuse_libretro;
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[TZX];Sinclair - ZX Spectrum;ZX Spectrum App TZX;fuse_libretro;
+zxspectrum;TOSEC/Sinclair/ZX Spectrum/Applications/[Z80];Sinclair - ZX Spectrum;ZX Spectrum App Z80;fuse_libretro;
+zxspectrum;MAME/Software List ROMs (merged)/spectrum_cass;Sinclair - ZX Spectrum;ZX Spectrum Merged;fuse_libretro;
+zxspectrum;MAME/Software List ROMs (split)/spectrum_cass;Sinclair - ZX Spectrum;ZX Spectrum Split;fuse_libretro;
+zxspectrum;FinalBurn Neo/spectrum;Sinclair - ZX Spectrum;ZX Spectrum FBN;fuse_libretro;
+zxspectrum;MAME/Software List ROMs (merged)/specpls3_flop;Sinclair - ZX Spectrum;ZX Spectrum+3 Merged;fuse_libretro;
+zxspectrum;MAME/Software List ROMs (split)/specpls3_flop;Sinclair - ZX Spectrum;ZX Spectrum+3 Split;fuse_libretro;
+amstradcpc;TOSEC/Amstrad/CPC/Games/[DSK];Amstrad - CPC;Amstrad CPC DSK;cap32_libretro;
+amstradcpc;TOSEC/Amstrad/CPC/Games/[CDT];Amstrad - CPC;Amstrad CPC CDT;cap32_libretro;
+amstradcpc;TOSEC/Amstrad/CPC/Games/[SNA];Amstrad - CPC;Amstrad CPC SNA;cap32_libretro;
+amstradcpc;TOSEC/Amstrad/CPC/Applications/[DSK];Amstrad - CPC;Amstrad CPC App;cap32_libretro;
+amstradcpc;MAME/Software List ROMs (merged)/cpc_cass;Amstrad - CPC;Amstrad CPC Cass Merged;cap32_libretro;
+amstradcpc;MAME/Software List ROMs (split)/cpc_cass;Amstrad - CPC;Amstrad CPC Cass Split;cap32_libretro;
+amstradcpc;MAME/Software List ROMs (merged)/cpc_flop;Amstrad - CPC;Amstrad CPC Flop Merged;cap32_libretro;
+amstradcpc;MAME/Software List ROMs (split)/cpc_flop;Amstrad - CPC;Amstrad CPC Flop Split;cap32_libretro;
+gx4000;TOSEC/Amstrad/GX4000/Games;Amstrad - GX4000;Amstrad GX4000 TOSEC;cap32_libretro;
+gx4000;MAME/Software List ROMs (merged)/gx4000;Amstrad - GX4000;Amstrad GX4000 Merged;cap32_libretro;
+gx4000;MAME/Software List ROMs (split)/gx4000;Amstrad - GX4000;Amstrad GX4000 Split;cap32_libretro;
 msx1;No-Intro/Microsoft - MSX;Microsoft - MSX;MSX 1 NoIntro;bluemsx_libretro;
 msx1;TOSEC/MSX/MSX/Games/[CAS];Microsoft - MSX;MSX 1 TOSEC CAS;bluemsx_libretro;
 msx1;TOSEC/MSX/MSX/Games/[DSK];Microsoft - MSX;MSX 1 TOSEC DSK;bluemsx_libretro;
@@ -496,37 +364,35 @@ msx2+;MAME/Software List ROMs (split)/msx2p_flop;Microsoft - MSX2;MSX 2+ Flop Sp
 msxturbor;TOSEC/MSX/TurboR/Games;Microsoft - MSX2;MSX TurboR;bluemsx_libretro;
 msxturbor;MAME/Software List ROMs (merged)/msxr_flop;Microsoft - MSX2;MSX TurboR Flop Merged;bluemsx_libretro;
 msxturbor;MAME/Software List ROMs (split)/msxr_flop;Microsoft - MSX2;MSX TurboR Flop Split;bluemsx_libretro;
-pc60;MAME/Software List ROMs (merged)/pc6001_cart;NEC - PC-6000 - PC-6001;NEC PC-60 Merged;mame pc6001 -cart1;
-pc60;MAME/Software List ROMs (split)/pc6001_cart;NEC - PC-6000 - PC-6001;NEC PC-60 Split;mame pc6001 -cart1;
-pc88;TOSEC/NEC/PC-8801/Games/[D88];NEC - PC-8001 - PC-8801;NEC PC-88 TOSEC;quasi88_libretro;
-pc88;MAME/Software List ROMs (merged)/pc8001_flop;NEC - PC-8001 - PC-8801;NEC PC-80 Flop Merged;quasi88_libretro;
-pc88;MAME/Software List ROMs (split)/pc8001_flop;NEC - PC-8001 - PC-8801;NEC PC-80 Flop Split;quasi88_libretro;
-pc88;MAME/Software List ROMs (merged)/pc8801_flop;NEC - PC-8001 - PC-8801;NEC PC-88 Flop Merged;quasi88_libretro;
-pc88;MAME/Software List ROMs (split)/pc8801_flop;NEC - PC-8001 - PC-8801;NEC PC-88 Flop Split;quasi88_libretro;
-pc98;TOSEC/NEC/PC-9801/Games/[FDD];NEC - PC-98;NEC PC-98 TOSEC;np2kai_libretro;
-pc98;MAME/Software List ROMs (merged)/pc98;NEC - PC-98;NEC PC-98 Merged;np2kai_libretro;
-pc98;MAME/Software List ROMs (split)/pc98;NEC - PC-98;NEC PC-98 Split;np2kai_libretro;
-pc98;MAME/Software List CHDs (merged)/pc98_cd;NEC - PC-98;NEC PC-98 CHD;mame pc9821 -cdrm;
-pcengine;No-Intro/NEC - PC Engine - TurboGrafx-16;NEC - PC Engine - TurboGrafx 16;PC Engine NoIntro;mednafen_pce_fast_libretro;
-pcengine;TOSEC/NEC/PC-Engine & TurboGrafx-16/Games;NEC - PC Engine - TurboGrafx 16;PC Engine TOSEC;mednafen_pce_fast_libretro;
-pcengine;MAME/Software List ROMs (merged)/pce;NEC - PC Engine - TurboGrafx 16;PC Engine Merged;mednafen_pce_fast_libretro;
-pcengine;MAME/Software List ROMs (split)/pce;NEC - PC Engine - TurboGrafx 16;PC Engine Split;mednafen_pce_fast_libretro;
-pcengine;MAME/Software List ROMs (merged)/tg16;NEC - PC Engine - TurboGrafx 16;TurboGrafx Merged;mednafen_pce_fast_libretro;
-pcengine;MAME/Software List ROMs (split)/tg16;NEC - PC Engine - TurboGrafx 16;TurboGrafx Split;mednafen_pce_fast_libretro;
-pcengine;FinalBurn Neo/tg16;NEC - PC Engine - TurboGrafx 16;TurboGrafx FBN;mednafen_pce_fast_libretro;
-pcengine;MAME/Software List ROMs (merged)/pce_tourvision;NEC - PC Engine - TurboGrafx 16;PCE TourVision Merged;mednafen_pce_fast_libretro;
-pcengine;MAME/Software List ROMs (split)/pce_tourvision;NEC - PC Engine - TurboGrafx 16;PCE TourVision Split;mednafen_pce_fast_libretro;
-pcengine;FinalBurn Neo/pce;NEC - PC Engine - TurboGrafx 16;PC Engine FBN;mednafen_pce_fast_libretro;
-supergrafx;No-Intro/NEC - PC Engine SuperGrafx;NEC - PC Engine SuperGrafx;PC Engine 2 NoIntro;mednafen_supergrafx_libretro;
-supergrafx;TOSEC/NEC/SuperGrafx/Games;NEC - PC Engine SuperGrafx;PC Engine 2 TOSEC;mednafen_supergrafx_libretro;
-supergrafx;MAME/Software List ROMs (merged)/sgx;NEC - PC Engine SuperGrafx;PC Engine 2 Merged;mednafen_supergrafx_libretro;
-supergrafx;MAME/Software List ROMs (split)/sgx;NEC - PC Engine SuperGrafx;PC Engine 2 Split;mednafen_supergrafx_libretro;
-supergrafx;FinalBurn Neo/sgx;NEC - PC Engine SuperGrafx;PC Engine 2 FBN;mednafen_supergrafx_libretro;
-pcenginecd;Redump/NEC - PC Engine CD & TurboGrafx CD;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD Redump;mednafen_pce_fast_libretro;cue
-pcenginecd;TOSEC-ISO/NEC/PC-Engine CD & TurboGrafx-16 CD/Games/[IMG];NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD ISO;mednafen_pce_fast_libretro;cue
-pcenginecd;MAME/Software List CHDs (merged)/pcecd;NEC - PC Engine CD - TurboGrafx-CD;PC Engine CD CHD;mednafen_pce_fast_libretro;
-pcfx;Redump/NEC - PC-FX & PC-FXGA;NEC - PC-FX;PC-FX Redump;mednafen_pcfx_libretro;cue
-pcfx;TOSEC-ISO/NEC/PC-FX/Games;NEC - PC-FX;PC-FX ISO;mednafen_pcfx_libretro;cue
+apple2;TOSEC/Apple/II/Games/[DSK];Apple - II;Apple II DSK;mame apple2ee -flop1;
+apple2;TOSEC/Apple/II/Games/[WOZ];Apple - II;Apple II WOZ;mame apple2ee -flop1;
+apple2;TOSEC/Apple/II/Educational/[DSK];Apple - II;Apple II Edu DSK;mame apple2ee -flop1;
+apple2;TOSEC/Apple/II/Educational/[WOZ];Apple - II;Apple II Edu WOZ;mame apple2ee -flop1;
+apple2;TOSEC/Apple/II/Applications/[DSK];Apple - II;Apple II App DSK;mame apple2ee -flop1;
+apple2;TOSEC/Apple/II/Applications/[WOZ];Apple - II;Apple II App WOZ;mame apple2ee -flop1;
+apple2;MAME/Software List ROMs (merged)/apple2_flop_clcracked;Apple - II;Apple II Cracked Merged;mame apple2ee -flop1;
+apple2;MAME/Software List ROMs (split)/apple2_flop_clcracked;Apple - II;Apple II Cracked Split;mame apple2ee -flop1;
+apple2;MAME/Software List ROMs (merged)/apple2_flop_misc;Apple - II;Apple II Misc Merged;mame apple2ee -flop1;
+apple2;MAME/Software List ROMs (split)/apple2_flop_misc;Apple - II;Apple II Misc Split;mame apple2ee -flop1;
+apple2;MAME/Software List ROMs (merged)/apple2_flop_orig;Apple - II;Apple II Orig Merged;mame apple2ee -flop1;
+apple2;MAME/Software List ROMs (split)/apple2_flop_orig;Apple - II;Apple II Orig Split;mame apple2ee -flop1;
+apple2gs;TOSEC/Apple/IIGS/Games/[2MG];Apple - IIGS;Apple IIGS 2MG;mame apple2gs -flop3;
+apple2gs;TOSEC/Apple/IIGS/Educational/[2MG];Apple - IIGS;Apple IIGS Edu;mame apple2gs -flop3;
+apple2gs;TOSEC/Apple/IIGS/Applications/[2MG];Apple - IIGS;Apple IIGS App;mame apple2gs -flop3;
+apple2gs;MAME/Software List ROMs (merged)/apple2gs_flop_clcracked;Apple - IIGS;Apple IIGS Cracked Merged;mame apple2gs -flop3;
+apple2gs;MAME/Software List ROMs (split)/apple2gs_flop_clcracked;Apple - IIGS;Apple IIGS Cracked Split;mame apple2gs -flop3;
+apple2gs;MAME/Software List ROMs (merged)/apple2gs_flop_misc;Apple - IIGS;Apple IIGS Misc Merged;mame apple2gs -flop3;
+apple2gs;MAME/Software List ROMs (split)/apple2gs_flop_misc;Apple - IIGS;Apple IIGS Misc Split;mame apple2gs -flop3;
+apple2gs;MAME/Software List ROMs (merged)/apple2gs_flop_orig;Apple - IIGS;Apple IIGS Orig Merged;mame apple2gs -flop3;
+apple2gs;MAME/Software List ROMs (split)/apple2gs_flop_orig;Apple - IIGS;Apple IIGS Orig Split;mame apple2gs -flop3;
+macintosh;MAME/Software List ROMs (merged)/mac_flop;Apple - Macintosh;Apple Mac Flop Merged;mame macse -flop1;
+macintosh;MAME/Software List ROMs (split)/mac_flop;Apple - Macintosh;Apple Mac Flop Split;mame macse -flop1;
+macintosh;MAME/Software List ROMs (merged)/mac_flop_orig;Apple - Macintosh;Apple Mac Orig Merged;mame macse -flop1;
+macintosh;MAME/Software List ROMs (split)/mac_flop_orig;Apple - Macintosh;Apple Mac Orig Split;mame macse -flop1;
+macintosh;MAME/Software List ROMs (merged)/mac_flop_clcracked;Apple - Macintosh;Apple Mac Cracked Merged;mame macse -flop1;
+macintosh;MAME/Software List ROMs (split)/mac_flop_clcracked;Apple - Macintosh;Apple Mac Cracked Split;mame macse -flop1;
+macintosh;MAME/Software List ROMs (merged)/mac_hdflop;Apple - Macintosh;Apple Mac HDflop Merged;mame macse -flop1;
+macintosh;MAME/Software List ROMs (split)/mac_hdflop;Apple - Macintosh;Apple Mac HDflop Split;mame macse -flop1;
 dos;eXo/eXoDOS/Full Release/eXo/eXoDOS;DOS;MS-DOS eXoDOS;dosbox_pure_libretro;
 dos;TOSEC/IBM/PC Compatibles/Games/[IMG];DOS;MS-DOS TOSEC;dosbox_pure_libretro;
 dos;TOSEC/IBM/PC Compatibles/Applications/[IMG];DOS;MS-DOS App TOSEC;dosbox_pure_libretro;
@@ -623,88 +489,42 @@ dos;Total DOS Collection/Applications/Files/2004;DOS;MS-DOS TDC App 2004;dosbox_
 dos;Total DOS Collection/Applications/Files/2005;DOS;MS-DOS TDC App 2005;dosbox_pure_libretro;
 dos;Total DOS Collection/Applications/Files/2006;DOS;MS-DOS TDC App 2006;dosbox_pure_libretro;
 dos;Total DOS Collection/Applications/Files/2009;DOS;MS-DOS TDC App 2009;dosbox_pure_libretro;
-pet;TOSEC/Commodore/PET/Games/[PRG];Commodore - PET;Commodore PET TOSEC;vice_xpet_libretro;
-pet;MAME/Software List ROMs (merged)/pet_cass;Commodore - PET;Commodore PET Merged;vice_xpet_libretro;
-pet;MAME/Software List ROMs (split)/pet_cass;Commodore - PET;Commodore PET Split;vice_xpet_libretro;
-cplus4;No-Intro/Commodore - Plus-4;Commodore - Plus-4;Commodore Plus-4 NoIntro;vice_xplus4_libretro;
-cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[PRG];Commodore - Plus-4;Commodore Plus-4 PRG;vice_xplus4_libretro;
-cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP];Commodore - Plus-4;Commodore Plus-4 TAP;vice_xplus4_libretro;
-cplus4;TOSEC/Commodore/C16, C116 & Plus-4/Utilities/[PRG];Commodore - Plus-4;Commodore Plus-4 Utils;vice_xplus4_libretro;
-cplus4;MAME/Software List ROMs (merged)/plus4_cart;Commodore - Plus-4;Commodore Plus-4 Merged;vice_xplus4_libretro;
-cplus4;MAME/Software List ROMs (split)/plus4_cart;Commodore - Plus-4;Commodore Plus-4 Split;vice_xplus4_libretro;
-vic20;No-Intro/Commodore - VIC-20;Commodore - VIC-20;Commodore VIC-20 NoIntro;vice_xvic_libretro;
-vic20;TOSEC/Commodore/VIC20/Games/[CRT]/Singlepart;Commodore - VIC-20;Commodore VIC-20 CRT;vice_xvic_libretro;
-vic20;TOSEC/Commodore/VIC20/Games/[D64];Commodore - VIC-20;Commodore VIC-20 D64;vice_xvic_libretro;
-vic20;TOSEC/Commodore/VIC20/Games/[PRG]/Singlepart;Commodore - VIC-20;Commodore VIC-20 PRG;vice_xvic_libretro;
-vic20;TOSEC/Commodore/VIC20/Games/[TAP];Commodore - VIC-20;Commodore VIC-20 TAP;vice_xvic_libretro;
-vic20;TOSEC/Commodore/VIC20/Applications/[PRG]/Singlepart;Commodore - VIC-20;Commodore VIC-20 App;vice_xvic_libretro;
-vic20;MAME/Software List ROMs (merged)/vic1001_cart;Commodore - VIC-20;Commodore VIC-20 Merged;vice_xvic_libretro;
-vic20;MAME/Software List ROMs (split)/vic1001_cart;Commodore - VIC-20;Commodore VIC-20 Split;vice_xvic_libretro;
-c64;No-Intro/Commodore - Commodore 64;Commodore - 64;Commodore 64 NoIntro;vice_x64sc_libretro;
-c64;No-Intro/Commodore - Commodore 64 (PP);Commodore - 64;Commodore 64 PP;vice_x64sc_libretro;
-c64;No-Intro/Commodore - Commodore 64 (Tapes);Commodore - 64;Commodore 64 Tapes;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Games/Adventure/[D64];Commodore - 64;Commodore 64 Adventure;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Games/Arcade/[D64];Commodore - 64;Commodore 64 Arcade;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Games/Boulder Dash/[D64];Commodore - 64;Commodore 64 Boulder;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Games/Cards/[D64];Commodore - 64;Commodore 64 Cards;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Games/Gambling/[D64];Commodore - 64;Commodore 64 Gambling;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Games/Misc/[D64];Commodore - 64;Commodore 64 Misc;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Games/Racing/[D64];Commodore - 64;Commodore 64 Racing;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Games/Shoot'em Up/[D64];Commodore - 64;Commodore 64 Shootem;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Games/Simulation/[D64];Commodore - 64;Commodore 64 Simulation;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Games/Sports/[D64];Commodore - 64;Commodore 64 Sports;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Games/Strategy/[D64];Commodore - 64;Commodore 64 Strategy;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Educational/[D64];Commodore - 64;Commodore 64 Edu D64;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Educational/[PRG];Commodore - 64;Commodore 64 Edu PRG;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Educational/[T64];Commodore - 64;Commodore 64 Edu T64;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Applications/[D64];Commodore - 64;Commodore 64 App D64;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Applications/[PRG];Commodore - 64;Commodore 64 App PRG;vice_x64sc_libretro;
-c64;TOSEC/Commodore/C64/Applications/[T64];Commodore - 64;Commodore 64 App T64;vice_x64sc_libretro;
-c64;MAME/Software List ROMs (merged)/c64_cart;Commodore - 64;Commodore 64 Cart Merged;vice_x64sc_libretro;
-c64;MAME/Software List ROMs (split)/c64_cart;Commodore - 64;Commodore 64 Cart Split;vice_x64sc_libretro;
-c64;MAME/Software List ROMs (merged)/c64_cass;Commodore - 64;Commodore 64 Cass Merged;vice_x64sc_libretro;
-c64;MAME/Software List ROMs (split)/c64_cass;Commodore - 64;Commodore 64 Cass Split;vice_x64sc_libretro;
-c128;TOSEC/Commodore/C128/Games/[D64];Commodore - 128;Commodore 128 D64;vice_x128_libretro;
-c128;TOSEC/Commodore/C128/Games/[PRG];Commodore - 128;Commodore 128 PRG;vice_x128_libretro;
-c128;TOSEC/Commodore/C128/Applications/[D64];Commodore - 128;Commodore 128 App;vice_x128_libretro;
-c128;MAME/Software List ROMs (merged)/c128_cart;Commodore - 128;Commodore 128 Cart Merged;vice_x128_libretro;
-c128;MAME/Software List ROMs (split)/c128_cart;Commodore - 128;Commodore 128 Cart Split;vice_x128_libretro;
-c128;MAME/Software List ROMs (merged)/c128_flop;Commodore - 128;Commodore 128 Flop Merged;vice_x128_libretro;
-c128;MAME/Software List ROMs (split)/c128_flop;Commodore - 128;Commodore 128 Flop Split;vice_x128_libretro;
-c128;MAME/Software List ROMs (merged)/c128_rom;Commodore - 128;Commodore 128 Rom Merged;vice_x128_libretro;
-c128;MAME/Software List ROMs (split)/c128_rom;Commodore - 128;Commodore 128 Rom Split;vice_x128_libretro;
-amiga500;No-Intro/Commodore - Amiga;Commodore - Amiga;Amiga NoIntro;puae_libretro;
-amiga500;TOSEC/Commodore/Amiga/Games/[ADF];Commodore - Amiga;Amiga ADF;puae_libretro;
-amiga500;TOSEC/Commodore/Amiga/Games/[Unofficial IPF];Commodore - Amiga;Amiga IPF;puae_libretro;
-amiga500;TOSEC/Commodore/Amiga/Games/Public Domain/[ADF];Commodore - Amiga;Amiga PD;puae_libretro;
-amiga500;TOSEC/Commodore/Amiga/Games/SPS;Commodore - Amiga;Amiga SPS;puae_libretro;
-amiga500;TOSEC/Commodore/Amiga/Educational/[ADF];Commodore - Amiga;Amiga Edu;puae_libretro;
-amiga500;TOSEC/Commodore/Amiga/Applications/[ADF];Commodore - Amiga;Amiga App;puae_libretro;
-amiga500;TOSEC/Commodore/Amiga/Applications/Public Domain/[ADF];Commodore - Amiga;Amiga App PD;puae_libretro;
-amiga500;MAME/Software List ROMs (merged)/amiga_flop;Commodore - Amiga;Amiga Flop Merged;puae_libretro;
-amiga500;MAME/Software List ROMs (split)/amiga_flop;Commodore - Amiga;Amiga Flop Split;puae_libretro;
-amiga500;MAME/Software List ROMs (merged)/amigaecs_flop;Commodore - Amiga;Amiga ECS Flop Merged;puae_libretro;
-amiga500;MAME/Software List ROMs (split)/amigaecs_flop;Commodore - Amiga;Amiga ECS Flop Split;puae_libretro;
-amiga500;MAME/Software List ROMs (merged)/amigaocs_flop;Commodore - Amiga;Amiga OCS Flop Merged;puae_libretro;
-amiga500;MAME/Software List ROMs (split)/amigaocs_flop;Commodore - Amiga;Amiga OCS Flop Split;puae_libretro;
-amiga500;MAME/Software List ROMs (merged)/amigaaga_flop;Commodore - Amiga;Amiga AGA Flop Merged;puae_libretro;
-amiga500;MAME/Software List ROMs (split)/amigaaga_flop;Commodore - Amiga;Amiga AGA Flop Split;puae_libretro;
-amiga1200;Redump/Commodore - Amiga CD;Commodore - Amiga;Amiga CD Redump;puae_libretro;cue
-amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Games/[ISO];Commodore - Amiga;Amiga CD ISO;puae_libretro;cue
-amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Applications/[ISO];Commodore - Amiga;Amiga CD App;puae_libretro;cue
-amiga1200;TOSEC-ISO/Commodore/Amiga/CD/Multimedia/[ISO];Commodore - Amiga;Amiga CD Multimedia;puae_libretro;cue
-amigacdtv;Redump/Commodore - Amiga CDTV;Commodore - CDTV;Amiga CDTV Redump;puae_libretro;cue
-amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Games/[ISO];Commodore - CDTV;Amiga CDTV ISO;puae_libretro;cue
-amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Applications/[ISO];Commodore - CDTV;Amiga CDTV App;puae_libretro;cue
-amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Educational/[ISO];Commodore - CDTV;Amiga CDTV Edu;puae_libretro;cue
-amigacdtv;TOSEC-ISO/Commodore/Amiga CDTV/Multimedia/[ISO];Commodore - CDTV;Amiga CDTV Multimedia;puae_libretro;cue
-amigacdtv;MAME/Software List CHDs (merged)/cdtv;Commodore - CDTV;Amiga CDTV CHD;puae_libretro;
-amigacd32;Redump/Commodore - Amiga CD32;Commodore - CD32;Amiga CD32 Redump;puae_libretro;cue
-amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Games/[ISO];Commodore - CD32;Amiga CD32 ISO;puae_libretro;cue
-amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Applications;Commodore - CD32;Amiga CD32 App;puae_libretro;cue
-amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Educational/[ISO];Commodore - CD32;Amiga CD32 Edu;puae_libretro;cue
-amigacd32;TOSEC-ISO/Commodore/Amiga CD32/Multimedia/[ISO];Commodore - CD32;Amiga CD32 Multimedia;puae_libretro;cue
-amigacd32;MAME/Software List CHDs (merged)/cd32;Commodore - CD32;Amiga CD32 CHD;puae_libretro;
+trs80;TOSEC/Tandy Radio Shack/TRS-80 Model III/Games/[CMD];Tandy - TRS-80;Tandy TRS-80 Model III;mame trs80m3 -quik;
+trs80;TOSEC/Tandy Radio Shack/TRS-80 Model 4/Games/[CMD];Tandy - TRS-80;Tandy TRS-80 Model 4;mame trs80m3 -quik;
+trs80;MAME/Software List ROMs (merged)/trs80_quik;Tandy - TRS-80;Tandy TRS-80 Merged;mame trs80m3 -quik;
+trs80;MAME/Software List ROMs (split)/trs80_quik;Tandy - TRS-80;Tandy TRS-80 Split;mame trs80m3 -quik;
+coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM];Tandy - TRS-80 Color Computer;Tandy TRS-80 CoCo TOSEC;mame coco3 -cart;
+coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Applications/[ROM];Tandy - TRS-80 Color Computer;Tandy TRS-80 CoCo App;mame coco3 -cart;
+coco;MAME/Software List ROMs (merged)/coco_cart;Tandy - TRS-80 Color Computer;Tandy TRS-80 CoCo Merged;mame coco3 -cart;
+coco;MAME/Software List ROMs (split)/coco_cart;Tandy - TRS-80 Color Computer;Tandy TRS-80 CoCo Split;mame coco3 -cart;
+mc10;TOSEC/Tandy Radio Shack/TRS-80 MC-10/Various;Tandy - MC-10;Tandy MC-10 TOSEC;mame mc10 -cass;
+mc10;MAME/Software List ROMs (merged)/mc10;Tandy - MC-10;Tandy MC-10 Merged;mame mc10 -cass;
+mc10;MAME/Software List ROMs (split)/mc10;Tandy - MC-10;Tandy MC-10 Split;mame mc10 -cass;
+dragon64;TOSEC/Dragon Data/Dragon/Games/[CAS];Dragon - Dragon 64;Dragon 32/64 TOSEC;mame dragon64 -cass;
+dragon64;MAME/Software List ROMs (merged)/dragon_cass;Dragon - Dragon 64;Dragon 32/64 Merged;mame dragon64 -cass;
+dragon64;MAME/Software List ROMs (split)/dragon_cass;Dragon - Dragon 64;Dragon 32/64 Split;mame dragon64 -cass;
+vis;Redump/Memorex - Visual Information System;Tandy - Video Information System;Tandy VIS Redump;mame vis -cdrm;cue
+vis;TOSEC-ISO/Memorex/Video Information System/Educational;Tandy - Video Information System;Tandy VIS Edu;mame vis -cdrm;cue
+vis;TOSEC-ISO/Memorex/Video Information System/Games;Tandy - Video Information System;Tandy VIS Games;mame vis -cdrm;cue
+vis;TOSEC-ISO/Memorex/Video Information System/Multimedia;Tandy - Video Information System;Tandy VIS Multimedia;mame vis -cdrm;cue
+vis;MAME/Software List CHDs (merged)/vis;Tandy - Video Information System;Tandy VIS Merged;mame vis -cdrm;
+atom;TOSEC/Acorn/Atom/Games/[DSK];Acorn - Atom;Acorn Atom TOSEC;mame atom -flop1;
+atom;MAME/Software List ROMs (merged)/atom_flop;Acorn - Atom;Acorn Atom Merged;mame atom -flop1;
+atom;MAME/Software List ROMs (split)/atom_flop;Acorn - Atom;Acorn Atom Split;mame atom -flop1;
+bbcmicro;TOSEC/Acorn/BBC/Games/[SSD];Acorn - BBC;Acorn BBC TOSEC;mame bbcb -flop1;
+bbcmicro;MAME/Software List ROMs (merged)/bbcb_flop;Acorn - BBC;Acorn BBC Flop Merged;mame bbcb -flop1;
+bbcmicro;MAME/Software List ROMs (split)/bbcb_flop;Acorn - BBC;Acorn BBC Flop Split;mame bbcb -flop1;
+bbcmicro;MAME/Software List ROMs (merged)/bbcb_flop_orig;Acorn - BBC;Acorn BBC Orig Merged;mame bbcb -flop1;
+bbcmicro;MAME/Software List ROMs (split)/bbcb_flop_orig;Acorn - BBC;Acorn BBC Orig Split;mame bbcb -flop1;
+electron;TOSEC/Acorn/Electron/Games/[UEF];Acorn - Electron;Acorn Electron TOSEC;mame electron64 -cass;
+electron;TOSEC/Acorn/Electron/Applications/[UEF];Acorn - Electron;Acorn Electron App;mame electron64 -cass;
+electron;TOSEC/Acorn/Electron/Educational/[UEF];Acorn - Electron;Acorn Electron Edu;mame electron64 -cass;
+electron;MAME/Software List ROMs (merged)/electron_cass;Acorn - Electron;Acorn Electron Merged;mame electron64 -cass;
+electron;MAME/Software List ROMs (split)/electron_cass;Acorn - Electron;Acorn Electron Split;mame electron64 -cass;
+archimedes;TOSEC/Acorn/Archimedes/Games/[ADF];Acorn - Archimedes;Acorn Archimedes TOSEC;mame aa4401 -flop;
+archimedes;TOSEC/Acorn/Archimedes/Applications/[ADF];Acorn - Archimedes;Acorn Archimedes App;mame aa4401 -flop;
+archimedes;MAME/Software List ROMs (merged)/archimedes;Acorn - Archimedes;Acorn Archimedes Merged;mame aa4401 -flop;
+archimedes;MAME/Software List ROMs (split)/archimedes;Acorn - Archimedes;Acorn Archimedes Split;mame aa4401 -flop;
 x1;TOSEC/Sharp/X1/Games/[2D];Sharp - X1;Sharp X1 2D;x1_libretro;
 x1;TOSEC/Sharp/X1/Games/[D88];Sharp - X1;Sharp X1 D88;x1_libretro;
 x1;MAME/Software List ROMs (merged)/x1_cass;Sharp - X1;Sharp X1 Cass Merged;x1_libretro;
@@ -715,30 +535,210 @@ x68000;TOSEC/Sharp/X68000/Games/[DIM];Sharp - X68000;Sharp X68000 DIM;px68k_libr
 x68000;TOSEC/Sharp/X68000/Applications;Sharp - X68000;Sharp X68000 App;px68k_libretro;
 x68000;MAME/Software List ROMs (merged)/x68k_flop;Sharp - X68000;Sharp X68000 Merged;px68k_libretro;
 x68000;MAME/Software List ROMs (split)/x68k_flop;Sharp - X68000;Sharp X68000 Split;px68k_libretro;
-mame;MAME/ROMs (merged);MAME;MAME Merged;mame;
-mame;MAME/ROMs (non-merged);MAME;MAME Non-Merged;mame;
-mame;MAME/ROMs (split);MAME;MAME Split;mame;
-mame;MAME/Reference Sets/0.37b5 ROMs (non-merged);MAME;MAME 2000;mame;
-mame;MAME/Reference Sets/0.78 ROMs (non-merged);MAME;MAME 2003;mame;
-mame;MAME/Reference Sets/0.94 ROMs (non-merged);MAME;MAME 2005;mame;
-mame;MAME/Reference Sets/0.106 ROMs (non-merged);MAME;MAME 2006;mame;
-mame;MAME/Reference Sets/0.139 ROMs (non-merged);MAME;MAME 2010;mame;
-mame;MAME/Reference Sets/0.160 ROMs (non-merged);MAME;MAME 2015;mame;
-mame;MAME/Reference Sets/0.174 ROMs (non-merged);MAME;MAME 2016;mame;
-vgmplay;MAME/Software List ROMs (merged)/vgmplay;MAME;VGMPlay Merged;mame vgmplay -quik;
-vgmplay;MAME/Software List ROMs (split)/vgmplay;MAME;VGMPlay Split;mame vgmplay -quik;
-fbneo;FinalBurn Neo/arcade;MAME;FinalBurn Neo;fbneo_libretro;
-neogeo;MAME/Software List ROMs (merged)/neogeo;SNK - Neo Geo;Neo Geo Merged;fbneo_libretro;
-neogeo;MAME/Software List ROMs (split)/neogeo;SNK - Neo Geo;Neo Geo Split;fbneo_libretro;
-neogeocd;Redump/SNK - Neo Geo CD;SNK - Neo Geo CD;Neo Geo CD Redump;neocd_libretro;cue
-neogeocd;TOSEC-ISO/SNK/Neo-Geo CD/Games/[ISO];SNK - Neo Geo CD;Neo Geo CD ISO;neocd_libretro;cue
-neogeocd;MAME/Software List CHDs (merged)/neocd;SNK - Neo Geo CD;Neo Geo CD CHD;neocd_libretro;
-ngp;No-Intro/SNK - NeoGeo Pocket;SNK - Neo Geo Pocket;Neo Geo Pocket NoIntro;mednafen_ngp_libretro;
-ngp;TOSEC/SNK/Neo-Geo Pocket/Games;SNK - Neo Geo Pocket;Neo Geo Pocket TOSEC;mednafen_ngp_libretro;
-ngp;MAME/Software List ROMs (merged)/ngp;SNK - Neo Geo Pocket;Neo Geo Pocket Merged;mednafen_ngp_libretro;bin
-ngp;MAME/Software List ROMs (split)/ngp;SNK - Neo Geo Pocket;Neo Geo Pocket Split;mednafen_ngp_libretro;bin
-ngp;FinalBurn Neo/ngp;SNK - Neo Geo Pocket;Neo Geo Pocket FBN;mednafen_ngp_libretro;bin
-ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;NGP Color NoIntro;mednafen_ngp_libretro;
-ngpc;TOSEC/SNK/Neo-Geo Pocket Color/Games;SNK - Neo Geo Pocket Color;NGP Color TOSEC;mednafen_ngp_libretro;
-ngpc;MAME/Software List ROMs (merged)/ngpc;SNK - Neo Geo Pocket Color;NGP Color Merged;mednafen_ngp_libretro;bin
-ngpc;MAME/Software List ROMs (split)/ngpc;SNK - Neo Geo Pocket Color;NGP Color Split;mednafen_ngp_libretro;bin
+fm7;No-Intro/Fujitsu - FM-7 (Sector);Fujitsu - Micro 7;Fujitsu Micro 7 NoIntro;mame fm7 -flop1;
+fm7;TOSEC/Fujitsu/FM-7/Games/[D77];Fujitsu - Micro 7;Fujitsu Micro 7 D77;mame fm7 -flop1;
+fm7;MAME/Software List ROMs (merged)/fm7_disk;Fujitsu - Micro 7;Fujitsu Micro 7 Merged;mame fm7 -flop1;
+fm7;MAME/Software List ROMs (split)/fm7_disk;Fujitsu - Micro 7;Fujitsu Micro 7 Split;mame fm7 -flop1;
+fmtowns;Redump/Fujitsu - FM-Towns;Fujitsu - FM Towns;Fujitsu FM Towns Redump;mame fmtmarty -cdrm;
+fmtowns;MAME/Software List ROMs (merged)/fmtowns_cd;Fujitsu - FM Towns;Fujitsu FM Towns Merged;mame fmtmarty -cdrm;
+fmtowns;MAME/Software List ROMs (split)/fmtowns_cd;Fujitsu - FM Towns;Fujitsu FM Towns Split;mame fmtmarty -cdrm;
+fmtowns;MAME/Software List CHDs (merged)/fmtowns_cd;Fujitsu - FM Towns;Fujitsu FM Towns CHD;mame fmtmarty -cdrm;
+colecovision;No-Intro/Coleco - ColecoVision;Coleco - ColecoVision;Coleco Colecovision NoIntro;gearcoleco_libretro;
+colecovision;TOSEC/Coleco/ColecoVision/Games;Coleco - ColecoVision;Coleco Colecovision TOSEC;gearcoleco_libretro;
+colecovision;MAME/Software List ROMs (merged)/coleco;Coleco - ColecoVision;Coleco Colecovision Merged;gearcoleco_libretro;
+colecovision;MAME/Software List ROMs (split)/coleco;Coleco - ColecoVision;Coleco Colecovision Split;gearcoleco_libretro;
+colecovision;FinalBurn Neo/coleco;Coleco - ColecoVision;Coleco Colecovision FBN;gearcoleco_libretro;
+adam;TOSEC/Coleco/ColecoVision ADAM/Games/[DSK];Coleco - Adam;Coleco Adam TOSEC;mame adam -flop1;
+adam;TOSEC/Coleco/ColecoVision ADAM/Applications/[DSK];Coleco - Adam;Coleco Adam App;mame adam -flop1;
+adam;MAME/Software List ROMs (merged)/adam_flop;Coleco - Adam;Coleco Adam Merged;mame adam -flop1;
+adam;MAME/Software List ROMs (split)/adam_flop;Coleco - Adam;Coleco Adam Split;mame adam -flop1;
+sv8000;MAME/Software List ROMs (merged)/sv8000;Bandai - Super Vision 8000;Bandai Super Vision 8000 Merged;mame sv8000 -cart;
+sv8000;MAME/Software List ROMs (split)/sv8000;Bandai - Super Vision 8000;Bandai Super Vision 8000 Split;mame sv8000 -cart;
+wonderswan;No-Intro/Bandai - WonderSwan;Bandai - WonderSwan;Bandai WonderSwan NoIntro;mednafen_wswan_libretro;
+wonderswan;TOSEC/Bandai/WonderSwan/Games;Bandai - WonderSwan;Bandai WonderSwan TOSEC;mednafen_wswan_libretro;
+wonderswan;MAME/Software List ROMs (merged)/wswan;Bandai - WonderSwan;Bandai WonderSwan Merged;mednafen_wswan_libretro;
+wonderswan;MAME/Software List ROMs (split)/wswan;Bandai - WonderSwan;Bandai WonderSwan Split;mednafen_wswan_libretro;
+wonderswan;No-Intro/Benesse - Pocket Challenge V2;Bandai - WonderSwan;Pocket Challenge 2 NoIntro;mednafen_wswan_libretro;
+wonderswan;MAME/Software List ROMs (merged)/pockchalv2;Bandai - WonderSwan;Pocket Challenge 2 Merged;mednafen_wswan_libretro;
+wonderswan;MAME/Software List ROMs (split)/pockchalv2;Bandai - WonderSwan;Pocket Challenge 2 Split;mednafen_wswan_libretro;
+wonderswancolor;No-Intro/Bandai - WonderSwan Color;Bandai - WonderSwan Color;WonderSwan Color NoIntro;mednafen_wswan_libretro;
+wonderswancolor;TOSEC/Bandai/WonderSwan Color/Games;Bandai - WonderSwan Color;WonderSwan Color TOSEC;mednafen_wswan_libretro;
+wonderswancolor;MAME/Software List ROMs (merged)/wscolor;Bandai - WonderSwan Color;WonderSwan Color Merged;mednafen_wswan_libretro;
+wonderswancolor;MAME/Software List ROMs (split)/wscolor;Bandai - WonderSwan Color;WonderSwan Color Split;mednafen_wswan_libretro;
+odyssey2;No-Intro/Magnavox - Odyssey 2;Magnavox - Odyssey2;Magnavox Odyssey 2 NoIntro;o2em_libretro;
+odyssey2;TOSEC/Magnavox/Odyssey2/Games;Magnavox - Odyssey2;Magnavox Odyssey 2 TOSEC;o2em_libretro;
+odyssey2;MAME/Software List ROMs (merged)/videopac;Magnavox - Odyssey2;Philips Videopac Merged;o2em_libretro;
+odyssey2;MAME/Software List ROMs (split)/videopac;Magnavox - Odyssey2;Philips Videopac Split;o2em_libretro;
+videopacplus;No-Intro/Philips - Videopac+;Philips - Videopac;Philips Videopac+ NoIntro;o2em_libretro;
+videopacplus;TOSEC/Philips/Videopac+/Games;Philips - Videopac;Philips Videopac+ TOSEC;o2em_libretro;
+cdi;Redump/Philips - CD-i;Philips - CD-i;Philips CDi Redump;same_cdi_libretro;cue
+cdi;No-Intro/Non-Redump - Philips - CD-i;Philips - CD-i;Philips CDi NonRedump;same_cdi_libretro;cue
+cdi;TOSEC-ISO/Philips/CD-i/Games;Philips - CD-i;Philips CDi TOSEC;same_cdi_libretro;cue
+cdi;TOSEC-ISO/Philips/CD-i/Applications;Philips - CD-i;Philips CDi App;same_cdi_libretro;cue
+cdi;TOSEC-ISO/Philips/CD-i/Educational;Philips - CD-i;Philips CDi Edu;same_cdi_libretro;cue
+cdi;TOSEC-ISO/Philips/CD-i/Multimedia;Philips - CD-i;Philips CDi Multimedia;same_cdi_libretro;cue
+cdi;MAME/Software List CHDs (merged)/cdi;Philips - CD-i;Philips CDi CHD;same_cdi_libretro;
+3do;Redump/Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO Redump;opera_libretro;cue
+3do;No-Intro/Non-Redump - Panasonic - 3DO Interactive Multiplayer;The 3DO Company - 3DO;Panasonic 3DO NonRedump;opera_libretro;cue
+3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Games;The 3DO Company - 3DO;Panasonic 3DO TOSEC;opera_libretro;cue
+3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Applications/[ISO];The 3DO Company - 3DO;Panasonic 3DO App;opera_libretro;cue
+3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Educational/[ISO];The 3DO Company - 3DO;Panasonic 3DO Edu;opera_libretro;cue
+3do;TOSEC-ISO/3DO/3DO Interactive Multiplayer/Multimedia;The 3DO Company - 3DO;Panasonic 3DO Multimedia;opera_libretro;cue
+intellivision;No-Intro/Mattel - Intellivision;Mattel - Intellivision;Mattel Intellivision NoIntro;freeintv_libretro;
+intellivision;TOSEC/Mattel/Intellivision/Games/[BIN];Mattel - Intellivision;Mattel Intellivision TOSEC;freeintv_libretro;
+intellivision;MAME/Software List ROMs (merged)/intv;Mattel - Intellivision;Mattel Intellivision Merged;freeintv_libretro;
+intellivision;MAME/Software List ROMs (split)/intv;Mattel - Intellivision;Mattel Intellivision Split;freeintv_libretro;
+channelf;No-Intro/Fairchild - Channel F;Fairchild - Channel F;Fairchild Channel F NoIntro;freechaf_libretro;
+channelf;TOSEC/Fairchild/VES & Channel F/Games;Fairchild - Channel F;Fairchild Channel F TOSEC;freechaf_libretro;
+channelf;MAME/Software List ROMs (merged)/channelf;Fairchild - Channel F;Fairchild Channel F Merged;freechaf_libretro;
+channelf;MAME/Software List ROMs (split)/channelf;Fairchild - Channel F;Fairchild Channel F Split;freechaf_libretro;
+channelf;FinalBurn Neo/channelf;Fairchild - Channel F;Fairchild Channel F FBN;freechaf_libretro;
+vectrex;No-Intro/GCE - Vectrex;GCE - Vectrex;GCE Vectrex NoIntro;vecx_libretro;
+vectrex;TOSEC/GCE/Vectrex/Games;GCE - Vectrex;GCE Vectrex TOSEC;vecx_libretro;
+vectrex;MAME/Software List ROMs (merged)/vectrex;GCE - Vectrex;GCE Vectrex Merged;vecx_libretro;
+vectrex;MAME/Software List ROMs (split)/vectrex;GCE - Vectrex;GCE Vectrex Split;vecx_libretro;
+creativision;No-Intro/VTech - CreatiVision;VTech - CreatiVision;CreatiVision NoIntro;mame crvision -cart;
+creativision;TOSEC/VTech/Laser 2001 & CreatiVision/Games;VTech - CreatiVision;CreatiVision TOSEC;mame crvision -cart;
+creativision;MAME/Software List ROMs (merged)/crvision;VTech - CreatiVision;CreatiVision Merged;mame crvision -cart;
+creativision;MAME/Software List ROMs (split)/crvision;VTech - CreatiVision;CreatiVision Split;mame crvision -cart;
+vsmile;No-Intro/VTech - V.Smile;VTech - V.Smile;VTech V.Smile NoIntro;mame vsmile -cart;
+vsmile;TOSEC/VTech/V.Smile Motion/Games/[BIN];VTech - V.Smile;VTech V.Smile TOSEC;mame vsmile -cart;
+vsmile;MAME/Software List ROMs (merged)/vsmile_cart;VTech - V.Smile;VTech V.Smile Merged;mame vsmile -cart;
+vsmile;MAME/Software List ROMs (split)/vsmile_cart;VTech - V.Smile;VTech V.Smile Split;mame vsmile -cart;
+laser310;TOSEC/VTech/Laser 200/Games/[VZ];VTech - Laser 310;VTech Laser 200;mame laser310 -dump;
+laser310;TOSEC/VTech/Laser 200/Applications;VTech - Laser 310;VTech Laser 200 App;mame laser310 -dump;
+laser310;TOSEC/VTech/Laser 310/Applications;VTech - Laser 310;VTech Laser 310 App;mame laser310 -dump;
+laser310;MAME/Software List ROMs (merged)/vz_snap;VTech - Laser 310;VTech Laser Merged;mame laser310 -dump;
+laser310;MAME/Software List ROMs (split)/vz_snap;VTech - Laser 310;VTech Laser Split;mame laser310 -dump;
+socrates;MAME/Software List ROMs (merged)/socrates;VTech - Socrates;VTech Socrates;mame socrates -cart;
+pv1000;No-Intro/Casio - PV-1000;Casio - PV-1000;Casio PV-1000 NoIntro;mame pv1000 -cart;
+pv1000;TOSEC/Casio/PV-1000/Games;Casio - PV-1000;Casio PV-1000 TOSEC;mame pv1000 -cart;
+pv1000;MAME/Software List ROMs (merged)/pv1000;Casio - PV-1000;Casio PV-1000 Merged;mame pv1000 -cart;
+pv1000;MAME/Software List ROMs (split)/pv1000;Casio - PV-1000;Casio PV-1000 Split;mame pv1000 -cart;
+pv2000;TOSEC/Casio/PV-2000/Games;Casio - PV-2000;Casio PV-2000 TOSEC;mame pv2000 -cart;
+pv2000;MAME/Software List ROMs (merged)/pv2000;Casio - PV-2000;Casio PV-2000 Merged;mame pv2000 -cart;
+pv2000;MAME/Software List ROMs (split)/pv2000;Casio - PV-2000;Casio PV-2000 Split;mame pv2000 -cart;
+loopy;No-Intro/Casio - Loopy (LittleEndian);Casio - Loopy;Casio Loopy NoIntro;mame casloopy -cart;
+loopy;TOSEC/Casio/Loopy/Games/[BIN];Casio - Loopy;Casio Loopy TOSEC;mame casloopy -cart;
+loopy;MAME/Software List ROMs (merged)/casloopy;Casio - Loopy;Casio Loopy Merged;mame casloopy -cart;
+loopy;MAME/Software List ROMs (split)/casloopy;Casio - Loopy;Casio Loopy Split;mame casloopy -cart;
+thomson;TOSEC/Thomson/MO5/Games/[K7];Thomson - MOTO;Thomson MO5 K7;theodore_libretro;
+thomson;TOSEC/Thomson/MO6/Games;Thomson - MOTO;Thomson MO6 K7;theodore_libretro;
+thomson;TOSEC/Thomson/TO7/Games/[K7];Thomson - MOTO;Thomson TO7 K7;theodore_libretro;
+thomson;TOSEC/Thomson/TO7/Games/[M7];Thomson - MOTO;Thomson TO7 M7;theodore_libretro;
+thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[FD];Thomson - MOTO;Thomson TO8 FD;theodore_libretro;
+thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[K7];Thomson - MOTO;Thomson TO8 K7;theodore_libretro;
+thomson;TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[SAP];Thomson - MOTO;Thomson TO8 SAP;theodore_libretro;
+thomson;MAME/Software List ROMs (merged)/mo5_cart;Thomson - MOTO;Thomson MO5 Cart Merged;theodore_libretro;
+thomson;MAME/Software List ROMs (split)/mo5_cart;Thomson - MOTO;Thomson MO5 Cart Split;theodore_libretro;
+thomson;MAME/Software List ROMs (merged)/mo5_cass;Thomson - MOTO;Thomson MO5 Cass Merged;theodore_libretro;
+thomson;MAME/Software List ROMs (split)/mo5_cass;Thomson - MOTO;Thomson MO5 Cass Split;theodore_libretro;
+thomson;MAME/Software List ROMs (merged)/mo5_flop;Thomson - MOTO;Thomson MO5 Flop Merged;theodore_libretro;
+thomson;MAME/Software List ROMs (split)/mo5_flop;Thomson - MOTO;Thomson MO5 Flop Split;theodore_libretro;
+thomson;MAME/Software List ROMs (merged)/mo6_cass;Thomson - MOTO;Thomson MO6 Cass Merged;theodore_libretro;
+thomson;MAME/Software List ROMs (split)/mo6_cass;Thomson - MOTO;Thomson MO6 Cass Split;theodore_libretro;
+thomson;MAME/Software List ROMs (merged)/mo6_flop;Thomson - MOTO;Thomson MO6 Flop Merged;theodore_libretro;
+thomson;MAME/Software List ROMs (split)/mo6_flop;Thomson - MOTO;Thomson MO6 Flop Split;theodore_libretro;
+thomson;MAME/Software List ROMs (merged)/to_flop;Thomson - MOTO;Thomson TO Flop Merged;theodore_libretro;
+thomson;MAME/Software List ROMs (split)/to_flop;Thomson - MOTO;Thomson TO Flop Split;theodore_libretro;
+thomson;MAME/Software List ROMs (merged)/to7_cart;Thomson - MOTO;Thomson TO7 Cart Merged;theodore_libretro;
+thomson;MAME/Software List ROMs (split)/to7_cart;Thomson - MOTO;Thomson TO7 Cart Split;theodore_libretro;
+thomson;MAME/Software List ROMs (merged)/to7_cass;Thomson - MOTO;Thomson TO7 Cass Merged;theodore_libretro;
+thomson;MAME/Software List ROMs (split)/to7_cass;Thomson - MOTO;Thomson TO7 Cass Split;theodore_libretro;
+thomson;MAME/Software List ROMs (merged)/to8_cass;Thomson - MOTO;Thomson TO8 Cass Merged;theodore_libretro;
+thomson;MAME/Software List ROMs (split)/to8_cass;Thomson - MOTO;Thomson TO8 Cass Split;theodore_libretro;
+ti99;MAME/Software List ROMs (merged)/ti99_cart;Texas Instruments - TI-99;Texas Instruments TI99 Merged;mame ti99_4a;
+ti99;MAME/Software List ROMs (split)/ti99_cart;Texas Instruments - TI-99;Texas Instruments TI99 Split;mame ti99_4a;
+spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Games/[BIN];Spectravideo - SVI-318 - SVI-328;Spectravideo Games;bluemsx_libretro;
+spectravideo;TOSEC/Spectravideo/SVI-318 & SVI-328/Various/[CAS];Spectravideo - SVI-318 - SVI-328;Spectravideo Various;bluemsx_libretro;
+spectravideo;MAME/Software List ROMs (merged)/svi318_cass;Spectravideo - SVI-318 - SVI-328;Spectravideo Merged;bluemsx_libretro;
+spectravideo;MAME/Software List ROMs (split)/svi318_cass;Spectravideo - SVI-318 - SVI-328;Spectravideo Split;bluemsx_libretro;
+enterprise;TOSEC/Enterprise/64 & 128/Games/[BAS];Enterprise - Enterprise;Enterprise 64 & 128 BAS;ep128emu_core_libretro;
+enterprise;TOSEC/Enterprise/64 & 128/Games/[COM];Enterprise - Enterprise;Enterprise 64 & 128 COM;ep128emu_core_libretro;
+enterprise;TOSEC/Enterprise/64 & 128/Games/[DTF];Enterprise - Enterprise;Enterprise 64 & 128 DTF;ep128emu_core_libretro;
+enterprise;TOSEC/Enterprise/64 & 128/Games/[Multipart];Enterprise - Enterprise;Enterprise 64 & 128 Multipart;ep128emu_core_libretro;
+enterprise;MAME/Software List ROMs (merged)/ep64_flop;Enterprise - Enterprise;Enterprise 64 & 128 Flop Merged;ep128emu_core_libretro;
+enterprise;MAME/Software List ROMs (split)/ep64_flop;Enterprise - Enterprise;Enterprise 64 & 128 Flop Split;ep128emu_core_libretro;
+tvc;TOSEC/Videoton/TV-Computer/Games/[CAS];Enterprise - Enterprise;Videoton TC Computer CAS;ep128emu_core_libretro;
+tvc;MAME/Software List ROMs (merged)/tvc_flop;Enterprise - Enterprise;Videoton TC Computer Flop Merged;ep128emu_core_libretro;
+tvc;MAME/Software List ROMs (split)/tvc_flop;Enterprise - Enterprise;Videoton TC Computer Flop Split;ep128emu_core_libretro;
+scv;No-Intro/Epoch - Super Cassette Vision;Epoch - Super Cassette Vision;Epoch SCV NoIntro;emuscv_libretro;
+scv;TOSEC/Epoch/Super Cassette Vision/Games;Epoch - Super Cassette Vision;Epoch SCV TOSEC;emuscv_libretro;
+scv;MAME/Software List ROMs (merged)/scv;Epoch - Super Cassette Vision;Epoch SCV Merged;emuscv_libretro;
+scv;MAME/Software List ROMs (split)/scv;Epoch - Super Cassette Vision;Epoch SCV Split;emuscv_libretro;
+gamepock;No-Intro/Epoch - Game Pocket Computer;Epoch - Game Pocket Computer;Epoch Game Pocket NoIntro;mame gamepock -cart;
+gamepock;MAME/Software List ROMs (merged)/gamepock;Epoch - Game Pocket Computer;Epoch Game Pocket Merged;mame gamepock -cart;
+gamepock;MAME/Software List ROMs (split)/gamepock;Epoch - Game Pocket Computer;Epoch Game Pocket Split;mame gamepock -cart;
+arcadia;No-Intro/Emerson - Arcadia 2001;Emerson - Arcadia 2001;Arcadia 2001 NoIntro;mame arcadia -cart;
+arcadia;TOSEC/Emerson/Arcadia 2001/Games;Emerson - Arcadia 2001;Arcadia 2001 TOSEC;mame arcadia -cart;
+arcadia;MAME/Software List ROMs (merged)/arcadia;Emerson - Arcadia 2001;Arcadia 2001 Merged;mame arcadia -cart;
+arcadia;MAME/Software List ROMs (split)/arcadia;Emerson - Arcadia 2001;Arcadia 2001 Split;mame arcadia -cart;
+oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[TAP];Tangerine - Oric Atmos;Oric Atmos TAP;mame orica -cass;
+oric;MAME/Software List ROMs (merged)/oric1_cass;Tangerine - Oric Atmos;Oric Atmos Merged;mame orica -cass;
+oric;MAME/Software List ROMs (split)/oric1_cass;Tangerine - Oric Atmos;Oric Atmos Split;mame orica -cass;
+camplynx;MAME/Software List ROMs (merged)/camplynx_cass;Camputers - Lynx;Camputers Lynx Merged;mame lynx48k -cass;
+camplynx;MAME/Software List ROMs (split)/camplynx_cass;Camputers - Lynx;Camputers Lynx Split;mame lynx48k -cass;
+bk;TOSEC/Elektronika/BK-0011-411/Games;Elektronika - BK;Elektronika BK TOSEC;bk_libretro;
+bk;TOSEC/Elektronika/BK-0010-0011M/Applications;Elektronika - BK;Elektronika BK App;bk_libretro;
+bk;MAME/Software List ROMs (merged)/bk0010;Elektronika - BK;Elektronika BK Merged;bk_libretro;
+bk;MAME/Software List ROMs (split)/bk0010;Elektronika - BK;Elektronika BK Split;bk_libretro;
+samcoupe;TOSEC/MGT/Sam Coupe/Games/[DSK];MGT - Sam Coupe;Sam Coupé DSK;mame samcoupe -flop1;
+samcoupe;MAME/Software List ROMs (merged)/samcoupe_flop;MGT - Sam Coupe;Sam Coupé Merged;mame samcoupe -flop1;
+samcoupe;MAME/Software List ROMs (split)/samcoupe_flop;MGT - Sam Coupe;Sam Coupé Split;mame samcoupe -flop1;
+astrocade;No-Intro/Bally - Astrocade;Bally - Astrocade;Bally Astrocade NoIntro;mame astrocde -cart;
+astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN];Bally - Astrocade;Bally Astrocade TOSEC;mame astrocde -cart;
+astrocade;MAME/Software List ROMs (merged)/astrocde;Bally - Astrocade;Bally Astrocade Merged;mame astrocde -cart;
+astrocade;MAME/Software List ROMs (split)/astrocde;Bally - Astrocade;Bally Astrocade Split;mame astrocde -cart;
+apfm1000;No-Intro/APF - MP-1000;APF - MP-1000;APF MP-1000 NoIntro;mame apfm1000 -cart;
+apfm1000;TOSEC/APF/M-1000/Games;APF - MP-1000;APF MP-1000 TOSEC;mame apfm1000 -cart;
+apfm1000;MAME/Software List ROMs (merged)/apfm1000;APF - MP-1000;APF MP-1000 Merged;mame apfm1000 -cart;
+apfm1000;MAME/Software List ROMs (split)/apfm1000;APF - MP-1000;APF MP-1000 Split;mame apfm1000 -cart;
+advision;No-Intro/Entex - Adventure Vision;Entex - Adventure Vision;Adventure Vision NoIntro;mame advision -cart;
+advision;TOSEC/Entex/Adventure Vision/Games;Entex - Adventure Vision;Adventure Vision TOSEC;mame advision -cart;
+advision;MAME/Software List ROMs (merged)/advision;Entex - Adventure Vision;Adventure Vision Merged;mame advision -cart;
+advision;MAME/Software List ROMs (split)/advision;Entex - Adventure Vision;Adventure Vision Split;mame advision -cart;
+vc4000;No-Intro/Interton - VC 4000;Interton - VC 4000;Interton VC 4000 NoIntro;mame vc4000 -cart;
+vc4000;MAME/Software List ROMs (merged)/vc4000;Interton - VC 4000;Interton VC 4000 Merged;mame vc4000 -cart;
+vc4000;MAME/Software List ROMs (split)/vc4000;Interton - VC 4000;Interton VC 4000 Split;mame vc4000 -cart;
+supracan;No-Intro/Funtech - Super Acan;Funtech - Super Acan;Super Acan NoIntro;mame supracan -cart;
+supracan;TOSEC/Funtech/Super A'can/Games;Funtech - Super Acan;Super Acan TOSEC;mame supracan -cart;
+supracan;MAME/Software List ROMs (merged)/supracan;Funtech - Super Acan;Super Acan Merged;mame supracan -cart;
+supracan;MAME/Software List ROMs (split)/supracan;Funtech - Super Acan;Super Acan Split;mame supracan -cart;
+multivision;TOSEC/Tsukuda Original/Othello Multivision/Games;Othello - Multivision;Othello Multivision;gearsystem_libretro;
+gamecom;No-Intro/Tiger - Game.com;Tiger - Game.com;Tiger Game.com NoIntro;mame gamecom -cart1;
+gamecom;TOSEC/Tiger Electronics/Game.com/Games;Tiger - Game.com;Tiger Game.com TOSEC;mame gamecom -cart1;
+gamecom;MAME/Software List ROMs (merged)/gamecom;Tiger - Game.com;Tiger Game.com Merged;mame gamecom -cart1;
+gamecom;MAME/Software List ROMs (split)/gamecom;Tiger - Game.com;Tiger Game.com Split;mame gamecom -cart1;
+ctvboy;MAME/Software List ROMs (merged)/ctvboy;Gakken - Compact Vision TV Boy;Gakken Compact Vision TV Boy Merged;mame ctvboy -cart;
+ctvboy;MAME/Software List ROMs (split)/ctvboy;Gakken - Compact Vision TV Boy;Gakken Compact Vision TV Boy Split;mame ctvboy -cart;
+supervision;No-Intro/Watara - Supervision;Watara - Supervision;Watara Supervision NoIntro;potator_libretro;
+supervision;TOSEC/Watara/Supervision/Games;Watara - Supervision;Watara Supervision TOSEC;potator_libretro;
+supervision;MAME/Software List ROMs (merged)/svision;Watara - Supervision;Watara Supervision Merged;potator_libretro;
+supervision;MAME/Software List ROMs (split)/svision;Watara - Supervision;Watara Supervision Split;potator_libretro;
+megaduck;No-Intro/Welback - Mega Duck;Welback - Mega Duck;Welback Mega Duck NoIntro;mame megaduck -cart;
+megaduck;MAME/Software List ROMs (merged)/megaduck;Welback - Mega Duck;Welback Mega Duck Merged;mame megaduck -cart;
+megaduck;MAME/Software List ROMs (split)/megaduck;Welback - Mega Duck;Welback Mega Duck Split;mame megaduck -cart;
+gamate;No-Intro/Bit Corporation - Gamate;Bitcorp - Gamate;Bitcorp Gamate NoIntro;mame gamate -cart;
+gamate;TOSEC/Bit Corporation/Gamate/Games;Bitcorp - Gamate;Bitcorp Gamate TOSEC;mame gamate -cart;
+gamate;MAME/Software List ROMs (merged)/gamate;Bitcorp - Gamate;Bitcorp Gamate Merged;mame gamate -cart;
+gamate;MAME/Software List ROMs (split)/gamate;Bitcorp - Gamate;Bitcorp Gamate Split;mame gamate -cart;
+gmaster;No-Intro/Hartung - Game Master;Hartung - Game Master;Hartung Game Master NoIntro;mame gmaster -cart;
+gmaster;TOSEC/Hartung/Game Master/Games;Hartung - Game Master;Hartung Game Master TOSEC;mame gmaster -cart;
+gmaster;MAME/Software List ROMs (merged)/gmaster;Hartung - Game Master;Hartung Game Master Merged;mame gmaster -cart;
+gmaster;MAME/Software List ROMs (split)/gmaster;Hartung - Game Master;Hartung Game Master Split;mame gmaster -cart;
+gp32;No-Intro/GamePark - GP32;GamePark - GP32;GamePark GP32 NoIntro;mame gp32 -memc;
+gp32;TOSEC/Game Park/GP32/Games/[SMC];GamePark - GP32;GamePark GP32 TOSEC;mame gp32 -memc;
+gp32;MAME/Software List ROMs (merged)/gp32;GamePark - GP32;GamePark GP32 Merged;mame gp32 -memc;
+gp32;MAME/Software List ROMs (split)/gp32;GamePark - GP32;GamePark GP32 Split;mame gp32 -memc;
+tutor;TOSEC/Tomy/Tutor & Pyuuta/Games;Tomy - Tutor;Tomy Tutor TOSEC;mame tutor -cart;
+tutor;MAME/Software List ROMs (merged)/tutor;Tomy - Tutor;Tomy Tutor Merged;mame tutor -cart;
+tutor;MAME/Software List ROMs (split)/tutor;Tomy - Tutor;Tomy Tutor Split;mame tutor -cart;
+arduboy;No-Intro/Arduboy Inc - Arduboy;Arduboy Inc - Arduboy;Arduboy NoIntro;arduous_libretro;
+arduboy;TOSEC/Arduboy/Arduboy/Games/[HEX];Arduboy Inc - Arduboy;Arduboy TOSEC;arduous_libretro;
+uzebox;MAME/Software List ROMs (merged)/uzebox;Uzebox;Uzebox Merged;mame uzebox -cart;
+uzebox;MAME/Software List ROMs (split)/uzebox;Uzebox;Uzebox Split;mame uzebox -cart;
+commanderx16;TOSEC/8-Bit Productions/Commander X16/Games/[IMG];Commander - X16;X16 IMG;x16emu;img
+commanderx16;TOSEC/8-Bit Productions/Commander X16/Games/[PRG];Commander - X16;X16 PRG;x16emu;prg
+vircon32;Internet Archive/joyrider3774/all_vircon32_roms_and_media/all_vircon32_roms_and_media;Vircon32;Vircon32;vircon32_libretro;
+pdp1;MAME/Software List ROMs (merged)/pdp1_ptp;PDP-1;PDP-1 Merged;mame pdp1 -ptap1;
+pdp1;MAME/Software List ROMs (split)/pdp1_ptp;PDP-1;PDP-1 Split;mame pdp1 -ptap1;
