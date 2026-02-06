@@ -280,6 +280,9 @@ coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Games/[ROM];Tandy - TRS-80 Co
 coco;TOSEC/Tandy Radio Shack/TRS-80 Color Computer/Applications/[ROM];Tandy - TRS-80 Color Computer;<code>Tandy TRS-80 CoCo</code> App;mame coco3 -cart;
 coco;MAME/Software List ROMs (merged)/coco_cart;Tandy - TRS-80 Color Computer;<code>Tandy TRS-80 CoCo</code> Merged;mame coco3 -cart;
 coco;MAME/Software List ROMs (split)/coco_cart;Tandy - TRS-80 Color Computer;<code>Tandy TRS-80 CoCo</code> Split;mame coco3 -cart;
+mc10;TOSEC/Tandy Radio Shack/TRS-80 MC-10/Various;Tandy - MC-10;Tandy MC-10 TOSEC;mame mc10 -cass;
+mc10;MAME/Software List ROMs (merged)/mc10;Tandy - MC-10;Tandy MC-10 Merged;mame mc10 -cass;
+mc10;MAME/Software List ROMs (split)/mc10;Tandy - MC-10;Tandy MC-10 Split;mame mc10 -cass;
 dragon64;TOSEC/Dragon Data/Dragon/Games/[CAS];Dragon - Dragon 64;Dragon 32/64 TOSEC;mame dragon64 -cass;
 dragon64;MAME/Software List ROMs (merged)/dragon_cass;Dragon - Dragon 64;Dragon 32/64 Merged;mame dragon64 -cass;
 dragon64;MAME/Software List ROMs (split)/dragon_cass;Dragon - Dragon 64;Dragon 32/64 Split;mame dragon64 -cass;
