@@ -137,7 +137,7 @@ supervision;MAME/Software List ROMs (split)/svision;Watara - Supervision;Watara 
 sv8000;MAME/Software List ROMs (merged)/sv8000;Bandai - Super Vision 8000;Bandai Super Vision 8000 Merged;mame sv8000 -cart;
 sv8000;MAME/Software List ROMs (split)/sv8000;Bandai - Super Vision 8000;Bandai Super Vision 8000 Split;mame sv8000 -cart;
 rx78;No-Intro/Bandai - Gundam RX-78;Bandai - Gundam RX-78;Bandai RX-78 NoIntro;mame rx78 -cart;
-rx78;TOSEC/Bandai/Gundam RX-78/Games;Bandai - Gundam RX-78;Bandai RX-78 TOSEC;mame rx78 -cart;
+rx78;TOSEC/Bandai/Gundam RX-78/Games/[BIN];Bandai - Gundam RX-78;Bandai RX-78 TOSEC;mame rx78 -cart;
 rx78;MAME/Software List ROMs (merged)/rx78_cart;Bandai - Gundam RX-78;Bandai RX-78 Cart Merged;mame rx78 -cart;
 rx78;MAME/Software List ROMs (split)/rx78_cart;Bandai - Gundam RX-78;Bandai RX-78 Cart Split;mame rx78 -cart;
 rx78;MAME/Software List ROMs (merged)/rx78_cass;Bandai - Gundam RX-78;Bandai RX-78 Cass Merged;mame rx78 -cass;
