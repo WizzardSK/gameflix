@@ -411,6 +411,13 @@ sg-1000;TOSEC/Sega/Game 1000/Games;Sega - SG-1000;SG 1000 TOSEC;gearsystem_libre
 sg-1000;MAME/Software List ROMs (merged)/sg1000;Sega - SG-1000;SG 1000 Merged;gearsystem_libretro;
 sg-1000;MAME/Software List ROMs (split)/sg1000;Sega - SG-1000;SG 1000 Split;gearsystem_libretro;
 sg-1000;FinalBurn Neo/sg1000;Sega - SG-1000;SG 1000 FBN;gearsystem_libretro;
+sc-3000;TOSEC/Sega/Computer 3000/Applications;Sega - SG-1000;SC 3000 App;mame sc3000 -cart;
+sc-3000;TOSEC/Sega/Computer 3000/Educational;Sega - SG-1000;SC 3000 Edu;mame sc3000 -cart;
+sc-3000;TOSEC/Sega/Computer 3000/Games/[WAV];Sega - SG-1000;SC 3000 Edu;mame sc3000 -cass;
+sc-3000;MAME/Software List ROMs (merged)/sc3000_cart;Sega - SG-1000;SC 3000 Cart Merged;mame sc3000 -cart;
+sc-3000;MAME/Software List ROMs (split)/sc3000_cart;Sega - SG-1000;SC 3000 Cart Split;mame sc3000 -cart;
+sc-3000;MAME/Software List ROMs (merged)/sc3000_cass;Sega - SG-1000;SC 3000 Cass Merged;mame sc3000 -cass;
+sc-3000;MAME/Software List ROMs (split)/sc3000_cass;Sega - SG-1000;SC 3000 Cass Split;mame sc3000 -cass;
 mastersystem;No-Intro/Sega - Master System - Mark III;Sega - Master System - Mark III;Master System NoIntro;gearsystem_libretro;
 mastersystem;TOSEC/Sega/Mark III & Master System/Games;Sega - Master System - Mark III;Master System TOSEC;gearsystem_libretro;
 mastersystem;MAME/Software List ROMs (merged)/sms;Sega - Master System - Mark III;Master System Merged;gearsystem_libretro;
