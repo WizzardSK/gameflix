@@ -1,7 +1,8 @@
 #!/bin/bash
 shopt -s nocasematch; 
-declare -A sys; while IFS=',' read -r k v; do sys[$k]="$v"; done < systems.csv
-roms=(); while IFS=';' read -r k rest; do roms+=("$k;$rest;${sys[$k]}"); done < platforms.csv
+declare -A sys; sysorder=(); while IFS=',' read -r k v; do sys[$k]="$v"; sysorder+=("$k"); done < systems.csv
+declare -A sysroms; while IFS=';' read -r k rest; do sysroms[$k]+="$k;$rest;${sys[$k]}"$'\n'; done < platforms.csv
+roms=(); for k in "${sysorder[@]}"; do while IFS= read -r line; do [[ -n "$line" ]] && roms+=("$line"); done <<< "${sysroms[$k]}"; done
 mkdir -p ~/{gameflix,rom,gamelists,zip,zips,mount} ~/gamelists/{tic80,wasm4,lowresnx,pico8,voxatron,switch}
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html; cp ~/gameflix/systems.html ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html

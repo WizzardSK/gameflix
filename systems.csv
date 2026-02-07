@@ -1,8 +1,8 @@
+arduboy,Arduboy
 uzebox,Uzebox
-vircon32,Vircon32
 commanderx16,Commander X16
+vircon32,Vircon32
 pdp1,DEC PDP-1
-vgmplay,VGMPlay
 atari2600,Atari 2600
 atari5200,Atari 5200
 atari7800,Atari 7800
@@ -21,18 +21,22 @@ odyssey2,Magnavox Odyssey²
 videopacplus,Magnavox Odyssey³
 intellivision,Mattel Intellivision
 colecovision,Coleco Colecovision
+adam,Coleco Adam
 scv,Epoch Super Casette Vision
+ctvboy,Gakken Compact Vision TV Boy
 gamepock,Epoch Game Pocket Computer
 supervision,Watara Supervision
 sv8000,Bandai Super Vision 8000
 wonderswan,Bandai WonderSwan
 wonderswancolor,Bandai WonderSwan Color
-arduboy,Arduboy
 megaduck,Welback Mega Duck
 gamate,Bitcorp Gamate
 gmaster,Hartung Game Master
 gamecom,Tiger Game.com
 gp32,GamePark GP32
+bk,Elektronika BK
+enterprise,Enterprise 64/128
+tvc,Videoton TV Computer
 amstradcpc,Amstrad CPC
 gx4000,Amstrad GX4000
 zx81,Sinclair ZX81
@@ -46,6 +50,8 @@ apfm1000,APF MP-1000
 advision,Adventure Vision
 creativision,VTech CreatiVision
 vsmile,VTech V.Smile
+laser310,VTech Laser
+socrates,VTech Socrates
 arcadia,Emerson Arcadia 2001
 pv1000,Casio PV-1000
 pv2000,Casio PV-2000
@@ -53,9 +59,10 @@ loopy,Casio Loopy
 supracan,Super Acan
 vc4000,Interton VC 4000
 multivision,Othello Multivision
-adam,Coleco Adam
 trs80,Tandy TRS-80
 coco,Tandy TRS-80 Color Computer
+mc10,Tandy MC-10
+dragon64,Dragon 32/64
 vis,Tandy Video Information System
 atom,Acorn Atom
 bbcmicro,Acorn BBS
@@ -64,8 +71,6 @@ archimedes,Acorn Archimedes
 fm7,Fujitsu Micro 7
 fmtowns,Fujitsu FM Towns
 tutor,Tomy Tutor
-laser310,VTech Laser
-socrates,VTech Socrates
 ti99,Texas Instruments TI-99/4A
 thomson,Thomson MO/TO
 nes,Nintendo Entertainment System
@@ -88,7 +93,7 @@ nds,Nintendo DS
 3ds,Nintendo 3DS
 wiiu,Nintendo Wii U
 sg-1000,Sega SG-1000
-sc-3000;Sega SC-3000
+sc-3000,Sega SC-3000
 mastersystem,Sega Master System
 megadrive,Sega Mega Drive
 msu-md,Sega MSU-MD
@@ -97,10 +102,18 @@ sega32x,Sega 32x
 segacd,Sega CD
 saturn,Sega Saturn
 dreamcast,Sega Dreamcast
+model2,Sega Model 2
+model3,Sega Model 3
 gamegear,Sega Game Gear
 psx,Sony PlayStation 1
 ps2,Sony PlayStation 2
 psp,Sony PlayStation Portable
+cdi,Philips CD-i
+3do,Panasonic 3DO
+msx1,Panasonic MSX1
+msx2,Panasonic MSX2
+msx2+,Panasonic MSX2+
+msxturbor,Panasonic MSX TurboR
 pc60,NEC PC 6000/6001
 pc88,NEC PC-88
 pc98,NEC PC-98
@@ -108,13 +121,7 @@ pcengine,NEC PC Engine 1
 supergrafx,NEC PC Engine 2
 pcenginecd,NEC PC Engine CD
 pcfx,NEC PC-FX
-cdi,Philips CD-i
-3do,Panasonic 3DO
 dos,Microsoft MS-DOS
-msx1,Panasonic MSX1
-msx2,Panasonic MSX2
-msx2+,Panasonic MSX2+
-msxturbor,Panasonic MSX TurboR
 pet,Commodore PET
 cplus4,Commodore Plus-4
 vic20,Commodore VIC-20
@@ -127,16 +134,9 @@ amigacd32,Commodore Amiga CD32
 x1,Sharp X1
 x68000,Sharp X68000
 mame,MAME Arcade
+vgmplay,VGMPlay
 fbneo,FinalBurn Neo
-model2,Sega Model 2
-model3,Sega Model 3
 neogeo,SNK Neo Geo AES
 neogeocd,SNK Neo Geo CD
 ngp,SNK Neo Geo Pocket
 ngpc,SNK Neo Geo Pocket Color
-enterprise,Enterprise 64/128
-tvc,Videoton TV Computer
-bk,Elektronika BK
-ctvboy,Gakken Compact Vision TV Boy
-dragon64,Dragon 32/64
-mc10,Tandy MC-10
