@@ -136,6 +136,11 @@ amigacdtv,Commodore Amiga CDTV
 amigacd32,Commodore Amiga CD32
 x1,Sharp X1
 x68000,Sharp X68000
+mz80k,Sharp MZ-80K
+mz700,Sharp MZ-700
+mz800,Sharp MZ-800
+mz2000,Sharp MZ-2000
+mz2500,Sharp MZ-2500
 mame,MAME Arcade
 vgmplay,VGMPlay
 fbneo,FinalBurn Neo
