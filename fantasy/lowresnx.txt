@@ -1,7 +1,7 @@
 3949	Catch Naano	7Jugsad4SP_Catch_NAANO_2.png	7Jugsad4SP_Catch_NAANO_2.nx
 3938	Gauntlet484	uTk5eErPL9_LowRes_NX_20260121_22_25_10.png	uTk5eErPL9_Gauntlet484.nx
 3937	In Dream	YwEjFC9LAV_In_Dream.png	YwEjFC9LAV_In_Dream.nx
-3935	sNOw: REDEMPTION	M3eXhh9W92_sNOw_REDEMPTION.png	M3eXhh9W92_sNOw_REDEMPTION.nx
+3935	sNOw: REDEMPTION	Ph8LiaMcQq_sNOw_REDEMPTION.png	Ph8LiaMcQq_sNOw_REDEMPTION.nx
 3933	Coinmania	byQkuuEjwB_cover.png	byQkuuEjwB_Coinmania.nx
 3931	Number Match	2jiAP2HXV7_Number_Match_0.33.png	2jiAP2HXV7_Number_Match_0.33.nx
 3929	Gamepad Hero v1	FYFMW8nF7y_IMG_6385.png	FYFMW8nF7y_Gamepad_Hero_v1.nx
