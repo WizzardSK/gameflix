@@ -520,9 +520,13 @@ msxturbor;MAME/Software List ROMs (merged)/msxr_flop;Microsoft - MSX2;MSX TurboR
 msxturbor;MAME/Software List ROMs (split)/msxr_flop;Microsoft - MSX2;MSX TurboR Flop Split;mame fsa1gt -flop;
 pc60;MAME/Software List ROMs (merged)/pc6001_cart;NEC - PC-6000 - PC-6001;NEC PC-60 Merged;mame pc6001 -cart1;
 pc60;MAME/Software List ROMs (split)/pc6001_cart;NEC - PC-6000 - PC-6001;NEC PC-60 Split;mame pc6001 -cart1;
+pc80;MAME/Software List ROMs (merged)/pc8001_flop;NEC - PC-8001 - PC-8801;NEC PC-8001 N-BASIC Flop Merged;mame pc8001mk2sr -flop1;
+pc80;MAME/Software List ROMs (split)/pc8001_flop;NEC - PC-8001 - PC-8801;NEC PC-8001 N-BASIC Flop Split;mame pc8001mk2sr -flop1;
+pc80;MAME/Software List ROMs (merged)/pc8001mk2_flop;NEC - PC-8001 - PC-8801;NEC PC-8001mkII N80 Flop Merged;mame pc8001mk2sr -flop1;
+pc80;MAME/Software List ROMs (split)/pc8001mk2_flop;NEC - PC-8001 - PC-8801;NEC PC-8001mkII N80 Flop Split;mame pc8001mk2sr -flop1;
+pc80;MAME/Software List ROMs (merged)/pc8001mk2sr_flop;NEC - PC-8001 - PC-8801;NEC PC-8001mkIISR N80SR Flop Merged;mame pc8001mk2sr -flop1;
+pc80;MAME/Software List ROMs (split)/pc8001mk2sr_flop;NEC - PC-8001 - PC-8801;NEC PC-8001mkIISR N80SR Flop Split;mame pc8001mk2sr -flop1;
 pc88;TOSEC/NEC/PC-8801/Games/[D88];NEC - PC-8001 - PC-8801;NEC PC-88 TOSEC;quasi88_libretro;
-pc88;MAME/Software List ROMs (merged)/pc8001_flop;NEC - PC-8001 - PC-8801;NEC PC-80 Flop Merged;mame pc8001 -flop1;
-pc88;MAME/Software List ROMs (split)/pc8001_flop;NEC - PC-8001 - PC-8801;NEC PC-80 Flop Split;mame pc8001 -flop1;
 pc88;MAME/Software List ROMs (merged)/pc8801_flop;NEC - PC-8001 - PC-8801;NEC PC-88 Flop Merged;mame pc8801 -flop1;
 pc88;MAME/Software List ROMs (split)/pc8801_flop;NEC - PC-8001 - PC-8801;NEC PC-88 Flop Split;mame pc8801 -flop1;
 pc98;TOSEC/NEC/PC-9801/Games/[FDD];NEC - PC-98;NEC PC-98 TOSEC;np2kai_libretro;
