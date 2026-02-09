@@ -227,8 +227,8 @@ samcoupe;MAME/Software List ROMs (split)/samcoupe_flop;MGT - Sam Coupe;Sam Coup√
 oric;TOSEC/Tangerine/Oric-1 & Oric Atmos/Games/[TAP];Tangerine - Oric Atmos;Oric Atmos TAP;mame orica -cass;
 oric;MAME/Software List ROMs (merged)/oric1_cass;Tangerine - Oric Atmos;Oric Atmos Merged;mame orica -cass;
 oric;MAME/Software List ROMs (split)/oric1_cass;Tangerine - Oric Atmos;Oric Atmos Split;mame orica -cass;
-camplynx;MAME/Software List ROMs (merged)/camplynx_cass;Camputers - Lynx;Camputers Lynx Merged;mame lynx48k -cass;
-camplynx;MAME/Software List ROMs (split)/camplynx_cass;Camputers - Lynx;Camputers Lynx Split;mame lynx48k -cass;
+camplynx;MAME/Software List ROMs (merged)/camplynx_cass;Camputers - Lynx;Camputers Lynx Merged;mame lynx48k -autoboot_command 'mload""\n' -autoboot_delay 2 -cass;
+camplynx;MAME/Software List ROMs (split)/camplynx_cass;Camputers - Lynx;Camputers Lynx Split;mame lynx48k -autoboot_command 'mload""\n' -autoboot_delay 2 -cass;
 astrocade;No-Intro/Bally - Astrocade;Bally - Astrocade;Bally Astrocade NoIntro;mame astrocde -cart;
 astrocade;TOSEC/Bally/Professional Arcade & Astrocade/Games/[BIN];Bally - Astrocade;Bally Astrocade TOSEC;mame astrocde -cart;
 astrocade;MAME/Software List ROMs (merged)/astrocde;Bally - Astrocade;Bally Astrocade Merged;mame astrocde -cart;
@@ -300,19 +300,19 @@ vis;TOSEC-ISO/Memorex/Video Information System/Educational;Tandy - Video Informa
 vis;TOSEC-ISO/Memorex/Video Information System/Games;Tandy - Video Information System;Tandy VIS Games;mame vis -cdrm;cue
 vis;TOSEC-ISO/Memorex/Video Information System/Multimedia;Tandy - Video Information System;Tandy VIS Multimedia;mame vis -cdrm;cue
 vis;MAME/Software List CHDs (merged)/vis;Tandy - Video Information System;Tandy VIS Merged;mame vis -cdrm;
-atom;TOSEC/Acorn/Atom/Games/[DSK];Acorn - Atom;Acorn Atom TOSEC;mame atom -flop1;
-atom;MAME/Software List ROMs (merged)/atom_flop;Acorn - Atom;Acorn Atom Merged;mame atom -flop1;
-atom;MAME/Software List ROMs (split)/atom_flop;Acorn - Atom;Acorn Atom Split;mame atom -flop1;
-bbcmicro;TOSEC/Acorn/BBC/Games/[SSD];Acorn - BBC;Acorn BBC TOSEC;mame bbcb -flop1;
-bbcmicro;MAME/Software List ROMs (merged)/bbcb_flop;Acorn - BBC;Acorn BBC Flop Merged;mame bbcb -flop1;
-bbcmicro;MAME/Software List ROMs (split)/bbcb_flop;Acorn - BBC;Acorn BBC Flop Split;mame bbcb -flop1;
-bbcmicro;MAME/Software List ROMs (merged)/bbcb_flop_orig;Acorn - BBC;Acorn BBC Orig Merged;mame bbcb -flop1;
-bbcmicro;MAME/Software List ROMs (split)/bbcb_flop_orig;Acorn - BBC;Acorn BBC Orig Split;mame bbcb -flop1;
-electron;TOSEC/Acorn/Electron/Games/[UEF];Acorn - Electron;Acorn Electron TOSEC;mame electron64 -cass;
-electron;TOSEC/Acorn/Electron/Applications/[UEF];Acorn - Electron;Acorn Electron App;mame electron64 -cass;
-electron;TOSEC/Acorn/Electron/Educational/[UEF];Acorn - Electron;Acorn Electron Edu;mame electron64 -cass;
-electron;MAME/Software List ROMs (merged)/electron_cass;Acorn - Electron;Acorn Electron Merged;mame electron64 -cass;
-electron;MAME/Software List ROMs (split)/electron_cass;Acorn - Electron;Acorn Electron Split;mame electron64 -cass;
+atom;TOSEC/Acorn/Atom/Games/[DSK];Acorn - Atom;Acorn Atom TOSEC;mame atom -autoboot_command '\n*DOS\n*DIR\n*CAT\n*RUN"' -autoboot_delay 1 -flop1;
+atom;MAME/Software List ROMs (merged)/atom_flop;Acorn - Atom;Acorn Atom Merged;mame atom -autoboot_command '\n*DOS\n*DIR\n*CAT\n*RUN"' -autoboot_delay 1 -flop1;
+atom;MAME/Software List ROMs (split)/atom_flop;Acorn - Atom;Acorn Atom Split;mame atom -autoboot_command '\n*DOS\n*DIR\n*CAT\n*RUN"' -autoboot_delay 1 -flop1;
+bbcmicro;TOSEC/Acorn/BBC/Games/[SSD];Acorn - BBC;Acorn BBC TOSEC;mame bbcb -autoboot_command '*cat\n\n\n\n*exec !boot\n' -autoboot_delay 3 -flop1;
+bbcmicro;MAME/Software List ROMs (merged)/bbcb_flop;Acorn - BBC;Acorn BBC Flop Merged;mame bbcb -autoboot_command '*cat\n\n\n\n*exec !boot\n' -autoboot_delay 3 -flop1;
+bbcmicro;MAME/Software List ROMs (split)/bbcb_flop;Acorn - BBC;Acorn BBC Flop Split;mame bbcb -autoboot_command '*cat\n\n\n\n*exec !boot\n' -autoboot_delay 3 -flop1;
+bbcmicro;MAME/Software List ROMs (merged)/bbcb_flop_orig;Acorn - BBC;Acorn BBC Orig Merged;mame bbcb -autoboot_command '*cat\n\n\n\n*exec !boot\n' -autoboot_delay 3 -flop1;
+bbcmicro;MAME/Software List ROMs (split)/bbcb_flop_orig;Acorn - BBC;Acorn BBC Orig Split;mame bbcb -autoboot_command '*cat\n\n\n\n*exec !boot\n' -autoboot_delay 3 -flop1;
+electron;TOSEC/Acorn/Electron/Games/[UEF];Acorn - Electron;Acorn Electron TOSEC;mame electron64 -autoboot_command '*T.\nCH.""\n' -autoboot_delay 2 -cass;
+electron;TOSEC/Acorn/Electron/Applications/[UEF];Acorn - Electron;Acorn Electron App;mame electron64 -autoboot_command '*T.\nCH.""\n' -autoboot_delay 2 -cass;
+electron;TOSEC/Acorn/Electron/Educational/[UEF];Acorn - Electron;Acorn Electron Edu;mame electron64 -autoboot_command '*T.\nCH.""\n' -autoboot_delay 2 -cass;
+electron;MAME/Software List ROMs (merged)/electron_cass;Acorn - Electron;Acorn Electron Merged;mame electron64 -autoboot_command '*T.\nCH.""\n' -autoboot_delay 2 -cass;
+electron;MAME/Software List ROMs (split)/electron_cass;Acorn - Electron;Acorn Electron Split;mame electron64 -autoboot_command '*T.\nCH.""\n' -autoboot_delay 2 -cass;
 archimedes;TOSEC/Acorn/Archimedes/Games/[ADF];Acorn - Archimedes;Acorn Archimedes TOSEC;mame aa4401 -flop;
 archimedes;TOSEC/Acorn/Archimedes/Applications/[ADF];Acorn - Archimedes;Acorn Archimedes App;mame aa4401 -flop;
 archimedes;MAME/Software List ROMs (merged)/archimedes;Acorn - Archimedes;Acorn Archimedes Merged;mame aa4401 -flop;
