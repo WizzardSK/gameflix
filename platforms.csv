@@ -196,6 +196,8 @@ amstradcpc;MAME/Software List ROMs (split)/cpc_flop;Amstrad - CPC;Amstrad CPC Fl
 gx4000;TOSEC/Amstrad/GX4000/Games;Amstrad - GX4000;Amstrad GX4000 TOSEC;cap32_libretro;
 gx4000;MAME/Software List ROMs (merged)/gx4000;Amstrad - GX4000;Amstrad GX4000 Merged;mame gx4000 -cart;
 gx4000;MAME/Software List ROMs (split)/gx4000;Amstrad - GX4000;Amstrad GX4000 Split;mame gx4000 -cart;
+pcw;MAME/Software List ROMs (merged)/pcw;Amstrad - PCW;Amstrad PCW Merged;mame pcw8256 -flop;
+pcw;MAME/Software List ROMs (split)/pcw;Amstrad - PCW;Amstrad PCW Split;mame pcw8256 -flop;
 zx81;TOSEC/Sinclair/ZX81/Games/[P];Sinclair - ZX 81;Sinclair ZX81 TOSEC;81_libretro;
 zx81;TOSEC/Sinclair/ZX81/Applications/[P];Sinclair - ZX 81;Sinclair ZX81 App;81_libretro;
 zx81;MAME/Software List ROMs (merged)/zx81_cass;Sinclair - ZX 81;Sinclair ZX81 Merged;mame zx81 -cass;
