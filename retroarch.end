@@ -11,7 +11,8 @@ if [[ "$1" == *"/ti99_cart/"* ]]; then rom="$(basename "${1%.*}")"; fi
 
 if [[ "$core" == *"mame"* ]]; then
   filename="${rom##*/}"; basename="${filename%.*}"
-  ${core} "${rom}" -skip_gameinfo -snapname "${basename}"
+  eval "cmd=($core)"
+  "${cmd[@]}" "${rom}" -skip_gameinfo -snapname "${basename}"
   exit
 fi
 
