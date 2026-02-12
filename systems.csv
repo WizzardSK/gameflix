@@ -41,6 +41,7 @@ tvc,Videoton TV Computer
 amstradcpc,Amstrad CPC
 gx4000,Amstrad GX4000
 pcw,Amstrad PCW
+zx80,Sinclair ZX80
 zx81,Sinclair ZX81
 zxspectrum,Sinclair ZX Spectrum
 spectravideo,Spectravideo SV-318/SV-328
@@ -130,6 +131,7 @@ pcfx,NEC PC-FX
 dos,Microsoft MS-DOS
 pet,Commodore PET
 cplus4,Commodore Plus-4
+vic10,Commodore VIC-10
 vic20,Commodore VIC-20
 c64,Commodore 64
 c128,Commodore 128
