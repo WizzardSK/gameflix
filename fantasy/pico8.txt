@@ -2,7 +2,7 @@
 154938	octoquestcart	octoquestcart-0.p8.png
 154937	shygullwhiskers	shygullwhiskers-0.p8.png
 154935	(open source) platformer engine	platformerengine2-0.p8.png
-154924	My first game: Defend the Command Line	defend_cmd-1.p8.png
+154924	My first game: Defend the Command Line	defend_cmd-2.p8.png
 154922	sakura high	lambchapel_sakura_high-1.p8.png
 154919	Skippy Stone	skippystone-3.p8.png
 154918	Arc8de Jam	arc8dejam-1.p8.png
@@ -149,7 +149,7 @@
 154368	Devilition (UFO 50) Demake	devilition_demake-2.p8.png
 154365	directional	directional-0.p8.png
 154352	Lost Stars	loststars-2.p8.png
-154351	Depression Bonanza	depression_bonanza_update-0.p8.png
+154351	Depression Bonanza	depression_bonanza_update-1.p8.png
 154347	Satrun	satrun-1.p8.png
 154332	Worlds Are Spinning	worldsarespinning-1.p8.png
 154330	Omega Wing v1	omegawing_laika-0.p8.png
@@ -304,7 +304,7 @@
 153709	Blink to reload	blink_to_reload-2.p8.png
 153707	Pico Imposter: A Party Game	pico_imposter-4.p8.png
 153704	Space-Mart Blitz!	spacemartblitz-3.p8.png
-153699	this was pain full to make 	yutmuguza-0.p8.png
+153699	Little mushroom guy	yutmuguza-0.p8.png
 153697	The Magnificent Step	uoaaaaaaaaa1224-1.p8.png
 153684	Cozy Xmas Maker v1.0	cozyxmasmaker-0.p8.png
 153683	Buscaminas	minasxdxdxdv03-0.p8.png
@@ -413,7 +413,7 @@
 153336	Nanaya - A Pico-8 Tower Defense	nanayagame-8.p8.png
 153332	Pico Present Swap	picpresswpdx1-0.p8.png
 153329	Matrix: A Celeste Classic Mod	matrix_0-2.p8.png
-153327	Floppy Canary	floppycanary-1.p8.png
+153327	Floppy Canary	floppycanary-2.p8.png
 153320	Beebe's Abyssal Fishes	abyssal_fishes-14.p8.png
 153317	Astro Match	astromatch-0.p8.png
 153307	Game release	fireplace-2.p8.png
