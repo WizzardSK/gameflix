@@ -463,8 +463,8 @@ n64;No-Intro/Nintendo - Nintendo 64 (ByteSwapped);Nintendo - Nintendo 64;Nintend
 n64;TOSEC/Nintendo/64/Games;Nintendo - Nintendo 64;Nintendo 64 TOSEC;mupen64plus_next_libretro;
 n64;MAME/Software List ROMs (merged)/n64;Nintendo - Nintendo 64;Nintendo 64 Merged;mame n64 -cart;
 n64;MAME/Software List ROMs (split)/n64;Nintendo - Nintendo 64;Nintendo 64 Split;mame n64 -cart;
-n64;MAME/Software List ROMs (merged)/n64dd;Nintendo - Nintendo 64;Nintendo 64DD Merged;mame n64dd -disk;
-n64;MAME/Software List ROMs (split)/n64dd;Nintendo - Nintendo 64;Nintendo 64DD Split;mame n64dd -disk;
+n64dd;MAME/Software List ROMs (merged)/n64dd;Nintendo - Nintendo 64DD;Nintendo 64DD Merged;mame n64dd -hard;
+n64dd;MAME/Software List ROMs (split)/n64dd;Nintendo - Nintendo 64DD;Nintendo 64DD Split;mame n64dd -hard;
 gc;Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k];Nintendo - GameCube;Gamecube Redump;dolphin_libretro;rvz
 gc;TOSEC-ISO/Nintendo/GameCube/Games;Nintendo - GameCube;Gamecube ISO;dolphin_libretro;iso
 wii;No-Intro/Unofficial - Nintendo - Wii (Digital) (Deprecated) (WAD);Nintendo - Wii;Nintendo Wii NoIntro;dolphin_libretro;wad
@@ -543,6 +543,8 @@ saturn;Redump/Sega - Saturn;Sega - Saturn;Sega Saturn Redump;yabasanshiro_libret
 saturn;No-Intro/Non-Redump - Sega - Sega Saturn;Sega - Saturn;Sega Saturn NonRedump;yabasanshiro_libretro;cue
 saturn;TOSEC-ISO/Sega/Saturn/Games/[ISO];Sega - Saturn;Sega Saturn ISO;yabasanshiro_libretro;cue
 saturn;MAME/Software List CHDs (merged)/saturn;Sega - Saturn;Sega Saturn CHD;mame saturn -cdrm;
+stv;MAME/Software List ROMs (merged)/stv;Sega - ST-V;Sega ST-V Merged;mame stvbios;
+stv;MAME/Software List ROMs (split)/stv;Sega - ST-V;Sega ST-V Split;mame stvbios;
 dreamcast;Redump/Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast Redump;flycast_libretro;cue
 dreamcast;No-Intro/Non-Redump - Sega - Dreamcast;Sega - Dreamcast;Sega Dreamcast NonRedump;flycast_libretro;gdi
 dreamcast;TOSEC-ISO/Sega/Dreamcast/Games/US;Sega - Dreamcast;Sega Dreamcast US;flycast_libretro;gdi

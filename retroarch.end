@@ -7,7 +7,7 @@ else
   rom="$1"
 fi
 
-case "$1" in */ti99_cart/*|*/vic10/*) rom="$(basename "${1%.*}")";; esac
+case "$1" in */ti99_cart/*|*/vic10/*|*/stv/*) rom="$(basename "${1%.*}")";; esac
 
 if [[ "$core" == *"mame"* ]]; then
   filename="${rom##*/}"; basename="${filename%.*}"

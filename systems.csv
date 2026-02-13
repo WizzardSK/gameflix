@@ -86,6 +86,7 @@ sufami,Nintendo Sufami Turbo
 sgb,Nintendo Super Game Boy
 sgb-msu1,Nintendo Game Boy MSU-1
 n64,Nintendo 64
+n64dd,Nintendo 64DD
 gc,Nintendo Gamecube
 wii,Nintendo Wii
 pokemini,Nintendo Pokémon Mini
@@ -107,6 +108,7 @@ beena,Sega Advanced Pico Beena
 sega32x,Sega 32x
 segacd,Sega CD
 saturn,Sega Saturn
+stv,Sega ST-V
 dreamcast,Sega Dreamcast
 model2,Sega Model 2
 model3,Sega Model 3
