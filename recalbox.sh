@@ -22,6 +22,7 @@ fi
 
 wget -nv -O /recalbox/share_init/system/.emulationstation/systemlist.xml https://github.com/WizzardSK/gameflix/raw/main/recalbox/systemlist.xml
 wget -nv -O /recalbox/share/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
+declare -A thumb; while IFS=',' read -r k v t; do thumb[$k]="$t"; done <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/systems.csv)"
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv)"
 
 es stop; chvt 3; clear
@@ -42,7 +43,7 @@ for each in "${roms[@]}"; do
   ls /recalbox/share/roms/${rom[0]}/Online | while read line; do
     if [[ ! ${line} =~ .*\.(jpg|png|torrent|xml|sqlite|mp3|ogg) ]]; then 
       line2=${line%.*}
-      echo "<game><path>Online/${line}</path><name>${line2}</name><image>../../thumbs/${rom[2]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
+      echo "<game><path>Online/${line}</path><name>${line2}</name><image>../../thumbs/${thumb[${rom[0]}]}/Named_Snaps/${line2}.png</image></game>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
     fi
   done
   echo "</gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml

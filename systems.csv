@@ -1,165 +1,165 @@
-arduboy,Arduboy
-uzebox,Uzebox
-commanderx16,Commander X16
-vircon32,Vircon32
-pdp1,DEC PDP-1
-atari2600,Atari 2600
-atari5200,Atari 5200
-atari7800,Atari 7800
-atarijaguar,Atari Jaguar
-atarijaguarcd,Atari Jaguar CD
-atarilynx,Atari Lynx
-atari800,Atari 800
-xegs,Atari XEGS
-atarist,Atari ST
-apple2,Apple II
-apple2gs,Apple IIGS
-macintosh,Apple Macintosh
-channelf,Fairchild Channel F
-vectrex,GCE Vectrex
-odyssey2,Magnavox Odyssey²
-videopacplus,Magnavox Odyssey³
-intellivision,Mattel Intellivision
-colecovision,Coleco Colecovision
-adam,Coleco Adam
-scv,Epoch Super Casette Vision
-ctvboy,Gakken Compact Vision TV Boy
-gamepock,Epoch Game Pocket Computer
-supervision,Watara Supervision
-sv8000,Bandai Super Vision 8000
-rx78,Bandai RX-78
-wonderswan,Bandai WonderSwan
-wonderswancolor,Bandai WonderSwan Color
-megaduck,Welback Mega Duck
-gamate,Bitcorp Gamate
-gmaster,Hartung Game Master
-gamecom,Tiger Game.com
-gp32,GamePark GP32
-bk,Elektronika BK
-enterprise,Enterprise 64/128
-tvc,Videoton TV Computer
-amstradcpc,Amstrad CPC
-gx4000,Amstrad GX4000
-pcw,Amstrad PCW
-zx80,Sinclair ZX80
-zx81,Sinclair ZX81
-zxspectrum,Sinclair ZX Spectrum
-spectravideo,Spectravideo SV-318/SV-328
-samcoupe,SAM Coupé
-oric,Oric Atmos
-camplynx,Camputers Lynx
-astrocade,Bally Astrocade
-apfm1000,APF MP-1000
-advision,Adventure Vision
-creativision,VTech CreatiVision
-vsmile,VTech V.Smile
-laser310,VTech Laser
-socrates,VTech Socrates
-arcadia,Emerson Arcadia 2001
-pv1000,Casio PV-1000
-pv2000,Casio PV-2000
-loopy,Casio Loopy
-supracan,Super Acan
-vc4000,Interton VC 4000
-multivision,Othello Multivision
-cgenie,EACA Colour Genie
-trs80,Tandy TRS-80
-coco,Tandy TRS-80 Color Computer
-mc10,Tandy MC-10
-dragon64,Dragon 32/64
-vis,Tandy Video Information System
-atom,Acorn Atom
-bbcmicro,Acorn BBS
-electron,Acorn Electron
-archimedes,Acorn Archimedes
-fm7,Fujitsu Micro 7
-fmtowns,Fujitsu FM Towns
-tutor,Tomy Tutor
-ti99,Texas Instruments TI-99/4A
-thomson,Thomson MO/TO
-nes,Nintendo Entertainment System
-fds,Nintendo Family Disk System
-snes,Nintendo Super NES
-snes-msu1,Nintendo SNES MSU-1
-satellaview,Nintendo Satellaview
-sufami,Nintendo Sufami Turbo
-sgb,Nintendo Super Game Boy
-sgb-msu1,Nintendo Game Boy MSU-1
-n64,Nintendo 64
-n64dd,Nintendo 64DD
-gc,Nintendo Gamecube
-wii,Nintendo Wii
-pokemini,Nintendo Pokémon Mini
-virtualboy,Nintendo Virtual Boy
-gb,Nintendo Game Boy
-gbc,Nintendo Game Boy Color
-gba,Nintendo Game Boy Advance
-nds,Nintendo DS
-3ds,Nintendo 3DS
-wiiu,Nintendo Wii U
-sg-1000,Sega SG-1000
-sc-3000,Sega SC-3000
-segaai,Sega AI Computer
-mastersystem,Sega Master System
-megadrive,Sega Mega Drive
-msu-md,Sega MSU-MD
-pico,Sega PICO
-beena,Sega Advanced Pico Beena
-sega32x,Sega 32x
-segacd,Sega CD
-saturn,Sega Saturn
-stv,Sega ST-V
-dreamcast,Sega Dreamcast
-model2,Sega Model 2
-model3,Sega Model 3
-gamegear,Sega Game Gear
-psx,Sony PlayStation 1
-ps2,Sony PlayStation 2
-psp,Sony PlayStation Portable
-cdi,Philips CD-i
-3do,Panasonic 3DO
-msx1,Panasonic MSX1
-msx2,Panasonic MSX2
-msx2+,Panasonic MSX2+
-msxturbor,Panasonic MSX TurboR
-pc60,NEC PC-6000
-pc80,NEC PC-8000
-pc88,NEC PC-8800
-pc98,NEC PC-9800
-pcengine,NEC PC Engine 1
-supergrafx,NEC PC Engine 2
-pcenginecd,NEC PC Engine CD
-pcfx,NEC PC-FX
-dos,Microsoft MS-DOS
-pet,Commodore PET
-cplus4,Commodore Plus-4
-vic10,Commodore VIC-10
-vic20,Commodore VIC-20
-c64,Commodore 64
-c128,Commodore 128
-amiga500,Commodore Amiga
-amiga1200,Commodore Amiga CD
-amigacdtv,Commodore Amiga CDTV
-amigacd32,Commodore Amiga CD32
-x1,Sharp X1
-x68000,Sharp X68000
-mz80k,Sharp MZ-80K
-mz700,Sharp MZ-700
-mz800,Sharp MZ-800
-mz2000,Sharp MZ-2000
-mz2500,Sharp MZ-2500
-mame,MAME Arcade
-vgmplay,VGMPlay
-fbneo,FinalBurn Neo
-neogeo,SNK Neo Geo AES
-neogeocd,SNK Neo Geo CD
-ngp,SNK Neo Geo Pocket
-ngpc,SNK Neo Geo Pocket Color
-mononcolor,M&D Monon Color
-gameking,TimeTop GameKing
-gameking3,TimeTop GameKing 3
-videobrain,VideoBrain FamilyComputer
-unichamp,Unisonic Champion 2711
-myvision,Nichibutsu My Vision
-entexsag,Entex Select-A-Game
-vii,Vii
+arduboy,Arduboy,Arduboy Inc - Arduboy
+uzebox,Uzebox,Uzebox
+commanderx16,Commander X16,Commander - X16
+vircon32,Vircon32,Vircon32
+pdp1,DEC PDP-1,PDP-1
+atari2600,Atari 2600,Atari - 2600
+atari5200,Atari 5200,Atari - 5200
+atari7800,Atari 7800,Atari - 7800
+atarijaguar,Atari Jaguar,Atari - Jaguar
+atarijaguarcd,Atari Jaguar CD,Atari - Jaguar
+atarilynx,Atari Lynx,Atari - Lynx
+atari800,Atari 800,Atari - 8-bit
+xegs,Atari XEGS,Atari - XEGS
+atarist,Atari ST,Atari - ST
+apple2,Apple II,Apple - II
+apple2gs,Apple IIGS,Apple - IIGS
+macintosh,Apple Macintosh,Apple - Macintosh
+channelf,Fairchild Channel F,Fairchild - Channel F
+vectrex,GCE Vectrex,GCE - Vectrex
+odyssey2,Magnavox Odyssey²,Magnavox - Odyssey2
+videopacplus,Magnavox Odyssey³,Philips - Videopac
+intellivision,Mattel Intellivision,Mattel - Intellivision
+colecovision,Coleco Colecovision,Coleco - ColecoVision
+adam,Coleco Adam,Coleco - Adam
+scv,Epoch Super Casette Vision,Epoch - Super Cassette Vision
+ctvboy,Gakken Compact Vision TV Boy,Gakken - Compact Vision TV Boy
+gamepock,Epoch Game Pocket Computer,Epoch - Game Pocket Computer
+supervision,Watara Supervision,Watara - Supervision
+sv8000,Bandai Super Vision 8000,Bandai - Super Vision 8000
+rx78,Bandai RX-78,Bandai - Gundam RX-78
+wonderswan,Bandai WonderSwan,Bandai - WonderSwan
+wonderswancolor,Bandai WonderSwan Color,Bandai - WonderSwan Color
+megaduck,Welback Mega Duck,Welback - Mega Duck
+gamate,Bitcorp Gamate,Bitcorp - Gamate
+gmaster,Hartung Game Master,Hartung - Game Master
+gamecom,Tiger Game.com,Tiger - Game.com
+gp32,GamePark GP32,GamePark - GP32
+bk,Elektronika BK,Elektronika - BK
+enterprise,Enterprise 64/128,Enterprise - Enterprise
+tvc,Videoton TV Computer,Enterprise - Enterprise
+amstradcpc,Amstrad CPC,Amstrad - CPC
+gx4000,Amstrad GX4000,Amstrad - GX4000
+pcw,Amstrad PCW,Amstrad - PCW
+zx80,Sinclair ZX80,Sinclair - ZX 80
+zx81,Sinclair ZX81,Sinclair - ZX 81
+zxspectrum,Sinclair ZX Spectrum,Sinclair - ZX Spectrum
+spectravideo,Spectravideo SV-318/SV-328,Spectravideo - SVI-318 - SVI-328
+samcoupe,SAM Coupé,MGT - Sam Coupe
+oric,Oric Atmos,Tangerine - Oric Atmos
+camplynx,Camputers Lynx,Camputers - Lynx
+astrocade,Bally Astrocade,Bally - Astrocade
+apfm1000,APF MP-1000,APF - MP-1000
+advision,Adventure Vision,Entex - Adventure Vision
+creativision,VTech CreatiVision,VTech - CreatiVision
+vsmile,VTech V.Smile,VTech - V.Smile
+laser310,VTech Laser,VTech - Laser 310
+socrates,VTech Socrates,VTech - Socrates
+arcadia,Emerson Arcadia 2001,Emerson - Arcadia 2001
+pv1000,Casio PV-1000,Casio - PV-1000
+pv2000,Casio PV-2000,Casio - PV-2000
+loopy,Casio Loopy,Casio - Loopy
+supracan,Super Acan,Funtech - Super Acan
+vc4000,Interton VC 4000,Interton - VC 4000
+multivision,Othello Multivision,Othello - Multivision
+cgenie,EACA Colour Genie,EACA - EG2000 Colour Genie
+trs80,Tandy TRS-80,Tandy - TRS-80
+coco,Tandy TRS-80 Color Computer,Tandy - TRS-80 Color Computer
+mc10,Tandy MC-10,Tandy - MC-10
+dragon64,Dragon 32/64,Dragon - Dragon 64
+vis,Tandy Video Information System,Tandy - Video Information System
+atom,Acorn Atom,Acorn - Atom
+bbcmicro,Acorn BBS,Acorn - BBC
+electron,Acorn Electron,Acorn - Electron
+archimedes,Acorn Archimedes,Acorn - Archimedes
+fm7,Fujitsu Micro 7,Fujitsu - Micro 7
+fmtowns,Fujitsu FM Towns,Fujitsu - FM Towns
+tutor,Tomy Tutor,Tomy - Tutor
+ti99,Texas Instruments TI-99/4A,Texas Instruments - TI-99
+thomson,Thomson MO/TO,Thomson - MOTO
+nes,Nintendo Entertainment System,Nintendo - Nintendo Entertainment System
+fds,Nintendo Family Disk System,Nintendo - Family Computer Disk System
+snes,Nintendo Super NES,Nintendo - Super Nintendo Entertainment System
+snes-msu1,Nintendo SNES MSU-1,Nintendo - Super Nintendo Entertainment System
+satellaview,Nintendo Satellaview,Nintendo - Satellaview
+sufami,Nintendo Sufami Turbo,Nintendo - Sufami Turbo
+sgb,Nintendo Super Game Boy,Nintendo - Game Boy
+sgb-msu1,Nintendo Game Boy MSU-1,Nintendo - Super Nintendo Entertainment System
+n64,Nintendo 64,Nintendo - Nintendo 64
+n64dd,Nintendo 64DD,Nintendo - Nintendo 64DD
+gc,Nintendo Gamecube,Nintendo - GameCube
+wii,Nintendo Wii,Nintendo - Wii
+pokemini,Nintendo Pokémon Mini,Nintendo - Pokemon Mini
+virtualboy,Nintendo Virtual Boy,Nintendo - Virtual Boy
+gb,Nintendo Game Boy,Nintendo - Game Boy
+gbc,Nintendo Game Boy Color,Nintendo - Game Boy Color
+gba,Nintendo Game Boy Advance,Nintendo - Game Boy Advance
+nds,Nintendo DS,Nintendo - Nintendo DS
+3ds,Nintendo 3DS,Nintendo - Nintendo 3DS
+wiiu,Nintendo Wii U,Nintendo - Wii U
+sg-1000,Sega SG-1000,Sega - SG-1000
+sc-3000,Sega SC-3000,Sega - SG-1000
+segaai,Sega AI Computer,Sega - AI Computer
+mastersystem,Sega Master System,Sega - Master System - Mark III
+megadrive,Sega Mega Drive,Sega - Mega Drive - Genesis
+msu-md,Sega MSU-MD,Sega - Mega Drive - Genesis
+pico,Sega PICO,Sega - PICO
+beena,Sega Advanced Pico Beena,Sega - Beena
+sega32x,Sega 32x,Sega - 32X
+segacd,Sega CD,Sega - Mega-CD - Sega CD
+saturn,Sega Saturn,Sega - Saturn
+stv,Sega ST-V,Sega - ST-V
+dreamcast,Sega Dreamcast,Sega - Dreamcast
+model2,Sega Model 2,MAME
+model3,Sega Model 3,MAME
+gamegear,Sega Game Gear,Sega - Game Gear
+psx,Sony PlayStation 1,Sony - PlayStation
+ps2,Sony PlayStation 2,Sony - PlayStation 2
+psp,Sony PlayStation Portable,Sony - PlayStation Portable
+cdi,Philips CD-i,Philips - CD-i
+3do,Panasonic 3DO,The 3DO Company - 3DO
+msx1,Panasonic MSX1,Microsoft - MSX
+msx2,Panasonic MSX2,Microsoft - MSX2
+msx2+,Panasonic MSX2+,Microsoft - MSX2
+msxturbor,Panasonic MSX TurboR,Microsoft - MSX2
+pc60,NEC PC-6000,NEC - PC-6000 - PC-6001
+pc80,NEC PC-8000,NEC - PC-8001 - PC-8801
+pc88,NEC PC-8800,NEC - PC-8001 - PC-8801
+pc98,NEC PC-9800,NEC - PC-98
+pcengine,NEC PC Engine 1,NEC - PC Engine - TurboGrafx 16
+supergrafx,NEC PC Engine 2,NEC - PC Engine SuperGrafx
+pcenginecd,NEC PC Engine CD,NEC - PC Engine CD - TurboGrafx-CD
+pcfx,NEC PC-FX,NEC - PC-FX
+dos,Microsoft MS-DOS,DOS
+pet,Commodore PET,Commodore - PET
+cplus4,Commodore Plus-4,Commodore - Plus-4
+vic10,Commodore VIC-10,Commodore - VIC-10
+vic20,Commodore VIC-20,Commodore - VIC-20
+c64,Commodore 64,Commodore - 64
+c128,Commodore 128,Commodore - 128
+amiga500,Commodore Amiga,Commodore - Amiga
+amiga1200,Commodore Amiga CD,Commodore - Amiga
+amigacdtv,Commodore Amiga CDTV,Commodore - CDTV
+amigacd32,Commodore Amiga CD32,Commodore - CD32
+x1,Sharp X1,Sharp - X1
+x68000,Sharp X68000,Sharp - X68000
+mz80k,Sharp MZ-80K,Sharp - MZ-80K
+mz700,Sharp MZ-700,Sharp - MZ-700
+mz800,Sharp MZ-800,Sharp - MZ-800
+mz2000,Sharp MZ-2000,Sharp - MZ-2000
+mz2500,Sharp MZ-2500,Sharp - MZ-2500
+mame,MAME Arcade,MAME
+vgmplay,VGMPlay,MAME
+fbneo,FinalBurn Neo,MAME
+neogeo,SNK Neo Geo AES,SNK - Neo Geo
+neogeocd,SNK Neo Geo CD,SNK - Neo Geo CD
+ngp,SNK Neo Geo Pocket,SNK - Neo Geo Pocket
+ngpc,SNK Neo Geo Pocket Color,SNK - Neo Geo Pocket Color
+mononcolor,M&D Monon Color,M&D - Monon Color
+gameking,TimeTop GameKing,TimeTop - GameKing
+gameking3,TimeTop GameKing 3,TimeTop - GameKing 3
+videobrain,VideoBrain FamilyComputer,VideoBrain - FamilyComputer
+unichamp,Unisonic Champion 2711,Unisonic - Champion 2711
+myvision,Nichibutsu My Vision,Nichibutsu - My Vision
+entexsag,Entex Select-A-Game,Entex - Select-A-Game
+vii,Vii,Vii
