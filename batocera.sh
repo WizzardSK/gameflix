@@ -5,9 +5,17 @@ for file in httpdirfs fuse-zip mount-zip; do [ ! -f /userdata/system/$file ] && 
 if [ ! -f /userdata/system/ratarmount-full ]; then wget -nv -O /userdata/system/ratarmount-full https://github.com/mxmlnkn/ratarmount/releases/download/v1.2.0/ratarmount-1.2.0-x86_64.AppImage; chmod +x /userdata/system/ratarmount-full; fi
 if [ ! -f /userdata/system/ratarmount ]; then wget -nv -O /userdata/system/ratarmount https://github.com/mxmlnkn/ratarmount/releases/download/v1.2.0/ratarmount-1.2.0-slim-x86_64.AppImage; chmod +x /userdata/system/ratarmount; fi
 if [ ! -f /userdata/system/configs/emulationstation/es_systems_voxatron.cfg ]; then wget -nv -O /userdata/system/configs/emulationstation/es_systems_voxatron.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems_voxatron.cfg; fi
-mkdir -p /userdata/system/configs/emulationstation/scripts/{game-selected,game-start}
+mkdir -p /userdata/system/configs/emulationstation/scripts/game-selected
 wget -nv -O /userdata/system/configs/emulationstation/scripts/game-selected/game.sh https://github.com/WizzardSK/gameflix/raw/main/batocera/game.sh > /dev/null 2>&1; chmod +x /userdata/system/configs/emulationstation/scripts/game-selected/game.sh
-printf '#!/bin/bash\nhead "$2" > /dev/null 2>&1\n' > /userdata/system/configs/emulationstation/scripts/game-start/head.sh; chmod +x /userdata/system/configs/emulationstation/scripts/game-start/head.sh
+cp /usr/bin/emulatorlauncher /usr/bin/emulatorlauncher.orig
+cat > /usr/bin/emulatorlauncher << 'WRAPPER'
+#!/bin/bash
+for i in $(seq 1 $#); do
+  if [ "${!i}" = "-rom" ]; then j=$((i+1)); head "${!j}" > /dev/null 2>&1; break; fi
+done
+exec /usr/bin/emulatorlauncher.orig "$@"
+WRAPPER
+chmod +x /usr/bin/emulatorlauncher
 wget -nv -O /usr/share/batocera/configgen/data/mame/messSystems.csv https://github.com/WizzardSK/gameflix/raw/main/batocera/messSystems.csv > /dev/null 2>&1
 for name in voxatron pico8; do [ ! -f /userdata/roms/$name/splore.png ] && wget -nv -O /userdata/roms/$name/splore.png https://github.com/WizzardSK/gameflix/raw/main/fantasy/$name.png; done
 touch /userdata/roms/tic80/surf.tic; mkdir /usr/lib/python3.12/site-packages/configgen/generators/tic80
