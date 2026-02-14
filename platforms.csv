@@ -872,13 +872,13 @@ neogeocd,TOSEC-ISO/SNK/Neo-Geo CD/Games/[ISO],ISO,neocd_libretro,cue
 neogeocd,MAME/Software List CHDs (merged)/neocd,CHD,mame neocdz -cdrm,
 ngp,No-Intro/SNK - NeoGeo Pocket,NoIntro,mednafen_ngp_libretro,
 ngp,TOSEC/SNK/Neo-Geo Pocket/Games,TOSEC,mednafen_ngp_libretro,
-ngp,MAME/Software List ROMs (merged)/ngp,Merged,mame ngp -cart,bin
-ngp,MAME/Software List ROMs (split)/ngp,Split,mame ngp -cart,bin
+ngp,MAME/Software List ROMs (merged)/ngp,Merged,mame ngp -cart,
+ngp,MAME/Software List ROMs (split)/ngp,Split,mame ngp -cart,
 ngp,FinalBurn Neo/ngp,FBN,mednafen_ngp_libretro,bin
 ngpc,No-Intro/SNK - NeoGeo Pocket Color,NoIntro,mednafen_ngp_libretro,
 ngpc,TOSEC/SNK/Neo-Geo Pocket Color/Games,TOSEC,mednafen_ngp_libretro,
-ngpc,MAME/Software List ROMs (merged)/ngpc,Merged,mame ngpc -cart,bin
-ngpc,MAME/Software List ROMs (split)/ngpc,Split,mame ngpc -cart,bin
+ngpc,MAME/Software List ROMs (merged)/ngpc,Merged,mame ngpc -cart,
+ngpc,MAME/Software List ROMs (split)/ngpc,Split,mame ngpc -cart,
 mononcolor,MAME/Software List ROMs (merged)/monon_color,Merged,mame mononcol -cart,
 mononcolor,MAME/Software List ROMs (split)/monon_color,Split,mame mononcol -cart,
 gameking,MAME/Software List ROMs (merged)/gameking,Merged,mame gameking -cart,
