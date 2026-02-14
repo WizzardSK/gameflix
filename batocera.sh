@@ -16,6 +16,13 @@ done
 exec /usr/bin/emulatorlauncher.orig "$@"
 WRAPPER
 chmod +x /usr/bin/emulatorlauncher
+cp /userdata/system/mount-zip /userdata/system/mount-zip.orig
+cat > /userdata/system/mount-zip << 'WRAPPER'
+#!/bin/bash
+head "$1" > /dev/null 2>&1
+exec /userdata/system/mount-zip.orig "$@"
+WRAPPER
+chmod +x /userdata/system/mount-zip
 wget -nv -O /usr/share/batocera/configgen/data/mame/messSystems.csv https://github.com/WizzardSK/gameflix/raw/main/batocera/messSystems.csv > /dev/null 2>&1
 for name in voxatron pico8; do [ ! -f /userdata/roms/$name/splore.png ] && wget -nv -O /userdata/roms/$name/splore.png https://github.com/WizzardSK/gameflix/raw/main/fantasy/$name.png; done
 touch /userdata/roms/tic80/surf.tic; mkdir /usr/lib/python3.12/site-packages/configgen/generators/tic80
