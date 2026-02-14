@@ -879,15 +879,19 @@ ngpc;No-Intro/SNK - NeoGeo Pocket Color;SNK - Neo Geo Pocket Color;NGP Color NoI
 ngpc;TOSEC/SNK/Neo-Geo Pocket Color/Games;SNK - Neo Geo Pocket Color;NGP Color TOSEC;mednafen_ngp_libretro;
 ngpc;MAME/Software List ROMs (merged)/ngpc;SNK - Neo Geo Pocket Color;NGP Color Merged;mame ngpc -cart;bin
 ngpc;MAME/Software List ROMs (split)/ngpc;SNK - Neo Geo Pocket Color;NGP Color Split;mame ngpc -cart;bin
-mononcolor;MAME/Software List ROMs (merged)/monon_color;M&D - Monon Color;Monon Color Merged;mame mononcol -cart;bin
-mononcolor;MAME/Software List ROMs (split)/monon_color;M&D - Monon Color;Monon Color Split;mame mononcol -cart;bin
-gameking;MAME/Software List ROMs (merged)/gameking;TimeTop - GameKing;GameKing Merged;mame gameking -cart;bin
-gameking;MAME/Software List ROMs (split)/gameking;TimeTop - GameKing;GameKing Split;mame gameking -cart;bin
-gameking3;MAME/Software List ROMs (merged)/gameking3;TimeTop - GameKing 3;GameKing 3 Merged;mame gamekin3 -cart;bin
-gameking3;MAME/Software List ROMs (split)/gameking3;TimeTop - GameKing 3;GameKing 3 Split;mame gamekin3 -cart;bin
-videobrain;MAME/Software List ROMs (merged)/vidbrain;VideoBrain - FamilyComputer;VideoBrain Merged;mame vidbrain -cart;bin
-videobrain;MAME/Software List ROMs (split)/vidbrain;VideoBrain - FamilyComputer;VideoBrain Split;mame vidbrain -cart;bin
-unichamp;MAME/Software List ROMs (merged)/unichamp;Unisonic - Champion 2711;Unisonic Champion Merged;mame unichamp -cart;bin
-unichamp;MAME/Software List ROMs (split)/unichamp;Unisonic - Champion 2711;Unisonic Champion Split;mame unichamp -cart;bin
-myvision;MAME/Software List ROMs (merged)/myvision;Nichibutsu - My Vision;My Vision Merged;mame myvision -cart;bin
-myvision;MAME/Software List ROMs (split)/myvision;Nichibutsu - My Vision;My Vision Split;mame myvision -cart;bin
+mononcolor;MAME/Software List ROMs (merged)/monon_color;M&D - Monon Color;Monon Color Merged;mame mononcol -cart;
+mononcolor;MAME/Software List ROMs (split)/monon_color;M&D - Monon Color;Monon Color Split;mame mononcol -cart;
+gameking;MAME/Software List ROMs (merged)/gameking;TimeTop - GameKing;GameKing Merged;mame gameking -cart;
+gameking;MAME/Software List ROMs (split)/gameking;TimeTop - GameKing;GameKing Split;mame gameking -cart;
+gameking3;MAME/Software List ROMs (merged)/gameking3;TimeTop - GameKing 3;GameKing 3 Merged;mame gamekin3 -cart;
+gameking3;MAME/Software List ROMs (split)/gameking3;TimeTop - GameKing 3;GameKing 3 Split;mame gamekin3 -cart;
+videobrain;MAME/Software List ROMs (merged)/vidbrain;VideoBrain - FamilyComputer;VideoBrain Merged;mame vidbrain -cart;
+videobrain;MAME/Software List ROMs (split)/vidbrain;VideoBrain - FamilyComputer;VideoBrain Split;mame vidbrain -cart;
+unichamp;MAME/Software List ROMs (merged)/unichamp;Unisonic - Champion 2711;Unisonic Champion Merged;mame unichamp -cart;
+unichamp;MAME/Software List ROMs (split)/unichamp;Unisonic - Champion 2711;Unisonic Champion Split;mame unichamp -cart;
+myvision;MAME/Software List ROMs (merged)/myvision;Nichibutsu - My Vision;My Vision Merged;mame myvision -cart;
+myvision;MAME/Software List ROMs (split)/myvision;Nichibutsu - My Vision;My Vision Split;mame myvision -cart;
+entexsag;MAME/Software List ROMs (merged)/entex_sag;Entex - Select-A-Game;Select-A-Game Merged;mame sag -cart;
+entexsag;MAME/Software List ROMs (split)/entex_sag;Entex - Select-A-Game;Select-A-Game Split;mame sag -cart;
+vii;MAME/Software List ROMs (merged)/vii;Vii;Vii Merged;mame vii -cart;
+vii;MAME/Software List ROMs (split)/vii;Vii;Vii Split;mame vii -cart;
