@@ -889,5 +889,5 @@ videobrain;MAME/Software List ROMs (merged)/vidbrain;VideoBrain - FamilyComputer
 videobrain;MAME/Software List ROMs (split)/vidbrain;VideoBrain - FamilyComputer;VideoBrain Split;mame vidbrain -cart;bin
 unichamp;MAME/Software List ROMs (merged)/unichamp;Unisonic - Champion 2711;Unisonic Champion Merged;mame unichamp -cart;bin
 unichamp;MAME/Software List ROMs (split)/unichamp;Unisonic - Champion 2711;Unisonic Champion Split;mame unichamp -cart;bin
-svmu;MAME/Software List ROMs (merged)/svmu;Sega - Visual Memory Unit;Sega VMU Merged;mame svmu -quik;vms
-svmu;MAME/Software List ROMs (split)/svmu;Sega - Visual Memory Unit;Sega VMU Split;mame svmu -quik;vms
+myvision;MAME/Software List ROMs (merged)/myvision;Nichibutsu - My Vision;My Vision Merged;mame myvision -cart;bin
+myvision;MAME/Software List ROMs (split)/myvision;Nichibutsu - My Vision;My Vision Split;mame myvision -cart;bin
