@@ -563,6 +563,7 @@ sega32x,MAME/Software List ROMs (merged)/32x,Merged,mame 32x -cart,
 sega32x,MAME/Software List ROMs (split)/32x,Split,mame 32x -cart,
 segacd,Redump/Sega - Mega CD & Sega CD,Redump,picodrive_libretro,cue
 segacd,TOSEC-ISO/Sega/Mega-CD & Sega CD/CD/Games/[ISO],ISO,picodrive_libretro,cue
+segacd,No-Intro/Non-Redump - Sega - Sega Mega CD + Sega CD,NonRedump,picodrive_libretro,cue
 segacd,MAME/Software List CHDs (merged)/megacd,CHD,mame segacd -cdrm,
 saturn,Redump/Sega - Saturn,Redump,yabasanshiro_libretro,cue
 saturn,No-Intro/Non-Redump - Sega - Sega Saturn,NonRedump,yabasanshiro_libretro,cue
@@ -661,6 +662,7 @@ supergrafx,MAME/Software List ROMs (split)/sgx,Split,mame sgx -cart,
 supergrafx,FinalBurn Neo/sgx,FBN,mednafen_supergrafx_libretro,
 pcenginecd,Redump/NEC - PC Engine CD & TurboGrafx CD,Redump,mednafen_pce_fast_libretro,cue
 pcenginecd,TOSEC-ISO/NEC/PC-Engine CD & TurboGrafx-16 CD/Games/[IMG],ISO,mednafen_pce_fast_libretro,cue
+pcenginecd,No-Intro/Non-Redump - NEC - PC Engine CD + TurboGrafx CD,NonRedump,mednafen_pce_fast_libretro,cue
 pcenginecd,MAME/Software List CHDs (merged)/pcecd,CHD,mame pce -cdrm,
 pcfx,Redump/NEC - PC-FX & PC-FXGA,Redump,mednafen_pcfx_libretro,cue
 pcfx,TOSEC-ISO/NEC/PC-FX/Games,ISO,mednafen_pcfx_libretro,cue
