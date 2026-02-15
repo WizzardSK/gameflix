@@ -136,6 +136,9 @@ supergrafx,NEC PC Engine 2,NEC - PC Engine SuperGrafx
 pcenginecd,NEC PC Engine CD,NEC - PC Engine CD - TurboGrafx-CD
 pcfx,NEC PC-FX,NEC - PC-FX
 dos,Microsoft MS-DOS,DOS
+ibm5150,IBM PC 5150,DOS
+ibm5170,IBM PC/AT 5170,DOS
+ibmpcjr,IBM PCjr,DOS
 pet,Commodore PET,Commodore - PET
 cplus4,Commodore Plus-4,Commodore - Plus-4
 vic10,Commodore VIC-10,Commodore - VIC-10
