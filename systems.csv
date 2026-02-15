@@ -12,8 +12,12 @@ atarilynx,Atari Lynx,Atari - Lynx
 atari800,Atari 800,Atari - 8-bit
 xegs,Atari XEGS,Atari - XEGS
 atarist,Atari ST,Atari - ST
+apple1,Apple I,Apple - I
 apple2,Apple II,Apple - II
 apple2gs,Apple IIGS,Apple - IIGS
+apple3,Apple III,Apple - III
+lisa,Apple Lisa,Apple - Lisa
+lisa2,Apple Lisa 2,Apple - Lisa
 macintosh,Apple Macintosh,Apple - Macintosh
 channelf,Fairchild Channel F,Fairchild - Channel F
 vectrex,GCE Vectrex,GCE - Vectrex
@@ -44,6 +48,7 @@ pcw,Amstrad PCW,Amstrad - PCW
 zx80,Sinclair ZX80,Sinclair - ZX 80
 zx81,Sinclair ZX81,Sinclair - ZX 81
 zxspectrum,Sinclair ZX Spectrum,Sinclair - ZX Spectrum
+ql,Sinclair QL,Sinclair - QL
 spectravideo,Spectravideo SV-318/SV-328,Spectravideo - SVI-318 - SVI-328
 samcoupe,SAM Coupé,MGT - Sam Coupe
 oric,Oric Atmos,Tangerine - Oric Atmos
