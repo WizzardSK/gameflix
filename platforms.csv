@@ -1,3 +1,4 @@
+platform,path,display_name,emulator_command,extension
 arduboy,No-Intro/Arduboy Inc - Arduboy,NoIntro,arduous_libretro,
 arduboy,TOSEC/Arduboy/Arduboy/Games/[HEX],TOSEC,arduous_libretro,
 uzebox,MAME/Software List ROMs (merged)/uzebox,Merged,mame uzebox -cart,
