@@ -975,3 +975,5 @@ mtx,MAME/Software List ROMs (merged)/mtx_flop,Flop Merged,mame mtx512 -exp_ext s
 mtx,MAME/Software List ROMs (split)/mtx_flop,Flop Split,mame mtx512 -exp_ext sdxbas -flop1,
 mtx,MAME/Software List ROMs (merged)/mtx_rom,ROM Merged,mame mtx512 -rom,
 mtx,MAME/Software List ROMs (split)/mtx_rom,ROM Split,mame mtx512 -rom,
+pmd85,MAME/Software List ROMs (merged)/pmd85_cass,Merged,mame pmd851 -autoboot_command 'MGLD 00\n' -autoboot_delay 3 -cass,
+pmd85,MAME/Software List ROMs (split)/pmd85_cass,Split,mame pmd851 -autoboot_command 'MGLD 00\n' -autoboot_delay 3 -cass,
