@@ -602,6 +602,8 @@ gamegear,TOSEC/Sega/Game Gear/Games,TOSEC,gearsystem_libretro,
 gamegear,MAME/Software List ROMs (merged)/gamegear,Merged,mame gamegear -cart,
 gamegear,MAME/Software List ROMs (split)/gamegear,Split,mame gamegear -cart,
 gamegear,FinalBurn Neo/gamegear,FBN,gearsystem_libretro,
+smc777,MAME/Software List ROMs (merged)/smc777,Merged,mame smc777 -flop1,
+smc777,MAME/Software List ROMs (split)/smc777,Split,mame smc777 -flop1,
 psx,Redump/Sony - PlayStation,Redump,pcsx_rearmed_libretro,cue
 psx,No-Intro/Non-Redump - Sony - PlayStation,NonRedump,pcsx_rearmed_libretro,cue
 psx,MAME/Software List CHDs (merged)/psx,CHD,mame psu -cdrm,
