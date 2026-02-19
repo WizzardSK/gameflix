@@ -6,14 +6,27 @@ filterInput.focus();
 
 var navlinksDiv = document.getElementById('navlinks');
 var sectionHeaders = document.querySelectorAll('.section-header');
+
 if (sectionHeaders.length > 1 && navlinksDiv) {
     sectionHeaders.forEach(function(header) {
         var link = document.createElement('a');
-        link.href = '#' + header.id;
+        link.href = '#';
         link.textContent = header.id;
         link.className = 'navlink';
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var topbarHeight = document.getElementById('topbar').offsetHeight;
+            var headerTop = header.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({ top: headerTop - topbarHeight, behavior: 'smooth' });
+        });
         navlinksDiv.appendChild(link);
     });
+}
+
+// Push first section header below the fixed topbar (after navlinks are added)
+if (sectionHeaders.length > 0) {
+    var topbarHeight = document.getElementById('topbar').offsetHeight;
+    sectionHeaders[0].style.marginTop = topbarHeight + 'px';
 }
 let timerId;
 filterInput.addEventListener('input', function () {

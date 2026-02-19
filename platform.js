@@ -25,7 +25,7 @@ src="https://github.com/WizzardSK/es-theme-carbon/raw/refs/heads/master/art/logo
 <input type=\"checkbox\" id=\"showHidePirate\"><label for=\"showHidePirate\">Pirate</label>
 <input type=\"checkbox\" id=\"showHideBrackets\"><label for=\"showHideBrackets\">[a][b]</label>
 <input type=\"checkbox\" id=\"showHideDisk\"><label for=\"showHideDisk\">[disk2]</label>
-<div id="navlinks"></div></div><br /><br /><br />`;
+<div id="navlinks"></div></div>`;
 
 document.write(text);
 function bgImage(platform) { document.write(`<style> figure { background-image: url('https://raw.githubusercontent.com/WizzardSK/es-theme-carbon/master/art/consoles/${platform}.png'); } </style>`); }
