@@ -3,6 +3,18 @@ const figureList = document.getElementsByClassName('figureList');
 const figures = document.querySelectorAll('.figureList figure');
 var size = 160;
 filterInput.focus();
+
+var navlinksDiv = document.getElementById('navlinks');
+var sectionHeaders = document.querySelectorAll('.section-header');
+if (sectionHeaders.length > 1 && navlinksDiv) {
+    sectionHeaders.forEach(function(header) {
+        var link = document.createElement('a');
+        link.href = '#' + header.id;
+        link.textContent = header.id;
+        link.className = 'navlink';
+        navlinksDiv.appendChild(link);
+    });
+}
 let timerId;
 filterInput.addEventListener('input', function () {
     clearTimeout(timerId);

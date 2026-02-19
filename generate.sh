@@ -67,13 +67,13 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ "$rom3" != "${rom[0]}" ]]; then
     echo ${rom[6]}; echo "<script src="script.js"></script><script src="script2.js"></script>" >> ~/gameflix/${rom3}.html;
     cp platform.html ~/gameflix/${rom[0]}.html
-    echo -e "${rom[2]}\n<script>bgImage(\"${rom[0]}\")\nfileNames = [" >> ~/gameflix/${rom[0]}.html
+    echo -e "<h3 id=\"${rom[2]}\" class=\"section-header\">${rom[2]}</h3>\n<script>bgImage(\"${rom[0]}\")\nfileNames = [" >> ~/gameflix/${rom[0]}.html
     if [ -n "$rom3" ]; then 
       echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/"${rom3}".jpg'><figcaption>${rom6}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html;
       echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; ((platforms++));
     fi
     pocet=0; 
-  else echo -e "<br><br>${rom[2]}\n<script>bgImage(\"${rom3}\")\nfileNames = [" >> ~/gameflix/${rom3}.html; fi
+  else echo -e "<h3 id=\"${rom[2]}\" class=\"section-header\">${rom[2]}</h3>\n<script>bgImage(\"${rom3}\")\nfileNames = [" >> ~/gameflix/${rom3}.html; fi
   rom3="${rom[0]}"; rom6="${rom[6]}"; 
   mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}";
   foldername=$(sed 's/<[^>]*>//g' <<< "${rom[2]}");
