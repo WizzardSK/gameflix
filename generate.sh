@@ -150,5 +150,6 @@ for k in "${!gamelist_started[@]}"; do
   echo "</gameList>" >> ~/gamelists/${k}/gamelist.xml
 done
 
+echo '<script>document.querySelectorAll("img").forEach(function(i){if(i.complete)i.classList.add("loaded");else i.onload=function(){this.classList.add("loaded")}})</script>' >> ~/gameflix/main.html
 cat retroarch.end >> ~/gameflix/retroarch.sh; cp favicon.png ~/gameflix/
 chmod +x ~/gameflix/retroarch.sh; echo "<p><b>Total: $total</b>" >> ~/gameflix/systems.html; echo "<p><b>Platforms: $platforms</b>" >> ~/gameflix/systems.html
