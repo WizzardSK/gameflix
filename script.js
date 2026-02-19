@@ -29,9 +29,13 @@ if (sectionHeaders.length > 1 && navlinksDiv) {
     });
 }
 
-// Push first section header below the fixed topbar (after navlinks are added)
+// Push first content below the fixed topbar (after navlinks are added)
+var topbarHeight = document.getElementById('topbar').offsetHeight + 'px';
 if (sectionHeaders.length > 0) {
-    sectionHeaders[0].style.marginTop = document.getElementById('topbar').offsetHeight + 'px';
+    sectionHeaders[0].style.marginTop = topbarHeight;
+} else {
+    var firstList = document.querySelector('.figureList');
+    if (firstList) firstList.style.marginTop = topbarHeight;
 }
 
 // Checkbox definitions
