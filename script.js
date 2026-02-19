@@ -4,9 +4,9 @@ const pocetEl = document.getElementById('pocet');
 filterInput.focus();
 
 // Cache figcaption texts for faster filtering
-const captionTexts = [];
-for (let i = 0; i < figures.length; i++) {
-    captionTexts.push(figures[i].getElementsByTagName('figcaption')[0].textContent.toLowerCase());
+var captionTexts = new Array(figures.length);
+for (var i = 0; i < figures.length; i++) {
+    captionTexts[i] = figures[i].getElementsByTagName('figcaption')[0].textContent.toLowerCase();
 }
 
 // Navlinks
@@ -50,16 +50,23 @@ var checkboxes = [
     [showHideDisk, /\((disk|side)( [2-9b-z].*)\)/]
 ];
 
-function fireAllCheckboxes() {
-    for (var i = 0; i < checkboxes.length; i++) {
-        checkboxes[i][0].dispatchEvent(new Event('change'));
-    }
-}
-
-function updateCount() {
+// Single-pass filter: applies text filter + all checkbox rules at once
+function applyFilters() {
+    var filterText = filterInput.value.toLowerCase();
     var count = 0;
     for (var i = 0; i < figures.length; i++) {
-        if (figures[i].style.display !== 'none') count++;
+        var text = captionTexts[i];
+        var visible = text.includes(filterText);
+        if (visible) {
+            for (var c = 0; c < checkboxes.length; c++) {
+                if (!checkboxes[c][0].checked && checkboxes[c][1].test(text)) {
+                    visible = false;
+                    break;
+                }
+            }
+        }
+        figures[i].style.display = visible ? '' : 'none';
+        if (visible) count++;
     }
     pocetEl.innerHTML = count + "/" + figures.length;
 }
@@ -68,36 +75,19 @@ function updateCount() {
 var timerId;
 filterInput.addEventListener('input', function () {
     clearTimeout(timerId);
-    var filterText = filterInput.value.toLowerCase();
-    timerId = setTimeout(function() {
-        for (var i = 0; i < figures.length; i++) {
-            figures[i].style.display = captionTexts[i].includes(filterText) ? '' : 'none';
-        }
-        fireAllCheckboxes();
-    }, 1000);
+    timerId = setTimeout(applyFilters, 1000);
 });
 
-// Checkbox change handlers with pre-compiled regex
+// Checkbox change triggers refilter
 for (var c = 0; c < checkboxes.length; c++) {
-    (function(checkbox, regex) {
-        checkbox.addEventListener('change', function () {
-            var filterText = filterInput.value.toLowerCase();
-            for (var i = 0; i < figures.length; i++) {
-                if (regex.test(captionTexts[i]) && captionTexts[i].includes(filterText)) {
-                    figures[i].style.display = checkbox.checked ? '' : 'none';
-                }
-            }
-            updateCount();
-        });
-    })(checkboxes[c][0], checkboxes[c][1]);
+    checkboxes[c][0].addEventListener('change', applyFilters);
 }
 
 // Escape key resets filter
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         filterInput.value = '';
-        filterInput.dispatchEvent(new Event('input'));
-        fireAllCheckboxes();
+        applyFilters();
     } else { filterInput.focus(); }
 });
 
@@ -113,11 +103,6 @@ function changeSize(size) {
         figurky[i].style.fontSize = Math.round(size / 13.3) + 'px';
     }
 }
-function change80() { changeSize(80); }
-function change120() { changeSize(120); }
-function change160() { changeSize(160); }
-function change240() { changeSize(240); }
-function change320() { changeSize(320); }
 
 // Image type switching
 var replaceMap = {
@@ -134,12 +119,8 @@ function processImages(operation) {
         obrazky[i].src = obrazky[i].src.replace(map.from, map.to);
     }
 }
-function boxarts() { processImages('boxarts'); }
-function snaps() { processImages('snaps'); }
-function titles() { processImages('titles'); }
-function logos() { processImages('logos'); }
 
-// Image error handling + loaded class (merged from script2.js)
+// Image error handling + loaded class
 var obrazky = document.querySelectorAll("img");
 for (var i = 0; i < obrazky.length; i++) {
     obrazky[i].onerror = function() { this.style.visibility = "hidden"; };
@@ -147,5 +128,5 @@ for (var i = 0; i < obrazky.length; i++) {
     else { obrazky[i].addEventListener('load', function() { this.classList.add('loaded'); }); }
 }
 
-// Initial checkbox state
-fireAllCheckboxes();
+// Initial filter
+applyFilters();
