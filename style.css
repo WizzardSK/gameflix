@@ -4,9 +4,9 @@ img    { width: 160px; height: 120px; object-fit: contain; background-color: #33
 img.loaded { opacity: 1; }
 figure:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(0, 0, 0, 1) }
 figure:active { transform: scale(1.1) translateY(10px) translateX(10px) }
-#topbar { position: fixed; top: 0; left: 0; width: 100%; background-color: #333333; z-index: 999; padding-top: 5px; }
+#topbar { position: fixed; top: 0; left: 0; width: 100%; background-color: #333333; z-index: 999; padding: 5px 0 10px 0; }
 a { color: cyan; text-decoration: none }
-.section-header { color: white; font-size: 14pt; margin: 5px 0 3px 0; padding-top: 5px }
+.section-header { color: white; font-size: 14pt; margin: 0 0 3px 0 }
 .navlink { display: inline-block; margin: 2px 5px; padding: 3px 8px; background-color: #555; color: cyan; border-radius: 4px; font-size: 10pt }
 .navlink:hover { background-color: #777 }
 #navlinks { margin-top: 3px; clear: left }
