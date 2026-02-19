@@ -97,14 +97,15 @@ document.addEventListener('keydown', function (event) {
 
 // Size change
 function changeSize(size) {
-    var obrazky = document.getElementsByTagName('img');
-    var figurky = document.getElementsByTagName('figure');
-    for (var i = 0; i < obrazky.length; i++) {
-        obrazky[i].style.width = size;
-        obrazky[i].style.height = (size / 1.333) + 'px';
+    var figurky = document.querySelectorAll('.figureList figure');
+    var h = (size / 1.333) + 'px';
+    var fs = Math.round(size / 13.3) + 'px';
+    for (var i = 0; i < figurky.length; i++) {
         figurky[i].style.width = size;
         figurky[i].style.height = size + 'px';
-        figurky[i].style.fontSize = Math.round(size / 13.3) + 'px';
+        figurky[i].style.fontSize = fs;
+        figurky[i].querySelector('img').style.width = size;
+        figurky[i].querySelector('img').style.height = h;
     }
 }
 
