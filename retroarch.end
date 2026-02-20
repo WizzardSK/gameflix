@@ -10,6 +10,7 @@ fi
 case "$1" in */ti99_cart/*|*/vic10/*|*/stv/*|*/myvision/*|*/ibm5150/*|*/ibm5170/*|*/ibmpcjr_cart/*|*/ibmpcjr_flop/*) rompath="$(dirname "$1");$HOME/share/bios"; rom="$(basename "${1%.*}")";; esac
 
 if [[ "$core" == *"mame"* ]]; then
+  core=$(echo "$core" | sed -E 's|(-hard[0-9]+) ([a-z0-9_]+):([a-z0-9_]+)|\1 '"$HOME"'/share/bios/\2/\3/\3.chd|g')
   filename="${rom##*/}"; basename="${filename%.*}"
   eval "cmd=($core)"
   "${cmd[@]}" "${rom}" ${rompath:+-rompath "$rompath"} -skip_gameinfo -snapname "${basename}"
