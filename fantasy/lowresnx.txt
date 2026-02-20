@@ -580,10 +580,10 @@
 2249	Power Poker game	7eWyhPegNu_Power_Poker_0.4.png	7eWyhPegNu_Power_Poker_0.4.nx
 2246	HUNGEE FROG	RP4w4Q5B3g_D8AAE8C839574D6CB6A7E61CB9E72D1A.jpeg	RP4w4Q5B3g_HUNGEE_FROGCurrent12122.nx
 2244	Sprite Draw	LhGR8xjnkZ_Sprite_Draw.png	LhGR8xjnkZ_Sprite_Draw.nx
-2243			
-2242			
-2240			
-2239			
+2243	Swipey Yatzey game	GDNUZ8oRGk_Swipy_Yatchy.png	GDNUZ8oRGk_Swipy_Yatchy.nx
+2242	Swipe Demo	NVAvCx563t_Swipe_Demo.png	NVAvCx563t_Swipe_Demo.nx
+2240	Happy Newyears 2022	LjyDUEhFNV_Happy_Newyears_2022.png	LjyDUEhFNV_Happy_Newyears_2022.nx
+2239	Balls O’ Steel	pDoCjzZ2Dc_BallsOSteel.png	pDoCjzZ2Dc_BallsOSteel.nx
 2236	Sheet Music Editor 2	L85Xd3o8Qd_Sheet_Music_Editor_2.01.png	L85Xd3o8Qd_Sheet_Music_Editor_2.01.nx
 2233	Santa Assault	TSxC5wCsrK_Santa_Assult.png	TSxC5wCsrK_Santa_Assult.nx
 2231	C.T.A.	JuY8uCi8zn_Grit.png	JuY8uCi8zn_Grit.nx
