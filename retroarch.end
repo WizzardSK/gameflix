@@ -7,12 +7,12 @@ else
   rom="$1"
 fi
 
-case "$1" in */ti99_cart/*|*/vic10/*|*/stv/*|*/myvision/*|*/ibm5150/*|*/ibm5170/*|*/ibmpcjr_cart/*|*/ibmpcjr_flop/*) rom="$(basename "${1%.*}")";; esac
+case "$1" in */ti99_cart/*|*/vic10/*|*/stv/*|*/myvision/*|*/ibm5150/*|*/ibm5170/*|*/ibmpcjr_cart/*|*/ibmpcjr_flop/*) rompath="$(dirname "$1")"; rom="$(basename "${1%.*}")";; esac
 
 if [[ "$core" == *"mame"* ]]; then
   filename="${rom##*/}"; basename="${filename%.*}"
   eval "cmd=($core)"
-  "${cmd[@]}" "${rom}" -skip_gameinfo -snapname "${basename}"
+  "${cmd[@]}" "${rom}" ${rompath:+-rompath "$rompath"} -skip_gameinfo -snapname "${basename}"
   exit
 fi
 
