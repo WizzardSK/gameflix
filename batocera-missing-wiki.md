@@ -38,11 +38,6 @@ Zdroj: `es_systems.yml` (master branch) vs wiki.batocera.org/systems
 | `j2me` | Java 2 Micro Edition |
 | `ngage` | Nokia N-Gage |
 
-### Konzoly / handheldy (2)
-| Systém | Názov |
-|---|---|
-| `vemulator` | Dreamcast VMU |
-
 ### Interné / ostatné (5)
 | Systém | Názov |
 |---|---|
