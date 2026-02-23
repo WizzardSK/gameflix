@@ -32,12 +32,6 @@ Zdroj: `es_systems.yml` (master branch) vs wiki.batocera.org/systems
 | `uqm` | Ur-Quan Masters (Star Control II) |
 | `zc210` | Zelda Classic |
 
-### Arcade systémy (2)
-| Systém | Názov |
-|---|---|
-| `chihiro` | Sega Chihiro |
-| `namco22` | Namco System 22 |
-
 ### Mobilné platformy (2)
 | Systém | Názov |
 |---|---|
@@ -47,7 +41,6 @@ Zdroj: `es_systems.yml` (master branch) vs wiki.batocera.org/systems
 ### Konzoly / handheldy (2)
 | Systém | Názov |
 |---|---|
-| `switch` | Nintendo Switch |
 | `vemulator` | Dreamcast VMU |
 
 ### Interné / ostatné (5)
