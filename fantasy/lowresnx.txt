@@ -1,3 +1,4 @@
+3960	Sirtet	8SGa7WJZz8_Sirtet.png	8SGa7WJZz8_Sirtet.nx
 3949	Catch Naano	7Jugsad4SP_Catch_NAANO_2.png	7Jugsad4SP_Catch_NAANO_2.nx
 3938	Gauntlet484	uTk5eErPL9_LowRes_NX_20260121_22_25_10.png	uTk5eErPL9_Gauntlet484.nx
 3937	In Dream	YwEjFC9LAV_In_Dream.png	YwEjFC9LAV_In_Dream.nx
@@ -444,10 +445,10 @@
 2617	Easy Pokémon 	86H3sk77am_Easy_Pokemon.png	86H3sk77am_Easy_Pokemon.nx
 2616	PERMINE	heLAa6ecwu_16ACDC3620F346E888FDA19A0BB77137.jpeg	heLAa6ecwu_Permine_Radioactive_1.5.nx
 2611	Super Mario Bros. Demo	nJswoMSF6b_MarioGame.png	nJswoMSF6b_MarioGame.nx
-2610	Hexa Lights Out game	mCKyXzBj8D_Hexa_Lights_Out.png	mCKyXzBj8D_Hexa_Lights_Out.nx
-2609	Vehicle Builder	fpLrZ7rMS3_Build_Rotated_Characters.png	fpLrZ7rMS3_Build_Rotated_Characters.nx
-2606	non suspicious platformer	HDA28zNHVg_B649330F7611429A9301AD2B2F9899EC.jpeg	HDA28zNHVg_Mario_NX.nx
-2604	Bubble Pop game	6JwzEueugQ_Bubble_Pop.png	6JwzEueugQ_Bubble_Pop.nx
+2610			
+2609			
+2606			
+2604			
 2599	Shall we play a game?	ATMzCT7AAL_PNG_image.png	ATMzCT7AAL_Joshua.nx
 2596	WhyCity	5BF8b2qDKq_PNG_image.png	5BF8b2qDKq_WhyCity.nx
 2595	A puzzle text adventure 	GigwsFEjP2_PNG_image.png	GigwsFEjP2_Copy_of_New_Text_Adventure.nx
