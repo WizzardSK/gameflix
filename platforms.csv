@@ -1044,3 +1044,4 @@ super80,MAME/Software List ROMs (split)/super80_cass,Cass Split,mame super80 -ca
 super80,MAME/Software List ROMs (merged)/super80_flop,Flop Merged,mame super80r -flop1,
 super80,MAME/Software List ROMs (split)/super80_flop,Flop Split,mame super80r -flop1,
 j2me,No-Intro/Mobile - J2ME,NoIntro,freej2me_libretro,jar
+palm,No-Intro/Mobile - Palm OS (Digital),NoIntro,mu_libretro,prc
