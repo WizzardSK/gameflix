@@ -175,9 +175,69 @@
 3329	LowRes nx bird	HDkRmVzKCP_Game.png	HDkRmVzKCP_Game.nx
 3327	Twisted Pong: Pac-Man Pong	AgL8SMRpav_LowRes_NX_20240424_18_33_15.png	AgL8SMRpav_PacMan_Pong.nx
 3324	Enpleinevue 	CCcpktVWf3_Enpleinevue_1.2.png	CCcpktVWf3_Enpleinevue_1.2.nx
-3323			
-3321			
-3312			
+3323	Twisted Pong: Apple Harvest	ULM9pKZzvz_Twisted_Pong_Apple_Tree_0.4.png	ULM9pKZzvz_Twisted_Pong_Apple_Tree_0.4.nx
+3321	Twisted Pong: Space Invaders	wCHbqdD9dj_Twisted_Pong_Space_Invaders_1.0.png	wCHbqdD9dj_Twisted_Pong_Space_Invaders_1.0.nx
+3312	Poker Yatzee	k8X4PmvW3t_Poker_Yatzee__.png	k8X4PmvW3t_Poker_Yatzee__.nx
+3311	 Untitled	D6jcwQmLHX_.nx.png	D6jcwQmLHX_.nx
+3310	Shuk’s Challenge #2	NxyY8Y8Rqp_Shuks_Challenge_2_3.png	NxyY8Y8Rqp_Shuks_Challenge_2_3.nx
+3306	Shuk’s Challenges #1	t2rRxhJBMv_Made_it_shorter_3.png	t2rRxhJBMv_Made_it_shorter_3.nx
+3305	Tap&#039;N&#039;Drag toy	xDxjNffMrj_Whatta_Drag.png	xDxjNffMrj_Whatta_Drag.nx
+3304	Crazy Pong	m4nyFT3sew_Crazy_Pong.png	m4nyFT3sew_Crazy_Pong.nx
+3303	Get&#039;em Solitaire	FYinvDsuxk_Getem_Solitaire_5.11.png	FYinvDsuxk_Getem_Solitaire_5.11.nx
+3299	Tone Match	KyrhdUUacD_Tone_Bubble.png	KyrhdUUacD_Tone_Bubble.nx
+3297	Kakuro game	Me5d9yKGdU_KAKURO_kasan_kurosu.png	Me5d9yKGdU_KAKURO_kasan_kurosu.nx
+3291	LowRes Space Program v0.4	DmfP78tLB4_IMG_9770.JPG	DmfP78tLB4_LowRes_Space_Program_0.4.nx
+3288	Bunny Dude Adventure	eWhmtEgRPu_LowRes_NX_20240217_18_10_01.png	eWhmtEgRPu_bunnydude.nx
+3285	Find the EXIT	vFVRvprA6g_Find_the_Exit_V1.40.png	vFVRvprA6g_Find_the_Exit_V1.40.nx
+3281	Snakecrawl Game&amp;Tool	8U8D4ZLjHY_SnakeCrawl_GameTool_0.01.png	8U8D4ZLjHY_SnakeCrawl_GameTool_0.01.nx
+3277	River Crossing	QrAFrrRS2C_River_Crossing.png	QrAFrrRS2C_River_Crossing.nx
+3273	Balloon Sniper 21	nKDvy37dVP_Copy_of_Baloons.png	nKDvy37dVP_Copy_of_Baloons.nx
+3270	Planes test	3K5nJRaew6_Planes_0.12.png	3K5nJRaew6_Planes_0.12.nx
+3267	Space Bounce	9TzrPa6rQx_Bounce_0.3.png	9TzrPa6rQx_Bounce_0.3.nx
+3266			
+3265			
+3262			
+3260			
+3254	Pokemon 5-in-a-row	DSX4DjSKJT_Pokemon_FIVEINAROW_C2P.png	DSX4DjSKJT_Pokemon_FIVEINAROW_C2P.nx
+3250	Doodle Jump	SwKt65Q2yk_Doodle_Jump.png	SwKt65Q2yk_Doodle_Jump.nx
+3247	Choose your own adventure ... test...	aXCVCSYy9R_CYOA_book_test_0.52.1.png	aXCVCSYy9R_CYOA_book_test_0.52.1.nx
+3246	Last Minute Present Making	3ZsD4isno7_Image1.jpeg	3ZsD4isno7_Last_Minute_Present_Making.nx
+3242	Dungeon Crawl	FfothgLiVz_Dungeon_Crawl.png	FfothgLiVz_Dungeon_Crawl.nx
+3240	Swpe (SWap shaPE)	kyZ2kxhqEY_LowRes_NX_20231219_11_09_18.png	kyZ2kxhqEY_Swpe_SWap_shaPE.nx
+3239	NumSum matchit game	W9eJPseR87_NumSum_Matchit_game.png	W9eJPseR87_NumSum_Matchit_game.nx
+3236	Juggler	nswiRLvTZY_Juggler.png	nswiRLvTZY_Juggler.nx
+3233	Bunny and Dog	TEEFaNgEKV_Bunny_and_Dog_1.1.png	TEEFaNgEKV_Bunny_and_Dog_1.1.nx
+3232	aMAZEing	4HsXtRj9od_aMAZEing_0.5.png	4HsXtRj9od_aMAZEing_0.5.nx
+3231	Speed dice	jcipRp4dak_Speed_Dice_1.1.png	jcipRp4dak_Speed_Dice_1.1.nx
+3230	Baby Pac-Man v. 0.2(video mode)	WA6QhRXuGe_IMG_3601.jpeg	WA6QhRXuGe_Baby_Pacman_V0.3.nx
+3229	Pyramid Builder	UdnnjDAaXJ_Pyramid_Builder_0.2.png	UdnnjDAaXJ_Pyramid_Builder_0.2.nx
+3228	Ravens Breath dungeon game	audjDAQXss_RavensBreath.png	audjDAQXss_RavensBreath.nx
+3225	Super Space Blast	zg5vLfYbHF_Super_Space_Blast.png	zg5vLfYbHF_Super_Space_Blast.nx
+3222	Finger Fidgit Toy	JgwZ8LM5Q9_Finger_Fidgit_Toy.png	JgwZ8LM5Q9_Finger_Fidgit_Toy.nx
+3219	Ups and Downs Race	MgbQKsKxey_Lifes_Ups_n_Downs.png	MgbQKsKxey_Lifes_Ups_n_Downs.nx
+3217	HoboYOLO	9egJg7PtuN_AF0802CDB7454843B438E75438BEA4F2.jpeg	9egJg7PtuN_HOBOYOLO.nx
+3214	Tetris Block Match	BWtFTW8Y9x_Tetris_Block_Match_1.4.png	BWtFTW8Y9x_Tetris_Block_Match_1.4.nx
+3213	Rachilen	Si84zdY8g7_Rachilen.png	Si84zdY8g7_Rachilen.nx
+3211	Punch the Clock!	9FdaErC33K_Punch_the_Clock_2.png	9FdaErC33K_Punch_the_Clock_2.nx
+3210	Domino Rally	siALtcNWgW_Domino_Rally_0.1.png	siALtcNWgW_Domino_Rally_0.1.nx
+3209	Worker Ant 	nZNjEo34Ew_Worker_Ant_1.1.png	nZNjEo34Ew_Worker_Ant_1.1.nx
+3208	Light Touch remix	EkcNqk8Fpr_Light_Touch_remix.png	EkcNqk8Fpr_Light_Touch_remix.nx
+3206	Radar Sweep	V5vEd2PW99_Radar_Sweep.png	V5vEd2PW99_Radar_Sweep.nx
+3205	Today&#039;s troubles...	gSXApk5t6A_Todays_Troubles....png	gSXApk5t6A_Todays_Troubles....nx
+3201	Musical Memories game	bzpxmjvy4W_Melody_Memory_game_2.png	bzpxmjvy4W_Melody_Memory_game_2.nx
+3200	Gems Matchit	mQw9GKfR7K_Gems_Matchit.png	mQw9GKfR7K_Gems_Matchit.nx
+3198	Shooty Boids	cuFAGFRt7w_Simple_Boids.png	cuFAGFRt7w_Simple_Boids.nx
+3197	Snake	wzqyPeKc5Y_snake.png	wzqyPeKc5Y_snake.nx
+3196	Moon landing	wa7JexUv4m_Rocket_Game.png	wa7JexUv4m_Rocket_Game.nx
+3191	Docking Simulator II	QThiFnD5oY_Rocket_Game.png	QThiFnD5oY_Rocket_Game.nx
+3189	Clue	9ejuBUfLve_Clue.png	9ejuBUfLve_Clue.nx
+3183	Bumbling Ballads toy	crDisiTMKD_Bumbling_Ballads.png	crDisiTMKD_Bumbling_Ballads.nx
+3182	M.I.A	86pvBr8Hfh_7E2F2241EE58467CA8A50E1A28EEED5A.jpeg	86pvBr8Hfh_M.I.A.nx
+3180	Platform Shooter	JSB4w8i4eA_Gun_Game.png	JSB4w8i4eA_Gun_Game.nx
+3177	Sokoban	PjbcP2gase_LowRes_NX_20231021_21_56_33.png	PjbcP2gase_sokoban.nx
+3176	Track Day	wKrcwA8UET_IMG_3153.jpeg	wKrcwA8UET_Track_Day.nx
+3175	Mario Solitaire card game	fLwpbjzcRD_Mario_Cards_Solitaire_9.png	fLwpbjzcRD_Mario_Cards_Solitaire_9.nx
+3174	Equation Puzzle	bNq8UqqDFh_Equation_Riddle.png	bNq8UqqDFh_Equation_Riddle.nx
 3173	Sliding Numbers demo game	LczPbJXuYg_Sliding_Numbers_demo_game.png	LczPbJXuYg_Sliding_Numbers_demo_game.nx
 3172	Odds are...	aGvA9fUsDE_Odds_Are..._racetrack.png	aGvA9fUsDE_Odds_Are..._racetrack.nx
 3171	Basketball Playoffs	hyt86s5CDy_Screenshot_20231012_083650fotor202310129412.png	hyt86s5CDy_BASKETBALL_2.0.nx
