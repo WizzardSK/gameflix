@@ -546,8 +546,8 @@ gba,MAME/Software List ROMs (split)/gba,Split,mame gba -cart,
 nds,No-Intro/Nintendo - Nintendo DS (Decrypted),DS NoIntro,melonds_libretro,
 nds,No-Intro/Nintendo - Nintendo DS (Download Play),DS Download,melonds_libretro,
 nds,TOSEC/Nintendo/DS/Games,DS TOSEC,melonds_libretro,
-nds,No-Intro/Nintendo - Nintendo DSi (Decrypted),DSi NoIntro,melondsds_libretro,
-nds,TOSEC/Nintendo/DSi/Games,DSi TOSEC,melondsds_libretro,
+dsi,No-Intro/Nintendo - Nintendo DSi (Decrypted),NoIntro,melondsds_libretro,
+dsi,TOSEC/Nintendo/DSi/Games,TOSEC,melondsds_libretro,
 3ds,No-Intro/Nintendo - Nintendo 3DS (Decrypted),NoIntro,citra_libretro,3ds
 wiiu,Redump/Nintendo - Wii U - WUX,Redump,cemu -g,wux
 sg-1000,No-Intro/Sega - SG-1000 - SC-3000,NoIntro,gearsystem_libretro,
