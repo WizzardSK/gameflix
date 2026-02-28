@@ -28,15 +28,15 @@ colecovision,Coleco Colecovision,Coleco - ColecoVision
 adam,Coleco Adam,Coleco - Adam
 cassettevision,Epoch Cassette Vision,Epoch - Super Cassette Vision
 scv,Epoch Super Casette Vision,Epoch - Super Cassette Vision
-ctvboy,Gakken Compact Vision TV Boy,Gakken - Compact Vision TV Boy
 gamepock,Epoch Game Pocket Computer,Epoch - Game Pocket Computer
+ctvboy,Gakken Compact Vision TV Boy,Gakken - Compact Vision TV Boy
 supervision,Watara Supervision,Watara - Supervision
 sv8000,Bandai Super Vision 8000,Bandai - Super Vision 8000
-svmu,Sega Visual Memory Unit,Sega - Visual Memory Unit
-pockstat,Sony Pocket Station,Sony - Pocket Station
 rx78,Bandai RX-78,Bandai - Gundam RX-78
 wonderswan,Bandai WonderSwan,Bandai - WonderSwan
 wonderswancolor,Bandai WonderSwan Color,Bandai - WonderSwan Color
+svmu,Sega Visual Memory Unit,Sega - Visual Memory Unit
+pockstat,Sony Pocket Station,Sony - Pocket Station
 megaduck,Welback Mega Duck,Welback - Mega Duck
 gamate,Bitcorp Gamate,Bitcorp - Gamate
 gmaster,Hartung Game Master,Hartung - Game Master
@@ -84,8 +84,8 @@ cgenie,EACA Colour Genie,EACA - EG2000 Colour Genie
 trs80,Tandy TRS-80,Tandy - TRS-80
 coco,Tandy TRS-80 Color Computer,Tandy - TRS-80 Color Computer
 mc10,Tandy MC-10,Tandy - MC-10
-dragon64,Dragon 32/64,Dragon - Dragon 64
 vis,Tandy Video Information System,Tandy - Video Information System
+dragon64,Dragon 32/64,Dragon - Dragon 64
 atom,Acorn Atom,Acorn - Atom
 bbcmicro,Acorn BBS,Acorn - BBC
 electron,Acorn Electron,Acorn - Electron
