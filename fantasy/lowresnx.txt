@@ -1,3 +1,4 @@
+3961	Solitary	4STanxzf4z_Solitary.png	4STanxzf4z_Solitary.nx
 3960	Sirtet	8SGa7WJZz8_Sirtet.png	8SGa7WJZz8_Sirtet.nx
 3949	Catch Naano	7Jugsad4SP_Catch_NAANO_2.png	7Jugsad4SP_Catch_NAANO_2.nx
 3938	Gauntlet484	uTk5eErPL9_LowRes_NX_20260121_22_25_10.png	uTk5eErPL9_Gauntlet484.nx
@@ -194,10 +195,10 @@
 3273	Balloon Sniper 21	nKDvy37dVP_Copy_of_Baloons.png	nKDvy37dVP_Copy_of_Baloons.nx
 3270	Planes test	3K5nJRaew6_Planes_0.12.png	3K5nJRaew6_Planes_0.12.nx
 3267	Space Bounce	9TzrPa6rQx_Bounce_0.3.png	9TzrPa6rQx_Bounce_0.3.nx
-3266			
-3265			
-3262			
-3260			
+3266	Cookie Sweeper 	DjrvdzRkkm_05E38A9F984D4308BBBD05F17EC0E80B.jpeg	DjrvdzRkkm_Cookie_Swiper.nx
+3265	Star Wars Vector Tie Wave (infinite) UPDATE 	HFRQoxEnCN_Star_Wars_Rev0.02.png	HFRQoxEnCN_Star_Wars_Rev0.02.nx
+3262	The Letter of the Day	Vpdns4bKqM_The_Letter_of_the_Day.png	Vpdns4bKqM_The_Letter_of_the_Day.nx
+3260	SHOTGUN  DUNGEON	EBRDEXYfHs_71719FD6ED1240F582B453DAB5872FBA.jpeg	EBRDEXYfHs_Shotgun_Dungeon.nx
 3254	Pokemon 5-in-a-row	DSX4DjSKJT_Pokemon_FIVEINAROW_C2P.png	DSX4DjSKJT_Pokemon_FIVEINAROW_C2P.nx
 3250	Doodle Jump	SwKt65Q2yk_Doodle_Jump.png	SwKt65Q2yk_Doodle_Jump.nx
 3247	Choose your own adventure ... test...	aXCVCSYy9R_CYOA_book_test_0.52.1.png	aXCVCSYy9R_CYOA_book_test_0.52.1.nx
