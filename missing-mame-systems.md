@@ -67,7 +67,7 @@ Generovane: 2026-03-01
 | e-kara | `ekara_cart` | `ekara -cart` | 242 | Japonsky karaoke system pre deti |
 | LeapFrog Leapster | `leapster` | `leapster -cart` | 135 | Detsky herny system |
 | LeapFrog LeapPad | `leapfrog_leappad_cart` | `leappad -cart` | 107 | Detsky vzdelavaci tablet |
-| CHIP-8 | `chip8_quik` | `chip8 -quik` | 71 | Virtualny pocitac/interpret |
+| CHIP-8 (RCA COSMAC VIP) | `chip8_quik` | `vip -quik` | 71 | Interpret na RCA VIP a D6800 |
 | VideoArt | `videoart` | `videoart -cart` | 9 | Kreslenie cez TV |
 
 ## Doplnky k existujucim systemom v platforms.csv

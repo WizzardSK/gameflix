@@ -325,6 +325,8 @@ vsmile,MAME/Software List ROMs (merged)/vsmilem_cart,Cart Merged,mame vsmilem -c
 vsmile,MAME/Software List ROMs (split)/vsmilem_cart,Cart Split,mame vsmilem -cart,
 vsmileb,MAME/Software List ROMs (merged)/vsmileb_cart,Merged,mame vsmileb -cart,
 vsmileb,MAME/Software List ROMs (split)/vsmileb_cart,Split,mame vsmileb -cart,
+chip8,MAME/Software List ROMs (merged)/chip8_quik,Merged,mame d6800 -quik,
+chip8,MAME/Software List ROMs (split)/chip8_quik,Split,mame d6800 -quik,
 laser310,TOSEC/VTech/Laser 200/Games/[VZ],200,mame laser310 -dump,
 laser310,TOSEC/VTech/Laser 200/Applications,200 App,mame laser310 -dump,
 laser310,TOSEC/VTech/Laser 310/Applications,310 App,mame laser310 -dump,
