@@ -1065,5 +1065,9 @@ super80,MAME/Software List ROMs (merged)/super80_flop,Flop Merged,mame super80r 
 super80,MAME/Software List ROMs (split)/super80_flop,Flop Split,mame super80r -flop1,
 kc85,MAME/Software List ROMs (merged)/kc_cass,Cass Merged,mame kc85_4 -autoboot_command 'LOAD\n' -autoboot_delay 3 -cass,
 kc85,MAME/Software List ROMs (split)/kc_cass,Cass Split,mame kc85_4 -autoboot_command 'LOAD\n' -autoboot_delay 3 -cass,
+special,MAME/Software List ROMs (merged)/special_cass,Merged,mame special -autoboot_command 'I\n' -autoboot_delay 3 -cass,
+special,MAME/Software List ROMs (split)/special_cass,Split,mame special -autoboot_command 'I\n' -autoboot_delay 3 -cass,
+special,MAME/Software List ROMs (merged)/special_flop,Flop Merged,mame specimx -flop1,
+special,MAME/Software List ROMs (split)/special_flop,Flop Split,mame specimx -flop1,
 j2me,No-Intro/Mobile - J2ME,NoIntro,freej2me_libretro,jar
 palm,No-Intro/Mobile - Palm OS (Digital),NoIntro,mu_libretro,prc

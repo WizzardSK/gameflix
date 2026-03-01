@@ -57,6 +57,7 @@ radio86,Radio-86RK,Radio-86RK
 mikrosha,Mikrosha,Mikrosha
 orion128,Orion 128,Orion - 128
 vector06,Vector-06C,Vector-06C
+special,Specialist,MAME
 lviv,Lviv PK-01,Lviv - PK-01
 ,British computers,
 enterprise,Enterprise 64/128,Enterprise - Enterprise
@@ -71,11 +72,12 @@ spectravideo,Spectravideo SV-318/SV-328,Spectravideo - SVI-318 - SVI-328
 samcoupe,SAM Coupé,MGT - Sam Coupe
 oric,Oric Atmos,Tangerine - Oric Atmos
 camplynx,Camputers Lynx,Camputers - Lynx
+mtx,Memotech MTX,Memotech - MTX512
+jupace,Jupiter Ace,MAME
 ,Various computers and consoles,
 thomson,Thomson MO/TO,Thomson - MOTO
 ti99,Texas Instruments TI-99/4A,Texas Instruments - TI-99
 pdp1,DEC PDP-1,PDP-1
-mtx,Memotech MTX,Memotech - MTX512
 astrocade,Bally Astrocade,Bally - Astrocade
 apfm1000,APF MP-1000,APF - MP-1000
 advision,Adventure Vision,Entex - Adventure Vision
@@ -219,7 +221,6 @@ gameking3,TimeTop GameKing 3,TimeTop - GameKing 3
 vii,Sport Vii,Sport Vii
 einstein,Tatung Einstein,Tatung - Einstein
 unichamp,Unisonic Champion 2711,Unisonic - Champion 2711
-jupace,Jupiter Ace,MAME
 alice,Matra Alice,MAME
 tiki100,Tiki 100,MAME
 videobrain,VideoBrain FamilyComputer,VideoBrain - FamilyComputer
