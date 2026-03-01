@@ -72,6 +72,8 @@ samcoupe,SAM Coupé,MGT - Sam Coupe
 oric,Oric Atmos,Tangerine - Oric Atmos
 camplynx,Camputers Lynx,Camputers - Lynx
 ,Various computers and consoles,
+thomson,Thomson MO/TO,Thomson - MOTO
+ti99,Texas Instruments TI-99/4A,Texas Instruments - TI-99
 pdp1,DEC PDP-1,PDP-1
 mtx,Memotech MTX,Memotech - MTX512
 astrocade,Bally Astrocade,Bally - Astrocade
@@ -87,9 +89,6 @@ mbee,MicroBee,Applied Technology - MicroBee
 pro128,Olivetti Prodest PC 128,Olivetti - Prodest PC 128
 pro128s,Olivetti Prodest PC 128S,Olivetti - Prodest PC 128S
 arcadia,Emerson Arcadia 2001,Emerson - Arcadia 2001
-pv1000,Casio PV-1000,Casio - PV-1000
-pv2000,Casio PV-2000,Casio - PV-2000
-loopy,Casio Loopy,Casio - Loopy
 supracan,Super Acan,Funtech - Super Acan
 vc4000,Interton VC 4000,Interton - VC 4000
 multivision,Othello Multivision,Othello - Multivision
@@ -98,7 +97,6 @@ cgenie,EACA Colour Genie,EACA - EG2000 Colour Genie
 trs80,Tandy TRS-80,Tandy - TRS-80
 coco,Tandy TRS-80 Color Computer,Tandy - TRS-80 Color Computer
 mc10,Tandy MC-10,Tandy - MC-10
-vis,Tandy Video Information System,Tandy - Video Information System
 dragon64,Dragon 32/64,Dragon - Dragon 64
 ,Acorn,
 atom,Acorn Atom,Acorn - Atom
@@ -109,8 +107,12 @@ archimedes,Acorn Archimedes,Acorn - Archimedes
 fm7,Fujitsu Micro 7,Fujitsu - Micro 7
 fmtowns,Fujitsu FM Towns,Fujitsu - FM Towns
 tutor,Tomy Tutor,Tomy - Tutor
-ti99,Texas Instruments TI-99/4A,Texas Instruments - TI-99
-thomson,Thomson MO/TO,Thomson - MOTO
+pv1000,Casio PV-1000,Casio - PV-1000
+pv2000,Casio PV-2000,Casio - PV-2000
+loopy,Casio Loopy,Casio - Loopy
+myvision,Nichibutsu My Vision,Nichibutsu - My Vision
+m5,Sord M5,Sord - M5
+phc25,Sanyo PHC-25,MAME
 ,Nintendo,
 nes,Nintendo Entertainment System,Nintendo - Nintendo Entertainment System
 fds,Nintendo Family Disk System,Nintendo - Family Computer Disk System
@@ -155,9 +157,10 @@ smc777,Sony SMC-777,Sony - SMC-777
 psx,Sony PlayStation 1,Sony - PlayStation
 ps2,Sony PlayStation 2,Sony - PlayStation 2
 psp,Sony PlayStation Portable,Sony - PlayStation Portable
-,Philips / Panasonic,
+,Philips / Panasonic / Tandy,
 cdi,Philips CD-i,Philips - CD-i
 3do,Panasonic 3DO,The 3DO Company - 3DO
+vis,Tandy Video Information System,Tandy - Video Information System
 ,MSX,
 msx1,Panasonic MSX1,Microsoft - MSX
 msx2,Panasonic MSX2,Microsoft - MSX2
@@ -210,9 +213,6 @@ neogeocd,SNK Neo Geo CD,SNK - Neo Geo CD
 ngp,SNK Neo Geo Pocket,SNK - Neo Geo Pocket
 ngpc,SNK Neo Geo Pocket Color,SNK - Neo Geo Pocket Color
 ,Various small systems,
-myvision,Nichibutsu My Vision,Nichibutsu - My Vision
-m5,Sord M5,Sord - M5
-phc25,Sanyo PHC-25,MAME
 mononcolor,M&D Monon Color,M&D - Monon Color
 gameking,TimeTop GameKing,TimeTop - GameKing
 gameking3,TimeTop GameKing 3,TimeTop - GameKing 3
