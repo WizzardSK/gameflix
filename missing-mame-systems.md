@@ -12,7 +12,6 @@ Generovane: 2026-03-01
 | Apple Pippin | `pippin` | `pippin -cdrm` | 89 | Apple herny system (1996) |
 | RCA Studio II | `studio2` | `studio2 -cart` | 40 | Retro konzola (1977) |
 | V.Smile CD | `vsmile_cd` | `vsmile -cdrm` | 34 | CD verzia V.Smile |
-| V.Smile Baby | `vsmileb_cart` | `vsmileb -cart` | 23 | Detsky vzdelavaci system |
 | Mattel Juice Box | `juicebox` | `juicebox -memcard` | 22 | Prenosny media prehravac s hrami |
 | Milton Bradley Microvision | `microvision` | `microvsn -cart` | 18 | Prvy handheld s vymenitel. kartridmi (1979) |
 | Bandai Pocket Challenge W | `pockchalw` | `pockchal -cart` | 40 | WonderSwan predchodca |
@@ -56,7 +55,6 @@ Generovane: 2026-03-01
 | System | Software list | MAME driver | Titulov | Poznamka |
 |--------|--------------|-------------|---------|----------|
 | Zorba | `zorba` | `zorba -flop1` | 38 | CP/M pocitac |
-| Osborne 1 | `osborne1` | `osborne1 -flop1` | 22 | Ikonicky prenosny CP/M pocitac |
 | Kaypro | `kaypro` | `kaypro2x -flop1` | 18 | CP/M pocitac |
 | Tandy TRS-80 Model II | `trs80m2` | `trs80m2 -flop1` | 10 | Doplnok k existujucemu TRS-80 |
 
@@ -65,9 +63,6 @@ Generovane: 2026-03-01
 | System | Software list | MAME driver | Titulov | Poznamka |
 |--------|--------------|-------------|---------|----------|
 | e-kara | `ekara_cart` | `ekara -cart` | 242 | Japonsky karaoke system pre deti |
-| LeapFrog Leapster | `leapster` | `leapster -cart` | 135 | Detsky herny system |
-| LeapFrog LeapPad | `leapfrog_leappad_cart` | `leappad -cart` | 107 | Detsky vzdelavaci tablet |
-| CHIP-8 (RCA COSMAC VIP) | `chip8_quik` | `vip -quik` | 71 | Interpret na RCA VIP a D6800 |
 | VideoArt | `videoart` | `videoart -cart` | 9 | Kreslenie cez TV |
 
 ## Doplnky k existujucim systemom v platforms.csv
@@ -83,7 +78,7 @@ Generovane: 2026-03-01
 | ZX Spectrum | `spectrum_microdrive` | `spec128 -mdrv1` | 73 | Microdrive media |
 | Dragon | `dragon_os9` + `dragon_flex` + `dgnalpha_flop` | `dragon64 -flop1` | 58 | OS-9, Flex, Dragon Alpha |
 | Acorn Atom | `atom_cass` | `atom -cass` | 44 | Kazetova verzia |
-| V.Smile | `vsmile_cd` + `vsmileb_cart` | `vsmile -cdrm` / `vsmileb -cart` | 57 | CD + Baby verzia |
+| V.Smile | `vsmile_cd` | `vsmile -cdrm` | 34 | CD verzia |
 | PC-6001 | `pc6001_cass` + `pc6001mk2_cass` | `pc6001 -cass` | 34 | Kazetove verzie |
 | IBM PC AT | `ibm5170_hdd` | `ibm5170 -hard` | 33 | HDD image hry |
 | Amiga | `amiga_cd` | `a500 -cdrom` | 13 | CD-ROM hry |
@@ -94,9 +89,13 @@ Generovane: 2026-03-01
 
 ## Zhrnutie
 
-- **~25 uplne novych systemov** (nie su v platforms.csv vobec)
-- **~15 doplnkovych software listov** k existujucim systemom
-- **~3 700+ titulov** celkovo
+- **~20 uplne novych systemov** (nie su v platforms.csv vobec)
+- **~14 doplnkovych software listov** k existujucim systemom
+- **~3 200+ titulov** celkovo
+
+Uz pridane do platforms.csv: V.Smile Baby, CHIP-8 (d6800), Osborne 1
+
+Nefunkcne v MAME (preliminary): LeapFrog Leapster, LeapFrog LeapPad
 
 ### TOP 10 podla velkosti kniznice
 
@@ -109,4 +108,4 @@ Generovane: 2026-03-01
 7. Olivetti Prodest PC 128 - 202 titulov
 8. Robotron KC 85 - 189 titulov
 9. Specialist - 160 titulov
-10. LeapFrog Leapster - 135 titulov
+10. Z80-NE - 120 titulov
