@@ -23,7 +23,7 @@ Generovane: 2026-03-01
 
 | System | Software list | MAME driver | Titulov | Poznamka |
 |--------|--------------|-------------|---------|----------|
-| MicroBee | `mbee_flop` + `mbee_quik` + `mbee_cart` | `mbee -flop1` / `-quik` / `-cart` | 717 | Australsky pocitac, velmi velka kniznica |
+| MicroBee (floppy) | `mbee_flop` | `mbee56 -flop1` | 494 | Preliminary driver, cart+quik uz pridane |
 | Compucolor II | `compclr2_flop` | `compclr2 -flop1` | 239 | Americky pocitac |
 | Olivetti Prodest PC 128 | `pro128_cass` + `pro128_flop` + `pro128s_flop` | `pro128 -cass` / `-flop1` | 202 | Taliansky pocitac |
 | Robotron KC 85 | `kc_cass` + `kc_cart` + `kc_flop` | `kc85_4 -cass` / `-cart` / `-flop1` | 189 | Vychodonemecky pocitac |
@@ -93,13 +93,13 @@ Generovane: 2026-03-01
 - **~14 doplnkovych software listov** k existujucim systemom
 - **~3 200+ titulov** celkovo
 
-Uz pridane do platforms.csv: V.Smile Baby, CHIP-8 (d6800), Osborne 1
+Uz pridane do platforms.csv: V.Smile Baby, CHIP-8 (d6800), Osborne 1, MicroBee (cart+quik)
 
 Nefunkcne v MAME (preliminary): LeapFrog Leapster, LeapFrog LeapPad
 
 ### TOP 10 podla velkosti kniznice
 
-1. MicroBee - 717 titulov
+1. MicroBee (floppy) - 494 titulov (preliminary, cart+quik uz pridane)
 2. GBA e-Reader - 686 titulov (doplnok)
 3. IBM PC AT CD-ROM - 476 titulov (doplnok)
 4. SNES BS-X - 401 titulov (doplnok)
