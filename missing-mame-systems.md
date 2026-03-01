@@ -93,7 +93,7 @@ Generovane: 2026-03-01
 - **~14 doplnkovych software listov** k existujucim systemom
 - **~3 200+ titulov** celkovo
 
-Uz pridane do platforms.csv: V.Smile Baby, CHIP-8 (d6800), Osborne 1, MicroBee (cart+quik), Specialist
+Uz pridane do platforms.csv: V.Smile Baby, CHIP-8 (d6800), Osborne 1, MicroBee (cart+quik), Specialist, Z80-NE
 
 Nefunkcne v MAME (preliminary): LeapFrog Leapster, LeapFrog LeapPad
 
