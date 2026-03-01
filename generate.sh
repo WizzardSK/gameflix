@@ -1,7 +1,7 @@
 #!/bin/bash
 shopt -s nocasematch;
-declare -A sys thumb; sysorder=(); while IFS=',' read -r k v t; do sys[$k]="$v"; thumb[$k]="$t"; sysorder+=("$k"); done < <(tail -n +2 systems.csv)
-declare -A sysroms; while IFS=';' read -r k rest; do sysroms[$k]+="$k;$rest;${thumb[$k]};${sys[$k]}"$'\n'; done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv))
+declare -A sys thumb separator; sysorder=(); needsep=0; while IFS=',' read -r k v t; do if [[ -z "$k" ]]; then needsep=1; sepname="$v"; continue; fi; sys[$k]="$v"; thumb[$k]="$t"; sysorder+=("$k"); if [[ $needsep -eq 1 ]]; then separator[$k]="$sepname"; needsep=0; fi; done < <(tail -n +2 systems.csv)
+declare -A sysroms; while IFS=';' read -r k rest; do sysroms[$k]+="$k;$rest;${thumb[$k]};${sys[$k]}"$'\n'; done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv ))
 roms=(); for k in "${sysorder[@]}"; do while IFS= read -r line; do [[ -n "$line" ]] && roms+=("$line"); done <<< "${sysroms[$k]}"; done
 mkdir -p ~/{gameflix,rom,gamelists,zip,zips,mount} ~/gamelists/{tic80,wasm4,lowresnx,pico8,voxatron,switch}
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html; cp ~/gameflix/systems.html ~/gameflix/main.html
@@ -107,6 +107,7 @@ IFS=";"; for each in "${roms[@]}"; do
       echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/${rom3}.jpg'><figcaption>${rom6}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
       echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; ((platforms++))
     fi
+    [[ -n "${separator[${rom[0]}]}" ]] && echo "<br /><b>${separator[${rom[0]}]}</b><br />" >> ~/gameflix/systems.html && echo "<h3 style=\"width:100%\">${separator[${rom[0]}]}</h3>" >> ~/gameflix/main.html
     cp platform.html ~/gameflix/${rom[0]}.html
     pocet=0
     # Open new fds
