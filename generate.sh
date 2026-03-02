@@ -8,7 +8,7 @@ echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/game
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
 
-echo "<b>Fantasy</b><br />" >> ~/gameflix/systems.html
+echo "<b>Fantasy & Homebrew</b><br />" >> ~/gameflix/systems.html
 echo "<h3 style=\"width:100%\">Fantasy</h3>" >> ~/gameflix/main.html
 
 # TIC-80 - single API call
