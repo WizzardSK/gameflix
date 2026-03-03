@@ -57,22 +57,22 @@ orion128,Orion 128,Orion - 128
 vector06,Vector-06C,Vector-06C
 special,Specialist,MAME
 lviv,Lviv PK-01,Lviv - PK-01
-,British computers,
-enterprise,Enterprise 64/128,Enterprise - Enterprise
-amstradcpc,Amstrad CPC,Amstrad - CPC
-gx4000,Amstrad GX4000,Amstrad - GX4000
-pcw,Amstrad PCW,Amstrad - PCW
+,Sinclair & Amstrad,
 zx80,Sinclair ZX80,Sinclair - ZX 80
 zx81,Sinclair ZX81,Sinclair - ZX 81
 zxspectrum,Sinclair ZX Spectrum,Sinclair - ZX Spectrum
 ql,Sinclair QL,Sinclair - QL
+amstradcpc,Amstrad CPC,Amstrad - CPC
+gx4000,Amstrad GX4000,Amstrad - GX4000
+pcw,Amstrad PCW,Amstrad - PCW
+,Various computers and consoles,
 spectravideo,Spectravideo SV-318/SV-328,Spectravideo - SVI-318 - SVI-328
 samcoupe,SAM Coupé,MGT - Sam Coupe
 oric,Oric Atmos,Tangerine - Oric Atmos
 camplynx,Camputers Lynx,Camputers - Lynx
 mtx,Memotech MTX,Memotech - MTX512
 jupace,Jupiter Ace,MAME
-,Various computers and consoles,
+enterprise,Enterprise 64/128,Enterprise - Enterprise
 thomson,Thomson MO/TO,Thomson - MOTO
 ti99,Texas Instruments TI-99/4A,Texas Instruments - TI-99
 pdp1,DEC PDP-1,PDP-1
