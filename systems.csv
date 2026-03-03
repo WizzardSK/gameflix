@@ -38,8 +38,6 @@ sv8000,Bandai Super Vision 8000,Bandai - Super Vision 8000
 rx78,Bandai RX-78,Bandai - Gundam RX-78
 wonderswan,Bandai WonderSwan,Bandai - WonderSwan
 wonderswancolor,Bandai WonderSwan Color,Bandai - WonderSwan Color
-svmu,Sega Visual Memory Unit,Sega - Visual Memory Unit
-pockstat,Sony Pocket Station,Sony - Pocket Station
 megaduck,Welback Mega Duck,Welback - Mega Duck
 gamate,Bitcorp Gamate,Bitcorp - Gamate
 gmaster,Hartung Game Master,Hartung - Game Master
@@ -138,6 +136,7 @@ dsi,Nintendo DSi,Nintendo - Nintendo DSi
 3ds,Nintendo 3DS,Nintendo - Nintendo 3DS
 wiiu,Nintendo Wii U,Nintendo - Wii U
 ,Sega,
+svmu,Sega Visual Memory Unit,Sega - Visual Memory Unit
 sg-1000,Sega SG-1000,Sega - SG-1000
 sc-3000,Sega SC-3000,Sega - SG-1000
 segaai,Sega AI Computer,Sega - AI Computer
@@ -155,6 +154,7 @@ model2,Sega Model 2,MAME
 model3,Sega Model 3,MAME
 gamegear,Sega Game Gear,Sega - Game Gear
 ,Sony,
+pockstat,Sony Pocket Station,Sony - Pocket Station
 smc777,Sony SMC-777,Sony - SMC-777
 psx,Sony PlayStation 1,Sony - PlayStation
 ps2,Sony PlayStation 2,Sony - PlayStation 2
