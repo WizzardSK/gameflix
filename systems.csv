@@ -160,11 +160,6 @@ smc777,Sony SMC-777,Sony - SMC-777
 psx,Sony PlayStation 1,Sony - PlayStation
 ps2,Sony PlayStation 2,Sony - PlayStation 2
 psp,Sony PlayStation Portable,Sony - PlayStation Portable
-,MSX,
-msx1,Panasonic MSX1,Microsoft - MSX
-msx2,Panasonic MSX2,Microsoft - MSX2
-msx2+,Panasonic MSX2+,Microsoft - MSX2
-msxturbor,Panasonic MSX TurboR,Microsoft - MSX2
 ,NEC,
 pc60,NEC PC-6000,NEC - PC-6000 - PC-6001
 pc80,NEC PC-8000,NEC - PC-8001 - PC-8801
@@ -179,6 +174,10 @@ dos,Microsoft MS-DOS,DOS
 ibm5150,IBM PC 5150,DOS
 ibm5170,IBM PC/AT 5170,DOS
 ibmpcjr,IBM PCjr,DOS
+msx1,Panasonic MSX1,Microsoft - MSX
+msx2,Panasonic MSX2,Microsoft - MSX2
+msx2+,Panasonic MSX2+,Microsoft - MSX2
+msxturbor,Panasonic MSX TurboR,Microsoft - MSX2
 ,Commodore,
 pet,Commodore PET,Commodore - PET
 cplus4,Commodore Plus-4,Commodore - Plus-4
