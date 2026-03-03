@@ -207,10 +207,9 @@ mz2500,Sharp MZ-2500,Sharp - MZ-2500
 spc1000,Samsung SPC-1000,Samsung - SPC-1000
 spc1500,Samsung SPC-1500,Samsung - SPC-1500
 ,Arcade,
-mame,MAME Arcade,MAME
+mame,MAME,MAME
 vgmplay,VGMPlay,MAME
 fbneo,FinalBurn Neo,MAME
-,SNK,
 neogeo,SNK Neo Geo AES,SNK - Neo Geo
 neogeocd,SNK Neo Geo CD,SNK - Neo Geo CD
 ngp,SNK Neo Geo Pocket,SNK - Neo Geo Pocket
