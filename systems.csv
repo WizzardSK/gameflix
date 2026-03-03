@@ -26,6 +26,7 @@ channelf,Fairchild Channel F,Fairchild - Channel F
 vectrex,GCE Vectrex,GCE - Vectrex
 odyssey2,Magnavox Odyssey²,Magnavox - Odyssey2
 videopacplus,Magnavox Odyssey³,Philips - Videopac
+aquarius,Mattel Aquarius,Mattel - Aquarius
 intellivision,Mattel Intellivision,Mattel - Intellivision
 colecovision,Coleco Colecovision,Coleco - ColecoVision
 adam,Coleco Adam,Coleco - Adam
@@ -225,7 +226,6 @@ alice,Matra Alice,MAME
 tiki100,Tiki 100,MAME
 videobrain,VideoBrain FamilyComputer,VideoBrain - FamilyComputer
 entexsag,Entex Select-A-Game,Entex - Select-A-Game
-aquarius,Mattel Aquarius,Mattel - Aquarius
 sorcerer,Exidy Sorcerer,MAME
 sol20,Processor Technology SOL-20,MAME
 interact,Interact Family Computer,MAME
