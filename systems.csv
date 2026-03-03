@@ -160,10 +160,6 @@ smc777,Sony SMC-777,Sony - SMC-777
 psx,Sony PlayStation 1,Sony - PlayStation
 ps2,Sony PlayStation 2,Sony - PlayStation 2
 psp,Sony PlayStation Portable,Sony - PlayStation Portable
-,Multimedia,
-cdi,Philips CD-i,Philips - CD-i
-3do,Panasonic 3DO,The 3DO Company - 3DO
-vis,Video Information System,Tandy - Video Information System
 ,MSX,
 msx1,Panasonic MSX1,Microsoft - MSX
 msx2,Panasonic MSX2,Microsoft - MSX2
@@ -193,8 +189,12 @@ c64,Commodore 64,Commodore - 64
 c128,Commodore 128,Commodore - 128
 amiga500,Commodore Amiga,Commodore - Amiga
 amiga1200,Commodore Amiga CD,Commodore - Amiga
-amigacdtv,Commodore Amiga CDTV,Commodore - CDTV
 amigacd32,Commodore Amiga CD32,Commodore - CD32
+,Multimedia,
+amigacdtv,Commodore Amiga CDTV,Commodore - CDTV
+cdi,Philips CD-i,Philips - CD-i
+3do,Panasonic 3DO,The 3DO Company - 3DO
+vis,Video Information System,Tandy - Video Information System
 ,Sharp,
 x1,Sharp X1,Sharp - X1
 x68000,Sharp X68000,Sharp - X68000
