@@ -53,66 +53,70 @@ ql,Sinclair QL,Sinclair - QL
 amstradcpc,Amstrad CPC,Amstrad - CPC
 gx4000,Amstrad GX4000,Amstrad - GX4000
 pcw,Amstrad PCW,Amstrad - PCW
-,Various computers,
+,Various computers (--1980),
+pdp1,DEC PDP-1,PDP-1
+sol20,Processor Technology SOL-20,MAME
+videobrain,VideoBrain FamilyComputer,VideoBrain - FamilyComputer
+trs80,Tandy TRS-80,Tandy - TRS-80
+interact,Interact Family Computer,MAME
+sorcerer,Exidy Sorcerer,MAME
+z80ne,Nuova Elettronica Z80-NE,MAME
+atom,Acorn Atom,Acorn - Atom
+coco,Tandy TRS-80 Color Computer,Tandy - TRS-80 Color Computer
+super80,Dick Smith Super-80,MAME
+,Various computers (1981-1982),
+osborne1,Osborne 1,Osborne - 1
+bbcmicro,Acorn BBC,Acorn - BBC
+ti99,Texas Instruments TI-99/4A,Texas Instruments - TI-99
+jupace,Jupiter Ace,MAME
+mbee,MicroBee,Applied Technology - MicroBee
+cgenie,EACA Colour Genie,EACA - EG2000 Colour Genie
+spc1000,Samsung SPC-1000,Samsung - SPC-1000
+m5,Sord M5,Sord - M5
+rainbow,DEC Rainbow 100,MAME
+dragon64,Dragon 32/64,Dragon - Dragon 64
+thomson,Thomson MO/TO,Thomson - MOTO
+,Various computers (1983),
 aquarius,Mattel Aquarius,Mattel - Aquarius
 adam,Coleco Adam,Coleco - Adam
 rx78,Bandai RX-78,Bandai - Gundam RX-78
 spectravideo,Spectravideo SV-318/SV-328,Spectravideo - SVI-318 - SVI-328
-samcoupe,SAM Coupé,MGT - Sam Coupe
 oric,Oric Atmos,Tangerine - Oric Atmos
 camplynx,Camputers Lynx,Camputers - Lynx
 mtx,Memotech MTX,Memotech - MTX512
-jupace,Jupiter Ace,MAME
-enterprise,Enterprise 64/128,Enterprise - Enterprise
-thomson,Thomson MO/TO,Thomson - MOTO
-ti99,Texas Instruments TI-99/4A,Texas Instruments - TI-99
-pdp1,DEC PDP-1,PDP-1
-laser310,VTech Laser,VTech - Laser 310
-socrates,VTech Socrates,VTech - Socrates
-osborne1,Osborne 1,Osborne - 1
-mbee,MicroBee,Applied Technology - MicroBee
-z80ne,Nuova Elettronica Z80-NE,MAME
-pro128,Olivetti Prodest PC 128,Olivetti - Prodest PC 128
-pro128s,Olivetti Prodest PC 128S,Olivetti - Prodest PC 128S
-einstein,Tatung Einstein,Tatung - Einstein
 alice,Matra Alice,MAME
-tiki100,Tiki 100,MAME
-videobrain,VideoBrain FamilyComputer,VideoBrain - FamilyComputer
-sorcerer,Exidy Sorcerer,MAME
-sol20,Processor Technology SOL-20,MAME
-interact,Interact Family Computer,MAME
-rainbow,DEC Rainbow 100,MAME
 pencil2,Hanimex Pencil II,MAME
-super80,Dick Smith Super-80,MAME
-mc1000,CCE MC-1000,MAME
-kc85,Robotron KC 85,MAME
-bk,Elektronika BK,Elektronika - BK
-tvc,Videoton TV Computer,Enterprise - Enterprise
-pmd85,Tesla PMD 85,Tesla - PMD 85
-pecom64,Ei Pecom 64,Pecom - 64
-galaxy,Galaksija,Galaksija
-apogee,Apogee BK-01,Apogee - BK-01
-radio86,Radio-86RK,Radio-86RK
-mikrosha,Mikrosha,Mikrosha
-orion128,Orion 128,Orion - 128
-vector06,Vector-06C,Vector-06C
-special,Specialist,MAME
-lviv,Lviv PK-01,Lviv - PK-01
-cgenie,EACA Colour Genie,EACA - EG2000 Colour Genie
-trs80,Tandy TRS-80,Tandy - TRS-80
-coco,Tandy TRS-80 Color Computer,Tandy - TRS-80 Color Computer
 mc10,Tandy MC-10,Tandy - MC-10
-dragon64,Dragon 32/64,Dragon - Dragon 64
-atom,Acorn Atom,Acorn - Atom
-bbcmicro,Acorn BBC,Acorn - BBC
 electron,Acorn Electron,Acorn - Electron
-archimedes,Acorn Archimedes,Acorn - Archimedes
-spc1000,Samsung SPC-1000,Samsung - SPC-1000
-spc1500,Samsung SPC-1500,Samsung - SPC-1500
 tutor,Tomy Tutor,Tomy - Tutor
 myvision,Nichibutsu My Vision,Nichibutsu - My Vision
-m5,Sord M5,Sord - M5
 phc25,Sanyo PHC-25,MAME
+galaxy,Galaksija,Galaksija
+,Various computers (1984-1985),
+einstein,Tatung Einstein,Tatung - Einstein
+laser310,VTech Laser,VTech - Laser 310
+tiki100,Tiki 100,MAME
+kc85,Robotron KC 85,MAME
+enterprise,Enterprise 64/128,Enterprise - Enterprise
+bk,Elektronika BK,Elektronika - BK
+pmd85,Tesla PMD 85,Tesla - PMD 85
+special,Specialist,MAME
+mc1000,CCE MC-1000,MAME
+apogee,Apogee BK-01,Apogee - BK-01
+,Various computers (1986+),
+pro128,Olivetti Prodest PC 128,Olivetti - Prodest PC 128
+pro128s,Olivetti Prodest PC 128S,Olivetti - Prodest PC 128S
+tvc,Videoton TV Computer,Enterprise - Enterprise
+pecom64,Ei Pecom 64,Pecom - 64
+radio86,Radio-86RK,Radio-86RK
+lviv,Lviv PK-01,Lviv - PK-01
+archimedes,Acorn Archimedes,Acorn - Archimedes
+spc1500,Samsung SPC-1500,Samsung - SPC-1500
+vector06,Vector-06C,Vector-06C
+mikrosha,Mikrosha,Mikrosha
+samcoupe,SAM Coupé,MGT - Sam Coupe
+socrates,VTech Socrates,VTech - Socrates
+orion128,Orion 128,Orion - 128
 ,Nintendo,
 nes,Nintendo Entertainment System,Nintendo - Nintendo Entertainment System
 famicom,Nintendo Family Computer,Nintendo - Nintendo Entertainment System
