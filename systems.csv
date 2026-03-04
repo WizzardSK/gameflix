@@ -21,29 +21,29 @@ apple2gs,Apple IIGS,Apple - IIGS
 apple3,Apple III,Apple - III
 lisa,Apple Lisa,Apple - Lisa
 macintosh,Apple Macintosh,Apple - Macintosh
-,Retro consoles,
+,Various consoles,
 channelf,Fairchild Channel F,Fairchild - Channel F
 vectrex,GCE Vectrex,GCE - Vectrex
 odyssey2,Magnavox Odyssey²,Magnavox - Odyssey2
 videopacplus,Magnavox Odyssey³,Philips - Videopac
-aquarius,Mattel Aquarius,Mattel - Aquarius
 intellivision,Mattel Intellivision,Mattel - Intellivision
 colecovision,Coleco Colecovision,Coleco - ColecoVision
-adam,Coleco Adam,Coleco - Adam
 cassettevision,Epoch Cassette Vision,Epoch - Super Cassette Vision
 scv,Epoch Super Casette Vision,Epoch - Super Cassette Vision
-gamepock,Epoch Game Pocket Computer,Epoch - Game Pocket Computer
 ctvboy,Gakken Compact Vision TV Boy,Gakken - Compact Vision TV Boy
-supervision,Watara Supervision,Watara - Supervision
 sv8000,Bandai Super Vision 8000,Bandai - Super Vision 8000
-rx78,Bandai RX-78,Bandai - Gundam RX-78
-wonderswan,Bandai WonderSwan,Bandai - WonderSwan
-wonderswancolor,Bandai WonderSwan Color,Bandai - WonderSwan Color
-megaduck,Welback Mega Duck,Welback - Mega Duck
-gamate,Bitcorp Gamate,Bitcorp - Gamate
-gmaster,Hartung Game Master,Hartung - Game Master
-gamecom,Tiger Game.com,Tiger - Game.com
-gp32,GamePark GP32,GamePark - GP32
+astrocade,Bally Astrocade,Bally - Astrocade
+apfm1000,APF MP-1000,APF - MP-1000
+creativision,VTech CreatiVision,VTech - CreatiVision
+vsmile,VTech V.Smile,VTech - V.Smile
+vsmileb,VTech V.Smile Baby,VTech - V.Smile Baby
+arcadia,Emerson Arcadia 2001,Emerson - Arcadia 2001
+supracan,Super Acan,Funtech - Super Acan
+vc4000,Interton VC 4000,Interton - VC 4000
+multivision,Othello Multivision,Othello - Multivision
+vii,Sport Vii,Sport Vii
+unichamp,Unisonic Champion 2711,Unisonic - Champion 2711
+entexsag,Entex Select-A-Game,Entex - Select-A-Game
 ,Eastern European computers,
 bk,Elektronika BK,Elektronika - BK
 tvc,Videoton TV Computer,Enterprise - Enterprise
@@ -66,7 +66,10 @@ ql,Sinclair QL,Sinclair - QL
 amstradcpc,Amstrad CPC,Amstrad - CPC
 gx4000,Amstrad GX4000,Amstrad - GX4000
 pcw,Amstrad PCW,Amstrad - PCW
-,Various computers and consoles,
+,Various computers,
+aquarius,Mattel Aquarius,Mattel - Aquarius
+adam,Coleco Adam,Coleco - Adam
+rx78,Bandai RX-78,Bandai - Gundam RX-78
 spectravideo,Spectravideo SV-318/SV-328,Spectravideo - SVI-318 - SVI-328
 samcoupe,SAM Coupé,MGT - Sam Coupe
 oric,Oric Atmos,Tangerine - Oric Atmos
@@ -77,12 +80,6 @@ enterprise,Enterprise 64/128,Enterprise - Enterprise
 thomson,Thomson MO/TO,Thomson - MOTO
 ti99,Texas Instruments TI-99/4A,Texas Instruments - TI-99
 pdp1,DEC PDP-1,PDP-1
-astrocade,Bally Astrocade,Bally - Astrocade
-apfm1000,APF MP-1000,APF - MP-1000
-advision,Adventure Vision,Entex - Adventure Vision
-creativision,VTech CreatiVision,VTech - CreatiVision
-vsmile,VTech V.Smile,VTech - V.Smile
-vsmileb,VTech V.Smile Baby,VTech - V.Smile Baby
 laser310,VTech Laser,VTech - Laser 310
 socrates,VTech Socrates,VTech - Socrates
 osborne1,Osborne 1,Osborne - 1
@@ -90,10 +87,18 @@ mbee,MicroBee,Applied Technology - MicroBee
 z80ne,Nuova Elettronica Z80-NE,MAME
 pro128,Olivetti Prodest PC 128,Olivetti - Prodest PC 128
 pro128s,Olivetti Prodest PC 128S,Olivetti - Prodest PC 128S
-arcadia,Emerson Arcadia 2001,Emerson - Arcadia 2001
-supracan,Super Acan,Funtech - Super Acan
-vc4000,Interton VC 4000,Interton - VC 4000
-multivision,Othello Multivision,Othello - Multivision
+einstein,Tatung Einstein,Tatung - Einstein
+alice,Matra Alice,MAME
+tiki100,Tiki 100,MAME
+videobrain,VideoBrain FamilyComputer,VideoBrain - FamilyComputer
+sorcerer,Exidy Sorcerer,MAME
+sol20,Processor Technology SOL-20,MAME
+interact,Interact Family Computer,MAME
+rainbow,DEC Rainbow 100,MAME
+pencil2,Hanimex Pencil II,MAME
+super80,Dick Smith Super-80,MAME
+mc1000,CCE MC-1000,MAME
+kc85,Robotron KC 85,MAME
 ,Tandy / EACA / Dragon,
 cgenie,EACA Colour Genie,EACA - EG2000 Colour Genie
 trs80,Tandy TRS-80,Tandy - TRS-80
@@ -215,25 +220,20 @@ neogeo,SNK Neo Geo AES,SNK - Neo Geo
 neogeocd,SNK Neo Geo CD,SNK - Neo Geo CD
 ngp,SNK Neo Geo Pocket,SNK - Neo Geo Pocket
 ngpc,SNK Neo Geo Pocket Color,SNK - Neo Geo Pocket Color
-,Various small systems,
+,Portable consoles,
+gamepock,Epoch Game Pocket Computer,Epoch - Game Pocket Computer
+supervision,Watara Supervision,Watara - Supervision
+wonderswan,Bandai WonderSwan,Bandai - WonderSwan
+wonderswancolor,Bandai WonderSwan Color,Bandai - WonderSwan Color
+megaduck,Welback Mega Duck,Welback - Mega Duck
+gamate,Bitcorp Gamate,Bitcorp - Gamate
+gmaster,Hartung Game Master,Hartung - Game Master
+gamecom,Tiger Game.com,Tiger - Game.com
+gp32,GamePark GP32,GamePark - GP32
+advision,Adventure Vision,Entex - Adventure Vision
 mononcolor,M&D Monon Color,M&D - Monon Color
 gameking,TimeTop GameKing,TimeTop - GameKing
 gameking3,TimeTop GameKing 3,TimeTop - GameKing 3
-vii,Sport Vii,Sport Vii
-einstein,Tatung Einstein,Tatung - Einstein
-unichamp,Unisonic Champion 2711,Unisonic - Champion 2711
-alice,Matra Alice,MAME
-tiki100,Tiki 100,MAME
-videobrain,VideoBrain FamilyComputer,VideoBrain - FamilyComputer
-entexsag,Entex Select-A-Game,Entex - Select-A-Game
-sorcerer,Exidy Sorcerer,MAME
-sol20,Processor Technology SOL-20,MAME
-interact,Interact Family Computer,MAME
-rainbow,DEC Rainbow 100,MAME
-pencil2,Hanimex Pencil II,MAME
-super80,Dick Smith Super-80,MAME
-mc1000,CCE MC-1000,MAME
-kc85,Robotron KC 85,MAME
 ,Mobile,
 j2me,Java ME (J2ME),Mobile - J2ME
 palm,Palm OS,Mobile - Palm OS (Digital)
