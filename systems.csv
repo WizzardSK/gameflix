@@ -21,6 +21,82 @@ apple2gs,Apple IIGS,Apple - IIGS
 apple3,Apple III,Apple - III
 lisa,Apple Lisa,Apple - Lisa
 macintosh,Apple Macintosh,Apple - Macintosh
+,Sinclair & Amstrad,
+zx80,Sinclair ZX80,Sinclair - ZX 80
+zx81,Sinclair ZX81,Sinclair - ZX 81
+zxspectrum,Sinclair ZX Spectrum,Sinclair - ZX Spectrum
+specpls3,Sinclair ZX Spectrum +3,Sinclair - ZX Spectrum +3
+ql,Sinclair QL,Sinclair - QL
+amstradcpc,Amstrad CPC,Amstrad - CPC
+gx4000,Amstrad GX4000,Amstrad - GX4000
+pcw,Amstrad PCW,Amstrad - PCW
+,Commodore,
+pet,Commodore PET,Commodore - PET
+cplus4,Commodore Plus-4,Commodore - Plus-4
+vic10,Commodore VIC-10,Commodore - VIC-10
+vic20,Commodore VIC-20,Commodore - VIC-20
+cbm2,Commodore CBM-II,Commodore - CBM-II
+c64,Commodore 64,Commodore - 64
+c128,Commodore 128,Commodore - 128
+amiga500,Commodore Amiga,Commodore - Amiga
+amiga1200,Commodore Amiga CD,Commodore - Amiga
+amigacd32,Commodore Amiga CD32,Commodore - CD32
+,Nintendo,
+nes,Nintendo Entertainment System,Nintendo - Nintendo Entertainment System
+famicom,Nintendo Family Computer,Nintendo - Nintendo Entertainment System
+fds,Nintendo Family Disk System,Nintendo - Family Computer Disk System
+snes,Nintendo Super NES,Nintendo - Super Nintendo Entertainment System
+snes-msu1,Nintendo SNES MSU-1,Nintendo - Super Nintendo Entertainment System
+satellaview,Nintendo Satellaview,Nintendo - Satellaview
+sufami,Nintendo Sufami Turbo,Nintendo - Sufami Turbo
+sgb,Nintendo Super Game Boy,Nintendo - Game Boy
+sgb-msu1,Nintendo Game Boy MSU-1,Nintendo - Super Nintendo Entertainment System
+n64,Nintendo 64,Nintendo - Nintendo 64
+n64dd,Nintendo 64DD,Nintendo - Nintendo 64DD
+gc,Nintendo Gamecube,Nintendo - GameCube
+wii,Nintendo Wii,Nintendo - Wii
+pokemini,Nintendo Pokémon Mini,Nintendo - Pokemon Mini
+virtualboy,Nintendo Virtual Boy,Nintendo - Virtual Boy
+gb,Nintendo Game Boy,Nintendo - Game Boy
+gbc,Nintendo Game Boy Color,Nintendo - Game Boy Color
+gba,Nintendo Game Boy Advance,Nintendo - Game Boy Advance
+nds,Nintendo DS,Nintendo - Nintendo DS
+dsi,Nintendo DSi,Nintendo - Nintendo DSi
+3ds,Nintendo 3DS,Nintendo - Nintendo 3DS
+wiiu,Nintendo Wii U,Nintendo - Wii U
+,Sega,
+svmu,Sega Visual Memory Unit,Sega - Visual Memory Unit
+sg-1000,Sega SG-1000,Sega - SG-1000
+sc-3000,Sega SC-3000,Sega - SG-1000
+segaai,Sega AI Computer,Sega - AI Computer
+mastersystem,Sega Master System,Sega - Master System - Mark III
+megadrive,Sega Mega Drive,Sega - Mega Drive - Genesis
+msu-md,Sega MSU-MD,Sega - Mega Drive - Genesis
+pico,Sega PICO,Sega - PICO
+beena,Sega Advanced Pico Beena,Sega - Beena
+sega32x,Sega 32x,Sega - 32X
+segacd,Sega CD,Sega - Mega-CD - Sega CD
+saturn,Sega Saturn,Sega - Saturn
+stv,Sega ST-V,Sega - ST-V
+dreamcast,Sega Dreamcast,Sega - Dreamcast
+model2,Sega Model 2,MAME
+model3,Sega Model 3,MAME
+gamegear,Sega Game Gear,Sega - Game Gear
+,Sony,
+pockstat,Sony Pocket Station,Sony - Pocket Station
+smc777,Sony SMC-777,Sony - SMC-777
+psx,Sony PlayStation 1,Sony - PlayStation
+ps2,Sony PlayStation 2,Sony - PlayStation 2
+psp,Sony PlayStation Portable,Sony - PlayStation Portable
+,IBM PC / DOS,
+dos,Microsoft MS-DOS,DOS
+ibm5150,IBM PC 5150,DOS
+ibm5170,IBM PC/AT 5170,DOS
+ibmpcjr,IBM PCjr,DOS
+msx1,Panasonic MSX1,Microsoft - MSX
+msx2,Panasonic MSX2,Microsoft - MSX2
+msx2+,Panasonic MSX2+,Microsoft - MSX2
+msxturbor,Panasonic MSX TurboR,Microsoft - MSX2
 ,Various consoles,
 channelf,Fairchild Channel F,Fairchild - Channel F
 vectrex,GCE Vectrex,GCE - Vectrex
@@ -44,15 +120,6 @@ multivision,Othello Multivision,Othello - Multivision
 vii,Sport Vii,Sport Vii
 unichamp,Unisonic Champion 2711,Unisonic - Champion 2711
 entexsag,Entex Select-A-Game,Entex - Select-A-Game
-,Sinclair & Amstrad,
-zx80,Sinclair ZX80,Sinclair - ZX 80
-zx81,Sinclair ZX81,Sinclair - ZX 81
-zxspectrum,Sinclair ZX Spectrum,Sinclair - ZX Spectrum
-specpls3,Sinclair ZX Spectrum +3,Sinclair - ZX Spectrum +3
-ql,Sinclair QL,Sinclair - QL
-amstradcpc,Amstrad CPC,Amstrad - CPC
-gx4000,Amstrad GX4000,Amstrad - GX4000
-pcw,Amstrad PCW,Amstrad - PCW
 ,Various computers (--1980),
 pdp1,DEC PDP-1,PDP-1
 sol20,Processor Technology SOL-20,MAME
@@ -117,53 +184,6 @@ mikrosha,Mikrosha,Mikrosha
 samcoupe,SAM Coupé,MGT - Sam Coupe
 socrates,VTech Socrates,VTech - Socrates
 orion128,Orion 128,Orion - 128
-,Nintendo,
-nes,Nintendo Entertainment System,Nintendo - Nintendo Entertainment System
-famicom,Nintendo Family Computer,Nintendo - Nintendo Entertainment System
-fds,Nintendo Family Disk System,Nintendo - Family Computer Disk System
-snes,Nintendo Super NES,Nintendo - Super Nintendo Entertainment System
-snes-msu1,Nintendo SNES MSU-1,Nintendo - Super Nintendo Entertainment System
-satellaview,Nintendo Satellaview,Nintendo - Satellaview
-sufami,Nintendo Sufami Turbo,Nintendo - Sufami Turbo
-sgb,Nintendo Super Game Boy,Nintendo - Game Boy
-sgb-msu1,Nintendo Game Boy MSU-1,Nintendo - Super Nintendo Entertainment System
-n64,Nintendo 64,Nintendo - Nintendo 64
-n64dd,Nintendo 64DD,Nintendo - Nintendo 64DD
-gc,Nintendo Gamecube,Nintendo - GameCube
-wii,Nintendo Wii,Nintendo - Wii
-pokemini,Nintendo Pokémon Mini,Nintendo - Pokemon Mini
-virtualboy,Nintendo Virtual Boy,Nintendo - Virtual Boy
-gb,Nintendo Game Boy,Nintendo - Game Boy
-gbc,Nintendo Game Boy Color,Nintendo - Game Boy Color
-gba,Nintendo Game Boy Advance,Nintendo - Game Boy Advance
-nds,Nintendo DS,Nintendo - Nintendo DS
-dsi,Nintendo DSi,Nintendo - Nintendo DSi
-3ds,Nintendo 3DS,Nintendo - Nintendo 3DS
-wiiu,Nintendo Wii U,Nintendo - Wii U
-,Sega,
-svmu,Sega Visual Memory Unit,Sega - Visual Memory Unit
-sg-1000,Sega SG-1000,Sega - SG-1000
-sc-3000,Sega SC-3000,Sega - SG-1000
-segaai,Sega AI Computer,Sega - AI Computer
-mastersystem,Sega Master System,Sega - Master System - Mark III
-megadrive,Sega Mega Drive,Sega - Mega Drive - Genesis
-msu-md,Sega MSU-MD,Sega - Mega Drive - Genesis
-pico,Sega PICO,Sega - PICO
-beena,Sega Advanced Pico Beena,Sega - Beena
-sega32x,Sega 32x,Sega - 32X
-segacd,Sega CD,Sega - Mega-CD - Sega CD
-saturn,Sega Saturn,Sega - Saturn
-stv,Sega ST-V,Sega - ST-V
-dreamcast,Sega Dreamcast,Sega - Dreamcast
-model2,Sega Model 2,MAME
-model3,Sega Model 3,MAME
-gamegear,Sega Game Gear,Sega - Game Gear
-,Sony,
-pockstat,Sony Pocket Station,Sony - Pocket Station
-smc777,Sony SMC-777,Sony - SMC-777
-psx,Sony PlayStation 1,Sony - PlayStation
-ps2,Sony PlayStation 2,Sony - PlayStation 2
-psp,Sony PlayStation Portable,Sony - PlayStation Portable
 ,NEC & Fujitsu,
 pc60,NEC PC-6000,NEC - PC-6000 - PC-6001
 pc80,NEC PC-8000,NEC - PC-8001 - PC-8801
@@ -175,31 +195,6 @@ pcenginecd,NEC PC Engine CD,NEC - PC Engine CD - TurboGrafx-CD
 pcfx,NEC PC-FX,NEC - PC-FX
 fm7,Fujitsu Micro 7,Fujitsu - Micro 7
 fmtowns,Fujitsu FM Towns,Fujitsu - FM Towns
-,IBM PC / DOS,
-dos,Microsoft MS-DOS,DOS
-ibm5150,IBM PC 5150,DOS
-ibm5170,IBM PC/AT 5170,DOS
-ibmpcjr,IBM PCjr,DOS
-msx1,Panasonic MSX1,Microsoft - MSX
-msx2,Panasonic MSX2,Microsoft - MSX2
-msx2+,Panasonic MSX2+,Microsoft - MSX2
-msxturbor,Panasonic MSX TurboR,Microsoft - MSX2
-,Commodore,
-pet,Commodore PET,Commodore - PET
-cplus4,Commodore Plus-4,Commodore - Plus-4
-vic10,Commodore VIC-10,Commodore - VIC-10
-vic20,Commodore VIC-20,Commodore - VIC-20
-cbm2,Commodore CBM-II,Commodore - CBM-II
-c64,Commodore 64,Commodore - 64
-c128,Commodore 128,Commodore - 128
-amiga500,Commodore Amiga,Commodore - Amiga
-amiga1200,Commodore Amiga CD,Commodore - Amiga
-amigacd32,Commodore Amiga CD32,Commodore - CD32
-,Multimedia,
-amigacdtv,Commodore Amiga CDTV,Commodore - CDTV
-cdi,Philips CD-i,Philips - CD-i
-3do,Panasonic 3DO,The 3DO Company - 3DO
-vis,Video Information System,Tandy - Video Information System
 ,Sharp & Casio,
 x1,Sharp X1,Sharp - X1
 x68000,Sharp X68000,Sharp - X68000
@@ -211,6 +206,11 @@ mz2500,Sharp MZ-2500,Sharp - MZ-2500
 pv1000,Casio PV-1000,Casio - PV-1000
 pv2000,Casio PV-2000,Casio - PV-2000
 loopy,Casio Loopy,Casio - Loopy
+,Multimedia,
+amigacdtv,Commodore Amiga CDTV,Commodore - CDTV
+cdi,Philips CD-i,Philips - CD-i
+3do,Panasonic 3DO,The 3DO Company - 3DO
+vis,Video Information System,Tandy - Video Information System
 ,Arcade,
 mame,MAME,MAME
 vgmplay,VGMPlay,MAME
