@@ -120,70 +120,69 @@ multivision,Othello Multivision,Othello - Multivision
 vii,Sport Vii,Sport Vii
 unichamp,Unisonic Champion 2711,Unisonic - Champion 2711
 entexsag,Entex Select-A-Game,Entex - Select-A-Game
-,Various computers (--1980),
+,Monochrome computers,
 pdp1,DEC PDP-1,PDP-1
 sol20,Processor Technology SOL-20,MAME
-videobrain,VideoBrain FamilyComputer,VideoBrain - FamilyComputer
 trs80,Tandy TRS-80,Tandy - TRS-80
-interact,Interact Family Computer,MAME
 sorcerer,Exidy Sorcerer,MAME
 z80ne,Nuova Elettronica Z80-NE,MAME
-atom,Acorn Atom,Acorn - Atom
-coco,Tandy TRS-80 Color Computer,Tandy - TRS-80 Color Computer
-super80,Dick Smith Super-80,MAME
-,Various computers (1981-1982),
 osborne1,Osborne 1,Osborne - 1
-bbcmicro,Acorn BBC,Acorn - BBC
-ti99,Texas Instruments TI-99/4A,Texas Instruments - TI-99
 jupace,Jupiter Ace,MAME
-mbee,MicroBee,Applied Technology - MicroBee
-cgenie,EACA Colour Genie,EACA - EG2000 Colour Genie
+galaxy,Galaksija,Galaksija
+special,Specialist,MAME
+apogee,Apogee BK-01,Apogee - BK-01
+radio86,Radio-86RK,Radio-86RK
+mikrosha,Mikrosha,Mikrosha
+,Computers up to 8 colors,
+atom,Acorn Atom,Acorn - Atom
+interact,Interact Family Computer,MAME
 spc1000,Samsung SPC-1000,Samsung - SPC-1000
-m5,Sord M5,Sord - M5
-rainbow,DEC Rainbow 100,MAME
+cgenie,EACA Colour Genie,EACA - EG2000 Colour Genie
 dragon64,Dragon 32/64,Dragon - Dragon 64
-thomson,Thomson MO/TO,Thomson - MOTO
-,Various computers (1983),
-aquarius,Mattel Aquarius,Mattel - Aquarius
-adam,Coleco Adam,Coleco - Adam
-rx78,Bandai RX-78,Bandai - Gundam RX-78
-spectravideo,Spectravideo SV-318/SV-328,Spectravideo - SVI-318 - SVI-328
 oric,Oric Atmos,Tangerine - Oric Atmos
 camplynx,Camputers Lynx,Camputers - Lynx
-mtx,Memotech MTX,Memotech - MTX512
 alice,Matra Alice,MAME
-pencil2,Hanimex Pencil II,MAME
 mc10,Tandy MC-10,Tandy - MC-10
+phc25,Sanyo PHC-25,MAME
+laser310,VTech Laser,VTech - Laser 310
+bk,Elektronika BK,Elektronika - BK
+pmd85,Tesla PMD 85,Tesla - PMD 85
+lviv,Lviv PK-01,Lviv - PK-01
+mc1000,CCE MC-1000,MAME
+pecom64,Ei Pecom 64,Pecom - 64
+spc1500,Samsung SPC-1500,Samsung - SPC-1500
+orion128,Orion 128,Orion - 128
+,Computers with 16 colors,
+videobrain,VideoBrain FamilyComputer,VideoBrain - FamilyComputer
+coco,Tandy TRS-80 Color Computer,Tandy - TRS-80 Color Computer
+super80,Dick Smith Super-80,MAME
+bbcmicro,Acorn BBC,Acorn - BBC
+ti99,Texas Instruments TI-99/4A,Texas Instruments - TI-99
+mbee,MicroBee,Applied Technology - MicroBee
+m5,Sord M5,Sord - M5
+rainbow,DEC Rainbow 100,MAME
+thomson,Thomson MO/TO,Thomson - MOTO
+aquarius,Mattel Aquarius,Mattel - Aquarius
+adam,Coleco Adam,Coleco - Adam
+spectravideo,Spectravideo SV-318/SV-328,Spectravideo - SVI-318 - SVI-328
+mtx,Memotech MTX,Memotech - MTX512
+pencil2,Hanimex Pencil II,MAME
 electron,Acorn Electron,Acorn - Electron
 tutor,Tomy Tutor,Tomy - Tutor
 myvision,Nichibutsu My Vision,Nichibutsu - My Vision
-phc25,Sanyo PHC-25,MAME
-galaxy,Galaksija,Galaksija
-,Various computers (1984-1985),
 einstein,Tatung Einstein,Tatung - Einstein
-laser310,VTech Laser,VTech - Laser 310
 tiki100,Tiki 100,MAME
 kc85,Robotron KC 85,MAME
-enterprise,Enterprise 64/128,Enterprise - Enterprise
-bk,Elektronika BK,Elektronika - BK
-pmd85,Tesla PMD 85,Tesla - PMD 85
-special,Specialist,MAME
-mc1000,CCE MC-1000,MAME
-apogee,Apogee BK-01,Apogee - BK-01
-,Various computers (1986+),
 pro128,Olivetti Prodest PC 128,Olivetti - Prodest PC 128
 pro128s,Olivetti Prodest PC 128S,Olivetti - Prodest PC 128S
 tvc,Videoton TV Computer,Enterprise - Enterprise
-pecom64,Ei Pecom 64,Pecom - 64
-radio86,Radio-86RK,Radio-86RK
-lviv,Lviv PK-01,Lviv - PK-01
-archimedes,Acorn Archimedes,Acorn - Archimedes
-spc1500,Samsung SPC-1500,Samsung - SPC-1500
 vector06,Vector-06C,Vector-06C
-mikrosha,Mikrosha,Mikrosha
 samcoupe,SAM Coupé,MGT - Sam Coupe
+,Computers with 64+ colors,
+rx78,Bandai RX-78,Bandai - Gundam RX-78
+enterprise,Enterprise 64/128,Enterprise - Enterprise
+archimedes,Acorn Archimedes,Acorn - Archimedes
 socrates,VTech Socrates,VTech - Socrates
-orion128,Orion 128,Orion - 128
 ,NEC & Fujitsu,
 pc60,NEC PC-6000,NEC - PC-6000 - PC-6001
 pc80,NEC PC-8000,NEC - PC-8001 - PC-8801
