@@ -154,14 +154,11 @@ spc1500,Samsung SPC-1500,Samsung - SPC-1500
 orion128,Orion 128,Orion - 128
 ,Computers with 16 colors,
 videobrain,VideoBrain FamilyComputer,VideoBrain - FamilyComputer
-coco,Tandy TRS-80 Color Computer,Tandy - TRS-80 Color Computer
 super80,Dick Smith Super-80,MAME
 bbcmicro,Acorn BBC,Acorn - BBC
 ti99,Texas Instruments TI-99/4A,Texas Instruments - TI-99
 mbee,MicroBee,Applied Technology - MicroBee
 m5,Sord M5,Sord - M5
-rainbow,DEC Rainbow 100,MAME
-thomson,Thomson MO/TO,Thomson - MOTO
 aquarius,Mattel Aquarius,Mattel - Aquarius
 adam,Coleco Adam,Coleco - Adam
 spectravideo,Spectravideo SV-318/SV-328,Spectravideo - SVI-318 - SVI-328
@@ -171,18 +168,21 @@ electron,Acorn Electron,Acorn - Electron
 tutor,Tomy Tutor,Tomy - Tutor
 myvision,Nichibutsu My Vision,Nichibutsu - My Vision
 einstein,Tatung Einstein,Tatung - Einstein
-tiki100,Tiki 100,MAME
 kc85,Robotron KC 85,MAME
+tvc,Videoton TV Computer,Enterprise - Enterprise
+,Computers with extended palette,
+rx78,Bandai RX-78,Bandai - Gundam RX-78
+coco,Tandy TRS-80 Color Computer,Tandy - TRS-80 Color Computer
+samcoupe,SAM Coupé,MGT - Sam Coupe
+enterprise,Enterprise 64/128,Enterprise - Enterprise
+vector06,Vector-06C,Vector-06C
+socrates,VTech Socrates,VTech - Socrates
+thomson,Thomson MO/TO,Thomson - MOTO
+rainbow,DEC Rainbow 100,MAME
+tiki100,Tiki 100,MAME
 pro128,Olivetti Prodest PC 128,Olivetti - Prodest PC 128
 pro128s,Olivetti Prodest PC 128S,Olivetti - Prodest PC 128S
-tvc,Videoton TV Computer,Enterprise - Enterprise
-vector06,Vector-06C,Vector-06C
-samcoupe,SAM Coupé,MGT - Sam Coupe
-,Computers with 64+ colors,
-rx78,Bandai RX-78,Bandai - Gundam RX-78
-enterprise,Enterprise 64/128,Enterprise - Enterprise
 archimedes,Acorn Archimedes,Acorn - Archimedes
-socrates,VTech Socrates,VTech - Socrates
 ,NEC & Fujitsu,
 pc60,NEC PC-6000,NEC - PC-6000 - PC-6001
 pc80,NEC PC-8000,NEC - PC-8001 - PC-8801
