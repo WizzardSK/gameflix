@@ -191,6 +191,8 @@ wonderswancolor,MAME/Software List ROMs (split)/wscolor,Split,mame wscolor -cart
 megaduck,No-Intro/Welback - Mega Duck,NoIntro,mame megaduck -cart,
 megaduck,MAME/Software List ROMs (merged)/megaduck,Merged,mame megaduck -cart,
 megaduck,MAME/Software List ROMs (split)/megaduck,Split,mame megaduck -cart,
+microvision,MAME/Software List ROMs (merged)/microvision,Merged,mame microvsn -cart,
+microvision,MAME/Software List ROMs (split)/microvision,Split,mame microvsn -cart,
 gamate,No-Intro/Bit Corporation - Gamate,NoIntro,mame gamate -cart,
 gamate,TOSEC/Bit Corporation/Gamate/Games,TOSEC,mame gamate -cart,
 gamate,MAME/Software List ROMs (merged)/gamate,Merged,mame gamate -cart,
