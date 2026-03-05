@@ -283,10 +283,10 @@
 3058	Lights Brights	VaejmUK2JT_Lights_Brights.png	VaejmUK2JT_Lights_Brights.nx
 3056	Thing	mWWsyD4ezG_LowRes_NX_20230708_23_30_08.png	mWWsyD4ezG_thing.nx
 3055	Treasures of Tarmin ... Beginnings...	n8GMnQ5keA_Tarmin_Master_1.005.png	n8GMnQ5keA_Tarmin_Master_1.005.nx
-3054	... just testing.... 	zbxbk4NDF3_All_Nine_all_phones.png	zbxbk4NDF3_All_Nine_all_phones.nx
-3052	Battleships	SxFoAVykS6_Battleships.png	SxFoAVykS6_Battleships.nx
-3044	ALL NINE battle dice	kqRd9mihov_All_Nine_2.0.png	kqRd9mihov_All_Nine_2.0.nx
-3043	Loop Chess	SCnfyxSxFk_Loop_Chess_Du.png	SCnfyxSxFk_Loop_Chess_Du.nx
+3054			
+3052			
+3044			
+3043			
 3039	Tower Defence Arcade game	sGCo3nNs2j_Tower_Defence_Arcade.png	sGCo3nNs2j_Tower_Defence_Arcade.nx
 3038	ROCKET-O!	iu8MNecSLC_LowRes_NX_20230625_16_38_45.png	iu8MNecSLC_ROCKETO.nx
 3037	Du Sum	EsEXrR2PAu_Du_Sum_25.2.png	EsEXrR2PAu_Du_Sum_25.2.nx
@@ -354,10 +354,10 @@
 2902	Another display driver	Kb5Lej3jV4_Another_Display_Driver.png	Kb5Lej3jV4_Another_Display_Driver.nx
 2899	ELECTRIC KEYBOARD	WHshYiDpzC_Keyboard_Funkalicious.png	WHshYiDpzC_Keyboard_Funkalicious.nx
 2894	Tic-Tac-Flip	4HkriDQsjk_LowRes_NX_20230220_01_46_53.png	4HkriDQsjk_tictacflip.nx
-2893			
-2887			
-2884			
-2879			
+2893	TANKS remixed	Wg6GpZaJ2y_TANK_remixed.png	Wg6GpZaJ2y_TANK_remixed.nx
+2887	Gaia Goblin 	Kzqy3BqbFp_Gaia_Goblin_title.png	Kzqy3BqbFp_Gaia_Goblin_title.nx
+2884	Devil Ladders	4GFRqbWMfG_LowRes_NX_20230210_22_15_11.png	4GFRqbWMfG_Devil_Ladders.nx
+2879	Platformer mockdown 	ZbLzwkTtMA_Unnamed_Program_2.png	ZbLzwkTtMA_Unnamed_Program_2.nx
 2878	Boneville test fork request	GJA3egtsce_Boneville_Test_Game.png	GJA3egtsce_Boneville_Test_Game.nx
 2877	First background, Sprite, and Gamepad!	GciKQK4hY9_Boneville_Test_Game.png	GciKQK4hY9_Boneville_Test_Game.nx
 2875	Flashing Lights toy	rMQEfwrqND_Flashing_Lights_Toy.png	rMQEfwrqND_Flashing_Lights_Toy.nx
