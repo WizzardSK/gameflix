@@ -25,10 +25,7 @@ Generovane: 2026-03-01
 |--------|--------------|-------------|---------|----------|
 | MicroBee (floppy) | `mbee_flop` | `mbee56 -flop1` | 494 | Preliminary driver, cart+quik uz pridane |
 | Compucolor II | `compclr2_flop` | `compclr2 -flop1` | 239 | Americky pocitac |
-| Olivetti Prodest PC 128 | `pro128_cass` + `pro128_flop` + `pro128s_flop` | `pro128 -cass` / `-flop1` | 202 | Taliansky pocitac |
-| Robotron KC 85 | `kc_cass` + `kc_cart` + `kc_flop` | `kc85_4 -cass` / `-cart` / `-flop1` | 189 | Vychodonemecky pocitac |
-| Specialist | `special_cass` | `special -cass` | 160 | Sovietsky pocitac |
-| Z80-NE | `z80ne_cass` + `z80ne_flop` | `z80ne -cass` / `-flop1` | 120 | Taliansky edukacny pocitac |
+| Robotron KC 85 | `kc_cart` + `kc_flop` | `kc85_4 -cart` / `-flop1` | ~100 | Vychodonemecky pocitac (cass uz pridane) |
 | Orion 128 (kazety) | `orion_cass` | `orion128 -cass` | 82 | Doplnok k existujucim disketam |
 | Nascom | `nascom_snap` + `nascom_flop` | `nascom2 -snap` / `-flop1` | 78 | Britsky pocitac |
 | Partner-01.01 | `partner_cass` + `partner_flop` | `partner -cass` / `-flop1` | 75 | Sovietsky pocitac |
@@ -89,23 +86,23 @@ Generovane: 2026-03-01
 
 ## Zhrnutie
 
-- **~20 uplne novych systemov** (nie su v platforms.csv vobec)
+- **~17 uplne novych systemov** (nie su v platforms.csv vobec)
 - **~14 doplnkovych software listov** k existujucim systemom
-- **~3 200+ titulov** celkovo
+- **~2 700+ titulov** celkovo
 
-Uz pridane do platforms.csv: V.Smile Baby, CHIP-8 (d6800), Osborne 1, MicroBee (cart+quik), Specialist, Z80-NE
+Uz pridane do platforms.csv: V.Smile Baby, CHIP-8 (d6800), Osborne 1, MicroBee (cart+quik), Specialist, Z80-NE, Olivetti Prodest PC 128, Robotron KC 85 (cass)
 
 Nefunkcne v MAME (preliminary): LeapFrog Leapster, LeapFrog LeapPad
 
 ### TOP 10 podla velkosti kniznice
 
-1. MicroBee (floppy) - 494 titulov (preliminary, cart+quik uz pridane)
-2. GBA e-Reader - 686 titulov (doplnok)
+1. GBA e-Reader - 686 titulov (doplnok)
+2. MicroBee (floppy) - 494 titulov (preliminary, cart+quik uz pridane)
 3. IBM PC AT CD-ROM - 476 titulov (doplnok)
 4. SNES BS-X - 401 titulov (doplnok)
 5. e-kara - 242 titulov
 6. Compucolor II - 239 titulov
-7. Olivetti Prodest PC 128 - 202 titulov
-8. Robotron KC 85 - 189 titulov
-9. Specialist - 160 titulov
-10. Z80-NE - 120 titulov
+7. APF Imagination Machine - 103 titulov (doplnok)
+8. PC-8801 kazety - 102 titulov (doplnok)
+9. Robotron KC 85 - ~100 titulov (cart+flop, cass uz pridane)
+10. Apple Pippin - 89 titulov
