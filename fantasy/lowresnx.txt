@@ -283,10 +283,10 @@
 3058	Lights Brights	VaejmUK2JT_Lights_Brights.png	VaejmUK2JT_Lights_Brights.nx
 3056	Thing	mWWsyD4ezG_LowRes_NX_20230708_23_30_08.png	mWWsyD4ezG_thing.nx
 3055	Treasures of Tarmin ... Beginnings...	n8GMnQ5keA_Tarmin_Master_1.005.png	n8GMnQ5keA_Tarmin_Master_1.005.nx
-3054			
-3052			
-3044			
-3043			
+3054	... just testing.... 	zbxbk4NDF3_All_Nine_all_phones.png	zbxbk4NDF3_All_Nine_all_phones.nx
+3052	Battleships	SxFoAVykS6_Battleships.png	SxFoAVykS6_Battleships.nx
+3044	ALL NINE battle dice	kqRd9mihov_All_Nine_2.0.png	kqRd9mihov_All_Nine_2.0.nx
+3043	Loop Chess	SCnfyxSxFk_Loop_Chess_Du.png	SCnfyxSxFk_Loop_Chess_Du.nx
 3039	Tower Defence Arcade game	sGCo3nNs2j_Tower_Defence_Arcade.png	sGCo3nNs2j_Tower_Defence_Arcade.nx
 3038	ROCKET-O!	iu8MNecSLC_LowRes_NX_20230625_16_38_45.png	iu8MNecSLC_ROCKETO.nx
 3037	Du Sum	EsEXrR2PAu_Du_Sum_25.2.png	EsEXrR2PAu_Du_Sum_25.2.nx
