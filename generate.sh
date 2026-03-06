@@ -8,25 +8,36 @@ echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/game
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
 
+# Pre-fetch all directory listings in parallel (rclone mount is slow per-request)
+echo "Pre-fetching directory listings..."
+cache=~/dircache; mkdir -p "$cache"
+cut -d',' -f2 platforms.csv | tail -n +2 | sort -u | xargs -P20 -I{} bash -c '
+  dir="$HOME/myrient/{}"
+  out="'"$cache"'/$(echo "{}" | tr "/" "_").txt"
+  ls "$dir" > "$out" 2>/dev/null
+'
+echo "Pre-fetch done."
+
 echo "<b>Fantasy & Homebrew</b><br />" >> ~/gameflix/systems.html; echo "<h3 style=\"width:100%\">Fantasy & Homebrew</h3>" >> ~/gameflix/main.html
 
-# TIC-80 - all categories with section headers
+# TIC-80 - all categories fetched in parallel
 pocet=0; echo "TIC-80"; cp platform.html ~/gameflix/TIC-80.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/tic80/gamelist.xml
 echo "*\"TIC-80/\"*) core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh
+tic_cache=~/tic_cache; mkdir -p "$tic_cache"
 for tic_cat in Games Tech Tools Music WIP Demoscene Livecoding; do
-  data=$(curl -s "https://tic80.com/api?fn=dir&path=play/$tic_cat")
+  curl -s "https://tic80.com/api?fn=dir&path=play/$tic_cat" > "$tic_cache/$tic_cat" &
+done; wait
+for tic_cat in Games Tech Tools Music WIP Demoscene Livecoding; do
+  data=$(<"$tic_cache/$tic_cat")
   cat_count=$(echo "$data" | grep -o 'filename' | wc -l)
   [[ $cat_count -eq 0 ]] && continue
   pocet=$((pocet+cat_count)); total=$((total+cat_count))
   echo -e "<h3 id=\"$tic_cat\" class=\"section-header\">$tic_cat</h3>\n<script>bgImage(\"tic80\")\nfileNames = [" >> ~/gameflix/TIC-80.html
-  records=(); while IFS= read -r line; do
-    if [[ "$line" =~ id[[:space:]]*=[[:space:]]*([0-9]+) ]]; then id="${BASH_REMATCH[1]}"; else continue; fi
-    if [[ "$line" =~ hash[[:space:]]*=[[:space:]]*\"([a-f0-9]+)\" ]]; then hash="${BASH_REMATCH[1]}"; else continue; fi
-    if [[ "$line" =~ name[[:space:]]*=[[:space:]]*\"([^\"]+)\" ]]; then name="${BASH_REMATCH[1]%.tic}"; else continue; fi
-    records+=("$id"$'\t'"$hash"$'\t'"$name")
-  done <<< "$(echo "$data" | sed 's/},/}\n/g')"
-  printf "%s\n" "${records[@]}" | sort -nr -k1,1 | awk '{ print "\"" $0 "\"," }' >> ~/gameflix/TIC-80.html
+  echo "$data" | sed 's/},/}\n/g' | awk '
+    match($0, /id *= *([0-9]+)/, a) && match($0, /hash *= *"([a-f0-9]+)"/, b) && match($0, /name *= *"([^"]+)"/, c) {
+      sub(/\.tic$/, "", c[1]); print a[1] "\t" b[1] "\t" c[1]
+    }' | sort -nr -k1,1 | awk '{ print "\"" $0 "\"," }' >> ~/gameflix/TIC-80.html
   printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script>\n' >> ~/gameflix/TIC-80.html
 done
 echo "<script src=\"script.js\"></script>" >> ~/gameflix/TIC-80.html
@@ -150,16 +161,18 @@ IFS=";"; for each in "${roms[@]}"; do
     exec {xml_fd}>> ~/gamelists/${rom[0]}/gamelist.xml
     gamelist_started[${rom[0]}]=1
   fi
+  cachefile="$cache/$(echo "${rom[1]}" | tr '/' '_').txt"
   romdir=~/"${romfolder}"
   while IFS= read -r line; do
+    [[ -z "$line" ]] && continue
     line2="${line%.*}"; echo "\"${line}\"," >&$html_fd; ((pocet++)); ((total++))
     if [[ "$line2" == *")"* ]]; then thumb="${line2%%)*})"; else thumb="$line2"; fi
-    if [ -d "${romdir}/${line}" ]; then polozka="folder"; else polozka="game"; fi
+    if [[ "$line" != *.* ]]; then polozka="folder"; else polozka="game"; fi
     hra="<$polozka><path>./$foldername/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[5]}/Named_Snaps/${thumb}.png</image>"
     if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h [^]]*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then
       echo "${hra}</$polozka>" >&$xml_fd
     else echo "${hra}<hidden>true</hidden></$polozka>" >&$xml_fd; fi
-  done < <(ls "$romdir")
+  done < "$cachefile"
   prev_romfolder="$romfolder"; prev_imagepath="${rom[5]// /_}"; prev_platform="${rom[0]}"
   platform=${rom[0]}; ext=""; if [ -n "${rom[4]}" ]; then ext="; ext=\"${rom[4]}\""; fi; emu="${rom[3]//\"/\\\"}"; echo "*\"${emufolder}/\"*) core=\"${emu}\"${ext};;" >> ~/gameflix/retroarch.sh
   echo "<folder><path>./$foldername</path><name>$foldername</name><image>~/../thumb/${rom[0]}.png</image></folder>" >&$xml_fd
