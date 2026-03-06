@@ -20,6 +20,7 @@ apple2,Apple II,Apple - II
 apple2gs,Apple IIGS,Apple - IIGS
 apple3,Apple III,Apple - III
 lisa,Apple Lisa,Apple - Lisa
+pippin,Apple Pippin,Apple - Pippin
 macintosh,Apple Macintosh,Apple - Macintosh
 ,Sinclair & Amstrad,
 zx80,Sinclair ZX80,Sinclair - ZX 80
@@ -62,6 +63,7 @@ gbc,Nintendo Game Boy Color,Nintendo - Game Boy Color
 gba,Nintendo Game Boy Advance,Nintendo - Game Boy Advance
 nds,Nintendo DS,Nintendo - Nintendo DS
 dsi,Nintendo DSi,Nintendo - Nintendo DSi
+famibox,Nintendo Famicom Box,Nintendo - Nintendo Entertainment System
 3ds,Nintendo 3DS,Nintendo - Nintendo 3DS
 wiiu,Nintendo Wii U,Nintendo - Wii U
 ,Sega,
@@ -98,6 +100,7 @@ msx2,Panasonic MSX2,Microsoft - MSX2
 msx2+,Panasonic MSX2+,Microsoft - MSX2
 msxturbor,Panasonic MSX TurboR,Microsoft - MSX2
 ,Various consoles,
+studio2,RCA Studio II,RCA - Studio II
 channelf,Fairchild Channel F,Fairchild - Channel F
 vectrex,GCE Vectrex,GCE - Vectrex
 odyssey2,Magnavox Odyssey²,Magnavox - Odyssey2
@@ -114,12 +117,17 @@ creativision,VTech CreatiVision,VTech - CreatiVision
 vsmile,VTech V.Smile,VTech - V.Smile
 vsmileb,VTech V.Smile Baby,VTech - V.Smile Baby
 arcadia,Emerson Arcadia 2001,Emerson - Arcadia 2001
+hyperscan,Mattel HyperScan,Mattel - HyperScan
+nuon,NUON,Samsung - NUON
 supracan,Super Acan,Funtech - Super Acan
 vc4000,Interton VC 4000,Interton - VC 4000
 multivision,Othello Multivision,Othello - Multivision
 vii,Sport Vii,Sport Vii
 unichamp,Unisonic Champion 2711,Unisonic - Champion 2711
 entexsag,Entex Select-A-Game,Entex - Select-A-Game
+ekara,e-kara,Takara - e-kara
+videoart,VideoArt,MAME
+kisssite,Tomy Kiss-Site,MAME
 ,Monochrome computers,
 pdp1,DEC PDP-1,PDP-1
 sol20,Processor Technology SOL-20,MAME
@@ -128,11 +136,17 @@ sorcerer,Exidy Sorcerer,MAME
 z80ne,Nuova Elettronica Z80-NE,MAME
 osborne1,Osborne 1,Osborne - 1
 jupace,Jupiter Ace,MAME
+nascom,Nascom,MAME
+abc80,Luxor ABC 80,MAME
+zorba,Zorba,MAME
+kaypro,Kaypro,MAME
 galaxy,Galaksija,Galaksija
 special,Specialist,MAME
 apogee,Apogee BK-01,Apogee - BK-01
 radio86,Radio-86RK,Radio-86RK
 mikrosha,Mikrosha,Mikrosha
+partner,Partner-01.01,MAME
+korvet,Korvet,MAME
 ,Computers up to 8 colors,
 atom,Acorn Atom,Acorn - Atom
 interact,Interact Family Computer,MAME
@@ -141,6 +155,11 @@ cgenie,EACA Colour Genie,EACA - EG2000 Colour Genie
 dragon64,Dragon 32/64,Dragon - Dragon 64
 oric,Oric Atmos,Tangerine - Oric Atmos
 camplynx,Camputers Lynx,Camputers - Lynx
+orao,Orao,MAME
+vg5k,Philips VG-5000,MAME
+pegasus,Pegasus,MAME
+juku,Juku,MAME
+x07,Canon X-07,MAME
 alice,Matra Alice,MAME
 mc10,Tandy MC-10,Tandy - MC-10
 phc25,Sanyo PHC-25,MAME
@@ -166,6 +185,9 @@ mtx,Memotech MTX,Memotech - MTX512
 pencil2,Hanimex Pencil II,MAME
 electron,Acorn Electron,Acorn - Electron
 tutor,Tomy Tutor,Tomy - Tutor
+exl100,Exel EXL 100,MAME
+compclr2,Compucolor II,MAME
+z88,Cambridge Z88,MAME
 myvision,Nichibutsu My Vision,Nichibutsu - My Vision
 einstein,Tatung Einstein,Tatung - Einstein
 kc85,Robotron KC 85,MAME
@@ -191,6 +213,8 @@ pc98,NEC PC-9800,NEC - PC-98
 pcengine,NEC PC Engine 1,NEC - PC Engine - TurboGrafx 16
 supergrafx,NEC PC Engine 2,NEC - PC Engine SuperGrafx
 pcenginecd,NEC PC Engine CD,NEC - PC Engine CD - TurboGrafx-CD
+pc88va,NEC PC-88VA,NEC - PC-8001 - PC-8801
+apc,NEC APC,NEC - APC
 pcfx,NEC PC-FX,NEC - PC-FX
 fm7,Fujitsu Micro 7,Fujitsu - Micro 7
 fmtowns,Fujitsu FM Towns,Fujitsu - FM Towns
@@ -226,6 +250,8 @@ wonderswancolor,Bandai WonderSwan Color,Bandai - WonderSwan Color
 megaduck,Welback Mega Duck,Welback - Mega Duck
 microvision,Milton Bradley Microvision,Milton Bradley - Microvision
 gamate,Bitcorp Gamate,Bitcorp - Gamate
+pockchalw,Bandai Pocket Challenge W,Bandai - Pocket Challenge W
+juicebox,Mattel Juice Box,MAME
 gmaster,Hartung Game Master,Hartung - Game Master
 gamecom,Tiger Game.com,Tiger - Game.com
 gp32,GamePark GP32,GamePark - GP32
