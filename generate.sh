@@ -11,12 +11,14 @@ for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix
 # Pre-fetch all directory listings in parallel (rclone mount is slow per-request)
 echo "Pre-fetching directory listings..."
 cache=~/dircache; mkdir -p "$cache"
-cut -d',' -f2 platforms.csv | tail -n +2 | sort -u | while IFS= read -r path; do
-  echo "$path"
-done | xargs -P20 -d$'\n' -I{} bash -c '
-  h=$(echo -n "{}" | md5sum | cut -d" " -f1)
-  ls "$HOME/myrient/{}" > "'"$cache"'/$h.txt" 2>/dev/null
-'
+jobs_running=0
+while IFS= read -r path; do
+  h=$(echo -n "$path" | md5sum | cut -d' ' -f1)
+  ls "$HOME/myrient/$path" > "$cache/$h.txt" 2>/dev/null &
+  ((jobs_running++))
+  if ((jobs_running >= 20)); then wait -n; ((jobs_running--)); fi
+done < <(cut -d',' -f2 platforms.csv | tail -n +2 | sort -u)
+wait
 echo "Pre-fetch done."
 
 echo "<b>Fantasy & Homebrew</b><br />" >> ~/gameflix/systems.html; echo "<h3 style=\"width:100%\">Fantasy & Homebrew</h3>" >> ~/gameflix/main.html
