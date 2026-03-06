@@ -34,22 +34,35 @@ echo "<figure><a href='TIC-80.html'><img src='https://raw.githubusercontent.com/
 echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 echo "<game><path>./surf.tic</path><name>TIC-80 surf</name><image>./tic80.png</image></game></gameList>" >> ~/gamelists/tic80/gamelist.xml
 
-# LowresNX - redirect stdin, dual fd output
-pocet=$(ls ~/roms/LowresNX/*.nx | wc -l); total=$((pocet+total))
-echo "<figure><a href='LowresNX.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/lowresnx.jpg'><figcaption>LowresNX</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
-echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"LowresNX/\"*) core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh
-echo "LowresNX"; cp platform.html ~/gameflix/LowresNX.html; echo "<script>bgImage(\"lowresnx\"); fileNames = [" >> ~/gameflix/LowresNX.html; ((platforms++))
-exec 3>> ~/gameflix/LowresNX.html
+# LowresNX - categories with section headers
+pocet=0; echo "LowresNX"; cp platform.html ~/gameflix/LowresNX.html; ((platforms++))
+echo "*\"LowresNX/\"*) core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh
+declare -A lrnx_names=([game]=Games [art]=Art [tool]=Tools [example]=Examples)
+section_open=0
 {
   echo "<gameList>"
-  while IFS=$'\t' read -r id name picture cart; do
-    if [[ -n "$cart" && -n "$picture" ]]; then echo "\"$cart\t$picture\t$name\t$id\"," >&3; fi
+  while IFS=$'\t' read -r id rest; do
+    if [[ "$id" == "---" ]]; then
+      if [[ $section_open -eq 1 ]]; then
+        printf ']; generateLrNXLinks("roms/LowresNX", "LowresNX");</script>\n' >> ~/gameflix/LowresNX.html
+      fi
+      section_name="${lrnx_names[$rest]:-$rest}"
+      echo -e "<h3 id=\"$section_name\" class=\"section-header\">$section_name</h3>\n<script>bgImage(\"lowresnx\")\nfileNames = [" >> ~/gameflix/LowresNX.html
+      section_open=1; continue
+    fi
+    IFS=$'\t' read -r name picture cart <<< "$rest"
+    if [[ -n "$cart" && -n "$picture" ]]; then
+      echo "\"$cart\t$picture\t$name\t$id\"," >> ~/gameflix/LowresNX.html
+      ((pocet++)); ((total++))
+    fi
     echo "<game><path>./${cart}</path><name>${name}</name><image>./${picture}</image></game>"
   done < fantasy/lowresnx.txt
   echo "</gameList>"
 } > ~/gamelists/lowresnx/gamelist.xml
-exec 3>&-
-printf ']; generateLrNXLinks("roms/LowresNX", "LowresNX");</script><script src=\"script.js\"></script>' >> ~/gameflix/LowresNX.html
+printf ']; generateLrNXLinks("roms/LowresNX", "LowresNX");</script>\n' >> ~/gameflix/LowresNX.html
+echo "<script src=\"script.js\"></script>" >> ~/gameflix/LowresNX.html
+echo "<figure><a href='LowresNX.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/lowresnx.jpg'><figcaption>LowresNX</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
+echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 
 # WASM-4 - dual fd output
 pocet=$(ls ~/roms/WASM-4/*.wasm | wc -l); total=$((pocet+total))
