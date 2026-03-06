@@ -7,7 +7,7 @@
 155390	bitPicoin	bitpicoin-1.p8.png
 155387	Daily Stitch	daily_stitch-0.p8.png
 155382	#k040326	k040326-0.p8.png
-155381	[Demo] Dropkicks Inc.	dropkicks_inc_demo-0.p8.png
+155381	[Demo] Dropkicks Inc.	dropkicks_inc_demo-1.p8.png
 155380	Pico Pong	pico_pong_dirtyharold-0.p8.png
 155372	mia	mia-10.p8.png
 155371	Moss Moss	mossmoss-2.p8.png
