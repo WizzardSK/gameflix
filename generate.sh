@@ -10,19 +10,28 @@ for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix
 
 echo "<b>Fantasy & Homebrew</b><br />" >> ~/gameflix/systems.html; echo "<h3 style=\"width:100%\">Fantasy & Homebrew</h3>" >> ~/gameflix/main.html
 
-# TIC-80 - single API call
-data=$(curl -s "https://tic80.com/api?fn=dir&path=play/Games")
-pocet=$(echo "$data" | grep -o 'filename' | wc -l); total=$((pocet+total))
+# TIC-80 - all categories with section headers
+pocet=0; echo "TIC-80"; cp platform.html ~/gameflix/TIC-80.html; ((platforms++))
+echo "<gameList>" > ~/gamelists/tic80/gamelist.xml
+echo "*\"TIC-80/\"*) core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh
+for tic_cat in Games Tech Tools Music WIP Demoscene Livecoding; do
+  data=$(curl -s "https://tic80.com/api?fn=dir&path=play/$tic_cat")
+  cat_count=$(echo "$data" | grep -o 'filename' | wc -l)
+  [[ $cat_count -eq 0 ]] && continue
+  pocet=$((pocet+cat_count)); total=$((total+cat_count))
+  echo -e "<h3 id=\"$tic_cat\" class=\"section-header\">$tic_cat</h3>\n<script>bgImage(\"tic80\")\nfileNames = [" >> ~/gameflix/TIC-80.html
+  records=(); while IFS= read -r line; do
+    if [[ "$line" =~ id[[:space:]]*=[[:space:]]*([0-9]+) ]]; then id="${BASH_REMATCH[1]}"; else continue; fi
+    if [[ "$line" =~ hash[[:space:]]*=[[:space:]]*\"([a-f0-9]+)\" ]]; then hash="${BASH_REMATCH[1]}"; else continue; fi
+    if [[ "$line" =~ name[[:space:]]*=[[:space:]]*\"([^\"]+)\" ]]; then name="${BASH_REMATCH[1]%.tic}"; else continue; fi
+    records+=("$id"$'\t'"$hash"$'\t'"$name")
+  done <<< "$(echo "$data" | sed 's/},/}\n/g')"
+  printf "%s\n" "${records[@]}" | sort -nr -k1,1 | awk '{ print "\"" $0 "\"," }' >> ~/gameflix/TIC-80.html
+  printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script>\n' >> ~/gameflix/TIC-80.html
+done
+echo "<script src=\"script.js\"></script>" >> ~/gameflix/TIC-80.html
 echo "<figure><a href='TIC-80.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/tic80.jpg'><figcaption>TIC-80</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
-echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"TIC-80/\"*) core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh
-echo "TIC-80"; cp platform.html ~/gameflix/TIC-80.html; echo "<script>bgImage(\"tic80\"); fileNames = [" >> ~/gameflix/TIC-80.html; ((platforms++))
-echo "<gameList>" > ~/gamelists/tic80/gamelist.xml; records=(); while IFS= read -r line; do
-  if [[ "$line" =~ id[[:space:]]*=[[:space:]]*([0-9]+) ]]; then id="${BASH_REMATCH[1]}"; else continue; fi
-  if [[ "$line" =~ hash[[:space:]]*=[[:space:]]*\"([a-f0-9]+)\" ]]; then hash="${BASH_REMATCH[1]}"; else continue; fi
-  if [[ "$line" =~ name[[:space:]]*=[[:space:]]*\"([^\"]+)\" ]]; then name="${BASH_REMATCH[1]%.tic}"; else continue; fi
-  records+=("$id"$'\t'"$hash"$'\t'"$name")
-done <<< "$(echo "$data" | sed 's/},/}\n/g')"; printf "%s\n" "${records[@]}" | sort -nr -k1,1 | awk '{ print "\"" $0 "\"," }' >> ~/gameflix/TIC-80.html
-printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script><script src=\"script.js\"></script>' >> ~/gameflix/TIC-80.html;
+echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 echo "<game><path>./surf.tic</path><name>TIC-80 surf</name><image>./tic80.png</image></game></gameList>" >> ~/gamelists/tic80/gamelist.xml
 
 # LowresNX - redirect stdin, dual fd output
