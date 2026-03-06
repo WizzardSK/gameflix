@@ -17,7 +17,7 @@ while IFS= read -r path; do
   (ls "$HOME/myrient/$path" 2>/dev/null > "$cache/$h.txt" || true) &
   ((jobs_running++))
   if ((jobs_running >= 20)); then wait -n; ((jobs_running--)); fi
-done < <(cut -d',' -f2 platforms.csv | tail -n +2 | sort -u)
+done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv) | cut -d';' -f2 | sort -u)
 wait
 echo "Pre-fetch done."
 
