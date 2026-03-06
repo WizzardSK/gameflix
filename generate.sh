@@ -11,10 +11,11 @@ for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix
 # Pre-fetch all directory listings in parallel (rclone mount is slow per-request)
 echo "Pre-fetching directory listings..."
 cache=~/dircache; mkdir -p "$cache"
-cut -d',' -f2 platforms.csv | tail -n +2 | sort -u | xargs -P20 -I{} bash -c '
-  dir="$HOME/myrient/{}"
-  out="'"$cache"'/$(echo "{}" | tr "/" "_").txt"
-  ls "$dir" > "$out" 2>/dev/null
+cut -d',' -f2 platforms.csv | tail -n +2 | sort -u | while IFS= read -r path; do
+  echo "$path"
+done | xargs -P20 -d$'\n' -I{} bash -c '
+  h=$(echo -n "{}" | md5sum | cut -d" " -f1)
+  ls "$HOME/myrient/{}" > "'"$cache"'/$h.txt" 2>/dev/null
 '
 echo "Pre-fetch done."
 
@@ -161,7 +162,7 @@ IFS=";"; for each in "${roms[@]}"; do
     exec {xml_fd}>> ~/gamelists/${rom[0]}/gamelist.xml
     gamelist_started[${rom[0]}]=1
   fi
-  cachefile="$cache/$(echo "${rom[1]}" | tr '/' '_').txt"
+  cachefile="$cache/$(echo -n "${rom[1]}" | md5sum | cut -d' ' -f1).txt"
   romdir=~/"${romfolder}"
   while IFS= read -r line; do
     [[ -z "$line" ]] && continue
