@@ -11,8 +11,8 @@ fetch_vox_cart() {
   printf '%s\t%s\t%s\n' "$TID" "$TITLE" "$PNG_NAME" > "$outdir/$TID.txt"
 }
 
-declare -A categories=([2]=Releases [3]=WIP [8]=Jam [9]=Code [17]=VOBs [15]=SFX)
-for sub in 2 3 8 9 17 15; do
+declare -A categories=([2]=Releases [3]=WIP)
+for sub in 2 3; do
   catname="${categories[$sub]}"
   echo "=== $catname (sub=$sub) ==="
   catdir=~/voxatron_tmp/$sub; mkdir -p "$catdir"
@@ -20,7 +20,7 @@ for sub in 2 3 8 9 17 15; do
   declare -A titles=()
   while true; do
     HTML=$(curl -s "https://www.lexaloffle.com/bbs/lister.php?cat=6&sub=$sub&mode=carts&page=$PAGE")
-    echo "$HTML" | grep -q '\[no posts found\]' && break
+    echo "$HTML" | grep -q '\[no posts found\]' 2>/dev/null && break
     echo "$HTML" | grep '<div style="padding:10px; display:table; margin:auto">' | sed -E 's/.*>([^<]+)<.*/\1/' > titles.txt
     echo "$HTML" | grep -oP '<a href="\?tid=\d+"' | grep -oP '\d+' | uniq > tids.txt
     while IFS=$'\t' read -r TID TITLE; do

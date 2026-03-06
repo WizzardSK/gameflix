@@ -20,7 +20,7 @@ for sub in 2 3 8 9 14 15; do
   declare -A titles=()
   while true; do
     HTML=$(curl -s "https://www.lexaloffle.com/bbs/lister.php?cat=7&sub=$sub&mode=carts&page=$PAGE")
-    echo "$HTML" | grep -q '\[no posts found\]' && break
+    echo "$HTML" | grep -q '\[no posts found\]' 2>/dev/null && break
     echo "$HTML" | grep '<div style="padding:10px; display:table; margin:auto">' | sed -E 's/.*>([^<]+)<.*/\1/' > titles.txt
     echo "$HTML" | grep -oP '<a href="\?tid=\d+"' | grep -oP '\d+' | uniq > tids.txt
     while IFS=$'\t' read -r TID TITLE; do

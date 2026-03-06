@@ -23,7 +23,7 @@ for category in game art tool example; do
   page=1; ids=""
   while true; do
     page_content=$(curl -s "https://lowresnx.inutilis.com/programs.php?category=$category&sort=new&page=${page}")
-    echo "$page_content" | grep -q "No results" && break
+    echo "$page_content" | grep -q "No results" 2>/dev/null && break
     ids+=" $(echo "$page_content" | grep -oP 'topic.php\?id=\K[0-9]+')"
     ((page++))
   done
