@@ -1,10 +1,3 @@
-# Chybajuce MAME systemy v Gameflixe
-
-Porovnanie platforms.csv s MAME software listami (hash subormi).
-Generovane: 2026-03-01
-
----
-
 ## Nove konzoly a handheld systemy
 
 | System | Software list | MAME driver | Titulov | Poznamka |
