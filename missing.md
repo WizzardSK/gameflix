@@ -2,7 +2,6 @@
 |--------|--------------|-------------|---------|----------|
 | Apple Pippin | `pippin` | `pippin -cdrm` | 89 | Apple herny system (1996) |
 | RCA Studio II | `studio2` | `studio2 -cart` | 40 | Retro konzola (1977) |
-| V.Smile CD | `vsmile_cd` | `vsmile -cdrm` | 34 | CD verzia V.Smile |
 | Mattel Juice Box | `juicebox` | `juicebox -memcard` | 22 | Prenosny media prehravac s hrami |
 | Milton Bradley Microvision | `microvision` | `microvsn -cart` | 18 | Prvy handheld s vymenitel. kartridmi (1979) |
 | Bandai Pocket Challenge W | `pockchalw` | `pockchal -cart` | 40 | WonderSwan predchodca |
@@ -32,25 +31,3 @@
 | Tandy TRS-80 Model II | `trs80m2` | `trs80m2 -flop1` | 10 | Doplnok k existujucemu TRS-80 |
 | e-kara | `ekara_cart` | `ekara -cart` | 242 | Japonsky karaoke system pre deti |
 | VideoArt | `videoart` | `videoart -cart` | 9 | Kreslenie cez TV |
-
-## Doplnky k existujucim systemom v platforms.csv
-| Existujuci system | Chybajuci software list | MAME driver | Titulov | Poznamka |
-|-------------------|------------------------|-------------|---------|----------|
-| GBA | `gba_ereader` | `gba -cart` | 686 | Nintendo e-Reader karty |
-| IBM PC AT | `ibm5170_cdrom` | `ibm5170 -cdrom` | 476 | CD-ROM hry |
-| SNES/Satellaview | `snes_bspack` | `snes -cart` | 401 | BS-X data packs |
-| APF M-1000 | `apfimag_cass` | `apfimag -cass` | 103 | Kazetove hry Imagination Machine |
-| PC-8801 | `pc8801_cass` | `pc8801 -cass` | 102 | Kazetove hry |
-| MSX TurboR | `msxr_flop` + `msxr_cart` | `fsa1gt -flop1` / `-cart1` | 79 | MAME softlisty |
-| ZX Spectrum | `spectrum_microdrive` | `spec128 -mdrv1` | 73 | Microdrive media |
-| Dragon | `dragon_os9` + `dragon_flex` + `dgnalpha_flop` | `dragon64 -flop1` | 58 | OS-9, Flex, Dragon Alpha |
-| Acorn Atom | `atom_cass` | `atom -cass` | 44 | Kazetova verzia |
-| V.Smile | `vsmile_cd` | `vsmile -cdrm` | 34 | CD verzia |
-| PC-6001 | `pc6001_cass` + `pc6001mk2_cass` | `pc6001 -cass` | 34 | Kazetove verzie |
-| IBM PC AT | `ibm5170_hdd` | `ibm5170 -hard` | 33 | HDD image hry |
-| Amiga | `amiga_cd` | `a500 -cdrom` | 13 | CD-ROM hry |
-| Macintosh | `mac_cdrom` + `mac_hdd` | `macse -cdrom` / `-hard` | 28 | CD a HDD softvery |
-| Atari ST | `st_flop_demos` | `st -flop1` | 8 | Demo diskety |
-
-
-
