@@ -14,7 +14,7 @@ cache=~/dircache; mkdir -p "$cache"
 jobs_running=0
 while IFS= read -r path; do
   h=$(echo -n "$path" | md5sum | cut -d' ' -f1)
-  ls "$HOME/myrient/$path" > "$cache/$h.txt" 2>/dev/null &
+  (ls "$HOME/myrient/$path" 2>/dev/null > "$cache/$h.txt" || true) &
   ((jobs_running++))
   if ((jobs_running >= 20)); then wait -n; ((jobs_running--)); fi
 done < <(cut -d',' -f2 platforms.csv | tail -n +2 | sort -u)
