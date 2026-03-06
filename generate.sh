@@ -96,28 +96,44 @@ exec 3>> ~/gameflix/WASM-4.html
 exec 3>&-
 printf ']; generateWasmLinks("roms/WASM-4", "WASM-4");</script><script src=\"script.js\"></script>' >> ~/gameflix/WASM-4.html
 
-# PICO-8 - redirect stdin
-pocet=$(wc -l < fantasy/pico8.txt); total=$((pocet+total))
+# PICO-8 - categories with section headers
+pocet=0; echo "PICO-8"; cp platform.html ~/gameflix/PICO-8.html; ((platforms++))
+echo "*\"PICO-8/\"*) core=\"pico8 -run\";;" >> ~/gameflix/retroarch.sh
+pico_section=0
+while IFS=$'\t' read -r id rest; do
+  if [[ "$id" == "---" ]]; then
+    [[ $pico_section -eq 1 ]] && printf ']; generatePicoLinks("roms/PICO-8", "PICO-8");</script>\n' >> ~/gameflix/PICO-8.html
+    echo -e "<h3 id=\"$rest\" class=\"section-header\">$rest</h3>\n<script>bgImage(\"pico8\")\nfileNames = [" >> ~/gameflix/PICO-8.html
+    pico_section=1; continue
+  fi
+  IFS=$'\t' read -r name cart <<< "$rest"
+  echo "\"$id\t$name\t$cart\"," >> ~/gameflix/PICO-8.html
+  ((pocet++)); ((total++))
+done < fantasy/pico8.txt
+printf ']; generatePicoLinks("roms/PICO-8", "PICO-8");</script>\n' >> ~/gameflix/PICO-8.html
+echo "<script src=\"script.js\"></script>" >> ~/gameflix/PICO-8.html
 echo "<figure><a href='PICO-8.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/pico8.jpg'><figcaption>PICO-8</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
-echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"PICO-8/\"*) core=\"pico8 -run\";;" >> ~/gameflix/retroarch.sh
-echo "PICO-8"; cp platform.html ~/gameflix/PICO-8.html; ((platforms++))
-{
-  echo "<script>bgImage(\"pico8\"); fileNames = ["
-  while IFS=$'\t' read -r id name cart; do echo "\"$id\t$name\t$cart\","; done < fantasy/pico8.txt
-  printf ']; generatePicoLinks("roms/PICO-8", "PICO-8");</script><script src="script.js"></script>'
-} >> ~/gameflix/PICO-8.html
+echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 echo "<gameList></gameList>" > ~/gamelists/pico8/gamelist.xml
 
-# Voxatron - redirect stdin
-pocet=$(wc -l < fantasy/voxatron.txt); total=$((pocet+total))
+# Voxatron - categories with section headers
+pocet=0; echo "Voxatron"; cp platform.html ~/gameflix/Voxatron.html; ((platforms++))
+echo "*\"Voxatron/\"*) core=\"vox\";;" >> ~/gameflix/retroarch.sh
+vox_section=0
+while IFS=$'\t' read -r id rest; do
+  if [[ "$id" == "---" ]]; then
+    [[ $vox_section -eq 1 ]] && printf ']; generateVoxLinks("roms/Voxatron", "Voxatron");</script>\n' >> ~/gameflix/Voxatron.html
+    echo -e "<h3 id=\"$rest\" class=\"section-header\">$rest</h3>\n<script>bgImage(\"voxatron\")\nfileNames = [" >> ~/gameflix/Voxatron.html
+    vox_section=1; continue
+  fi
+  IFS=$'\t' read -r name cart <<< "$rest"
+  echo "\"$id\t$name\t$cart\"," >> ~/gameflix/Voxatron.html
+  ((pocet++)); ((total++))
+done < fantasy/voxatron.txt
+printf ']; generateVoxLinks("roms/Voxatron", "Voxatron");</script>\n' >> ~/gameflix/Voxatron.html
+echo "<script src=\"script.js\"></script>" >> ~/gameflix/Voxatron.html
 echo "<figure><a href='Voxatron.html'><img src='https://raw.githubusercontent.com/wizzardsk/es-theme-carbon/master/art/background/voxatron.jpg'><figcaption>Voxatron</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
-echo "<a href=\"Voxatron.html\" target=\"main\">Voxatron</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"Voxatron/\"*) core=\"vox\";;" >> ~/gameflix/retroarch.sh
-echo "Voxatron"; cp platform.html ~/gameflix/Voxatron.html; ((platforms++))
-{
-  echo "<script>bgImage(\"voxatron\"); fileNames = ["
-  while IFS=$'\t' read -r id name cart; do echo "\"$id\t$name\t$cart\","; done < fantasy/voxatron.txt
-  printf ']; generateVoxLinks("roms/Voxatron", "Voxatron");</script><script src="script.js"></script>'
-} >> ~/gameflix/Voxatron.html
+echo "<a href=\"Voxatron.html\" target=\"main\">Voxatron</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 echo "<gameList></gameList>" > ~/gamelists/voxatron/gamelist.xml
 
 # Switch - redirect stdin, single write
