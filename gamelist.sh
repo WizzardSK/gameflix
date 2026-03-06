@@ -1,8 +1,9 @@
 #!/bin/bash
-sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null
+sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
 chmod +x $GITHUB_WORKSPACE/batocera/ratarmount1; sudo ln -s $GITHUB_WORKSPACE/batocera/ratarmount1 /bin/ratarmount-full
 mkdir -p $HOME/.config/rclone; cp rclone.conf $HOME/.config/rclone/
-echo "user_allow_other" | sudo tee -a /etc/fuse.conf
+echo "user_allow_other" | sudo tee -a /etc/fuse.conf > /dev/null
+sudo rm -f /var/lib/dpkg/info/man-db.triggers
 sudo apt install bindfs fuse-zip > /dev/null
 
 bash ./webflix.sh
