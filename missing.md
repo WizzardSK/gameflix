@@ -1,5 +1,3 @@
-## Nove konzoly a handheld systemy
-
 | System | Software list | MAME driver | Titulov | Poznamka |
 |--------|--------------|-------------|---------|----------|
 | Apple Pippin | `pippin` | `pippin -cdrm` | 89 | Apple herny system (1996) |
@@ -11,11 +9,6 @@
 | Nintendo Famicom Box | `famibox` | `famibox` | 39 | Hotelovy NES automat |
 | NUON | `nuon` | `n501 -cdrm` | 8 | Samsung DVD prehravac s hrami (2000) |
 | Mattel HyperScan | `hyperscan` + `hyperscan_card` | `hyprscan -cart` | 7+445 | RFID kartove hry (2006) |
-
-## Nove europske a sovietske pocitace
-
-| System | Software list | MAME driver | Titulov | Poznamka |
-|--------|--------------|-------------|---------|----------|
 | MicroBee (floppy) | `mbee_flop` | `mbee56 -flop1` | 494 | Preliminary driver, cart+quik uz pridane |
 | Compucolor II | `compclr2_flop` | `compclr2 -flop1` | 239 | Americky pocitac |
 | Robotron KC 85 | `kc_cart` + `kc_flop` | `kc85_4 -cart` / `-flop1` | ~100 | Vychodonemecky pocitac (cass uz pridane) |
@@ -30,33 +23,17 @@
 | Korvet | `korvet_flop` | `korvet -flop1` | 16 | Sovietsky pocitac |
 | ABC 80 | `abc80_flop` + `abc80_cass` + `abc80_rom` | `abc80 -flop1` | 18 | Svedsky pocitac |
 | Juku | `juku` | `juku -flop` | 7 | Estonsky pocitac |
-
-## Nove japonske pocitace
-
-| System | Software list | MAME driver | Titulov | Poznamka |
-|--------|--------------|-------------|---------|----------|
 | Canon X-07 | `x07_cass` | `x07 -cass` | 87 | Prenosny pocitac s hrami |
 | NEC PC-88VA | `pc88va` | `pc88va -flop1` | 67 | 16-bitovy PC-8801 |
 | NEC APC | `apc` | `apc -flop1` | 32 | NEC Advanced Personal Computer |
 | Tomy Kiss-Site | `kisssite_cd` | `kisssite -cdrm` | 30 | Japonsky detsky system |
-
-## Nove americke/business pocitace
-
-| System | Software list | MAME driver | Titulov | Poznamka |
-|--------|--------------|-------------|---------|----------|
 | Zorba | `zorba` | `zorba -flop1` | 38 | CP/M pocitac |
 | Kaypro | `kaypro` | `kaypro2x -flop1` | 18 | CP/M pocitac |
 | Tandy TRS-80 Model II | `trs80m2` | `trs80m2 -flop1` | 10 | Doplnok k existujucemu TRS-80 |
-
-## Vzdelavacie a detske systemy
-
-| System | Software list | MAME driver | Titulov | Poznamka |
-|--------|--------------|-------------|---------|----------|
 | e-kara | `ekara_cart` | `ekara -cart` | 242 | Japonsky karaoke system pre deti |
 | VideoArt | `videoart` | `videoart -cart` | 9 | Kreslenie cez TV |
 
 ## Doplnky k existujucim systemom v platforms.csv
-
 | Existujuci system | Chybajuci software list | MAME driver | Titulov | Poznamka |
 |-------------------|------------------------|-------------|---------|----------|
 | GBA | `gba_ereader` | `gba -cart` | 686 | Nintendo e-Reader karty |
@@ -75,27 +52,5 @@
 | Macintosh | `mac_cdrom` + `mac_hdd` | `macse -cdrom` / `-hard` | 28 | CD a HDD softvery |
 | Atari ST | `st_flop_demos` | `st -flop1` | 8 | Demo diskety |
 
----
 
-## Zhrnutie
 
-- **~17 uplne novych systemov** (nie su v platforms.csv vobec)
-- **~14 doplnkovych software listov** k existujucim systemom
-- **~2 700+ titulov** celkovo
-
-Uz pridane do platforms.csv: V.Smile Baby, CHIP-8 (d6800), Osborne 1, MicroBee (cart+quik), Specialist, Z80-NE, Olivetti Prodest PC 128, Robotron KC 85 (cass)
-
-Nefunkcne v MAME (preliminary): LeapFrog Leapster, LeapFrog LeapPad
-
-### TOP 10 podla velkosti kniznice
-
-1. GBA e-Reader - 686 titulov (doplnok)
-2. MicroBee (floppy) - 494 titulov (preliminary, cart+quik uz pridane)
-3. IBM PC AT CD-ROM - 476 titulov (doplnok)
-4. SNES BS-X - 401 titulov (doplnok)
-5. e-kara - 242 titulov
-6. Compucolor II - 239 titulov
-7. APF Imagination Machine - 103 titulov (doplnok)
-8. PC-8801 kazety - 102 titulov (doplnok)
-9. Robotron KC 85 - ~100 titulov (cart+flop, cass uz pridane)
-10. Apple Pippin - 89 titulov
