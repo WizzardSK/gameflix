@@ -137,9 +137,6 @@ gameflix/
 ├── retroarch.end         # ROM launcher (execution logic)
 ├── platforms.csv         # Master database of ROM collections (760+ entries)
 ├── systems.csv           # System short names → display names (145 entries)
-├── fbneo.dat             # FinalBurn Neo ROM name database
-├── mame.dat              # MAME ROM name database
-├── neogeo.dat            # Neo Geo ROM name database
 ├── switch.txt            # Nintendo Switch game name database
 ├── rclone.conf           # Rclone remote configuration
 ├── platform.html         # Template for platform pages
