@@ -1,12 +1,13 @@
 const filterInput = document.getElementById('filterInput');
-const figures = document.querySelectorAll('.figureList figure');
+const isMain = !document.querySelector('.figureList');
+const figures = document.querySelectorAll(isMain ? 'figure' : '.figureList figure');
 const pocetEl = document.getElementById('pocet');
 filterInput.focus();
 
 // Cache figcaption texts for faster filtering
 var captionTexts = new Array(figures.length);
 for (var i = 0; i < figures.length; i++) {
-    captionTexts[i] = figures[i].getElementsByTagName('figcaption')[0].textContent.toLowerCase();
+    captionTexts[i] = (isMain ? figures[i].textContent : figures[i].getElementsByTagName('figcaption')[0].textContent).toLowerCase();
 }
 
 // Navlinks
@@ -38,21 +39,24 @@ if (sectionHeaders.length > 0) {
     if (firstList) firstList.style.marginTop = topbarHeight;
 }
 
-// Checkbox definitions
-var checkboxes = [
-    [showHideProto, /\(proto\)/],
-    [showHideProgram, /\(program\)/],
-    [showHideAlfa, /\(alpha( [0-9]+)?\)/],
-    [showHideBeta, /\(beta( [0-9]+)?\)/],
-    [showHideDemo, /\(demo( [0-9]+)?\)/],
-    [showHideAftermarket, /\(aftermarket\)/],
-    [showHideUnl, /\(unl\)/],
-    [showHideAlt, /\(alt|alternate\)/],
-    [showHidePirate, /\(pirate\)/],
-    [showHidePrerelease, /\(pre-release\)/],
-    [showHideBrackets, /\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|[Hh] [^\]]*|o ?.*|p ?.*|t ?.*|cr ?.*)\]/],
-    [showHideDisk, /\((disk|side)( [2-9b-z].*)\)/]
-];
+// Checkbox definitions (platform pages only)
+var checkboxes = [];
+if (!isMain) {
+    checkboxes = [
+        [showHideProto, /\(proto\)/],
+        [showHideProgram, /\(program\)/],
+        [showHideAlfa, /\(alpha( [0-9]+)?\)/],
+        [showHideBeta, /\(beta( [0-9]+)?\)/],
+        [showHideDemo, /\(demo( [0-9]+)?\)/],
+        [showHideAftermarket, /\(aftermarket\)/],
+        [showHideUnl, /\(unl\)/],
+        [showHideAlt, /\(alt|alternate\)/],
+        [showHidePirate, /\(pirate\)/],
+        [showHidePrerelease, /\(pre-release\)/],
+        [showHideBrackets, /\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|[Hh] [^\]]*|o ?.*|p ?.*|t ?.*|cr ?.*)\]/],
+        [showHideDisk, /\((disk|side)( [2-9b-z].*)\)/]
+    ];
+}
 
 // Single-pass filter: applies text filter + all checkbox rules at once
 function applyFilters() {
@@ -72,14 +76,14 @@ function applyFilters() {
         figures[i].style.display = visible ? '' : 'none';
         if (visible) count++;
     }
-    pocetEl.innerHTML = count + "/" + figures.length;
+    if (pocetEl) pocetEl.innerHTML = count + "/" + figures.length;
 }
 
 // Filter input with debounce
 var timerId;
 filterInput.addEventListener('input', function () {
     clearTimeout(timerId);
-    timerId = setTimeout(applyFilters, 1000);
+    timerId = setTimeout(applyFilters, 500);
 });
 
 // Checkbox change triggers refilter
