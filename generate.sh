@@ -211,27 +211,4 @@ done
 echo '<script src="script.js"></script>' >> ~/gameflix/main.html
 cat retroarch.end >> ~/gameflix/retroarch.sh; cp favicon.png ~/gameflix/
 chmod +x ~/gameflix/retroarch.sh; echo "<p><b>Total: $total</b>" >> ~/gameflix/systems.html; echo "<p><b>Platforms: $platforms</b>" >> ~/gameflix/systems.html
-cat >> ~/gameflix/systems.html << 'SYSSCRIPT'
-<script>
-var filterInput = document.getElementById('filterInput');
-var links = document.querySelectorAll('a[target="main"]');
-var timerId;
-filterInput.addEventListener('input', function() {
-    clearTimeout(timerId);
-    timerId = setTimeout(function() {
-        var text = filterInput.value.toLowerCase();
-        links.forEach(function(a) { a.style.display = a.textContent.toLowerCase().includes(text) ? '' : 'none'; });
-        try {
-            var mainDoc = parent.frames['main'].document;
-            var figures = mainDoc.querySelectorAll('figure');
-            for (var i = 0; i < figures.length; i++) {
-                figures[i].style.display = figures[i].textContent.toLowerCase().includes(text) ? '' : 'none';
-            }
-        } catch(e) {}
-    }, 500);
-});
-filterInput.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') { filterInput.value = ''; filterInput.dispatchEvent(new Event('input')); }
-});
-</script>
-SYSSCRIPT
+echo '<script src="script.js"></script>' >> ~/gameflix/systems.html
