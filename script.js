@@ -36,6 +36,7 @@ if (isSystems) {
     var figures = document.querySelectorAll(isMain ? 'figure' : '.figureList figure');
     var pocetEl = document.getElementById('pocet');
     if (filterInput) { window.focus(); filterInput.focus(); }
+    else if (isMain) { try { parent.frames['menu'].document.getElementById('filterInput').focus(); } catch(e) {} }
 
     var captionTexts = new Array(figures.length);
     for (var i = 0; i < figures.length; i++) {
