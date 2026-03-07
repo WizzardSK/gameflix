@@ -9,7 +9,15 @@ if (isSystems) {
         clearTimeout(timerId);
         timerId = setTimeout(function() {
             var text = filterInput.value.toLowerCase();
-            links.forEach(function(a) { a.style.display = a.textContent.toLowerCase().includes(text) ? '' : 'none'; });
+            links.forEach(function(a) {
+                var visible = a.textContent.toLowerCase().includes(text);
+                a.style.display = visible ? '' : 'none';
+                var el = a.nextSibling;
+                while (el && el.tagName !== 'A') {
+                    if (el.style) el.style.display = visible ? '' : 'none';
+                    el = el.nextSibling;
+                }
+            });
             try {
                 var figures = parent.frames['main'].document.querySelectorAll('figure');
                 for (var i = 0; i < figures.length; i++) {
