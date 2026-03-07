@@ -4,8 +4,8 @@ declare -A sys thumb separator; sysorder=(); needsep=0; while IFS=',' read -r k 
 declare -A sysroms; while IFS=';' read -r k rest; do sysroms[$k]+="$k;$rest;${thumb[$k]};${sys[$k]}"$'\n'; done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv ))
 roms=(); for k in "${sysorder[@]}"; do while IFS= read -r line; do [[ -n "$line" ]] && roms+=("$line"); done <<< "${sysroms[$k]}"; done
 mkdir -p ~/{gameflix,rom,gamelists,zip,zips,mount} ~/gamelists/{tic80,wasm4,lowresnx,pico8,voxatron,switch}
-echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />" > ~/gameflix/systems.html
-echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="topbar"><input type="text" id="filterInput" placeholder="Filter..."><div id="navlinks"></div></div>' > ~/gameflix/main.html
+echo '<link rel="stylesheet" type="text/css" href="style.css" /><input type="text" id="filterInput" placeholder="Filter..." style="width:95%;margin:5px 2px">' > ~/gameflix/systems.html
+echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="topbar"><div id="navlinks"></div></div>' > ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
 
@@ -211,3 +211,27 @@ done
 echo '<script src="script.js"></script>' >> ~/gameflix/main.html
 cat retroarch.end >> ~/gameflix/retroarch.sh; cp favicon.png ~/gameflix/
 chmod +x ~/gameflix/retroarch.sh; echo "<p><b>Total: $total</b>" >> ~/gameflix/systems.html; echo "<p><b>Platforms: $platforms</b>" >> ~/gameflix/systems.html
+cat >> ~/gameflix/systems.html << 'SYSSCRIPT'
+<script>
+var filterInput = document.getElementById('filterInput');
+var links = document.querySelectorAll('a[target="main"]');
+var timerId;
+filterInput.addEventListener('input', function() {
+    clearTimeout(timerId);
+    timerId = setTimeout(function() {
+        var text = filterInput.value.toLowerCase();
+        links.forEach(function(a) { a.style.display = a.textContent.toLowerCase().includes(text) ? '' : 'none'; });
+        try {
+            var mainDoc = parent.frames['main'].document;
+            var figures = mainDoc.querySelectorAll('figure');
+            for (var i = 0; i < figures.length; i++) {
+                figures[i].style.display = figures[i].textContent.toLowerCase().includes(text) ? '' : 'none';
+            }
+        } catch(e) {}
+    }, 500);
+});
+filterInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { filterInput.value = ''; filterInput.dispatchEvent(new Event('input')); }
+});
+</script>
+SYSSCRIPT

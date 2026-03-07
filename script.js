@@ -2,7 +2,7 @@ const filterInput = document.getElementById('filterInput');
 const isMain = !document.querySelector('.figureList');
 const figures = document.querySelectorAll(isMain ? 'figure' : '.figureList figure');
 const pocetEl = document.getElementById('pocet');
-filterInput.focus();
+if (filterInput) filterInput.focus();
 
 // Cache figcaption texts for faster filtering
 var captionTexts = new Array(figures.length);
@@ -31,17 +31,20 @@ if (sectionHeaders.length > 1 && navlinksDiv) {
 }
 
 // Push first content below the fixed topbar (after navlinks are added)
-var topbarHeight = document.getElementById('topbar').offsetHeight + 'px';
-if (sectionHeaders.length > 0) {
-    sectionHeaders[0].style.marginTop = topbarHeight;
-} else {
-    var firstList = document.querySelector('.figureList');
-    if (firstList) firstList.style.marginTop = topbarHeight;
+var topbar = document.getElementById('topbar');
+if (topbar) {
+    var topbarHeight = topbar.offsetHeight + 'px';
+    if (sectionHeaders.length > 0) {
+        sectionHeaders[0].style.marginTop = topbarHeight;
+    } else {
+        var firstList = document.querySelector('.figureList');
+        if (firstList) firstList.style.marginTop = topbarHeight;
+    }
 }
 
 // Checkbox definitions (platform pages only)
 var checkboxes = [];
-if (!isMain) {
+if (!isMain && filterInput) {
     checkboxes = [
         [showHideProto, /\(proto\)/],
         [showHideProgram, /\(program\)/],
@@ -60,7 +63,7 @@ if (!isMain) {
 
 // Single-pass filter: applies text filter + all checkbox rules at once
 function applyFilters() {
-    var filterText = filterInput.value.toLowerCase();
+    var filterText = filterInput ? filterInput.value.toLowerCase() : '';
     var count = 0;
     for (var i = 0; i < figures.length; i++) {
         var text = captionTexts[i];
@@ -79,25 +82,27 @@ function applyFilters() {
     if (pocetEl) pocetEl.innerHTML = count + "/" + figures.length;
 }
 
-// Filter input with debounce
-var timerId;
-filterInput.addEventListener('input', function () {
-    clearTimeout(timerId);
-    timerId = setTimeout(applyFilters, 500);
-});
+if (filterInput) {
+    // Filter input with debounce
+    var timerId;
+    filterInput.addEventListener('input', function () {
+        clearTimeout(timerId);
+        timerId = setTimeout(applyFilters, 500);
+    });
+
+    // Escape key resets filter
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            filterInput.value = '';
+            applyFilters();
+        } else { filterInput.focus(); }
+    });
+}
 
 // Checkbox change triggers refilter
 for (var c = 0; c < checkboxes.length; c++) {
     checkboxes[c][0].addEventListener('change', applyFilters);
 }
-
-// Escape key resets filter
-document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
-        filterInput.value = '';
-        applyFilters();
-    } else { filterInput.focus(); }
-});
 
 // Size change
 function changeSize(size) {
