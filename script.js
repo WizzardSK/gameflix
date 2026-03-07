@@ -10,20 +10,48 @@ if (isSystems) {
         clearTimeout(timerId);
         timerId = setTimeout(function() {
             var text = filterInput.value.toLowerCase();
+            // Filter links and hide siblings
             links.forEach(function(a) {
                 var visible = a.textContent.toLowerCase().includes(text);
                 a.style.display = visible ? '' : 'none';
                 var el = a.nextSibling;
-                while (el && el.tagName !== 'A') {
+                while (el && el.tagName !== 'A' && el.tagName !== 'B' && el.tagName !== 'BR') {
                     if (el.style) el.style.display = visible ? '' : 'none';
                     el = el.nextSibling;
                 }
             });
+            // Hide section headers with no visible links
+            var headers = document.querySelectorAll('b');
+            headers.forEach(function(b) {
+                var hasVisible = false;
+                var el = b.nextSibling;
+                while (el && el.tagName !== 'B') {
+                    if (el.tagName === 'A' && el.style.display !== 'none') { hasVisible = true; break; }
+                    el = el.nextSibling;
+                }
+                b.style.display = hasVisible || !text ? '' : 'none';
+                // Hide <br> before header
+                if (b.previousSibling && b.previousSibling.tagName === 'BR') {
+                    b.previousSibling.style.display = b.style.display;
+                }
+            });
+            // Filter main frame figures and headers
             try {
-                var figures = parent.frames['main'].document.querySelectorAll('figure');
+                var mainDoc = parent.frames['main'].document;
+                var figures = mainDoc.querySelectorAll('figure');
                 for (var i = 0; i < figures.length; i++) {
                     figures[i].style.display = figures[i].textContent.toLowerCase().includes(text) ? '' : 'none';
                 }
+                var mainHeaders = mainDoc.querySelectorAll('.section-header');
+                mainHeaders.forEach(function(h) {
+                    var hasVisible = false;
+                    var el = h.nextElementSibling;
+                    while (el && !el.classList.contains('section-header')) {
+                        if (el.tagName === 'FIGURE' && el.style.display !== 'none') { hasVisible = true; break; }
+                        el = el.nextElementSibling;
+                    }
+                    h.style.display = hasVisible || !text ? '' : 'none';
+                });
             } catch(e) {}
         }, 500);
     });
