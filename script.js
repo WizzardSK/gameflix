@@ -96,20 +96,15 @@ if (isSystems) {
         });
     }
 
-    // Push first content below the fixed topbar (after layout settles)
+    // Push content below the fixed topbar
     var topbar = document.getElementById('topbar');
     if (topbar) {
-        function adjustTopMargin() {
-            var h = topbar.offsetHeight + 'px';
-            if (sectionHeaders.length > 0) {
-                sectionHeaders[0].style.marginTop = h;
-            } else {
-                var firstList = document.querySelector('.figureList');
-                if (firstList) firstList.style.marginTop = h;
-            }
+        var target = sectionHeaders.length > 0 ? sectionHeaders[0] : document.querySelector('.figureList');
+        if (target) {
+            function adjustTopMargin() { target.style.marginTop = topbar.offsetHeight + 'px'; }
+            adjustTopMargin();
+            new ResizeObserver(adjustTopMargin).observe(topbar);
         }
-        adjustTopMargin();
-        requestAnimationFrame(adjustTopMargin);
     }
 
     // Checkbox definitions (platform pages only)
