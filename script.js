@@ -23,6 +23,7 @@ if (isSystems) {
             });
             // Hide section headers with no visible links
             var headers = document.querySelectorAll('b');
+            var firstVisible = true;
             headers.forEach(function(b) {
                 var hasVisible = false;
                 var el = b.nextSibling;
@@ -32,16 +33,17 @@ if (isSystems) {
                 }
                 var show = hasVisible || !text;
                 b.style.display = show ? '' : 'none';
-                // Hide br before header when section is hidden, keep one when visible
+                // Hide br before header: always hide for first visible, show for others
                 var prev = b.previousSibling;
                 if (prev && prev.tagName === 'BR') {
-                    prev.style.display = show ? '' : 'none';
+                    prev.style.display = (show && !firstVisible) ? '' : 'none';
                     var prev2 = prev.previousSibling;
                     if (prev2 && prev2.tagName === 'BR') prev2.style.display = 'none';
                 }
                 // Hide br after header when hidden
                 var next = b.nextSibling;
                 if (next && next.tagName === 'BR') next.style.display = show ? '' : 'none';
+                if (show) firstVisible = false;
             });
             // Filter main frame figures and headers (only on main page, not platform pages)
             try {
