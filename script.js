@@ -3,6 +3,7 @@ var isSystems = filterInput && !document.getElementById('topbar');
 
 if (isSystems) {
     // Systems sidebar: filter links + main frame figures
+    filterInput.focus();
     var links = document.querySelectorAll('a[target="main"]');
     var timerId;
     filterInput.addEventListener('input', function() {
@@ -34,7 +35,7 @@ if (isSystems) {
     var isMain = !document.querySelector('.figureList');
     var figures = document.querySelectorAll(isMain ? 'figure' : '.figureList figure');
     var pocetEl = document.getElementById('pocet');
-    if (filterInput) filterInput.focus();
+    if (filterInput) { window.focus(); filterInput.focus(); }
 
     var captionTexts = new Array(figures.length);
     for (var i = 0; i < figures.length; i++) {
