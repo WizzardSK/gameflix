@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Microsoft 80s style wordmark -->
+  <text x="30" y="38" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="16" font-weight="300" letter-spacing="1">Microsoft</text>
+  <text x="150" y="38" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="12" font-weight="300">&#174;</text>
+  <!-- MS-DOS in blocky retro style -->
+  <text x="30" y="78" fill="#fff" font-family="'Courier New','Lucida Console',monospace" font-size="46" font-weight="700">MS-DOS</text>
+  <!-- Underline accent -->
+  <rect x="30" y="84" width="240" height="3" fill="#00a4ef"/>
+</svg>

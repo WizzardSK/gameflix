@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- VideoBrain Family Computer - 70s retro style -->
+  <defs>
+    <linearGradient id="vbgrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff6600"/>
+      <stop offset="50%" stop-color="#ffcc00"/>
+      <stop offset="100%" stop-color="#ff6600"/>
+    </linearGradient>
+  </defs>
+  <text x="200" y="38" text-anchor="middle" fill="url(#vbgrad)" font-family="'Arial Black','Impact',sans-serif" font-size="30" font-weight="900" letter-spacing="4">VideoBrain</text>
+  <rect x="60" y="46" width="280" height="2" fill="#ff6600" opacity="0.5"/>
+  <text x="200" y="74" text-anchor="middle" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="18" font-weight="300" letter-spacing="6">FAMILY COMPUTER</text>
+</svg>

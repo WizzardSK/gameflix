@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Hanimex Pencil II -->
+  <text x="30" y="32" fill="#888" font-family="'Helvetica Neue','Arial',sans-serif" font-size="16" font-weight="400" letter-spacing="4">HANIMEX</text>
+  <!-- Pencil icon -->
+  <line x1="30" y1="80" x2="50" y2="48" stroke="#ffcc00" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="28,84 32,84 30,80" fill="#ffcc00"/>
+  <text x="60" y="78" fill="#fff" font-family="'Georgia','Times New Roman',serif" font-size="40" font-weight="700" font-style="italic">Pencil II</text>
+</svg>

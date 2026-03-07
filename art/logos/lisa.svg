@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <defs>
+    <linearGradient id="rainbowL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#61BB46"/>
+      <stop offset="20%" stop-color="#FDB827"/>
+      <stop offset="40%" stop-color="#F5821F"/>
+      <stop offset="60%" stop-color="#E03A3E"/>
+      <stop offset="80%" stop-color="#963D97"/>
+      <stop offset="100%" stop-color="#009DDC"/>
+    </linearGradient>
+  </defs>
+  <path d="M52,22 C52,22 58,8 70,12 C74,13 76,18 75,22 C82,16 90,18 90,26 C90,42 78,58 70,62 C62,58 50,42 50,26 C50,22 51,20 52,22 Z" fill="url(#rainbowL)"/>
+  <path d="M68,12 C68,12 72,4 78,6" stroke="#61BB46" stroke-width="2" fill="none"/>
+  <text x="120" y="55" fill="#fff" font-family="'Garamond','Georgia',serif" font-size="44" font-weight="normal" letter-spacing="4">Lisa</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Matra & Hachette Alice - French tricolor accent -->
+  <rect x="20" y="12" width="40" height="4" fill="#002395"/>
+  <rect x="60" y="12" width="40" height="4" fill="#fff"/>
+  <rect x="100" y="12" width="40" height="4" fill="#ED2939"/>
+  <text x="30" y="42" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="14" font-weight="400" letter-spacing="4">MATRA &amp; HACHETTE</text>
+  <text x="30" y="80" fill="#fff" font-family="'Georgia','Times New Roman',serif" font-size="46" font-weight="700" font-style="italic">Alice</text>
+</svg>

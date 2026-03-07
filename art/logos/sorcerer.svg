@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Exidy Sorcerer - mystical/magical style -->
+  <text x="30" y="30" fill="#9966cc" font-family="'Arial','Helvetica',sans-serif" font-size="16" font-weight="700" letter-spacing="6">EXIDY</text>
+  <!-- Star decoration -->
+  <polygon points="350,20 354,32 366,32 356,40 360,52 350,44 340,52 344,40 334,32 346,32" fill="#9966cc" opacity="0.6"/>
+  <text x="30" y="76" fill="#fff" font-family="'Georgia','Times New Roman',serif" font-size="44" font-weight="700" font-style="italic" letter-spacing="2">Sorcerer</text>
+</svg>

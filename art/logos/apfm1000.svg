@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- APF Electronics retro style -->
+  <text x="30" y="40" fill="#f4a024" font-family="'Arial Black','Impact',sans-serif" font-size="34" font-weight="900" letter-spacing="6">APF</text>
+  <rect x="30" y="48" width="110" height="2" fill="#f4a024"/>
+  <text x="30" y="78" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="30" font-weight="300" letter-spacing="2">M-1000</text>
+</svg>

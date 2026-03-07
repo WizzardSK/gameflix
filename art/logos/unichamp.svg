@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Unisonic Champion 2711 - 70s game console -->
+  <text x="30" y="30" fill="#aaa" font-family="'Helvetica Neue','Arial',sans-serif" font-size="14" font-weight="400" letter-spacing="6">UNISONIC</text>
+  <text x="30" y="70" fill="#ffcc00" font-family="'Arial Black','Impact',sans-serif" font-size="34" font-weight="900" font-style="italic">Champion</text>
+  <text x="280" y="70" fill="#fff" font-family="'Courier New',monospace" font-size="22" font-weight="700">2711</text>
+</svg>

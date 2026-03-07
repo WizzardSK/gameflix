@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Tesla PMD 85 - Czechoslovak computer -->
+  <!-- Tesla logo - stylized T in circle -->
+  <circle cx="50" cy="50" r="28" fill="none" stroke="#cc0000" stroke-width="3"/>
+  <text x="50" y="60" text-anchor="middle" fill="#cc0000" font-family="'Arial Black','Impact',sans-serif" font-size="32" font-weight="900">T</text>
+  <text x="95" y="36" fill="#cc0000" font-family="'Helvetica Neue','Arial',sans-serif" font-size="18" font-weight="700" letter-spacing="6">TESLA</text>
+  <rect x="95" y="42" width="80" height="1" fill="#cc0000"/>
+  <text x="95" y="72" fill="#fff" font-family="'Courier New',monospace" font-size="34" font-weight="700" letter-spacing="2">PMD 85</text>
+</svg>

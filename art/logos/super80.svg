@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Dick Smith Super-80 - Australian electronics -->
+  <text x="30" y="30" fill="#ff0000" font-family="'Arial Black','Impact',sans-serif" font-size="14" font-weight="900" letter-spacing="3">DICK SMITH</text>
+  <text x="200" y="30" fill="#ff0000" font-family="'Arial',sans-serif" font-size="12" font-weight="400">ELECTRONICS</text>
+  <rect x="30" y="36" width="280" height="2" fill="#ff0000"/>
+  <text x="30" y="78" fill="#fff" font-family="'Arial Black','Impact',sans-serif" font-size="42" font-weight="900" letter-spacing="2">Super-80</text>
+</svg>

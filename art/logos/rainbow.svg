@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- DEC Digital corporate style -->
+  <g transform="translate(55,50)">
+    <!-- DEC logo blocks -->
+    <g fill="#fff">
+      <rect x="-30" y="-25" width="12" height="12"/>
+      <rect x="-16" y="-25" width="12" height="12"/>
+      <rect x="-2" y="-25" width="12" height="12"/>
+      <rect x="-30" y="-11" width="12" height="12"/>
+      <rect x="-2" y="-11" width="12" height="12"/>
+      <rect x="-30" y="3" width="12" height="12"/>
+      <rect x="-16" y="3" width="12" height="12"/>
+      <rect x="-2" y="3" width="12" height="12"/>
+    </g>
+  </g>
+  <text x="100" y="32" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="14" font-weight="400" letter-spacing="6">DIGITAL</text>
+  <text x="100" y="60" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="28" font-weight="300" letter-spacing="2">Rainbow 100</text>
+  <!-- Rainbow stripe -->
+  <rect x="100" y="68" width="50" height="3" fill="#e03a3e"/>
+  <rect x="150" y="68" width="50" height="3" fill="#f5a623"/>
+  <rect x="200" y="68" width="50" height="3" fill="#7ed321"/>
+  <rect x="250" y="68" width="50" height="3" fill="#4a90d9"/>
+</svg>

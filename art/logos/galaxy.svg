@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Galaksija - Yugoslav DIY computer, retro magazine style -->
+  <defs>
+    <linearGradient id="galgrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4fc3f7"/>
+      <stop offset="100%" stop-color="#fff"/>
+    </linearGradient>
+  </defs>
+  <text x="200" y="40" text-anchor="middle" fill="#4fc3f7" font-family="'Courier New',monospace" font-size="12" font-weight="400" letter-spacing="6">RACUNARI U VASOJ KUCI</text>
+  <text x="200" y="76" text-anchor="middle" fill="url(#galgrad)" font-family="'Arial','Helvetica',sans-serif" font-size="42" font-weight="700" font-style="italic" letter-spacing="3">Galaksija</text>
+</svg>

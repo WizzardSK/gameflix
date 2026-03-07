@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <defs>
+    <clipPath id="ibmtext2">
+      <text x="42" y="62" font-family="'Arial Black','Impact',sans-serif" font-size="60" font-weight="900">IBM</text>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#ibmtext2)">
+    <rect x="30" y="14" width="180" height="6" fill="#fff"/>
+    <rect x="30" y="22" width="180" height="6" fill="#fff"/>
+    <rect x="30" y="30" width="180" height="6" fill="#fff"/>
+    <rect x="30" y="38" width="180" height="6" fill="#fff"/>
+    <rect x="30" y="46" width="180" height="6" fill="#fff"/>
+    <rect x="30" y="54" width="180" height="6" fill="#fff"/>
+    <rect x="30" y="62" width="180" height="6" fill="#fff"/>
+    <rect x="30" y="70" width="180" height="6" fill="#fff"/>
+  </g>
+  <text x="220" y="40" fill="#8fb8de" font-family="'Helvetica Neue','Arial',sans-serif" font-size="16" font-weight="300" letter-spacing="3">Personal Computer</text>
+  <text x="220" y="68" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="32" font-weight="300" letter-spacing="1">AT 5170</text>
+</svg>

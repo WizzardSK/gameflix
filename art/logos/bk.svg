@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Soviet Elektronika industrial style -->
+  <text x="30" y="30" fill="#cc0000" font-family="'Courier New',monospace" font-size="12" font-weight="700" letter-spacing="3">ELEKTRONIKA</text>
+  <rect x="30" y="36" width="160" height="1" fill="#cc0000"/>
+  <text x="30" y="78" fill="#fff" font-family="'Arial Black','Impact',sans-serif" font-size="52" font-weight="900" letter-spacing="8">BK</text>
+  <text x="130" y="78" fill="#aaa" font-family="'Courier New',monospace" font-size="16" font-weight="400">0010-01</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Nintendo style red -->
+  <rect x="20" y="10" width="140" height="30" rx="5" fill="#e60012"/>
+  <text x="90" y="31" text-anchor="middle" fill="#fff" font-family="'Arial','Helvetica',sans-serif" font-size="18" font-weight="700" letter-spacing="2">NINTENDO</text>
+  <text x="25" y="62" fill="#8b8bc8" font-family="'Arial','Helvetica',sans-serif" font-size="22" font-weight="700" font-style="italic">SUPER</text>
+  <text x="135" y="62" fill="#fff" font-family="'Arial','Helvetica',sans-serif" font-size="22" font-weight="700">GAME BOY</text>
+  <text x="25" y="84" fill="#aaa" font-family="'Arial',sans-serif" font-size="16" font-weight="300" letter-spacing="3">MSU-1</text>
+</svg>

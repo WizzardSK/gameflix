@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Monon Color - colorful Chinese handheld -->
+  <defs>
+    <linearGradient id="monograd" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff4444"/>
+      <stop offset="33%" stop-color="#44ff44"/>
+      <stop offset="66%" stop-color="#4444ff"/>
+      <stop offset="100%" stop-color="#ffff44"/>
+    </linearGradient>
+  </defs>
+  <text x="30" y="30" fill="#888" font-family="'Arial',sans-serif" font-size="12" font-weight="400" letter-spacing="4">M&amp;D</text>
+  <text x="30" y="72" fill="url(#monograd)" font-family="'Arial Black','Impact',sans-serif" font-size="40" font-weight="900" font-style="italic">Monon Color</text>
+</svg>

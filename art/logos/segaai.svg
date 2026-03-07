@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Sega blue rounded logo style -->
+  <g transform="translate(65,50)">
+    <rect x="-45" y="-24" rx="12" ry="12" width="90" height="48" fill="#0060a8" stroke="#fff" stroke-width="2"/>
+    <text x="0" y="8" text-anchor="middle" fill="#fff" font-family="'Arial Black','Impact',sans-serif" font-size="26" font-weight="900" font-style="italic" letter-spacing="2">SEGA</text>
+  </g>
+  <text x="130" y="42" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="14" font-weight="300" letter-spacing="3">AI COMPUTER</text>
+  <text x="130" y="68" fill="#0060a8" font-family="'Helvetica Neue','Arial',sans-serif" font-size="12" letter-spacing="1">SC-3000H</text>
+</svg>

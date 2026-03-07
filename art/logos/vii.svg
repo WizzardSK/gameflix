@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Vii - Chinese Wii clone, playful style -->
+  <defs>
+    <linearGradient id="viigrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00aaff"/>
+      <stop offset="100%" stop-color="#0066cc"/>
+    </linearGradient>
+  </defs>
+  <text x="200" y="72" text-anchor="middle" fill="url(#viigrad)" font-family="'Helvetica Neue','Arial',sans-serif" font-size="60" font-weight="100" letter-spacing="10">Vii</text>
+  <!-- Decorative dots like Wii -->
+  <circle cx="230" cy="22" r="4" fill="#00aaff"/>
+  <circle cx="248" cy="22" r="4" fill="#00aaff"/>
+</svg>

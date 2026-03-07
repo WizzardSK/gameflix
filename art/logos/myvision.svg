@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Nichibutsu My Vision - Japanese arcade style -->
+  <text x="30" y="30" fill="#e60012" font-family="'Arial',sans-serif" font-size="14" font-weight="700" letter-spacing="4">NICHIBUTSU</text>
+  <text x="30" y="72" fill="#fff" font-family="'Georgia','Times New Roman',serif" font-size="38" font-weight="700" font-style="italic">My Vision</text>
+  <!-- Decorative dots -->
+  <circle cx="310" cy="60" r="4" fill="#e60012"/>
+  <circle cx="325" cy="60" r="4" fill="#fff"/>
+  <circle cx="340" cy="60" r="4" fill="#e60012"/>
+</svg>

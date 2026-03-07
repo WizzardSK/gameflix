@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Processor Technology Sol-20 - 70s computer style -->
+  <text x="30" y="28" fill="#aaa" font-family="'Courier New',monospace" font-size="11" font-weight="400" letter-spacing="2">PROCESSOR TECHNOLOGY CORP.</text>
+  <rect x="30" y="34" width="290" height="1" fill="#aaa" opacity="0.3"/>
+  <!-- Sol-20 in retro futuristic style -->
+  <text x="30" y="74" fill="#f4a024" font-family="'Arial Black','Impact',sans-serif" font-size="44" font-weight="900" letter-spacing="4">SOL-20</text>
+</svg>

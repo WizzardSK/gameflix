@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 240" width="820" height="240">
+  <defs>
+    <style>
+      .b { fill: #192560; }
+    </style>
+  </defs>
+
+  <!-- ========== CCE BADGE ========== -->
+  <g transform="translate(5, 6)">
+    <!-- Outer rounded rectangle -->
+    <rect class="b" x="0" y="0" width="152" height="186" rx="42" ry="42"/>
+    <!-- Inner white border -->
+    <rect x="9" y="9" width="134" height="168" rx="34" ry="34" fill="none" stroke="#fff" stroke-width="5.5"/>
+
+    <!-- Letters centered: badge width=152, letters span ~74px, offset=(152-74)/2=39 but shifted slightly right for visual balance with C openings -->
+
+    <!-- "c" letter (top) -->
+    <path d="M 52,28 C 40,28 34,35 34,45 L 34,58 C 34,68 40,75 52,75 L 106,75 L 106,64 L 56,64 C 51,64 48,61 48,57 L 48,46 C 48,42 51,39 56,39 L 106,39 L 106,28 Z" fill="#ffffff"/>
+
+    <!-- "c" letter (middle) -->
+    <path d="M 52,82 C 40,82 34,89 34,99 L 34,112 C 34,122 40,129 52,129 L 106,129 L 106,118 L 56,118 C 51,118 48,115 48,111 L 48,100 C 48,96 51,93 56,93 L 106,93 L 106,82 Z" fill="#ffffff"/>
+
+    <!-- "e" letter (bottom) -->
+    <path d="M 52,136 C 40,136 34,143 34,153 L 34,166 C 34,176 40,183 52,183 L 106,183 L 106,172 L 56,172 C 51,172 48,170 48,166 L 48,163 L 106,163 L 106,154 L 48,154 L 48,153 C 48,149 51,147 56,147 L 106,147 L 106,136 Z" fill="#ffffff"/>
+  </g>
+
+  <!-- ========== MC1000 TEXT ========== -->
+  <g transform="translate(178, 6)">
+    <!-- M -->
+    <path class="b" d="M 0,0 L 38,0 L 64,52 L 90,0 L 128,0 L 128,134 L 96,134 L 96,52 L 72,100 L 56,100 L 32,52 L 32,134 L 0,134 Z"/>
+
+    <!-- C -->
+    <path class="b" d="M 150,0 L 250,0 L 250,32 L 184,32 C 180,32 178,36 178,40 L 178,94 C 178,98 180,102 184,102 L 250,102 L 250,134 L 150,134 C 142,134 138,126 138,116 L 138,18 C 138,8 142,0 150,0 Z"/>
+
+    <!-- 1 -->
+    <path class="b" d="M 264,0 L 306,0 L 306,134 L 274,134 L 274,30 L 258,30 L 258,12 Z"/>
+
+    <!-- 0 first -->
+    <path class="b" d="M 324,16 C 324,6 332,0 344,0 L 400,0 C 412,0 420,6 420,16 L 420,118 C 420,128 412,134 400,134 L 344,134 C 332,134 324,128 324,118 Z M 356,32 L 356,102 L 388,102 L 388,32 Z"/>
+
+    <!-- 0 second -->
+    <path class="b" d="M 434,16 C 434,6 442,0 454,0 L 510,0 C 522,0 530,6 530,16 L 530,118 C 530,128 522,134 510,134 L 454,134 C 442,134 434,128 434,118 Z M 466,32 L 466,102 L 498,102 L 498,32 Z"/>
+
+    <!-- 0 third -->
+    <path class="b" d="M 544,16 C 544,6 552,0 564,0 L 620,0 C 632,0 640,6 640,16 L 640,118 C 640,128 632,134 620,134 L 564,134 C 552,134 544,128 544,118 Z M 576,32 L 576,102 L 608,102 L 608,32 Z"/>
+  </g>
+
+  <!-- COLOR COMPUTER text -->
+  <text x="175" y="200" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="52" fill="#192560" textLength="643" lengthAdjust="spacingAndGlyphs">COLOR COMPUTER</text>
+</svg>

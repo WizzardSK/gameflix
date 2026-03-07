@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Interact Home Computer - 70s style -->
+  <text x="200" y="36" text-anchor="middle" fill="#f4a024" font-family="'Arial Black','Impact',sans-serif" font-size="28" font-weight="900" letter-spacing="6">INTERACT</text>
+  <rect x="60" y="44" width="280" height="1" fill="#f4a024"/>
+  <text x="200" y="72" text-anchor="middle" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="18" font-weight="300" letter-spacing="6">HOME COMPUTER</text>
+</svg>

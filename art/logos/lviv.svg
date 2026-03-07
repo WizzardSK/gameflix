@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Lviv PK-01 Soviet Ukrainian computer -->
+  <text x="30" y="32" fill="#cc0000" font-family="'Courier New',monospace" font-size="11" font-weight="700" letter-spacing="2">LVIVSKE VVO KINESKOP</text>
+  <rect x="30" y="38" width="230" height="1" fill="#cc0000" opacity="0.5"/>
+  <text x="30" y="72" fill="#fff" font-family="'Arial Black','Impact',sans-serif" font-size="20" font-weight="900" letter-spacing="4">LVIV</text>
+  <text x="120" y="72" fill="#aaa" font-family="'Courier New',monospace" font-size="32" font-weight="400">PK-01</text>
+</svg>

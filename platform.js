@@ -1,6 +1,6 @@
 let text = `<div id=\"topbar\"><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />
 <a href="main.html"><img align=left style="margin-right:5px;padding:0px;height:50px;width:200px;"
-src="https://github.com/WizzardSK/es-theme-carbon/raw/refs/heads/master/art/logos/${location.pathname.split('/').pop().replace(/\.html?$/, '')}.svg"></a>
+src="https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/logos/${location.pathname.split('/').pop().replace(/\.html?$/, '')}.svg"></a>
 <input type=\"text\" id=\"filterInput\" placeholder=\"Filter...\">
 <input type=\"radio\" name=\"thumbtype\" id=\"Snaps\" value=\"Snaps\" checked onclick=\"processImages('snaps')\"><label for=\"Snaps\">Snaps</label>
 <input type=\"radio\" name=\"thumbtype\" id=\"Titles\" value=\"Titles\" onclick=\"processImages('titles')\"><label for=\"Titles\">Titles</label>
@@ -33,7 +33,7 @@ var _bgPlatform;
 function bgImage(platform) {
     if (_bgPlatform !== platform) {
         _bgPlatform = platform;
-        document.write(`<style> figure { background-image: url('https://raw.githubusercontent.com/WizzardSK/es-theme-carbon/master/art/consoles/${platform}.png'); } </style>`);
+        document.write(`<style> figure { background-image: url('https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/consoles/${platform}.png'); } </style>`);
     }
 }
 

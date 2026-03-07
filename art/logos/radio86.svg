@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Radio-86RK Soviet DIY computer -->
+  <text x="30" y="30" fill="#cc0000" font-family="'Courier New',monospace" font-size="11" font-weight="700" letter-spacing="2">RADIO MAGAZINE</text>
+  <rect x="30" y="35" width="170" height="1" fill="#cc0000" opacity="0.5"/>
+  <text x="30" y="72" fill="#fff" font-family="'Courier New',monospace" font-size="36" font-weight="700">Radio-86RK</text>
+</svg>

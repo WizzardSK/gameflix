@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Sord M5 - Japanese tech style -->
+  <text x="30" y="38" fill="#ff6600" font-family="'Helvetica Neue','Arial',sans-serif" font-size="24" font-weight="700" letter-spacing="6">SORD</text>
+  <rect x="30" y="44" width="105" height="2" fill="#ff6600"/>
+  <text x="30" y="78" fill="#fff" font-family="'Arial Black','Impact',sans-serif" font-size="42" font-weight="900">M5</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Amstrad red/corporate style -->
+  <rect x="20" y="12" width="160" height="32" rx="2" fill="#cc0000"/>
+  <text x="100" y="35" text-anchor="middle" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="22" font-weight="700" letter-spacing="6">AMSTRAD</text>
+  <text x="30" y="78" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="44" font-weight="300" letter-spacing="8">PCW</text>
+</svg>

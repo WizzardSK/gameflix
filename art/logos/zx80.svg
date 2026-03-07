@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Sinclair red stripe bar -->
+  <rect x="20" y="15" width="360" height="4" fill="#cc0000"/>
+  <!-- Sinclair text -->
+  <text x="30" y="48" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="20" font-weight="700" letter-spacing="8">SINCLAIR</text>
+  <!-- ZX80 large -->
+  <text x="30" y="82" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="40" font-weight="900" letter-spacing="4">ZX80</text>
+  <!-- Decorative line -->
+  <rect x="20" y="88" width="360" height="2" fill="#cc0000"/>
+</svg>

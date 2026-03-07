@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Sony clean modernist style -->
+  <text x="30" y="42" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="32" font-weight="700" letter-spacing="10">SONY</text>
+  <rect x="30" y="50" width="140" height="1" fill="#fff" opacity="0.5"/>
+  <text x="30" y="78" fill="#ccc" font-family="'Helvetica Neue','Arial',sans-serif" font-size="30" font-weight="300" letter-spacing="3">SMC-777</text>
+</svg>

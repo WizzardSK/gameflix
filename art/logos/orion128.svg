@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Orion 128 Soviet computer - industrial style -->
+  <rect x="20" y="15" width="360" height="70" fill="none" stroke="#aaa" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="200" y="40" text-anchor="middle" fill="#cc0000" font-family="'Courier New',monospace" font-size="14" font-weight="700" letter-spacing="8">ORION</text>
+  <text x="200" y="72" text-anchor="middle" fill="#fff" font-family="'Courier New',monospace" font-size="36" font-weight="700">128</text>
+</svg>

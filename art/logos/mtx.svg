@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Memotech MTX - UK 80s tech style -->
+  <text x="30" y="36" fill="#00aaff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="18" font-weight="300" letter-spacing="8">MEMOTECH</text>
+  <rect x="30" y="42" width="200" height="2" fill="#00aaff"/>
+  <text x="30" y="78" fill="#fff" font-family="'Arial Black','Impact',sans-serif" font-size="42" font-weight="900" letter-spacing="8">MTX</text>
+  <text x="170" y="78" fill="#00aaff" font-family="'Arial',sans-serif" font-size="20" font-weight="300">512</text>
+</svg>

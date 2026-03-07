@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Commodore "chicken lips" C logo -->
+  <g transform="translate(55,50)">
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#fff" stroke-width="5"/>
+    <rect x="-5" y="-8" width="34" height="16" fill="#000"/>
+    <line x1="1" y1="-8" x2="30" y2="-8" stroke="#fff" stroke-width="5"/>
+    <line x1="1" y1="8" x2="30" y2="8" stroke="#fff" stroke-width="5"/>
+  </g>
+  <!-- Commodore text -->
+  <text x="100" y="38" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="14" font-weight="400" letter-spacing="6">COMMODORE</text>
+  <!-- Model -->
+  <text x="100" y="68" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="34" font-weight="700">CBM-II</text>
+</svg>
