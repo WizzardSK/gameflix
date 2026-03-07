@@ -31,10 +31,10 @@ if (isSystems) {
                 }
                 var show = hasVisible || !text;
                 b.style.display = show ? '' : 'none';
-                // Hide br before and after header
+                // When filtering, always hide br before header (link's br provides spacing)
                 var prev = b.previousSibling;
                 while (prev && (prev.tagName === 'BR' || (prev.nodeType === 3 && !prev.textContent.trim()))) {
-                    if (prev.style) prev.style.display = show ? '' : 'none';
+                    if (prev.style) prev.style.display = text ? 'none' : '';
                     prev = prev.previousSibling;
                 }
                 var next = b.nextSibling;
