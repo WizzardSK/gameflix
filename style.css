@@ -1,11 +1,11 @@
-body { background-color: #333333; font-size: 11pt; font-family: Tahoma; color: white }
+body { background-color: #333333; font-size: 11pt; font-family: Tahoma; color: white; margin: 0; padding: 0 }
 figure { background-repeat: no-repeat;  background-position: top; background-position-y: 25px; background-size: auto 40%; cursor: pointer; margin: 0; display: inline-block; width: 160; height: 160; font-size: 8pt; font-family: Tahoma; vertical-align: top; transition: transform 0.3s ease; text-align: center; background-color: #333333 }
 img    { width: 160px; height: 120px; object-fit: contain; background-color: #333333; opacity: 0; transition: 1s ease-in; padding: 5px }
 img.loaded { opacity: 1; }
 figure:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(0, 0, 0, 1) }
 figure:active { transform: scale(1.1) translateY(10px) translateX(10px) }
 #topbar { position: fixed; top: 0; left: 0; width: 100%; background-color: #333333; z-index: 999; padding: 5px 0 10px 0; }
-#filterBar { position: sticky; top: 0; background-color: #333333; z-index: 999; padding: 2px 0; }
+#filterBar { position: sticky; top: 0; background-color: #333333; z-index: 999; padding: 5px; }
 a { color: cyan; text-decoration: none }
 .section-header { color: white; font-size: 14pt; margin: 0 0 3px 0 }
 .navlink { display: inline-block; margin: 2px 5px; padding: 3px 8px; background-color: #555; color: cyan; border-radius: 4px; font-size: 10pt }
