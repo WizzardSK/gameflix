@@ -1,5 +1,5 @@
 var filterInput = document.getElementById('filterInput');
-var isSystems = document.querySelectorAll('a[target="main"]').length > 0;
+var isSystems = filterInput && !document.getElementById('topbar');
 
 if (isSystems) {
     // Systems sidebar: filter links + main frame figures
