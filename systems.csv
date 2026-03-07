@@ -20,7 +20,6 @@ apple2,Apple II,Apple - II
 apple2gs,Apple IIGS,Apple - IIGS
 apple3,Apple III,Apple - III
 lisa,Apple Lisa,Apple - Lisa
-pippin,Apple Pippin,Apple - Pippin
 macintosh,Apple Macintosh,Apple - Macintosh
 ,Sinclair & Amstrad,
 zx80,Sinclair ZX80,Sinclair - ZX 80
@@ -63,7 +62,6 @@ gbc,Nintendo Game Boy Color,Nintendo - Game Boy Color
 gba,Nintendo Game Boy Advance,Nintendo - Game Boy Advance
 nds,Nintendo DS,Nintendo - Nintendo DS
 dsi,Nintendo DSi,Nintendo - Nintendo DSi
-famibox,Nintendo Famicom Box,Nintendo - Nintendo Entertainment System
 3ds,Nintendo 3DS,Nintendo - Nintendo 3DS
 wiiu,Nintendo Wii U,Nintendo - Wii U
 ,Sega,
@@ -211,8 +209,6 @@ pc98,NEC PC-9800,NEC - PC-98
 pcengine,NEC PC Engine 1,NEC - PC Engine - TurboGrafx 16
 supergrafx,NEC PC Engine 2,NEC - PC Engine SuperGrafx
 pcenginecd,NEC PC Engine CD,NEC - PC Engine CD - TurboGrafx-CD
-pc88va,NEC PC-88VA,NEC - PC-8001 - PC-8801
-apc,NEC APC,NEC - APC
 pcfx,NEC PC-FX,NEC - PC-FX
 fm7,Fujitsu Micro 7,Fujitsu - Micro 7
 fmtowns,Fujitsu FM Towns,Fujitsu - FM Towns
@@ -248,7 +244,6 @@ wonderswancolor,Bandai WonderSwan Color,Bandai - WonderSwan Color
 megaduck,Welback Mega Duck,Welback - Mega Duck
 microvision,Milton Bradley Microvision,Milton Bradley - Microvision
 gamate,Bitcorp Gamate,Bitcorp - Gamate
-pockchalw,Bandai Pocket Challenge W,Bandai - Pocket Challenge W
 juicebox,Mattel Juice Box,MAME
 gmaster,Hartung Game Master,Hartung - Game Master
 gamecom,Tiger Game.com,Tiger - Game.com
