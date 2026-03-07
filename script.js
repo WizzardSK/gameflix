@@ -40,9 +40,10 @@ if (isSystems) {
                 var next = b.nextSibling;
                 if (next && next.tagName === 'BR') next.style.display = show ? '' : 'none';
             });
-            // Filter main frame figures and headers
+            // Filter main frame figures and headers (only on main page, not platform pages)
             try {
                 var mainDoc = parent.frames['main'].document;
+                if (mainDoc.querySelector('.figureList')) throw 0;
                 var figures = mainDoc.querySelectorAll('figure');
                 for (var i = 0; i < figures.length; i++) {
                     figures[i].style.display = figures[i].textContent.toLowerCase().includes(text) ? '' : 'none';
