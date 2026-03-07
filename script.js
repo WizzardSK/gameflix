@@ -52,6 +52,9 @@ if (isSystems) {
                     figures[i].style.display = figures[i].textContent.toLowerCase().includes(text) ? '' : 'none';
                 }
                 var mainHeaders = mainDoc.querySelectorAll('.section-header');
+                var topbar = mainDoc.getElementById('topbar');
+                var topMargin = topbar ? topbar.offsetHeight + 'px' : '0';
+                var firstVisible = true;
                 mainHeaders.forEach(function(h, idx) {
                     var hasVisible = false;
                     var next = mainHeaders[idx + 1];
@@ -60,7 +63,10 @@ if (isSystems) {
                         if (el.tagName === 'FIGURE' && el.style.display !== 'none') { hasVisible = true; break; }
                         el = el.nextElementSibling;
                     }
-                    h.style.display = hasVisible || !text ? '' : 'none';
+                    var show = hasVisible || !text;
+                    h.style.display = show ? '' : 'none';
+                    h.style.marginTop = (show && firstVisible) ? topMargin : '0';
+                    if (show) firstVisible = false;
                 });
             } catch(e) {}
         }, 500);
