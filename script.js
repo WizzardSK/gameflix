@@ -10,17 +10,17 @@ if (isSystems) {
         clearTimeout(timerId);
         timerId = setTimeout(function() {
             var text = filterInput.value.toLowerCase();
-            // Filter links and hide siblings
+            // Filter links and hide siblings (small, br, text nodes)
             links.forEach(function(a) {
                 var visible = a.textContent.toLowerCase().includes(text);
                 a.style.display = visible ? '' : 'none';
                 var el = a.nextSibling;
-                while (el && el.tagName !== 'A' && el.tagName !== 'B' && el.tagName !== 'BR') {
+                while (el && el.tagName !== 'A' && el.tagName !== 'B') {
                     if (el.style) el.style.display = visible ? '' : 'none';
                     el = el.nextSibling;
                 }
             });
-            // Hide section headers with no visible links
+            // Hide section headers with no visible links + surrounding br
             var headers = document.querySelectorAll('b');
             headers.forEach(function(b) {
                 var hasVisible = false;
@@ -29,11 +29,16 @@ if (isSystems) {
                     if (el.tagName === 'A' && el.style.display !== 'none') { hasVisible = true; break; }
                     el = el.nextSibling;
                 }
-                b.style.display = hasVisible || !text ? '' : 'none';
-                // Hide <br> before header
-                if (b.previousSibling && b.previousSibling.tagName === 'BR') {
-                    b.previousSibling.style.display = b.style.display;
+                var show = hasVisible || !text;
+                b.style.display = show ? '' : 'none';
+                // Hide br before and after header
+                var prev = b.previousSibling;
+                while (prev && (prev.tagName === 'BR' || (prev.nodeType === 3 && !prev.textContent.trim()))) {
+                    if (prev.style) prev.style.display = show ? '' : 'none';
+                    prev = prev.previousSibling;
                 }
+                var next = b.nextSibling;
+                if (next && next.tagName === 'BR') next.style.display = show ? '' : 'none';
             });
             // Filter main frame figures and headers
             try {
