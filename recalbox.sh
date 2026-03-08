@@ -27,8 +27,8 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 
 es stop; chvt 3; clear
 
-rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty
-rclone mount myrient: /recalbox/share/rom --config=/recalbox/share/system/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty
+rclone mount thumbnails: /recalbox/share/thumbs --config=/recalbox/share/system/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
+rclone mount myrient: /recalbox/share/rom --config=/recalbox/share/system/rclone.conf --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
 
 IFS=";"
 for each in "${roms[@]}"; do
@@ -36,7 +36,7 @@ for each in "${roms[@]}"; do
   echo "Mounting ${rom[0]}"
   mkdir -p /recalbox/share/roms/${rom[0]}/Online
   if grep -q ":" <<< "${rom[1]}"; then
-    rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/Online --config=/recalbox/share/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty
+    rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/Online --config=/recalbox/share/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
   else mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/Online; fi
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
