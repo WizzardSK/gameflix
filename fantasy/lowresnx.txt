@@ -1,4 +1,5 @@
 ---	game
+3963	Lowcraft Launcher Version 1.0	mvDPwEzsCM_LowcraftLauncher.exe.png	mvDPwEzsCM_LowcraftLauncher.exe.nx
 3962	MAD LOTTERY	p4PvxfhW6s_MAD_LOTTERY_SCREENSHOT01.png	p4PvxfhW6s_MAD_LOTTERY.nx
 3961	Solitary	4STanxzf4z_Solitary.png	4STanxzf4z_Solitary.nx
 3960	Sirtet	8SGa7WJZz8_Sirtet.png	8SGa7WJZz8_Sirtet.nx
