@@ -1,8 +1,10 @@
 ---	game
+3975	Shenzhen Solitaire	2QozpBT5jQ_LowRes_NX_20260314_00_35_00.png	2QozpBT5jQ_shenzhensolitaire.nx
+3974	Swipe-N-Slide	wHhoBqDgby_SwipeNSlide.png	wHhoBqDgby_SwipeNSlide.nx
 3973	Office 	niteoyDbqK_Office.png	niteoyDbqK_Office.nx
 3972	-Test pet program-	HhT3uD9Axr_Test_pet_pic.png	HhT3uD9Axr_Test_Pet_Program.nx
 3971	Catch NAANO 3 (finished!)	X7MrPoy3an_Catch_Naano_3.png	X7MrPoy3an_Catch_Naano_3.nx
-3968	Tiny Tycoon	GoHAFGetEi_Tiny_Tycoon_0.1.png	GoHAFGetEi_Tiny_Tycoon_0.1.nx
+3968	Tiny Tycoon	BCYERyhm4C_Tiny_Tycoon_0.3.png	BCYERyhm4C_Tiny_Tycoon_0.3.nx
 3963	Lowcraft Launcher Version 1.0	mvDPwEzsCM_LowcraftLauncher.exe.png	mvDPwEzsCM_LowcraftLauncher.exe.nx
 3962	MAD LOTTERY	p4PvxfhW6s_MAD_LOTTERY_SCREENSHOT01.png	p4PvxfhW6s_MAD_LOTTERY.nx
 3961	Solitary	4STanxzf4z_Solitary.png	4STanxzf4z_Solitary.nx
@@ -2242,27 +2244,17 @@
 2241	Swipe study	Ndvti439ve_Swipe_Study.png	Ndvti439ve_Swipe_Study.nx
 2237	Full 3D Proof of Concept	hfYrMFTBUw_star3D_20220105.png	hfYrMFTBUw_star3D_20220105.nx
 2219	This program is obfuscated.	QLWbtr3bmd_LowRes_NX_20211215_19_56_05.png	QLWbtr3bmd_otbpfiso.nx
-2200	Faces	uo84jwKvJr_Faces.png	uo84jwKvJr_Faces.nx
 2193	Advanced Sprite Control test	j8ARTha82z_Advanced_Sprite_Controls.png	j8ARTha82z_Advanced_Sprite_Controls.nx
 2184	 Mobile phone touch grid	YuvDBEEUjY_Mobile_Phone_Test_Grid.png	YuvDBEEUjY_Mobile_Phone_Test_Grid.nx
 2164	Bézier Curve	vgvbHPTSnc_Bzier_Curve.png	vgvbHPTSnc_Bzier_Curve.nx
-2160	BG Flash Test (Flash Warning)	AVUnapULXq_Bg_Flash_Test2.1.png	AVUnapULXq_Bg_Flash_Test2.1.nx
 2158	Sheet Music Editor	YsSxkXZMRK_Sheet_Music_Editor_1.6.png	YsSxkXZMRK_Sheet_Music_Editor_1.6.nx
 2129	128 sprites	X9VMeeW7v4_128_Sprites.png	X9VMeeW7v4_128_Sprites.nx
-2125	Modulation-based Audio Library	zuKxcNFWyw_Modulationbased_Audio_Library.png	zuKxcNFWyw_Modulationbased_Audio_Library.nx
 2121	Mahjong Engine	v3HggKATi6_Mahjong_Engine_1.2.png	v3HggKATi6_Mahjong_Engine_1.2.nx
-2113	Purper conversion	jwq4uveuMZ_Purper_Conversion_0.62.png	jwq4uveuMZ_Purper_Conversion_0.62.nx
 2112	Attempts to use raster fx for pixel-based graphics in NX	Uz46UFmhas_Raster_Freedom.png	Uz46UFmhas_Raster_Freedom.nx
 2111	Purper	QirtbWGEZk_Purper.png	QirtbWGEZk_Purper.nx
 2108	Boomer Shocks (Stage Alpha 3)	dFJSmka4ov_Boomer_Shocks_Alpha_3.png	dFJSmka4ov_Boomer_Shocks_Alpha_3.nx
-2106	Open Platformer Engine	bRgriy7Gfc_Open_Platformer_Engine.png	bRgriy7Gfc_Open_Platformer_Engine.nx
 2093	My first game made with LowRes NX	NwphsazFWV_First_Game.png	NwphsazFWV_First_Game.nx
-2081	GUI Library 2.3 [FILE]	esbn4Gii5Y_GUI_Library_2.3.png	esbn4Gii5Y_GUI_Library_2.3.nx
 2076	Throw Test	gj3XPtXuih_Throw_Test_0.2.png	gj3XPtXuih_Throw_Test_0.2.nx
-2066	Microsized Font	hHNNusr7ap_998551BFF76D4D0793A26B1D13DAA68B.png	hHNNusr7ap_Microsized_Font.nx
-2059	NAT platform “engine” example	tvj2GueBBM_NAT_Engine_Example.png	tvj2GueBBM_NAT_Engine_Example.nx
-2047	Spaced Out	tYyp4KDi46_Spaced_Out.png	tYyp4KDi46_Spaced_Out.nx
-2042	TX Library 1.4	42mY8cKNJx_TX_Library_1.4.png	42mY8cKNJx_TX_Library_1.4.nx
 2034	Pxl Library 2.0 Base	L6xgrbZwuD_Pxl_Library_2.0_Base.png	L6xgrbZwuD_Pxl_Library_2.0_Base.nx
 2021	Skeld	Ns9CSBFwrQ_3325EF89F983478588BD2C13799A6B08.jpeg	Ns9CSBFwrQ_Relaxing_City_Building_Game.nx
 2014	BG pixel detection system 2	33AhZdw5ZD_Bg_Pixel_Detection_System_2.2.png	33AhZdw5ZD_Bg_Pixel_Detection_System_2.2.nx
@@ -2319,6 +2311,7 @@
 1600	The Great Escape (Moon Shot Remix)	3diwKKKWLE_The_Great_Escape_V0.1.png	3diwKKKWLE_The_Great_Escape_V0.1.nx
 1584	Fast Cars Demo (BMP Import Tool)	H3DsHCtgk6_fast_cars.png	H3DsHCtgk6_fast_cars.nx
 1574	Testing Diagonal Grids	8TRhJxQEap_Diagonal_Grid_2.12.png	8TRhJxQEap_Diagonal_Grid_2.12.nx
+1572	EZ Collisions	FqR66j9bSj_EZ_Collisions.png	FqR66j9bSj_EZ_Collisions.nx
 1570	EZ Checks with Smooth Moves	3JSxeVxM35_EZ_Checks__Smooth_Moves.png	3JSxeVxM35_EZ_Checks__Smooth_Moves.nx
 1565	First Person Camera	oKSmDnRcwz_LowRes_NX_20201126_17_44_22.png	oKSmDnRcwz_First_Person_Camera.nx
 1563	Typing Test	zPbtZnjVYF_Typing_Test.png	zPbtZnjVYF_Typing_Test.nx
