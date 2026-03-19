@@ -1,4 +1,5 @@
 ---	Releases
+155677	The Ritual (Alpha)	the_ritual-0.vx.png
 151419	colibruit_3d	colibruit_3d-0.vx.png
 150196	superhotpelletmunchervoxatron	superhotpelletmunchervoxatron-0.vx.png
 145242	MouselostWTF	kekugukaho-0.vx.png

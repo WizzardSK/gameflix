@@ -1,4 +1,5 @@
 ---	game
+3980	MaxiMem	cfLHT6GkQn_MaxiMem_Level_2.png	cfLHT6GkQn_MaxiMem_Level_2.nx
 3978	Train Train	UuSQ8PhjZA_Train_Train_0.3.png	UuSQ8PhjZA_Train_Train_0.3.nx
 3975	Shenzhen Solitaire	YStEYrS62h_LowRes_NX_20260314_20_20_38.png	YStEYrS62h_shenzhensolitaire.nx
 3974	Swipe-N-Slide	wHhoBqDgby_SwipeNSlide.png	wHhoBqDgby_SwipeNSlide.nx
@@ -2407,12 +2408,14 @@
 1022	AI like Pac-Man 	rmf2nGoULz_Pac_Man_like_AI.png	rmf2nGoULz_Pac_Man_like_AI.nx
 1021	Quadruple Stacked Layered Conditional Example	HDUnC8DetD_Quadruple_Stacked_Layered_Conditional_Example.png	HDUnC8DetD_Quadruple_Stacked_Layered_Conditional_Example.nx
 1015	Original lowres demo	vDbAQjD4DA_Original_Lowres_.png	vDbAQjD4DA_Original_Lowres_.nx
+1005	HOW TO: Make a game (step by step) 	kfNauRTZDa_How_To_make_a_game_STEP_8.2.png	kfNauRTZDa_How_To_make_a_game_STEP_8.2.nx
 990	Memory Tricks	TVBRcptcDi_Character_Memory_Trick.png	TVBRcptcDi_Character_Memory_Trick.nx
 989	Dynamic Sprite assignment	b5eZwRnXS3_Topdown_Shooter.png	b5eZwRnXS3_Topdown_Shooter.nx
 987	Fading Text	DKpz9bfAWQ_Fading_Text.png	DKpz9bfAWQ_Fading_Text.nx
 980	Paddle Vector Tests	JgctyhC5aF_Paddle_Vector_Tests_0.2.png	JgctyhC5aF_Paddle_Vector_Tests_0.2.nx
 978	Vector Tests	NZ4Vb89fnL_Vector_Tests_0.2.png	NZ4Vb89fnL_Vector_Tests_0.2.nx
 977	Question bot	8Poistrivx_Question_Bot.png	8Poistrivx_Question_Bot.nx
+975	Talking sounds	7VZzGurF2x_Talking_Sounds.png	7VZzGurF2x_Talking_Sounds.nx
 973	Textbox	NuRn8LzwEX_Textbox.png	NuRn8LzwEX_Textbox.nx
 972	into the dark demo	anQDeSC2Hm_into_the_dark.png	anQDeSC2Hm_into_the_dark.nx
 971	Simple Pattern Explorer (NX music: part 3)	dt2oB5q6F2_Simple_Pattern_Explorer.png	dt2oB5q6F2_Simple_Pattern_Explorer.nx
@@ -2421,8 +2424,14 @@
 957	First attempt at using sound	pXvRYLVJy3_Sound_Test.png	pXvRYLVJy3_Sound_Test.nx
 955	My favourite tv channel (static)	n3DFC6biz9_My_Favourite_Tv_Channel_static.png	n3DFC6biz9_My_Favourite_Tv_Channel_static.nx
 951	Rainbow Line	Z9eFMAuvVB_Rainbow_Line.png	Z9eFMAuvVB_Rainbow_Line.nx
-939	Week Old Cola From The Fridge	nNbBzLmJYn_Week_Old_Cola_From_The_Fridge.png	nNbBzLmJYn_Week_Old_Cola_From_The_Fridge.nx
+936	Cell collision	WhacVCgjDp_Cell_Colision.png	WhacVCgjDp_Cell_Colision.nx
+926	NX ... Simulated Depth	5Bwemy25Ph_NX_simulated_depth.png	5Bwemy25Ph_NX_simulated_depth.nx
 918	Notepad 2000	xMtyFFGQsd_Notepad_2000.png	xMtyFFGQsd_Notepad_2000.nx
+916	My talking virtual friend	3nFKkmhAVn_My_Talking_Vitrual_Friend.png	3nFKkmhAVn_My_Talking_Vitrual_Friend.nx
+912	Jerome	kjXpSRrtq8_Jerome.png	kjXpSRrtq8_Jerome.nx
+898	Need Help Collision	ELsu835KgP_Lowres_nx_screeanshot_320x180.png	ELsu835KgP_Disk__Kopya.nx
+895	Random Map Generator	owsrREdgvm_Random_Map_Generator.png	owsrREdgvm_Random_Map_Generator.nx
+888	Micro racers TEST	zU7VbZBsGV_Micro_Racers.png	zU7VbZBsGV_Micro_Racers.nx
 886	Spin Test	uEKVD3pfLN_Spin_Test.png	uEKVD3pfLN_Spin_Test.nx
 882	Dynamic terrain	vcb2vbPg8n_Dynamic_Terrain3.png	vcb2vbPg8n_Dynamic_Terrain3.nx
 876	Simple Track Explorer (NX music: part 2)	GPftFKxV92_Simple_Track_Explorer.png	GPftFKxV92_Simple_Track_Explorer.nx
@@ -2442,16 +2451,10 @@
 800	Graphics Demo (Pxl Library 2.0)	Z6ebi8VBQT_Pxl_Library_2.0_Graphics.png	Z6ebi8VBQT_Pxl_Library_2.0_Graphics.nx
 799	Stack commands!	9k5V49AbVT_Stack_In_Nx.png	9k5V49AbVT_Stack_In_Nx.nx
 785	Array Text Scroller	GrCxfZKouz_LowRes_NX_20191120_21_15_33.png	GrCxfZKouz_Array_Text_Scroller.nx
-778	LEARN: SOUND effects, TRACK riffs, and MUSIC patterns	BZ3upssKJT_Tutorial.png	BZ3upssKJT_Tutorial.nx
 754	A PERSIST METHOD	GfxuqWtJzN_A_PERSIST_METHOD.png	GfxuqWtJzN_A_PERSIST_METHOD.nx
-726	Sprite VS Cell - Touch / Mouse version	QT3ynJV3RF_Sprite_VS_Cell_TouchMouse_Version.png	QT3ynJV3RF_Sprite_VS_Cell_TouchMouse_Version.nx
-721	Custom Mouse Controls	sbqtkCGGx6_Custom_Mouse_Example.png	sbqtkCGGx6_Custom_Mouse_Example.nx
 719	Custom Gamepad Controls	82BwAEbCzL_Custom_Gamepad_Example.png	82BwAEbCzL_Custom_Gamepad_Example.nx
-718	SuperFX chip	KbBJp3SWUr_3D_drawer.png	KbBJp3SWUr_Triangle.nx
-714	Sprite layering example	RDxiSUNsRe_Sprite_Layering_Example.png	RDxiSUNsRe_Sprite_Layering_Example.nx
 713	16 color sprite example	rscxHa3ksG_16_Color_Sprite_Example.png	rscxHa3ksG_16_Color_Sprite_Example.nx
 711	7 color background effect	DZK4jjxWjC_7_Color_Background_Example.png	DZK4jjxWjC_7_Color_Background_Example.nx
-686	Multi color shades demonstration	gzu36vfUrq_Rainbow_Flasher.png	gzu36vfUrq_Rainbow_Flasher.nx
 676	Sprite VS Cell	ZABg7DJRj3_Sprite_VS_Cell.png	ZABg7DJRj3_Sprite_VS_Cell.nx
 675	Timing Example	9iXDLUQfgU_Timing_Example.png	9iXDLUQfgU_Timing_Example.nx
 666	It is.... ICONic ;)	NoqiCistNo_It_is..._ICONic_.png	NoqiCistNo_It_is..._ICONic_.nx
