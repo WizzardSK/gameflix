@@ -2356,24 +2356,14 @@
 1398	Stars 3D	XwXSNsD6AE_Stars3D.png	XwXSNsD6AE_Stars3D.nx
 1396	Colony Test	e4tw3jvuVL_Colony_Test.png	e4tw3jvuVL_Colony_Test.nx
 1394	Following camera concept demo thingy	5s7SiAed2x_5B67F42750364ED693AAC457D84C1173.jpeg	5s7SiAed2x_Following_Camera_Demo.nx
-1391	Boxing Champ	APQZJbYz3i_Boxing_Champ.png	APQZJbYz3i_Boxing_Champ.nx
 1388	Moire Pattens	RCrsUTFWsv_Copy_of_Moire_Patterns.png	RCrsUTFWsv_Copy_of_Moire_Patterns.nx
-1379	4 Directional A* Pathfinding Test	b44eSW8Vig_4DirAStarTest_1.1.png	b44eSW8Vig_4DirAStarTest_1.1.nx
 1374	Cycle counter	a4SNUZFPnD_LowRes_NX_20200821_14_34_21.png	a4SNUZFPnD_cycles.nx
 1368	Copper bars	YJYB7ZRJWq_Copper_Bars.png	YJYB7ZRJWq_Copper_Bars.nx
-1366	howto: store two messages in the same charas	JwnB9SQkqq_howto_store_two_asset_in_one_chara.png	JwnB9SQkqq_howto_store_two_asset_in_one_chara.nx
 1365	The Flying Ace	rUZ7mYRkGP_The_Flying_Ace_0.4.png	rUZ7mYRkGP_The_Flying_Ace_0.4.nx
-1354	Pitfall Challenge	NXaK4go8mz_Pitfall.png	NXaK4go8mz_Pitfall.nx
-1333	BIRD	gLhSyiUj2a_BIRDS_0.2.png	gLhSyiUj2a_BIRDS_0.2.nx
-1325	Surface of the SUN	DeUNU5jZka_Surface_of_the_Sun.png	DeUNU5jZka_Surface_of_the_Sun.nx
 1304	Firecrackers....	2zhXspLJHv_Firecrackers.png	2zhXspLJHv_Firecrackers.nx
 1302	Cell Attribute Reader	WguvruHLra_Cell_Attributes_Reader.png	WguvruHLra_Cell_Attributes_Reader.nx
-1299	Memory Access Speed Test: DIM vs BG 	LUky8Q89Hp_Dim_Vs_BG_Memory_Access_Speeds.png	LUky8Q89Hp_Dim_Vs_BG_Memory_Access_Speeds.nx
-1285	Candy Cane	csjRVnrUvo_CandyCane.png	csjRVnrUvo_CandyCane.nx
 1276	SEAS (game challenge)	kQzZQhnXzd_Seas.png	kQzZQhnXzd_Seas.nx
-1275	Screen Transition: Horizontal Slide	BBhDYWbWPU_Transition_Slide_horizontal.png	BBhDYWbWPU_Transition_Slide_horizontal.nx
 1274	Screen Transition: Vertical Slide	mRZYJNF98o_Transition_Slide_vertical.png	mRZYJNF98o_Transition_Slide_vertical.nx
-1273	Screen Transition: Fade Away	H94HK38yQi_Transition_Fade_Away.png	H94HK38yQi_Transition_Fade_Away.nx
 1261	Compact Text	hVCAs8ywje_Compact_Text.png	hVCAs8ywje_Compact_Text.nx
 1253	Buggy Race	B8CUqRdehV_Buggy_Race.png	B8CUqRdehV_Buggy_Race.nx
 1251	Carrom	HNPZedEFBS_Carromz.png	HNPZedEFBS_Carromz.nx

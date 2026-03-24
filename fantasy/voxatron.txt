@@ -1,4 +1,9 @@
 ---	Releases
+155777	Abandoned Factory	nesuzuputa-1.vx.png
+155773	Cowboy Game	jirujehuyo-0.vx.png
+155771	Outbreak	gehufoweti-0.vx.png
+155769	zombietown	zombietown-0.vx.png
+155766	hordeblaster	hordeblaster-0.vx.png
 155677	The Ritual (Alpha)	the_ritual-0.vx.png
 151419	colibruit_3d	colibruit_3d-0.vx.png
 150196	superhotpelletmunchervoxatron	superhotpelletmunchervoxatron-0.vx.png
