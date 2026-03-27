@@ -2344,11 +2344,13 @@
 1491	VBL BG	28QXex63rn_VBL_BG.png	28QXex63rn_VBL_BG.nx
 1490	Raster Racing Game 	DDuutfn8VR_Racing.png	DDuutfn8VR_Racing.nx
 1475	Eye Eye Captain!	RAHkexMmhD_Eye_Eye_Captain.png	RAHkexMmhD_Eye_Eye_Captain.nx
+1468	Three Screen Scroller	kBBqdJEqWv_3_Screen_Scroller.png	kBBqdJEqWv_3_Screen_Scroller.nx
 1464	 3D Viewer using Mini Map Database	e9mPwQC6T9_3D_Viewer_Mini_Map_0.4.png	e9mPwQC6T9_3D_Viewer_Mini_Map_0.4.nx
 1463	Micro Map Data Creator	y4sGRBSQAS_Micro_Map_Data.png	y4sGRBSQAS_Micro_Map_Data.nx
 1451	RASTER Water	mEcQBFcNRq_RASTER_Water.png	mEcQBFcNRq_RASTER_Water.nx
+1446	Quine in NX	BZsZSz7eF7_LowRes_NX_20200922_13_19_03.png	BZsZSz7eF7_quine.nx
+1445	32x32 scrollable gametable with cursor control and playing cards	bUF4Q5Qcc3_Bit_Cards.png	bUF4Q5Qcc3_Bit_Cards.nx
 1438	Micro Mapping Test	NNf9hG8sC8_Micro_Mapping_Test.png	NNf9hG8sC8_Micro_Mapping_Test.nx
-1428	Branchless Programming Guide	RhqiNsKaN3_Branchless_Programming_Guide.png	RhqiNsKaN3_Branchless_Programming_Guide.nx
 1412	Lego Toy	cUADgyp2xt_Lego_Toy.png	cUADgyp2xt_Lego_Toy.nx
 1410	Android Test 2	mRXpMJd3vP_Android2.png	mRXpMJd3vP_Android2.nx
 1407	I DID THIS ON A ANDRIOD TABLET	eMChUuPzy5_Android.png	eMChUuPzy5_f.nx
@@ -2358,6 +2360,13 @@
 1394	Following camera concept demo thingy	5s7SiAed2x_5B67F42750364ED693AAC457D84C1173.jpeg	5s7SiAed2x_Following_Camera_Demo.nx
 1391	Boxing Champ	APQZJbYz3i_Boxing_Champ.png	APQZJbYz3i_Boxing_Champ.nx
 1388	Moire Pattens	RCrsUTFWsv_Copy_of_Moire_Patterns.png	RCrsUTFWsv_Copy_of_Moire_Patterns.nx
+1379	4 Directional A* Pathfinding Test	b44eSW8Vig_4DirAStarTest_1.1.png	b44eSW8Vig_4DirAStarTest_1.1.nx
+1374	Cycle counter	a4SNUZFPnD_LowRes_NX_20200821_14_34_21.png	a4SNUZFPnD_cycles.nx
+1368	Copper bars	YJYB7ZRJWq_Copper_Bars.png	YJYB7ZRJWq_Copper_Bars.nx
+1366	howto: store two messages in the same charas	JwnB9SQkqq_howto_store_two_asset_in_one_chara.png	JwnB9SQkqq_howto_store_two_asset_in_one_chara.nx
+1365	The Flying Ace	rUZ7mYRkGP_The_Flying_Ace_0.4.png	rUZ7mYRkGP_The_Flying_Ace_0.4.nx
+1354	Pitfall Challenge	NXaK4go8mz_Pitfall.png	NXaK4go8mz_Pitfall.nx
+1333	BIRD	gLhSyiUj2a_BIRDS_0.2.png	gLhSyiUj2a_BIRDS_0.2.nx
 1325	Surface of the SUN	DeUNU5jZka_Surface_of_the_Sun.png	DeUNU5jZka_Surface_of_the_Sun.nx
 1304	Firecrackers....	2zhXspLJHv_Firecrackers.png	2zhXspLJHv_Firecrackers.nx
 1302	Cell Attribute Reader	WguvruHLra_Cell_Attributes_Reader.png	WguvruHLra_Cell_Attributes_Reader.nx
