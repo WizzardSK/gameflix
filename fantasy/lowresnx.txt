@@ -1977,6 +1977,7 @@
 2	Background Designer	PpbkUEMFEs_BG_Designer_1.7.png	PpbkUEMFEs_BG_Designer_1.7.nx
 1	Character Designer	A2Mz2eaoxF_Char_Designer_1.6.png	A2Mz2eaoxF_Char_Designer_1.6.nx
 ---	example
+3987	Animated Drawing	b2QLWSmYKt_Text_Bright_Designer_3.png	b2QLWSmYKt_Text_Bright_Designer_3.nx
 3985	Claude generated Mario song	EUuLFLz4zm_Claude_Genarated_Mario_Song.png	EUuLFLz4zm_Claude_Genarated_Mario_Song.nx
 3966	Spin to Win 	RHgmRUrJGd_Spin_to_Win_0.1.png	RHgmRUrJGd_Spin_to_Win_0.1.nx
 3953	Twister Blox	ALUFR6rjgk_Twister_Blox_0.1.png	ALUFR6rjgk_Twister_Blox_0.1.nx
@@ -2351,6 +2352,7 @@
 1446	Quine in NX	BZsZSz7eF7_LowRes_NX_20200922_13_19_03.png	BZsZSz7eF7_quine.nx
 1445	32x32 scrollable gametable with cursor control and playing cards	bUF4Q5Qcc3_Bit_Cards.png	bUF4Q5Qcc3_Bit_Cards.nx
 1438	Micro Mapping Test	NNf9hG8sC8_Micro_Mapping_Test.png	NNf9hG8sC8_Micro_Mapping_Test.nx
+1428	Branchless Programming Guide	RhqiNsKaN3_Branchless_Programming_Guide.png	RhqiNsKaN3_Branchless_Programming_Guide.nx
 1412	Lego Toy	cUADgyp2xt_Lego_Toy.png	cUADgyp2xt_Lego_Toy.nx
 1410	Android Test 2	mRXpMJd3vP_Android2.png	mRXpMJd3vP_Android2.nx
 1407	I DID THIS ON A ANDRIOD TABLET	eMChUuPzy5_Android.png	eMChUuPzy5_f.nx
@@ -2446,7 +2448,6 @@
 852	Space flight wip	9wu9ypD2i4_Space_Game.png	9wu9ypD2i4_Space_Game.nx
 847	Pics Demo (Pxl Library 2.0)	vtnXkuSGed_Pxl_Library_2.0_Pics.png	vtnXkuSGed_Pxl_Library_2.0_Pics.nx
 831	Sound monitoring	ohwgPKxius_Sound_Monitoring.png	ohwgPKxius_Sound_Monitoring.nx
-827	3D gfx example	AEYQXhPW6G_Test_3d_Gfx.png	AEYQXhPW6G_Test_3d_Gfx.nx
 826	Vector gfx example	SfLJLmWSWf_Pix_Draw_Test.png	SfLJLmWSWf_Pix_Draw_Test.nx
 817	Fibonacci numbers	43MN93MvpL_Stack_In_Nx_2.png	43MN93MvpL_Fib.nx
 806	Window Demo (Pxl Library 2.0)	Gn4qxpnj8F_Pxl_Library_2.0_Display.png	Gn4qxpnj8F_Pxl_Library_2.0_Display.nx
@@ -2458,16 +2459,12 @@
 754	A PERSIST METHOD	GfxuqWtJzN_A_PERSIST_METHOD.png	GfxuqWtJzN_A_PERSIST_METHOD.nx
 726	Sprite VS Cell - Touch / Mouse version	QT3ynJV3RF_Sprite_VS_Cell_TouchMouse_Version.png	QT3ynJV3RF_Sprite_VS_Cell_TouchMouse_Version.nx
 721	Custom Mouse Controls	sbqtkCGGx6_Custom_Mouse_Example.png	sbqtkCGGx6_Custom_Mouse_Example.nx
-719	Custom Gamepad Controls	82BwAEbCzL_Custom_Gamepad_Example.png	82BwAEbCzL_Custom_Gamepad_Example.nx
 718	SuperFX chip	KbBJp3SWUr_3D_drawer.png	KbBJp3SWUr_Triangle.nx
 714	Sprite layering example	RDxiSUNsRe_Sprite_Layering_Example.png	RDxiSUNsRe_Sprite_Layering_Example.nx
-713	16 color sprite example	rscxHa3ksG_16_Color_Sprite_Example.png	rscxHa3ksG_16_Color_Sprite_Example.nx
 711	7 color background effect	DZK4jjxWjC_7_Color_Background_Example.png	DZK4jjxWjC_7_Color_Background_Example.nx
 686	Multi color shades demonstration	gzu36vfUrq_Rainbow_Flasher.png	gzu36vfUrq_Rainbow_Flasher.nx
 676	Sprite VS Cell	ZABg7DJRj3_Sprite_VS_Cell.png	ZABg7DJRj3_Sprite_VS_Cell.nx
 675	Timing Example	9iXDLUQfgU_Timing_Example.png	9iXDLUQfgU_Timing_Example.nx
-666	It is.... ICONic ;)	NoqiCistNo_It_is..._ICONic_.png	NoqiCistNo_It_is..._ICONic_.nx
-665	BIG NUMBER Handler example	9YEGodQB2e_BIG_NUMBER_Handler_example.png	9YEGodQB2e_BIG_NUMBER_Handler_example.nx
 664	Poke Poke 	ihb8fWYMzx_Poke_Poke_2.png	ihb8fWYMzx_Poke_Poke_2.nx
 663	Walking/Jumping Man bkg side scroll	G6hz6wKBbG_E750B366628E449F8F563585D0F5F3B9.jpeg	G6hz6wKBbG_Bg_Scroll_Walking_Man.nx
 662	Basic Side Scrolling Starfield	xtCSMnVP6x_A6946275C1334DC2BE782B0C35BFAA5F.jpeg	xtCSMnVP6x_Starfield_Example.nx
@@ -2475,12 +2472,7 @@
 657	Vector Bullet	Edxi25ioWK_Vector_Bullet.png	Edxi25ioWK_Vector_Bullet.nx
 653	Deep Navigation	ssRQJWK8cZ_Deep_Navigation.png	ssRQJWK8cZ_Deep_Navigation.nx
 649	Fire	zNKPaRCMWJ_Disk.png	zNKPaRCMWJ_Disk.nx
-648	Cursor follower	AjBCbad5JN_Cursor_Follower.png	AjBCbad5JN_Cursor_Follower.nx
-642	Sprite animation example....	AuCNWV4FaV_Sprite_Animation_Example.png	AuCNWV4FaV_Sprite_Animation_Example.nx
 638	6 Color Tiles	MrdZRoPhcF_6_Color_Tiles.png	MrdZRoPhcF_6_Color_Tiles.nx
-636	Mini Maps	ktgPNr5wvc_Mini_Maps.png	ktgPNr5wvc_Mini_Maps.nx
-633	Help	G2LByWyERu_Unnamed_Program_13.png	G2LByWyERu_Unnamed_Program_13.nx
-629	howto: breadth first search path finding	Er8VG54X8e_howto_path_finding.png	Er8VG54X8e_howto_path_finding.nx
 626	Any player size platformer	osTE2sikEk_Unnamed_Program_86.png	osTE2sikEk_Unnamed_Program_86.nx
 617	Howto: path finding explore	gsLZLjyMn6_howto_path_finding_explore.png	gsLZLjyMn6_howto_path_finding_explore.nx
 616	Howto: Set character pixels	Hvs4id6z9x_howto_set_chara_pixel.png	Hvs4id6z9x_howto_set_chara_pixel.nx
