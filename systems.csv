@@ -8,9 +8,9 @@ chip8,CHIP-8,CHIP-8
 atari2600,Atari 2600,Atari - 2600
 atari5200,Atari 5200,Atari - 5200
 atari7800,Atari 7800,Atari - 7800
-atarijaguar,Atari Jaguar,Atari - Jaguar
-atarijaguarcd,Atari Jaguar CD,Atari - Jaguar
-atarilynx,Atari Lynx,Atari - Lynx
+jaguar,Atari Jaguar,Atari - Jaguar
+jaguarcd,Atari Jaguar CD,Atari - Jaguar
+lynx,Atari Lynx,Atari - Lynx
 atari800,Atari 800,Atari - 8-bit
 xegs,Atari XEGS,Atari - XEGS
 atarist,Atari ST,Atari - ST
@@ -35,7 +35,7 @@ pcw,Amstrad PCW,Amstrad - PCW
 pet,Commodore PET,Commodore - PET
 cplus4,Commodore Plus-4,Commodore - Plus-4
 vic10,Commodore VIC-10,Commodore - VIC-10
-vic20,Commodore VIC-20,Commodore - VIC-20
+c20,Commodore VIC-20,Commodore - VIC-20
 cbm2,Commodore CBM-II,Commodore - CBM-II
 c64,Commodore 64,Commodore - 64
 c128,Commodore 128,Commodore - 128
@@ -54,7 +54,7 @@ sgb,Nintendo Super Game Boy,Nintendo - Game Boy
 sgb-msu1,Nintendo Game Boy MSU-1,Nintendo - Super Nintendo Entertainment System
 n64,Nintendo 64,Nintendo - Nintendo 64
 n64dd,Nintendo 64DD,Nintendo - Nintendo 64DD
-gc,Nintendo Gamecube,Nintendo - GameCube
+gamecube,Nintendo Gamecube,Nintendo - GameCube
 wii,Nintendo Wii,Nintendo - Wii
 pokemini,Nintendo Pokémon Mini,Nintendo - Pokemon Mini
 virtualboy,Nintendo Virtual Boy,Nintendo - Virtual Boy
@@ -67,8 +67,8 @@ dsi,Nintendo DSi,Nintendo - Nintendo DSi
 wiiu,Nintendo Wii U,Nintendo - Wii U
 ,Sega,
 svmu,Sega Visual Memory Unit,Sega - Visual Memory Unit
-sg-1000,Sega SG-1000,Sega - SG-1000
-sc-3000,Sega SC-3000,Sega - SG-1000
+sg1000,Sega SG-1000,Sega - SG-1000
+sc3000,Sega SC-3000,Sega - SG-1000
 segaai,Sega AI Computer,Sega - AI Computer
 mastersystem,Sega Master System,Sega - Master System - Mark III
 megadrive,Sega Mega Drive,Sega - Mega Drive - Genesis
@@ -76,7 +76,7 @@ megadrive-msu,Sega MSU-MD,Sega - Mega Drive - Genesis
 pico,Sega PICO,Sega - PICO
 beena,Sega Advanced Pico Beena,Sega - Beena
 sega32x,Sega 32x,Sega - 32X
-segacd,Sega CD,Sega - Mega-CD - Sega CD
+megacd,Sega CD,Sega - Mega-CD - Sega CD
 saturn,Sega Saturn,Sega - Saturn
 stv,Sega ST-V,Sega - ST-V
 dreamcast,Sega Dreamcast,Sega - Dreamcast
@@ -102,7 +102,7 @@ msxturbor,Panasonic MSX TurboR,Microsoft - MSX2
 studio2,RCA Studio II,RCA - Studio II
 channelf,Fairchild Channel F,Fairchild - Channel F
 vectrex,GCE Vectrex,GCE - Vectrex
-odyssey2,Magnavox Odyssey²,Magnavox - Odyssey2
+o2em,Magnavox Odyssey²,Magnavox - Odyssey2
 videopacplus,Magnavox Odyssey³,Philips - Videopac
 intellivision,Mattel Intellivision,Mattel - Intellivision
 colecovision,Coleco Colecovision,Coleco - ColecoVision
@@ -112,7 +112,7 @@ ctvboy,Gakken Compact Vision TV Boy,Gakken - Compact Vision TV Boy
 sv8000,Bandai Super Vision 8000,Bandai - Super Vision 8000
 astrocade,Bally Astrocade,Bally - Astrocade
 apfm1000,APF MP-1000,APF - MP-1000
-creativision,VTech CreatiVision,VTech - CreatiVision
+crvision,VTech CreatiVision,VTech - CreatiVision
 vsmile,VTech V.Smile,VTech - V.Smile
 vsmileb,VTech V.Smile Baby,VTech - V.Smile Baby
 arcadia,Emerson Arcadia 2001,Emerson - Arcadia 2001
@@ -149,7 +149,7 @@ interact,Interact Family Computer,MAME
 spc1000,Samsung SPC-1000,Samsung - SPC-1000
 cgenie,EACA Colour Genie,EACA - EG2000 Colour Genie
 dragon64,Dragon 32/64,Dragon - Dragon 64
-oric,Oric Atmos,Tangerine - Oric Atmos
+oricatmos,Oric Atmos,Tangerine - Oric Atmos
 camplynx,Camputers Lynx,Camputers - Lynx
 orao,Orao,MAME
 vg5k,Philips VG-5000,MAME
@@ -238,8 +238,8 @@ ngpc,SNK Neo Geo Pocket Color,SNK - Neo Geo Pocket Color
 ,Portable & mobile consoles,
 gamepock,Epoch Game Pocket Computer,Epoch - Game Pocket Computer
 supervision,Watara Supervision,Watara - Supervision
-wonderswan,Bandai WonderSwan,Bandai - WonderSwan
-wonderswancolor,Bandai WonderSwan Color,Bandai - WonderSwan Color
+wswan,Bandai WonderSwan,Bandai - WonderSwan
+wswanc,Bandai WonderSwan Color,Bandai - WonderSwan Color
 megaduck,Welback Mega Duck,Welback - Mega Duck
 microvision,Milton Bradley Microvision,Milton Bradley - Microvision
 gamate,Bitcorp Gamate,Bitcorp - Gamate
