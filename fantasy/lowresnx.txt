@@ -1,5 +1,5 @@
 ---	game
-3984	Patchwork	qLeKsV4yM7_Patchwork_0.13.png	qLeKsV4yM7_Patchwork_0.13.nx
+3984	Patchwork	y6ZQDshiDu_Patchwork_0.21.png	y6ZQDshiDu_Patchwork_0.21.nx
 3980	MaxiMem	GfxJ7VU6y2_MaxiMem_Level_3.png	GfxJ7VU6y2_MaxiMem_Level_3.nx
 3978	Train Train	6d39AYmRyK_Train_Train_0.41.png	6d39AYmRyK_Train_Train_0.41.nx
 3975	Shenzhen Solitaire	YStEYrS62h_LowRes_NX_20260314_20_20_38.png	YStEYrS62h_shenzhensolitaire.nx
@@ -1424,7 +1424,6 @@
 3843	Stinky pyramid	uG5Sj9YcJM_ShapeRender.png	uG5Sj9YcJM_ShapeRender.nx
 3831	Realtime shading	uVtDpVudwa_Realtime_Lighting.png	uVtDpVudwa_Realtime_Lighting.nx
 3818	lowres galaxy 2 but the spaceship was getting repaired	UgferbGnE2_LowRes_Galaxy_2_1.5.png	UgferbGnE2_LowRes_Galaxy_2_1.5.nx
-3817	DANGO	UDdEMcnLK6_DANGO.png	UDdEMcnLK6_DANGO.nx
 3813	TRUE Hexagonal  Game Board - Experimental	EYc6RXFX8S_Kingdom_Quest_0.1.png	EYc6RXFX8S_Kingdom_Quest_0.1.nx
 3807	Mokiopan	kALNABt58r_Mokipan_1.3.png	kALNABt58r_Mokipan_1.3.nx
 3806	Minecraft Font	XKVexTE2vx_Unnamed_Program_64.png	XKVexTE2vx_Unnamed_Program_64.nx
@@ -2448,6 +2447,7 @@
 852	Space flight wip	9wu9ypD2i4_Space_Game.png	9wu9ypD2i4_Space_Game.nx
 847	Pics Demo (Pxl Library 2.0)	vtnXkuSGed_Pxl_Library_2.0_Pics.png	vtnXkuSGed_Pxl_Library_2.0_Pics.nx
 831	Sound monitoring	ohwgPKxius_Sound_Monitoring.png	ohwgPKxius_Sound_Monitoring.nx
+827	3D gfx example	AEYQXhPW6G_Test_3d_Gfx.png	AEYQXhPW6G_Test_3d_Gfx.nx
 826	Vector gfx example	SfLJLmWSWf_Pix_Draw_Test.png	SfLJLmWSWf_Pix_Draw_Test.nx
 817	Fibonacci numbers	43MN93MvpL_Stack_In_Nx_2.png	43MN93MvpL_Fib.nx
 806	Window Demo (Pxl Library 2.0)	Gn4qxpnj8F_Pxl_Library_2.0_Display.png	Gn4qxpnj8F_Pxl_Library_2.0_Display.nx
@@ -2459,12 +2459,16 @@
 754	A PERSIST METHOD	GfxuqWtJzN_A_PERSIST_METHOD.png	GfxuqWtJzN_A_PERSIST_METHOD.nx
 726	Sprite VS Cell - Touch / Mouse version	QT3ynJV3RF_Sprite_VS_Cell_TouchMouse_Version.png	QT3ynJV3RF_Sprite_VS_Cell_TouchMouse_Version.nx
 721	Custom Mouse Controls	sbqtkCGGx6_Custom_Mouse_Example.png	sbqtkCGGx6_Custom_Mouse_Example.nx
+719	Custom Gamepad Controls	82BwAEbCzL_Custom_Gamepad_Example.png	82BwAEbCzL_Custom_Gamepad_Example.nx
 718	SuperFX chip	KbBJp3SWUr_3D_drawer.png	KbBJp3SWUr_Triangle.nx
 714	Sprite layering example	RDxiSUNsRe_Sprite_Layering_Example.png	RDxiSUNsRe_Sprite_Layering_Example.nx
+713	16 color sprite example	rscxHa3ksG_16_Color_Sprite_Example.png	rscxHa3ksG_16_Color_Sprite_Example.nx
 711	7 color background effect	DZK4jjxWjC_7_Color_Background_Example.png	DZK4jjxWjC_7_Color_Background_Example.nx
 686	Multi color shades demonstration	gzu36vfUrq_Rainbow_Flasher.png	gzu36vfUrq_Rainbow_Flasher.nx
 676	Sprite VS Cell	ZABg7DJRj3_Sprite_VS_Cell.png	ZABg7DJRj3_Sprite_VS_Cell.nx
 675	Timing Example	9iXDLUQfgU_Timing_Example.png	9iXDLUQfgU_Timing_Example.nx
+666	It is.... ICONic ;)	NoqiCistNo_It_is..._ICONic_.png	NoqiCistNo_It_is..._ICONic_.nx
+665	BIG NUMBER Handler example	9YEGodQB2e_BIG_NUMBER_Handler_example.png	9YEGodQB2e_BIG_NUMBER_Handler_example.nx
 664	Poke Poke 	ihb8fWYMzx_Poke_Poke_2.png	ihb8fWYMzx_Poke_Poke_2.nx
 663	Walking/Jumping Man bkg side scroll	G6hz6wKBbG_E750B366628E449F8F563585D0F5F3B9.jpeg	G6hz6wKBbG_Bg_Scroll_Walking_Man.nx
 662	Basic Side Scrolling Starfield	xtCSMnVP6x_A6946275C1334DC2BE782B0C35BFAA5F.jpeg	xtCSMnVP6x_Starfield_Example.nx
@@ -2472,20 +2476,18 @@
 657	Vector Bullet	Edxi25ioWK_Vector_Bullet.png	Edxi25ioWK_Vector_Bullet.nx
 653	Deep Navigation	ssRQJWK8cZ_Deep_Navigation.png	ssRQJWK8cZ_Deep_Navigation.nx
 649	Fire	zNKPaRCMWJ_Disk.png	zNKPaRCMWJ_Disk.nx
+642	Sprite animation example....	AuCNWV4FaV_Sprite_Animation_Example.png	AuCNWV4FaV_Sprite_Animation_Example.nx
 638	6 Color Tiles	MrdZRoPhcF_6_Color_Tiles.png	MrdZRoPhcF_6_Color_Tiles.nx
+636	Mini Maps	ktgPNr5wvc_Mini_Maps.png	ktgPNr5wvc_Mini_Maps.nx
+629	howto: breadth first search path finding	Er8VG54X8e_howto_path_finding.png	Er8VG54X8e_howto_path_finding.nx
 626	Any player size platformer	osTE2sikEk_Unnamed_Program_86.png	osTE2sikEk_Unnamed_Program_86.nx
 617	Howto: path finding explore	gsLZLjyMn6_howto_path_finding_explore.png	gsLZLjyMn6_howto_path_finding_explore.nx
-616	Howto: Set character pixels	Hvs4id6z9x_howto_set_chara_pixel.png	Hvs4id6z9x_howto_set_chara_pixel.nx
 615	Movable Game buttons	fE72pK9pfw_Scroll_Button_3.png	fE72pK9pfw_Scroll_Button_3.nx
 610	Palette Viewer	gGXafChvvC_Palette_Viewer.png	gGXafChvvC_Palette_Viewer.nx
-607	Tank	cK7PURdPFP_Unnamed_Program_74.png	cK7PURdPFP_Unnamed_Program_74.nx
 605	howto: half resolution	WGorHsDgx7_howto_half_resolution.png	WGorHsDgx7_howto_half_resolution.nx
-596	3D Hallway simulation	wzv3KgEht6_3d_Hallway_Simulation_Test.png	wzv3KgEht6_3d_Hallway_Simulation_Test.nx
 595	?	VoWAg65Cna_.png	VoWAg65Cna_.nx
-594	Screen shake (Kinda)	TWNff43JjD_Unnamed_Program_129.png	TWNff43JjD_Unnamed_Program_129.nx
 592	PEEK and POKE for pascal string	stMXdp63eh_pascal_string.png	stMXdp63eh_pascal_string.nx
 586	Controls Test	hiUPWWeEru_Controls_Test_0.05.png	hiUPWWeEru_Controls_Test_0.05.nx
-573	3D with 2 Char files	pYxYcwypu8_3D_With_2_Char_Files.png	pYxYcwypu8_3D_With_2_Char_Files.nx
 572	3D simulation test	Jr7zms6SR7_3D_Simulation_Test.png	Jr7zms6SR7_3D_Simulation_Test.nx
 563	Entity drawer?	ZdZTLBHQAJ_Unnamed_Program_74.png	ZdZTLBHQAJ_Unnamed_Program_74.nx
 558	Transformulae	F85mW8rz87_Transformulae.png	F85mW8rz87_Transformulae.nx
