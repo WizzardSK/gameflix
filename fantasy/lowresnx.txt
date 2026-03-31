@@ -1401,6 +1401,7 @@
 5	LowRes Galaxy 2	EppSh9pZxH_LowRes_Galaxy_2_1.5.png	EppSh9pZxH_LowRes_Galaxy_2_1.5.nx
 4	LowRes Adventure	cMntqD3hwj_LowRes_Adventure_1.1.png	cMntqD3hwj_LowRes_Adventure_1.1.nx
 ---	art
+3989	Depth Perception	p6YHhAsJGg_Depth_Perception.png	p6YHhAsJGg_Depth_Perception.nx
 3983	Compressed 17 (Microtonal)	UJYzY386jo_IMG_0103.jpeg	UJYzY386jo_Compressed_17.nx
 3956	Digital	PxbB2Jx3oD_Digital.png	PxbB2Jx3oD_Digital.nx
 3944	BugzyBattle	sN9tivuc5s_BugzyBattle_0.01.png	sN9tivuc5s_BugzyBattle_0.01.nx
@@ -2281,6 +2282,7 @@
 1986	Dithering Effect	FdpMDWEJEP_DitherEffect.png	FdpMDWEJEP_DitherEffect.nx
 1981	Bit Art Redux (remix)	fjjVduST59_Bit_Art_Redux.png	fjjVduST59_Bit_Art_Redux.nx
 1968	Pong without bats	hLo26nUb5p_LowRes_NX_20210617_18_20_09.png	hLo26nUb5p_pongWithoutBats.nx
+1964	Hello	diCAVM4TzK_Test.png	diCAVM4TzK_Test.nx
 1962	Google Doodles	yUDj82hFKY_Google_Doodle_By_Benimo12.png	yUDj82hFKY_Google_Doodle_By_Benimo12.nx
 1958	Menu with arrays, array example.	MAi2noeYu8_LowRes_NX_20210613_19_01_42.png	MAi2noeYu8_ArrayMenuHelp.nx
 1948	Sprite-based 3D	yddeiJALtZ_Sprite3DDemo.png	yddeiJALtZ_Sprite3DDemo.nx
@@ -2289,18 +2291,27 @@
 1912	Cell detecting	x3toSKdSBQ_18697C34768947238FC6CC30FB89E8B9.jpeg	x3toSKdSBQ_Unnamed_Program_4.nx
 1895	autolist	2f7aWi2Wf4_Image1.jpg	2f7aWi2Wf4_autotype199.nx
 1890	I learned something: not-quantized frequencies are possible	wsLz9EcdVa_Audio_Reading.png	wsLz9EcdVa_Audio_Reading.nx
+1873	anagram	WdkVqtc2eg_Image1.jpg	WdkVqtc2eg_anagram1.nx
 1857	10 oneliners	fDAvUjjQFA_10oneliners.png	fDAvUjjQFA_10oneliners.nx
 1855	Y Sorting V:1.0	2eCs7wQTLo_LowRes_NX_20210418_23_53_05.png	2eCs7wQTLo_Ysorting.nx
 1842	Dual Stick Control	zDCHsrJ28y_Capture_21.png.png	zDCHsrJ28y_dual_sticks.nx
 1832	Fireworks	DoFvxrPVEU_Fireworks.png	DoFvxrPVEU_Fireworks.nx
+1811	Array Flood fill	qzDnz4kB9G_LowRes_NX_20210528_22_12_13.png	qzDnz4kB9G_ArrayFloodFillshorterdisplayingcode.nx
 1802	Background as Data Storage	NQHcmhb9F6_Background_Data_Tests_0.3.png	NQHcmhb9F6_Background_Data_Tests_0.3.nx
 1792	Funky Waves	L4uWhVycZy_LowRes_NX_20210319_21_13_45.png	L4uWhVycZy_waves.nx
 1791	Dubble button test	K5vk39dCpZ_Dubble_Button_Test.png	K5vk39dCpZ_Dubble_Button_Test.nx
 1790	Speedy Borders	JeTQkexcwM_Speedy_Borders.png	JeTQkexcwM_Speedy_Borders.nx
+1772	Animation Test (3D zoom by Nicky)	Bk8ufLN9SZ_3Dzoom_by_Nicky_TEST.png	Bk8ufLN9SZ_3Dzoom_by_Nicky_TEST.nx
+1769	3DTree	6qqcZVUTxq_Image1.jpg	6qqcZVUTxq_3DTree.nx
+1762	Budgerigar	aEJP9u839H_Image1.jpg	aEJP9u839H_budgerigar_eff.nx
+1748	Background Attribute Bits	xdyUXAyGTc_Attribute_Bits.png	xdyUXAyGTc_Attribute_Bits.nx
+1716	Multi Ball Collision	kEGKmByZay_Ball_Collision.png	kEGKmByZay_Ball_Collision.nx
 1706	Graphics data hack	j6D5QCgXNh_Graphics_Data_Hack.png	j6D5QCgXNh_Graphics_Data_Hack.nx
+1697	You Died text	iMU8QxnMW4_You_Died.png	iMU8QxnMW4_You_Died.nx
 1684	Remix of PARTICLES by G-9 	QqtLuejAgG_REMIX_of_a_G9_original.png	QqtLuejAgG_REMIX_of_a_G9_original.nx
 1679	Zelda Forest Concept Tests	hSpya29K9S_Zelda_Concept_Tests_108.png	hSpya29K9S_Zelda_Concept_Tests_108.nx
 1673	Massive dungeon test	QbeRu8quLB_Massive_Dungeon_Test.png	QbeRu8quLB_Massive_Dungeon_Test.nx
+1664	BallNX	bQ22KT4mpp_BallNX.png	bQ22KT4mpp_BallNX.nx
 1662	CHIPS TEST	k5g2fQPdng_Chips_Test_2.5.png	k5g2fQPdng_Chips_Test_2.5.nx
 1659	Rubberband Toy	6VXygjy42E_The_Unknown_Toy.png	6VXygjy42E_The_Unknown_Toy.nx
 1655	Sprite Expansion Library 2.0	oFieDA7WLt_SX_Library_2.0.png	oFieDA7WLt_SX_Library_2.0.nx
@@ -2360,11 +2371,9 @@
 1333	BIRD	gLhSyiUj2a_BIRDS_0.2.png	gLhSyiUj2a_BIRDS_0.2.nx
 1325	Surface of the SUN	DeUNU5jZka_Surface_of_the_Sun.png	DeUNU5jZka_Surface_of_the_Sun.nx
 1304	Firecrackers....	2zhXspLJHv_Firecrackers.png	2zhXspLJHv_Firecrackers.nx
-1302	Cell Attribute Reader	WguvruHLra_Cell_Attributes_Reader.png	WguvruHLra_Cell_Attributes_Reader.nx
 1299	Memory Access Speed Test: DIM vs BG 	LUky8Q89Hp_Dim_Vs_BG_Memory_Access_Speeds.png	LUky8Q89Hp_Dim_Vs_BG_Memory_Access_Speeds.nx
 1285	Candy Cane	csjRVnrUvo_CandyCane.png	csjRVnrUvo_CandyCane.nx
 1276	SEAS (game challenge)	kQzZQhnXzd_Seas.png	kQzZQhnXzd_Seas.nx
-1275	Screen Transition: Horizontal Slide	BBhDYWbWPU_Transition_Slide_horizontal.png	BBhDYWbWPU_Transition_Slide_horizontal.nx
 1274	Screen Transition: Vertical Slide	mRZYJNF98o_Transition_Slide_vertical.png	mRZYJNF98o_Transition_Slide_vertical.nx
 1273	Screen Transition: Fade Away	H94HK38yQi_Transition_Fade_Away.png	H94HK38yQi_Transition_Fade_Away.nx
 1261	Compact Text	hVCAs8ywje_Compact_Text.png	hVCAs8ywje_Compact_Text.nx
@@ -2373,18 +2382,10 @@
 1248	Roads	LVGKvEUCxi_Roads.png	LVGKvEUCxi_Roads.nx
 1244	Slide Controllers	neHMPv7kPi_Slide_Controllers_Test.png	neHMPv7kPi_Slide_Controllers_Test.nx
 1240	Lighting works	5o9rkATxpF_Lighting_Works.png	5o9rkATxpF_Lighting_Works.nx
-1229	Text Formatter and Viewer	NVxhBxS7fK_Text_Formater.png	NVxhBxS7fK_Text_Formater.nx
 1222	Song Test	NYL4LnDUpo_Song_Test.png	NYL4LnDUpo_Song_Test.nx
-1221	Master Keyboard Test	NJRiATZNf9_Master_Keyboard_Test_1.png	NJRiATZNf9_Master_Keyboard_Test_1.nx
 1215	RASTER TEST	NtxcAShxAo_Mini_Test.png	NtxcAShxAo_Mini_Test.nx
-1208	Experiments with raster	7hiX3oYEUr_Experimemts_With_Raster.png	7hiX3oYEUr_Experimemts_With_Raster.nx
 1172	Memory Access Test.	Dh5HdHKKXc_LowRes_NX_20200430_21_58_02.png	Dh5HdHKKXc_memtest_0.2.nx
-1166	NX Paint	vFAXz7GJQc_NX_Paint_1.1.png	vFAXz7GJQc_NX_Paint_1.1.nx
-1152	TYPEWRITER (screensaver)	jhJbg7ChN3_Typewriter.png	jhJbg7ChN3_Typewriter.nx
-1148	API for Remjin Spyky Thyngy	ZBfwVRafgQ_LowRes_NX_20200420_12_18_16.png	ZBfwVRafgQ_rttsapi.nx
-1129	THE SORTING PROGRAM V 1.3.1	XC9FL26FR7_THE_SORTING_PROGRAM_V_1.4.png	XC9FL26FR7_THE_SORTING_PROGRAM_V_1.4.nx
 1122	Gamepad Text Adventure	QQTDYzvCmp_gamepadadventure.png	QQTDYzvCmp_gamepadadventure.nx
-1111	Space Generation Tech Demo	wKMJVLUvqN_Space_Generation_Tech_Demo.png	wKMJVLUvqN_Space_Generation_Tech_Demo.nx
 1103	EXTREME POKE	HUkCEtjoQP_EXTREME_POKE_2.0.png	HUkCEtjoQP_EXTREME_POKE_2.0.nx
 1098	4 Page Scroller Demo	H6jgEPXxoM_4page_Scroller.png	H6jgEPXxoM_4page_Scroller.nx
 1085	POKEY BITS Decoded	VheFZLwhkp_POKEY_BITS_Decoded.png	VheFZLwhkp_POKEY_BITS_Decoded.nx
