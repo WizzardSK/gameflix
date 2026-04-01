@@ -1,4 +1,5 @@
 ---	Releases
+155948	bumegajogu	bumegajogu-0.vx.png
 155944	Cowboy vs. Scorpion	rusizunit-0.vx.png
 155934	finishedzombietown	finishedzombietown-0.vx.png
 155777	Abandoned Factory	nesuzuputa-3.vx.png

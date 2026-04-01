@@ -2371,9 +2371,11 @@
 1333	BIRD	gLhSyiUj2a_BIRDS_0.2.png	gLhSyiUj2a_BIRDS_0.2.nx
 1325	Surface of the SUN	DeUNU5jZka_Surface_of_the_Sun.png	DeUNU5jZka_Surface_of_the_Sun.nx
 1304	Firecrackers....	2zhXspLJHv_Firecrackers.png	2zhXspLJHv_Firecrackers.nx
+1302	Cell Attribute Reader	WguvruHLra_Cell_Attributes_Reader.png	WguvruHLra_Cell_Attributes_Reader.nx
 1299	Memory Access Speed Test: DIM vs BG 	LUky8Q89Hp_Dim_Vs_BG_Memory_Access_Speeds.png	LUky8Q89Hp_Dim_Vs_BG_Memory_Access_Speeds.nx
 1285	Candy Cane	csjRVnrUvo_CandyCane.png	csjRVnrUvo_CandyCane.nx
 1276	SEAS (game challenge)	kQzZQhnXzd_Seas.png	kQzZQhnXzd_Seas.nx
+1275	Screen Transition: Horizontal Slide	BBhDYWbWPU_Transition_Slide_horizontal.png	BBhDYWbWPU_Transition_Slide_horizontal.nx
 1274	Screen Transition: Vertical Slide	mRZYJNF98o_Transition_Slide_vertical.png	mRZYJNF98o_Transition_Slide_vertical.nx
 1273	Screen Transition: Fade Away	H94HK38yQi_Transition_Fade_Away.png	H94HK38yQi_Transition_Fade_Away.nx
 1261	Compact Text	hVCAs8ywje_Compact_Text.png	hVCAs8ywje_Compact_Text.nx
@@ -2382,10 +2384,18 @@
 1248	Roads	LVGKvEUCxi_Roads.png	LVGKvEUCxi_Roads.nx
 1244	Slide Controllers	neHMPv7kPi_Slide_Controllers_Test.png	neHMPv7kPi_Slide_Controllers_Test.nx
 1240	Lighting works	5o9rkATxpF_Lighting_Works.png	5o9rkATxpF_Lighting_Works.nx
+1229	Text Formatter and Viewer	NVxhBxS7fK_Text_Formater.png	NVxhBxS7fK_Text_Formater.nx
 1222	Song Test	NYL4LnDUpo_Song_Test.png	NYL4LnDUpo_Song_Test.nx
+1221	Master Keyboard Test	NJRiATZNf9_Master_Keyboard_Test_1.png	NJRiATZNf9_Master_Keyboard_Test_1.nx
 1215	RASTER TEST	NtxcAShxAo_Mini_Test.png	NtxcAShxAo_Mini_Test.nx
+1208	Experiments with raster	7hiX3oYEUr_Experimemts_With_Raster.png	7hiX3oYEUr_Experimemts_With_Raster.nx
 1172	Memory Access Test.	Dh5HdHKKXc_LowRes_NX_20200430_21_58_02.png	Dh5HdHKKXc_memtest_0.2.nx
+1166	NX Paint	vFAXz7GJQc_NX_Paint_1.1.png	vFAXz7GJQc_NX_Paint_1.1.nx
+1152	TYPEWRITER (screensaver)	jhJbg7ChN3_Typewriter.png	jhJbg7ChN3_Typewriter.nx
+1148	API for Remjin Spyky Thyngy	ZBfwVRafgQ_LowRes_NX_20200420_12_18_16.png	ZBfwVRafgQ_rttsapi.nx
+1129	THE SORTING PROGRAM V 1.3.1	XC9FL26FR7_THE_SORTING_PROGRAM_V_1.4.png	XC9FL26FR7_THE_SORTING_PROGRAM_V_1.4.nx
 1122	Gamepad Text Adventure	QQTDYzvCmp_gamepadadventure.png	QQTDYzvCmp_gamepadadventure.nx
+1111	Space Generation Tech Demo	wKMJVLUvqN_Space_Generation_Tech_Demo.png	wKMJVLUvqN_Space_Generation_Tech_Demo.nx
 1103	EXTREME POKE	HUkCEtjoQP_EXTREME_POKE_2.0.png	HUkCEtjoQP_EXTREME_POKE_2.0.nx
 1098	4 Page Scroller Demo	H6jgEPXxoM_4page_Scroller.png	H6jgEPXxoM_4page_Scroller.nx
 1085	POKEY BITS Decoded	VheFZLwhkp_POKEY_BITS_Decoded.png	VheFZLwhkp_POKEY_BITS_Decoded.nx
