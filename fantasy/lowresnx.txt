@@ -8,7 +8,7 @@
 3972	-Test pet program-	HhT3uD9Axr_Test_pet_pic.png	HhT3uD9Axr_Test_Pet_Program.nx
 3971	Catch NAANO 3 (finished!)	X7MrPoy3an_Catch_Naano_3.png	X7MrPoy3an_Catch_Naano_3.nx
 3968	Tiny Tycoon	BCYERyhm4C_Tiny_Tycoon_0.3.png	BCYERyhm4C_Tiny_Tycoon_0.3.nx
-3963	Lowcraft Launcher Version 1.0	mvDPwEzsCM_LowcraftLauncher.exe.png	mvDPwEzsCM_LowcraftLauncher.exe.nx
+3963	Lowcraft Launcher Version 1.0	bccMVLgaVh_LowcraftLauncher.exe.png	bccMVLgaVh_LowcraftLauncher.exe.nx
 3962	MAD LOTTERY	p4PvxfhW6s_MAD_LOTTERY_SCREENSHOT01.png	p4PvxfhW6s_MAD_LOTTERY.nx
 3961	Solitary	4STanxzf4z_Solitary.png	4STanxzf4z_Solitary.nx
 3960	Sirtet	igSTByHy5v_Sirtet_1.2.png	igSTByHy5v_Sirtet_1.2.nx
