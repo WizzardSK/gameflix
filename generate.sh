@@ -15,7 +15,7 @@ cache=~/dircache; mkdir -p "$cache"
 jobs_running=0
 while IFS= read -r path; do
   h=$(echo -n "$path" | md5sum | cut -d' ' -f1)
-  (ls "$HOME/myrient/$path" 2>/dev/null > "$cache/$h.txt" || true) &
+  (ls "$HOME/$path" 2>/dev/null > "$cache/$h.txt" || true) &
   ((jobs_running++))
   if ((jobs_running >= 20)); then wait -n; ((jobs_running--)); fi
 done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv) | cut -d';' -f2 | sort -u)
@@ -173,7 +173,7 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
   echo -e "<h3 id=\"${rom[2]}\" class=\"section-header\">${rom[2]}</h3>\n<script>bgImage(\"${rom[0]}\")\nfileNames = [" >&$html_fd
   rom3="${rom[0]}"; rom6="${rom[6]}"
-  mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="myrient/${rom[1]}"; emufolder="${rom[1]}"
+  mkdir -p ~/mount/${rom[0]} ~/gamelists/${rom[0]}; romfolder="${rom[1]}"; emufolder="${rom[1]}"
   foldername="${rom[2]//<[^>]*>/}"
   # Write <gameList> header once per platform and open xml fd
   if [[ -z "${gamelist_started[${rom[0]}]}" ]]; then
