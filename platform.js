@@ -96,6 +96,7 @@ function generateVoxLinks(romPath, imagePath) {
 
 function generateFileLinks(romPath, imagePath) {
     if (location.protocol !== "file:") {
+        if (romPath.startsWith("archive:")) { romPath = romPath.replace(/^archive:([^/]+)\/(.*)$/, "https://archive.org/download/$1/$2"); }
         if (romPath.includes("2600")) { romPath = "https://javatari.org/?rom=" + romPath; romPath = romPath.replace("&", "%26"); romPath = romPath.replace(" ", "%20"); }
     } else { romPath = "../" + romPath }
     var encodedPath = encodeURI(romPath);

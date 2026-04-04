@@ -9,13 +9,30 @@ echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="topbar"
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
 
-# Pre-fetch all directory listings in parallel (rclone mount is slow per-request)
+# Pre-fetch all directory listings in parallel
 echo "Pre-fetching directory listings..."
 cache=~/dircache; mkdir -p "$cache"
 jobs_running=0
 while IFS= read -r path; do
   h=$(echo -n "$path" | md5sum | cut -d' ' -f1)
-  (ls "$HOME/$path" 2>/dev/null > "$cache/$h.txt" || true) &
+  if [[ "$path" == *:.*.zip ]]; then
+    # archive:item/path/file.zip - list zip contents via central directory
+    (python3 ziplist.py "$path" 2>/dev/null > "$cache/$h.txt" || true) &
+  elif [[ "$path" == *:* ]]; then
+    # archive:item/path/ - directory listing, may contain a single zip
+    (
+      listing=$(rclone lsf "$path" --files-only 2>/dev/null)
+      zipfile=$(echo "$listing" | grep -m1 '\.zip$')
+      if [ -n "$zipfile" ]; then
+        python3 ziplist.py "$path/$zipfile" 2>/dev/null > "$cache/$h.txt"
+        echo "$path/$zipfile" > "$cache/$h.path"
+      else
+        echo "$listing" > "$cache/$h.txt"
+      fi
+    ) &
+  else
+    (ls "$HOME/$path" 2>/dev/null > "$cache/$h.txt" || true) &
+  fi
   ((jobs_running++))
   if ((jobs_running >= 20)); then wait -n; ((jobs_running--)); fi
 done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv) | cut -d';' -f2 | sort -u)
@@ -181,7 +198,9 @@ IFS=";"; for each in "${roms[@]}"; do
     exec {xml_fd}>> ~/gamelists/${rom[0]}/gamelist.xml
     gamelist_started[${rom[0]}]=1
   fi
-  cachefile="$cache/$(echo -n "${rom[1]}" | md5sum | cut -d' ' -f1).txt"
+  cachehash=$(echo -n "${rom[1]}" | md5sum | cut -d' ' -f1)
+  cachefile="$cache/$cachehash.txt"
+  if [ -f "$cache/$cachehash.path" ]; then romfolder=$(<"$cache/$cachehash.path"); fi
   romdir=~/"${romfolder}"
   while IFS= read -r line; do
     [[ -z "$line" ]] && continue
