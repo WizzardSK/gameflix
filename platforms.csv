@@ -89,7 +89,7 @@ macintosh,archive:mame-sl/mame-sl/mac_flop_orig.zip,Orig MAME,mame macse -flop1,
 macintosh,archive:mame-sl/mame-sl/mac_flop_clcracked.zip,Cracked MAME,mame macse -flop1,
 macintosh,archive:mame-sl/mame-sl/mac_hdflop.zip,HDflop MAME,mame macse -flop1,
 macintosh,MAME/Software List CHDs (merged)/mac_cdrom,CDROM CHD,mame macse -cdrom,
-macintosh,MAME/Software List CHDs (merged)/mac_hdd,HDD CHD,mame macse -hard,
+macintosh,archive:mame-software-list-chds-2/mac_hdd,HDD CHD,mame macse -hard,
 macintosh,archive:tosec-main/Apple/Macintosh/Games/[DSK],TOSEC DSK,mame macse -flop1,
 macintosh,archive:tosec-main/Apple/Macintosh/Games/[IMG],TOSEC IMG,mame macse -flop1,
 channelf,archive:ni-roms/roms/Fairchild - Channel F.zip,NoIntro,freechaf_libretro,
@@ -326,7 +326,7 @@ fm7,archive:mame-sl/mame-sl/fm77av.zip,FM-77AV Flop MAME,mame fm77av -flop1,
 fm7,archive:tosec-main/Fujitsu/FM77-AV/Games/[D77],FM-77AV TOSEC,mame fm77av -flop1,
 fmtowns,archive:noaen-redump-fujitsu-fm-towns,Redump,mame fmtmarty -cdrm,
 fmtowns,archive:mame-sl/mame-sl/fmtowns_cd.zip,MAME,mame fmtmarty -cdrm,
-fmtowns,MAME/Software List CHDs (merged)/fmtowns_cd,CHD,mame fmtmarty -cdrm,
+fmtowns,archive:mame-software-list-chds-2/fmtowns_cd,CHD,mame fmtmarty -cdrm,
 fmtowns,archive:mame-sl/mame-sl/fmtowns_flop_orig.zip,Flop Orig MAME,mame fmtowns -flop1,
 fmtowns,archive:mame-sl/mame-sl/fmtowns_flop_misc.zip,Flop Misc MAME,mame fmtowns -flop1,
 fmtowns,archive:tosec-main/Fujitsu/FM Towns/Games/[BIN],TOSEC BIN,mame fmtmarty -cdrm,
@@ -482,7 +482,7 @@ cdi,archive:tosec-iso-philips/CD-i/Games,TOSEC,same_cdi_libretro,cue
 cdi,archive:tosec-iso-philips/CD-i/Applications,App,same_cdi_libretro,cue
 cdi,archive:tosec-iso-philips/CD-i/Educational,Edu,same_cdi_libretro,cue
 cdi,archive:tosec-iso-philips/CD-i/Multimedia,Multimedia,same_cdi_libretro,cue
-cdi,MAME/Software List CHDs (merged)/cdi,CHD,mame cdimono1 -cdrm,
+cdi,archive:mame-software-list-chds-2/cdi,CHD,mame cdimono1 -cdrm,
 3do,archive:ef_panasonic_3do_redump_set_661,Redump,opera_libretro,cue
 3do,archive:non-redump_panasonic_3do,NonRedump,opera_libretro,cue
 3do,archive:tosec-iso-3do/3DO Interactive Multiplayer/Games,TOSEC,opera_libretro,cue
@@ -520,7 +520,7 @@ pc88,archive:mame-sl/mame-sl/pc8801_flop.zip,Flop MAME,mame pc8801 -flop1,
 pc88,archive:mame-sl/mame-sl/pc8801_cass.zip,Cass MAME,mame pc8801 -cass,
 pc98,archive:tosec-main/NEC/PC-9801/Games/[FDD],TOSEC,np2kai_libretro,
 pc98,archive:mame-sl/mame-sl/pc98.zip,MAME,mame pc9801 -flop1,
-pc98,MAME/Software List CHDs (merged)/pc98_cd,CHD,mame pc9821 -cdrm,
+pc98,archive:mame-software-list-chds-2/pc98_cd,CHD,mame pc9821 -cdrm,
 pc98,archive:mame-sl/mame-sl/pc98_cd.zip,CD MAME,mame pc9821 -cdrm,
 pc98,archive:tosec-main/NEC/PC-9821/Games/[FDD],PC-9821 TOSEC,np2kai_libretro,
 pcengine,archive:ni-roms/roms/NEC - PC Engine - TurboGrafx-16.zip,NoIntro,mednafen_pce_fast_libretro,
@@ -537,7 +537,7 @@ supergrafx,FinalBurn Neo/sgx,FBN,mednafen_supergrafx_libretro,
 pcenginecd,archive:nec-pc-engine-cd-turbografx-cd-redump,Redump,mednafen_pce_fast_libretro,cue
 pcenginecd,archive:tosec-iso-nec/PC-Engine CD & TurboGrafx-16 CD/Games/[IMG],ISO,mednafen_pce_fast_libretro,cue
 pcenginecd,archive:non-redump_nec-pc-engine-cd-turbografx-cd,NonRedump,mednafen_pce_fast_libretro,cue
-pcenginecd,MAME/Software List CHDs (merged)/pcecd,CHD,mame pce -cdrm,
+pcenginecd,archive:mame-software-list-chds-2/pcecd,CHD,mame pce -cdrm,
 pcfx,archive:nec-pc-fx-pc-fxga-redump,Redump,mednafen_pcfx_libretro,cue
 pcfx,archive:tosec-iso-nec/PC-FX/Games,ISO,mednafen_pcfx_libretro,cue
 dos,eXo/eXoDOS/Full Release/eXo/eXoDOS,eXoDOS,dosbox_pure_libretro,
@@ -638,9 +638,9 @@ dos,Total DOS Collection/Applications/Files/2006,TDC App 06,dosbox_pure_libretro
 dos,Total DOS Collection/Applications/Files/2009,TDC App 09,dosbox_pure_libretro,
 ibm5150,archive:mame-sl/mame-sl/ibm5150.zip,MAME,mame ibm5150 -hard1 ibm5150_hdd:freedos13_8086,
 ibm5170,archive:mame-sl/mame-sl/ibm5170.zip,MAME,mame ibm5170 -hard1 ibm5170_hdd:freedos13,
-ibm5170,MAME/Software List CHDs (merged)/ibm5170_cdrom,CDROM CHD,mame ibm5170 -cdrom,
+ibm5170,archive:mame-software-list-chds-2/ibm5170_cdrom,CDROM CHD,mame ibm5170 -cdrom,
 ibm5170,archive:mame-sl/mame-sl/ibm5170_cdrom.zip,CDROM MAME,mame ibm5170 -cdrom,
-ibm5170,MAME/Software List CHDs (merged)/ibm5170_hdd,HDD CHD,mame ibm5170 -hard,
+ibm5170,archive:mame-software-list-chds-2/ibm5170_hdd,HDD CHD,mame ibm5170 -hard,
 ibmpcjr,archive:mame-sl/mame-sl/ibmpcjr_cart.zip,Cart MAME,mame ibmpcjr,
 ibmpcjr,archive:mame-sl/mame-sl/ibmpcjr_flop.zip,Flop MAME,mame ibmpcjr -hard1 ibm5150_hdd:freedos13_8086,
 pet,archive:tosec-main/Commodore/PET/Games/[PRG],TOSEC,vice_xpet_libretro,
@@ -716,13 +716,13 @@ amigacdtv,archive:tosec-iso-commodore/Amiga CDTV/Games/[ISO],ISO,puae_libretro,c
 amigacdtv,archive:tosec-iso-commodore/Amiga CDTV/Applications/[ISO],App,puae_libretro,cue
 amigacdtv,archive:tosec-iso-commodore/Amiga CDTV/Educational/[ISO],Edu,puae_libretro,cue
 amigacdtv,archive:tosec-iso-commodore/Amiga CDTV/Multimedia/[ISO],Multimedia,puae_libretro,cue
-amigacdtv,MAME/Software List CHDs (merged)/cdtv,CHD,mame cdtv -cdrm,
+amigacdtv,archive:mame-software-list-chds-2/cdtv,CHD,mame cdtv -cdrm,
 amigacd32,archive:noaen-redump-commodore-amiga-cd32,Redump,puae_libretro,cue
 amigacd32,archive:tosec-iso-commodore/Amiga CD32/Games/[ISO],ISO,puae_libretro,cue
 amigacd32,archive:tosec-iso-commodore/Amiga CD32/Applications,App,puae_libretro,cue
 amigacd32,archive:tosec-iso-commodore/Amiga CD32/Educational/[ISO],Edu,puae_libretro,cue
 amigacd32,archive:tosec-iso-commodore/Amiga CD32/Multimedia/[ISO],Multimedia,puae_libretro,cue
-amigacd32,MAME/Software List CHDs (merged)/cd32,CHD,mame cd32 -cdrm,
+amigacd32,archive:mame-software-list-chds-2/cd32,CHD,mame cd32 -cdrm,
 x1,archive:tosec-main/Sharp/X1/Games/[2D],2D,x1_libretro,
 x1,archive:tosec-main/Sharp/X1/Games/[D88],D88,x1_libretro,
 x1,archive:mame-sl/mame-sl/x1_cass.zip,Cass MAME,mame x1 -autoboot_command 'LOAD\n' -autoboot_delay 3 -cass,
@@ -818,7 +818,7 @@ j2me,archive:ni-roms/roms/Mobile - J2ME.zip,NoIntro,freej2me_libretro,jar
 palm,archive:ni-roms/roms/Mobile - Palm OS (Digital).zip,NoIntro,mu_libretro,prc
 studio2,archive:mame-sl/mame-sl/studio2.zip,MAME,mame studio2 -cart,
 juicebox,archive:mame-sl/mame-sl/juicebox.zip,MAME,mame juicebox,
-hyperscan,MAME/Software List CHDs (merged)/hyperscan,MAME,mame hyprscan -cdrom,
+hyperscan,archive:mame-software-list-chds-2/hyperscan,MAME,mame hyprscan -cdrom,
 compclr2,archive:mame-sl/mame-sl/compclr2_flop.zip,MAME,mame compclr2 -flop1,
 nascom,archive:mame-sl/mame-sl/nascom_snap.zip,Snap MAME,mame nascom2 -dump1,
 nascom,archive:mame-sl/mame-sl/nascom_flop.zip,Flop MAME,mame nascom2 -flop1,
