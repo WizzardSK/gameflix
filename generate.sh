@@ -39,14 +39,14 @@ while IFS= read -r path; do
       localpath="$HOME/mount/$aftercolon"
       if [[ "$localpath" == *.zip ]]; then
         zipdir=$(mktemp -d)
-        $HOME/ratarmount-full "$localpath" "$zipdir" 2>/dev/null; sleep 1
+        $HOME/ratarmount-full "$localpath" "$zipdir" 2>/dev/null
         ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
         fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"
       else
         zipfile=$(ls "$localpath"/*.zip 2>/dev/null | head -1)
         if [ -n "$zipfile" ]; then
           zipdir=$(mktemp -d)
-          $HOME/ratarmount-full "$zipfile" "$zipdir" 2>/dev/null; sleep 1
+          $HOME/ratarmount-full "$zipfile" "$zipdir" 2>/dev/null
           ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
           echo "$path/$(basename "$zipfile")" > "$cache/$h.path"
           fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"
@@ -59,7 +59,7 @@ while IFS= read -r path; do
     fi
   ) &
   ((jobs_running++))
-  if ((jobs_running >= 5)); then wait -n; ((jobs_running--)); fi
+  if ((jobs_running >= 20)); then wait -n; ((jobs_running--)); fi
 done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv) | cut -d';' -f2 | sort -u)
 wait
 echo "Pre-fetch done."
