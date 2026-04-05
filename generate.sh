@@ -15,44 +15,26 @@ cache=~/dircache; mkdir -p "$cache"
 jobs_running=0
 while IFS= read -r path; do
   h=$(echo -n "$path" | md5sum | cut -d' ' -f1)
-  if [[ "$path" == *:*.zip ]]; then
-    # archive:item/path/file.zip - list zip contents via central directory
-    (python3 -c "
-import sys,subprocess,json
-p=sys.argv[1];r=subprocess.run(['rclone','size',p,'--json'],capture_output=True,text=True);s=json.loads(r.stdout)['bytes'];o=max(s-131072,0)
-d=subprocess.run(['rclone','cat',p,'--offset',str(o)],capture_output=True).stdout;i=0
-while i<len(d)-46:
- if d[i:i+4]==b'\x50\x4b\x01\x02':
-  n=int.from_bytes(d[i+28:i+30],'little');e=int.from_bytes(d[i+30:i+32],'little');c=int.from_bytes(d[i+32:i+34],'little')
-  print(d[i+46:i+46+n].decode('utf-8',errors='replace'));i+=46+n+e+c
- else:i+=1
-" "$path" 2>/dev/null > "$cache/$h.txt" || true) &
-  elif [[ "$path" == *:* ]]; then
-    # archive:item/path/ - directory listing, may contain a single zip
-    (
-      listing=$(rclone lsf "$path" --files-only 2>/dev/null)
-      zipfile=$(echo "$listing" | grep -m1 '\.zip$')
+  [ -s "$cache/$h.txt" ] && continue
+  (
+    if [[ "$path" == *:*.zip ]]; then
+      tmp=$(mktemp); rclone cat "$path" 2>/dev/null > "$tmp"
+      unzip -Z1 "$tmp" 2>/dev/null > "$cache/$h.txt"; rm -f "$tmp"
+    elif [[ "$path" == *:* ]]; then
+      zipfile=$(rclone lsf "$path" --files-only 2>/dev/null | grep -m1 '\.zip$')
       if [ -n "$zipfile" ]; then
-        python3 -c "
-import sys,subprocess,json
-p=sys.argv[1];r=subprocess.run(['rclone','size',p,'--json'],capture_output=True,text=True);s=json.loads(r.stdout)['bytes'];o=max(s-131072,0)
-d=subprocess.run(['rclone','cat',p,'--offset',str(o)],capture_output=True).stdout;i=0
-while i<len(d)-46:
- if d[i:i+4]==b'\x50\x4b\x01\x02':
-  n=int.from_bytes(d[i+28:i+30],'little');e=int.from_bytes(d[i+30:i+32],'little');c=int.from_bytes(d[i+32:i+34],'little')
-  print(d[i+46:i+46+n].decode('utf-8',errors='replace'));i+=46+n+e+c
- else:i+=1
-" "$path/$zipfile" 2>/dev/null > "$cache/$h.txt"
+        tmp=$(mktemp); rclone cat "$path/$zipfile" 2>/dev/null > "$tmp"
+        unzip -Z1 "$tmp" 2>/dev/null > "$cache/$h.txt"; rm -f "$tmp"
         echo "$path/$zipfile" > "$cache/$h.path"
       else
-        echo "$listing" > "$cache/$h.txt"
+        rclone lsf "$path" --files-only 2>/dev/null > "$cache/$h.txt"
       fi
-    ) &
-  else
-    (ls "$HOME/$path" 2>/dev/null > "$cache/$h.txt" || true) &
-  fi
+    else
+      ls "$HOME/$path" 2>/dev/null > "$cache/$h.txt" || true
+    fi
+  ) &
   ((jobs_running++))
-  if ((jobs_running >= 20)); then wait -n; ((jobs_running--)); fi
+  if ((jobs_running >= 5)); then wait -n; ((jobs_running--)); fi
 done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv) | cut -d';' -f2 | sort -u)
 wait
 echo "Pre-fetch done."
