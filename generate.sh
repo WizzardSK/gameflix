@@ -9,25 +9,50 @@ echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="topbar"
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
 
-# Pre-fetch all directory listings in parallel
+# Mount IA items via rclone, then use ratarmount for zips
+echo "Mounting archive remotes..."
+mkdir -p ~/mount ~/dircache
+cache=~/dircache
+declare -A mounted_items
+
+# Mount each unique IA item once: archive:ni-roms -> ~/mount/ni-roms
+while IFS= read -r path; do
+  [[ "$path" != *:* ]] && continue
+  aftercolon="${path#*:}"; item="${aftercolon%%/*}"
+  if [ -z "${mounted_items[$item]}" ]; then
+    mkdir -p ~/mount/$item
+    rclone mount "archive:$item" ~/mount/$item --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --vfs-cache-mode minimal --vfs-read-chunk-size 1M --allow-non-empty 2>/dev/null
+    mounted_items[$item]=1; echo "Mounted archive:$item"
+  fi
+done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv) | cut -d';' -f2 | sort -u)
+sleep 2
+
+# Pre-fetch directory listings
 echo "Pre-fetching directory listings..."
-cache=~/dircache; mkdir -p "$cache"
 jobs_running=0
 while IFS= read -r path; do
   h=$(echo -n "$path" | md5sum | cut -d' ' -f1)
   [ -s "$cache/$h.txt" ] && continue
   (
-    if [[ "$path" == *:*.zip ]]; then
-      tmp=$(mktemp); rclone cat "$path" 2>/dev/null > "$tmp"
-      unzip -Z1 "$tmp" 2>/dev/null > "$cache/$h.txt"; rm -f "$tmp"
-    elif [[ "$path" == *:* ]]; then
-      zipfile=$(rclone lsf "$path" --files-only 2>/dev/null | grep -m1 '\.zip$')
-      if [ -n "$zipfile" ]; then
-        tmp=$(mktemp); rclone cat "$path/$zipfile" 2>/dev/null > "$tmp"
-        unzip -Z1 "$tmp" 2>/dev/null > "$cache/$h.txt"; rm -f "$tmp"
-        echo "$path/$zipfile" > "$cache/$h.path"
+    if [[ "$path" == *:* ]]; then
+      aftercolon="${path#*:}"
+      localpath="$HOME/mount/$aftercolon"
+      if [[ "$localpath" == *.zip ]]; then
+        zipdir=$(mktemp -d)
+        $HOME/ratarmount-full "$localpath" "$zipdir" 2>/dev/null; sleep 1
+        ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
+        fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"
       else
-        rclone lsf "$path" --files-only 2>/dev/null > "$cache/$h.txt"
+        zipfile=$(ls "$localpath"/*.zip 2>/dev/null | head -1)
+        if [ -n "$zipfile" ]; then
+          zipdir=$(mktemp -d)
+          $HOME/ratarmount-full "$zipfile" "$zipdir" 2>/dev/null; sleep 1
+          ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
+          echo "$path/$(basename "$zipfile")" > "$cache/$h.path"
+          fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"
+        else
+          ls "$localpath" 2>/dev/null > "$cache/$h.txt"
+        fi
       fi
     else
       ls "$HOME/$path" 2>/dev/null > "$cache/$h.txt" || true
