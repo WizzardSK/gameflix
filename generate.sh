@@ -15,7 +15,7 @@ cache=~/dircache; mkdir -p "$cache"
 jobs_running=0
 while IFS= read -r path; do
   h=$(echo -n "$path" | md5sum | cut -d' ' -f1)
-  if [[ "$path" == *:.*.zip ]]; then
+  if [[ "$path" == *:*.zip ]]; then
     # archive:item/path/file.zip - list zip contents via central directory
     (python3 ziplist.py "$path" 2>/dev/null > "$cache/$h.txt" || true) &
   elif [[ "$path" == *:* ]]; then
