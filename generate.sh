@@ -59,11 +59,17 @@ while IFS= read -r path; do
         fi
         fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"
       else
-        zipfile=$(ls "$localpath"/*.zip 2>/dev/null | head -1)
-        if [ -n "$zipfile" ]; then
+        zipcount=$(ls "$localpath"/*.zip 2>/dev/null | wc -l)
+        if [ "$zipcount" -eq 1 ]; then
+          zipfile=$(ls "$localpath"/*.zip 2>/dev/null)
           zipdir=$(mktemp -d)
           $HOME/ratarmount-full "$zipfile" "$zipdir" 2>/dev/null
-          ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
+          entries=("$zipdir"/*)
+          if [ ${#entries[@]} -eq 1 ] && [ -d "${entries[0]}" ]; then
+            ls "${entries[0]}" 2>/dev/null > "$cache/$h.txt"
+          else
+            ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
+          fi
           echo "$path/$(basename "$zipfile")" > "$cache/$h.path"
           fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"
         else
