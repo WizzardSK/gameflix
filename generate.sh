@@ -21,7 +21,7 @@ while IFS= read -r path; do
   aftercolon="${path#*:}"; item="${aftercolon%%/*}"
   if [ -z "${mounted_items[$item]}" ]; then
     mkdir -p ~/mount/$item
-    rclone mount "archive:$item" ~/mount/$item --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --vfs-cache-mode minimal --vfs-read-chunk-size 1M --allow-non-empty 2>/dev/null
+    rclone mount "archive:$item" ~/mount/$item --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --vfs-cache-mode full --allow-non-empty 2>/dev/null
     mounted_items[$item]=1; echo "Mounted archive:$item"
   fi
 done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv) | cut -d';' -f2 | sort -u)
@@ -40,7 +40,12 @@ while IFS= read -r path; do
       if [[ "$localpath" == *.zip ]]; then
         zipdir=$(mktemp -d)
         $HOME/ratarmount-full "$localpath" "$zipdir" 2>/dev/null
-        ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
+        entries=("$zipdir"/*)
+        if [ ${#entries[@]} -eq 1 ] && [ -d "${entries[0]}" ]; then
+          ls "${entries[0]}" 2>/dev/null > "$cache/$h.txt"
+        else
+          ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
+        fi
         fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"
       else
         zipfile=$(ls "$localpath"/*.zip 2>/dev/null | head -1)
