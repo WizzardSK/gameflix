@@ -34,9 +34,11 @@ for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   echo "Mounting ${rom[0]}"
   mkdir -p /recalbox/share/roms/${rom[0]}/Online
-  if grep -q ":" <<< "${rom[1]}"; then
+  if grep -q ":" <<< "${rom[1]}" && [[ "${rom[1]}" != *.zip ]]; then
     rclone mount ${rom[1]} /recalbox/share/roms/${rom[0]}/Online --config=/recalbox/share/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
-  else mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/Online; fi
+  elif [[ "${rom[1]}" != *:* ]]; then
+    mount -o bind /recalbox/share/rom/${rom[1]} /recalbox/share/roms/${rom[0]}/Online
+  fi
   > /recalbox/share/roms/${rom[0]}/gamelist.xml
   echo "<gameList>" >> /recalbox/share/roms/${rom[0]}/gamelist.xml
   ls /recalbox/share/roms/${rom[0]}/Online | while read line; do

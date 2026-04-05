@@ -19,9 +19,11 @@ IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/consoles/${rom[0]}.png; fi
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[2]}"); mkdir -p /userdata/roms/${rom[0]}/${rom3}
-  if grep -q ":" <<< "${rom[1]}"; then
+  if grep -q ":" <<< "${rom[1]}" && [[ "${rom[1]}" != *.zip ]]; then
     rclone mount "${rom[1]}" /userdata/roms/${rom[0]}/${rom3} --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
-  else mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}; fi
+  elif [[ "${rom[1]}" != *:* ]]; then
+    mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}
+  fi
 done
 
 archives=(wasm4 lowresnx)
