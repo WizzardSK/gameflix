@@ -13,19 +13,19 @@ for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix
 echo "Mounting archive remotes..."
 mkdir -p ~/mount ~/dircache
 cache=~/dircache
-declare -A mounted_items
+mounted_file=$(mktemp)
 
 # Mount each unique IA item once: archive:ni-roms -> ~/mount/ni-roms
 while IFS= read -r path; do
-  [[ "$path" != *:* ]] && continue
+  [[ "$path" != *:* || "$path" == https://* ]] && continue
   aftercolon="${path#*:}"; item="${aftercolon%%/*}"
-  if [ -z "${mounted_items[$item]}" ]; then
-    mkdir -p ~/mount/$item
-    rclone mount "archive:$item" ~/mount/$item --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --vfs-cache-mode full --allow-non-empty 2>/dev/null
-    mounted_items[$item]=1; echo "Mounted archive:$item"
+  if ! grep -qx "$item" "$mounted_file" 2>/dev/null; then
+    mkdir -p ~/mount/"$item"
+    rclone mount "archive:$item" ~/mount/"$item" --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --vfs-cache-mode full --allow-non-empty 2>/dev/null
+    echo "$item" >> "$mounted_file"; echo "Mounted archive:$item"
   fi
 done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv) | cut -d';' -f2 | sort -u)
-sleep 2
+sleep 10
 
 # Pre-fetch directory listings
 echo "Pre-fetching directory listings..."
