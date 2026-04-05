@@ -458,8 +458,8 @@ dreamcast,archive:tosec-iso-sega/Dreamcast/Games/US,US,flycast_libretro,gdi
 dreamcast,archive:tosec-iso-sega/Dreamcast/Games/PAL,PAL,flycast_libretro,gdi
 dreamcast,archive:tosec-iso-sega/Dreamcast/Games/JP,JP,flycast_libretro,gdi
 dreamcast,MAME/Software List CHDs (merged)/dc,CHD,mame dc -cdrm,
-model2,Internet Archive/chadmaster/m2emu1.1a/Sega Model 2 Emu 1.1a and Full Romset/Model 2 Romset (Merged),Sega Model 2,mame,
-model3,Internet Archive/chadmaster/segamodel3/ROMs,Sega Model 3,mame,
+model2,archive:m2emu1.1a/Sega Model 2 Emu 1.1a and Full Romset/Model 2 Romset (Merged),Sega Model 2,mame,
+model3,archive:segamodel3/ROMs,Sega Model 3,mame,
 gamegear,archive:ni-roms/roms/Sega - Game Gear.zip,NoIntro,gearsystem_libretro,
 gamegear,archive:tosec-main/Sega/Game Gear/Games,TOSEC,gearsystem_libretro,
 gamegear,archive:mame-sl/mame-sl/gamegear.zip,MAME,mame gamegear -cart,
