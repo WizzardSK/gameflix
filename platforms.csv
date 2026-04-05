@@ -28,7 +28,7 @@ jaguar,archive:ni-roms/roms/Atari - Jaguar (J64).zip,NoIntro,virtualjaguar_libre
 jaguar,archive:tosec-main/Atari/Jaguar/Games/[J64],TOSEC,virtualjaguar_libretro,
 jaguar,archive:mame-sl/mame-sl/jaguar.zip,MAME,mame jaguar -cart,
 jaguarcd,Redump/Atari - Jaguar CD Interactive Multimedia System,Redump,bigpemu,cue
-jaguarcd,No-Intro/Non-Redump - Atari - Atari Jaguar CD,NonRedump,bigpemu,cdi
+jaguarcd,archive:non-redump_atari-jaguar-cd,NonRedump,bigpemu,cdi
 lynx,archive:ni-roms/roms/Atari - Lynx (LYX).zip,NoIntro,mednafen_lynx_libretro,
 lynx,archive:tosec-main/Atari/Lynx/Games/[LNX],TOSEC,mednafen_lynx_libretro,
 lynx,archive:mame-sl/mame-sl/lynx.zip,MAME,mame lynx -cart,bin
@@ -445,15 +445,15 @@ sega32x,archive:tosec-main/Sega/32X/Games,TOSEC,picodrive_libretro,
 sega32x,archive:mame-sl/mame-sl/32x.zip,MAME,mame 32x -cart,
 megacd,Redump/Sega - Mega CD & Sega CD,Redump,picodrive_libretro,cue
 megacd,TOSEC-ISO/Sega/Mega-CD & Sega CD/CD/Games/[ISO],ISO,picodrive_libretro,cue
-megacd,No-Intro/Non-Redump - Sega - Sega Mega CD + Sega CD,NonRedump,picodrive_libretro,cue
+megacd,archive:non-redump_sega-mega-cd_sega-cd,NonRedump,picodrive_libretro,cue
 megacd,MAME/Software List CHDs (merged)/megacd,CHD,mame segacd -cdrm,
 saturn,Redump/Sega - Saturn,Redump,yabasanshiro_libretro,cue
-saturn,No-Intro/Non-Redump - Sega - Sega Saturn,NonRedump,yabasanshiro_libretro,cue
+saturn,archive:non-redump_sega-saturn,NonRedump,yabasanshiro_libretro,cue
 saturn,TOSEC-ISO/Sega/Saturn/Games/[ISO],ISO,yabasanshiro_libretro,cue
 saturn,MAME/Software List CHDs (merged)/saturn,CHD,mame saturn -cdrm,
 stv,archive:mame-sl/mame-sl/stv.zip,MAME,mame stvbios,
 dreamcast,Redump/Sega - Dreamcast,Redump,flycast_libretro,cue
-dreamcast,No-Intro/Non-Redump - Sega - Dreamcast,NonRedump,flycast_libretro,gdi
+dreamcast,archive:non-redump_sega-dreamcast,NonRedump,flycast_libretro,gdi
 dreamcast,TOSEC-ISO/Sega/Dreamcast/Games/US,US,flycast_libretro,gdi
 dreamcast,TOSEC-ISO/Sega/Dreamcast/Games/PAL,PAL,flycast_libretro,gdi
 dreamcast,TOSEC-ISO/Sega/Dreamcast/Games/JP,JP,flycast_libretro,gdi
@@ -466,23 +466,25 @@ gamegear,archive:mame-sl/mame-sl/gamegear.zip,MAME,mame gamegear -cart,
 gamegear,FinalBurn Neo/gamegear,FBN,gearsystem_libretro,
 smc777,archive:mame-sl/mame-sl/smc777.zip,MAME,mame smc777 -flop1,
 psx,Redump/Sony - PlayStation,Redump,pcsx_rearmed_libretro,cue
-psx,No-Intro/Non-Redump - Sony - PlayStation,NonRedump,pcsx_rearmed_libretro,cue
+psx,archive:non-redump_sony_playstation,NonRedump,pcsx_rearmed_libretro,cue
 psx,MAME/Software List CHDs (merged)/psx,CHD,mame psu -cdrm,
 ps2,Redump/Sony - PlayStation 2,Redump,pcsx2,iso
-ps2,No-Intro/Non-Redump - Sony - PlayStation 2,NonRedump,pcsx2,iso
+ps2,archive:non-redump_sony_playstation2_part1,NonRedump A-G,pcsx2,iso
+ps2,archive:non-redump_sony_playstation2_part2,NonRedump H-Q,pcsx2,iso
+ps2,archive:non-redump_sony_playstation2_part3,NonRedump R-Z,pcsx2,iso
 psp,Redump/Sony - PlayStation Portable,Redump,ppsspp_libretro,iso
-psp,No-Intro/Non-Redump - Sony - PlayStation Portable,NonRedump,ppsspp_libretro,iso
+psp,archive:non-redump_sony_playstation_portable,NonRedump,ppsspp_libretro,iso
 psp,No-Intro/Unofficial - Sony - PlayStation Portable (PSN) (Decrypted),PSN,ppsspp_libretro,iso
 psp,TOSEC-ISO/Sony/PlayStation Portable/Games/[ISO],TOSEC,ppsspp_libretro,iso
 cdi,Redump/Philips - CD-i,Redump,same_cdi_libretro,cue
-cdi,No-Intro/Non-Redump - Philips - CD-i,NonRedump,same_cdi_libretro,cue
+cdi,archive:non-redump_philips-cdi,NonRedump,same_cdi_libretro,cue
 cdi,TOSEC-ISO/Philips/CD-i/Games,TOSEC,same_cdi_libretro,cue
 cdi,TOSEC-ISO/Philips/CD-i/Applications,App,same_cdi_libretro,cue
 cdi,TOSEC-ISO/Philips/CD-i/Educational,Edu,same_cdi_libretro,cue
 cdi,TOSEC-ISO/Philips/CD-i/Multimedia,Multimedia,same_cdi_libretro,cue
 cdi,MAME/Software List CHDs (merged)/cdi,CHD,mame cdimono1 -cdrm,
 3do,Redump/Panasonic - 3DO Interactive Multiplayer,Redump,opera_libretro,cue
-3do,No-Intro/Non-Redump - Panasonic - 3DO Interactive Multiplayer,NonRedump,opera_libretro,cue
+3do,archive:non-redump_panasonic_3do,NonRedump,opera_libretro,cue
 3do,TOSEC-ISO/3DO/3DO Interactive Multiplayer/Games,TOSEC,opera_libretro,cue
 3do,TOSEC-ISO/3DO/3DO Interactive Multiplayer/Applications/[ISO],App,opera_libretro,cue
 3do,TOSEC-ISO/3DO/3DO Interactive Multiplayer/Educational/[ISO],Edu,opera_libretro,cue
@@ -534,7 +536,7 @@ supergrafx,archive:mame-sl/mame-sl/sgx.zip,MAME,mame sgx -cart,
 supergrafx,FinalBurn Neo/sgx,FBN,mednafen_supergrafx_libretro,
 pcenginecd,Redump/NEC - PC Engine CD & TurboGrafx CD,Redump,mednafen_pce_fast_libretro,cue
 pcenginecd,TOSEC-ISO/NEC/PC-Engine CD & TurboGrafx-16 CD/Games/[IMG],ISO,mednafen_pce_fast_libretro,cue
-pcenginecd,No-Intro/Non-Redump - NEC - PC Engine CD + TurboGrafx CD,NonRedump,mednafen_pce_fast_libretro,cue
+pcenginecd,archive:non-redump_nec-pc-engine-cd-turbografx-cd,NonRedump,mednafen_pce_fast_libretro,cue
 pcenginecd,MAME/Software List CHDs (merged)/pcecd,CHD,mame pce -cdrm,
 pcfx,Redump/NEC - PC-FX & PC-FXGA,Redump,mednafen_pcfx_libretro,cue
 pcfx,TOSEC-ISO/NEC/PC-FX/Games,ISO,mednafen_pcfx_libretro,cue
