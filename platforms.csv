@@ -6,7 +6,7 @@ commanderx16,archive:tosec-main/8-Bit Productions/Commander X16/Games/[IMG],IMG,
 commanderx16,archive:tosec-main/8-Bit Productions/Commander X16/Games/[PRG],PRG,x16emu,prg
 vircon32,archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media,Vircon32,vircon32_libretro,
 pdp1,archive:mame-sl/mame-sl/pdp1_ptp.zip,MAME,mame pdp1 -ptap1,
-atari2600,https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip,ROMS,stella_libretro,
+atari2600,https://www.atarimania.com/roms/Atari-2600-VCS-ROM-Collection.zip#ROMS,ROMS,stella_libretro,
 atari2600,archive:ni-roms/roms/Atari - 2600.zip,NoIntro,stella_libretro,
 atari2600,archive:tosec-main/Atari/2600 & VCS/Games,TOSEC,stella_libretro,
 atari2600,archive:tosec-main/Atari/2600 & VCS/Homebrew/Games/[BIN],Homebrew,stella_libretro,

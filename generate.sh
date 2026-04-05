@@ -35,14 +35,19 @@ while IFS= read -r path; do
   [ -s "$cache/$h.txt" ] && continue
   (
     if [[ "$path" == https://* ]]; then
-      tmp=$(mktemp); wget -q "$path" -O "$tmp"
+      url="${path%%#*}"; subdir="${path#*#}"; [ "$subdir" = "$path" ] && subdir=""
+      tmp=$(mktemp); wget -q "$url" -O "$tmp"
       zipdir=$(mktemp -d)
       $HOME/ratarmount-full "$tmp" "$zipdir" 2>/dev/null
-      entries=("$zipdir"/*)
-      if [ ${#entries[@]} -eq 1 ] && [ -d "${entries[0]}" ]; then
-        ls "${entries[0]}" 2>/dev/null > "$cache/$h.txt"
+      if [ -n "$subdir" ] && [ -d "$zipdir/$subdir" ]; then
+        ls "$zipdir/$subdir" 2>/dev/null > "$cache/$h.txt"
       else
-        ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
+        entries=("$zipdir"/*)
+        if [ ${#entries[@]} -eq 1 ] && [ -d "${entries[0]}" ]; then
+          ls "${entries[0]}" 2>/dev/null > "$cache/$h.txt"
+        else
+          ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
+        fi
       fi
       fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"; rm -f "$tmp"
     elif [[ "$path" == *:* ]]; then
