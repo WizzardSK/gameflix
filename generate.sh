@@ -34,7 +34,18 @@ while IFS= read -r path; do
   h=$(echo -n "$path" | md5sum | cut -d' ' -f1)
   [ -s "$cache/$h.txt" ] && continue
   (
-    if [[ "$path" == *:* ]]; then
+    if [[ "$path" == https://* ]]; then
+      tmp=$(mktemp); wget -q "$path" -O "$tmp"
+      zipdir=$(mktemp -d)
+      $HOME/ratarmount-full "$tmp" "$zipdir" 2>/dev/null
+      entries=("$zipdir"/*)
+      if [ ${#entries[@]} -eq 1 ] && [ -d "${entries[0]}" ]; then
+        ls "${entries[0]}" 2>/dev/null > "$cache/$h.txt"
+      else
+        ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
+      fi
+      fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"; rm -f "$tmp"
+    elif [[ "$path" == *:* ]]; then
       aftercolon="${path#*:}"
       localpath="$HOME/mount/$aftercolon"
       if [[ "$localpath" == *.zip ]]; then
