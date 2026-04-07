@@ -378,8 +378,7 @@ n64dd,archive:mame-sl/mame-sl/n64dd.zip,MAME,mame n64dd -hard,
 n64dd,archive:tosec-main/Nintendo/64DD/Games/[BIN],TOSEC,mame n64dd -hard,
 gamecube,Redump/Nintendo - GameCube - NKit RVZ [zstd-19-128k],Redump,dolphin_libretro,rvz
 gamecube,archive:tosec-iso-namco-sega-nintendo/Nintendo/GameCube/Games,ISO,dolphin_libretro,iso
-wii,No-Intro/Unofficial - Nintendo - Wii (Digital) (Deprecated) (WAD),NoIntro,dolphin_libretro,wad
-wii,Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k],Redump,dolphin_libretro,rvz
+wii,archive:redumpwiipalrvz,Redump,dolphin_libretro,
 pokemini,archive:ni-roms/roms/Nintendo - Pokemon Mini.zip,NoIntro,pokemini_libretro,
 pokemini,archive:tosec-main/Nintendo/Pokemon Mini/Games,TOSEC,pokemini_libretro,
 pokemini,archive:mame-sl/mame-sl/pokemini.zip,MAME,mame pokemini -cart,
