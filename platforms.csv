@@ -115,7 +115,6 @@ adam,archive:tosec-main/Coleco/ColecoVision ADAM/Applications/[DSK],App,mame ada
 adam,archive:mame-sl/mame-sl/adam_flop.zip,MAME,mame adam -flop1,
 adam,archive:mame-sl/mame-sl/adam_cass.zip,Cass MAME,mame adam -cass,
 adam,archive:mame-sl/mame-sl/adam_cart.zip,Cart MAME,mame adam -cart1,
-cassettevision,MAME/Software List ROMs (merged)/cassvisn_cart,MAME,mame cassvisn,
 scv,archive:ni-roms/roms/Epoch - Super Cassette Vision.zip,NoIntro,emuscv_libretro,
 scv,archive:tosec-main/Epoch/Super Cassette Vision/Games,TOSEC,emuscv_libretro,
 scv,archive:mame-sl/mame-sl/scv.zip,MAME,mame scv -cart,
