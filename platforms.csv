@@ -540,7 +540,7 @@ pcenginecd,archive:non-redump_nec-pc-engine-cd-turbografx-cd,NonRedump,mednafen_
 pcenginecd,archive:mame-software-list-chds-2/pcecd,CHD,mame pce -cdrm,
 pcfx,archive:nec-pc-fx-pc-fxga-redump,Redump,mednafen_pcfx_libretro,cue
 pcfx,archive:tosec-iso-nec/PC-FX/Games,ISO,mednafen_pcfx_libretro,cue
-dos,eXo/eXoDOS/Full Release/eXo/eXoDOS,eXoDOS,dosbox_pure_libretro,
+dos,archive:exov5_2/eXo/eXoDOS,eXoDOS,dosbox_pure_libretro,
 dos,archive:tosec-main/IBM/PC Compatibles/Games/[IMG],TOSEC,dosbox_pure_libretro,
 dos,archive:tosec-main/IBM/PC Compatibles/Applications/[IMG],App TOSEC,dosbox_pure_libretro,
 dos,archive:tosec-main/IBM/PC Compatibles/Educational/[IMG],Edu TOSEC,dosbox_pure_libretro,
