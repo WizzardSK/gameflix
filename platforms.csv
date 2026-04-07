@@ -640,7 +640,7 @@ mz800,archive:tosec-main/Sharp/MZ-800 & MZ-1500/Games/[MZT],MZT,mame mz800 -auto
 mz800,archive:mame-sl/mame-sl/mz800_cass.zip,MAME,mame mz800 -autoboot_command 'L\n' -autoboot_delay 3 -cass,
 mz2000,archive:tosec-main/Sharp/MZ-2000 & MZ-2200/Games/[MZT],MZT,mame mz2000 -autoboot_command 'C' -autoboot_delay 5 -cass,
 mz2000,archive:mame-sl/mame-sl/mz2000_cass.zip,MAME,mame mz2000 -autoboot_command 'C' -autoboot_delay 5 -cass,
-mz2500,MAME/Software List ROMs (merged)/mz2500_flop,MAME,mame mz2500 -flop1,
+mz2500,archive:mame-sl/mame-sl/mz2500.zip,MAME,mame mz2500 -flop1,
 spc1000,archive:mame-sl/mame-sl/spc1000_cass.zip,MAME,mame spc1000 -autoboot_command 'LOAD\n' -autoboot_delay 3 -cass,
 spc1500,archive:mame-sl/mame-sl/spc1500_cass.zip,MAME,mame spc1500 -autoboot_command 'LOAD\n' -autoboot_delay 3 -cass,
 mc1000,archive:mame-sl/mame-sl/mc1000_cass.zip,MAME,mame mc1000 -autoboot_command 'LOAD\n' -autoboot_delay 3 -cass,
