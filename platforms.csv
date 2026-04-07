@@ -453,11 +453,13 @@ gamegear,archive:ni-roms/roms/Sega - Game Gear.zip,NoIntro,gearsystem_libretro,
 gamegear,archive:tosec-main/Sega/Game Gear/Games,TOSEC,gearsystem_libretro,
 gamegear,archive:mame-sl/mame-sl/gamegear.zip,MAME,mame gamegear -cart,
 smc777,archive:mame-sl/mame-sl/smc777.zip,MAME,mame smc777 -flop1,
-psx,archive:PS1_EU_CHD_Arquivista,Redump EUR,pcsx_rearmed_libretro,
-psx,archive:PS1_JP_CHD_Arquivista,Redump JAP,pcsx_rearmed_libretro,
-psx,archive:PS1_US_CHD_Arquivista,Redump USA,pcsx_rearmed_libretro,
+psx,archive:PS1_EU_CHD_Arquivista,CHD EUR,pcsx_rearmed_libretro,
+psx,archive:PS1_JP_CHD_Arquivista,CHD JAP,pcsx_rearmed_libretro,
+psx,archive:PS1_US_CHD_Arquivista,CHD USA,pcsx_rearmed_libretro,
 psx,archive:non-redump_sony_playstation,NonRedump,pcsx_rearmed_libretro,cue
-ps2,Redump/Sony - PlayStation 2,Redump,pcsx2,iso
+ps2,archive:PS2-part1-CHD-Arquivista,CHD 1,pcsx2,
+ps2,archive:PS2-part2-CHD-Arquivista,CHD 2,pcsx2,
+ps2,archive:PS2-part3-CHD-Arquivista,CHD 3,pcsx2,
 ps2,archive:non-redump_sony_playstation2_part1,NonRedump A-G,pcsx2,iso
 ps2,archive:non-redump_sony_playstation2_part2,NonRedump H-Q,pcsx2,iso
 ps2,archive:non-redump_sony_playstation2_part3,NonRedump R-Z,pcsx2,iso
