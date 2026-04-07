@@ -465,7 +465,6 @@ ps2,archive:non-redump_sony_playstation2_part2,NonRedump H-Q,pcsx2,iso
 ps2,archive:non-redump_sony_playstation2_part3,NonRedump R-Z,pcsx2,iso
 psp,archive:playstation-portable-redump,Redump,ppsspp_libretro,iso
 psp,archive:non-redump_sony_playstation_portable,NonRedump,ppsspp_libretro,iso
-psp,No-Intro/Unofficial - Sony - PlayStation Portable (PSN) (Decrypted),PSN,ppsspp_libretro,iso
 psp,archive:tosec-iso-sony/PlayStation Portable/Games/[ISO],TOSEC,ppsspp_libretro,iso
 cdi,archive:ef_Philips_cd-i_redump_2300,Redump,same_cdi_libretro,cue
 cdi,archive:non-redump_philips-cdi,NonRedump,same_cdi_libretro,cue
