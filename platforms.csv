@@ -754,7 +754,7 @@ mame,archive:MAME_2010_full_nonmerged_romsets/roms.zip,2010,mame,
 mame,archive:MAME_2015_arcade_romsets/roms.zip,2015,mame,
 mame,archive:MAME_2016_Arcade_Romsets/roms.zip,2016,mame,
 vgmplay,archive:mame-sl/mame-sl/vgmplay.zip,MAME,mame vgmplay -quik,
-fbneo,FinalBurn Neo/arcade,FinalBurn Neo,fbneo_libretro,
+fbneo,archive:FBNEOPACK,FinalBurn Neo,fbneo_libretro,
 neogeo,archive:mame-sl/mame-sl/neogeo.zip,MAME,mame aes -cart,
 neogeocd,archive:snk-neo-geo-cd-redump,Redump,neocd_libretro,cue
 neogeocd,archive:tosec-iso-snk/Neo-Geo CD/Games/[ISO],ISO,neocd_libretro,cue
