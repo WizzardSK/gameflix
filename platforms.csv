@@ -616,7 +616,6 @@ amiga500,archive:mame-sl/mame-sl/amiga_flop.zip,Flop MAME,mame a500 -flop,
 amiga500,archive:mame-sl/mame-sl/amigaecs_flop.zip,ECS Flop MAME,mame a600 -flop,
 amiga500,archive:mame-sl/mame-sl/amigaocs_flop.zip,OCS Flop MAME,mame a500 -flop,
 amiga500,archive:mame-sl/mame-sl/amigaaga_flop.zip,AGA Flop MAME,mame a1200 -flop,
-amiga500,MAME/Software List CHDs (merged)/amiga_cd,CD CHD,mame a500 -cdrom,
 amiga1200,archive:noaen-redump-commodore-amiga-cd,Redump,puae_libretro,cue
 amiga1200,archive:tosec-iso-commodore/Amiga/CD/Games/[ISO],ISO,puae_libretro,cue
 amiga1200,archive:tosec-iso-commodore/Amiga/CD/Applications/[ISO],App,puae_libretro,cue
