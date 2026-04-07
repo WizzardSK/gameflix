@@ -668,7 +668,6 @@ fbneo,archive:FBNEOPACK,FinalBurn Neo,fbneo_libretro,
 neogeo,archive:mame-sl/mame-sl/neogeo.zip,MAME,mame aes -cart,
 neogeocd,archive:snk-neo-geo-cd-redump,Redump,neocd_libretro,cue
 neogeocd,archive:tosec-iso-snk/Neo-Geo CD/Games/[ISO],ISO,neocd_libretro,cue
-neogeocd,MAME/Software List CHDs (merged)/neocd,CHD,mame neocdz -cdrm,
 ngp,archive:ni-roms/roms/SNK - NeoGeo Pocket.zip,NoIntro,mednafen_ngp_libretro,
 ngp,archive:tosec-main/SNK/Neo-Geo Pocket/Games,TOSEC,mednafen_ngp_libretro,
 ngp,archive:mame-sl/mame-sl/ngp.zip,MAME,mame ngp -cart,
