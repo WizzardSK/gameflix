@@ -421,7 +421,7 @@ megadrive,archive:ni-roms/roms/Sega - Mega Drive - Genesis.zip,NoIntro,genesis_p
 megadrive,archive:tosec-main/Sega/Mega Drive & Genesis/Games/[BIN],TOSEC,genesis_plus_gx_libretro,
 megadrive,archive:mame-sl/mame-sl/megadriv.zip,MAME,mame megadriv -cart,
 megadrive,archive:mame-sl/mame-sl/megatech.zip,Mega-Tech MAME,mame megatech -cart,
-megadrive-msu,T-En Collection/Sega - Mega Drive - MSU-MD,Sega MSU-MD,genesis_plus_gx_libretro,md
+megadrive-msu,archive:SegaMD-Enhanced-ROMs/ROMs/Sega - Mega Drive - MSU-MD,Sega MSU-MD,genesis_plus_gx_libretro,md
 pico,archive:ni-roms/roms/Sega - PICO.zip,NoIntro,picodrive_libretro,
 pico,archive:tosec-main/Sega/Pico/Educational,TOSEC,picodrive_libretro,
 pico,archive:mame-sl/mame-sl/pico.zip,MAME,mame pico -cart,
