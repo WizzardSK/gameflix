@@ -291,7 +291,6 @@ vis,Redump/Memorex - Visual Information System,Redump,mame vis -cdrm,cue
 vis,archive:tosec-iso-memorex/Video Information System/Educational,Edu,mame vis -cdrm,cue
 vis,archive:tosec-iso-memorex/Video Information System/Games,Games,mame vis -cdrm,cue
 vis,archive:tosec-iso-memorex/Video Information System/Multimedia,Multimedia,mame vis -cdrm,cue
-vis,MAME/Software List CHDs (merged)/vis,MAME,mame vis -cdrm,
 atom,archive:tosec-main/Acorn/Atom/Games/[DSK],TOSEC,mame atom -flop1,
 atom,archive:mame-sl/mame-sl/atom_flop.zip,MAME,mame atom -flop1,
 atom,archive:mame-sl/mame-sl/atom_rom.zip,ROM MAME,mame atom -cart,
