@@ -399,7 +399,7 @@ nds,archive:tosec-main/Nintendo/DS/Games,DS TOSEC,melonds_libretro,
 dsi,archive:ni-roms/roms/Nintendo - Nintendo DSi (Decrypted).zip,NoIntro,melondsds_libretro,
 dsi,archive:tosec-main/Nintendo/DSi/Games,TOSEC,melondsds_libretro,
 3ds,No-Intro/Nintendo - Nintendo 3DS (Decrypted),NoIntro,citra_libretro,3ds
-wiiu,Redump/Nintendo - Wii U - WUX,Redump,cemu -g,wux
+wiiu,archive:wii-u-retail-nus-usa,Redump,cemu -g,
 sg1000,archive:ni-roms/roms/Sega - SG-1000.zip,NoIntro,gearsystem_libretro,
 sg1000,archive:tosec-main/Sega/Game 1000/Games,TOSEC,gearsystem_libretro,
 sg1000,archive:mame-sl/mame-sl/sg1000.zip,MAME,mame sg1000 -cart,
