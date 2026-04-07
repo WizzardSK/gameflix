@@ -433,18 +433,15 @@ sega32x,archive:mame-sl/mame-sl/32x.zip,MAME,mame 32x -cart,
 megacd,archive:sega-mega-cd-sega-cd-redump,Redump,picodrive_libretro,cue
 megacd,archive:tosec-iso-sega/Mega-CD & Sega CD/CD/Games/[ISO],ISO,picodrive_libretro,cue
 megacd,archive:non-redump_sega-mega-cd_sega-cd,NonRedump,picodrive_libretro,cue
-megacd,MAME/Software List CHDs (merged)/megacd,CHD,mame segacd -cdrm,
 saturn,archive:redump.sega_saturn,Redump,yabasanshiro_libretro,cue
 saturn,archive:non-redump_sega-saturn,NonRedump,yabasanshiro_libretro,cue
 saturn,archive:tosec-iso-sega/Saturn/Games/[ISO],ISO,yabasanshiro_libretro,cue
-saturn,MAME/Software List CHDs (merged)/saturn,CHD,mame saturn -cdrm,
 stv,archive:mame-sl/mame-sl/stv.zip,MAME,mame stvbios,
 dreamcast,archive:sega-dreamcast-redump,Redump,flycast_libretro,cue
 dreamcast,archive:non-redump_sega-dreamcast,NonRedump,flycast_libretro,gdi
 dreamcast,archive:tosec-iso-sega/Dreamcast/Games/US,US,flycast_libretro,gdi
 dreamcast,archive:tosec-iso-sega/Dreamcast/Games/PAL,PAL,flycast_libretro,gdi
 dreamcast,archive:tosec-iso-sega/Dreamcast/Games/JP,JP,flycast_libretro,gdi
-dreamcast,MAME/Software List CHDs (merged)/dc,CHD,mame dc -cdrm,
 model2,archive:m2emu1.1a/Sega Model 2 Emu 1.1a and Full Romset/Model 2 Romset (Merged),Sega Model 2,mame,
 model3,archive:segamodel3/ROMs,Sega Model 3,mame,
 gamegear,archive:ni-roms/roms/Sega - Game Gear.zip,NoIntro,gearsystem_libretro,
