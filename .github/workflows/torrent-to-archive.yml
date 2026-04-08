@@ -82,16 +82,17 @@ jobs:
               continue
             fi
 
-            # Clear workdir before download
+            # Clear workdir and aria2 cache before download
             rm -rf workdir
             mkdir -p workdir
+            rm -rf ~/.cache/aria2
 
             # Download single file with retry
             DOWNLOADED=""
             for attempt in 1 2 3; do
               if [ $attempt -gt 1 ]; then
                 echo "Retry $attempt for file index $i"
-                rm -rf workdir
+                rm -rf workdir ~/.cache/aria2
                 mkdir -p workdir
                 sleep 5
               fi
@@ -104,6 +105,7 @@ jobs:
                 --max-overall-download-limit=0 \
                 --file-allocation=none \
                 --summary-interval=30 \
+                --bt-remove-unselected-file \
                 torrent.torrent && {
                   DOWNLOADED=$(find workdir -type f ! -name "*.torrent" ! -name "*.aria2" -print0 2>/dev/null | tr '\0' '\n' | head -1)
                   [ -n "$DOWNLOADED" ] && break
