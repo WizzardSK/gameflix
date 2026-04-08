@@ -95,6 +95,7 @@ jobs:
             # Clear workdir and create empty dht.dat with proper permissions
             rm -rf workdir
             mkdir -p workdir
+            mkdir -p ~/.cache/aria2
             touch ~/.cache/aria2/dht.dat
             chmod 600 ~/.cache/aria2/dht.dat
 
@@ -105,6 +106,7 @@ jobs:
                 echo "Retry $attempt for file index $i"
                 rm -rf workdir
                 mkdir -p workdir
+                mkdir -p ~/.cache/aria2
                 touch ~/.cache/aria2/dht.dat
                 chmod 600 ~/.cache/aria2/dht.dat
                 sleep 5
