@@ -150,3 +150,5 @@ jobs:
           done
 
           echo "All files processed ($START to $END)."
+          echo "Refreshing Archive.org item..."
+          ia post "$IA_ID" --metadata="updatedate:$(date -u +%Y-%m-%d)" 2>/dev/null || true
