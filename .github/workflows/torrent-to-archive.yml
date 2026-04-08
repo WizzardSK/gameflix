@@ -86,6 +86,7 @@ jobs:
             rm -rf workdir
             mkdir -p workdir
             rm -rf ~/.cache/aria2
+            rm -f ~/.cache/aria2/dht.dat
 
             # Download single file with retry
             DOWNLOADED=""
