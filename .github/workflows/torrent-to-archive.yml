@@ -64,12 +64,8 @@ jobs:
             echo "Processing file index: $i"
             echo "=========================================="
 
-            # Get file info from torrent
-            FILE_INFO=$(aria2c --show-files torrent.torrent | grep -A1 "^\s*${i}|")
-            echo "$FILE_INFO"
-
-            # Extract file path from torrent info
-            REMOTE_PATH=$(echo "$FILE_INFO" | grep "^\s*${i}|" | sed 's/^\s*'"$i"'|//' | sed 's/|.*//' | xargs)
+            # Get file path from torrent info (first line with index)
+            REMOTE_PATH=$(aria2c --show-files torrent.torrent | sed -n "/^\s*${i}|/p" | sed "s/^\s*${i}|//" | sed 's/|.*//' | xargs)
 
             if [ -z "$REMOTE_PATH" ]; then
               echo "WARNING: Could not determine path for index $i, skipping"
