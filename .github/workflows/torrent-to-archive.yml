@@ -67,8 +67,10 @@ jobs:
             FILE_INFO=$(aria2c --show-files torrent.torrent | grep -A1 "^\s*${i}|")
             echo "$FILE_INFO"
 
-            # Download single file
+            # Download into isolated workdir so find picks up exactly one file
+            mkdir -p workdir
             aria2c \
+              --dir=workdir \
               --select-file=$i \
               --seed-time=0 \
               --bt-stop-timeout=600 \
@@ -77,6 +79,7 @@ jobs:
               --summary-interval=30 \
               torrent.torrent || {
                 echo "WARNING: Failed to download file $i, skipping"
+                rm -rf workdir
                 continue
               }
 
@@ -86,22 +89,22 @@ jobs:
             while IFS= read -r -d $'\0' f; do
               DOWNLOADED="$f"
               break
-            done < <(find . -type f \
+            done < <(find workdir -type f \
               ! -name "*.torrent" \
               ! -name "*.aria2" \
-              -newer torrent.torrent \
               -print0 2>/dev/null)
 
             if [ -z "$DOWNLOADED" ]; then
               echo "WARNING: No file found for index $i, skipping"
+              rm -rf workdir
               continue
             fi
 
             echo "Downloaded: $DOWNLOADED"
             ls -lh -- "$DOWNLOADED"
 
-            # Upload to Internet Archive preserving path structure
-            REMOTE_PATH="${DOWNLOADED#./}"
+            # Strip workdir/ prefix to preserve original torrent path structure
+            REMOTE_PATH="${DOWNLOADED#workdir/}"
             echo "Uploading as: $REMOTE_PATH"
 
             ia upload "${{ inputs.ia_identifier }}" "$DOWNLOADED" \
@@ -111,10 +114,8 @@ jobs:
                 echo "ERROR: Failed to upload file $i"
               }
 
-            # Delete local file to free disk space
-            rm -f -- "$DOWNLOADED"
-            # Clean up any .aria2 control files
-            find . -name "*.aria2" -delete
+            # Wipe entire workdir to free disk space
+            rm -rf workdir
 
             echo "Disk space remaining:"
             df -h / | tail -1
