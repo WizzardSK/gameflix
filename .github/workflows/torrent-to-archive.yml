@@ -90,34 +90,32 @@ jobs:
             rm -rf workdir
             mkdir -p workdir
 
-            # Download single file
-            aria2c \
-              --dir=workdir \
-              --select-file=$i \
-              --seed-time=0 \
-              --bt-stop-timeout=600 \
-              --max-overall-download-limit=0 \
-              --file-allocation=none \
-              --summary-interval=30 \
-              torrent.torrent || {
-                echo "WARNING: Failed to download file $i, skipping"
-                rm -rf workdir
-                continue
-              }
-
-            # Find the downloaded file using null-safe method
-            # (handles filenames with spaces, parentheses, special characters)
+            # Download single file with retry
             DOWNLOADED=""
-            while IFS= read -r -d $'\0' f; do
-              DOWNLOADED="$f"
-              break
-            done < <(find workdir -type f \
-              ! -name "*.torrent" \
-              ! -name "*.aria2" \
-              -print0 2>/dev/null)
+            for attempt in 1 2 3; do
+              if [ $attempt -gt 1 ]; then
+                echo "Retry $attempt for file index $i"
+                rm -rf workdir
+                mkdir -p workdir
+                sleep 5
+              fi
+
+              aria2c \
+                --dir=workdir \
+                --select-file=$i \
+                --seed-time=0 \
+                --bt-stop-timeout=600 \
+                --max-overall-download-limit=0 \
+                --file-allocation=none \
+                --summary-interval=30 \
+                torrent.torrent && {
+                  DOWNLOADED=$(find workdir -type f ! -name "*.torrent" ! -name "*.aria2" -print0 2>/dev/null | tr '\0' '\n' | head -1)
+                  [ -n "$DOWNLOADED" ] && break
+                }
+            done
 
             if [ -z "$DOWNLOADED" ]; then
-              echo "WARNING: No file found for index $i, skipping"
+              echo "WARNING: Failed to download file $i after 3 attempts, skipping"
               rm -rf workdir
               continue
             fi
