@@ -6,7 +6,7 @@ on:
       torrent_url:
         description: 'URL of .torrent file to download'
         required: true
-        default: 'https://archive.org/download/exodos-full/eXoDOS.torrent'
+        default: 'https://www.retro-exo.com/eXoDOS.torrent'
       ia_identifier:
         description: 'Internet Archive item identifier'
         required: true
