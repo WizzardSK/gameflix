@@ -1402,6 +1402,7 @@
 5	LowRes Galaxy 2	EppSh9pZxH_LowRes_Galaxy_2_1.5.png	EppSh9pZxH_LowRes_Galaxy_2_1.5.nx
 4	LowRes Adventure	cMntqD3hwj_LowRes_Adventure_1.1.png	cMntqD3hwj_LowRes_Adventure_1.1.nx
 ---	art
+3999	[fixed upload] Low Resolution Demo	j9EoBvHPzb_thumb.png	j9EoBvHPzb_demo.nx
 3996	StarFly	vMTNoYjCVr_Star_Fly.png	vMTNoYjCVr_Star_Fly.nx
 3990	Road Rage	uV6b9Jv8Lp_Road_Rage.png	uV6b9Jv8Lp_Road_Rage.nx
 3989	Depth Perception	p6YHhAsJGg_Depth_Perception.png	p6YHhAsJGg_Depth_Perception.nx
@@ -1980,6 +1981,7 @@
 2	Background Designer	PpbkUEMFEs_BG_Designer_1.7.png	PpbkUEMFEs_BG_Designer_1.7.nx
 1	Character Designer	A2Mz2eaoxF_Char_Designer_1.6.png	A2Mz2eaoxF_Char_Designer_1.6.nx
 ---	example
+3997	Pathway counter	Ug7nrpncGV_Pathway_Counter.png	Ug7nrpncGV_Pathway_Counter.nx
 3987	Animated Drawing	b2QLWSmYKt_Text_Bright_Designer_3.png	b2QLWSmYKt_Text_Bright_Designer_3.nx
 3985	Claude generated Mario song	EUuLFLz4zm_Claude_Genarated_Mario_Song.png	EUuLFLz4zm_Claude_Genarated_Mario_Song.nx
 3966	Spin to Win 	RHgmRUrJGd_Spin_to_Win_0.1.png	RHgmRUrJGd_Spin_to_Win_0.1.nx
@@ -2569,8 +2571,6 @@
 187	Floating Numeric Display demo	L4Vk2dLhCb_Floating_Numeric_Display.png	L4Vk2dLhCb_Floating_Numeric_Display.nx
 180	Teaser...	ZotSXJrpcT_Teaser.png	ZotSXJrpcT_Teaser.nx
 146	Double x Double = 13 colors in 4 shades demo	EXSvY8gAk5_Double_x_Double_background_Colors.png	EXSvY8gAk5_Double_x_Double_background_Colors.nx
-142	Double your colors!  demo	iu5374sTAP_Double_Your_Colors_Demo.png	iu5374sTAP_Double_Your_Colors_Demo.nx
-123	Circle drawer for nx	mJrfugQxWW_Image.png	mJrfugQxWW_Unnamed_Program_12.nx
 122	Sine Drawing	jdnkd4Sv7K_LowRes_NX_20181111_12_07_36.png	jdnkd4Sv7K_drawing.nx
 120	Draw Recreation	ZYLfjDrZbK_True_Draw_Thing_V_0.2.png	ZYLfjDrZbK_True_Draw_Thing_V_0.2.nx
 118	Atari running man demo	6hYoqgPids_Poke_Animation_W_Color_Strobe.png	6hYoqgPids_Poke_Animation_W_Color_Strobe.nx
@@ -2579,5 +2579,4 @@
 78	Sprites with Background	geZUoiLgqY_Sprites_with_Background.png	geZUoiLgqY_Sprites_with_Background.nx
 74	Quicksort NX	w3r9mGvFit_Quicksort_NX.png	w3r9mGvFit_Quicksort_NX.nx
 54	Micro Text	iEFyWULNmu_Micro_Text.png	iEFyWULNmu_Micro_Text.nx
-53	Challenge #1 “HELLO” program	u2Gq748wti_Hello_Challenge.png	u2Gq748wti_Hello_Challenge.nx
 36	Sound Examples	Wi3tKwxGQ4_sounds.png	Wi3tKwxGQ4_sounds.nx
