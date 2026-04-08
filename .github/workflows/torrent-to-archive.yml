@@ -115,7 +115,6 @@ jobs:
                 --file-allocation=none \
                 --summary-interval=30 \
                 --bt-remove-unselected-file \
-                --disable-dht \
                 torrent.torrent && {
                   DOWNLOADED=$(find workdir -type f ! -name "*.torrent" ! -name "*.aria2" -print0 2>/dev/null | tr '\0' '\n' | head -1)
                   [ -n "$DOWNLOADED" ] && break
