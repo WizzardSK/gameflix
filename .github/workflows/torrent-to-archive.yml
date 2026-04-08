@@ -1,119 +1,107 @@
-name: Torrent to Archive.org
+# Kompletný workflow `torrent-to-archive.yml`
+
+```yaml
+name: Torrent to Archive
 
 on:
   workflow_dispatch:
     inputs:
       torrent_url:
-        description: 'URL of .torrent file to download'
+        description: "Torrent URL"
         required: true
-        default: 'https://archive.org/download/exodos-full/eXoDOS.torrent'
-      ia_identifier:
-        description: 'Internet Archive item identifier'
+      archive_item:
+        description: "Internet Archive item identifier"
         required: true
-        default: 'exodos-full'
       start_file:
-        description: 'Start file index (1-based)'
+        description: "Start file index"
         required: true
-        default: '1'
+        default: "1"
       end_file:
-        description: 'End file index (1-based)'
+        description: "End file index"
         required: true
-        default: '99'
+        default: "1"
 
 jobs:
   upload:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+
     steps:
-      - name: Free disk space
-        run: |
-          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache
-          df -h /
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Install tools
+      - name: Install dependencies
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq aria2
+          sudo apt-get update
+          sudo apt-get install -y aria2 jq python3-pip
           pip install internetarchive
-
-      - name: Configure Internet Archive
-        run: |
-          mkdir -p ~/.config/internetarchive
-          cat > ~/.config/internetarchive/ia.ini << 'EOCONF'
-          [s3]
-          access = ${{ secrets.IA_ACCESS }}
-          secret = ${{ secrets.IA_SECRET }}
-          EOCONF
-          # Remove leading spaces from heredoc
-          sed -i 's/^          //' ~/.config/internetarchive/ia.ini
 
       - name: Download torrent file
         run: |
-          curl -L -o torrent.torrent "${{ inputs.torrent_url }}"
-          aria2c --show-files torrent.torrent | head -20
+          curl -L "${{ github.event.inputs.torrent_url }}" -o torrent.torrent
 
-      - name: Download and upload files one by one
+      - name: Show torrent file list
         run: |
-          START=${{ inputs.start_file }}
-          END=${{ inputs.end_file }}
+          aria2c --show-files torrent.torrent
 
-          echo "Processing files $START to $END"
+      - name: Download and upload selected files
+        env:
+          IA_ACCESS_KEY: ${{ secrets.IA_ACCESS_KEY }}
+          IA_SECRET_KEY: ${{ secrets.IA_SECRET_KEY }}
+          ARCHIVE_ITEM: ${{ github.event.inputs.archive_item }}
+          START_FILE: ${{ github.event.inputs.start_file }}
+          END_FILE: ${{ github.event.inputs.end_file }}
+        run: |
+          set -e
 
-          for i in $(seq $START $END); do
-            echo "=========================================="
-            echo "Processing file index: $i"
-            echo "=========================================="
+          for ((i=START_FILE; i<=END_FILE; i++)); do
+            echo "Processing torrent file index $i"
 
-            # Get file info
-            FILE_INFO=$(aria2c --show-files torrent.torrent | grep -A1 "^\s*${i}|")
-            echo "$FILE_INFO"
+            mkdir -p workdir
+            cd workdir
 
-            # Download single file
             aria2c \
-              --select-file=$i \
+              --dir=. \
               --seed-time=0 \
-              --bt-stop-timeout=600 \
-              --max-overall-download-limit=0 \
-              --file-allocation=none \
-              --summary-interval=30 \
-              torrent.torrent || {
-                echo "WARNING: Failed to download file $i, skipping"
-                continue
-              }
+              --summary-interval=0 \
+              --bt-save-metadata=true \
+              --bt-remove-unselected-file=true \
+              --select-file="$i" \
+              ../torrent.torrent
 
-            # Find the downloaded file (skip .aria2 control files)
-            DOWNLOADED=$(find . -type f ! -name "*.torrent" ! -name "*.aria2" -newer torrent.torrent 2>/dev/null)
+            DOWNLOADED=$(find . -type f \
+              ! -name "*.torrent" \
+              ! -name "*.aria2" \
+              ! -path "*/.git/*" \
+              2>/dev/null | head -n1)
 
             if [ -z "$DOWNLOADED" ]; then
-              echo "WARNING: No file found for index $i, skipping"
+              echo "No downloaded file found for index $i"
+              cd ..
+              rm -rf workdir
               continue
             fi
 
             echo "Downloaded: $DOWNLOADED"
             ls -lh "$DOWNLOADED"
 
-            # Upload to Internet Archive preserving path structure
-            # Strip leading ./ from path
             REMOTE_PATH="${DOWNLOADED#./}"
-            echo "Uploading as: $REMOTE_PATH"
 
-            ia upload "${{ inputs.ia_identifier }}" "$DOWNLOADED" \
-              --remote-name="$REMOTE_PATH" \
-              --no-derive \
-              --retries=5 || {
-                echo "ERROR: Failed to upload file $i"
-                # Still delete to free space
-              }
+            echo "Uploading to Internet Archive path: $REMOTE_PATH"
 
-            # Delete local file to free disk space
+            ia upload "$ARCHIVE_ITEM" "$DOWNLOADED" \
+              --remote-name="$REMOTE_PATH"
+
+            echo "Removing uploaded file"
             rm -f "$DOWNLOADED"
-            # Also clean up any .aria2 files
-            find . -name "*.aria2" -delete
 
-            echo "Disk space remaining:"
-            df -h / | tail -1
+            find . -type d -empty -delete
 
-            echo "File $i done."
+            cd ..
+            rm -rf workdir
           done
 
-          echo "All files processed ($START to $END)."
+      - name: Cleanup
+        run: |
+          rm -f torrent.torrent
+          find . -type d -empty -delete
+```
