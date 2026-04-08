@@ -16,9 +16,9 @@ on:
         required: true
         default: '1'
       end_file:
-        description: 'End file index (1-based)'
+        description: 'End file index (1-based, 0=all files)'
         required: true
-        default: '99'
+        default: '0'
 
 jobs:
   upload:
@@ -56,6 +56,16 @@ jobs:
           START=${{ inputs.start_file }}
           END=${{ inputs.end_file }}
           IA_ID="${{ inputs.ia_identifier }}"
+
+          # Count total files in torrent
+          TOTAL_FILES=$(aria2c --show-files torrent.torrent | grep -E "^\s*[0-9]+\|" | wc -l)
+          echo "Total files in torrent: $TOTAL_FILES"
+
+          # If END is 0 or very high (e.g. 9999), use total files
+          if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL_FILES" ]; then
+            echo "Setting END to total files: $TOTAL_FILES"
+            END=$TOTAL_FILES
+          fi
 
           echo "Processing files $START to $END"
 
