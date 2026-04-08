@@ -1,8 +1,4 @@
-# Kompletný workflow `torrent-to-archive.yml`
-
-```yaml
 name: Torrent to Archive
-
 on:
   workflow_dispatch:
     inputs:
@@ -20,29 +16,23 @@ on:
         description: "End file index"
         required: true
         default: "1"
-
 jobs:
   upload:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y aria2 jq python3-pip
           pip install internetarchive
-
       - name: Download torrent file
         run: |
           curl -L "${{ github.event.inputs.torrent_url }}" -o torrent.torrent
-
       - name: Show torrent file list
         run: |
           aria2c --show-files torrent.torrent
-
       - name: Download and upload selected files
         env:
           IA_ACCESS_KEY: ${{ secrets.IA_ACCESS_KEY }}
@@ -52,10 +42,8 @@ jobs:
           END_FILE: ${{ github.event.inputs.end_file }}
         run: |
           set -e
-
           for ((i=START_FILE; i<=END_FILE; i++)); do
             echo "Processing torrent file index $i"
-
             mkdir -p workdir
             cd workdir
 
@@ -68,11 +56,15 @@ jobs:
               --select-file="$i" \
               ../torrent.torrent
 
-            DOWNLOADED=$(find . -type f \
+            DOWNLOADED=""
+            while IFS= read -r -d $'\0' f; do
+              DOWNLOADED="$f"
+              break
+            done < <(find . -type f \
               ! -name "*.torrent" \
               ! -name "*.aria2" \
               ! -path "*/.git/*" \
-              2>/dev/null | head -n1)
+              -print0 2>/dev/null)
 
             if [ -z "$DOWNLOADED" ]; then
               echo "No downloaded file found for index $i"
@@ -82,26 +74,21 @@ jobs:
             fi
 
             echo "Downloaded: $DOWNLOADED"
-            ls -lh "$DOWNLOADED"
+            ls -lh -- "$DOWNLOADED"
 
             REMOTE_PATH="${DOWNLOADED#./}"
-
             echo "Uploading to Internet Archive path: $REMOTE_PATH"
 
             ia upload "$ARCHIVE_ITEM" "$DOWNLOADED" \
               --remote-name="$REMOTE_PATH"
 
             echo "Removing uploaded file"
-            rm -f "$DOWNLOADED"
-
+            rm -f -- "$DOWNLOADED"
             find . -type d -empty -delete
-
             cd ..
             rm -rf workdir
           done
-
       - name: Cleanup
         run: |
           rm -f torrent.torrent
           find . -type d -empty -delete
-```
