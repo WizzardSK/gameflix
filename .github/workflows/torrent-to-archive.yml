@@ -75,7 +75,7 @@ jobs:
             echo "=========================================="
 
             # Get file path from torrent info (first line with index)
-            REMOTE_PATH=$(aria2c --show-files torrent.torrent | sed -n "/^\s*${i}|/p" | sed "s/^\s*${i}|//" | sed 's/|.*//' | xargs)
+            REMOTE_PATH=$(aria2c --show-files torrent.torrent | sed -n "/^\s*${i}|/p" | sed "s/^\s*${i}|//" | sed 's/|.*//')
 
             if [ -z "$REMOTE_PATH" ]; then
               echo "WARNING: Could not determine path for index $i, skipping"
