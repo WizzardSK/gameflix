@@ -82,11 +82,9 @@ jobs:
               continue
             fi
 
-            # Clear workdir and aria2 cache before download
+            # Clear workdir before download
             rm -rf workdir
             mkdir -p workdir
-            rm -rf ~/.cache/aria2
-            rm -f ~/.cache/aria2/dht.dat
 
             # Download single file with retry
             DOWNLOADED=""
@@ -107,6 +105,7 @@ jobs:
                 --file-allocation=none \
                 --summary-interval=30 \
                 --bt-remove-unselected-file \
+                --disable-dht \
                 torrent.torrent && {
                   DOWNLOADED=$(find workdir -type f ! -name "*.torrent" ! -name "*.aria2" -print0 2>/dev/null | tr '\0' '\n' | head -1)
                   [ -n "$DOWNLOADED" ] && break
