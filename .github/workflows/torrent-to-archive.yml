@@ -92,17 +92,21 @@ jobs:
               continue
             fi
 
-            # Clear workdir before download
+            # Clear workdir and create empty dht.dat with proper permissions
             rm -rf workdir
             mkdir -p workdir
+            touch ~/.cache/aria2/dht.dat
+            chmod 600 ~/.cache/aria2/dht.dat
 
             # Download single file with retry
             DOWNLOADED=""
             for attempt in 1 2 3; do
               if [ $attempt -gt 1 ]; then
                 echo "Retry $attempt for file index $i"
-                rm -rf workdir ~/.cache/aria2
+                rm -rf workdir
                 mkdir -p workdir
+                touch ~/.cache/aria2/dht.dat
+                chmod 600 ~/.cache/aria2/dht.dat
                 sleep 5
               fi
 
