@@ -55,6 +55,7 @@ jobs:
         run: |
           START=${{ inputs.start_file }}
           END=${{ inputs.end_file }}
+          IA_ID="${{ inputs.ia_identifier }}"
 
           echo "Processing files $START to $END"
 
@@ -63,12 +64,33 @@ jobs:
             echo "Processing file index: $i"
             echo "=========================================="
 
-            # Get file info
+            # Get file info from torrent
             FILE_INFO=$(aria2c --show-files torrent.torrent | grep -A1 "^\s*${i}|")
             echo "$FILE_INFO"
 
-            # Download into isolated workdir so find picks up exactly one file
+            # Extract file path from torrent info
+            REMOTE_PATH=$(echo "$FILE_INFO" | grep "^\s*${i}|" | sed 's/^\s*'"$i"'|//' | sed 's/|.*//' | xargs)
+
+            if [ -z "$REMOTE_PATH" ]; then
+              echo "WARNING: Could not determine path for index $i, skipping"
+              continue
+            fi
+
+            # Strip leading ./
+            REMOTE_PATH="${REMOTE_PATH#./}"
+            echo "Remote path: $REMOTE_PATH"
+
+            # Check if file already exists on Archive.org
+            if ia list "$IA_ID" 2>/dev/null | grep -q "^${REMOTE_PATH}$"; then
+              echo "SKIP: File already exists on Archive.org: $REMOTE_PATH"
+              continue
+            fi
+
+            # Clear workdir before download
+            rm -rf workdir
             mkdir -p workdir
+
+            # Download single file
             aria2c \
               --dir=workdir \
               --select-file=$i \
@@ -103,11 +125,10 @@ jobs:
             echo "Downloaded: $DOWNLOADED"
             ls -lh -- "$DOWNLOADED"
 
-            # Strip workdir/ prefix to preserve original torrent path structure
-            REMOTE_PATH="${DOWNLOADED#workdir/}"
+            # Upload to Internet Archive
             echo "Uploading as: $REMOTE_PATH"
 
-            ia upload "${{ inputs.ia_identifier }}" "$DOWNLOADED" \
+            ia upload "$IA_ID" "$DOWNLOADED" \
               --remote-name="$REMOTE_PATH" \
               --no-derive \
               --retries=5 || {
