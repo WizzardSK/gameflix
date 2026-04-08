@@ -1,0 +1,119 @@
+name: Torrent to Archive.org
+
+on:
+  workflow_dispatch:
+    inputs:
+      torrent_url:
+        description: 'URL of .torrent file to download'
+        required: true
+        default: 'https://archive.org/download/exodos-full/eXoDOS.torrent'
+      ia_identifier:
+        description: 'Internet Archive item identifier'
+        required: true
+        default: 'exodos-full'
+      start_file:
+        description: 'Start file index (1-based)'
+        required: true
+        default: '1'
+      end_file:
+        description: 'End file index (1-based)'
+        required: true
+        default: '99'
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache
+          df -h /
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq aria2
+          pip install internetarchive
+
+      - name: Configure Internet Archive
+        run: |
+          mkdir -p ~/.config/internetarchive
+          cat > ~/.config/internetarchive/ia.ini << 'EOCONF'
+          [s3]
+          access = ${{ secrets.IA_ACCESS }}
+          secret = ${{ secrets.IA_SECRET }}
+          EOCONF
+          # Remove leading spaces from heredoc
+          sed -i 's/^          //' ~/.config/internetarchive/ia.ini
+
+      - name: Download torrent file
+        run: |
+          curl -L -o torrent.torrent "${{ inputs.torrent_url }}"
+          aria2c --show-files torrent.torrent | head -20
+
+      - name: Download and upload files one by one
+        run: |
+          START=${{ inputs.start_file }}
+          END=${{ inputs.end_file }}
+
+          echo "Processing files $START to $END"
+
+          for i in $(seq $START $END); do
+            echo "=========================================="
+            echo "Processing file index: $i"
+            echo "=========================================="
+
+            # Get file info
+            FILE_INFO=$(aria2c --show-files torrent.torrent | grep -A1 "^\s*${i}|")
+            echo "$FILE_INFO"
+
+            # Download single file
+            aria2c \
+              --select-file=$i \
+              --seed-time=0 \
+              --bt-stop-timeout=600 \
+              --max-overall-download-limit=0 \
+              --file-allocation=none \
+              --summary-interval=30 \
+              torrent.torrent || {
+                echo "WARNING: Failed to download file $i, skipping"
+                continue
+              }
+
+            # Find the downloaded file (skip .aria2 control files)
+            DOWNLOADED=$(find . -type f ! -name "*.torrent" ! -name "*.aria2" -newer torrent.torrent 2>/dev/null)
+
+            if [ -z "$DOWNLOADED" ]; then
+              echo "WARNING: No file found for index $i, skipping"
+              continue
+            fi
+
+            echo "Downloaded: $DOWNLOADED"
+            ls -lh "$DOWNLOADED"
+
+            # Upload to Internet Archive preserving path structure
+            # Strip leading ./ from path
+            REMOTE_PATH="${DOWNLOADED#./}"
+            echo "Uploading as: $REMOTE_PATH"
+
+            ia upload "${{ inputs.ia_identifier }}" "$DOWNLOADED" \
+              --remote-name="$REMOTE_PATH" \
+              --no-derive \
+              --retries=5 || {
+                echo "ERROR: Failed to upload file $i"
+                # Still delete to free space
+              }
+
+            # Delete local file to free disk space
+            rm -f "$DOWNLOADED"
+            # Also clean up any .aria2 files
+            find . -name "*.aria2" -delete
+
+            echo "Disk space remaining:"
+            df -h / | tail -1
+
+            echo "File $i done."
+          done
+
+          echo "All files processed ($START to $END)."
