@@ -72,13 +72,15 @@ jobs:
 
           get_file_size() {
             local idx=$1
-            local size_str
-            size_str=$(sed -n "/^\s*${idx}|/p" /tmp/torrent_files.txt | sed 's/|//g' | awk '{print $2}')
-            echo "$size_str"
+            sed -n "/^\s*${idx}|/p" /tmp/torrent_files.txt | sed 's/|//g' | awk '{print $NF}'
           }
 
           parse_size_to_bytes() {
             local size_str=$1
+            if [ -z "$size_str" ]; then
+              echo 0
+              return
+            fi
             local num part
             num=$(echo "$size_str" | sed 's/[A-Za-z]*//')
             part=$(echo "$size_str" | grep -oE '[A-Za-z]+')
@@ -86,7 +88,13 @@ jobs:
               G|GB) echo $(echo "$num * 1024 * 1024 * 1024" | bc) ;;
               M|MB) echo $(echo "$num * 1024 * 1024" | bc) ;;
               K|KB) echo $(echo "$num * 1024" | bc) ;;
-              *) echo "$num" ;;
+              *) 
+                if ! [[ "$num" =~ ^[0-9.]+$ ]]; then
+                  echo 0
+                else
+                  echo "$num"
+                fi
+                ;;
             esac
           }
 
@@ -177,7 +185,7 @@ jobs:
                 fi
                 batch_size=$((batch_size + size_bytes))
                 batch+=($current_idx)
-                echo "Batch: file $current_idx, size: $size_str, total: $batch_size bytes"
+                echo "Batch: file $current_idx, size: $size_str"
               fi
               ((current_idx++))
             done
