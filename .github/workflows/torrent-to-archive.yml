@@ -140,7 +140,10 @@ jobs:
             local workdirs=()
 
             for idx in "${batch_indices[@]}"; do
-              [ -z "$idx" ] && continue
+              if ! [[ "$idx" =~ ^[0-9]+$ ]]; then
+                echo "DEBUG: Skipping invalid idx: '$idx'"
+                continue
+              fi
               rm -rf "workdir_$idx"
               mkdir -p "workdir_$idx"
               mkdir -p "$HOME/.cache/aria2"
