@@ -63,6 +63,9 @@ jobs:
           MAX_PARALLEL=3
 
           TOTAL_FILES=$(aria2c --show-files torrent.torrent 2>/dev/null | grep -cE "^\s*[0-9]+\|" || echo 0)
+          if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL_FILES" ]; then
+            END=$TOTAL_FILES
+          fi
           echo "Total: $TOTAL_FILES files, processing $START to $END"
 
           aria2c --show-files torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
