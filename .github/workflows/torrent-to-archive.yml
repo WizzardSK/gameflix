@@ -33,7 +33,7 @@ jobs:
       - name: Install tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq aria2
+          sudo apt-get install -y -qq aria2 bc
           pip install internetarchive
 
       - name: Configure Internet Archive
@@ -51,110 +51,144 @@ jobs:
           curl -L -o torrent.torrent "${{ inputs.torrent_url }}"
           aria2c --show-files torrent.torrent | head -20
 
-      - name: Download and upload files one by one
+      - name: Download and upload files in parallel batches
         run: |
           START=${{ inputs.start_file }}
           END=${{ inputs.end_file }}
           IA_ID="${{ inputs.ia_identifier }}"
+          MAX_SIZE=1073741824  # 1GB in bytes
+          MAX_PARALLEL=3
 
-          # Count total files in torrent
           TOTAL_FILES=$(aria2c --show-files torrent.torrent | grep -E "^\s*[0-9]+\|" | wc -l)
           echo "Total files in torrent: $TOTAL_FILES"
 
-          # If END is 0 or very high (e.g. 9999), use total files
           if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL_FILES" ]; then
-            echo "Setting END to total files: $TOTAL_FILES"
             END=$TOTAL_FILES
           fi
 
           echo "Processing files $START to $END"
 
-          for i in $(seq $START $END); do
-            echo "=========================================="
-            echo "Processing file index: $i"
-            echo "=========================================="
+          aria2c --show-files torrent.torrent > /tmp/torrent_files.txt
 
-            # Get file path from torrent info (first line with index)
-            REMOTE_PATH=$(aria2c --show-files torrent.torrent | sed -n "/^\s*${i}|/p" | sed "s/^\s*${i}|//" | sed 's/|.*//')
+          get_file_size() {
+            local idx=$1
+            local size_str
+            size_str=$(sed -n "/^\s*${idx}|/p" /tmp/torrent_files.txt | sed 's/|//g' | awk '{print $2}')
+            echo "$size_str"
+          }
 
-            if [ -z "$REMOTE_PATH" ]; then
-              echo "WARNING: Could not determine path for index $i, skipping"
-              continue
+          parse_size_to_bytes() {
+            local size_str=$1
+            local num part
+            num=$(echo "$size_str" | sed 's/[A-Za-z]*//')
+            part=$(echo "$size_str" | grep -oE '[A-Za-z]+')
+            case "$part" in
+              G|GB) echo $(echo "$num * 1024 * 1024 * 1024" | bc) ;;
+              M|MB) echo $(echo "$num * 1024 * 1024" | bc) ;;
+              K|KB) echo $(echo "$num * 1024" | bc) ;;
+              *) echo "$num" ;;
+            esac
+          }
+
+          get_file_path() {
+            local idx=$1
+            sed -n "/^\s*${idx}|/p" /tmp/torrent_files.txt | sed "s/^\s*${idx}|//" | sed 's/|.*//' | sed 's/^\.\///'
+          }
+
+          check_and_upload() {
+            local idx=$1
+            local workdir=$2
+            local remote_path=$3
+
+            if ia list "$IA_ID" 2>/dev/null | grep -q "^${remote_path}$"; then
+              echo "SKIP: File already exists: $remote_path"
+              return 0
             fi
 
-            # Strip leading ./
-            REMOTE_PATH="${REMOTE_PATH#./}"
-            echo "Remote path: $REMOTE_PATH"
+            ia upload "$IA_ID" "$workdir" \
+              --remote-name="$remote_path" \
+              --no-derive \
+              --retries=5 || echo "ERROR: Upload failed for $remote_path"
+          }
 
-            # Check if file already exists on Archive.org
-            if ia list "$IA_ID" 2>/dev/null | grep -q "^${REMOTE_PATH}$"; then
-              echo "SKIP: File already exists on Archive.org: $REMOTE_PATH"
-              continue
-            fi
+          process_batch() {
+            local batch_indices=("$@")
+            local pids=()
+            local workdirs=()
 
-            # Clear workdir and create empty dht.dat with proper permissions
-            rm -rf workdir
-            mkdir -p workdir
-            mkdir -p ~/.cache/aria2
-            touch ~/.cache/aria2/dht.dat
-            chmod 600 ~/.cache/aria2/dht.dat
+            for idx in "${batch_indices[@]}"; do
+              rm -rf workdir_$idx
+              mkdir -p workdir_$idx
+              mkdir -p ~/.cache/aria2
+              touch ~/.cache/aria2/dht.dat
+              chmod 600 ~/.cache/aria2/dht.dat
 
-            # Download single file with retry
-            DOWNLOADED=""
-            for attempt in 1 2 3; do
-              if [ $attempt -gt 1 ]; then
-                echo "Retry $attempt for file index $i"
-                rm -rf workdir
-                mkdir -p workdir
-                mkdir -p ~/.cache/aria2
-                touch ~/.cache/aria2/dht.dat
-                chmod 600 ~/.cache/aria2/dht.dat
-                sleep 5
-              fi
+              REMOTE_PATH=$(get_file_path $idx)
+              echo "Downloading file $idx: $REMOTE_PATH"
 
               aria2c \
-                --dir=workdir \
-                --select-file=$i \
+                --dir=workdir_$idx \
+                --select-file=$idx \
                 --seed-time=0 \
                 --bt-stop-timeout=600 \
                 --max-overall-download-limit=0 \
                 --file-allocation=none \
                 --summary-interval=30 \
                 --bt-remove-unselected-file \
-                torrent.torrent && {
-                  DOWNLOADED=$(find workdir -type f ! -name "*.torrent" ! -name "*.aria2" -print0 2>/dev/null | tr '\0' '\n' | head -1)
-                  [ -n "$DOWNLOADED" ] && break
-                }
+                torrent.torrent 2>&1 | grep -v "^#" &
+              pids+=($!)
+              workdirs+=(workdir_$idx)
             done
 
-            if [ -z "$DOWNLOADED" ]; then
-              echo "WARNING: Failed to download file $i after 3 attempts, skipping"
-              rm -rf workdir
-              continue
+            for i in "${!pids[@]}"; do
+              wait ${pids[$i]} 2>/dev/null
+              idx=${batch_indices[$i]}
+              workdir=${workdirs[$i]}
+              REMOTE_PATH=$(get_file_path $idx)
+
+              DOWNLOADED=$(find $workdir -type f ! -name "*.torrent" ! -name "*.aria2" -print0 2>/dev/null | tr '\0' '\n' | head -1)
+
+              if [ -n "$DOWNLOADED" ]; then
+                echo "Uploaded: $REMOTE_PATH"
+                check_and_upload $idx "$DOWNLOADED" "$REMOTE_PATH"
+              fi
+
+              rm -rf $workdir
+            done
+          }
+
+          current_idx=$START
+          while [ $current_idx -le $END ]; do
+            batch=()
+            batch_size=0
+
+            while [ $current_idx -le $END ] && [ ${#batch[@]} -lt $MAX_PARALLEL ]; do
+              if ia list "$IA_ID" 2>/dev/null | grep -q "^$(get_file_path $current_idx)$"; then
+                echo "SKIP (exists): $(get_file_path $current_idx)"
+                ((current_idx++))
+                continue
+              fi
+
+              size_str=$(get_file_size $current_idx)
+              if [ -n "$size_str" ]; then
+                size_bytes=$(parse_size_to_bytes "$size_str")
+                if [ $batch_size -gt 0 ] && [ $((batch_size + size_bytes)) -gt $MAX_SIZE ]; then
+                  break
+                fi
+                batch_size=$((batch_size + size_bytes))
+                batch+=($current_idx)
+                echo "Batch: file $current_idx, size: $size_str, total: $batch_size bytes"
+              fi
+              ((current_idx++))
+            done
+
+            if [ ${#batch[@]} -gt 0 ]; then
+              echo "Processing batch of ${#batch[@]} files (${batch_size} bytes)"
+              process_batch "${batch[@]}"
+              echo "Batch done. Disk space:"
+              df -h / | tail -1
             fi
-
-            echo "Downloaded: $DOWNLOADED"
-            ls -lh -- "$DOWNLOADED"
-
-            # Upload to Internet Archive
-            echo "Uploading as: $REMOTE_PATH"
-
-            ia upload "$IA_ID" "$DOWNLOADED" \
-              --remote-name="$REMOTE_PATH" \
-              --no-derive \
-              --retries=5 || {
-                echo "ERROR: Failed to upload file $i"
-              }
-
-            # Wipe entire workdir to free disk space
-            rm -rf workdir
-
-            echo "Disk space remaining:"
-            df -h / | tail -1
-
-            echo "File $i done."
           done
 
           echo "All files processed ($START to $END)."
-          echo "Refreshing Archive.org item..."
           ia post "$IA_ID" --metadata="updatedate:$(date -u +%Y-%m-%d)" 2>/dev/null || true
