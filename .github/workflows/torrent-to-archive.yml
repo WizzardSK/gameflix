@@ -70,6 +70,10 @@ jobs:
 
           aria2c --show-files torrent.torrent > /tmp/torrent_files.txt
 
+          echo "Fetching existing files from IA..."
+          ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
+          echo "Found $(wc -l < /tmp/ia_files.txt) existing files on IA"
+
           get_file_size() {
             local idx=$1
             sed -n "/^\s*${idx}|/p" /tmp/torrent_files.txt | sed 's/|//g' | awk '{print $NF}'
@@ -108,7 +112,7 @@ jobs:
             local workdir=$2
             local remote_path=$3
 
-            if ia list "$IA_ID" 2>/dev/null | grep -q "^${remote_path}$"; then
+            if grep -qx "^${remote_path}$" /tmp/ia_files.txt; then
               echo "SKIP: File already exists: $remote_path"
               return 0
             fi
@@ -171,8 +175,9 @@ jobs:
             batch_size=0
 
             while [ $current_idx -le $END ] && [ ${#batch[@]} -lt $MAX_PARALLEL ]; do
-              if ia list "$IA_ID" 2>/dev/null | grep -q "^$(get_file_path $current_idx)$"; then
-                echo "SKIP (exists): $(get_file_path $current_idx)"
+              remote_path=$(get_file_path $current_idx)
+              if grep -qx "^${remote_path}$" /tmp/ia_files.txt; then
+                echo "SKIP (exists): $remote_path"
                 ((current_idx++))
                 continue
               fi
