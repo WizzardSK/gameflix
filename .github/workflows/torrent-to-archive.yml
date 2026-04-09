@@ -96,16 +96,8 @@ jobs:
             echo "File $i: Done"
           }
 
-          MAX_JOBS=3
-          running=0
-
           for i in $(seq "$START" "$END"); do
-            while [ $running -ge $MAX_JOBS ]; do
-              wait $(jobs -p) 2>/dev/null || true
-              running=$((running - 1))
-            done
             process_file "$i" &
-            running=$((running + 1))
           done
           wait
 
