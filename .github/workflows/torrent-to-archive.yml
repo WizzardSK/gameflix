@@ -57,6 +57,7 @@ jobs:
           START=$1
           END=$2
           IA_ID=$3
+          MAX_JOBS=3
 
           echo "START=$START, END=$END, IA_ID=$IA_ID"
           TOTAL_FILES=$(aria2c --show-files torrent.torrent 2>/dev/null | grep -cE "^\s*[0-9]+\|" || echo 0)
@@ -71,28 +72,45 @@ jobs:
           ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
           echo "IA existing files: $(wc -l < /tmp/ia_files.txt)"
 
-          for i in $(seq "$START" "$END"); do
-            echo "Processing file $i"
-
+          process_file() {
+            local i=$1
+            local path
             path=$(sed -n "/^\s*${i}|/p" /tmp/torrent_files.txt | sed "s/^\s*${i}|//" | sed 's/|.*//' | sed 's/^\.\///')
-            echo "  Path: $path"
 
             if grep -qx "^${path}$" /tmp/ia_files.txt; then
-              echo "  SKIP (exists)"
-              continue
+              echo "File $i: SKIP (exists)"
+              return
             fi
 
-            mkdir -p workdir
-            aria2c --dir=workdir --select-file="$i" --seed-time=0 --bt-stop-timeout=300 --bt-remove-unselected-file torrent.torrent 2>&1 | grep -v "^#"
+            mkdir -p "workdir_$i"
+            aria2c --dir="workdir_$i" --select-file="$i" --seed-time=0 --bt-stop-timeout=300 --bt-remove-unselected-file torrent.torrent 2>&1 | grep -v "^#"
 
-            file=$(find workdir -type f ! -name "*.torrent" ! -name "*.aria2" | head -1)
+            file=$(find "workdir_$i" -type f ! -name "*.torrent" ! -name "*.aria2" | head -1)
             if [ -n "$file" ] && [ -f "$file" ]; then
-              echo "  Uploading: $(basename "$file")"
+              echo "File $i: Uploading $(basename "$file")"
               ia upload "$IA_ID" "$file" --remote-name="$path" --no-derive --retries=3
             fi
 
-            rm -rf workdir
-            echo "  Done"
+            rm -rf "workdir_$i"
+            echo "File $i: Done"
+          }
+
+          count=0
+          pids=()
+          for i in $(seq "$START" "$END"); do
+            process_file "$i" &
+            pids+=($!)
+            count=$((count + 1))
+            if [ $count -ge $MAX_JOBS ]; then
+              for pid in "${pids[@]}"; do
+                wait $pid 2>/dev/null || true
+              done
+              pids=()
+              count=0
+            fi
+          done
+          for pid in "${pids[@]}"; do
+            wait $pid 2>/dev/null || true
           done
 
           echo "All done."
