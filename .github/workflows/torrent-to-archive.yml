@@ -49,174 +49,53 @@ jobs:
           curl -sL -o torrent.torrent "${{ inputs.torrent_url }}"
           aria2c --show-files torrent.torrent 2>/dev/null | head -10
 
-      - name: Download and upload files in parallel batches
+      - name: Download and upload files
         run: |
           echo "Starting upload process..."
-          START_NUM="${{ inputs.start_file }}"
-          END_NUM="${{ inputs.end_file }}"
-          IA_ID_NUM="${{ inputs.ia_identifier }}"
           cat > /tmp/upload.sh << 'SCRIPT'
           #!/bin/bash
-          set -euo pipefail
           START=$1
           END=$2
           IA_ID=$3
 
-          echo "DEBUG: START=$START, END=$END, IA_ID=$IA_ID"
-          echo "DEBUG: HOME=$HOME"
-          MAX_SIZE=1073741824
-          MAX_PARALLEL=3
-
+          echo "START=$START, END=$END, IA_ID=$IA_ID"
           TOTAL_FILES=$(aria2c --show-files torrent.torrent 2>/dev/null | grep -cE "^\s*[0-9]+\|" || echo 0)
-          if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL_FILES" ] || [ "$END" -lt 1 ]; then
+          echo "Total files: $TOTAL_FILES"
+
+          if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL_FILES" ]; then
             END=$TOTAL_FILES
           fi
-          if [ "$START" -lt 1 ] || [ "$START" -gt "$TOTAL_FILES" ]; then
-            START=1
-          fi
-          echo "Total: $TOTAL_FILES files, processing $START to $END"
 
           aria2c --show-files torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
-          echo "Torrent file lines: $(wc -l < /tmp/torrent_files.txt)"
 
-          echo "Checking IA..."
           ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
-          echo "IA: $(wc -l < /tmp/ia_files.txt) files"
+          echo "IA existing files: $(wc -l < /tmp/ia_files.txt)"
 
-          get_file_size() {
-            local idx=$1
-            local line size
-            line=$(sed -n "/^\s*${idx}|/p" /tmp/torrent_files.txt)
-            size=$(echo "$line" | grep -oE '[0-9.]+[KMGT]?B?' | tail -1)
-            echo "${size:-0}"
-          }
+          for i in $(seq "$START" "$END"); do
+            echo "Processing file $i"
 
-          parse_size_to_bytes() {
-            local size_str=$1
-            if [ -z "$size_str" ] || [ "$size_str" = "0" ]; then
-              echo 0
-              return
-            fi
-            local num part
-            num=$(echo "$size_str" | sed 's/[A-Za-z]*$//' | tr -d ' ')
-            part=$(echo "$size_str" | grep -oE '[A-Za-z]+')
-            if [ -z "$num" ] || ! [[ "$num" =~ ^[0-9.]+$ ]]; then
-              echo 0
-              return
-            fi
-            case "$part" in
-              G|GB|g|gb) echo $(echo "scale=0; $num * 1073741824" | bc 2>/dev/null || echo 0) ;;
-              M|MB|m|mb) echo $(echo "scale=0; $num * 1048576" | bc 2>/dev/null || echo 0) ;;
-              K|KB|k|kb) echo $(echo "scale=0; $num * 1024" | bc 2>/dev/null || echo 0) ;;
-              T|TB|t|tb) echo $(echo "scale=0; $num * 1099511627776" | bc 2>/dev/null || echo 0) ;;
-              *) echo "$num" ;;
-            esac
-          }
+            path=$(sed -n "/^\s*${i}|/p" /tmp/torrent_files.txt | sed "s/^\s*${i}|//" | sed 's/|.*//' | sed 's/^\.\///')
+            echo "  Path: $path"
 
-          get_file_path() {
-            local idx=$1
-            sed -n "/^\s*${idx}|/p" /tmp/torrent_files.txt | sed "s/^\s*${idx}|//" | sed 's/|.*//' | sed 's/^\.\///'
-          }
-
-          check_and_upload() {
-            local idx=$1
-            local workdir=$2
-            local remote_path=$3
-
-            if grep -qx "^${remote_path}$" /tmp/ia_files.txt; then
-              echo "SKIP: File already exists: $remote_path"
-              return 0
+            if grep -qx "^${path}$" /tmp/ia_files.txt; then
+              echo "  SKIP (exists)"
+              continue
             fi
 
-            ia upload "$IA_ID" "$workdir" \
-              --remote-name="$remote_path" \
-              --no-derive \
-              --retries=5 || echo "ERROR: Upload failed for $remote_path"
-          }
+            mkdir -p workdir
+            aria2c --dir=workdir --select-file="$i" --seed-time=0 --bt-stop-timeout=300 --bt-remove-unselected-file torrent.torrent 2>&1 | grep -v "^#"
 
-          process_batch() {
-            local batch_indices=("$@")
-            local pids=()
-            local workdirs=()
-
-            for idx in "${batch_indices[@]}"; do
-              if ! [[ "$idx" =~ ^[0-9]+$ ]]; then
-                echo "DEBUG: Skipping invalid idx: '$idx'"
-                continue
-              fi
-              rm -rf "workdir_$idx"
-              mkdir -p "workdir_$idx"
-              mkdir -p "$HOME/.cache/aria2"
-              touch "$HOME/.cache/aria2/dht.dat"
-              chmod 600 "$HOME/.cache/aria2/dht.dat"
-
-              REMOTE_PATH=$(get_file_path "$idx")
-              echo "Downloading file $idx: $REMOTE_PATH"
-
-              aria2c \
-                --dir="workdir_$idx" \
-                --select-file="$idx" \
-                --seed-time=0 \
-                --bt-stop-timeout=600 \
-                --max-overall-download-limit=0 \
-                --file-allocation=none \
-                --summary-interval=30 \
-                --bt-remove-unselected-file \
-                torrent.torrent 2>&1 | grep -v "^#" &
-              pids+=($!)
-              workdirs+=("workdir_$idx")
-            done
-
-            for i in "${!pids[@]}"; do
-              wait ${pids[$i]} 2>/dev/null
-              idx=${batch_indices[$i]}
-              workdir=${workdirs[$i]}
-              REMOTE_PATH=$(get_file_path "$idx")
-
-              DOWNLOADED=$(find "$workdir" -type f ! -name "*.torrent" ! -name "*.aria2" -print0 2>/dev/null | tr '\0' '\n' | head -1)
-
-              if [ -n "$DOWNLOADED" ] && [ -f "$DOWNLOADED" ]; then
-                check_and_upload "$idx" "$DOWNLOADED" "$REMOTE_PATH"
-              fi
-
-              rm -rf "$workdir"
-            done
-          }
-
-          current_idx=$START
-          while [ $current_idx -le $END ]; do
-            batch=()
-            batch_size=0
-
-            while [ $current_idx -le $END ] && [ ${#batch[@]} -lt $MAX_PARALLEL ]; do
-              remote_path=$(get_file_path "$current_idx")
-              if grep -qx "^${remote_path}$" /tmp/ia_files.txt; then
-                echo "SKIP (exists): $remote_path"
-                ((current_idx++))
-                continue
-              fi
-
-              size_str=$(get_file_size $current_idx)
-              if [ -n "$size_str" ]; then
-                size_bytes=$(parse_size_to_bytes "$size_str")
-                if [ $batch_size -gt 0 ] && [ $((batch_size + size_bytes)) -gt $MAX_SIZE ]; then
-                  break
-                fi
-                batch_size=$((batch_size + size_bytes))
-                batch+=($current_idx)
-                echo "Batch: file $current_idx, size: $size_str"
-              fi
-              ((current_idx++))
-            done
-
-            if [ ${#batch[@]} -gt 0 ]; then
-              process_batch "${batch[@]}"
-              df -h / | tail -1
+            file=$(find workdir -type f ! -name "*.torrent" ! -name "*.aria2" | head -1)
+            if [ -n "$file" ] && [ -f "$file" ]; then
+              echo "  Uploading: $(basename "$file")"
+              ia upload "$IA_ID" "$file" --remote-name="$path" --no-derive --retries=3
             fi
+
+            rm -rf workdir
+            echo "  Done"
           done
 
-          echo "Done ($START-$END)."
-          ia post "$IA_ID" --metadata="updatedate:$(date -u +%Y-%m-%d)" 2>/dev/null || true
+          echo "All done."
           SCRIPT
           chmod +x /tmp/upload.sh
           /tmp/upload.sh "${{ inputs.start_file }}" "${{ inputs.end_file }}" "${{ inputs.ia_identifier }}"
