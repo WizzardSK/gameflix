@@ -53,9 +53,9 @@ jobs:
 
       - name: Download and upload files in parallel batches
         run: |
+          echo "Starting upload process..."
           cat > /tmp/upload.sh << 'SCRIPT'
           #!/bin/bash
-          set +x
           START=$1
           END=$2
           IA_ID=$3
