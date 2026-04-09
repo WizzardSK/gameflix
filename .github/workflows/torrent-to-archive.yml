@@ -76,30 +76,26 @@ jobs:
 
           get_file_size() {
             local idx=$1
-            local line
+            local line size
             line=$(sed -n "/^\s*${idx}|/p" /tmp/torrent_files.txt)
-            local last_field
-            last_field=$(echo "$line" | sed 's/|/ /g' | awk '{print $NF}')
-            if echo "$last_field" | grep -qE '^[0-9]+[KMGT]?B?$'; then
-              echo "$last_field"
-            else
-              echo "0"
-            fi
+            size=$(echo "$line" | grep -oE '[0-9.]+[KMGT]?B?' | tail -1)
+            echo "${size:-0}"
           }
 
           parse_size_to_bytes() {
             local size_str=$1
-            if [ -z "$size_str" ]; then
+            if [ -z "$size_str" ] || [ "$size_str" = "0" ]; then
               echo 0
               return
             fi
             local num part
-            num=$(echo "$size_str" | sed 's/[A-Za-z]*//')
+            num=$(echo "$size_str" | sed 's/[A-Za-z]*$//')
             part=$(echo "$size_str" | grep -oE '[A-Za-z]+')
             case "$part" in
-              G|GB) echo $(echo "$num * 1024 * 1024 * 1024" | bc) ;;
-              M|MB) echo $(echo "$num * 1024 * 1024" | bc) ;;
-              K|KB) echo $(echo "$num * 1024" | bc) ;;
+              G|GB|g|gb) echo $(echo "$num * 1024 * 1024 * 1024" | bc) ;;
+              M|MB|m|mb) echo $(echo "$num * 1024 * 1024" | bc) ;;
+              K|KB|k|kb) echo $(echo "$num * 1024" | bc) ;;
+              T|TB|t|tb) echo $(echo "$num * 1024 * 1024 * 1024 * 1024" | bc) ;;
               *) 
                 if ! [[ "$num" =~ ^[0-9.]+$ ]]; then
                   echo 0
