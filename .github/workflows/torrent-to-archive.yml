@@ -53,9 +53,12 @@ jobs:
 
       - name: Download and upload files in parallel batches
         run: |
-          START=${{ inputs.start_file }}
-          END=${{ inputs.end_file }}
-          IA_ID="${{ inputs.ia_identifier }}"
+          cat > /tmp/upload.sh << 'SCRIPT'
+          #!/bin/bash
+          set +x
+          START=$1
+          END=$2
+          IA_ID=$3
           MAX_SIZE=1073741824
           MAX_PARALLEL=3
 
@@ -196,3 +199,6 @@ jobs:
 
           echo "Done ($START-$END)."
           ia post "$IA_ID" --metadata="updatedate:$(date -u +%Y-%m-%d)" 2>/dev/null || true
+          SCRIPT
+          chmod +x /tmp/upload.sh
+          /tmp/upload.sh "${{ inputs.start_file }}" "${{ inputs.end_file }}" "${{ inputs.ia_identifier }}"
