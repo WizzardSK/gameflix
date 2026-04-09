@@ -132,9 +132,9 @@ jobs:
               [ -z "$idx" ] && continue
               rm -rf "workdir_$idx"
               mkdir -p "workdir_$idx"
-              mkdir -p ~/.cache/aria2
-              touch ~/.cache/aria2/dht.dat
-              chmod 600 ~/.cache/aria2/dht.dat
+              mkdir -p "$HOME/.cache/aria2"
+              touch "$HOME/.cache/aria2/dht.dat"
+              chmod 600 "$HOME/.cache/aria2/dht.dat"
 
               REMOTE_PATH=$(get_file_path "$idx")
               echo "Downloading file $idx: $REMOTE_PATH"
