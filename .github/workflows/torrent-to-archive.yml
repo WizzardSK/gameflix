@@ -83,8 +83,7 @@ jobs:
             fi
 
             mkdir -p "workdir_$i"
-            aria2c --dir="workdir_$i" --select-file="$i" --seed-time=0 --bt-stop-timeout=300 --bt-remove-unselected-file torrent.torrent 2>&1 | grep -v "^#" &
-            wait $!
+            aria2c --dir="workdir_$i" --select-file="$i" --seed-time=0 --bt-stop-timeout=300 --bt-remove-unselected-file torrent.torrent 2>&1 | grep -v "^#"
 
             file=$(find "workdir_$i" -type f ! -name "*.torrent" ! -name "*.aria2" | head -1)
             if [ -n "$file" ] && [ -f "$file" ]; then
@@ -97,9 +96,8 @@ jobs:
           }
 
           for i in $(seq "$START" "$END"); do
-            process_file "$i" &
+            process_file "$i"
           done
-          wait
 
           echo "All done."
           SCRIPT
