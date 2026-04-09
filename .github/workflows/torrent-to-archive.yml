@@ -162,9 +162,9 @@ jobs:
               workdir=${workdirs[$i]}
               REMOTE_PATH=$(get_file_path $idx)
 
-              DOWNLOADED=$(find $workdir -type f ! -name "*.torrent" ! -name "*.aria2" -print0 2>/dev/null | tr '\0' '\n' | head -1)
+              DOWNLOADED=$(find "$workdir" -type f ! -name "*.torrent" ! -name "*.aria2" -print0 2>/dev/null | tr '\0' '\n' | head -1)
 
-              if [ -n "$DOWNLOADED" ]; then
+              if [ -n "$DOWNLOADED" ] && [ -f "$DOWNLOADED" ]; then
                 check_and_upload $idx "$DOWNLOADED" "$REMOTE_PATH"
               fi
 
