@@ -57,7 +57,7 @@ jobs:
           START=$1
           END=$2
           IA_ID=$3
-          MAX_JOBS=3
+          MAX_JOBS=5
 
           echo "START=$START, END=$END, IA_ID=$IA_ID"
           TOTAL_FILES=$(aria2c --show-files torrent.torrent 2>/dev/null | grep -cE "^\s*[0-9]+\|" || echo 0)
@@ -83,7 +83,8 @@ jobs:
             fi
 
             mkdir -p "workdir_$i"
-            aria2c --dir="workdir_$i" --select-file="$i" --seed-time=0 --bt-stop-timeout=300 --bt-remove-unselected-file torrent.torrent 2>&1 | grep -v "^#"
+            aria2c --dir="workdir_$i" --select-file="$i" --seed-time=0 --bt-stop-timeout=300 --bt-remove-unselected-file torrent.torrent 2>&1 | grep -v "^#" &
+            wait $!
 
             file=$(find "workdir_$i" -type f ! -name "*.torrent" ! -name "*.aria2" | head -1)
             if [ -n "$file" ] && [ -f "$file" ]; then
@@ -95,23 +96,15 @@ jobs:
             echo "File $i: Done"
           }
 
-          count=0
-          pids=()
+          MAX_JOBS=5
+
           for i in $(seq "$START" "$END"); do
+            while [ $(jobs -r | wc -l) -ge $MAX_JOBS ]; do
+              sleep 1
+            done
             process_file "$i" &
-            pids+=($!)
-            count=$((count + 1))
-            if [ $count -ge $MAX_JOBS ]; then
-              for pid in "${pids[@]}"; do
-                wait $pid 2>/dev/null || true
-              done
-              pids=()
-              count=0
-            fi
           done
-          for pid in "${pids[@]}"; do
-            wait $pid 2>/dev/null || true
-          done
+          wait
 
           echo "All done."
           SCRIPT
