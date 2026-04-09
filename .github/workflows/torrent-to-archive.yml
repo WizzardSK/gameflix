@@ -52,22 +52,32 @@ jobs:
       - name: Download and upload files in parallel batches
         run: |
           echo "Starting upload process..."
+          START_NUM="${{ inputs.start_file }}"
+          END_NUM="${{ inputs.end_file }}"
+          IA_ID_NUM="${{ inputs.ia_identifier }}"
           cat > /tmp/upload.sh << 'SCRIPT'
           #!/bin/bash
           set -euo pipefail
           START=$1
           END=$2
           IA_ID=$3
+
+          echo "DEBUG: START=$START, END=$END, IA_ID=$IA_ID"
+          echo "DEBUG: HOME=$HOME"
           MAX_SIZE=1073741824
           MAX_PARALLEL=3
 
           TOTAL_FILES=$(aria2c --show-files torrent.torrent 2>/dev/null | grep -cE "^\s*[0-9]+\|" || echo 0)
-          if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL_FILES" ]; then
+          if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL_FILES" ] || [ "$END" -lt 1 ]; then
             END=$TOTAL_FILES
+          fi
+          if [ "$START" -lt 1 ] || [ "$START" -gt "$TOTAL_FILES" ]; then
+            START=1
           fi
           echo "Total: $TOTAL_FILES files, processing $START to $END"
 
           aria2c --show-files torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
+          echo "Torrent file lines: $(wc -l < /tmp/torrent_files.txt)"
 
           echo "Checking IA..."
           ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
