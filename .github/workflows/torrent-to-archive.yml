@@ -131,18 +131,19 @@ jobs:
             local workdirs=()
 
             for idx in "${batch_indices[@]}"; do
-              rm -rf workdir_$idx
-              mkdir -p workdir_$idx
+              [ -z "$idx" ] && continue
+              rm -rf "workdir_$idx"
+              mkdir -p "workdir_$idx"
               mkdir -p ~/.cache/aria2
               touch ~/.cache/aria2/dht.dat
               chmod 600 ~/.cache/aria2/dht.dat
 
-              REMOTE_PATH=$(get_file_path $idx)
+              REMOTE_PATH=$(get_file_path "$idx")
               echo "Downloading file $idx: $REMOTE_PATH"
 
               aria2c \
-                --dir=workdir_$idx \
-                --select-file=$idx \
+                --dir="workdir_$idx" \
+                --select-file="$idx" \
                 --seed-time=0 \
                 --bt-stop-timeout=600 \
                 --max-overall-download-limit=0 \
@@ -151,22 +152,22 @@ jobs:
                 --bt-remove-unselected-file \
                 torrent.torrent 2>&1 | grep -v "^#" &
               pids+=($!)
-              workdirs+=(workdir_$idx)
+              workdirs+=("workdir_$idx")
             done
 
             for i in "${!pids[@]}"; do
               wait ${pids[$i]} 2>/dev/null
               idx=${batch_indices[$i]}
               workdir=${workdirs[$i]}
-              REMOTE_PATH=$(get_file_path $idx)
+              REMOTE_PATH=$(get_file_path "$idx")
 
               DOWNLOADED=$(find "$workdir" -type f ! -name "*.torrent" ! -name "*.aria2" -print0 2>/dev/null | tr '\0' '\n' | head -1)
 
               if [ -n "$DOWNLOADED" ] && [ -f "$DOWNLOADED" ]; then
-                check_and_upload $idx "$DOWNLOADED" "$REMOTE_PATH"
+                check_and_upload "$idx" "$DOWNLOADED" "$REMOTE_PATH"
               fi
 
-              rm -rf $workdir
+              rm -rf "$workdir"
             done
           }
 
@@ -176,7 +177,7 @@ jobs:
             batch_size=0
 
             while [ $current_idx -le $END ] && [ ${#batch[@]} -lt $MAX_PARALLEL ]; do
-              remote_path=$(get_file_path $current_idx)
+              remote_path=$(get_file_path "$current_idx")
               if grep -qx "^${remote_path}$" /tmp/ia_files.txt; then
                 echo "SKIP (exists): $remote_path"
                 ((current_idx++))
