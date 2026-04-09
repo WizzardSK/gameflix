@@ -89,20 +89,18 @@ jobs:
               return
             fi
             local num part
-            num=$(echo "$size_str" | sed 's/[A-Za-z]*$//')
+            num=$(echo "$size_str" | sed 's/[A-Za-z]*$//' | tr -d ' ')
             part=$(echo "$size_str" | grep -oE '[A-Za-z]+')
+            if [ -z "$num" ] || ! [[ "$num" =~ ^[0-9.]+$ ]]; then
+              echo 0
+              return
+            fi
             case "$part" in
-              G|GB|g|gb) echo $(echo "$num * 1024 * 1024 * 1024" | bc) ;;
-              M|MB|m|mb) echo $(echo "$num * 1024 * 1024" | bc) ;;
-              K|KB|k|kb) echo $(echo "$num * 1024" | bc) ;;
-              T|TB|t|tb) echo $(echo "$num * 1024 * 1024 * 1024 * 1024" | bc) ;;
-              *) 
-                if ! [[ "$num" =~ ^[0-9.]+$ ]]; then
-                  echo 0
-                else
-                  echo "$num"
-                fi
-                ;;
+              G|GB|g|gb) echo $(echo "scale=0; $num * 1073741824" | bc 2>/dev/null || echo 0) ;;
+              M|MB|m|mb) echo $(echo "scale=0; $num * 1048576" | bc 2>/dev/null || echo 0) ;;
+              K|KB|k|kb) echo $(echo "scale=0; $num * 1024" | bc 2>/dev/null || echo 0) ;;
+              T|TB|t|tb) echo $(echo "scale=0; $num * 1099511627776" | bc 2>/dev/null || echo 0) ;;
+              *) echo "$num" ;;
             esac
           }
 
