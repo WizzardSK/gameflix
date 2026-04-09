@@ -54,6 +54,7 @@ jobs:
           echo "Starting upload process..."
           cat > /tmp/upload.sh << 'SCRIPT'
           #!/bin/bash
+          set -euo pipefail
           START=$1
           END=$2
           IA_ID=$3
