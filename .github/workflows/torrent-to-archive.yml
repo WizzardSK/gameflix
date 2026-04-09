@@ -26,9 +26,7 @@ jobs:
     timeout-minutes: 350
     steps:
       - name: Free disk space
-        run: |
-          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache
-          df -h /
+        run: df -h /
 
       - name: Install tools
         run: |
