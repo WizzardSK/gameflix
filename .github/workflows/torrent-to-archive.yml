@@ -77,7 +77,7 @@ jobs:
           ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
           echo "IA existing files: $(wc -l < /tmp/ia_files.txt)"
 
-          aria2c --quiet --show-files torrent.torrent 2>/dev/null | grep -E "^\s+[0-9]+\|" | sed 's/^[[:space:]]*[0-9]*|//' | sed 's|^\./||' > /tmp/torrent_files.txt
+          aria2c --quiet --show-files torrent.torrent 2>/dev/null | grep -E "^[[:space:]]+[0-9]+\|" | sed 's/^[[:space:]]*[0-9]*|//' | sed 's|^\./||' > /tmp/torrent_files.txt
           TOTAL_FILES=$(wc -l < /tmp/torrent_files.txt)
           echo "Torrent files: $TOTAL_FILES"
 
