@@ -1402,7 +1402,7 @@
 5	LowRes Galaxy 2	EppSh9pZxH_LowRes_Galaxy_2_1.5.png	EppSh9pZxH_LowRes_Galaxy_2_1.5.nx
 4	LowRes Adventure	cMntqD3hwj_LowRes_Adventure_1.1.png	cMntqD3hwj_LowRes_Adventure_1.1.nx
 ---	art
-3999	[fixed upload] Low Resolution Demo	j9EoBvHPzb_thumb.png	j9EoBvHPzb_demo.nx
+3999	Low Resolution Demo	j9EoBvHPzb_thumb.png	j9EoBvHPzb_demo.nx
 3996	StarFly	vMTNoYjCVr_Star_Fly.png	vMTNoYjCVr_Star_Fly.nx
 3990	Road Rage	uV6b9Jv8Lp_Road_Rage.png	uV6b9Jv8Lp_Road_Rage.nx
 3989	Depth Perception	p6YHhAsJGg_Depth_Perception.png	p6YHhAsJGg_Depth_Perception.nx
@@ -2387,7 +2387,6 @@
 1253	Buggy Race	B8CUqRdehV_Buggy_Race.png	B8CUqRdehV_Buggy_Race.nx
 1251	Carrom	HNPZedEFBS_Carromz.png	HNPZedEFBS_Carromz.nx
 1248	Roads	LVGKvEUCxi_Roads.png	LVGKvEUCxi_Roads.nx
-1244	Slide Controllers	neHMPv7kPi_Slide_Controllers_Test.png	neHMPv7kPi_Slide_Controllers_Test.nx
 1240	Lighting works	5o9rkATxpF_Lighting_Works.png	5o9rkATxpF_Lighting_Works.nx
 1229	Text Formatter and Viewer	NVxhBxS7fK_Text_Formater.png	NVxhBxS7fK_Text_Formater.nx
 1222	Song Test	NYL4LnDUpo_Song_Test.png	NYL4LnDUpo_Song_Test.nx
@@ -2395,30 +2394,26 @@
 1215	RASTER TEST	NtxcAShxAo_Mini_Test.png	NtxcAShxAo_Mini_Test.nx
 1208	Experiments with raster	7hiX3oYEUr_Experimemts_With_Raster.png	7hiX3oYEUr_Experimemts_With_Raster.nx
 1172	Memory Access Test.	Dh5HdHKKXc_LowRes_NX_20200430_21_58_02.png	Dh5HdHKKXc_memtest_0.2.nx
-1166	NX Paint	vFAXz7GJQc_NX_Paint_1.1.png	vFAXz7GJQc_NX_Paint_1.1.nx
 1152	TYPEWRITER (screensaver)	jhJbg7ChN3_Typewriter.png	jhJbg7ChN3_Typewriter.nx
 1148	API for Remjin Spyky Thyngy	ZBfwVRafgQ_LowRes_NX_20200420_12_18_16.png	ZBfwVRafgQ_rttsapi.nx
 1129	THE SORTING PROGRAM V 1.3.1	XC9FL26FR7_THE_SORTING_PROGRAM_V_1.4.png	XC9FL26FR7_THE_SORTING_PROGRAM_V_1.4.nx
 1122	Gamepad Text Adventure	QQTDYzvCmp_gamepadadventure.png	QQTDYzvCmp_gamepadadventure.nx
 1111	Space Generation Tech Demo	wKMJVLUvqN_Space_Generation_Tech_Demo.png	wKMJVLUvqN_Space_Generation_Tech_Demo.nx
 1103	EXTREME POKE	HUkCEtjoQP_EXTREME_POKE_2.0.png	HUkCEtjoQP_EXTREME_POKE_2.0.nx
-1098	4 Page Scroller Demo	H6jgEPXxoM_4page_Scroller.png	H6jgEPXxoM_4page_Scroller.nx
 1085	POKEY BITS Decoded	VheFZLwhkp_POKEY_BITS_Decoded.png	VheFZLwhkp_POKEY_BITS_Decoded.nx
 1084	POKEY BIT TV (1bit and 2bit)	ykZUH5ZC2B_Pokey_2BIT_TV.png	ykZUH5ZC2B_Pokey_2BIT_TV.nx
-1083	PeekyPokeyClock	Yh7FLGiEZK_PeekyPokey_22Clock22_4.png	Yh7FLGiEZK_PeekyPokey_22Clock22_4.nx
 1076	SCROLL math for SPRITE+CELL	zC9QB8ABwY_SCROLL_Math_for_SPRITE__CELL.png	zC9QB8ABwY_SCROLL_Math_for_SPRITE__CELL.nx
-1073	Extreme Sprite Animation Example	ZXvsKFTXY7_Extreme_Sprite_Animation.png	ZXvsKFTXY7_Extreme_Sprite_Animation.nx
 1064	SUB example 	QrkVfiywmn_SUB_example.png	QrkVfiywmn_SUB_example.nx
 1052	How to make a game 2 (using sprites) 	hDPUjDxMhR_How_To_Make_a_Game_2_6.0.png	hDPUjDxMhR_How_To_Make_a_Game_2_6.0.nx
-1046	YAY!!!	N98KTPTG3k_Thibg.png	N98KTPTG3k_Thibg.nx
-1033	Warriors Quest 4.0	6wxfEaAAzt_Warrior_Quest.png	6wxfEaAAzt_Warrior_Quest.nx
-1027	Keyboard Explorer	aC7ppVsac6_Keyboard_Explorer.png	aC7ppVsac6_Keyboard_Explorer.nx
 1022	AI like Pac-Man 	rmf2nGoULz_Pac_Man_like_AI.png	rmf2nGoULz_Pac_Man_like_AI.nx
-1021	Quadruple Stacked Layered Conditional Example	HDUnC8DetD_Quadruple_Stacked_Layered_Conditional_Example.png	HDUnC8DetD_Quadruple_Stacked_Layered_Conditional_Example.nx
+1015	Original lowres demo	vDbAQjD4DA_Original_Lowres_.png	vDbAQjD4DA_Original_Lowres_.nx
+1005	HOW TO: Make a game (step by step) 	kfNauRTZDa_How_To_make_a_game_STEP_8.2.png	kfNauRTZDa_How_To_make_a_game_STEP_8.2.nx
+990	Memory Tricks	TVBRcptcDi_Character_Memory_Trick.png	TVBRcptcDi_Character_Memory_Trick.nx
 989	Dynamic Sprite assignment	b5eZwRnXS3_Topdown_Shooter.png	b5eZwRnXS3_Topdown_Shooter.nx
 987	Fading Text	DKpz9bfAWQ_Fading_Text.png	DKpz9bfAWQ_Fading_Text.nx
 980	Paddle Vector Tests	JgctyhC5aF_Paddle_Vector_Tests_0.2.png	JgctyhC5aF_Paddle_Vector_Tests_0.2.nx
 978	Vector Tests	NZ4Vb89fnL_Vector_Tests_0.2.png	NZ4Vb89fnL_Vector_Tests_0.2.nx
+977	Question bot	8Poistrivx_Question_Bot.png	8Poistrivx_Question_Bot.nx
 975	Talking sounds	7VZzGurF2x_Talking_Sounds.png	7VZzGurF2x_Talking_Sounds.nx
 973	Textbox	NuRn8LzwEX_Textbox.png	NuRn8LzwEX_Textbox.nx
 972	into the dark demo	anQDeSC2Hm_into_the_dark.png	anQDeSC2Hm_into_the_dark.nx
@@ -2427,13 +2422,19 @@
 961	My ball pit blew up	uBB6MWP28Q_Ball_Pit_Exsplodes.png	uBB6MWP28Q_Ball_Pit_Exsplodes.nx
 957	First attempt at using sound	pXvRYLVJy3_Sound_Test.png	pXvRYLVJy3_Sound_Test.nx
 956	As seen on tv ad generator 	a4otE2yNM4_Mobile_Games.png	a4otE2yNM4_Mobile_Games.nx
+955	My favourite tv channel (static)	n3DFC6biz9_My_Favourite_Tv_Channel_static.png	n3DFC6biz9_My_Favourite_Tv_Channel_static.nx
 951	Rainbow Line	Z9eFMAuvVB_Rainbow_Line.png	Z9eFMAuvVB_Rainbow_Line.nx
 939	Week Old Cola From The Fridge	nNbBzLmJYn_Week_Old_Cola_From_The_Fridge.png	nNbBzLmJYn_Week_Old_Cola_From_The_Fridge.nx
 936	Cell collision	WhacVCgjDp_Cell_Colision.png	WhacVCgjDp_Cell_Colision.nx
 926	NX ... Simulated Depth	5Bwemy25Ph_NX_simulated_depth.png	5Bwemy25Ph_NX_simulated_depth.nx
+918	Notepad 2000	xMtyFFGQsd_Notepad_2000.png	xMtyFFGQsd_Notepad_2000.nx
 916	My talking virtual friend	3nFKkmhAVn_My_Talking_Vitrual_Friend.png	3nFKkmhAVn_My_Talking_Vitrual_Friend.nx
+912	Jerome	kjXpSRrtq8_Jerome.png	kjXpSRrtq8_Jerome.nx
+898	Need Help Collision	ELsu835KgP_Lowres_nx_screeanshot_320x180.png	ELsu835KgP_Disk__Kopya.nx
 895	Random Map Generator	owsrREdgvm_Random_Map_Generator.png	owsrREdgvm_Random_Map_Generator.nx
 888	Micro racers TEST	zU7VbZBsGV_Micro_Racers.png	zU7VbZBsGV_Micro_Racers.nx
+886	Spin Test	uEKVD3pfLN_Spin_Test.png	uEKVD3pfLN_Spin_Test.nx
+882	Dynamic terrain	vcb2vbPg8n_Dynamic_Terrain3.png	vcb2vbPg8n_Dynamic_Terrain3.nx
 876	Simple Track Explorer (NX music: part 2)	GPftFKxV92_Simple_Track_Explorer.png	GPftFKxV92_Simple_Track_Explorer.nx
 865	Voxel 3d test	LZcLi9iwVV_Voxel_Test.png	LZcLi9iwVV_Voxel_Test.nx
 864	A background that you can draw on	hJpLhZABru_sdfaf.png	hJpLhZABru_Background_To_Buffer.nx
