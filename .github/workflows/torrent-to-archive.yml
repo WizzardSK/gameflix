@@ -75,71 +75,72 @@ jobs:
               with open("/tmp/external_meta.json") as f:
                   data = json.load(f)
               for f in data.get("files", []):
-                  name = f.get("name", "")
+                  name = f.get("name", "").split("/")[-1]
                   size = f.get("size", "")
                   mtime = f.get("mtime", "")
                   if name and size:
-                      print(name + "\t" + size + "\t" + mtime)
+                      print(name + "|" + size + "|" + mtime)
           except: pass' > /tmp/build_index.py
           python3 /tmp/build_index.py > /tmp/external_files.txt
           echo "External IA files: $(wc -l < /tmp/external_files.txt)"
 
-          TOTAL_FILES=$(aria2c -S torrent.torrent 2>/dev/null | grep -cE "^[[:space:]]*[0-9]+\|" || echo 0)
-          echo "Total files: $TOTAL_FILES"
+          aria2c -S torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
+          
+          echo "Sorting files by size (largest first)..."
+          printf '%s\n' 'import re, sys' 'files = []' 'for line in sys.stdin:' '    match = re.match(r"\s*(\d+)\|(.*)\|.*\(([\d,]+)\)", line)' '    if match:' '        idx = int(match.group(1))' '        path = match.group(2).strip().lstrip("./")' '        size_str = match.group(3).replace(",", "")' '        try: size = int(size_str)' '        except: size = 0' '        files.append((size, idx, path))' 'files.sort(reverse=True)' 'for size, idx, path in files:' '    print(str(idx) + "|" + path + "|" + str(size))' > /tmp/sort_files.py
+          cat /tmp/torrent_files.txt | python3 /tmp/sort_files.py > /tmp/torrent_files_sorted.txt
+          mv /tmp/torrent_files_sorted.txt /tmp/torrent_files.txt
+          
+          TOTAL_FILES=$(wc -l < /tmp/torrent_files.txt)
+          echo "Total files (sorted): $TOTAL_FILES"
 
           if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL_FILES" ]; then
             END=$TOTAL_FILES
           fi
 
-          aria2c -S torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
-
           ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
           echo "IA existing files: $(wc -l < /tmp/ia_files.txt)"
 
           process_file() {
-            local i=$1
-            local path size
-            path=$(sed -n "s/^[[:space:]]*${i}|\\(.*\\)/\\1/p" /tmp/torrent_files.txt | sed 's/|.*//' | sed 's/^\\.\\///')
+            local line=$1
+            local i=$(echo "$line" | cut -d'|' -f1)
+            local path=$(echo "$line" | cut -d'|' -f2)
+            local size=$(echo "$line" | cut -d'|' -f3)
             
             if [ -z "$path" ]; then
-              path=$(grep -E "^[[:space:]]*${i}\\|" /tmp/torrent_files.txt | sed 's/^[[:space:]]*[0-9]*|//' | sed 's/|.*//' | sed 's/^\\.\\///' | head -1)
-            fi
-            
-            if [ -z "$path" ]; then
-              echo "File $i: SKIP (no path found)"
+              echo "File: SKIP (no path found)"
               return
             fi
             
-            size=$(grep -E "^[[:space:]]*${i}\\|" /tmp/torrent_files.txt -A1 | grep "|" | sed 's/.*|//' | tr -d ' ' | head -1)
-
             if grep -qx "^${path}$" /tmp/ia_files.txt; then
               echo "File $i: SKIP (exists in target IA)"
               return
             fi
-
-            ext_match=$(grep -F "${path}" /tmp/external_files.txt | grep -w "${size}")
+            
+            fname=$(basename "$path")
+            ext_match=$(grep -F "${fname}|${size}" /tmp/external_files.txt)
             if [ -n "$ext_match" ]; then
               echo "File $i: Copying from external IA: $path"
               ia copy "$EXTERNAL_IA/${path}" "$IA_ID/${path}" --no-derive
               echo "File $i: Done (copied)"
               return
             fi
-
+            
             mkdir -p "workdir_$i"
             aria2c --dir="workdir_$i" --select-file="$i" --seed-time=0 --bt-stop-timeout=300 --bt-remove-unselected-file torrent.torrent 2>&1 | grep -v "^#"
-
+            
             file=$(find "workdir_$i" -type f ! -name "*.torrent" ! -name "*.aria2" | head -1)
             if [ -n "$file" ] && [ -f "$file" ]; then
               echo "File $i: Uploading $(basename "$file")"
               ia upload "$IA_ID" "$file" --remote-name="$path" --no-derive --retries=3
             fi
-
+            
             rm -rf "workdir_$i"
             echo "File $i: Done"
           }
-
-          for i in $(seq "$START" "$END"); do
-            process_file "$i"
+          
+          cat /tmp/torrent_files.txt | while read line; do
+            process_file "$line"
           done
 
           echo "All done."
