@@ -55,14 +55,7 @@ jobs:
       - name: Download torrent file
         run: |
           curl -sL -A "Mozilla/5.0" -o torrent.torrent "${{ inputs.torrent_url }}"
-          aria2c --show-files torrent.torrent 2>/dev/null | head -10
-          echo "---"
-          echo "Total files in torrent:"
-          aria2c --show-files torrent.torrent 2>/dev/null > /tmp/aria_out.txt
-          grep -E "^[[:space:]]+[0-9]+\|" /tmp/aria_out.txt | wc -l
-          echo "---"
-          echo "Sample lines:"
-          grep -E "^[[:space:]]+[0-9]+\|" /tmp/aria_out.txt | head -3
+          aria2c -S torrent.torrent 2>/dev/null | head -10
 
       - name: Download and upload files
         run: |
@@ -81,7 +74,7 @@ jobs:
           ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
           echo "IA existing files: $(wc -l < /tmp/ia_files.txt)"
 
-          aria2c --show-files torrent.torrent 2>/dev/null | grep -E "^[[:space:]]+[0-9]+\|" | sed 's/^[[:space:]]*[0-9]*|//' | sed 's|^\./||' > /tmp/torrent_files.txt
+          aria2c -S torrent.torrent 2>/dev/null | grep -E "^[[:space:]]+[0-9]+\|" | sed 's/^[[:space:]]*[0-9]*|//' | sed 's|^\./||' > /tmp/torrent_files.txt
           TOTAL_FILES=$(wc -l < /tmp/torrent_files.txt)
           echo "Torrent files: $TOTAL_FILES"
 
