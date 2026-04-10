@@ -19,10 +19,6 @@ on:
         description: 'End file index (1-based, 0=all files)'
         required: true
         default: '0'
-      external_ia_id:
-        description: 'External IA identifier to copy from (if name+size+date matches)'
-        required: false
-        default: 'exov5_2'
 
 jobs:
   upload:
@@ -61,68 +57,30 @@ jobs:
           START=$1
           END=$2
           IA_ID=$3
-          EXTERNAL_IA=$4
           MAX_JOBS=5
 
-          echo "START=$START, END=$END, IA_ID=$IA_ID, EXTERNAL=$EXTERNAL_IA"
-
-          echo "Fetching external IA metadata..."
-          curl -sL "https://archive.org/metadata/$EXTERNAL_IA?output=json" > /tmp/external_meta.json
-          
-          echo "Building external IA file index..."
-          echo 'import json
-          try:
-              with open("/tmp/external_meta.json") as f:
-                  data = json.load(f)
-              for f in data.get("files", []):
-                  name = f.get("name", "").split("/")[-1]
-                  size = f.get("size", "")
-                  mtime = f.get("mtime", "")
-                  if name and size:
-                      print(name + "|" + size + "|" + mtime)
-          except: pass' > /tmp/build_index.py
-          python3 /tmp/build_index.py > /tmp/external_files.txt
-          echo "External IA files: $(wc -l < /tmp/external_files.txt)"
-
-          aria2c -S torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
-          
-          echo "Sorting files by size (largest first)..."
-          printf '%s\n' 'import re, sys' 'files = []' 'for line in sys.stdin:' '    m = re.search(r"(\d+)\|(.+)\|.*\((\d+)\)", line)' '    if m:' '        idx = int(m.group(1))' '        path = m.group(2).strip().lstrip("./")' '        size = int(m.group(3))' '        files.append((size, idx, path))' 'files.sort(reverse=True)' 'for s, i, p in files:' '    print(str(i) + "|" + p + "|" + str(s))' > /tmp/sort_files.py
-          cat /tmp/torrent_files.txt | python3 /tmp/sort_files.py > /tmp/torrent_files_sorted.txt
-          mv /tmp/torrent_files_sorted.txt /tmp/torrent_files.txt
-          
+          echo "START=$START, END=$END, IA_ID=$IA_ID"
           TOTAL_FILES=$(wc -l < /tmp/torrent_files.txt)
           echo "Total files (sorted): $TOTAL_FILES"
-
+          
           if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL_FILES" ]; then
             END=$TOTAL_FILES
           fi
-
+          
           ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
           echo "IA existing files: $(wc -l < /tmp/ia_files.txt)"
-
+          
           process_file() {
             local line=$1
             local i=$(echo "$line" | cut -d'|' -f1)
             local path=$(echo "$line" | cut -d'|' -f2)
-            local size=$(echo "$line" | cut -d'|' -f3)
             
             if [ -z "$path" ]; then
-              echo "File: SKIP (no path found)"
               return
             fi
             
             if grep -qx "^${path}$" /tmp/ia_files.txt; then
-              echo "File $i: SKIP (exists in target IA)"
-              return
-            fi
-            
-            fname=$(basename "$path")
-            ext_match=$(grep -F "${fname}|${size}" /tmp/external_files.txt)
-            if [ -n "$ext_match" ]; then
-              echo "File $i: Copying from external IA: $path"
-              ia copy "$EXTERNAL_IA/${path}" "$IA_ID/${path}" --no-derive
-              echo "File $i: Done (copied)"
+              echo "File $i: SKIP (exists)"
               return
             fi
             
@@ -139,11 +97,11 @@ jobs:
             echo "File $i: Done"
           }
           
-          cat /tmp/torrent_files.txt | while read line; do
+          head -n "$END" /tmp/torrent_files.txt | while read line; do
             process_file "$line"
           done
 
           echo "All done."
           SCRIPT
           chmod +x /tmp/upload.sh
-          /tmp/upload.sh "${{ inputs.start_file }}" "${{ inputs.end_file }}" "${{ inputs.ia_identifier }}" "${{ inputs.external_ia_id }}"
+          /tmp/upload.sh "${{ inputs.start_file }}" "${{ inputs.end_file }}" "${{ inputs.ia_identifier }}"
