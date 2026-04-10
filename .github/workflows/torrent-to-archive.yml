@@ -84,14 +84,14 @@ jobs:
           python3 /tmp/build_index.py > /tmp/external_files.txt
           echo "External IA files: $(wc -l < /tmp/external_files.txt)"
 
-          TOTAL_FILES=$(aria2c --show-files torrent.torrent 2>/dev/null | grep -cE "^\s*[0-9]+\|" || echo 0)
+          TOTAL_FILES=$(aria2c -S torrent.torrent 2>/dev/null | grep -cE "^[[:space:]]*[0-9]+\|" || echo 0)
           echo "Total files: $TOTAL_FILES"
 
           if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL_FILES" ]; then
             END=$TOTAL_FILES
           fi
 
-          aria2c --show-files torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
+          aria2c -S torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
 
           ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
           echo "IA existing files: $(wc -l < /tmp/ia_files.txt)"
@@ -99,8 +99,18 @@ jobs:
           process_file() {
             local i=$1
             local path size
-            path=$(sed -n "/^\s*${i}|/p" /tmp/torrent_files.txt | sed "s/^\s*${i}|//" | sed 's/|.*//' | sed 's/^\.\///')
-            size=$(sed -n "/^\s*${i}|/p" /tmp/torrent_files.txt | sed 's/.*|//' | tr -d ' ')
+            path=$(sed -n "s/^[[:space:]]*${i}|\\(.*\\)/\\1/p" /tmp/torrent_files.txt | sed 's/|.*//' | sed 's/^\\.\\///')
+            
+            if [ -z "$path" ]; then
+              path=$(grep -E "^[[:space:]]*${i}\\|" /tmp/torrent_files.txt | sed 's/^[[:space:]]*[0-9]*|//' | sed 's/|.*//' | sed 's/^\\.\\///' | head -1)
+            fi
+            
+            if [ -z "$path" ]; then
+              echo "File $i: SKIP (no path found)"
+              return
+            fi
+            
+            size=$(grep -E "^[[:space:]]*${i}\\|" /tmp/torrent_files.txt -A1 | grep "|" | sed 's/.*|//' | tr -d ' ' | head -1)
 
             if grep -qx "^${path}$" /tmp/ia_files.txt; then
               echo "File $i: SKIP (exists in target IA)"
