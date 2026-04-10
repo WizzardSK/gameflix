@@ -62,6 +62,8 @@ jobs:
           echo "START=$START, END=$END, IA_ID=$IA_ID"
 
           aria2c -S torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
+          echo "Debug: first 5 lines of torrent_files.txt:"
+          head -5 /tmp/torrent_files.txt
           
           echo "Sorting files by size (largest first)..."
           printf '%s\n' 'import re, sys' 'files = []' 'for line in sys.stdin:' '    if "|" not in line: continue' '    m = re.search(r"(\d+)\|(.+)\|.*\((\d+)\)", line)' '    if m:' '        idx = int(m.group(1))' '        path = m.group(2).strip().lstrip("./")' '        size = int(m.group(3))' '        files.append((size, idx, path))' 'files.sort(reverse=True)' 'for s, i, p in files:' '    print(str(i) + "|" + p + "|" + str(s))' > /tmp/sort_files.py
