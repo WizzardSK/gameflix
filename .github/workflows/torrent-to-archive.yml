@@ -121,7 +121,7 @@ jobs:
 
             if [ "$COPY_MODE" = "true" ]; then
               echo "File $i: Copying from external IA: $path"
-              ia copy "$EXTERNAL_IA_IDS/eXo/eXoDOS/${path}" "$IA_ID/${path}" --no-derive --retries=3
+              ia copy "$EXTERNAL_IA_IDS/eXo/eXoDOS/${path}" "$IA_ID/${path}" --no-derive
               echo "File $i: Done (copied)"
               return
             fi
