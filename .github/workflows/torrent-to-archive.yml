@@ -87,7 +87,7 @@ jobs:
           aria2c -S torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
           
           echo "Sorting files by size (largest first)..."
-          printf '%s\n' 'import re, sys' 'files = []' 'for line in sys.stdin:' '    match = re.match(r"\s*(\d+)\|(.*)\|.*\(([\d,]+)\)", line)' '    if match:' '        idx = int(match.group(1))' '        path = match.group(2).strip().lstrip("./")' '        size_str = match.group(3).replace(",", "")' '        try: size = int(size_str)' '        except: size = 0' '        files.append((size, idx, path))' 'files.sort(reverse=True)' 'for size, idx, path in files:' '    print(str(idx) + "|" + path + "|" + str(size))' > /tmp/sort_files.py
+          printf '%s\n' 'import re, sys' 'files = []' 'for line in sys.stdin:' '    m = re.search(r"(\d+)\|(.+)\|.*\((\d+)\)", line)' '    if m:' '        idx = int(m.group(1))' '        path = m.group(2).strip().lstrip("./")' '        size = int(m.group(3))' '        files.append((size, idx, path))' 'files.sort(reverse=True)' 'for s, i, p in files:' '    print(str(i) + "|" + p + "|" + str(s))' > /tmp/sort_files.py
           cat /tmp/torrent_files.txt | python3 /tmp/sort_files.py > /tmp/torrent_files_sorted.txt
           mv /tmp/torrent_files_sorted.txt /tmp/torrent_files.txt
           
