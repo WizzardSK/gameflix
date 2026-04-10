@@ -77,10 +77,11 @@ jobs:
           echo "IA existing files: $(wc -l < /tmp/ia_files.txt)"
 
           process_file() {
-            local i=$1
+            local line="$1"
+            local i
             local path
-            path=$(echo "$i" | sed "s/.*|//" | sed 's/^\.\///')
-            i=$(echo "$i" | sed "s/|.*//")
+            i=$(echo "$line" | sed 's/|.*//')
+            path=$(echo "$line" | sed 's/^[0-9]*|//' | sed 's/^\.\///')
             
             if [ -z "$path" ]; then
               return
@@ -88,6 +89,11 @@ jobs:
 
             if grep -qx "^${path}$" /tmp/ia_files.txt; then
               echo "File $i: SKIP (exists)"
+              return
+            fi
+            
+            if ! [[ "$i" =~ ^[0-9]+$ ]]; then
+              echo "File: SKIP (invalid index: $i)"
               return
             fi
 
