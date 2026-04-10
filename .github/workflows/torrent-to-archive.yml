@@ -60,6 +60,14 @@ jobs:
           MAX_JOBS=5
 
           echo "START=$START, END=$END, IA_ID=$IA_ID"
+
+          aria2c --show-files torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
+          
+          echo "Sorting files by size (largest first)..."
+          printf '%s\n' 'import re, sys' 'files = []' 'for line in sys.stdin:' '    m = re.search(r"(\d+)\|(.+)\|.*\((\d+)\)", line)' '    if m:' '        idx = int(m.group(1))' '        path = m.group(2).strip().lstrip("./")' '        size = int(m.group(3))' '        files.append((size, idx, path))' 'files.sort(reverse=True)' 'for s, i, p in files:' '    print(str(i) + "|" + p + "|" + str(s))' > /tmp/sort_files.py
+          cat /tmp/torrent_files.txt | python3 /tmp/sort_files.py > /tmp/torrent_files_sorted.txt
+          mv /tmp/torrent_files_sorted.txt /tmp/torrent_files.txt
+          
           TOTAL_FILES=$(wc -l < /tmp/torrent_files.txt)
           echo "Total files (sorted): $TOTAL_FILES"
           
