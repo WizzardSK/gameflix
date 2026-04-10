@@ -54,8 +54,11 @@ jobs:
 
       - name: Download torrent file
         run: |
-          curl -sL -o torrent.torrent "${{ inputs.torrent_url }}"
+          curl -sL -A "Mozilla/5.0" -o torrent.torrent "${{ inputs.torrent_url }}"
           aria2c --quiet --show-files torrent.torrent 2>/dev/null | head -10
+          echo "---"
+          echo "Total files in torrent:"
+          aria2c --quiet --show-files torrent.torrent 2>/dev/null | grep -cE "^\s+[0-9]+\|"
 
       - name: Download and upload files
         run: |
