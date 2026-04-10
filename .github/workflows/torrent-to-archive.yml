@@ -67,10 +67,11 @@ jobs:
             END=$TOTAL_FILES
           fi
 
-          aria2c --show-files torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
+          aria2c --show-files torrent.torrent 2>/dev/null | grep -E "^\s+[0-9]+\|" > /tmp/torrent_files.txt
           
           echo "Sorting by size (largest first)..."
-          sort -t'|' -k3 -nr /tmp/torrent_files.txt > /tmp/torrent_sorted.txt || true
+          printf '%s\n' 'import sys, re' 'files = []' 'for line in sys.stdin:' '    m = re.search(r"(\d+)\s*\|(.+)\|.*?\((\d+)\)", line)' '    if m:' '        idx = int(m.group(1))' '        path = m.group(2).strip().lstrip("./")' '        size = int(m.group(3))' '        files.append((size, idx, path))' 'files.sort(reverse=True)' 'for s, i, p in files:' '    print(str(i) + "|" + p)' > /tmp/sort.py
+          python3 /tmp/sort.py < /tmp/torrent_files.txt > /tmp/torrent_sorted.txt
           mv /tmp/torrent_sorted.txt /tmp/torrent_files.txt
 
           ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
