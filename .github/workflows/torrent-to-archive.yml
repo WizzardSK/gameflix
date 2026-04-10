@@ -70,20 +70,18 @@ jobs:
           curl -sL "https://archive.org/metadata/$EXTERNAL_IA?output=json" > /tmp/external_meta.json
           
           echo "Building external IA file index..."
-          python3 << 'PYEOF'
-import json
-try:
-    with open('/tmp/external_meta.json') as f:
-        data = json.load(f)
-    for f in data.get('files', []):
-        name = f.get('name', '')
-        size = f.get('size', '')
-        mtime = f.get('mtime', '')
-        if name and size:
-            print(f'{name}\t{size}\t{mtime}')
-except: pass
-PYEOF
-          > /tmp/external_files.txt
+          echo 'import json
+          try:
+              with open("/tmp/external_meta.json") as f:
+                  data = json.load(f)
+              for f in data.get("files", []):
+                  name = f.get("name", "")
+                  size = f.get("size", "")
+                  mtime = f.get("mtime", "")
+                  if name and size:
+                      print(name + "\t" + size + "\t" + mtime)
+          except: pass' > /tmp/build_index.py
+          python3 /tmp/build_index.py > /tmp/external_files.txt
           echo "External IA files: $(wc -l < /tmp/external_files.txt)"
 
           TOTAL_FILES=$(aria2c --show-files torrent.torrent 2>/dev/null | grep -cE "^\s*[0-9]+\|" || echo 0)
