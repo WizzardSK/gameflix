@@ -60,55 +60,52 @@ jobs:
           MAX_JOBS=5
 
           echo "START=$START, END=$END, IA_ID=$IA_ID"
+          TOTAL_FILES=$(aria2c --show-files torrent.torrent 2>/dev/null | grep -cE "^\s*[0-9]+\|" || echo 0)
+          echo "Total files: $TOTAL_FILES"
 
-          aria2c -S torrent.torrent 2>&1 > /tmp/torrent_files.txt
-          echo "Debug: first 5 lines of torrent_files.txt:"
-          head -5 /tmp/torrent_files.txt
-          
-          echo "Sorting files by size (largest first)..."
-          printf '%s\n' 'import re, sys' 'files = []' 'for line in sys.stdin:' '    if "|" not in line: continue' '    m = re.search(r"(\d+)\|(.+)\|.*\((\d+)\)", line)' '    if m:' '        idx = int(m.group(1))' '        path = m.group(2).strip().lstrip("./")' '        size = int(m.group(3))' '        files.append((size, idx, path))' 'files.sort(reverse=True)' 'for s, i, p in files:' '    print(str(i) + "|" + p + "|" + str(s))' > /tmp/sort_files.py
-          cat /tmp/torrent_files.txt | python3 /tmp/sort_files.py > /tmp/torrent_files_sorted.txt
-          mv /tmp/torrent_files_sorted.txt /tmp/torrent_files.txt
-          
-          TOTAL_FILES=$(wc -l < /tmp/torrent_files.txt)
-          echo "Total files (sorted): $TOTAL_FILES"
-          
           if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL_FILES" ]; then
             END=$TOTAL_FILES
           fi
+
+          aria2c --show-files torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
           
+          echo "Sorting by size (largest first)..."
+          sort -t'|' -k3 -nr /tmp/torrent_files.txt > /tmp/torrent_sorted.txt || true
+          mv /tmp/torrent_sorted.txt /tmp/torrent_files.txt
+
           ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
           echo "IA existing files: $(wc -l < /tmp/ia_files.txt)"
-          
+
           process_file() {
-            local line=$1
-            local i=$(echo "$line" | cut -d'|' -f1)
-            local path=$(echo "$line" | cut -d'|' -f2)
+            local i=$1
+            local path
+            path=$(echo "$i" | sed "s/.*|//" | sed 's/^\.\///')
+            i=$(echo "$i" | sed "s/|.*//")
             
             if [ -z "$path" ]; then
               return
             fi
-            
+
             if grep -qx "^${path}$" /tmp/ia_files.txt; then
               echo "File $i: SKIP (exists)"
               return
             fi
-            
+
             mkdir -p "workdir_$i"
             aria2c --dir="workdir_$i" --select-file="$i" --seed-time=0 --bt-stop-timeout=300 --bt-remove-unselected-file torrent.torrent 2>&1 | grep -v "^#"
-            
+
             file=$(find "workdir_$i" -type f ! -name "*.torrent" ! -name "*.aria2" | head -1)
             if [ -n "$file" ] && [ -f "$file" ]; then
               echo "File $i: Uploading $(basename "$file")"
               ia upload "$IA_ID" "$file" --remote-name="$path" --no-derive --retries=3
             fi
-            
+
             rm -rf "workdir_$i"
             echo "File $i: Done"
           }
-          
-          head -n "$END" /tmp/torrent_files.txt | while read line; do
-            process_file "$line"
+
+          for i in $(cat /tmp/torrent_files.txt); do
+            process_file "$i"
           done
 
           echo "All done."
