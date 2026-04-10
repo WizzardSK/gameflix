@@ -61,7 +61,7 @@ jobs:
 
           echo "START=$START, END=$END, IA_ID=$IA_ID"
 
-          aria2c -S torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
+          aria2c -S torrent.torrent 2>&1 > /tmp/torrent_files.txt
           echo "Debug: first 5 lines of torrent_files.txt:"
           head -5 /tmp/torrent_files.txt
           
