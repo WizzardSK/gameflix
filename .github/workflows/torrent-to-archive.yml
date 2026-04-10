@@ -74,14 +74,14 @@ jobs:
           ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
           echo "IA existing files: $(wc -l < /tmp/ia_files.txt)"
 
-          aria2c --quiet --show-files torrent.torrent 2>/dev/null | grep -E "^\s+[0-9]+\|" | sed 's/^[[:space:]]*[0-9]*|//' | sed 's|^\./eXoDOS/||' > /tmp/torrent_files.txt
+          aria2c --quiet --show-files torrent.torrent 2>/dev/null | grep -E "^\s+[0-9]+\|" | sed 's/^[[:space:]]*[0-9]*|//' | sed 's|^\./||' > /tmp/torrent_files.txt
           TOTAL_FILES=$(wc -l < /tmp/torrent_files.txt)
           echo "Torrent files: $TOTAL_FILES"
 
           > /tmp/external_ia_files.txt
           for ext_id in $(echo "$EXTERNAL_IA_IDS" | tr ',' ' '); do
             echo "Fetching external IA file list: $ext_id"
-            ia list "$ext_id" 2>/dev/null >> /tmp/external_ia_files.txt || true
+            ia list "$ext_id" 2>/dev/null | sed 's|^eXo/eXoDOS/||' >> /tmp/external_ia_files.txt || true
           done
           sort -u /tmp/external_ia_files.txt > /tmp/external_ia_files_sorted.txt
           mv /tmp/external_ia_files_sorted.txt /tmp/external_ia_files.txt
