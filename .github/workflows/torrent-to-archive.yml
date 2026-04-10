@@ -19,6 +19,10 @@ on:
         description: 'End file index (1-based, 0=all files)'
         required: true
         default: '0'
+      external_ia_id:
+        description: 'External IA identifier to copy from (if name+size+date matches)'
+        required: false
+        default: 'exov5_2'
 
 jobs:
   upload:
@@ -57,9 +61,31 @@ jobs:
           START=$1
           END=$2
           IA_ID=$3
+          EXTERNAL_IA=$4
           MAX_JOBS=5
 
-          echo "START=$START, END=$END, IA_ID=$IA_ID"
+          echo "START=$START, END=$END, IA_ID=$IA_ID, EXTERNAL=$EXTERNAL_IA"
+
+          echo "Fetching external IA metadata..."
+          curl -sL "https://archive.org/metadata/$EXTERNAL_IA?output=json" > /tmp/external_meta.json
+          
+          echo "Building external IA file index..."
+          python3 << 'PYEOF'
+import json
+try:
+    with open('/tmp/external_meta.json') as f:
+        data = json.load(f)
+    for f in data.get('files', []):
+        name = f.get('name', '')
+        size = f.get('size', '')
+        mtime = f.get('mtime', '')
+        if name and size:
+            print(f'{name}\t{size}\t{mtime}')
+except: pass
+PYEOF
+          > /tmp/external_files.txt
+          echo "External IA files: $(wc -l < /tmp/external_files.txt)"
+
           TOTAL_FILES=$(aria2c --show-files torrent.torrent 2>/dev/null | grep -cE "^\s*[0-9]+\|" || echo 0)
           echo "Total files: $TOTAL_FILES"
 
@@ -74,11 +100,20 @@ jobs:
 
           process_file() {
             local i=$1
-            local path
+            local path size
             path=$(sed -n "/^\s*${i}|/p" /tmp/torrent_files.txt | sed "s/^\s*${i}|//" | sed 's/|.*//' | sed 's/^\.\///')
+            size=$(sed -n "/^\s*${i}|/p" /tmp/torrent_files.txt | sed 's/.*|//' | tr -d ' ')
 
             if grep -qx "^${path}$" /tmp/ia_files.txt; then
-              echo "File $i: SKIP (exists)"
+              echo "File $i: SKIP (exists in target IA)"
+              return
+            fi
+
+            ext_match=$(grep -F "${path}" /tmp/external_files.txt | grep -w "${size}")
+            if [ -n "$ext_match" ]; then
+              echo "File $i: Copying from external IA: $path"
+              ia copy "$EXTERNAL_IA/${path}" "$IA_ID/${path}" --no-derive
+              echo "File $i: Done (copied)"
               return
             fi
 
@@ -102,4 +137,4 @@ jobs:
           echo "All done."
           SCRIPT
           chmod +x /tmp/upload.sh
-          /tmp/upload.sh "${{ inputs.start_file }}" "${{ inputs.end_file }}" "${{ inputs.ia_identifier }}"
+          /tmp/upload.sh "${{ inputs.start_file }}" "${{ inputs.end_file }}" "${{ inputs.ia_identifier }}" "${{ inputs.external_ia_id }}"
