@@ -58,7 +58,11 @@ jobs:
           aria2c --show-files torrent.torrent 2>/dev/null | head -10
           echo "---"
           echo "Total files in torrent:"
-          aria2c --show-files torrent.torrent 2>/dev/null | grep -cE "^[[:space:]]+[0-9]+\|"
+          aria2c --show-files torrent.torrent 2>/dev/null > /tmp/aria_out.txt
+          grep -E "^[[:space:]]+[0-9]+\|" /tmp/aria_out.txt | wc -l
+          echo "---"
+          echo "Sample lines:"
+          grep -E "^[[:space:]]+[0-9]+\|" /tmp/aria_out.txt | head -3
 
       - name: Download and upload files
         run: |
