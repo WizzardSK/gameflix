@@ -1981,7 +1981,8 @@
 2	Background Designer	PpbkUEMFEs_BG_Designer_1.7.png	PpbkUEMFEs_BG_Designer_1.7.nx
 1	Character Designer	A2Mz2eaoxF_Char_Designer_1.6.png	A2Mz2eaoxF_Char_Designer_1.6.nx
 ---	example
-3997	Pathway counter	Ug7nrpncGV_Pathway_Counter.png	Ug7nrpncGV_Pathway_Counter.nx
+4001	Power Solitaire	doU48K6goF_Power_Solitaire.png	doU48K6goF_Power_Solitaire.nx
+3997	Pathway counter	mbaVvy46oq_Pathway_Counter_2.png	mbaVvy46oq_Pathway_Counter_2.nx
 3987	Animated Drawing	b2QLWSmYKt_Text_Bright_Designer_3.png	b2QLWSmYKt_Text_Bright_Designer_3.nx
 3985	Claude generated Mario song	EUuLFLz4zm_Claude_Genarated_Mario_Song.png	EUuLFLz4zm_Claude_Genarated_Mario_Song.nx
 3966	Spin to Win 	RHgmRUrJGd_Spin_to_Win_0.1.png	RHgmRUrJGd_Spin_to_Win_0.1.nx
@@ -2285,16 +2286,6 @@
 1993	Attr for Sprites	M3Vnz9kd8c_Attribute_Bits_For_Sprites.png	M3Vnz9kd8c_Attribute_Bits_For_Sprites.nx
 1988	More color	yFmT6Rf3uv_More_Color.png	yFmT6Rf3uv_More_Color.nx
 1986	Dithering Effect	FdpMDWEJEP_DitherEffect.png	FdpMDWEJEP_DitherEffect.nx
-1981	Bit Art Redux (remix)	fjjVduST59_Bit_Art_Redux.png	fjjVduST59_Bit_Art_Redux.nx
-1968	Pong without bats	hLo26nUb5p_LowRes_NX_20210617_18_20_09.png	hLo26nUb5p_pongWithoutBats.nx
-1964	Hello	diCAVM4TzK_Test.png	diCAVM4TzK_Test.nx
-1962	Google Doodles	yUDj82hFKY_Google_Doodle_By_Benimo12.png	yUDj82hFKY_Google_Doodle_By_Benimo12.nx
-1958	Menu with arrays, array example.	MAi2noeYu8_LowRes_NX_20210613_19_01_42.png	MAi2noeYu8_ArrayMenuHelp.nx
-1948	Sprite-based 3D	yddeiJALtZ_Sprite3DDemo.png	yddeiJALtZ_Sprite3DDemo.nx
-1933	Cell demo	HGPvGRCRZa_LowRes_NX_20210602_18_45_52.png	HGPvGRCRZa_test404.nx
-1928	Graphics	xisDNrrKBa_LowRes_NX_20210531_11_36_42.png	xisDNrrKBa_test.nx
-1912	Cell detecting	x3toSKdSBQ_18697C34768947238FC6CC30FB89E8B9.jpeg	x3toSKdSBQ_Unnamed_Program_4.nx
-1895	autolist	2f7aWi2Wf4_Image1.jpg	2f7aWi2Wf4_autotype199.nx
 1890	I learned something: not-quantized frequencies are possible	wsLz9EcdVa_Audio_Reading.png	wsLz9EcdVa_Audio_Reading.nx
 1873	anagram	WdkVqtc2eg_Image1.jpg	WdkVqtc2eg_anagram1.nx
 1857	10 oneliners	fDAvUjjQFA_10oneliners.png	fDAvUjjQFA_10oneliners.nx
@@ -2387,6 +2378,7 @@
 1253	Buggy Race	B8CUqRdehV_Buggy_Race.png	B8CUqRdehV_Buggy_Race.nx
 1251	Carrom	HNPZedEFBS_Carromz.png	HNPZedEFBS_Carromz.nx
 1248	Roads	LVGKvEUCxi_Roads.png	LVGKvEUCxi_Roads.nx
+1244	Slide Controllers	neHMPv7kPi_Slide_Controllers_Test.png	neHMPv7kPi_Slide_Controllers_Test.nx
 1240	Lighting works	5o9rkATxpF_Lighting_Works.png	5o9rkATxpF_Lighting_Works.nx
 1229	Text Formatter and Viewer	NVxhBxS7fK_Text_Formater.png	NVxhBxS7fK_Text_Formater.nx
 1222	Song Test	NYL4LnDUpo_Song_Test.png	NYL4LnDUpo_Song_Test.nx
@@ -2394,18 +2386,26 @@
 1215	RASTER TEST	NtxcAShxAo_Mini_Test.png	NtxcAShxAo_Mini_Test.nx
 1208	Experiments with raster	7hiX3oYEUr_Experimemts_With_Raster.png	7hiX3oYEUr_Experimemts_With_Raster.nx
 1172	Memory Access Test.	Dh5HdHKKXc_LowRes_NX_20200430_21_58_02.png	Dh5HdHKKXc_memtest_0.2.nx
+1166	NX Paint	vFAXz7GJQc_NX_Paint_1.1.png	vFAXz7GJQc_NX_Paint_1.1.nx
 1152	TYPEWRITER (screensaver)	jhJbg7ChN3_Typewriter.png	jhJbg7ChN3_Typewriter.nx
 1148	API for Remjin Spyky Thyngy	ZBfwVRafgQ_LowRes_NX_20200420_12_18_16.png	ZBfwVRafgQ_rttsapi.nx
 1129	THE SORTING PROGRAM V 1.3.1	XC9FL26FR7_THE_SORTING_PROGRAM_V_1.4.png	XC9FL26FR7_THE_SORTING_PROGRAM_V_1.4.nx
 1122	Gamepad Text Adventure	QQTDYzvCmp_gamepadadventure.png	QQTDYzvCmp_gamepadadventure.nx
 1111	Space Generation Tech Demo	wKMJVLUvqN_Space_Generation_Tech_Demo.png	wKMJVLUvqN_Space_Generation_Tech_Demo.nx
 1103	EXTREME POKE	HUkCEtjoQP_EXTREME_POKE_2.0.png	HUkCEtjoQP_EXTREME_POKE_2.0.nx
+1098	4 Page Scroller Demo	H6jgEPXxoM_4page_Scroller.png	H6jgEPXxoM_4page_Scroller.nx
 1085	POKEY BITS Decoded	VheFZLwhkp_POKEY_BITS_Decoded.png	VheFZLwhkp_POKEY_BITS_Decoded.nx
 1084	POKEY BIT TV (1bit and 2bit)	ykZUH5ZC2B_Pokey_2BIT_TV.png	ykZUH5ZC2B_Pokey_2BIT_TV.nx
+1083	PeekyPokeyClock	Yh7FLGiEZK_PeekyPokey_22Clock22_4.png	Yh7FLGiEZK_PeekyPokey_22Clock22_4.nx
 1076	SCROLL math for SPRITE+CELL	zC9QB8ABwY_SCROLL_Math_for_SPRITE__CELL.png	zC9QB8ABwY_SCROLL_Math_for_SPRITE__CELL.nx
+1073	Extreme Sprite Animation Example	ZXvsKFTXY7_Extreme_Sprite_Animation.png	ZXvsKFTXY7_Extreme_Sprite_Animation.nx
 1064	SUB example 	QrkVfiywmn_SUB_example.png	QrkVfiywmn_SUB_example.nx
 1052	How to make a game 2 (using sprites) 	hDPUjDxMhR_How_To_Make_a_Game_2_6.0.png	hDPUjDxMhR_How_To_Make_a_Game_2_6.0.nx
+1046	YAY!!!	N98KTPTG3k_Thibg.png	N98KTPTG3k_Thibg.nx
+1033	Warriors Quest 4.0	6wxfEaAAzt_Warrior_Quest.png	6wxfEaAAzt_Warrior_Quest.nx
+1027	Keyboard Explorer	aC7ppVsac6_Keyboard_Explorer.png	aC7ppVsac6_Keyboard_Explorer.nx
 1022	AI like Pac-Man 	rmf2nGoULz_Pac_Man_like_AI.png	rmf2nGoULz_Pac_Man_like_AI.nx
+1021	Quadruple Stacked Layered Conditional Example	HDUnC8DetD_Quadruple_Stacked_Layered_Conditional_Example.png	HDUnC8DetD_Quadruple_Stacked_Layered_Conditional_Example.nx
 1015	Original lowres demo	vDbAQjD4DA_Original_Lowres_.png	vDbAQjD4DA_Original_Lowres_.nx
 1005	HOW TO: Make a game (step by step) 	kfNauRTZDa_How_To_make_a_game_STEP_8.2.png	kfNauRTZDa_How_To_make_a_game_STEP_8.2.nx
 990	Memory Tricks	TVBRcptcDi_Character_Memory_Trick.png	TVBRcptcDi_Character_Memory_Trick.nx
