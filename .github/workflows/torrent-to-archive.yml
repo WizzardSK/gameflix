@@ -87,7 +87,7 @@ jobs:
           
           for filepath in sorted(files_to_delete):
               print(f"Deleting: {filepath}")
-              subprocess.run(["ia", "delete", "${{ inputs.ia_identifier }}", filepath, "--no-derive"], check=False)
+              subprocess.run(["ia", "delete", "${{ inputs.ia_identifier }}", filepath], check=False)
           PYCLEAN
 
       - name: Download and upload files
