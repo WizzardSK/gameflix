@@ -2286,6 +2286,16 @@
 1993	Attr for Sprites	M3Vnz9kd8c_Attribute_Bits_For_Sprites.png	M3Vnz9kd8c_Attribute_Bits_For_Sprites.nx
 1988	More color	yFmT6Rf3uv_More_Color.png	yFmT6Rf3uv_More_Color.nx
 1986	Dithering Effect	FdpMDWEJEP_DitherEffect.png	FdpMDWEJEP_DitherEffect.nx
+1981	Bit Art Redux (remix)	fjjVduST59_Bit_Art_Redux.png	fjjVduST59_Bit_Art_Redux.nx
+1968	Pong without bats	hLo26nUb5p_LowRes_NX_20210617_18_20_09.png	hLo26nUb5p_pongWithoutBats.nx
+1964	Hello	diCAVM4TzK_Test.png	diCAVM4TzK_Test.nx
+1962	Google Doodles	yUDj82hFKY_Google_Doodle_By_Benimo12.png	yUDj82hFKY_Google_Doodle_By_Benimo12.nx
+1958	Menu with arrays, array example.	MAi2noeYu8_LowRes_NX_20210613_19_01_42.png	MAi2noeYu8_ArrayMenuHelp.nx
+1948	Sprite-based 3D	yddeiJALtZ_Sprite3DDemo.png	yddeiJALtZ_Sprite3DDemo.nx
+1933	Cell demo	HGPvGRCRZa_LowRes_NX_20210602_18_45_52.png	HGPvGRCRZa_test404.nx
+1928	Graphics	xisDNrrKBa_LowRes_NX_20210531_11_36_42.png	xisDNrrKBa_test.nx
+1912	Cell detecting	x3toSKdSBQ_18697C34768947238FC6CC30FB89E8B9.jpeg	x3toSKdSBQ_Unnamed_Program_4.nx
+1895	autolist	2f7aWi2Wf4_Image1.jpg	2f7aWi2Wf4_autotype199.nx
 1890	I learned something: not-quantized frequencies are possible	wsLz9EcdVa_Audio_Reading.png	wsLz9EcdVa_Audio_Reading.nx
 1873	anagram	WdkVqtc2eg_Image1.jpg	WdkVqtc2eg_anagram1.nx
 1857	10 oneliners	fDAvUjjQFA_10oneliners.png	fDAvUjjQFA_10oneliners.nx
@@ -2483,7 +2493,6 @@
 617	Howto: path finding explore	gsLZLjyMn6_howto_path_finding_explore.png	gsLZLjyMn6_howto_path_finding_explore.nx
 616	Howto: Set character pixels	Hvs4id6z9x_howto_set_chara_pixel.png	Hvs4id6z9x_howto_set_chara_pixel.nx
 615	Movable Game buttons	fE72pK9pfw_Scroll_Button_3.png	fE72pK9pfw_Scroll_Button_3.nx
-610	Palette Viewer	gGXafChvvC_Palette_Viewer.png	gGXafChvvC_Palette_Viewer.nx
 607	Tank	cK7PURdPFP_Unnamed_Program_74.png	cK7PURdPFP_Unnamed_Program_74.nx
 605	howto: half resolution	WGorHsDgx7_howto_half_resolution.png	WGorHsDgx7_howto_half_resolution.nx
 596	3D Hallway simulation	wzv3KgEht6_3d_Hallway_Simulation_Test.png	wzv3KgEht6_3d_Hallway_Simulation_Test.nx
@@ -2491,28 +2500,19 @@
 594	Screen shake (Kinda)	TWNff43JjD_Unnamed_Program_129.png	TWNff43JjD_Unnamed_Program_129.nx
 592	PEEK and POKE for pascal string	stMXdp63eh_pascal_string.png	stMXdp63eh_pascal_string.nx
 586	Controls Test	hiUPWWeEru_Controls_Test_0.05.png	hiUPWWeEru_Controls_Test_0.05.nx
-573	3D with 2 Char files	pYxYcwypu8_3D_With_2_Char_Files.png	pYxYcwypu8_3D_With_2_Char_Files.nx
 572	3D simulation test	Jr7zms6SR7_3D_Simulation_Test.png	Jr7zms6SR7_3D_Simulation_Test.nx
 563	Entity drawer?	ZdZTLBHQAJ_Unnamed_Program_74.png	ZdZTLBHQAJ_Unnamed_Program_74.nx
 558	Transformulae	F85mW8rz87_Transformulae.png	F85mW8rz87_Transformulae.nx
 555	Bug for timo	F9dhK5JWEu_Bug_For_Timo.png	F9dhK5JWEu_Bug_For_Timo.nx
-554	PERSIST SAVE BACKGROUND (demo)	hMJf3yyLjs_Testing.png	hMJf3yyLjs_Testing.nx
-551	PERSIST SAVE TEXT (demo)	c5oXe2PynF_Testflight_2.png	c5oXe2PynF_Testflight_2.nx
 549	Spring Illusion 	ewVcZb6YBu_C0559B1288C24E799F5FA43A2F2A52EB.jpeg	ewVcZb6YBu_Spring_Illusion.nx
 546	DIM ARRAYS LOOP	4dMB6U2ALU_DIM_ARRAYS_LOOP.png	4dMB6U2ALU_DIM_ARRAYS_LOOP.nx
-545	Manually Controlled	k4JdoTbUA5_Manually_Controlled.png	k4JdoTbUA5_Manually_Controlled.nx
-544	Plane	nEvQc7N5Ek_Plane.png	nEvQc7N5Ek_Plane.nx
 537	Ball toy 	9y69wtBxwU_Ball.png	9y69wtBxwU_Ball.nx
-534	Colored lights	XwdK5sZ9Am_Multicolored_Lights.png	XwdK5sZ9Am_Multicolored_Lights.nx
 531	Metaballs with dithered rendering	ZHgPhWh9dt_Unnamed_Program_65.png	ZHgPhWh9dt_Unnamed_Program_65.nx
 527	Major Crash Bug?	j7dNgyG5u9_Unnamed_Program_61.png	j7dNgyG5u9_Unnamed_Program_61.nx
 526	Monochrome Image Loader (legacy)	WkUCgNfob8_Unnamed_Program_27.png	WkUCgNfob8_Unnamed_Program_27.nx
 521	I am bored	Bq62g32qaD_I_Am_Bored.png	Bq62g32qaD_I_Am_Bored.nx
-520	Kinda screen scroller	QgFsbagrgo_Kinda_Screen_Scrolling.png	QgFsbagrgo_Kinda_Screen_Scrolling.nx
-519	Flashy Text Display	Xp6gYNv3CC_Flash_Display.png	Xp6gYNv3CC_Flash_Display.nx
 509	Dog fight (toy)	XSsVsfVieY_Dog_Fight_toy.png	XSsVsfVieY_Dog_Fight_toy.nx
 500	Sprite rotator array v2	HMWUmJwxCV_Sprite_Rotater_Ezperiment.png	HMWUmJwxCV_Sprite_Rotater_Ezperiment.nx
-496	World generator 	HQmu6AvNuN_World_Generator.png	HQmu6AvNuN_World_Generator.nx
 494	Sprite rotator using array	pV7fnBvuhL_Unnamed_Program_56.png	pV7fnBvuhL_Unnamed_Program_56.nx
 492	Sprite rotating	z5VHavmxrp_Unnamed_Program_56.png	z5VHavmxrp_Unnamed_Program_56.nx
 487	Cell position test	8wNBTpg4wE_Testing_Cell_Positions.png	8wNBTpg4wE_Testing_Cell_Positions.nx
