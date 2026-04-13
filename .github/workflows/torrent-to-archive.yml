@@ -23,6 +23,8 @@ on:
         description: 'External IA identifier to copy from (if name+size+date matches)'
         required: false
         default: 'exov5_2'
+  schedule:
+    - cron: '0 */6 * * *'
 
 jobs:
   upload:
