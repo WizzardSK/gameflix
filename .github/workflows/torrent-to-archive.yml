@@ -53,42 +53,10 @@ jobs:
           curl -sL -o torrent.torrent "${{ inputs.torrent_url }}"
           aria2c --show-files torrent.torrent 2>/dev/null | head -10
 
-      - name: Cleanup old files not in torrent
+      - name: List existing IA files
         run: |
-          aria2c --show-files torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
-          ia list "${{ inputs.ia_identifier }}" 2>/dev/null | sort > /tmp/ia_files_current.txt || true
-          
-          python3 << 'PYCLEAN'
-          import subprocess
-          
-          torrent_files = set()
-          with open("/tmp/torrent_files.txt") as f:
-              for line in f:
-                  line = line.strip()
-                  if not line:
-                      continue
-                  parts = line.split("|")
-                  if len(parts) >= 2:
-                      path = parts[1].strip().lstrip("./")
-                      if path:
-                          torrent_files.add(path)
-          
-          ia_files = set()
-          with open("/tmp/ia_files_current.txt") as f:
-              for line in f:
-                  path = line.strip()
-                  if path:
-                      ia_files.add(path)
-          
-          files_to_delete = ia_files - torrent_files
-          print(f"Files in torrent: {len(torrent_files)}")
-          print(f"Files in IA: {len(ia_files)}")
-          print(f"Files to delete: {len(files_to_delete)}")
-          
-          for filepath in sorted(files_to_delete):
-              print(f"Deleting: {filepath}")
-              subprocess.run(["ia", "delete", "${{ inputs.ia_identifier }}", filepath], check=False)
-          PYCLEAN
+          ia list "${{ inputs.ia_identifier }}" 2>/dev/null | sort > /tmp/ia_files.txt || true
+          echo "IA existing files: $(wc -l < /tmp/ia_files.txt)"
 
       - name: Download and upload files
         run: |
