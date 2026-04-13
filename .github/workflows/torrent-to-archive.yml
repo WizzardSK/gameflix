@@ -24,7 +24,7 @@ on:
         required: false
         default: 'exov5_2'
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 9,15,21,3 * * *'
 
 jobs:
   upload:
