@@ -1,4 +1,5 @@
 ---	game
+4006	Connect Pathways	m8wbNuNFhX_Connect_3.1.png	m8wbNuNFhX_Connect_3.1.nx
 3994	Ballerz	jcdtPtkRUM_Ballerz.png	jcdtPtkRUM_Ballerz.nx
 3984	Patchwork	y6ZQDshiDu_Patchwork_0.21.png	y6ZQDshiDu_Patchwork_0.21.nx
 3980	MaxiMem	GfxJ7VU6y2_MaxiMem_Level_3.png	GfxJ7VU6y2_MaxiMem_Level_3.nx
@@ -2493,6 +2494,7 @@
 617	Howto: path finding explore	gsLZLjyMn6_howto_path_finding_explore.png	gsLZLjyMn6_howto_path_finding_explore.nx
 616	Howto: Set character pixels	Hvs4id6z9x_howto_set_chara_pixel.png	Hvs4id6z9x_howto_set_chara_pixel.nx
 615	Movable Game buttons	fE72pK9pfw_Scroll_Button_3.png	fE72pK9pfw_Scroll_Button_3.nx
+610	Palette Viewer	gGXafChvvC_Palette_Viewer.png	gGXafChvvC_Palette_Viewer.nx
 607	Tank	cK7PURdPFP_Unnamed_Program_74.png	cK7PURdPFP_Unnamed_Program_74.nx
 605	howto: half resolution	WGorHsDgx7_howto_half_resolution.png	WGorHsDgx7_howto_half_resolution.nx
 596	3D Hallway simulation	wzv3KgEht6_3d_Hallway_Simulation_Test.png	wzv3KgEht6_3d_Hallway_Simulation_Test.nx
@@ -2500,20 +2502,28 @@
 594	Screen shake (Kinda)	TWNff43JjD_Unnamed_Program_129.png	TWNff43JjD_Unnamed_Program_129.nx
 592	PEEK and POKE for pascal string	stMXdp63eh_pascal_string.png	stMXdp63eh_pascal_string.nx
 586	Controls Test	hiUPWWeEru_Controls_Test_0.05.png	hiUPWWeEru_Controls_Test_0.05.nx
+573	3D with 2 Char files	pYxYcwypu8_3D_With_2_Char_Files.png	pYxYcwypu8_3D_With_2_Char_Files.nx
 572	3D simulation test	Jr7zms6SR7_3D_Simulation_Test.png	Jr7zms6SR7_3D_Simulation_Test.nx
 563	Entity drawer?	ZdZTLBHQAJ_Unnamed_Program_74.png	ZdZTLBHQAJ_Unnamed_Program_74.nx
 558	Transformulae	F85mW8rz87_Transformulae.png	F85mW8rz87_Transformulae.nx
 555	Bug for timo	F9dhK5JWEu_Bug_For_Timo.png	F9dhK5JWEu_Bug_For_Timo.nx
+554	PERSIST SAVE BACKGROUND (demo)	hMJf3yyLjs_Testing.png	hMJf3yyLjs_Testing.nx
+551	PERSIST SAVE TEXT (demo)	c5oXe2PynF_Testflight_2.png	c5oXe2PynF_Testflight_2.nx
 549	Spring Illusion 	ewVcZb6YBu_C0559B1288C24E799F5FA43A2F2A52EB.jpeg	ewVcZb6YBu_Spring_Illusion.nx
 546	DIM ARRAYS LOOP	4dMB6U2ALU_DIM_ARRAYS_LOOP.png	4dMB6U2ALU_DIM_ARRAYS_LOOP.nx
+545	Manually Controlled	k4JdoTbUA5_Manually_Controlled.png	k4JdoTbUA5_Manually_Controlled.nx
+544	Plane	nEvQc7N5Ek_Plane.png	nEvQc7N5Ek_Plane.nx
 537	Ball toy 	9y69wtBxwU_Ball.png	9y69wtBxwU_Ball.nx
+534	Colored lights	XwdK5sZ9Am_Multicolored_Lights.png	XwdK5sZ9Am_Multicolored_Lights.nx
 531	Metaballs with dithered rendering	ZHgPhWh9dt_Unnamed_Program_65.png	ZHgPhWh9dt_Unnamed_Program_65.nx
 527	Major Crash Bug?	j7dNgyG5u9_Unnamed_Program_61.png	j7dNgyG5u9_Unnamed_Program_61.nx
 526	Monochrome Image Loader (legacy)	WkUCgNfob8_Unnamed_Program_27.png	WkUCgNfob8_Unnamed_Program_27.nx
 521	I am bored	Bq62g32qaD_I_Am_Bored.png	Bq62g32qaD_I_Am_Bored.nx
+520	Kinda screen scroller	QgFsbagrgo_Kinda_Screen_Scrolling.png	QgFsbagrgo_Kinda_Screen_Scrolling.nx
+519	Flashy Text Display	Xp6gYNv3CC_Flash_Display.png	Xp6gYNv3CC_Flash_Display.nx
 509	Dog fight (toy)	XSsVsfVieY_Dog_Fight_toy.png	XSsVsfVieY_Dog_Fight_toy.nx
 500	Sprite rotator array v2	HMWUmJwxCV_Sprite_Rotater_Ezperiment.png	HMWUmJwxCV_Sprite_Rotater_Ezperiment.nx
-494	Sprite rotator using array	pV7fnBvuhL_Unnamed_Program_56.png	pV7fnBvuhL_Unnamed_Program_56.nx
+496	World generator 	HQmu6AvNuN_World_Generator.png	HQmu6AvNuN_World_Generator.nx
 492	Sprite rotating	z5VHavmxrp_Unnamed_Program_56.png	z5VHavmxrp_Unnamed_Program_56.nx
 487	Cell position test	8wNBTpg4wE_Testing_Cell_Positions.png	8wNBTpg4wE_Testing_Cell_Positions.nx
 467	Path example	qSYSzxQkmD_Path_Example.png	qSYSzxQkmD_Path_Example.nx
@@ -2532,7 +2542,6 @@
 392	DIM example 	8CSjbArT5j_Dim_Example.png	8CSjbArT5j_Dim_Example.nx
 385	Triangle Subprogram	5cgBUzCF9o_Triangle_Sub.png	5cgBUzCF9o_Triangle_Sub.nx
 383	Sphere and line drawer	KHpNwrTZNo_Sphere_And_Line_Drawer.png	KHpNwrTZNo_Sphere_And_Line_Drawer.nx
-379	2D Map collisions	UEuNUYrKdH_2D_Map_Collision_Example.png	UEuNUYrKdH_2D_Map_Collision_Example.nx
 362	Scrolling city and clouds	cnjLVJPYoX_City_And_Clouds.png	cnjLVJPYoX_City_And_Clouds.nx
 359	Simple demo - Fancy Text	SUMcWErvR5_Helloo.png	SUMcWErvR5_Helloo.nx
 357	Using a raster subprogram to center text	DGWUFbJFp9_Centered_Text.png	DGWUFbJFp9_Centered_Text.nx
@@ -2543,21 +2552,14 @@
 324	Chess demo	npGaaxfj8H_Chess_Demo.png	npGaaxfj8H_Chess_Demo.nx
 318	Map Scrolling	PSseoEXKXi_Map_Scrolling_1.3.png	PSseoEXKXi_Map_Scrolling_1.3.nx
 317	Scaled images demo	YpXreWKUXL_Scaled_Images.png	YpXreWKUXL_Scaled_Images.nx
-295	Game Making Skills: Chapter 3	LkKk9KudXZ_Game_Making_Skills_Chapter_3.png	LkKk9KudXZ_Game_Making_Skills_Chapter_3.nx
 294	Game Making Skills: Chapter 2	biuY9bdJbm_Game_Making_Skills_Chapter_2.png	biuY9bdJbm_Game_Making_Skills_Chapter_2.nx
-290	Game Making Skills: Chapter 1	aXNPKnaww7_Quick_Adventure.png	aXNPKnaww7_Quick_Adventure.nx
-283	Collision Demo	MTey5GTXsf_Collision_Demo.png	MTey5GTXsf_Collision_Demo.nx
-282	Volume Control	WUQxYdxGLZ_Volume_Control.png	WUQxYdxGLZ_Volume_Control.nx
 279	Move Demo	ZqmDDFcFRD_Move_Demo.png	ZqmDDFcFRD_Move_Demo.nx
 270	Space: Special FX demo	arJ6EiAeD8_Space_Special_Effects_DEMO.png	arJ6EiAeD8_Space_Special_Effects_DEMO.nx
 263	Circle Based Collision Detection	bJLT2gwtde_Circle_Based_Collision_Detection.png	bJLT2gwtde_Circle_Based_Collision_Detection.nx
 245	Animated background trick demo	dJNWdGTibx_Animated_Background_Trick.png	dJNWdGTibx_Animated_Background_Trick.nx
 243	Resistance is futile, you will be assimilated !! (demo)	Q9DYYPiFwp_Resistence_Is_Futile_You_Will_Be_Assimulated_2.png	Q9DYYPiFwp_Resistence_Is_Futile_You_Will_Be_Assimulated_2.nx
-236	Raster wiggle demo	ZVV9xXkqjR_Raster_Wiggle.png	ZVV9xXkqjR_Raster_Wiggle.nx
 232	Raster Trick with 24 Colors demo	4dP49wmm7d_Raster_Trick_with_24_Colors_.png	4dP49wmm7d_Raster_Trick_with_24_Colors_.nx
-226	Sprite demo	FovCXYsCcA_Sprite_Demo.png	FovCXYsCcA_Sprite_Demo.nx
 197	Space simulation demo	UVAKSa89vE_Space_2.png	UVAKSa89vE_Space_2.nx
-196	Burgerman with TOUCH MOVE demo	7utEyyZnSx_Burgerman.png	7utEyyZnSx_Burgerman.nx
 188	Floating Text Scroller Display demo	NhtRiHNA7M_Floating_Text_Scroller_Display.png	NhtRiHNA7M_Floating_Text_Scroller_Display.nx
 187	Floating Numeric Display demo	L4Vk2dLhCb_Floating_Numeric_Display.png	L4Vk2dLhCb_Floating_Numeric_Display.nx
 180	Teaser...	ZotSXJrpcT_Teaser.png	ZotSXJrpcT_Teaser.nx
