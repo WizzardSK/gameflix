@@ -1,0 +1,43 @@
+name: Delete IA History
+
+on:
+  workflow_dispatch:
+    inputs:
+      ia_identifier:
+        description: 'Internet Archive item identifier'
+        required: true
+        default: 'exodos-full'
+
+jobs:
+  delete-history:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq curl
+          pip install internetarchive
+
+      - name: Configure Internet Archive
+        run: |
+          mkdir -p ~/.config/internetarchive
+          cat > ~/.config/internetarchive/ia.ini << 'EOCONF'
+          [s3]
+          access = ${{ secrets.IA_ACCESS }}
+          secret = ${{ secrets.IA_SECRET }}
+          EOCONF
+          sed -i 's/^          //' ~/.config/internetarchive/ia.ini
+
+      - name: Delete history files
+        run: |
+          IA_ID="${{ inputs.ia_identifier }}"
+          while true; do
+            COUNT_BEFORE=$(curl -s "https://archive.org/metadata/$IA_ID" | python3 -c "import json,sys; d=json.load(sys.stdin); print(len([f for f in d.get('files',[]) if 'history/' in f['name']]))")
+            if [ "$COUNT_BEFORE" -eq 0 ]; then
+              echo "No more history files"
+              break
+            fi
+            echo "Deleting... ($COUNT_BEFORE files remaining)"
+            ia delete "$IA_ID" --glob="history/*" --cascade 2>&1 | tail -1
+            sleep 2
+          done
