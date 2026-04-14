@@ -24,7 +24,7 @@ on:
         required: false
         default: 'exov5_2'
   schedule:
-    - cron: '0 9,15,21,3 * * *'
+    - cron: '0 7,13,19,1 * * *'
 
 jobs:
   upload:
@@ -52,12 +52,14 @@ jobs:
 
       - name: Download torrent file
         run: |
-          curl -sL -o torrent.torrent "${{ inputs.torrent_url }}"
+          TORRENT_URL="${{ inputs.torrent_url || 'https://www.retro-exo.com/eXoDOS.torrent' }}"
+          curl -sL -o torrent.torrent "$TORRENT_URL"
           aria2c --show-files torrent.torrent 2>/dev/null | head -10
 
       - name: List existing IA files
         run: |
-          ia list "${{ inputs.ia_identifier }}" 2>/dev/null | sort > /tmp/ia_files.txt || true
+          IA_ID="${{ inputs.ia_identifier || 'exodos-full' }}"
+          ia list "$IA_ID" 2>/dev/null | sort > /tmp/ia_files.txt || true
           echo "IA existing files: $(wc -l < /tmp/ia_files.txt)"
 
       - name: Download and upload files
@@ -142,4 +144,8 @@ jobs:
           echo "All done."
           SCRIPT
           chmod +x /tmp/upload.sh
-          /tmp/upload.sh "${{ inputs.start_file }}" "${{ inputs.end_file }}" "${{ inputs.ia_identifier }}" "${{ inputs.external_ia_id }}"
+          START_FILE="${{ inputs.start_file || '1' }}"
+          END_FILE="${{ inputs.end_file || '0' }}"
+          IA_ID="${{ inputs.ia_identifier || 'exodos-full' }}"
+          EXTERNAL_IA="${{ inputs.external_ia_id || 'exov5_2' }}"
+          /tmp/upload.sh "$START_FILE" "$END_FILE" "$IA_ID" "$EXTERNAL_IA"
