@@ -2524,6 +2524,7 @@
 509	Dog fight (toy)	XSsVsfVieY_Dog_Fight_toy.png	XSsVsfVieY_Dog_Fight_toy.nx
 500	Sprite rotator array v2	HMWUmJwxCV_Sprite_Rotater_Ezperiment.png	HMWUmJwxCV_Sprite_Rotater_Ezperiment.nx
 496	World generator 	HQmu6AvNuN_World_Generator.png	HQmu6AvNuN_World_Generator.nx
+494	Sprite rotator using array	pV7fnBvuhL_Unnamed_Program_56.png	pV7fnBvuhL_Unnamed_Program_56.nx
 492	Sprite rotating	z5VHavmxrp_Unnamed_Program_56.png	z5VHavmxrp_Unnamed_Program_56.nx
 487	Cell position test	8wNBTpg4wE_Testing_Cell_Positions.png	8wNBTpg4wE_Testing_Cell_Positions.nx
 467	Path example	qSYSzxQkmD_Path_Example.png	qSYSzxQkmD_Path_Example.nx
@@ -2542,6 +2543,7 @@
 392	DIM example 	8CSjbArT5j_Dim_Example.png	8CSjbArT5j_Dim_Example.nx
 385	Triangle Subprogram	5cgBUzCF9o_Triangle_Sub.png	5cgBUzCF9o_Triangle_Sub.nx
 383	Sphere and line drawer	KHpNwrTZNo_Sphere_And_Line_Drawer.png	KHpNwrTZNo_Sphere_And_Line_Drawer.nx
+379	2D Map collisions	UEuNUYrKdH_2D_Map_Collision_Example.png	UEuNUYrKdH_2D_Map_Collision_Example.nx
 362	Scrolling city and clouds	cnjLVJPYoX_City_And_Clouds.png	cnjLVJPYoX_City_And_Clouds.nx
 359	Simple demo - Fancy Text	SUMcWErvR5_Helloo.png	SUMcWErvR5_Helloo.nx
 357	Using a raster subprogram to center text	DGWUFbJFp9_Centered_Text.png	DGWUFbJFp9_Centered_Text.nx
@@ -2552,14 +2554,21 @@
 324	Chess demo	npGaaxfj8H_Chess_Demo.png	npGaaxfj8H_Chess_Demo.nx
 318	Map Scrolling	PSseoEXKXi_Map_Scrolling_1.3.png	PSseoEXKXi_Map_Scrolling_1.3.nx
 317	Scaled images demo	YpXreWKUXL_Scaled_Images.png	YpXreWKUXL_Scaled_Images.nx
+295	Game Making Skills: Chapter 3	LkKk9KudXZ_Game_Making_Skills_Chapter_3.png	LkKk9KudXZ_Game_Making_Skills_Chapter_3.nx
 294	Game Making Skills: Chapter 2	biuY9bdJbm_Game_Making_Skills_Chapter_2.png	biuY9bdJbm_Game_Making_Skills_Chapter_2.nx
+290	Game Making Skills: Chapter 1	aXNPKnaww7_Quick_Adventure.png	aXNPKnaww7_Quick_Adventure.nx
+283	Collision Demo	MTey5GTXsf_Collision_Demo.png	MTey5GTXsf_Collision_Demo.nx
+282	Volume Control	WUQxYdxGLZ_Volume_Control.png	WUQxYdxGLZ_Volume_Control.nx
 279	Move Demo	ZqmDDFcFRD_Move_Demo.png	ZqmDDFcFRD_Move_Demo.nx
 270	Space: Special FX demo	arJ6EiAeD8_Space_Special_Effects_DEMO.png	arJ6EiAeD8_Space_Special_Effects_DEMO.nx
 263	Circle Based Collision Detection	bJLT2gwtde_Circle_Based_Collision_Detection.png	bJLT2gwtde_Circle_Based_Collision_Detection.nx
 245	Animated background trick demo	dJNWdGTibx_Animated_Background_Trick.png	dJNWdGTibx_Animated_Background_Trick.nx
 243	Resistance is futile, you will be assimilated !! (demo)	Q9DYYPiFwp_Resistence_Is_Futile_You_Will_Be_Assimulated_2.png	Q9DYYPiFwp_Resistence_Is_Futile_You_Will_Be_Assimulated_2.nx
+236	Raster wiggle demo	ZVV9xXkqjR_Raster_Wiggle.png	ZVV9xXkqjR_Raster_Wiggle.nx
 232	Raster Trick with 24 Colors demo	4dP49wmm7d_Raster_Trick_with_24_Colors_.png	4dP49wmm7d_Raster_Trick_with_24_Colors_.nx
+226	Sprite demo	FovCXYsCcA_Sprite_Demo.png	FovCXYsCcA_Sprite_Demo.nx
 197	Space simulation demo	UVAKSa89vE_Space_2.png	UVAKSa89vE_Space_2.nx
+196	Burgerman with TOUCH MOVE demo	7utEyyZnSx_Burgerman.png	7utEyyZnSx_Burgerman.nx
 188	Floating Text Scroller Display demo	NhtRiHNA7M_Floating_Text_Scroller_Display.png	NhtRiHNA7M_Floating_Text_Scroller_Display.nx
 187	Floating Numeric Display demo	L4Vk2dLhCb_Floating_Numeric_Display.png	L4Vk2dLhCb_Floating_Numeric_Display.nx
 180	Teaser...	ZotSXJrpcT_Teaser.png	ZotSXJrpcT_Teaser.nx
