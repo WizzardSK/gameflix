@@ -119,7 +119,7 @@ jobs:
             ext_match=$(grep -F "${path}" /tmp/external_files.txt | grep -w "${size}")
             if [ -n "$ext_match" ]; then
               echo "File $i: Copying from external IA: $path"
-              ia copy "$EXTERNAL_IA/${path}" "$IA_ID/${path}" --no-derive
+              ia copy "$EXTERNAL_IA/${path}" "$IA_ID/${path}" --no-derive --no-backup
               echo "File $i: Done (copied)"
               return
             fi
@@ -130,7 +130,7 @@ jobs:
             file=$(find "workdir_$i" -type f ! -name "*.torrent" ! -name "*.aria2" | head -1)
             if [ -n "$file" ] && [ -f "$file" ]; then
               echo "File $i: Uploading $(basename "$file")"
-              ia upload "$IA_ID" "$file" --remote-name="$path" --no-derive --retries=3
+              ia upload "$IA_ID" "$file" --remote-name="$path" --no-derive --no-backup --retries=3
             fi
 
             rm -rf "workdir_$i"
