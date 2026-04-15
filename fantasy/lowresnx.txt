@@ -1,4 +1,5 @@
 ---	game
+4007	Rubik&#039;s cube	TcZVZ5berd_LowRes_NX_20260414_23_03_53.png	TcZVZ5berd_Rubiks_cube.nx
 4006	Connect Pathways	m8wbNuNFhX_Connect_3.1.png	m8wbNuNFhX_Connect_3.1.nx
 3994	Ballerz	jcdtPtkRUM_Ballerz.png	jcdtPtkRUM_Ballerz.nx
 3984	Patchwork	y6ZQDshiDu_Patchwork_0.21.png	y6ZQDshiDu_Patchwork_0.21.nx
@@ -2555,7 +2556,6 @@
 318	Map Scrolling	PSseoEXKXi_Map_Scrolling_1.3.png	PSseoEXKXi_Map_Scrolling_1.3.nx
 317	Scaled images demo	YpXreWKUXL_Scaled_Images.png	YpXreWKUXL_Scaled_Images.nx
 295	Game Making Skills: Chapter 3	LkKk9KudXZ_Game_Making_Skills_Chapter_3.png	LkKk9KudXZ_Game_Making_Skills_Chapter_3.nx
-294	Game Making Skills: Chapter 2	biuY9bdJbm_Game_Making_Skills_Chapter_2.png	biuY9bdJbm_Game_Making_Skills_Chapter_2.nx
 290	Game Making Skills: Chapter 1	aXNPKnaww7_Quick_Adventure.png	aXNPKnaww7_Quick_Adventure.nx
 283	Collision Demo	MTey5GTXsf_Collision_Demo.png	MTey5GTXsf_Collision_Demo.nx
 282	Volume Control	WUQxYdxGLZ_Volume_Control.png	WUQxYdxGLZ_Volume_Control.nx
@@ -2574,9 +2574,7 @@
 180	Teaser...	ZotSXJrpcT_Teaser.png	ZotSXJrpcT_Teaser.nx
 146	Double x Double = 13 colors in 4 shades demo	EXSvY8gAk5_Double_x_Double_background_Colors.png	EXSvY8gAk5_Double_x_Double_background_Colors.nx
 142	Double your colors!  demo	iu5374sTAP_Double_Your_Colors_Demo.png	iu5374sTAP_Double_Your_Colors_Demo.nx
-123	Circle drawer for nx	mJrfugQxWW_Image.png	mJrfugQxWW_Unnamed_Program_12.nx
 122	Sine Drawing	jdnkd4Sv7K_LowRes_NX_20181111_12_07_36.png	jdnkd4Sv7K_drawing.nx
-120	Draw Recreation	ZYLfjDrZbK_True_Draw_Thing_V_0.2.png	ZYLfjDrZbK_True_Draw_Thing_V_0.2.nx
 118	Atari running man demo	6hYoqgPids_Poke_Animation_W_Color_Strobe.png	6hYoqgPids_Poke_Animation_W_Color_Strobe.nx
 93	BULK DATA RETRIEVAL (DEMO)	syfseURTVc_Message_File_Pro_DEMO.png	syfseURTVc_Message_File_Pro_DEMO.nx
 89	Touch Zones GUI library	bWj4zfKiBS_Touch_Zones_1.2.png	bWj4zfKiBS_Touch_Zones_1.2.nx
