@@ -2300,24 +2300,14 @@
 1895	autolist	2f7aWi2Wf4_Image1.jpg	2f7aWi2Wf4_autotype199.nx
 1890	I learned something: not-quantized frequencies are possible	wsLz9EcdVa_Audio_Reading.png	wsLz9EcdVa_Audio_Reading.nx
 1873	anagram	WdkVqtc2eg_Image1.jpg	WdkVqtc2eg_anagram1.nx
-1857	10 oneliners	fDAvUjjQFA_10oneliners.png	fDAvUjjQFA_10oneliners.nx
-1855	Y Sorting V:1.0	2eCs7wQTLo_LowRes_NX_20210418_23_53_05.png	2eCs7wQTLo_Ysorting.nx
 1842	Dual Stick Control	zDCHsrJ28y_Capture_21.png.png	zDCHsrJ28y_dual_sticks.nx
 1832	Fireworks	DoFvxrPVEU_Fireworks.png	DoFvxrPVEU_Fireworks.nx
 1811	Array Flood fill	qzDnz4kB9G_LowRes_NX_20210528_22_12_13.png	qzDnz4kB9G_ArrayFloodFillshorterdisplayingcode.nx
 1802	Background as Data Storage	NQHcmhb9F6_Background_Data_Tests_0.3.png	NQHcmhb9F6_Background_Data_Tests_0.3.nx
 1792	Funky Waves	L4uWhVycZy_LowRes_NX_20210319_21_13_45.png	L4uWhVycZy_waves.nx
-1791	Dubble button test	K5vk39dCpZ_Dubble_Button_Test.png	K5vk39dCpZ_Dubble_Button_Test.nx
 1790	Speedy Borders	JeTQkexcwM_Speedy_Borders.png	JeTQkexcwM_Speedy_Borders.nx
 1772	Animation Test (3D zoom by Nicky)	Bk8ufLN9SZ_3Dzoom_by_Nicky_TEST.png	Bk8ufLN9SZ_3Dzoom_by_Nicky_TEST.nx
 1769	3DTree	6qqcZVUTxq_Image1.jpg	6qqcZVUTxq_3DTree.nx
-1762	Budgerigar	aEJP9u839H_Image1.jpg	aEJP9u839H_budgerigar_eff.nx
-1748	Background Attribute Bits	xdyUXAyGTc_Attribute_Bits.png	xdyUXAyGTc_Attribute_Bits.nx
-1716	Multi Ball Collision	kEGKmByZay_Ball_Collision.png	kEGKmByZay_Ball_Collision.nx
-1706	Graphics data hack	j6D5QCgXNh_Graphics_Data_Hack.png	j6D5QCgXNh_Graphics_Data_Hack.nx
-1697	You Died text	iMU8QxnMW4_You_Died.png	iMU8QxnMW4_You_Died.nx
-1684	Remix of PARTICLES by G-9 	QqtLuejAgG_REMIX_of_a_G9_original.png	QqtLuejAgG_REMIX_of_a_G9_original.nx
-1679	Zelda Forest Concept Tests	hSpya29K9S_Zelda_Concept_Tests_108.png	hSpya29K9S_Zelda_Concept_Tests_108.nx
 1673	Massive dungeon test	QbeRu8quLB_Massive_Dungeon_Test.png	QbeRu8quLB_Massive_Dungeon_Test.nx
 1664	BallNX	bQ22KT4mpp_BallNX.png	bQ22KT4mpp_BallNX.nx
 1662	CHIPS TEST	k5g2fQPdng_Chips_Test_2.5.png	k5g2fQPdng_Chips_Test_2.5.nx
@@ -2556,6 +2546,7 @@
 318	Map Scrolling	PSseoEXKXi_Map_Scrolling_1.3.png	PSseoEXKXi_Map_Scrolling_1.3.nx
 317	Scaled images demo	YpXreWKUXL_Scaled_Images.png	YpXreWKUXL_Scaled_Images.nx
 295	Game Making Skills: Chapter 3	LkKk9KudXZ_Game_Making_Skills_Chapter_3.png	LkKk9KudXZ_Game_Making_Skills_Chapter_3.nx
+294	Game Making Skills: Chapter 2	biuY9bdJbm_Game_Making_Skills_Chapter_2.png	biuY9bdJbm_Game_Making_Skills_Chapter_2.nx
 290	Game Making Skills: Chapter 1	aXNPKnaww7_Quick_Adventure.png	aXNPKnaww7_Quick_Adventure.nx
 283	Collision Demo	MTey5GTXsf_Collision_Demo.png	MTey5GTXsf_Collision_Demo.nx
 282	Volume Control	WUQxYdxGLZ_Volume_Control.png	WUQxYdxGLZ_Volume_Control.nx
@@ -2574,7 +2565,9 @@
 180	Teaser...	ZotSXJrpcT_Teaser.png	ZotSXJrpcT_Teaser.nx
 146	Double x Double = 13 colors in 4 shades demo	EXSvY8gAk5_Double_x_Double_background_Colors.png	EXSvY8gAk5_Double_x_Double_background_Colors.nx
 142	Double your colors!  demo	iu5374sTAP_Double_Your_Colors_Demo.png	iu5374sTAP_Double_Your_Colors_Demo.nx
+123	Circle drawer for nx	mJrfugQxWW_Image.png	mJrfugQxWW_Unnamed_Program_12.nx
 122	Sine Drawing	jdnkd4Sv7K_LowRes_NX_20181111_12_07_36.png	jdnkd4Sv7K_drawing.nx
+120	Draw Recreation	ZYLfjDrZbK_True_Draw_Thing_V_0.2.png	ZYLfjDrZbK_True_Draw_Thing_V_0.2.nx
 118	Atari running man demo	6hYoqgPids_Poke_Animation_W_Color_Strobe.png	6hYoqgPids_Poke_Animation_W_Color_Strobe.nx
 93	BULK DATA RETRIEVAL (DEMO)	syfseURTVc_Message_File_Pro_DEMO.png	syfseURTVc_Message_File_Pro_DEMO.nx
 89	Touch Zones GUI library	bWj4zfKiBS_Touch_Zones_1.2.png	bWj4zfKiBS_Touch_Zones_1.2.nx
