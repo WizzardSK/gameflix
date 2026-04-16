@@ -11,11 +11,25 @@ while ! mountpoint -q "$HOME/zips"; do sleep 5; done
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/lowresnx.zip "$HOME/roms/LowresNX"
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) $HOME/zips/wasm4.zip "$HOME/roms/WASM-4"
 
-IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv | tail -n +2 | awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}')"
-IFS=";"; for each in "${roms[@]}"; do
-  read -ra rom < <(printf '%s' "$each")
-  if grep -q ":" <<< "${rom[1]}" && [[ "${rom[1]}" != *.zip ]]; then
-    rom3=$(sed 's/<[^>]*>//g' <<< "${rom[2]}"); mkdir -p ~/roms/${rom[0]}/${rom3}
-    rclone mount "${rom[1]}" ~/roms/${rom[0]}/${rom3} --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --allow-other --vfs-cache-mode minimal --vfs-read-chunk-size 1M
+csv=$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv | tail -n +2)
+mounted=()
+while IFS=';' read -ra rom; do
+  path="${rom[1]}"
+  [[ "$path" =~ ^archive:([^/]+)(.*) ]] && archive="${BASH_REMATCH[1]}" subpath="${BASH_REMATCH[2]}"
+  [[ -n "$archive" ]] || continue
+  already_mounted=false
+  for m in "${mounted[@]}"; do [[ "$m" == "$archive" ]] && already_mounted=true && break; done
+  if [[ "$already_mounted" == "false" ]]; then
+    mounted+=("$archive")
+    mkdir -p ~/zips/$archive
+    mountpoint -q ~/zips/$archive || rclone mount "$archive:" ~/zips/$archive --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --allow-other --vfs-cache-mode minimal --vfs-read-chunk-size 1M
   fi
-done
+done <<< "$csv"
+while IFS=';' read -ra rom; do
+  platform="${rom[0]}" path="${rom[1]}" display="${rom[2]}"
+  [[ "$path" =~ ^archive:([^/]+)(.*) ]] && archive="${BASH_REMATCH[1]}" subpath="${BASH_REMATCH[2]}"
+  [[ -n "$archive" ]] || continue
+  display=$(sed 's/<[^>]*>//g' <<< "$display")
+  mkdir -p ~/roms/$platform/$display
+  bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/zips/$archive$subpath ~/roms/$platform/$display
+done <<< "$csv"
