@@ -9,7 +9,9 @@ csv=$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform
 
 remotes_done=()
 
-nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount https://wizzardsk.github.io/lowresnx.zip https://wizzardsk.github.io/wasm4.zip ~/zips -f &
+nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount https://wizzardsk.github.io/lowresnx.zip ~/zips -f &
+while ! mountpoint -q ~/zips; do sleep 5; done
+nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount https://wizzardsk.github.io/wasm4.zip ~/zips -f &
 while ! mountpoint -q ~/zips; do sleep 5; done
 
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/zips/lowresnx ~/roms/LowresNX
@@ -25,6 +27,8 @@ while IFS=',' read -ra rom; do
     remotes_done+=("$remote")
     nohup rclone mount "archive:$remote" ~/rom/$remote --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --allow-non-empty --allow-other --vfs-cache-mode minimal --vfs-read-chunk-size 1M > /dev/null 2>&1 &
     while ! mountpoint -q ~/rom/$remote; do sleep 5; done
+    nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount ~/rom/$remote ~/zips -f > /dev/null 2>&1 &
+    while ! mountpoint -q ~/zips; do sleep 5; done
   fi
   
   mkdir -p ~/roms/$platform/"$display"
