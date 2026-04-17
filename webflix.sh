@@ -17,7 +17,6 @@ bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/zips/wasm4 
 csv=$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv | tail -n +2)
 
 remotes_done=()
-zips_done=()
 while IFS=',' read -ra rom; do
   platform="${rom[0]}" path="${rom[1]}" display="${rom[2]}"
   [[ "$path" =~ ^archive:([^/]+)/(.+\.zip)(/.*)? ]] && remote="${BASH_REMATCH[1]}" zipfile="${BASH_REMATCH[2]}" subpath="${BASH_REMATCH[3]}"
@@ -30,14 +29,6 @@ while IFS=',' read -ra rom; do
     while ! mountpoint -q ~/rom/$remote; do sleep 5; done
   fi
   
-  zip_path="${remote}/${zipfile}"
-  if [[ ! " ${zips_done[@]} " =~ " ${zip_path} " ]]; then
-    zips_done+=("$zip_path")
-    mkdir -p ~/zips/$zip_path
-    nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount "$HOME/rom/$zip_path" ~/zips/$zip_path -f > /dev/null 2>&1 &
-    while ! mountpoint -q ~/zips/$zip_path; do sleep 5; done
-  fi
-  
-  mkdir -p ~/roms/$platform/$display
-  bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/zips/$zip_path${subpath} ~/roms/$platform/$display
+  mkdir -p ~/roms/$platform/"$display"
+  bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/rom/$remote ~/roms/$platform/"$display"
 done <<< "$csv"
