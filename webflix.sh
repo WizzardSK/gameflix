@@ -5,11 +5,8 @@ wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/Wizza
 
 if [ ! -f $HOME/ratarmount-full ]; then wget -nv -O $HOME/ratarmount-full https://github.com/mxmlnkn/ratarmount/releases/download/v1.2.0/ratarmount-1.2.0-x86_64.AppImage; chmod +x $HOME/ratarmount-full; fi
 
-mkdir -p ~/zips/lowresnx ~/zips/wasm4
-nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount https://wizzardsk.github.io/lowresnx.zip ~/zips/lowresnx -f &
-nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount https://wizzardsk.github.io/wasm4.zip ~/zips/wasm4 -f &
-while ! mountpoint -q ~/zips/lowresnx || ! mountpoint -q ~/zips/wasm4; do sleep 5; done
-sleep 2
+nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount https://wizzardsk.github.io/lowresnx.zip https://wizzardsk.github.io/wasm4.zip ~/zips -f &
+while ! mountpoint -q ~/zips; do sleep 5; done
 
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/zips/lowresnx ~/roms/LowresNX
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/zips/wasm4 ~/roms/WASM-4
@@ -17,7 +14,6 @@ bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/zips/wasm4 
 csv=$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv | tail -n +2)
 
 remotes_done=()
-zips_by_remote=()
 while IFS=',' read -ra rom; do
   platform="${rom[0]}" path="${rom[1]}" display="${rom[2]}"
   [[ "$path" =~ ^archive:([^/]+)/(.+\.zip)(/.*)? ]] && remote="${BASH_REMATCH[1]}" zipfile="${BASH_REMATCH[2]}" subpath="${BASH_REMATCH[3]}"
@@ -30,12 +26,11 @@ while IFS=',' read -ra rom; do
     while ! mountpoint -q ~/rom/$remote; do sleep 5; done
   fi
   
-  zips_by_remote+=("$remote")
   mkdir -p ~/roms/$platform/"$display"
   bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/rom/$remote/roms ~/roms/$platform/"$display"
 done <<< "$csv"
 
 for remote in "${remotes_done[@]}"; do
-  nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount ~/rom/$remote ~/zips/$remote -f > /dev/null 2>&1 &
-  while ! mountpoint -q ~/zips/$remote; do sleep 5; done
+  nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount ~/rom/$remote ~/zips -f > /dev/null 2>&1 &
+  while ! mountpoint -q ~/zips; do sleep 5; done
 done
