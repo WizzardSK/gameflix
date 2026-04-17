@@ -8,14 +8,30 @@ if [ ! -f $HOME/ratarmount-full ]; then wget -nv -O $HOME/ratarmount-full https:
 csv=$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv | tail -n +2)
 
 remotes_done=()
+zip_sources=()
 
-nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount https://wizzardsk.github.io/lowresnx.zip ~/zips -f &
-while ! mountpoint -q ~/zips; do sleep 5; done
-nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount https://wizzardsk.github.io/wasm4.zip ~/zips -f &
-while ! mountpoint -q ~/zips; do sleep 5; done
+nohup rclone mount "archive:ni-roms" ~/rom/ni-roms --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --allow-non-empty --allow-other --vfs-cache-mode minimal --vfs-read-chunk-size 1M > /dev/null 2>&1 &
+while ! mountpoint -q ~/rom/ni-roms; do sleep 5; done
+zip_sources+=("~/rom/ni-roms/roms")
 
+nohup rclone mount "archive:tosec-main" ~/rom/tosec-main --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --allow-non-empty --allow-other --vfs-cache-mode minimal --vfs-read-chunk-size 1M > /dev/null 2>&1 &
+while ! mountpoint -q ~/rom/tosec-main; do sleep 5; done
+zip_sources+=("~/rom/tosec-main")
+
+nohup rclone mount "archive:mame-sl" ~/rom/mame-sl --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --allow-non-empty --allow-other --vfs-cache-mode minimal --vfs-read-chunk-size 1M > /dev/null 2>&1 &
+while ! mountpoint -q ~/rom/mame-sl; do sleep 5; done
+zip_sources+=("~/rom/mame-sl")
+
+nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount https://wizzardsk.github.io/lowresnx.zip ~/zips/lowresnx -f > /dev/null 2>&1 &
+while ! mountpoint -q ~/zips/lowresnx; do sleep 5; done
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/zips/lowresnx ~/roms/LowresNX
+
+nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount https://wizzardsk.github.io/wasm4.zip ~/zips/wasm4 -f > /dev/null 2>&1 &
+while ! mountpoint -q ~/zips/wasm4; do sleep 5; done
 bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/zips/wasm4 ~/roms/WASM-4
+
+nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount "${zip_sources[@]}" ~/zips -f > /dev/null 2>&1 &
+while ! mountpoint -q ~/zips; do sleep 5; done
 
 while IFS=',' read -ra rom; do
   platform="${rom[0]}" path="${rom[1]}" display="${rom[2]}"
@@ -23,24 +39,6 @@ while IFS=',' read -ra rom; do
   [[ -n "$remote" ]] || continue
   display=$(sed 's/<[^>]*>//g' <<< "$display")
   
-  if [[ ! " ${remotes_done[@]} " =~ " ${remote} " ]]; then
-    remotes_done+=("$remote")
-    nohup rclone mount "archive:$remote" ~/rom/$remote --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --allow-non-empty --allow-other --vfs-cache-mode minimal --vfs-read-chunk-size 1M > /dev/null 2>&1 &
-    while ! mountpoint -q ~/rom/$remote; do sleep 5; done
-    
-    rompath="$remote"
-    if [[ "$remote" != "mame-sl" && "$remote" != "tosec-main" ]]; then
-      rompath="$remote/roms"
-    fi
-    
-    nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount ~/rom/$rompath ~/zips -f > /dev/null 2>&1 &
-    while ! mountpoint -q ~/zips; do sleep 5; done
-  fi
-  
   mkdir -p ~/roms/$platform/"$display"
-  if [[ "$remote" == "mame-sl" || "$remote" == "tosec-main" ]]; then
-    bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/rom/$remote ~/roms/$platform/"$display"
-  else
-    bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/rom/$remote/roms ~/roms/$platform/"$display"
-  fi
+  bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/zips ~/roms/$platform/"$display"
 done <<< "$csv"
