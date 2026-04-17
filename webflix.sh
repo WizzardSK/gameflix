@@ -24,7 +24,7 @@ while IFS=',' read -ra rom; do
   fi
   
   mkdir -p ~/roms/$platform/"$display"
-  if [[ "$remote" == "mame-sl" ]]; then
+  if [[ "$remote" == "mame-sl" || "$remote" == "tosec-main" ]]; then
     bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/rom/$remote ~/roms/$platform/"$display"
   else
     bindfs --perms=0755 --force-user=$(whoami) --force-group=$(id -gn) ~/rom/$remote/roms ~/roms/$platform/"$display"
