@@ -1,0 +1,180 @@
+name: TDC DAT Import
+
+on:
+  workflow_dispatch:
+    inputs:
+      dat_url:
+        description: 'URL of TDC DAT file (zip)'
+        required: true
+        default: 'http://www.totaldoscollection.org/nugnugnug/TDC_DAT_release_23.zip'
+      source_ia_id:
+        description: 'Source IA identifier to copy from'
+        required: true
+        default: 'total_dos_collection'
+      target_ia_id:
+        description: 'Target IA identifier'
+        required: true
+        default: 'gameflix-tdc'
+      batch_size:
+        description: 'Files per batch (0=all)'
+        required: false
+        default: '100'
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 600
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq p7zip-full jq curl
+          pip install internetarchive
+
+      - name: Configure IA
+        run: |
+          mkdir -p ~/.config/internetarchive
+          cat > ~/.config/internetarchive/ia.ini << EOCONF
+          [s3]
+          access = ${{ secrets.IA_ACCESS }}
+          secret = ${{ secrets.IA_SECRET }}
+          EOCONF
+
+      - name: Download and parse DAT file
+        env:
+          DAT_URL: ${{ inputs.dat_url }}
+        run: |
+          curl -sL -o /tmp/tdc_dat.zip "$DAT_URL"
+          7z x -y /tmp/tdc_dat.zip -o/tmp/dat_out/ > /tmp/dat_extract.log
+          find /tmp/dat_out/ -type f > /tmp/dat_files.txt
+          echo "DAT files extracted: $(wc -l < /tmp/dat_files.txt)"
+
+      - name: Build game name index from DAT
+        run: |
+          python3 << 'PYEOF'
+          import os
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          def extract_game_names(dat_dir):
+              game_names = set()
+              for f in Path(dat_dir).rglob('*'):
+                  try:
+                      if f.is_file() and f.stat().st_size > 0:
+                          with open(f, 'r', encoding='utf-8', errors='ignore') as fp:
+                              content = fp.read()
+                          if '<game' in content or '<machine' in content:
+                              try:
+                                  root = ET.fromstring(content)
+                                  for elem in root.iter('game'):
+                                      name = elem.get('name', '')
+                                      if name:
+                                          game_names.add(name)
+                                  for elem in root.iter('machine'):
+                                      name = elem.get('name', '')
+                                      if name:
+                                          game_names.add(name)
+                              except ET.ParseError:
+                                  pass
+                  except Exception as e:
+                      pass
+              return game_names
+
+          game_names = extract_game_names('/tmp/dat_out')
+          print(f"Found {len(game_names)} games in DAT")
+          with open('/tmp/dat_games.txt', 'w') as f:
+              for gn in sorted(game_names):
+                  f.write(gn + '\n')
+          for gn in list(game_names)[:10]:
+              print(f"  {gn}")
+          PYEOF
+
+      - name: Get source IA files
+        env:
+          SOURCE_IA: ${{ inputs.source_ia_id }}
+        run: |
+          curl -sL "https://archive.org/metadata/${SOURCE_IA}?output=json" | python3 -c "
+          import json, sys
+          data = json.load(sys.stdin)
+          for f in data.get('files', []):
+              name = f.get('name', '')
+              size = f.get('size', '')
+              if name and name.endswith('.zip'):
+                  print(name + '\t' + size)
+          " > /tmp/ia_source_files.txt
+          echo "Source IA files: $(wc -l < /tmp/ia_source_files.txt)"
+
+      - name: Match and copy files
+        run: |
+          BATCH_SIZE="${{ inputs.batch_size }}"
+          SOURCE_IA="${{ inputs.source_ia_id }}"
+          TARGET_IA="${{ inputs.target_ia_id }}"
+          python3 << PYEOF
+          import subprocess
+          import sys
+
+          BATCH_SIZE = int(sys.argv[1]) if len(sys.argv) > 1 else 100
+          SOURCE_IA = sys.argv[2] if len(sys.argv) > 2 else 'total_dos_collection'
+          TARGET_IA = sys.argv[3] if len(sys.argv) > 3 else 'gameflix-tdc'
+
+          dat_games = set()
+          with open('/tmp/dat_games.txt') as f:
+              for line in f:
+                  line = line.strip()
+                  if line:
+                      dat_games.add(line)
+
+          print(f"Looking for {len(dat_games)} games from DAT")
+
+          ia_files = {}
+          with open('/tmp/ia_source_files.txt') as f:
+              for line in f:
+                  line = line.strip()
+                  if '\t' in line:
+                      name, size = line.split('\t', 1)
+                      ia_files[name] = size
+
+          print(f"Found {len(ia_files)} files in source IA")
+
+          matched = []
+          for ia_file in ia_files:
+              base = ia_file.rsplit('.zip', 1)[0]
+              for dat_game in dat_games:
+                  dat_base = dat_game.rsplit('.zip', 1)[0] if '.zip' in dat_game else dat_game
+                  if dat_game in ia_file or base.startswith(dat_base[:20]):
+                      matched.append((ia_file, dat_game))
+                      break
+                  if '.zip' in ia_file:
+                      name_part = ia_file.replace('.zip', '')
+                      if dat_game in name_part or name_part in dat_game:
+                          matched.append((ia_file, dat_game))
+                          break
+
+          print(f"Matched {len(matched)} files")
+
+          if BATCH_SIZE == '0':
+              BATCH_SIZE = len(matched)
+          else:
+              BATCH_SIZE = int(BATCH_SIZE)
+
+          print(f"Batch size: {BATCH_SIZE}")
+
+          copied = 0
+          for ia_file, dat_game in matched[:BATCH_SIZE]:
+              cmd = ['ia', 'copy', f'{SOURCE_IA}/{ia_file}', f'{TARGET_IA}/{ia_file}', '--no-derive', '--no-backup']
+              print(f"Copying: {ia_file}")
+              result = subprocess.run(cmd, capture_output=True, text=True)
+              if result.returncode == 0:
+                  copied += 1
+                  print(f"OK: {ia_file}")
+              else:
+                  err = result.stderr[:200] if result.stderr else result.stdout[:200]
+                  print(f"FAIL: {ia_file} - {err}")
+
+          print(f"Copied {copied} files")
+          PYEOF
+          "$BATCH_SIZE" "$SOURCE_IA" "$TARGET_IA"
