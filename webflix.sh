@@ -15,6 +15,7 @@ while read path; do
       ;;
     archive:mame-sl/*)
       subpath="${path#archive:mame-sl/}"
+      subpath="${subpath#*/}"
       target=~/rom/mame-sl/"$subpath"
       ;;
     archive:tosec-main/*)
