@@ -77,18 +77,19 @@ jobs:
               print(f"  {g[:40]} CRC:{games[g]}")
           PYEOF
 
-      - name: Get source IA files
+      - name: Get source IA files with checksums
         run: |
           SOURCE="${{ github.event.inputs.source_ia }}"
           TARGET="${{ github.event.inputs.target_ia }}"
-          echo "Getting source files..."
+          echo "Getting source files with checksums..."
           curl -sL "https://archive.org/metadata/${SOURCE}?output=json" | python3 -c "
           import json, sys
           data = json.load(sys.stdin)
           for f in data.get('files', []):
               n = f.get('name', '')
               if n.endswith('.zip'):
-                  print(n)
+                  crc = f.get('crc32', '')
+                  print(n + '|' + (crc or ''))
           " > /tmp/source.txt
           echo "Getting target files..."
           curl -sL "https://archive.org/metadata/${TARGET}?output=json" | python3 -c "
@@ -100,18 +101,16 @@ jobs:
           " > /tmp/target.txt
           echo "Source: $(wc -l < /tmp/source.txt), Target: $(wc -l < /tmp/target.txt)"
 
-      - name: Match files with CRC
+      - name: Match files with CRC verification
         run: |
           python3 << 'PYEOF'
-          import urllib.request
-          
           games = {}
           with open('/tmp/games.txt') as f:
               for l in f:
                   l = l.strip()
                   if l and '|' in l:
                       name, crc = l.split('|', 1)
-                      games[name] = crc.lower() if crc else None
+                      games[name.strip()] = crc.strip().lower() if crc.strip() else None
           
           target_files = set()
           with open('/tmp/target.txt') as f:
@@ -120,31 +119,19 @@ jobs:
                   if l:
                       target_files.add(l)
           
-          files = []
+          source_files = {}
           with open('/tmp/source.txt') as f:
               for l in f:
                   l = l.strip()
-                  if l:
-                      files.append(l)
-          
-          TARGET = "${{ github.event.inputs.target_ia }}"
-          
-          target_crc = {}
-          try:
-              target_meta = __import__('json').loads(__import__('urllib.request').urlopen(f"https://archive.org/metadata/{TARGET}?output=json").read())
-              for f in target_meta.get('files', []):
-                  n = f.get('name', '')
-                  c = f.get('crc32', '')
-                  if n and c:
-                      target_crc[n] = c.lower()
-          except:
-              pass
+                  if l and '|' in l:
+                      parts = l.rsplit('|', 1)
+                      source_files[parts[0]] = parts[1].lower() if len(parts) > 1 and parts[1] else None
           
           matched = []
           skip_existing = 0
           skip_checksum = 0
           
-          for ia_file in files:
+          for ia_file, source_crc in source_files.items():
               if ia_file in target_files:
                   skip_existing += 1
                   continue
@@ -154,15 +141,15 @@ jobs:
                   if g in base or base in g[:25]:
                       dat_crc = games.get(g)
                       break
-              if dat_crc and ia_file in target_crc:
-                  if target_crc[ia_file].lower() == dat_crc.lower():
+              if dat_crc:
+                  if source_crc and source_crc.lower() == dat_crc.lower():
                       matched.append(ia_file)
                   else:
                       skip_checksum += 1
-              elif not dat_crc:
+              else:
                   matched.append(ia_file)
           
-          print(f"Matched: {len(matched)}, Skipped existing: {skip_existing}, Skipped checksum: {skip_checksum}")
+          print(f"Matched: {len(matched)}, Skipped existing: {skip_existing}, Skipped mismatch: {skip_checksum}")
           
           with open('/tmp/matched.txt', 'w') as f:
               for m in matched:
