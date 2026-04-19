@@ -1,0 +1,47 @@
+name: TDC Import
+
+on:
+  workflow_dispatch:
+    inputs:
+      batch_size:
+        description: 'Files to copy'
+        required: false
+        default: '5'
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq curl
+
+      - name: Get source IA files
+        run: |
+          curl -sL "https://archive.org/metadata/Total_DOS_Collection_Release_16_March_2019?output=json" | python3 -c "
+          import json, sys
+          data = json.load(sys.stdin)
+          for f in data.get('files', []):
+              name = f.get('name', '')
+              if name and name.endswith('.zip'):
+                  print(name)
+          " > /tmp/source.txt
+          echo "Found $(wc -l < /tmp/source.txt) files"
+
+      - name: Match and copy
+        env:
+          BATCH_SIZE: ${{ inputs.batch_size }}
+        run: |
+          python3 << 'PYEOF'
+          import os
+          BATCH = int(os.environ.get('BATCH_SIZE', '5'))
+          print(f"Batch size: {BATCH}")
+          
+          with open('/tmp/source.txt') as f:
+              files = [l.strip() for l in f if l.strip()]
+          
+          print(f"Total: {len(files)}")
+          for i, f in enumerate(files[:BATCH]):
+              print(f"{i+1}: {f[:60]}")
+          PYEOF
