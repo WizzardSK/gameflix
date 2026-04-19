@@ -24,7 +24,7 @@ while read path; do
   esac
   
   [[ -f "$target" ]] && continue
-  rclone copy "archive:$path" "$target" --no-check-dest 2>/dev/null &
+  rclone copy "$path" "$target" --no-check-dest 2>/dev/null &
   
   while (( $(jobs -r | wc -l) >= 10 )); do sleep 2; done
 done <<< "$csv"
