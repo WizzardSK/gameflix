@@ -121,35 +121,11 @@ jobs:
           SOURCE: ${{ github.event.inputs.source_ia }}
           TARGET: ${{ github.event.inputs.target_ia }}
         run: |
-          python3 << 'PYEOF'
-          import os
-          import internetarchive
-
-          BATCH = int(os.environ.get('BATCH', '10'))
-          SOURCE = os.environ.get('SOURCE')
-          TARGET = os.environ.get('TARGET')
-
-          print(f"BATCH={BATCH}, SOURCE={SOURCE}, TARGET={TARGET}")
-
-          with open('/tmp/matched.txt') as f:
-              matched = [l.strip() for l in f if l.strip()]
-
-          if BATCH == 0:
-              BATCH = len(matched)
-
-          print(f"Copying {BATCH} files from {SOURCE} to {TARGET}")
-
-          copied = 0
-          for ia_file in matched[:BATCH]:
-              try:
-                  source_item = internetarchive.get_item(f"{SOURCE}/{ia_file}")
-                  target_item = internetarchive.get_item(TARGET)
-                  result = target_item.upload_file(source_item.download(), file_name=ia_file)
-                  print(f"  OK: {ia_file[:40]}")
-                  copied += 1
-              except Exception as e:
-                  print(f"  FAIL: {ia_file[:40]} - {str(e)[:40]}")
-
-          print(f"======")
-          print(f"Copied {copied} files")
-          PYEOF
+          echo "=== Starting copy ==="
+          ia configure --help | head -5
+          echo "Trying direct copy..."
+          
+          MATCHED_FILE=$(head -1 /tmp/matched.txt)
+          echo "First matched: $MATCHED_FILE"
+          
+          ia copy "${SOURCE}/${MATCHED_FILE}" "${TARGET}/${MATCHED_FILE}" --no-backup 2>&1 || echo "Copy failed"
