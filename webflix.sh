@@ -10,19 +10,23 @@ while read path; do
   
   case "$path" in
     archive:ni-roms/*)
-      target=~/rom/ni-roms/"${path##*/}"
+      subpath="${path#archive:ni-roms/}"
+      target=~/rom/ni-roms/"$subpath"
       ;;
     archive:mame-sl/*)
-      target=~/rom/mame-sl/"${path##*/}"
+      subpath="${path#archive:mame-sl/}"
+      target=~/rom/mame-sl/"$subpath"
       ;;
     archive:tosec-main/*)
-      target=~/rom/tosec-main/"${path##*/}"
+      subpath="${path#archive:tosec-main/}"
+      target=~/rom/tosec-main/"$subpath"
       ;;
     *)
       continue
       ;;
   esac
   
+  mkdir -p "$(dirname "$target")"
   [[ -f "$target" ]] && continue
   rclone copy "$path" "$target" --no-check-dest 2>/dev/null &
   
