@@ -64,9 +64,9 @@ while IFS= read -r path; do
         fi
         fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"
       else
-        zipcount=$(find "$localpath" -maxdepth 1 -name "*.zip" 2>/dev/null | head -2 | wc -l)
-        if [ "$zipcount" -eq 1 ]; then
-          zipfile=$(find "$localpath" -maxdepth 1 -name "*.zip" 2>/dev/null)
+        zipcount=$(find "$localpath" -name "*.zip" 2>/dev/null | wc -l)
+        if [ "$zipcount" -ge 1 ]; then
+          zipfile=$(find "$localpath" -name "*.zip" 2>/dev/null | head -1)
           zipdir=$(mktemp -d)
           $HOME/ratarmount-full "$zipfile" "$zipdir" 2>/dev/null
           entries=("$zipdir"/*)

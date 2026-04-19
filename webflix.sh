@@ -10,13 +10,12 @@ csv=$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platform
 remotes_done=()
 
 nohup rclone mount "archive:ni-roms" ~/rom/ni-roms --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --allow-non-empty --allow-other --vfs-cache-mode minimal --vfs-read-chunk-size 1M > /dev/null 2>&1 &
-while ! mountpoint -q ~/rom/ni-roms; do sleep 5; done
 
 nohup rclone mount "archive:tosec-main" ~/rom/tosec-main --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --allow-non-empty --allow-other --vfs-cache-mode minimal --vfs-read-chunk-size 1M > /dev/null 2>&1 &
-while ! mountpoint -q ~/rom/tosec-main; do sleep 5; done
 
 nohup rclone mount "archive:mame-sl" ~/rom/mame-sl --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --allow-non-empty --allow-other --vfs-cache-mode minimal --vfs-read-chunk-size 1M > /dev/null 2>&1 &
-while ! mountpoint -q ~/rom/mame-sl; do sleep 5; done
+
+while ! mountpoint -q ~/rom/ni-roms || ! mountpoint -q ~/rom/tosec-main || ! mountpoint -q ~/rom/mame-sl; do sleep 2; done
 
 nohup $HOME/ratarmount-full -o attr_timeout=3600 --disable-union-mount https://wizzardsk.github.io/lowresnx.zip https://wizzardsk.github.io/wasm4.zip ~/rom/ni-roms/roms ~/rom/tosec-main ~/rom/mame-sl ~/zips -f > /dev/null 2>&1 &
 while ! mountpoint -q ~/zips; do sleep 5; done
