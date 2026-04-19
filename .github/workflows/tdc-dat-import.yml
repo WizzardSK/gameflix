@@ -34,6 +34,8 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq p7zip-full jq curl
           pip install internetarchive
+          export PATH="$HOME/.local/bin:$PATH"
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Configure IA
         run: |
@@ -113,9 +115,14 @@ jobs:
           BATCH_SIZE="${{ inputs.batch_size }}"
           SOURCE_IA="${{ inputs.source_ia_id }}"
           TARGET_IA="${{ inputs.target_ia_id }}"
+          export PATH="$HOME/.local/bin:$PATH"
+          which ia || pip install internetarchive
           python3 << PYEOF
           import subprocess
           import sys
+          import os
+
+          os.environ['PATH'] = os.path.expanduser('~/.local/bin') + ':' + os.environ.get('PATH', '')
 
           BATCH_SIZE = int(sys.argv[1]) if len(sys.argv) > 1 else 100
           SOURCE_IA = sys.argv[2] if len(sys.argv) > 2 else 'total_dos_collection'
@@ -167,7 +174,7 @@ jobs:
           for ia_file, dat_game in matched[:BATCH_SIZE]:
               cmd = ['ia', 'copy', f'{SOURCE_IA}/{ia_file}', f'{TARGET_IA}/{ia_file}', '--no-derive', '--no-backup']
               print(f"Copying: {ia_file}")
-              result = subprocess.run(cmd, capture_output=True, text=True)
+              result = subprocess.run(cmd, capture_output=True, text=True, env=dict(os.environ, PATH=os.path.expanduser('~/.local/bin') + ':' + os.environ.get('PATH', '/usr/local/bin:/usr/bin:/bin')))
               if result.returncode == 0:
                   copied += 1
                   print(f"OK: {ia_file}")
