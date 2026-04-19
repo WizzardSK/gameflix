@@ -26,16 +26,12 @@ jobs:
     timeout-minutes: 600
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Install tools
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq p7zip-full jq curl
-          pip install internetarchive
-          export PATH="$HOME/.local/bin:$PATH"
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
+          pip install internetarchive --break-system-packages
+          echo "ia location: $(which ia 2>/dev/null || echo 'not found')"
 
       - name: Configure IA
         run: |
@@ -45,6 +41,7 @@ jobs:
           access = ${{ secrets.IA_ACCESS }}
           secret = ${{ secrets.IA_SECRET }}
           EOCONF
+          chmod 600 ~/.config/internetarchive/ia.ini
 
       - name: Download and parse DAT file
         env:
@@ -111,22 +108,23 @@ jobs:
           echo "Source IA files: $(wc -l < /tmp/ia_source_files.txt)"
 
       - name: Match and copy files
+        env:
+          SOURCE_IA: ${{ inputs.source_ia_id }}
+          TARGET_IA: ${{ inputs.target_ia_id }}
+          BATCH_SIZE: ${{ inputs.batch_size }}
         run: |
-          BATCH_SIZE="${{ inputs.batch_size }}"
-          SOURCE_IA="${{ inputs.source_ia_id }}"
-          TARGET_IA="${{ inputs.target_ia_id }}"
-          export PATH="$HOME/.local/bin:$PATH"
-          which ia || pip install internetarchive
-          python3 << PYEOF
-          import subprocess
-          import sys
+          IA_CMD=$(which ia)
+          echo "Using ia: $IA_CMD"
+          
+          python3 << 'PYEOF'
           import os
+          import sys
+          import subprocess
 
-          os.environ['PATH'] = os.path.expanduser('~/.local/bin') + ':' + os.environ.get('PATH', '')
-
-          BATCH_SIZE = int(sys.argv[1]) if len(sys.argv) > 1 else 100
-          SOURCE_IA = sys.argv[2] if len(sys.argv) > 2 else 'total_dos_collection'
-          TARGET_IA = sys.argv[3] if len(sys.argv) > 3 else 'gameflix-tdc'
+          BATCH_SIZE = int(os.environ.get('BATCH_SIZE', '100'))
+          SOURCE_IA = os.environ.get('SOURCE_IA')
+          TARGET_IA = os.environ.get('TARGET_IA')
+          IA_CMD = os.environ.get('IA_CMD', 'ia')
 
           dat_games = set()
           with open('/tmp/dat_games.txt') as f:
@@ -163,18 +161,20 @@ jobs:
 
           print(f"Matched {len(matched)} files")
 
-          if BATCH_SIZE == '0':
+          if BATCH_SIZE == 0:
               BATCH_SIZE = len(matched)
-          else:
-              BATCH_SIZE = int(BATCH_SIZE)
 
           print(f"Batch size: {BATCH_SIZE}")
 
           copied = 0
           for ia_file, dat_game in matched[:BATCH_SIZE]:
-              cmd = ['ia', 'copy', f'{SOURCE_IA}/{ia_file}', f'{TARGET_IA}/{ia_file}', '--no-derive', '--no-backup']
               print(f"Copying: {ia_file}")
-              result = subprocess.run(cmd, capture_output=True, text=True, env=dict(os.environ, PATH=os.path.expanduser('~/.local/bin') + ':' + os.environ.get('PATH', '/usr/local/bin:/usr/bin:/bin')))
+              result = subprocess.run([
+                  IA_CMD, 'copy',
+                  f'{SOURCE_IA}/{ia_file}',
+                  f'{TARGET_IA}/{ia_file}',
+                  '--no-derive', '--no-backup'
+              ], capture_output=True, text=True)
               if result.returncode == 0:
                   copied += 1
                   print(f"OK: {ia_file}")
@@ -184,4 +184,3 @@ jobs:
 
           print(f"Copied {copied} files")
           PYEOF
-          "$BATCH_SIZE" "$SOURCE_IA" "$TARGET_IA"
