@@ -6,7 +6,7 @@ commanderx16,archive:tosec-main/8-Bit Productions/Commander X16/Games/8-Bit Prod
 commanderx16,archive:tosec-main/8-Bit Productions/Commander X16/Games/8-Bit Productions Commander X16 - Games - [IMG] (TOSEC-v2024-01-15).zip,PRG,x16emu,prg
 vircon32,archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media,Vircon32,vircon32_libretro,
 pdp1,archive:mame-sl/mame-sl/pdp1_ptp.zip,MAME,mame pdp1 -ptap1,
-atari2600,archive:a2600_romhunter/Atari-2600-VCS-ROM-Collection.zip#ROMS,ROMS,stella_libretro,
+atari2600,archive:atari-2600-vcs-roms/ROMS,ROMS,stella_libretro,
 atari2600,archive:ni-roms/roms/Atari - 2600.zip,NoIntro,stella_libretro,
 atari2600,archive:tosec-main/Atari/2600 & VCS/Games/Atari 2600 & VCS - Games (TOSEC-v2025-01-15).zip,TOSEC,stella_libretro,
 atari2600,archive:tosec-main/Atari/2600 & VCS/Homebrew/Atari 2600 & VCS - Homebrew - Games - AtariAge Design Contest (TOSEC-v2024-07-03).zip,Homebrew,stella_libretro,
