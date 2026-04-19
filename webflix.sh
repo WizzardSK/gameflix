@@ -5,21 +5,22 @@ wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/Wizza
 
 if [ ! -f $HOME/ratarmount-full ]; then wget -nv -O $HOME/ratarmount-full https://github.com/mxmlnkn/ratarmount/releases/download/v1.2.0/ratarmount-1.2.0-x86_64.AppImage; chmod +x $HOME/ratarmount-full; fi
 
-csv=$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv | tail -n +2)
+csv=$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv | tail -n +2 | cut -d',' -f2 | sort -u | grep '\.zip$')
 
-while IFS=',' read -ra rom; do
-  platform="${rom[0]}" path="${rom[1]}" display="${rom[2]}"
-  [[ "$path" =~ ^archive:([^/]+)/(.+\.zip)(/.*)? ]] && remote="${BASH_REMATCH[1]}" zipfile="${BASH_REMATCH[2]}" subpath="${BASH_REMATCH[3]}"
-  [[ -n "$remote" ]] || continue
-  display=$(sed 's/<[^>]*>//g' <<< "$display")
+while read path; do
+  [[ "$path" != archive:* ]] && continue
+  remote="${path#archive:}"
+  remote="${remote%%/*}"
+  zipfile="${path##*/}"
   
-  mkdir -p ~/roms/$platform/"$display"
-  target=~/roms/$platform/"$display"/"$zipfile"
+  mkdir -p ~/roms/"$remote"
+  target=~/roms/"$remote"/"$zipfile"
   [[ -f "$target" ]] && continue
   
-  rclone copy "archive:$remote/$zipfile" "$target" --no-check-dest --no-gzip-progress 2>/dev/null &
+  rclone copy "archive:$path" "$target" --no-check-dest -v 2>&1 | tail -1 &
   
-  while (( $(jobs -r | wc -l) >= 10 )); do sleep 1; done
+  while (( $(jobs -r | wc -l) >= 5 )); do sleep 2; done
 done <<< "$csv"
 
 wait
+echo "Done"
