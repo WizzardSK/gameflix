@@ -3,45 +3,155 @@ name: TDC Import
 on:
   workflow_dispatch:
     inputs:
+      dat_url:
+        description: 'DAT file URL'
+        required: true
+        default: 'http://www.totaldoscollection.org/nugnugnug/TDC_DAT_release_23.zip'
+      source_ia:
+        description: 'Source IA identifier'
+        required: true
+        default: 'Total_DOS_Collection_Release_16_March_2019'
+      target_ia:
+        description: 'Target IA identifier'
+        required: true
+        default: 'total_dos_collection'
       batch_size:
-        description: 'Files to copy'
+        description: 'Files to copy (0=all)'
         required: false
-        default: '5'
+        default: '10'
 
 jobs:
   import:
     runs-on: ubuntu-latest
+    timeout-minutes: 600
+    
     steps:
       - name: Install tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq curl
+          sudo apt-get install -y -qq p7zip-full curl
+          pip install internetarchive --break-system-packages
+
+      - name: Configure IA
+        run: |
+          mkdir -p ~/.config/internetarchive
+          cat > ~/.config/internetarchive/ia.ini << 'EOCONF'
+          [s3]
+          access = ${{ secrets.IA_ACCESS }}
+          secret = ${{ secrets.IA_SECRET }}
+          EOCONF
+
+      - name: Download and parse DAT
+        run: |
+          DAT_URL="${{ github.event.inputs.dat_url }}"
+          echo "Downloading DAT: $DAT_URL"
+          curl -sL -o /tmp/tdc_dat.zip "$DAT_URL"
+          7z x -y /tmp/tdc_dat.zip -o/tmp/dat/ > /dev/null
+          echo "DAT extracted"
+
+      - name: Build game list
+        run: |
+          python3 << 'PYEOF'
+          import re
+          games = set()
+          for f in __import__('os').listdir('/tmp/dat'):
+              p = f'/tmp/dat/{f}'
+              try:
+                  with open(p, 'r', encoding='utf-8', errors='ignore') as fp:
+                      c = fp.read()
+                  g = re.findall(r'game\s*\(\s*name\s+"([^"]+)"', c)
+                  games.update(g)
+              except:
+                  pass
+          print(f"Games in DAT: {len(games)}")
+          with open('/tmp/games.txt', 'w') as f:
+              for g in sorted(games):
+                  f.write(g + '\n')
+          PYEOF
 
       - name: Get source IA files
         run: |
-          curl -sL "https://archive.org/metadata/Total_DOS_Collection_Release_16_March_2019?output=json" | python3 -c "
+          SOURCE="${{ github.event.inputs.source_ia }}"
+          curl -sL "https://archive.org/metadata/${SOURCE}?output=json" | python3 -c "
           import json, sys
           data = json.load(sys.stdin)
           for f in data.get('files', []):
-              name = f.get('name', '')
-              if name and name.endswith('.zip'):
-                  print(name)
+              n = f.get('name', '')
+              if n.endswith('.zip'):
+                  print(n)
           " > /tmp/source.txt
-          echo "Found $(wc -l < /tmp/source.txt) files"
+          echo "Source files: $(wc -l < /tmp/source.txt)"
 
-      - name: Match and copy
-        env:
-          BATCH_SIZE: ${{ inputs.batch_size }}
+      - name: Match files
         run: |
           python3 << 'PYEOF'
-          import os
-          BATCH = int(os.environ.get('BATCH_SIZE', '5'))
-          print(f"Batch size: {BATCH}")
-          
+          games = set()
+          with open('/tmp/games.txt') as f:
+              for l in f:
+                  l = l.strip()
+                  if l:
+                      games.add(l.replace('.zip', ''))
+
+          files = []
           with open('/tmp/source.txt') as f:
-              files = [l.strip() for l in f if l.strip()]
+              for l in f:
+                  l = l.strip()
+                  if l:
+                      files.append(l)
+
+          matched = []
+          for ia_file in files:
+              base = ia_file.replace('.zip', '').replace('Games/', '')
+              for g in games:
+                  if g in base or base in g[:25]:
+                      matched.append(ia_file)
+                      break
+
+          print(f"Matched: {len(matched)}")
+          with open('/tmp/matched.txt', 'w') as f:
+              for m in matched:
+                  f.write(m + '\n')
+          for m in matched[:5]:
+              print(f"  {m[:60]}")
+          PYEOF
+
+      - name: Copy files
+        run: |
+          BATCH="${{ github.event.inputs.batch_size }}"
+          SOURCE="${{ github.event.inputs.source_ia }}"
+          TARGET="${{ github.event.inputs.target_ia }}"
           
-          print(f"Total: {len(files)}")
-          for i, f in enumerate(files[:BATCH]):
-              print(f"{i+1}: {f[:60]}")
+          python3 << 'PYEOF'
+          import subprocess
+          import os
+
+          BATCH = int(os.environ.get('BATCH', '10'))
+          SOURCE = os.environ.get('SOURCE')
+          TARGET = os.environ.get('TARGET')
+
+          with open('/tmp/matched.txt') as f:
+              matched = [l.strip() for l in f if l.strip()]
+
+          if BATCH == 0:
+              BATCH = len(matched)
+
+          print(f"Copying {BATCH} files...")
+
+          copied = 0
+          for ia_file in matched[:BATCH]:
+              print(f"Copy: {ia_file[:50]}")
+              result = subprocess.run([
+                  'ia', 'copy',
+                  f'{SOURCE}/{ia_file}',
+                  f'{TARGET}/{ia_file}',
+                  '--no-derive', '--no-backup'
+              ], capture_output=True, text=True)
+              if result.returncode == 0:
+                  copied += 1
+                  print(f"OK")
+              else:
+                  print(f"FAIL: {(result.stderr or result.stdout)[:80]}")
+
+          print(f"======")
+          print(f"Copied {copied} files")
           PYEOF
