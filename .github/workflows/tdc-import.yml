@@ -143,8 +143,7 @@ jobs:
               result = subprocess.run([
                   'ia', 'copy',
                   f'{SOURCE}/{ia_file}',
-                  f'{TARGET}/{ia_file}',
-                  '--no-backup'
+                  f'{TARGET}/{ia_file}'
               ], capture_output=True, text=True)
               if result.returncode == 0:
                   copied += 1
