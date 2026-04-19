@@ -121,14 +121,14 @@ jobs:
           SOURCE: ${{ github.event.inputs.source_ia }}
           TARGET: ${{ github.event.inputs.target_ia }}
         run: |
-          BATCH_NUM=$(($BATCH))
+          BATCH_NUM=$BATCH
           echo "=== Starting copy of $BATCH_NUM files ==="
           
           COPIED=0
           FAILED=0
           
-          for ia_file in $(head -n $BATCH_NUM /tmp/matched.txt); do
-            echo "Copying: ${ia_file:0:50}"
+          while IFS= read -r ia_file; do
+            echo "Copying: $ia_file"
             if ia copy "${SOURCE}/${ia_file}" "${TARGET}/${ia_file}" --no-backup 2>&1 | grep -q "success"; then
               echo "  OK"
               COPIED=$((COPIED+1))
@@ -136,7 +136,7 @@ jobs:
               echo "  FAIL"
               FAILED=$((FAILED+1))
             fi
-          done
+          done < <(head -n $BATCH_NUM /tmp/matched.txt)
           
           echo "======"
           echo "Copied: $COPIED files"
