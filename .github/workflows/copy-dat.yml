@@ -1,0 +1,10 @@
+name: Copy DAT Files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello"
