@@ -101,17 +101,15 @@ jobs:
           " > /tmp/target.txt
           echo "Source: $(wc -l < /tmp/source.txt), Target: $(wc -l < /tmp/target.txt)"
 
-      - name: Match files with CRC verification
+      - name: Match files by name (no CRC)
         run: |
           python3 << 'PYEOF'
-          games = {}
+          games = set()
           with open('/tmp/games.txt') as f:
               for l in f:
                   l = l.strip()
-                  if l and '|' in l:
-                      name, crc = l.split('|', 1)
-                      if crc:
-                          games[name.strip()] = crc.strip().lower()
+                  if l:
+                      games.add(l.replace('.zip', ''))
           
           target_files = set()
           with open('/tmp/target.txt') as f:
@@ -120,47 +118,28 @@ jobs:
                   if l:
                       target_files.add(l)
           
-          source_files = {}
+          source_files = []
           with open('/tmp/source.txt') as f:
               for l in f:
                   l = l.strip()
-                  if l and '|' in l:
-                      parts = l.rsplit('|', 1)
-                      if len(parts) > 1 and parts[1]:
-                          source_files[parts[0]] = parts[1].lower()
+                  if l:
+                      source_files.append(l.split('|')[0])
           
           matched = []
           skip_existing = 0
-          skip_no_dat_crc = 0
-          skip_no_source_crc = 0
-          skip_mismatch = 0
           
-          for ia_file, source_crc in source_files.items():
+          for ia_file in source_files:
               if ia_file in target_files:
                   skip_existing += 1
                   continue
               base = ia_file.replace('.zip', '').replace('Games/', '')
-              dat_crc = None
               for g in games:
-                  if g and (g in base or base in g[:25]):
-                      dat_crc = games.get(g)
+                  if g in base or base in g[:25]:
+                      matched.append(ia_file)
                       break
-              if not dat_crc:
-                  skip_no_dat_crc += 1
-                  continue
-              if not source_crc:
-                  skip_no_source_crc += 1
-                  continue
-              if source_crc.lower() == dat_crc.lower():
-                  matched.append(ia_file)
-              else:
-                  skip_mismatch += 1
           
-          print(f"Matched (CRC): {len(matched)}")
+          print(f"Matched by name: {len(matched)}")
           print(f"Skipped existing: {skip_existing}")
-          print(f"Skipped - no CRC in DAT: {skip_no_dat_crc}")
-          print(f"Skipped - no CRC in source: {skip_no_source_crc}")  
-          print(f"Skipped - CRC mismatch: {skip_mismatch}")
           
           with open('/tmp/matched.txt', 'w') as f:
               for m in matched:
