@@ -10,11 +10,11 @@ on:
       source_ia_id:
         description: 'Source IA identifier to copy from'
         required: true
-        default: 'total_dos_collection'
+        default: 'Total_DOS_Collection_Release_16_March_2019'
       target_ia_id:
         description: 'Target IA identifier'
         required: true
-        default: 'gameflix-tdc'
+        default: 'total_dos_collection'
       batch_size:
         description: 'Files per batch (0=all)'
         required: false
