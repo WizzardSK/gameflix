@@ -28,7 +28,7 @@ while read path; do
   
   mkdir -p "$(dirname "$target")"
   [[ -f "$target" ]] && continue
-  rclone copyfile "$path" "$target" --no-check-dest 2>/dev/null &
+  rclone copyto "$path" "$target" --no-check-dest 2>/dev/null &
   
   while (( $(jobs -r | wc -l) >= 10 )); do sleep 2; done
 done <<< "$csv"
