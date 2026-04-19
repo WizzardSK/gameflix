@@ -58,39 +58,27 @@ jobs:
           python3 << 'PYEOF'
           import os
           import re
-          from pathlib import Path
 
           game_names = set()
-
-          for f in Path('/tmp/dat_out').rglob('*'):
-              if not f.is_file():
+          for f in os.listdir('/tmp/dat_out'):
+              path = os.path.join('/tmp/dat_out', f)
+              if not os.path.isfile(path):
                   continue
               try:
-                  content = f.read_text(errors='ignore')
-                  if '<game ' in content:
-                      m = re.findall(r'<game\s+name="([^"]+)"', content)
-                      game_names.update(m)
-                  if '<machine ' in content:
-                      m = re.findall(r'<machine\s+name="([^"]+)"', content)
-                      game_names.update(m)
+                  with open(path, 'r', encoding='utf-8', errors='ignore') as fp:
+                      content = fp.read()
+                  m = re.findall(r'game\s*\(\s*name\s+"([^"]+)"', content)
+                  game_names.update(m)
               except:
                   pass
 
           print(f"Found {len(game_names)} games in DAT")
           
-          clean_names = set()
-          for g in game_names:
-              g = g.strip()
-              for ext in ['.zip', '.7z', '.rar']:
-                  if g.lower().endswith(ext):
-                      g = g[:-len(ext)]
-              clean_names.add(g)
-
           with open('/tmp/dat_games.txt', 'w') as f:
-              for gn in sorted(clean_names):
+              for gn in sorted(game_names):
                   f.write(gn + '\n')
           
-          for gn in list(clean_names)[:10]:
+          for gn in list(game_names)[:10]:
               print(f"  {gn}")
           PYEOF
 
@@ -109,7 +97,7 @@ jobs:
           " > /tmp/ia_source_files.txt
           echo "Source files: $(wc -l < /tmp/ia_source_files.txt)"
 
-      - name: Match and copy
+- name: Match and copy
         env:
           SOURCE_IA: ${{ inputs.source_ia_id }}
           TARGET_IA: ${{ inputs.target_ia_id }}
@@ -149,11 +137,14 @@ jobs:
               base = ia_file.replace('.zip', '')
               for dat_game in dat_games:
                   dat_base = dat_game.replace('.zip', '')
-                  if dat_game in ia_file or base in dat_game or dat_base in base:
+                  if dat_game in ia_file or base.replace('Games/', '')[:15] in dat_base or dat_base[:15] in base.replace('Games/', ''):
                       matched.append(ia_file)
                       break
 
           print(f"Matched: {len(matched)} files")
+          
+          if matched:
+              print(f"First match: {matched[0]}")
 
           if BATCH_SIZE == 0:
               BATCH_SIZE = len(matched)
