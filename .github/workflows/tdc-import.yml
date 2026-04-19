@@ -144,7 +144,7 @@ jobs:
                   'ia', 'copy',
                   f'{SOURCE}/{ia_file}',
                   f'{TARGET}/{ia_file}',
-                  '--no-derive', '--no-backup'
+                  '--no-backup'
               ], capture_output=True, text=True)
               if result.returncode == 0:
                   copied += 1
