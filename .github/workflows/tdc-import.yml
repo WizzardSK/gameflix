@@ -135,21 +135,20 @@ jobs:
           if BATCH == 0:
               BATCH = len(matched)
 
-          print(f"Copying {BATCH} files...")
+          print(f"Copying {BATCH} files from {SOURCE} to {TARGET}")
 
           copied = 0
           for ia_file in matched[:BATCH]:
-              print(f"Copy: {ia_file[:50]}")
-              result = subprocess.run([
-                  'ia', 'copy',
-                  f'{SOURCE}/{ia_file}',
-                  f'{TARGET}/{ia_file}'
-              ], capture_output=True, text=True)
+              src = f"{SOURCE}/{ia_file}"
+              dst = f"{TARGET}/{ia_file}"
+              cmd = f"ia copy {src} {dst} --no-backup"
+              print(f"$ {cmd}")
+              result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
               if result.returncode == 0:
                   copied += 1
-                  print(f"OK")
+                  print(f"  OK")
               else:
-                  print(f"FAIL: {(result.stderr or result.stdout)[:80]}")
+                  print(f"  FAIL: {(result.stderr or result.stdout)[:60]}")
 
           print(f"======")
           print(f"Copied {copied} files")
