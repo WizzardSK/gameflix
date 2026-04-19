@@ -49,24 +49,38 @@ jobs:
           7z x -y /tmp/tdc_dat.zip -o/tmp/dat/ > /dev/null
           echo "DAT extracted"
 
-      - name: Build game list
+      - name: Build game list with checksums
         run: |
           python3 << 'PYEOF'
           import re
-          games = set()
+          games = {}
           for f in __import__('os').listdir('/tmp/dat'):
               p = f'/tmp/dat/{f}'
               try:
                   with open(p, 'r', encoding='utf-8', errors='ignore') as fp:
                       c = fp.read()
                   g = re.findall(r'game\s*\(\s*name\s+"([^"]+)"', c)
-                  games.update(g)
+                  for name in g:
+                      games[name] = None
+                  m = re.findall(r'game\s*\(\s*name\s+"([^"]+)"[^)]*\)\s*\(.*crc\s*([0-9a-fA-F]+)', c)
+                  for name, crc in m:
+                      if name in games:
+                          games[name] = crc.lower()
+                  m = re.findall(r'game\s*\(\s*name\s+"([^"]+)"[^)]*\)\s*\(.*md5\s*([0-9a-fA-F]+)', c)
+                  for name, md5 in m:
+                      if name in games:
+                          games[name] = md5.lower()
               except:
                   pass
           print(f"Games in DAT: {len(games)}")
           with open('/tmp/games.txt', 'w') as f:
-              for g in sorted(games):
+              for g in sorted(games.keys()):
                   f.write(g + '\n')
+          with open('/tmp/checksums.txt', 'w') as f:
+              for g, chk in sorted(games.items()):
+                  f.write(f"{g}|{chk}\n")
+          for g in list(games.keys())[:5]:
+              print(f"  {g[:50]} => {games[g]}")
           PYEOF
 
       - name: Get source IA files
@@ -92,48 +106,69 @@ jobs:
           " > /tmp/target.txt
           echo "Source: $(wc -l < /tmp/source.txt), Target: $(wc -l < /tmp/target.txt)"
 
-      - name: Match files
+      - name: Match files with checksum
         run: |
           python3 << 'PYEOF'
-          games = set()
-          with open('/tmp/games.txt') as f:
+          import json
+          import urllib.request
+          
+          games = {}
+          with open('/tmp/checksums.txt') as f:
               for l in f:
                   l = l.strip()
-                  if l:
-                      games.add(l.replace('.zip', ''))
-
+                  if '|' in l:
+                      name, chk = l.split('|', 1)
+                      games[name] = chk
+          
           target_files = set()
           with open('/tmp/target.txt') as f:
               for l in f:
                   l = l.strip()
                   if l:
                       target_files.add(l)
-
+          
           files = []
           with open('/tmp/source.txt') as f:
               for l in f:
                   l = l.strip()
                   if l:
                       files.append(l)
-
+          
+          TARGET = "${{ github.event.inputs.target_ia }}"
+          target_meta = json.loads(urllib.request.urlopen(f"https://archive.org/metadata/{TARGET}").read())
+          target_checksums = {}
+          for f in target_meta.get('files', []):
+              name = f.get('name', '')
+              md5 = f.get('md5', '')
+              if name and md5:
+                  target_checksums[name] = md5.lower()
+          
           matched = []
           skipped = 0
           for ia_file in files:
-              if ia_file in target_files:
-                  skipped += 1
-                  continue
               base = ia_file.replace('.zip', '').replace('Games/', '')
               for g in games:
                   if g in base or base in g[:25]:
-                      matched.append(ia_file)
+                      matched.append((ia_file, games[g]))
                       break
-
-          print(f"Matched: {len(matched)}, Already in target: {skipped}")
+          
+          verified = []
+          for ia_file, dat_chk in matched:
+              if ia_file in target_files:
+                  skipped += 1
+                  continue
+              if ia_file in target_checksums:
+                  if dat_chk and dat_chk == target_checksums[ia_file]:
+                      verified.append(ia_file)
+                  else:
+                      skipped += 1
+              else:
+                  verified.append(ia_file)
+          
+          print(f"Matched: {len(matched)}, Verified: {len(verified)}, Skipped: {skipped}")
           with open('/tmp/matched.txt', 'w') as f:
-              for m in matched:
+              for m in verified:
                   f.write(m + '\n')
-          for m in matched[:5]:
-              print(f"  {m[:60]}")
           PYEOF
 
       - name: Copy files
