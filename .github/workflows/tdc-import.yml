@@ -101,50 +101,48 @@ jobs:
           " > /tmp/target.txt
           echo "Source: $(wc -l < /tmp/source.txt), Target: $(wc -l < /tmp/target.txt)"
 
-      - name: Match files by name (no CRC)
+      - name: Match files
         run: |
           python3 << 'PYEOF'
-          games = set()
-          with open('/tmp/games.txt') as f:
-              for l in f:
-                  l = l.strip()
-                  if l:
-                      games.add(l.replace('.zip', ''))
+          import re
           
-          target_files = set()
-          with open('/tmp/target.txt') as f:
-              for l in f:
-                  l = l.strip()
-                  if l:
-                      target_files.add(l)
+          games = set()
+          for line in open('/tmp/games.txt'):
+              line = line.strip()
+              if line:
+                  games.add(line.replace('.zip', '').split('|')[0])
+          
+          target_files = set(open('/tmp/target.txt').read().splitlines())
           
           source_files = []
-          with open('/tmp/source.txt') as f:
-              for l in f:
-                  l = l.strip()
-                  if l:
-                      source_files.append(l.split('|')[0])
+          for line in open('/tmp/source.txt'):
+              line = line.strip()
+              if line:
+                  source_files.append(line.split('|')[0])
+          
+          print(f"Games: {len(games)}, Source: {len(source_files)}, Target: {len(target_files)}")
           
           matched = []
           skip_existing = 0
           
           for ia_file in source_files:
-              if ia_file in target_files:
+              if ia_file in target_files or ia_file.replace('Games/', '') in target_files:
                   skip_existing += 1
                   continue
-              base = ia_file.replace('.zip', '').replace('Games/', '')
+              base = ia_file.replace('.zip', '')
+              game_base = base.replace('Games/', '')
+              
               for g in games:
-                  if g in base or base in g[:25]:
+                  if g and (g in game_base or game_base in g or game_base[:20] in g):
                       matched.append(ia_file)
                       break
           
-          print(f"Matched by name: {len(matched)}")
-          print(f"Skipped existing: {skip_existing}")
+          print(f"Matched: {len(matched)}, Skipped: {skip_existing}")
           
           with open('/tmp/matched.txt', 'w') as f:
               for m in matched:
                   f.write(m + '\n')
-          for m in matched[:5]:
+          for m in matched[:10]:
               print(f"  {m[:60]}")
           PYEOF
 
