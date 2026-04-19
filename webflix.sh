@@ -1,6 +1,6 @@
 #!/bin/bash
 export LD_LIBRARY_PATH=/usr/local/lib
-mkdir -p ~/rom/ni-roms ~/rom/mame-sl ~/rom/tosec-main ~/gameflix
+mkdir -p ~/share/zip/ni-roms ~/share/zip/mame-sl ~/share/zip/tosec-main ~/gameflix
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 
 csv=$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv | tail -n +2 | cut -d',' -f2 | sort -u | grep '\.zip$')
@@ -11,16 +11,16 @@ while read path; do
   case "$path" in
     archive:ni-roms/*)
       subpath="${path#archive:ni-roms/}"
-      target=~/rom/ni-roms/"$subpath"
+      target=~/share/zip/ni-roms/"$subpath"
       ;;
     archive:mame-sl/*)
       subpath="${path#archive:mame-sl/}"
       subpath="${subpath#*/}"
-      target=~/rom/mame-sl/"$subpath"
+      target=~/share/zip/mame-sl/"$subpath"
       ;;
     archive:tosec-main/*)
       subpath="${path#archive:tosec-main/}"
-      target=~/rom/tosec-main/"$subpath"
+      target=~/share/zip/tosec-main/"$subpath"
       ;;
     *)
       continue
