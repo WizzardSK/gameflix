@@ -116,18 +116,20 @@ jobs:
           PYEOF
 
       - name: Copy files
+        env:
+          BATCH: ${{ github.event.inputs.batch_size }}
+          SOURCE: ${{ github.event.inputs.source_ia }}
+          TARGET: ${{ github.event.inputs.target_ia }}
         run: |
-          BATCH="${{ github.event.inputs.batch_size }}"
-          SOURCE="${{ github.event.inputs.source_ia }}"
-          TARGET="${{ github.event.inputs.target_ia }}"
-          
           python3 << 'PYEOF'
-          import subprocess
           import os
+          import internetarchive
 
           BATCH = int(os.environ.get('BATCH', '10'))
           SOURCE = os.environ.get('SOURCE')
           TARGET = os.environ.get('TARGET')
+
+          print(f"BATCH={BATCH}, SOURCE={SOURCE}, TARGET={TARGET}")
 
           with open('/tmp/matched.txt') as f:
               matched = [l.strip() for l in f if l.strip()]
@@ -139,16 +141,14 @@ jobs:
 
           copied = 0
           for ia_file in matched[:BATCH]:
-              src = f"{SOURCE}/{ia_file}"
-              dst = f"{TARGET}/{ia_file}"
-              cmd = f"ia copy {src} {dst} --no-backup"
-              print(f"$ {cmd}")
-              result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-              if result.returncode == 0:
+              try:
+                  source_item = internetarchive.get_item(f"{SOURCE}/{ia_file}")
+                  target_item = internetarchive.get_item(TARGET)
+                  result = target_item.upload_file(source_item.download(), file_name=ia_file)
+                  print(f"  OK: {ia_file[:40]}")
                   copied += 1
-                  print(f"  OK")
-              else:
-                  print(f"  FAIL: {(result.stderr or result.stdout)[:60]}")
+              except Exception as e:
+                  print(f"  FAIL: {ia_file[:40]} - {str(e)[:40]}")
 
           print(f"======")
           print(f"Copied {copied} files")
