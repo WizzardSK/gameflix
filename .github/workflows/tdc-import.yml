@@ -110,7 +110,8 @@ jobs:
                   l = l.strip()
                   if l and '|' in l:
                       name, crc = l.split('|', 1)
-                      games[name.strip()] = crc.strip().lower() if crc.strip() else None
+                      if crc:
+                          games[name.strip()] = crc.strip().lower()
           
           target_files = set()
           with open('/tmp/target.txt') as f:
@@ -125,11 +126,14 @@ jobs:
                   l = l.strip()
                   if l and '|' in l:
                       parts = l.rsplit('|', 1)
-                      source_files[parts[0]] = parts[1].lower() if len(parts) > 1 and parts[1] else None
+                      if len(parts) > 1 and parts[1]:
+                          source_files[parts[0]] = parts[1].lower()
           
           matched = []
           skip_existing = 0
-          skip_checksum = 0
+          skip_no_dat_crc = 0
+          skip_no_source_crc = 0
+          skip_mismatch = 0
           
           for ia_file, source_crc in source_files.items():
               if ia_file in target_files:
@@ -138,18 +142,25 @@ jobs:
               base = ia_file.replace('.zip', '').replace('Games/', '')
               dat_crc = None
               for g in games:
-                  if g in base or base in g[:25]:
+                  if g and (g in base or base in g[:25]):
                       dat_crc = games.get(g)
                       break
-              if dat_crc:
-                  if source_crc and source_crc.lower() == dat_crc.lower():
-                      matched.append(ia_file)
-                  else:
-                      skip_checksum += 1
-              else:
+              if not dat_crc:
+                  skip_no_dat_crc += 1
+                  continue
+              if not source_crc:
+                  skip_no_source_crc += 1
+                  continue
+              if source_crc.lower() == dat_crc.lower():
                   matched.append(ia_file)
+              else:
+                  skip_mismatch += 1
           
-          print(f"Matched: {len(matched)}, Skipped existing: {skip_existing}, Skipped mismatch: {skip_checksum}")
+          print(f"Matched (CRC): {len(matched)}")
+          print(f"Skipped existing: {skip_existing}")
+          print(f"Skipped - no CRC in DAT: {skip_no_dat_crc}")
+          print(f"Skipped - no CRC in source: {skip_no_source_crc}")  
+          print(f"Skipped - CRC mismatch: {skip_mismatch}")
           
           with open('/tmp/matched.txt', 'w') as f:
               for m in matched:
