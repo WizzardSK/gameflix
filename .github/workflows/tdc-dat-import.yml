@@ -3,6 +3,10 @@ name: TDC DAT Import
 on:
   workflow_dispatch:
     inputs:
+      dat_url:
+        description: 'URL of TDC DAT file (zip)'
+        required: true
+        default: 'http://www.totaldoscollection.org/nugnugnug/TDC_DAT_release_23.zip'
       source_ia_id:
         description: 'Source IA identifier to copy from'
         required: true
@@ -38,45 +42,80 @@ jobs:
           EOCONF
           chmod 600 ~/.config/internetarchive/ia.ini
 
+      - name: Download and extract DAT
+        env:
+          DAT_URL: ${{ inputs.dat_url }}
+        run: |
+          echo "Downloading DAT file..."
+          curl -sL -o /tmp/tdc_dat.zip "$DAT_URL"
+          echo "Extracting DAT..."
+          7z x -y /tmp/tdc_dat.zip -o/tmp/dat_out/ > /tmp/dat_extract.log
+          find /tmp/dat_out/ -type f -name "*.dat" -o -name "*.xml" | head -20
+
+      - name: Build game list from DAT
+        run: |
+          echo "Building game name list from DAT..."
+          python3 << 'PYEOF'
+          import os
+          import re
+          from pathlib import Path
+
+          game_names = set()
+
+          for f in Path('/tmp/dat_out').rglob('*'):
+              if not f.is_file():
+                  continue
+              try:
+                  content = f.read_text(errors='ignore')
+                  if '<game ' in content:
+                      m = re.findall(r'<game\s+name="([^"]+)"', content)
+                      game_names.update(m)
+                  if '<machine ' in content:
+                      m = re.findall(r'<machine\s+name="([^"]+)"', content)
+                      game_names.update(m)
+              except:
+                  pass
+
+          print(f"Found {len(game_names)} games in DAT")
+          
+          clean_names = set()
+          for g in game_names:
+              g = g.strip()
+              for ext in ['.zip', '.7z', '.rar']:
+                  if g.lower().endswith(ext):
+                      g = g[:-len(ext)]
+              clean_names.add(g)
+
+          with open('/tmp/dat_games.txt', 'w') as f:
+              for gn in sorted(clean_names):
+                  f.write(gn + '\n')
+          
+          for gn in list(clean_names)[:10]:
+              print(f"  {gn}")
+          PYEOF
+
       - name: Get source IA files
         env:
           SOURCE_IA: ${{ inputs.source_ia_id }}
         run: |
-          echo "Fetching files from $SOURCE_IA..."
+          echo "Fetching source IA files..."
           curl -sL "https://archive.org/metadata/${SOURCE_IA}?output=json" | python3 -c "
           import json, sys
           data = json.load(sys.stdin)
           for f in data.get('files', []):
               name = f.get('name', '')
-              size = f.get('size', '')
-              if name and (name.endswith('.zip') or name.endswith('.z01') or name.endswith('.z02')):
-                  print(name + '\t' + size, file=sys.stderr)
+              if name and (name.endswith('.zip') or name.endswith('.z01')):
                   print(name)
           " > /tmp/ia_source_files.txt
-          echo "Files found: $(wc -l < /tmp/ia_source_files.txt)"
+          echo "Source files: $(wc -l < /tmp/ia_source_files.txt)"
 
-      - name: Get target IA files
-        env:
-          TARGET_IA: ${{ inputs.target_ia_id }}
-        run: |
-          echo "Fetching target files..."
-          curl -sL "https://archive.org/metadata/${TARGET_IA}?output=json" | python3 -c "
-          import json, sys
-          data = json.load(sys.stdin)
-          for f in data.get('files', []):
-              name = f.get('name', '')
-              print(name)
-          " > /tmp/ia_target_files.txt
-          echo "Target files: $(wc -l < /tmp/ia_target_files.txt)"
-
-      - name: Copy files
+      - name: Match and copy
         env:
           SOURCE_IA: ${{ inputs.source_ia_id }}
           TARGET_IA: ${{ inputs.target_ia_id }}
           BATCH_SIZE: ${{ inputs.batch_size }}
         run: |
-          echo "Starting copy..."
-          echo "BATCH: $BATCH_SIZE"
+          echo "Matching files..."
           
           python3 << 'PYEOF'
           import os
@@ -87,14 +126,14 @@ jobs:
           SOURCE_IA = os.environ.get('SOURCE_IA')
           TARGET_IA = os.environ.get('TARGET_IA')
 
-          target_files = set()
-          with open('/tmp/ia_target_files.txt') as f:
+          dat_games = set()
+          with open('/tmp/dat_games.txt') as f:
               for line in f:
                   line = line.strip()
                   if line:
-                      target_files.add(line)
+                      dat_games.add(line)
 
-          print(f"Target has {len(target_files)} existing files")
+          print(f"DAT has {len(dat_games)} games")
 
           source_files = []
           with open('/tmp/ia_source_files.txt') as f:
@@ -103,18 +142,26 @@ jobs:
                   if line:
                       source_files.append(line)
 
-          print(f"Source has {len(source_files)} files")
+          print(f"Source has {len(source_files)} zips")
 
-          to_copy = [f for f in source_files if f not in target_files]
-          print(f"Need to copy: {len(to_copy)} files")
+          matched = []
+          for ia_file in source_files:
+              base = ia_file.replace('.zip', '')
+              for dat_game in dat_games:
+                  dat_base = dat_game.replace('.zip', '')
+                  if dat_game in ia_file or base in dat_game or dat_base in base:
+                      matched.append(ia_file)
+                      break
+
+          print(f"Matched: {len(matched)} files")
 
           if BATCH_SIZE == 0:
-              BATCH_SIZE = len(to_copy)
+              BATCH_SIZE = len(matched)
 
           print(f"Copying batch of {BATCH_SIZE}...")
 
           copied = 0
-          for ia_file in to_copy[:BATCH_SIZE]:
+          for ia_file in matched[:BATCH_SIZE]:
               print(f"Copying: {ia_file}")
               result = subprocess.run([
                   'ia', 'copy',
@@ -124,12 +171,11 @@ jobs:
               ], capture_output=True, text=True)
               if result.returncode == 0:
                   copied += 1
-                  print(f"OK: {ia_file}")
+                  print(f"OK")
               else:
-                  err = (result.stderr or result.stdout)[:200]
-                  print(f"FAIL: {ia_file} - {err}")
+                  err = (result.stderr or result.stdout)[:150]
+                  print(f"FAIL - {err}")
 
+          print(f"======")
           print(f"Copied {copied} files")
-          if copied == 0:
-              print("No files copied - checking error above")
           PYEOF
