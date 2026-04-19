@@ -49,26 +49,32 @@ jobs:
           7z x -y /tmp/tdc_dat.zip -o/tmp/dat/ > /dev/null
           echo "DAT extracted"
 
-      - name: Build game list
+      - name: Build game list with CRC
         run: |
           python3 << 'PYEOF'
           import re
-          games = set()
+          games = {}
           for f in __import__('os').listdir('/tmp/dat'):
               p = f'/tmp/dat/{f}'
               try:
                   with open(p, 'r', encoding='utf-8', errors='ignore') as fp:
                       c = fp.read()
-                  g = re.findall(r'game\s*\(\s*name\s+"([^"]+)"', c)
-                  games.update(g)
+                  for m in re.finditer(r'game\s*\(\s*name\s+"([^"]+)"[^)]*file\s*\([^)]*crc\s*([0-9a-fA-F]+)', c):
+                      name = m.group(1)
+                      crc = m.group(2).lower()
+                      games[name] = crc
+                  names = re.findall(r'game\s*\(\s*name\s+"([^"]+)"', c)
+                  for n in names:
+                      if n not in games:
+                          games[n] = None
               except:
                   pass
           print(f"Games in DAT: {len(games)}")
           with open('/tmp/games.txt', 'w') as f:
-              for g in sorted(games):
-                  f.write(g + '\n')
-          for g in list(games)[:5]:
-              print(f"  {g[:50]}")
+              for g in sorted(games.keys()):
+                  f.write(f"{g}|{games[g] or ''}\n")
+          for g in list(games.keys())[:3]:
+              print(f"  {g[:40]} CRC:{games[g]}")
           PYEOF
 
       - name: Get source IA files
@@ -94,17 +100,18 @@ jobs:
           " > /tmp/target.txt
           echo "Source: $(wc -l < /tmp/source.txt), Target: $(wc -l < /tmp/target.txt)"
 
-      - name: Match files
+      - name: Match files with CRC
         run: |
           python3 << 'PYEOF'
           import urllib.request
           
-          games = set()
+          games = {}
           with open('/tmp/games.txt') as f:
               for l in f:
                   l = l.strip()
-                  if l:
-                      games.add(l.replace('.zip', ''))
+                  if l and '|' in l:
+                      name, crc = l.split('|', 1)
+                      games[name] = crc.lower() if crc else None
           
           target_files = set()
           with open('/tmp/target.txt') as f:
@@ -122,31 +129,40 @@ jobs:
           
           TARGET = "${{ github.event.inputs.target_ia }}"
           
-          target_checksums = {}
+          target_crc = {}
           try:
               target_meta = __import__('json').loads(__import__('urllib.request').urlopen(f"https://archive.org/metadata/{TARGET}?output=json").read())
               for f in target_meta.get('files', []):
                   n = f.get('name', '')
-                  md5 = f.get('md5', '')
-                  if n and md5:
-                      target_checksums[n] = md5.lower()
+                  c = f.get('crc32', '')
+                  if n and c:
+                      target_crc[n] = c.lower()
           except:
               pass
           
           matched = []
-          skipped = 0
+          skip_existing = 0
+          skip_checksum = 0
           
           for ia_file in files:
               if ia_file in target_files:
-                  skipped += 1
+                  skip_existing += 1
                   continue
               base = ia_file.replace('.zip', '').replace('Games/', '')
+              dat_crc = None
               for g in games:
                   if g in base or base in g[:25]:
-                      matched.append(ia_file)
+                      dat_crc = games.get(g)
                       break
+              if dat_crc and ia_file in target_crc:
+                  if target_crc[ia_file].lower() == dat_crc.lower():
+                      matched.append(ia_file)
+                  else:
+                      skip_checksum += 1
+              elif not dat_crc:
+                  matched.append(ia_file)
           
-          print(f"Matched: {len(matched)}, Target has {len(target_checksums)} files with checksums, Skipped: {skipped}")
+          print(f"Matched: {len(matched)}, Skipped existing: {skip_existing}, Skipped checksum: {skip_checksum}")
           
           with open('/tmp/matched.txt', 'w') as f:
               for m in matched:
