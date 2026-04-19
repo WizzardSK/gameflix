@@ -72,6 +72,8 @@ jobs:
       - name: Get source IA files
         run: |
           SOURCE="${{ github.event.inputs.source_ia }}"
+          TARGET="${{ github.event.inputs.target_ia }}"
+          echo "Getting source files..."
           curl -sL "https://archive.org/metadata/${SOURCE}?output=json" | python3 -c "
           import json, sys
           data = json.load(sys.stdin)
@@ -80,7 +82,15 @@ jobs:
               if n.endswith('.zip'):
                   print(n)
           " > /tmp/source.txt
-          echo "Source files: $(wc -l < /tmp/source.txt)"
+          echo "Getting target files..."
+          curl -sL "https://archive.org/metadata/${TARGET}?output=json" | python3 -c "
+          import json, sys
+          data = json.load(sys.stdin)
+          for f in data.get('files', []):
+              n = f.get('name', '')
+              print(n)
+          " > /tmp/target.txt
+          echo "Source: $(wc -l < /tmp/source.txt), Target: $(wc -l < /tmp/target.txt)"
 
       - name: Match files
         run: |
@@ -92,6 +102,13 @@ jobs:
                   if l:
                       games.add(l.replace('.zip', ''))
 
+          target_files = set()
+          with open('/tmp/target.txt') as f:
+              for l in f:
+                  l = l.strip()
+                  if l:
+                      target_files.add(l)
+
           files = []
           with open('/tmp/source.txt') as f:
               for l in f:
@@ -100,14 +117,18 @@ jobs:
                       files.append(l)
 
           matched = []
+          skipped = 0
           for ia_file in files:
+              if ia_file in target_files:
+                  skipped += 1
+                  continue
               base = ia_file.replace('.zip', '').replace('Games/', '')
               for g in games:
                   if g in base or base in g[:25]:
                       matched.append(ia_file)
                       break
 
-          print(f"Matched: {len(matched)}")
+          print(f"Matched: {len(matched)}, Already in target: {skipped}")
           with open('/tmp/matched.txt', 'w') as f:
               for m in matched:
                   f.write(m + '\n')
