@@ -10,7 +10,9 @@ echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gamefli
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
 
 # Mount IA items via rclone, then use ratarmount for zips
-echo "Mounting archive remotes..."
+echo "=== MOUNTING IA ITEMS ==="
+item_count=0
+mount_start=$(date +%s)
 mkdir -p ~/mount ~/dircache
 cache=~/dircache
 mounted_file=$(mktemp)
@@ -20,16 +22,22 @@ while IFS= read -r path; do
   [[ "$path" != *:* || "$path" == https://* ]] && continue
   aftercolon="${path#*:}"; item="${aftercolon%%/*}"
   if ! grep -qx "$item" "$mounted_file" 2>/dev/null; then
+    ((item_count++))
     mkdir -p ~/mount/"$item"
     rclone mount "archive:$item" ~/mount/"$item" --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --vfs-cache-mode full --allow-non-empty 2>/dev/null
-    echo "$item" >> "$mounted_file"; echo "Mounted archive:$item"
+    echo "$item" >> "$mounted_file"
+    if ((item_count % 20 == 0)); then echo "Mounted $item_count items..."; fi
   fi
 done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv) | cut -d';' -f2 | sort -u)
 sleep 10
+mount_end=$(date +%s)
+echo "=== MOUNTING DONE: $item_count items in $((mount_end - mount_start))s ==="
 
 # Pre-fetch directory listings
-echo "Pre-fetching directory listings..."
+echo "=== PRE-FETCHING DIRECTORY LISTINGS ==="
+prefetch_start=$(date +%s)
 jobs_running=0
+path_count=0
 while IFS= read -r path; do
   h=$(echo -n "$path" | md5sum | cut -d' ' -f1)
   [ -s "$cache/$h.txt" ] && continue
@@ -59,10 +67,13 @@ while IFS= read -r path; do
     fi
   ) &
   ((jobs_running++))
+  ((path_count++))
+  if ((path_count % 50 == 0)); then echo "Processing path $path_count..."; fi
   if ((jobs_running >= 20)); then wait -n; ((jobs_running--)); fi
 done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv) | cut -d';' -f2 | sort -u)
 wait
-echo "Pre-fetch done."
+prefetch_end=$(date +%s)
+echo "=== PRE-FETCH DONE: $path_count paths in $((prefetch_end - prefetch_start))s ==="
 
 echo "<b>Fantasy & Homebrew</b><br />" >> ~/gameflix/systems.html; echo "<h3 id=\"Fantasy &amp; Homebrew\" class=\"section-header\" style=\"width:100%\">Fantasy & Homebrew</h3>" >> ~/gameflix/main.html
 
