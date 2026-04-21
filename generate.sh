@@ -37,46 +37,19 @@ while IFS= read -r path; do
     if [[ "$path" == https://* ]]; then
       url="${path%%#*}"; subdir="${path#*#}"; [ "$subdir" = "$path" ] && subdir=""
       tmp=$(mktemp); wget -q "$url" -O "$tmp"
-      zipdir=$(mktemp -d)
-      $HOME/ratarmount-full "$tmp" "$zipdir" 2>/dev/null
-      if [ -n "$subdir" ] && [ -d "$zipdir/$subdir" ]; then
-        ls "$zipdir/$subdir" 2>/dev/null > "$cache/$h.txt"
-      else
-        entries=("$zipdir"/*)
-        if [ ${#entries[@]} -eq 1 ] && [ -d "${entries[0]}" ]; then
-          ls "${entries[0]}" 2>/dev/null > "$cache/$h.txt"
-        else
-          ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
-        fi
-      fi
-      fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"; rm -f "$tmp"
+      unzip -l "$tmp" 2>/dev/null | awk 'NR>3 && $4 != "" {print $4}' > "$cache/$h.txt"
+      rm -f "$tmp"
     elif [[ "$path" == *:* ]]; then
       aftercolon="${path#*:}"
       localpath="$HOME/mount/$aftercolon"
       if [[ "$localpath" == *.zip ]]; then
-        zipdir=$(mktemp -d)
-        $HOME/ratarmount-full "$localpath" "$zipdir" 2>/dev/null
-        entries=("$zipdir"/*)
-        if [ ${#entries[@]} -eq 1 ] && [ -d "${entries[0]}" ]; then
-          ls "${entries[0]}" 2>/dev/null > "$cache/$h.txt"
-        else
-          ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
-        fi
-        fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"
+        unzip -l "$localpath" 2>/dev/null | awk 'NR>3 && $4 != "" {print $4}' > "$cache/$h.txt"
       else
         zipcount=$(find "$localpath" -name "*.zip" 2>/dev/null | wc -l)
         if [ "$zipcount" -ge 1 ]; then
           zipfile=$(find "$localpath" -name "*.zip" 2>/dev/null | head -1)
-          zipdir=$(mktemp -d)
-          $HOME/ratarmount-full "$zipfile" "$zipdir" 2>/dev/null
-          entries=("$zipdir"/*)
-          if [ ${#entries[@]} -eq 1 ] && [ -d "${entries[0]}" ]; then
-            ls "${entries[0]}" 2>/dev/null > "$cache/$h.txt"
-          else
-            ls "$zipdir" 2>/dev/null > "$cache/$h.txt"
-          fi
+          unzip -l "$zipfile" 2>/dev/null | awk 'NR>3 && $4 != "" {print $4}' > "$cache/$h.txt"
           echo "$path/$(basename "$zipfile")" > "$cache/$h.path"
-          fusermount -u "$zipdir" 2>/dev/null; rmdir "$zipdir"
         else
           ls "$localpath" 2>/dev/null > "$cache/$h.txt"
         fi
