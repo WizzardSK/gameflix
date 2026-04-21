@@ -7,19 +7,22 @@ if [[ -z "$CI" ]]; then
   sudo apt install bindfs fuse-zip unzip > /dev/null
 
   bash ./webflix.sh
-  bash ./generate.sh
 fi
 
-cd ~/gamelists
-rm -f "$GITHUB_WORKSPACE/batocera/gamelist.zip"
-zip -q -r "$GITHUB_WORKSPACE/batocera/gamelist.zip" *
-cd "$GITHUB_WORKSPACE"
-git add "$GITHUB_WORKSPACE/batocera/gamelist.zip"
+bash ./generate.sh
+
+WORKSPACE="${GITHUB_WORKSPACE:-$PWD}"
+cd ~ && mkdir -p gamelists gameflix
+cd gamelists
+rm -f "$WORKSPACE/batocera/gamelist.zip"
+zip -q -r "$WORKSPACE/batocera/gamelist.zip" *
+cd "$WORKSPACE"
+git add "$WORKSPACE/batocera/gamelist.zip"
 cd ~/gameflix
-rm -f "$GITHUB_WORKSPACE/gameflix.zip"
-zip -q -r "$GITHUB_WORKSPACE/gameflix.zip" *
-cd "$GITHUB_WORKSPACE"
-git add "$GITHUB_WORKSPACE/gameflix.zip"
+rm -f "$WORKSPACE/gameflix.zip"
+zip -q -r "$WORKSPACE/gameflix.zip" *
+cd "$WORKSPACE"
+git add "$WORKSPACE/gameflix.zip"
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"
