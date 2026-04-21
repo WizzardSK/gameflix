@@ -19,6 +19,8 @@ if [[ -n "$CI" ]]; then
     while (( $(jobs -r | wc -l) >= 10 )); do sleep 2; done
   done < <(cut -d',' -f2 platforms.csv | sort -u | grep '\.zip$')
   wait
+  # Also create symlinks for mount paths used by generate.sh
+  cd ~ && for d in share/zip/*/; do ln -sf "$d" "mount/${d##*/}" 2>/dev/null; done
 else
   bash ./webflix.sh
 fi

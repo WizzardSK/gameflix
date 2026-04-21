@@ -50,6 +50,10 @@ while IFS= read -r path; do
     elif [[ "$path" == *:* ]]; then
       aftercolon="${path#*:}"
       localpath="$HOME/mount/$aftercolon"
+      if [[ ! -e "$localpath" && -d "$HOME/share/zip" ]]; then
+        altpath="$HOME/share/zip/$aftercolon"
+        [[ -e "$altpath" ]] && localpath="$altpath"
+      fi
       if [[ "$localpath" == *.zip ]]; then
         unzip -l "$localpath" 2>/dev/null | awk 'NR>3 && $4 != "" {print $4}' > "$cache/$h.txt"
       else
