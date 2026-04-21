@@ -6,21 +6,17 @@ mkdir -p $HOME/.config/rclone; cp rclone.conf $HOME/.config/rclone/
 echo "user_allow_other" | sudo tee -a /etc/fuse.conf > /dev/null
 sudo rm -f /var/lib/dpkg/info/man-db.triggers
 
-# In CI: download zip files directly; locally: use webflix.sh for mounting
+# Mount IA items - in CI via rclone mount, locally via webflix.sh
 if [[ -n "$CI" ]]; then
-  echo "=== DOWNLOADING IA ITEMS FOR CI ==="
+  echo "=== MOUNTING IA ITEMS FOR CI ==="
   while IFS= read -r path; do
     [[ "$path" != archive:* ]] && continue
-    aftercolon="${path#*:}"
-    target="$HOME/share/zip/$aftercolon"
-    mkdir -p "$(dirname "$target")"
-    [[ -f "$target" ]] && continue
-    rclone copyto "$path" "$target" --no-check-dest 2>/dev/null &
-    while (( $(jobs -r | wc -l) >= 10 )); do sleep 2; done
-  done < <(cut -d',' -f2 platforms.csv | sort -u | grep '\.zip$')
-  wait
-  # Also create symlinks for mount paths used by generate.sh
-  cd ~ && for d in share/zip/*/; do ln -sf "$d" "mount/${d##*/}" 2>/dev/null; done
+    aftercolon="${path#*:}"; item="${aftercolon%%/*}"
+    mkdir -p ~/mount/"$item"
+    rclone mount "archive:$item" ~/mount/"$item" --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --vfs-cache-mode full --allow-non-empty 2>/dev/null &
+    sleep 2
+  done < <(cut -d',' -f2 platforms.csv | sort -u | grep '^archive:' | cut -d':' -f2 | cut -d'/' -f1 | sort -u)
+  sleep 10
 else
   bash ./webflix.sh
 fi
