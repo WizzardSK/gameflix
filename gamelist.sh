@@ -1,12 +1,14 @@
 #!/bin/bash
-sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
-mkdir -p $HOME/.config/rclone; cp rclone.conf $HOME/.config/rclone/
-echo "user_allow_other" | sudo tee -a /etc/fuse.conf > /dev/null
-sudo rm -f /var/lib/dpkg/info/man-db.triggers
-sudo apt install bindfs fuse-zip unzip > /dev/null
+if [[ -z "$CI" ]]; then
+  sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
+  mkdir -p $HOME/.config/rclone; cp rclone.conf $HOME/.config/rclone/
+  echo "user_allow_other" | sudo tee -a /etc/fuse.conf > /dev/null
+  sudo rm -f /var/lib/dpkg/info/man-db.triggers
+  sudo apt install bindfs fuse-zip unzip > /dev/null
 
-bash ./webflix.sh
-bash ./generate.sh
+  bash ./webflix.sh
+  bash ./generate.sh
+fi
 
 cd ~/gamelists
 rm -f "$GITHUB_WORKSPACE/batocera/gamelist.zip"
