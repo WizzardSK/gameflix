@@ -1,11 +1,25 @@
 #!/bin/bash
-if [[ -z "$CI" ]]; then
-  sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
-  mkdir -p $HOME/.config/rclone; cp rclone.conf $HOME/.config/rclone/
-  echo "user_allow_other" | sudo tee -a /etc/fuse.conf > /dev/null
-  sudo rm -f /var/lib/dpkg/info/man-db.triggers
-  sudo apt install bindfs fuse-zip unzip > /dev/null
+sudo -v
+curl -s https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
+sudo apt update > /dev/null && sudo apt install -y bindfs fuse-zip unzip > /dev/null
+mkdir -p $HOME/.config/rclone; cp rclone.conf $HOME/.config/rclone/
+echo "user_allow_other" | sudo tee -a /etc/fuse.conf > /dev/null
+sudo rm -f /var/lib/dpkg/info/man-db.triggers
 
+# In CI: download zip files directly; locally: use webflix.sh for mounting
+if [[ -n "$CI" ]]; then
+  echo "=== DOWNLOADING IA ITEMS FOR CI ==="
+  while IFS= read -r path; do
+    [[ "$path" != archive:* ]] && continue
+    aftercolon="${path#*:}"
+    target="$HOME/share/zip/$aftercolon"
+    mkdir -p "$(dirname "$target")"
+    [[ -f "$target" ]] && continue
+    rclone copyto "$path" "$target" --no-check-dest 2>/dev/null &
+    while (( $(jobs -r | wc -l) >= 10 )); do sleep 2; done
+  done < <(cut -d',' -f2 platforms.csv | sort -u | grep '\.zip$')
+  wait
+else
   bash ./webflix.sh
 fi
 
