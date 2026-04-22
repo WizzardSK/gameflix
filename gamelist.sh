@@ -13,7 +13,7 @@ if [[ -n "$CI" ]]; then
     [[ "$path" != archive:* ]] && continue
     aftercolon="${path#*:}"; item="${aftercolon%%/*}"
     mkdir -p ~/mount/"$item"
-    rclone mount "archive:$item" ~/mount/"$item" --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --vfs-cache-mode full --allow-non-empty 2>/dev/null &
+    rclone mount "archive:$item" ~/mount/"$item" --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --vfs-cache-mode minimal --allow-non-empty 2>/dev/null &
     sleep 2
   done < <(cut -d',' -f2 platforms.csv | sort -u | grep '^archive:' | cut -d':' -f2 | cut -d'/' -f1 | sort -u)
   sleep 10

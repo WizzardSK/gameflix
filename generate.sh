@@ -24,7 +24,7 @@ while IFS= read -r path; do
   if ! grep -qx "$item" "$mounted_file" 2>/dev/null; then
     ((item_count++))
     mkdir -p ~/mount/"$item"
-    rclone mount "archive:$item" ~/mount/"$item" --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --vfs-cache-mode full --allow-non-empty 2>/dev/null
+    rclone mount "archive:$item" ~/mount/"$item" --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --vfs-cache-mode minimal --allow-non-empty 2>/dev/null
     echo "$item" >> "$mounted_file"
     if ((item_count % 20 == 0)); then echo "Mounted $item_count items..."; fi
   fi
