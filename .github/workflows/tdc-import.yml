@@ -11,8 +11,12 @@ on:
         description: 'Target IA identifier'
         required: true
         default: 'total_dos_collection'
-      batch_size:
-        description: 'Files to upload (0=all)'
+      start_index:
+        description: 'Start file index (1-based)'
+        required: false
+        default: '1'
+      end_index:
+        description: 'End file index (0=all)'
         required: false
         default: '0'
 
@@ -50,28 +54,39 @@ jobs:
           " > /tmp/target.txt
           echo "Target: $(wc -l < /tmp/target.txt)"
 
-      - name: Download from torrent
+      - name: Get torrent file list
         run: |
           MAGNET="${{ github.event.inputs.magnet_url }}"
-          TARGET="${{ github.event.inputs.target_ia }}"
-          BATCH="${{ github.event.inputs.batch_size }}"
-          
           mkdir -p /tmp/downloads
           chmod 777 /tmp/downloads
           
-          aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=1 --dir=/tmp/downloads --file-allocation=none "$MAGNET" 2>&1 | tail -30
+          aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=1 --dir=/tmp/downloads --file-allocation=none --bt-save-metadata=true "$MAGNET" 2>&1 | tail -10
           
-          echo "Downloaded files:"
-          find /tmp/downloads -type f ! -name "*.torrent" ! -name "*.aria2" 2>/dev/null | wc -l
-          ls -la /tmp/downloads/
+          if [ -f /tmp/downloads/*.torrent ]; then
+            aria2c --show-files /tmp/downloads/*.torrent > /tmp/torrent_files.txt
+          else
+            aria2c --show-files /tmp/downloads/*.torrent 2>/dev/null > /tmp/torrent_files.txt || true
+          fi
+          
+          TOTAL=$(grep -cE "^\s*[0-9]+|" /tmp/torrent_files.txt || echo 0)
+          echo "Total files in torrent: $TOTAL"
 
-      - name: Upload new files
-        env:
-          TARGET: ${{ github.event.inputs.target_ia }}
-          BATCH: ${{ github.event.inputs.batch_size }}
+      - name: Download and upload files
         run: |
+          MAGNET="${{ github.event.inputs.magnet_url }}"
           TARGET="${{ github.event.inputs.target_ia }}"
-          BATCH_NUM=${{ github.event.inputs.batch_size }}
+          START=${{ github.event.inputs.start_index || '1' }}
+          END=${{ github.event.inputs.end_index || '0' }}
+          
+          cat > /tmp/process.sh << 'SCRIPT'
+          #!/bin/bash
+          START=$1
+          END=$2
+          
+          TOTAL=$(grep -cE "^\s*[0-9]+|" /tmp/torrent_files.txt)
+          if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL" ]; then
+            END=$TOTAL
+          fi
           
           target_files=$(cat /tmp/target.txt)
           
@@ -79,31 +94,43 @@ jobs:
           FAILED=0
           SKIPPED=0
           
-          for f in /tmp/downloads/*; do
-            [ -f "$f" ] || continue
-            fname=$(basename "$f")
+          for i in $(seq "$START" "$END"); do
+            path=$(sed -n "/^\s*${i}|/p" /tmp/torrent_files.txt | sed "s/^\s*${i}|//" | sed 's/|.*//' | sed 's/^\.\///')
             
-            if echo "$target_files" | grep -qx "$fname"; then
-              echo "SKIP: $fname (exists)"
+            if echo "$target_files" | grep -qx "$path"; then
+              echo "File $i: SKIP (exists in IA): $path"
               SKIPPED=$((SKIPPED+1))
               continue
             fi
             
-            echo "Uploading: $fname"
-            if ia upload "$TARGET" "$f" --remote-name="$fname" --no-derive --no-backup --retries=3 2>&1 | grep -q "success"; then
-              echo "  OK"
-              COPIED=$((COPIED+1))
+            echo "File $i: Downloading: $path"
+            rm -rf /tmp/downloads/*
+            mkdir -p /tmp/work
+            aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=1 --select-file="$i" --dir=/tmp/work --file-allocation=none /tmp/downloads/*.torrent 2>&1 | grep -v "^#"
+            
+            file=$(find /tmp/work -type f ! -name "*.torrent" ! -name "*.aria2" | head -1)
+            if [ -n "$file" ] && [ -f "$file" ]; then
+              fname=$(basename "$file")
+              echo "File $i: Uploading: $fname"
+              if ia upload "$TARGET" "$file" --remote-name="$path" --no-derive --no-backup --retries=3 2>&1 | grep -q "success"; then
+                echo "File $i: OK"
+                COPIED=$((COPIED+1))
+              else
+                echo "File $i: FAIL"
+                FAILED=$((FAILED+1))
+              fi
             else
-              echo "  FAIL"
+              echo "File $i: FAIL (no file)"
               FAILED=$((FAILED+1))
             fi
             
-            if [ "$BATCH_NUM" != "0" ] && [ $COPIED -ge $BATCH_NUM ]; then
-              break
-            fi
+            rm -rf /tmp/work
           done
           
           echo "======"
-          echo "Uploaded: $COPIED files"
-          echo "Skipped: $SKIPPED files"
-          echo "Failed: $FAILED files"
+          echo "Uploaded: $COPIED"
+          echo "Skipped: $SKIPPED"
+          echo "Failed: $FAILED"
+          SCRIPT
+          chmod +x /tmp/process.sh
+          /tmp/process.sh "$START" "$END"
