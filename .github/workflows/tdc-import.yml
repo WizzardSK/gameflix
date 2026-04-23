@@ -90,6 +90,11 @@ jobs:
           
           cat > /tmp/process.sh << 'SCRIPT'
           #!/bin/bash
+          cleanup() {
+            rm -rf /tmp/downloads/* /tmp/work/* 2>/dev/null
+            sync 2>/dev/null || true
+          }
+          trap cleanup EXIT
           START=$1
           END=$2
           
@@ -105,6 +110,7 @@ jobs:
           SKIPPED=0
           
           for i in $(seq "$START" "$END"); do
+            cleanup
             path=$(sed -n "/^\s*${i}|/p" /tmp/torrent_files.txt | sed "s/^\s*${i}|//" | sed 's/|.*//' | sed 's/^\.\///')
             
             if echo "$target_files" | grep -qx "$path"; then
