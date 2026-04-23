@@ -3,20 +3,16 @@ name: TDC Import
 on:
   workflow_dispatch:
     inputs:
-      dat_url:
-        description: 'DAT file URL'
+      magnet_url:
+        description: 'Magnet URL'
         required: true
-        default: 'http://www.totaldoscollection.org/nugnugnug/TDC_DAT_release_23.zip'
-      source_ia:
-        description: 'Source IA identifier'
-        required: true
-        default: 'Total_DOS_Collection_Release_16_March_2019'
+        default: 'magnet:?xt=urn:btih:5D1B8E19C6C20B2E6107F0C4DFE631F86CE16C29&tr=http%3A%2F%2Fbt4.t-ru.org%2Fann%3Fmagnet'
       target_ia:
         description: 'Target IA identifier'
         required: true
         default: 'total_dos_collection'
       batch_size:
-        description: 'Files to copy (0=all)'
+        description: 'Files to upload (0=all)'
         required: false
         default: '0'
 
@@ -29,8 +25,8 @@ jobs:
       - name: Install tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq p7zip-full curl
-          pip install internetarchive --break-system-packages
+          sudo apt-get install -y -qq aria2 bc p7zip-full curl
+          pip install internetarchive
 
       - name: Configure IA
         run: |
@@ -41,50 +37,9 @@ jobs:
           secret = ${{ secrets.IA_SECRET }}
           EOCONF
 
-      - name: Download and parse DAT
+      - name: Get target IA files
         run: |
-          DAT_URL="${{ github.event.inputs.dat_url }}"
-          echo "Downloading DAT: $DAT_URL"
-          curl -sL -o /tmp/tdc_dat.zip "$DAT_URL"
-          7z x -y /tmp/tdc_dat.zip -o/tmp/dat/ > /dev/null
-          echo "DAT extracted"
-
-      - name: Build game list
-        run: |
-          python3 << 'PYEOF'
-          import re
-          games = set()
-          for f in __import__('os').listdir('/tmp/dat'):
-              p = f'/tmp/dat/{f}'
-              try:
-                  with open(p, 'r', encoding='utf-8', errors='ignore') as fp:
-                      c = fp.read()
-                  names = re.findall(r'game\s*\(\s*name\s+"([^"]+)"', c)
-                  for n in names:
-                      games.add(n)
-              except:
-                  pass
-          print(f"Games in DAT: {len(games)}")
-          with open('/tmp/games.txt', 'w') as f:
-              for g in sorted(games):
-                  f.write(g + '\n')
-          for g in list(games)[:3]:
-              print(f"  {g[:40]}")
-          PYEOF
-
-      - name: Get source IA files
-        run: |
-          SOURCE="${{ github.event.inputs.source_ia }}"
           TARGET="${{ github.event.inputs.target_ia }}"
-          echo "Getting source files..."
-          curl -sL "https://archive.org/metadata/${SOURCE}?output=json" | python3 -c "
-          import json, sys
-          data = json.load(sys.stdin)
-          for f in data.get('files', []):
-              n = f.get('name', '')
-              if n.endswith('.zip'):
-                  print(n)
-          " > /tmp/source.txt
           echo "Getting target files..."
           curl -sL "https://archive.org/metadata/${TARGET}?output=json" | python3 -c "
           import json, sys
@@ -93,79 +48,61 @@ jobs:
               n = f.get('name', '')
               print(n)
           " > /tmp/target.txt
-          echo "Source: $(wc -l < /tmp/source.txt), Target: $(wc -l < /tmp/target.txt)"
+          echo "Target: $(wc -l < /tmp/target.txt)"
 
-      - name: Match files
+      - name: Download from torrent
         run: |
-          python3 << 'PYEOF'
-          import re
+          MAGNET="${{ github.event.inputs.magnet_url }}"
+          TARGET="${{ github.event.inputs.target_ia }}"
+          BATCH="${{ github.event.inputs.batch_size }}"
           
-          games = set()
-          for line in open('/tmp/games.txt'):
-              line = line.strip()
-              if line:
-                  games.add(line.replace('.zip', ''))
+          mkdir -p /tmp/downloads
+          cd /tmp/downloads
           
-          target_files = set(open('/tmp/target.txt').read().splitlines())
+          aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=5 --dir=/tmp/downloads "$MAGNET" 2>&1 | tail -20
           
-          source_files = []
-          for line in open('/tmp/source.txt'):
-              line = line.strip()
-              if line:
-                  source_files.append(line)
-          
-          print(f"Games: {len(games)}, Source: {len(source_files)}, Target: {len(target_files)}")
-          
-          matched = []
-          skip_existing = 0
-          
-          for ia_file in source_files:
-              if ia_file in target_files or ia_file.replace('Games/', '') in target_files:
-                  skip_existing += 1
-                  continue
-              base = ia_file.replace('.zip', '')
-              game_base = base.replace('Games/', '')
-              
-              for g in games:
-                  if g and (g in game_base or game_base in g or game_base[:20] in g):
-                      matched.append(ia_file)
-                      break
-          
-          print(f"Matched: {len(matched)}, Skipped: {skip_existing}")
-          
-          with open('/tmp/matched.txt', 'w') as f:
-              for m in matched:
-                  f.write(m + '\n')
-          for m in matched[:10]:
-              print(f"  {m[:60]}")
-          PYEOF
+          echo "Downloaded files:"
+          find /tmp/downloads -type f ! -name "*.torrent" ! -name "*.aria2" | wc -l
 
-      - name: Copy files
+      - name: Upload new files
         env:
-          BATCH: ${{ github.event.inputs.batch_size }}
-          SOURCE: ${{ github.event.inputs.source_ia }}
           TARGET: ${{ github.event.inputs.target_ia }}
+          BATCH: ${{ github.event.inputs.batch_size }}
         run: |
-          BATCH_NUM=$BATCH
-          echo "=== Starting copy of $BATCH_NUM files ==="
+          TARGET="${{ github.event.inputs.target_ia }}"
+          BATCH_NUM=${{ github.event.inputs.batch_size }}
+          
+          target_files=$(cat /tmp/target.txt)
           
           COPIED=0
           FAILED=0
+          SKIPPED=0
           
-          while IFS= read -r ia_file; do
-            echo "Copying: $ia_file"
-            if ia copy "${SOURCE}/${ia_file}" "${TARGET}/${ia_file}" --no-backup 2>&1 | grep -q "success"; then
+          for f in /tmp/downloads/*; do
+            [ -f "$f" ] || continue
+            fname=$(basename "$f")
+            
+            if echo "$target_files" | grep -qx "$fname"; then
+              echo "SKIP: $fname (exists)"
+              SKIPPED=$((SKIPPED+1))
+              continue
+            fi
+            
+            echo "Uploading: $fname"
+            if ia upload "$TARGET" "$f" --remote-name="$fname" --no-derive --no-backup --retries=3 2>&1 | grep -q "success"; then
               echo "  OK"
               COPIED=$((COPIED+1))
             else
               echo "  FAIL"
               FAILED=$((FAILED+1))
             fi
+            
             if [ "$BATCH_NUM" != "0" ] && [ $COPIED -ge $BATCH_NUM ]; then
               break
             fi
-          done < /tmp/matched.txt
+          done
           
           echo "======"
-          echo "Copied: $COPIED files"
+          echo "Uploaded: $COPIED files"
+          echo "Skipped: $SKIPPED files"
           echo "Failed: $FAILED files"
