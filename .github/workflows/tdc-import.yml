@@ -57,14 +57,21 @@ jobs:
       - name: Get torrent file list
         run: |
           MAGNET="${{ github.event.inputs.magnet_url }}"
+          echo "Using magnet: $MAGNET"
           mkdir -p /tmp/downloads
           chmod 777 /tmp/downloads
           
-          aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=1 --dir=/tmp/downloads --file-allocation=none --bt-save-metadata=true "$MAGNET" 2>&1 | tail -10
+          aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=1 --dir=/tmp/downloads --file-allocation=none --bt-save-metadata=true "$MAGNET" 2>&1 | tail -20
           
-          if [ -f /tmp/downloads/*.torrent ]; then
-            aria2c --show-files /tmp/downloads/*.torrent > /tmp/torrent_files.txt
+          echo "Downloads dir:"
+          ls -la /tmp/downloads/
+          
+          if ls /tmp/downloads/*.torrent 1> /dev/null 2>&1; then
+            TORRENT=$(ls /tmp/downloads/*.torrent | head -1)
+            echo "Found torrent: $TORRENT"
+            aria2c --show-files "$TORRENT" > /tmp/torrent_files.txt
           else
+            echo "No torrent file found, using magnet directly"
             aria2c --show-files /tmp/downloads/*.torrent 2>/dev/null > /tmp/torrent_files.txt || true
           fi
           
