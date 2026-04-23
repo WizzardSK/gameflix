@@ -61,7 +61,10 @@ jobs:
           mkdir -p /tmp/downloads
           chmod 777 /tmp/downloads
           
-          aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=1 --dir=/tmp/downloads --file-allocation=none --bt-save-metadata=true "$MAGNET" 2>&1 | tail -20
+          aria2c --bt-seed-unverified=true --bt-max-peers=50 --max-concurrent-downloads=1 --dir=/tmp/downloads --file-allocation=none --bt-save-metadata=true --bt-stop-timeout=120 --bt-tracker-connect-timeout=60 "$MAGNET" 2>&1 | tail -30
+          
+          echo "Downloads dir:"
+          ls -la /tmp/downloads/
           
           echo "Downloads dir:"
           ls -la /tmp/downloads/
