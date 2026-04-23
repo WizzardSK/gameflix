@@ -161,7 +161,10 @@ jobs:
               echo "  FAIL"
               FAILED=$((FAILED+1))
             fi
-          done < <(head -n $BATCH_NUM /tmp/matched.txt)
+            if [ "$BATCH_NUM" != "0" ] && [ $COPIED -ge $BATCH_NUM ]; then
+              break
+            fi
+          done < /tmp/matched.txt
           
           echo "======"
           echo "Copied: $COPIED files"
