@@ -59,7 +59,7 @@ jobs:
           mkdir -p /tmp/downloads
           chmod 777 /tmp/downloads
           
-          aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=5 --dir=/tmp/downloads --file-allocation=none "$MAGNET" 2>&1 | tail -30
+          aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=1 --dir=/tmp/downloads --file-allocation=none "$MAGNET" 2>&1 | tail -30
           
           echo "Downloaded files:"
           find /tmp/downloads -type f ! -name "*.torrent" ! -name "*.aria2" 2>/dev/null | wc -l
