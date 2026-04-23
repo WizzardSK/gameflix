@@ -57,12 +57,13 @@ jobs:
           BATCH="${{ github.event.inputs.batch_size }}"
           
           mkdir -p /tmp/downloads
-          cd /tmp/downloads
+          chmod 777 /tmp/downloads
           
-          aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=5 --dir=/tmp/downloads "$MAGNET" 2>&1 | tail -20
+          aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=5 --dir=/tmp/downloads --file-allocation=none "$MAGNET" 2>&1 | tail -30
           
           echo "Downloaded files:"
-          find /tmp/downloads -type f ! -name "*.torrent" ! -name "*.aria2" | wc -l
+          find /tmp/downloads -type f ! -name "*.torrent" ! -name "*.aria2" 2>/dev/null | wc -l
+          ls -la /tmp/downloads/
 
       - name: Upload new files
         env:
