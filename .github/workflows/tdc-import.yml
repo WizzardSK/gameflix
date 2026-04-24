@@ -6,7 +6,7 @@ on:
       magnet_url:
         description: 'Magnet URL'
         required: true
-        default: 'magnet:?xt=urn:btih:5D1B8E19C6C20B2E6107F0C4DFE631F86CE16C29&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberdie.net%3A1337%2Fannounce&tr=udp%3A%2F%2Fbt.t-ru.org%3A7777%2Fannounce'
+        default: 'magnet:?xt=urn:btih:5D1B8E19C6C20B2E6107F0C4DFE631F86CE16C29'
       target_ia:
         description: 'Target IA identifier'
         required: true
