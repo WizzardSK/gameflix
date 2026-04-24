@@ -97,6 +97,8 @@ jobs:
           trap cleanup EXIT
           START=$1
           END=$2
+          MAGNET=$3
+          TARGET=$4
           
           TOTAL=$(grep -cE "^\s*[0-9]+|" /tmp/torrent_files.txt)
           if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL" ]; then
@@ -122,13 +124,13 @@ jobs:
             echo "File $i: Downloading: $path"
             rm -rf /tmp/downloads/*
             mkdir -p /tmp/work
-            aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=1 --select-file="$i" --dir=/tmp/work --file-allocation=none /tmp/downloads/*.torrent 2>&1 | grep -v "^#"
+            aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=1 --select-file="$i" --dir=/tmp/work --file-allocation=none --bt-save-metadata=true "$MAGNET" 2>&1 | grep -v "^#"
             
             file=$(find /tmp/work -type f ! -name "*.torrent" ! -name "*.aria2" | head -1)
             if [ -n "$file" ] && [ -f "$file" ]; then
               fname=$(basename "$file")
               echo "File $i: Uploading: $fname"
-              if ia upload "$TARGET" "$file" --remote-name="$path" --no-derive --no-backup --retries=3 2>&1 | grep -q "success"; then
+              if ia upload $TARGET "$file" --remote-name="$path" --no-derive --no-backup --retries=3 2>&1 | grep -q "success"; then
                 echo "File $i: OK"
                 COPIED=$((COPIED+1))
               else
@@ -149,4 +151,4 @@ jobs:
           echo "Failed: $FAILED"
           SCRIPT
           chmod +x /tmp/process.sh
-          /tmp/process.sh "$START" "$END"
+          /tmp/process.sh "$START" "$END" "$MAGNET" "$TARGET"
