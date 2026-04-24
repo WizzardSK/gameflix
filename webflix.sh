@@ -11,7 +11,7 @@ while read path; do
   case "$path" in
     archive:ni-roms/*)
       subpath="${path#archive:ni-roms/}"
-      target=~/share/zip/ni-roms/"$subpath"
+      target=~/share/zip/ni-roms/"${subpath##*/}"
       ;;
     archive:mame-sl/*)
       subpath="${path#archive:mame-sl/}"
@@ -20,7 +20,7 @@ while read path; do
       ;;
     archive:tosec-main/*)
       subpath="${path#archive:tosec-main/}"
-      target=~/share/zip/tosec-main/"$subpath"
+      target=~/share/zip/tosec-main/"${subpath##*/}"
       ;;
     *)
       continue
