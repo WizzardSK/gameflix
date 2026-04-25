@@ -144,11 +144,12 @@ jobs:
             if [ -n "$file" ] && [ -f "$file" ]; then
               fname=$(basename "$file")
               echo "File $i: Uploading: $fname"
-              if ia upload $TARGET "$file" --remote-name="$path" --no-derive --no-backup --retries=3 2>&1 | grep -q "success"; then
+              ia upload $TARGET "$file" --remote-name="$path" --no-derive --no-backup --retries=3 2>&1 | tee /tmp/upload_log.txt
+              if grep -q "success\|uploaded\|completed" /tmp/upload_log.txt; then
                 echo "File $i: OK"
                 COPIED=$((COPIED+1))
               else
-                echo "File $i: FAIL"
+                echo "File $i: FAIL - check log: $(cat /tmp/upload_log.txt | head -3)"
                 FAILED=$((FAILED+1))
               fi
             else
