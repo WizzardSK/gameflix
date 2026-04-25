@@ -1,4 +1,4 @@
-name: Torrent to Archive.org
+name: eXoDOS Import
 
 on:
   workflow_dispatch:
