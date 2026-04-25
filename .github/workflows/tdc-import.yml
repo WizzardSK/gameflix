@@ -3,14 +3,18 @@ name: TDC Import
 on:
   workflow_dispatch:
     inputs:
-      magnet_url:
-        description: 'Magnet URL'
+      torrent_url:
+        description: 'URL of .torrent file'
         required: true
-        default: 'magnet:?xt=urn:btih:5D1B8E19C6C20B2E6107F0C4DFE631F86CE16C29'
+        default: 'https://archive.org/download/total_dos_collection/TDC23.torrent'
       target_ia:
         description: 'Target IA identifier'
         required: true
         default: 'total_dos_collection'
+      external_ia_id:
+        description: 'External IA identifier to copy from'
+        required: false
+        default: ''
       start_index:
         description: 'Start file index (1-based)'
         required: false
@@ -56,49 +60,27 @@ jobs:
 
       - name: Get torrent file list
         run: |
-          MAGNET="${{ github.event.inputs.magnet_url }}"
-          echo "Using magnet: $MAGNET"
-          mkdir -p /tmp/downloads
-          chmod 777 /tmp/downloads
+          TORRENT_URL="${{ github.event.inputs.torrent_url }}"
+          echo "Downloading torrent from: $TORRENT_URL"
+          curl -sL -o /tmp/torrent.torrent "$TORRENT_URL"
           
-          aria2c --bt-seed-unverified=true --bt-max-peers=50 --max-concurrent-downloads=1 --dir=/tmp/downloads --file-allocation=none --bt-save-metadata=true --bt-stop-timeout=120 --bt-tracker-connect-timeout=60 "$MAGNET" 2>&1 | tail -30
+          echo "Torrent file size: $(stat -c%s /tmp/torrent.torrent) bytes"
           
-          echo "Downloads dir:"
-          ls -la /tmp/downloads/
+          aria2c --show-files /tmp/torrent.torrent 2>/dev/null > /tmp/torrent_files.txt
           
-          echo "Downloads dir:"
-          ls -la /tmp/downloads/
-          
-          if ls /tmp/downloads/*.torrent 1> /dev/null 2>&1; then
-            TORRENT=$(ls /tmp/downloads/*.torrent | head -1)
-            echo "Found torrent: $TORRENT"
-            aria2c --show-files "$TORRENT" > /tmp/torrent_files.txt
-          else
-            echo "No torrent file found, using magnet directly"
-            aria2c --show-files /tmp/downloads/*.torrent 2>/dev/null > /tmp/torrent_files.txt || true
-          fi
+          echo "Torrent files preview:"
+          head -20 /tmp/torrent_files.txt
           
           TOTAL=$(grep -cE "^\s*[0-9]+|" /tmp/torrent_files.txt || echo 0)
           echo "Total files in torrent: $TOTAL"
 
       - name: Download and upload files
         run: |
-          MAGNET="${{ github.event.inputs.magnet_url }}"
+          TORRENT_URL="${{ github.event.inputs.torrent_url }}"
           TARGET="${{ github.event.inputs.target_ia }}"
+          EXTERNAL_IA="${{ github.event.inputs.external_ia_id || '' }}"
           START=${{ github.event.inputs.start_index || '1' }}
           END=${{ github.event.inputs.end_index || '0' }}
-          
-          cat > /tmp/process.sh << 'SCRIPT'
-          #!/bin/bash
-          cleanup() {
-            rm -rf /tmp/downloads/* /tmp/work/* 2>/dev/null
-            sync 2>/dev/null || true
-          }
-          trap cleanup EXIT
-          START=$1
-          END=$2
-          MAGNET=$3
-          TARGET=$4
           
           TOTAL=$(grep -cE "^\s*[0-9]+|" /tmp/torrent_files.txt)
           if [ "$END" -eq 0 ] || [ "$END" -gt "$TOTAL" ]; then
@@ -107,13 +89,30 @@ jobs:
           
           target_files=$(cat /tmp/target.txt)
           
+          if [ -n "$EXTERNAL_IA" ]; then
+            echo "Fetching external IA metadata..."
+            curl -sL "https://archive.org/metadata/${EXTERNAL_IA}?output=json" > /tmp/external_meta.json
+            python3 -c "
+            import json
+            with open('/tmp/external_meta.json') as f:
+                data = json.load(f)
+            for f in data.get('files', []):
+                name = f.get('name', '')
+                size = f.get('size', '')
+                mtime = f.get('mtime', '')
+                if name and size:
+                    print(name + '\t' + size + '\t' + mtime)
+            " > /tmp/external_files.txt
+            echo "External IA files: $(wc -l < /tmp/external_files.txt)"
+          fi
+          
           COPIED=0
           FAILED=0
           SKIPPED=0
           
           for i in $(seq "$START" "$END"); do
-            cleanup
             path=$(sed -n "/^\s*${i}|/p" /tmp/torrent_files.txt | sed "s/^\s*${i}|//" | sed 's/|.*//' | sed 's/^\.\///')
+            size=$(sed -n "/^\s*${i}|/p" /tmp/torrent_files.txt | sed 's/.*|//' | tr -d ' ')
             
             if echo "$target_files" | grep -qx "$path"; then
               echo "File $i: SKIP (exists in IA): $path"
@@ -121,10 +120,25 @@ jobs:
               continue
             fi
             
+            if [ -n "$EXTERNAL_IA" ]; then
+              ext_match=$(grep -F "${path}" /tmp/external_files.txt | grep -w "${size}")
+              if [ -n "$ext_match" ]; then
+                echo "File $i: Copying from external IA: $path"
+                if ia copy "$EXTERNAL_IA/${path}" "$TARGET/${path}" --no-derive --no-backup 2>&1 | grep -q "success\|copied"; then
+                  echo "File $i: OK (copied)"
+                  COPIED=$((COPIED+1))
+                else
+                  echo "File $i: FAIL (copy)"
+                  FAILED=$((FAILED+1))
+                fi
+                continue
+              fi
+            fi
+            
             echo "File $i: Downloading: $path"
-            rm -rf /tmp/downloads/*
+            rm -rf /tmp/work/*
             mkdir -p /tmp/work
-            aria2c --bt-seed-unverified=true --bt-max-peers=20 --max-concurrent-downloads=1 --select-file="$i" --dir=/tmp/work --file-allocation=none --bt-save-metadata=true "$MAGNET" 2>&1 | grep -v "^#"
+            aria2c --dir=/tmp/work --select-file="$i" --seed-time=0 --bt-stop-timeout=300 /tmp/torrent.torrent 2>&1 | grep -v "^#"
             
             file=$(find /tmp/work -type f ! -name "*.torrent" ! -name "*.aria2" | head -1)
             if [ -n "$file" ] && [ -f "$file" ]; then
@@ -149,6 +163,3 @@ jobs:
           echo "Uploaded: $COPIED"
           echo "Skipped: $SKIPPED"
           echo "Failed: $FAILED"
-          SCRIPT
-          chmod +x /tmp/process.sh
-          /tmp/process.sh "$START" "$END" "$MAGNET" "$TARGET"
