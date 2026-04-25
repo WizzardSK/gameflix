@@ -23,6 +23,8 @@ on:
         description: 'End file index (0=all)'
         required: false
         default: '0'
+  schedule:
+    - cron: '0 */6 * * *'
 
 jobs:
   import:
