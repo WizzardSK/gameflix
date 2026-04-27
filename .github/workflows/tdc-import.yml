@@ -150,11 +150,11 @@ jobs:
               ext_match=$(awk -F'\t' -v p="$path" -v s="$size" '$1 == p && $2 == s { print; exit }' /tmp/external_files.txt)
               if [ -n "$ext_match" ]; then
                 echo "File $i: Copying from external IA: $path"
-                if ia copy "$EXTERNAL_IA/${path}" "$TARGET/${path}" --no-derive --no-backup 2>&1 | grep -q "success\|copied"; then
+                if ia copy "$EXTERNAL_IA/${path}" "$TARGET/${path}" --no-derive --no-backup; then
                   echo "File $i: OK (copied)"
                   COPIED=$((COPIED+1))
                 else
-                  echo "File $i: FAIL (copy)"
+                  echo "File $i: FAIL (copy, ia exit $?)"
                   FAILED=$((FAILED+1))
                 fi
                 continue
@@ -170,11 +170,12 @@ jobs:
             if [ -f "$file" ] && [ -s "$file" ]; then
               echo "File $i: Uploading: $path"
               ia upload "$TARGET" "$file" --remote-name="$path" --no-derive --no-backup --retries=3 2>&1 | tee /tmp/upload_log.txt
-              if grep -q "success\|uploaded\|completed" /tmp/upload_log.txt; then
+              ia_rc=${PIPESTATUS[0]}
+              if [ "$ia_rc" -eq 0 ]; then
                 echo "File $i: OK"
                 COPIED=$((COPIED+1))
               else
-                echo "File $i: FAIL - check log: $(head -3 /tmp/upload_log.txt)"
+                echo "File $i: FAIL (ia exit $ia_rc) - log: $(head -3 /tmp/upload_log.txt)"
                 FAILED=$((FAILED+1))
               fi
             else
