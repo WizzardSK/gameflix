@@ -130,7 +130,9 @@ jobs:
           SKIPPED=0
 
           for i in $(seq "$START" "$END"); do
-            IFS=$'\t' read -r _idx path size < <(awk -F'\t' -v idx="$i" '$1 == idx { print; exit }' /tmp/files_index.txt)
+            path=""
+            size=""
+            IFS=$'\t' read -r _idx path size < <(awk -F'\t' -v idx="$i" '$1 == idx { print; exit }' /tmp/files_index.txt) || true
 
             if [ -z "$path" ]; then
               echo "File $i: FAIL (not in torrent index)"
@@ -162,7 +164,7 @@ jobs:
             echo "File $i: Downloading: $path ($size bytes)"
             rm -rf /tmp/work
             mkdir -p /tmp/work
-            aria2c --dir=/tmp/work --select-file="$i" --seed-time=0 --bt-stop-timeout=300 --bt-remove-unselected-file=true /tmp/torrent.torrent 2>&1 | grep -v "^#"
+            aria2c --dir=/tmp/work --select-file="$i" --seed-time=0 --bt-stop-timeout=300 --bt-remove-unselected-file=true /tmp/torrent.torrent 2>&1 | { grep -v "^#" || true; }
 
             file="/tmp/work/${path}"
             if [ -f "$file" ] && [ -s "$file" ]; then
