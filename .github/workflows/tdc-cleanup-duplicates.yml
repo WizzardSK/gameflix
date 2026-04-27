@@ -1,0 +1,92 @@
+name: TDC Cleanup Duplicates
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_ia:
+        description: 'Target IA identifier'
+        required: true
+        default: 'total_dos_collection'
+      dry_run:
+        description: 'Dry run (only list, do not delete)'
+        required: false
+        default: 'true'
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Install tools
+        run: pip install internetarchive
+
+      - name: Configure IA
+        run: |
+          mkdir -p ~/.config/internetarchive
+          cat > ~/.config/internetarchive/ia.ini << 'EOCONF'
+          [s3]
+          access = ${{ secrets.IA_ACCESS }}
+          secret = ${{ secrets.IA_SECRET }}
+          EOCONF
+
+      - name: Find duplicate-content files
+        run: |
+          TARGET="${{ inputs.target_ia }}"
+          curl -sL "https://archive.org/metadata/${TARGET}?output=json" > /tmp/meta.json
+
+          python3 << 'PYEOF' > /tmp/dupes.txt
+          import json
+          from collections import defaultdict
+
+          with open('/tmp/meta.json') as f:
+              data = json.load(f)
+
+          by_md5 = defaultdict(list)
+          for f in data.get('files', []):
+              if f.get('source') != 'original':
+                  continue
+              md5 = f.get('md5', '')
+              name = f.get('name', '')
+              size = f.get('size', '')
+              if md5 and name:
+                  by_md5[md5].append((name, size))
+
+          for md5, items in sorted(by_md5.items()):
+              if len(items) > 1:
+                  for name, size in items:
+                      print(f"{md5}\t{size}\t{name}")
+          PYEOF
+
+          COUNT=$(wc -l < /tmp/dupes.txt)
+          GROUPS=$(awk -F'\t' '{print $1}' /tmp/dupes.txt | sort -u | wc -l)
+          echo "Duplicate MD5 groups: $GROUPS"
+          echo "Files to delete: $COUNT"
+          echo
+          echo "First 30 entries (md5<TAB>size<TAB>name):"
+          head -30 /tmp/dupes.txt
+
+      - name: Delete duplicates
+        if: ${{ inputs.dry_run != 'true' }}
+        run: |
+          TARGET="${{ inputs.target_ia }}"
+          DELETED=0
+          FAILED=0
+          while IFS=$'\t' read -r md5 size name; do
+            echo "Deleting: $name"
+            if ia delete "$TARGET" "$name" 2>&1 | tee /tmp/del.log | grep -q "deleted\|404"; then
+              DELETED=$((DELETED+1))
+            else
+              echo "FAIL: $(head -3 /tmp/del.log)"
+              FAILED=$((FAILED+1))
+            fi
+          done < /tmp/dupes.txt
+          echo "======"
+          echo "Deleted: $DELETED"
+          echo "Failed:  $FAILED"
+
+      - name: Dry run summary
+        if: ${{ inputs.dry_run == 'true' }}
+        run: |
+          echo "DRY RUN — nothing deleted."
+          echo "Re-run with dry_run=false to actually delete."
