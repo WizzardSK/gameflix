@@ -59,8 +59,8 @@ jobs:
           PYEOF
 
           COUNT=$(wc -l < /tmp/dupes.txt)
-          GROUPS=$(awk -F'\t' '{print $1}' /tmp/dupes.txt | sort -u | wc -l)
-          echo "Duplicate MD5 groups: $GROUPS"
+          NUM_GROUPS=$(awk -F'\t' '{print $1}' /tmp/dupes.txt | sort -u | wc -l)
+          echo "Duplicate MD5 groups: $NUM_GROUPS"
           echo "Files to delete: $COUNT"
           echo
           echo "First 30 entries (md5<TAB>size<TAB>name):"
