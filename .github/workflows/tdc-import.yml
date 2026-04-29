@@ -49,7 +49,7 @@ jobs:
 
       - name: Get target IA files
         run: |
-          TARGET="${{ github.event.inputs.target_ia }}"
+          TARGET="${{ github.event.inputs.target_ia || 'total_dos_collection' }}"
           echo "Getting target files..."
           curl -sL "https://archive.org/metadata/${TARGET}?output=json" | python3 -c "
           import json, sys
@@ -62,7 +62,7 @@ jobs:
 
       - name: Get torrent file list
         run: |
-          TORRENT_URL="${{ github.event.inputs.torrent_url }}"
+          TORRENT_URL="${{ github.event.inputs.torrent_url || 'https://archive.org/download/total_dos_collection/TDC23.torrent' }}"
           echo "Downloading torrent from: $TORRENT_URL"
           curl -sL -o /tmp/torrent.torrent "$TORRENT_URL"
           
@@ -97,8 +97,8 @@ jobs:
 
       - name: Download and upload files
         run: |
-          TORRENT_URL="${{ github.event.inputs.torrent_url }}"
-          TARGET="${{ github.event.inputs.target_ia }}"
+          TORRENT_URL="${{ github.event.inputs.torrent_url || 'https://archive.org/download/total_dos_collection/TDC23.torrent' }}"
+          TARGET="${{ github.event.inputs.target_ia || 'total_dos_collection' }}"
           EXTERNAL_IA="${{ github.event.inputs.external_ia_id || '' }}"
           START=${{ github.event.inputs.start_index || '1' }}
           END=${{ github.event.inputs.end_index || '0' }}
