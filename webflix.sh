@@ -1,7 +1,7 @@
 #!/bin/bash
 export LD_LIBRARY_PATH=/usr/local/lib
 mkdir -p ~/share/zip/ni-roms ~/share/zip/mame-sl ~/share/zip/tosec-main \
-         ~/share/roms ~/share/roms-mount ~/share/zip-tree ~/gameflix
+         ~/share/roms ~/share/roms-mount ~/share/zips ~/gameflix
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 
 csv_file=$(mktemp)
@@ -41,18 +41,18 @@ done < "$csv_file"
 wait
 echo "Download done"
 
-# Phase 2: rebuild symlink tree at ~/share/zip-tree/<platform>/<foldername>.zip
+# Phase 2: rebuild symlink tree at ~/share/zips/<platform>/<foldername>.zip
 echo "=== BUILDING ZIP TREE ==="
-rm -rf ~/share/zip-tree
-mkdir -p ~/share/zip-tree
+rm -rf ~/share/zips
+mkdir -p ~/share/zips
 linked=0
 while IFS=',' read -r platform path foldername rest; do
   [[ "$path" != archive:* || "$path" != *.zip ]] && continue
   compute_zip "$path" || continue
   [[ ! -f "$zip" ]] && continue
   cleanfolder="${foldername//<[^>]*>/}"
-  mkdir -p ~/share/zip-tree/"$platform"
-  ln -sfn "$zip" ~/share/zip-tree/"$platform"/"$cleanfolder.zip"
+  mkdir -p ~/share/zips/"$platform"
+  ln -sfn "$zip" ~/share/zips/"$platform"/"$cleanfolder.zip"
   ((linked++))
 done < "$csv_file"
 echo "Linked $linked zip(s)"
@@ -60,7 +60,7 @@ echo "Linked $linked zip(s)"
 # Phase 3: single ratarmount-full process for the whole tree (recursive + lazy)
 echo "=== MOUNTING ==="
 mountpoint -q ~/share/roms-mount && fusermount -u ~/share/roms-mount 2>/dev/null
-ratarmount-full -r -s --lazy ~/share/zip-tree ~/share/roms-mount
+ratarmount-full -r -s --lazy ~/share/zips ~/share/roms-mount
 sleep 2
 if mountpoint -q ~/share/roms-mount; then
   echo "Mounted ~/share/roms-mount"
