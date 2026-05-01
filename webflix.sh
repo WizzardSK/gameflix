@@ -42,7 +42,7 @@ while IFS=',' read -r platform path foldername rest; do
   ((pending++))
   echo "[$pending] $zip"
   rclone copyto "$path" "$zip" --no-check-dest 2>/dev/null &
-  while (( $(jobs -r | wc -l) >= 10 )); do sleep 2; done
+  while (( $(jobs -r | wc -l) >= 3 )); do sleep 2; done
 done < "$csv_file"
 wait
 echo "Download done: $((total - pending))/$total already present, $pending downloaded"
