@@ -28,18 +28,24 @@ compute_zip() {
   esac
 }
 
-# Phase 1: download zips from archive.org via rclone
+# Phase 1: download unique zips from archive.org via rclone
 echo "=== DOWNLOADING ZIPS ==="
+declare -A seen
+total=0; pending=0
 while IFS=',' read -r platform path foldername rest; do
   [[ "$path" != archive:* || "$path" != *.zip ]] && continue
+  [[ -n "${seen[$path]}" ]] && continue
+  seen[$path]=1; ((total++))
   compute_zip "$path" || continue
   mkdir -p "$(dirname "$zip")"
   [[ -f "$zip" ]] && continue
+  ((pending++))
+  echo "[$pending] $zip"
   rclone copyto "$path" "$zip" --no-check-dest 2>/dev/null &
   while (( $(jobs -r | wc -l) >= 10 )); do sleep 2; done
 done < "$csv_file"
 wait
-echo "Download done"
+echo "Download done: $((total - pending))/$total already present, $pending downloaded"
 
 # Phase 2: rebuild symlink tree at ~/share/zips/<platform>/<foldername>.zip
 echo "=== BUILDING ZIP TREE ==="
