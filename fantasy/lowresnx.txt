@@ -1,4 +1,8 @@
 ---	game
+4019	Simon Match Game	bZpxgqHfej_Simon_Match_Game_0.01.png	bZpxgqHfej_Simon_Match_Game_0.01.nx
+4017	Hacker Game Intro	EWwuHbPAir_Hacker_Game_Intro.png	EWwuHbPAir_Hacker_Game_Intro.nx
+4016	Unnamed Program X	kY8rDpuVue_Unnamed_Program_X.007.png	kY8rDpuVue_Unnamed_Program_X.007.nx
+4013	Nomogram puzzles	NttfHoXb3Y_Nono_Pix_0.41.png	NttfHoXb3Y_Nono_Pix_0.41.nx
 4008	Trolls vs Noids	td4YbwtuJr_Trolls_VS_Noids_0.1.png	td4YbwtuJr_Trolls_VS_Noids_0.1.nx
 4007	Rubik&#039;s cube	zyN4NRZ6rA_LowRes_NX_20260416_17_23_09.png	zyN4NRZ6rA_Rubiks_cube.nx
 4006	Connect Pathways	m8wbNuNFhX_Connect_3.1.png	m8wbNuNFhX_Connect_3.1.nx
@@ -12,7 +16,7 @@
 3972	-Test pet program-	HhT3uD9Axr_Test_pet_pic.png	HhT3uD9Axr_Test_Pet_Program.nx
 3971	Catch NAANO 3 (finished!)	X7MrPoy3an_Catch_Naano_3.png	X7MrPoy3an_Catch_Naano_3.nx
 3968	Tiny Tycoon	BCYERyhm4C_Tiny_Tycoon_0.3.png	BCYERyhm4C_Tiny_Tycoon_0.3.nx
-3963	Lowcraft Launcher Version 1.0	bccMVLgaVh_LowcraftLauncher.exe.png	bccMVLgaVh_LowcraftLauncher.exe.nx
+3963	Lowcraft Launcher Version 1.0	JLXUggtXiH_LowcraftLauncher.exe.png	JLXUggtXiH_LowcraftLauncher.exe.nx
 3962	MAD LOTTERY	p4PvxfhW6s_MAD_LOTTERY_SCREENSHOT01.png	p4PvxfhW6s_MAD_LOTTERY.nx
 3961	Solitary	4STanxzf4z_Solitary.png	4STanxzf4z_Solitary.nx
 3960	Sirtet	igSTByHy5v_Sirtet_1.2.png	igSTByHy5v_Sirtet_1.2.nx
@@ -20,7 +24,7 @@
 3938	Gauntlet484	uTk5eErPL9_LowRes_NX_20260121_22_25_10.png	uTk5eErPL9_Gauntlet484.nx
 3937	In Dream	YwEjFC9LAV_In_Dream.png	YwEjFC9LAV_In_Dream.nx
 3935	sNOw: REDEMPTION	Ph8LiaMcQq_sNOw_REDEMPTION.png	Ph8LiaMcQq_sNOw_REDEMPTION.nx
-3933	Coinmania	tzU7beev4w_cover.png	tzU7beev4w_Coinmania.nx
+3933	Coinmania	XhSyqRUpci_cover.png	XhSyqRUpci_Coinmania.nx
 3931	Number Match	2jiAP2HXV7_Number_Match_0.33.png	2jiAP2HXV7_Number_Match_0.33.nx
 3929	Gamepad Hero v1	FYFMW8nF7y_IMG_6385.png	FYFMW8nF7y_Gamepad_Hero_v1.nx
 3923	Scavenger	MYHZgrENdY_Scavenger_0.231.png	MYHZgrENdY_Scavenger_0.231.nx
@@ -1985,6 +1989,7 @@
 2	Background Designer	PpbkUEMFEs_BG_Designer_1.7.png	PpbkUEMFEs_BG_Designer_1.7.nx
 1	Character Designer	A2Mz2eaoxF_Char_Designer_1.6.png	A2Mz2eaoxF_Char_Designer_1.6.nx
 ---	example
+4018	Number Squares	xww38w8wE7_Square_Sums_3.2.png	xww38w8wE7_Square_Sums_3.2.nx
 4011	Do Math Bro	CNDARcnSJi_Do_Math_Bro.png	CNDARcnSJi_Do_Math_Bro.nx
 4001	Power Solitaire	doU48K6goF_Power_Solitaire.png	doU48K6goF_Power_Solitaire.nx
 3997	Pathway counter	mbaVvy46oq_Pathway_Counter_2.png	mbaVvy46oq_Pathway_Counter_2.nx
@@ -2458,7 +2463,6 @@
 855	Picture Picture DISPLAYER (Pro)	dxHiBzsBUq_Picture_Picture_Displayer_Pro.png	dxHiBzsBUq_Picture_Picture_Displayer_Pro.nx
 852	Space flight wip	9wu9ypD2i4_Space_Game.png	9wu9ypD2i4_Space_Game.nx
 847	Pics Demo (Pxl Library 2.0)	vtnXkuSGed_Pxl_Library_2.0_Pics.png	vtnXkuSGed_Pxl_Library_2.0_Pics.nx
-831	Sound monitoring	ohwgPKxius_Sound_Monitoring.png	ohwgPKxius_Sound_Monitoring.nx
 827	3D gfx example	AEYQXhPW6G_Test_3d_Gfx.png	AEYQXhPW6G_Test_3d_Gfx.nx
 826	Vector gfx example	SfLJLmWSWf_Pix_Draw_Test.png	SfLJLmWSWf_Pix_Draw_Test.nx
 817	Fibonacci numbers	43MN93MvpL_Stack_In_Nx_2.png	43MN93MvpL_Fib.nx
@@ -2488,23 +2492,14 @@
 657	Vector Bullet	Edxi25ioWK_Vector_Bullet.png	Edxi25ioWK_Vector_Bullet.nx
 653	Deep Navigation	ssRQJWK8cZ_Deep_Navigation.png	ssRQJWK8cZ_Deep_Navigation.nx
 649	Fire	zNKPaRCMWJ_Disk.png	zNKPaRCMWJ_Disk.nx
-648	Cursor follower	AjBCbad5JN_Cursor_Follower.png	AjBCbad5JN_Cursor_Follower.nx
-642	Sprite animation example....	AuCNWV4FaV_Sprite_Animation_Example.png	AuCNWV4FaV_Sprite_Animation_Example.nx
 638	6 Color Tiles	MrdZRoPhcF_6_Color_Tiles.png	MrdZRoPhcF_6_Color_Tiles.nx
 636	Mini Maps	ktgPNr5wvc_Mini_Maps.png	ktgPNr5wvc_Mini_Maps.nx
 633	Help	G2LByWyERu_Unnamed_Program_13.png	G2LByWyERu_Unnamed_Program_13.nx
 629	howto: breadth first search path finding	Er8VG54X8e_howto_path_finding.png	Er8VG54X8e_howto_path_finding.nx
 626	Any player size platformer	osTE2sikEk_Unnamed_Program_86.png	osTE2sikEk_Unnamed_Program_86.nx
-617	Howto: path finding explore	gsLZLjyMn6_howto_path_finding_explore.png	gsLZLjyMn6_howto_path_finding_explore.nx
 616	Howto: Set character pixels	Hvs4id6z9x_howto_set_chara_pixel.png	Hvs4id6z9x_howto_set_chara_pixel.nx
 615	Movable Game buttons	fE72pK9pfw_Scroll_Button_3.png	fE72pK9pfw_Scroll_Button_3.nx
-610	Palette Viewer	gGXafChvvC_Palette_Viewer.png	gGXafChvvC_Palette_Viewer.nx
-607	Tank	cK7PURdPFP_Unnamed_Program_74.png	cK7PURdPFP_Unnamed_Program_74.nx
-605	howto: half resolution	WGorHsDgx7_howto_half_resolution.png	WGorHsDgx7_howto_half_resolution.nx
 596	3D Hallway simulation	wzv3KgEht6_3d_Hallway_Simulation_Test.png	wzv3KgEht6_3d_Hallway_Simulation_Test.nx
-595	?	VoWAg65Cna_.png	VoWAg65Cna_.nx
-594	Screen shake (Kinda)	TWNff43JjD_Unnamed_Program_129.png	TWNff43JjD_Unnamed_Program_129.nx
-592	PEEK and POKE for pascal string	stMXdp63eh_pascal_string.png	stMXdp63eh_pascal_string.nx
 586	Controls Test	hiUPWWeEru_Controls_Test_0.05.png	hiUPWWeEru_Controls_Test_0.05.nx
 573	3D with 2 Char files	pYxYcwypu8_3D_With_2_Char_Files.png	pYxYcwypu8_3D_With_2_Char_Files.nx
 572	3D simulation test	Jr7zms6SR7_3D_Simulation_Test.png	Jr7zms6SR7_3D_Simulation_Test.nx
