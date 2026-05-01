@@ -45,18 +45,18 @@ while IFS= read -r path; do
     if [[ "$path" == https://* ]]; then
       url="${path%%#*}"; subdir="${path#*#}"; [ "$subdir" = "$path" ] && subdir=""
       tmp=$(mktemp); wget -q "$url" -O "$tmp"
-      unzip -l "$tmp" 2>/dev/null | awk 'NR>3 && $4 != "" {print $4}' > "$cache/$h.txt"
+      unzip -l "$tmp" 2>/dev/null | awk 'NR==2{c=index($0,"Name");next} NR>3 && $2 ~ /^[0-9]{4}-/ {print substr($0,c)}' > "$cache/$h.txt"
       rm -f "$tmp"
     elif [[ "$path" == *:* ]]; then
       aftercolon="${path#*:}"
       localpath="$HOME/mount/$aftercolon"
       if [[ "$localpath" == *.zip ]]; then
-        unzip -l "$localpath" 2>/dev/null | awk 'NR>3 && $4 != "" {print $4}' > "$cache/$h.txt"
+        unzip -l "$localpath" 2>/dev/null | awk 'NR==2{c=index($0,"Name");next} NR>3 && $2 ~ /^[0-9]{4}-/ {print substr($0,c)}' > "$cache/$h.txt"
       else
         zipcount=$(find "$localpath" -name "*.zip" 2>/dev/null | wc -l)
         if [ "$zipcount" -ge 1 ]; then
           zipfile=$(find "$localpath" -name "*.zip" 2>/dev/null | head -1)
-          unzip -l "$zipfile" 2>/dev/null | awk 'NR>3 && $4 != "" {print $4}' > "$cache/$h.txt"
+          unzip -l "$zipfile" 2>/dev/null | awk 'NR==2{c=index($0,"Name");next} NR>3 && $2 ~ /^[0-9]{4}-/ {print substr($0,c)}' > "$cache/$h.txt"
           echo "$path/$(basename "$zipfile")" > "$cache/$h.path"
         else
           ls "$localpath" 2>/dev/null > "$cache/$h.txt"
