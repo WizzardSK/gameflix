@@ -66,7 +66,9 @@ echo "Linked $linked zip(s)"
 # Phase 3: single ratarmount-full process for the whole tree (recursive + lazy)
 echo "=== MOUNTING ==="
 mountpoint -q ~/share/roms-mount && fusermount -u ~/share/roms-mount 2>/dev/null
-ratarmount-full -r -s --lazy --transform '^[a-z0-9_]+/' '' ~/share/zips ~/share/roms-mount
+ratarmount-full -r -s --lazy --transform '^[a-z0-9_]+/' '' \
+  -o entry_timeout=86400,attr_timeout=86400,negative_timeout=86400 \
+  ~/share/zips ~/share/roms-mount
 sleep 2
 if mountpoint -q ~/share/roms-mount; then
   echo "Mounted ~/share/roms-mount"
