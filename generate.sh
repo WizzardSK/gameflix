@@ -133,9 +133,9 @@ echo "<figure><a href='LowresNX.html'><img src='https://raw.githubusercontent.co
 echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 
 # WASM-4 - dual fd output
-pocet=$(ls ~/roms/WASM-4/*.wasm | wc -l); total=$((pocet+total))
+pocet=$(ls ~/share/roms/wasm4/*.wasm 2>/dev/null | wc -l); total=$((pocet+total))
 echo "<figure><a href='WASM-4.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/wasm4.jpg'><figcaption>WASM-4</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
-echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"WASM-4/\"*) core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh
+echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"/wasm4/\"*) core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh
 echo "WASM-4"; cp platform.html ~/gameflix/WASM-4.html; echo "<script>bgImage(\"wasm4\"); fileNames = [" >> ~/gameflix/WASM-4.html; ((platforms++))
 exec 3>> ~/gameflix/WASM-4.html
 {
