@@ -1,7 +1,7 @@
 #!/bin/bash
 export LD_LIBRARY_PATH=/usr/local/lib
 mkdir -p ~/share/zip/ni-roms ~/share/zip/mame-sl ~/share/zip/tosec-main \
-         ~/share/roms ~/gameflix
+         ~/share/roms ~/share/roms-mount ~/share/zips ~/gameflix
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 
 csv_file=$(mktemp)
@@ -47,29 +47,56 @@ done < "$csv_file"
 wait
 echo "Download done: $((total - pending))/$total already present, $pending downloaded"
 
-# Phase 2: archivemount each zip directly into ~/share/roms/<platform>/<foldername>/
-# For MAME-SL zips, use -o subtree=<shortname> to skip the inner wrapper directory.
-echo "=== MOUNTING ZIPS ==="
-mounted=0; skipped=0
+# Phase 2: rebuild symlink tree at ~/share/zips/<platform>/<foldername>.zip
+echo "=== BUILDING ZIP TREE ==="
+rm -rf ~/share/zips
+mkdir -p ~/share/zips
+linked=0
 while IFS=',' read -r platform path foldername rest; do
   [[ "$path" != archive:* || "$path" != *.zip ]] && continue
   compute_zip "$path" || continue
   [[ ! -f "$zip" ]] && continue
   cleanfolder="${foldername//<[^>]*>/}"
+  mkdir -p ~/share/zips/"$platform"
+  ln -sfn "$zip" ~/share/zips/"$platform"/"$cleanfolder.zip"
+  ((linked++))
+done < "$csv_file"
+echo "Linked $linked zip(s)"
+
+# Phase 3: single ratarmount process for the whole tree
+# --recursion-depth 1: mount only the top-level zips, not ROM zips inside them
+# --transform: strip MAME-style <shortname>/ prefix from contents
+# entry/attr_timeout=86400: kernel caches stat for a day -> fast repeat ls
+echo "=== MOUNTING ==="
+mountpoint -q ~/share/roms-mount && fusermount -u -z ~/share/roms-mount 2>/dev/null
+ratarmount --recursion-depth 1 -s --transform '^[a-z0-9_]+/' '' \
+  -o entry_timeout=86400,attr_timeout=86400,negative_timeout=86400 \
+  ~/share/zips ~/share/roms-mount
+sleep 2
+if mountpoint -q ~/share/roms-mount; then
+  echo "Mounted ~/share/roms-mount"
+else
+  echo "Mount failed" >&2; rm -f "$csv_file"; exit 1
+fi
+
+# Phase 4: symlinks ~/share/roms/<platform>/<foldername> -> ~/share/roms-mount/<platform>/<foldername>
+echo "=== LINKING INTO ROMS ==="
+symlinked=0
+while IFS=',' read -r platform path foldername rest; do
+  [[ "$path" != archive:* || "$path" != *.zip ]] && continue
+  compute_zip "$path" || continue
+  [[ ! -f "$zip" ]] && continue
+  cleanfolder="${foldername//<[^>]*>/}"
+  src=~/share/roms-mount/"$platform"/"$cleanfolder"
   dst=~/share/roms/"$platform"/"$cleanfolder"
-  # Refuse to clobber a non-empty real directory; tolerate it being a mountpoint already
-  if [[ -e "$dst" && ! -d "$dst" ]]; then ((skipped++)); continue; fi
-  mkdir -p "$dst"
-  # If an old/different mount lives there, drop it first
-  mountpoint -q "$dst" && fusermount -u "$dst" 2>/dev/null
-  if [[ "$path" == archive:mame-sl/* ]]; then
-    shortname="${zip##*/}"; shortname="${shortname%.zip}"
-    archivemount -o readonly,subtree="$shortname" "$zip" "$dst" 2>/dev/null && ((mounted++))
-  else
-    archivemount -o readonly "$zip" "$dst" 2>/dev/null && ((mounted++))
+  mkdir -p ~/share/roms/"$platform"
+  # Replace only existing symlinks; never clobber a real directory
+  if [[ -L "$dst" || ! -e "$dst" ]]; then
+    ln -sfn "$src" "$dst"
+    ((symlinked++))
   fi
 done < "$csv_file"
-echo "Mounted $mounted zip(s), skipped $skipped"
+echo "Symlinked $symlinked target(s)"
 
 rm -f "$csv_file"
 echo "Done"
