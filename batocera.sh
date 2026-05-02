@@ -19,7 +19,6 @@ mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{htt
 wget -nv -O /userdata/system/systems.csv https://raw.githubusercontent.com/WizzardSK/gameflix/main/systems.csv > /dev/null 2>&1
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv | tail -n +2 | awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}')"
 
-declare -A ia_zip_mounted
 mkdir -p /userdata/zips /userdata/zips-mount /userdata/mount
 
 # Resolve archive:<bucket>/<path> -> /userdata/zip/<bucket>/<filename> (matches webflix.sh)
@@ -33,7 +32,27 @@ local_zip_path() {
   esac
 }
 
-zip_count=0; zip_local=0; zip_remote=0; ia_count=0; bind_count=0; rclone_count=0
+# Phase 1: download missing zips to /userdata/zip/<bucket>/ (in parallel, like webflix.sh)
+echo "=== downloading missing zips ==="
+declare -A seen_path
+download_pending=0
+for each in "${roms[@]}"; do
+  IFS=";" read -ra rom <<< "$each"
+  [[ "${rom[1]}" != archive:* || "${rom[1]}" != *.zip ]] && continue
+  [[ -n "${seen_path[${rom[1]}]}" ]] && continue
+  seen_path[${rom[1]}]=1
+  local_path=$(local_zip_path "${rom[1]}") || continue
+  [[ -f "$local_path" ]] && continue
+  mkdir -p "$(dirname "$local_path")"
+  ((download_pending++))
+  echo "[$download_pending] downloading ${rom[1]}"
+  rclone copyto "${rom[1]}" "$local_path" --config=/userdata/system/rclone.conf --no-check-dest 2>/dev/null &
+  while (( $(jobs -r | wc -l) >= 3 )); do sleep 2; done
+done
+wait
+echo "=== downloaded $download_pending zip(s) ==="
+
+zip_count=0; ia_count=0; bind_count=0; rclone_count=0
 total=${#roms[@]}; idx=0
 echo "=== mounting/linking $total platform entries ==="
 IFS=";"; for each in "${roms[@]}"; do
@@ -43,28 +62,12 @@ IFS=";"; for each in "${roms[@]}"; do
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[2]}")
   dst="/userdata/roms/${rom[0]}/${rom3}"
   if [[ "${rom[1]}" == archive:* && "${rom[1]}" == *.zip ]]; then
-    # Prefer locally-downloaded zip in /userdata/zip/<bucket>/; fall back to live IA mount.
-    mkdir -p /userdata/zips/${rom[0]}
-    src_zip=""
+    # Symlink the zips tree to the local downloaded zip (already ensured by Phase 1)
     if local_path=$(local_zip_path "${rom[1]}") && [[ -f "$local_path" ]]; then
-      src_zip="$local_path"
-      ((zip_local++))
-    else
-      aftercolon="${rom[1]#archive:}"; item="${aftercolon%%/*}"; subpath="${aftercolon#$item/}"
-      if [[ -z "${ia_zip_mounted[$item]}" ]]; then
-        mkdir -p /userdata/mount/"$item"
-        if ! grep -q " /userdata/mount/$item " /proc/mounts; then
-          echo "[$idx/$total] rclone-mount archive:$item (local zip missing)"
-          rclone mount "archive:$item" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
-          ((ia_count++))
-        fi
-        ia_zip_mounted[$item]=1
-      fi
-      src_zip="/userdata/mount/$item/$subpath"
-      ((zip_remote++))
+      mkdir -p /userdata/zips/${rom[0]}
+      ln -sfn "$local_path" "/userdata/zips/${rom[0]}/${rom3}.zip"
+      ((zip_count++))
     fi
-    ln -sfn "$src_zip" "/userdata/zips/${rom[0]}/${rom3}.zip"
-    ((zip_count++))
   elif grep -q ":" <<< "${rom[1]}" && [[ "${rom[1]}" != *.zip ]]; then
     grep -q " $dst " /proc/mounts && continue
     [[ -L "$dst" ]] && continue
@@ -80,7 +83,7 @@ IFS=";"; for each in "${roms[@]}"; do
     ((bind_count++))
   fi
 done
-echo "=== loop done: $zip_count zip-symlinks ($zip_local local, $zip_remote via IA mount), $ia_count IA mounts, $rclone_count direct mounts, $bind_count binds ==="
+echo "=== loop done: $zip_count zip-symlinks, $rclone_count direct rclone mounts, $bind_count binds ==="
 
 # Single ratarmount over the symlink tree of all .zip archives, then symlink into roms.
 # --recursion-depth 1 keeps ROM zips inside MAME bundles as files; --transform strips
