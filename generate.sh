@@ -208,7 +208,7 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ "$rom3" != "${rom[0]}" ]]; then
     # Close previous platform fds and finalize
     if [ -n "$rom3" ]; then
-      echo ']; generateFileLinks("'"$prev_romfolder"'", "'"${prev_imagepath}"'");</script>' >&$html_fd
+      echo ']; generateFileLinks("'"$prev_romfolder"'", "'"${prev_imagepath}"'", "'"${prev_localpath}"'");</script>' >&$html_fd
       echo "<script src=\"script.js\"></script>" >&$html_fd
       exec {html_fd}>&- {xml_fd}>&-
       echo ${rom[6]}
@@ -222,7 +222,7 @@ IFS=";"; for each in "${roms[@]}"; do
     exec {html_fd}>> ~/gameflix/${rom[0]}.html
   else
     # Close section, keep fds open for same platform
-    echo ']; generateFileLinks("'"$prev_romfolder"'", "'"${prev_imagepath}"'");</script>' >&$html_fd
+    echo ']; generateFileLinks("'"$prev_romfolder"'", "'"${prev_imagepath}"'", "'"${prev_localpath}"'");</script>' >&$html_fd
   fi
   echo -e "<h3 id=\"${rom[2]}\" class=\"section-header\">${rom[2]}</h3>\n<script>bgImage(\"${rom[0]}\")\nfileNames = [" >&$html_fd
   rom3="${rom[0]}"; rom6="${rom[6]}"
@@ -248,12 +248,12 @@ IFS=";"; for each in "${roms[@]}"; do
       echo "${hra}</$polozka>" >&$xml_fd
     else echo "${hra}<hidden>true</hidden></$polozka>" >&$xml_fd; fi
   done < "$cachefile"
-  prev_romfolder="$romfolder"; prev_imagepath="${rom[5]// /_}"; prev_platform="${rom[0]}"
+  prev_romfolder="$romfolder"; prev_imagepath="${rom[5]// /_}"; prev_platform="${rom[0]}"; prev_localpath="../share/roms/${rom[0]}/${foldername}"
   platform=${rom[0]}; ext=""; if [ -n "${rom[4]}" ]; then ext="; ext=\"${rom[4]}\""; fi; emu="${rom[3]//\"/\\\"}"; echo "*\"${emufolder}/\"*) core=\"${emu}\"${ext};;" >> ~/gameflix/retroarch.sh
   echo "<folder><path>./$foldername</path><name>$foldername</name><image>~/../thumb/${rom[0]}.png</image></folder>" >&$xml_fd
 done
 # Flush last platform
-echo ']; generateFileLinks("'"$prev_romfolder"'", "'"${prev_imagepath}"'");</script>' >&$html_fd
+echo ']; generateFileLinks("'"$prev_romfolder"'", "'"${prev_imagepath}"'", "'"${prev_localpath}"'");</script>' >&$html_fd
 echo "<script src=\"script.js\"></script>" >&$html_fd
 exec {html_fd}>&- {xml_fd}>&-
 echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/${rom3}.jpg'><figcaption>${rom6}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html; ((platforms++))

@@ -94,11 +94,11 @@ function generateVoxLinks(romPath, imagePath) {
     document.write('<div class="figureList">' + html.join('') + '</div>');
 }
 
-function generateFileLinks(romPath, imagePath) {
+function generateFileLinks(romPath, imagePath, localPath) {
     if (location.protocol !== "file:") {
         if (romPath.startsWith("archive:")) { romPath = romPath.replace(/^archive:([^/]+)\/(.*)$/, "https://archive.org/download/$1/$2"); }
         if (romPath.includes("2600")) { romPath = "https://javatari.org/?rom=" + romPath; romPath = romPath.replace("&", "%26"); romPath = romPath.replace(" ", "%20"); }
-    } else { romPath = "../" + romPath }
+    } else { romPath = localPath || ("../" + romPath); }
     var encodedPath = encodeURI(romPath);
     var html = [];
     fileNames.forEach(fileName => {
