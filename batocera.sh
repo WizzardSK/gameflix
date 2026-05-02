@@ -15,14 +15,50 @@ mkdir -p /userdata/{rom,roms,thumb,thumbs,zip,zips} /userdata/system/.cache/{htt
 wget -nv -O /userdata/system/systems.csv https://raw.githubusercontent.com/WizzardSK/gameflix/main/systems.csv > /dev/null 2>&1
 IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv | tail -n +2 | awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}')"
 
-IFS=";"; for each in "${roms[@]}"; do 
+declare -A ia_zip_mounted
+mkdir -p /userdata/zips /userdata/zips-mount /userdata/mount
+
+IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/consoles/${rom[0]}.png; fi
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[2]}"); mkdir -p /userdata/roms/${rom[0]}/${rom3}
-  if grep -q ":" <<< "${rom[1]}" && [[ "${rom[1]}" != *.zip ]]; then
+  if [[ "${rom[1]}" == archive:* && "${rom[1]}" == *.zip ]]; then
+    # archive:*.zip — rclone-mount parent IA item, build symlink tree for ratarmount below
+    aftercolon="${rom[1]#archive:}"; item="${aftercolon%%/*}"; subpath="${aftercolon#$item/}"
+    if [[ -z "${ia_zip_mounted[$item]}" ]]; then
+      mkdir -p /userdata/mount/"$item"
+      mountpoint -q /userdata/mount/"$item" || rclone mount "archive:$item" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
+      ia_zip_mounted[$item]=1
+    fi
+    mkdir -p /userdata/zips/${rom[0]}
+    ln -sfn "/userdata/mount/$item/$subpath" "/userdata/zips/${rom[0]}/${rom3}.zip"
+  elif grep -q ":" <<< "${rom[1]}" && [[ "${rom[1]}" != *.zip ]]; then
     rclone mount "${rom[1]}" /userdata/roms/${rom[0]}/${rom3} --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
   elif [[ "${rom[1]}" != *:* ]]; then
     mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}
+  fi
+done
+
+# Single ratarmount over the symlink tree of all .zip archives, then symlink into roms.
+# --recursion-depth 1 keeps ROM zips inside MAME bundles as files; --transform strips
+# the redundant <shortname>/ directory inside MAME-SL zips.
+mountpoint -q /userdata/zips-mount && fusermount -u -z /userdata/zips-mount 2>/dev/null
+/userdata/system/ratarmount --recursion-depth 1 -s --transform '^[a-z0-9_]+/' '' \
+  -o entry_timeout=86400,attr_timeout=86400,negative_timeout=86400 \
+  /userdata/zips /userdata/zips-mount &
+sleep 5
+
+IFS=";"; for each in "${roms[@]}"; do
+  read -ra rom < <(printf '%s' "$each")
+  [[ "${rom[1]}" != archive:* || "${rom[1]}" != *.zip ]] && continue
+  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[2]}")
+  src="/userdata/zips-mount/${rom[0]}/${rom3}"
+  dst="/userdata/roms/${rom[0]}/${rom3}"
+  if [[ -d "$dst" && ! -L "$dst" ]] && [[ -z "$(ls -A "$dst" 2>/dev/null)" ]]; then
+    rmdir "$dst" 2>/dev/null
+  fi
+  if [[ -L "$dst" || ! -e "$dst" ]]; then
+    ln -sfn "$src" "$dst"
   fi
 done
 
