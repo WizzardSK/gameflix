@@ -94,12 +94,14 @@ status "=== loop done: $zip_count zip-symlinks, $rclone_count direct rclone moun
 # --recursion-depth 1 keeps ROM zips inside MAME bundles as files; --transform strips
 # the redundant <shortname>/ directory inside MAME-SL zips.
 grep -q " /userdata/zips-mount " /proc/mounts && fusermount -u -z /userdata/zips-mount 2>/dev/null
-/userdata/system/ratarmount --recursion-depth 1 -s --lazy --transform '^[a-z0-9_]+/' '' \
+/userdata/system/ratarmount --recursion-depth 1 -s --transform '^[a-z0-9_]+/' '' \
   -o entry_timeout=86400,attr_timeout=86400,negative_timeout=86400 \
   /userdata/zips /userdata/zips-mount &
-# Wait briefly for FUSE mountpoint to come up, but don't block on full indexing —
-# --lazy defers central-directory reads of each zip until first access
-for i in $(seq 1 20); do grep -q " /userdata/zips-mount " /proc/mounts && break; sleep 1; done
+# Eager indexing of 615 local zips runs ~30s; --lazy here is broken because
+# ratarmount disables -s (strip-extension) when lazy mode is on, leaving the
+# mount with only `<fold>.zip` files instead of `<fold>/` dirs.
+# Wait up to 90s for the mountpoint to come up.
+for i in $(seq 1 90); do grep -q " /userdata/zips-mount " /proc/mounts && break; sleep 1; done
 
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
