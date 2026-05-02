@@ -249,7 +249,7 @@ IFS=";"; for each in "${roms[@]}"; do
     else echo "${hra}<hidden>true</hidden></$polozka>" >&$xml_fd; fi
   done < "$cachefile"
   prev_romfolder="$romfolder"; prev_imagepath="${rom[5]// /_}"; prev_platform="${rom[0]}"
-  platform=${rom[0]}; ext=""; if [ -n "${rom[4]}" ]; then ext="; ext=\"${rom[4]}\""; fi; emu="${rom[3]//\"/\\\"}"; echo "*\"${emufolder}/\"*) core=\"${emu}\"${ext};;" >> ~/gameflix/retroarch.sh
+  platform=${rom[0]}; ext=""; if [ -n "${rom[4]}" ]; then ext="; ext=\"${rom[4]}\""; fi; emu="${rom[3]//\"/\\\"}"; echo "*\"/${rom[0]}/${foldername}/\"*) core=\"${emu}\"${ext};;" >> ~/gameflix/retroarch.sh
   echo "<folder><path>./$foldername</path><name>$foldername</name><image>~/../thumb/${rom[0]}.png</image></folder>" >&$xml_fd
 done
 # Flush last platform
