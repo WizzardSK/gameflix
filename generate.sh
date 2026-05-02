@@ -134,22 +134,25 @@ echo "<script src=\"script.js\"></script>" >> ~/gameflix/LowresNX.html
 echo "<figure><a href='LowresNX.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/lowresnx.jpg'><figcaption>LowresNX</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 
-# WASM-4 - dual fd output
-pocet=$(ls ~/share/roms/wasm4/*.wasm 2>/dev/null | wc -l); total=$((pocet+total))
-echo "<figure><a href='WASM-4.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/wasm4.jpg'><figcaption>WASM-4</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
-echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; echo "*\"/wasm4/\"*) core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh
+# WASM-4 - dual fd output (count from wasm4.org/play, works in CI without local ROMs)
 echo "WASM-4"; cp platform.html ~/gameflix/WASM-4.html; echo "<script>bgImage(\"wasm4\"); fileNames = [" >> ~/gameflix/WASM-4.html; ((platforms++))
+wasm_html=$(curl -s "https://wasm4.org/play/")
+wasm_entries=$(echo "$wasm_html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"')
+pocet=$(echo "$wasm_entries" | grep -c '.'); total=$((pocet+total))
+echo "*\"/wasm4/\"*) core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh
 exec 3>> ~/gameflix/WASM-4.html
 {
   echo "<gameList>"
-  html=$(curl -s "https://wasm4.org/play/"); while read -r line; do
+  while read -r line; do
     image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png)
     echo "\"$image_name\t$title\"," >&3
     echo "<game><path>./${image_name}.wasm</path><name>${title}</name><image>./${image_name}.png</image></game>"
-  done <<< "$(echo "$html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"')"
+  done <<< "$wasm_entries"
   echo "</gameList>"
 } > ~/gamelists/wasm4/gamelist.xml
 exec 3>&-
+echo "<figure><a href='WASM-4.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/wasm4.jpg'><figcaption>WASM-4</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
+echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 printf ']; generateWasmLinks("roms/WASM-4", "WASM-4");</script><script src=\"script.js\"></script>' >> ~/gameflix/WASM-4.html
 
 # PICO-8 - categories with section headers
