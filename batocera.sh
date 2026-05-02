@@ -1,4 +1,8 @@
 #!/bin/bash
+# Tee all output to a log file so the user can review after boot (chvt 1 hides TTY3)
+mkdir -p /userdata/system/logs
+exec > >(tee -a /userdata/system/logs/gameflix.log) 2>&1
+echo "=== gameflix batocera.sh started at $(date) ==="
 emulationstation stop; chvt 3; clear; mount -o remount,size=6000M /tmp
 wget -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf > /dev/null 2>&1
 for file in httpdirfs fuse-zip mount-zip; do [ ! -f /userdata/system/$file ] && wget -nv -O /userdata/system/$file https://github.com/WizzardSK/gameflix/raw/main/batocera/$file && chmod +x /userdata/system/$file; done
@@ -18,9 +22,12 @@ IFS=$'\n' read -d '' -ra roms <<< "$(curl -s https://raw.githubusercontent.com/W
 declare -A ia_zip_mounted
 mkdir -p /userdata/zips /userdata/zips-mount /userdata/mount
 
+zip_count=0; ia_count=0; bind_count=0; rclone_count=0; total=${#roms[@]}; idx=0
+echo "=== mounting/linking $total platform entries ==="
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/consoles/${rom[0]}.png; fi
+  ((idx++))
   rom3=$(sed 's/<[^>]*>//g' <<< "${rom[2]}")
   dst="/userdata/roms/${rom[0]}/${rom3}"
   if [[ "${rom[1]}" == archive:* && "${rom[1]}" == *.zip ]]; then
@@ -29,23 +36,32 @@ IFS=";"; for each in "${roms[@]}"; do
     aftercolon="${rom[1]#archive:}"; item="${aftercolon%%/*}"; subpath="${aftercolon#$item/}"
     if [[ -z "${ia_zip_mounted[$item]}" ]]; then
       mkdir -p /userdata/mount/"$item"
-      grep -q " /userdata/mount/$item " /proc/mounts || rclone mount "archive:$item" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
+      if ! grep -q " /userdata/mount/$item " /proc/mounts; then
+        echo "[$idx/$total] rclone-mount archive:$item"
+        rclone mount "archive:$item" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
+        ((ia_count++))
+      fi
       ia_zip_mounted[$item]=1
     fi
     mkdir -p /userdata/zips/${rom[0]}
     ln -sfn "/userdata/mount/$item/$subpath" "/userdata/zips/${rom[0]}/${rom3}.zip"
+    ((zip_count++))
   elif grep -q ":" <<< "${rom[1]}" && [[ "${rom[1]}" != *.zip ]]; then
-    # archive:<dir> — rclone-mount directly onto $dst (skip if already a mount or live symlink)
     grep -q " $dst " /proc/mounts && continue
     [[ -L "$dst" ]] && continue
     mkdir -p "$dst"
+    echo "[$idx/$total] rclone-mount ${rom[1]} -> $dst"
     rclone mount "${rom[1]}" "$dst" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
+    ((rclone_count++))
   elif [[ "${rom[1]}" != *:* ]]; then
     grep -q " $dst " /proc/mounts && continue
     mkdir -p "$dst"
+    echo "[$idx/$total] bind ${rom[1]} -> $dst"
     mount -o bind /userdata/rom/${rom[1]} "$dst"
+    ((bind_count++))
   fi
 done
+echo "=== loop done: $zip_count zip-symlinks, $ia_count IA mounts, $rclone_count direct mounts, $bind_count binds ==="
 
 # Single ratarmount over the symlink tree of all .zip archives, then symlink into roms.
 # --recursion-depth 1 keeps ROM zips inside MAME bundles as files; --transform strips
