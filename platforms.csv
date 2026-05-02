@@ -373,7 +373,7 @@ n64,archive:tosec-main/Nintendo/64/Games/Nintendo 64 - Games (TOSEC-v2025-01-15)
 n64,archive:mame-sl/mame-sl/n64.zip,MAME,mame n64 -cart,
 n64dd,archive:mame-sl/mame-sl/n64dd.zip,MAME,mame n64dd -hard,
 n64dd,archive:tosec-main/Nintendo/64DD/Games/[BIN]/Nintendo 64DD - Games - [BIN] (TOSEC-v2021-07-25).zip,TOSEC,mame n64dd -hard,
-gamecube,archive:tosec-iso-namco-sega-nintendo/Nintendo/GameCube/Games,ISO,dolphin_libretro,iso
+gamecube,archive:gamecubecollectionbyblopez,ISO,dolphin_libretro,iso
 wii,archive:redumpwiipalrvz,Redump,dolphin_libretro,
 pokemini,archive:ni-roms/roms/Nintendo - Pokemon Mini.zip,NoIntro,pokemini_libretro,
 pokemini,archive:tosec-main/Nintendo/Pokemon Mini/Games/Nintendo Pokemon Mini - Games (TOSEC-v2022-06-08).zip,TOSEC,pokemini_libretro,
