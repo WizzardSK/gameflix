@@ -1,7 +1,14 @@
 #!/bin/bash
-# Tee all output to a log file so the user can review after boot (chvt 1 hides TTY3)
+# Mirror everything (stdout+stderr) to a log file via line-buffered tee.
+# stdbuf forces tee to flush per line so on-boot TTY3 actually shows progress.
 mkdir -p /userdata/system/logs
-exec > >(tee -a /userdata/system/logs/gameflix.log) 2>&1
+LOG=/userdata/system/logs/gameflix.log
+echo "=== gameflix batocera.sh started at $(date) ===" >>"$LOG"
+if command -v stdbuf >/dev/null 2>&1; then
+  exec > >(stdbuf -oL tee -a "$LOG") 2>&1
+else
+  exec > >(tee -a "$LOG") 2>&1
+fi
 echo "=== gameflix batocera.sh started at $(date) ==="
 emulationstation stop; chvt 3; clear; mount -o remount,size=6000M /tmp
 wget -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf > /dev/null 2>&1
@@ -46,7 +53,7 @@ for each in "${roms[@]}"; do
   mkdir -p "$(dirname "$local_path")"
   ((download_pending++))
   echo "[$download_pending] downloading ${rom[1]}"
-  rclone copyto "${rom[1]}" "$local_path" --config=/userdata/system/rclone.conf --no-check-dest 2>/dev/null &
+  rclone copyto "${rom[1]}" "$local_path" --config=/userdata/system/rclone.conf --no-check-dest &
   while (( $(jobs -r | wc -l) >= 3 )); do sleep 2; done
 done
 wait
