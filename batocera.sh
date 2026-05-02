@@ -97,11 +97,21 @@ grep -q " /userdata/zips-mount " /proc/mounts && fusermount -u -z /userdata/zips
 /userdata/system/ratarmount --recursion-depth 1 -s --transform '^[a-z0-9_]+/' '' \
   -o entry_timeout=86400,attr_timeout=86400,negative_timeout=86400 \
   /userdata/zips /userdata/zips-mount &
-# Eager indexing of 615 local zips runs ~30s; --lazy here is broken because
-# ratarmount disables -s (strip-extension) when lazy mode is on, leaving the
-# mount with only `<fold>.zip` files instead of `<fold>/` dirs.
-# Wait up to 90s for the mountpoint to come up.
-for i in $(seq 1 90); do grep -q " /userdata/zips-mount " /proc/mounts && break; sleep 1; done
+# ratarmount registers the FUSE mountpoint in /proc/mounts early, BEFORE all the
+# nested zips are exposed as directories. If we link before indexing finishes,
+# /userdata/zips-mount/<plat>/<fold>/ doesn't exist yet -> broken symlinks ->
+# EmulationStation sees empty platforms.
+# Wait until the count of dirs at depth 2 in zips-mount matches the count of
+# zip symlinks in /userdata/zips (each <fold>.zip -> <fold>/ after -s).
+expected_dirs=$(find /userdata/zips -mindepth 2 -name "*.zip" 2>/dev/null | wc -l)
+status "=== indexing $expected_dirs zips into ratarmount mount ==="
+for i in $(seq 1 600); do
+  grep -q " /userdata/zips-mount " /proc/mounts || { sleep 1; continue; }
+  current_dirs=$(find /userdata/zips-mount -mindepth 2 -maxdepth 2 -type d 2>/dev/null | wc -l)
+  [[ $current_dirs -ge $expected_dirs ]] && break
+  sleep 2
+done
+status "=== ratarmount ready ($current_dirs/$expected_dirs zip dirs) ==="
 
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
