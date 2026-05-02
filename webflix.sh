@@ -98,5 +98,34 @@ while IFS=',' read -r platform path foldername rest; do
 done < "$csv_file"
 echo "Symlinked $symlinked target(s)"
 
+# Phase 5: rclone-mount IA items live for non-zip archive: paths (redump, full-folder bundles)
+echo "=== MOUNTING IA ITEMS LIVE ==="
+declare -A items_mounted
+ia_mounted=0; ia_linked=0
+while IFS=',' read -r platform path foldername rest; do
+  [[ "$path" != archive:* || "$path" == *.zip ]] && continue
+  aftercolon="${path#archive:}"
+  item="${aftercolon%%/*}"
+  subpath="${aftercolon#$item}"; subpath="${subpath#/}"
+  if [[ -z "${items_mounted[$item]}" ]]; then
+    mkdir -p ~/mount/"$item"
+    if ! mountpoint -q ~/mount/"$item"; then
+      rclone mount "archive:$item" ~/mount/"$item" --daemon --no-checksum --no-modtime \
+        --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h \
+        --vfs-cache-mode minimal --allow-non-empty 2>/dev/null && ((ia_mounted++))
+    fi
+    items_mounted[$item]=1
+  fi
+  cleanfolder="${foldername//<[^>]*>/}"
+  src="$HOME/mount/$item${subpath:+/$subpath}"
+  dst=~/share/roms/"$platform"/"$cleanfolder"
+  mkdir -p ~/share/roms/"$platform"
+  if [[ -L "$dst" || ! -e "$dst" ]]; then
+    ln -sfn "$src" "$dst"
+    ((ia_linked++))
+  fi
+done < "$csv_file"
+echo "IA: mounted $ia_mounted item(s), linked $ia_linked target(s)"
+
 rm -f "$csv_file"
 echo "Done"
