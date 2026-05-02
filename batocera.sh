@@ -21,9 +21,11 @@ mkdir -p /userdata/zips /userdata/zips-mount /userdata/mount
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/consoles/${rom[0]}.png; fi
-  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[2]}"); mkdir -p /userdata/roms/${rom[0]}/${rom3}
+  rom3=$(sed 's/<[^>]*>//g' <<< "${rom[2]}")
+  dst="/userdata/roms/${rom[0]}/${rom3}"
   if [[ "${rom[1]}" == archive:* && "${rom[1]}" == *.zip ]]; then
-    # archive:*.zip — rclone-mount parent IA item, build symlink tree for ratarmount below
+    # archive:*.zip — rclone-mount parent IA item, build symlink tree for ratarmount below.
+    # Don't pre-create $dst here; the second loop replaces empty real dirs with symlinks.
     aftercolon="${rom[1]#archive:}"; item="${aftercolon%%/*}"; subpath="${aftercolon#$item/}"
     if [[ -z "${ia_zip_mounted[$item]}" ]]; then
       mkdir -p /userdata/mount/"$item"
@@ -33,9 +35,15 @@ IFS=";"; for each in "${roms[@]}"; do
     mkdir -p /userdata/zips/${rom[0]}
     ln -sfn "/userdata/mount/$item/$subpath" "/userdata/zips/${rom[0]}/${rom3}.zip"
   elif grep -q ":" <<< "${rom[1]}" && [[ "${rom[1]}" != *.zip ]]; then
-    rclone mount "${rom[1]}" /userdata/roms/${rom[0]}/${rom3} --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
+    # archive:<dir> — rclone-mount directly onto $dst (skip if already a mount or live symlink)
+    grep -q " $dst " /proc/mounts && continue
+    [[ -L "$dst" ]] && continue
+    mkdir -p "$dst"
+    rclone mount "${rom[1]}" "$dst" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
   elif [[ "${rom[1]}" != *:* ]]; then
-    mount -o bind /userdata/rom/${rom[1]} /userdata/roms/${rom[0]}/${rom3}
+    grep -q " $dst " /proc/mounts && continue
+    mkdir -p "$dst"
+    mount -o bind /userdata/rom/${rom[1]} "$dst"
   fi
 done
 
