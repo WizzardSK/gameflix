@@ -1,7 +1,7 @@
 #!/bin/bash
 export LD_LIBRARY_PATH=/usr/local/lib
 mkdir -p ~/share/zip/ni-roms ~/share/zip/mame-sl ~/share/zip/tosec-main \
-         ~/share/roms ~/share/roms-mount ~/gameflix
+         ~/share/roms ~/gameflix
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 
 csv_file=$(mktemp)
@@ -47,37 +47,29 @@ done < "$csv_file"
 wait
 echo "Download done: $((total - pending))/$total already present, $pending downloaded"
 
-# Phase 2: mount each zip via mount-zip into ~/share/roms-mount/<platform>/<foldername>/
-# Then symlink ~/share/roms/<platform>/<foldername> to the appropriate inner path
-# (for MAME-SL zips the contents are under <shortname>/, so the symlink targets that subdir)
+# Phase 2: archivemount each zip directly into ~/share/roms/<platform>/<foldername>/
+# For MAME-SL zips, use -o subtree=<shortname> to skip the inner wrapper directory.
 echo "=== MOUNTING ZIPS ==="
-mounted=0; relinked=0
+mounted=0; skipped=0
 while IFS=',' read -r platform path foldername rest; do
   [[ "$path" != archive:* || "$path" != *.zip ]] && continue
   compute_zip "$path" || continue
   [[ ! -f "$zip" ]] && continue
   cleanfolder="${foldername//<[^>]*>/}"
-  mp=~/share/roms-mount/"$platform"/"$cleanfolder"
-  mkdir -p "$mp"
-  if ! mountpoint -q "$mp"; then
-    mount-zip -o quiet "$zip" "$mp" 2>/dev/null && ((mounted++))
-  fi
-  # MAME software list zips wrap contents in <shortname>/ — strip via symlink
+  dst=~/share/roms/"$platform"/"$cleanfolder"
+  # Refuse to clobber a non-empty real directory; tolerate it being a mountpoint already
+  if [[ -e "$dst" && ! -d "$dst" ]]; then ((skipped++)); continue; fi
+  mkdir -p "$dst"
+  # If an old/different mount lives there, drop it first
+  mountpoint -q "$dst" && fusermount -u "$dst" 2>/dev/null
   if [[ "$path" == archive:mame-sl/* ]]; then
     shortname="${zip##*/}"; shortname="${shortname%.zip}"
-    src="$mp/$shortname"
+    archivemount -o readonly,subtree="$shortname" "$zip" "$dst" 2>/dev/null && ((mounted++))
   else
-    src="$mp"
-  fi
-  dst=~/share/roms/"$platform"/"$cleanfolder"
-  mkdir -p ~/share/roms/"$platform"
-  # Replace only existing symlinks; never clobber a real directory
-  if [[ -L "$dst" || ! -e "$dst" ]]; then
-    ln -sfn "$src" "$dst"
-    ((relinked++))
+    archivemount -o readonly "$zip" "$dst" 2>/dev/null && ((mounted++))
   fi
 done < "$csv_file"
-echo "Mounted $mounted zip(s), relinked $relinked target(s)"
+echo "Mounted $mounted zip(s), skipped $skipped"
 
 rm -f "$csv_file"
 echo "Done"
