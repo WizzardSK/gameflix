@@ -120,6 +120,10 @@ while IFS=',' read -r platform path foldername rest; do
   src="$HOME/mount/$item${subpath:+/$subpath}"
   dst=~/share/roms/"$platform"/"$cleanfolder"
   mkdir -p ~/share/roms/"$platform"
+  # Empty real dir is leftover from older runs — drop it so we can symlink
+  if [[ -d "$dst" && ! -L "$dst" ]] && [[ -z "$(ls -A "$dst" 2>/dev/null)" ]]; then
+    rmdir "$dst" 2>/dev/null
+  fi
   if [[ -L "$dst" || ! -e "$dst" ]]; then
     ln -sfn "$src" "$dst"
     ((ia_linked++))
