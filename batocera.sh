@@ -39,7 +39,7 @@ local_zip_path() {
 
 # Phase 1: download missing zips to /userdata/zip/<bucket>/ (in parallel, like webflix.sh)
 status "=== downloading missing zips ==="
-declare -A seen_path
+declare -A seen_path ia_dir_mounted
 download_pending=0
 for each in "${roms[@]}"; do
   IFS=";" read -ra rom <<< "$each"
@@ -73,13 +73,28 @@ IFS=";"; for each in "${roms[@]}"; do
       ln -sfn "$local_path" "/userdata/zips/${rom[0]}/${rom3}.zip"
       ((zip_count++))
     fi
-  elif grep -q ":" <<< "${rom[1]}" && [[ "${rom[1]}" != *.zip ]]; then
-    grep -q " $dst " /proc/mounts && continue
-    [[ -L "$dst" ]] && continue
-    mkdir -p "$dst"
-    echo "[$idx/$total] rclone-mount ${rom[1]} -> $dst"
-    rclone mount "${rom[1]}" "$dst" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
-    ((rclone_count++))
+  elif [[ "${rom[1]}" == archive:* ]]; then
+    # archive:<bucket>/<subpath> (no .zip): rclone-mount parent IA item once,
+    # then symlink $dst into the mount. Mirrors webflix.sh Phase 5 so the
+    # symlinks made there ('/userdata/roms/<plat>/<fold> -> /userdata/mount/
+    # <item>/<subpath>') just work without webflix overwriting them.
+    aftercolon="${rom[1]#archive:}"; item="${aftercolon%%/*}"; subpath="${aftercolon#$item}"; subpath="${subpath#/}"
+    if [[ -z "${ia_dir_mounted[$item]}" ]]; then
+      mkdir -p /userdata/mount/"$item"
+      if ! grep -q " /userdata/mount/$item " /proc/mounts; then
+        echo "[$idx/$total] rclone-mount archive:$item"
+        rclone mount "archive:$item" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
+        ((rclone_count++))
+      fi
+      ia_dir_mounted[$item]=1
+    fi
+    src="/userdata/mount/$item${subpath:+/$subpath}"
+    if [[ -d "$dst" && ! -L "$dst" ]] && [[ -z "$(ls -A "$dst" 2>/dev/null)" ]]; then
+      rmdir "$dst" 2>/dev/null
+    fi
+    if [[ -L "$dst" || ! -e "$dst" ]]; then
+      ln -sfn "$src" "$dst"
+    fi
   elif [[ "${rom[1]}" != *:* ]]; then
     grep -q " $dst " /proc/mounts && continue
     mkdir -p "$dst"
