@@ -94,23 +94,19 @@ status "=== loop done: $zip_count zip-symlinks, $rclone_count direct rclone moun
 # --recursion-depth 1 keeps ROM zips inside MAME bundles as files; --transform strips
 # the redundant <shortname>/ directory inside MAME-SL zips.
 grep -q " /userdata/zips-mount " /proc/mounts && fusermount -u -z /userdata/zips-mount 2>/dev/null
-/userdata/system/ratarmount --recursion-depth 1 -s --transform '^[a-z0-9_]+/' '' \
-  -o entry_timeout=86400,attr_timeout=86400,negative_timeout=86400 \
-  /userdata/zips /userdata/zips-mount &
-# ratarmount registers the FUSE mountpoint in /proc/mounts early, BEFORE all the
-# nested zips are exposed as directories. If we link before indexing finishes,
-# /userdata/zips-mount/<plat>/<fold>/ doesn't exist yet -> broken symlinks ->
-# EmulationStation sees empty platforms.
-# Wait until the count of dirs at depth 2 in zips-mount matches the count of
-# zip symlinks in /userdata/zips (each <fold>.zip -> <fold>/ after -s).
+# ratarmount in foreground: it eagerly indexes every nested zip, then forks a
+# FUSE daemon and exits the parent — when this command returns, the mount-point
+# is fully populated. Don't '&' it: the previous attempt registered the
+# mount-point only AFTER the fork, so a backgrounded ratarmount left our wait
+# loop polling on a path that wouldn't appear in /proc/mounts for 5-30 min.
+# negative_timeout dropped to 60 to avoid kernel caching false-negative lookups
+# for 24h if anything goes wrong.
 expected_dirs=$(find /userdata/zips -mindepth 2 -name "*.zip" 2>/dev/null | wc -l)
-status "=== indexing $expected_dirs zips into ratarmount mount ==="
-for i in $(seq 1 600); do
-  grep -q " /userdata/zips-mount " /proc/mounts || { sleep 1; continue; }
-  current_dirs=$(find /userdata/zips-mount -mindepth 2 -maxdepth 2 -type d 2>/dev/null | wc -l)
-  [[ $current_dirs -ge $expected_dirs ]] && break
-  sleep 2
-done
+status "=== indexing $expected_dirs zips into ratarmount mount (foreground; takes a while) ==="
+/userdata/system/ratarmount --recursion-depth 1 -s --transform '^[a-z0-9_]+/' '' \
+  -o entry_timeout=86400,attr_timeout=86400,negative_timeout=60 \
+  /userdata/zips /userdata/zips-mount
+current_dirs=$(find /userdata/zips-mount -mindepth 2 -maxdepth 2 -type d 2>/dev/null | wc -l)
 status "=== ratarmount ready ($current_dirs/$expected_dirs zip dirs) ==="
 
 IFS=";"; for each in "${roms[@]}"; do
