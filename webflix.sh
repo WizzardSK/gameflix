@@ -1,7 +1,7 @@
 #!/bin/bash
 export LD_LIBRARY_PATH=/usr/local/lib
 mkdir -p ~/share/zip/ni-roms ~/share/zip/mame-sl ~/share/zip/tosec-main \
-         ~/share/roms ~/share/roms-mount ~/share/zips ~/gameflix
+         ~/share/roms ~/share/roms-mount ~/gameflix
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 
 csv_file=$(mktemp)
@@ -47,53 +47,37 @@ done < "$csv_file"
 wait
 echo "Download done: $((total - pending))/$total already present, $pending downloaded"
 
-# Phase 2: rebuild symlink tree at ~/share/zips/<platform>/<foldername>.zip
-echo "=== BUILDING ZIP TREE ==="
-rm -rf ~/share/zips
-mkdir -p ~/share/zips
-linked=0
+# Phase 2: mount each zip via mount-zip into ~/share/roms-mount/<platform>/<foldername>/
+# Then symlink ~/share/roms/<platform>/<foldername> to the appropriate inner path
+# (for MAME-SL zips the contents are under <shortname>/, so the symlink targets that subdir)
+echo "=== MOUNTING ZIPS ==="
+mounted=0; relinked=0
 while IFS=',' read -r platform path foldername rest; do
   [[ "$path" != archive:* || "$path" != *.zip ]] && continue
   compute_zip "$path" || continue
   [[ ! -f "$zip" ]] && continue
   cleanfolder="${foldername//<[^>]*>/}"
-  mkdir -p ~/share/zips/"$platform"
-  ln -sfn "$zip" ~/share/zips/"$platform"/"$cleanfolder.zip"
-  ((linked++))
-done < "$csv_file"
-echo "Linked $linked zip(s)"
-
-# Phase 3: single ratarmount-full process for the whole tree (recursive + lazy)
-echo "=== MOUNTING ==="
-mountpoint -q ~/share/roms-mount && fusermount -u ~/share/roms-mount 2>/dev/null
-ratarmount-full --recursion-depth 1 -s --transform '^[a-z0-9_]+/' '' \
-  -o entry_timeout=86400,attr_timeout=86400,negative_timeout=86400 \
-  ~/share/zips ~/share/roms-mount
-sleep 2
-if mountpoint -q ~/share/roms-mount; then
-  echo "Mounted ~/share/roms-mount"
-else
-  echo "Mount failed" >&2; rm -f "$csv_file"; exit 1
-fi
-
-# Phase 4: symlinks ~/share/roms/<platform>/<foldername> -> ~/share/roms-mount/<platform>/<foldername>
-echo "=== LINKING INTO ROMS ==="
-symlinked=0
-while IFS=',' read -r platform path foldername rest; do
-  [[ "$path" != archive:* || "$path" != *.zip ]] && continue
-  compute_zip "$path" || continue
-  [[ ! -f "$zip" ]] && continue
-  cleanfolder="${foldername//<[^>]*>/}"
-  src=~/share/roms-mount/"$platform"/"$cleanfolder"
+  mp=~/share/roms-mount/"$platform"/"$cleanfolder"
+  mkdir -p "$mp"
+  if ! mountpoint -q "$mp"; then
+    mount-zip -o quiet "$zip" "$mp" 2>/dev/null && ((mounted++))
+  fi
+  # MAME software list zips wrap contents in <shortname>/ — strip via symlink
+  if [[ "$path" == archive:mame-sl/* ]]; then
+    shortname="${zip##*/}"; shortname="${shortname%.zip}"
+    src="$mp/$shortname"
+  else
+    src="$mp"
+  fi
   dst=~/share/roms/"$platform"/"$cleanfolder"
   mkdir -p ~/share/roms/"$platform"
   # Replace only existing symlinks; never clobber a real directory
   if [[ -L "$dst" || ! -e "$dst" ]]; then
     ln -sfn "$src" "$dst"
-    ((symlinked++))
+    ((relinked++))
   fi
 done < "$csv_file"
-echo "Symlinked $symlinked target(s)"
+echo "Mounted $mounted zip(s), relinked $relinked target(s)"
 
 rm -f "$csv_file"
 echo "Done"
