@@ -1,15 +1,13 @@
 #!/bin/bash
-# Mirror everything (stdout+stderr) to a log file via line-buffered tee.
-# stdbuf forces tee to flush per line so on-boot TTY3 actually shows progress.
+# All output goes to a log file (avoids tee/process-substitution buffer issues on
+# busybox), with status banners echoed live to /dev/console so the user sees
+# something on TTY3. Tail the log via SSH for full progress.
 mkdir -p /userdata/system/logs
 LOG=/userdata/system/logs/gameflix.log
-echo "=== gameflix batocera.sh started at $(date) ===" >>"$LOG"
-if command -v stdbuf >/dev/null 2>&1; then
-  exec > >(stdbuf -oL tee -a "$LOG") 2>&1
-else
-  exec > >(tee -a "$LOG") 2>&1
-fi
-echo "=== gameflix batocera.sh started at $(date) ==="
+exec >>"$LOG" 2>&1
+status() { echo "$@"; echo "$@" >/dev/console 2>/dev/null; }
+status "=== gameflix batocera.sh started at $(date) ==="
+status "tail -f $LOG  # for live progress"
 emulationstation stop; chvt 3; clear; mount -o remount,size=6000M /tmp
 wget -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf > /dev/null 2>&1
 for file in httpdirfs fuse-zip mount-zip; do [ ! -f /userdata/system/$file ] && wget -nv -O /userdata/system/$file https://github.com/WizzardSK/gameflix/raw/main/batocera/$file && chmod +x /userdata/system/$file; done
@@ -40,7 +38,7 @@ local_zip_path() {
 }
 
 # Phase 1: download missing zips to /userdata/zip/<bucket>/ (in parallel, like webflix.sh)
-echo "=== downloading missing zips ==="
+status "=== downloading missing zips ==="
 declare -A seen_path
 download_pending=0
 for each in "${roms[@]}"; do
@@ -57,11 +55,11 @@ for each in "${roms[@]}"; do
   while (( $(jobs -r | wc -l) >= 3 )); do sleep 2; done
 done
 wait
-echo "=== downloaded $download_pending zip(s) ==="
+status "=== downloaded $download_pending zip(s) ==="
 
 zip_count=0; ia_count=0; bind_count=0; rclone_count=0
 total=${#roms[@]}; idx=0
-echo "=== mounting/linking $total platform entries ==="
+status "=== mounting/linking $total platform entries ==="
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
   if [ ! -f /userdata/thumb/${rom[0]}.png ]; then wget -nv -O /userdata/thumb/${rom[0]}.png https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/consoles/${rom[0]}.png; fi
@@ -90,7 +88,7 @@ IFS=";"; for each in "${roms[@]}"; do
     ((bind_count++))
   fi
 done
-echo "=== loop done: $zip_count zip-symlinks, $rclone_count direct rclone mounts, $bind_count binds ==="
+status "=== loop done: $zip_count zip-symlinks, $rclone_count direct rclone mounts, $bind_count binds ==="
 
 # Single ratarmount over the symlink tree of all .zip archives, then symlink into roms.
 # --recursion-depth 1 keeps ROM zips inside MAME bundles as files; --transform strips
