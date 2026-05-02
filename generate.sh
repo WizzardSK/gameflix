@@ -53,12 +53,14 @@ while IFS= read -r path; do
       if [[ "$localpath" == *.zip ]]; then
         unzip -l "$localpath" 2>/dev/null | awk '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
       else
-        zipcount=$(find "$localpath" -name "*.zip" 2>/dev/null | wc -l)
-        if [ "$zipcount" -ge 1 ]; then
-          zipfile=$(find "$localpath" -name "*.zip" 2>/dev/null | head -1)
+        zipcount=$(find "$localpath" -maxdepth 1 -name "*.zip" 2>/dev/null | wc -l)
+        if [ "$zipcount" -eq 1 ]; then
+          # single bundled zip — list its contents
+          zipfile=$(find "$localpath" -maxdepth 1 -name "*.zip" 2>/dev/null | head -1)
           unzip -l "$zipfile" 2>/dev/null | awk '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
           echo "$path/$(basename "$zipfile")" > "$cache/$h.path"
         else
+          # directory of files (each file = one ROM, even if many .zip files)
           ls "$localpath" 2>/dev/null > "$cache/$h.txt"
         fi
       fi
