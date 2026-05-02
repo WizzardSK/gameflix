@@ -43,10 +43,12 @@ done
 # --recursion-depth 1 keeps ROM zips inside MAME bundles as files; --transform strips
 # the redundant <shortname>/ directory inside MAME-SL zips.
 mountpoint -q /userdata/zips-mount && fusermount -u -z /userdata/zips-mount 2>/dev/null
-/userdata/system/ratarmount --recursion-depth 1 -s --transform '^[a-z0-9_]+/' '' \
+/userdata/system/ratarmount --recursion-depth 1 -s --lazy --transform '^[a-z0-9_]+/' '' \
   -o entry_timeout=86400,attr_timeout=86400,negative_timeout=86400 \
   /userdata/zips /userdata/zips-mount &
-sleep 5
+# Wait briefly for FUSE mountpoint to come up, but don't block on full indexing —
+# --lazy defers central-directory reads of each zip until first access
+for i in $(seq 1 20); do mountpoint -q /userdata/zips-mount && break; sleep 1; done
 
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
