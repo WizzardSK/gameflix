@@ -27,7 +27,7 @@ IFS=";"; for each in "${roms[@]}"; do
     aftercolon="${rom[1]#archive:}"; item="${aftercolon%%/*}"; subpath="${aftercolon#$item/}"
     if [[ -z "${ia_zip_mounted[$item]}" ]]; then
       mkdir -p /userdata/mount/"$item"
-      mountpoint -q /userdata/mount/"$item" || rclone mount "archive:$item" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
+      grep -q " /userdata/mount/$item " /proc/mounts || rclone mount "archive:$item" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
       ia_zip_mounted[$item]=1
     fi
     mkdir -p /userdata/zips/${rom[0]}
@@ -42,13 +42,13 @@ done
 # Single ratarmount over the symlink tree of all .zip archives, then symlink into roms.
 # --recursion-depth 1 keeps ROM zips inside MAME bundles as files; --transform strips
 # the redundant <shortname>/ directory inside MAME-SL zips.
-mountpoint -q /userdata/zips-mount && fusermount -u -z /userdata/zips-mount 2>/dev/null
+grep -q " /userdata/zips-mount " /proc/mounts && fusermount -u -z /userdata/zips-mount 2>/dev/null
 /userdata/system/ratarmount --recursion-depth 1 -s --lazy --transform '^[a-z0-9_]+/' '' \
   -o entry_timeout=86400,attr_timeout=86400,negative_timeout=86400 \
   /userdata/zips /userdata/zips-mount &
 # Wait briefly for FUSE mountpoint to come up, but don't block on full indexing —
 # --lazy defers central-directory reads of each zip until first access
-for i in $(seq 1 20); do mountpoint -q /userdata/zips-mount && break; sleep 1; done
+for i in $(seq 1 20); do grep -q " /userdata/zips-mount " /proc/mounts && break; sleep 1; done
 
 IFS=";"; for each in "${roms[@]}"; do
   read -ra rom < <(printf '%s' "$each")
