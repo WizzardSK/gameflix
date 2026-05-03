@@ -141,7 +141,17 @@ jobs:
             fi
 
             if grep -Fxq "$path" /tmp/target.txt; then
-              echo "File $i: SKIP (exists in IA): $path"
+              echo "File $i: SKIP (exists in IA, snapshot): $path"
+              SKIPPED=$((SKIPPED+1))
+              continue
+            fi
+
+            # Live re-check on archive.org — catches files uploaded by a parallel
+            # workflow run since /tmp/target.txt was snapshotted. HEAD only.
+            encoded=$(python3 -c "import urllib.parse,sys; print(urllib.parse.quote(sys.stdin.read().rstrip(),safe='/'))" <<< "$path")
+            http_code=$(curl -sI -o /dev/null -w '%{http_code}' --max-time 15 "https://archive.org/download/${TARGET}/${encoded}")
+            if [ "$http_code" = "200" ]; then
+              echo "File $i: SKIP (exists in IA, live check): $path"
               SKIPPED=$((SKIPPED+1))
               continue
             fi
