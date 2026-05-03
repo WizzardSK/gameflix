@@ -74,7 +74,11 @@ jobs:
           FAILED=0
           while IFS=$'\t' read -r md5 size name; do
             echo "Deleting: $name"
-            if ia delete "$TARGET" "$name" 2>&1 | tee /tmp/del.log | grep -q "deleted\|404"; then
+            # x-archive-keep-old-version:0 -> IA does NOT move the deleted file
+            # to <item>/history/files/<name>~<ts>~. Without it, every duplicate
+            # we delete here would silently land in the history folder, which
+            # still counts against item size.
+            if ia delete -H 'x-archive-keep-old-version:0' "$TARGET" "$name" 2>&1 | tee /tmp/del.log | grep -q "deleted\|404"; then
               DELETED=$((DELETED+1))
             else
               echo "FAIL: $(head -3 /tmp/del.log)"
