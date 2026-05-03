@@ -147,4 +147,17 @@ wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/
 cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.bak
 wget -nv -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems.cfg > /dev/null 2>&1
 cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.cfg
+
+# Make ES treat gamelist.xml as authoritative — skip directory scans of every
+# FUSE-mounted platform (619 ratarmounts + ~50 rclone mounts is otherwise
+# minutes of stat traffic at startup).
+ES_SETTINGS=/userdata/system/configs/emulationstation/es_settings.cfg
+mkdir -p "$(dirname "$ES_SETTINGS")"
+[[ -s "$ES_SETTINGS" ]] || echo '<?xml version="1.0"?>' > "$ES_SETTINGS"
+if grep -q 'name="ParseGamelistOnly"' "$ES_SETTINGS"; then
+  sed -i 's|\(name="ParseGamelistOnly" value=\)"[^"]*"|\1"true"|' "$ES_SETTINGS"
+else
+  echo '<bool name="ParseGamelistOnly" value="true" />' >> "$ES_SETTINGS"
+fi
+status "=== ES set to ParseGamelistOnly=true ==="
 chvt 1; wget http://127.0.0.1:1234/reloadgames > /dev/null 2>&1
