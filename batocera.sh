@@ -147,4 +147,14 @@ wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/
 cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.bak
 wget -nv -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems.cfg > /dev/null 2>&1
 cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.cfg
+
+# Pre-warm kernel directory cache for the rclone-mounted IA items (redump etc.).
+# Each is a network-backed FUSE mount, so without this the first ES dir scan
+# pays one HTTP roundtrip per stat. Background it — ES restart below doesn't
+# need to wait for it to finish, the cache builds up while ES walks the tree.
+status "=== pre-warming rclone mount cache ==="
+( for item in "${!ia_dir_mounted[@]}"; do
+    ls -A /userdata/mount/"$item" >/dev/null 2>&1
+  done ) &
+
 chvt 1; wget http://127.0.0.1:1234/reloadgames > /dev/null 2>&1
