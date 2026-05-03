@@ -117,6 +117,10 @@ grep -q " /userdata/zips-mount " /proc/mounts && fusermount -u -z /userdata/zips
 # negative_timeout dropped to 60 to avoid kernel caching false-negative lookups
 # for 24h if anything goes wrong.
 expected_dirs=$(find /userdata/zips -mindepth 2 -name "*.zip" 2>/dev/null | wc -l)
+# Bump file descriptor limit — ratarmount keeps a handle open per mounted zip
+# (615+ here), and the default ulimit -n of 1024 caused 'Too many open files'
+# crashes mid-mount on slim systems like Steam Deck batocera.
+ulimit -n 65536 2>/dev/null || ulimit -n 8192 2>/dev/null
 status "=== indexing $expected_dirs zips into ratarmount mount (foreground; takes a while) ==="
 /userdata/system/ratarmount --recursion-depth 1 -s --transform '^[a-z0-9_]+/' '' \
   --index-minimum-file-count 1 \
