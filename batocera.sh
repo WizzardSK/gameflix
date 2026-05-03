@@ -119,6 +119,7 @@ grep -q " /userdata/zips-mount " /proc/mounts && fusermount -u -z /userdata/zips
 expected_dirs=$(find /userdata/zips -mindepth 2 -name "*.zip" 2>/dev/null | wc -l)
 status "=== indexing $expected_dirs zips into ratarmount mount (foreground; takes a while) ==="
 /userdata/system/ratarmount --recursion-depth 1 -s --transform '^[a-z0-9_]+/' '' \
+  --index-minimum-file-count 1 \
   -o entry_timeout=86400,attr_timeout=86400,negative_timeout=60 \
   /userdata/zips /userdata/zips-mount
 current_dirs=$(find /userdata/zips-mount -mindepth 2 -maxdepth 2 -type d 2>/dev/null | wc -l)
