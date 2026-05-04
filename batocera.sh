@@ -100,7 +100,12 @@ IFS=";"; for each in "${roms[@]}"; do
       mkdir -p /userdata/mount/"$item"
       if ! grep -q " /userdata/mount/$item " /proc/mounts; then
         echo "[$idx/$total] rclone-mount archive:$item"
-        rclone mount "archive:$item" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M
+        # Background: each mount's HTTPS handshake to archive.org takes ~4s,
+        # 61 mounts × 4s = ~4 min serially. Parallelism 8 shrinks that to ~30s.
+        # Symlinks below tolerate the target not being ready yet (ln -sfn
+        # accepts dangling), and ia_dir_mounted dedup avoids double-mount races.
+        rclone mount "archive:$item" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M &
+        while (( $(jobs -r | wc -l) >= 8 )); do sleep 0.5; done
         ((rclone_count++))
       fi
       ia_dir_mounted[$item]=1
@@ -120,6 +125,7 @@ IFS=";"; for each in "${roms[@]}"; do
     ((bind_count++))
   fi
 done
+wait  # let backgrounded rclone-mount handshakes finish before ratarmount
 status "=== loop done: $zip_count zip-symlinks, $rclone_count direct rclone mounts, $bind_count binds ==="
 
 # Single ratarmount over the symlink tree of all .zip archives, then symlink into roms.
