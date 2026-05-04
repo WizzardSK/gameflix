@@ -95,9 +95,10 @@ function generateVoxLinks(romPath, imagePath) {
 }
 
 function generateFileLinks(romPath, imagePath) {
+    var wrapInJavatari = false;
     if (location.protocol !== "file:") {
         if (romPath.startsWith("archive:")) { romPath = romPath.replace(/^archive:([^/]+)\/(.*)$/, "https://archive.org/download/$1/$2"); }
-        if (romPath.includes("2600")) { romPath = "https://javatari.org/?rom=" + romPath; romPath = romPath.replace("&", "%26"); romPath = romPath.replace(" ", "%20"); }
+        if (romPath.includes("2600")) { wrapInJavatari = true; }
     } else {
         var platform = location.pathname.split('/').pop().replace(/\.html?$/, '');
         var headers = document.querySelectorAll('.section-header');
@@ -111,7 +112,9 @@ function generateFileLinks(romPath, imagePath) {
         var nameWithoutExt = subor.includes(".") ? subor.slice(0, subor.lastIndexOf(".")) : subor;
         var nameWithoutBrackets = nameWithoutExt.replace(/^([^)]*\([^)]*\)).*$/, "$1");
         var nazov = fileName.includes("\t") ? fileName.split("\t")[1] : fileName.replace(/\.[^.]+$/, "");
-        html.push(`<a href="${encodedPath}/${encodeURIComponent(subor)}" target="main" rel="noreferrer">
+        var fileUrl = `${encodedPath}/${encodeURIComponent(subor)}`;
+        var href = wrapInJavatari ? `https://javatari.org/?rom=${encodeURIComponent(fileUrl)}` : fileUrl;
+        html.push(`<a href="${href}" target="main" rel="noreferrer">
         <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutBrackets)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
     });
     document.write('<div class="figureList">' + html.join('') + '</div>');
