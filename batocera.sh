@@ -9,23 +9,6 @@ status() { echo "$@"; echo "$@" >/dev/console 2>/dev/null; }
 status "=== gameflix batocera.sh started at $(date) ==="
 status "tail -f $LOG  # for live progress"
 emulationstation stop; chvt 3; clear; mount -o remount,size=6000M /tmp
-
-# Reap stale FUSE handles from previous boot/run. ES restarts (and crashed
-# ratarmount/rclone processes) leave mount points behind; fresh mounts then
-# stack on top of them, inflating the live mount count (1042 of 615 expected
-# in practice) and making every kernel stat() walk extra dead inodes.
-# fusermount -uz is lazy: detaches the mount even if handles are still open.
-status "=== reaping stale FUSE mounts from previous run ==="
-stale=0
-while read -r _ mp fs _; do
-  case "$fs" in fuse*|rclone*) ;; *) continue ;; esac
-  case "$mp" in
-    /userdata/zips-mount|/userdata/mount/*|/userdata/zips/*|/userdata/roms/*)
-      fusermount -uz "$mp" 2>/dev/null && ((stale++))
-      ;;
-  esac
-done </proc/mounts
-status "=== reaped $stale stale FUSE mounts ==="
 wget -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf > /dev/null 2>&1
 for file in httpdirfs fuse-zip mount-zip; do [ ! -f /userdata/system/$file ] && wget -nv -O /userdata/system/$file https://github.com/WizzardSK/gameflix/raw/main/batocera/$file && chmod +x /userdata/system/$file; done
 if [ ! -f /userdata/system/ratarmount-full ]; then wget -nv -O /userdata/system/ratarmount-full https://github.com/mxmlnkn/ratarmount/releases/download/v1.2.0/ratarmount-1.2.0-x86_64.AppImage; chmod +x /userdata/system/ratarmount-full; fi
