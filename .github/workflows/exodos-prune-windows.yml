@@ -1,0 +1,96 @@
+name: Prune eXoWin3x/eXoWin9x from exodos-full
+
+on:
+  workflow_dispatch:
+    inputs:
+      ia_identifier:
+        description: 'IA item to prune'
+        required: true
+        default: 'exodos-full'
+      prefixes:
+        description: 'Comma-separated path prefixes to delete'
+        required: true
+        default: 'eXoWin3x/,eXoWin9x/'
+      dry_run:
+        description: 'Dry run (only list, do not delete)'
+        required: false
+        default: 'true'
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Install tools
+        run: pip install internetarchive
+
+      - name: Configure IA
+        run: |
+          mkdir -p ~/.config/internetarchive
+          cat > ~/.config/internetarchive/ia.ini << 'EOCONF'
+          [s3]
+          access = ${{ secrets.IA_ACCESS }}
+          secret = ${{ secrets.IA_SECRET }}
+          EOCONF
+
+      - name: Find files under target prefixes
+        run: |
+          TARGET="${{ inputs.ia_identifier }}"
+          PREFIXES="${{ inputs.prefixes }}"
+          curl -sL "https://archive.org/metadata/${TARGET}?output=json" > /tmp/meta.json
+
+          PREFIXES="$PREFIXES" python3 << 'PYEOF' > /tmp/victims.txt
+          import json, os
+
+          prefixes = [p.strip() for p in os.environ['PREFIXES'].split(',') if p.strip()]
+          with open('/tmp/meta.json') as f:
+              data = json.load(f)
+
+          for f in data.get('files', []):
+              name = f.get('name', '')
+              size = f.get('size', '0')
+              if any(name.startswith(p) for p in prefixes):
+                  print(f"{size}\t{name}")
+          PYEOF
+
+          COUNT=$(wc -l < /tmp/victims.txt)
+          BYTES=$(awk -F'\t' '{s+=$1} END{print s+0}' /tmp/victims.txt)
+          GB=$(awk -v b="$BYTES" 'BEGIN{printf "%.1f", b/1024/1024/1024}')
+          echo "Files matching prefixes: $COUNT"
+          echo "Total size: ${BYTES} bytes (~${GB} GiB)"
+          echo
+          echo "First 30 entries (size<TAB>name):"
+          head -30 /tmp/victims.txt
+          echo "..."
+          echo "Last 5 entries:"
+          tail -5 /tmp/victims.txt
+
+      - name: Delete files (no history copy)
+        if: ${{ inputs.dry_run != 'true' }}
+        run: |
+          TARGET="${{ inputs.ia_identifier }}"
+          DELETED=0
+          FAILED=0
+          # x-archive-keep-old-version:0 prevents IA from moving the deleted
+          # file into <item>/history/files/<name>~<ts>~ — without it the
+          # bytes stay in the item's history folder forever and the prune
+          # frees no actual storage. This is what "bez možnosti obnovy" means.
+          while IFS=$'\t' read -r size name; do
+            echo "Deleting: $name"
+            if ia delete -H 'x-archive-keep-old-version:0' --cascade "$TARGET" "$name" 2>&1 | tee /tmp/del.log | grep -q "deleted\|404"; then
+              DELETED=$((DELETED+1))
+            else
+              echo "FAIL: $(head -3 /tmp/del.log)"
+              FAILED=$((FAILED+1))
+            fi
+          done < /tmp/victims.txt
+          echo "======"
+          echo "Deleted: $DELETED"
+          echo "Failed:  $FAILED"
+
+      - name: Dry run summary
+        if: ${{ inputs.dry_run == 'true' }}
+        run: |
+          echo "DRY RUN — nothing deleted."
+          echo "Re-run with dry_run=false to actually delete."
