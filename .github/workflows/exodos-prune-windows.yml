@@ -10,7 +10,7 @@ on:
       prefixes:
         description: 'Comma-separated path prefixes to delete'
         required: true
-        default: 'eXoWin3x/,eXoWin9x/'
+        default: 'eXoScummVM/,eXoDREAMM/'
       dry_run:
         description: 'Dry run (only list, do not delete)'
         required: false
