@@ -1,4 +1,4 @@
-name: Prune eXoWin3x/eXoWin9x from exodos-full
+name: Prune exodos-full
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
       prefixes:
         description: 'Comma-separated path prefixes to delete'
         required: true
-        default: 'eXoScummVM/,eXoDREAMM/'
+        default: 'eXoDemoScene/,eXoIF/,eXoAppleIIGS/'
       dry_run:
         description: 'Dry run (only list, do not delete)'
         required: false
