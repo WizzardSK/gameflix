@@ -8,6 +8,9 @@ if [ -n "$ext" ]; then
     mount-zip "$1" ~/iso
   fi
   rom=$(find ~/iso -type f -name "*.${ext}" | head -n 1)
+elif [[ "$1" == *.rar ]]; then
+  umount -l ~/iso; ratarmount "$1" ~/iso
+  rom=~/iso
 else
   rom="$1"
 fi
