@@ -110,7 +110,7 @@ while IFS=',' read -r platform path foldername rest; do
   if [[ -z "${items_mounted[$item]}" ]]; then
     mkdir -p ~/mount/"$item"
     if ! mountpoint -q ~/mount/"$item"; then
-      rclone mount "archive:$item" ~/mount/"$item" --daemon --no-checksum --no-modtime \
+      rclone mount "archive:$item/" ~/mount/"$item" --daemon --no-checksum --no-modtime \
         --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h \
         --vfs-cache-mode minimal --allow-non-empty 2>/dev/null && ((ia_mounted++))
     fi

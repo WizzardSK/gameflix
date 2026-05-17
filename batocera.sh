@@ -87,7 +87,7 @@ IFS=";"; for each in "${roms[@]}"; do
         # 61 mounts × 4s = ~4 min serially. Parallelism 8 shrinks that to ~30s.
         # Symlinks below tolerate the target not being ready yet (ln -sfn
         # accepts dangling), and ia_dir_mounted dedup avoids double-mount races.
-        rclone mount "archive:$item" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M &
+        rclone mount "archive:$item/" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M &
         while (( $(jobs -r | wc -l) >= 8 )); do sleep 0.5; done
         ((rclone_count++))
       fi
@@ -158,4 +158,4 @@ wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/
 cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.bak
 wget -nv -O /usr/share/emulationstation/es_systems.cfg https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems.cfg > /dev/null 2>&1
 cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.cfg
-chvt 1; wget http://127.0.0.1:1234/reloadgames > /dev/null 2>&1
+chvt 1; emulationstation start &
