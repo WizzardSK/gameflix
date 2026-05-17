@@ -73,39 +73,41 @@ IFS=";"; for each in "${roms[@]}"; do
       ln -sfn "$local_path" "/userdata/zips/${rom[0]}/${rom3}.zip"
       ((zip_count++))
     fi
-  elif [[ "${rom[1]}" == archive:* ]]; then
-    # archive:<bucket>/<subpath> (no .zip): rclone-mount parent IA item once,
-    # then symlink $dst into the mount. Mirrors webflix.sh Phase 5 so the
-    # symlinks made there ('/userdata/roms/<plat>/<fold> -> /userdata/mount/
-    # <item>/<subpath>') just work without webflix overwriting them.
-    aftercolon="${rom[1]#archive:}"; item="${aftercolon%%/*}"; subpath="${aftercolon#$item}"; subpath="${subpath#/}"
-    if [[ -z "${ia_dir_mounted[$item]}" ]]; then
-      mkdir -p /userdata/mount/"$item"
-      if ! grep -q " /userdata/mount/$item " /proc/mounts; then
-        echo "[$idx/$total] rclone-mount archive:$item"
-        # Background: each mount's HTTPS handshake to archive.org takes ~4s,
-        # 61 mounts × 4s = ~4 min serially. Parallelism 8 shrinks that to ~30s.
-        # Symlinks below tolerate the target not being ready yet (ln -sfn
-        # accepts dangling), and ia_dir_mounted dedup avoids double-mount races.
-        rclone mount "archive:$item/" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M &
-        while (( $(jobs -r | wc -l) >= 8 )); do sleep 0.5; done
-        ((rclone_count++))
-      fi
-      ia_dir_mounted[$item]=1
-    fi
-    src="/userdata/mount/$item${subpath:+/$subpath}"
-    if [[ -d "$dst" && ! -L "$dst" ]] && [[ -z "$(ls -A "$dst" 2>/dev/null)" ]]; then
-      rmdir "$dst" 2>/dev/null
-    fi
-    if [[ -L "$dst" || ! -e "$dst" ]]; then
-      ln -sfn "$src" "$dst"
-    fi
-  elif [[ "${rom[1]}" != *:* ]]; then
-    grep -q " $dst " /proc/mounts && continue
-    mkdir -p "$dst"
-    echo "[$idx/$total] bind ${rom[1]} -> $dst"
-    mount -o bind /userdata/rom/${rom[1]} "$dst"
-    ((bind_count++))
+  # TEMP: skip mounting non-zip items (archive:* without .zip, and local bind-mounts).
+  # Only zip-archive symlinks above are active. Revert by uncommenting both elif blocks.
+  # elif [[ "${rom[1]}" == archive:* ]]; then
+  #   # archive:<bucket>/<subpath> (no .zip): rclone-mount parent IA item once,
+  #   # then symlink $dst into the mount. Mirrors webflix.sh Phase 5 so the
+  #   # symlinks made there ('/userdata/roms/<plat>/<fold> -> /userdata/mount/
+  #   # <item>/<subpath>') just work without webflix overwriting them.
+  #   aftercolon="${rom[1]#archive:}"; item="${aftercolon%%/*}"; subpath="${aftercolon#$item}"; subpath="${subpath#/}"
+  #   if [[ -z "${ia_dir_mounted[$item]}" ]]; then
+  #     mkdir -p /userdata/mount/"$item"
+  #     if ! grep -q " /userdata/mount/$item " /proc/mounts; then
+  #       echo "[$idx/$total] rclone-mount archive:$item"
+  #       # Background: each mount's HTTPS handshake to archive.org takes ~4s,
+  #       # 61 mounts × 4s = ~4 min serially. Parallelism 8 shrinks that to ~30s.
+  #       # Symlinks below tolerate the target not being ready yet (ln -sfn
+  #       # accepts dangling), and ia_dir_mounted dedup avoids double-mount races.
+  #       rclone mount "archive:$item/" /userdata/mount/"$item" --config=/userdata/system/rclone.conf --http-no-head --daemon --no-checksum --no-modtime --attr-timeout 1000h --dir-cache-time 1000h --poll-interval 1000h --allow-non-empty --vfs-cache-mode minimal --vfs-read-chunk-size 1M &
+  #       while (( $(jobs -r | wc -l) >= 8 )); do sleep 0.5; done
+  #       ((rclone_count++))
+  #     fi
+  #     ia_dir_mounted[$item]=1
+  #   fi
+  #   src="/userdata/mount/$item${subpath:+/$subpath}"
+  #   if [[ -d "$dst" && ! -L "$dst" ]] && [[ -z "$(ls -A "$dst" 2>/dev/null)" ]]; then
+  #     rmdir "$dst" 2>/dev/null
+  #   fi
+  #   if [[ -L "$dst" || ! -e "$dst" ]]; then
+  #     ln -sfn "$src" "$dst"
+  #   fi
+  # elif [[ "${rom[1]}" != *:* ]]; then
+  #   grep -q " $dst " /proc/mounts && continue
+  #   mkdir -p "$dst"
+  #   echo "[$idx/$total] bind ${rom[1]} -> $dst"
+  #   mount -o bind /userdata/rom/${rom[1]} "$dst"
+  #   ((bind_count++))
   fi
 done
 wait  # let backgrounded rclone-mount handshakes finish before ratarmount
