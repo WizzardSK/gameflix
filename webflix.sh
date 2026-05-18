@@ -7,6 +7,30 @@ wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/Wizza
 csv_file=$(mktemp)
 curl -s https://raw.githubusercontent.com/WizzardSK/gameflix/main/platforms.csv | tail -n +2 > "$csv_file"
 
+# Phase 0: probe existing FUSE mounts (rclone-IA items under ~/mount/* and the
+# ratarmount tree at ~/share/roms-mount) and clear any whose userspace daemon
+# died silently. The kernel keeps such mounts registered, so `mountpoint -q`
+# still reports them mounted and `ls` then fails with ENOTCONN — which
+# leaves every downstream symlink in ~/share/roms/ visibly broken. A 5s `ls`
+# is short enough to flag truly hung mounts but long enough that a
+# slow-but-alive HTTPS round-trip survives.
+echo "=== PROBING MOUNTS ==="
+stale=0
+probe_mount() {
+  local mp="$1"
+  [[ -d "$mp" ]] || return 1
+  mountpoint -q "$mp" || return 1
+  timeout 5 ls -A "$mp" >/dev/null 2>&1 && return 1
+  echo "Stale: $mp"
+  fusermount -u -z "$mp" 2>/dev/null
+  return 0
+}
+probe_mount ~/share/roms-mount && ((stale++))
+for d in ~/mount/*/; do
+  probe_mount "$d" && ((stale++))
+done
+echo "Cleared $stale stale mount(s)"
+
 # Compute local zip path for archive: paths; sets $zip on success, returns 1 otherwise
 compute_zip() {
   local path="$1" subpath
