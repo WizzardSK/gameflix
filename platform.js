@@ -103,7 +103,7 @@ function generateFileLinks(romPath, imagePath) {
         var platform = location.pathname.split('/').pop().replace(/\.html?$/, '');
         var headers = document.querySelectorAll('.section-header');
         var foldername = headers.length ? headers[headers.length - 1].id : '';
-        romPath = '../share/roms/' + platform + '/' + foldername;
+        romPath = 'play:///home/wizzard/share/roms/' + platform + '/' + foldername;
     }
     var encodedPath = encodeURI(romPath);
     var html = [];

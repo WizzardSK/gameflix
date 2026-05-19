@@ -1,4 +1,9 @@
 #!/bin/bash
+# Strip play:// URL scheme + URL-decode
+arg="$1"
+[[ "$arg" == play://* ]] && arg="${arg#play://}"
+arg=$(printf '%b' "${arg//%/\\x}")
+set -- "$arg" "${@:2}"
 head "$1"
 adresar=$(dirname "$1")
 adresar2="${adresar##*/}"
