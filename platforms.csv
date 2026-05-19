@@ -240,7 +240,7 @@ laser310,archive:mame-sl/mame-sl/vz_cass.zip,Cass MAME,mame laser310 -autoboot_c
 socrates,archive:mame-sl/mame-sl/socrates.zip,VTech Socrates,mame socrates -cart,
 chip8,archive:mame-sl/mame-sl/chip8_quik.zip,MAME,mame d6800 -quik,
 osborne1,archive:mame-sl/mame-sl/osborne1.zip,MAME,mame osborne1 -flop1,
-mbee,archive:mame-sl/mame-sl/mbee_cart.zip,Cart MAME,mame mbee -cart,
+mbee,archive:mame-sl/mame-sl/mbee_cart.zip,Cart MAME,mame mbee -rom2,
 mbee,archive:mame-sl/mame-sl/mbee_quik.zip,Quik MAME,mame mbee -quik,
 mbee,archive:mame-sl/mame-sl/mbee_flop.zip,Flop MAME,mame mbee56 -flop1,
 pro128,archive:mame-sl/mame-sl/pro128_cass.zip,Cass MAME,"mame pro128 -autoboot_command 'RUN""CASS:""\n' -autoboot_delay 8 -cass",
