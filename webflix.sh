@@ -1,7 +1,7 @@
 #!/bin/bash
 export LD_LIBRARY_PATH=/usr/local/lib
 mkdir -p ~/share/zip/ni-roms ~/share/zip/mame-sl ~/share/zip/tosec-main \
-         ~/share/roms ~/share/roms-mount ~/share/zips ~/gameflix
+         ~/share/roms ~/share/zips ~/gameflix
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 
 csv_file=$(mktemp)
@@ -19,7 +19,9 @@ stale=0
 probe_mount() {
   local mp="$1"
   [[ -d "$mp" ]] || return 1
-  mountpoint -q "$mp" || return 1
+  # If `ls` works the dir is either healthy-mounted or just unused-empty.
+  # If `ls` fails (ENOTCONN — kernel still holds a dead FUSE registration)
+  # mountpoint -q sometimes returns false too, so we can't rely on it.
   timeout 5 ls -A "$mp" >/dev/null 2>&1 && return 1
   echo "Stale: $mp"
   fusermount -u -z "$mp" 2>/dev/null
@@ -92,7 +94,10 @@ echo "Linked $linked zip(s)"
 # --transform: strip MAME-style <shortname>/ prefix from contents
 # entry/attr_timeout=86400: kernel caches stat for a day -> fast repeat ls
 echo "=== MOUNTING ==="
-mountpoint -q ~/share/roms-mount && fusermount -u -z ~/share/roms-mount 2>/dev/null
+fusermount -u -z ~/share/roms-mount 2>/dev/null
+# ratarmount 1.2 expects mountpoint NOT to exist (it creates it). rmdir is a
+# no-op if missing or non-empty, so it's safe even on a fresh run.
+rmdir ~/share/roms-mount 2>/dev/null
 ratarmount --recursion-depth 1 -s --transform '^[a-z0-9_]+/' '' \
   -o entry_timeout=86400,attr_timeout=86400,negative_timeout=86400 \
   ~/share/zips ~/share/roms-mount
