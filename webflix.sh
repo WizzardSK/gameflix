@@ -99,7 +99,7 @@ fusermount -u -z ~/share/roms-mount 2>/dev/null
 # no-op if missing or non-empty, so it's safe even on a fresh run.
 rmdir ~/share/roms-mount 2>/dev/null
 ratarmount --recursion-depth 1 -s --transform '^[a-z0-9_]+/' '' \
-  -o entry_timeout=86400,attr_timeout=86400,negative_timeout=86400 \
+  -o entry_timeout=86400,attr_timeout=86400,negative_timeout=86400,uid=$(id -u),gid=$(id -g),umask=022 \
   ~/share/zips ~/share/roms-mount
 sleep 2
 if mountpoint -q ~/share/roms-mount; then
