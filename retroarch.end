@@ -15,9 +15,16 @@ else
   rom="$1"
 fi
 
-case "$1" in */ti99_cart/*|*/vic10/*|*/stv/*|*/myvision/*|*/ibm5150/*|*/ibm5170/*|*/ibmpcjr_cart/*|*/ibmpcjr_flop/*|*/cassvisn_cart/*|*/juicebox/*) rompath="$(dirname "$1");$HOME/share/bios"; rom="$(basename "${1%.*}")";; esac
-
-if [[ "$core" == *"mame"* ]]; then
+if [[ "$core" == "mame "* ]]; then
+  # MAME softlist entries (mame-sl): $ext is empty and $1 is a zip whose basename
+  # is the softlist shortname (e.g. atari800/MAME/atrax01.zip → atrax01). MAME
+  # only resolves softlist hashes when given the shortname + -rompath, not an
+  # absolute path. TOSEC paths set $ext and pre-mounted a real disk file into
+  # $rom — leave those alone.
+  if [[ -z "$ext" ]]; then
+    rompath="$(dirname "$1");$HOME/share/bios"
+    rom="$(basename "${1%.*}")"
+  fi
   core=$(echo "$core" | sed -E 's|(-hard[0-9]+) ([a-z0-9_]+):([a-z0-9_]+)|\1 '"$HOME"'/share/bios/\2/\3/\3.chd|g')
   filename="${rom##*/}"; basename="${filename%.*}"
   eval "cmd=($core)"
