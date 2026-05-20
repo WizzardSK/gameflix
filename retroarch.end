@@ -15,12 +15,12 @@ else
   rom="$1"
 fi
 
-if [[ "$core" == "mame "* ]]; then
-  # MAME softlist entries (mame-sl): $ext is empty and $1 is a zip whose basename
-  # is the softlist shortname (e.g. atari800/MAME/atrax01.zip → atrax01). MAME
-  # only resolves softlist hashes when given the shortname + -rompath, not an
-  # absolute path. TOSEC paths set $ext and pre-mounted a real disk file into
-  # $rom — leave those alone.
+if [[ "$core" == "mame" || "$core" == "mame "* ]]; then
+  # MAME softlist (core="mame <machine> -<slot>") and arcade ROMset
+  # (core="mame", zip basename IS the machine) both need the same treatment:
+  # convert $1 → shortname + add its dir to -rompath, so MAME can resolve
+  # parent/BIOS deps via its hash files. TOSEC paths already set $ext and
+  # pre-mounted a real disk file into $rom — leave those alone.
   if [[ -z "$ext" ]]; then
     rompath="$(dirname "$1");$HOME/share/bios"
     rom="$(basename "${1%.*}")"
