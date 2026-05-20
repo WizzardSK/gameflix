@@ -10,7 +10,7 @@ on:
       prefixes:
         description: 'Comma-separated path prefixes to delete'
         required: true
-        default: 'eXoDemoScene/,eXoIF/,eXoAppleIIGS/'
+        default: 'eXoIF/,eXoDemoScene/'
       dry_run:
         description: 'Dry run (only list, do not delete)'
         required: false
