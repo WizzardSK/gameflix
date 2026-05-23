@@ -113,6 +113,47 @@ while IFS= read -r softlist; do
   ((mame_jobs++))
   if ((mame_jobs >= 20)); then wait -n; ((mame_jobs--)); fi
 done < <(awk -F',' '$2 ~ /^archive:mame-sl\// { n=$2; sub(/.*\//, "", n); sub(/\.zip$/, "", n); print n }' platforms.csv | sort -u)
+
+# Fetch MAME arcade listxml (~19 MB zip → 322 MB XML, 50k <machine> entries)
+arcade_mame_cache="$mame_names_dir/arcade-mame.tsv"
+if [ ! -e "$arcade_mame_cache" ]; then
+  (
+    mame_tag=$(curl -sIL "https://github.com/mamedev/mame/releases/latest" 2>/dev/null | awk 'tolower($1)=="location:" { sub(/\r$/,""); n=split($2,p,"/"); print p[n] }' | tail -1)
+    if [[ -n "$mame_tag" ]]; then
+      mame_ver="${mame_tag#mame}"
+      tmpzip=$(mktemp --suffix=.zip)
+      if curl -fsSL -o "$tmpzip" "https://github.com/mamedev/mame/releases/download/$mame_tag/${mame_tag}lx.zip" && [ -s "$tmpzip" ]; then
+        unzip -p "$tmpzip" "mame${mame_ver}.xml" 2>/dev/null | awk '
+          /<machine name=/ { if (match($0, /name="([^"]+)"/, a)) name=a[1] }
+          /<description>/ { if (match($0, /<description>([^<]+)<\/description>/, a) && name && a[1]) print name "\t" a[1]; name="" }
+        ' > "$arcade_mame_cache"
+      else
+        : > "$arcade_mame_cache"
+      fi
+      rm -f "$tmpzip"
+    else
+      : > "$arcade_mame_cache"
+    fi
+  ) &
+fi
+
+# Fetch FBNeo arcade dat (~14 MB, 8k <game> entries)
+arcade_fbneo_cache="$mame_names_dir/arcade-fbneo.tsv"
+if [ ! -e "$arcade_fbneo_cache" ]; then
+  (
+    tmpdat=$(mktemp)
+    if curl -fsSL -o "$tmpdat" "https://raw.githubusercontent.com/libretro/FBNeo/master/dats/FinalBurn%20Neo%20(ClrMame%20Pro%20XML%2C%20Arcade%20only).dat" && [ -s "$tmpdat" ]; then
+      awk '
+        /<game name=/ { if (match($0, /name="([^"]+)"/, a)) name=a[1] }
+        /<description>/ { if (match($0, /<description>([^<]+)<\/description>/, a) && name && a[1]) print name "\t" a[1]; name="" }
+      ' "$tmpdat" > "$arcade_fbneo_cache"
+    else
+      : > "$arcade_fbneo_cache"
+    fi
+    rm -f "$tmpdat"
+  ) &
+fi
+
 wait
 declare -A mame_name
 for tsv in "$mame_names_dir"/*.tsv; do
@@ -296,12 +337,20 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ "${rom[1]}" == archive:mame-sl/*/*.zip ]]; then
     softlist="${rom[1]##*/}"; softlist="${softlist%.zip}"
   fi
+  # Arcade name source for mame/fbneo platforms (listxml + FBNeo dat)
+  arcade_src=""
+  case "${rom[0]}" in
+    mame) arcade_src="arcade-mame" ;;
+    fbneo) arcade_src="arcade-fbneo" ;;
+  esac
   while IFS= read -r line; do
     [[ -z "$line" ]] && continue
     line2="${line%.*}"
     display_name="$line2"
     if [[ -n "$softlist" && -n "${mame_name[$softlist:$line2]}" ]]; then
       display_name="${mame_name[$softlist:$line2]}"
+    elif [[ -n "$arcade_src" && -n "${mame_name[$arcade_src:$line2]}" ]]; then
+      display_name="${mame_name[$arcade_src:$line2]}"
     fi
     # Decode XML entities for JS string in HTML; escape literal " for JS
     # Note: bash 5.2 patsub_replacement makes & mean "the match" in replacements, so escape it
