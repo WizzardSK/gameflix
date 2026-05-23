@@ -337,10 +337,12 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ "${rom[1]}" == archive:mame-sl/*/*.zip ]]; then
     softlist="${rom[1]##*/}"; softlist="${softlist%.zip}"
   fi
-  # Arcade name source for mame/fbneo platforms (listxml + FBNeo dat)
+  # Arcade name source for mame/fbneo platforms (listxml + FBNeo dat).
+  # model2/model3 are also MAME drivers (sega/model2.cpp, sega/model3.cpp)
+  # so they live in the same listxml.
   arcade_src=""
   case "${rom[0]}" in
-    mame) arcade_src="arcade-mame" ;;
+    mame|model2|model3) arcade_src="arcade-mame" ;;
     fbneo) arcade_src="arcade-fbneo" ;;
   esac
   while IFS= read -r line; do
