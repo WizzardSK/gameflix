@@ -77,6 +77,54 @@ wait
 prefetch_end=$(date +%s)
 echo "=== PRE-FETCH DONE: $path_count paths in $((prefetch_end - prefetch_start))s ==="
 
+# Fetch MAME software list display names — short ROM names (e.g. "mslug") -> "Metal Slug (NGM-201 ~ NGH-201)"
+echo "=== FETCHING MAME SOFTLIST NAMES ==="
+mame_names_dir=~/dircache/mame-names
+mkdir -p "$mame_names_dir"
+mame_fetch_start=$(date +%s)
+mame_jobs=0
+while IFS= read -r softlist; do
+  [[ -z "$softlist" ]] && continue
+  cached="$mame_names_dir/$softlist.tsv"
+  [ -e "$cached" ] && continue
+  (
+    src=""
+    if [ -s "/usr/share/games/mame/hash/$softlist.xml" ]; then
+      src="/usr/share/games/mame/hash/$softlist.xml"
+    else
+      tmp=$(mktemp)
+      if curl -fsSL "https://raw.githubusercontent.com/mamedev/mame/master/hash/$softlist.xml" -o "$tmp" 2>/dev/null && [ -s "$tmp" ]; then
+        src="$tmp"
+      fi
+    fi
+    if [ -n "$src" ]; then
+      awk '
+        /<software name=/ { if (match($0, /name="([^"]+)"/, a)) name=a[1] }
+        /<description>/ {
+          if (match($0, /<description>([^<]+)<\/description>/, a) && name && a[1]) print name "\t" a[1]
+          name=""
+        }
+      ' "$src" > "$cached"
+    else
+      : > "$cached"  # mark as tried so we don't retry
+    fi
+    [[ "$src" == /tmp/* ]] && rm -f "$src"
+  ) &
+  ((mame_jobs++))
+  if ((mame_jobs >= 20)); then wait -n; ((mame_jobs--)); fi
+done < <(awk -F',' '$2 ~ /^archive:mame-sl\// { n=$2; sub(/.*\//, "", n); sub(/\.zip$/, "", n); print n }' platforms.csv | sort -u)
+wait
+declare -A mame_name
+for tsv in "$mame_names_dir"/*.tsv; do
+  [ -s "$tsv" ] || continue
+  softlist=$(basename "$tsv" .tsv)
+  while IFS=$'\t' read -r sn desc; do
+    [[ -n "$sn" ]] && mame_name["$softlist:$sn"]="$desc"
+  done < "$tsv"
+done
+mame_fetch_end=$(date +%s)
+echo "=== MAME SOFTLIST NAMES DONE: ${#mame_name[@]} entries in $((mame_fetch_end - mame_fetch_start))s ==="
+
 echo "<b>Fantasy & Homebrew</b><br />" >> ~/gameflix/systems.html; echo "<h3 id=\"Fantasy &amp; Homebrew\" class=\"section-header\" style=\"width:100%\">Fantasy & Homebrew</h3>" >> ~/gameflix/main.html
 
 # TIC-80 - all categories fetched in parallel
@@ -243,12 +291,34 @@ IFS=";"; for each in "${roms[@]}"; do
   cachefile="$cache/$cachehash.txt"
   if [ -f "$cache/$cachehash.path" ]; then romfolder=$(<"$cache/$cachehash.path"); fi
   romdir=~/"${romfolder}"
+  # Detect MAME software list source — used to map short ROM names to real game titles
+  softlist=""
+  if [[ "${rom[1]}" == archive:mame-sl/*/*.zip ]]; then
+    softlist="${rom[1]##*/}"; softlist="${softlist%.zip}"
+  fi
   while IFS= read -r line; do
     [[ -z "$line" ]] && continue
-    line2="${line%.*}"; echo "\"${line}\"," >&$html_fd; ((pocet++)); ((total++))
+    line2="${line%.*}"
+    display_name="$line2"
+    if [[ -n "$softlist" && -n "${mame_name[$softlist:$line2]}" ]]; then
+      display_name="${mame_name[$softlist:$line2]}"
+    fi
+    # Decode XML entities for JS string in HTML; escape literal " for JS
+    # Note: bash 5.2 patsub_replacement makes & mean "the match" in replacements, so escape it
+    js_name="$display_name"
+    js_name="${js_name//&quot;/\\\"}"
+    js_name="${js_name//&lt;/<}"
+    js_name="${js_name//&gt;/>}"
+    js_name="${js_name//&amp;/\&}"
+    if [[ "$display_name" != "$line2" ]]; then
+      echo "\"${line}	${js_name}\"," >&$html_fd
+    else
+      echo "\"${line}\"," >&$html_fd
+    fi
+    ((pocet++)); ((total++))
     if [[ "$line2" == *")"* ]]; then thumb="${line2%%)*})"; else thumb="$line2"; fi
     if [[ "$line" != *.* ]]; then polozka="folder"; else polozka="game"; fi
-    hra="<$polozka><path>./$foldername/${line}</path><name>${line2}</name><image>~/../thumbs/${rom[5]}/Named_Snaps/${thumb}.png</image>"
+    hra="<$polozka><path>./$foldername/${line}</path><name>${display_name}</name><image>~/../thumbs/${rom[5]}/Named_Snaps/${thumb}.png</image>"
     if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h [^]]*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then
       echo "${hra}</$polozka>" >&$xml_fd
     else echo "${hra}<hidden>true</hidden></$polozka>" >&$xml_fd; fi
