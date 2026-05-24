@@ -15,20 +15,22 @@ else
   rom="$1"
 fi
 
-if [[ "$core" == "mame_libretro "* ]]; then
-  # MAME softlist via libretro core. mame_libretro supports .cmd files as
-  # content (see supported_extensions = "cmd|zip|7z" in mame_libretro.info):
-  # the file's text is parsed as MAME command-line args. Same args we'd pass
+if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
+  # MAME via libretro core. mame_libretro supports .cmd files as content
+  # (see supported_extensions = "cmd|zip|7z" in mame_libretro.info): the
+  # file's text is parsed as MAME command-line args. Same args we'd pass
   # to standalone MAME — just routed through the libretro frontend.
+  # Bare "mame_libretro" = arcade ROMset (zip basename IS the machine);
+  # "mame_libretro <driver> ..." = softlist or system-with-media.
   if [[ -z "$ext" ]]; then
     rompath="$(dirname "$1");$HOME/share/bios"
     rom="$(basename "${1%.*}")"
   fi
   core=$(echo "$core" | sed -E 's|(-hard[0-9]+) ([a-z0-9_]+):([a-z0-9_]+)|\1 '"$HOME"'/share/bios/\2/\3/\3.chd|g')
-  mame_args="${core#mame_libretro }"
+  mame_args="${core#mame_libretro}"; mame_args="${mame_args# }"
   filename="${rom##*/}"; basename="${filename%.*}"
   cmd_file=$(mktemp --suffix=.cmd)
-  echo "$mame_args $rom${rompath:+ -rompath \"$rompath\"} -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
+  echo "${mame_args:+$mame_args }$rom${rompath:+ -rompath \"$rompath\"} -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
   retroarch -L ~/.config/retroarch/cores/mame_libretro.so "$cmd_file"
   rm -f "$cmd_file"
   exit
