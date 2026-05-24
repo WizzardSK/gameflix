@@ -26,6 +26,14 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
     rompath="$(dirname "$1");$HOME/share/bios"
     rom="$(basename "${1%.*}")"
   fi
+  # Model 2/3: the gameflix listing comes from an ElSemi-format archive
+  # (m2emu1.1a / segamodel3) whose zips MAME can't read. The zip basenames
+  # match MAME driver shortnames though, so point rompath at MAME's merged
+  # romset — MAME finds the right ROMs there (including the model2 BIOS).
+  # ElSemi-format dir is omitted entirely; it would only mask the MAME zips.
+  case "$1" in
+    */model2/*|*/model3/*) rompath="$HOME/share/roms/mame/MAME;$HOME/share/bios" ;;
+  esac
   core=$(echo "$core" | sed -E 's|(-hard[0-9]+) ([a-z0-9_]+):([a-z0-9_]+)|\1 '"$HOME"'/share/bios/\2/\3/\3.chd|g')
   mame_args="${core#mame_libretro}"; mame_args="${mame_args# }"
   filename="${rom##*/}"; basename="${filename%.*}"
