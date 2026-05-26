@@ -99,6 +99,11 @@ if (isSystems) {
             link.href = '#';
             link.textContent = header.id;
             link.className = 'navlink';
+            if (header.dataset.count) {
+                var sm = document.createElement('small');
+                sm.textContent = ' ' + header.dataset.count;
+                link.appendChild(sm);
+            }
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 var topbarHeight = document.getElementById('topbar').offsetHeight;

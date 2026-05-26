@@ -330,7 +330,7 @@ IFS=";"; for each in "${roms[@]}"; do
   cachehash=$(echo -n "${rom[1]}" | md5sum | cut -d' ' -f1)
   cachefile="$cache/$cachehash.txt"
   catcount=$(grep -c . "$cachefile" 2>/dev/null || echo 0)
-  echo -e "<h3 id=\"${rom[2]}\" class=\"section-header\">${rom[2]} <small>(${catcount})</small></h3>\n<script>bgImage(\"${rom[0]}\")\nfileNames = [" >&$html_fd
+  echo -e "<h3 id=\"${rom[2]}\" data-count=\"${catcount}\" class=\"section-header\">${rom[2]} <small>${catcount}</small></h3>\n<script>bgImage(\"${rom[0]}\")\nfileNames = [" >&$html_fd
   if [ -f "$cache/$cachehash.path" ]; then romfolder=$(<"$cache/$cachehash.path"); fi
   romdir=~/"${romfolder}"
   # Detect MAME software list source — used to map short ROM names to real game titles
