@@ -5,9 +5,11 @@
 # this hook materializes the file on-demand when the user actually presses
 # Start, then returns and lets configgen launch the emulator normally.
 #
-# Args: $1 = system name (e.g. "snes"), $2 = full path to the game file.
-SYSTEM="$1"
-GAMEPATH="$2"
+# Args (per es-app/src/FileData.cpp's Scripting::fireEvent("game-start", ...)):
+#   $1 = full ROM path (escaped)
+#   $2 = basename without extension
+#   $3 = display name
+GAMEPATH="$1"
 [[ -z "$GAMEPATH" ]] && exit 0
 [[ -e "$GAMEPATH" ]] && exit 0  # already downloaded — fast path
 
@@ -38,11 +40,17 @@ inner="${relpath#*/}"; inner="${inner#*/}"
 urlenc() { local LC_ALL=C s="$1" i c e=""; for ((i=0;i<${#s};i++)); do c="${s:i:1}"; case "$c" in [/a-zA-Z0-9._~-]) e+="$c";; *) printf -v c '%%%02X' "'$c"; e+="$c";; esac; done; printf '%s' "$e"; }
 enc=$(urlenc "$inner")
 
+LOG=/userdata/system/logs/gameflix-fetch.log
 mkdir -p "$(dirname "$GAMEPATH")"
-echo "gameflix: fetching $inner ..." >/dev/console 2>/dev/null
-if ! curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$GAMEPATH" "${src}${enc}"; then
+{
+  echo "[$(date '+%F %T')] fetch start: $inner"
+  echo "  src: $src"
+  echo "  url: ${src}${enc}"
+} >>"$LOG"
+if ! curl -fL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$GAMEPATH" "${src}${enc}" 2>>"$LOG"; then
   rm -f "$GAMEPATH"
-  echo "gameflix: download failed for ${src}${enc}" >/dev/console 2>/dev/null
+  echo "[$(date '+%F %T')] download FAILED for ${src}${enc}" >>"$LOG"
   exit 1
 fi
+echo "[$(date '+%F %T')] fetch done ($(stat -c%s "$GAMEPATH") bytes) → $GAMEPATH" >>"$LOG"
 exit 0
