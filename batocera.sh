@@ -49,19 +49,20 @@ unzip -p /tmp/gameflix.zip urls.sh > /userdata/system/urls.sh
 rm -f /tmp/gameflix.zip
 [[ ! -s /userdata/system/urls.sh ]] && status "WARNING: urls.sh empty — on-demand fetch will not work"
 
-status "=== installing game-start hook (on-demand ROM fetch) ==="
-mkdir -p /userdata/system/configs/emulationstation/scripts/game-start
-# Filename MUST end in `-wait` — Batocera ES queues game-start scripts to a
-# worker thread by default (it's in _asyncEvents), and the emulator launches
-# in parallel. The `-wait` suffix flips Scripting.cpp's dispatch to run the
-# script synchronously with waitForExit=true, so the fetch finishes before
-# configgen invokes the emulator. Without -wait, big CHDs (PSX/Saturn/etc.)
-# get killed mid-download when the emulator starts on a half-written file.
-HOOK=/userdata/system/configs/emulationstation/scripts/game-start/gameflix-wait.sh
-# Remove any prior non-wait copy so we don't double-fire
-rm -f /userdata/system/configs/emulationstation/scripts/game-start/gameflix.sh
-wget -nv -O "$HOOK" https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera/game-start.sh
-chmod +x "$HOOK"
+status "=== installing emulator launch wrapper (on-demand fetch + mount-zip) ==="
+# We can't use a game-start hook for the fetch because on Linux,
+# Batocera ES sets psi.waitForExit=false for non-quit events
+# (es-core/src/Scripting.cpp), so ES launches the emulator immediately
+# regardless of -wait suffix and races a multi-megabyte download.
+# Instead we wire the wrapper into es_systems.cfg <command>, which ES
+# DOES wait for (it's the launch itself).
+wget -nv -O /userdata/system/gameflix-launch.sh \
+  https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera/gameflix-launch.sh
+chmod +x /userdata/system/gameflix-launch.sh
+# Disable legacy game-start hook (does nothing useful on Linux, still in
+# repo for the standalone web flow which doesn't share this script)
+rm -f /userdata/system/configs/emulationstation/scripts/game-start/gameflix-wait.sh \
+      /userdata/system/configs/emulationstation/scripts/game-start/gameflix.sh
 
 status "=== installing game-selected hook (thumbnail prefetch) ==="
 mkdir -p /userdata/system/configs/emulationstation/scripts/game-selected
