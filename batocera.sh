@@ -113,6 +113,28 @@ unzip -q -o /userdata/system/gamelist.zip -d /userdata/roms
 # Replace the bundled full-catalog gamelist with one containing only games the
 # user has actually placed in /userdata/roms/switch/, so ES doesn't show
 # thousands of unlaunchable tiles.
+# ParseGamelistOnly bypasses Utils::FileSystem::exists(path) but ES still
+# rejects entries whose PARENT DIRECTORY doesn't exist ("Error finding/creating
+# FileData ... skipping" in es_log.txt). For each gamelist <path>./sub/file</path>
+# create the sub/ directory so ES can register the entry even with no ROM file
+# present.
+status "=== materialising parent dirs for gamelist entries ==="
+python3 <<'PYEOF'
+import os, re, glob
+n = 0
+for gl in glob.glob('/userdata/roms/*/gamelist.xml'):
+    pdir = os.path.dirname(gl)
+    seen = set()
+    with open(gl) as f:
+        for m in re.finditer(r'<path>\./([^<]+)</path>', f.read()):
+            d = os.path.dirname(m.group(1))
+            if d and d not in seen:
+                seen.add(d)
+                os.makedirs(os.path.join(pdir, d), exist_ok=True)
+                n += 1
+print(f'ensured {n} directories')
+PYEOF
+
 status "=== regenerating Switch gamelist from local files ==="
 SWITCH_DIR=/userdata/roms/switch
 if [[ -d "$SWITCH_DIR" ]]; then
