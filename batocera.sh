@@ -51,9 +51,17 @@ rm -f /tmp/gameflix.zip
 
 status "=== installing game-start hook (on-demand ROM fetch) ==="
 mkdir -p /userdata/system/configs/emulationstation/scripts/game-start
-wget -nv -O /userdata/system/configs/emulationstation/scripts/game-start/gameflix.sh \
-  https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera/game-start.sh
-chmod +x /userdata/system/configs/emulationstation/scripts/game-start/gameflix.sh
+# Filename MUST end in `-wait` — Batocera ES queues game-start scripts to a
+# worker thread by default (it's in _asyncEvents), and the emulator launches
+# in parallel. The `-wait` suffix flips Scripting.cpp's dispatch to run the
+# script synchronously with waitForExit=true, so the fetch finishes before
+# configgen invokes the emulator. Without -wait, big CHDs (PSX/Saturn/etc.)
+# get killed mid-download when the emulator starts on a half-written file.
+HOOK=/userdata/system/configs/emulationstation/scripts/game-start/gameflix-wait.sh
+# Remove any prior non-wait copy so we don't double-fire
+rm -f /userdata/system/configs/emulationstation/scripts/game-start/gameflix.sh
+wget -nv -O "$HOOK" https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera/game-start.sh
+chmod +x "$HOOK"
 
 status "=== installing game-selected hook (thumbnail prefetch) ==="
 mkdir -p /userdata/system/configs/emulationstation/scripts/game-selected
