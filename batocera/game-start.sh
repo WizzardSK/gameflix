@@ -6,10 +6,15 @@
 # Start, then returns and lets configgen launch the emulator normally.
 #
 # Args (per es-app/src/FileData.cpp's Scripting::fireEvent("game-start", ...)):
-#   $1 = full ROM path (escaped)
+#   $1 = full ROM path (escaped via getEscapedPath — backslash-prefixes spaces,
+#        parens, brackets, &, !, etc.)
 #   $2 = basename without extension
 #   $3 = display name
-GAMEPATH="$1"
+# Batocera's executeScript wraps $1 in double quotes for the system() call, so
+# the shell does NOT consume the backslashes (inside "" only \$ \" \\ \` and \n
+# are escape sequences) — we get literal "Acid\ Drop\ \(Europe\).zip" in $1.
+# Strip the backslashes here so file paths and URLs are clean.
+GAMEPATH="${1//\\/}"
 [[ -z "$GAMEPATH" ]] && exit 0
 [[ -e "$GAMEPATH" ]] && exit 0  # already downloaded — fast path
 
