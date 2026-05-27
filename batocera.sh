@@ -88,6 +88,27 @@ status "=== installing gamelists ==="
 wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/batocera/gamelist.zip
 unzip -q -o /userdata/system/gamelist.zip -d /userdata/roms
 
+# Switch has no on-demand fetch source (no NoIntro/TOSEC/Redump on archive.org).
+# Replace the bundled full-catalog gamelist with one containing only games the
+# user has actually placed in /userdata/roms/switch/, so ES doesn't show
+# thousands of unlaunchable tiles.
+status "=== regenerating Switch gamelist from local files ==="
+SWITCH_DIR=/userdata/roms/switch
+if [[ -d "$SWITCH_DIR" ]]; then
+  {
+    echo '<gameList>'
+    find "$SWITCH_DIR" -maxdepth 1 -type f \( -name '*.nsp' -o -name '*.xci' \) -printf '%f\n' | sort | \
+    while IFS= read -r fname; do
+      name="${fname%.*}"
+      # Strip "(region) [tag]" suffix for thumbnail lookup
+      short="${name%% (*}"; short="${short%% [*}"
+      echo "<game><path>./${fname}</path><name>${name}</name><image>~/../thumbs/Nintendo - Nintendo Switch/Named_Snaps/${short}.png</image></game>"
+    done
+    echo '</gameList>'
+  } > "$SWITCH_DIR/gamelist.xml"
+  status "Switch gamelist: $(grep -c '<game>' "$SWITCH_DIR/gamelist.xml") entries"
+fi
+
 cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.bak
 wget -nv -O /usr/share/emulationstation/es_systems.cfg \
   https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems.cfg
