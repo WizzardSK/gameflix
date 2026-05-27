@@ -74,8 +74,14 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
   core=$(echo "$core" | sed -E 's|(-hard[0-9]+) ([a-z0-9_]+):([a-z0-9_]+)|\1 '"$HOME"'/share/bios/\2/\3/\3.chd|g')
   mame_args="${core#mame_libretro}"; mame_args="${mame_args# }"
   filename="${rom##*/}"; basename="${filename%.*}"
+  # mame_libretro's bundled softlist is older than standalone MAME's hash files,
+  # so games like a2600 "3dzapper" exist in the IA-fed romset but not in the core's
+  # internal list (MAME prints "approximately matches" then aborts). Point at the
+  # system MAME hash dir if installed so the lookup hits the current softlists.
+  hashpath_opt=""
+  [[ -d /usr/share/games/mame/hash ]] && hashpath_opt=" -hashpath /usr/share/games/mame/hash"
   cmd_file=$(mktemp --suffix=.cmd)
-  echo "${mame_args:+$mame_args }$rom${rompath:+ -rompath \"$rompath\"} -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
+  echo "${mame_args:+$mame_args }$rom${rompath:+ -rompath \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
   retroarch -L ~/.config/retroarch/cores/mame_libretro.so "$cmd_file"
   rm -f "$cmd_file"
   exit
