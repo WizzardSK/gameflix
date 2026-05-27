@@ -49,11 +49,6 @@ unzip -p /tmp/gameflix.zip urls.sh > /userdata/system/urls.sh
 rm -f /tmp/gameflix.zip
 [[ ! -s /userdata/system/urls.sh ]] && status "WARNING: urls.sh empty — on-demand fetch will not work"
 
-status "=== installing emulatorlauncher wrapper (handles zipped CD images) ==="
-wget -nv -O /userdata/system/gameflix-launch.sh \
-  https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera/gameflix-launch.sh
-chmod +x /userdata/system/gameflix-launch.sh
-
 status "=== installing game-start hook (on-demand ROM fetch) ==="
 mkdir -p /userdata/system/configs/emulationstation/scripts/game-start
 # Filename MUST end in `-wait` — Batocera ES queues game-start scripts to a
