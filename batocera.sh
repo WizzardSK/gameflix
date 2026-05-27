@@ -114,19 +114,22 @@ wget -nv -O /usr/share/emulationstation/es_systems.cfg \
   https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems.cfg
 cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.cfg
 
-# -- Enable ParseGamelistOnly so ES shows games even when files don't exist --
+# -- Enable ParseGamelistOnly so ES trusts gamelist entries (skips
+#    Utils::FileSystem::exists check in es-app/src/Gamelist.cpp:findOrCreateFile,
+#    confirmed in batocera-emulationstation master). Without this, ES filters
+#    out every gamelist row whose target ROM isn't already on disk → platforms
+#    appear empty → SystemData::isVisible() hides them.
 ES_SETTINGS=/userdata/system/.emulationstation/es_settings.cfg
 mkdir -p "$(dirname "$ES_SETTINGS")"
-touch "$ES_SETTINGS"
+if [[ ! -s "$ES_SETTINGS" ]] || ! grep -q '<config>' "$ES_SETTINGS"; then
+  # Initialise with a valid skeleton — ES doesn't fall back to defaults if it
+  # fails to parse the file, it would just ignore our setting.
+  printf '<?xml version="1.0"?>\n<config>\n</config>\n' > "$ES_SETTINGS"
+fi
 if grep -q 'name="ParseGamelistOnly"' "$ES_SETTINGS"; then
   sed -i 's|<bool name="ParseGamelistOnly" value="[^"]*"|<bool name="ParseGamelistOnly" value="true"|' "$ES_SETTINGS"
 else
-  # Insert before closing root tag or append
-  if grep -q '</config>' "$ES_SETTINGS"; then
-    sed -i 's|</config>|<bool name="ParseGamelistOnly" value="true" />\n</config>|' "$ES_SETTINGS"
-  else
-    echo '<bool name="ParseGamelistOnly" value="true" />' >> "$ES_SETTINGS"
-  fi
+  sed -i 's|</config>|\t<bool name="ParseGamelistOnly" value="true" />\n</config>|' "$ES_SETTINGS"
 fi
 
 status "=== done — restarting EmulationStation ==="
