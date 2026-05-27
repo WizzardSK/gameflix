@@ -17,8 +17,11 @@ if [[ -n "$src" && ! -e "$1" ]]; then
   # need to preserve those subdirs in the URL.
   relpath="${1#$HOME/share/roms/}"
   inner="${relpath#*/}"; inner="${inner#*/}"
-  # URL-encode the inner path, preserving '/' between segments
-  enc=""; for ((i=0;i<${#inner};i++)); do c="${inner:i:1}"; case "$c" in [/a-zA-Z0-9._~-]) enc+="$c";; *) printf -v c '%%%02X' "'$c"; enc+="$c";; esac; done
+  # URL-encode the inner path, preserving '/' between segments. LC_ALL=C forces
+  # byte-by-byte iteration so UTF-8 multibyte chars (e.g. 'í' = 0xC3 0xAD) get
+  # encoded as %C3%AD (what archive.org expects), not %ED (Unicode codepoint).
+  urlenc() { local LC_ALL=C s="$1" i c e=""; for ((i=0;i<${#s};i++)); do c="${s:i:1}"; case "$c" in [/a-zA-Z0-9._~-]) e+="$c";; *) printf -v c '%%%02X' "'$c"; e+="$c";; esac; done; printf '%s' "$e"; }
+  enc=$(urlenc "$inner")
   fname="${1##*/}"
   ia_auth=""
   if [[ -f ~/.config/rclone/rclone.conf ]]; then

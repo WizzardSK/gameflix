@@ -33,7 +33,10 @@ fi
 # nested TOSEC-style subdirectories inside the IA zip)
 relpath="${GAMEPATH#/userdata/roms/}"
 inner="${relpath#*/}"; inner="${inner#*/}"
-enc=""; for ((i=0;i<${#inner};i++)); do c="${inner:i:1}"; case "$c" in [/a-zA-Z0-9._~-]) enc+="$c";; *) printf -v c '%%%02X' "'$c"; enc+="$c";; esac; done
+# LC_ALL=C forces byte-mode iteration so UTF-8 multibyte chars (e.g. 'í' =
+# 0xC3 0xAD) get encoded as %C3%AD, not %ED. archive.org returns 404 otherwise.
+urlenc() { local LC_ALL=C s="$1" i c e=""; for ((i=0;i<${#s};i++)); do c="${s:i:1}"; case "$c" in [/a-zA-Z0-9._~-]) e+="$c";; *) printf -v c '%%%02X' "'$c"; e+="$c";; esac; done; printf '%s' "$e"; }
+enc=$(urlenc "$inner")
 
 mkdir -p "$(dirname "$GAMEPATH")"
 echo "gameflix: fetching $inner ..." >/dev/console 2>/dev/null
