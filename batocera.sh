@@ -170,5 +170,32 @@ else
   sed -i 's|</config>|\t<bool name="ParseGamelistOnly" value="true" />\n</config>|' "$ES_SETTINGS"
 fi
 
+# SaveGamelistsOnExit=false is CRITICAL — without it, ES's cleanupGamelist
+# rewrites every /userdata/roms/<plat>/gamelist.xml on shutdown, dropping
+# every entry whose ROM file isn't physically present on disk. After one
+# ES restart, a freshly-installed 8514-entry psx gamelist.xml is reduced to
+# just the few CHDs that on-demand fetch happened to download — and ES then
+# treats the system as "almost empty" on the next boot.
+if grep -q 'name="SaveGamelistsOnExit"' "$ES_SETTINGS"; then
+  sed -i 's|<bool name="SaveGamelistsOnExit" value="[^"]*"|<bool name="SaveGamelistsOnExit" value="false"|' "$ES_SETTINGS"
+else
+  sed -i 's|</config>|\t<bool name="SaveGamelistsOnExit" value="false" />\n</config>|' "$ES_SETTINGS"
+fi
+
+# Sync to the configs path too — Batocera reads from
+# /userdata/system/configs/emulationstation/es_settings.cfg
+ES_CFG=/userdata/system/configs/emulationstation/es_settings.cfg
+if [[ -f "$ES_CFG" ]]; then
+  for k in ParseGamelistOnly SaveGamelistsOnExit; do
+    v=true
+    [[ "$k" == SaveGamelistsOnExit ]] && v=false
+    if grep -q "name=\"$k\"" "$ES_CFG"; then
+      sed -i "s|<bool name=\"$k\" value=\"[^\"]*\"|<bool name=\"$k\" value=\"$v\"|" "$ES_CFG"
+    else
+      sed -i "s|</config>|\t<bool name=\"$k\" value=\"$v\" />\n</config>|" "$ES_CFG"
+    fi
+  done
+fi
+
 status "=== done — restarting EmulationStation ==="
 chvt 1; batocera-es-swissknife --restart &
