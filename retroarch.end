@@ -1,5 +1,39 @@
 esac
 
+# On-demand fetch: pull just the requested game when it's not cached locally.
+# The case clause sets $src to a fully URL-encoded archive.org download URL
+# prefix ending in '/'; concatenating with the URL-encoded filename yields the
+# per-file download URL. archive.org performs server-side extraction when the
+# prefix points inside a zip (e.g. .../uzebox.zip/uzebox/) so only one file is
+# transferred, not the whole romset.
+# Restricted IA items (NoIntro/MAME-SL/TOSEC) require IA's LOW S3-key auth
+# header read from ~/.config/rclone/rclone.conf; --location-trusted preserves
+# it across IA's cross-host CDN redirect.
+if [[ -n "$src" && ! -e "$1" ]]; then
+  mkdir -p "$(dirname "$1")"
+  # Compute the inner path relative to ~/share/roms/<platform>/<foldername>/.
+  # Most ROMs are flat (one file per pick) so $inner == basename, but TOSEC zips
+  # sometimes nest each game in its own subdir (gamename/gamename.ext) — we
+  # need to preserve those subdirs in the URL.
+  relpath="${1#$HOME/share/roms/}"
+  inner="${relpath#*/}"; inner="${inner#*/}"
+  # URL-encode the inner path, preserving '/' between segments
+  enc=""; for ((i=0;i<${#inner};i++)); do c="${inner:i:1}"; case "$c" in [/a-zA-Z0-9._~-]) enc+="$c";; *) printf -v c '%%%02X' "'$c"; enc+="$c";; esac; done
+  fname="${1##*/}"
+  ia_auth=""
+  if [[ -f ~/.config/rclone/rclone.conf ]]; then
+    ia_key=$(awk '/^\[archive\]/{f=1;next} /^\[/{f=0} f && /access_key_id/{print $3;exit}' ~/.config/rclone/rclone.conf)
+    ia_sec=$(awk '/^\[archive\]/{f=1;next} /^\[/{f=0} f && /secret_access_key/{print $3;exit}' ~/.config/rclone/rclone.conf)
+    [[ -n "$ia_key" && -n "$ia_sec" ]] && ia_auth="LOW ${ia_key}:${ia_sec}"
+  fi
+  echo "Fetching $fname ..." >&2
+  if ! curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$1" "${src}${enc}"; then
+    rm -f "$1"
+    echo "Download failed: ${src}${enc}" >&2
+    exit 1
+  fi
+fi
+
 if [ -n "$ext" ]; then
   umount -l ~/iso
   if [[ "$1" == *.rar ]]; then

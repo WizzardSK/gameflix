@@ -1,5 +1,7 @@
 #!/bin/bash
 shopt -s nocasematch;
+# URL-encode a path segment for archive.org download URLs (keeps / and ASCII safe chars)
+urlenc() { local s="$1" out="" i c; for ((i=0;i<${#s};i++)); do c="${s:i:1}"; case "$c" in [a-zA-Z0-9._~/-]) out+="$c";; *) printf -v c '%%%02X' "'$c"; out+="$c";; esac; done; printf '%s' "$out"; }
 declare -A sys thumb separator; sysorder=(); needsep=0; while IFS=',' read -r k v t; do if [[ -z "$k" ]]; then needsep=1; sepname="$v"; continue; fi; sys[$k]="$v"; thumb[$k]="$t"; sysorder+=("$k"); if [[ $needsep -eq 1 ]]; then separator[$k]="$sepname"; needsep=0; fi; done < <(tail -n +2 systems.csv)
 declare -A sysroms; while IFS=';' read -r k rest; do sysroms[$k]+="$k;$rest;${thumb[$k]};${sys[$k]}"$'\n'; done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv ))
 roms=(); for k in "${sysorder[@]}"; do while IFS= read -r line; do [[ -n "$line" ]] && roms+=("$line"); done <<< "${sysroms[$k]}"; done
@@ -8,6 +10,10 @@ echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="filterB
 echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="topbar"><div id="navlinks"></div></div>' > ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
+# urls.sh — sourceable lookup function used by the Batocera/Recalbox game-start
+# hook to resolve a chosen ROM's archive.org src URL. retroarch.sh has the same
+# case statement embedded inline (no need to source urls.sh there).
+echo 'gameflix_lookup_src() { src=""; case "$1" in' > ~/gameflix/urls.sh
 
 # Mount IA items via rclone, then use ratarmount for zips
 echo "=== MOUNTING IA ITEMS ==="
@@ -51,13 +57,13 @@ while IFS= read -r path; do
       aftercolon="${path#*:}"
       localpath="$HOME/mount/$aftercolon"
       if [[ "$localpath" == *.zip ]]; then
-        unzip -l "$localpath" 2>/dev/null | awk '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
+        unzip -l "$localpath" 2>/dev/null | awk -v px="$cache/$h.prefix" '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); if (!seen) { seen=1; if (match(name,/^[a-z0-9_]+\//)) { print substr(name,RSTART,RLENGTH) > px } else { print "" > px } } sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
       else
         zipcount=$(find "$localpath" -maxdepth 1 -name "*.zip" 2>/dev/null | wc -l)
         if [ "$zipcount" -eq 1 ]; then
           # single bundled zip — list its contents
           zipfile=$(find "$localpath" -maxdepth 1 -name "*.zip" 2>/dev/null | head -1)
-          unzip -l "$zipfile" 2>/dev/null | awk '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
+          unzip -l "$zipfile" 2>/dev/null | awk -v px="$cache/$h.prefix" '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); if (!seen) { seen=1; if (match(name,/^[a-z0-9_]+\//)) { print substr(name,RSTART,RLENGTH) > px } else { print "" > px } } sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
           echo "$path/$(basename "$zipfile")" > "$cache/$h.path"
         else
           # directory of files (each file = one ROM, even if many .zip files)
@@ -376,7 +382,36 @@ IFS=";"; for each in "${roms[@]}"; do
     else echo "${hra}<hidden>true</hidden></$polozka>" >&$xml_fd; fi
   done < "$cachefile"
   prev_romfolder="$romfolder"; prev_imagepath="${rom[5]// /_}"; prev_platform="${rom[0]}"
-  platform=${rom[0]}; ext=""; rom4="${rom[4]//$'\r'/}"; if [ -n "$rom4" ]; then ext="; ext=\"${rom4}\""; fi; emu="${rom[3]//\"/\\\"}"; echo "*\"/${rom[0]}/${foldername}/\"*) core=\"${emu}\"${ext};;" >> ~/gameflix/retroarch.sh
+  # Compute on-demand download URL prefix ($src). At runtime retroarch.end
+  # URL-encodes the ROM filename and appends it to $src to fetch one game.
+  # Three archive.org patterns produce the same URL shape ending with '/':
+  #   archive:item/path.zip        → .../download/<item>/<path>.zip/<innerprefix>/
+  #     (server-side extraction from inside the zip)
+  #   archive:item/folder (1 zip)  → .../download/<item>/<folder>/<inner>.zip/<innerprefix>/
+  #     (single-bundled-zip — prefetch redirected via $cache/<h>.path)
+  #   archive:item/folder (files)  → .../download/<item>/<folder>/
+  #     (direct per-file download)
+  src=""
+  if [[ "${rom[1]}" == archive:* ]]; then
+    if [[ -f "$cache/$cachehash.path" ]]; then
+      eff_path=$(<"$cache/$cachehash.path")
+    else
+      eff_path="${rom[1]}"
+    fi
+    inner_prefix=""
+    [[ -f "$cache/$cachehash.prefix" ]] && inner_prefix=$(<"$cache/$cachehash.prefix")
+    aftercolon="${eff_path#archive:}"
+    ia_item="${aftercolon%%/*}"
+    ia_sub="${aftercolon#$ia_item}"; ia_sub="${ia_sub#/}"
+    if [[ -n "$ia_sub" ]]; then
+      src="https://archive.org/download/${ia_item}/$(urlenc "$ia_sub")/${inner_prefix}"
+    else
+      src="https://archive.org/download/${ia_item}/${inner_prefix}"
+    fi
+  fi
+  src_kv=""; [[ -n "$src" ]] && src_kv="; src=\"${src}\""
+  platform=${rom[0]}; ext=""; rom4="${rom[4]//$'\r'/}"; if [ -n "$rom4" ]; then ext="; ext=\"${rom4}\""; fi; emu="${rom[3]//\"/\\\"}"; echo "*\"/${rom[0]}/${foldername}/\"*) core=\"${emu}\"${ext}${src_kv};;" >> ~/gameflix/retroarch.sh
+  [[ -n "$src" ]] && echo "  *\"/${rom[0]}/${foldername}/\"*) src=\"${src}\";;" >> ~/gameflix/urls.sh
   echo "<folder><path>./$foldername</path><name>$foldername</name><image>~/../thumb/${rom[0]}.png</image></folder>" >&$xml_fd
 done
 # Flush last platform
@@ -392,5 +427,6 @@ done
 
 echo '<script src="script.js"></script>' >> ~/gameflix/main.html
 cat retroarch.end >> ~/gameflix/retroarch.sh; cp favicon.png ~/gameflix/
+echo '  esac; }' >> ~/gameflix/urls.sh
 chmod +x ~/gameflix/retroarch.sh; echo "<p><b>Total: $total</b>" >> ~/gameflix/systems.html; echo "<p><b>Platforms: $platforms</b>" >> ~/gameflix/systems.html
 echo '<script src="script.js"></script>' >> ~/gameflix/systems.html
