@@ -29,6 +29,14 @@ rm -rf /userdata/zip /userdata/zips /userdata/zips-mount /userdata/share/roms-mo
 rmdir /userdata/mount/*/ 2>/dev/null
 rmdir /userdata/mount 2>/dev/null
 
+# The pre-refactor batocera.sh populated /userdata/roms/<plat>/<fold> with
+# symlinks pointing into /userdata/zips-mount and /userdata/mount. Those
+# targets are now gone, so the symlinks are dangling — mkdir -p can't create
+# a real directory underneath them, which blocks the on-demand fetch with
+# "No such file or directory" inside <plat>/<fold>/.
+dangling=$(find /userdata/roms -maxdepth 3 -type l ! -exec test -e {} \; -print -delete 2>/dev/null | wc -l)
+status "removed $dangling dangling symlinks from /userdata/roms"
+
 # -- Install runtime config and helpers -------------------------------------
 status "=== installing rclone.conf (IA auth) ==="
 wget -nv -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
