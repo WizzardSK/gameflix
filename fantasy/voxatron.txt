@@ -1,4 +1,6 @@
 ---	Releases
+156747	voxatronhw	voxatronhw-0.vx.png
+156746	relic_of_old	relic_of_old-0.vx.png
 156404	ZaQuest	zaquest-0.vx.png
 155948	bumegajogu	bumegajogu-0.vx.png
 155944	Cowboy vs. Scorpion	rusizunit-0.vx.png
