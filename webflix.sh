@@ -36,5 +36,13 @@ wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/Wizza
 wget -nv -O /tmp/gameflix.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/gameflix.zip
 unzip -o -q /tmp/gameflix.zip -d ~/gameflix/
 rm -f /tmp/gameflix.zip
+# Replace the bundled full retroarch.sh with a thin bootstrap that fetches the
+# latest version from wizzardsk.github.io on every launch — URL/core mapping
+# updates deploy without re-running webflix.sh.
+cat > ~/gameflix/retroarch.sh <<'EOF'
+#!/bin/bash
+set -e
+exec bash -c "$(curl -fsSL https://wizzardsk.github.io/retroarch.sh)" _ "$@"
+EOF
 chmod +x ~/gameflix/retroarch.sh
 echo "Done. Open ~/gameflix/index.html in your browser; ROMs download per-game on launch."
