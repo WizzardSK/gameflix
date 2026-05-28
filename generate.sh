@@ -290,16 +290,6 @@ echo "<figure><a href='Voxatron.html'><img src='https://raw.githubusercontent.co
 echo "<a href=\"Voxatron.html\" target=\"main\">Voxatron</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 echo "<gameList></gameList>" > ~/gamelists/voxatron/gamelist.xml
 
-# Switch - redirect stdin, single write
-{
-  echo "<gameList>"
-  while read -r name; do
-    echo "<game><path>./${name}.nsp</path><name>${name}</name><image>~/../thumbs/Nintendo - Nintendo Switch/Named_Snaps/${name}.png</image></game>"
-    echo "<game><path>./${name}.xci</path><name>${name}</name><image>~/../thumbs/Nintendo - Nintendo Switch/Named_Snaps/${name}.png</image></game>"
-  done < switch.txt
-  echo "</gameList>"
-} > ~/gamelists/switch/gamelist.xml
-
 # Main ROM loop - file descriptors for HTML and XML, no string buffering
 declare -A gamelist_started
 html_fd=3; xml_fd=4
@@ -382,15 +372,6 @@ IFS=";"; for each in "${roms[@]}"; do
     else echo "${hra}<hidden>true</hidden></$polozka>" >&$xml_fd; fi
   done < "$cachefile"
   prev_romfolder="$romfolder"; prev_imagepath="${rom[5]// /_}"; prev_platform="${rom[0]}"
-  # Compute on-demand download URL prefix ($src). At runtime retroarch.end
-  # URL-encodes the ROM filename and appends it to $src to fetch one game.
-  # Three archive.org patterns produce the same URL shape ending with '/':
-  #   archive:item/path.zip        → .../download/<item>/<path>.zip/<innerprefix>/
-  #     (server-side extraction from inside the zip)
-  #   archive:item/folder (1 zip)  → .../download/<item>/<folder>/<inner>.zip/<innerprefix>/
-  #     (single-bundled-zip — prefetch redirected via $cache/<h>.path)
-  #   archive:item/folder (files)  → .../download/<item>/<folder>/
-  #     (direct per-file download)
   src=""
   if [[ "${rom[1]}" == archive:* ]]; then
     if [[ -f "$cache/$cachehash.path" ]]; then
