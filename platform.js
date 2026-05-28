@@ -96,15 +96,10 @@ function generateVoxLinks(romPath, imagePath) {
 
 function generateFileLinks(romPath, imagePath) {
     var wrapInJavatari = false;
-    if (location.protocol !== "file:") {
-        if (romPath.startsWith("archive:")) { romPath = romPath.replace(/^archive:([^/]+)\/(.*)$/, "https://archive.org/download/$1/$2"); }
-        if (romPath.includes("2600")) { wrapInJavatari = true; }
-    } else {
-        var platform = location.pathname.split('/').pop().replace(/\.html?$/, '');
-        var headers = document.querySelectorAll('.section-header');
-        var foldername = headers.length ? headers[headers.length - 1].id : '';
-        romPath = 'play:///' + platform + '/' + foldername;
-    }
+    var platform = location.pathname.split('/').pop().replace(/\.html?$/, '');
+    var headers = document.querySelectorAll('.section-header');
+    var foldername = headers.length ? headers[headers.length - 1].id : '';
+    romPath = 'play:///' + platform + '/' + foldername;
     var encodedPath = encodeURI(romPath);
     var html = [];
     fileNames.forEach(fileName => {
