@@ -115,21 +115,21 @@ unzip -q -o /userdata/system/gamelist.zip -d /userdata/roms
 # create the sub/ directory so ES can register the entry even with no ROM file
 # present.
 status "=== materialising parent dirs for gamelist entries ==="
-python3 <<'PYEOF'
-import os, re, glob
-n = 0
-for gl in glob.glob('/userdata/roms/*/gamelist.xml'):
-    pdir = os.path.dirname(gl)
-    seen = set()
-    with open(gl) as f:
-        for m in re.finditer(r'<path>\./([^<]+)</path>', f.read()):
-            d = os.path.dirname(m.group(1))
-            if d and d not in seen:
-                seen.add(d)
-                os.makedirs(os.path.join(pdir, d), exist_ok=True)
-                n += 1
-print(f'ensured {n} directories')
-PYEOF
+n=0
+for gl in /userdata/roms/*/gamelist.xml; do
+  [[ -f "$gl" ]] || continue
+  pdir=$(dirname "$gl")
+  while IFS= read -r d; do
+    mkdir -p "$pdir/$d"
+    n=$((n+1))
+  done < <(
+    grep -oE '<path>\./[^<]+</path>' "$gl" \
+      | sed -E 's|^<path>\./||; s|</path>$||; s|[^/]*$||; s|/$||' \
+      | grep -v '^$' \
+      | sort -u
+  )
+done
+echo "ensured $n directories"
 
 status "=== regenerating Switch gamelist from local files ==="
 SWITCH_DIR=/userdata/roms/switch
