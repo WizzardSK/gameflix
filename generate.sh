@@ -175,7 +175,7 @@ echo "=== MAME SOFTLIST NAMES DONE: ${#mame_name[@]} entries in $((mame_fetch_en
 echo "<b>Fantasy & Homebrew</b><br />" >> ~/gameflix/systems.html; echo "<h3 id=\"Fantasy &amp; Homebrew\" class=\"section-header\" style=\"width:100%\">Fantasy & Homebrew</h3>" >> ~/gameflix/main.html
 
 # TIC-80 - all categories fetched in parallel
-pocet=0; echo "TIC-80"; cp platform.html ~/gameflix/TIC-80.html; ((platforms++))
+pocet=0; echo "TIC-80"; echo '<script src="platform.js"></script>' > ~/gameflix/TIC-80.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/tic80/gamelist.xml
 echo "*\"TIC-80/\"*) core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh
 tic_cache=~/tic_cache; mkdir -p "$tic_cache"
@@ -200,7 +200,7 @@ echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> <small>$pocet</small><b
 echo "<game><path>./surf.tic</path><name>TIC-80 surf</name><image>./tic80.png</image></game></gameList>" >> ~/gamelists/tic80/gamelist.xml
 
 # LowresNX - categories with section headers
-pocet=0; echo "LowresNX"; cp platform.html ~/gameflix/LowresNX.html; ((platforms++))
+pocet=0; echo "LowresNX"; echo '<script src="platform.js"></script>' > ~/gameflix/LowresNX.html; ((platforms++))
 echo "*\"LowresNX/\"*) core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh
 declare -A lrnx_names=([game]=Games [art]=Art [tool]=Tools [example]=Examples)
 section_open=0
@@ -230,7 +230,7 @@ echo "<figure><a href='LowresNX.html'><img src='https://raw.githubusercontent.co
 echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 
 # WASM-4 - dual fd output (count from wasm4.org/play, works in CI without local ROMs)
-echo "WASM-4"; cp platform.html ~/gameflix/WASM-4.html; echo "<script>bgImage(\"wasm4\"); fileNames = [" >> ~/gameflix/WASM-4.html; ((platforms++))
+echo "WASM-4"; echo '<script src="platform.js"></script>' > ~/gameflix/WASM-4.html; echo "<script>bgImage(\"wasm4\"); fileNames = [" >> ~/gameflix/WASM-4.html; ((platforms++))
 wasm_html=$(curl -s "https://wasm4.org/play/")
 wasm_entries=$(echo "$wasm_html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"')
 pocet=$(echo "$wasm_entries" | grep -c '.'); total=$((pocet+total))
@@ -251,7 +251,7 @@ echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> <small>$pocet</small><b
 printf ']; generateWasmLinks("roms/WASM-4", "WASM-4");</script><script src=\"script.js\"></script>' >> ~/gameflix/WASM-4.html
 
 # PICO-8 - categories with section headers
-pocet=0; echo "PICO-8"; cp platform.html ~/gameflix/PICO-8.html; ((platforms++))
+pocet=0; echo "PICO-8"; echo '<script src="platform.js"></script>' > ~/gameflix/PICO-8.html; ((platforms++))
 echo "*\"PICO-8/\"*) core=\"pico8 -run\";;" >> ~/gameflix/retroarch.sh
 pico_section=0
 while IFS=$'\t' read -r id rest; do
@@ -271,7 +271,7 @@ echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> <small>$pocet</small><b
 echo "<gameList></gameList>" > ~/gamelists/pico8/gamelist.xml
 
 # Voxatron - categories with section headers
-pocet=0; echo "Voxatron"; cp platform.html ~/gameflix/Voxatron.html; ((platforms++))
+pocet=0; echo "Voxatron"; echo '<script src="platform.js"></script>' > ~/gameflix/Voxatron.html; ((platforms++))
 echo "*\"Voxatron/\"*) core=\"vox\";;" >> ~/gameflix/retroarch.sh
 vox_section=0
 while IFS=$'\t' read -r id rest; do
@@ -306,7 +306,7 @@ IFS=";"; for each in "${roms[@]}"; do
       echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; ((platforms++))
     fi
     [[ -n "${separator[${rom[0]}]}" ]] && echo "<br /><b>${separator[${rom[0]}]}</b><br />" >> ~/gameflix/systems.html && echo "<h3 id=\"${separator[${rom[0]}]}\" class=\"section-header\" style=\"width:100%\">${separator[${rom[0]}]}</h3>" >> ~/gameflix/main.html
-    cp platform.html ~/gameflix/${rom[0]}.html
+    echo '<script src="platform.js"></script>' > ~/gameflix/${rom[0]}.html
     pocet=0
     # Open new fds
     exec {html_fd}>> ~/gameflix/${rom[0]}.html

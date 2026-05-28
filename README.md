@@ -117,7 +117,6 @@ gameflix/
 ├── platforms.csv         # Master database of ROM collections (760+ entries)
 ├── systems.csv           # System short names → display names (145 entries)
 ├── rclone.conf           # Rclone remote configuration
-├── platform.html         # Template for platform pages
 ├── platform.js           # Platform page generator (JS)
 ├── script.js             # Filtering and UI logic
 ├── script2.js            # Lazy loading for thumbnails
