@@ -7,24 +7,6 @@ status "=== gameflix batocera.sh started at $(date) ==="
 status "tail -f $LOG  # for live progress"
 emulationstation stop; chvt 3; clear
 
-# -- Cleanup any prior gameflix mounts and zip caches -----------------------
-status "=== unmounting legacy FUSE mounts ==="
-for mp in /userdata/zips-mount /userdata/share/roms-mount /userdata/iso; do
-  [[ -d "$mp" ]] && mountpoint -q "$mp" 2>/dev/null && fusermount -u -z "$mp"
-done
-for d in /userdata/mount/*/; do
-  [[ -d "$d" ]] || continue
-  mountpoint -q "$d" 2>/dev/null && fusermount -u -z "$d"
-done
-
-status "=== deleting cached romset zips ==="
-rm -rf /userdata/zip /userdata/zips /userdata/zips-mount /userdata/share/roms-mount
-rmdir /userdata/mount/*/ 2>/dev/null
-rmdir /userdata/mount 2>/dev/null
-
-dangling=$(find /userdata/roms -maxdepth 3 -type l ! -exec test -e {} \; -print -delete 2>/dev/null | wc -l)
-status "removed $dangling dangling symlinks from /userdata/roms"
-
 # -- Install runtime config and helpers -------------------------------------
 status "=== installing rclone.conf (IA auth) ==="
 wget -nv -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
