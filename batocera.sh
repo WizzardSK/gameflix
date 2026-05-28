@@ -1,11 +1,4 @@
 #!/bin/bash
-# gameflix Batocera setup — on-demand per-game fetch (no bulk romset downloads,
-# no rclone/ratarmount mounts). EmulationStation runs with ParseGamelistOnly=true
-# so it shows dlaždice straight from gamelist.xml without stat()ing each ROM;
-# the game-start hook materializes each picked ROM via archive.org HTTPS just
-# before launch.
-#
-# Logs to /userdata/system/logs/gameflix.log; status banners echoed to TTY3.
 mkdir -p /userdata/system/logs
 LOG=/userdata/system/logs/gameflix.log
 exec >>"$LOG" 2>&1
@@ -29,11 +22,6 @@ rm -rf /userdata/zip /userdata/zips /userdata/zips-mount /userdata/share/roms-mo
 rmdir /userdata/mount/*/ 2>/dev/null
 rmdir /userdata/mount 2>/dev/null
 
-# The pre-refactor batocera.sh populated /userdata/roms/<plat>/<fold> with
-# symlinks pointing into /userdata/zips-mount and /userdata/mount. Those
-# targets are now gone, so the symlinks are dangling — mkdir -p can't create
-# a real directory underneath them, which blocks the on-demand fetch with
-# "No such file or directory" inside <plat>/<fold>/.
 dangling=$(find /userdata/roms -maxdepth 3 -type l ! -exec test -e {} \; -print -delete 2>/dev/null | wc -l)
 status "removed $dangling dangling symlinks from /userdata/roms"
 
@@ -50,12 +38,6 @@ rm -f /tmp/gameflix.zip
 [[ ! -s /userdata/system/urls.sh ]] && status "WARNING: urls.sh empty — on-demand fetch will not work"
 
 status "=== installing emulator launch wrapper (on-demand fetch + mount-zip) ==="
-# We can't use a game-start hook for the fetch because on Linux,
-# Batocera ES sets psi.waitForExit=false for non-quit events
-# (es-core/src/Scripting.cpp), so ES launches the emulator immediately
-# regardless of -wait suffix and races a multi-megabyte download.
-# Instead we wire the wrapper into es_systems.cfg <command>, which ES
-# DOES wait for (it's the launch itself).
 wget -nv -O /userdata/system/gameflix-launch.sh \
   https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera/gameflix-launch.sh
 chmod +x /userdata/system/gameflix-launch.sh
@@ -105,15 +87,6 @@ status "=== installing gamelists ==="
 wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/batocera/gamelist.zip
 unzip -q -o /userdata/system/gamelist.zip -d /userdata/roms
 
-# Switch has no on-demand fetch source (no NoIntro/TOSEC/Redump on archive.org).
-# Replace the bundled full-catalog gamelist with one containing only games the
-# user has actually placed in /userdata/roms/switch/, so ES doesn't show
-# thousands of unlaunchable tiles.
-# ParseGamelistOnly bypasses Utils::FileSystem::exists(path) but ES still
-# rejects entries whose PARENT DIRECTORY doesn't exist ("Error finding/creating
-# FileData ... skipping" in es_log.txt). For each gamelist <path>./sub/file</path>
-# create the sub/ directory so ES can register the entry even with no ROM file
-# present.
 status "=== materialising parent dirs for gamelist entries ==="
 n=0
 for gl in /userdata/roms/*/gamelist.xml; do
@@ -153,11 +126,6 @@ wget -nv -O /usr/share/emulationstation/es_systems.cfg \
   https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems.cfg
 cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.cfg
 
-# -- Enable ParseGamelistOnly so ES trusts gamelist entries (skips
-#    Utils::FileSystem::exists check in es-app/src/Gamelist.cpp:findOrCreateFile,
-#    confirmed in batocera-emulationstation master). Without this, ES filters
-#    out every gamelist row whose target ROM isn't already on disk → platforms
-#    appear empty → SystemData::isVisible() hides them.
 ES_SETTINGS=/userdata/system/.emulationstation/es_settings.cfg
 mkdir -p "$(dirname "$ES_SETTINGS")"
 if [[ ! -s "$ES_SETTINGS" ]] || ! grep -q '<config>' "$ES_SETTINGS"; then
@@ -171,12 +139,6 @@ else
   sed -i 's|</config>|\t<bool name="ParseGamelistOnly" value="true" />\n</config>|' "$ES_SETTINGS"
 fi
 
-# SaveGamelistsOnExit=false is CRITICAL — without it, ES's cleanupGamelist
-# rewrites every /userdata/roms/<plat>/gamelist.xml on shutdown, dropping
-# every entry whose ROM file isn't physically present on disk. After one
-# ES restart, a freshly-installed 8514-entry psx gamelist.xml is reduced to
-# just the few CHDs that on-demand fetch happened to download — and ES then
-# treats the system as "almost empty" on the next boot.
 if grep -q 'name="SaveGamelistsOnExit"' "$ES_SETTINGS"; then
   sed -i 's|<bool name="SaveGamelistsOnExit" value="[^"]*"|<bool name="SaveGamelistsOnExit" value="false"|' "$ES_SETTINGS"
 else
