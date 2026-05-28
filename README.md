@@ -18,12 +18,10 @@ You get access to your entire game library without needing huge storage. PSX, PS
 
 | Tool | Purpose | Required |
 |------|---------|----------|
-| [rclone](https://rclone.org/downloads/) (v1.60+) | Mounting remote ROM libraries | Yes |
-| [mount-zip](https://github.com/niclas-ahden/mount-zip) | Mounting zipped ISO files (PSP, PS2, PC Engine CD, etc.) | Yes |
-| [ratarmount](https://github.com/mxmlnkn/ratarmount) | Mounting fantasy console archives | For fantasy consoles |
-| [bindfs](https://bindfs.org/) | Permission mapping for mounted archives | For fantasy consoles |
-| curl / wget | Downloading scripts and assets | Yes |
-| unzip / zip | Archive management | Yes |
+| [rclone](https://rclone.org/downloads/) (v1.60+) | On-demand ROM download from Internet Archive | Yes |
+| [mount-zip](https://github.com/niclas-ahden/mount-zip) | Mounting zipped ISO files (PSP, PS2, PC Engine CD, etc.) | For CD-based systems |
+| curl / wget | Bootstrap fetch and asset downloads | Yes |
+| unzip / zip | Archive extraction at launch | Yes |
 | [RetroArch](https://www.retroarch.com/) | Main emulation frontend | Yes |
 | [MAME](https://www.mamedev.org/) | Arcade and computer emulation | For arcade/computer systems |
 
@@ -37,42 +35,31 @@ bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/webfli
 
 Open <https://wizzardsk.github.io/> in your browser and click a game thumbnail to launch it. ROMs download per-game on click; no local install of the web interface is needed.
 
-## Web version
+## How it works
 
-### Rclone setup
+`webflix.sh` registers the `play://` URL scheme handler with the OS. Clicking a thumbnail on <https://wizzardsk.github.io/> then triggers:
 
-The [rclone.conf](rclone.conf) file must be placed in `~/.config/rclone/`. It contains preconfigured remotes for Myrient, Internet Archive, and other sources.
+1. Browser hands `play://<platform>/<source>/<rom>` to the OS
+2. OS launches `~/retroarch.sh` (3-line bootstrap)
+3. Bootstrap fetches the full launcher from <https://wizzardsk.github.io/retroarch.sh>
+4. Launcher downloads the ROM into `~/share/roms/` via rclone (Internet Archive S3 session is required for restricted items like NoIntro / MAME-SL / TOSEC)
+5. ROM launches via the matching RetroArch core or standalone emulator
 
-If your rclone version is not up to date, grab it from https://rclone.org/downloads/
+### Rclone configuration
 
-### Mounting the library
-
-Run [webflix.sh](webflix.sh) to mount the remote library:
-
-```bash
-bash webflix.sh
-```
-
-This mounts the Myrient ROM library to `~/myrient` via rclone with aggressive caching. It also downloads and mounts fantasy console archives (LowresNX, WASM-4) using ratarmount and bindfs.
-
-Alternatively, [mount.sh](mount.sh) downloads and executes `webflix.sh` remotely.
+`webflix.sh` writes [rclone.conf](rclone.conf) to `~/.config/rclone/` with preconfigured remotes. If your rclone is older than v1.60, update from <https://rclone.org/downloads/>.
 
 ### Generating the web interface
 
-[generate.sh](generate.sh) is the main script that builds the entire web interface. It:
+[generate.sh](generate.sh) is the developer script that builds the interface served at <https://wizzardsk.github.io/>. It:
 
 - Reads platform definitions from [platforms.csv](platforms.csv) and system names from [systems.csv](systems.csv)
 - Generates HTML pages for each platform with game thumbnails
-- Creates `retroarch.sh` launcher script with correct core mappings for each system
+- Builds the full `retroarch.sh` launcher with correct core mappings for each system
 - Generates `gamelist.xml` files for EmulationStation compatibility
 - Filters out unwanted ROM versions (BIOS, prototypes, demos, betas, alternate versions) by default
-- Creates the output in `~/gameflix/`
 
-Generation takes around 30 minutes on slower machines (e.g. ARM Chromebook). You don't need to run it yourself — the pre-built version is hosted at <https://wizzardsk.github.io/> and the bootstrap installed by `webflix.sh` fetches it on every game launch.
-
-### Launching games
-
-Games are launched by clicking thumbnails in the web interface. ROM files need to be associated with the `retroarch.sh` script (generated into `~/`), which automatically selects the correct RetroArch core or standalone emulator based on the ROM's directory.
+Generation takes around 30 minutes on slower machines (e.g. ARM Chromebook). End users don't run this — the pre-built version is hosted on GitHub Pages and the bootstrap fetches it on every launch.
 
 ## Web interface features
 
@@ -121,15 +108,14 @@ Recalbox version is no longer maintained as I no longer use it.
 
 ```
 gameflix/
-├── generate.sh          # Main web interface generator
+├── generate.sh          # Main web interface generator (developer-only)
 ├── webflix.sh            # Installs play:// scheme handler bootstrap
-├── mount.sh             # Remote wrapper for webflix.sh
+├── mount.sh             # Remote one-liner wrapper for webflix.sh
 ├── gamelist.sh           # GitHub Actions CI/CD script
-├── retroarch.sh          # ROM launcher (start, completed by generate.sh)
-├── retroarch.end         # ROM launcher (execution logic)
+├── retroarch.sh          # ROM launcher prefix (start of assembled script)
+├── retroarch.end         # ROM launcher execution logic (end of assembled script)
 ├── platforms.csv         # Master database of ROM collections (760+ entries)
 ├── systems.csv           # System short names → display names (145 entries)
-├── switch.txt            # Nintendo Switch game name database
 ├── rclone.conf           # Rclone remote configuration
 ├── platform.html         # Template for platform pages
 ├── platform.js           # Platform page generator (JS)
