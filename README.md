@@ -29,19 +29,13 @@ You get access to your entire game library without needing huge storage. PSX, PS
 
 ## Quick start
 
-Mount the library and download the web interface in one step:
+Register the `play://` URL scheme handler in one step:
 
 ```bash
 bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/webflix.sh)
 ```
 
-Then run [upd.sh](upd.sh) to download the pre-generated web interface:
-
-```bash
-bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/upd.sh)
-```
-
-Open `~/gameflix/index.html` in your browser (Firefox recommended) and click a game thumbnail to launch it.
+Open <https://wizzardsk.github.io/> in your browser and click a game thumbnail to launch it. ROMs download per-game on click; no local install of the web interface is needed.
 
 ## Web version
 
@@ -74,7 +68,7 @@ Alternatively, [mount.sh](mount.sh) downloads and executes `webflix.sh` remotely
 - Filters out unwanted ROM versions (BIOS, prototypes, demos, betas, alternate versions) by default
 - Creates the output in `~/gameflix/`
 
-Generation takes around 30 minutes on slower machines (e.g. ARM Chromebook). You don't need to run it every time — use [upd.sh](upd.sh) to download the pre-built version instead.
+Generation takes around 30 minutes on slower machines (e.g. ARM Chromebook). You don't need to run it yourself — the pre-built version is hosted at <https://wizzardsk.github.io/> and the bootstrap installed by `webflix.sh` fetches it on every game launch.
 
 ### Launching games
 
@@ -128,10 +122,8 @@ Recalbox version is no longer maintained as I no longer use it.
 ```
 gameflix/
 ├── generate.sh          # Main web interface generator
-├── webflix.sh            # Mounts remote ROM library
+├── webflix.sh            # Installs play:// scheme handler bootstrap
 ├── mount.sh             # Remote wrapper for webflix.sh
-├── upd.sh               # Remote wrapper for update.sh
-├── update.sh            # Downloads pre-built web interface
 ├── gamelist.sh           # GitHub Actions CI/CD script
 ├── retroarch.sh          # ROM launcher (start, completed by generate.sh)
 ├── retroarch.end         # ROM launcher (execution logic)
