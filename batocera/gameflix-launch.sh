@@ -58,7 +58,13 @@ if [[ -n "$rom" && ! -e "$rom" ]]; then
     ranges=$(echo "$hdr" | grep -i '^accept-ranges:' | tail -1 | awk '{print $2}' | tr -d '\r\n')
     fetch_ok=0
     if [[ -n "$size" && "$ranges" == "bytes" && "$size" -gt 4194304 ]]; then
-      n=4
+      # Scale chunk count by file size — archive.org throttles past ~6-8
+      # connections per IP, so cap there. Benchmark on 50 MB: n=2..4 ≈6 MB/s,
+      # n=8 drops to 2 MB/s due to rate limit.
+      if   (( size > 524288000 )); then n=8     # >500 MB (PS2/GC/Wii)
+      elif (( size >  52428800 )); then n=6     # >50 MB (CHD, large CDTV/PSX)
+      else                              n=4     # 4-50 MB
+      fi
       chunk=$((size / n))
       tmpdir=$(mktemp -d)
       echo "[$(date '+%F %T')] launch-wrapper chunked fetch: $size bytes in $n parts" >>"$LOG"
