@@ -110,13 +110,25 @@ else
   sed -i 's|</config>|\t<bool name="SaveGamelistsOnExit" value="false" />\n</config>|' "$ES_SETTINGS"
 fi
 
+# PackGamelists=false — packGamelist (Gamelist.cpp:518) rescans the rom dir on
+# every system load and prunes XML entries whose paths don't exist. It bypasses
+# both ParseGamelistOnly and SaveGamelistsOnExit. ViewController::reloadAllGames
+# (with updateGameLists=true) temporarily flips it to ParseGamelistOnly's value,
+# which truncates our gamelists during a reload cycle. Pinning to false
+# overrides that.
+if grep -q 'name="PackGamelists"' "$ES_SETTINGS"; then
+  sed -i 's|<bool name="PackGamelists" value="[^"]*"|<bool name="PackGamelists" value="false"|' "$ES_SETTINGS"
+else
+  sed -i 's|</config>|\t<bool name="PackGamelists" value="false" />\n</config>|' "$ES_SETTINGS"
+fi
+
 # Sync to the configs path too — Batocera reads from
 # /userdata/system/configs/emulationstation/es_settings.cfg
 ES_CFG=/userdata/system/configs/emulationstation/es_settings.cfg
 if [[ -f "$ES_CFG" ]]; then
-  for k in ParseGamelistOnly SaveGamelistsOnExit; do
+  for k in ParseGamelistOnly SaveGamelistsOnExit PackGamelists; do
     v=true
-    [[ "$k" == SaveGamelistsOnExit ]] && v=false
+    [[ "$k" == SaveGamelistsOnExit || "$k" == PackGamelists ]] && v=false
     if grep -q "name=\"$k\"" "$ES_CFG"; then
       sed -i "s|<bool name=\"$k\" value=\"[^\"]*\"|<bool name=\"$k\" value=\"$v\"|" "$ES_CFG"
     else
