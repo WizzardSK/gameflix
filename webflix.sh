@@ -35,14 +35,27 @@ mkdir -p ~/gameflix ~/share/roms ~/.config/rclone
 wget -nv -O ~/.config/rclone/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 wget -nv -O /tmp/gameflix.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/gameflix.zip
 unzip -o -q /tmp/gameflix.zip -d ~/gameflix/
-rm -f /tmp/gameflix.zip
-# Replace the bundled full retroarch.sh with a thin bootstrap that fetches the
-# latest version from wizzardsk.github.io on every launch — URL/core mapping
-# updates deploy without re-running webflix.sh.
-cat > ~/gameflix/retroarch.sh <<'EOF'
+rm -f /tmp/gameflix.zip ~/gameflix/retroarch.sh
+# Thin bootstrap at $HOME/retroarch.sh fetches the latest full script from
+# wizzardsk.github.io on every launch — URL/core mapping updates deploy
+# without re-running webflix.sh.
+cat > ~/retroarch.sh <<'EOF'
 #!/bin/bash
 set -e
 exec bash -c "$(curl -fsSL https://wizzardsk.github.io/retroarch.sh)" _ "$@"
 EOF
-chmod +x ~/gameflix/retroarch.sh
+chmod +x ~/retroarch.sh
+# Register play:// URL scheme handler pointing to the bootstrap
+mkdir -p ~/.local/share/applications
+cat > ~/.local/share/applications/retroarch.sh.desktop <<EOF
+[Desktop Entry]
+Type=Application
+Name=retroarch.sh
+Comment=gameflix launcher
+Exec=$HOME/retroarch.sh %u
+NoDisplay=true
+MimeType=x-scheme-handler/play;
+EOF
+update-desktop-database ~/.local/share/applications/ 2>/dev/null || true
+xdg-mime default retroarch.sh.desktop x-scheme-handler/play
 echo "Done. Open ~/gameflix/index.html in your browser; ROMs download per-game on launch."
