@@ -87,34 +87,6 @@ status "=== installing gamelists ==="
 wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/batocera/gamelist.zip
 unzip -q -o /userdata/system/gamelist.zip -d /userdata/roms
 
-status "=== materialising parent dirs for gamelist entries ==="
-# Per-mkdir fork+exec is ~1.5ms on SD-card Batocera → 434k dirs = 10+ min.
-# Single awk per file does extraction + dedup in-process, then one xargs
-# batches all unique paths into a few mkdir calls. ~100× faster.
-list=$(mktemp)
-for gl in /userdata/roms/*/gamelist.xml; do
-  [[ -f "$gl" ]] || continue
-  pdir=$(dirname "$gl")
-  awk -v p="$pdir" '
-    {
-      s = $0
-      while (match(s, /<path>\.\/[^<]+<\/path>/)) {
-        m = substr(s, RSTART, RLENGTH)
-        sub(/^<path>\.\//, "", m)
-        sub(/<\/path>$/, "", m)
-        if (sub(/\/[^\/]*$/, "", m) && m != "" && !(m in seen)) {
-          seen[m] = 1
-          print p"/"m
-        }
-        s = substr(s, RSTART+RLENGTH)
-      }
-    }
-  ' "$gl"
-done > "$list"
-xargs -d '\n' -a "$list" -r mkdir -p
-echo "ensured $(wc -l < "$list") directories"
-rm -f "$list"
-
 status "=== regenerating Switch gamelist from local files ==="
 SWITCH_DIR=/userdata/roms/switch
 if [[ -d "$SWITCH_DIR" ]]; then
