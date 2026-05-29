@@ -1,8 +1,4 @@
 #!/bin/bash
-# Strip play:// URL scheme + URL-decode. New gameflix HTML emits a relative
-# path like /atari2600/NoIntro/foo.zip which we resolve under ~/share/roms;
-# old HTML with the full absolute path is detected via existence and used
-# as-is.
 arg="$1"
 [[ "$arg" == play://* ]] && arg="${arg#play://}"
 arg=$(printf '%b' "${arg//%/\\x}")
