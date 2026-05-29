@@ -23,8 +23,8 @@ status "=== installing emulator launch wrapper (on-demand fetch + mount-zip) ===
 wget -nv -O /userdata/system/gameflix-launch.sh \
   https://raw.githubusercontent.com/WizzardSK/gameflix/main/batocera/gameflix-launch.sh
 chmod +x /userdata/system/gameflix-launch.sh
-# Disable legacy game-start hook (does nothing useful on Linux, still in
-# repo for the standalone web flow which doesn't share this script)
+# Disable legacy game-start hooks (do nothing useful on Linux — ES doesn't
+# wait for them, so on-demand fetch lives in the gameflix-launch.sh wrapper)
 rm -f /userdata/system/configs/emulationstation/scripts/game-start/gameflix-wait.sh \
       /userdata/system/configs/emulationstation/scripts/game-start/gameflix.sh
 
