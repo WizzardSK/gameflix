@@ -114,7 +114,10 @@ if [[ -n "$rom" && ! -e "$rom" ]]; then
              --range "${start}-${end}" -o "$tmpdir/p$i" "$dl_url" 2>>"$LOG" &
         pids+=($!)
       done
-      ( while :; do gf_bar "$(gf_sum "$tmpdir"/p*)" "$size"; sleep 1; done ) & prog=$!
+      # high-water mark: a chunk's curl may truncate+restart its part on a
+      # redirect/connection reset, so the raw byte-sum can dip — never let the
+      # displayed bar go backwards.
+      ( hi=0; while :; do c=$(gf_sum "$tmpdir"/p*); (( c > hi )) && hi=$c; gf_bar "$hi" "$size"; sleep 1; done ) & prog=$!
       chunk_ok=1
       for pid in "${pids[@]}"; do wait "$pid" || chunk_ok=0; done
       kill "$prog" 2>/dev/null; wait "$prog" 2>/dev/null
@@ -127,7 +130,7 @@ if [[ -n "$rom" && ! -e "$rom" ]]; then
     if (( fetch_ok == 0 )); then
       # Single-stream fallback (small file, no range support, or chunked failed)
       curl -fL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$rom" "$dl_url" 2>>"$LOG" & cpid=$!
-      ( while :; do gf_bar "$(gf_sum "$rom")" "$size"; sleep 1; done ) & prog=$!
+      ( hi=0; while :; do c=$(gf_sum "$rom"); (( c > hi )) && hi=$c; gf_bar "$hi" "$size"; sleep 1; done ) & prog=$!
       cok=0; wait "$cpid" || cok=1
       kill "$prog" 2>/dev/null; wait "$prog" 2>/dev/null
       if (( cok != 0 )); then
