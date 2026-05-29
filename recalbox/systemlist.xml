@@ -777,8 +777,8 @@
       </emulator>
     </emulatorList>
   </system>
-  <system uuid="3bac42f2-c18c-4b1e-ba90-b66d7fdc0ac5" name="o2em" fullname="Odyssey2">
-    <descriptor path="%ROOT%/o2em" theme="odyssey2" extensions=".7z .zip .bin" icon="$F241" downloader="0"/>
+  <system uuid="3bac42f2-c18c-4b1e-ba90-b66d7fdc0ac5" name="odyssey2" fullname="Odyssey2">
+    <descriptor path="%ROOT%/odyssey2" theme="odyssey2" extensions=".7z .zip .bin" icon="$F241" downloader="0"/>
     <scraper screenscraper="104"/>
     <properties type="console" pad="mandatory" keyboard="mandatory" mouse="no" lightgun="no" releasedate="1978-01" manufacturer="Magnavox" retroachievements="1" crt.multiresolution="0" crt.multiregion="0" ignoredfiles=""/>
     <emulatorList>
