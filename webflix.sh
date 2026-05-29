@@ -1,11 +1,5 @@
 #!/bin/bash
 set -u
-mountpoint -q ~/iso 2>/dev/null && fusermount -u -z ~/iso
-
-echo "=== Removing legacy local files ==="
-rm -rf ~/share/zip ~/share/zips ~/share/roms-mount ~/gameflix
-rmdir ~/mount/*/ 2>/dev/null
-rmdir ~/mount 2>/dev/null
 
 echo "=== Installing play:// handler ==="
 mkdir -p ~/share/roms ~/.config/rclone
@@ -30,3 +24,5 @@ MimeType=x-scheme-handler/play;
 EOF
 update-desktop-database ~/.local/share/applications/ 2>/dev/null || true
 xdg-mime default retroarch.sh.desktop x-scheme-handler/play
+
+echo "Done. Open https://wizzardsk.github.io/ in your browser; ROMs download per-game on launch."
