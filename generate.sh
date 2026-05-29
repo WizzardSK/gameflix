@@ -1,6 +1,5 @@
 #!/bin/bash
 shopt -s nocasematch;
-# URL-encode a path segment for archive.org download URLs (keeps / and ASCII safe chars)
 urlenc() { local s="$1" out="" i c; for ((i=0;i<${#s};i++)); do c="${s:i:1}"; case "$c" in [a-zA-Z0-9._~/-]) out+="$c";; *) printf -v c '%%%02X' "'$c"; out+="$c";; esac; done; printf '%s' "$out"; }
 declare -A sys thumb separator; sysorder=(); needsep=0; while IFS=',' read -r k v t; do if [[ -z "$k" ]]; then needsep=1; sepname="$v"; continue; fi; sys[$k]="$v"; thumb[$k]="$t"; sysorder+=("$k"); if [[ $needsep -eq 1 ]]; then separator[$k]="$sepname"; needsep=0; fi; done < <(tail -n +2 systems.csv)
 declare -A sysroms; while IFS=';' read -r k rest; do sysroms[$k]+="$k;$rest;${thumb[$k]};${sys[$k]}"$'\n'; done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv ))
@@ -10,9 +9,6 @@ echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="filterB
 echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="topbar"><div id="navlinks"></div></div>' > ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
 for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
-# urls.sh — sourceable lookup function used by the Batocera/Recalbox game-start
-# hook to resolve a chosen ROM's archive.org src URL. retroarch.sh has the same
-# case statement embedded inline (no need to source urls.sh there).
 echo 'gameflix_lookup_src() { src=""; case "$1" in' > ~/gameflix/urls.sh
 
 # Mount IA items via rclone, then use ratarmount for zips
@@ -334,9 +330,6 @@ IFS=";"; for each in "${roms[@]}"; do
   if [[ "${rom[1]}" == archive:mame-sl/*/*.zip ]]; then
     softlist="${rom[1]##*/}"; softlist="${softlist%.zip}"
   fi
-  # Arcade name source for mame/fbneo platforms (listxml + FBNeo dat).
-  # model2/model3 are also MAME drivers (sega/model2.cpp, sega/model3.cpp)
-  # so they live in the same listxml.
   arcade_src=""
   case "${rom[0]}" in
     mame|model2|model3) arcade_src="arcade-mame" ;;
@@ -351,8 +344,6 @@ IFS=";"; for each in "${roms[@]}"; do
     elif [[ -n "$arcade_src" && -n "${mame_name[$arcade_src:$line2]}" ]]; then
       display_name="${mame_name[$arcade_src:$line2]}"
     fi
-    # Decode XML entities for JS string in HTML; escape literal " for JS
-    # Note: bash 5.2 patsub_replacement makes & mean "the match" in replacements, so escape it
     js_name="$display_name"
     js_name="${js_name//&quot;/\\\"}"
     js_name="${js_name//&lt;/<}"
