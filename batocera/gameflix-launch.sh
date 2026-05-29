@@ -9,14 +9,46 @@
 # would race the emulator, which loses. The <command> string IS the launch,
 # so ES does wait for us to return.
 #
-# NOTE: no on-screen progress here. Drawing during the launch hand-off means
-# grabbing a VT/DRM, and on rotated panels (Steam Deck) a chvt to fbcon and
-# back drops Batocera's KMS rotation, leaving ES and the emulator stuck at
-# 90°. Progress is logged to $LOG instead; tail it over SSH to watch a fetch.
+# On-screen progress: ES runs under a labwc/wlroots Wayland compositor, so we
+# show a `yad` progress window AS a Wayland client. (An earlier chvt-to-text-VT
+# approach fought the Wayland session and dropped the Steam Deck panel rotation
+# — never switch VTs here.) Best-effort: missing yad or display just disables
+# the window, never the download. Progress is also logged to $LOG.
 #
 # Args (passed straight through to emulatorlauncher except -rom): typically
 #   %CONTROLLERSCONFIG% -system %SYSTEM% -rom %ROM% -gameinfoxml %GAMEINFOXML% -systemname %SYSTEMNAME%
 LOG=/userdata/system/logs/gameflix-fetch.log
+
+# --- on-screen progress via a yad GTK dialog (Wayland-native) --------------
+GF_FIFO=""; GF_YAD=""; GF_LABEL=""
+gf_ui_init() {  # $1 = label text
+  command -v yad >/dev/null 2>&1 || return 0
+  : "${XDG_RUNTIME_DIR:=/var/run}"; : "${WAYLAND_DISPLAY:=wayland-0}"
+  export XDG_RUNTIME_DIR WAYLAND_DISPLAY
+  [[ -S "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY" ]] || return 0
+  GF_LABEL="$1"
+  GF_FIFO=$(mktemp -u)
+  mkfifo "$GF_FIFO" 2>/dev/null || { GF_FIFO=""; return 0; }
+  exec 9<>"$GF_FIFO"   # read-write so the open never blocks if yad dies
+  GDK_BACKEND=wayland yad --progress --title="gameflix" --text="$1" \
+      --percentage=0 --no-buttons --auto-close --center --width=520 \
+      < "$GF_FIFO" >/dev/null 2>&1 &
+  GF_YAD=$!
+}
+gf_sum() { stat -c%s "$@" 2>/dev/null | awk '{s+=$1} END{print s+0}'; }
+gf_prog() {  # $1=current bytes  $2=total bytes (0/empty = unknown)
+  [[ -n "$GF_FIFO" ]] || return 0
+  local cur="${1:-0}" tot="${2:-0}" pct=0
+  [[ "$tot" =~ ^[0-9]+$ ]] && (( tot > 0 )) && { (( pct = cur*100/tot )); (( pct > 100 )) && pct=100; }
+  printf '#%s  %d / %d MB\n%d\n' "$GF_LABEL" $((cur/1048576)) $((tot/1048576)) "$pct" >&9 2>/dev/null
+}
+gf_ui_done() {
+  [[ -n "$GF_FIFO" ]] || return 0
+  exec 9>&- 2>/dev/null   # close write end → yad gets EOF and auto-closes
+  wait "$GF_YAD" 2>/dev/null
+  rm -f "$GF_FIFO"
+  GF_FIFO=""
+}
 
 args=("$@")
 rom=""; rom_idx=-1
@@ -53,6 +85,7 @@ if [[ -n "$rom" && ! -e "$rom" ]]; then
       echo "[$(date '+%F %T')] launch-wrapper fetch start: $inner"
       echo "  url: ${src}${enc}"
     } >>"$LOG"
+    gf_ui_init "Downloading $(basename "$rom")"
     # 4-way parallel range-chunked download — archive.org throttles single
     # connections, splitting bypasses that (measured 4.4× speedup on a 20 MB
     # CDTV sample). Falls back to single-stream if HEAD fails, server doesn't
@@ -61,8 +94,9 @@ if [[ -n "$rom" && ! -e "$rom" ]]; then
     hdr=$(curl -sIL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} "$dl_url" 2>>"$LOG")
     size=$(echo "$hdr" | grep -i '^content-length:' | tail -1 | awk '{print $2}' | tr -d '\r\n')
     ranges=$(echo "$hdr" | grep -i '^accept-ranges:' | tail -1 | awk '{print $2}' | tr -d '\r\n')
+    [[ "$size" =~ ^[0-9]+$ ]] || size=0
     fetch_ok=0
-    if [[ -n "$size" && "$ranges" == "bytes" && "$size" -gt 4194304 ]]; then
+    if [[ "$ranges" == "bytes" && "$size" -gt 4194304 ]]; then
       # Scale chunk count by file size — archive.org throttles past ~6-8
       # connections per IP, so cap there. Benchmark on 50 MB: n=2..4 ≈6 MB/s,
       # n=8 drops to 2 MB/s due to rate limit.
@@ -81,8 +115,13 @@ if [[ -n "$rom" && ! -e "$rom" ]]; then
              --range "${start}-${end}" -o "$tmpdir/p$i" "$dl_url" 2>>"$LOG" &
         pids+=($!)
       done
+      # high-water mark: a chunk's curl may truncate+restart its part on a
+      # redirect/reset, so the raw byte-sum can dip — never go backwards.
+      ( hi=0; while :; do c=$(gf_sum "$tmpdir"/p*); (( c > hi )) && hi=$c; gf_prog "$hi" "$size"; sleep 1; done ) & prog=$!
       chunk_ok=1
       for pid in "${pids[@]}"; do wait "$pid" || chunk_ok=0; done
+      kill "$prog" 2>/dev/null; wait "$prog" 2>/dev/null
+      gf_prog "$size" "$size"
       if (( chunk_ok == 1 )); then
         cat "$tmpdir"/p* > "$rom" && fetch_ok=1
       fi
@@ -90,13 +129,20 @@ if [[ -n "$rom" && ! -e "$rom" ]]; then
     fi
     if (( fetch_ok == 0 )); then
       # Single-stream fallback (small file, no range support, or chunked failed)
-      if ! curl -fL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$rom" "$dl_url" 2>>"$LOG"; then
+      curl -fL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$rom" "$dl_url" 2>>"$LOG" & cpid=$!
+      ( hi=0; while :; do c=$(gf_sum "$rom"); (( c > hi )) && hi=$c; gf_prog "$hi" "$size"; sleep 1; done ) & prog=$!
+      cok=0; wait "$cpid" || cok=1
+      kill "$prog" 2>/dev/null; wait "$prog" 2>/dev/null
+      if (( cok != 0 )); then
         rm -f "$rom"
         echo "[$(date '+%F %T')] launch-wrapper download FAILED" >>"$LOG"
+        gf_ui_done
         exit 1
       fi
+      gf_prog "$size" "$size"
     fi
     echo "[$(date '+%F %T')] launch-wrapper fetch done ($(stat -c%s "$rom") bytes)" >>"$LOG"
+    gf_ui_done
   fi
 fi
 
