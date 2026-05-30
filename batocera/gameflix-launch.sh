@@ -9,47 +9,57 @@
 # would race the emulator, which loses. The <command> string IS the launch,
 # so ES does wait for us to return.
 #
-# Download is a single stream: every gameflix source is a file *inside* an
-# archive.org .zip, served via view_archive.php. A HEAD on that redirects and
-# reports the *container* zip's size (e.g. 324 MB for the whole Mega Drive
-# set), not the inner ROM — so range/chunked downloads compute bogus offsets.
-# Single-stream just works.
+# Two download shapes (see urls.sh sources):
+#  * file INSIDE an archive.org .zip (URL like .../Collection.zip/Game.zip),
+#    served via view_archive.php — a HEAD reports the *container* zip size
+#    (e.g. 324 MB for the whole Mega Drive set), not the inner ROM, and ranges
+#    don't map to the inner file. So: single-stream, and a pulsating bar
+#    (real size unknown) showing MB downloaded.
+#  * a direct file in an item (URL like .../item/ROMS/Game.zip) — HEAD reports
+#    the real size and honours ranges. So: a real percentage bar, and a
+#    parallel range-chunked download (≈4.4× on a 20 MB CDTV sample).
 #
-# On-screen progress: ES runs under a labwc/wlroots Wayland compositor, so we
-# show a `yad` window AS a Wayland client (a chvt to a text VT fought the
-# session and dropped the Steam Deck panel rotation — never switch VTs here).
-# The inner-ROM size isn't known up front, so the bar pulsates and we show MB
-# downloaded. Best-effort: missing yad/display just disables the window.
+# On-screen progress is a `yad` window AS a Wayland client (ES runs under a
+# labwc/wlroots compositor; a chvt to a text VT fought the session and dropped
+# the Steam Deck panel rotation — never switch VTs here). Best-effort: missing
+# yad/display just disables the window, never the download.
 #
 # Args (passed straight through to emulatorlauncher except -rom): typically
 #   %CONTROLLERSCONFIG% -system %SYSTEM% -rom %ROM% -gameinfoxml %GAMEINFOXML% -systemname %SYSTEMNAME%
 LOG=/userdata/system/logs/gameflix-fetch.log
 
 # --- on-screen progress via a yad GTK dialog (Wayland-native) --------------
-GF_FIFO=""; GF_YAD=""; GF_NAME=""
-gf_ui_init() {  # $1 = ROM basename
+GF_FIFO=""; GF_YAD=""; GF_NAME=""; GF_TOT=0
+gf_ui_init() {  # $1=label  $2=total bytes (0/unknown => pulsating bar)
   command -v yad >/dev/null 2>&1 || return 0
   : "${XDG_RUNTIME_DIR:=/var/run}"; : "${WAYLAND_DISPLAY:=wayland-0}"
   export XDG_RUNTIME_DIR WAYLAND_DISPLAY
   [[ -S "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY" ]] || return 0
-  GF_NAME="$1"
+  GF_NAME="$1"; GF_TOT="${2:-0}"; [[ "$GF_TOT" =~ ^[0-9]+$ ]] || GF_TOT=0
+  local mode=""; (( GF_TOT > 0 )) || mode="--pulsate"
   GF_FIFO=$(mktemp -u)
   mkfifo "$GF_FIFO" 2>/dev/null || { GF_FIFO=""; return 0; }
   exec 9<>"$GF_FIFO"   # read-write so the open never blocks if yad dies
-  GDK_BACKEND=wayland yad --progress --pulsate --title="gameflix" \
+  GDK_BACKEND=wayland yad --progress $mode --title="gameflix" \
       --text="Downloading $1" --no-buttons --auto-close --center --width=520 \
       < "$GF_FIFO" >/dev/null 2>&1 &
   GF_YAD=$!
 }
 gf_sum() { stat -c%s "$@" 2>/dev/null | awk '{s+=$1} END{print s+0}'; }
-gf_prog() {  # $1 = bytes downloaded so far (pulsates the bar + shows MB)
+gf_prog() {  # $1 = bytes downloaded so far
   [[ -n "$GF_FIFO" ]] || return 0
-  printf '#%s  —  %d MB\n' "$GF_NAME" $(( ${1:-0} / 1048576 )) >&9 2>/dev/null
+  local cur="${1:-0}"
+  if (( GF_TOT > 0 )); then
+    local pct=$(( cur*100/GF_TOT )); (( pct > 100 )) && pct=100
+    printf '#%s  %d / %d MB\n%d\n' "$GF_NAME" $((cur/1048576)) $((GF_TOT/1048576)) "$pct" >&9 2>/dev/null
+  else
+    printf '#%s  —  %d MB\n' "$GF_NAME" $((cur/1048576)) >&9 2>/dev/null
+  fi
 }
 gf_ui_done() {
   [[ -n "$GF_FIFO" ]] || return 0
-  exec 9>&- 2>/dev/null    # close write end
-  kill "$GF_YAD" 2>/dev/null   # don't rely on EOF/auto-close — kill it
+  exec 9>&- 2>/dev/null         # close write end
+  kill "$GF_YAD" 2>/dev/null    # don't rely on EOF/auto-close — kill it
   wait "$GF_YAD" 2>/dev/null
   rm -f "$GF_FIFO"
   GF_FIFO=""
@@ -87,22 +97,66 @@ if [[ -n "$rom" && ! -e "$rom" ]]; then
     enc=$(urlenc "$inner")
     mkdir -p "$(dirname "$rom")"
     dl_url="${src}${enc}"
+    name=$(basename "$rom")
     {
       echo "[$(date '+%F %T')] launch-wrapper fetch start: $inner"
       echo "  url: ${dl_url}"
     } >>"$LOG"
-    gf_ui_init "$(basename "$rom")"
-    # Single stream (-s: no progress meter spamming the log). Run in the
-    # background so we can pulse the yad bar + report MB while it downloads.
-    curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$rom" "$dl_url" 2>>"$LOG" & cpid=$!
-    ( while :; do gf_prog "$(gf_sum "$rom")"; sleep 1; done ) & prog=$!
-    cok=0; wait "$cpid" || cok=1
-    kill "$prog" 2>/dev/null; wait "$prog" 2>/dev/null
-    if (( cok != 0 )); then
-      rm -f "$rom"
-      echo "[$(date '+%F %T')] launch-wrapper download FAILED" >>"$LOG"
-      gf_ui_done
-      exit 1
+
+    # A ".zip/" path component means archive.org view_archive.php extraction —
+    # HEAD reports the container size and ranges don't map to the inner file.
+    size=0; ranges=""
+    if [[ "$dl_url" != *.zip/* ]]; then
+      hdr=$(curl -sIL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} "$dl_url" 2>>"$LOG")
+      size=$(echo "$hdr" | grep -i '^content-length:' | tail -1 | awk '{print $2}' | tr -d '\r\n')
+      ranges=$(echo "$hdr" | grep -i '^accept-ranges:' | tail -1 | awk '{print $2}' | tr -d '\r\n')
+      [[ "$size" =~ ^[0-9]+$ ]] || size=0
+    fi
+    gf_ui_init "$name" "$size"
+
+    fetch_ok=0
+    if [[ "$ranges" == "bytes" && "$size" -gt 4194304 ]]; then
+      # Parallel range-chunked download (direct files only). archive.org
+      # throttles past ~6-8 connections per IP, so cap there.
+      if   (( size > 524288000 )); then n=8     # >500 MB (PS2/GC/Wii)
+      elif (( size >  52428800 )); then n=6     # >50 MB (CHD, large CD/PSX)
+      else                              n=4     # 4-50 MB
+      fi
+      chunk=$((size / n))
+      tmpdir=$(mktemp -d)
+      echo "[$(date '+%F %T')] chunked fetch: $size bytes in $n parts" >>"$LOG"
+      pids=()
+      for ((i=0; i<n; i++)); do
+        start=$((i*chunk))
+        end=$((i==n-1 ? size-1 : (i+1)*chunk-1))
+        curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} \
+             --range "${start}-${end}" -o "$tmpdir/p$i" "$dl_url" 2>>"$LOG" &
+        pids+=($!)
+      done
+      # high-water mark: a part may truncate+restart on a redirect/reset, so
+      # the raw byte-sum can dip — never let the bar go backwards.
+      ( hi=0; while :; do c=$(gf_sum "$tmpdir"/p*); (( c > hi )) && hi=$c; gf_prog "$hi"; sleep 1; done ) & prog=$!
+      chunk_ok=1
+      for pid in "${pids[@]}"; do wait "$pid" || chunk_ok=0; done
+      kill "$prog" 2>/dev/null; wait "$prog" 2>/dev/null
+      if (( chunk_ok == 1 )); then
+        cat "$tmpdir"/p* > "$rom" && fetch_ok=1
+      fi
+      rm -rf "$tmpdir"
+    fi
+    if (( fetch_ok == 0 )); then
+      # Single stream (-s: no progress meter spamming the log). For inner-zip
+      # the bar pulsates; for a direct file with a known size it shows percent.
+      curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$rom" "$dl_url" 2>>"$LOG" & cpid=$!
+      ( while :; do gf_prog "$(gf_sum "$rom")"; sleep 1; done ) & prog=$!
+      cok=0; wait "$cpid" || cok=1
+      kill "$prog" 2>/dev/null; wait "$prog" 2>/dev/null
+      if (( cok != 0 )); then
+        rm -f "$rom"
+        echo "[$(date '+%F %T')] launch-wrapper download FAILED" >>"$LOG"
+        gf_ui_done
+        exit 1
+      fi
     fi
     echo "[$(date '+%F %T')] launch-wrapper fetch done ($(stat -c%s "$rom") bytes)" >>"$LOG"
     gf_ui_done
