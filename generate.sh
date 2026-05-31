@@ -8,8 +8,10 @@ mkdir -p ~/{gameflix,rom,gamelists,zip,zips,mount} ~/gamelists/{tic80,wasm4,lowr
 echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="filterBar"><input type="text" id="filterInput" placeholder="Filter..." style="width:100%;box-sizing:border-box"></div>' > ~/gameflix/systems.html
 echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="topbar"><div id="navlinks"></div></div>' > ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
-for file in retroarch.sh style.css script.js platform.js; do cp $file ~/gameflix/$file; done
+for file in retroarch.sh retroarch.ps1 webflix.ps1 style.css script.js platform.js; do cp $file ~/gameflix/$file; done
 echo 'gameflix_lookup_src() { src=""; case "$1" in' > ~/gameflix/urls.sh
+# Windows launcher data: KEY<TAB>core<TAB>ext<TAB>src (parsed by retroarch.ps1)
+: > ~/gameflix/launch.tsv
 
 # Mount IA items via rclone, then use ratarmount for zips
 echo "=== MOUNTING IA ITEMS ==="
@@ -174,6 +176,7 @@ echo "<b>Fantasy & Homebrew</b><br />" >> ~/gameflix/systems.html; echo "<h3 id=
 pocet=0; echo "TIC-80"; echo '<script src="platform.js"></script>' > ~/gameflix/TIC-80.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/tic80/gamelist.xml
 echo "*\"TIC-80/\"*) core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh
+printf 'TIC-80/\ttic80_libretro\t\t\n' >> ~/gameflix/launch.tsv
 tic_cache=~/tic_cache; mkdir -p "$tic_cache"
 for tic_cat in Games Tech Tools Music WIP Demoscene Livecoding; do
   curl -s "https://tic80.com/api?fn=dir&path=play/$tic_cat" > "$tic_cache/$tic_cat" &
@@ -198,6 +201,7 @@ echo "<game><path>./surf.tic</path><name>TIC-80 surf</name><image>./tic80.png</i
 # LowresNX - categories with section headers
 pocet=0; echo "LowresNX"; echo '<script src="platform.js"></script>' > ~/gameflix/LowresNX.html; ((platforms++))
 echo "*\"LowresNX/\"*) core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh
+printf 'LowresNX/\tlowresnx_libretro\t\t\n' >> ~/gameflix/launch.tsv
 declare -A lrnx_names=([game]=Games [art]=Art [tool]=Tools [example]=Examples)
 section_open=0
 {
@@ -231,6 +235,7 @@ wasm_html=$(curl -s "https://wasm4.org/play/")
 wasm_entries=$(echo "$wasm_html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"')
 pocet=$(echo "$wasm_entries" | grep -c '.'); total=$((pocet+total))
 echo "*\"/wasm4/\"*) core=\"wasm4_libretro\";;" >> ~/gameflix/retroarch.sh
+printf '/wasm4/\twasm4_libretro\t\t\n' >> ~/gameflix/launch.tsv
 exec 3>> ~/gameflix/WASM-4.html
 {
   echo "<gameList>"
@@ -249,6 +254,7 @@ printf ']; generateWasmLinks("roms/WASM-4", "WASM-4");</script><script src=\"scr
 # PICO-8 - categories with section headers
 pocet=0; echo "PICO-8"; echo '<script src="platform.js"></script>' > ~/gameflix/PICO-8.html; ((platforms++))
 echo "*\"PICO-8/\"*) core=\"pico8 -run\";;" >> ~/gameflix/retroarch.sh
+printf 'PICO-8/\tpico8 -run\t\t\n' >> ~/gameflix/launch.tsv
 pico_section=0
 while IFS=$'\t' read -r id rest; do
   if [[ "$id" == "---" ]]; then
@@ -269,6 +275,7 @@ echo "<gameList></gameList>" > ~/gamelists/pico8/gamelist.xml
 # Voxatron - categories with section headers
 pocet=0; echo "Voxatron"; echo '<script src="platform.js"></script>' > ~/gameflix/Voxatron.html; ((platforms++))
 echo "*\"Voxatron/\"*) core=\"vox\";;" >> ~/gameflix/retroarch.sh
+printf 'Voxatron/\tvox\t\t\n' >> ~/gameflix/launch.tsv
 vox_section=0
 while IFS=$'\t' read -r id rest; do
   if [[ "$id" == "---" ]]; then
@@ -383,6 +390,7 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
   src_kv=""; [[ -n "$src" ]] && src_kv="; src=\"${src}\""
   platform=${rom[0]}; ext=""; rom4="${rom[4]//$'\r'/}"; if [ -n "$rom4" ]; then ext="; ext=\"${rom4}\""; fi; emu="${rom[3]//\"/\\\"}"; echo "*\"/${rom[0]}/${foldername}/\"*) core=\"${emu}\"${ext}${src_kv};;" >> ~/gameflix/retroarch.sh
+  printf '/%s/%s/\t%s\t%s\t%s\n' "${rom[0]}" "$foldername" "${rom[3]}" "$rom4" "$src" >> ~/gameflix/launch.tsv
   [[ -n "$src" ]] && echo "  *\"/${rom[0]}/${foldername}/\"*) src=\"${src}\";;" >> ~/gameflix/urls.sh
   echo "<folder><path>./$foldername</path><name>$foldername</name><image>~/../thumb/${rom[0]}.png</image></folder>" >&$xml_fd
 done
