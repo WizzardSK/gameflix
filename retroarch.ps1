@@ -9,18 +9,38 @@ param([Parameter(ValueFromRemainingArguments=$true)][string[]]$PlayArgs)
 $ErrorActionPreference = 'Stop'
 
 # ---- Configuration (override via environment variables) ---------------------
-# Emulator executables are expected on PATH (PATH + conventions).
 $RomsDir   = if ($env:GAMEFLIX_ROMS)  { $env:GAMEFLIX_ROMS }  else { Join-Path $env:USERPROFILE 'share\roms' }
 $BiosDir   = if ($env:GAMEFLIX_BIOS)  { $env:GAMEFLIX_BIOS }  else { Join-Path $env:USERPROFILE 'share\bios' }
-$CoresDir  = if ($env:GAMEFLIX_CORES) { $env:GAMEFLIX_CORES } else { Join-Path $env:APPDATA 'RetroArch\cores' }
 $MountDir  = if ($env:GAMEFLIX_MOUNT) { $env:GAMEFLIX_MOUNT } else { Join-Path $env:TEMP 'gameflix-iso' }
-$RetroArch = if ($env:GAMEFLIX_RETROARCH) { $env:GAMEFLIX_RETROARCH } else { 'retroarch.exe' }
-$Mame      = if ($env:GAMEFLIX_MAME)      { $env:GAMEFLIX_MAME }      else { 'mame.exe' }
-$TsvUrl    = if ($env:GAMEFLIX_TSV)       { $env:GAMEFLIX_TSV }       else { 'https://wizzardsk.github.io/launch.tsv' }
+$TsvUrl    = if ($env:GAMEFLIX_TSV)   { $env:GAMEFLIX_TSV }   else { 'https://wizzardsk.github.io/launch.tsv' }
 $CacheDir  = Join-Path $env:LOCALAPPDATA 'gameflix'
-$MameHash  = if ($env:GAMEFLIX_MAMEHASH)  { $env:GAMEFLIX_MAMEHASH }  else { '' }  # optional MAME hash dir
+$MameHash  = if ($env:GAMEFLIX_MAMEHASH) { $env:GAMEFLIX_MAMEHASH } else { '' }  # optional MAME hash dir
+# $RetroArch / $Mame / $CoresDir are resolved below (PATH + common install paths).
+
+# ---- Logging + error surfacing (the bootstrap runs us in a hidden window) ----
+New-Item -ItemType Directory -Force -Path $CacheDir | Out-Null
+$LogFile = Join-Path $CacheDir 'launch.log'
+try { Start-Transcript -Path $LogFile -Append | Out-Null } catch {}
+function Show-Error([string]$msg) {
+  Write-Host $msg
+  try { (New-Object -ComObject WScript.Shell).Popup($msg, 0, 'gameflix', 0x10) | Out-Null } catch {}
+}
+trap {
+  Show-Error ("gameflix could not launch the game:`n`n{0}`n`nFull log: {1}" -f $_, $LogFile)
+  try { Stop-Transcript | Out-Null } catch {}
+  exit 1
+}
 
 # ---- Helpers ----------------------------------------------------------------
+
+# Find an executable: honour an explicit override, then PATH, then candidate paths.
+function Find-Exe([string]$override, [string]$onPath, [string[]]$candidates) {
+  if ($override) { return $override }
+  $c = Get-Command $onPath -ErrorAction SilentlyContinue
+  if ($c) { return $c.Source }
+  foreach ($p in $candidates) { if ($p -and (Test-Path $p)) { return $p } }
+  return $null
+}
 
 # Split a bash-style command string into argv, honouring single quotes (used for
 # MAME -autoboot_command 'LOAD\n' etc.). Single quotes are stripped like in bash.
@@ -209,6 +229,35 @@ if ($ext) {
   $rom = $root
 }
 
+# ---- Resolve emulator executables (PATH + common Windows install locations) -
+function J($a, $b) { if ($a) { Join-Path $a $b } else { $null } }
+$pf = ${env:ProgramFiles}; $pfx8 = ${env:ProgramFiles(x86)}
+$RetroArch = Find-Exe $env:GAMEFLIX_RETROARCH 'retroarch.exe' @(
+  (J $env:LOCALAPPDATA 'Programs\RetroArch\retroarch.exe'),
+  'C:\RetroArch-Win64\retroarch.exe',
+  'C:\RetroArch\retroarch.exe',
+  (J $pf   'RetroArch\retroarch.exe'),
+  (J $pfx8 'RetroArch\retroarch.exe'),
+  (J $pfx8 'Steam\steamapps\common\RetroArch\retroarch.exe')
+)
+$Mame = Find-Exe $env:GAMEFLIX_MAME 'mame.exe' @('C:\mame\mame.exe', (J $pf 'mame\mame.exe'))
+$CoresDir = if ($env:GAMEFLIX_CORES) { $env:GAMEFLIX_CORES }
+            elseif ($RetroArch)      { Join-Path (Split-Path -Parent $RetroArch) 'cores' }
+            else                     { Join-Path $env:APPDATA 'RetroArch\cores' }
+
+# Resolve the core .dll for a libretro core; throw a clear, actionable error.
+function Resolve-LibretroCore([string]$name) {
+  if (-not $RetroArch) { throw "retroarch.exe not found. Install RetroArch, add it to PATH, or set the GAMEFLIX_RETROARCH environment variable." }
+  $dll = Join-Path $CoresDir "$name.dll"
+  if (-not (Test-Path $dll)) {
+    throw "Core '$name' not found at:`n  $dll`n`nIn RetroArch open Online Updater > Core Downloader and install '$name', or set GAMEFLIX_CORES to your cores folder."
+  }
+  return $dll
+}
+
+Write-Host "core=$core ext=$ext rom=$rom"
+Write-Host "retroarch=$RetroArch cores=$CoresDir"
+
 # ---- 5. Launch --------------------------------------------------------------
 try {
   $coreTokens = Split-Command $core
@@ -235,9 +284,10 @@ try {
     if ($rompath) { $line += " -rompath `"$rompath`"" }
     if ($MameHash) { $line += " -hashpath $MameHash" }
     $line += " -skip_gameinfo -snapname `"$base`""
+    $dll = Resolve-LibretroCore 'mame_libretro'
     $cmdFile = [IO.Path]::GetTempFileName() + '.cmd'
     Set-Content -LiteralPath $cmdFile -Value $line -Encoding ASCII
-    & $RetroArch -L (Join-Path $CoresDir 'mame_libretro.dll') $cmdFile
+    & $RetroArch -L $dll $cmdFile
     Remove-Item -LiteralPath $cmdFile -Force -ErrorAction SilentlyContinue
   }
   elseif ($coreName -eq 'mame') {
@@ -252,16 +302,21 @@ try {
     $base = [IO.Path]::GetFileNameWithoutExtension($rom)
     $tok = Split-Command $core
     $exe = if ($tok[0] -eq 'mame') { $Mame } else { $tok[0] }
+    if (-not $exe) { throw "mame.exe not found. Add it to PATH or set the GAMEFLIX_MAME environment variable." }
     $rest = if ($tok.Count -gt 1) { $tok[1..($tok.Count-1)] } else { @() }
     $cmd = @($rest) + @($rom, '-skip_gameinfo', '-snapname', $base)
     if ($rompath) { $cmd += @('-rompath', $rompath) }
     & $exe @cmd
   }
   elseif ($core -like '*libretro*') {
-    & $RetroArch -L (Join-Path $CoresDir "$coreName.dll") $rom
+    $dll = Resolve-LibretroCore $coreName
+    & $RetroArch -L $dll $rom
   }
   elseif ($core) {
     $rest = if ($coreTokens.Count -gt 1) { $coreTokens[1..($coreTokens.Count-1)] } else { @() }
+    if (-not (Get-Command $coreName -ErrorAction SilentlyContinue) -and -not (Test-Path $coreName)) {
+      throw "Emulator '$coreName' not found on PATH. Install it or add it to PATH."
+    }
     & $coreName @rest $rom
   }
   else {
@@ -271,3 +326,4 @@ try {
 finally {
   Dismount-Archive
 }
+try { Stop-Transcript | Out-Null } catch {}
