@@ -27,11 +27,13 @@ You get access to your entire game library without needing huge storage. PSX, PS
 
 ## Quick start
 
-Register the `play://` URL scheme handler in one step:
+On **Linux**, register the `play://` URL scheme handler in one step:
 
 ```bash
 bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/webflix.sh)
 ```
+
+On **Windows**, see [Windows setup](#windows) for the PowerShell installer.
 
 Open <https://wizzardsk.github.io/> in your browser and click a game thumbnail to launch it. ROMs download per-game on click; no local install of the web interface is needed.
 
