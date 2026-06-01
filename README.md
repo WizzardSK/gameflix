@@ -4,15 +4,11 @@
 
 **Demo: https://wizzardsk.github.io/**
 
-Stream retro games directly from public online sources on Linux machines — no massive local storage needed. Like Netflix, but for retro games.
+Play retro games directly from public online sources.
 
-The library covers **145+ systems** with **760+ ROM collections** from sources like Myrient, Internet Archive, TOSEC, and others. Thumbnails are fetched from GitHub repositories.
+The library covers **200+ systems** with **1000+ ROM collections** from sources Internet Archive. Thumbnails are fetched from GitHub repositories.
 
 I made this project for my own personal needs, to have the same setup on all my machines.
-
-### Why streaming over local storage?
-
-You get access to your entire game library without needing huge storage. PSX, PS2, GameCube, or Dreamcast games can be very large — with Gameflix you can run them even on a Chromebook with limited storage (if it can run the emulators). The trade-off is that you need a fast internet connection, and loading larger games may be slow.
 
 ## Dependencies
 
