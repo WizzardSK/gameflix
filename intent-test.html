@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gameflix intent:// diagnostika</title>
+<style>
+  body { font-family: sans-serif; margin: 16px; line-height: 1.5; }
+  button { display: block; width: 100%; margin: 10px 0; padding: 14px; font-size: 16px; }
+  pre { background: #eee; padding: 8px; white-space: pre-wrap; word-break: break-all; font-size: 12px; }
+  h3 { margin: 18px 0 4px; }
+  .ua { background: #ffd; padding: 8px; font-size: 13px; }
+</style>
+</head>
+<body>
+<h2>gameflix — intent:// diagnostika</h2>
+
+<div class="ua" id="ua"></div>
+
+<h3>1. Otvorí sa RetroArch vôbec? (len balík, bez ROM)</h3>
+<button onclick="go('intent://#Intent;package=com.retroarch;end')">A — RetroArch (com.retroarch)</button>
+<button onclick="go('intent://#Intent;package=com.retroarch.aarch64;end')">B — RetroArch Plus (com.retroarch.aarch64)</button>
+
+<h3>2. Prejde aj cesta k ROM-u? (RetroArch by mal hlásiť „súbor sa nenašiel“)</h3>
+<button onclick="full('com.retroarch')">C — com.retroarch + neexistujúci ROM + Stella core</button>
+<button onclick="full('com.retroarch.aarch64')">D — com.retroarch.aarch64 + neexistujúci ROM + Stella core</button>
+
+<h3>Posledný odpálený intent:</h3>
+<pre id="out">—</pre>
+
+<script>
+document.getElementById('ua').textContent = 'userAgent: ' + navigator.userAgent;
+
+function show(u){ document.getElementById('out').textContent = u; }
+function go(u){ show(u); window.location.href = u; }
+
+function full(pkg){
+  var ACT = 'com.retroarch.browser.retroactivity.RetroActivityFuture';
+  var rom = '/storage/emulated/0/Download/__gameflix_test_neexistuje__.bin';
+  var core = '/data/data/' + pkg + '/cores/stella_libretro_android.so';
+  var e = encodeURIComponent;
+  var u = 'intent://gameflix/launch#Intent;action=android.intent.action.MAIN;' +
+          'package=' + pkg + ';' +
+          'component=' + pkg + '/' + ACT + ';' +
+          'S.ROM=' + e(rom) + ';' +
+          'S.LIBRETRO=' + e(core) + ';end';
+  go(u);
+}
+</script>
+</body>
+</html>
