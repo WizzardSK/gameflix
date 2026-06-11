@@ -29,6 +29,9 @@ src="https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/logos/${loc
 
 document.write(text);
 
+// On Android, launch games in the native RetroArch app (intent://). No-op elsewhere.
+document.write('<script src="intent.js"></script>');
+
 var _bgPlatform;
 function bgImage(platform) {
     if (_bgPlatform !== platform) {

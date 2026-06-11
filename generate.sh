@@ -8,7 +8,7 @@ mkdir -p ~/{gameflix,rom,gamelists,zip,zips,mount} ~/gamelists/{tic80,wasm4,lowr
 echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="filterBar"><input type="text" id="filterInput" placeholder="Filter..." style="width:100%;box-sizing:border-box"></div>' > ~/gameflix/systems.html
 echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="topbar"><div id="navlinks"></div></div>' > ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
-for file in retroarch.sh retroarch.ps1 webflix.ps1 style.css script.js platform.js; do cp $file ~/gameflix/$file; done
+for file in retroarch.sh retroarch.ps1 webflix.ps1 style.css script.js platform.js intent.js cores.json; do cp $file ~/gameflix/$file; done
 echo 'gameflix_lookup_src() { src=""; case "$1" in' > ~/gameflix/urls.sh
 # Windows launcher data: KEY<TAB>core<TAB>ext<TAB>src (parsed by retroarch.ps1)
 : > ~/gameflix/launch.tsv
