@@ -28,7 +28,8 @@ for (const href of cases) {
     // assertions
     if (/ /.test(r.intent)) { console.error("  !! intent contains a raw space"); fail++; }
     if (!r.intent.startsWith("intent://")) { console.error("  !! bad scheme"); fail++; }
-    if (!r.intent.includes("component=com.retroarch.aarch64/com.retroarch")) { console.error("  !! component mangled"); fail++; }
+    if (!r.intent.includes("component=" + I.RETRO_PKG + "/com.retroarch.browser")) { console.error("  !! component mangled"); fail++; }
+    if (!r.corePath.startsWith("/data/data/" + I.RETRO_PKG + "/cores/")) { console.error("  !! core dir wrong"); fail++; }
     // ROM/LIBRETRO must round-trip via decodeURIComponent (what Android does)
     const rom = decodeURIComponent(r.intent.match(/S\.ROM=([^;]*)/)[1]);
     const lib = decodeURIComponent(r.intent.match(/S\.LIBRETRO=([^;]*)/)[1]);

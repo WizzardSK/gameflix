@@ -16,7 +16,9 @@
 (function () {
     "use strict";
 
-    var RETRO_PKG = "com.retroarch.aarch64";
+    // Target RetroArch app. "com.retroarch" = stable RetroArch;
+    // "com.retroarch.aarch64" = RetroArch Plus (64-bit). Core dir + component follow it.
+    var RETRO_PKG = "com.retroarch";
     var RETRO_ACT = "com.retroarch.browser.retroactivity.RetroActivityFuture";
     var CORE_DIR  = "/data/data/" + RETRO_PKG + "/cores";
     var DL_DIR    = "/storage/emulated/0/Download";   // Chrome's default download dir
