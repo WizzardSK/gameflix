@@ -25,6 +25,13 @@
 Ak sa stránka reloadne s červeným hlásením → intent sa <b>nezrezolvoval</b>
 (zlý balík/aktivita). Ak sa otvorí RetroArch → intent <b>prešiel</b>.</small></p>
 
+<h3>0. REÁLNE ODKAZY (ťukni priamo, žiadny JavaScript)</h3>
+<p><small>Firefox môže otvárať intent len cez skutočné ťuknutie na odkaz, nie cez
+JS navigáciu. Ak fungujú tieto a tlačidlá nižšie nie → to je príčina.</small></p>
+<p><a href="intent://gameflix#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.retroarch;end">L1 — odkaz: com.retroarch (launcher)</a></p>
+<p><a href="intent://gameflix#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.retroarch.aarch64;end">L2 — odkaz: com.retroarch.aarch64 (launcher)</a></p>
+<p><a href="intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.retroarch;end">L3 — odkaz: intent: (bez //) com.retroarch</a></p>
+
 <h3>1. Otvorí sa appka vôbec? (MAIN + LAUNCHER, bez ROM)</h3>
 <button onclick="launcher('com.retroarch')">A — com.retroarch (stable)</button>
 <button onclick="launcher('com.retroarch.aarch64')">B — com.retroarch.aarch64 (Plus 64-bit)</button>
