@@ -91,6 +91,12 @@
     // ---- Browser, Android only --------------------------------------------
     if (typeof navigator === "undefined" || !/Android/i.test(navigator.userAgent)) return;
 
+    // Firefox/Fenix has a long-standing bug: if S.browser_fallback_url is present
+    // it jumps straight to the fallback and never tries to open the app
+    // (fenix#23397, bug 1795161). So on Firefox we omit the fallback entirely;
+    // Chrome honours it correctly (tries the app first, falls back only if absent).
+    var FIREFOX = /Firefox|FxiOS|Fennec/i.test(navigator.userAgent);
+
     var coresPromise = fetch("cores.json").then(function (r) { return r.json(); });
 
     function startDownload(url, fname) {
@@ -104,7 +110,7 @@
         if (!a) return;
         ev.preventDefault();
         coresPromise.then(function (cores) {
-            var r = resolve(cores, a.getAttribute("href"), location.href);
+            var r = resolve(cores, a.getAttribute("href"), FIREFOX ? null : location.href);
             if (r.error) { alert(r.error); return; }
             startDownload(r.romUrl, r.fname);          // 1) get the ROM onto the device
             if (confirm("Sťahujem „" + r.fname + "“ do Downloads.\n\n" +

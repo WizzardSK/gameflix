@@ -6,45 +6,112 @@
 <title>gameflix intent:// diagnostika</title>
 <style>
   body { font-family: sans-serif; margin: 16px; line-height: 1.5; }
-  button { display: block; width: 100%; margin: 10px 0; padding: 14px; font-size: 16px; }
+  button { display: block; width: 100%; margin: 8px 0; padding: 14px; font-size: 15px; }
   pre { background: #eee; padding: 8px; white-space: pre-wrap; word-break: break-all; font-size: 12px; }
   h3 { margin: 18px 0 4px; }
   .ua { background: #ffd; padding: 8px; font-size: 13px; }
+  .ok { background: #cfc; padding: 8px; }
+  .bad { background: #fcc; padding: 8px; }
+  small { color: #555; }
 </style>
 </head>
 <body>
 <h2>gameflix — intent:// diagnostika</h2>
 
 <div class="ua" id="ua"></div>
+<div id="verdict"></div>
 
-<h3>1. Otvorí sa RetroArch vôbec? (len balík, bez ROM)</h3>
-<button onclick="go('intent://#Intent;package=com.retroarch;end')">A — RetroArch (com.retroarch)</button>
-<button onclick="go('intent://#Intent;package=com.retroarch.aarch64;end')">B — RetroArch Plus (com.retroarch.aarch64)</button>
+<p><small>Každé tlačidlo má <b>fallback URL</b> späť sem s <code>?failed=…</code>.
+Ak sa stránka reloadne s červeným hlásením → intent sa <b>nezrezolvoval</b>
+(zlý balík/aktivita). Ak sa otvorí RetroArch → intent <b>prešiel</b>.</small></p>
 
-<h3>2. Prejde aj cesta k ROM-u? (RetroArch by mal hlásiť „súbor sa nenašiel“)</h3>
-<button onclick="full('com.retroarch')">C — com.retroarch + neexistujúci ROM + Stella core</button>
-<button onclick="full('com.retroarch.aarch64')">D — com.retroarch.aarch64 + neexistujúci ROM + Stella core</button>
+<h3>1. Otvorí sa appka vôbec? (MAIN + LAUNCHER, bez ROM)</h3>
+<button onclick="launcher('com.retroarch')">A — com.retroarch (stable)</button>
+<button onclick="launcher('com.retroarch.aarch64')">B — com.retroarch.aarch64 (Plus 64-bit)</button>
+<button onclick="launcher('com.retroarch.ra32')">C — com.retroarch.ra32 (Plus 32-bit)</button>
+
+<h3>2. Explicitná komponenta (RetroActivityFuture, bez ROM)</h3>
+<button onclick="component('com.retroarch')">D — com.retroarch / RetroActivityFuture</button>
+<button onclick="component('com.retroarch.aarch64')">E — com.retroarch.aarch64 / RetroActivityFuture</button>
+
+<h3>3. Plný launch (neexistujúci ROM + Stella core)</h3>
+<button onclick="full('com.retroarch')">F — com.retroarch + ROM + core</button>
+<button onclick="full('com.retroarch.aarch64')">G — com.retroarch.aarch64 + ROM + core</button>
 
 <h3>Posledný odpálený intent:</h3>
 <pre id="out">—</pre>
 
 <script>
-document.getElementById('ua').textContent = 'userAgent: ' + navigator.userAgent;
+var ACT = 'com.retroarch.browser.retroactivity.RetroActivityFuture';
+// Firefox/Fenix jumps straight to S.browser_fallback_url and never tries the app
+// (fenix#23397). So on Firefox we MUST omit the fallback, and we can't use the
+// "did we bounce back?" trick — the only signal is whether RetroArch opens.
+var FIREFOX = /Firefox|FxiOS|Fennec/i.test(navigator.userAgent);
+document.getElementById('ua').textContent =
+  'userAgent: ' + navigator.userAgent + (FIREFOX ? '\n→ Firefox: fallback URL vypnutý' : '');
+
+(function () {
+  var m = /[?&]failed=([^&]+)/.exec(location.search);
+  var v = document.getElementById('verdict');
+  if (FIREFOX) {
+    v.className = 'bad';
+    v.innerHTML = '🦊 <b>Firefox</b>: zapni <b>Nastavenia → Otvárať odkazy v aplikáciách</b> ' +
+      '(„Open links in apps"), inak sa appka neotvorí. Fallback URL je vypnutý, ' +
+      'takže detekcia zlyhania cez <code>?failed</code> tu nefunguje — ' +
+      'jediný signál je, či sa RetroArch otvorí.';
+  } else if (m) {
+    v.className = 'bad';
+    v.innerHTML = '❌ Intent <b>' + decodeURIComponent(m[1]) +
+      '</b> sa NEzrezolvoval — Android nenašiel takú aktivitu/balík ' +
+      '(appka nie je nainštalovaná pod týmto názvom, alebo je iná komponenta).';
+  } else {
+    v.className = 'ok';
+    v.innerHTML = '✅ Ak sa po ťuknutí otvorí RetroArch, daný intent funguje. ' +
+      'Ak sa vrátiš sem s červeným hlásením, nefunguje.';
+  }
+})();
 
 function show(u){ document.getElementById('out').textContent = u; }
-function go(u){ show(u); window.location.href = u; }
+function fire(u){ show(u); window.location.href = u; }
+function fb(tag){
+  // Chrome: fallback back to this page so we can detect non-resolution.
+  // Firefox: must be omitted (it short-circuits to the fallback).
+  if (FIREFOX) return '';
+  var base = location.origin + location.pathname + '?failed=' + encodeURIComponent(tag);
+  return 'S.browser_fallback_url=' + encodeURIComponent(base) + ';';
+}
 
+// Just open the app's launcher activity.
+function launcher(pkg){
+  fire('intent://gameflix#Intent;' +
+       'action=android.intent.action.MAIN;' +
+       'category=android.intent.category.LAUNCHER;' +
+       'package=' + pkg + ';' + fb(pkg + ' (launcher)') + 'end');
+}
+
+// Explicit RetroActivityFuture component, no ROM.
+function component(pkg){
+  fire('intent://gameflix#Intent;' +
+       'action=android.intent.action.MAIN;' +
+       'package=' + pkg + ';' +
+       'component=' + pkg + '/' + ACT + ';' +
+       fb(pkg + ' (component)') + 'end');
+}
+
+// Full launch with a (non-existent) ROM + Stella core.
 function full(pkg){
-  var ACT = 'com.retroarch.browser.retroactivity.RetroActivityFuture';
-  var rom = '/storage/emulated/0/Download/__gameflix_test_neexistuje__.bin';
+  var rom  = '/storage/emulated/0/Download/__gameflix_test_neexistuje__.bin';
   var core = '/data/data/' + pkg + '/cores/stella_libretro_android.so';
+  var cfg  = '/storage/emulated/0/Android/data/' + pkg + '/files/retroarch.cfg';
   var e = encodeURIComponent;
-  var u = 'intent://gameflix/launch#Intent;action=android.intent.action.MAIN;' +
-          'package=' + pkg + ';' +
-          'component=' + pkg + '/' + ACT + ';' +
-          'S.ROM=' + e(rom) + ';' +
-          'S.LIBRETRO=' + e(core) + ';end';
-  go(u);
+  fire('intent://gameflix/launch#Intent;' +
+       'action=android.intent.action.MAIN;' +
+       'package=' + pkg + ';' +
+       'component=' + pkg + '/' + ACT + ';' +
+       'S.ROM=' + e(rom) + ';' +
+       'S.LIBRETRO=' + e(core) + ';' +
+       'S.CONFIGFILE=' + e(cfg) + ';' +
+       fb(pkg + ' (full)') + 'end');
 }
 </script>
 </body>
