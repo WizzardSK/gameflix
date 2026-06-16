@@ -1,7 +1,10 @@
 name: Gamelists updater
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
+  schedule:
+    # Every Sunday at 04:00 UTC
+    - cron: '0 4 * * 0'
 
 jobs:
   build:

@@ -663,6 +663,7 @@ cdi,archive:mame-software-list-chds-2/cdi,CHD,mame_libretro cdimono1 -cdrm,
 3do,archive:tosec-iso-3do/3DO Interactive Multiplayer/Applications/[ISO],App,opera_libretro,cue
 3do,archive:tosec-iso-3do/3DO Interactive Multiplayer/Educational/[ISO],Edu,opera_libretro,cue
 3do,archive:tosec-iso-3do/3DO Interactive Multiplayer/Multimedia,Multimedia,opera_libretro,cue
+nuon,archive:vm_labs_nuon,Redump,nuance_libretro,iso
 msx1,archive:ni-roms/roms/Microsoft - MSX.zip,NoIntro,bluemsx_libretro,
 msx1,archive:tosec-main/MSX/MSX/Games/[CAS]/MSX MSX - Games - [CAS] (TOSEC-v2025-01-15).zip,Games CAS,bluemsx_libretro,
 msx1,archive:tosec-main/MSX/MSX/Games/[DSK]/MSX MSX - Games - [DSK] (TOSEC-v2025-01-15).zip,Games DSK,bluemsx_libretro,

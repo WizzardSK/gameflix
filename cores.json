@@ -4798,6 +4798,12 @@
   "src": "https://archive.org/download/tosec-iso-3do/3DO%20Interactive%20Multiplayer/Multimedia/"
  },
  {
+  "pattern": "/nuon/Redump/",
+  "core": "nuance_libretro",
+  "ext": "iso",
+  "src": "https://archive.org/download/vm_labs_nuon/"
+ },
+ {
   "pattern": "/vis/Edu/",
   "core": "mame_libretro vis -cdrm",
   "ext": "cue",
