@@ -3,8 +3,8 @@ name: Gamelists updater
 on:
   workflow_dispatch:
   schedule:
-    # Every Sunday at 04:00 UTC
-    - cron: '0 4 * * 0'
+    # Every Sunday at 02:00 UTC (mirror wizzardsk.github.io runs after, at 06:00)
+    - cron: '0 2 * * 0'
 
 jobs:
   build:
