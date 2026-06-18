@@ -82,6 +82,28 @@ if [[ -d "$SWITCH_DIR" ]]; then
   status "Switch gamelist: $(grep -c '<game>' "$SWITCH_DIR/gamelist.xml") entries"
 fi
 
+status "=== regenerating PS3 gamelist from local files ==="
+PS3_DIR=/userdata/roms/ps3
+if [[ -d "$PS3_DIR" ]]; then
+  {
+    echo '<gameList>'
+    # PS3 games are usually directories (.ps3 JB folders, .psn) but ISO/squashfs
+    # disc images are plain files — list both at maxdepth 1.
+    find "$PS3_DIR" -maxdepth 1 -mindepth 1 \
+      \( \( -type d \( -name '*.ps3' -o -name '*.ps3dir' -o -name '*.psn' \) \) -o \
+         \( -type f \( -name '*.ps3' -o -name '*.psn' -o -name '*.iso' -o -name '*.squashfs' \) \) \) \
+      -printf '%f\n' | sort | \
+    while IFS= read -r fname; do
+      name="${fname%.*}"
+      # Strip "(region) [tag]" suffix for thumbnail lookup
+      short="${name%% (*}"; short="${short%% [*}"
+      echo "<game><path>./${fname}</path><name>${name}</name><image>~/../thumbs/Sony - PlayStation 3/Named_Snaps/${short}.png</image></game>"
+    done
+    echo '</gameList>'
+  } > "$PS3_DIR/gamelist.xml"
+  status "PS3 gamelist: $(grep -c '<game>' "$PS3_DIR/gamelist.xml") entries"
+fi
+
 cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.bak
 wget -nv -O /usr/share/emulationstation/es_systems.cfg \
   https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems.cfg
