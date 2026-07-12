@@ -497,9 +497,9 @@ thomson,archive:tosec-main/Thomson/MO5/Educational/[M5]/Thomson MO5 - Educationa
 thomson,archive:tosec-main/Thomson/MO5/Educational/[WAV]/Thomson MO5 - Educational - [WAV] (TOSEC-v2012-08-27).zip,Edu [WAV],theodore_libretro,
 thomson,archive:tosec-main/Thomson/TO7/Demos/Thomson TO7 - Demos (TOSEC-v2012-08-27).zip,Demo,theodore_libretro,
 thomson,archive:tosec-main/Thomson/TO7/Educational/[K7]/Thomson TO7 - Educational - [K7] (TOSEC-v2012-08-27).zip,Edu [K7],theodore_libretro,
-thomson,"TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[FD]",TO8 FD,theodore_libretro,
-thomson,"TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[K7]",TO8 K7,theodore_libretro,
-thomson,"TOSEC/Thomson/TO8, TO8D, TO9, TO9+/Games/[SAP]",TO8 SAP,theodore_libretro,
+thomson,"archive:tosec-main/Thomson/TO8, TO8D, TO9, TO9+/Games/[FD]/Thomson TO8, TO8D, TO9, TO9+ - Games - [FD] (TOSEC-v2025-01-15).zip",TO8 FD,theodore_libretro,
+thomson,"archive:tosec-main/Thomson/TO8, TO8D, TO9, TO9+/Games/[K7]/Thomson TO8, TO8D, TO9, TO9+ - Games - [K7] (TOSEC-v2025-01-15).zip",TO8 K7,theodore_libretro,
+thomson,"archive:tosec-main/Thomson/TO8, TO8D, TO9, TO9+/Games/[SAP]/Thomson TO8, TO8D, TO9, TO9+ - Games - [SAP] (TOSEC-v2025-01-15).zip",TO8 SAP,theodore_libretro,
 thomson,archive:mame-sl/mame-sl/mo5_cart.zip,MO5 Cart MAME,mame_libretro mo5 -cart,
 thomson,archive:mame-sl/mame-sl/mo5_cass.zip,MO5 Cass MAME,"mame_libretro mo5 -autoboot_command 'RUN""""\n' -autoboot_delay 3 -cass",
 thomson,archive:mame-sl/mame-sl/mo5_flop.zip,MO5 Flop MAME,mame_libretro mo5 -flop,
@@ -619,11 +619,9 @@ sega32x,archive:tosec-main/Sega/32X/Games/Sega 32X - Games (TOSEC-v2024-07-03).z
 sega32x,archive:tosec-main/Sega/32X/Demos/Sega 32X - Demos (TOSEC-v2022-06-08).zip,Demo,picodrive_libretro,
 sega32x,archive:mame-sl/mame-sl/32x.zip,MAME,mame_libretro 32x -cart,
 megacd,archive:sega-mega-cd-sega-cd-redump,Redump,picodrive_libretro,cue
-megacd,archive:tosec-iso-sega/Mega-CD & Sega CD/CD/Games/[ISO],ISO,picodrive_libretro,cue
 megacd,archive:non-redump_sega-mega-cd_sega-cd,NonRedump,picodrive_libretro,cue
 saturn,archive:redump.sega_saturn,Redump,yabasanshiro_libretro,cue
 saturn,archive:non-redump_sega-saturn,NonRedump,yabasanshiro_libretro,cue
-saturn,archive:tosec-iso-sega/Saturn/Games/[ISO],ISO,yabasanshiro_libretro,cue
 stv,archive:mame-sl/mame-sl/stv.zip,MAME,mame_libretro stvbios,
 dreamcast,archive:sega-dreamcast-redump,Redump,flycast_libretro,cue
 dreamcast,archive:non-redump_sega-dreamcast,NonRedump,flycast_libretro,gdi
@@ -764,9 +762,9 @@ pet,archive:mame-sl/mame-sl/pet_flop.zip,Flop MAME,mame_libretro pet2001n -flop1
 pet,archive:mame-sl/mame-sl/pet_rom.zip,ROM MAME,mame_libretro pet2001n -rom,
 pet,archive:mame-sl/mame-sl/pet_quik.zip,Quik MAME,mame_libretro pet2001n -quik,
 cplus4,archive:ni-roms/roms/Commodore - Plus-4.zip,NoIntro,vice_xplus4_libretro,
-cplus4,"TOSEC/Commodore/C16, C116 & Plus-4/Games/[PRG]",PRG,vice_xplus4_libretro,
-cplus4,"TOSEC/Commodore/C16, C116 & Plus-4/Games/[TAP]",TAP,vice_xplus4_libretro,
-cplus4,"TOSEC/Commodore/C16, C116 & Plus-4/Utilities/[PRG]",Utils,vice_xplus4_libretro,
+cplus4,"archive:tosec-main/Commodore/C16, C116 & Plus-4/Games/[PRG]/Commodore C16, C116 & Plus-4 - Games - [PRG] (TOSEC-v2025-01-15).zip",PRG,vice_xplus4_libretro,
+cplus4,"archive:tosec-main/Commodore/C16, C116 & Plus-4/Games/[TAP]/Commodore C16, C116 & Plus-4 - Games - [TAP] (TOSEC-v2014-02-01).zip",TAP,vice_xplus4_libretro,
+cplus4,"archive:tosec-main/Commodore/C16, C116 & Plus-4/Utilities/[PRG]/Commodore C16, C116 & Plus-4 - Utilities - [PRG] (TOSEC-v2023-03-18).zip",Utils,vice_xplus4_libretro,
 cplus4,archive:mame-sl/mame-sl/plus4_cart.zip,MAME,mame_libretro c16 -cart,
 cplus4,archive:mame-sl/mame-sl/plus4_flop.zip,Flop MAME,mame_libretro c16 -flop,
 cplus4,archive:mame-sl/mame-sl/plus4_cass.zip,Cass MAME,mame_libretro c16 -autoboot_command 'LOAD\n' -autoboot_delay 3 -cass,

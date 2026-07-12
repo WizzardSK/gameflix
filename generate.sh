@@ -19,6 +19,7 @@ item_count=0
 mount_start=$(date +%s)
 mkdir -p ~/mount ~/dircache
 cache=~/dircache
+ia_ziplist="$PWD/ia_ziplist.py"  # authenticated HTTP fallback lister for archive:*.zip
 mounted_file=$(mktemp)
 
 # Mount each unique IA item once: archive:ni-roms -> ~/mount/ni-roms
@@ -56,6 +57,12 @@ while IFS= read -r path; do
       localpath="$HOME/mount/$aftercolon"
       if [[ "$localpath" == *.zip ]]; then
         unzip -l "$localpath" 2>/dev/null | awk -v px="$cache/$h.prefix" '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); if (!seen) { seen=1; if (match(name,/^[a-z0-9_]+\//)) { print substr(name,RSTART,RLENGTH) > px } else { print "" > px } } sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
+        # Mounted listing came back empty (IA intermittently errors on the rclone
+        # mount for large restricted zips) -> read the ZIP central directory
+        # directly over authenticated HTTP so the platform page is never silently empty.
+        if [[ ! -s "$cache/$h.txt" && "$path" == archive:* ]]; then
+          python3 "$ia_ziplist" "$path" "$cache/$h.txt" "$cache/$h.prefix" 2>/dev/null || true
+        fi
       else
         zipcount=$(find "$localpath" -maxdepth 1 -name "*.zip" 2>/dev/null | wc -l)
         if [ "$zipcount" -eq 1 ]; then
@@ -328,7 +335,7 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
   cachehash=$(echo -n "${rom[1]}" | md5sum | cut -d' ' -f1)
   cachefile="$cache/$cachehash.txt"
-  catcount=$(grep -c . "$cachefile" 2>/dev/null || echo 0)
+  catcount=$(grep -c . "$cachefile" 2>/dev/null); catcount=${catcount:-0}
   echo -e "<h3 id=\"${rom[2]}\" data-count=\"${catcount}\" class=\"section-header\">${rom[2]}</h3>\n<script>bgImage(\"${rom[0]}\")\nfileNames = [" >&$html_fd
   if [ -f "$cache/$cachehash.path" ]; then romfolder=$(<"$cache/$cachehash.path"); fi
   romdir=~/"${romfolder}"
