@@ -287,7 +287,14 @@ try {
     $dll = Resolve-LibretroCore 'mame_libretro'
     $cmdFile = [IO.Path]::GetTempFileName() + '.cmd'
     Set-Content -LiteralPath $cmdFile -Value $line -Encoding ASCII
-    & $RetroArch -L $dll $cmdFile
+    # Launch from RetroArch's own directory so the mame_libretro core finds its
+    # support data (hash/, artwork, plugins) -- relative to cwd, they are missing
+    # when the launcher's working directory is used, so games fail to open. Quote
+    # the DLL and .cmd paths explicitly (spaces in "Program Files"/user names) and
+    # -Wait so the temp .cmd is only removed after RetroArch has read it.
+    # (Fix reported by @kevinmadson026, gameflix#10.)
+    $RetroArchDir = Split-Path -Parent $RetroArch
+    Start-Process -FilePath $RetroArch -ArgumentList "-L `"$dll`" `"$cmdFile`"" -WorkingDirectory $RetroArchDir -Wait
     Remove-Item -LiteralPath $cmdFile -Force -ErrorAction SilentlyContinue
   }
   elseif ($coreName -eq 'mame') {
