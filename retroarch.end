@@ -36,6 +36,47 @@ else
   rom="$1"
 fi
 
+# Ensure the libretro core exists locally: look in the native and flatpak
+# cores directories, fetch from the libretro buildbot if missing, and as a
+# last resort fall back to an installed core with the same name stem
+# (e.g. stella -> stella2014 on arches the buildbot doesn't cover).
+if [[ "$core" == *libretro* ]]; then
+  corebin="${core%% *}"
+  coredirs=("$HOME/.config/retroarch/cores")
+  [[ -d "$HOME/.var/app/org.libretro.RetroArch/config/retroarch/cores" ]] && coredirs+=("$HOME/.var/app/org.libretro.RetroArch/config/retroarch/cores")
+  corepath=""
+  for d in "${coredirs[@]}"; do [[ -e "$d/$corebin.so" ]] && { corepath="$d/$corebin.so"; break; }; done
+  if [[ -z "$corepath" ]]; then
+    case "$(uname -m)" in
+      x86_64) barch="x86_64";;
+      aarch64|arm64) barch="aarch64";;
+      armv7l|armv6l) barch="armhf";;
+      *) barch="";;
+    esac
+    if [[ -n "$barch" ]]; then
+      echo "Fetching core $corebin ($barch) from the libretro buildbot ..." >&2
+      dl="${coredirs[${#coredirs[@]}-1]}"
+      mkdir -p "$dl"
+      tmpz=$(mktemp)
+      if curl -sfL "https://buildbot.libretro.com/nightly/linux/${barch}/latest/${corebin}.so.zip" -o "$tmpz" && unzip -oq "$tmpz" -d "$dl"; then
+        corepath="$dl/$corebin.so"
+      fi
+      rm -f "$tmpz"
+    fi
+  fi
+  if [[ -z "$corepath" ]]; then
+    stem="${corebin%_libretro}"
+    for d in "${coredirs[@]}"; do
+      alt=$(ls "$d" 2>/dev/null | grep -E "^${stem}[^/]*_libretro\.so$" | head -n 1)
+      [[ -n "$alt" ]] && { corepath="$d/$alt"; echo "Core $corebin unavailable; using ${alt%.so} instead" >&2; break; }
+    done
+  fi
+  if [[ -z "$corepath" ]]; then
+    echo "Core $corebin is not installed and the buildbot has no build for this system; install it via RetroArch's Online Updater." >&2
+    exit 1
+  fi
+fi
+
 if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
   if [[ -z "$ext" ]]; then
     rompath="$(dirname "$1");$HOME/share/bios"
@@ -49,9 +90,9 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
   filename="${rom##*/}"; basename="${filename%.*}"
   hashpath_opt=""
   [[ -d /usr/share/games/mame/hash ]] && hashpath_opt=" -hashpath /usr/share/games/mame/hash"
-  cmd_file=$(mktemp --suffix=.cmd)
+  cmd_file=$(mktemp).cmd
   echo "${mame_args:+$mame_args }$rom${rompath:+ -rompath \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
-  retroarch -L ~/.config/retroarch/cores/mame_libretro.so "$cmd_file"
+  retroarch -L "$corepath" "$cmd_file"
   rm -f "$cmd_file"
   exit
 fi
@@ -69,7 +110,7 @@ if [[ "$core" == "mame" || "$core" == "mame "* ]]; then
 fi
 
 if [[ "$core" == *"libretro"* ]]; then
-  retroarch -L ~/.config/retroarch/cores/${core}.so "${rom}"
+  retroarch -L "$corepath" "${rom}"
 else
   ${core} "${rom}"
 fi
