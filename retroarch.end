@@ -42,8 +42,11 @@ fi
 # (e.g. stella -> stella2014 on arches the buildbot doesn't cover).
 if [[ "$core" == *libretro* ]]; then
   corebin="${core%% *}"
-  coredirs=("$HOME/.config/retroarch/cores")
+  # Flatpak cores dir first: on flatpak-RetroArch machines a same-named core
+  # in ~/.config may be built against the wrong libc for the sandbox.
+  coredirs=()
   [[ -d "$HOME/.var/app/org.libretro.RetroArch/config/retroarch/cores" ]] && coredirs+=("$HOME/.var/app/org.libretro.RetroArch/config/retroarch/cores")
+  coredirs+=("$HOME/.config/retroarch/cores")
   corepath=""
   for d in "${coredirs[@]}"; do [[ -e "$d/$corebin.so" ]] && { corepath="$d/$corebin.so"; break; }; done
   if [[ -z "$corepath" ]]; then
@@ -55,7 +58,7 @@ if [[ "$core" == *libretro* ]]; then
     esac
     if [[ -n "$barch" ]]; then
       echo "Fetching core $corebin ($barch) from the libretro buildbot ..." >&2
-      dl="${coredirs[${#coredirs[@]}-1]}"
+      dl="${coredirs[0]}"
       mkdir -p "$dl"
       tmpz=$(mktemp)
       if curl -sfL "https://buildbot.libretro.com/nightly/linux/${barch}/latest/${corebin}.so.zip" -o "$tmpz" && unzip -oq "$tmpz" -d "$dl"; then
