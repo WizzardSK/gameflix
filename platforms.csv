@@ -467,7 +467,6 @@ archimedes,archive:tosec-main/Acorn/Archimedes/Educational/Acorn Archimedes - Ed
 archimedes,archive:mame-sl/mame-sl/archimedes.zip,MAME,mame_libretro aa4401 -flop,
 fm7,archive:ni-roms/roms/Fujitsu - FM-7 (Sector).zip,NoIntro,mame_libretro fm7 -flop1,
 fm7,archive:tosec-main/Fujitsu/FM-7/Games/[T77]/Fujitsu FM-7 - Games - [T77] (TOSEC-v2024-01-15).zip,Games T77,"mame_libretro fm7 -autoboot_command 'RUN""""\n' -autoboot_delay 5 -cass",
-
 fm7,archive:tosec-main/Fujitsu/FM-7/Games/[D77]/Fujitsu FM-7 - Games - [D77] (TOSEC-v2011-02-07).zip,Games D77,mame_libretro fm7 -flop1,
 fm7,archive:mame-sl/mame-sl/fm7_disk.zip,MAME,mame_libretro fm7 -flop1,
 fm7,archive:mame-sl/mame-sl/fm7_cass.zip,FM-7 Cass MAME,"mame_libretro fm7 -autoboot_command 'RUN""""\n' -autoboot_delay 5 -cass",
