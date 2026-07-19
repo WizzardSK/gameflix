@@ -245,14 +245,32 @@ $CoresDir = if ($env:GAMEFLIX_CORES) { $env:GAMEFLIX_CORES }
             elseif ($RetroArch)      { Join-Path (Split-Path -Parent $RetroArch) 'cores' }
             else                     { Join-Path $env:APPDATA 'RetroArch\cores' }
 
-# Resolve the core .dll for a libretro core; throw a clear, actionable error.
+# Resolve the core .dll for a libretro core: fetch it from the libretro
+# buildbot if missing, and as a last resort fall back to an installed core
+# with the same name stem (e.g. stella -> stella2014), mirroring retroarch.end.
 function Resolve-LibretroCore([string]$name) {
   if (-not $RetroArch) { throw "retroarch.exe not found. Install RetroArch, add it to PATH, or set the GAMEFLIX_RETROARCH environment variable." }
   $dll = Join-Path $CoresDir "$name.dll"
-  if (-not (Test-Path $dll)) {
-    throw "Core '$name' not found at:`n  $dll`n`nIn RetroArch open Online Updater > Core Downloader and install '$name', or set GAMEFLIX_CORES to your cores folder."
+  if (Test-Path $dll) { return $dll }
+  # The buildbot only ships x86 and x86_64 Windows cores; on ARM64 RetroArch
+  # itself runs x86_64 under emulation, so the x86_64 core is the right one.
+  $barch = if ($env:PROCESSOR_ARCHITECTURE -eq 'x86') { 'x86' } else { 'x86_64' }
+  Write-Host "Fetching core $name ($barch) from the libretro buildbot ..."
+  $zip = Join-Path $env:TEMP "$name.dll.zip"
+  try {
+    New-Item -ItemType Directory -Force -Path $CoresDir | Out-Null
+    Invoke-WebRequest -UseBasicParsing -Uri "https://buildbot.libretro.com/nightly/windows/$barch/latest/$name.dll.zip" -OutFile $zip -TimeoutSec 600
+    Expand-Archive -LiteralPath $zip -DestinationPath $CoresDir -Force
+  } catch {
+    Write-Host "Buildbot download failed: $_"
+  } finally {
+    Remove-Item -LiteralPath $zip -Force -ErrorAction SilentlyContinue
   }
-  return $dll
+  if (Test-Path $dll) { return $dll }
+  $stem = $name -replace '_libretro$', ''
+  $alt = Get-ChildItem -Path $CoresDir -Filter "$stem*_libretro.dll" -ErrorAction SilentlyContinue | Select-Object -First 1
+  if ($alt) { Write-Host "Core $name unavailable; using $($alt.BaseName) instead"; return $alt.FullName }
+  throw "Core '$name' is not installed and the buildbot download failed; in RetroArch open Online Updater > Core Downloader and install '$name', or set GAMEFLIX_CORES to your cores folder."
 }
 
 Write-Host "core=$core ext=$ext rom=$rom"
