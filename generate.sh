@@ -8,7 +8,9 @@ mkdir -p ~/{gameflix,rom,gamelists,zip,zips,mount} ~/gamelists/{tic80,wasm4,lowr
 echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="filterBar"><input type="text" id="filterInput" placeholder="Filter..." style="width:100%;box-sizing:border-box"></div>' > ~/gameflix/systems.html
 echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="topbar"><div id="navlinks"></div></div>' > ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
-for file in retroarch.sh retroarch.ps1 webflix.ps1 style.css script.js platform.js intent.js intent-test.html cores.json; do cp $file ~/gameflix/$file; done
+# cores.json is NOT copied here — it is generated from launch.tsv at the end so
+# the Android intent map can never drift from platforms.csv (see gen_cores.py).
+for file in retroarch.sh retroarch.ps1 webflix.ps1 style.css script.js platform.js intent.js intent-test.html; do cp $file ~/gameflix/$file; done
 echo 'gameflix_lookup_src() { src=""; case "$1" in' > ~/gameflix/urls.sh
 # Windows launcher data: KEY<TAB>core<TAB>ext<TAB>src (parsed by retroarch.ps1)
 : > ~/gameflix/launch.tsv
@@ -414,6 +416,9 @@ done
 
 echo '<script src="script.js"></script>' >> ~/gameflix/main.html
 cat retroarch.end >> ~/gameflix/retroarch.sh; cp favicon.png ~/gameflix/
+# Derive the Android intent core map from the launcher table we just built, so
+# cores.json always matches retroarch.sh / launch.tsv (core + src + ext).
+python3 gen_cores.py ~/gameflix/launch.tsv > ~/gameflix/cores.json
 echo '  esac; }' >> ~/gameflix/urls.sh
 chmod +x ~/gameflix/retroarch.sh; echo "<p><b>Total: $total</b>" >> ~/gameflix/systems.html; echo "<p><b>Platforms: $platforms</b>" >> ~/gameflix/systems.html
 echo '<script src="script.js"></script>' >> ~/gameflix/systems.html

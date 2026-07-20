@@ -47,47 +47,47 @@
  },
  {
   "pattern": "/atari2600/ROMS/",
-  "core": "stella_libretro",
+  "core": "tia_libretro",
   "src": "https://archive.org/download/atari-2600-vcs-roms/ROMS/"
  },
  {
   "pattern": "/atari2600/NoIntro/",
-  "core": "stella_libretro",
+  "core": "tia_libretro",
   "src": "https://archive.org/download/ni-roms/roms/Atari%20-%202600.zip/"
  },
  {
   "pattern": "/atari2600/TOSEC/",
-  "core": "stella_libretro",
+  "core": "tia_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Games/Atari%202600%20%26%20VCS%20-%20Games%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
   "pattern": "/atari2600/Homebrew/",
-  "core": "stella_libretro",
+  "core": "tia_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Homebrew/Games/AtariAge%20Design%20Contest/Atari%202600%20%26%20VCS%20-%20Homebrew%20-%20Games%20-%20AtariAge%20Design%20Contest%20%28TOSEC-v2024-07-03%29.zip/"
  },
  {
   "pattern": "/atari2600/Applications/",
-  "core": "stella_libretro",
+  "core": "tia_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Applications/Atari%202600%20%26%20VCS%20-%20Applications%20%28TOSEC-v2024-07-03%29.zip/"
  },
  {
   "pattern": "/atari2600/Educational/",
-  "core": "stella_libretro",
+  "core": "tia_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Educational/Atari%202600%20%26%20VCS%20-%20Educational%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
   "pattern": "/atari2600/Demo [A26]/",
-  "core": "stella_libretro",
+  "core": "tia_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Demos/%5BA26%5D/Atari%202600%20%26%20VCS%20-%20Demos%20-%20%5BA26%5D%20%28TOSEC-v2024-01-15%29.zip/"
  },
  {
   "pattern": "/atari2600/Demo [BIN]/",
-  "core": "stella_libretro",
+  "core": "tia_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Demos/%5BBIN%5D/Atari%202600%20%26%20VCS%20-%20Demos%20-%20%5BBIN%5D%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
   "pattern": "/atari2600/Demo [MP3]/",
-  "core": "stella_libretro",
+  "core": "tia_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Demos/%5BMP3%5D/Atari%202600%20%26%20VCS%20-%20Demos%20-%20%5BMP3%5D%20%28TOSEC-v2024-01-15%29.zip/"
  },
  {
@@ -2236,12 +2236,6 @@
   "src": "https://archive.org/download/sega-mega-cd-sega-cd-redump/"
  },
  {
-  "pattern": "/megacd/ISO/",
-  "core": "picodrive_libretro",
-  "ext": "cue",
-  "src": "https://archive.org/download/tosec-iso-sega/Mega-CD%20%26%20Sega%20CD/CD/Games/%5BISO%5D/"
- },
- {
   "pattern": "/megacd/NonRedump/",
   "core": "picodrive_libretro",
   "ext": "cue",
@@ -2258,12 +2252,6 @@
   "core": "yabasanshiro_libretro",
   "ext": "cue",
   "src": "https://archive.org/download/non-redump_sega-saturn/"
- },
- {
-  "pattern": "/saturn/ISO/",
-  "core": "yabasanshiro_libretro",
-  "ext": "cue",
-  "src": "https://archive.org/download/tosec-iso-sega/Saturn/Games/%5BISO%5D/"
  },
  {
   "pattern": "/stv/MAME/",

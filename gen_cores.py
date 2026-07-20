@@ -1,39 +1,58 @@
 #!/usr/bin/env python3
-"""Generate cores.json (platform -> core/src/ext) from retroarch.sh.
+"""Generate cores.json (platform -> core/ext/src) from launch.tsv.
 
-The desktop launcher (wizzardsk.github.io/retroarch.sh) maps a play:// path to a
-libretro core, an Internet-Archive source URL and (optionally) an inner extension
-via one big bash `case` block. We parse that block into an ordered JSON array so
-intent.js (Android -> native RetroArch via intent://) can do the exact same
-first-substring-match lookup. Re-run when the case block changes.
+generate.sh already resolves every play:// path to its libretro core, inner
+Internet-Archive extension and fully-qualified source URL (with the real inner
+zip prefix discovered by listing each archive) and writes them, one TAB-
+separated row per path, to launch.tsv:
 
-Usage: gen_cores.py /path/to/retroarch.sh > cores.json
+    KEY<TAB>core<TAB>ext<TAB>src
+
+That is the single source of truth the desktop launchers (retroarch.sh /
+retroarch.ps1) consume. We turn the same table into the ordered JSON array
+intent.js (Android -> native RetroArch via intent://) fetches, so every
+launcher does the identical first-substring-match lookup and cores.json can
+never drift from platforms.csv again.
+
+Reading launch.tsv (rather than re-parsing the bash `case` block) is lossless:
+MAME autoboot commands contain both " and \n, which broke the old regex-based
+retroarch.sh parser and left cores.json with truncated core strings.
+
+Only keys that start with "/" are emitted — the Android intent path handles the
+"/platform/folder/" ROM entries, not the fantasy pseudo-platforms (TIC-80/,
+PICO-8/, ...) whose keys have no leading slash. This matches the historical
+gen_cores.py behaviour.
+
+Usage: gen_cores.py /path/to/launch.tsv > cores.json
 """
 import json
-import re
 import sys
-
-LINE = re.compile(r'^\s*\*"(/[^"]*?)"\*\)\s*(.*?);;\s*$')
-KV = re.compile(r'(core|src|ext)="([^"]*)"')
 
 
 def parse(path):
     out = []
     with open(path, encoding="utf-8") as fh:
         for line in fh:
-            m = LINE.match(line)
-            if not m:
+            line = line.rstrip("\n")
+            if not line:
                 continue
-            pattern, body = m.group(1), m.group(2)
-            entry = {"pattern": pattern}
-            for k, v in KV.findall(body):
-                entry[k] = v
+            parts = line.split("\t")
+            pattern = parts[0]
+            if not pattern.startswith("/"):
+                continue
+            entry = {"pattern": pattern, "core": parts[1] if len(parts) > 1 else ""}
+            ext = parts[2] if len(parts) > 2 else ""
+            src = parts[3] if len(parts) > 3 else ""
+            if ext:
+                entry["ext"] = ext
+            if src:
+                entry["src"] = src
             out.append(entry)
     return out
 
 
 if __name__ == "__main__":
-    src = sys.argv[1] if len(sys.argv) > 1 else "retroarch.sh"
+    src = sys.argv[1] if len(sys.argv) > 1 else "launch.tsv"
     entries = parse(src)
     json.dump(entries, sys.stdout, ensure_ascii=False, indent=1)
     print()
