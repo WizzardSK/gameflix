@@ -109,11 +109,17 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
       rm -f "$sysdir/mame/hash/$list.xml"
     fi
   fi
-  cmd_file=$(mktemp).cmd
+  # Keep the .cmd file next to the ROM, not in /tmp: a flatpak RetroArch has its
+  # own private /tmp, so a mktemp file is invisible to the core, which then falls
+  # back to parsing the path as a machine name ("Unknown system 'tmp'") and every
+  # MAME game fails. The ROM directory is readable by definition -- the core has
+  # to load the ROM out of it -- and it lands in MAME's rompath for free.
+  cmd_file="$(dirname "$1")/.gameflix-$$.cmd"
   # -rp, not -rompath: the core appends a "-rp" path to its own rompath and then
   # drops the switch, so RetroArch's system/mame/bios and system/mame/roms stay
   # searchable. A literal -rompath reaches MAME last and replaces them.
   echo "${mame_args:+$mame_args }$rom${rompath:+ -rp \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
+  trap 'rm -f "$cmd_file"' EXIT   # do not litter the ROM dir if we are killed
   retroarch -L "$corepath" "$cmd_file"
   rm -f "$cmd_file"
   exit
