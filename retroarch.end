@@ -92,9 +92,28 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
   mame_args="${core#mame_libretro}"; mame_args="${mame_args# }"
   filename="${rom##*/}"; basename="${filename%.*}"
   hashpath_opt=""
-  [[ -d /usr/share/games/mame/hash ]] && hashpath_opt=" -hashpath /usr/share/games/mame/hash"
+  if [[ -d /usr/share/games/mame/hash ]]; then
+    hashpath_opt=" -hashpath /usr/share/games/mame/hash"
+  elif [[ "$src" =~ /mame-sl/([^/]+)\.zip/ ]]; then
+    # Software-list games ("aes -cart mslug") need the list XML; mame_libretro
+    # looks for it in <system>/mame/hash and ships none, so without it the core
+    # dies before drawing a frame -- no error, just a black screen (gameflix#12).
+    list="${BASH_REMATCH[1]}"
+    sysdir="$HOME/.config/retroarch/system"
+    [[ -d "$HOME/.var/app/org.libretro.RetroArch/config/retroarch/system" ]] && sysdir="$HOME/.var/app/org.libretro.RetroArch/config/retroarch/system"
+    mkdir -p "$sysdir/mame/hash"
+    if [[ -f "$sysdir/mame/hash/$list.xml" ]] || curl -sfL -o "$sysdir/mame/hash/$list.xml" \
+         "https://raw.githubusercontent.com/libretro/mame/master/hash/$list.xml"; then
+      hashpath_opt=" -hashpath \"$sysdir/mame/hash\""
+    else
+      rm -f "$sysdir/mame/hash/$list.xml"
+    fi
+  fi
   cmd_file=$(mktemp).cmd
-  echo "${mame_args:+$mame_args }$rom${rompath:+ -rompath \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
+  # -rp, not -rompath: the core appends a "-rp" path to its own rompath and then
+  # drops the switch, so RetroArch's system/mame/bios and system/mame/roms stay
+  # searchable. A literal -rompath reaches MAME last and replaces them.
+  echo "${mame_args:+$mame_args }$rom${rompath:+ -rp \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
   retroarch -L "$corepath" "$cmd_file"
   rm -f "$cmd_file"
   exit

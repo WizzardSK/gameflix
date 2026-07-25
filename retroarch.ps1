@@ -33,11 +33,41 @@ trap {
 
 # ---- Helpers ----------------------------------------------------------------
 
+# PATH as the registry has it. We are started by the play:// handler, i.e. by
+# explorer.exe, whose environment is a snapshot taken at logon: a directory the
+# user adds to PATH afterwards stays invisible to us (though a fresh cmd sees
+# it) until the next logon. Reading the registry closes that gap.
+function Get-RegistryPath {
+  $dirs = @()
+  foreach ($k in @('HKCU:\Environment',
+                   'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment')) {
+    try { $v = (Get-ItemProperty -LiteralPath $k -Name Path -ErrorAction Stop).Path } catch { continue }
+    if ($v) { $dirs += ([Environment]::ExpandEnvironmentVariables($v) -split ';') }
+  }
+  return @($dirs | ForEach-Object { $_.Trim().Trim('"') } | Where-Object { $_ })
+}
+
+# Expand relative install paths against every attached drive, so an emulator on
+# D:\ (or a portable one on a USB stick) is found just like one on C:\.
+function Get-DriveCandidates([string[]]$relative) {
+  $out = @()
+  foreach ($d in [IO.DriveInfo]::GetDrives()) {
+    if (-not $d.IsReady) { continue }
+    if ($d.DriveType -ne [IO.DriveType]::Fixed -and $d.DriveType -ne [IO.DriveType]::Removable) { continue }
+    foreach ($r in $relative) { $out += (Join-Path $d.RootDirectory.FullName $r) }
+  }
+  return $out
+}
+
 # Find an executable: honour an explicit override, then PATH, then candidate paths.
 function Find-Exe([string]$override, [string]$onPath, [string[]]$candidates) {
   if ($override) { return $override }
   $c = Get-Command $onPath -ErrorAction SilentlyContinue
   if ($c) { return $c.Source }
+  foreach ($d in (Get-RegistryPath)) {
+    try { $p = Join-Path $d $onPath } catch { continue }   # skip malformed PATH entries
+    try { if (Test-Path -LiteralPath $p) { return $p } } catch { continue }
+  }
   foreach ($p in $candidates) { if ($p -and (Test-Path $p)) { return $p } }
   return $null
 }
@@ -232,15 +262,20 @@ if ($ext) {
 # ---- Resolve emulator executables (PATH + common Windows install locations) -
 function J($a, $b) { if ($a) { Join-Path $a $b } else { $null } }
 $pf = ${env:ProgramFiles}; $pfx8 = ${env:ProgramFiles(x86)}
-$RetroArch = Find-Exe $env:GAMEFLIX_RETROARCH 'retroarch.exe' @(
+$RetroArch = Find-Exe $env:GAMEFLIX_RETROARCH 'retroarch.exe' (@(
   (J $env:LOCALAPPDATA 'Programs\RetroArch\retroarch.exe'),
-  'C:\RetroArch-Win64\retroarch.exe',
-  'C:\RetroArch\retroarch.exe',
   (J $pf   'RetroArch\retroarch.exe'),
   (J $pfx8 'RetroArch\retroarch.exe'),
   (J $pfx8 'Steam\steamapps\common\RetroArch\retroarch.exe')
-)
-$Mame = Find-Exe $env:GAMEFLIX_MAME 'mame.exe' @('C:\mame\mame.exe', (J $pf 'mame\mame.exe'))
+) + (Get-DriveCandidates @(
+  'RetroArch-Win64\retroarch.exe',
+  'RetroArch\retroarch.exe',
+  'Games\RetroArch\retroarch.exe',
+  'Emulators\RetroArch\retroarch.exe',
+  'SteamLibrary\steamapps\common\RetroArch\retroarch.exe'
+)))
+$Mame = Find-Exe $env:GAMEFLIX_MAME 'mame.exe' (@((J $pf 'mame\mame.exe')) +
+  (Get-DriveCandidates @('mame\mame.exe', 'Games\mame\mame.exe', 'Emulators\mame\mame.exe')))
 $CoresDir = if ($env:GAMEFLIX_CORES) { $env:GAMEFLIX_CORES }
             elseif ($RetroArch)      { Join-Path (Split-Path -Parent $RetroArch) 'cores' }
             else                     { Join-Path $env:APPDATA 'RetroArch\cores' }
@@ -273,6 +308,61 @@ function Resolve-LibretroCore([string]$name) {
   throw "Core '$name' is not installed and the buildbot download failed; in RetroArch open Online Updater > Core Downloader and install '$name', or set GAMEFLIX_CORES to your cores folder."
 }
 
+# RetroArch's system directory: where the mame_libretro core keeps its support
+# data (mame\hash, mame\bios, mame\roms). Portable installs put it next to
+# retroarch.exe, installed ones under %APPDATA%; retroarch.cfg has the truth,
+# where a leading ":" means "the RetroArch directory".
+function Get-RetroArchSystemDir {
+  $raDir = if ($RetroArch) { Split-Path -Parent $RetroArch } else { $null }
+  foreach ($cfg in @((J $raDir 'retroarch.cfg'), (J $env:APPDATA 'RetroArch\retroarch.cfg'))) {
+    if (-not $cfg -or -not (Test-Path -LiteralPath $cfg)) { continue }
+    $m = Select-String -LiteralPath $cfg -Pattern '^\s*system_directory\s*=\s*"?([^"]*?)"?\s*$' | Select-Object -First 1
+    if (-not $m) { continue }
+    $v = $m.Matches[0].Groups[1].Value
+    if (-not $v -or $v -eq 'default') { continue }
+    if ($v -match '^:[\\/]?(.*)$' -and $raDir) { $v = Join-Path $raDir $Matches[1] }
+    if (Test-Path -LiteralPath $v) { return $v }
+  }
+  foreach ($d in @((J $raDir 'system'), (J $env:APPDATA 'RetroArch\system'))) {
+    if ($d -and (Test-Path -LiteralPath $d)) { return $d }
+  }
+  return (J $raDir 'system')
+}
+
+# MAME-SL sources are named after the MAME software list they hold:
+# .../mame-sl/mame-sl/neogeo.zip/neogeo/ -> the "neogeo" list.
+function Get-SoftlistName([string]$src) {
+  if ($src -match '/mame-sl/([^/]+)\.zip/') { return [uri]::UnescapeDataString($Matches[1]) }
+  return ''
+}
+
+# A software-list launch ("aes -cart mslug") only resolves if MAME can read the
+# list XML. mame_libretro looks for it in <system>\mame\hash and ships none, so
+# without it the core dies before drawing a frame -- no error, just a black
+# screen (gameflix#12). Fetch the single list this game needs.
+function Install-MameHash([string]$list) {
+  if (-not $list) { return '' }
+  $hashDir = $MameHash
+  if (-not $hashDir) {
+    $sys = Get-RetroArchSystemDir
+    if (-not $sys) { return '' }
+    $hashDir = Join-Path $sys 'mame\hash'
+  }
+  $xml = Join-Path $hashDir "$list.xml"
+  if (Test-Path -LiteralPath $xml) { return $hashDir }
+  try {
+    New-Item -ItemType Directory -Force -Path $hashDir | Out-Null
+    Write-Host "Fetching MAME software list $list.xml ..."
+    Invoke-WebRequest -UseBasicParsing -TimeoutSec 120 -OutFile $xml `
+      -Uri "https://raw.githubusercontent.com/libretro/mame/master/hash/$list.xml"
+  } catch {
+    Write-Host "Could not fetch the $list software list: $_"
+    Remove-Item -LiteralPath $xml -Force -ErrorAction SilentlyContinue
+  }
+  if (Test-Path -LiteralPath $xml) { return $hashDir }
+  return ''
+}
+
 Write-Host "core=$core ext=$ext rom=$rom"
 Write-Host "retroarch=$RetroArch cores=$CoresDir"
 
@@ -295,12 +385,29 @@ try {
     $core = [regex]::Replace($core, '(-hard\d+) ([a-z0-9_]+):([a-z0-9_]+)', {
       param($m) "$($m.Groups[1].Value) " + (Join-Path $BiosDir ("$($m.Groups[2].Value)\$($m.Groups[3].Value)\$($m.Groups[3].Value).chd")) })
     $mameArgs = ($core -replace '^mame_libretro\s*', '')
+    # Software-list games need the list XML in the core's hash dir; install it.
+    $list = Get-SoftlistName $src
+    if ($list) { $h = Install-MameHash $list; if ($h) { $MameHash = $h } }
+    # Warn in the log when the driver's own ROM set is missing (MAME needs e.g.
+    # aes.zip to boot "aes -cart"), which otherwise also just shows black.
+    $driver = ($mameArgs -split '\s+')[0]
+    if ($driver -and $driver -notmatch '^-') {
+      $biosDirs = @($rompath -split ';' | Where-Object { $_ })
+      $sysDir = Get-RetroArchSystemDir
+      if ($sysDir) { $biosDirs += @((Join-Path $sysDir 'mame\bios'), (Join-Path $sysDir 'mame\roms')) }
+      $found = $false
+      foreach ($d in $biosDirs) { if (Test-Path -LiteralPath (Join-Path $d "$driver.zip")) { $found = $true; break } }
+      if (-not $found) { Write-Host "warning: MAME system ROMs $driver.zip not found in $($biosDirs -join ';') - the core may fail to start" }
+    }
     $base = [IO.Path]::GetFileNameWithoutExtension($rom)
     $line = ''
     if ($mameArgs) { $line += "$mameArgs " }
     $line += "$rom"
-    if ($rompath) { $line += " -rompath `"$rompath`"" }
-    if ($MameHash) { $line += " -hashpath $MameHash" }
+    # -rp, not -rompath: the core appends a "-rp" path to its own rompath and
+    # then drops the switch, so RetroArch's system\mame\bios and system\mame\roms
+    # stay searchable. A literal -rompath reaches MAME last and replaces them.
+    if ($rompath) { $line += " -rp `"$rompath`"" }
+    if ($MameHash) { $line += " -hashpath `"$MameHash`"" }
     $line += " -skip_gameinfo -snapname `"$base`""
     $dll = Resolve-LibretroCore 'mame_libretro'
     $cmdFile = [IO.Path]::GetTempFileName() + '.cmd'

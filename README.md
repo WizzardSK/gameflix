@@ -82,7 +82,8 @@ Install **one** of these only if you play CD-based systems. For cartridge consol
 
 The launcher runs in a hidden window, so on failure it shows a **pop-up dialog** with the cause and writes a full transcript to `%LOCALAPPDATA%\gameflix\launch.log`. Common fixes:
 
-- *"retroarch.exe not found"* → add it to `PATH`, or set `GAMEFLIX_RETROARCH` to its full path
+- *"retroarch.exe not found"* → add it to `PATH`, or set `GAMEFLIX_RETROARCH` to its full path. The launcher also re-reads `PATH` from the registry (a `PATH` edit only reaches already-running programs after the next logon) and looks for `RetroArch\` / `RetroArch-Win64\` on every drive, not just `C:`
+- A MAME game shows only a **black screen** → check `launch.log`. MAME systems need their own ROM set in `%USERPROFILE%\share\bios` (e.g. `aes.zip` for Neo Geo AES), which the log warns about; the software-list XML the core needs is downloaded automatically into `<RetroArch>\system\mame\hash`
 - *"Core '…' not found"* → install that core via RetroArch's Online Updater, or set `GAMEFLIX_CORES` to your cores folder
 - Other paths/executables are overridable via environment variables read at the top of `retroarch.ps1`: `GAMEFLIX_ROMS`, `GAMEFLIX_BIOS`, `GAMEFLIX_CORES`, `GAMEFLIX_RETROARCH`, `GAMEFLIX_MAME`, `GAMEFLIX_MOUNT`
 
