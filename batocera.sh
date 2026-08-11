@@ -126,7 +126,13 @@ for gl in /userdata/roms/*/gamelist.xml; do
 
   # Everything present, as ./relative/path — the shape <path> entries use.
   # Directories count too: PS3 titles are .ps3/.psn folders, not files.
-  ( cd "$sysdir" && find . \( -type f -o -type d \) ) > /tmp/gf-present.txt 2>/dev/null
+  ( cd "$sysdir" && find . -mindepth 1 \( -type f -o -type d \) ! -name gamelist.xml ) \
+    > /tmp/gf-present.txt 2>/dev/null
+
+  # Most systems have nothing downloaded at all. Walking their ROM directory
+  # costs nothing — it is empty — but reading the gamelist does, and together
+  # they are ~200 MB of XML. So when the walk came up empty, never open it.
+  [[ -s /tmp/gf-present.txt ]] || continue
 
   n=$(awk -v out="$gl.gf" '
         NR==FNR { present[$0]=1; next }
