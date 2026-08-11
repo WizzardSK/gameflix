@@ -104,6 +104,52 @@ if [[ -d "$PS3_DIR" ]]; then
   status "PS3 gamelist: $(grep -c '<game>' "$PS3_DIR/gamelist.xml") entries"
 fi
 
+# -- Mark everything already on disk as a favorite -----------------------------
+# The gamelists list every game on archive.org; only the ones actually fetched
+# have a file behind them, so the Favorites collection becomes "what is really
+# on this box". The launch wrapper flags each new download, but the gamelists
+# above were just reinstalled from scratch, which drops every flag — so re-mark
+# them here, while ES is stopped. (ES itself never writes gamelist.xml back:
+# SaveGamelistsOnExit is set to false further down, which also turns
+# saveToGamelistRecovery into a no-op, so the file is the only place this
+# can live.)
+#
+# Skipped: the fantasy consoles, whose games are bundled with the installer
+# rather than downloaded — marking a few hundred of them would bury the real
+# downloads in the collection.
+status "=== marking downloaded games as favorites ==="
+fav_total=0
+for gl in /userdata/roms/*/gamelist.xml; do
+  [[ -f "$gl" ]] || continue
+  sysdir=$(dirname "$gl"); sysname=$(basename "$sysdir")
+  case "$sysname" in wasm4|lowresnx|pico8|voxatron|tic80) continue ;; esac
+
+  # Everything present, as ./relative/path — the shape <path> entries use.
+  # Directories count too: PS3 titles are .ps3/.psn folders, not files.
+  ( cd "$sysdir" && find . \( -type f -o -type d \) ) > /tmp/gf-present.txt 2>/dev/null
+
+  n=$(awk -v out="$gl.gf" '
+        NR==FNR { present[$0]=1; next }
+        index($0, "<game>") && index($0, "<favorite>") == 0 {
+          p = $0
+          sub(/.*<path>/, "", p); sub(/<\/path>.*/, "", p)
+          if (p in present) { sub(/<\/game>/, "<favorite>true</favorite></game>"); n++ }
+        }
+        { print > out }
+        END { print n+0 }
+      ' /tmp/gf-present.txt "$gl" 2>>"$LOG")
+
+  if [[ -s "$gl.gf" && "${n:-0}" -gt 0 ]]; then
+    mv "$gl.gf" "$gl"
+    status "favorites: $sysname — $n"
+    fav_total=$((fav_total + n))
+  else
+    rm -f "$gl.gf"
+  fi
+done
+rm -f /tmp/gf-present.txt
+status "favorites: $fav_total game(s) marked"
+
 cp /usr/share/emulationstation/es_systems.cfg /userdata/system/es_systems.bak
 wget -nv -O /usr/share/emulationstation/es_systems.cfg \
   https://github.com/WizzardSK/gameflix/raw/main/batocera/es_systems.cfg
