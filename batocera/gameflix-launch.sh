@@ -66,13 +66,12 @@ gf_ui_done() {
 }
 
 args=("$@")
-rom=""; rom_idx=-1
+rom=""; rom_idx=-1; system=""
 for ((i=0;i<${#args[@]};i++)); do
-  if [[ "${args[$i]}" == "-rom" ]]; then
-    rom="${args[$((i+1))]}"
-    rom_idx=$((i+1))
-    break
-  fi
+  case "${args[$i]}" in
+    -rom)    rom="${args[$((i+1))]}"; rom_idx=$((i+1)) ;;
+    -system) system="${args[$((i+1))]}" ;;
+  esac
 done
 
 # Strip the double-escape backslashes Batocera's getEscapedPath adds
@@ -160,6 +159,53 @@ if [[ -n "$rom" && ! -e "$rom" ]]; then
     fi
     echo "[$(date '+%F %T')] launch-wrapper fetch done ($(stat -c%s "$rom") bytes)" >>"$LOG"
     gf_ui_done
+
+    # Mark what we just downloaded as a favorite, so the Favorites collection
+    # doubles as "what is actually on this box" — everything else in the
+    # gamelists is a placeholder with no file behind it yet. Two steps,
+    # because neither alone survives:
+    #
+    #  * the gamelist.xml edit is what persists. batocera.sh sets
+    #    SaveGamelistsOnExit=false, so ES never writes the file back over us
+    #    (SystemData::deleteSystems only calls updateGamelist when that
+    #    setting is on) and re-reads it at the next start. The same setting
+    #    also makes saveToGamelistRecovery() a no-op, so ES itself would
+    #    persist nothing.
+    #  * the POST to the ES HTTP server (port 1234, 127.0.0.1 always allowed)
+    #    updates the *running* instance, so the star appears without waiting
+    #    for a restart. Game id = MD5 of the ROM's absolute path
+    #    (HttpApi::getFileDataId); ImportFromJson reads string values only,
+    #    hence "true" rather than true.
+    #
+    # Both are best-effort: a launch never fails over either of them. On the
+    # next boot batocera.sh re-marks everything present on disk anyway, since
+    # it reinstalls the gamelists from scratch.
+    if [[ -n "$system" ]]; then
+      gl="/userdata/roms/${system}/gamelist.xml"
+      rel="./${rom#/userdata/roms/${system}/}"
+      if [[ -f "$gl" ]]; then
+        awk -v want="$rel" '
+          index($0, "<game>") && index($0, "<favorite>") == 0 {
+            p = $0
+            sub(/.*<path>/, "", p); sub(/<\/path>.*/, "", p)
+            if (p == want) { sub(/<\/game>/, "<favorite>true</favorite></game>"); n++ }
+          }
+          { print }
+          END { exit(n ? 0 : 1) }
+        ' "$gl" > "$gl.gf" 2>>"$LOG" && mv "$gl.gf" "$gl" \
+          && echo "[$(date '+%F %T')] mark favorite: $rel in $gl" >>"$LOG" \
+          || rm -f "$gl.gf"
+      fi
+      gid=$(printf '%s' "$rom" | md5sum 2>/dev/null | awk '{print $1}')
+      if [[ -n "$gid" ]]; then
+        code=$(curl -s -o /dev/null -w '%{http_code}' -m 5 -X POST \
+                 -d '{"favorite":"true"}' \
+                 "http://127.0.0.1:1234/systems/${system}/games/${gid}" 2>>"$LOG")
+        # 404 also comes back when the value was already set (ImportFromJson
+        # reports "nothing changed"), so it is not necessarily an error.
+        echo "[$(date '+%F %T')] mark favorite (live): id=$gid http=${code:-none}" >>"$LOG"
+      fi
+    fi
   fi
 fi
 
