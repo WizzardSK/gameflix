@@ -2351,34 +2351,34 @@
  },
  {
   "pattern": "/ps2/CHD 1/",
-  "core": "pcsx2",
+  "core": "pcee2_libretro",
   "src": "https://archive.org/download/PS2-part1-CHD-Arquivista/"
  },
  {
   "pattern": "/ps2/CHD 2/",
-  "core": "pcsx2",
+  "core": "pcee2_libretro",
   "src": "https://archive.org/download/PS2-part2-CHD-Arquivista/"
  },
  {
   "pattern": "/ps2/CHD 3/",
-  "core": "pcsx2",
+  "core": "pcee2_libretro",
   "src": "https://archive.org/download/PS2-part3-CHD-Arquivista/"
  },
  {
   "pattern": "/ps2/NonRedump A-G/",
-  "core": "pcsx2",
+  "core": "pcee2_libretro",
   "ext": "iso",
   "src": "https://archive.org/download/non-redump_sony_playstation2_part1/"
  },
  {
   "pattern": "/ps2/NonRedump H-Q/",
-  "core": "pcsx2",
+  "core": "pcee2_libretro",
   "ext": "iso",
   "src": "https://archive.org/download/non-redump_sony_playstation2_part2/"
  },
  {
   "pattern": "/ps2/NonRedump R-Z/",
-  "core": "pcsx2",
+  "core": "pcee2_libretro",
   "ext": "iso",
   "src": "https://archive.org/download/non-redump_sony_playstation2_part3/"
  },
