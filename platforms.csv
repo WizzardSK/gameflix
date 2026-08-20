@@ -584,7 +584,7 @@ nds,archive:tosec-main/Nintendo/DS/Educational/Nintendo DS - Educational (TOSEC-
 dsi,archive:ni-roms/roms/Nintendo - Nintendo DSi (Decrypted).zip,NoIntro,melondsds_libretro,
 dsi,archive:tosec-main/Nintendo/DSi/Games/Nintendo DSi - Games (TOSEC-v2025-01-15).zip,TOSEC,melondsds_libretro,
 3ds,archive:nintendo-nintendo-3ds-games-decrypted/Nintendo - Nintendo 3DS,NoIntro,citra_libretro,3ds
-wiiu,archive:wii-u-retail-nus-usa,Redump,cemu -g,
+wiiu,archive:wii-u-retail-nus-usa,Redump,cemu_libretro,tmd
 sg1000,archive:ni-roms/roms/Sega - SG-1000.zip,NoIntro,gearsystem_libretro,
 sg1000,archive:tosec-main/Sega/Game 1000/Games/Sega Game 1000 - Games (TOSEC-v2025-01-15).zip,TOSEC,gearsystem_libretro,
 sg1000,archive:tosec-main/Sega/Game 1000/Demos/[BIN]/Sega Game 1000 - Demos - [BIN] (TOSEC-v2025-01-15).zip,Demo [BIN],gearsystem_libretro,
@@ -648,6 +648,9 @@ ps2,archive:non-redump_sony_playstation2_part3,NonRedump R-Z,pcee2_libretro,iso
 psp,archive:playstation-portable-redump,Redump,ppsspp_libretro,iso
 psp,archive:non-redump_sony_playstation_portable,NonRedump,ppsspp_libretro,iso
 psp,archive:tosec-iso-sony/PlayStation Portable/Games/[ISO],TOSEC,ppsspp_libretro,iso
+xbox,archive:metal-gear-solid-2-substance-usa,XISO 0-M,xemu -dvd_path,
+xbox,archive:microsoft-xbox-xemu.xisoready-software-collection-part-2,XISO M-Z,xemu -dvd_path,
+xbox,archive:microsoft-xbox-xemu-ready-software-collection-part-3,XISO Extra,xemu -dvd_path,
 cdi,archive:ef_Philips_cd-i_redump_2300,Redump,same_cdi_libretro,cue
 cdi,archive:non-redump_philips-cdi,NonRedump,same_cdi_libretro,cue
 cdi,archive:tosec-iso-philips/CD-i/Games,TOSEC,same_cdi_libretro,cue

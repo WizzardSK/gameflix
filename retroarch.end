@@ -23,13 +23,15 @@ fi
 
 if [ -n "$ext" ]; then
   umount -l ~/iso
-  if [[ "$1" == *.rar ]]; then
+  # mount-zip reads zips only; .rar and .7z (Wii U NUS titles ship as .7z) go
+  # through ratarmount, which handles both.
+  if [[ "$1" == *.rar || "$1" == *.7z ]]; then
     ratarmount "$1" ~/iso
   else
     mount-zip "$1" ~/iso
   fi
   rom=$(find ~/iso -type f -name "*.${ext}" | head -n 1)
-elif [[ "$1" == *.rar ]]; then
+elif [[ "$1" == *.rar || "$1" == *.7z ]]; then
   umount -l ~/iso; ratarmount "$1" ~/iso
   rom=~/iso
 else

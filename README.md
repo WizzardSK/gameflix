@@ -20,6 +20,7 @@ I made this project for my own personal needs, to have the same setup on all my 
 | unzip / zip | Archive extraction at launch | Yes |
 | [RetroArch](https://www.retroarch.com/) | Main emulation frontend | Yes |
 | [MAME](https://www.mamedev.org/) | Arcade and computer emulation | For arcade/computer systems |
+| [xemu](https://xemu.app/) | Original Xbox emulation (`xemu -dvd_path`) | For Xbox |
 
 ## Quick start
 

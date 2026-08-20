@@ -2045,7 +2045,8 @@
  },
  {
   "pattern": "/wiiu/Redump/",
-  "core": "cemu -g",
+  "core": "cemu_libretro",
+  "ext": "tmd",
   "src": "https://archive.org/download/wii-u-retail-nus-usa/"
  },
  {
@@ -2399,6 +2400,21 @@
   "core": "ppsspp_libretro",
   "ext": "iso",
   "src": "https://archive.org/download/tosec-iso-sony/PlayStation%20Portable/Games/%5BISO%5D/"
+ },
+ {
+  "pattern": "/xbox/XISO 0-M/",
+  "core": "xemu -dvd_path",
+  "src": "https://archive.org/download/metal-gear-solid-2-substance-usa/"
+ },
+ {
+  "pattern": "/xbox/XISO M-Z/",
+  "core": "xemu -dvd_path",
+  "src": "https://archive.org/download/microsoft-xbox-xemu.xisoready-software-collection-part-2/"
+ },
+ {
+  "pattern": "/xbox/XISO Extra/",
+  "core": "xemu -dvd_path",
+  "src": "https://archive.org/download/microsoft-xbox-xemu-ready-software-collection-part-3/"
  },
  {
   "pattern": "/dos/eXoDOS/",
