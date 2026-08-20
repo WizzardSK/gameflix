@@ -648,9 +648,6 @@ ps2,archive:non-redump_sony_playstation2_part3,NonRedump R-Z,pcee2_libretro,iso
 psp,archive:playstation-portable-redump,Redump,ppsspp_libretro,iso
 psp,archive:non-redump_sony_playstation_portable,NonRedump,ppsspp_libretro,iso
 psp,archive:tosec-iso-sony/PlayStation Portable/Games/[ISO],TOSEC,ppsspp_libretro,iso
-xbox,archive:metal-gear-solid-2-substance-usa,XISO 0-M,xemu -dvd_path,
-xbox,archive:microsoft-xbox-xemu.xisoready-software-collection-part-2,XISO M-Z,xemu -dvd_path,
-xbox,archive:microsoft-xbox-xemu-ready-software-collection-part-3,XISO Extra,xemu -dvd_path,
 cdi,archive:ef_Philips_cd-i_redump_2300,Redump,same_cdi_libretro,cue
 cdi,archive:non-redump_philips-cdi,NonRedump,same_cdi_libretro,cue
 cdi,archive:tosec-iso-philips/CD-i/Games,TOSEC,same_cdi_libretro,cue
@@ -724,6 +721,9 @@ pcenginecd,archive:non-redump_nec-pc-engine-cd-turbografx-cd,NonRedump,mednafen_
 pcenginecd,archive:mame-software-list-chds-2/pcecd,CHD,mame_libretro pce -cdrm,
 pcfx,archive:nec-pc-fx-pc-fxga-redump,Redump,mednafen_pcfx_libretro,cue
 pcfx,archive:tosec-iso-nec/PC-FX/Games,ISO,mednafen_pcfx_libretro,cue
+xbox,archive:metal-gear-solid-2-substance-usa,XISO 0-M,xemu -dvd_path,
+xbox,archive:microsoft-xbox-xemu.xisoready-software-collection-part-2,XISO M-Z,xemu -dvd_path,
+xbox,archive:microsoft-xbox-xemu-ready-software-collection-part-3,XISO Extra,xemu -dvd_path,
 dos,archive:exodos-full/eXoDOS/eXo/eXoDOS,eXoDOS,dosbox_pure_libretro,
 dos,archive:tosec-main/IBM/PC Compatibles/Compilations/Games/[IMG]/IBM PC Compatibles - Compilations - Games - [IMG] (TOSEC-v2024-04-20).zip,TOSEC,dosbox_pure_libretro,
 dos,archive:tosec-main/IBM/PC Compatibles/Applications/Addons & Patches/IBM PC Compatibles - Applications - Addons & Patches (TOSEC-v2023-11-07).zip,App TOSEC,dosbox_pure_libretro,
