@@ -755,7 +755,7 @@
  },
  {
   "pattern": "/zx81/MAME/",
-  "core": "mame_libretro zx81 -autoboot_command 'J\\",
+  "core": "mame_libretro zx81 -autoboot_command 'J\"\"\\n' -autoboot_delay 3 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/zx81_cass.zip/zx81_cass/"
  },
  {
@@ -910,12 +910,12 @@
  },
  {
   "pattern": "/zxspectrum/MAME/",
-  "core": "mame_libretro spectrum -autoboot_command 'LOAD \\",
+  "core": "mame_libretro spectrum -autoboot_command 'LOAD \"\"\\n' -autoboot_delay 3 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/spectrum_cass.zip/spectrum_cass/"
  },
  {
   "pattern": "/zxspectrum/Cass MAME/",
-  "core": "mame_libretro tc2068 -autoboot_command 'LOAD \\",
+  "core": "mame_libretro tc2068 -autoboot_command 'LOAD \"\"\\n' -autoboot_delay 3 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/timex_cass.zip/timex_cass/"
  },
  {
@@ -1007,7 +1007,7 @@
  },
  {
   "pattern": "/amstradcpc/Cass MAME/",
-  "core": "mame_libretro cpc464 -autoboot_command 'RUN\\",
+  "core": "mame_libretro cpc464 -autoboot_command 'RUN\"\\n' -autoboot_delay 3 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/cpc_cass.zip/cpc_cass/"
  },
  {
@@ -1067,15 +1067,18 @@
  },
  {
   "pattern": "/cplus4/PRG/",
-  "core": "vice_xplus4_libretro"
+  "core": "vice_xplus4_libretro",
+  "src": "https://archive.org/download/tosec-main/Commodore/C16%2C%20C116%20%26%20Plus-4/Games/%5BPRG%5D/Commodore%20C16%2C%20C116%20%26%20Plus-4%20-%20Games%20-%20%5BPRG%5D%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
   "pattern": "/cplus4/TAP/",
-  "core": "vice_xplus4_libretro"
+  "core": "vice_xplus4_libretro",
+  "src": "https://archive.org/download/tosec-main/Commodore/C16%2C%20C116%20%26%20Plus-4/Games/%5BTAP%5D/Commodore%20C16%2C%20C116%20%26%20Plus-4%20-%20Games%20-%20%5BTAP%5D%20%28TOSEC-v2014-02-01%29.zip/"
  },
  {
   "pattern": "/cplus4/Utils/",
-  "core": "vice_xplus4_libretro"
+  "core": "vice_xplus4_libretro",
+  "src": "https://archive.org/download/tosec-main/Commodore/C16%2C%20C116%20%26%20Plus-4/Utilities/%5BPRG%5D/Commodore%20C16%2C%20C116%20%26%20Plus-4%20-%20Utilities%20-%20%5BPRG%5D%20%28TOSEC-v2023-03-18%29.zip/"
  },
  {
   "pattern": "/cplus4/MAME/",
@@ -1159,7 +1162,7 @@
  },
  {
   "pattern": "/cbm2/Flop MAME/",
-  "core": "mame_libretro cbm610 -autoboot_command 'DLOAD\\",
+  "core": "mame_libretro cbm610 -autoboot_command 'DLOAD\"\"*\"\"\\nRUN\\n' -autoboot_delay 5 -flop1",
   "src": "https://archive.org/download/mame-sl/mame-sl/cbm2_flop.zip/cbm2_flop/"
  },
  {
@@ -2653,7 +2656,7 @@
  },
  {
   "pattern": "/msx1/Cass MAME/",
-  "core": "mame_libretro expert11 -autoboot_command 'RUN\\",
+  "core": "mame_libretro expert11 -autoboot_command 'RUN\"CAS:\"\\n' -autoboot_delay 3 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/msx1_cass.zip/msx1_cass/"
  },
  {
@@ -2703,7 +2706,7 @@
  },
  {
   "pattern": "/msx2/Cass MAME/",
-  "core": "mame_libretro hbf1xd -autoboot_command 'RUN\\",
+  "core": "mame_libretro hbf1xd -autoboot_command 'RUN\"CAS:\"\\n' -autoboot_delay 3 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/msx2_cass.zip/msx2_cass/"
  },
  {
@@ -3448,37 +3451,37 @@
  },
  {
   "pattern": "/oricatmos/TAP/",
-  "core": "mame_libretro orica -autoboot_command 'CLOAD\\",
+  "core": "mame_libretro orica -autoboot_command 'CLOAD\"\"\\n' -autoboot_delay 4 -cass",
   "src": "https://archive.org/download/tosec-main/Tangerine/Oric-1%20%26%20Oric%20Atmos/Compilations/Games/%5BDSK%5D/Tangerine%20Oric-1%20%26%20Oric%20Atmos%20-%20Compilations%20-%20Games%20-%20%5BDSK%5D%20%28TOSEC-v2021-12-11%29.zip/"
  },
  {
   "pattern": "/oricatmos/Demo [DSK]/",
-  "core": "mame_libretro orica -autoboot_command 'CLOAD\\",
+  "core": "mame_libretro orica -autoboot_command 'CLOAD\"\"\\n' -autoboot_delay 4 -cass",
   "src": "https://archive.org/download/tosec-main/Tangerine/Oric-1%20%26%20Oric%20Atmos/Demos/%5BDSK%5D/Tangerine%20Oric-1%20%26%20Oric%20Atmos%20-%20Demos%20-%20%5BDSK%5D%20%28TOSEC-v2021-12-11%29.zip/"
  },
  {
   "pattern": "/oricatmos/Demo [TAP]/",
-  "core": "mame_libretro orica -autoboot_command 'CLOAD\\",
+  "core": "mame_libretro orica -autoboot_command 'CLOAD\"\"\\n' -autoboot_delay 4 -cass",
   "src": "https://archive.org/download/tosec-main/Tangerine/Oric-1%20%26%20Oric%20Atmos/Demos/%5BTAP%5D/Tangerine%20Oric-1%20%26%20Oric%20Atmos%20-%20Demos%20-%20%5BTAP%5D%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
   "pattern": "/oricatmos/Edu [DSK]/",
-  "core": "mame_libretro orica -autoboot_command 'CLOAD\\",
+  "core": "mame_libretro orica -autoboot_command 'CLOAD\"\"\\n' -autoboot_delay 4 -cass",
   "src": "https://archive.org/download/tosec-main/Tangerine/Oric-1%20%26%20Oric%20Atmos/Educational/%5BDSK%5D/Tangerine%20Oric-1%20%26%20Oric%20Atmos%20-%20Educational%20-%20%5BDSK%5D%20%28TOSEC-v2021-12-11%29.zip/"
  },
  {
   "pattern": "/oricatmos/Edu [TAP]/",
-  "core": "mame_libretro orica -autoboot_command 'CLOAD\\",
+  "core": "mame_libretro orica -autoboot_command 'CLOAD\"\"\\n' -autoboot_delay 4 -cass",
   "src": "https://archive.org/download/tosec-main/Tangerine/Oric-1%20%26%20Oric%20Atmos/Educational/%5BTAP%5D/Tangerine%20Oric-1%20%26%20Oric%20Atmos%20-%20Educational%20-%20%5BTAP%5D%20%28TOSEC-v2024-07-03%29.zip/"
  },
  {
   "pattern": "/oricatmos/MAME/",
-  "core": "mame_libretro orica -autoboot_command 'CLOAD\\",
+  "core": "mame_libretro orica -autoboot_command 'CLOAD\"\"\\n' -autoboot_delay 4 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/oric1_cass.zip/oric1_cass/"
  },
  {
   "pattern": "/camplynx/MAME/",
-  "core": "mame_libretro lynx48k -autoboot_command 'mload\\",
+  "core": "mame_libretro lynx48k -autoboot_command 'mload\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/camplynx_cass.zip/camplynx_cass/"
  },
  {
@@ -3623,7 +3626,7 @@
  },
  {
   "pattern": "/lviv/MAME/",
-  "core": "mame_libretro lviv -autoboot_command 'CLOAD \\",
+  "core": "mame_libretro lviv -autoboot_command 'CLOAD \"\"\\nRUN\\n' -autoboot_delay 3 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/lviv.zip/lviv/"
  },
  {
@@ -3718,7 +3721,7 @@
  },
  {
   "pattern": "/bbcmicro/Micro Cass MAME/",
-  "core": "mame_libretro bbcb -autoboot_command '*T.\\nCH.\\",
+  "core": "mame_libretro bbcb -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/bbc_cass.zip/bbc_cass/"
  },
  {
@@ -3883,7 +3886,7 @@
  },
  {
   "pattern": "/mtx/Cass MAME/",
-  "core": "mame_libretro mtx512 -autoboot_command 'LOAD \\",
+  "core": "mame_libretro mtx512 -autoboot_command 'LOAD \"\"\\n' -autoboot_delay 3 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/mtx_cass.zip/mtx_cass/"
  },
  {
@@ -3903,32 +3906,32 @@
  },
  {
   "pattern": "/electron/TOSEC/",
-  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\\",
+  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/tosec-main/Acorn/Electron/Games/%5BBIN%5D/Acorn%20Electron%20-%20Games%20-%20%5BBIN%5D%20%28TOSEC-v2018-07-01%29.zip/"
  },
  {
   "pattern": "/electron/App/",
-  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\\",
+  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/tosec-main/Acorn/Electron/Applications/%5BBIN%5D/Acorn%20Electron%20-%20Applications%20-%20%5BBIN%5D%20%28TOSEC-v2013-10-22%29.zip/"
  },
  {
   "pattern": "/electron/Edu/",
-  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\\",
+  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/tosec-main/Acorn/Electron/Educational/%5BBIN%5D/Acorn%20Electron%20-%20Educational%20-%20%5BBIN%5D%20%28TOSEC-v2018-07-01%29.zip/"
  },
  {
   "pattern": "/electron/Demo [UEF]/",
-  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\\",
+  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/tosec-main/Acorn/Electron/Demos/%5BUEF%5D/Acorn%20Electron%20-%20Demos%20-%20%5BUEF%5D%20%28TOSEC-v2018-07-01%29.zip/"
  },
  {
   "pattern": "/electron/Edu [UEF]/",
-  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\\",
+  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/tosec-main/Acorn/Electron/Educational/%5BUEF%5D/Acorn%20Electron%20-%20Educational%20-%20%5BUEF%5D%20%28TOSEC-v2018-07-01%29.zip/"
  },
  {
   "pattern": "/electron/MAME/",
-  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\\",
+  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/electron_cass.zip/electron_cass/"
  },
  {
@@ -4103,7 +4106,7 @@
  },
  {
   "pattern": "/samcoupe/Cass MAME/",
-  "core": "mame_libretro samcoupe -autoboot_command 'LOAD \\",
+  "core": "mame_libretro samcoupe -autoboot_command 'LOAD \"\"\\n' -autoboot_delay 3 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/samcoupe_cass.zip/samcoupe_cass/"
  },
  {
@@ -4213,15 +4216,18 @@
  },
  {
   "pattern": "/thomson/TO8 FD/",
-  "core": "theodore_libretro"
+  "core": "theodore_libretro",
+  "src": "https://archive.org/download/tosec-main/Thomson/TO8%2C%20TO8D%2C%20TO9%2C%20TO9%2B/Games/%5BFD%5D/Thomson%20TO8%2C%20TO8D%2C%20TO9%2C%20TO9%2B%20-%20Games%20-%20%5BFD%5D%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
   "pattern": "/thomson/TO8 K7/",
-  "core": "theodore_libretro"
+  "core": "theodore_libretro",
+  "src": "https://archive.org/download/tosec-main/Thomson/TO8%2C%20TO8D%2C%20TO9%2C%20TO9%2B/Games/%5BK7%5D/Thomson%20TO8%2C%20TO8D%2C%20TO9%2C%20TO9%2B%20-%20Games%20-%20%5BK7%5D%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
   "pattern": "/thomson/TO8 SAP/",
-  "core": "theodore_libretro"
+  "core": "theodore_libretro",
+  "src": "https://archive.org/download/tosec-main/Thomson/TO8%2C%20TO8D%2C%20TO9%2C%20TO9%2B/Games/%5BSAP%5D/Thomson%20TO8%2C%20TO8D%2C%20TO9%2C%20TO9%2B%20-%20Games%20-%20%5BSAP%5D%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
   "pattern": "/thomson/MO5 Cart MAME/",
@@ -4230,7 +4236,7 @@
  },
  {
   "pattern": "/thomson/MO5 Cass MAME/",
-  "core": "mame_libretro mo5 -autoboot_command 'RUN\\",
+  "core": "mame_libretro mo5 -autoboot_command 'RUN\"\"\\n' -autoboot_delay 3 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/mo5_cass.zip/mo5_cass/"
  },
  {
@@ -4240,7 +4246,7 @@
  },
  {
   "pattern": "/thomson/MO6 Cass MAME/",
-  "core": "mame_libretro mo6 -autoboot_command '2\\nRUN\\",
+  "core": "mame_libretro mo6 -autoboot_command '2\\nRUN\"\"\\n' -autoboot_delay 5 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/mo6_cass.zip/mo6_cass/"
  },
  {
@@ -4260,12 +4266,12 @@
  },
  {
   "pattern": "/thomson/TO7 Cass MAME/",
-  "core": "mame_libretro to7 -cart basic -autoboot_command '1\\nRUN\\",
+  "core": "mame_libretro to7 -cart basic -autoboot_command '1\\nRUN\"\"\\n' -autoboot_delay 5 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/to7_cass.zip/to7_cass/"
  },
  {
   "pattern": "/thomson/TO8 Cass MAME/",
-  "core": "mame_libretro to8 -autoboot_command '2\\nRUN\\",
+  "core": "mame_libretro to8 -autoboot_command '2\\nRUN\"\"\\n' -autoboot_delay 5 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/to8_cass.zip/to8_cass/"
  },
  {
@@ -4295,7 +4301,7 @@
  },
  {
   "pattern": "/pro128/Cass MAME/",
-  "core": "mame_libretro pro128 -autoboot_command 'RUN\\",
+  "core": "mame_libretro pro128 -autoboot_command 'RUN\"CASS:\"\\n' -autoboot_delay 8 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/pro128_cass.zip/pro128_cass/"
  },
  {
@@ -4490,8 +4496,7 @@
  },
  {
   "pattern": "/fm7/Games T77/",
-  "core": "mame_libretro fm7 -autoboot_command 'RUN\\\\n' -autoboot_delay 5 -cass,",
-  "ext": "Fujitsu - Micro 7",
+  "core": "mame_libretro fm7 -autoboot_command 'RUN\"\"\\n' -autoboot_delay 5 -cass",
   "src": "https://archive.org/download/tosec-main/Fujitsu/FM-7/Games/%5BT77%5D/Fujitsu%20FM-7%20-%20Games%20-%20%5BT77%5D%20%28TOSEC-v2024-01-15%29.zip/"
  },
  {
@@ -4506,12 +4511,12 @@
  },
  {
   "pattern": "/fm7/FM-7 Cass MAME/",
-  "core": "mame_libretro fm7 -autoboot_command 'RUN\\",
+  "core": "mame_libretro fm7 -autoboot_command 'RUN\"\"\\n' -autoboot_delay 5 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/fm7_cass.zip/fm7_cass/"
  },
  {
   "pattern": "/fm7/FM-8 Cass MAME/",
-  "core": "mame_libretro fm8 -autoboot_command 'RUN\\",
+  "core": "mame_libretro fm8 -autoboot_command 'RUN\"\"\\n' -autoboot_delay 5 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/fm8_cass.zip/fm8_cass/"
  },
  {
