@@ -53,7 +53,12 @@ function generateTicLinks(romPath, imagePath) {
     var html = [];
     fileNames.forEach(fileName => {
         var [id, hash, nazov, subor] = fileName.split('\t');
-        var href = `${base}/${hash}/${encodeURIComponent(subor || hash + '.tic')}`;
+        // RetroArch picks the core by extension, and tic80.com has carts whose
+        // file name carries none, so the name is only ever a label here - the
+        // hash in the path is what identifies the cart.
+        var rom = subor || hash;
+        if (!/\.tic$/i.test(rom)) rom += '.tic';
+        var href = `${base}/${hash}/${encodeURIComponent(rom)}`;
         html.push(`<a href="${href}" target="main" rel="noreferrer">
         <figure><img loading="lazy" src="https://tic80.com/cart/${hash}/cover.gif" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     });

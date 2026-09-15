@@ -202,7 +202,7 @@ for tic_cat in Games Tech Tools Music WIP Demoscene Livecoding; do
   echo -e "<h3 id=\"$tic_cat\" class=\"section-header\">$tic_cat</h3>\n<script>bgImage(\"tic80\")\nfileNames = [" >> ~/gameflix/TIC-80.html
   echo "$data" | sed 's/},/}\n/g' | awk '
     match($0, /id *= *([0-9]+)/, a) && match($0, /hash *= *"([a-f0-9]+)"/, b) && match($0, /name *= *"([^"]+)"/, c) && match($0, /filename *= *"([^"]+)"/, d) {
-      sub(/\.tic$/, "", c[1]); print a[1] "\t" b[1] "\t" c[1] "\t" d[1]
+      sub(/\.tic$/, "", c[1]); gsub(/[\t\r\n]/, " ", c[1]); print a[1] "\t" b[1] "\t" c[1] "\t" d[1]
     }' | sort -nr -k1,1 | awk '{ print "\"" $0 "\"," }' >> ~/gameflix/TIC-80.html
   printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script>\n' >> ~/gameflix/TIC-80.html
 done
