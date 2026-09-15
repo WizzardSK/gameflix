@@ -124,6 +124,12 @@ gameflix_fetch_firmware() {
       url="$mame_rom_url/${path##*/}"
     fi
     if [[ -z "$url" ]]; then
+      # Last try before giving up: the machine's own MAME set, which keeps its
+      # ROMs under the names they had (5200.rom, exec.bin, iplrom.dat).
+      if gameflix_from_mame_set "$corebin" "${path##*/}" "$sysdir/$path"; then
+        echo "Fetched firmware $path from the MAME set" >&2
+        continue
+      fi
       echo "Firmware $path is not in the BIOS pack - put it in $sysdir/$path yourself" >&2
       missing=1
       continue
@@ -200,6 +206,58 @@ gameflix_system_zip() {
     return 0
   fi
   rm -f "$tmpz"
+  return 1
+}
+
+# A machine's BIOS is often in the merged MAME set under the same file name the
+# core asks for - MAME keeps ROMs by their original names - even when the BIOS
+# pack has nothing. The set is named after the MAME driver, which is usually
+# the core's own stem (a5200_libretro -> a5200.zip); where it is not, it is
+# named here, and only for the cases where the file names line up as well.
+gameflix_mame_set_for_core() {
+  case "$1" in
+    freeintv_libretro)     echo intv ;;      # exec.bin, grom.bin
+    o2em_libretro)         echo odyssey2 ;;  # o2rom.bin
+    mednafen_pcfx_libretro) echo pcfx ;;     # pcfx.rom
+    px68k_libretro)        echo x68000 ;;    # iplrom.dat, cgrom.dat
+    *)                     echo "${1%_libretro}" ;;
+  esac
+}
+
+# What the file is called inside the set. Usually the same name the core asks
+# for, because MAME keeps ROMs under their original names - but some machines
+# are stored under the chip they came on, and those are named here. Each of
+# these was read out of the set itself, not guessed.
+gameflix_mame_member_for() {
+  case "$1:$2" in
+    a5200_libretro:5200.rom)              echo "co19156.u8" ;;
+    gearcoleco_libretro:colecovision.rom) echo "313_10031-4005_73108a.u2" ;;
+    mednafen_pcfx_libretro:pcfx.rom)      echo "pcfxbios.bin" ;;
+    *)                                    echo "$2" ;;
+  esac
+}
+
+# Pulls one named file out of a MAME set, downloading the set once per core.
+# Returns non-zero and leaves nothing behind when the set has no such file,
+# which is the common case and not an error.
+gameflix_from_mame_set() {
+  local core="$1" want="$2" dest="$3" set_name cache zip
+  cache="${XDG_CACHE_HOME:-$HOME/.cache}/gameflix"
+  set_name=$(gameflix_mame_set_for_core "$core")
+  [[ -n "$set_name" ]] || return 1
+  zip="$cache/mameset-$set_name.zip"
+  if [[ ! -s "$zip" ]]; then
+    mkdir -p "$cache"
+    gameflix_ia_auth
+    curl -sfL --location-trusted --max-time 600 ${ia_auth:+-H "Authorization: $ia_auth"} \
+      -o "$zip" "$mame_rom_url/$set_name.zip" || { rm -f "$zip"; return 1; }
+  fi
+  local member
+  member=$(gameflix_mame_member_for "$core" "$want")
+  unzip -l "$zip" 2>/dev/null | grep -qF " $member" || return 1
+  mkdir -p "$(dirname "$dest")"
+  unzip -p "$zip" "$member" > "$dest" 2>/dev/null && [[ -s "$dest" ]] && return 0
+  rm -f "$dest"
   return 1
 }
 
