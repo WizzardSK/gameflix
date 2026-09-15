@@ -140,6 +140,31 @@ gameflix_fetch_firmware() {
   return $missing
 }
 
+# Whether a core is a build for this machine. The buildbot has shipped an
+# x86-64 binary in the aarch64 slot before now (stella, 15 September 2026), and
+# dlopen answers that with "cannot open shared object file: No such file or
+# directory" naming the core - a file that is plainly there - because what is
+# missing is the loader it asks for. Nothing in that message says "wrong
+# architecture", so it is worth one read of the ELF header before handing the
+# path to RetroArch.
+gameflix_core_arch_ok() {
+  local f="$1" want machine
+  [[ -r "$f" ]] || return 1
+  case "$(uname -m)" in
+    x86_64)        want=62 ;;   # EM_X86_64
+    aarch64|arm64) want=183 ;;  # EM_AARCH64
+    armv7l|armv6l) want=40 ;;   # EM_ARM
+    i?86)          want=3 ;;    # EM_386
+    riscv64)       want=243 ;;  # EM_RISCV
+    *)             return 0 ;;  # unknown host: do not second-guess it
+  esac
+  # e_machine is two little-endian bytes at offset 18, after the magic this
+  # also confirms.
+  [[ "$(od -An -tx1 -N4 "$f" | tr -d ' ')" == "7f454c46" ]] || return 1
+  machine=$(od -An -tu2 -j18 -N2 "$f" | tr -d ' ')
+  [[ "$machine" == "$want" ]]
+}
+
 # Some cores need support files rather than a console BIOS - Dolphin's
 # codehandler, PPSSPP's atlas, ScummVM's engine data - and libretro publishes
 # those itself, one zip per core, laid out as a system folder. First-party and
@@ -246,7 +271,11 @@ if [[ "$core" == *libretro* ]]; then
   [[ -d "$HOME/.var/app/org.libretro.RetroArch/config/retroarch/cores" ]] && coredirs+=("$HOME/.var/app/org.libretro.RetroArch/config/retroarch/cores")
   coredirs+=("$HOME/.config/retroarch/cores")
   corepath=""
-  for d in "${coredirs[@]}"; do [[ -e "$d/$corebin.so" ]] && { corepath="$d/$corebin.so"; break; }; done
+  for d in "${coredirs[@]}"; do
+    [[ -e "$d/$corebin.so" ]] || continue
+    if gameflix_core_arch_ok "$d/$corebin.so"; then corepath="$d/$corebin.so"; break; fi
+    echo "Core $d/$corebin.so is not a build for $(uname -m); ignoring it" >&2
+  done
   if [[ -z "$corepath" ]]; then
     case "$(uname -m)" in
       x86_64) barch="x86_64";;
@@ -260,7 +289,14 @@ if [[ "$core" == *libretro* ]]; then
       mkdir -p "$dl"
       tmpz=$(mktemp)
       if curl -sfL "https://buildbot.libretro.com/nightly/linux/${barch}/latest/${corebin}.so.zip" -o "$tmpz" && unzip -oq "$tmpz" -d "$dl"; then
-        corepath="$dl/$corebin.so"
+        if gameflix_core_arch_ok "$dl/$corebin.so"; then
+          corepath="$dl/$corebin.so"
+        else
+          # The download worked and the file is wrong. Keeping it would mean
+          # fetching it again on every launch and failing the same way.
+          echo "The buildbot's $barch build of $corebin is not a $barch binary; falling back" >&2
+          rm -f "$dl/$corebin.so"
+        fi
       fi
       rm -f "$tmpz"
     fi
@@ -268,8 +304,12 @@ if [[ "$core" == *libretro* ]]; then
   if [[ -z "$corepath" ]]; then
     stem="${corebin%_libretro}"
     for d in "${coredirs[@]}"; do
-      alt=$(ls "$d" 2>/dev/null | grep -E "^${stem}[^/]*_libretro\.so$" | head -n 1)
-      [[ -n "$alt" ]] && { corepath="$d/$alt"; echo "Core $corebin unavailable; using ${alt%.so} instead" >&2; break; }
+      while IFS= read -r alt; do
+        [[ -z "$alt" ]] && continue
+        gameflix_core_arch_ok "$d/$alt" || continue
+        corepath="$d/$alt"; echo "Core $corebin unavailable; using ${alt%.so} instead" >&2; break
+      done < <(ls "$d" 2>/dev/null | grep -E "^${stem}[^/]*_libretro\.so$")
+      [[ -n "$corepath" ]] && break
     done
   fi
   if [[ -z "$corepath" ]]; then
