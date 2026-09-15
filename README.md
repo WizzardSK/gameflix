@@ -42,7 +42,20 @@ Open <https://wizzardsk.github.io/> in your browser and click a game thumbnail t
 2. OS launches `~/retroarch.sh` (3-line bootstrap)
 3. Bootstrap fetches the full launcher from <https://wizzardsk.github.io/retroarch.sh>
 4. Launcher downloads the ROM into `~/share/roms/` via rclone (Internet Archive S3 session is required for restricted items like NoIntro / MAME-SL / TOSEC)
-5. ROM launches via the matching RetroArch core or standalone emulator
+5. Launcher fetches the core if it is not installed, and then any firmware that core needs and the system directory does not have (see [Firmware](#firmware))
+6. ROM launches via the matching RetroArch core or standalone emulator
+
+### Firmware
+
+A core that needs a BIOS lists the exact files in its `.info`, and a missing one is not an error message — it is a black screen, or a core that exits without drawing anything. The Linux launcher reads that list and fetches what is missing into RetroArch's system directory, from three sources in order:
+
+1. **libretro's own system zips** (`buildbot.libretro.com/assets/system`) — support files the project distributes itself, such as Dolphin's `codehandler.bin`, PPSSPP's atlas or ScummVM's engine data. One zip usually settles every file a core is missing.
+2. **A RetroArch BIOS pack on the Internet Archive** — laid out as a system folder, so a name from the `.info` is a path in the pack. Covers PS1, Mega CD, Game Boy/GBA boot ROMs, Lynx, PC Engine CD, Atari ST, blueMSX machines and more.
+3. **The merged MAME set** — for firmware entries that are `.zip` files (flycast's Naomi and Atomiswave boards), and for the system ROM set a `mame_libretro` driver needs in `~/share/bios` (`neogeo.zip`, `stvbios.zip`, `sms.zip`). Restricted, so it needs the same Internet Archive S3 session as the NoIntro/TOSEC ROM sets.
+
+The listings of the first two are cached under `~/.cache/gameflix` for a month, and nothing is fetched at all when the files are already there. Anything none of the three has — Intellivision's `exec.bin`, ColecoVision's `colecovision.rom`, the Amiga Kickstarts, the PC-FX and X68000 ROMs — is named on stderr with the path to drop it in, rather than passed over in silence.
+
+Windows (`retroarch.ps1`) does not do this yet; it only warns when a MAME system ROM set is missing.
 
 ### Windows
 
