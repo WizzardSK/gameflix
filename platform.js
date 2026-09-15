@@ -40,12 +40,21 @@ function bgImage(platform) {
     }
 }
 
+// TIC-80 carts are played locally, in tic80_libretro, not on tic80.com: the
+// site sends X-Frame-Options: SAMEORIGIN, so its player can never load in the
+// "main" frame gameflix is built out of. The cart itself is fetched straight
+// from tic80.com, which serves /cart/<hash>/<anything>.tic - so the play://
+// path carries the hash as its folder and the cart's own file name as the ROM,
+// and launch.tsv maps /TIC-80/ to https://tic80.com/cart/.
 function generateTicLinks(romPath, imagePath) {
-    romPath = romPath.replace("roms/TIC-80", "https://tic80.com/play?cart=");
+    var headers = document.querySelectorAll('.section-header');
+    var foldername = headers.length ? headers[headers.length - 1].id : '';
+    var base = encodeURI('play:///TIC-80/' + foldername);
     var html = [];
     fileNames.forEach(fileName => {
-        var [id, hash, nazov] = fileName.split('\t');
-        html.push(`<a href="${romPath}${id}" target="main">
+        var [id, hash, nazov, subor] = fileName.split('\t');
+        var href = `${base}/${hash}/${encodeURIComponent(subor || hash + '.tic')}`;
+        html.push(`<a href="${href}" target="main" rel="noreferrer">
         <figure><img loading="lazy" src="https://tic80.com/cart/${hash}/cover.gif" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     });
     document.write('<div class="figureList">' + html.join('') + '</div>');

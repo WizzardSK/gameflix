@@ -184,8 +184,12 @@ echo "<b>Fantasy & Homebrew</b><br />" >> ~/gameflix/systems.html; echo "<h3 id=
 # TIC-80 - all categories fetched in parallel
 pocet=0; echo "TIC-80"; echo '<script src="platform.js"></script>' > ~/gameflix/TIC-80.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/tic80/gamelist.xml
-echo "*\"TIC-80/\"*) core=\"tic80_libretro\";;" >> ~/gameflix/retroarch.sh
-printf 'TIC-80/\ttic80_libretro\t\t\n' >> ~/gameflix/launch.tsv
+# tic80.com serves a cart at /cart/<hash>/<anything>.tic, so the carts are
+# fetched from the site itself and played in tic80_libretro, exactly like any
+# other platform's ROM. (Linking the site's own player instead does not work:
+# tic80.com sends X-Frame-Options: SAMEORIGIN and gameflix is a frameset.)
+echo "*\"/TIC-80/\"*) core=\"tic80_libretro\"; src=\"https://tic80.com/cart/\";;" >> ~/gameflix/retroarch.sh
+printf '/TIC-80/\ttic80_libretro\t\thttps://tic80.com/cart/\n' >> ~/gameflix/launch.tsv
 tic_cache=~/tic_cache; mkdir -p "$tic_cache"
 for tic_cat in Games Tech Tools Music WIP Demoscene Livecoding; do
   curl -s "https://tic80.com/api?fn=dir&path=play/$tic_cat" > "$tic_cache/$tic_cat" &
@@ -197,8 +201,8 @@ for tic_cat in Games Tech Tools Music WIP Demoscene Livecoding; do
   pocet=$((pocet+cat_count)); total=$((total+cat_count))
   echo -e "<h3 id=\"$tic_cat\" class=\"section-header\">$tic_cat</h3>\n<script>bgImage(\"tic80\")\nfileNames = [" >> ~/gameflix/TIC-80.html
   echo "$data" | sed 's/},/}\n/g' | awk '
-    match($0, /id *= *([0-9]+)/, a) && match($0, /hash *= *"([a-f0-9]+)"/, b) && match($0, /name *= *"([^"]+)"/, c) {
-      sub(/\.tic$/, "", c[1]); print a[1] "\t" b[1] "\t" c[1]
+    match($0, /id *= *([0-9]+)/, a) && match($0, /hash *= *"([a-f0-9]+)"/, b) && match($0, /name *= *"([^"]+)"/, c) && match($0, /filename *= *"([^"]+)"/, d) {
+      sub(/\.tic$/, "", c[1]); print a[1] "\t" b[1] "\t" c[1] "\t" d[1]
     }' | sort -nr -k1,1 | awk '{ print "\"" $0 "\"," }' >> ~/gameflix/TIC-80.html
   printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script>\n' >> ~/gameflix/TIC-80.html
 done

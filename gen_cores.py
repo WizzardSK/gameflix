@@ -19,9 +19,11 @@ MAME autoboot commands contain both " and \n, which broke the old regex-based
 retroarch.sh parser and left cores.json with truncated core strings.
 
 Only keys that start with "/" are emitted — the Android intent path handles the
-"/platform/folder/" ROM entries, not the fantasy pseudo-platforms (TIC-80/,
-PICO-8/, ...) whose keys have no leading slash. This matches the historical
-gen_cores.py behaviour.
+"/platform/folder/" ROM entries, not the fantasy pseudo-platforms (PICO-8/,
+Voxatron/, ...) whose keys have no leading slash, because those are played on
+their own web site rather than fetched as a ROM. TIC-80 is the exception among
+the fantasy consoles: its carts are downloaded from tic80.com and run in
+tic80_libretro, so its key is "/TIC-80/" and it does get an entry.
 
 Usage: gen_cores.py /path/to/launch.tsv > cores.json
 """

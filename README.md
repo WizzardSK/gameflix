@@ -130,11 +130,11 @@ Generation takes around 30 minutes on slower machines (e.g. ARM Chromebook). End
 
 ## Fantasy consoles
 
-Gameflix includes special support for fantasy console platforms. These games are played directly in the browser via their official web players:
+Gameflix includes special support for fantasy console platforms. Most of these games are played directly in the browser via their official web players; TIC-80 is the exception, because tic80.com sends `X-Frame-Options: SAMEORIGIN` and so cannot load inside the gameflix frameset — its carts are fetched from tic80.com and run in `tic80_libretro` through the normal `play://` launcher instead.
 
 | Platform | Source | Player |
 |----------|--------|--------|
-| [TIC-80](https://tic80.com) | TIC-80 API | tic80.com/play |
+| [TIC-80](https://tic80.com) | TIC-80 API | `tic80_libretro` (cart from tic80.com/cart) |
 | [PICO-8](https://www.lexaloffle.com/pico-8.php) | Lexaloffle BBS | lexaloffle.com |
 | [Voxatron](https://www.lexaloffle.com/voxatron.php) | Lexaloffle BBS | lexaloffle.com |
 | [WASM-4](https://wasm4.org) | wasm4.org | wasm4.org/play |
