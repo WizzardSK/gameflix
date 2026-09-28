@@ -103,6 +103,9 @@ if (isSystems) {
         l.rows.className = 'figureRows';
         l.el.appendChild(l.rows);
         l.shown = null;   // indices passing the filter
+        // The section header this list belongs to (hidden when nothing matches)
+        l.header = l.el.previousElementSibling;
+        while (l.header && !l.header.classList.contains('section-header')) l.header = l.header.previousElementSibling;
         l.first = l.last = -2;   // rendered row range; -1/-1 = nothing rendered
     });
 
@@ -185,19 +188,34 @@ if (isSystems) {
                 var headerTop = header.getBoundingClientRect().top + window.scrollY;
                 window.scrollTo({ top: headerTop - topbarHeight, behavior: 'smooth' });
             });
+            header.navlink = link;
             navlinksDiv.appendChild(link);
         });
     }
 
     // Push content below the fixed topbar
     var topbar = document.getElementById('topbar');
+    // The margin goes on the first header the filter has not hidden
+    var refreshTopMargin = function() {};
     if (topbar) {
-        var target = sectionHeaders.length > 0 ? sectionHeaders[0] : document.querySelector('.figureList');
-        if (target) {
-            function adjustTopMargin() { target.style.marginTop = topbar.offsetHeight + 'px'; }
-            adjustTopMargin();
-            new ResizeObserver(adjustTopMargin).observe(topbar);
-        }
+        var marginTarget = null;
+        refreshTopMargin = function() {
+            var target = null;
+            for (var h = 0; h < sectionHeaders.length && !target; h++) {
+                if (sectionHeaders[h].style.display !== 'none') target = sectionHeaders[h];
+            }
+            if (!target && !sectionHeaders.length) target = document.querySelector('.figureList');
+            if (marginTarget && marginTarget !== target) marginTarget.style.marginTop = '';
+            if (target) target.style.marginTop = topbar.offsetHeight + 'px';
+            marginTarget = target;
+        };
+        refreshTopMargin();
+        new ResizeObserver(function() { refreshTopMargin(); }).observe(topbar);
+        // main.html#Commodore (the logo link on a platform page): keep the
+        // section header clear of the fixed topbar when the browser jumps to it
+        sectionHeaders.forEach(function(header) { header.style.scrollMarginTop = topbar.offsetHeight + 'px'; });
+        var hashTarget = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (hashTarget) hashTarget.scrollIntoView();
     }
 
     // Checkbox definitions (platform pages only)
@@ -239,8 +257,15 @@ if (isSystems) {
                 lists[k].shown = shown;
                 count += shown.length;
                 total += captions.length;
+                var display = shown.length ? '' : 'none';
+                lists[k].el.style.display = display;
+                if (lists[k].header) {
+                    lists[k].header.style.display = display;
+                    if (lists[k].header.navlink) lists[k].header.navlink.style.display = display;
+                }
             }
             if (pocetEl) pocetEl.innerHTML = count + "/" + total;
+            refreshTopMargin();
             layoutLists();
             return;
         }

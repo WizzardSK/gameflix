@@ -1,5 +1,5 @@
 let text = `<div id=\"topbar\"><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />
-<a href="main.html"><img align=left style="margin-right:5px;padding:0px;height:50px;width:200px;"
+<a href="main.html${typeof gfGroup === 'undefined' ? '' : '#' + encodeURIComponent(gfGroup)}"><img align=left style="margin-right:5px;padding:0px;height:50px;width:200px;"
 src="https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/logos/${location.pathname.split('/').pop().replace(/\.html?$/, '')}.svg"></a>
 <input type=\"text\" id=\"filterInput\" placeholder=\"Filter...\">
 <input type=\"radio\" name=\"thumbtype\" id=\"Snaps\" value=\"Snaps\" checked onclick=\"processImages('snaps')\"><label for=\"Snaps\">Snaps</label>

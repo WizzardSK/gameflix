@@ -179,10 +179,14 @@ done
 mame_fetch_end=$(date +%s)
 echo "=== MAME SOFTLIST NAMES DONE: ${#mame_name[@]} entries in $((mame_fetch_end - mame_fetch_start))s ==="
 
+# Each platform page links its logo back to its section of main.html (gfGroup)
+group="Fantasy & Homebrew"; platform_head() { printf '<script>var gfGroup = "%s";</script><script src="platform.js"></script>\n' "$group"; }
+# fileNames entries are JS string literals: escape backslashes and double quotes
+jsstr() { local s="${1//\\/\\\\}"; printf '%s' "${s//\"/\\\"}"; }
 echo "<b>Fantasy & Homebrew</b><br />" >> ~/gameflix/systems.html; echo "<h3 id=\"Fantasy &amp; Homebrew\" class=\"section-header\" style=\"width:100%\">Fantasy & Homebrew</h3>" >> ~/gameflix/main.html
 
 # TIC-80 - all categories fetched in parallel
-pocet=0; echo "TIC-80"; echo '<script src="platform.js"></script>' > ~/gameflix/TIC-80.html; ((platforms++))
+pocet=0; echo "TIC-80"; platform_head > ~/gameflix/TIC-80.html; ((platforms++))
 echo "<gameList>" > ~/gamelists/tic80/gamelist.xml
 # tic80.com serves a cart at /cart/<hash>/<anything>.tic, so the carts are
 # fetched from the site itself and played in tic80_libretro, exactly like any
@@ -212,7 +216,7 @@ echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> <small>$pocet</small><b
 echo "<game><path>./surf.tic</path><name>TIC-80 surf</name><image>./tic80.png</image></game></gameList>" >> ~/gamelists/tic80/gamelist.xml
 
 # LowresNX - categories with section headers
-pocet=0; echo "LowresNX"; echo '<script src="platform.js"></script>' > ~/gameflix/LowresNX.html; ((platforms++))
+pocet=0; echo "LowresNX"; platform_head > ~/gameflix/LowresNX.html; ((platforms++))
 echo "*\"LowresNX/\"*) core=\"lowresnx_libretro\";;" >> ~/gameflix/retroarch.sh
 printf 'LowresNX/\tlowresnx_libretro\t\t\n' >> ~/gameflix/launch.tsv
 declare -A lrnx_names=([game]=Games [art]=Art [tool]=Tools [example]=Examples)
@@ -230,7 +234,7 @@ section_open=0
     fi
     IFS=$'\t' read -r name picture cart <<< "$rest"
     if [[ -n "$cart" && -n "$picture" ]]; then
-      echo "\"$cart\t$picture\t$name\t$id\"," >> ~/gameflix/LowresNX.html
+      echo "\"$(jsstr "$cart")\t$(jsstr "$picture")\t$(jsstr "$name")\t$id\"," >> ~/gameflix/LowresNX.html
       ((pocet++)); ((total++))
     fi
     echo "<game><path>./${cart}</path><name>${name}</name><image>./${picture}</image></game>"
@@ -243,7 +247,7 @@ echo "<figure><a href='LowresNX.html'><img src='https://raw.githubusercontent.co
 echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 
 # WASM-4 - dual fd output (count from wasm4.org/play, works in CI without local ROMs)
-echo "WASM-4"; echo '<script src="platform.js"></script>' > ~/gameflix/WASM-4.html; echo "<script>bgImage(\"wasm4\"); fileNames = [" >> ~/gameflix/WASM-4.html; ((platforms++))
+echo "WASM-4"; platform_head > ~/gameflix/WASM-4.html; echo "<script>bgImage(\"wasm4\"); fileNames = [" >> ~/gameflix/WASM-4.html; ((platforms++))
 wasm_html=$(curl -s "https://wasm4.org/play/")
 wasm_entries=$(echo "$wasm_html" | grep -oP '<img src="/carts/[^"]+\.png" alt="[^"]+"')
 pocet=$(echo "$wasm_entries" | grep -c '.'); total=$((pocet+total))
@@ -254,7 +258,7 @@ exec 3>> ~/gameflix/WASM-4.html
   echo "<gameList>"
   while read -r line; do
     image=$(echo "$line" | grep -oP '(?<=src=")/carts/[^"]+'); title=$(echo "$line" | grep -oP '(?<=alt=")[^"]+'); image_name=$(basename "$image" .png)
-    echo "\"$image_name\t$title\"," >&3
+    echo "\"$(jsstr "$image_name")\t$(jsstr "$title")\"," >&3
     echo "<game><path>./${image_name}.wasm</path><name>${title}</name><image>./${image_name}.png</image></game>"
   done <<< "$wasm_entries"
   echo "</gameList>"
@@ -265,7 +269,7 @@ echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> <small>$pocet</small><b
 printf ']; generateWasmLinks("roms/WASM-4", "WASM-4");</script><script src=\"script.js\"></script>' >> ~/gameflix/WASM-4.html
 
 # PICO-8 - categories with section headers
-pocet=0; echo "PICO-8"; echo '<script src="platform.js"></script>' > ~/gameflix/PICO-8.html; ((platforms++))
+pocet=0; echo "PICO-8"; platform_head > ~/gameflix/PICO-8.html; ((platforms++))
 echo "*\"PICO-8/\"*) core=\"pico8 -run\";;" >> ~/gameflix/retroarch.sh
 printf 'PICO-8/\tpico8 -run\t\t\n' >> ~/gameflix/launch.tsv
 pico_section=0
@@ -276,7 +280,7 @@ while IFS=$'\t' read -r id rest; do
     pico_section=1; continue
   fi
   IFS=$'\t' read -r name cart <<< "$rest"
-  echo "\"$id\t$name\t$cart\"," >> ~/gameflix/PICO-8.html
+  echo "\"$id\t$(jsstr "$name")\t$(jsstr "$cart")\"," >> ~/gameflix/PICO-8.html
   ((pocet++)); ((total++))
 done < fantasy/pico8.txt
 printf ']; generatePicoLinks("roms/PICO-8", "PICO-8");</script>\n' >> ~/gameflix/PICO-8.html
@@ -286,7 +290,7 @@ echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> <small>$pocet</small><b
 echo "<gameList></gameList>" > ~/gamelists/pico8/gamelist.xml
 
 # Voxatron - categories with section headers
-pocet=0; echo "Voxatron"; echo '<script src="platform.js"></script>' > ~/gameflix/Voxatron.html; ((platforms++))
+pocet=0; echo "Voxatron"; platform_head > ~/gameflix/Voxatron.html; ((platforms++))
 echo "*\"Voxatron/\"*) core=\"vox\";;" >> ~/gameflix/retroarch.sh
 printf 'Voxatron/\tvox\t\t\n' >> ~/gameflix/launch.tsv
 vox_section=0
@@ -297,7 +301,7 @@ while IFS=$'\t' read -r id rest; do
     vox_section=1; continue
   fi
   IFS=$'\t' read -r name cart <<< "$rest"
-  echo "\"$id\t$name\t$cart\"," >> ~/gameflix/Voxatron.html
+  echo "\"$id\t$(jsstr "$name")\t$(jsstr "$cart")\"," >> ~/gameflix/Voxatron.html
   ((pocet++)); ((total++))
 done < fantasy/voxatron.txt
 printf ']; generateVoxLinks("roms/Voxatron", "Voxatron");</script>\n' >> ~/gameflix/Voxatron.html
@@ -321,8 +325,8 @@ IFS=";"; for each in "${roms[@]}"; do
       echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/${rom3}.jpg'><figcaption>${rom6}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
       echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; ((platforms++))
     fi
-    [[ -n "${separator[${rom[0]}]}" ]] && echo "<br /><b>${separator[${rom[0]}]}</b><br />" >> ~/gameflix/systems.html && echo "<h3 id=\"${separator[${rom[0]}]}\" class=\"section-header\" style=\"width:100%\">${separator[${rom[0]}]}</h3>" >> ~/gameflix/main.html
-    echo '<script src="platform.js"></script>' > ~/gameflix/${rom[0]}.html
+    [[ -n "${separator[${rom[0]}]}" ]] && group="${separator[${rom[0]}]}" && echo "<br /><b>${separator[${rom[0]}]}</b><br />" >> ~/gameflix/systems.html && echo "<h3 id=\"${separator[${rom[0]}]}\" class=\"section-header\" style=\"width:100%\">${separator[${rom[0]}]}</h3>" >> ~/gameflix/main.html
+    platform_head > ~/gameflix/${rom[0]}.html
     pocet=0
     # Open new fds
     exec {html_fd}>> ~/gameflix/${rom[0]}.html
@@ -364,15 +368,19 @@ IFS=";"; for each in "${roms[@]}"; do
     elif [[ -n "$arcade_src" && -n "${mame_name[$arcade_src:$line2]}" ]]; then
       display_name="${mame_name[$arcade_src:$line2]}"
     fi
+    # Decode the entities, then escape backslashes and double quotes for the JS
+    # string literal (MAME names like: Aigiina no Yogen - from "The Legend of ...")
     js_name="$display_name"
-    js_name="${js_name//&quot;/\\\"}"
+    js_name="${js_name//&quot;/\"}"
     js_name="${js_name//&lt;/<}"
     js_name="${js_name//&gt;/>}"
     js_name="${js_name//&amp;/\&}"
+    js_name="${js_name//\\/\\\\}"; js_name="${js_name//\"/\\\"}"
+    js_line="${line//\\/\\\\}"; js_line="${js_line//\"/\\\"}"
     if [[ "$display_name" != "$line2" ]]; then
-      echo "\"${line}	${js_name}\"," >&$html_fd
+      echo "\"${js_line}	${js_name}\"," >&$html_fd
     else
-      echo "\"${line}\"," >&$html_fd
+      echo "\"${js_line}\"," >&$html_fd
     fi
     ((pocet++)); ((total++))
     if [[ "$line2" == *")"* ]]; then thumb="${line2%%)*})"; else thumb="$line2"; fi
