@@ -158,7 +158,8 @@ if (isSystems) {
                     }
                 }
             }
-            figures[i].style.display = visible ? '' : 'none';
+            var display = visible ? '' : 'none';
+            if (figures[i].style.display !== display) figures[i].style.display = display;
             if (visible) count++;
         }
         if (pocetEl) pocetEl.innerHTML = count + "/" + figures.length;
@@ -182,18 +183,13 @@ if (isSystems) {
         checkboxes[c][0].addEventListener('change', applyFilters);
     }
 
-    // Size change
+    // Size change: one stylesheet rule instead of inline styles on every figure,
+    // so a list of tens of thousands of games is restyled in a single pass
+    var sizeStyle = document.createElement('style');
+    document.head.appendChild(sizeStyle);
     function changeSize(size) {
-        var figurky = document.querySelectorAll('.figureList figure');
-        var h = (size / 1.333) + 'px';
-        var fs = Math.round(size / 13.3) + 'px';
-        for (var i = 0; i < figurky.length; i++) {
-            figurky[i].style.width = size;
-            figurky[i].style.height = size + 'px';
-            figurky[i].style.fontSize = fs;
-            figurky[i].querySelector('img').style.width = size;
-            figurky[i].querySelector('img').style.height = h;
-        }
+        sizeStyle.textContent = '.figureList figure { width: ' + size + 'px; height: ' + size + 'px; font-size: ' + Math.round(size / 13.3) + 'px; contain-intrinsic-size: auto ' + size + 'px }' +
+            '.figureList figure img { width: ' + size + 'px; height: ' + (size / 1.333) + 'px }';
     }
 
     // Image type switching
@@ -212,12 +208,13 @@ if (isSystems) {
         }
     }
 
-    // Image error handling + loaded class
+    // Image error handling + loaded class. load/error do not bubble, so catch
+    // them in the capture phase once instead of adding two listeners per image.
+    document.addEventListener('load', function(e) { if (e.target.tagName === 'IMG') e.target.classList.add('loaded'); }, true);
+    document.addEventListener('error', function(e) { if (e.target.tagName === 'IMG') e.target.style.visibility = 'hidden'; }, true);
     var obrazky = document.querySelectorAll("img");
     for (var i = 0; i < obrazky.length; i++) {
-        obrazky[i].onerror = function() { this.style.visibility = "hidden"; };
-        if (obrazky[i].complete) { obrazky[i].classList.add('loaded'); }
-        else { obrazky[i].addEventListener('load', function() { this.classList.add('loaded'); }); }
+        if (obrazky[i].complete && obrazky[i].naturalWidth) obrazky[i].classList.add('loaded');
     }
 
     applyFilters();

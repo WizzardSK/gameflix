@@ -14,3 +14,7 @@ a { color: cyan; text-decoration: none }
 .navlink small { color: white }
 .navlink:hover { background-color: #777 }
 #navlinks { margin-top: 3px; clear: left }
+/* Long lists (C64 has tens of thousands of games): skip layout and paint of
+   figures outside the viewport. auto remembers each figure's last real size. */
+.figureList figure { content-visibility: auto; contain-intrinsic-size: auto 160px }
+.figureList figure:hover { content-visibility: visible }

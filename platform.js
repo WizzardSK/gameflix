@@ -59,8 +59,7 @@ function generateTicLinks(romPath, imagePath) {
         var rom = subor || hash;
         if (!/\.tic$/i.test(rom)) rom += '.tic';
         var href = `${base}/${hash}/${encodeURIComponent(rom)}`;
-        html.push(`<a href="${href}" target="main" rel="noreferrer">
-        <figure><img loading="lazy" src="https://tic80.com/cart/${hash}/cover.gif" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        html.push(`<a href="${href}" target="main" rel="noreferrer"><figure><img loading="lazy" src="https://tic80.com/cart/${hash}/cover.gif" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     });
     document.write('<div class="figureList">' + html.join('') + '</div>');
 }
@@ -70,8 +69,7 @@ function generateWasmLinks(romPath, imagePath) {
     var html = [];
     fileNames.forEach(fileName => {
         var [subor, nazov] = fileName.split('\t');
-        html.push(`<a href="${romPath}/${encodeURIComponent(subor)}" target="main">
-        <figure><img loading="lazy" src="https://wasm4.org/carts/${subor}.png" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        html.push(`<a href="${romPath}/${encodeURIComponent(subor)}" target="main"><figure><img loading="lazy" src="https://wasm4.org/carts/${subor}.png" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     });
     document.write('<div class="figureList">' + html.join('') + '</div>');
 }
@@ -81,8 +79,7 @@ function generateLrNXLinks(romPath, imagePath) {
     var html = [];
     fileNames.forEach(fileName => {
         var [subor, obrazok, nazov, id] = fileName.split('\t');
-        html.push(`<a href="${romPath}${encodeURIComponent(id)}" target="main">
-        <figure><img loading="lazy" src="https://lowresnx.inutilis.com/uploads/${obrazok}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        html.push(`<a href="${romPath}${encodeURIComponent(id)}" target="main"><figure><img loading="lazy" src="https://lowresnx.inutilis.com/uploads/${obrazok}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     });
     document.write('<div class="figureList">' + html.join('') + '</div>');
 }
@@ -93,8 +90,7 @@ function generatePicoLinks(romPath, imagePath) {
         var [id, nazov, kart] = fileName.split('\t');
         var screen = /^\d/.test(kart) ? "pico" + kart.replace(/\.p8\.png$/, '.png') : kart.replace(/^(.*)\.p8\.png$/, 'pico8_$1.png');
         var cart = kart.replace(/\.p8.png$/, "");
-        html.push(`<a href="https://www.lexaloffle.com/bbs/?pid=${cart}#p" target="main">
-        <figure><img loading="lazy" src="https://www.lexaloffle.com/bbs/thumbs/${screen}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        html.push(`<a href="https://www.lexaloffle.com/bbs/?pid=${cart}#p" target="main"><figure><img loading="lazy" src="https://www.lexaloffle.com/bbs/thumbs/${screen}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     });
     document.write('<div class="figureList">' + html.join('') + '</div>');
 }
@@ -105,8 +101,7 @@ function generateVoxLinks(romPath, imagePath) {
         var [id, nazov, kart] = fileName.split('\t');
         var screen = kart.replace(/^(.*)\.vx\.png$/, 'vox_$1.png').replace(/^cpost/, "vox");
         var cart = kart.replace(/^cpost/, "").replace(/\.png$/, "");
-        html.push(`<a href="https://www.lexaloffle.com/bbs/?pid=${cart}#p" target="main">
-        <figure><img loading="lazy" src="https://www.lexaloffle.com/bbs/thumbs/${screen}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        html.push(`<a href="https://www.lexaloffle.com/bbs/?pid=${cart}#p" target="main"><figure><img loading="lazy" src="https://www.lexaloffle.com/bbs/thumbs/${screen}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
     });
     document.write('<div class="figureList">' + html.join('') + '</div>');
 }
@@ -126,8 +121,7 @@ function generateFileLinks(romPath, imagePath) {
         var nazov = fileName.includes("\t") ? fileName.split("\t")[1] : fileName.replace(/\.[^.]+$/, "");
         var fileUrl = `${encodedPath}/${encodeURIComponent(subor)}`;
         var href = wrapInJavatari ? `https://javatari.org/?rom=${encodeURIComponent(fileUrl)}` : fileUrl;
-        html.push(`<a href="${href}" target="main" rel="noreferrer">
-        <figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutBrackets)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
+        html.push(`<a href="${href}" target="main" rel="noreferrer"><figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutBrackets)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
     });
     document.write('<div class="figureList">' + html.join('') + '</div>');
 }
