@@ -14,7 +14,7 @@ a { color: cyan; text-decoration: none }
 .navlink small { color: white }
 .navlink:hover { background-color: #777 }
 #navlinks { margin-top: 3px; clear: left }
-/* Long lists (C64 has tens of thousands of games): skip layout and paint of
-   figures outside the viewport. auto remembers each figure's last real size. */
-.figureList figure { content-visibility: auto; contain-intrinsic-size: auto 160px }
-.figureList figure:hover { content-visibility: visible }
+/* Platform pages render only the rows on screen (script.js): .figureList is
+   sized to the whole list and .figureRows holds the visible rows. */
+.figureList { position: relative }
+.figureRows { position: absolute; left: 0; right: 0; display: grid; column-gap: 4px }

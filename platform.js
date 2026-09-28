@@ -40,6 +40,28 @@ function bgImage(platform) {
     }
 }
 
+// Game lists are not written into the page as HTML. A platform like C64 has
+// over 260,000 games, and a million-plus DOM nodes take the browser a minute to
+// build. Each generate*Links() call instead registers its list here with a
+// caption per game (for the filter) and a function that builds one game's
+// markup; script.js creates markup only for the rows on screen.
+var gfLists = [];
+
+// Thumbnail set for generateFileLinks: _Snaps, _Titles, _Boxarts or _Logos
+// (switched by processImages() in script.js).
+var gfThumbType = '_Snaps';
+
+function addFigureList(names, parse, render) {
+    var captions = new Array(names.length);
+    for (var i = 0; i < names.length; i++) captions[i] = parse(names[i]).nazov.toLowerCase();
+    document.write('<div class="figureList" data-list="' + gfLists.length + '"></div>');
+    gfLists.push({ captions: captions, render: function (i) { return render(parse(names[i])); } });
+}
+
+function figureHtml(href, img, alt, caption, attrs) {
+    return `<a href="${href}" target="main"${attrs || ''}><figure><img loading="lazy" src="${img}" alt="${alt}"><figcaption>${caption}</figcaption></figure></a>`;
+}
+
 // TIC-80 carts are played locally, in tic80_libretro, not on tic80.com: the
 // site sends X-Frame-Options: SAMEORIGIN, so its player can never load in the
 // "main" frame gameflix is built out of. The cart itself is fetched straight
@@ -50,60 +72,59 @@ function generateTicLinks(romPath, imagePath) {
     var headers = document.querySelectorAll('.section-header');
     var foldername = headers.length ? headers[headers.length - 1].id : '';
     var base = encodeURI('play:///TIC-80/' + foldername);
-    var html = [];
-    fileNames.forEach(fileName => {
+    addFigureList(fileNames, function (fileName) {
         var [id, hash, nazov, subor] = fileName.split('\t');
+        return { hash: hash, nazov: nazov, subor: subor };
+    }, function (g) {
         // RetroArch picks the core by extension, and tic80.com has carts whose
         // file name carries none, so the name is only ever a label here - the
         // hash in the path is what identifies the cart.
-        var rom = subor || hash;
+        var rom = g.subor || g.hash;
         if (!/\.tic$/i.test(rom)) rom += '.tic';
-        var href = `${base}/${hash}/${encodeURIComponent(rom)}`;
-        html.push(`<a href="${href}" target="main" rel="noreferrer"><figure><img loading="lazy" src="https://tic80.com/cart/${hash}/cover.gif" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        return figureHtml(`${base}/${g.hash}/${encodeURIComponent(rom)}`, `https://tic80.com/cart/${g.hash}/cover.gif`, g.nazov, g.nazov, ' rel="noreferrer"');
     });
-    document.write('<div class="figureList">' + html.join('') + '</div>');
 }
 
 function generateWasmLinks(romPath, imagePath) {
     romPath = romPath.replace("roms/WASM-4", "https://wasm4.org/play");
-    var html = [];
-    fileNames.forEach(fileName => {
+    addFigureList(fileNames, function (fileName) {
         var [subor, nazov] = fileName.split('\t');
-        html.push(`<a href="${romPath}/${encodeURIComponent(subor)}" target="main"><figure><img loading="lazy" src="https://wasm4.org/carts/${subor}.png" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        return { subor: subor, nazov: nazov };
+    }, function (g) {
+        return figureHtml(`${romPath}/${encodeURIComponent(g.subor)}`, `https://wasm4.org/carts/${g.subor}.png`, g.nazov, g.nazov);
     });
-    document.write('<div class="figureList">' + html.join('') + '</div>');
 }
 
 function generateLrNXLinks(romPath, imagePath) {
     romPath = romPath.replace("roms/LowresNX", "https://lowresnx.inutilis.com/topic.php?id=");
-    var html = [];
-    fileNames.forEach(fileName => {
+    addFigureList(fileNames, function (fileName) {
         var [subor, obrazok, nazov, id] = fileName.split('\t');
-        html.push(`<a href="${romPath}${encodeURIComponent(id)}" target="main"><figure><img loading="lazy" src="https://lowresnx.inutilis.com/uploads/${obrazok}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        return { obrazok: obrazok, nazov: nazov, id: id };
+    }, function (g) {
+        return figureHtml(`${romPath}${encodeURIComponent(g.id)}`, `https://lowresnx.inutilis.com/uploads/${g.obrazok}`, g.nazov, g.nazov);
     });
-    document.write('<div class="figureList">' + html.join('') + '</div>');
 }
 
 function generatePicoLinks(romPath, imagePath) {
-    var html = [];
-    fileNames.forEach(fileName => {
+    addFigureList(fileNames, function (fileName) {
         var [id, nazov, kart] = fileName.split('\t');
-        var screen = /^\d/.test(kart) ? "pico" + kart.replace(/\.p8\.png$/, '.png') : kart.replace(/^(.*)\.p8\.png$/, 'pico8_$1.png');
-        var cart = kart.replace(/\.p8.png$/, "");
-        html.push(`<a href="https://www.lexaloffle.com/bbs/?pid=${cart}#p" target="main"><figure><img loading="lazy" src="https://www.lexaloffle.com/bbs/thumbs/${screen}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        return { nazov: nazov, kart: kart };
+    }, function (g) {
+        var screen = /^\d/.test(g.kart) ? "pico" + g.kart.replace(/\.p8\.png$/, '.png') : g.kart.replace(/^(.*)\.p8\.png$/, 'pico8_$1.png');
+        var cart = g.kart.replace(/\.p8.png$/, "");
+        return figureHtml(`https://www.lexaloffle.com/bbs/?pid=${cart}#p`, `https://www.lexaloffle.com/bbs/thumbs/${screen}`, g.nazov, g.nazov);
     });
-    document.write('<div class="figureList">' + html.join('') + '</div>');
 }
 
 function generateVoxLinks(romPath, imagePath) {
-    var html = [];
-    fileNames.forEach(fileName => {
+    addFigureList(fileNames, function (fileName) {
         var [id, nazov, kart] = fileName.split('\t');
-        var screen = kart.replace(/^(.*)\.vx\.png$/, 'vox_$1.png').replace(/^cpost/, "vox");
-        var cart = kart.replace(/^cpost/, "").replace(/\.png$/, "");
-        html.push(`<a href="https://www.lexaloffle.com/bbs/?pid=${cart}#p" target="main"><figure><img loading="lazy" src="https://www.lexaloffle.com/bbs/thumbs/${screen}" alt="${nazov}"><figcaption>${nazov}</figcaption></figure></a>`);
+        return { nazov: nazov, kart: kart };
+    }, function (g) {
+        var screen = g.kart.replace(/^(.*)\.vx\.png$/, 'vox_$1.png').replace(/^cpost/, "vox");
+        var cart = g.kart.replace(/^cpost/, "").replace(/\.png$/, "");
+        return figureHtml(`https://www.lexaloffle.com/bbs/?pid=${cart}#p`, `https://www.lexaloffle.com/bbs/thumbs/${screen}`, g.nazov, g.nazov);
     });
-    document.write('<div class="figureList">' + html.join('') + '</div>');
 }
 
 function generateFileLinks(romPath, imagePath) {
@@ -113,15 +134,15 @@ function generateFileLinks(romPath, imagePath) {
     var foldername = headers.length ? headers[headers.length - 1].id : '';
     romPath = 'play:///' + platform + '/' + foldername;
     var encodedPath = encodeURI(romPath);
-    var html = [];
-    fileNames.forEach(fileName => {
+    addFigureList(fileNames, function (fileName) {
         var subor = fileName.includes("\t") ? fileName.split("\t")[0] : fileName;
-        var nameWithoutExt = subor.includes(".") ? subor.slice(0, subor.lastIndexOf(".")) : subor;
-        var nameWithoutBrackets = nameWithoutExt.replace(/^([^)]*\([^)]*\)).*$/, "$1");
         var nazov = fileName.includes("\t") ? fileName.split("\t")[1] : fileName.replace(/\.[^.]+$/, "");
-        var fileUrl = `${encodedPath}/${encodeURIComponent(subor)}`;
+        return { subor: subor, nazov: nazov };
+    }, function (g) {
+        var nameWithoutExt = g.subor.includes(".") ? g.subor.slice(0, g.subor.lastIndexOf(".")) : g.subor;
+        var nameWithoutBrackets = nameWithoutExt.replace(/^([^)]*\([^)]*\)).*$/, "$1");
+        var fileUrl = `${encodedPath}/${encodeURIComponent(g.subor)}`;
         var href = wrapInJavatari ? `https://javatari.org/?rom=${encodeURIComponent(fileUrl)}` : fileUrl;
-        html.push(`<a href="${href}" target="main" rel="noreferrer"><figure><img loading="lazy" src="https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named_Snaps/${encodeURIComponent(nameWithoutBrackets)}.png" alt="${nameWithoutExt}"><figcaption>${nazov}</figcaption></figure></a>`);
+        return figureHtml(href, `https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named${gfThumbType}/${encodeURIComponent(nameWithoutBrackets)}.png`, nameWithoutExt, g.nazov, ' rel="noreferrer"');
     });
-    document.write('<div class="figureList">' + html.join('') + '</div>');
 }

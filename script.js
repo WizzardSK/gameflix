@@ -79,7 +79,11 @@ if (isSystems) {
 } else {
     // Main page or platform page
     var isMain = !document.querySelector('.figureList');
-    var figures = document.querySelectorAll(isMain ? 'figure' : '.figureList figure');
+    // Platform pages register their games in gfLists (platform.js) and only the
+    // rows on screen exist as elements; the main page is plain HTML.
+    var lists = typeof gfLists !== 'undefined' ? gfLists : [];
+    var virtual = lists.length > 0;
+    var figures = virtual ? [] : document.querySelectorAll(isMain ? 'figure' : '.figureList figure');
     var pocetEl = document.getElementById('pocet');
     if (filterInput) { window.focus(); filterInput.focus(); }
     else if (isMain) { try { parent.frames['menu'].document.getElementById('filterInput').focus(); } catch(e) {} }
@@ -87,6 +91,77 @@ if (isSystems) {
     var captionTexts = new Array(figures.length);
     for (var i = 0; i < figures.length; i++) {
         captionTexts[i] = (isMain ? figures[i].textContent : figures[i].getElementsByTagName('figcaption')[0].textContent).toLowerCase();
+    }
+
+    // ---- Windowed rendering of the game lists --------------------------------
+    var itemSize = 160;   // figure width and height, changed by changeSize()
+    var ITEM_GAP = 4;     // horizontal gap between figures
+    var ROW_BUFFER = 4;   // rows rendered above and below the viewport
+    lists.forEach(function(l, k) {
+        l.el = document.querySelector('.figureList[data-list="' + k + '"]');
+        l.rows = document.createElement('div');
+        l.rows.className = 'figureRows';
+        l.el.appendChild(l.rows);
+        l.shown = null;   // indices passing the filter
+        l.first = l.last = -2;   // rendered row range; -1/-1 = nothing rendered
+    });
+
+    function layoutLists() {
+        // Two passes: setting the heights can add or remove the scrollbar,
+        // which changes the width the columns are computed from.
+        for (var pass = 0; pass < 2; pass++) {
+            var changed = false;
+            for (var k = 0; k < lists.length; k++) {
+                var l = lists[k];
+                var cols = Math.max(1, Math.floor((l.el.clientWidth + ITEM_GAP) / (itemSize + ITEM_GAP)));
+                if (pass && cols === l.cols) continue;
+                changed = true;
+                l.cols = cols;
+                l.el.style.height = Math.ceil(l.shown.length / cols) * itemSize + 'px';
+                l.rows.style.gridTemplateColumns = 'repeat(' + cols + ', ' + itemSize + 'px)';
+                l.rows.style.gridAutoRows = itemSize + 'px';
+                l.first = l.last = -2;   // force a re-render, even of a list that is now empty
+            }
+            if (!changed) break;
+        }
+        renderLists();
+    }
+
+    function renderLists() {
+        var viewH = window.innerHeight;
+        for (var k = 0; k < lists.length; k++) {
+            var l = lists[k];
+            var top = l.el.getBoundingClientRect().top;
+            var rowCount = Math.ceil(l.shown.length / l.cols);
+            var first = Math.max(0, Math.floor(-top / itemSize) - ROW_BUFFER);
+            var last = Math.min(rowCount - 1, Math.floor((viewH - top) / itemSize) + ROW_BUFFER);
+            if (first > last) first = last = -1;
+            if (first === l.first && last === l.last) continue;
+            l.first = first; l.last = last;
+            var html = [];
+            if (first >= 0) {
+                var end = Math.min(l.shown.length, (last + 1) * l.cols);
+                for (var i = first * l.cols; i < end; i++) html.push(l.render(l.shown[i]));
+            }
+            l.rows.style.top = Math.max(first, 0) * itemSize + 'px';
+            l.rows.innerHTML = html.join('');
+            // Thumbnails already in the cache skip the fade-in when scrolled back to
+            var imgs = l.rows.getElementsByTagName('img');
+            for (var j = 0; j < imgs.length; j++) {
+                if (imgs[j].complete && imgs[j].naturalWidth) imgs[j].classList.add('loaded');
+            }
+        }
+    }
+
+    if (virtual) {
+        var renderQueued = false;
+        var queueRender = function() {
+            if (renderQueued) return;
+            renderQueued = true;
+            requestAnimationFrame(function() { renderQueued = false; renderLists(); });
+        };
+        window.addEventListener('scroll', queueRender, { passive: true });
+        window.addEventListener('resize', function() { requestAnimationFrame(layoutLists); });
     }
 
     // Navlinks
@@ -144,9 +219,31 @@ if (isSystems) {
         ];
     }
 
+    function passesCheckboxes(text) {
+        for (var c = 0; c < checkboxes.length; c++) {
+            if (!checkboxes[c][0].checked && checkboxes[c][1].test(text)) return false;
+        }
+        return true;
+    }
+
     function applyFilters() {
         var filterText = filterInput ? filterInput.value.toLowerCase() : '';
         var count = 0;
+        if (virtual) {
+            var total = 0;
+            for (var k = 0; k < lists.length; k++) {
+                var captions = lists[k].captions, shown = [];
+                for (var i = 0; i < captions.length; i++) {
+                    if (captions[i].includes(filterText) && passesCheckboxes(captions[i])) shown.push(i);
+                }
+                lists[k].shown = shown;
+                count += shown.length;
+                total += captions.length;
+            }
+            if (pocetEl) pocetEl.innerHTML = count + "/" + total;
+            layoutLists();
+            return;
+        }
         for (var i = 0; i < figures.length; i++) {
             var text = captionTexts[i];
             var visible = text.includes(filterText);
@@ -188,8 +285,10 @@ if (isSystems) {
     var sizeStyle = document.createElement('style');
     document.head.appendChild(sizeStyle);
     function changeSize(size) {
-        sizeStyle.textContent = '.figureList figure { width: ' + size + 'px; height: ' + size + 'px; font-size: ' + Math.round(size / 13.3) + 'px; contain-intrinsic-size: auto ' + size + 'px }' +
+        itemSize = size;
+        sizeStyle.textContent = '.figureList figure { width: ' + size + 'px; height: ' + size + 'px; font-size: ' + Math.round(size / 13.3) + 'px }' +
             '.figureList figure img { width: ' + size + 'px; height: ' + (size / 1.333) + 'px }';
+        if (virtual) layoutLists();
     }
 
     // Image type switching
@@ -200,8 +299,13 @@ if (isSystems) {
         'logos': { from: /_Snaps|_Boxarts|_Titles/g, to: '_Logos' }
     };
     function processImages(operation) {
-        var obrazky = document.getElementsByTagName('img');
         var map = replaceMap[operation];
+        if (virtual) {
+            gfThumbType = map.to;
+            layoutLists();
+            return;
+        }
+        var obrazky = document.getElementsByTagName('img');
         for (var i = 0; i < obrazky.length; i++) {
             obrazky[i].style.visibility = "visible";
             obrazky[i].src = obrazky[i].src.replace(map.from, map.to);
