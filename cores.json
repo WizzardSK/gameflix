@@ -227,13 +227,13 @@
  },
  {
   "pattern": "/jaguarcd/Redump/",
-  "core": "bigpemu",
+  "core": "virtualjaguar_libretro",
   "ext": "cue",
   "src": "https://archive.org/download/atari-jaguarcd-redump/"
  },
  {
   "pattern": "/jaguarcd/NonRedump/",
-  "core": "bigpemu",
+  "core": "virtualjaguar_libretro",
   "ext": "cdi",
   "src": "https://archive.org/download/non-redump_atari-jaguar-cd/"
  },

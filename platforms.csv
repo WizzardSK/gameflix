@@ -43,8 +43,8 @@ jaguar,archive:ni-roms/roms/Atari - Jaguar (ABS).zip,NoIntro ABS,virtualjaguar_l
 jaguar,archive:ni-roms/roms/Atari - Jaguar (COF).zip,NoIntro COF,virtualjaguar_libretro,
 jaguar,archive:ni-roms/roms/Atari - Jaguar (JAG).zip,NoIntro JAG,virtualjaguar_libretro,
 jaguar,archive:ni-roms/roms/Atari - Jaguar (ROM).zip,NoIntro ROM,virtualjaguar_libretro,
-jaguarcd,archive:atari-jaguarcd-redump,Redump,bigpemu,cue
-jaguarcd,archive:non-redump_atari-jaguar-cd,NonRedump,bigpemu,cdi
+jaguarcd,archive:atari-jaguarcd-redump,Redump,virtualjaguar_libretro,cue
+jaguarcd,archive:non-redump_atari-jaguar-cd,NonRedump,virtualjaguar_libretro,cdi
 lynx,archive:ni-roms/roms/Atari - Lynx (LYX).zip,NoIntro,mednafen_lynx_libretro,
 lynx,archive:tosec-main/Atari/Lynx/Compilations/Games/[LNX]/Atari Lynx - Compilations - Games - [LNX] (TOSEC-v2022-06-08).zip,TOSEC,mednafen_lynx_libretro,
 lynx,archive:tosec-main/Atari/Lynx/Demos/[LNX]/Atari Lynx - Demos - [LNX] (TOSEC-v2025-01-15).zip,Demo [LNX],mednafen_lynx_libretro,
