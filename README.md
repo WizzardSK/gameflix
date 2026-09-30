@@ -51,11 +51,13 @@ A core that needs a BIOS lists the exact files in its `.info`, and a missing one
 
 1. **libretro's own system zips** (`buildbot.libretro.com/assets/system`) — support files the project distributes itself, such as Dolphin's `codehandler.bin`, PPSSPP's atlas or ScummVM's engine data. One zip usually settles every file a core is missing.
 2. **A RetroArch BIOS pack on the Internet Archive** — laid out as a system folder, so a name from the `.info` is a path in the pack. Covers PS1, Mega CD, Game Boy/GBA boot ROMs, Lynx, PC Engine CD, Atari ST, blueMSX machines and more.
-3. **The merged MAME set** — for firmware entries that are `.zip` files (flycast's Naomi and Atomiswave boards), and for the system ROM set a `mame_libretro` driver needs in `~/share/bios` (`neogeo.zip`, `stvbios.zip`, `sms.zip`). Restricted, so it needs the same Internet Archive S3 session as the NoIntro/TOSEC ROM sets.
+3. **MAME sets** — for firmware entries that are `.zip` files (flycast's Naomi and Atomiswave boards, SAME CDi's `cdimono1.zip`), and for BIOS files MAME keeps under another name, matched by CRC: the 3DO, ColecoVision, Odyssey 2 / Videopac+, Channel F, Famicom Disk System, Kickstart 1.3, the DS BIOS and firmware, BK monitors, Atari 7800, Dreamcast boot ROM.
 
-The listings of the first two are cached under `~/.cache/gameflix` for a month, and nothing is fetched at all when the files are already there. Anything none of the three has — Intellivision's `exec.bin`, ColecoVision's `colecovision.rom`, the Amiga Kickstarts, the PC-FX and X68000 ROMs — is named on stderr with the path to drop it in, rather than passed over in silence.
+For `mame_libretro`, the launcher also fetches into `~/share/bios` every ROM set a machine needs: its own, its parent's, its BIOS and the ROM devices of its default configuration and of the cards the list plugs in (a keyboard, a disk controller), as listed in [mame_deps.tsv](mame_deps.tsv). That file is written by [gen_mame_deps.py](gen_mame_deps.py) from the `-listxml` of the core's MAME version. The sets come from a recent non-merged set first and from the merged set as a fallback; the merged set is older than the core, and machines whose ROMs changed since would not start from it. Software named in a list's core arguments (Family BASIC, a BASIC cartridge, a FreeDOS disk) and every software-list XML of the machine are fetched too.
 
-Windows (`retroarch.ps1`) does not do this yet; it only warns when a MAME system ROM set is missing.
+The listings are cached under `~/.cache/gameflix` for a month, and nothing is fetched at all when the files are already there. Anything no source has — the Amiga 3.x and CD32 Kickstarts, Satellaview's `BS-X.bin`, the Palm ROMs, BK's BASIC and FOCAL — is named on stderr with the path to drop it in, rather than passed over in silence.
+
+Windows (`retroarch.ps1`) fetches the MAME sets, software and lists the same way, but not the firmware of other cores yet.
 
 ### Windows
 
