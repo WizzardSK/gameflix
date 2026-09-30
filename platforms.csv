@@ -985,7 +985,7 @@ special,archive:mame-sl/mame-sl/special_cass.zip,MAME,mame_libretro special -aut
 special,archive:mame-sl/mame-sl/special_flop.zip,Flop MAME,mame_libretro specimx -flop1,
 z80ne,archive:mame-sl/mame-sl/z80ne_cass.zip,Cass MAME,mame_libretro z80net -cass1,
 z80ne,archive:mame-sl/mame-sl/z80ne_flop.zip,Flop MAME,mame_libretro z80netf -flop1,
-j2me,archive:ni-roms/roms/Mobile - J2ME.zip,NoIntro,freej2me_libretro,jar
+j2me,archive:ni-roms/roms/Mobile - J2ME.zip,NoIntro,squirreljme_libretro,jar
 palm,archive:ni-roms/roms/Mobile - Palm OS (Digital).zip,NoIntro,mu_libretro,prc
 studio2,archive:mame-sl/mame-sl/studio2.zip,MAME,mame_libretro studio2 -cart,
 juicebox,archive:mame-sl/mame-sl/juicebox.zip,MAME,mame_libretro juicebox,

@@ -5119,7 +5119,7 @@
  },
  {
   "pattern": "/j2me/NoIntro/",
-  "core": "freej2me_libretro",
+  "core": "squirreljme_libretro",
   "ext": "jar",
   "src": "https://archive.org/download/ni-roms/roms/Mobile%20-%20J2ME.zip/"
  },

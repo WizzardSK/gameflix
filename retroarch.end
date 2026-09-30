@@ -264,23 +264,45 @@ gameflix_from_mame_set() {
 # MAME wants a system's own ROM set - neogeo.zip, stvbios.zip, sms.zip - in its
 # rompath, and without it the core stops before the first frame. The set is
 # named after the driver, which is the first word of the core arguments, so it
-# can be fetched the same way.
-gameflix_fetch_mame_bios() {
-  local driver="$1" dest="$HOME/share/bios"
-  [[ -z "$driver" || "$driver" == -* ]] && return 0
-  [[ -e "$dest/$driver.zip" ]] && return 0
-  # RetroArch's own system directories are searched too, so a set that is
-  # already there is not fetched again.
-  [[ -e "$sysdir/mame/bios/$driver.zip" || -e "$sysdir/mame/roms/$driver.zip" ]] && return 0
-  mkdir -p "$dest"
-  echo "Fetching MAME system ROMs $driver.zip ..." >&2
-  gameflix_ia_auth
-  if ! curl -sfL --location-trusted --max-time 600 ${ia_auth:+-H "Authorization: $ia_auth"} -o "$dest/$driver.zip" "$mame_rom_url/$driver.zip"; then
-    rm -f "$dest/$driver.zip"
-    # Not every driver has a set of its own - a cartridge machine keeps
-    # everything in the cartridge - so this is a note, not a failure.
-    echo "No MAME system ROMs for $driver in the merged set; continuing" >&2
+# can be fetched the same way. Most machines need more than that one zip: a
+# clone's ROMs are in its parent's zip in a merged set, and the keyboard, disk
+# controller or cassette interface of the default configuration have zips of
+# their own (abc80 needs abc80kb, apple2ee needs apple2e). mame_deps.tsv, made
+# by gen_mame_deps.py from MAME's -listxml, lists them per driver.
+# With a second argument of 3, the driver's software lists instead.
+gameflix_mame_deps() {
+  local cache="${XDG_CACHE_HOME:-$HOME/.cache}/gameflix" deps col="${2:-2}"
+  deps="$cache/mame_deps.tsv"
+  if [[ ! -s "$deps" ]] || [[ -n "$(find "$deps" -mtime +30 2>/dev/null)" ]]; then
+    mkdir -p "$cache"
+    curl -sfL --max-time 60 -o "$deps.tmp" "https://wizzardsk.github.io/mame_deps.tsv" && mv "$deps.tmp" "$deps"
+    rm -f "$deps.tmp"
   fi
+  if [[ "$col" == 2 ]]; then
+    awk -F'\t' -v d="$1" '$1 == d { print $2; f = 1 } END { if (!f) print d }' "$deps" 2>/dev/null || echo "$1"
+  else
+    awk -F'\t' -v d="$1" '$1 == d { print $3 }' "$deps" 2>/dev/null
+  fi
+}
+
+gameflix_fetch_mame_bios() {
+  local driver="$1" dest="$HOME/share/bios" set
+  [[ -z "$driver" || "$driver" == -* ]] && return 0
+  mkdir -p "$dest"
+  for set in $(gameflix_mame_deps "$driver"); do
+    [[ -e "$dest/$set.zip" ]] && continue
+    # RetroArch's own system directories are searched too, so a set that is
+    # already there is not fetched again.
+    [[ -e "$sysdir/mame/bios/$set.zip" || -e "$sysdir/mame/roms/$set.zip" ]] && continue
+    echo "Fetching MAME system ROMs $set.zip ..." >&2
+    gameflix_ia_auth
+    if ! curl -sfL --location-trusted --max-time 600 ${ia_auth:+-H "Authorization: $ia_auth"} -o "$dest/$set.zip" "$mame_rom_url/$set.zip"; then
+      rm -f "$dest/$set.zip"
+      # Not every driver has a set of its own - a cartridge machine keeps
+      # everything in the cartridge - so this is a note, not a failure.
+      echo "No MAME system ROMs $set.zip in the merged set; continuing" >&2
+    fi
+  done
 }
 
 
@@ -382,41 +404,63 @@ fi
 if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
   if [[ -z "$ext" ]]; then
     rompath="$(dirname "$1");$HOME/share/bios"
-    rom="$(basename "${1%.*}")"
+    case "$src" in
+      *tosec*|*ni-roms*|*redump*|*memorex*)
+        # A plain image (TOSEC, No-Intro, Redump), not a MAME set: MAME needs
+        # its path, and it cannot open an image inside a zip.
+        rom="$1"
+        if [[ "$1" == *.zip ]]; then
+          mkdir -p "${1%.*}"
+          unzip -oq "$1" -d "${1%.*}"
+          rom=$(find "${1%.*}" -type f -printf '%s\t%p\n' | sort -rn | head -n 1 | cut -f2-)
+        fi
+        ;;
+      *) rom="$(basename "${1%.*}")" ;;   # a set MAME finds by its short name
+    esac
+  else
+    # The image comes out of ~/iso; the system ROMs are still in ~/share/bios.
+    rompath="$HOME/share/bios"
   fi
   case "$1" in
-    */model2/*|*/model3/*) rompath="$HOME/share/roms/mame/MAME;$HOME/share/bios" ;;
+    # A Model 2/3 game can need its parent from the MAME folder.
+    */model2/*|*/model3/*) rompath="$(dirname "$1");$HOME/share/roms/mame/MAME;$HOME/share/bios" ;;
   esac
   core=$(echo "$core" | sed -E 's|(-hard[0-9]+) ([a-z0-9_]+):([a-z0-9_]+)|\1 '"$HOME"'/share/bios/\2/\3/\3.chd|g')
   mame_args="${core#mame_libretro}"; mame_args="${mame_args# }"
   gameflix_fetch_mame_bios "${mame_args%% *}"
   filename="${rom##*/}"; basename="${filename%.*}"
+  # Software-list games ("aes -cart mslug") need the list XML; mame_libretro
+  # looks for it in <system>/mame/hash and ships none, so without it the core
+  # dies before drawing a frame -- no error, just a black screen (gameflix#12).
+  # The lists come from libretro/mame, so they match the core: the XML of an
+  # installed standalone MAME is from another version and misses newer
+  # entries. A machine can need several ("famicom famibs30 -cass abunaipp"
+  # takes Family BASIC from nes and the tape from famicom_cass), so every list
+  # of the driver is fetched, with the one the ROM came from.
   hashpath_opt=""
-  if [[ -d /usr/share/games/mame/hash ]]; then
-    hashpath_opt=" -hashpath /usr/share/games/mame/hash"
-  elif [[ "$src" =~ /mame-sl/([^/]+)\.zip/ ]]; then
-    # Software-list games ("aes -cart mslug") need the list XML; mame_libretro
-    # looks for it in <system>/mame/hash and ships none, so without it the core
-    # dies before drawing a frame -- no error, just a black screen (gameflix#12).
-    list="${BASH_REMATCH[1]}"
-    mkdir -p "$sysdir/mame/hash"
-    if [[ -f "$sysdir/mame/hash/$list.xml" ]] || curl -sfL -o "$sysdir/mame/hash/$list.xml" \
-         "https://raw.githubusercontent.com/libretro/mame/master/hash/$list.xml"; then
-      hashpath_opt=" -hashpath \"$sysdir/mame/hash\""
-    else
-      rm -f "$sysdir/mame/hash/$list.xml"
-    fi
-  fi
+  lists=$(gameflix_mame_deps "${mame_args%% *}" 3)
+  [[ "$src" =~ /mame-sl/([^/]+)\.zip/ ]] && lists="$lists ${BASH_REMATCH[1]}"
+  mkdir -p "$sysdir/mame/hash"
+  for list in $lists; do
+    [[ -f "$sysdir/mame/hash/$list.xml" ]] && continue
+    curl -sfL -o "$sysdir/mame/hash/$list.xml" \
+      "https://raw.githubusercontent.com/libretro/mame/master/hash/$list.xml" || rm -f "$sysdir/mame/hash/$list.xml"
+  done
+  ls "$sysdir/mame/hash/"*.xml >/dev/null 2>&1 && hashpath_opt=" -hashpath \"$sysdir/mame/hash\""
   # Keep the .cmd file next to the ROM, not in /tmp: a flatpak RetroArch has its
   # own private /tmp, so a mktemp file is invisible to the core, which then falls
   # back to parsing the path as a machine name ("Unknown system 'tmp'") and every
   # MAME game fails. The ROM directory is readable by definition -- the core has
   # to load the ROM out of it -- and it lands in MAME's rompath for free.
   cmd_file="$(dirname "$1")/.gameflix-$$.cmd"
-  # -rp, not -rompath: the core appends a "-rp" path to its own rompath and then
-  # drops the switch, so RetroArch's system/mame/bios and system/mame/roms stay
-  # searchable. A literal -rompath reaches MAME last and replaces them.
-  echo "${mame_args:+$mame_args }$rom${rompath:+ -rp \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
+  # -rompath, not -rp: current cores (0.28x) no longer merge a "-rp" path into
+  # their own rompath, so the system ROMs in ~/share/bios were never found and
+  # every machine stopped with "Required files are missing". A -rompath
+  # replaces the core's own path, so RetroArch's system/mame/bios and
+  # system/mame/roms are added back by hand. The ROM is quoted: TOSEC and
+  # No-Intro names have spaces.
+  [[ -n "$rompath" ]] && rompath="$rompath;$sysdir/mame/bios;$sysdir/mame/roms"
+  echo "${mame_args:+$mame_args }\"$rom\"${rompath:+ -rompath \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
   trap 'rm -f "$cmd_file"' EXIT   # do not litter the ROM dir if we are killed
   retroarch -L "$corepath" "$cmd_file"
   rm -f "$cmd_file"
