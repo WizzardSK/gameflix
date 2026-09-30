@@ -306,6 +306,74 @@ gameflix_fetch_mame_bios() {
 }
 
 
+# Software named in the core arguments rather than picked on the page: Family
+# BASIC for the Famicom tape games ("famicom famibs30 -cass"), a BASIC
+# cartridge ("m5 -cart1 m5_cart:basici", "to7 -cart basic"), a FreeDOS hard
+# disk ("ibm5150 -hard1 ibm5150_hdd:freedos13_8086"). It comes from the MAME
+# software-list sets - a zip, or for a CHD list the entry's folder - into
+# ~/share/bios/<list>/<entry>, where MAME finds it through the rompath. A bare
+# name has no list, so the driver's lists are tried in turn.
+mame_chd_dirs=()
+gameflix_fetch_mame_software() {
+  local -a words
+  local i w prev="" list item lists got dest href chd listing
+  read -ra words <<< "$1"
+  for ((i = 1; i < ${#words[@]}; i++)); do
+    w="${words[i]}"
+    list=""; item=""
+    if [[ "$w" =~ ^([a-z0-9_]+):([a-z0-9_]+)$ ]]; then
+      list="${BASH_REMATCH[1]}"; item="${BASH_REMATCH[2]}"
+    elif [[ "$w" =~ ^[a-z0-9_]+$ ]] && { [[ $i == 1 ]] || [[ "$prev" =~ ^-(cart|cass|flop|hard|cdrm|cdrom|rom|memc|utap|quik)[0-9]*$ ]]; }; then
+      item="$w"
+    fi
+    prev="$w"
+    [[ -z "$item" ]] && continue
+    lists="$list"
+    [[ -z "$lists" ]] && lists=$(gameflix_mame_deps "${words[0]}" 3)
+    got=0
+    for list in $lists; do
+      dest="$HOME/share/bios/$list"
+      if [[ -e "$dest/$item.zip" ]]; then got=1; break; fi
+      if [[ -d "$dest/$item" ]]; then got=1; mame_chd_dirs+=("$list/$item"); break; fi
+      mkdir -p "$dest"
+      gameflix_ia_auth
+      if curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$dest/$item.zip" \
+           "https://archive.org/download/mame-sl/mame-sl/$list.zip/$list/$item.zip"; then
+        echo "Fetched MAME software $list:$item" >&2; got=1; break
+      fi
+      rm -f "$dest/$item.zip"
+      listing=$(curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} \
+        "https://archive.org/download/mame-software-list-chds-2/$list/$item/") || continue
+      while IFS= read -r href; do
+        [[ -z "$href" ]] && continue
+        mkdir -p "$dest/$item"
+        chd=$(printf '%b' "${href//%/\\x}")
+        echo "Fetching MAME software $list:$item ($chd) ..." >&2
+        curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$dest/$item/$chd" \
+          "https://archive.org/download/mame-software-list-chds-2/$list/$item/$href" && got=1 || rm -f "$dest/$item/$chd"
+      done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.chd"' | sed 's/^href="//; s/"$//' | sort -u)
+      [[ $got == 1 ]] && { mame_chd_dirs+=("$list/$item"); break; }
+    done
+    [[ $got == 0 ]] && echo "MAME software $w not found in the software-list sets; continuing" >&2
+  done
+}
+
+# The CHD sets on the Internet Archive are older than the core, and some discs
+# have been renamed since ("towns hyakunin isshu.chd" is now "hyakunin isshu
+# (japan).chd"). MAME looks a disk up by the name in the list XML, so when an
+# entry folder holds one CHD under another name, it gets a link by that name.
+gameflix_chd_names() {
+  local dir="$1" list="$2" item="$3" xml want have
+  xml="$sysdir/mame/hash/$list.xml"
+  [[ -d "$dir" && -f "$xml" ]] || return 0
+  want=$(awk -v n="$item" '/<software /{ inside = (index($0, "name=\"" n "\"") > 0) } inside && /<disk / { if (match($0, /name="[^"]*"/)) print substr($0, RSTART + 6, RLENGTH - 7) } /<\/software>/{ inside = 0 }' "$xml")
+  [[ $(printf '%s\n' "$want" | grep -c .) == 1 ]] || return 0
+  [[ -e "$dir/$want.chd" ]] && return 0
+  have=$(find "$dir" -maxdepth 1 -name '*.chd' -type f)
+  [[ $(printf '%s\n' "$have" | grep -c .) == 1 ]] || return 0
+  ln -sf "$(basename "$have")" "$dir/$want.chd"
+}
+
 if [[ -n "$src" && ! -e "$1" ]]; then
   mkdir -p "$(dirname "$1")"
   relpath="${1#$HOME/share/roms/}"
@@ -315,14 +383,47 @@ if [[ -n "$src" && ! -e "$1" ]]; then
   fname="${1##*/}"
   gameflix_ia_auth
   echo "Fetching $fname ..." >&2
-  if ! curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$1" "${src}${enc}"; then
+  if [[ "$fname" != *.* && "$src" == *mame-software-list-chds* ]]; then
+    # A CHD software-list entry is a folder holding the disc or disk images
+    # (cd32/abreed3d/alien breed 3d (europe).chd); MAME finds them in
+    # <rompath>/<entry>/, so the folder is mirrored.
+    mkdir -p "$1"
+    listing=$(curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} "${src}${enc}/") || listing=""
+    got=0
+    while IFS= read -r href; do
+      [[ -z "$href" ]] && continue
+      chd=$(printf '%b' "${href//%/\\x}")
+      echo "Fetching $fname/$chd ..." >&2
+      curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$1/$chd" "${src}${enc}/$href" && got=1 || rm -f "$1/$chd"
+    done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.chd"' | sed 's/^href="//; s/"$//' | sort -u)
+    if [[ $got == 0 ]]; then
+      rm -rf "$1"
+      echo "Download failed: ${src}${enc}/" >&2
+      exit 1
+    fi
+  elif ! curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$1" "${src}${enc}"; then
     rm -f "$1"
     echo "Download failed: ${src}${enc}" >&2
     exit 1
   fi
 fi
 
-if [ -n "$ext" ]; then
+# The disc image to start out of an extracted archive: the list's own type
+# first, then the usual ones in order of preference, then the largest file.
+# No-Intro/NonRedump lists mix them (a Mega CD beta is a bare .bin, a PSX one
+# an .iso), so a list's single type does not always match.
+gameflix_pick_image() {
+  local dir="$1" want="$2" e f
+  for e in $want cue gdi m3u ccd chd cdi iso bin img; do
+    f=$(find "$dir" -type f -iname "*.$e" | sort | head -n 1)
+    [[ -n "$f" ]] && { printf '%s' "$f"; return; }
+  done
+  find "$dir" -type f -printf '%s\t%p\n' | sort -rn | head -n 1 | cut -f2-
+}
+
+if [[ -n "$ext" && "$1" != *.zip && "$1" != *.rar && "$1" != *.7z ]]; then
+  rom="$1"   # not an archive after all (3DS .cci); the core takes it as it is
+elif [ -n "$ext" ]; then
   umount -l ~/iso
   # mount-zip reads zips only; .rar and .7z (Wii U NUS titles ship as .7z) go
   # through ratarmount, which handles both.
@@ -331,10 +432,13 @@ if [ -n "$ext" ]; then
   else
     mount-zip "$1" ~/iso
   fi
-  rom=$(find ~/iso -type f -name "*.${ext}" | head -n 1)
+  rom=$(gameflix_pick_image ~/iso "$ext")
 elif [[ "$1" == *.rar || "$1" == *.7z ]]; then
   umount -l ~/iso; ratarmount "$1" ~/iso
+  # A title of many files (Wii U NUS) is started from its folder; a single
+  # image (a No-Intro DS .7z) is handed over itself.
   rom=~/iso
+  [[ $(find ~/iso -type f | head -n 2 | wc -l) == 1 ]] && rom=$(find ~/iso -type f)
 else
   rom="$1"
 fi
@@ -415,7 +519,7 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
           rom=$(find "${1%.*}" -type f -printf '%s\t%p\n' | sort -rn | head -n 1 | cut -f2-)
         fi
         ;;
-      *) rom="$(basename "${1%.*}")" ;;   # a set MAME finds by its short name
+      *) rom="${1##*/}"; rom="${rom%.*}" ;;   # a set MAME finds by its short name
     esac
   else
     # The image comes out of ~/iso; the system ROMs are still in ~/share/bios.
@@ -425,9 +529,9 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
     # A Model 2/3 game can need its parent from the MAME folder.
     */model2/*|*/model3/*) rompath="$(dirname "$1");$HOME/share/roms/mame/MAME;$HOME/share/bios" ;;
   esac
-  core=$(echo "$core" | sed -E 's|(-hard[0-9]+) ([a-z0-9_]+):([a-z0-9_]+)|\1 '"$HOME"'/share/bios/\2/\3/\3.chd|g')
   mame_args="${core#mame_libretro}"; mame_args="${mame_args# }"
   gameflix_fetch_mame_bios "${mame_args%% *}"
+  gameflix_fetch_mame_software "$mame_args"
   filename="${rom##*/}"; basename="${filename%.*}"
   # Software-list games ("aes -cart mslug") need the list XML; mame_libretro
   # looks for it in <system>/mame/hash and ships none, so without it the core
@@ -447,6 +551,13 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
       "https://raw.githubusercontent.com/libretro/mame/master/hash/$list.xml" || rm -f "$sysdir/mame/hash/$list.xml"
   done
   ls "$sysdir/mame/hash/"*.xml >/dev/null 2>&1 && hashpath_opt=" -hashpath \"$sysdir/mame/hash\""
+  # CHD entries: the game's own folder, and any fetched for the core arguments
+  if [[ -d "$1" && "$src" =~ /mame-software-list-chds[^/]*/([^/]+)/ ]]; then
+    gameflix_chd_names "$1" "${BASH_REMATCH[1]}" "${1##*/}"
+  fi
+  for d in "${mame_chd_dirs[@]}"; do
+    gameflix_chd_names "$HOME/share/bios/$d" "${d%%/*}" "${d##*/}"
+  done
   # Keep the .cmd file next to the ROM, not in /tmp: a flatpak RetroArch has its
   # own private /tmp, so a mktemp file is invisible to the core, which then falls
   # back to parsing the path as a machine name ("Unknown system 'tmp'") and every
@@ -460,7 +571,19 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
   # system/mame/roms are added back by hand. The ROM is quoted: TOSEC and
   # No-Intro names have spaces.
   [[ -n "$rompath" ]] && rompath="$rompath;$sysdir/mame/bios;$sysdir/mame/roms"
-  echo "${mame_args:+$mame_args }\"$rom\"${rompath:+ -rompath \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
+  # The table quotes arguments for a shell ("-autoboot_command 'LOAD \"\"\n'"),
+  # but the core's cmd parser knows only double quotes and keeps single ones as
+  # text, so every autoboot command was typed with an apostrophe on each side,
+  # and one holding "" fell apart. The arguments are split as a shell would and
+  # written back double-quoted where needed; a " inside becomes \x22, which the
+  # Lua string MAME posts the keys from turns back into a quote.
+  cmd_args=""
+  eval "margs=($mame_args)"
+  for a in "${margs[@]}"; do
+    [[ "$a" == *[[:space:]\"]* ]] && a="\"${a//\"/\\x22}\""
+    cmd_args+="${cmd_args:+ }$a"
+  done
+  echo "${cmd_args:+$cmd_args }\"$rom\"${rompath:+ -rompath \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
   trap 'rm -f "$cmd_file"' EXIT   # do not litter the ROM dir if we are killed
   retroarch -L "$corepath" "$cmd_file"
   rm -f "$cmd_file"

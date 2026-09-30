@@ -51,7 +51,7 @@ dragon64	dragon32 dragon_fdc	dragon_cart dragon_cass dragon_flop coco_cart drago
 einstein	einstein	einstein einstein_rom
 ekara	ekara	ekara_us ekara_pal ekara_japan ekara_japan_g ekara_japan_p ekara_japan_s ekara_japan_m ekara_japan_d ekara_japan_en ekara_japan_kd ekara_japan_sp ekara_japan_web ekara_japan_a ekara_japan_gk ekara_japan_bh ekara_japan_packin
 electron64	electron electron_plus1 electron_plus3	electron_cass bbc_cass electron_cart electron_flop electron_rom
-ep128	ep64	ep64_cart ep64_cass ep64_flop
+ep128	ep64 ep64_exdos	ep64_cart ep64_cass ep64_flop
 exl100	exl100	exl100
 expert11	expert13	msx1_cass msx1_cart
 famicom	famicom	nes nes_ade nes_ntbrom nes_kstudio nes_datach famibox famicom_flop famicom_cass
@@ -108,10 +108,10 @@ megaduck	megaduck	megaduck
 megatech	megatech	megatech
 microvsn	microvsn	microvision
 mikrosha	radio86	mikrosha_cass mikrosha_cart
-mo5	mo5	mo5_cart mo5_cass mo5_flop mo5_qd
-mo6	mo6	mo6_cass mo6_flop mo5_cart mo5_cass mo5_flop mo5_qd
+mo5	mo5 cd90_640	mo5_cart mo5_cass mo5_flop mo5_qd
+mo6	mo6 cd90_640	mo6_cass mo6_flop mo5_cart mo5_cass mo5_flop mo5_qd
 mononcol	mononcol ax208	monon_color
-mtx512	mtx512	mtx_cass mtx_flop mtx_cart mtx_hdd mtx_rom
+mtx512	mtx512 mtx_sdxbas	mtx_cass mtx_flop mtx_cart mtx_hdd mtx_rom
 myvision	myvision	myvision
 mz2000	mz2000	mz2000_flop mz2000_cass mz2200_cass
 mz2500	mz2500	mz2500
@@ -146,11 +146,11 @@ pico	pico	pico
 pmd851	pmd851	pmd85_cass
 pockstat	pockstat	
 pokemini	pokemini	pokemini
-pro128	mo6	pro128_cart pro128_cass pro128_flop
+pro128	mo6 cd90_640	pro128_cart pro128_cass pro128_flop
 pro128s	bbcmc saa5050	bbcm_flop bbcb_flop bbcb_flop_orig bbc_rom bbc_hdd bbcmc_flop pro128s_flop
 pv1000	pv1000	pv1000
 pv2000	pv2000	pv2000
-ql	ql	ql_cart ql_cass ql_flop
+ql	ql ql_trump	ql_cart ql_cass ql_flop
 radio86	radio86	radio86_cass
 rainbow	rainbow lk201 upd7220	rainbow
 rx78	rx78	rx78_cart rx78_cass
@@ -171,7 +171,7 @@ sorcerer	sorcerer	sorcerer_cart sorcerer_cass sorcerer_quik
 sorcererd	sorcerer	sorcerer_cart sorcerer_cass sorcerer_quik sorcerer_flop
 spc1000	spc1000	spc1000_cass
 spc1500	spc1500	spc1500_cass
-spec128	spec128	spectrum_cass
+spec128	spec128 spectrum_opus spectrum_plusd	spectrum_cass
 special	special	special_cass
 specimx	special	special_cass special_flop
 specpls3	specpl2a	spectrum_cass specpls3_flop

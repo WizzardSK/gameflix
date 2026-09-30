@@ -172,7 +172,28 @@ if ($src -and -not (Test-Path -LiteralPath $local)) {
   $auth = Get-IaAuth
   $curl = Get-Command curl.exe -ErrorAction SilentlyContinue
   $ok = $false
-  if ($curl) {
+  $leaf = Split-Path -Leaf $local
+  if ($leaf -notmatch '\.' -and $src -match 'mame-software-list-chds') {
+    # A CHD software-list entry is a folder holding the disc or disk images
+    # (cd32/abreed3d/alien breed 3d (europe).chd); MAME finds them in
+    # <rompath>\<entry>\, so the folder is mirrored.
+    New-Item -ItemType Directory -Force -Path $local | Out-Null
+    $headers = @{}; if ($auth) { $headers['Authorization'] = $auth }
+    try { $listing = (Invoke-WebRequest -UseBasicParsing -Uri "$url/" -Headers $headers -TimeoutSec 60).Content } catch { $listing = '' }
+    foreach ($href in ([regex]::Matches($listing, 'href="([^"/?]*\.chd)"') | ForEach-Object { $_.Groups[1].Value } | Select-Object -Unique)) {
+      $chd = Join-Path $local ([uri]::UnescapeDataString($href))
+      Write-Host "Fetching $leaf\$(Split-Path -Leaf $chd) ..."
+      if ($curl) {
+        $cargs = @('-sfL', '--location-trusted', '-o', $chd, "$url/$href")
+        if ($auth) { $cargs = @('-H', "Authorization: $auth") + $cargs }
+        & $curl.Source @cargs
+        if ($LASTEXITCODE -eq 0) { $ok = $true } else { Remove-Item -LiteralPath $chd -Force -ErrorAction SilentlyContinue }
+      } else {
+        try { Invoke-WebRequest -UseBasicParsing -Uri "$url/$href" -Headers $headers -OutFile $chd; $ok = $true } catch { }
+      }
+    }
+    if (-not $ok) { Remove-Item -LiteralPath $local -Recurse -Force -ErrorAction SilentlyContinue; Write-Error "Download failed: $url/"; exit 1 }
+  } elseif ($curl) {
     $cargs = @('-sfL', '--location-trusted', '-o', $local, $url)
     if ($auth) { $cargs = @('-H', "Authorization: $auth") + $cargs }
     & $curl.Source @cargs
@@ -246,17 +267,39 @@ function Expand-Archive7z {
   return $dir
 }
 
-if ($ext) {
+# The disc image to start out of an opened archive: the list's own type first,
+# then the usual ones in order of preference, then the largest file. No-Intro
+# and NonRedump lists mix them (a Mega CD beta is a bare .bin, a PSX one an
+# .iso), so a list's single type does not always match.
+function Find-Image([string]$root, [string]$want) {
+  $files = @(Get-ChildItem -Path $root -Recurse -File -ErrorAction SilentlyContinue)
+  foreach ($e in @($want, 'cue', 'gdi', 'm3u', 'ccd', 'chd', 'cdi', 'iso', 'bin', 'img')) {
+    if (-not $e) { continue }
+    $f = $files | Where-Object { $_.Extension -eq ".$e" } | Sort-Object FullName | Select-Object -First 1
+    if ($f) { return $f.FullName }
+  }
+  $f = $files | Sort-Object Length -Descending | Select-Object -First 1
+  if ($f) { return $f.FullName }
+  return $null
+}
+
+if ($ext -and $local -notmatch '\.(zip|rar|7z)$') {
+  $rom = $local   # not an archive after all (3DS .cci); the core takes it as it is
+} elseif ($ext) {
   $root = Mount-Archive
   if (-not $root) { $root = Expand-Archive7z }
   if (-not $root) { Write-Error 'Need Pismo File Mount (pfm), 7-Zip (7z.exe), or ratarmount to open CD images.'; exit 1 }
-  $found = Get-ChildItem -Path $root -Recurse -File -Filter "*.$ext" -ErrorAction SilentlyContinue | Select-Object -First 1
-  if ($found) { $rom = $found.FullName }
-} elseif ($local -match '\.rar$') {
+  $found = Find-Image $root $ext
+  if ($found) { $rom = $found }
+} elseif ($local -match '\.(rar|7z)$') {
   $root = Mount-Archive
   if (-not $root) { $root = Expand-Archive7z }
-  if (-not $root) { Write-Error 'Need Pismo File Mount (pfm), 7-Zip (7z.exe), or ratarmount to open .rar archives.'; exit 1 }
+  if (-not $root) { Write-Error 'Need Pismo File Mount (pfm), 7-Zip (7z.exe), or ratarmount to open .rar and .7z archives.'; exit 1 }
+  # A title of many files (Wii U NUS) is started from its folder; a single
+  # image (a No-Intro DS .7z) is handed over itself.
   $rom = $root
+  $files = @(Get-ChildItem -Path $root -Recurse -File -ErrorAction SilentlyContinue)
+  if ($files.Count -eq 1) { $rom = $files[0].FullName }
 }
 
 # ---- Resolve emulator executables (PATH + common Windows install locations) -
@@ -329,6 +372,128 @@ function Get-RetroArchSystemDir {
   return (J $raDir 'system')
 }
 
+# Download $url to $out, with the Internet Archive session when rclone has one.
+function Get-IaFile([string]$url, [string]$out) {
+  $auth = Get-IaAuth
+  $curl = Get-Command curl.exe -ErrorAction SilentlyContinue
+  if ($curl) {
+    $cargs = @('-sfL', '--location-trusted', '-o', $out, $url)
+    if ($auth) { $cargs = @('-H', "Authorization: $auth") + $cargs }
+    & $curl.Source @cargs
+    if ($LASTEXITCODE -eq 0) { return $true }
+  } else {
+    try {
+      $headers = @{}; if ($auth) { $headers['Authorization'] = $auth }
+      Invoke-WebRequest -UseBasicParsing -Uri $url -Headers $headers -OutFile $out
+      return $true
+    } catch { }
+  }
+  Remove-Item -LiteralPath $out -Force -ErrorAction SilentlyContinue
+  return $false
+}
+
+# mame_deps.tsv (made by gen_mame_deps.py): per MAME driver, the zips of the
+# merged set it needs - its own (the parent's, for a clone), the BIOS chain and
+# the ROM devices of its default configuration - and its software lists. With
+# the driver's own zip alone most machines stop with "Required files are
+# missing". Column 2 is the zips, column 3 the lists.
+function Get-MameDeps([string]$driver, [int]$col) {
+  New-Item -ItemType Directory -Force -Path $CacheDir | Out-Null
+  $deps = Join-Path $CacheDir 'mame_deps.tsv'
+  if (-not (Test-Path -LiteralPath $deps) -or (Get-Item -LiteralPath $deps).LastWriteTime -lt (Get-Date).AddDays(-30)) {
+    try { Invoke-WebRequest -UseBasicParsing -TimeoutSec 60 -OutFile $deps -Uri 'https://wizzardsk.github.io/mame_deps.tsv' } catch { }
+  }
+  if (Test-Path -LiteralPath $deps) {
+    foreach ($line in Get-Content -LiteralPath $deps) {
+      $f = $line -split "`t"
+      if ($f[0] -eq $driver) { if ($f.Count -ge $col) { return @($f[$col - 1] -split ' ' | Where-Object { $_ }) } else { return @() } }
+    }
+  }
+  if ($col -eq 2) { return @($driver) } else { return @() }
+}
+
+# Fetch the MAME system ROM sets a driver needs into $BiosDir, from the merged
+# set on the Internet Archive; sets RetroArch's system dirs already hold are
+# left alone.
+function Install-MameBios([string]$driver) {
+  if (-not $driver -or $driver -match '^-') { return }
+  New-Item -ItemType Directory -Force -Path $BiosDir | Out-Null
+  $sysDir = Get-RetroArchSystemDir
+  foreach ($set in (Get-MameDeps $driver 2)) {
+    $dirs = @($BiosDir)
+    if ($sysDir) { $dirs += @((Join-Path $sysDir 'mame\bios'), (Join-Path $sysDir 'mame\roms')) }
+    if ($dirs | Where-Object { Test-Path -LiteralPath (Join-Path $_ "$set.zip") }) { continue }
+    Write-Host "Fetching MAME system ROMs $set.zip ..."
+    if (-not (Get-IaFile "https://archive.org/download/mame-merged/mame-merged/$set.zip" (Join-Path $BiosDir "$set.zip"))) {
+      Write-Host "No MAME system ROMs $set.zip in the merged set; continuing"
+    }
+  }
+}
+
+# Software named in the core arguments rather than picked on the page: Family
+# BASIC for the Famicom tape games ("famicom famibs30 -cass"), a BASIC
+# cartridge ("m5 -cart1 m5_cart:basici", "to7 -cart basic"), a FreeDOS hard
+# disk ("ibm5150 -hard1 ibm5150_hdd:freedos13_8086"). It comes from the MAME
+# software-list sets - a zip, or for a CHD list the entry's folder - into
+# $BiosDir\<list>\<entry>, where MAME finds it through the rompath. A bare
+# name has no list, so the driver's lists are tried in turn. Returns the CHD
+# folders fetched, as "list/entry".
+function Install-MameSoftware([string[]]$words) {
+  $chdDirs = @()
+  $prev = ''
+  for ($i = 1; $i -lt $words.Count; $i++) {
+    $w = $words[$i]; $list = ''; $item = ''
+    if ($w -match '^([a-z0-9_]+):([a-z0-9_]+)$') { $list = $Matches[1]; $item = $Matches[2] }
+    elseif ($w -match '^[a-z0-9_]+$' -and ($i -eq 1 -or $prev -match '^-(cart|cass|flop|hard|cdrm|cdrom|rom|memc|utap|quik)\d*$')) { $item = $w }
+    $prev = $w
+    if (-not $item) { continue }
+    $lists = if ($list) { @($list) } else { @(Get-MameDeps $words[0] 3) }
+    $got = $false
+    foreach ($l in $lists) {
+      $dest = Join-Path $BiosDir $l
+      if (Test-Path -LiteralPath (Join-Path $dest "$item.zip")) { $got = $true; break }
+      if (Test-Path -LiteralPath (Join-Path $dest $item)) { $got = $true; $chdDirs += "$l/$item"; break }
+      New-Item -ItemType Directory -Force -Path $dest | Out-Null
+      if (Get-IaFile "https://archive.org/download/mame-sl/mame-sl/$l.zip/$l/$item.zip" (Join-Path $dest "$item.zip")) {
+        Write-Host "Fetched MAME software ${l}:$item"; $got = $true; break
+      }
+      $headers = @{}; $auth = Get-IaAuth; if ($auth) { $headers['Authorization'] = $auth }
+      try { $listing = (Invoke-WebRequest -UseBasicParsing -Uri "https://archive.org/download/mame-software-list-chds-2/$l/$item/" -Headers $headers -TimeoutSec 60).Content } catch { continue }
+      foreach ($href in ([regex]::Matches($listing, 'href="([^"/?]*\.chd)"') | ForEach-Object { $_.Groups[1].Value } | Select-Object -Unique)) {
+        New-Item -ItemType Directory -Force -Path (Join-Path $dest $item) | Out-Null
+        $chd = Join-Path (Join-Path $dest $item) ([uri]::UnescapeDataString($href))
+        Write-Host "Fetching MAME software ${l}:$item ($(Split-Path -Leaf $chd)) ..."
+        if (Get-IaFile "https://archive.org/download/mame-software-list-chds-2/$l/$item/$href" $chd) { $got = $true }
+      }
+      if ($got) { $chdDirs += "$l/$item"; break }
+    }
+    if (-not $got) { Write-Host "MAME software $w not found in the software-list sets; continuing" }
+  }
+  return ,$chdDirs
+}
+
+# The CHD sets on the Internet Archive are older than the core, and some discs
+# have been renamed since ("towns hyakunin isshu.chd" is now "hyakunin isshu
+# (japan).chd"). MAME looks a disk up by the name in the list XML, so when an
+# entry folder holds one CHD under another name, it gets that name too.
+function Repair-ChdName([string]$dir, [string]$list, [string]$item, [string]$hashDir) {
+  if (-not $hashDir -or -not (Test-Path -LiteralPath $dir)) { return }
+  $xml = Join-Path $hashDir "$list.xml"
+  if (-not (Test-Path -LiteralPath $xml)) { return }
+  $text = Get-Content -LiteralPath $xml -Raw
+  $m = [regex]::Match($text, '<software name="' + [regex]::Escape($item) + '"[\s\S]*?</software>')
+  if (-not $m.Success) { return }
+  $want = @([regex]::Matches($m.Value, '<disk name="([^"]*)"') | ForEach-Object { $_.Groups[1].Value })
+  if ($want.Count -ne 1) { return }
+  $target = Join-Path $dir "$($want[0]).chd"
+  if (Test-Path -LiteralPath $target) { return }
+  $have = @(Get-ChildItem -LiteralPath $dir -Filter '*.chd' -File)
+  if ($have.Count -ne 1) { return }
+  # a hard link costs no space; a copy where the file system has none
+  try { New-Item -ItemType HardLink -Path $target -Target $have[0].FullName -ErrorAction Stop | Out-Null }
+  catch { Copy-Item -LiteralPath $have[0].FullName -Destination $target }
+}
+
 # MAME-SL sources are named after the MAME software list they hold:
 # .../mame-sl/mame-sl/neogeo.zip/neogeo/ -> the "neogeo" list.
 function Get-SoftlistName([string]$src) {
@@ -376,37 +541,63 @@ try {
     $rompath = ''
     if (-not $ext) {
       $rompath = (Split-Path -Parent $local) + ';' + $BiosDir
-      $rom = [IO.Path]::GetFileNameWithoutExtension($local)
+      if ($src -match 'tosec|ni-roms|redump|memorex') {
+        # A plain image (TOSEC, No-Intro, Redump), not a MAME set: MAME needs
+        # its path, and it cannot open an image inside a zip.
+        $rom = $local
+        if ($local -match '\.zip$') {
+          $dir = $local -replace '\.zip$', ''
+          Expand-Archive -LiteralPath $local -DestinationPath $dir -Force
+          $rom = (Get-ChildItem -LiteralPath $dir -Recurse -File | Sort-Object Length -Descending | Select-Object -First 1).FullName
+        }
+      } else {
+        $rom = [IO.Path]::GetFileNameWithoutExtension($local)   # a set MAME finds by its short name
+      }
+    } else {
+      # The image comes out of the mounted archive; system ROMs stay in $BiosDir.
+      $rompath = $BiosDir
     }
     if ($local -match '\\model2\\' -or $local -match '\\model3\\') {
-      $rompath = (Join-Path $RomsDir 'mame\MAME') + ';' + $BiosDir
+      $rompath = (Split-Path -Parent $local) + ';' + (Join-Path $RomsDir 'mame\MAME') + ';' + $BiosDir
     }
-    # Substitute "-hardN slot:disk" -> CHD path under BIOS dir.
-    $core = [regex]::Replace($core, '(-hard\d+) ([a-z0-9_]+):([a-z0-9_]+)', {
-      param($m) "$($m.Groups[1].Value) " + (Join-Path $BiosDir ("$($m.Groups[2].Value)\$($m.Groups[3].Value)\$($m.Groups[3].Value).chd")) })
     $mameArgs = ($core -replace '^mame_libretro\s*', '')
-    # Software-list games need the list XML in the core's hash dir; install it.
+    $words = Split-Command $mameArgs
+    $driver = if ($words.Count -gt 0) { $words[0] } else { '' }
+    Install-MameBios $driver
+    $chdDirs = Install-MameSoftware $words
+    # Software-list games need the list XML in the core's hash dir. The lists
+    # come from libretro/mame, matching the core, for every list of the driver
+    # and the one the ROM came from.
+    $lists = @(Get-MameDeps $driver 3)
     $list = Get-SoftlistName $src
-    if ($list) { $h = Install-MameHash $list; if ($h) { $MameHash = $h } }
-    # Warn in the log when the driver's own ROM set is missing (MAME needs e.g.
-    # aes.zip to boot "aes -cart"), which otherwise also just shows black.
-    $driver = ($mameArgs -split '\s+')[0]
-    if ($driver -and $driver -notmatch '^-') {
-      $biosDirs = @($rompath -split ';' | Where-Object { $_ })
-      $sysDir = Get-RetroArchSystemDir
-      if ($sysDir) { $biosDirs += @((Join-Path $sysDir 'mame\bios'), (Join-Path $sysDir 'mame\roms')) }
-      $found = $false
-      foreach ($d in $biosDirs) { if (Test-Path -LiteralPath (Join-Path $d "$driver.zip")) { $found = $true; break } }
-      if (-not $found) { Write-Host "warning: MAME system ROMs $driver.zip not found in $($biosDirs -join ';') - the core may fail to start" }
+    if ($list) { $lists += $list }
+    foreach ($l in ($lists | Select-Object -Unique)) { $h = Install-MameHash $l; if ($h) { $MameHash = $h } }
+    if ((Test-Path -LiteralPath $local -PathType Container) -and $src -match '/mame-software-list-chds[^/]*/([^/]+)/') {
+      Repair-ChdName $local $Matches[1] (Split-Path -Leaf $local) $MameHash
     }
+    foreach ($d in $chdDirs) { Repair-ChdName (Join-Path $BiosDir $d) ($d -split '/')[0] ($d -split '/')[1] $MameHash }
     $base = [IO.Path]::GetFileNameWithoutExtension($rom)
+    # The table quotes arguments for a shell ("-autoboot_command 'LOAD ""\n'"),
+    # but the core's cmd parser knows only double quotes and keeps single ones
+    # as text, so every autoboot command was typed with an apostrophe on each
+    # side. The arguments are written back double-quoted where needed; a "
+    # inside becomes \x22, which the Lua string MAME posts the keys from turns
+    # back into a quote.
     $line = ''
-    if ($mameArgs) { $line += "$mameArgs " }
-    $line += "$rom"
-    # -rp, not -rompath: the core appends a "-rp" path to its own rompath and
-    # then drops the switch, so RetroArch's system\mame\bios and system\mame\roms
-    # stay searchable. A literal -rompath reaches MAME last and replaces them.
-    if ($rompath) { $line += " -rp `"$rompath`"" }
+    foreach ($w in $words) {
+      if ($w -match '[\s"]') { $w = '"' + ($w -replace '"', '\x22') + '"' }
+      $line += "$w "
+    }
+    $line += "`"$rom`""
+    # -rompath, not -rp: current cores (0.28x) no longer merge a "-rp" path into
+    # their own rompath, so the system ROMs were never found. A -rompath
+    # replaces the core's own path, so RetroArch's system\mame\bios and
+    # system\mame\roms are added back by hand.
+    if ($rompath) {
+      $sysDir = Get-RetroArchSystemDir
+      if ($sysDir) { $rompath += ';' + (Join-Path $sysDir 'mame\bios') + ';' + (Join-Path $sysDir 'mame\roms') }
+      $line += " -rompath `"$rompath`""
+    }
     if ($MameHash) { $line += " -hashpath `"$MameHash`"" }
     $line += " -skip_gameinfo -snapname `"$base`""
     $dll = Resolve-LibretroCore 'mame_libretro'

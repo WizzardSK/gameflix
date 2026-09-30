@@ -1,5 +1,10 @@
 [
  {
+  "pattern": "/TIC-80/",
+  "core": "tic80_libretro",
+  "src": "https://tic80.com/cart/"
+ },
+ {
   "pattern": "/wasm4/",
   "core": "wasm4_libretro"
  },
@@ -47,47 +52,47 @@
  },
  {
   "pattern": "/atari2600/ROMS/",
-  "core": "tia_libretro",
+  "core": "stella_libretro",
   "src": "https://archive.org/download/atari-2600-vcs-roms/ROMS/"
  },
  {
   "pattern": "/atari2600/NoIntro/",
-  "core": "tia_libretro",
+  "core": "stella_libretro",
   "src": "https://archive.org/download/ni-roms/roms/Atari%20-%202600.zip/"
  },
  {
   "pattern": "/atari2600/TOSEC/",
-  "core": "tia_libretro",
+  "core": "stella_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Games/Atari%202600%20%26%20VCS%20-%20Games%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
   "pattern": "/atari2600/Homebrew/",
-  "core": "tia_libretro",
+  "core": "stella_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Homebrew/Games/AtariAge%20Design%20Contest/Atari%202600%20%26%20VCS%20-%20Homebrew%20-%20Games%20-%20AtariAge%20Design%20Contest%20%28TOSEC-v2024-07-03%29.zip/"
  },
  {
   "pattern": "/atari2600/Applications/",
-  "core": "tia_libretro",
+  "core": "stella_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Applications/Atari%202600%20%26%20VCS%20-%20Applications%20%28TOSEC-v2024-07-03%29.zip/"
  },
  {
   "pattern": "/atari2600/Educational/",
-  "core": "tia_libretro",
+  "core": "stella_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Educational/Atari%202600%20%26%20VCS%20-%20Educational%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
   "pattern": "/atari2600/Demo [A26]/",
-  "core": "tia_libretro",
+  "core": "stella_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Demos/%5BA26%5D/Atari%202600%20%26%20VCS%20-%20Demos%20-%20%5BA26%5D%20%28TOSEC-v2024-01-15%29.zip/"
  },
  {
   "pattern": "/atari2600/Demo [BIN]/",
-  "core": "tia_libretro",
+  "core": "stella_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Demos/%5BBIN%5D/Atari%202600%20%26%20VCS%20-%20Demos%20-%20%5BBIN%5D%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
   "pattern": "/atari2600/Demo [MP3]/",
-  "core": "tia_libretro",
+  "core": "stella_libretro",
   "src": "https://archive.org/download/tosec-main/Atari/2600%20%26%20VCS/Demos/%5BMP3%5D/Atari%202600%20%26%20VCS%20-%20Demos%20-%20%5BMP3%5D%20%28TOSEC-v2024-01-15%29.zip/"
  },
  {
@@ -540,7 +545,7 @@
  },
  {
   "pattern": "/apple2/Demo [WAV]/",
-  "core": "mame_libretro apple2ee -flop1",
+  "core": "mame_libretro apple2ee -cass",
   "src": "https://archive.org/download/tosec-main/Apple/II/Demos/%5BWAV%5D/Apple%20II%20-%20Demos%20-%20%5BWAV%5D%20%28TOSEC-v2023-06-14%29.zip/"
  },
  {
@@ -575,7 +580,7 @@
  },
  {
   "pattern": "/apple2/Edu [WAV]/",
-  "core": "mame_libretro apple2ee -flop1",
+  "core": "mame_libretro apple2ee -cass",
   "src": "https://archive.org/download/tosec-main/Apple/II/Educational/%5BWAV%5D/Apple%20II%20-%20Educational%20-%20%5BWAV%5D%20%28TOSEC-v2023-10-03%29.zip/"
  },
  {
@@ -625,7 +630,7 @@
  },
  {
   "pattern": "/apple2gs/Demo [PO]/",
-  "core": "mame_libretro apple2gs -flop3",
+  "core": "mame_libretro apple2gs -flop1",
   "src": "https://archive.org/download/tosec-main/Apple/IIGS/Demos/%5BPO%5D/Apple%20IIGS%20-%20Demos%20-%20%5BPO%5D%20%28TOSEC-v2023-08-29%29.zip/"
  },
  {
@@ -635,7 +640,7 @@
  },
  {
   "pattern": "/apple2gs/Edu [PO]/",
-  "core": "mame_libretro apple2gs -flop3",
+  "core": "mame_libretro apple2gs -flop1",
   "src": "https://archive.org/download/tosec-main/Apple/IIGS/Educational/%5BPO%5D/Apple%20IIGS%20-%20Educational%20-%20%5BPO%5D%20%28TOSEC-v2023-06-14%29.zip/"
  },
  {
@@ -910,22 +915,22 @@
  },
  {
   "pattern": "/zxspectrum/MAME/",
-  "core": "mame_libretro spectrum -autoboot_command 'LOAD \"\"\\n' -autoboot_delay 3 -cass",
+  "core": "mame_libretro spectrum -autoboot_command 'J\"\"\\n' -autoboot_delay 3 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/spectrum_cass.zip/spectrum_cass/"
  },
  {
   "pattern": "/zxspectrum/Cass MAME/",
-  "core": "mame_libretro tc2068 -autoboot_command 'LOAD \"\"\\n' -autoboot_delay 3 -cass",
+  "core": "mame_libretro ts2068 -autoboot_command 'J\"\"\\n' -autoboot_delay 3 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/timex_cass.zip/timex_cass/"
  },
  {
   "pattern": "/zxspectrum/Beta Disc MAME/",
-  "core": "mame_libretro pentagon -flop",
+  "core": "mame_libretro pentagon -flop1",
   "src": "https://archive.org/download/mame-sl/mame-sl/spectrum_betadisc_flop.zip/spectrum_betadisc_flop/"
  },
  {
   "pattern": "/zxspectrum/Opus Flop MAME/",
-  "core": "mame_libretro spec128 -flop",
+  "core": "mame_libretro spec128 -exp opus -flop1",
   "src": "https://archive.org/download/mame-sl/mame-sl/spectrum_flop_opus.zip/spectrum_flop_opus/"
  },
  {
@@ -935,7 +940,7 @@
  },
  {
   "pattern": "/zxspectrum/MGT Flop MAME/",
-  "core": "mame_libretro spec128 -flop",
+  "core": "mame_libretro spec128 -exp plusd -flop1",
   "src": "https://archive.org/download/mame-sl/mame-sl/spectrum_mgt_flop.zip/spectrum_mgt_flop/"
  },
  {
@@ -2099,7 +2104,7 @@
  },
  {
   "pattern": "/sc3000/WAV/",
-  "core": "mame_libretro sc3000 -autoboot_command 'LOAD\\n' -autoboot_delay 5 -cass",
+  "core": "mame_libretro sc3000 -cart sc3000_cart:basic3 -autoboot_command 'LOAD\\n' -autoboot_delay 5 -cass",
   "src": "https://archive.org/download/tosec-main/Sega/Computer%203000/Games/%5BROM%5D/Sega%20Computer%203000%20-%20Games%20-%20%5BROM%5D%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
@@ -2109,7 +2114,7 @@
  },
  {
   "pattern": "/sc3000/Cass MAME/",
-  "core": "mame_libretro sc3000 -autoboot_command 'LOAD\\n' -autoboot_delay 5 -cass",
+  "core": "mame_libretro sc3000 -cart sc3000_cart:basic3 -autoboot_command 'LOAD\\n' -autoboot_delay 5 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/sc3000_cass.zip/sc3000_cass/"
  },
  {
@@ -3146,7 +3151,7 @@
  },
  {
   "pattern": "/trs80/Demo [DSK]/",
-  "core": "mame_libretro trs80m3 -quik",
+  "core": "mame_libretro trs80m3 -flop1",
   "src": "https://archive.org/download/tosec-main/Tandy%20Radio%20Shack/TRS-80%20Model%204/Demos/%5BDSK%5D/Tandy%20Radio%20Shack%20TRS-80%20Model%204%20-%20Demos%20-%20%5BDSK%5D%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
@@ -3166,7 +3171,7 @@
  },
  {
   "pattern": "/trs80/Edu [DSK]/",
-  "core": "mame_libretro trs80m3 -quik",
+  "core": "mame_libretro trs80m3 -flop1",
   "src": "https://archive.org/download/tosec-main/Tandy%20Radio%20Shack/TRS-80%20Model%204/Educational/%5BDSK%5D/Tandy%20Radio%20Shack%20TRS-80%20Model%204%20-%20Educational%20-%20%5BDSK%5D%20%28TOSEC-v2025-01-15%29.zip/"
  },
  {
@@ -3201,12 +3206,12 @@
  },
  {
   "pattern": "/trs80/Edu [DMK]/",
-  "core": "mame_libretro trs80m3 -quik",
+  "core": "mame_libretro trs80m3 -flop1",
   "src": "https://archive.org/download/tosec-main/Tandy%20Radio%20Shack/TRS-80%20Model%20III/Educational/%5BDMK%5D/Tandy%20Radio%20Shack%20TRS-80%20Model%20III%20-%20Educational%20-%20%5BDMK%5D%20%28TOSEC-v2024-07-03%29.zip/"
  },
  {
   "pattern": "/trs80/Edu [DSK]/",
-  "core": "mame_libretro trs80m3 -quik",
+  "core": "mame_libretro trs80m3 -flop1",
   "src": "https://archive.org/download/tosec-main/Tandy%20Radio%20Shack/TRS-80%20Model%20III/Educational/%5BDSK%5D/Tandy%20Radio%20Shack%20TRS-80%20Model%20III%20-%20Educational%20-%20%5BDSK%5D%20%28TOSEC-v2024-07-03%29.zip/"
  },
  {
@@ -3356,7 +3361,7 @@
  },
  {
   "pattern": "/atom/TOSEC/",
-  "core": "mame_libretro atom -flop1",
+  "core": "mame_libretro atom -cass",
   "src": "https://archive.org/download/tosec-main/Acorn/Atom/Compilations/Games/Acorn%20Atom%20-%20Compilations%20-%20Games%20%28TOSEC-v2018-03-08%29.zip/"
  },
  {
@@ -3706,7 +3711,7 @@
  },
  {
   "pattern": "/bbcmicro/Edu [UEF]/",
-  "core": "mame_libretro bbcb -flop1",
+  "core": "mame_libretro bbcb -cass",
   "src": "https://archive.org/download/tosec-main/Acorn/BBC/Educational/%5BUEF%5D/Acorn%20BBC%20-%20Educational%20-%20%5BUEF%5D%20%28TOSEC-v2013-10-22%29.zip/"
  },
  {
@@ -3721,7 +3726,7 @@
  },
  {
   "pattern": "/bbcmicro/Micro Cass MAME/",
-  "core": "mame_libretro bbcb -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
+  "core": "mame_libretro bbcb -autoboot_command '*TAPE\\nCHAIN\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/bbc_cass.zip/bbc_cass/"
  },
  {
@@ -3731,7 +3736,7 @@
  },
  {
   "pattern": "/bbcmicro/Master Cart MAME/",
-  "core": "mame_libretro bbcm -cart",
+  "core": "mame_libretro bbcm -cart1",
   "src": "https://archive.org/download/mame-sl/mame-sl/bbcm_cart.zip/bbcm_cart/"
  },
  {
@@ -3831,7 +3836,7 @@
  },
  {
   "pattern": "/adam/TOSEC/",
-  "core": "mame_libretro adam -flop1",
+  "core": "mame_libretro adam -cass1",
   "src": "https://archive.org/download/tosec-main/Coleco/ColecoVision%20ADAM/Compilations/Games/%5BDDP%5D/Coleco%20ColecoVision%20ADAM%20-%20Compilations%20-%20Games%20-%20%5BDDP%5D%20%28TOSEC-v2023-08-29%29.zip/"
  },
  {
@@ -3841,7 +3846,7 @@
  },
  {
   "pattern": "/adam/Edu [DDP]/",
-  "core": "mame_libretro adam -flop1",
+  "core": "mame_libretro adam -cass1",
   "src": "https://archive.org/download/tosec-main/Coleco/ColecoVision%20ADAM/Educational/%5BDDP%5D/Coleco%20ColecoVision%20ADAM%20-%20Educational%20-%20%5BDDP%5D%20%28TOSEC-v2023-08-29%29.zip/"
  },
  {
@@ -3851,7 +3856,7 @@
  },
  {
   "pattern": "/adam/Cass MAME/",
-  "core": "mame_libretro adam -cass",
+  "core": "mame_libretro adam -cass1",
   "src": "https://archive.org/download/mame-sl/mame-sl/adam_cass.zip/adam_cass/"
  },
  {
@@ -3906,32 +3911,32 @@
  },
  {
   "pattern": "/electron/TOSEC/",
-  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
+  "core": "mame_libretro electron64 -autoboot_command '*TAPE\\nCHAIN\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/tosec-main/Acorn/Electron/Games/%5BBIN%5D/Acorn%20Electron%20-%20Games%20-%20%5BBIN%5D%20%28TOSEC-v2018-07-01%29.zip/"
  },
  {
   "pattern": "/electron/App/",
-  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
+  "core": "mame_libretro electron64 -autoboot_command '*TAPE\\nCHAIN\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/tosec-main/Acorn/Electron/Applications/%5BBIN%5D/Acorn%20Electron%20-%20Applications%20-%20%5BBIN%5D%20%28TOSEC-v2013-10-22%29.zip/"
  },
  {
   "pattern": "/electron/Edu/",
-  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
+  "core": "mame_libretro electron64 -autoboot_command '*TAPE\\nCHAIN\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/tosec-main/Acorn/Electron/Educational/%5BBIN%5D/Acorn%20Electron%20-%20Educational%20-%20%5BBIN%5D%20%28TOSEC-v2018-07-01%29.zip/"
  },
  {
   "pattern": "/electron/Demo [UEF]/",
-  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
+  "core": "mame_libretro electron64 -autoboot_command '*TAPE\\nCHAIN\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/tosec-main/Acorn/Electron/Demos/%5BUEF%5D/Acorn%20Electron%20-%20Demos%20-%20%5BUEF%5D%20%28TOSEC-v2018-07-01%29.zip/"
  },
  {
   "pattern": "/electron/Edu [UEF]/",
-  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
+  "core": "mame_libretro electron64 -autoboot_command '*TAPE\\nCHAIN\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/tosec-main/Acorn/Electron/Educational/%5BUEF%5D/Acorn%20Electron%20-%20Educational%20-%20%5BUEF%5D%20%28TOSEC-v2018-07-01%29.zip/"
  },
  {
   "pattern": "/electron/MAME/",
-  "core": "mame_libretro electron64 -autoboot_command '*T.\\nCH.\"\"\\n' -autoboot_delay 2 -cass",
+  "core": "mame_libretro electron64 -autoboot_command '*TAPE\\nCHAIN\"\"\\n' -autoboot_delay 2 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/electron_cass.zip/electron_cass/"
  },
  {
@@ -3941,12 +3946,12 @@
  },
  {
   "pattern": "/electron/Cart MAME/",
-  "core": "mame_libretro electron64 -exp plus1 -cart",
+  "core": "mame_libretro electron64 -exp plus1 -cart1",
   "src": "https://archive.org/download/mame-sl/mame-sl/electron_cart.zip/electron_cart/"
  },
  {
   "pattern": "/electron/ROM MAME/",
-  "core": "mame_libretro electron64 -exp plus1 -rom",
+  "core": "mame_libretro electron64 -exp rombox -rom1",
   "src": "https://archive.org/download/mame-sl/mame-sl/electron_rom.zip/electron_rom/"
  },
  {
@@ -4056,7 +4061,7 @@
  },
  {
   "pattern": "/coco/Edu [DSK]/",
-  "core": "mame_libretro coco3 -cart",
+  "core": "mame_libretro coco3 -flop1",
   "src": "https://archive.org/download/tosec-main/Tandy%20Radio%20Shack/TRS-80%20Color%20Computer/Educational/%5BDSK%5D/Tandy%20Radio%20Shack%20TRS-80%20Color%20Computer%20-%20Educational%20-%20%5BDSK%5D%20%28TOSEC-v2011-01-01%29.zip/"
  },
  {
@@ -4106,7 +4111,7 @@
  },
  {
   "pattern": "/samcoupe/Cass MAME/",
-  "core": "mame_libretro samcoupe -autoboot_command 'LOAD \"\"\\n' -autoboot_delay 3 -cass",
+  "core": "mame_libretro samcoupe -autoboot_command 'LOAD \"\"\\n' -autoboot_delay 5 -cass",
   "src": "https://archive.org/download/mame-sl/mame-sl/samcoupe_cass.zip/samcoupe_cass/"
  },
  {
@@ -4131,7 +4136,7 @@
  },
  {
   "pattern": "/enterprise/64 & 128 Flop MAME/",
-  "core": "mame_libretro ep128 -flop",
+  "core": "mame_libretro ep128 -exp exdos -flop",
   "src": "https://archive.org/download/mame-sl/mame-sl/ep64_flop.zip/ep64_flop/"
  },
  {
@@ -4141,7 +4146,7 @@
  },
  {
   "pattern": "/enterprise/Cass MAME/",
-  "core": "mame_libretro ep128 -autoboot_command 'LOAD\\n' -autoboot_delay 3 -cass",
+  "core": "mame_libretro ep128 -autoboot_command 'LOAD\\n' -autoboot_delay 3 -cass1",
   "src": "https://archive.org/download/mame-sl/mame-sl/ep64_cass.zip/ep64_cass/"
  },
  {
@@ -4241,7 +4246,7 @@
  },
  {
   "pattern": "/thomson/MO5 Flop MAME/",
-  "core": "mame_libretro mo5 -flop",
+  "core": "mame_libretro mo5 -extension cd90_640 -flop",
   "src": "https://archive.org/download/mame-sl/mame-sl/mo5_flop.zip/mo5_flop/"
  },
  {
@@ -4251,7 +4256,7 @@
  },
  {
   "pattern": "/thomson/MO6 Flop MAME/",
-  "core": "mame_libretro mo6 -flop",
+  "core": "mame_libretro mo6 -extension cd90_640 -flop",
   "src": "https://archive.org/download/mame-sl/mame-sl/mo6_flop.zip/mo6_flop/"
  },
  {
@@ -4311,7 +4316,7 @@
  },
  {
   "pattern": "/pro128/Flop MAME/",
-  "core": "mame_libretro pro128 -flop1",
+  "core": "mame_libretro pro128 -extension cd90_640 -flop",
   "src": "https://archive.org/download/mame-sl/mame-sl/pro128_flop.zip/pro128_flop/"
  },
  {
@@ -4474,7 +4479,7 @@
  },
  {
   "pattern": "/pcenginecd/CHD/",
-  "core": "mame_libretro pce -cdrm",
+  "core": "mame_libretro pce -cart scdsys -cdrm",
   "src": "https://archive.org/download/mame-software-list-chds-2/pcecd/"
  },
  {
@@ -4536,7 +4541,7 @@
  },
  {
   "pattern": "/fm7/Demo [T77]/",
-  "core": "mame_libretro fm7 -flop1",
+  "core": "mame_libretro fm7 -cass",
   "src": "https://archive.org/download/tosec-main/Fujitsu/FM-7/Demos/%5BT77%5D/Fujitsu%20FM-7%20-%20Demos%20-%20%5BT77%5D%20%28TOSEC-v2011-02-07%29.zip/"
  },
  {

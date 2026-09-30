@@ -12,7 +12,7 @@
 #   python3 gen_mame_deps.py ~/gameflix/retroarch.sh > mame_deps.tsv
 import re,shutil,subprocess,sys,xml.etree.ElementTree as ET
 MAME=shutil.which('mame') or '/usr/games/mame'
-def deps(drv):
+def deps(drv, slotargs=()):
     x=subprocess.run([MAME,'-listxml',drv],capture_output=True,text=True).stdout
     if not x.strip(): return None
     m={e.get('name'):e for e in ET.fromstring(x).findall('machine')}
@@ -25,11 +25,18 @@ def deps(drv):
     b=top.get('romof')
     while b:
         add(b); b=m[b].get('romof') if b in m else None
-    tree=subprocess.run([MAME,'-listdevices',drv],capture_output=True,text=True).stdout
     used=set()
-    for l in tree.split('\n')[1:]:
-        mm=re.match(r'\s*\S+\s{2,}(.*?)(?: @ [\d.]+ [kMG]?Hz)?$',l)
-        if mm: used.add(mm.group(1))
+    for extra in [[]]+[list(a) for a in slotargs]:
+        tree=subprocess.run([MAME,'-listdevices',drv]+extra,capture_output=True,text=True).stdout
+        for l in tree.split('\n')[1:]:
+            mm=re.match(r'\s*\S+\s{2,}(.*?)(?: @ [\d.]+ [kMG]?Hz)?$',l)
+            if mm: used.add(mm.group(1))
+    if slotargs:
+        # a card's devices are only in -listxml when the card is plugged in
+        for a in slotargs:
+            x=subprocess.run([MAME,'-listxml',drv]+list(a),capture_output=True,text=True).stdout
+            if x.strip():
+                for e in ET.fromstring(x).findall('machine'): m.setdefault(e.get('name'),e)
     for n,e in m.items():
         if e.get('isdevice')=='yes' and e.find('rom') is not None and e.findtext('description') in used:
             add(n)
@@ -37,7 +44,20 @@ def deps(drv):
     for l in top.findall('softwarelist'):
         if l.get('name') not in lists: lists.append(l.get('name'))
     return need,lists
-drivers=sorted(set(re.findall(r'core="mame(?:_libretro)? ([a-z0-9_]+)',open(sys.argv[1]).read())))
-for d in drivers:
-    r=deps(d)
+# Slot cards the launcher plugs in ("ep128 -exp exdos -flop", "mo5 -extension
+# cd90_640 -flop") bring ROM devices of their own; they are added to the
+# driver's line, so every list of that driver fetches them.
+cores=re.findall(r'core="mame(?:_libretro)? ([^"]*)"',open(sys.argv[1]).read())
+slots={}
+for c in cores:
+    w=c.split(); d=w[0]
+    names=slots.setdefault(d,{'names':None,'args':set()})
+    if names['names'] is None:
+        out=subprocess.run([MAME,d,'-listslots'],capture_output=True,text=True).stdout
+        names['names']={m.group(1) for m in re.finditer(r'^\S*\s+(\S+)\s',out,re.M)}
+    for i in range(1,len(w)-1):
+        if w[i].startswith('-') and w[i][1:] in names['names'] and not w[i+1].startswith('-'):
+            names['args'].add(('-'+w[i][1:],w[i+1]))
+for d in sorted(slots):
+    r=deps(d, sorted(slots[d]['args']))
     if r: print(d+'\t'+' '.join(r[0])+'\t'+' '.join(r[1]),flush=True)
