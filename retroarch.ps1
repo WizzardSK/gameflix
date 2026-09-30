@@ -412,20 +412,34 @@ function Get-MameDeps([string]$driver, [int]$col) {
   if ($col -eq 2) { return @($driver) } else { return @() }
 }
 
-# Fetch the MAME system ROM sets a driver needs into $BiosDir, from the merged
-# set on the Internet Archive; sets RetroArch's system dirs already hold are
-# left alone.
+# Fetch the MAME system ROM sets a driver needs into $BiosDir; sets RetroArch's
+# system dirs already hold are left alone. The merged set on the Internet
+# Archive is MAME 0.268 and the core is newer, so machines whose ROMs were
+# added or renamed since (apple2gs, mo5, to7, ...) would stop with "Required
+# files are missing"; a recent non-merged set, whose zips also hold the ROMs
+# of the machine's devices, comes first. .gameflix-recent lists the sets
+# fetched from it, so one from the old merged set is fetched once more.
+$MameSysUrl = 'https://archive.org/download/mame-roms-non-merged-latest_202609/mame-roms-non-merged%20latest.zip/mame-roms-non-merged%20latest/MAME%20ROMs%20%28non-merged%29'
 function Install-MameBios([string]$driver) {
   if (-not $driver -or $driver -match '^-') { return }
   New-Item -ItemType Directory -Force -Path $BiosDir | Out-Null
   $sysDir = Get-RetroArchSystemDir
+  $recentFile = Join-Path $BiosDir '.gameflix-recent'
+  $recent = if (Test-Path -LiteralPath $recentFile) { @(Get-Content -LiteralPath $recentFile) } else { @() }
   foreach ($set in (Get-MameDeps $driver 2)) {
-    $dirs = @($BiosDir)
-    if ($sysDir) { $dirs += @((Join-Path $sysDir 'mame\bios'), (Join-Path $sysDir 'mame\roms')) }
-    if ($dirs | Where-Object { Test-Path -LiteralPath (Join-Path $_ "$set.zip") }) { continue }
+    $zip = Join-Path $BiosDir "$set.zip"
+    if ((Test-Path -LiteralPath $zip) -and ($recent -contains $set)) { continue }
+    if ($sysDir -and ((Test-Path -LiteralPath (Join-Path $sysDir "mame\bios\$set.zip")) -or (Test-Path -LiteralPath (Join-Path $sysDir "mame\roms\$set.zip")))) { continue }
     Write-Host "Fetching MAME system ROMs $set.zip ..."
-    if (-not (Get-IaFile "https://archive.org/download/mame-merged/mame-merged/$set.zip" (Join-Path $BiosDir "$set.zip"))) {
-      Write-Host "No MAME system ROMs $set.zip in the merged set; continuing"
+    $part = Join-Path $BiosDir ".$set.zip.part"
+    if (Get-IaFile "$MameSysUrl/$set.zip" $part) {
+      Move-Item -LiteralPath $part -Destination $zip -Force
+      Add-Content -LiteralPath $recentFile -Value $set
+      continue
+    }
+    if (Test-Path -LiteralPath $zip) { continue }
+    if (-not (Get-IaFile "https://archive.org/download/mame-merged/mame-merged/$set.zip" $zip)) {
+      Write-Host "No MAME system ROMs $set.zip in the MAME sets; continuing"
     }
   }
 }

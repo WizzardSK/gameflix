@@ -18,6 +18,11 @@ sysdir="$HOME/.config/retroarch/system"
 # where the user has to do something.
 bios_pack_url="https://archive.org/download/retroarch_bios_pack/extract_to_sytem_folder.zip"
 mame_rom_url="https://archive.org/download/mame-merged/mame-merged"
+# The merged set above is MAME 0.268; the core is newer, and machines whose
+# ROMs were added or renamed since (apple2gs, mo5, to7, ...) stop with
+# "Required files are missing". System ROMs come from this recent non-merged
+# set first, whose zips also hold the ROMs of the machine's devices.
+mame_sys_url="https://archive.org/download/mame-roms-non-merged-latest_202609/mame-roms-non-merged%20latest.zip/mame-roms-non-merged%20latest/MAME%20ROMs%20%28non-merged%29"
 system_zip_url="https://buildbot.libretro.com/assets/system"
 
 # An Internet Archive S3 session, when rclone has one configured: restricted
@@ -136,6 +141,10 @@ gameflix_fetch_firmware() {
     fi
     echo "Fetching firmware $path ..." >&2
     mkdir -p "$(dirname "$sysdir/$path")"
+    # a MAME set: the recent set first, as for the system ROMs
+    if [[ "$url" == "$mame_rom_url/"* ]] && curl -sfL --max-time 300 -o "$sysdir/$path" "$mame_sys_url/${path##*/}"; then
+      continue
+    fi
     gameflix_ia_auth
     if ! curl -sfL --location-trusted --max-time 300 ${ia_auth:+-H "Authorization: $ia_auth"} -o "$sysdir/$path" "$url"; then
       rm -f "$sysdir/$path"
@@ -240,20 +249,51 @@ gameflix_mame_member_for() {
 # Pulls one named file out of a MAME set, downloading the set once per core.
 # Returns non-zero and leaves nothing behind when the set has no such file,
 # which is the common case and not an error.
+# Firmware a core wants under its own name that MAME keeps in some set under
+# another, found by CRC (libretro's System.dat against MAME's -listxml):
+# prints "<set> <member>", nothing when there is no such mapping.
+gameflix_mame_firmware() {
+  local core="$1" want="${2,,}"
+  case "$want" in
+    panafz10.bin|panafz1.bin)             echo "3do $want" ;;
+    colecovision.rom|coleco.rom|os7.u2)   echo "coleco 313_10031-4005_73108a.u2" ;;
+    o2rom.bin)                            echo "videopac o2bios.rom" ;;
+    c52.bin)                              echo "videopacf c52.rom" ;;
+    g7400.bin)                            echo "videopacp g7400.bin" ;;
+    jopac.bin)                            echo "jopac jopac.bin" ;;
+    sl31253.bin|sl31254.bin|sl90025.bin)  echo "channelf ${want%.bin}.rom" ;;
+    disksys.rom)                          echo "fc_disksys rp2c33a-01a.bin" ;;
+    kick34005.a500)                       echo "a500 315093-02.u2" ;;
+    monit10.rom)                          echo "bk0010 monit10.rom" ;;
+    b11m_bos.rom)                         echo "bk0011m b11m_bos.rom" ;;
+    "7800 bios (u).rom")                  echo "a7800 7800.u7" ;;
+    dc_boot.bin)                          echo "dcjp mpr-21931.ic501" ;;
+    bios7.bin)    [[ "$core" == melonds* ]] && echo "nds biosnds7.rom" ;;
+    bios9.bin)    [[ "$core" == melonds* ]] && echo "nds biosnds9.rom" ;;
+    firmware.bin) [[ "$core" == melonds* ]] && echo "nds firmware.bin" ;;
+  esac
+}
+
 gameflix_from_mame_set() {
-  local core="$1" want="$2" dest="$3" set_name cache zip
+  local core="$1" want="$2" dest="$3" set_name member map cache zip
   cache="${XDG_CACHE_HOME:-$HOME/.cache}/gameflix"
-  set_name=$(gameflix_mame_set_for_core "$core")
+  map=$(gameflix_mame_firmware "$core" "$want")
+  if [[ -n "$map" ]]; then
+    set_name="${map%% *}"; member="${map#* }"
+  else
+    set_name=$(gameflix_mame_set_for_core "$core")
+    member=$(gameflix_mame_member_for "$core" "$want")
+  fi
   [[ -n "$set_name" ]] || return 1
   zip="$cache/mameset-$set_name.zip"
   if [[ ! -s "$zip" ]]; then
     mkdir -p "$cache"
-    gameflix_ia_auth
-    curl -sfL --location-trusted --max-time 600 ${ia_auth:+-H "Authorization: $ia_auth"} \
-      -o "$zip" "$mame_rom_url/$set_name.zip" || { rm -f "$zip"; return 1; }
+    if ! curl -sfL --max-time 600 -o "$zip" "$mame_sys_url/$set_name.zip"; then
+      gameflix_ia_auth
+      curl -sfL --location-trusted --max-time 600 ${ia_auth:+-H "Authorization: $ia_auth"} \
+        -o "$zip" "$mame_rom_url/$set_name.zip" || { rm -f "$zip"; return 1; }
+    fi
   fi
-  local member
-  member=$(gameflix_mame_member_for "$core" "$want")
   unzip -l "$zip" 2>/dev/null | grep -qF " $member" || return 1
   mkdir -p "$(dirname "$dest")"
   unzip -p "$zip" "$member" > "$dest" 2>/dev/null && [[ -s "$dest" ]] && return 0
@@ -286,21 +326,31 @@ gameflix_mame_deps() {
 }
 
 gameflix_fetch_mame_bios() {
-  local driver="$1" dest="$HOME/share/bios" set
+  local driver="$1" dest="$HOME/share/bios" set tmp
   [[ -z "$driver" || "$driver" == -* ]] && return 0
   mkdir -p "$dest"
   for set in $(gameflix_mame_deps "$driver"); do
-    [[ -e "$dest/$set.zip" ]] && continue
+    # .gameflix-recent lists the sets that came from the recent set; one from
+    # the old merged set is fetched once more.
+    [[ -e "$dest/$set.zip" ]] && grep -qxF "$set" "$dest/.gameflix-recent" 2>/dev/null && continue
     # RetroArch's own system directories are searched too, so a set that is
     # already there is not fetched again.
     [[ -e "$sysdir/mame/bios/$set.zip" || -e "$sysdir/mame/roms/$set.zip" ]] && continue
     echo "Fetching MAME system ROMs $set.zip ..." >&2
+    tmp="$dest/.$set.zip.part"
+    if curl -sfL --max-time 600 -o "$tmp" "$mame_sys_url/$set.zip"; then
+      mv -f "$tmp" "$dest/$set.zip"
+      echo "$set" >> "$dest/.gameflix-recent"
+      continue
+    fi
+    rm -f "$tmp"
+    [[ -e "$dest/$set.zip" ]] && continue
     gameflix_ia_auth
     if ! curl -sfL --location-trusted --max-time 600 ${ia_auth:+-H "Authorization: $ia_auth"} -o "$dest/$set.zip" "$mame_rom_url/$set.zip"; then
       rm -f "$dest/$set.zip"
       # Not every driver has a set of its own - a cartridge machine keeps
       # everything in the cartridge - so this is a note, not a failure.
-      echo "No MAME system ROMs $set.zip in the merged set; continuing" >&2
+      echo "No MAME system ROMs $set.zip in the MAME sets; continuing" >&2
     fi
   done
 }

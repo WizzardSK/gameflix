@@ -1,68 +1,68 @@
 32x	32x	32x
-a1200	a1200 a1200kbd_rb m68hc705c8a	amiga_workbench amiga_hardware amiga_apps amiga_flop amigaocs_flop amiga_demos amigaaga_flop amigaecs_flop amiga_hdd
+a1200	a1200 a1200kbd_rb	amiga_workbench amiga_hardware amiga_apps amiga_flop amigaocs_flop amiga_demos amiga_cd photo_cd amigaaga_flop amigaecs_flop amiga_hdd
 a2600	a2600	a2600 a2600_cass
-a500	a500 a500kbd_us	amiga_workbench amiga_hardware amiga_apps amiga_flop amigaocs_flop amiga_demos
+a500	a500 a500kbd_us a2000kbd_us	amiga_workbench amiga_hardware amiga_apps amiga_flop amigaocs_flop amiga_demos amiga_cd photo_cd
 a5200	a5200	a5200
-a600	a600 a600kbd_us	amiga_workbench amiga_hardware amiga_apps amiga_flop amigaocs_flop amiga_demos amigaecs_flop amiga_hdd
+a600	a600 a600kbd_us a2000kbd_us	amiga_workbench amiga_hardware amiga_apps amiga_flop amigaocs_flop amiga_demos amiga_cd photo_cd amigaecs_flop amiga_hdd
 a7800	a7800	a7800
 a800	a800	a800_flop a800_cass a800 xegs
-aa4401	aa310 archimedes_keyboard	archimedes archimedes_hdd archimedes_rom
-abc80	abc80 abc80kb abc830 sn74s263	abc80_cass abc80_flop abc80_rom
-adam	adam adam_ddp adam_fdc adam_kb adam_prn	coleco adam_cart adam_cass adam_flop
+aa4401	aa4401 aa310 archimedes_keyboard	archimedes archimedes_hdd archimedes_rom
+abc80	abc80 sn74s263 abc830 abc80kb	abc80_cass abc80_flop abc80_rom
+adam	adam adam_fdc adam_ddp adam_prn adam_kb	coleco coleco_homebrew adam_cart adam_cass adam_flop
 advision	advision	advision
 aes	aes	neogeo
 alice32	alice32	alice32 mc10
-alice90	alice32	alice90 alice32
-apfimag	apfm1000	apfm1000 apfimag_cass
+alice90	alice90 alice32	alice90 alice32
+apfimag	apfimag apfm1000	apfm1000 apfimag_cass
 apfm1000	apfm1000	apfm1000
-apogee	radio86	apogee
+apogee	apogee radio86	apogee
 apple1	apple1 a1cass	apple1
-apple2ee	apple2e a2diskiing d2fdc votrsc01a	apple2_flop_clcracked apple2_flop_orig apple2_flop_misc
+apple2ee	apple2ee apple2e d2fdc a2diskiing votrsc01a	apple2_flop_clcracked apple2_flop_orig apple2_flop_misc
 apple2gs	apple2gs	apple2gs_flop_clcracked apple2gs_flop_orig apple2gs_flop_misc apple2_flop_clcracked apple2_flop_orig apple2_flop_misc
 apple3	apple3 a3fdc	apple3
 aquarius	aquarius	aquarius_cart aquarius_cass
 arcadia	arcadia	arcadia
 astrocde	astrocde	astrocde
-atom	atom	atom_rom atom_cass atom_flop
-bbcb	bbcb bbc_acorn8271 saa5050	bbc_cass bbc_rom bbcb_flop bbcb_flop_orig bbc_hdd
+atom	atom atom_discpack	atom_rom atom_cass atom_flop
+bbcb	bbcb bbc_acorn8271 saa5050	bbc_cass bbc_rom bbcb_flop bbcb_flop_orig bbc_hdd bbc_vsm
 bbcm	bbcm saa5050	bbc_cass bbcm_flop bbcm_cart bbcb_flop bbcb_flop_orig bbc_rom bbc_hdd
-bbcmc	bbcmc saa5050	bbcm_flop bbcb_flop bbcb_flop_orig bbc_rom bbc_hdd bbcmc_flop pro128s_flop
+bbcmc	bbcmc saa5050	bbcmc_flop pro128s_flop bbcm_flop bbcb_flop bbcb_flop_orig bbcm_cart bbc_rom
 beena	beena	sega_beena_cart
 bk0010	bk0010	bk0010
 c128	c128 c1571	c128_cart c128_flop c128_rom c64_cart c64_cass vic10 c64_flop_orig c64_flop_misc
-c16	c264 c1541	plus4_cart plus4_cass plus4_flop
-c64	c64 c1541	vic10 c64_cart c64_cass c64_flop_orig c64_flop_misc
+c16	c16 c264 c1541	plus4_cart plus4_cass plus4_flop plus4_quik
+c64	c64 c1541	vic10 c64_cart c64_cass c64_flop_orig c64_flop_misc c64_quik
 casloopy	casloopy	casloopy
-cbm610	b500 c8050 c8050fdc	cbm2_cart cbm2_flop
-cd32	cd32	amiga_workbench amiga_hardware amiga_apps amiga_flop amigaocs_flop amiga_demos cd32 cdtv
-cdimono1	cdimono1	cdi
-cdtv	cdtv a2000kbd_us	amiga_workbench amiga_hardware amiga_apps amiga_flop amigaocs_flop amiga_demos cdtv
+cbm610	cbm610 b500 c8050fdc c8050	cbm2_cart cbm2_flop
+cd32	cd32	amiga_workbench amiga_hardware amiga_apps amiga_flop amigaocs_flop amiga_demos amiga_cd photo_cd cd32 cdtv
+cdimono1	cdimono1	cdi photo_cd
+cdtv	cdtv a2000kbd_us	amiga_workbench amiga_hardware amiga_apps amiga_flop amigaocs_flop amiga_demos amiga_cd photo_cd cdtv
 cgenie	cgenie	cgenie_cass
 channelf	channelf	channelf
-coco3	coco coco_fdc	coco_cart coco_flop
-coleco	coleco	coleco
+coco3	coco3 coco coco_fdc	coco_cart coco_flop
+coleco	coleco	coleco coleco_homebrew
 compclr2	compclr2	compclr2_flop
 cpc464	cpc464	cpc_cass
-cpc6128	cpc464	cpc_cass cpc_flop
+cpc6128	cpc6128 cpc464	cpc_cass cpc_flop
 crvision	crvision	crvision
 ctvboy	ctvboy	ctvboy
 d6800	d6800	chip8_quik
-dragon64	dragon32 dragon_fdc	dragon_cart dragon_cass dragon_flop coco_cart dragon_flex dragon_os9
+dragon64	dragon64 dragon32 dragon_fdc	dragon_cart dragon_cass dragon_flop coco_cart dragon_flex dragon_os9
 einstein	einstein	einstein einstein_rom
-ekara	ekara	ekara_us ekara_pal ekara_japan ekara_japan_g ekara_japan_p ekara_japan_s ekara_japan_m ekara_japan_d ekara_japan_en ekara_japan_kd ekara_japan_sp ekara_japan_web ekara_japan_a ekara_japan_gk ekara_japan_bh ekara_japan_packin
-electron64	electron electron_plus1 electron_plus3	electron_cass bbc_cass electron_cart electron_flop electron_rom
-ep128	ep64 ep64_exdos	ep64_cart ep64_cass ep64_flop
+ekara	ekara	ekara_cart
+electron64	electron64 electron electron_plus1 electron_plus3	electron_cass bbc_cass electron_cart electron_flop electron_rom
+ep128	ep128 ep64 ep64_exdos	ep64_cart ep64_cass ep64_flop
 exl100	exl100	exl100
-expert11	expert13	msx1_cass msx1_cart
+expert11	expert11 expert13	msx1_cass msx1_cart
 famicom	famicom	nes nes_ade nes_ntbrom nes_kstudio nes_datach famibox famicom_flop famicom_cass
-fds	famicom fc_disksys	famicom_flop
+fds	fds famicom fc_disksys	famicom_flop
 fm7	fm7	fm7_cass fm8_cass fm7_disk
-fm77av	fm7	fm7_cass fm8_cass fm77av fm7_disk
+fm77av	fm77av fm7	fm7_cass fm8_cass fm77av fm7_disk
 fm8	fm8	fm8_cass
 fmtmarty	fmtmarty	fmtowns_flop_orig fmtowns_flop_cracked fmtowns_flop_misc fmtowns_cd
 fmtowns	fmtowns	fmtowns_flop_orig fmtowns_flop_cracked fmtowns_flop_misc fmtowns_cd
-fsa1gt	fsa1gt ym2413	msx2_cass msx1_cass msx2_cart msx1_cart msxr_flop msx2p_flop msx2_flop msx1_flop
-fsa1wsx	fsa1wsx ym2413	msx2_cass msx1_cass msx2_cart msx1_cart msx2p_flop msx2_flop msx1_flop
+fsa1gt	fsa1gt ym2413	msxr_cart msx2p_cart msx2_cart msx1_cart msxr_flop msx2p_flop msx2_flop msx1_flop
+fsa1wsx	fsa1wsx ym2413	msx2_cass msx1_cass msx2p_cart msx2_cart msx1_cart msx2p_flop msx2_flop msx1_flop
 galaxy	galaxy	galaxy
 gamate	gamate	gamate
 gameboy	gameboy	gameboy gbcolor
@@ -78,76 +78,76 @@ gp32	gp32	gp32
 gx4000	gx4000	gx4000
 hbf1xd	hbf1xd	msx2_cass msx1_cass msx2_cart msx1_cart msx2_flop msx1_flop
 hyprscan	hyprscan	hyperscan hyperscan_card
-ibm5150	ibm5150 cga isa_hdc keytronic_pc3270	ibm5150 ibm5150_cass ibm5150_hdd
-ibm5170	ibm5170 at_keybc ega kb_pcat84	ibm5150 ibm5170 ibm5170_cdrom ibm5170_hdd midi_flop
-ibmpcjr	ibm5150	ibmpcjr_cart ibmpcjr_flop ibm5150
+ibm5150	ibm5150 keytronic_pc3270 isa_hdc cga	ibm5150 ibm5150_cass ibm5150_hdd
+ibm5170	ibm5170 kb_pcat84 ega at_keybc	ibm5150 ibm5170 ibm5170_cdrom generic_cdrom ibm5170_hdd midi_flop
+ibmpcjr	ibmpcjr ibm5150	ibmpcjr_cart ibmpcjr_flop ibm5150
 interact	interact	interact
 intv	intv stic	intv intvecs
-intvecs	intv intv_ecs stic	intvecs intv
+intvecs	intvecs intv intv_ecs stic	intvecs intv
 jaguar	jaguar	jaguar
 juicebox	juicebox	juicebox
 juku	juku	juku
 jupace	jupace	jupace_cass jupace_snap
-kaypro2x	kaypro484 kaypro10kbd	kaypro
-kc85_4	kc85_2	kc_cart kc_flop kc_cass
+kaypro2x	kaypro2x kaypro484 kaypro10kbd	kaypro
+kc85_4	kc85_4 kc85_2	kc_cart kc_flop kc_cass
 korvet	korvet	korvet_flop
 laser310	laser310	vz_cass vz_snap
-lisa	lisa	lisa
+lisa	lisa lisavideo lisafdc	lisa
 lviv	lviv	lviv
 lynx	lynx	lynx
-lynx128k	lynx48k	camplynx_cass camplynx_flop
+lynx128k	lynx128k lynx48k	camplynx_cass camplynx_flop
 lynx48k	lynx48k	camplynx_cass
-m5	m5	m5_cart m5_cass
+m5	m5	m5_cart m5_cass m5_flop
 macse	macse adbmodem	mac_flop_orig mac_flop_clcracked mac_flop mac_hdd mac_cdrom
 mbee	mbee	mbee_cass mbee_quik mbee_cart
-mbee56	mbee	mbee_flop
+mbee56	mbee56 mbee	mbee_flop
 mc10	mc10	mc10
 mc1000	mc1000	mc1000_cass
-megadriv	genesis	megadriv
+megadriv	megadriv genesis	megadriv
 megaduck	megaduck	megaduck
 megatech	megatech	megatech
 microvsn	microvsn	microvision
-mikrosha	radio86	mikrosha_cass mikrosha_cart
+mikrosha	mikrosha radio86	mikrosha_cass mikrosha_cart
 mo5	mo5 cd90_640	mo5_cart mo5_cass mo5_flop mo5_qd
 mo6	mo6 cd90_640	mo6_cass mo6_flop mo5_cart mo5_cass mo5_flop mo5_qd
 mononcol	mononcol ax208	monon_color
 mtx512	mtx512 mtx_sdxbas	mtx_cass mtx_flop mtx_cart mtx_hdd mtx_rom
 myvision	myvision	myvision
-mz2000	mz2000	mz2000_flop mz2000_cass mz2200_cass
-mz2500	mz2500	mz2500
-mz700	mz700	mz700_cass
-mz800	mz800	mz800_cass
+mz2000	mz2000	mz2000_flop mz2000_cass mz2000_snap generic_flop_525
+mz2500	mz2500	mz2500_flop mz2000_flop
+mz700	mz700	mz700_cass mz80k_cass
+mz800	mz800	mz80k_cass mz800_cass mz700_cass
 n64	n64	n64
-n64dd	n64	n64 n64dd
+n64dd	n64dd n64	n64 n64dd
 nascom2	nascom2	nascom_snap nascom_socket nascom_flop
 nes	nes	nes nes_ade nes_ntbrom nes_kstudio nes_datach famibox
 ngp	ngp	ngp ngpc
-ngpc	ngp	ngpc ngp
+ngpc	ngpc ngp	ngpc ngp
 orao	orao	orao
-orica	oric1	oric1_cass
+orica	orica oric1	oric1_cass
 orion128	orion128	orion_cass orion_flop orion_cart
 osborne1	osborne1	osborne1
-partner	radio86	partner_cass partner_flop
-pc6001	pc6001	pc6001_cart
-pc8001mk2sr	pc8001 pc80s31	pc8001_flop pc8001mk2_flop pc8001mk2sr_flop
-pc8801	pc8801 pc80s31	pc8801_cass pc8801_flop pc8001_flop
-pc9801	pc9801 pc9801_26 upd7220	pc98
-pc9821	pc9821 pc9801_86 upd7220 ym2608	pc98 pc98_cd
+partner	partner radio86	partner_cass partner_flop
+pc6001	pc6001	pc6001_cart pc6001_cass
+pc8001mk2sr	pc8001mk2sr pc8001 pc80s31	pc8001_flop pc8001mk2_flop pc8001mk2sr_flop
+pc8801	pc8801 pc80s31	pc8801_cass pc8801_flop pc8801_flop_orig pc8001_flop generic_flop_525
+pc9801	pc9801 pc80s31k upd7220 pc9801_26	pc98 pc98_flop_orig generic_flop_525
+pc9821	pc9821 ym2608 pc9801_86	pc98 pc98_flop_orig generic_flop_525 pc98_hdd pc98_cd generic_cdrom
 pce	pce	pcecd pce
 pcw8256	pcw8256	pcw
 pdp1	pdp1	pdp1_ptp
-pecom64	pecom32	pecom_cass
+pecom64	pecom64 pecom32	pecom_cass
 pegasus	pegasus	pegasus_cart
-pencil2	pencil2	pencil2
-pentagon	spec128 betadisk	spectrum_cass pentagon_cass spectrum_betadisc_flop
+pencil2	pencil2	pencil2 pencil2_cass coleco coleco_homebrew
+pentagon	pentagon spec128 betadisk	spectrum_cass pentagon_cass spectrum_betadisc_flop
 pet2001n	pet2001n c2040_fdc c4040	pet_cass pet_flop pet_hdd pet_quik pet_rom
 phc25	phc25	phc25_cass
 pico	pico	pico
 pmd851	pmd851	pmd85_cass
 pockstat	pockstat	
 pokemini	pokemini	pokemini
-pro128	mo6 cd90_640	pro128_cart pro128_cass pro128_flop
-pro128s	bbcmc saa5050	bbcm_flop bbcb_flop bbcb_flop_orig bbc_rom bbc_hdd bbcmc_flop pro128s_flop
+pro128	pro128 mo6 cd90_640	pro128_cart pro128_cass pro128_flop
+pro128s	pro128s bbcmc saa5050	bbcmc_flop pro128s_flop bbcm_flop bbcb_flop bbcb_flop_orig bbcm_cart bbc_rom
 pv1000	pv1000	pv1000
 pv2000	pv2000	pv2000
 ql	ql ql_trump	ql_cart ql_cass ql_flop
@@ -159,45 +159,46 @@ samcoupe	samcoupe	samcoupe_cass samcoupe_flop
 sc3000	sc3000	sg1000 sc3000_cart sc3000_cass
 scv	scv	scv
 segaai	segaai	segaai
-sf7000	sc3000	sg1000 sc3000_cart sc3000_cass sf7000
+sf7000	sf7000 sc3000	sg1000 sc3000_cart sc3000_cass sf7000
 sg1000	sg1000	sg1000
-sgx	pce	sgx pce pcecd
+sgx	sgx pce	sgx pce pcecd
 smc777	smc777	smc777
 sms	sms	sms
 snes	snes s_smp	snes snes_bspack snes_strom
 socrates	socrates	socrates
 sol20	sol20	sol20_cass
 sorcerer	sorcerer	sorcerer_cart sorcerer_cass sorcerer_quik
-sorcererd	sorcerer	sorcerer_cart sorcerer_cass sorcerer_quik sorcerer_flop
+sorcererd	sorcererd sorcerer	sorcerer_cart sorcerer_cass sorcerer_quik sorcerer_flop
 spc1000	spc1000	spc1000_cass
 spc1500	spc1500	spc1500_cass
-spec128	spec128 spectrum_opus spectrum_plusd	spectrum_cass
+spec128	spec128 spectrum_plusd spectrum_opus	spectrum_cass
 special	special	special_cass
-specimx	special	special_cass special_flop
-specpls3	specpl2a	spectrum_cass specpls3_flop
+specimx	specimx special	special_cass special_flop
+specpls3	specpls3 specpl2a	spectrum_cass specpls3_flop
 spectrum	spectrum	spectrum_cass
-st	st st_kbd	st_flop st_cart
+st	st st_kbd	st_flop st_flop_demos st_cart
 studio2	studio2	studio2
 stvbios	stvbios segabill	stv
 super80	super80	super80_cass super80_quik
-super80r	super80	super80_cass super80_quik super80_flop
-supergb	gameboy	gameboy gbcolor
-supracan	supracan	supracan
+super80r	super80r super80	super80_cass super80_quik super80_flop
+supergb	supergb gameboy	gameboy gbcolor
+supracan	supracan umc6650	supracan
 sv8000	sv8000	sv8000
 svi318	svi318	svi318_cass svi318_cart
 svi738	svi738	msx1_cass msx1_cart msx1_flop
 svision	svision	svision
 svmu	svmu	svmu
-tg16	pce	pcecd tg16
+tg16	tg16 pce	pcecd tg16
 ti99_4a	ti99_4a	ti99_cart
-tiki100	kontiki tiki100_8088	tiki100
+tiki100	tiki100 kontiki tiki100_8088	tiki100
 to7	to7	to7_cart to7_cass to_flop to7_qd
 to8	to8	to7_cart to7_cass to_flop to7_qd to8_cass to8_qd
 tourvis	tourvis	pce_tourvision
 trs80m2	trs80m2 trs80m2kb	trs80m2
 trs80m3	trs80m3	trs80_cass trs80_quik trs80_flop
+ts2068	ts2068 spectrum	spectrum_cass timex_dock timex_cass
 tutor	tutor	tutor
-tvc64p	tvc64	tvc_cart tvc_cass tvc_flop
+tvc64p	tvc64p tvc64	tvc_cart tvc_cass tvc_flop
 unichamp	unichamp gic	unichamp
 uzebox	uzebox	uzebox
 vboy	vboy	vboy
@@ -205,25 +206,25 @@ vc4000	vc4000	vc4000
 vector06	vector06	vector06_flop vector06_cart
 vectrex	vectrex	vectrex
 vg5k	vg5k	vg5k
-vgmplay	vgmplay qsound ym2413 ym2608	vgmplay
+vgmplay	vgmplay qsound ym2608 ym2413	vgmplay
 vic10	vic10	vic10
-vic20	vic1001 c1541	vic1001_cart vic1001_cass vic1001_flop
+vic20	vic20 vic1001 c1541	vic1001_cart vic1001_cass vic1001_flop
 vidbrain	vidbrain	vidbrain
 videoart	videoart ef9365	videoart
-videopac	videopac i8245	videopac
+videopac	videopac i8245 i8244	videopac
 vii	vii	vii
-vis	vis	vis
+vis	vis at_keybc	vis
 vsmile	vsmile	vsmile_cart vsmilem_cart
 vsmileb	vsmileb	vsmileb_cart
-vsmilem	vsmile	vsmile_cart vsmilem_cart
-wscolor	wswan	wscolor pockchalv2 wswan
-wswan	wswan	wswan wscolor pockchalv2
+vsmilem	vsmilem vsmile	vsmile_cart vsmilem_cart
+wscolor	wscolor wswan	wscolor wswan
+wswan	wswan	wswan wscolor
 x07	x07	x07_card x07_cass
-x1	x1	x1_flop x1_cass
-x68000	x68000	x68k_flop
+x1	x1	x1_cass x1_flop generic_flop_525
+x68000	x68000	x68k_flop generic_flop_525
 xegs	xegs	a800_flop a800_cass a800 xegs
-z80net	z80ne	z80ne_cass
-z80netf	z80ne	z80ne_cass z80ne_flop
+z80net	z80net z80ne	z80ne_cass
+z80netf	z80netf z80ne	z80ne_cass z80ne_flop
 z88	z88	z88_cart
 zx80	zx80	zx80_cass
 zx81	zx81	zx81_cass
