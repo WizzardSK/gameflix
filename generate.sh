@@ -410,7 +410,7 @@ IFS=";"; for each in "${roms[@]}"; do
     fi
   fi
   src_kv=""; [[ -n "$src" ]] && src_kv="; src=\"${src}\""
-  platform=${rom[0]}; ext=""; rom4="${rom[4]//$'\r'/}"; if [ -n "$rom4" ]; then ext="; ext=\"${rom4}\""; fi; emu="${rom[3]//\"/\\\"}"; echo "*\"/${rom[0]}/${foldername}/\"*) core=\"${emu}\"${ext}${src_kv};;" >> ~/gameflix/retroarch.sh
+  platform=${rom[0]}; ext=""; rom4="${rom[4]//$'\r'/}"; if [ -n "$rom4" ]; then ext="; ext=\"${rom4}\""; fi; emu="${rom[3]//\"/\\\"}"; casefolder="${foldername//\$/\\\$}"; echo "*\"/${rom[0]}/${casefolder}/\"*) core=\"${emu}\"${ext}${src_kv};;" >> ~/gameflix/retroarch.sh
   printf '/%s/%s/\t%s\t%s\t%s\n' "${rom[0]}" "$foldername" "${rom[3]}" "$rom4" "$src" >> ~/gameflix/launch.tsv
   [[ -n "$src" ]] && echo "  *\"/${rom[0]}/${foldername}/\"*) src=\"${src}\";;" >> ~/gameflix/urls.sh
   echo "<folder><path>./$foldername</path><name>$foldername</name><image>~/../thumb/${rom[0]}.png</image></folder>" >&$xml_fd

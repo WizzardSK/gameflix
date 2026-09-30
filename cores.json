@@ -4852,12 +4852,12 @@
  },
  {
   "pattern": "/mame/2000/",
-  "core": "mame_libretro",
+  "core": "mame2000_libretro",
   "src": "https://archive.org/download/MAME0.37b5_MAME2000_Reference_Set_Update_2_ROMs_Samples/roms/"
  },
  {
   "pattern": "/mame/2003/",
-  "core": "mame_libretro",
+  "core": "mame2003_libretro",
   "src": "https://archive.org/download/MAME2003_Reference_Set_MAME0.78_ROMs_CHDs_Samples/roms/"
  },
  {
@@ -4867,17 +4867,17 @@
  },
  {
   "pattern": "/mame/2010/",
-  "core": "mame_libretro",
+  "core": "mame2010_libretro",
   "src": "https://archive.org/download/MAME_2010_full_nonmerged_romsets/roms.zip/roms/"
  },
  {
   "pattern": "/mame/2015/",
-  "core": "mame_libretro",
+  "core": "mame2015_libretro",
   "src": "https://archive.org/download/MAME_2015_arcade_romsets/roms.zip/roms/"
  },
  {
   "pattern": "/mame/2016/",
-  "core": "mame_libretro",
+  "core": "mame2016_libretro",
   "src": "https://archive.org/download/MAME_2016_Arcade_Romsets/roms.zip/roms/"
  },
  {
