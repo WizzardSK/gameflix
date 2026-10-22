@@ -183,7 +183,6 @@ gameflix/
 ├── script2.js            # Lazy loading for thumbnails
 ├── style.css             # Dark theme styling
 ├── fantasy/              # Fantasy console scrapers and data
-│   ├── tic80.sh          # TIC-80 scraper
 │   ├── pico8.sh          # PICO-8 scraper
 │   ├── voxatron.sh       # Voxatron scraper
 │   ├── wasm4.sh          # WASM-4 scraper
