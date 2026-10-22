@@ -139,7 +139,7 @@ Gameflix includes special support for fantasy console platforms. Most of these g
 | [WASM-4](https://wasm4.org) | wasm4.org | wasm4.org/play |
 | [LowresNX](https://lowresnx.inutilis.com) | LowresNX community | lowresnx.inutilis.com |
 
-Game data for fantasy consoles is scraped by scripts in the [fantasy/](fantasy/) directory and updated via GitHub Actions.
+Game data for fantasy consoles is scraped by scripts in the [fantasy/](fantasy/) directory, run by `gamelist.sh` each time the site is built.
 
 ## Batocera Linux
 
@@ -183,7 +183,6 @@ gameflix/
 ├── script2.js            # Lazy loading for thumbnails
 ├── style.css             # Dark theme styling
 ├── fantasy/              # Fantasy console scrapers and data
-│   ├── fantasy.sh        # Master update script
 │   ├── tic80.sh          # TIC-80 scraper
 │   ├── pico8.sh          # PICO-8 scraper
 │   ├── voxatron.sh       # Voxatron scraper

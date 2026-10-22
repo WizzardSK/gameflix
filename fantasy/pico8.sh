@@ -45,4 +45,3 @@ for sub in 2 3 8 9 14 15; do
 done
 rm -rf ~/pico8_tmp
 cd "$GITHUB_WORKSPACE"
-git add "$OUTPUT_FILE"

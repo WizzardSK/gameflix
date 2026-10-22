@@ -20,4 +20,3 @@ cd "$GITHUB_WORKSPACE/wasm4"
 rm -f "$GITHUB_WORKSPACE/fantasy/wasm4.zip" 
 zip -q -r "$GITHUB_WORKSPACE/fantasy/wasm4.zip" *
 cd "$GITHUB_WORKSPACE"
-git add "$GITHUB_WORKSPACE/fantasy/wasm4.zip"

@@ -21,4 +21,3 @@ mogrify -format png *.gif
 rm -f "$GITHUB_WORKSPACE/fantasy/tic80.zip" 
 zip -q -r "$GITHUB_WORKSPACE/fantasy/tic80.zip" *
 cd "$GITHUB_WORKSPACE"
-git add "$GITHUB_WORKSPACE/fantasy/tic80.zip"

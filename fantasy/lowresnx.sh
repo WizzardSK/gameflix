@@ -36,5 +36,3 @@ cd ~/lowresnx
 rm -f "$GITHUB_WORKSPACE/fantasy/lowresnx.zip" 
 zip -q -r "$GITHUB_WORKSPACE/fantasy/lowresnx.zip" *
 cd "$GITHUB_WORKSPACE"
-git add "$OUTPUT_FILE"
-git add "$GITHUB_WORKSPACE/fantasy/lowresnx.zip"

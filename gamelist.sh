@@ -1,6 +1,7 @@
 #!/bin/bash
 # Builds the site into ~/gameflix and the EmulationStation gamelists into
-# ~/gamelists. Run from this repo's root; in CI that is the update workflow of
+# ~/gamelists, after refreshing the fantasy console lists. Run from this
+# repo's root; in CI that is the update workflow of
 # WizzardSK/wizzardsk.github.io, which copies the result into the site.
 sudo -v
 curl -s https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
@@ -23,5 +24,11 @@ if [[ -n "$CI" ]]; then
 else
   bash ./webflix.sh
 fi
+
+# Fantasy console lists (fantasy/*.txt, read by generate.sh). The carts of
+# WASM-4 and LowresNX are kept in the site's wasm4.zip and lowresnx.zip, so
+# only new ones are downloaded; the scrapers write the zips anew.
+for z in wasm4 lowresnx; do curl -sfL -o fantasy/$z.zip https://wizzardsk.github.io/$z.zip; done
+for s in wasm4 voxatron pico8 lowresnx; do GITHUB_WORKSPACE="$PWD" bash ./fantasy/$s.sh; done
 
 bash ./generate.sh

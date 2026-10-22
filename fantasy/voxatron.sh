@@ -45,4 +45,3 @@ for sub in 2 3; do
 done
 rm -rf ~/voxatron_tmp
 cd "$GITHUB_WORKSPACE"
-git add "$OUTPUT_FILE"

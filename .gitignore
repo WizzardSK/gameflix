@@ -1,0 +1,4 @@
+# Made by the fantasy scrapers when gamelist.sh runs
+fantasy/*.txt
+fantasy/*.zip
+wasm4/
