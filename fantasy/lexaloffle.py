@@ -64,7 +64,7 @@ def main():
                         if cart:
                             carts[int(tid)] = (title.replace("\t", " "), cart)
                     page += 1
-        print(f"{catname}: {page - 1} pages, {len(carts)} carts", file=sys.stderr)
+        print(f"{sys.argv[1]} {catname}: {page - 1} pages, {len(carts)} carts", file=sys.stderr)
         print(f"---\t{catname}")
         for tid in sorted(carts, reverse=True):
             print(f"{tid}\t{carts[tid][0]}\t{carts[tid][1]}")
