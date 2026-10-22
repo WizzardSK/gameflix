@@ -3,7 +3,7 @@
 # Invoked as:  retroarch.ps1 "play:///<platform>/<folder>/<rom>"
 # Resolves the play:// URL to a local ROM under %USERPROFILE%\share\roms, downloads
 # it on demand from Internet Archive, optionally mounts/extracts CD images, and
-# launches it via the matching RetroArch core, MAME, or a standalone emulator.
+# launches it via the matching RetroArch core or a standalone emulator.
 param([Parameter(ValueFromRemainingArguments=$true)][string[]]$PlayArgs)
 
 $ErrorActionPreference = 'Stop'
@@ -15,7 +15,7 @@ $MountDir  = if ($env:GAMEFLIX_MOUNT) { $env:GAMEFLIX_MOUNT } else { Join-Path $
 $TsvUrl    = if ($env:GAMEFLIX_TSV)   { $env:GAMEFLIX_TSV }   else { 'https://wizzardsk.github.io/launch.tsv' }
 $CacheDir  = Join-Path $env:LOCALAPPDATA 'gameflix'
 $MameHash  = if ($env:GAMEFLIX_MAMEHASH) { $env:GAMEFLIX_MAMEHASH } else { '' }  # optional MAME hash dir
-# $RetroArch / $Mame / $CoresDir are resolved below (PATH + common install paths).
+# $RetroArch / $CoresDir are resolved below (PATH + common install paths).
 
 # ---- Logging + error surfacing (the bootstrap runs us in a hidden window) ----
 New-Item -ItemType Directory -Force -Path $CacheDir | Out-Null
@@ -317,8 +317,6 @@ $RetroArch = Find-Exe $env:GAMEFLIX_RETROARCH 'retroarch.exe' (@(
   'Emulators\RetroArch\retroarch.exe',
   'SteamLibrary\steamapps\common\RetroArch\retroarch.exe'
 )))
-$Mame = Find-Exe $env:GAMEFLIX_MAME 'mame.exe' (@((J $pf 'mame\mame.exe')) +
-  (Get-DriveCandidates @('mame\mame.exe', 'Games\mame\mame.exe', 'Emulators\mame\mame.exe')))
 $CoresDir = if ($env:GAMEFLIX_CORES) { $env:GAMEFLIX_CORES }
             elseif ($RetroArch)      { Join-Path (Split-Path -Parent $RetroArch) 'cores' }
             else                     { Join-Path $env:APPDATA 'RetroArch\cores' }
@@ -626,24 +624,6 @@ try {
     $RetroArchDir = Split-Path -Parent $RetroArch
     Start-Process -FilePath $RetroArch -ArgumentList "-L `"$dll`" `"$cmdFile`"" -WorkingDirectory $RetroArchDir -Wait
     Remove-Item -LiteralPath $cmdFile -Force -ErrorAction SilentlyContinue
-  }
-  elseif ($coreName -eq 'mame') {
-    # Standalone MAME.
-    $rompath = ''
-    if (-not $ext) {
-      $rompath = (Split-Path -Parent $local) + ';' + $BiosDir
-      $rom = [IO.Path]::GetFileNameWithoutExtension($local)
-    }
-    $core = [regex]::Replace($core, '(-hard\d+) ([a-z0-9_]+):([a-z0-9_]+)', {
-      param($m) "$($m.Groups[1].Value) " + (Join-Path $BiosDir ("$($m.Groups[2].Value)\$($m.Groups[3].Value)\$($m.Groups[3].Value).chd")) })
-    $base = [IO.Path]::GetFileNameWithoutExtension($rom)
-    $tok = Split-Command $core
-    $exe = if ($tok[0] -eq 'mame') { $Mame } else { $tok[0] }
-    if (-not $exe) { throw "mame.exe not found. Add it to PATH or set the GAMEFLIX_MAME environment variable." }
-    $rest = if ($tok.Count -gt 1) { $tok[1..($tok.Count-1)] } else { @() }
-    $cmd = @($rest) + @($rom, '-skip_gameinfo', '-snapname', $base)
-    if ($rompath) { $cmd += @('-rompath', $rompath) }
-    & $exe @cmd
   }
   elseif ($core -like '*libretro*') {
     $dll = Resolve-LibretroCore $coreName
