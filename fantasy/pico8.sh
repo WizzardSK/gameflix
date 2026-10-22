@@ -6,7 +6,7 @@ BASE_CART_URL="https://www.lexaloffle.com/bbs/?tid="
 fetch_pico_cart() {
   local TID=$1 outdir=$2 TITLE=$3
   CART_HTML=$(curl -s "${BASE_CART_URL}${TID}")
-  PNG_NAME=$(echo "$CART_HTML" | grep -oP 'href="[^"]+\.p8\.png"' | head -n1 | sed -E 's/.*\/([^/]+\.p8\.png)".*/\1/')
+  PNG_NAME=$(echo "$CART_HTML" | grep -m1 -oP 'href="[^"]+\.p8\.png"' | head -n1 | sed -E 's/.*\/([^/]+\.p8\.png)".*/\1/')
   [[ -z "$PNG_NAME" ]] && return
   printf '%s\t%s\t%s\n' "$TID" "$TITLE" "$PNG_NAME" > "$outdir/$TID.txt"
 }
