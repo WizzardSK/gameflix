@@ -1,4 +1,6 @@
 #!/bin/bash
+# Refreshes the fantasy console lists in fantasy/. The site picks them up the
+# next time the update workflow of WizzardSK/wizzardsk.github.io runs.
 sudo -v ; curl https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
 chmod +x $GITHUB_WORKSPACE/batocera/ratarmount1; sudo ln -s $GITHUB_WORKSPACE/batocera/ratarmount1 /bin/ratarmount-full
 mkdir -p $HOME/.config/rclone; cp rclone.conf $HOME/.config/rclone/
@@ -10,18 +12,9 @@ bash ./fantasy/wasm4.sh
 bash ./fantasy/voxatron.sh
 bash ./fantasy/pico8.sh
 bash ./fantasy/lowresnx.sh
-bash ./generate.sh
 
-cd ~/gamelists
-rm -f "$GITHUB_WORKSPACE/batocera/gamelist.zip"
-zip -q -r "$GITHUB_WORKSPACE/batocera/gamelist.zip" *
 cd "$GITHUB_WORKSPACE"
-git add "$GITHUB_WORKSPACE/batocera/gamelist.zip"
-cd ~/gameflix
-rm -f "$GITHUB_WORKSPACE/gameflix.zip"
-zip -q -r "$GITHUB_WORKSPACE/gameflix.zip" *
-cd "$GITHUB_WORKSPACE"
-git add "$GITHUB_WORKSPACE/gameflix.zip"
+git add fantasy
 git config --global user.name "GitHub Actions"
 git config --global user.email "actions@github.com"
 git commit -m "Auto update ($(date +'%Y-%m-%d %H:%M:%S'))"

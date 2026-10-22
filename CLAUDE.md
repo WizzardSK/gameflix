@@ -4,8 +4,11 @@
 
 - Commits: author `WizzardSK <42868978+WizzardSK@users.noreply.github.com>`,
   no `Co-Authored-By` / `Claude-Session` trailers, no Claude signature anywhere.
-- Push straight to `main` here. Deploy by committing the generated files to
-  `WizzardSK/wizzardsk.github.io` (`main`), which serves the site.
+- Push straight to `main` here. The site is `WizzardSK/wizzardsk.github.io`
+  (`main`). Its "Gamelists updater" workflow (Sundays, or run by hand with
+  `gh workflow run update.yml -R WizzardSK/wizzardsk.github.io`) clones this
+  repo, runs `gamelist.sh` and commits the result there, with `gamelist.zip`
+  for Batocera. Run it after a change here to deploy it.
 
 ## How a click on the site starts a game
 

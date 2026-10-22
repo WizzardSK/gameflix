@@ -12,11 +12,8 @@ status "=== installing rclone.conf (IA auth) ==="
 wget -nv -O /userdata/system/rclone.conf https://raw.githubusercontent.com/WizzardSK/gameflix/main/rclone.conf
 
 status "=== installing urls.sh (per-platform IA source lookup) ==="
-# urls.sh is a build artifact — lives inside gameflix.zip alongside the web
-# interface, not at repo root. Pull it out without exploding the whole archive.
-wget -nv -O /tmp/gameflix.zip https://github.com/WizzardSK/gameflix/raw/refs/heads/main/gameflix.zip
-unzip -p /tmp/gameflix.zip urls.sh > /userdata/system/urls.sh
-rm -f /tmp/gameflix.zip
+# urls.sh is a build artifact, deployed with the web interface on the site
+wget -nv -O /userdata/system/urls.sh https://wizzardsk.github.io/urls.sh
 [[ ! -s /userdata/system/urls.sh ]] && status "WARNING: urls.sh empty — on-demand fetch will not work"
 
 status "=== installing emulator launch wrapper (on-demand fetch + mount-zip) ==="
@@ -62,7 +59,7 @@ done < <(awk -F',' 'NR>1{print $1}' /userdata/system/systems.csv | sort -u)
 
 # -- Install gamelists + es_systems --------------------------------------------
 status "=== installing gamelists ==="
-wget -nv -O /userdata/system/gamelist.zip https://github.com/WizzardSK/gameflix/raw/main/batocera/gamelist.zip
+wget -nv -O /userdata/system/gamelist.zip https://wizzardsk.github.io/gamelist.zip
 unzip -q -o /userdata/system/gamelist.zip -d /userdata/roms
 
 status "=== regenerating Switch gamelist from local files ==="

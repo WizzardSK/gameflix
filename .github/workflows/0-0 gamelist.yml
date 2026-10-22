@@ -1,4 +1,4 @@
-name: Fantasy/Gamelists updater
+name: Fantasy lists updater
 
 on:
   workflow_dispatch:
