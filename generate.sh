@@ -73,8 +73,12 @@ while IFS= read -r path; do
           unzip -l "$zipfile" 2>/dev/null | awk -v px="$cache/$h.prefix" '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); if (!seen) { seen=1; if (match(name,/^[a-z0-9_]+\//)) { print substr(name,RSTART,RLENGTH) > px } else { print "" > px } } sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
           echo "$path/$(basename "$zipfile")" > "$cache/$h.path"
         else
-          # directory of files (each file = one ROM, even if many .zip files)
-          ls "$localpath" 2>/dev/null > "$cache/$h.txt"
+          # directory of files (each file = one ROM, even if many .zip files),
+          # without the files archive.org adds to an item: its metadata
+          # (<item>_files.xml, _meta.xml, _meta.sqlite, _reviews.xml,
+          # _archive.torrent), the tile __ia_thumb.jpg and the uploader's
+          # pictures with their _thumb.jpg derivatives
+          ls "$localpath" 2>/dev/null | grep -viE '^__ia_thumb\.jpg$|_(files|meta|reviews)\.xml$|_meta\.sqlite$|_archive\.torrent$|\.(jpe?g|png|gif)$' > "$cache/$h.txt"
         fi
       fi
     else
