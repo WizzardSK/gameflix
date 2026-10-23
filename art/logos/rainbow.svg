@@ -1,23 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
-  <!-- DEC Digital corporate style -->
-  <g transform="translate(55,50)">
-    <!-- DEC logo blocks -->
-    <g fill="#fff">
-      <rect x="-30" y="-25" width="12" height="12"/>
-      <rect x="-16" y="-25" width="12" height="12"/>
-      <rect x="-2" y="-25" width="12" height="12"/>
-      <rect x="-30" y="-11" width="12" height="12"/>
-      <rect x="-2" y="-11" width="12" height="12"/>
-      <rect x="-30" y="3" width="12" height="12"/>
-      <rect x="-16" y="3" width="12" height="12"/>
-      <rect x="-2" y="3" width="12" height="12"/>
-    </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg8" width="2546.2pt" height="750pt" version="1.1" viewBox="0 0 2546.2 750" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata id="metadata5">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="layer1" transform="translate(13.06 424.8)">
+  <g id="g1547" transform="matrix(10 0 0 10 117.54 -2926.8)">
+   <path id="path1512" d="m-13.06 325.2h31.875v-75h-31.875z"/>
+   <path id="path1514" transform="scale(.75)" d="m12.119 357.61v18.129c-2.2813-2.5195-5.543-3.6992-8.8594-3.6992-8.9609 0-16.5 7.4297-16.5 21.801 0 16.949 10.09 21.649 15.727 21.641 5.4102 0 8.582-3.3125 9.332-4.0703v2.5977h9.1992v-56.398zm-8 23.73c4.3398 0.0196 7.7891 4.668 7.7695 8.1992v8.9414c0.01953 2.957-3.4297 7.5508-7.6289 7.5586-4.4805-0.0196-8.8711-4.0781-8.8711-12.199 0-8.2422 4.3789-12.48 8.7305-12.5z" fill="#fff"/>
+   <path id="path1508" d="m24.065 325.2h31.875v-75h-31.875z"/>
+   <path id="path1494" d="m61.19 250.2h31.875v75h-31.875z"/>
+   <path id="path1492" transform="scale(.75)" d="m101.77 373.16c-6.7695 0.012-16.211 3.9219-16.211 20.891 0.01173 13.379 10.703 17.871 15.09 17.871 4.7422 8e-3 8.2617-2.75 9.2227-3.7891v4.207c0 3.1133-3.1914 6.1523-8.5312 6.1523-4.6016-0.012-5.0781-2.9609-5.0781-4.4219h-9.4023c0 4.6719 3.0117 11.492 13.91 11.5 9.7617 0 12.98-3.7305 14.371-5.1289 1.168-1.1797 2.918-4.418 2.918-7.0117v-39.828h-7.9375l-0.0117 3.9102c-0.92969-1.332-3.9805-4.3516-8.3398-4.3516zm0.46875 8.3633c3.7422 0 7.7812 3.707 7.7812 7.2969v8.1094c0 4.2813-3.8008 7.0508-7.8281 7.0508-2.0312-1e-5 -8.1523-1.4297-8.1523-11.219 0-9.1914 4.9805-11.238 8.1992-11.238z" fill="#fff"/>
+   <path id="path1490" d="m98.315 325.2h31.875v-75h-31.875z"/>
+   <path id="path1476" d="m167.32 325.2h-31.875v-75h31.875z"/>
+   <path id="path1474" d="m204.44 325.2h-31.875v-75h31.875z"/>
+   <path id="path1466" d="m209.69 325.2h31.875v-75h-31.875z"/>
+   <path id="path1510" d="m18.815 325.2" fill="#fff"/>
+   <path id="path1506" d="m55.94 325.2" fill="#fff"/>
+   <path id="path1504" d="m43.378 310.5h-6.75v-30.299h6.75z" fill="#fff"/>
+   <path id="path1502" d="m36.628 310.5" fill="#fff"/>
+   <path id="path1500" d="m43.378 276.08h-6.75v-7.5h6.75z" fill="#fff"/>
+   <path id="path1498" d="m36.628 276.08" fill="#fff"/>
+   <path id="path1488" d="m130.19 325.2" fill="#fff"/>
+   <path id="path1486" d="m117.63 310.5h-6.75v-30.299h6.75z" fill="#fff"/>
+   <path id="path1484" d="m110.88 310.5" fill="#fff"/>
+   <path id="path1482" d="m117.63 276.08h-6.75v-7.5h6.75z" fill="#fff"/>
+   <path id="path1480" d="m110.88 276.08" fill="#fff"/>
+   <path id="path1478" d="m152.9 268.77h-6.1729v10.904h-3.2344v5.0625h3.2344v19.081c0 3.6357 1.8662 6.4951 7.0723 6.4863 2.4375 0 2.3408 0.0147 4.456-0.35156v-6.2988c-1.3828 0.2373-1.8076 0.33691-2.4844 0.31348-1.2978-0.0381-2.8711-0.49512-2.8711-2.8037v-16.418h4.8896v-5.0713h-4.8896z" fill="#fff"/>
+   <path id="path1472" d="m172.57 325.2" fill="#fff"/>
+   <path id="path1470" transform="scale(.75)" d="m250.95 372.62c-8.8086 0.0196-13.879 4.4492-13.871 13.699h7.7109c0-4.0976 2.1211-6.25 6.1602-6.25 6.4414-8e-3 6.2305 2.8594 6.2188 6.4531-3.9766 1.5469-3.6094 1.5078-9.6797 2.8867-7.707 1.7812-12.43 5.082-12.438 13.07 8e-3 7.8125 5.5703 11.98 11.84 11.973 6.2774 8e-3 7.5781-2.0234 10.18-3.75v3.1172h9.8398c-2.3203-3.7383-1.7109-4.4687-1.7305-7.2773 0.012-2.2031 0-23.742 0-23.742 0.012-4.2695-2.2109-6.8789-3.6602-7.75-3.6211-2.1602-8.0898-2.418-10.57-2.4297zm6.2188 21.52v5.4492c0 2.4922-3.0273 7.3125-8.9766 7.3203-2.9023 0.012-4.5234-2.1367-4.5312-4.9297 8e-3 -2.8008 2.3789-4.9492 4.3906-5.3477 2.0898-0.42188 6.8984-1.6524 9.1172-2.4922z" fill="#fff"/>
+   <path id="path1464" d="m241.57 325.2" fill="#fff"/>
+   <path id="path1462" d="m229 310.5h-6.75v-42.674h6.75z" fill="#fff"/>
+   <path id="path1397" d="m229 310.5" fill="#fff"/>
   </g>
-  <text x="100" y="32" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="14" font-weight="400" letter-spacing="6">DIGITAL</text>
-  <text x="100" y="60" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="28" font-weight="300" letter-spacing="2">Rainbow 100</text>
-  <!-- Rainbow stripe -->
-  <rect x="100" y="68" width="50" height="3" fill="#e03a3e"/>
-  <rect x="150" y="68" width="50" height="3" fill="#f5a623"/>
-  <rect x="200" y="68" width="50" height="3" fill="#7ed321"/>
-  <rect x="250" y="68" width="50" height="3" fill="#4a90d9"/>
+ </g>
 </svg>

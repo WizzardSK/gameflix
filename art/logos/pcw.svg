@@ -1,6 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
-  <!-- Amstrad red/corporate style -->
-  <rect x="20" y="12" width="160" height="32" rx="2" fill="#cc0000"/>
-  <text x="100" y="35" text-anchor="middle" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="22" font-weight="700" letter-spacing="6">AMSTRAD</text>
-  <text x="30" y="78" fill="#fff" font-family="'Helvetica Neue','Arial',sans-serif" font-size="44" font-weight="300" letter-spacing="8">PCW</text>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="788.203px"
+	 height="387.422px" viewBox="0 0 788.203 387.422" enable-background="new 0 0 788.203 387.422" xml:space="preserve">
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  width="788.203" height="387.422" y="-48.711" x="-99.102" bottomLeftOrigin="true"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<g>
+	<rect x="0" y="0" fill="#3A454B" width="788.203" height="387.422"/>
+	<polygon fill="#9C2249" points="546.772,0 346.195,387.422 502.421,387.422 702.998,0 	"/>
+</g>
+<g>
+	<path fill="#FFFFFF" d="M662.626,336.655h72.366c14.068,0,23.82-9.618,23.82-23.499V167.78c0-13.879-9.752-23.499-23.82-23.499
+		h-72.366V336.655z M705.375,305.034V175.902h0.146c9.392,0,10.541,6.453,10.541,15.777v97.577c0,9.325-1.149,15.777-10.541,15.777
+		H705.375z"/>
+	<path fill="#FFFFFF" d="M531.932,243.14c14.066,0,23.818-9.619,23.818-23.499v-51.86c0-13.879-9.752-23.499-23.818-23.499h-72.369
+		v98.858v93.516h42.752v-75.251h0.147c9.39,0,10.539,6.452,10.539,15.777v59.474h42.75v-70.017
+		C555.75,252.759,545.998,243.14,531.932,243.14z M502.314,175.902h0.147c9.39,0,10.539,6.453,10.539,15.777v17.422
+		c0,9.326-1.31,15.923-10.686,15.923V175.902z"/>
+	<path fill="#FFFFFF" d="M344.898,336.655c14.068,0,23.82-9.618,23.82-23.499v-62.668c-0.16-18.877-53.437-40.078-53.437-40.078
+		v-32.061c0-2.953,2.392-5.345,5.344-5.345c2.953,0,5.344,2.392,5.344,5.345l0.041,32.061h42.708v-43.298
+		c0-13.879-9.751-23.499-23.82-23.499h-48.547c-14.067,0-23.82,9.619-23.82,23.499v51.982c0.173,18.865,53.437,40.078,53.437,40.078
+		v42.752c0,2.95-2.391,5.342-5.344,5.342c-2.952,0-5.344-2.392-5.344-5.342l-0.04-42.752h-42.71v53.984
+		c0,13.881,9.752,23.499,23.82,23.499H344.898z"/>
+	<path fill="#FFFFFF" d="M57.445,144.282L32.063,336.655h37.406l3.3-37.405h17.446l3.301,37.405h37.407L105.54,144.282h-1.336
+		H58.781H57.445z M75.36,269.858l6.132-69.468l6.133,69.468H75.36z"/>
+	<path fill="#FFFFFF" d="M583.805,144.282l-25.383,192.373h37.407l3.3-37.405h17.445l3.301,37.405h37.408l-25.387-192.373h-1.334
+		h-45.421H583.805z M601.719,269.858l6.133-69.468l6.133,69.468H601.719z"/>
+	<polygon fill="#FFFFFF" points="392.766,176.344 392.766,336.655 435.518,336.655 435.518,176.344 454.219,176.344 
+		454.219,144.282 371.391,144.282 371.391,176.344 	"/>
+	<polygon fill="#FFFFFF" points="227.109,240.469 227.109,336.655 264.517,336.655 264.517,144.282 211.079,144.282 
+		200.391,221.231 189.703,144.282 136.266,144.282 136.266,336.655 173.672,336.655 173.672,240.469 187.031,336.655 
+		213.75,336.655 	"/>
+</g>
 </svg>
