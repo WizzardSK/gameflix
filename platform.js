@@ -143,6 +143,6 @@ function generateFileLinks(romPath, imagePath) {
         var nameWithoutBrackets = nameWithoutExt.replace(/^([^)]*\([^)]*\)).*$/, "$1");
         var fileUrl = `${encodedPath}/${encodeURIComponent(g.subor)}`;
         var href = wrapInJavatari ? `https://javatari.org/?rom=${encodeURIComponent(fileUrl)}` : fileUrl;
-        return figureHtml(href, `https://raw.githubusercontent.com/WizzardSK/${imagePath}/master/Named${gfThumbType}/${encodeURIComponent(nameWithoutBrackets)}.png`, nameWithoutExt, g.nazov, ' rel="noreferrer"');
+        return figureHtml(href, `https://raw.githubusercontent.com/WizzardSK/${imagePath.replace(/[^\w.-]/g, "-")}/master/Named${gfThumbType}/${encodeURIComponent(nameWithoutBrackets)}.png`, nameWithoutExt, g.nazov, ' rel="noreferrer"');
     });
 }
