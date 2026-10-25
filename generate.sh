@@ -67,7 +67,10 @@ while IFS= read -r path; do
         fi
       else
         zipcount=$(find "$localpath" -maxdepth 1 -name "*.zip" 2>/dev/null | wc -l)
-        if [ "$zipcount" -eq 1 ]; then
+        # the item's other files: a lone zip beside the games (ChihiroNetboot's
+        # "Chihiro BIOS.zip") is not a bundle of them
+        othercount=$(find "$localpath" -maxdepth 1 -type f ! -name "*.zip" ! -name "__ia_thumb.jpg" ! -name "*_files.xml" ! -name "*_meta.xml" ! -name "*_reviews.xml" ! -name "*_meta.sqlite" ! -name "*_archive.torrent" 2>/dev/null | wc -l)
+        if [ "$zipcount" -eq 1 ] && [ "$othercount" -eq 0 ]; then
           # single bundled zip — list its contents
           zipfile=$(find "$localpath" -maxdepth 1 -name "*.zip" 2>/dev/null | head -1)
           unzip -l "$zipfile" 2>/dev/null | awk -v px="$cache/$h.prefix" '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); if (!seen) { seen=1; if (match(name,/^[a-z0-9_]+\//)) { print substr(name,RSTART,RLENGTH) > px } else { print "" > px } } sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
@@ -77,8 +80,9 @@ while IFS= read -r path; do
           # without the files archive.org adds to an item: its metadata
           # (<item>_files.xml, _meta.xml, _meta.sqlite, _reviews.xml,
           # _archive.torrent), the tile __ia_thumb.jpg and the uploader's
-          # pictures with their _thumb.jpg derivatives
-          ls "$localpath" 2>/dev/null | grep -viE '^__ia_thumb\.jpg$|_(files|meta|reviews)\.xml$|_meta\.sqlite$|_archive\.torrent$|\.(jpe?g|png|gif)$' > "$cache/$h.txt"
+          # pictures with their _thumb.jpg derivatives, and a BIOS zip kept
+          # beside the games (ChihiroNetboot's "Chihiro BIOS.zip")
+          ls "$localpath" 2>/dev/null | grep -viE '^__ia_thumb\.jpg$|_(files|meta|reviews)\.xml$|_meta\.sqlite$|_archive\.torrent$|\.(jpe?g|png|gif)$| BIOS\.zip$' > "$cache/$h.txt"
         fi
       fi
     else

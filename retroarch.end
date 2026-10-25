@@ -155,6 +155,27 @@ gameflix_fetch_firmware() {
   return $missing
 }
 
+# Sega Chihiro (xemu_libretro): the BIOS, the media board flash and the
+# EEPROMs in system/xemu/Chihiro, under the MAME names the core looks for. Its
+# .info lists them as optional, and the BIOS pack has none of them; the
+# ChihiroNetboot item that holds the games keeps them in "Chihiro BIOS.zip"
+# under short names.
+gameflix_chihiro_files() {
+  local dir="$sysdir/xemu/Chihiro" pair from to
+  local url="https://archive.org/download/ChihiroNetboot/Chihiro%20BIOS.zip/Chihiro%20BIOS%2F"
+  mkdir -p "$dir"
+  for pair in chihiro_xbox_bios.bin:chihiro_xbox_bios.bin fpr21042.bin:fpr21042_m29w160et.bin \
+      ic10.bin:ic10_g24lc64.bin ic11.bin:ic11_24lc024.bin pc20.bin:pc20_g24lc64.bin; do
+    from="${pair%%:*}"; to="${pair#*:}"
+    [[ -s "$dir/$to" ]] && continue
+    echo "Fetching firmware xemu/Chihiro/$to ..." >&2
+    if ! curl -sfL --max-time 120 -o "$dir/$to" "$url$from"; then
+      rm -f "$dir/$to"
+      echo "Firmware not found: xemu/Chihiro/$to - put it in $dir/$to yourself" >&2
+    fi
+  done
+}
+
 # Whether a core is a build for this machine. The buildbot has shipped an
 # x86-64 binary in the aarch64 slot before now (stella, 15 September 2026), and
 # dlopen answers that with "cannot open shared object file: No such file or
@@ -553,6 +574,7 @@ if [[ "$core" == *libretro* ]]; then
   # Whatever core we ended up with - the one asked for, the one fetched, or the
   # near-name fallback - it is the one whose firmware has to be there.
   gameflix_fetch_firmware "$(basename "$corepath" .so)"
+  case "$1" in */chihiro/*) gameflix_chihiro_files ;; esac
 fi
 
 if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
