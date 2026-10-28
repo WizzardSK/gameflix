@@ -631,6 +631,8 @@ dreamcast,archive:tosec-iso-sega/Dreamcast/Games/PAL,PAL,flycast_libretro,gdi
 dreamcast,archive:tosec-iso-sega/Dreamcast/Games/JP,JP,flycast_libretro,gdi
 model2,archive:m2emu1.1a/Sega Model 2 Emu 1.1a and Full Romset/Model 2 Romset (Merged),Sega Model 2,mame_libretro,
 model3,archive:segamodel3/ROMs,Sega Model 3,mame_libretro,
+naomi,archive:sega-naomi-naomi2/Sega Naomi,MAME 0.255,flycast_libretro,
+naomi2,archive:naomi-2,Naomi 2,flycast_libretro,
 chihiro,archive:ChihiroNetboot,Netboot,xemu_libretro,
 gamegear,archive:ni-roms/roms/Sega - Game Gear.zip,NoIntro,gearsystem_libretro,
 gamegear,archive:tosec-main/Sega/Game Gear/Games/Sega Game Gear - Games (TOSEC-v2025-01-15).zip,TOSEC,gearsystem_libretro,

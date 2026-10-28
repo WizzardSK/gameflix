@@ -479,6 +479,27 @@ if [[ -n "$src" && ! -e "$1" ]]; then
   fi
 fi
 
+# A Sega Naomi GD-ROM game: flycast, as MAME, finds its disc in a folder named
+# after the game beside its zip (ikaruga.zip, ikaruga/gdl-0010.chd). The
+# sega-naomi-naomi2 item keeps those folders at its root, beside "Sega Naomi"
+# with the zips; a cartridge game has none, and the listing comes back empty.
+if [[ "$src" == *"/sega-naomi-naomi2/"* && "$1" == *.zip ]]; then
+  game="${1##*/}"; game="${game%.zip}"
+  gddir="$(dirname "$1")/$game"
+  if ! ls "$gddir"/*.chd >/dev/null 2>&1; then
+    gdbase="${src%%/sega-naomi-naomi2/*}/sega-naomi-naomi2/$game/"
+    gameflix_ia_auth
+    listing=$(curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} "$gdbase") || listing=""
+    while IFS= read -r href; do
+      [[ -z "$href" ]] && continue
+      chd=$(printf '%b' "${href//%/\\x}")
+      mkdir -p "$gddir"
+      echo "Fetching $game/$chd ..." >&2
+      curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$gddir/$chd" "$gdbase$href" || rm -f "$gddir/$chd"
+    done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.chd"' | sed 's/^href="//; s/"$//' | sort -u)
+  fi
+fi
+
 # The disc image to start out of an extracted archive: the list's own type
 # first, then the usual ones in order of preference, then the largest file.
 # No-Intro/NonRedump lists mix them (a Mega CD beta is a bare .bin, a PSX one

@@ -211,6 +211,27 @@ if ($src -and -not (Test-Path -LiteralPath $local)) {
   }
 }
 
+# Sega Naomi GD-ROM games: flycast, as MAME, finds the disc in a folder named
+# after the game beside its zip (ikaruga.zip, ikaruga\gdl-0010.chd); the
+# sega-naomi-naomi2 item keeps those folders at its root. A cartridge game has
+# none, and the listing comes back empty.
+if ($src -match '/sega-naomi-naomi2/' -and $local -like '*.zip') {
+  $game  = [IO.Path]::GetFileNameWithoutExtension($local)
+  $gddir = Join-Path (Split-Path -Parent $local) $game
+  if (-not (Get-ChildItem -LiteralPath $gddir -Filter *.chd -ErrorAction SilentlyContinue)) {
+    $gdbase = ($src -replace '/sega-naomi-naomi2/.*$', '/sega-naomi-naomi2/') + (Url-Enc $game) + '/'
+    $auth = Get-IaAuth
+    $headers = @{}; if ($auth) { $headers['Authorization'] = $auth }
+    try { $listing = (Invoke-WebRequest -UseBasicParsing -Uri $gdbase -Headers $headers -TimeoutSec 60).Content } catch { $listing = '' }
+    foreach ($href in ([regex]::Matches($listing, 'href="([^"/?]*\.chd)"') | ForEach-Object { $_.Groups[1].Value } | Select-Object -Unique)) {
+      New-Item -ItemType Directory -Force -Path $gddir | Out-Null
+      $chd = Join-Path $gddir ([uri]::UnescapeDataString($href))
+      Write-Host "Fetching $game\$(Split-Path -Leaf $chd) ..."
+      try { Invoke-WebRequest -UseBasicParsing -Uri "$gdbase$href" -Headers $headers -OutFile $chd } catch { Remove-Item -LiteralPath $chd -Force -ErrorAction SilentlyContinue }
+    }
+  }
+}
+
 # ---- 4. Mount / extract CD images -------------------------------------------
 # A .cue/.gdi image references separate track files, so the emulator needs the
 # whole archive visible. Preferred backends on Windows, in order:
