@@ -597,6 +597,11 @@ try {
     $words = Split-Command $mameArgs
     $driver = if ($words.Count -gt 0) { $words[0] } else { '' }
     Install-MameBios $driver
+    # A Model 1 board takes the ROMs of its I/O, link and display devices from
+    # sets of their own.
+    if ($local -match '\\model1\\') {
+      foreach ($set in 'model1io', 'model1io2', 'm1comm', 'hd44780', 'hd44780u') { Install-MameBios $set }
+    }
     $chdDirs = Install-MameSoftware $words
     # Software-list games need the list XML in the core's hash dir. The lists
     # come from libretro/mame, matching the core, for every list of the driver

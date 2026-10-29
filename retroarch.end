@@ -622,6 +622,11 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
     # A Model 1/2/3 game can need its parent from the MAME folder.
     */model1/*|*/model2/*|*/model3/*) rompath="$(dirname "$1");$HOME/share/roms/mame/MAME;$HOME/share/bios" ;;
   esac
+  # A Model 1 board takes the ROMs of its I/O, link and display devices from
+  # sets of their own.
+  if [[ "$1" == */model1/* ]]; then
+    for set in model1io model1io2 m1comm hd44780 hd44780u; do gameflix_fetch_mame_bios "$set"; done
+  fi
   mame_args="${core#mame_libretro}"; mame_args="${mame_args# }"
   gameflix_fetch_mame_bios "${mame_args%% *}"
   gameflix_fetch_mame_software "$mame_args"
