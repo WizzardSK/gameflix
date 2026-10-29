@@ -106,12 +106,13 @@ PS4_DIR=/userdata/roms/ps4
 if [[ -d "$PS4_DIR" ]]; then
   {
     echo '<gameList>'
-    # shadPS4 runs an installed game: a .ps4 folder with eboot.bin inside (or
-    # a .ps4 file pointing at one).
-    find "$PS4_DIR" -maxdepth 1 -mindepth 1 \( -type d -o -type f \) -name '*.ps4' \
-      -printf '%f\n' | sort | \
+    # shadPS4 runs an installed game: an empty .ps4 file made in the game's
+    # installation folder (/userdata/roms/ps4/CUSA03173/Bloodborne.ps4), or a
+    # .ps4 folder.
+    find "$PS4_DIR" -mindepth 1 -maxdepth 2 -name '*.ps4' -printf '%P\n' | sort | \
     while IFS= read -r fname; do
-      echo "<game><path>./${fname}</path><name>${fname%.*}</name></game>"
+      name="${fname##*/}"
+      echo "<game><path>./${fname}</path><name>${name%.*}</name></game>"
     done
     echo '</gameList>'
   } > "$PS4_DIR/gamelist.xml"
