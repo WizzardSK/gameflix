@@ -101,6 +101,23 @@ if [[ -d "$PS3_DIR" ]]; then
   status "PS3 gamelist: $(grep -c '<game>' "$PS3_DIR/gamelist.xml") entries"
 fi
 
+status "=== regenerating PS4 gamelist from local files ==="
+PS4_DIR=/userdata/roms/ps4
+if [[ -d "$PS4_DIR" ]]; then
+  {
+    echo '<gameList>'
+    # shadPS4 runs an installed game: a .ps4 folder with eboot.bin inside (or
+    # a .ps4 file pointing at one).
+    find "$PS4_DIR" -maxdepth 1 -mindepth 1 \( -type d -o -type f \) -name '*.ps4' \
+      -printf '%f\n' | sort | \
+    while IFS= read -r fname; do
+      echo "<game><path>./${fname}</path><name>${fname%.*}</name></game>"
+    done
+    echo '</gameList>'
+  } > "$PS4_DIR/gamelist.xml"
+  status "PS4 gamelist: $(grep -c '<game>' "$PS4_DIR/gamelist.xml") entries"
+fi
+
 # -- Mark everything already on disk as a favorite -----------------------------
 # The gamelists list every game on archive.org; only the ones actually fetched
 # have a file behind them, so the Favorites collection becomes "what is really
