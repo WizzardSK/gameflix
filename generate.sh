@@ -137,15 +137,18 @@ done < <(awk -F',' '$2 ~ /^archive:mame-sl\// { n=$2; sub(/.*\//, "", n); sub(/\
 
 # Fetch MAME arcade listxml (~19 MB zip → 322 MB XML, 50k <machine> entries)
 arcade_mame_cache="$mame_names_dir/arcade-mame.tsv"
-if [ ! -e "$arcade_mame_cache" ]; then
+# Devices and BIOS sets (model1io, hd44780, ...) sit beside the games in some
+# arcade folders; they are left out of the lists.
+arcade_mame_nogame="$mame_names_dir/arcade-mame-nogame.txt"
+if [ ! -e "$arcade_mame_cache" ] || [ ! -e "$arcade_mame_nogame" ]; then
   (
     mame_tag=$(curl -sIL "https://github.com/mamedev/mame/releases/latest" 2>/dev/null | awk 'tolower($1)=="location:" { sub(/\r$/,""); n=split($2,p,"/"); print p[n] }' | tail -1)
     if [[ -n "$mame_tag" ]]; then
       mame_ver="${mame_tag#mame}"
       tmpzip=$(mktemp --suffix=.zip)
       if curl -fsSL -o "$tmpzip" "https://github.com/mamedev/mame/releases/download/$mame_tag/${mame_tag}lx.zip" && [ -s "$tmpzip" ]; then
-        unzip -p "$tmpzip" "mame${mame_ver}.xml" 2>/dev/null | awk '
-          /<machine name=/ { if (match($0, /name="([^"]+)"/, a)) name=a[1] }
+        unzip -p "$tmpzip" "mame${mame_ver}.xml" 2>/dev/null | awk -v nogame="$arcade_mame_nogame" '
+          /<machine name=/ { if (match($0, /name="([^"]+)"/, a)) name=a[1]; if (/isdevice="yes"|isbios="yes"/) print name > nogame }
           /<description>/ { if (match($0, /<description>([^<]+)<\/description>/, a) && name && a[1]) print name "\t" a[1]; name="" }
         ' > "$arcade_mame_cache"
       else
@@ -155,6 +158,7 @@ if [ ! -e "$arcade_mame_cache" ]; then
     else
       : > "$arcade_mame_cache"
     fi
+    touch "$arcade_mame_nogame"
   ) &
 fi
 
@@ -184,6 +188,8 @@ for tsv in "$mame_names_dir"/*.tsv; do
     [[ -n "$sn" ]] && mame_name["$softlist:$sn"]="$desc"
   done < "$tsv"
 done
+declare -A mame_nogame
+while IFS= read -r sn; do [[ -n "$sn" ]] && mame_nogame["$sn"]=1; done < "$arcade_mame_nogame"
 mame_fetch_end=$(date +%s)
 echo "=== MAME SOFTLIST NAMES DONE: ${#mame_name[@]} entries in $((mame_fetch_end - mame_fetch_start))s ==="
 
@@ -370,6 +376,7 @@ IFS=";"; for each in "${roms[@]}"; do
   while IFS= read -r line; do
     [[ -z "$line" ]] && continue
     line2="${line%.*}"
+    [[ -n "$arcade_src" && -n "${mame_nogame[$line2]}" ]] && continue
     display_name="$line2"
     if [[ -n "$softlist" && -n "${mame_name[$softlist:$line2]}" ]]; then
       display_name="${mame_name[$softlist:$line2]}"
