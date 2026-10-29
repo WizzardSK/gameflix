@@ -619,8 +619,8 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
     rompath="$HOME/share/bios"
   fi
   case "$1" in
-    # A Model 2/3 game can need its parent from the MAME folder.
-    */model2/*|*/model3/*) rompath="$(dirname "$1");$HOME/share/roms/mame/MAME;$HOME/share/bios" ;;
+    # A Model 1/2/3 game can need its parent from the MAME folder.
+    */model1/*|*/model2/*|*/model3/*) rompath="$(dirname "$1");$HOME/share/roms/mame/MAME;$HOME/share/bios" ;;
   esac
   mame_args="${core#mame_libretro}"; mame_args="${mame_args# }"
   gameflix_fetch_mame_bios "${mame_args%% *}"

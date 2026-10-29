@@ -364,7 +364,7 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
   arcade_src=""
   case "${rom[0]}" in
-    mame|model2|model3) arcade_src="arcade-mame" ;;
+    mame|model1|model2|model3) arcade_src="arcade-mame" ;;
     fbneo) arcade_src="arcade-fbneo" ;;
   esac
   while IFS= read -r line; do

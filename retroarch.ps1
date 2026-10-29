@@ -590,7 +590,7 @@ try {
       # The image comes out of the mounted archive; system ROMs stay in $BiosDir.
       $rompath = $BiosDir
     }
-    if ($local -match '\\model2\\' -or $local -match '\\model3\\') {
+    if ($local -match '\\model1\\' -or $local -match '\\model2\\' -or $local -match '\\model3\\') {
       $rompath = (Split-Path -Parent $local) + ';' + (Join-Path $RomsDir 'mame\MAME') + ';' + $BiosDir
     }
     $mameArgs = ($core -replace '^mame_libretro\s*', '')
