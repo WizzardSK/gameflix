@@ -312,6 +312,14 @@ if ($ext -and $local -notmatch '\.(zip|rar|7z)$') {
   if (-not $root) { Write-Error 'Need Pismo File Mount (pfm), 7-Zip (7z.exe), or ratarmount to open CD images.'; exit 1 }
   $found = Find-Image $root $ext
   if ($found) { $rom = $found }
+  # ScummVM detects the game in the folder of the file it is given: a file
+  # straight inside the game's folder, never one from a subfolder of it
+  if ($core -like 'scummvm_libretro*') {
+    $f = Get-ChildItem -Path $root -Recurse -Depth 1 -File -ErrorAction SilentlyContinue |
+      Sort-Object @{ e = { ($_.FullName.Substring($root.Length).TrimStart('\', '/') -split '[\\/]').Count } },
+                  @{ e = { $_.Length }; Descending = $true } | Select-Object -First 1
+    if ($f) { $rom = $f.FullName }
+  }
 } elseif ($local -match '\.(rar|7z)$') {
   $root = Mount-Archive
   if (-not $root) { $root = Expand-Archive7z }

@@ -824,6 +824,7 @@ dos,archive:Total_DOS_Collection_Release_16_March_2019/Games/Files/2009,TDC 2009
 dos,archive:Total_DOS_Collection_Release_16_March_2019/Games/Files/2011,TDC 2011,dosbox_pure_libretro,
 dos,archive:Total_DOS_Collection_Release_16_March_2019/Games/Files/2014,TDC 2014,dosbox_pure_libretro,
 dos,archive:Total_DOS_Collection_Release_16_March_2019/Games/Files/2015,TDC 2015,dosbox_pure_libretro,
+scummvm,archive:eXoScummVM_v2/eXo/eXoScummVM,eXo,scummvm_libretro,scummvm
 ibm5150,archive:mame-sl/mame-sl/ibm5150.zip,MAME,mame_libretro ibm5150 -hard1 ibm5150_hdd:freedos13_8086,
 ibm5170,archive:mame-sl/mame-sl/ibm5170.zip,MAME,mame_libretro ibm5170 -hard1 ibm5170_hdd:freedos13,
 ibm5170,archive:mame-software-list-chds-2/ibm5170_cdrom,CDROM CHD,mame_libretro ibm5170 -cdrom,

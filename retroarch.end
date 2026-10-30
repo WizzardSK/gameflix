@@ -550,6 +550,11 @@ elif [ -n "$ext" ]; then
     mount-zip "$1" ~/iso
   fi
   rom=$(gameflix_pick_image ~/iso "$ext")
+  # ScummVM detects the game in the folder of the file it is given: a file
+  # straight inside the game's folder, never one from a subfolder of it
+  if [[ "$core" == scummvm_libretro* ]]; then
+    rom=$(find ~/iso -mindepth 1 -maxdepth 2 -type f -printf '%d\t%s\t%p\n' | sort -t$'\t' -k1,1n -k2,2nr | head -n 1 | cut -f3-)
+  fi
 elif [[ "$1" == *.rar || "$1" == *.7z ]]; then
   umount -l ~/iso; ratarmount "$1" ~/iso
   # A title of many files (Wii U NUS) is started from its folder; a single
