@@ -176,6 +176,31 @@ gameflix_chihiro_files() {
   done
 }
 
+# PlayStation 3 (rpcs3_libretro): a Redump disc image is encrypted, and the
+# core reads it only with its disc key, which it looks for in
+# system/rpcs3/data/redump/ under the image's name (.dkey or .key). The keys come from the
+# Euler collection on the archive, a zip per Redump name.
+gameflix_ps3_dkey() {
+  local name="${1##*/}" dir="$sysdir/rpcs3/data/redump" tmpz f k enc="" i c
+  name="${name%.*}"
+  [[ -s "$dir/$name.dkey" || -s "$dir/$name.key" ]] && return
+  mkdir -p "$dir"
+  for ((i=0;i<${#name};i++)); do c="${name:i:1}"; case "$c" in [a-zA-Z0-9._~-]) enc+="$c";; *) printf -v c '%%%02X' "'$c"; enc+="$c";; esac; done
+  tmpz=$(mktemp)
+  echo "Fetching the disc key of $name ..." >&2
+  # the collection's keys are .key files (16 bytes); the core takes .dkey too
+  if curl -sfL --max-time 60 -o "$tmpz" \
+      "https://archive.org/download/sony-playstation-3-disc-keys-dkey-euler-collection/$enc.zip" &&
+     f=$(unzip -Z1 "$tmpz" | grep -i -E '\.d?key$' | head -n 1) && [[ -n "$f" ]]; then
+    k="$dir/$name.${f##*.}"
+    unzip -p "$tmpz" "$f" > "$k"
+    [[ -s "$k" ]] || rm -f "$k"
+  else
+    echo "No disc key found for $name - the core needs it in $dir/$name.dkey" >&2
+  fi
+  rm -f "$tmpz"
+}
+
 # Whether a core is a build for this machine. The buildbot has shipped an
 # x86-64 binary in the aarch64 slot before now (stella, 15 September 2026), and
 # dlopen answers that with "cannot open shared object file: No such file or
@@ -595,7 +620,7 @@ if [[ "$core" == *libretro* ]]; then
   # Whatever core we ended up with - the one asked for, the one fetched, or the
   # near-name fallback - it is the one whose firmware has to be there.
   gameflix_fetch_firmware "$(basename "$corepath" .so)"
-  case "$1" in */chihiro/*) gameflix_chihiro_files ;; esac
+  case "$1" in */chihiro/*) gameflix_chihiro_files ;; */ps3/*) LC_ALL=C gameflix_ps3_dkey "$1" ;; esac
 fi
 
 if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then

@@ -411,6 +411,35 @@ function Get-IaFile([string]$url, [string]$out) {
   return $false
 }
 
+# PlayStation 3 (rpcs3_libretro): a Redump disc image is encrypted, and the
+# core reads it only with its disc key, which it looks for in
+# system\rpcs3\data\redump\ under the image's name (.dkey or .key). The keys
+# come from the Euler collection on the archive, a zip per Redump name.
+function Install-Ps3Key([string]$image) {
+  $sysDir = Get-RetroArchSystemDir
+  if (-not $sysDir) { return }
+  $name = [IO.Path]::GetFileNameWithoutExtension($image)
+  $dir = Join-Path $sysDir 'rpcs3\data\redump'
+  if ((Test-Path -LiteralPath (Join-Path $dir "$name.key")) -or (Test-Path -LiteralPath (Join-Path $dir "$name.dkey"))) { return }
+  New-Item -ItemType Directory -Force -Path $dir | Out-Null
+  $zip = [IO.Path]::GetTempFileName()
+  Write-Host "Fetching the disc key of $name ..."
+  $url = 'https://archive.org/download/sony-playstation-3-disc-keys-dkey-euler-collection/' + (Url-Enc "$name.zip")
+  if (Get-IaFile $url $zip) {
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    $archive = [IO.Compression.ZipFile]::OpenRead($zip)
+    try {
+      $entry = $archive.Entries | Where-Object { $_.Name -match '\.d?key$' } | Select-Object -First 1
+      if ($entry) {
+        [IO.Compression.ZipFileExtensions]::ExtractToFile($entry, (Join-Path $dir ($name + [IO.Path]::GetExtension($entry.Name))), $true)
+      }
+    } finally { $archive.Dispose() }
+  } else {
+    Write-Host "No disc key found for $name - the core needs it in $dir\$name.dkey"
+  }
+  Remove-Item -LiteralPath $zip -Force -ErrorAction SilentlyContinue
+}
+
 # mame_deps.tsv (made by gen_mame_deps.py): per MAME driver, the zips of the
 # merged set it needs - its own (the parent's, for a clone), the BIOS chain and
 # the ROM devices of its default configuration - and its software lists. With
@@ -652,6 +681,7 @@ try {
     Remove-Item -LiteralPath $cmdFile -Force -ErrorAction SilentlyContinue
   }
   elseif ($core -like '*libretro*') {
+    if ($local -match '\\ps3\\') { Install-Ps3Key $rom }
     $dll = Resolve-LibretroCore $coreName
     & $RetroArch -L $dll $rom
   }
