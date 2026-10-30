@@ -1,4 +1,5 @@
 platform,display_name,thumbnail
+scummvm,ScummVM,ScummVM
 arduboy,Arduboy,Arduboy Inc - Arduboy
 uzebox,Uzebox,Uzebox
 commanderx16,Commander X16,Commander - X16
@@ -98,7 +99,6 @@ psp,Sony PlayStation Portable,Sony - PlayStation Portable
 xbox,Microsoft Xbox,Microsoft - Xbox
 xbox360,Microsoft Xbox 360,Microsoft - Xbox 360
 dos,Microsoft MS-DOS,DOS
-scummvm,ScummVM,ScummVM
 ibm5150,IBM PC 5150,DOS
 ibm5170,IBM PC/AT 5170,DOS
 ibmpcjr,IBM PCjr,DOS
