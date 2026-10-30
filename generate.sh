@@ -194,10 +194,10 @@ mame_fetch_end=$(date +%s)
 echo "=== MAME SOFTLIST NAMES DONE: ${#mame_name[@]} entries in $((mame_fetch_end - mame_fetch_start))s ==="
 
 # Each platform page links its logo back to its section of main.html (gfGroup)
-group="Fantasy & Homebrew"; platform_head() { printf '<script>var gfGroup = "%s";</script><script src="platform.js"></script>\n' "$group"; }
+group="Fantasy, Homebrew & Ports"; platform_head() { printf '<script>var gfGroup = "%s";</script><script src="platform.js"></script>\n' "$group"; }
 # fileNames entries are JS string literals: escape backslashes and double quotes
 jsstr() { local s="${1//\\/\\\\}"; printf '%s' "${s//\"/\\\"}"; }
-echo "<b>Fantasy & Homebrew</b><br />" >> ~/gameflix/systems.html; echo "<h3 id=\"Fantasy &amp; Homebrew\" class=\"section-header\" style=\"width:100%\">Fantasy & Homebrew</h3>" >> ~/gameflix/main.html
+echo "<b>Fantasy, Homebrew & Ports</b><br />" >> ~/gameflix/systems.html; echo "<h3 id=\"Fantasy, Homebrew &amp; Ports\" class=\"section-header\" style=\"width:100%\">Fantasy, Homebrew & Ports</h3>" >> ~/gameflix/main.html
 
 # TIC-80 - all categories fetched in parallel
 pocet=0; echo "TIC-80"; platform_head > ~/gameflix/TIC-80.html; ((platforms++))
