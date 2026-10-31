@@ -52,13 +52,15 @@ while IFS= read -r path; do
     if [[ "$path" == https://* ]]; then
       url="${path%%#*}"; subdir="${path#*#}"; [ "$subdir" = "$path" ] && subdir=""
       tmp=$(mktemp); wget -q "$url" -O "$tmp"
-      unzip -l "$tmp" 2>/dev/null | awk '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
+      # awk in the C locale throughout: zips name files in CP437 as often as
+      # in UTF-8, and in a UTF-8 locale those names were invalid multibyte data
+      unzip -l "$tmp" 2>/dev/null | LC_ALL=C awk '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
       rm -f "$tmp"
     elif [[ "$path" == *:* ]]; then
       aftercolon="${path#*:}"
       localpath="$HOME/mount/$aftercolon"
       if [[ "$localpath" == *.zip ]]; then
-        unzip -l "$localpath" 2>/dev/null | awk -v px="$cache/$h.prefix" '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); if (!seen) { seen=1; if (match(name,/^[a-z0-9_]+\//)) { print substr(name,RSTART,RLENGTH) > px } else { print "" > px } } sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
+        unzip -l "$localpath" 2>/dev/null | LC_ALL=C awk -v px="$cache/$h.prefix" '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); if (!seen) { seen=1; if (match(name,/^[a-z0-9_]+\//)) { print substr(name,RSTART,RLENGTH) > px } else { print "" > px } } sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
         # Mounted listing came back empty (IA intermittently errors on the rclone
         # mount for large restricted zips) -> read the ZIP central directory
         # directly over authenticated HTTP so the platform page is never silently empty.
@@ -73,7 +75,7 @@ while IFS= read -r path; do
         if [ "$zipcount" -eq 1 ] && [ "$othercount" -eq 0 ]; then
           # single bundled zip — list its contents
           zipfile=$(find "$localpath" -maxdepth 1 -name "*.zip" 2>/dev/null | head -1)
-          unzip -l "$zipfile" 2>/dev/null | awk -v px="$cache/$h.prefix" '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); if (!seen) { seen=1; if (match(name,/^[a-z0-9_]+\//)) { print substr(name,RSTART,RLENGTH) > px } else { print "" > px } } sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
+          unzip -l "$zipfile" 2>/dev/null | LC_ALL=C awk -v px="$cache/$h.prefix" '$2 ~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/ && $3 ~ /^[0-9]{2}:[0-9]{2}$/ {match($0,/^ *[0-9]+ +[0-9-]+ +[0-9:]+ +/); name=substr($0,RLENGTH+1); if (!seen) { seen=1; if (match(name,/^[a-z0-9_]+\//)) { print substr(name,RSTART,RLENGTH) > px } else { print "" > px } } sub(/^[a-z0-9_]+\//, "", name); print name}' > "$cache/$h.txt"
           echo "$path/$(basename "$zipfile")" > "$cache/$h.path"
         else
           # directory of files (each file = one ROM, even if many .zip files),

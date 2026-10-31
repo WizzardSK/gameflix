@@ -5,7 +5,7 @@
 # WizzardSK/wizzardsk.github.io, which copies the result into the site.
 sudo -v
 curl -s https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
-sudo apt update > /dev/null && sudo apt install -y bindfs fuse-zip unzip zip > /dev/null
+sudo apt update > /dev/null && sudo apt install -y unzip zip > /dev/null
 mkdir -p $HOME/.config/rclone; cp rclone.conf $HOME/.config/rclone/
 echo "user_allow_other" | sudo tee -a /etc/fuse.conf > /dev/null
 sudo rm -f /var/lib/dpkg/info/man-db.triggers
