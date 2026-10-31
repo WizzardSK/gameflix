@@ -327,17 +327,6 @@ echo "<a href=\"Voxatron.html\" target=\"main\">Voxatron</a> <small>$pocet</smal
 echo "<gameList></gameList>" > ~/gamelists/voxatron/gamelist.xml
 
 # Main ROM loop - file descriptors for HTML and XML, no string buffering
-# ScummVM: eXoScummVM names its games ("3 Skulls of the Toltecs (CD DOS)")
-# otherwise than the thumbnail repo ("3 Skulls of the Toltecs (DOS_English)"),
-# so a game gets its thumbnail by the title before the brackets, the English
-# one first; the page then takes that name for the picture.
-title_key() { local s="${1%% (*}"; s="${s,,}"; s="${s//&/and}"; printf '%s' "${s//[^a-z0-9]/}"; }
-declare -A scummvm_thumb
-while IFS= read -r t; do
-  k=$(title_key "$t")
-  if [[ -z "${scummvm_thumb[$k]}" || ( "$t" == *English* && "${scummvm_thumb[$k]}" != *English* ) ]]; then scummvm_thumb[$k]="$t"; fi
-done < <(curl -fsSL "https://api.github.com/repos/WizzardSK/ScummVM/git/trees/master?recursive=1" | grep -o '"path": *"Named_Snaps/[^"]*\.png"' | sed 's/.*Named_Snaps\///; s/\.png"$//')
-echo "=== SCUMMVM THUMBNAILS: ${#scummvm_thumb[@]} titles ==="
 declare -A gamelist_started
 html_fd=3; xml_fd=4
 IFS=";"; for each in "${roms[@]}"; do
@@ -395,8 +384,6 @@ IFS=";"; for each in "${roms[@]}"; do
     # to strip ("B.S.U - Blow Stuff Up"), and "_ " where the title has a
     # colon ("Adventure_ 2600"); the name goes to the page as written out.
     if [[ "${rom[0]}" == atarivcs ]]; then line2="$line"; display_name="${line//_ /: }"; fi
-    thumbname=""
-    [[ "${rom[0]}" == scummvm ]] && thumbname="${scummvm_thumb[$(title_key "$line2")]}"
     if [[ -n "$softlist" && -n "${mame_name[$softlist:$line2]}" ]]; then
       display_name="${mame_name[$softlist:$line2]}"
     elif [[ -n "$arcade_src" && -n "${mame_name[$arcade_src:$line2]}" ]]; then
@@ -411,17 +398,13 @@ IFS=";"; for each in "${roms[@]}"; do
     js_name="${js_name//&amp;/\&}"
     js_name="${js_name//\\/\\\\}"; js_name="${js_name//\"/\\\"}"
     js_line="${line//\\/\\\\}"; js_line="${js_line//\"/\\\"}"
-    if [[ -n "$thumbname" ]]; then
-      js_thumb="${thumbname//\\/\\\\}"; js_thumb="${js_thumb//\"/\\\"}"
-      echo "\"${js_line}	${js_name}	${js_thumb}\"," >&$html_fd
-    elif [[ "$display_name" != "$line2" || "${rom[0]}" == atarivcs ]]; then
+    if [[ "$display_name" != "$line2" || "${rom[0]}" == atarivcs ]]; then
       echo "\"${js_line}	${js_name}\"," >&$html_fd
     else
       echo "\"${js_line}\"," >&$html_fd
     fi
     ((pocet++)); ((total++))
     if [[ "$line2" == *")"* ]]; then thumb="${line2%%)*})"; else thumb="$line2"; fi
-    [[ -n "$thumbname" ]] && thumb="$thumbname"
     if [[ "$line" != *.* ]]; then polozka="folder"; else polozka="game"; fi
     hra="<$polozka><path>./$foldername/${line}</path><name>${display_name}</name><image>~/../thumbs/${rom[5]}/Named_Snaps/${thumb}.png</image>"
     if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h [^]]*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then
