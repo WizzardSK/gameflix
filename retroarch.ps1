@@ -158,6 +158,9 @@ $entry = $null
 foreach ($row in $table) { if ($matchKey.Contains($row.Key)) { $entry = $row; break } }
 if (-not $entry) { Write-Error "No launch mapping found for $matchKey"; exit 1 }
 $core = $entry.Core
+# Atari VCS (2021) store games are Linux x86-64 programs or packages for
+# emulators, set up by the Linux launcher (retroarch.sh) only.
+if ($core -eq 'atarivcs') { Write-Error "Atari VCS (2021) games run with the Linux launcher only"; exit 1 }
 $ext  = $entry.Ext
 $src  = $entry.Src
 

@@ -447,7 +447,7 @@ gameflix_fetch_mame_software() {
         echo "Fetching MAME software $list:$item ($chd) ..." >&2
         curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$dest/$item/$chd" \
           "https://archive.org/download/mame-software-list-chds-2/$list/$item/$href" && got=1 || rm -f "$dest/$item/$chd"
-      done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.chd"' | sed 's/^href="//; s/"$//' | sort -u)
+      done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.'"$mirror_ext"'"' | sed 's/^href="//; s/"$//' | sort -u)
       [[ $got == 1 ]] && { mame_chd_dirs+=("$list/$item"); break; }
     done
     [[ $got == 0 ]] && echo "MAME software $w not found in the software-list sets; continuing" >&2
@@ -479,11 +479,13 @@ if [[ -n "$src" && ! -e "$1" ]]; then
   fname="${1##*/}"
   gameflix_ia_auth
   echo "Fetching $fname ..." >&2
-  if [[ "$fname" != *.* && "$src" == *mame-software-list-chds* ]]; then
+  if [[ "$fname" != *.* && ( "$src" == *mame-software-list-chds* || "$core" == atarivcs ) ]]; then
     # A CHD software-list entry is a folder holding the disc or disk images
     # (cd32/abreed3d/alien breed 3d (europe).chd); MAME finds them in
-    # <rompath>/<entry>/, so the folder is mirrored.
+    # <rompath>/<entry>/, so the folder is mirrored. An Atari VCS store
+    # entry is a folder too, holding the game's package as one zip.
     mkdir -p "$1"
+    mirror_ext=chd; [[ "$core" == atarivcs ]] && mirror_ext=zip
     listing=$(curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} "${src}${enc}/") || listing=""
     got=0
     while IFS= read -r href; do
@@ -491,7 +493,7 @@ if [[ -n "$src" && ! -e "$1" ]]; then
       chd=$(printf '%b' "${href//%/\\x}")
       echo "Fetching $fname/$chd ..." >&2
       curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$1/$chd" "${src}${enc}/$href" && got=1 || rm -f "$1/$chd"
-    done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.chd"' | sed 's/^href="//; s/"$//' | sort -u)
+    done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.'"$mirror_ext"'"' | sed 's/^href="//; s/"$//' | sort -u)
     if [[ $got == 0 ]]; then
       rm -rf "$1"
       echo "Download failed: ${src}${enc}/" >&2
@@ -521,7 +523,7 @@ if [[ "$src" == *"/sega-naomi-naomi2/"* && "$1" == *.zip ]]; then
       mkdir -p "$gddir"
       echo "Fetching $game/$chd ..." >&2
       curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$gddir/$chd" "$gdbase$href" || rm -f "$gddir/$chd"
-    done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.chd"' | sed 's/^href="//; s/"$//' | sort -u)
+    done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.'"$mirror_ext"'"' | sed 's/^href="//; s/"$//' | sort -u)
   fi
 fi
 
@@ -564,6 +566,108 @@ elif [[ "$1" == *.rar || "$1" == *.7z ]]; then
 else
   rom="$1"
 fi
+
+# Atari VCS (2021) store packages. A list entry is a folder holding the
+# package zip; the zip holds a bundle.ini naming the program (Exec=) and, for
+# the classic games Atari sold there, the emulator it ran in (Launcher=stella,
+# prosystem, dosbox). Those go to the libretro core below like any ROM. A
+# package without a Launcher is a Linux x86-64 game - a Unity or SDL build, or
+# a shell script starting one - and runs as a program: as it is on x86-64, and
+# through box64 elsewhere.
+gameflix_deb_fetch() {   # <suite> <arch> <package> <dir>: unpack a Debian package
+  local deb tmp
+  deb=$(curl -sfL "https://packages.debian.org/$1/$2/$3/download" | grep -o 'http://ftp.debian.org/[^"]*\.deb' | head -n 1)
+  [[ -n "$deb" ]] || { echo "Debian has no $3 for $2 in $1" >&2; return 1; }
+  tmp=$(mktemp -d)
+  echo "Fetching $3 ($2) from Debian ..." >&2
+  ( cd "$tmp" && curl -sfL -o p.deb "$deb" && ar x p.deb && tar xf data.tar.* -C "$4" ) || { rm -rf "$tmp"; return 1; }
+  rm -rf "$tmp"
+}
+
+# box64 and the x86-64 libraries it does not wrap: libstdc++ and libgcc_s,
+# which C++ games link, and bash, which runs the games started by a script
+# (box64 runs the programs an emulated bash starts). All from Debian, once.
+gameflix_box64_setup() {
+  box64_root="${XDG_CACHE_HOME:-$HOME/.cache}/gameflix/box64"
+  [[ -x "$box64_root/usr/bin/box64" && -x "$box64_root/x86/usr/bin/bash" ]] && return 0
+  mkdir -p "$box64_root/x86"
+  gameflix_deb_fetch sid arm64 box64 "$box64_root" || return 1
+  local p
+  for p in libstdc++6 libgcc-s1 bash libtinfo6; do
+    gameflix_deb_fetch trixie amd64 "$p" "$box64_root/x86" || return 1
+  done
+  [[ -x "$box64_root/usr/bin/box64" ]]
+}
+
+gameflix_atarivcs() {
+  local pkg="$1" game="$1/game" ini dir launcher exe
+  if [[ ! -d "$game" ]]; then
+    local zip
+    zip=$(find "$pkg" -maxdepth 1 -type f -name '*.zip' | head -n 1)
+    [[ -n "$zip" ]] || { echo "No package in $pkg" >&2; exit 1; }
+    echo "Unpacking $(basename "$pkg") ..." >&2
+    mkdir -p "$game.part"
+    unzip -qo "$zip" -x '__MACOSX/*' -d "$game.part" || { rm -rf "$game.part"; echo "Could not unpack $zip" >&2; exit 1; }
+    mv "$game.part" "$game"
+    rm -f "$zip"   # unpacked, the zip is only a second copy (ATARI 50 is 5 GB)
+  fi
+  # the shallowest one; by depth without -printf, which busybox find lacks
+  ini=$(find "$game" -name bundle.ini -not -path '*/__MACOSX/*' | awk -F/ '{print NF "\t" $0}' | sort -n | head -n 1 | cut -f2-)
+  [[ -n "$ini" ]] || { echo "No bundle.ini in $(basename "$pkg")" >&2; exit 1; }
+  dir=$(dirname "$ini")
+  launcher=$(sed -n 's/^Launcher=//p' "$ini" | tr -d '\r' | head -n 1)
+  exe=$(sed -n 's/^Exec=//p' "$ini" | tr -d '\r' | head -n 1)
+  case "$launcher" in
+    stella)    core="stella_libretro";    rom="$dir/$exe"; return 0 ;;
+    prosystem) core="prosystem_libretro"; rom="$dir/$exe"; return 0 ;;
+    dosbox)
+      # The conf mounts folders relative to the package (mount C C) and in
+      # the case of a Mac or Windows file system, where the folder is "c".
+      # Written out with absolute paths, case matched against what is there.
+      local conf="$dir/gameflix-dosbox.conf" line d real
+      : > "$conf"
+      while IFS= read -r line || [[ -n "$line" ]]; do
+        line="${line%$'\r'}"
+        if [[ "$line" =~ ^([[:space:]]*mount[[:space:]]+[A-Za-z][[:space:]]+)([^[:space:]\"/][^[:space:]]*)(.*)$ ]]; then
+          d="${BASH_REMATCH[2]//\\//}"
+          real=$(find "$dir" -maxdepth 1 -iname "$d" | head -n 1)
+          [[ -n "$real" ]] && line="${BASH_REMATCH[1]}\"$real\"${BASH_REMATCH[3]}"
+        fi
+        printf '%s\n' "$line" >> "$conf"
+      done < "$dir/$exe"
+      core="dosbox_pure_libretro"; rom="$conf"; return 0 ;;
+    chrome)
+      echo "$(basename "$pkg") is a web app: $exe" >&2
+      xdg-open "$exe" 2>/dev/null
+      exit 0 ;;
+    "") ;;
+    *) echo "$(basename "$pkg") runs in \"$launcher\", which gameflix does not know" >&2; exit 1 ;;
+  esac
+
+  chmod +x "$dir/$exe" 2>/dev/null
+  cd "$dir" || exit 1
+  if [[ "$(uname -m)" == x86_64 ]]; then
+    exec "./$exe"
+  fi
+  gameflix_box64_setup || { echo "box64 could not be set up" >&2; exit 1; }
+  local -a envs=(BOX64_LD_LIBRARY_PATH="$box64_root/x86/usr/lib/x86_64-linux-gnu" BOX64_BASH="$box64_root/x86/usr/bin/bash" BOX64_NOBANNER=1)
+  local -a run=("$box64_root/usr/bin/box64" "./$exe")
+  head -c 2 "$exe" | grep -q '#!' && run=("$box64_root/usr/bin/box64" "$box64_root/x86/usr/bin/bash" "./$exe")
+  # box64 is a glibc program and loads the system's own libGL, SDL and
+  # OpenAL. On a glibc system it runs as it is; on a musl one (postmarketOS,
+  # Alpine) it runs in an installed flatpak runtime, which has all of those.
+  if ldd --version 2>&1 | grep -qi musl || [[ -e /lib/ld-musl-aarch64.so.1 ]]; then
+    local rt
+    rt=$(flatpak list --runtime --columns=application,branch 2>/dev/null | awk '$1=="org.kde.Platform"{print $1"//"$2}' | sort -V | tail -n 1)
+    [[ -z "$rt" ]] && rt=$(flatpak list --runtime --columns=application,branch 2>/dev/null | awk '$1=="org.freedesktop.Platform" && $2 ~ /^[0-9.]+$/{print $1"//"$2}' | sort -V | tail -n 1)
+    [[ -n "$rt" ]] || { echo "This system has musl; install a flatpak runtime for box64: flatpak install flathub org.kde.Platform" >&2; exit 1; }
+    exec flatpak run --command=env --filesystem="$game" --filesystem="$box64_root" \
+      --filesystem=xdg-config --filesystem=xdg-data --device=all --socket=x11 --socket=wayland \
+      --socket=pulseaudio --share=ipc --share=network "$rt" "${envs[@]}" "${run[@]}"
+  fi
+  exec env "${envs[@]}" "${run[@]}"
+}
+[[ "$core" == atarivcs ]] && gameflix_atarivcs "$1"
 
 # Ensure the libretro core exists locally: look in the native and flatpak
 # cores directories, fetch from the libretro buildbot if missing, and as a

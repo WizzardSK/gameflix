@@ -378,6 +378,10 @@ IFS=";"; for each in "${roms[@]}"; do
     line2="${line%.*}"
     [[ -n "$arcade_src" && -n "${mame_nogame[$line2]}" ]] && continue
     display_name="$line2"
+    # An Atari VCS entry is a folder named after the game, with no extension
+    # to strip ("B.S.U - Blow Stuff Up"), and "_ " where the title has a
+    # colon ("Adventure_ 2600"); the name goes to the page as written out.
+    if [[ "${rom[0]}" == atarivcs ]]; then line2="$line"; display_name="${line//_ /: }"; fi
     if [[ -n "$softlist" && -n "${mame_name[$softlist:$line2]}" ]]; then
       display_name="${mame_name[$softlist:$line2]}"
     elif [[ -n "$arcade_src" && -n "${mame_name[$arcade_src:$line2]}" ]]; then
@@ -392,7 +396,7 @@ IFS=";"; for each in "${roms[@]}"; do
     js_name="${js_name//&amp;/\&}"
     js_name="${js_name//\\/\\\\}"; js_name="${js_name//\"/\\\"}"
     js_line="${line//\\/\\\\}"; js_line="${js_line//\"/\\\"}"
-    if [[ "$display_name" != "$line2" ]]; then
+    if [[ "$display_name" != "$line2" || "${rom[0]}" == atarivcs ]]; then
       echo "\"${js_line}	${js_name}\"," >&$html_fd
     else
       echo "\"${js_line}\"," >&$html_fd

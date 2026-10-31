@@ -91,6 +91,7 @@ atarist,archive:tosec-main/Atari/ST/Educational/[STX]/Atari ST - Educational - [
 atarist,archive:tosec-main/Atari/ST/Educational/[ST]/Atari ST - Educational - [ST] (TOSEC-v2023-11-07).zip,Edu [ST],hatari_libretro,
 atarist,archive:mame-sl/mame-sl/st_flop.zip,MAME,mame_libretro st -flop,
 atarist,archive:mame-sl/mame-sl/st_cart.zip,Cart MAME,mame_libretro st -rom,
+atarivcs,archive:atari-vcs-complete-store-archive-2026/Atari-VCS-Software/games,Store,atarivcs,
 apple1,archive:tosec-main/Apple/1/Games/Apple 1 - Games (TOSEC-v2023-08-29).zip,TOSEC,mame_libretro apple1 -cass,
 apple1,archive:tosec-main/Apple/1/Applications/Apple 1 - Applications (TOSEC-v2023-08-29).zip,App,mame_libretro apple1 -cass,
 apple1,archive:tosec-main/Apple/1/Demos/Apple 1 - Demos (TOSEC-v2023-08-29).zip,Demo,mame_libretro apple1 -cass,

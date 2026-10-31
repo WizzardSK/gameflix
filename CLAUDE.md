@@ -103,6 +103,34 @@
   - SquirrelJME's libretro boot is still a `sjme_todo` stub (nanocoat
     `boot.c`), so it runs nothing yet.
 
+## Atari VCS (2021) - `atarivcs`
+
+- Source: the store archive `atari-vcs-complete-store-archive-2026`,
+  `Atari-VCS-Software/games`. Each entry is a folder holding one package zip.
+  The launcher mirrors it like a CHD softlist folder, unpacks it to
+  `<entry>/game` and deletes the zip.
+- `bundle.ini` decides what runs:
+  - `Launcher=stella` / `prosystem`: that libretro core with `Exec`.
+  - `dosbox`: `dosbox_pure_libretro` with `gameflix-dosbox.conf`, a copy of the
+    package's conf whose relative `mount C C` lines point at the real folder
+    (absolute path, case matched: the folder is `c`).
+  - `chrome` (AirConsole): `xdg-open` on the URL.
+  - none: a Linux x86-64 program (Unity, SDL) or a shell script. It runs
+    directly on x86-64 and through box64 elsewhere.
+- box64 comes from Debian (sid arm64), with x86-64 libstdc++, libgcc_s, bash
+  and libtinfo (trixie amd64), into `~/.cache/gameflix/box64`. A script runs
+  under the x86 bash (`BOX64_BASH`).
+- On a musl host (postmarketOS), box64 runs in an installed flatpak runtime
+  (org.kde.Platform, else org.freedesktop.Platform), which supplies glibc,
+  Mesa, SDL2 and OpenAL.
+- Tested 31.10.2026 on the aarch64 Chromebook:
+  - native: Bloo Kid (SDL2), A Path to the Princess (Unity, 3D), Alice
+    Sisters (script);
+  - emulator packages: Dogfight (DOSBox), Adventure (2600), Asteroids (7800).
+- The Windows launcher refuses the platform.
+- Entry names have no extension and use `_ ` for a colon. `generate.sh` writes
+  them out with an explicit display name.
+
 ## Open issues (from the per-list test, Sept 2026)
 
 - About 35 lists are in formats MAME cannot load: Apple A2R/AIF/2MG
