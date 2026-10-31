@@ -527,6 +527,12 @@ if [[ "$src" == *"/sega-naomi-naomi2/"* && "$1" == *.zip ]]; then
   fi
 fi
 
+# The largest file under a folder. With stat rather than find -printf, which
+# busybox find (postmarketOS, Alpine) lacks: the file came back empty there.
+gameflix_largest() {
+  find "$1" -type f -exec stat -c '%s	%n' {} + | sort -rn | head -n 1 | cut -f2-
+}
+
 # The disc image to start out of an extracted archive: the list's own type
 # first, then the usual ones in order of preference, then the largest file.
 # No-Intro/NonRedump lists mix them (a Mega CD beta is a bare .bin, a PSX one
@@ -537,28 +543,48 @@ gameflix_pick_image() {
     f=$(find "$dir" -type f -iname "*.$e" | sort | head -n 1)
     [[ -n "$f" ]] && { printf '%s' "$f"; return; }
   done
-  find "$dir" -type f -printf '%s\t%p\n' | sort -rn | head -n 1 | cut -f2-
+  gameflix_largest "$dir"
+}
+
+# An archive at ~/iso: mounted by mount-zip (zips) or ratarmount (.rar, .7z),
+# as the README asks for; without them, unpacked there instead. Without either
+# tool the image was never found, and RetroArch started the core with no
+# content at all (ScummVM, every CD system in a zip).
+gameflix_open_archive() {
+  umount -l ~/iso 2>/dev/null
+  mkdir -p ~/iso
+  if [[ "$1" == *.rar || "$1" == *.7z ]]; then
+    command -v ratarmount >/dev/null && ratarmount "$1" ~/iso && return
+  else
+    command -v mount-zip >/dev/null && mount-zip "$1" ~/iso && return
+  fi
+  # never into a mount point that failed to come off
+  mountpoint -q ~/iso 2>/dev/null && { echo "$HOME/iso is still mounted" >&2; return 1; }
+  echo "Unpacking $(basename "$1") (no mount-zip/ratarmount) ..." >&2
+  find ~/iso -mindepth 1 -delete
+  if [[ "$1" == *.zip ]] && command -v unzip >/dev/null; then
+    unzip -qo "$1" -d ~/iso
+  elif command -v 7z >/dev/null; then
+    7z x -y -bd -o"$HOME/iso" "$1" >/dev/null
+  else
+    bsdtar -xf "$1" -C ~/iso
+  fi
 }
 
 if [[ -n "$ext" && "$1" != *.zip && "$1" != *.rar && "$1" != *.7z ]]; then
   rom="$1"   # not an archive after all (3DS .cci); the core takes it as it is
 elif [ -n "$ext" ]; then
-  umount -l ~/iso
   # mount-zip reads zips only; .rar and .7z (Wii U NUS titles ship as .7z) go
   # through ratarmount, which handles both.
-  if [[ "$1" == *.rar || "$1" == *.7z ]]; then
-    ratarmount "$1" ~/iso
-  else
-    mount-zip "$1" ~/iso
-  fi
+  gameflix_open_archive "$1"
   rom=$(gameflix_pick_image ~/iso "$ext")
   # ScummVM detects the game in the folder of the file it is given: a file
   # straight inside the game's folder, never one from a subfolder of it
   if [[ "$core" == scummvm_libretro* ]]; then
-    rom=$(find ~/iso -mindepth 1 -maxdepth 2 -type f -printf '%d\t%s\t%p\n' | sort -t$'\t' -k1,1n -k2,2nr | head -n 1 | cut -f3-)
+    rom=$(find ~/iso -mindepth 1 -maxdepth 2 -type f -exec stat -c '%s	%n' {} + | awk -F'\t' '{print split($2, parts, "/") "\t" $0}' | sort -t$'\t' -k1,1n -k2,2nr | head -n 1 | cut -f3-)
   fi
 elif [[ "$1" == *.rar || "$1" == *.7z ]]; then
-  umount -l ~/iso; ratarmount "$1" ~/iso
+  gameflix_open_archive "$1"
   # A title of many files (Wii U NUS) is started from its folder; a single
   # image (a No-Intro DS .7z) is handed over itself.
   rom=~/iso
@@ -743,7 +769,7 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
         if [[ "$1" == *.zip ]]; then
           mkdir -p "${1%.*}"
           unzip -oq "$1" -d "${1%.*}"
-          rom=$(find "${1%.*}" -type f -printf '%s\t%p\n' | sort -rn | head -n 1 | cut -f2-)
+          rom=$(gameflix_largest "${1%.*}")
         fi
         ;;
       *) rom="${1##*/}"; rom="${rom%.*}" ;;   # a set MAME finds by its short name
