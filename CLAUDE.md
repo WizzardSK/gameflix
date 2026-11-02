@@ -145,7 +145,17 @@
   programs itself). Checked on two local dumps: Virtua Tennis 3 (the game's
   program in `disk0/vt3_Lindbergh/`), Primeval Hunt (`disk0/prog/main.exe`).
 - `[Server]` entries of that item are server programs, not games.
-- No console image: es-theme-carbon has a background and a logo only.
+- Console image (`art/consoles/lindbergh.png`): es-theme-carbon has none, so it is
+  carbon's Lindbergh logo rendered light grey on transparent (the page's
+  background is #333), 424x283 like the other console pictures.
+- Lindbergh and Chihiro thumbnails come from the MAME repo (systems.csv: MAME):
+  MAME names their games without emulating them, and WizzardSK/MAME has
+  snaps under the short names. generate.sh matches each title to a MAME set
+  with a snap (game_key, mame_snap_of: exact title, a part of "A / B" or
+  "X - Y", else a title that starts the other by up to 8 letters that are not
+  a number, so Initial D Arcade Stage 4 is not Initial D Arcade Stage) and
+  passes the short name as the third field. 16 Lindbergh and 6 Chihiro games
+  get one; the rest (Initial D, 2 Spicy, Primeval Hunt...) have no MAME snap.
 
 ## Open issues (from the per-list test, Sept 2026)
 

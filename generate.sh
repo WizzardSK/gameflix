@@ -192,6 +192,50 @@ for tsv in "$mame_names_dir"/*.tsv; do
 done
 declare -A mame_nogame
 while IFS= read -r sn; do [[ -n "$sn" ]] && mame_nogame["$sn"]=1; done < "$arcade_mame_nogame"
+
+# Sega Lindbergh and Chihiro: MAME emulates neither, but its database names
+# their games, and the MAME thumbnail repo has snaps of many of them under the
+# short names. A game of those lists takes the snap of the MAME set whose title
+# matches its own: game_key, the title before its brackets in small letters
+# and figures, II to IV as figures, each part of a title "A / B"; else a set
+# whose title starts its own or the other way round, by at most 8 letters
+# that are not a number (Hummer Extreme Edition, Hummer Extreme); a title
+# "X - Y" also as Y (Loving Deads - The House of the Dead EX).
+game_key() { local s="$1"; s="${s%% (*}"; s="${s%% [*}"; s=" ${s,,} "; s="${s// iii / 3 }"; s="${s// ii / 2 }"; s="${s// iv / 4 }"; s="${s//&/and}"; REPLY="${s//[^a-z0-9]/}"; }
+declare -A mame_snap mame_by_key
+while IFS= read -r sn; do mame_snap["$sn"]=1; done < <(curl -fsSL "https://api.github.com/repos/WizzardSK/MAME/git/trees/master:Named_Snaps" | grep -o '"path": *"[a-z0-9_]*\.png"' | sed 's/.*"path": *"//; s/\.png"$//')
+for k in "${!mame_name[@]}"; do
+  [[ "$k" == arcade-mame:* ]] || continue
+  sn="${k#arcade-mame:}"
+  [[ -n "${mame_snap[$sn]}" ]] || continue
+  desc="${mame_name[$k]}"
+  IFS='/' read -ra parts <<< "${desc%% (*}"
+  for part in "${parts[@]}"; do
+    game_key "$part"
+    [[ -n "$REPLY" && -z "${mame_by_key[$REPLY]}" ]] && mame_by_key[$REPLY]="$sn"
+  done
+done
+echo "=== MAME SNAPS: ${#mame_snap[@]} short names, ${#mame_by_key[@]} titles ==="
+mame_snap_of() {
+  local title="$1" key k rest part
+  for part in "$title" "${title#* - }"; do
+    game_key "$part"; key="$REPLY"
+    REPLY="${mame_by_key[$key]}"
+    [[ -n "$REPLY" ]] && return
+  done
+  game_key "$title"; key="$REPLY"
+  REPLY=""
+  [[ ${#key} -lt 6 ]] && return
+  # a title that starts the other, by a few letters that are not a number
+  # (Initial D Arcade Stage 4 is not Initial D Arcade Stage)
+  for k in "${!mame_by_key[@]}"; do
+    rest=""
+    if [[ "$key" == "$k"* && ${#k} -ge 6 ]]; then rest="${key#"$k"}"; elif [[ "$k" == "$key"* ]]; then rest="${k#"$key"}"; else continue; fi
+    if [[ -n "$rest" && ${#rest} -le 8 && "$rest" != [0-9]* ]]; then
+      REPLY="${mame_by_key[$k]}"; return
+    fi
+  done
+}
 mame_fetch_end=$(date +%s)
 echo "=== MAME SOFTLIST NAMES DONE: ${#mame_name[@]} entries in $((mame_fetch_end - mame_fetch_start))s ==="
 
@@ -398,13 +442,19 @@ IFS=";"; for each in "${roms[@]}"; do
     js_name="${js_name//&amp;/\&}"
     js_name="${js_name//\\/\\\\}"; js_name="${js_name//\"/\\\"}"
     js_line="${line//\\/\\\\}"; js_line="${js_line//\"/\\\"}"
-    if [[ "$display_name" != "$line2" || "${rom[0]}" == atarivcs ]]; then
+    # the snap of the MAME set of a Lindbergh or Chihiro game, as a third field
+    thumbname=""
+    if [[ "${rom[0]}" == lindbergh || "${rom[0]}" == chihiro ]]; then mame_snap_of "$line2"; thumbname="$REPLY"; fi
+    if [[ -n "$thumbname" ]]; then
+      echo "\"${js_line}	${js_name}	${thumbname}\"," >&$html_fd
+    elif [[ "$display_name" != "$line2" || "${rom[0]}" == atarivcs ]]; then
       echo "\"${js_line}	${js_name}\"," >&$html_fd
     else
       echo "\"${js_line}\"," >&$html_fd
     fi
     ((pocet++)); ((total++))
     if [[ "$line2" == *")"* ]]; then thumb="${line2%%)*})"; else thumb="$line2"; fi
+    [[ -n "$thumbname" ]] && thumb="$thumbname"
     if [[ "$line" != *.* ]]; then polozka="folder"; else polozka="game"; fi
     hra="<$polozka><path>./$foldername/${line}</path><name>${display_name}</name><image>~/../thumbs/${rom[5]}/Named_Snaps/${thumb}.png</image>"
     if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h [^]]*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then
