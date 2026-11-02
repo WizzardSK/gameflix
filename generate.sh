@@ -217,7 +217,10 @@ for k in "${!mame_name[@]}"; do
 done
 # Lindbergh games MAME has no set for (or names otherwise), with snaps in the
 # MAME repo under lindbergh_* names
-for a in harleydavidsonkingoftheroad=lindbergh_harley virtuafighter5finalshowdown=lindbergh_vf5fs initialdarcadestage4=initiad4; do
+for a in harleydavidsonkingoftheroad=lindbergh_harley virtuafighter5finalshowdown=lindbergh_vf5fs initialdarcadestage4=initiad4 \
+         initialdarcadestage5=lindbergh_id5 rtunedultimatestreetracing=lindbergh_rtuned seganetworkcasinoclub=lindbergh_casino \
+         networktaisenquizanswerxanswer=lindbergh_quiz networktaisenquizanswerxanswerlive=lindbergh_quizlive \
+         seganetworktaisenmahjongmj4=lindbergh_mj4 seganetworktaisenmahjongmj4evolution=lindbergh_mj4; do
   k="${a%%=*}"; sn="${a#*=}"
   [[ -n "${mame_snap[$sn]}" && -z "${mame_by_key[$k]}" ]] && mame_by_key[$k]="$sn"
 done

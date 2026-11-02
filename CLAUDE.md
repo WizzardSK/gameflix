@@ -158,8 +158,9 @@
   get one. Snaps added to the MAME repo by hand (from the LaunchBox Games DB):
   initiad4 and primevah (MAME sets without a snap), lindbergh_harley and
   lindbergh_vf5fs (no MAME set; generate.sh maps their titles to them, and
-  Initial D Arcade Stage 4 to initiad4). No snap anywhere for 2 Spicy, Ghost
-  Squad Evolution, R-Tuned, Initial D 5, Quiz Answer x Answer, Casino Club, MJ4.
+  Initial D Arcade Stage 4 to initiad4). The rest from frames of YouTube
+  gameplay videos (2.11.2026): 2spicy and ghostsev under their MAME sets,
+  lindbergh_id5, _rtuned, _casino, _quiz, _quizlive, _mj4 mapped in generate.sh.
 
 ## Open issues (from the per-list test, Sept 2026)
 
