@@ -155,7 +155,11 @@
   "X - Y", else a title that starts the other by up to 8 letters that are not
   a number, so Initial D Arcade Stage 4 is not Initial D Arcade Stage) and
   passes the short name as the third field. 16 Lindbergh and 6 Chihiro games
-  get one; the rest (Initial D, 2 Spicy, Primeval Hunt...) have no MAME snap.
+  get one. Snaps added to the MAME repo by hand (from the LaunchBox Games DB):
+  initiad4 and primevah (MAME sets without a snap), lindbergh_harley and
+  lindbergh_vf5fs (no MAME set; generate.sh maps their titles to them, and
+  Initial D Arcade Stage 4 to initiad4). No snap anywhere for 2 Spicy, Ghost
+  Squad Evolution, R-Tuned, Initial D 5, Quiz Answer x Answer, Casino Club, MJ4.
 
 ## Open issues (from the per-list test, Sept 2026)
 

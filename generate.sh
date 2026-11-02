@@ -215,6 +215,12 @@ for k in "${!mame_name[@]}"; do
     [[ -n "$REPLY" && -z "${mame_by_key[$REPLY]}" ]] && mame_by_key[$REPLY]="$sn"
   done
 done
+# Lindbergh games MAME has no set for (or names otherwise), with snaps in the
+# MAME repo under lindbergh_* names
+for a in harleydavidsonkingoftheroad=lindbergh_harley virtuafighter5finalshowdown=lindbergh_vf5fs initialdarcadestage4=initiad4; do
+  k="${a%%=*}"; sn="${a#*=}"
+  [[ -n "${mame_snap[$sn]}" && -z "${mame_by_key[$k]}" ]] && mame_by_key[$k]="$sn"
+done
 echo "=== MAME SNAPS: ${#mame_snap[@]} short names, ${#mame_by_key[@]} titles ==="
 mame_snap_of() {
   local title="$1" key k rest part
