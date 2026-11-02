@@ -131,6 +131,22 @@
 - Entry names have no extension and use `_ ` for a colon. `generate.sh` writes
   them out with an explicit display name.
 
+## Sega Lindbergh - `lindbergh`
+
+- Core `linuxloader_libretro` (buildbot: Linux x86_64 and aarch64, Windows).
+  On aarch64 the core runs the game through FEX-Emu, which the user installs.
+- Source: `SegaLindbergh` ("Clean Game Data"), one zip per dump with
+  `disk0/`, `disk1/` ... as on the cabinet. The core takes the dump as it is.
+- Both launchers unpack the zip once into the folder of its name beside it,
+  delete the zip, and skip the download while that folder exists (the game
+  writes beside its program, so no read-only mount).
+- The content is the game's program: the largest 32-bit executable ELF,
+  skipping `lib/`, `.so`, `.ko` and names with `test` (the core finds test
+  programs itself). Checked on two local dumps: Virtua Tennis 3 (the game's
+  program in `disk0/vt3_Lindbergh/`), Primeval Hunt (`disk0/prog/main.exe`).
+- `[Server]` entries of that item are server programs, not games.
+- No console image: es-theme-carbon has a background and a logo only.
+
 ## Open issues (from the per-list test, Sept 2026)
 
 - About 35 lists are in formats MAME cannot load: Apple A2R/AIF/2MG

@@ -164,8 +164,12 @@ if ($core -eq 'atarivcs') { Write-Error "Atari VCS (2021) games run with the Lin
 $ext  = $entry.Ext
 $src  = $entry.Src
 
+# A Sega Lindbergh game, once unpacked, is the folder beside where its zip was
+# (see below): not fetched again
+$lindberghDir = if ($core -eq 'linuxloader_libretro' -and $local -like '*.zip') { $local -replace '\.zip$', '' } else { '' }
+
 # ---- 3. Download the ROM on demand ------------------------------------------
-if ($src -and -not (Test-Path -LiteralPath $local)) {
+if ($src -and -not (Test-Path -LiteralPath $local) -and -not ($lindberghDir -and (Test-Path -LiteralPath $lindberghDir))) {
   New-Item -ItemType Directory -Force -Path (Split-Path -Parent $local) | Out-Null
   # inner = relUrl minus the first two segments (platform/folder)
   $parts = $relUrl.Split('/')
@@ -332,6 +336,40 @@ if ($ext -and $local -notmatch '\.(zip|rar|7z)$') {
   $rom = $root
   $files = @(Get-ChildItem -Path $root -Recurse -File -ErrorAction SilentlyContinue)
   if ($files.Count -eq 1) { $rom = $files[0].FullName }
+}
+
+# Sega Lindbergh (linuxloader_libretro). A list entry is the game's dump as one
+# zip (disk0\, disk1\ ...); the game runs from its folders as they are, and
+# writes beside its program, so the zip is unpacked once into the folder of
+# its name and deleted. The core is given the game's program: the largest
+# 32-bit x86 executable ELF in the dump, past the libraries, kernel drivers
+# and test programs (vt3_testmode, JenTest), which the core finds by itself.
+if ($lindberghDir) {
+  if (-not (Test-Path -LiteralPath $lindberghDir)) {
+    Write-Host "Unpacking $(Split-Path -Leaf $local) ..."
+    $part = "$lindberghDir.part"
+    Remove-Item -LiteralPath $part -Recurse -Force -ErrorAction SilentlyContinue
+    $sevenzip = Get-Tool @('7z.exe', '7za.exe')
+    if ($sevenzip) { & $sevenzip.Source x -y "-o$part" $local | Out-Null; $ok = ($LASTEXITCODE -eq 0) }
+    else { try { Expand-Archive -LiteralPath $local -DestinationPath $part -Force; $ok = $true } catch { $ok = $false } }
+    if (-not $ok) { Remove-Item -LiteralPath $part -Recurse -Force -ErrorAction SilentlyContinue; Write-Error "Could not unpack $local"; exit 1 }
+    Move-Item -LiteralPath $part -Destination $lindberghDir
+    Remove-Item -LiteralPath $local -Force   # unpacked, the zip is only a second copy (up to 6 GB)
+  }
+  $best = $null
+  foreach ($f in Get-ChildItem -LiteralPath $lindberghDir -Recurse -File -ErrorAction SilentlyContinue) {
+    if ($f.Length -le 100KB) { continue }
+    if ($f.FullName -match '[\\/](lib|lib32|lost\+found)[\\/]') { continue }
+    if ($f.Name -match '\.(so|ko)$|\.so\.|test') { continue }
+    $b = New-Object byte[] 17
+    try { $fs = [IO.File]::OpenRead($f.FullName); $n = $fs.Read($b, 0, 17); $fs.Close() } catch { continue }
+    # the ELF magic, 32-bit (EI_CLASS 1), an executable (e_type 2)
+    if ($n -lt 17 -or $b[0] -ne 0x7f -or $b[1] -ne 0x45 -or $b[2] -ne 0x4c -or $b[3] -ne 0x46 -or $b[4] -ne 1 -or $b[16] -ne 2) { continue }
+    if (-not $best -or $f.Length -gt $best.Length) { $best = $f }
+  }
+  if (-not $best) { Write-Error "No Lindbergh game program found in $lindberghDir"; exit 1 }
+  Write-Host "Lindbergh program: $($best.FullName.Substring($lindberghDir.Length + 1))"
+  $rom = $best.FullName
 }
 
 # ---- Resolve emulator executables (PATH + common Windows install locations) -

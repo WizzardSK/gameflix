@@ -470,7 +470,12 @@ gameflix_chd_names() {
   ln -sf "$(basename "$have")" "$dir/$want.chd"
 }
 
-if [[ -n "$src" && ! -e "$1" ]]; then
+# A Sega Lindbergh game, once unpacked, is the folder beside where its zip was
+# (gameflix_lindbergh): not fetched again
+lindbergh_unpacked=0
+[[ "$core" == linuxloader_libretro && "$1" == *.zip && -d "${1%.zip}" ]] && lindbergh_unpacked=1
+
+if [[ -n "$src" && ! -e "$1" && $lindbergh_unpacked == 0 ]]; then
   mkdir -p "$(dirname "$1")"
   relpath="${1#$HOME/share/roms/}"
   inner="${relpath#*/}"; inner="${inner#*/}"
@@ -694,6 +699,45 @@ gameflix_atarivcs() {
   exec env "${envs[@]}" "${run[@]}"
 }
 [[ "$core" == atarivcs ]] && gameflix_atarivcs "$1"
+
+# Sega Lindbergh (linuxloader_libretro). A list entry is the game's dump as one
+# zip (disk0/, disk1/ ...); the game runs from its folders as they are, and
+# writes beside its program, so the zip is unpacked once into the folder of
+# its name and deleted. The core is given the game's program: the largest
+# 32-bit x86 executable ELF in the dump, past the libraries, kernel drivers
+# and test programs (vt3_testmode, JenTest), which the core finds by itself.
+# On aarch64 the core runs the game through FEX-Emu, which has to be installed.
+gameflix_lindbergh_elf() {
+  local f name head b size max=-1 best=""
+  while IFS= read -r -d '' f; do
+    name="${f##*/}"; name="${name,,}"
+    case "${f,,}" in */lib/*|*/lib32/*|*/lost+found/*) continue ;; esac
+    case "$name" in *.so|*.so.*|*.ko|*test*) continue ;; esac
+    # the ELF magic, 32-bit (EI_CLASS 1), an executable (e_type 2)
+    head=$(od -An -tu1 -N17 -v "$f" 2>/dev/null | tr -s ' \n' ' ')
+    read -ra b <<< "$head"
+    [[ "${b[0]} ${b[1]} ${b[2]} ${b[3]} ${b[4]} ${b[16]}" == "127 69 76 70 1 2" ]] || continue
+    chmod u+x "$f" 2>/dev/null
+    size=$(stat -c %s "$f")
+    (( size > max )) && { max=$size; best="$f"; }
+  done < <(find "$1" -type f -size +100k -print0)
+  printf '%s' "$best"
+}
+
+gameflix_lindbergh() {
+  local zip="$1" game="${1%.zip}"
+  if [[ ! -d "$game" ]]; then
+    echo "Unpacking $(basename "$zip") ..." >&2
+    rm -rf "$game.part"; mkdir -p "$game.part"
+    unzip -qo "$zip" -d "$game.part" || { rm -rf "$game.part"; echo "Could not unpack $zip" >&2; exit 1; }
+    mv "$game.part" "$game"
+    rm -f "$zip"   # unpacked, the zip is only a second copy (up to 6 GB)
+  fi
+  rom=$(gameflix_lindbergh_elf "$game")
+  [[ -n "$rom" ]] || { echo "No Lindbergh game program found in $game" >&2; exit 1; }
+  echo "Lindbergh program: ${rom#$game/}" >&2
+}
+[[ "$core" == linuxloader_libretro && "$1" == *.zip ]] && gameflix_lindbergh "$1"
 
 # Ensure the libretro core exists locally: look in the native and flatpak
 # cores directories, fetch from the libretro buildbot if missing, and as a
