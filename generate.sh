@@ -458,6 +458,9 @@ IFS=";"; for each in "${roms[@]}"; do
     # the snap of the MAME set of a Lindbergh or Chihiro game, as a third field
     thumbname=""
     if [[ "${rom[0]}" == lindbergh || "${rom[0]}" == chihiro ]]; then mame_snap_of "$line2"; thumbname="$REPLY"; fi
+    # the page strips an extension after the last dot, which an Atari VCS
+    # name with dots has not ("A.R.T.I. 7800"): name its snap outright
+    [[ "${rom[0]}" == atarivcs && "$line" == *.* ]] && thumbname="$line"
     if [[ -n "$thumbname" ]]; then
       echo "\"${js_line}	${js_name}	${thumbname}\"," >&$html_fd
     elif [[ "$display_name" != "$line2" || "${rom[0]}" == atarivcs ]]; then
