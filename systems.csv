@@ -68,7 +68,6 @@ dsi,Nintendo DSi,Nintendo - Nintendo DSi
 3ds,Nintendo 3DS,Nintendo - Nintendo 3DS
 wiiu,Nintendo Wii U,Nintendo - Wii U
 ,Sega,
-svmu,Sega Visual Memory Unit,Sega - Visual Memory Unit
 sg1000,Sega SG-1000,Sega - SG-1000
 sc3000,Sega SC-3000,Sega - SG-1000
 segaai,Sega AI Computer,Sega - AI Computer
@@ -91,7 +90,6 @@ naomi2,Sega Naomi 2,MAME
 chihiro,Sega Chihiro,MAME
 lindbergh,Sega Lindbergh,MAME
 ,Sony,
-pockstat,Sony Pocket Station,Sony - Pocket Station
 smc777,Sony SMC-777,Sony - SMC-777
 psx,Sony PlayStation 1,Sony - PlayStation
 ps2,Sony PlayStation 2,Sony - PlayStation 2
@@ -263,5 +261,7 @@ advision,Adventure Vision,Entex - Adventure Vision
 mononcolor,M&D Monon Color,M&D - Monon Color
 gameking,TimeTop GameKing,TimeTop - GameKing
 gameking3,TimeTop GameKing 3,TimeTop - GameKing 3
+svmu,Sega Visual Memory Unit,Sega - Visual Memory Unit
+pockstat,Sony Pocket Station,Sony - Pocket Station
 j2me,Java ME (J2ME),Mobile - J2ME
 palm,Palm OS,Mobile - Palm OS (Digital)
