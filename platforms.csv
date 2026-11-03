@@ -721,6 +721,7 @@ ps3,archive:sony_playstation3_z,Redump Z,rpcs3_libretro,
 psp,archive:playstation-portable-redump,Redump,ppsspp_libretro,iso
 psp,archive:non-redump_sony_playstation_portable,NonRedump,ppsspp_libretro,iso
 psp,archive:tosec-iso-sony/PlayStation Portable/Games/[ISO],TOSEC,ppsspp_libretro,iso
+psvita,archive:sony-playstation-vita-usa-full-set-nonpdrm-format,USA NoNpDRM,vita3k_libretro,
 cdi,archive:ef_Philips_cd-i_redump_2300,Redump,same_cdi_libretro,cue
 cdi,archive:non-redump_philips-cdi,NonRedump,same_cdi_libretro,cue
 cdi,archive:tosec-iso-philips/CD-i/Games,TOSEC,same_cdi_libretro,cue
