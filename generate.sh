@@ -1,5 +1,9 @@
 #!/bin/bash
 shopt -s nocasematch;
+# What the gamelist hides: bad dumps, hacks, demos, betas, extra disks... The
+# pattern is kept in a variable: written out in [[ =~ ]], bash broke the
+# bracket expression [^]] and every test failed (invalid regex), hiding all.
+hidden_re='\[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h [^]]*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\)'
 urlenc() { local s="$1" out="" i c; for ((i=0;i<${#s};i++)); do c="${s:i:1}"; case "$c" in [a-zA-Z0-9._~/-]) out+="$c";; *) printf -v c '%%%02X' "'$c"; out+="$c";; esac; done; printf '%s' "$out"; }
 declare -A sys thumb separator; sysorder=(); needsep=0; while IFS=',' read -r k v t; do if [[ -z "$k" ]]; then needsep=1; sepname="$v"; continue; fi; sys[$k]="$v"; thumb[$k]="$t"; sysorder+=("$k"); if [[ $needsep -eq 1 ]]; then separator[$k]="$sepname"; needsep=0; fi; done < <(tail -n +2 systems.csv)
 declare -A sysroms; while IFS=';' read -r k rest; do [[ -z "$k" ]] && continue; sysroms[$k]+="$k;$rest;${thumb[$k]};${sys[$k]}"$'\n'; done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv ))
@@ -466,7 +470,7 @@ IFS=";"; for each in "${roms[@]}"; do
     [[ -n "$thumbname" ]] && thumb="$thumbname"
     if [[ "$line" != *.* ]]; then polozka="folder"; else polozka="game"; fi
     hra="<$polozka><path>./$foldername/${line}</path><name>${display_name}</name><image>~/../thumbs/${rom[5]}/Named_Snaps/${thumb}.png</image>"
-    if [[ ! "$line" =~ \[(bios|a[0-9]{0,2}|b[0-9]{0,2}|c|f|h [^]]*|o ?.*|p ?.*|t ?.*|cr ?.*)\]|\((demo( [0-9]+)?|beta( [0-9]+)?|alpha( [0-9]+)?|(disk|side)( [2-9B-Z]).*|pre-release|aftermarket|alt|alternate|unl|channel|system|dlc)\) ]]; then
+    if [[ ! "$line" =~ $hidden_re ]]; then
       echo "${hra}</$polozka>" >&$xml_fd
     else echo "${hra}<hidden>true</hidden></$polozka>" >&$xml_fd; fi
   done < "$cachefile"
