@@ -103,7 +103,7 @@
   - SquirrelJME's libretro boot is still a `sjme_todo` stub (nanocoat
     `boot.c`), so it runs nothing yet.
 
-## Atari VCS (2021) - `atarivcs`
+## Atari VCS - `atarivcs`
 
 - Source: the store archive `atari-vcs-complete-store-archive-2026`,
   `Atari-VCS-Software/games`. Each entry is a folder holding one package zip.
