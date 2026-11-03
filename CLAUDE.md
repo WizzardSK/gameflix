@@ -161,6 +161,10 @@
   Initial D Arcade Stage 4 to initiad4). The rest from frames of YouTube
   gameplay videos (2.11.2026): 2spicy and ghostsev under their MAME sets,
   lindbergh_id5, _rtuned, _casino, _quiz, _quizlive, _mj4 mapped in generate.sh.
+  vf5, letsgoju, psmash3 and rambo were MAME's "Screenless System" placeholder
+  (18 KB, 320x240) and were replaced by YouTube video frames (3.11.2026; the
+  auto frames i.ytimg.com/vi/<id>/hq1-3.jpg have no overlay text). Check a
+  new match's snap for that placeholder.
 
 ## Open issues (from the per-list test, Sept 2026)
 
