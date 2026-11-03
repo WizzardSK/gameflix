@@ -80,8 +80,9 @@ beena,Sega Advanced Pico Beena,Sega - Beena
 sega32x,Sega 32x,Sega - 32X
 megacd,Sega CD,Sega - Mega-CD - Sega CD
 saturn,Sega Saturn,Sega - Saturn
-stv,Sega ST-V,Sega - ST-V
 dreamcast,Sega Dreamcast,Sega - Dreamcast
+gamegear,Sega Game Gear,Sega - Game Gear
+stv,Sega ST-V,Sega - ST-V
 model1,Sega Model 1,MAME
 model2,Sega Model 2,MAME
 model3,Sega Model 3,MAME
@@ -89,7 +90,6 @@ naomi,Sega Naomi,MAME
 naomi2,Sega Naomi 2,MAME
 chihiro,Sega Chihiro,MAME
 lindbergh,Sega Lindbergh,MAME
-gamegear,Sega Game Gear,Sega - Game Gear
 ,Sony,
 pockstat,Sony Pocket Station,Sony - Pocket Station
 smc777,Sony SMC-777,Sony - SMC-777
