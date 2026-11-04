@@ -447,7 +447,7 @@ gameflix_fetch_mame_software() {
         echo "Fetching MAME software $list:$item ($chd) ..." >&2
         curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$dest/$item/$chd" \
           "https://archive.org/download/mame-software-list-chds-2/$list/$item/$href" && got=1 || rm -f "$dest/$item/$chd"
-      done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.'"$mirror_ext"'"' | sed 's/^href="//; s/"$//' | sort -u)
+      done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.chd"' | sed 's/^href="//; s/"$//' | sort -u)
       [[ $got == 1 ]] && { mame_chd_dirs+=("$list/$item"); break; }
     done
     [[ $got == 0 ]] && echo "MAME software $w not found in the software-list sets; continuing" >&2
@@ -528,7 +528,7 @@ if [[ "$src" == *"/sega-naomi-naomi2/"* && "$1" == *.zip ]]; then
       mkdir -p "$gddir"
       echo "Fetching $game/$chd ..." >&2
       curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$gddir/$chd" "$gdbase$href" || rm -f "$gddir/$chd"
-    done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.'"$mirror_ext"'"' | sed 's/^href="//; s/"$//' | sort -u)
+    done < <(printf '%s' "$listing" | grep -o 'href="[^"/?]*\.chd"' | sed 's/^href="//; s/"$//' | sort -u)
   fi
 fi
 
