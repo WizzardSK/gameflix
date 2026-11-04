@@ -146,15 +146,17 @@ arcade_mame_cache="$mame_names_dir/arcade-mame.tsv"
 # Devices and BIOS sets (model1io, hd44780, ...) sit beside the games in some
 # arcade folders; they are left out of the lists.
 arcade_mame_nogame="$mame_names_dir/arcade-mame-nogame.txt"
-if [ ! -e "$arcade_mame_cache" ] || [ ! -e "$arcade_mame_nogame" ]; then
+# Clone -> parent set, for the snap of a clone that has none of its own
+arcade_mame_parent="$mame_names_dir/arcade-mame-parent.txt"
+if [ ! -e "$arcade_mame_cache" ] || [ ! -e "$arcade_mame_nogame" ] || [ ! -e "$arcade_mame_parent" ]; then
   (
     mame_tag=$(curl -sIL "https://github.com/mamedev/mame/releases/latest" 2>/dev/null | awk 'tolower($1)=="location:" { sub(/\r$/,""); n=split($2,p,"/"); print p[n] }' | tail -1)
     if [[ -n "$mame_tag" ]]; then
       mame_ver="${mame_tag#mame}"
       tmpzip=$(mktemp --suffix=.zip)
       if curl -fsSL -o "$tmpzip" "https://github.com/mamedev/mame/releases/download/$mame_tag/${mame_tag}lx.zip" && [ -s "$tmpzip" ]; then
-        unzip -p "$tmpzip" "mame${mame_ver}.xml" 2>/dev/null | awk -v nogame="$arcade_mame_nogame" '
-          /<machine name=/ { if (match($0, /name="([^"]+)"/, a)) name=a[1]; if (/isdevice="yes"|isbios="yes"/) print name > nogame }
+        unzip -p "$tmpzip" "mame${mame_ver}.xml" 2>/dev/null | awk -v nogame="$arcade_mame_nogame" -v parent="$arcade_mame_parent" '
+          /<machine name=/ { if (match($0, /name="([^"]+)"/, a)) name=a[1]; if (/isdevice="yes"|isbios="yes"/) print name > nogame; if (match($0, /cloneof="([^"]+)"/, c)) print name "\t" c[1] > parent }
           /<description>/ { if (match($0, /<description>([^<]+)<\/description>/, a) && name && a[1]) print name "\t" a[1]; name="" }
         ' > "$arcade_mame_cache"
       else
@@ -164,7 +166,7 @@ if [ ! -e "$arcade_mame_cache" ] || [ ! -e "$arcade_mame_nogame" ]; then
     else
       : > "$arcade_mame_cache"
     fi
-    touch "$arcade_mame_nogame"
+    touch "$arcade_mame_nogame" "$arcade_mame_parent"
   ) &
 fi
 
@@ -196,6 +198,11 @@ for tsv in "$mame_names_dir"/*.tsv; do
 done
 declare -A mame_nogame
 while IFS= read -r sn; do [[ -n "$sn" ]] && mame_nogame["$sn"]=1; done < "$arcade_mame_nogame"
+declare -A mame_parent
+while IFS=$'\t' read -r sn par; do [[ -n "$sn" ]] && mame_parent["$sn"]="$par"; done < "$arcade_mame_parent"
+# Sets MAME no longer has, by the set whose snap they take (Magical Truck
+# Adventure's old bad dump, in the Model 3 list)
+mame_parent[mgtrkbad]=magtruck
 
 # Sega Lindbergh and Chihiro: MAME emulates neither, but its database names
 # their games, and the MAME thumbnail repo has snaps of many of them under the
@@ -458,6 +465,12 @@ IFS=";"; for each in "${roms[@]}"; do
     # the snap of the MAME set of a Lindbergh or Chihiro game, as a third field
     thumbname=""
     if [[ "${rom[0]}" == lindbergh || "${rom[0]}" == chihiro ]]; then mame_snap_of "$line2"; thumbname="$REPLY"; fi
+    # a MAME clone without a snap of its own takes its parent's (Virtua
+    # Formula, Virtua Racing's)
+    if [[ "$arcade_src" == arcade-mame && -z "${mame_snap[$line2]}" ]]; then
+      par="${mame_parent[$line2]}"
+      [[ -n "$par" && -n "${mame_snap[$par]}" ]] && thumbname="$par"
+    fi
     # the page strips an extension after the last dot, which an Atari VCS
     # name with dots has not ("A.R.T.I. 7800"): name its snap outright
     [[ "${rom[0]}" == atarivcs && "$line" == *.* ]] && thumbname="$line"
