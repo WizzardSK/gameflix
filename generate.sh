@@ -443,6 +443,9 @@ IFS=";"; for each in "${roms[@]}"; do
     [[ -z "$line" ]] && continue
     line2="${line%.*}"
     [[ -n "$arcade_src" && -n "${mame_nogame[$line2]}" ]] && continue
+    # a disc image lying loose in the NAOMI set (gdl-0032.chd, Radirgy's) is
+    # not a game: a GD-ROM game is its zip, the launcher fetches the disc
+    [[ "${rom[0]}" == naomi && "$line" == *.chd ]] && continue
     display_name="$line2"
     # An Atari VCS entry is a folder named after the game, with no extension
     # to strip ("B.S.U - Blow Stuff Up"), and "_ " where the title has a
