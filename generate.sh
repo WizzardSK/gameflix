@@ -436,7 +436,7 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
   arcade_src=""
   case "${rom[0]}" in
-    mame|model1|model2|model3|naomi|naomi2|stv) arcade_src="arcade-mame" ;;
+    mame|model1|model2|model3|naomi|naomi2|hikaru|stv) arcade_src="arcade-mame" ;;
     fbneo) arcade_src="arcade-fbneo" ;;
   esac
   while IFS= read -r line; do
@@ -446,6 +446,9 @@ IFS=";"; for each in "${roms[@]}"; do
     # a disc image lying loose in the NAOMI set (gdl-0032.chd, Radirgy's) is
     # not a game: a GD-ROM game is its zip, the launcher fetches the disc
     [[ "${rom[0]}" == naomi && "$line" == *.chd ]] && continue
+    # the Hikaru item keeps the BIOS and other boards' sets beside the games,
+    # as .7z (hikaru.7z, mie.7z, naomi.7z...); the games are the zips
+    [[ "${rom[0]}" == hikaru && "$line" != *.zip ]] && continue
     display_name="$line2"
     # An Atari VCS entry is a folder named after the game, with no extension
     # to strip ("B.S.U - Blow Stuff Up"), and "_ " where the title has a

@@ -218,6 +218,20 @@ if ($src -and -not (Test-Path -LiteralPath $local) -and -not ($lindberghDir -and
   }
 }
 
+# Sega Hikaru (odin_libretro): a clone's set holds only what differs from its
+# parent (airtrixo, sgnascaro), and Odin reads the parent's zip beside it, so
+# that comes from the same folder of the item too.
+if ($core -like 'odin_libretro*' -and $src -and $local -like '*.zip') {
+  $parent = @{ 'airtrixo' = 'airtrix'; 'sgnascaro' = 'sgnascar' }[[IO.Path]::GetFileNameWithoutExtension($local)]
+  $plocal = if ($parent) { Join-Path (Split-Path -Parent $local) "$parent.zip" } else { $null }
+  if ($parent -and -not (Test-Path -LiteralPath $plocal)) {
+    $auth = Get-IaAuth
+    $headers = @{}; if ($auth) { $headers['Authorization'] = $auth }
+    Write-Host "Fetching $parent.zip (the parent set) ..."
+    try { Invoke-WebRequest -UseBasicParsing -Uri "$src$parent.zip" -Headers $headers -OutFile $plocal } catch { Remove-Item -LiteralPath $plocal -Force -ErrorAction SilentlyContinue }
+  }
+}
+
 # Sega Naomi GD-ROM games: flycast, as MAME, finds the disc in a folder named
 # after the game beside its zip (ikaruga.zip, ikaruga\gdl-0010.chd); the
 # sega-naomi-naomi2 item keeps those folders at its root. A cartridge game has
