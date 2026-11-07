@@ -175,7 +175,7 @@ if (isSystems) {
         sectionHeaders.forEach(function(header) {
             var link = document.createElement('a');
             link.href = '#';
-            link.textContent = header.id;
+            link.textContent = header.textContent || header.id;
             link.className = 'navlink';
             if (header.dataset.count) {
                 var sm = document.createElement('small');
