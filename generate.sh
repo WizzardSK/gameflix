@@ -502,9 +502,10 @@ IFS=";"; for each in "${roms[@]}"; do
     js_name="${js_name//&amp;/\&}"
     js_name="${js_name//\\/\\\\}"; js_name="${js_name//\"/\\\"}"
     js_line="${line//\\/\\\\}"; js_line="${js_line//\"/\\\"}"
-    # the snap of the MAME set of a Lindbergh or Chihiro game, as a third field
+    # the snap of the MAME set of a Lindbergh, Chihiro or Namco 246/256 game, as a third field
     thumbname=""
     if [[ "${rom[0]}" == lindbergh || "${rom[0]}" == chihiro ]]; then mame_snap_of "$line2"; thumbname="$REPLY"; fi
+    [[ "${rom[0]}" == namco2x6 ]] && { mame_snap_of "$display_name"; thumbname="$REPLY"; }
     # a MAME clone without a snap of its own takes its parent's (Virtua
     # Formula, Virtua Racing's)
     if [[ "$arcade_src" == arcade-mame && -z "${mame_snap[$line2]}" ]]; then
