@@ -481,9 +481,9 @@ IFS=";"; for each in "${roms[@]}"; do
     [[ "${rom[0]}" == hikaru && "$line" != *.zip ]] && continue
     # the PCSX2x6 collection keeps each game's folder (media, dongle, bootloader)
     # beside its .acgame; the .acgame is the game, shown without its game ID
-    [[ "${rom[0]}" == namco && "$line" != *.acgame ]] && continue
+    [[ "${rom[0]}" == namco2x6 && "$line" != *.acgame ]] && continue
     display_name="$line2"
-    [[ "${rom[0]}" == namco ]] && display_name="${line2#NM[0-9][0-9][0-9][0-9][0-9]* - }"
+    [[ "${rom[0]}" == namco2x6 ]] && display_name="${line2#NM[0-9][0-9][0-9][0-9][0-9]* - }"
     # An Atari VCS entry is a folder named after the game, with no extension
     # to strip ("B.S.U - Blow Stuff Up"), and "_ " where the title has a
     # colon ("Adventure_ 2600"); the name goes to the page as written out.
