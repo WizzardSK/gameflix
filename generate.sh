@@ -8,7 +8,7 @@ urlenc() { local s="$1" out="" i c; for ((i=0;i<${#s};i++)); do c="${s:i:1}"; ca
 declare -A sys thumb separator; sysorder=(); needsep=0; while IFS=',' read -r k v t; do if [[ -z "$k" ]]; then needsep=1; sepname="$v"; continue; fi; sys[$k]="$v"; thumb[$k]="$t"; sysorder+=("$k"); if [[ $needsep -eq 1 ]]; then separator[$k]="$sepname"; needsep=0; fi; done < <(tail -n +2 systems.csv)
 declare -A sysroms; while IFS=';' read -r k rest; do [[ -z "$k" ]] && continue; sysroms[$k]+="$k;$rest;${thumb[$k]};${sys[$k]}"$'\n'; done < <(awk '{o="";i=1;n=length($0);while(i<=n){c=substr($0,i,1);if(c==","){o=o";";i++}else if(c=="\""){i++;while(i<=n){c=substr($0,i,1);if(c=="\""){if(substr($0,i+1,1)=="\""){o=o"\"";i+=2}else{i++;break}}else{o=o c;i++}}}else{o=o c;i++}};print o}' <(tail -n +2 platforms.csv ))
 roms=(); for k in "${sysorder[@]}"; do while IFS= read -r line; do [[ -n "$line" ]] && roms+=("$line"); done <<< "${sysroms[$k]}"; done
-mkdir -p ~/{gameflix,rom,gamelists,zip,zips,mount} ~/gamelists/{tic80,wasm4,lowresnx,pico8,voxatron,switch}
+mkdir -p ~/{gameflix,rom,gamelists,zip,zips,mount} ~/gamelists/{tic80,wasm4,lowresnx,pico8,voxatron,lutro,switch}
 echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="filterBar"><input type="text" id="filterInput" placeholder="Filter..." style="width:100%;box-sizing:border-box"></div>' > ~/gameflix/systems.html
 echo '<link rel="stylesheet" type="text/css" href="style.css" /><div id="topbar"><div id="navlinks"></div></div>' > ~/gameflix/main.html
 echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gameflix</title><frameset border=0 cols='260, 100%'><frame name='menu' src='systems.html'><frame name='main' src='main.html'></frameset>" > ~/gameflix/index.html
@@ -389,6 +389,28 @@ echo "<script src=\"script.js\"></script>" >> ~/gameflix/Voxatron.html
 echo "<figure><a href='Voxatron.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/voxatron.jpg'><figcaption>Voxatron</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"Voxatron.html\" target=\"main\">Voxatron</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 echo "<gameList></gameList>" > ~/gamelists/voxatron/gamelist.xml
+
+# Lutro - the games libretro hosts on its buildbot, played in lutro_libretro
+# (play:///Lutro/Games/<file>.lutro, fetched from the buildbot like an archive.org ROM)
+pocet=0; echo "Lutro"; platform_head > ~/gameflix/Lutro.html; ((platforms++))
+lutro_src="https://buildbot.libretro.com/assets/cores/Lutro/"
+echo "*\"/Lutro/\"*) core=\"lutro_libretro\"; src=\"$lutro_src\";;" >> ~/gameflix/retroarch.sh
+printf '/Lutro/\tlutro_libretro\t\t%s\n' "$lutro_src" >> ~/gameflix/launch.tsv
+echo -e "<h3 id=\"Games\" class=\"section-header\">Games</h3>\n<script>bgImage(\"lutro\")\nfileNames = [" >> ~/gameflix/Lutro.html
+{
+  echo "<gameList>"
+  # BIOS Check is the core's own test cart, not a game
+  while IFS= read -r cart; do
+    name="${cart%.lutro}"
+    echo "\"$(jsstr "$cart")\"," >> ~/gameflix/Lutro.html
+    echo "<game><path>./${cart}</path><name>${name}</name></game>"
+    ((pocet++)); ((total++))
+  done < <(curl -s "$lutro_src" | grep -oP '(?<=href="/assets/cores/Lutro/)[^"]+\.lutro' | while IFS= read -r f; do printf '%b\n' "${f//%/\\x}"; done | grep -v '^BIOS Check' | sort -u)
+  echo "</gameList>"
+} > ~/gamelists/lutro/gamelist.xml
+printf ']; generateFileLinks("roms/Lutro", "Lutro");</script>\n<script src="script.js"></script>\n' >> ~/gameflix/Lutro.html
+echo "<figure><a href='Lutro.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/lutro.jpg'><figcaption>Lutro</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
+echo "<a href=\"Lutro.html\" target=\"main\">Lutro</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 
 # Main ROM loop - file descriptors for HTML and XML, no string buffering
 declare -A gamelist_started
