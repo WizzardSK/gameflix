@@ -999,6 +999,7 @@ mame,archive:MAME_2015_arcade_romsets/roms.zip,2015,mame2015_libretro,
 mame,archive:MAME_2016_Arcade_Romsets/roms.zip,2016,mame2016_libretro,
 vgmplay,archive:mame-sl/mame-sl/vgmplay.zip,MAME,mame_libretro vgmplay -quik,
 fbneo,archive:FBNEOPACK,FinalBurn Neo,fbneo_libretro,
+namco2x6,archive:pcsx2x6-collection/PCSX2x6 Arcade Collection/roms,PCSX2x6,pcee2_libretro,
 neogeo,archive:mame-sl/mame-sl/neogeo.zip,MAME,mame_libretro aes -cart,
 neogeocd,archive:snk-neo-geo-cd-redump,Redump,neocd_libretro,cue
 neogeocd,archive:tosec-iso-snk/Neo-Geo CD/Games/[ISO],ISO,neocd_libretro,cue
