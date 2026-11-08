@@ -466,7 +466,7 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
   arcade_src=""
   case "${rom[0]}" in
-    mame|model1|model2|model3|naomi|naomi2|hikaru|gaelco|stv) arcade_src="arcade-mame" ;;
+    mame|model1|model2|model3|naomi|naomi2|atomiswave|hikaru|gaelco|stv) arcade_src="arcade-mame" ;;
     fbneo) arcade_src="arcade-fbneo" ;;
   esac
   while IFS= read -r line; do
@@ -479,6 +479,10 @@ IFS=";"; for each in "${roms[@]}"; do
     # the Hikaru item keeps the BIOS and other boards' sets beside the games,
     # as .7z (hikaru.7z, mie.7z, naomi.7z...); the games are the zips
     [[ "${rom[0]}" == hikaru && "$line" != *.zip ]] && continue
+    # the Atomiswave item keeps the BIOS, Demul and other boards' sets beside
+    # the games (awbios.zip, demul*.zip, dolphin.zip, *.7z, artwork); the
+    # games are the other zips
+    [[ "${rom[0]}" == atomiswave && ( "$line" != *.zip || "$line" =~ ^(awbios|demul|dolphin|Atoms_|Atomiswave_) ) ]] && continue
     # Gaelco's PowerVR boards (Odin): their sets out of the whole non-merged
     # MAME set, the ones Odin's game list knows
     [[ "${rom[0]}" == gaelco && ! "$line" =~ ^(atvtrack|atvtracka|gfootbal|smashdrv|smashdrvb|smashdrvs)\.zip$ ]] && continue
