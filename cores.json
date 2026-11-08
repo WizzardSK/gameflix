@@ -9,6 +9,27 @@
   "core": "wasm4_libretro"
  },
  {
+  "pattern": "/Lutro/",
+  "core": "lutro_libretro",
+  "src": "https://buildbot.libretro.com/assets/cores/Lutro/"
+ },
+ {
+  "pattern": "/ChaiLove/",
+  "core": "chailove_libretro",
+  "src": "https://buildbot.libretro.com/assets/cores/ChaiLove/"
+ },
+ {
+  "pattern": "/VaporSpec/",
+  "core": "vaporspec_libretro",
+  "src": "https://buildbot.libretro.com/assets/cores/VaporSpec/"
+ },
+ {
+  "pattern": "/scummvm/eXo/",
+  "core": "scummvm_libretro",
+  "ext": "scummvm",
+  "src": "https://archive.org/download/eXoScummVM_v2/eXo/eXoScummVM/"
+ },
+ {
   "pattern": "/arduboy/NoIntro/",
   "core": "arduous_libretro",
   "src": "https://archive.org/download/ni-roms/roms/Arduboy%20Inc%20-%20Arduboy.zip/"
@@ -472,6 +493,11 @@
   "pattern": "/atarist/Cart MAME/",
   "core": "mame_libretro st -rom",
   "src": "https://archive.org/download/mame-sl/mame-sl/st_cart.zip/st_cart/"
+ },
+ {
+  "pattern": "/atarivcs/Store/",
+  "core": "atarivcs",
+  "src": "https://archive.org/download/atari-vcs-complete-store-archive-2026/Atari-VCS-Software/games/"
  },
  {
   "pattern": "/apple1/TOSEC/",
@@ -2058,21 +2084,6 @@
   "src": "https://archive.org/download/wii-u-retail-nus-usa/"
  },
  {
-  "pattern": "/svmu/TOSEC/",
-  "core": "mame_libretro svmu -quik",
-  "src": "https://archive.org/download/tosec-main/Sega/Visual%20Memory%20System/Games/Sega%20Visual%20Memory%20System%20-%20Games%20%28TOSEC-v2023-08-29%29.zip/"
- },
- {
-  "pattern": "/svmu/Demo/",
-  "core": "mame_libretro svmu -quik",
-  "src": "https://archive.org/download/tosec-main/Sega/Visual%20Memory%20System/Demos/Sega%20Visual%20Memory%20System%20-%20Demos%20%28TOSEC-v2023-08-29%29.zip/"
- },
- {
-  "pattern": "/svmu/MAME/",
-  "core": "mame_libretro svmu -quik",
-  "src": "https://archive.org/download/mame-sl/mame-sl/svmu.zip/svmu/"
- },
- {
   "pattern": "/sg1000/NoIntro/",
   "core": "gearsystem_libretro",
   "src": "https://archive.org/download/ni-roms/roms/Sega%20-%20SG-1000.zip/"
@@ -2263,11 +2274,6 @@
   "src": "https://archive.org/download/non-redump_sega-saturn/"
  },
  {
-  "pattern": "/stv/MAME/",
-  "core": "mame_libretro stvbios",
-  "src": "https://archive.org/download/mame-sl/mame-sl/stv.zip/stv/"
- },
- {
   "pattern": "/dreamcast/Redump/",
   "core": "flycast_libretro",
   "ext": "cue",
@@ -2298,16 +2304,6 @@
   "src": "https://archive.org/download/tosec-iso-sega/Dreamcast/Games/JP/"
  },
  {
-  "pattern": "/model2/Sega Model 2/",
-  "core": "mame_libretro",
-  "src": "https://archive.org/download/m2emu1.1a/Sega%20Model%202%20Emu%201.1a%20and%20Full%20Romset/Model%202%20Romset%20%28Merged%29/"
- },
- {
-  "pattern": "/model3/Sega Model 3/",
-  "core": "mame_libretro",
-  "src": "https://archive.org/download/segamodel3/ROMs/"
- },
- {
   "pattern": "/gamegear/NoIntro/",
   "core": "gearsystem_libretro",
   "src": "https://archive.org/download/ni-roms/roms/Sega%20-%20Game%20Gear.zip/"
@@ -2328,9 +2324,54 @@
   "src": "https://archive.org/download/mame-sl/mame-sl/gamegear.zip/gamegear/"
  },
  {
-  "pattern": "/pockstat/TOSEC/",
-  "core": "mame_libretro pockstat -cart",
-  "src": "https://archive.org/download/tosec-main/Sony/PocketStation/Various/Sony%20PocketStation%20-%20Various%20%28TOSEC-v2014-05-29%29.zip/"
+  "pattern": "/stv/MAME/",
+  "core": "mame_libretro stvbios",
+  "src": "https://archive.org/download/mame-sl/mame-sl/stv.zip/stv/"
+ },
+ {
+  "pattern": "/model1/Sega Model 1/",
+  "core": "mame_libretro",
+  "src": "https://archive.org/download/Ages_Sega_Model_1/Model1/"
+ },
+ {
+  "pattern": "/model2/Sega Model 2/",
+  "core": "mame_libretro",
+  "src": "https://archive.org/download/m2emu1.1a/Sega%20Model%202%20Emu%201.1a%20and%20Full%20Romset/Model%202%20Romset%20%28Merged%29/"
+ },
+ {
+  "pattern": "/model3/Sega Model 3/",
+  "core": "mame_libretro",
+  "src": "https://archive.org/download/segamodel3/ROMs/"
+ },
+ {
+  "pattern": "/naomi/MAME 0.255/",
+  "core": "flycast_libretro",
+  "src": "https://archive.org/download/sega-naomi-naomi2/Sega%20Naomi/"
+ },
+ {
+  "pattern": "/naomi2/Naomi 2/",
+  "core": "flycast_libretro",
+  "src": "https://archive.org/download/naomi-2/"
+ },
+ {
+  "pattern": "/hikaru/Hikaru/",
+  "core": "odin_libretro",
+  "src": "https://archive.org/download/hikaru_202607/"
+ },
+ {
+  "pattern": "/gaelco/MAME 0.264/",
+  "core": "odin_libretro",
+  "src": "https://archive.org/download/mame-0.264-roms-non-merged/MAME%200.264%20ROMs%20%28non-merged%29/"
+ },
+ {
+  "pattern": "/chihiro/Netboot/",
+  "core": "xemu_libretro",
+  "src": "https://archive.org/download/ChihiroNetboot/"
+ },
+ {
+  "pattern": "/lindbergh/Clean Data/",
+  "core": "linuxloader_libretro",
+  "src": "https://archive.org/download/SegaLindbergh/"
  },
  {
   "pattern": "/smc777/MAME/",
@@ -2392,6 +2433,336 @@
   "src": "https://archive.org/download/non-redump_sony_playstation2_part3/"
  },
  {
+  "pattern": "/ps3/Redump #/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_numberssymbols/"
+ },
+ {
+  "pattern": "/ps3/Redump A1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_a_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump A2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_a_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump A3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_a_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump B1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_b_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump B2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_b_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump B3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_b_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump C1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_c_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump C2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_c_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump C3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_c_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump D1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_d_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump D2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_d_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump D3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_d_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump D4/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_d_part4/"
+ },
+ {
+  "pattern": "/ps3/Redump D5/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_d_part5/"
+ },
+ {
+  "pattern": "/ps3/Redump E/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_e/"
+ },
+ {
+  "pattern": "/ps3/Redump F1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_f_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump F2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_f_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump F3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_f_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump G1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_g_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump G2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_g_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump G3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_g_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump H1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_h_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump H2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_h_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump I/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_i/"
+ },
+ {
+  "pattern": "/ps3/Redump J/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_j/"
+ },
+ {
+  "pattern": "/ps3/Redump K/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_k/"
+ },
+ {
+  "pattern": "/ps3/Redump L1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_l_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump L2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_l_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump L3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_l_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump M1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_m_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump M2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_m_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump M3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_m_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump M4/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_m_part4/"
+ },
+ {
+  "pattern": "/ps3/Redump M5/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_m_part5/"
+ },
+ {
+  "pattern": "/ps3/Redump N1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_n_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump N2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_n_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump N3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_n_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump O1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_o_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump O2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_o_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump O3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_o_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump P1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_p_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump P2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_p_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump Q/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_q/"
+ },
+ {
+  "pattern": "/ps3/Redump R1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_r_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump R2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_r_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump R3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_r_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump R4/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_r_part4/"
+ },
+ {
+  "pattern": "/ps3/Redump S1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_s_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump S2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_s_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump S3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_s_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump S4/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_s_part4/"
+ },
+ {
+  "pattern": "/ps3/Redump S5/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_s_part5/"
+ },
+ {
+  "pattern": "/ps3/Redump S6/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_s_part6/"
+ },
+ {
+  "pattern": "/ps3/Redump T1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_t_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump T2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_t_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump T3/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_t_part3/"
+ },
+ {
+  "pattern": "/ps3/Redump T4/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_t_part4/"
+ },
+ {
+  "pattern": "/ps3/Redump U1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_u_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump U2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_u_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump V/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_v/"
+ },
+ {
+  "pattern": "/ps3/Redump W1/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_w_part1/"
+ },
+ {
+  "pattern": "/ps3/Redump W2/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_w_part2/"
+ },
+ {
+  "pattern": "/ps3/Redump X/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_x/"
+ },
+ {
+  "pattern": "/ps3/Redump Y/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_y/"
+ },
+ {
+  "pattern": "/ps3/Redump Z/",
+  "core": "rpcs3_libretro",
+  "src": "https://archive.org/download/sony_playstation3_z/"
+ },
+ {
   "pattern": "/psp/Redump/",
   "core": "ppsspp_libretro",
   "ext": "iso",
@@ -2410,6 +2781,11 @@
   "src": "https://archive.org/download/tosec-iso-sony/PlayStation%20Portable/Games/%5BISO%5D/"
  },
  {
+  "pattern": "/psvita/USA NoNpDRM/",
+  "core": "vita3k_libretro",
+  "src": "https://archive.org/download/sony-playstation-vita-usa-full-set-nonpdrm-format/"
+ },
+ {
   "pattern": "/xbox/XISO 0-M/",
   "core": "xemu_libretro",
   "src": "https://archive.org/download/metal-gear-solid-2-substance-usa/"
@@ -2423,6 +2799,12 @@
   "pattern": "/xbox/XISO Extra/",
   "core": "xemu_libretro",
   "src": "https://archive.org/download/microsoft-xbox-xemu-ready-software-collection-part-3/"
+ },
+ {
+  "pattern": "/xbox360/Redump/",
+  "core": "xenia_edge_libretro",
+  "ext": "iso",
+  "src": "https://archive.org/download/redump-microsoft-xbox-360-games-myrient-unique-files/"
  },
  {
   "pattern": "/dos/eXoDOS/",
@@ -3110,11 +3492,6 @@
   "src": "https://archive.org/download/mame-sl/mame-sl/entex_sag.zip/entex_sag/"
  },
  {
-  "pattern": "/ekara/MAME/",
-  "core": "mame_libretro ekara -cart",
-  "src": "https://archive.org/download/mame-sl/mame-sl/ekara_cart.zip/ekara_cart/"
- },
- {
   "pattern": "/videoart/MAME/",
   "core": "mame_libretro videoart -cart",
   "src": "https://archive.org/download/mame-sl/mame-sl/videoart.zip/videoart/"
@@ -3211,7 +3588,7 @@
  },
  {
   "pattern": "/trs80/Edu [DSK]/",
-  "core": "mame_libretro trs80m3 -flop1",
+  "core": "mame_libretro trs80m3 -quik",
   "src": "https://archive.org/download/tosec-main/Tandy%20Radio%20Shack/TRS-80%20Model%20III/Educational/%5BDSK%5D/Tandy%20Radio%20Shack%20TRS-80%20Model%20III%20-%20Educational%20-%20%5BDSK%5D%20%28TOSEC-v2024-07-03%29.zip/"
  },
  {
@@ -4836,6 +5213,11 @@
   "src": "https://archive.org/download/tosec-iso-memorex/Video%20Information%20System/Multimedia/"
  },
  {
+  "pattern": "/playdia/Redump/",
+  "core": "playdiaemu_libretro",
+  "src": "https://archive.org/download/bandai_playdia_quick_interactive_system/"
+ },
+ {
   "pattern": "/mame/Merged/",
   "core": "mame_libretro",
   "src": "https://archive.org/download/mame-roms-merged_/MAME%20ROMs%20%28merged%29/"
@@ -4843,12 +5225,12 @@
  {
   "pattern": "/mame/Non-Merged/",
   "core": "mame_libretro",
-  "src": "https://archive.org/download/mame-0.264-roms-non-merged/"
+  "src": "https://archive.org/download/mame-0.264-roms-non-merged/MAME%200.264%20ROMs%20%28non-merged%29/"
  },
  {
   "pattern": "/mame/Split/",
   "core": "mame_libretro",
-  "src": "https://archive.org/download/mame-0.260-roms-split_202310/"
+  "src": "https://archive.org/download/mame-0.260-roms-split_202310/MAME%200.260%20ROMs%20%28split%29/MAME%200.260%20ROMs%20%28split%29/"
  },
  {
   "pattern": "/mame/2000/",
@@ -4889,6 +5271,11 @@
   "pattern": "/fbneo/FinalBurn Neo/",
   "core": "fbneo_libretro",
   "src": "https://archive.org/download/FBNEOPACK/"
+ },
+ {
+  "pattern": "/namco2x6/System 246-256/",
+  "core": "pcee2_libretro",
+  "src": "https://archive.org/download/pcsx2x6-collection/PCSX2x6%20Arcade%20Collection/roms/"
  },
  {
   "pattern": "/neogeo/MAME/",
@@ -5121,6 +5508,31 @@
   "pattern": "/gameking3/MAME/",
   "core": "mame_libretro gamekin3 -cart",
   "src": "https://archive.org/download/mame-sl/mame-sl/gameking3.zip/gameking3/"
+ },
+ {
+  "pattern": "/svmu/TOSEC/",
+  "core": "mame_libretro svmu -quik",
+  "src": "https://archive.org/download/tosec-main/Sega/Visual%20Memory%20System/Games/Sega%20Visual%20Memory%20System%20-%20Games%20%28TOSEC-v2023-08-29%29.zip/"
+ },
+ {
+  "pattern": "/svmu/Demo/",
+  "core": "mame_libretro svmu -quik",
+  "src": "https://archive.org/download/tosec-main/Sega/Visual%20Memory%20System/Demos/Sega%20Visual%20Memory%20System%20-%20Demos%20%28TOSEC-v2023-08-29%29.zip/"
+ },
+ {
+  "pattern": "/svmu/MAME/",
+  "core": "mame_libretro svmu -quik",
+  "src": "https://archive.org/download/mame-sl/mame-sl/svmu.zip/svmu/"
+ },
+ {
+  "pattern": "/pockstat/TOSEC/",
+  "core": "mame_libretro pockstat -cart",
+  "src": "https://archive.org/download/tosec-main/Sony/PocketStation/Various/Sony%20PocketStation%20-%20Various%20%28TOSEC-v2014-05-29%29.zip/"
+ },
+ {
+  "pattern": "/ekara/MAME/",
+  "core": "mame_libretro ekara -cart",
+  "src": "https://archive.org/download/mame-sl/mame-sl/ekara_cart.zip/ekara_cart/"
  },
  {
   "pattern": "/j2me/NoIntro/",
