@@ -483,6 +483,9 @@ IFS=";"; for each in "${roms[@]}"; do
     # the games (awbios.zip, demul*.zip, dolphin.zip, *.7z, artwork); the
     # games are the other zips
     [[ "${rom[0]}" == atomiswave && ( "$line" != *.zip || "$line" =~ ^(awbios|demul|dolphin|Atoms_|Atomiswave_) ) ]] && continue
+    # the Triforce item: the games are its GameCube images; Tatsunoko vs.
+    # Capcom there is the Wii's and Dolphin's builds, not a Triforce game
+    [[ "${rom[0]}" == triforce && ( ! "$line" =~ \.(iso|gcm)$ || "$line" == TATSUNOKO* ) ]] && continue
     # Gaelco's PowerVR boards (Odin): their sets out of the whole non-merged
     # MAME set, the ones Odin's game list knows
     [[ "${rom[0]}" == gaelco && ! "$line" =~ ^(atvtrack|atvtracka|gfootbal|smashdrv|smashdrvb|smashdrvs)\.zip$ ]] && continue
@@ -513,6 +516,18 @@ IFS=";"; for each in "${roms[@]}"; do
     thumbname=""
     if [[ "${rom[0]}" == lindbergh || "${rom[0]}" == chihiro ]]; then mame_snap_of "$line2"; thumbname="$REPLY"; fi
     [[ "${rom[0]}" == namco2x6 ]] && { mame_snap_of "$display_name"; thumbname="$REPLY"; }
+    # a Triforce image's MAME set, by its title
+    if [[ "${rom[0]}" == triforce ]]; then
+      case "$line2" in
+        "F-Zero AX (Monster)"*|"F-Zero AX Monster"*) thumbname=fzeroaxm ;;
+        "F-Zero AX"*) thumbname=fzeroax ;;
+        "Gekitou Pro Yakyuu"*) thumbname=gekpurya ;;
+        "Mario Kart Arcade GP 2"*|"Mario Kart Arcade GP2"*) thumbname=mkartag2 ;;
+        "Mario Kart Arcade GP"*) thumbname=mkartagp ;;
+        "Virtua Striker 3"*) thumbname=vs2002ex ;;
+        "Virtua Striker 4"*) thumbname=vs42006 ;;
+      esac
+    fi
     # a MAME clone without a snap of its own takes its parent's (Virtua
     # Formula, Virtua Racing's)
     if [[ "$arcade_src" == arcade-mame && -z "${mame_snap[$line2]}" ]]; then
