@@ -466,7 +466,7 @@ IFS=";"; for each in "${roms[@]}"; do
   fi
   arcade_src=""
   case "${rom[0]}" in
-    mame|model1|model2|model3|naomi|naomi2|hikaru|stv) arcade_src="arcade-mame" ;;
+    mame|model1|model2|model3|naomi|naomi2|hikaru|gaelco|stv) arcade_src="arcade-mame" ;;
     fbneo) arcade_src="arcade-fbneo" ;;
   esac
   while IFS= read -r line; do
@@ -479,6 +479,9 @@ IFS=";"; for each in "${roms[@]}"; do
     # the Hikaru item keeps the BIOS and other boards' sets beside the games,
     # as .7z (hikaru.7z, mie.7z, naomi.7z...); the games are the zips
     [[ "${rom[0]}" == hikaru && "$line" != *.zip ]] && continue
+    # Gaelco's PowerVR boards (Odin): their sets out of the whole non-merged
+    # MAME set, the ones Odin's game list knows
+    [[ "${rom[0]}" == gaelco && ! "$line" =~ ^(atvtrack|atvtracka|gfootbal|smashdrv|smashdrvb|smashdrvs)\.zip$ ]] && continue
     # the PCSX2x6 collection keeps each game's folder (media, dongle, bootloader)
     # beside its .acgame; the .acgame is the game, shown without its game ID
     [[ "${rom[0]}" == namco2x6 && "$line" != *.acgame ]] && continue
