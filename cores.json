@@ -2354,6 +2354,11 @@
   "src": "https://archive.org/download/naomi-2/"
  },
  {
+  "pattern": "/atomiswave/Atomiswave/",
+  "core": "flycast_libretro",
+  "src": "https://archive.org/download/atomiswave_202607/"
+ },
+ {
   "pattern": "/hikaru/Hikaru/",
   "core": "odin_libretro",
   "src": "https://archive.org/download/hikaru_202607/"
