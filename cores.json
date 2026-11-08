@@ -2374,6 +2374,11 @@
   "src": "https://archive.org/download/ChihiroNetboot/"
  },
  {
+  "pattern": "/triforce/Triforce/",
+  "core": "dolphin_libretro",
+  "src": "https://archive.org/download/triforce_namco-sega-nintendo/"
+ },
+ {
   "pattern": "/lindbergh/Clean Data/",
   "core": "linuxloader_libretro",
   "src": "https://archive.org/download/SegaLindbergh/"
