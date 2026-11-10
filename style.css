@@ -18,3 +18,15 @@ a { color: cyan; text-decoration: none }
    sized to the whole list and .figureRows holds the visible rows. */
 .figureList { position: relative }
 .figureRows { position: absolute; left: 0; right: 0; display: grid; column-gap: 4px }
+
+/* launcher-help.js: install instructions when a click starts nothing */
+#gfHelp { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 16px; font-family: Tahoma, sans-serif }
+#gfHelp .gfh-box { background: #222; color: #ddd; max-width: 640px; width: 100%; max-height: 90vh; overflow: auto; padding: 16px 20px; border-radius: 8px; box-shadow: 0 0 30px #000; font-size: 10pt }
+#gfHelp h3 { margin: 0 0 8px; color: #fff }
+#gfHelp a { color: #8cf }
+#gfHelp .gfh-os { margin: 12px 0 }
+#gfHelp .gfh-note { color: #aaa; margin: 4px 0 }
+#gfHelp .gfh-cmd { display: flex; gap: 8px; align-items: center; background: #111; padding: 6px 8px; border-radius: 4px }
+#gfHelp .gfh-cmd code { flex: 1; white-space: pre-wrap; word-break: break-all; color: #9f9 }
+#gfHelp .gfh-buttons { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; margin-top: 12px }
+#gfHelp button { cursor: pointer }

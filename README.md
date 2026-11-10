@@ -30,7 +30,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/WizzardSK/gameflix/main/webfli
 
 On **Windows**, see [Windows setup](#windows) for the PowerShell installer.
 
-Open <https://wizzardsk.github.io/> in your browser and click a game thumbnail to launch it. ROMs download per-game on click; no local install of the web interface is needed.
+Open <https://wizzardsk.github.io/> in your browser and click a game thumbnail to launch it. ROMs download per-game on click; no local install of the web interface is needed. If a click starts nothing because the launcher is not installed, the page shows these install steps (`launcher-help.js`).
 
 ## How it works
 

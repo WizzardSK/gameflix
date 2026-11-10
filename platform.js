@@ -31,6 +31,8 @@ document.write(text);
 
 // On Android, launch games in the native RetroArch app (intent://). No-op elsewhere.
 document.write('<script src="intent.js"></script>');
+// Elsewhere, install instructions when a click starts nothing (no launcher)
+document.write('<script src="launcher-help.js"></script>');
 
 var _bgPlatform;
 function bgImage(platform) {
