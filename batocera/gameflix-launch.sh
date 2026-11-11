@@ -92,7 +92,7 @@ if [[ -n "$rom" && ! -e "$rom" ]]; then
       [[ -n "$ia_key" && -n "$ia_sec" ]] && ia_auth="LOW ${ia_key}:${ia_sec}"
     fi
     relpath="${rom#/userdata/roms/}"; inner="${relpath#*/}"; inner="${inner#*/}"
-    urlenc() { local LC_ALL=C s="$1" i c e=""; for ((i=0;i<${#s};i++)); do c="${s:i:1}"; case "$c" in [/a-zA-Z0-9._~-]) e+="$c";; *) printf -v c '%%%02X' "'$c"; e+="$c";; esac; done; printf '%s' "$e"; }
+    urlenc() { local LC_ALL=C s="$1" i c e=""; for ((i=0;i<${#s};i++)); do c="${s:i:1}"; case "$c" in [/a-zA-Z0-9._~-]) e+="$c";; *) printf -v c '%d' "'$c"; printf -v c '%%%02X' $((c & 255)); e+="$c";; esac; done; printf '%s' "$e"; }
     enc=$(urlenc "$inner")
     mkdir -p "$(dirname "$rom")"
     dl_url="${src}${enc}"

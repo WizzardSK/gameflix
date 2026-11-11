@@ -479,7 +479,7 @@ if [[ -n "$src" && ! -e "$1" && $lindbergh_unpacked == 0 ]]; then
   mkdir -p "$(dirname "$1")"
   relpath="${1#$HOME/share/roms/}"
   inner="${relpath#*/}"; inner="${inner#*/}"
-  urlenc() { local LC_ALL=C s="$1" i c e=""; for ((i=0;i<${#s};i++)); do c="${s:i:1}"; case "$c" in [/a-zA-Z0-9._~-]) e+="$c";; *) printf -v c '%%%02X' "'$c"; e+="$c";; esac; done; printf '%s' "$e"; }
+  urlenc() { local LC_ALL=C s="$1" i c e=""; for ((i=0;i<${#s};i++)); do c="${s:i:1}"; case "$c" in [/a-zA-Z0-9._~-]) e+="$c";; *) printf -v c '%d' "'$c"; printf -v c '%%%02X' $((c & 255)); e+="$c";; esac; done; printf '%s' "$e"; }
   enc=$(urlenc "$inner")
   fname="${1##*/}"
   gameflix_ia_auth
@@ -506,8 +506,16 @@ if [[ -n "$src" && ! -e "$1" && $lindbergh_unpacked == 0 ]]; then
     fi
   elif ! curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$1" "${src}${enc}"; then
     rm -f "$1"
-    echo "Download failed: ${src}${enc}" >&2
-    exit 1
+    # Some TOSEC zips keep UTF-8 names without the UTF-8 flag, so the Internet
+    # Archive reads them as CP437 and its unzip only finds "Br├╕derbund" for
+    # "Brøderbund" (exit 11): try the name in that form too
+    enc437=""
+    [[ "$inner" == *[![:ascii:]]* ]] && command -v iconv >/dev/null && enc437=$(urlenc "$(printf '%s' "$inner" | iconv -f CP437 -t UTF-8 2>/dev/null)")
+    if [[ -z "$enc437" || "$enc437" == "$enc" ]] || ! curl -sfL --location-trusted ${ia_auth:+-H "Authorization: $ia_auth"} -o "$1" "${src}${enc437}"; then
+      rm -f "$1"
+      echo "Download failed: ${src}${enc}" >&2
+      exit 1
+    fi
   fi
 fi
 
