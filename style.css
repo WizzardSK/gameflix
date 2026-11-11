@@ -1,3 +1,5 @@
+@font-face { font-family: Tahoma; src: local("Tahoma"), url("fonts/WineTahoma.ttf") format("truetype"); font-weight: normal; font-display: swap }
+@font-face { font-family: Tahoma; src: local("Tahoma Bold"), local("Tahoma-Bold"), url("fonts/WineTahoma-Bold.ttf") format("truetype"); font-weight: bold; font-display: swap }
 body { background-color: #333333; font-size: 11pt; font-family: Tahoma; color: white; margin: 0; padding: 0 5px }
 figure { background-repeat: no-repeat;  background-position: top; background-position-y: 25px; background-size: auto 40%; cursor: pointer; margin: 0; display: inline-block; width: 160; height: 160; font-size: 8pt; font-family: Tahoma; vertical-align: top; transition: transform 0.3s ease; text-align: center; background-color: #333333; position: relative }
 figcaption { display: block; line-height: 1.2em; max-height: 3.6em; overflow: hidden; background-color: #333333; -webkit-mask-image: linear-gradient(to bottom, black 2em, transparent 3.6em); mask-image: linear-gradient(to bottom, black 2em, transparent 3.6em); transition: max-height 0.5s ease, -webkit-mask-image 0.5s ease, mask-image 0.5s ease }

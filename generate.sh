@@ -15,6 +15,7 @@ echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gamefli
 # cores.json is NOT copied here — it is generated from launch.tsv at the end so
 # the Android intent map can never drift from platforms.csv (see gen_cores.py).
 for file in retroarch.sh retroarch.ps1 mame_deps.tsv webflix.ps1 style.css script.js platform.js intent.js launcher-help.js intent-test.html; do cp $file ~/gameflix/$file; done
+mkdir -p ~/gameflix/fonts && cp fonts/* ~/gameflix/fonts/
 echo 'gameflix_lookup_src() { src=""; case "$1" in' > ~/gameflix/urls.sh
 # Windows launcher data: KEY<TAB>core<TAB>ext<TAB>src (parsed by retroarch.ps1)
 : > ~/gameflix/launch.tsv
