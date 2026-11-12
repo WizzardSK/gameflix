@@ -155,6 +155,27 @@ gameflix_fetch_firmware() {
   return $missing
 }
 
+# Commander X16 (x16emu_libretro): the KERNAL ROM, x16/rom.bin, is in no
+# BIOS pack and no buildbot system zip, but every x16emu release ships it
+# (BSD licensed). The release the core is built from: change it with the core.
+x16_rom_release="r49"
+gameflix_x16_rom() {
+  local dest="$sysdir/x16/rom.bin" tmpz
+  [[ -s "$dest" ]] && return 0
+  tmpz=$(mktemp)
+  echo "Fetching the Commander X16 KERNAL ROM ($x16_rom_release) ..." >&2
+  mkdir -p "$sysdir/x16"
+  if curl -sfL --max-time 300 -o "$tmpz" \
+       "https://github.com/X16Community/x16-emulator/releases/download/$x16_rom_release/x16emu_linux-x86_64-$x16_rom_release.zip" &&
+     unzip -ojq "$tmpz" rom.bin -d "$sysdir/x16" && [[ -s "$dest" ]]; then
+    rm -f "$tmpz"
+    return 0
+  fi
+  rm -f "$tmpz" "$dest"
+  echo "Could not fetch rom.bin - put it in $dest yourself" >&2
+  return 1
+}
+
 # Sega Chihiro (xemu_libretro): the BIOS, the media board flash and the
 # EEPROMs in system/xemu/Chihiro, under the MAME names the core looks for. Its
 # .info lists them as optional, and the BIOS pack has none of them; the
@@ -820,6 +841,7 @@ if [[ "$core" == *libretro* ]]; then
   fi
   # Whatever core we ended up with - the one asked for, the one fetched, or the
   # near-name fallback - it is the one whose firmware has to be there.
+  case "$corepath" in */x16emu_libretro.so) gameflix_x16_rom ;; esac
   gameflix_fetch_firmware "$(basename "$corepath" .so)"
   case "$1" in */chihiro/*) gameflix_chihiro_files ;; */ps3/*) LC_ALL=C gameflix_ps3_dkey "$1" ;; esac
 fi

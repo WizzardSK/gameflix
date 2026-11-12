@@ -3,8 +3,8 @@ arduboy,archive:ni-roms/roms/Arduboy Inc - Arduboy.zip,NoIntro,arduous_libretro,
 arduboy,archive:tosec-main/Arduboy/Arduboy/Games/[ARDUBOY]/Arduboy Arduboy - Games - [ARDUBOY] (TOSEC-v2024-01-15).zip,TOSEC,arduous_libretro,
 arduboy,archive:tosec-main/Arduboy/Arduboy/Demos/Arduboy Arduboy - Demos (TOSEC-v2024-01-15).zip,Demo,arduous_libretro,
 uzebox,archive:mame-sl/mame-sl/uzebox.zip,MAME,mame_libretro uzebox -cart,
-commanderx16,archive:tosec-main/8-Bit Productions/Commander X16/Games/[IMG]/8-Bit Productions Commander X16 - Games - [IMG] (TOSEC-v2024-01-15).zip,Games,x16emu,img
-commanderx16,archive:tosec-main/8-Bit Productions/Commander X16/Demos/8-Bit Productions Commander X16 - Demos (TOSEC-v2023-08-29).zip,Demo,x16emu,img
+commanderx16,archive:tosec-main/8-Bit Productions/Commander X16/Games/[IMG]/8-Bit Productions Commander X16 - Games - [IMG] (TOSEC-v2024-01-15).zip,Games,x16emu_libretro,img
+commanderx16,archive:tosec-main/8-Bit Productions/Commander X16/Demos/8-Bit Productions Commander X16 - Demos (TOSEC-v2023-08-29).zip,Demo,x16emu_libretro,img
 vircon32,archive:all_vircon32_roms_and_media/all_vircon32_roms_and_media,Vircon32,vircon32_libretro,
 pdp1,archive:mame-sl/mame-sl/pdp1_ptp.zip,MAME,mame_libretro pdp1 -ptap1,
 atari2600,archive:atari-2600-vcs-roms/ROMS,ROMS,stella_libretro,

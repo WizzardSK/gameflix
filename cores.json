@@ -51,13 +51,13 @@
  },
  {
   "pattern": "/commanderx16/Games/",
-  "core": "x16emu",
+  "core": "x16emu_libretro",
   "ext": "img",
   "src": "https://archive.org/download/tosec-main/8-Bit%20Productions/Commander%20X16/Games/%5BIMG%5D/8-Bit%20Productions%20Commander%20X16%20-%20Games%20-%20%5BIMG%5D%20%28TOSEC-v2024-01-15%29.zip/"
  },
  {
   "pattern": "/commanderx16/Demo/",
-  "core": "x16emu",
+  "core": "x16emu_libretro",
   "ext": "img",
   "src": "https://archive.org/download/tosec-main/8-Bit%20Productions/Commander%20X16/Demos/8-Bit%20Productions%20Commander%20X16%20-%20Demos%20%28TOSEC-v2023-08-29%29.zip/"
  },
