@@ -204,6 +204,10 @@ while IFS=$'\t' read -r sn par; do [[ -n "$sn" ]] && mame_parent["$sn"]="$par"; 
 # Sets MAME no longer has, by the set whose snap they take (Magical Truck
 # Adventure's old bad dump, in the Model 3 list)
 mame_parent[mgtrkbad]=magtruck
+# Sets MAME renamed since an older list's version: the list's name -> today's,
+# per list folder (gen_mame_renames.py, from progettosnaps' allMAMErenamed)
+declare -A mame_ren
+while IFS=$'\t' read -r fo sn now; do [[ -n "$sn" ]] && mame_ren["$fo:$sn"]="$now"; done < mame_renames.tsv
 
 # Sega Lindbergh and Chihiro: MAME emulates neither, but its database names
 # their games, and the MAME thumbnail repo has snaps of many of them under the
@@ -513,6 +517,14 @@ IFS=";"; for each in "${roms[@]}"; do
     elif [[ -n "$arcade_src" && -n "${mame_name[$arcade_src:$set2]}" ]]; then
       display_name="${mame_name[$arcade_src:$set2]}"
     fi
+    # a set of an older list that MAME has renamed since (and that has no
+    # snap under its old name): its snap, and its title if MAME no longer
+    # knows the old name, are today's set's
+    ren_now=""
+    if [[ "$arcade_src" == arcade-mame && -z "${mame_snap[$set2]}" ]]; then
+      ren_now="${mame_ren[${rom[2]}:$set2]}"
+      [[ -n "$ren_now" && "$display_name" == "$set2" && -n "${mame_name[$arcade_src:$ren_now]}" ]] && display_name="${mame_name[$arcade_src:$ren_now]}"
+    fi
     # Decode the entities, then escape backslashes and double quotes for the JS
     # string literal (MAME names like: Aigiina no Yogen - from "The Legend of ...")
     js_name="$display_name"
@@ -542,8 +554,13 @@ IFS=";"; for each in "${roms[@]}"; do
     # Formula, Virtua Racing's)
     [[ "$set2" != "$line2" ]] && thumbname="$set2"
     if [[ "$arcade_src" == arcade-mame && -z "${mame_snap[$set2]}" ]]; then
-      par="${mame_parent[$set2]}"
-      [[ -n "$par" && -n "${mame_snap[$par]}" ]] && thumbname="$par"
+      if [[ -n "$ren_now" ]]; then
+        if [[ -n "${mame_snap[$ren_now]}" ]]; then thumbname="$ren_now"
+        else par="${mame_parent[$ren_now]}"; [[ -n "$par" && -n "${mame_snap[$par]}" ]] && thumbname="$par"; fi
+      else
+        par="${mame_parent[$set2]}"
+        [[ -n "$par" && -n "${mame_snap[$par]}" ]] && thumbname="$par"
+      fi
     fi
     # the page strips an extension after the last dot, which an Atari VCS
     # name with dots has not ("A.R.T.I. 7800"): name its snap outright
