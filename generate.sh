@@ -473,7 +473,16 @@ IFS=";"; for each in "${roms[@]}"; do
   while IFS= read -r line; do
     [[ -z "$line" ]] && continue
     line2="${line%.*}"
-    [[ -n "$arcade_src" && -n "${mame_nogame[$line2]}" ]] && continue
+    # MAME 0.106's set is one zip with its folders inside: the games are
+    # roms/<set>.zip, beside the samples, a CHD folder per game, the dat and
+    # a readme. A game keeps its path (the launcher fetches it from the zip),
+    # its name and snap are its set's.
+    set2="$line2"
+    if [[ "${rom[1]}" == */MAME0.106Non-Merged.zip ]]; then
+      [[ "$line" =~ ^[^/]+/roms/[^/]+\.zip$ ]] || continue
+      set2="${line2##*/}"
+    fi
+    [[ -n "$arcade_src" && -n "${mame_nogame[$set2]}" ]] && continue
     # a disc image lying loose in the NAOMI set (gdl-0032.chd, Radirgy's) is
     # not a game: a GD-ROM game is its zip, the launcher fetches the disc
     [[ "${rom[0]}" == naomi && "$line" == *.chd ]] && continue
@@ -493,7 +502,7 @@ IFS=";"; for each in "${roms[@]}"; do
     # the PCSX2x6 collection keeps each game's folder (media, dongle, bootloader)
     # beside its .acgame; the .acgame is the game, shown without its game ID
     [[ "${rom[0]}" == namco2x6 && "$line" != *.acgame ]] && continue
-    display_name="$line2"
+    display_name="$set2"
     [[ "${rom[0]}" == namco2x6 ]] && display_name="${line2#NM[0-9][0-9][0-9][0-9][0-9]* - }"
     # An Atari VCS entry is a folder named after the game, with no extension
     # to strip ("B.S.U - Blow Stuff Up"), and "_ " where the title has a
@@ -501,8 +510,8 @@ IFS=";"; for each in "${roms[@]}"; do
     if [[ "${rom[0]}" == atarivcs ]]; then line2="$line"; display_name="${line//_ /: }"; fi
     if [[ -n "$softlist" && -n "${mame_name[$softlist:$line2]}" ]]; then
       display_name="${mame_name[$softlist:$line2]}"
-    elif [[ -n "$arcade_src" && -n "${mame_name[$arcade_src:$line2]}" ]]; then
-      display_name="${mame_name[$arcade_src:$line2]}"
+    elif [[ -n "$arcade_src" && -n "${mame_name[$arcade_src:$set2]}" ]]; then
+      display_name="${mame_name[$arcade_src:$set2]}"
     fi
     # Decode the entities, then escape backslashes and double quotes for the JS
     # string literal (MAME names like: Aigiina no Yogen - from "The Legend of ...")
@@ -531,8 +540,9 @@ IFS=";"; for each in "${roms[@]}"; do
     fi
     # a MAME clone without a snap of its own takes its parent's (Virtua
     # Formula, Virtua Racing's)
-    if [[ "$arcade_src" == arcade-mame && -z "${mame_snap[$line2]}" ]]; then
-      par="${mame_parent[$line2]}"
+    [[ "$set2" != "$line2" ]] && thumbname="$set2"
+    if [[ "$arcade_src" == arcade-mame && -z "${mame_snap[$set2]}" ]]; then
+      par="${mame_parent[$set2]}"
       [[ -n "$par" && -n "${mame_snap[$par]}" ]] && thumbname="$par"
     fi
     # the page strips an extension after the last dot, which an Atari VCS
