@@ -1,0 +1,46 @@
+name: Cassette Vision to archive.org
+
+# The Epoch Cassette Vision games as zips the PD777 core loads (see
+# scripts/cassettevision_pd777.py), made from the sources in the
+# epoch-cassette-vision-roms-and-emulator item and uploaded as their own item.
+on:
+  workflow_dispatch:
+    inputs:
+      ia_identifier:
+        description: 'Internet Archive item identifier'
+        required: true
+        default: 'epoch-cassette-vision-pd777'
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        run: pip install internetarchive
+
+      - name: Configure Internet Archive
+        run: |
+          mkdir -p ~/.config/internetarchive
+          printf '[s3]\naccess = %s\nsecret = %s\n' "${{ secrets.IA_ACCESS }}" "${{ secrets.IA_SECRET }}" > ~/.config/internetarchive/ia.ini
+
+      - name: Convert
+        run: |
+          curl -sfL -o src.zip "https://archive.org/download/epoch-cassette-vision-roms-and-emulator/Epoch%20Cassette%20Vision%20ROMs%20and%20Emulator.zip"
+          unzip -q src.zip
+          unzip -q "Epoch Cassette Vision ROMs and Emulator/CPP Files.zip" -d cpp
+          mkdir out
+          python3 scripts/cassettevision_pd777.py cpp out
+          ls -l out
+          test "$(ls out/*.zip | wc -l)" -eq 11
+
+      - name: Upload
+        run: |
+          cd out
+          ia upload "${{ inputs.ia_identifier }}" *.zip \
+            --metadata="mediatype:software" \
+            --metadata="title:Epoch Cassette Vision - games for the PD777 emulator" \
+            --metadata="subject:Epoch Cassette Vision; PD777; libretro" \
+            --metadata="description:The 11 known Epoch Cassette Vision games (1981-1984), each as a zip of a .bin777 code file and a .ptn777 pattern file that the PD777 emulator and its libretro core (pd777_libretro) load directly. Made from the rom.cpp sources in the epoch-cassette-vision-roms-and-emulator item; the conversion script is scripts/cassettevision_pd777.py in github.com/WizzardSK/gameflix." \
+            --retries 10
