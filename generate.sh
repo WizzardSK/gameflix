@@ -114,7 +114,9 @@ mame_jobs=0
 while IFS= read -r softlist; do
   [[ -z "$softlist" ]] && continue
   cached="$mame_names_dir/$softlist.tsv"
-  [ -e "$cached" ] && continue
+  # a list fetched within the month is kept; an empty one (a failed fetch:
+  # tiki100 had no names for months) is tried again
+  [ -s "$cached" ] && [ -z "$(find "$cached" -mtime +30)" ] && continue
   (
     src=""
     if [ -s "/usr/share/games/mame/hash/$softlist.xml" ]; then
@@ -140,7 +142,7 @@ while IFS= read -r softlist; do
   ) &
   ((mame_jobs++))
   if ((mame_jobs >= 20)); then wait -n; ((mame_jobs--)); fi
-done < <(awk -F',' '$2 ~ /^archive:mame-sl\// { n=$2; sub(/.*\//, "", n); sub(/\.zip$/, "", n); print n }' platforms.csv | sort -u)
+done < <(awk -F',' '$2 ~ /^archive:mame-sl\// || $2 ~ /^archive:mame-software-list-chds-2\// { n=$2; sub(/.*\//, "", n); sub(/\.zip$/, "", n); print n }' platforms.csv | sort -u)
 
 # Fetch MAME arcade listxml (~19 MB zip → 322 MB XML, 50k <machine> entries)
 arcade_mame_cache="$mame_names_dir/arcade-mame.tsv"
@@ -468,6 +470,11 @@ IFS=";"; for each in "${roms[@]}"; do
   softlist=""
   if [[ "${rom[1]}" == archive:mame-sl/*/*.zip ]]; then
     softlist="${rom[1]##*/}"; softlist="${softlist%.zip}"
+  fi
+  # the CHD software lists (CD-i, PC Engine CD, CD32...): a folder per entry
+  # named after it, so the list's names apply as well
+  if [[ "${rom[1]}" == archive:mame-software-list-chds-2/* ]]; then
+    softlist="${rom[1]##*/}"
   fi
   arcade_src=""
   case "${rom[0]}" in
