@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-15. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**42,068** of **341,512** games have no snap (87.7 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**41,699** of **341,512** games have no snap (87.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -12,12 +12,12 @@ Games on the site without a snap, per platform page, as of 2026-11-15. Regenerat
 | Philips CD-i | cdi | 2,141 | 2,976 | 28 % | Philips_-_CD-i |
 | Commodore 64 | c64 | 2,050 | 63,862 | 97 % | Commodore_-_64 |
 | Sony PlayStation 3 | ps3 | 2,019 | 4,093 | 51 % | Sony_-_PlayStation_3 |
-| Acorn BBC | bbcmicro | 1,372 | 2,686 | 49 % | Acorn_-_BBC |
+| Acorn BBC | bbcmicro | 1,363 | 2,686 | 49 % | Acorn_-_BBC |
 | Amstrad CPC | amstradcpc | 1,246 | 14,827 | 92 % | Amstrad_-_CPC |
-| Coleco Adam | adam | 1,089 | 1,183 | 8 % | Coleco_-_Adam |
 | Videoton TV Computer | tvc | 904 | 952 | 5 % | Enterprise_-_Enterprise |
 | Atari ST | atarist | 868 | 5,952 | 85 % | Atari_-_ST |
 | Sinclair ZX Spectrum | zxspectrum | 789 | 13,216 | 94 % | Sinclair_-_ZX_Spectrum |
+| Coleco Adam | adam | 729 | 1,183 | 38 % | Coleco_-_Adam |
 | Atari 800 | atari800 | 651 | 6,419 | 90 % | Atari_-_8-bit |
 | Thomson MO/TO | thomson | 643 | 1,959 | 67 % | Thomson_-_MOTO |
 | Fujitsu FM Towns | fmtowns | 634 | 1,789 | 65 % | Fujitsu_-_FM_Towns |
