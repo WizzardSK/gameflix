@@ -221,7 +221,23 @@ while IFS=$'\t' read -r fo sn now; do [[ -n "$sn" ]] && mame_ren["$fo:$sn"]="$no
 # "X - Y" also as Y (Loving Deads - The House of the Dead EX).
 game_key() { local s="$1"; s="${s%% (*}"; s="${s%% [*}"; s=" ${s,,} "; s="${s// iii / 3 }"; s="${s// ii / 2 }"; s="${s// iv / 4 }"; s="${s//&/and}"; REPLY="${s//[^a-z0-9]/}"; }
 declare -A mame_snap mame_by_key
-while IFS= read -r sn; do mame_snap["$sn"]=1; done < <(curl -fsSL "https://api.github.com/repos/WizzardSK/MAME/git/trees/master:Named_Snaps" | grep -o '"path": *"[a-z0-9_]*\.png"' | sed 's/.*"path": *"//; s/\.png"$//')
+# The MAME repo's snap names, from the GitHub API: with the workflow's token
+# when there is one (anonymous calls share the runner's 60 an hour, and on
+# 15 Nov 2026 they had run out: no names, and every MAME clone lost its
+# parent's snap), tried three times, and the build stops without them rather
+# than deploy pages that have lost those snaps.
+gh_auth=()
+[[ -n "${GITHUB_TOKEN:-}" ]] && gh_auth=(-H "Authorization: Bearer $GITHUB_TOKEN")
+for try in 1 2 3; do
+  mame_snap_list=$(curl -fsSL "${gh_auth[@]}" "https://api.github.com/repos/WizzardSK/MAME/git/trees/master:Named_Snaps" | grep -o '"path": *"[a-z0-9_]*\.png"' | sed 's/.*"path": *"//; s/\.png"$//')
+  [[ -n "$mame_snap_list" ]] && break
+  sleep 30
+done
+if [[ -z "$mame_snap_list" ]]; then
+  echo "=== MAME SNAPS: the list of the MAME repo's snaps could not be fetched; stopping ===" >&2
+  exit 1
+fi
+while IFS= read -r sn; do mame_snap["$sn"]=1; done <<< "$mame_snap_list"
 for k in "${!mame_name[@]}"; do
   [[ "$k" == arcade-mame:* ]] || continue
   sn="${k#arcade-mame:}"

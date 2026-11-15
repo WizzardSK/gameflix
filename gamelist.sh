@@ -31,4 +31,4 @@ fi
 for z in wasm4 lowresnx; do curl -sfL -o fantasy/$z.zip https://wizzardsk.github.io/$z.zip; done
 for s in wasm4 voxatron pico8 lowresnx; do GITHUB_WORKSPACE="$PWD" bash ./fantasy/$s.sh; done
 
-bash ./generate.sh
+bash ./generate.sh || exit 1
