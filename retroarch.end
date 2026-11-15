@@ -380,7 +380,11 @@ gameflix_from_mame_set() {
 gameflix_mame_deps() {
   local cache="${XDG_CACHE_HOME:-$HOME/.cache}/gameflix" deps col="${2:-2}"
   deps="$cache/mame_deps.tsv"
-  if [[ ! -s "$deps" ]] || [[ -n "$(find "$deps" -mtime +30 2>/dev/null)" ]]; then
+  # Refetch when the copy is a month old, or a day old and doesn't know the
+  # driver yet (a platform added since it was fetched).
+  if [[ ! -s "$deps" ]] || [[ -n "$(find "$deps" -mtime +30 2>/dev/null)" ]] ||
+     { [[ -n "$(find "$deps" -mtime +0 2>/dev/null)" ]] &&
+       ! awk -F'\t' -v d="$1" '$1 == d { f = 1 } END { exit !f }' "$deps" 2>/dev/null; }; then
     mkdir -p "$cache"
     curl -sfL --max-time 60 -o "$deps.tmp" "https://wizzardsk.github.io/mame_deps.tsv" && mv "$deps.tmp" "$deps"
     rm -f "$deps.tmp"
