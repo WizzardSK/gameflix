@@ -2,14 +2,14 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-15. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**42,422** of **341,512** games have no snap (87.6 % covered).
+**42,068** of **341,512** games have no snap (87.7 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
 | Microsoft MS-DOS | dos | 4,458 | 23,819 | 81 % | DOS |
 | Commodore Amiga | amiga500 | 4,069 | 29,213 | 86 % | Commodore_-_Amiga |
 | VGMPlay | vgmplay | 2,995 | 3,963 | 24 % | MAME |
-| Philips CD-i | cdi | 2,495 | 2,976 | 16 % | Philips_-_CD-i |
+| Philips CD-i | cdi | 2,141 | 2,976 | 28 % | Philips_-_CD-i |
 | Commodore 64 | c64 | 2,050 | 63,862 | 97 % | Commodore_-_64 |
 | Sony PlayStation 3 | ps3 | 2,019 | 4,093 | 51 % | Sony_-_PlayStation_3 |
 | Acorn BBC | bbcmicro | 1,372 | 2,686 | 49 % | Acorn_-_BBC |

@@ -2,7 +2,11 @@
 """Writes MISSING_SNAPS.md: for each platform page of the site, how many of its
 games have no snap in the thumbnail repo the page takes them from.
 
-    python3 scripts/missing_snaps.py <site checkout> [MISSING_SNAPS.md]
+    python3 scripts/missing_snaps.py <site checkout> [MISSING_SNAPS.md] [missing.html]
+
+The optional HTML page holds the same table, sortable by any column (click a
+heading), for the site (wizzardsk.github.io/missing.html); the Markdown links
+to it, as GitHub does not sort a Markdown table.
 
 <site checkout> is a clone of WizzardSK/wizzardsk.github.io. A game's snap is
 looked for as the page's script.js looks for it: Named_Snaps/<name>.png in the
@@ -23,6 +27,8 @@ import sys
 
 site = sys.argv[1]
 out = sys.argv[2] if len(sys.argv) > 2 else 'MISSING_SNAPS.md'
+html_out = sys.argv[3] if len(sys.argv) > 3 else None
+import html as htmlmod
 
 SECTION = re.compile(r'fileNames\s*=\s*\[(.*?)\]\s*;?\s*\n?\s*generateFileLinks\(\s*"([^"]*)"\s*,\s*"([^"]*)"\s*\)', re.S)
 
@@ -89,7 +95,8 @@ with open(out, 'w', encoding='utf-8') as f:
     f.write('# Missing snaps\n\n')
     f.write(f'Games on the site without a snap, per platform page, as of {datetime.date.today().isoformat()}. '
             f'Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.\n\n')
-    f.write(f'**{all_missing:,}** of **{all_total:,}** games have no snap ({100 * (all_total - all_missing) / all_total:.1f} % covered).\n\n')
+    f.write(f'**{all_missing:,}** of **{all_total:,}** games have no snap ({100 * (all_total - all_missing) / all_total:.1f} % covered). '
+            'The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).\n\n')
     f.write('| Platform | Page | Missing | Games | Covered | Snap repos |\n|---|---|---:|---:|---:|---|\n')
     for missing, total, page, rs in rows:
         if not missing:
@@ -100,4 +107,26 @@ with open(out, 'w', encoding='utf-8') as f:
         f.write(f'\nComplete ({len(done)}): ' + ', '.join(titles.get(r[2], r[2]) for r in sorted(done, key=lambda r: r[2])) + '.\n')
     if unreadable:
         f.write('\nNot counted (their repo could not be read): ' + ', '.join(unreadable) + '.\n')
+if html_out:
+    e = htmlmod.escape
+    trs = ''.join(
+        f'<tr><td>{e(titles.get(page, page))}</td><td><a href="{e(page)}.html">{e(page)}</a></td>'
+        f'<td data-v="{missing}">{missing:,}</td><td data-v="{total}">{total:,}</td>'
+        f'<td data-v="{(total - missing) / total:.4f}">{100 * (total - missing) / total:.0f} %</td><td>{e(", ".join(rs))}</td></tr>'
+        for missing, total, page, rs in rows)
+    open(html_out, 'w', encoding='utf-8').write(f'''<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Missing snaps</title><link rel="stylesheet" href="style.css">
+<style>body{{background:#333;color:#ddd;font-family:sans-serif;margin:16px}}table{{border-collapse:collapse;width:100%}}
+th,td{{padding:4px 8px;border-bottom:1px solid #555;text-align:left}}th{{cursor:pointer;position:sticky;top:0;background:#222}}
+td:nth-child(3),td:nth-child(4),td:nth-child(5){{text-align:right}}a{{color:#8cf}}</style>
+<h1>Missing snaps</h1>
+<p>{all_missing:,} of {all_total:,} games have no snap ({100 * (all_total - all_missing) / all_total:.1f} % covered), as of {datetime.date.today().isoformat()}. Click a heading to sort.</p>
+<table id="t"><thead><tr><th>Platform</th><th>Page</th><th>Missing</th><th>Games</th><th>Covered</th><th>Snap repos</th></tr></thead><tbody>{trs}</tbody></table>
+<script>
+document.querySelectorAll('#t th').forEach((th,i)=>th.onclick=()=>{{
+  const tb=document.querySelector('#t tbody'),rows=[...tb.rows],num=i>=2&&i<=4,dir=th.dataset.d=th.dataset.d==='1'?'-1':'1';
+  rows.sort((a,b)=>{{const x=a.cells[i],y=b.cells[i];return (num?(x.dataset.v-y.dataset.v):x.textContent.localeCompare(y.textContent))*dir}});
+  rows.forEach(r=>tb.appendChild(r));}});
+</script>
+''')
 print(out, all_missing, 'of', all_total)
