@@ -103,13 +103,13 @@ psp,Sony PlayStation Portable,Sony - PlayStation Portable
 psvita,Sony PlayStation Vita,Sony - PlayStation Vita
 ,IBM & Microsoft,
 ibm5150,IBM PC 5150,DOS
-dos,Microsoft MS-DOS,DOS
-msx1,Panasonic MSX1,Microsoft - MSX
 ibmpcjr,IBM PCjr,DOS
 ibm5170,IBM PC/AT 5170,DOS
+msx1,Panasonic MSX1,Microsoft - MSX
 msx2,Panasonic MSX2,Microsoft - MSX2
 msx2+,Panasonic MSX2+,Microsoft - MSX2
 msxturbor,Panasonic MSX TurboR,Microsoft - MSX2
+dos,Microsoft MS-DOS,DOS
 xbox,Microsoft Xbox,Microsoft - Xbox
 xbox360,Microsoft Xbox 360,Microsoft - Xbox 360
 ,Various consoles,
