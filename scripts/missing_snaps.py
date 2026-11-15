@@ -1,0 +1,103 @@
+#!/usr/bin/env python3
+"""Writes MISSING_SNAPS.md: for each platform page of the site, how many of its
+games have no snap in the thumbnail repo the page takes them from.
+
+    python3 scripts/missing_snaps.py <site checkout> [MISSING_SNAPS.md]
+
+<site checkout> is a clone of WizzardSK/wizzardsk.github.io. A game's snap is
+looked for as the page's script.js looks for it: Named_Snaps/<name>.png in the
+repo the section names (generateFileLinks' second argument), <name> being the
+entry's third field when it has one (the snap of another set or title), else
+the file name without extension and without what follows its first
+"(...)". The repos' file lists come from the GitHub API (gh, or GITHUB_TOKEN
+with curl).
+"""
+import concurrent.futures as cf
+import datetime
+import glob
+import json
+import os
+import re
+import subprocess
+import sys
+
+site = sys.argv[1]
+out = sys.argv[2] if len(sys.argv) > 2 else 'MISSING_SNAPS.md'
+
+SECTION = re.compile(r'fileNames\s*=\s*\[(.*?)\]\s*;?\s*\n?\s*generateFileLinks\(\s*"([^"]*)"\s*,\s*"([^"]*)"\s*\)', re.S)
+
+
+def key_of(entry):
+    parts = entry.split('\t')
+    if len(parts) > 2 and parts[2]:
+        return parts[2]
+    name = parts[0]
+    stem = name[:name.rfind('.')] if '.' in name else name
+    return re.sub(r'^([^)]*\([^)]*\)).*$', r'\1', stem)
+
+
+titles = {}
+pages = {}
+for path in sorted(glob.glob(os.path.join(site, '*.html'))):
+    page = os.path.basename(path)[:-5]
+    html = open(path, encoding='utf-8', errors='replace').read()
+    for m in SECTION.finditer(html):
+        entries = json.loads('[' + m.group(1).strip().rstrip(',') + ']', strict=False)
+        repo = re.sub(r'[^\w.-]', '-', m.group(3))
+        pages.setdefault(page, {}).setdefault(repo, set()).update(key_of(e) for e in entries)
+
+# the platform names shown on the site
+for line in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'systems.csv'), encoding='utf-8'):
+    f = line.rstrip('\n').split(',')
+    if len(f) >= 2 and f[0]:
+        titles[f[0]] = f[1]
+
+
+def tree(repo):
+    url = f'repos/WizzardSK/{repo}/git/trees/master:Named_Snaps'
+    try:
+        r = subprocess.run(['gh', 'api', url], capture_output=True, text=True, timeout=300)
+        if r.returncode:
+            return repo, None
+        d = json.loads(r.stdout)
+        return repo, {t['path'][:-4] for t in d['tree'] if t['path'].endswith('.png')}
+    except (OSError, subprocess.TimeoutExpired, ValueError):
+        return repo, None
+
+
+repos = sorted({r for p in pages.values() for r in p})
+with cf.ThreadPoolExecutor(8) as ex:
+    have = dict(ex.map(tree, repos))
+
+rows = []
+for page, by_repo in pages.items():
+    total = missing = 0
+    for repo, keys in by_repo.items():
+        if have.get(repo) is None:
+            continue
+        total += len(keys)
+        missing += sum(1 for k in keys if '/' not in k and k not in have[repo])
+    if total:
+        rows.append((missing, total, page, sorted(by_repo)))
+rows.sort(key=lambda r: (-r[0], r[2]))
+
+all_total = sum(r[1] for r in rows)
+all_missing = sum(r[0] for r in rows)
+unreadable = [r for r in repos if have.get(r) is None]
+
+with open(out, 'w', encoding='utf-8') as f:
+    f.write('# Missing snaps\n\n')
+    f.write(f'Games on the site without a snap, per platform page, as of {datetime.date.today().isoformat()}. '
+            f'Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.\n\n')
+    f.write(f'**{all_missing:,}** of **{all_total:,}** games have no snap ({100 * (all_total - all_missing) / all_total:.1f} % covered).\n\n')
+    f.write('| Platform | Page | Missing | Games | Covered | Snap repos |\n|---|---|---:|---:|---:|---|\n')
+    for missing, total, page, rs in rows:
+        if not missing:
+            continue
+        f.write(f'| {titles.get(page, page)} | {page} | {missing:,} | {total:,} | {100 * (total - missing) / total:.0f} % | {", ".join(rs)} |\n')
+    done = [r for r in rows if not r[0]]
+    if done:
+        f.write(f'\nComplete ({len(done)}): ' + ', '.join(titles.get(r[2], r[2]) for r in sorted(done, key=lambda r: r[2])) + '.\n')
+    if unreadable:
+        f.write('\nNot counted (their repo could not be read): ' + ', '.join(unreadable) + '.\n')
+print(out, all_missing, 'of', all_total)
