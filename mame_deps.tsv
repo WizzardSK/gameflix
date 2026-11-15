@@ -33,7 +33,7 @@ c128	c128 c1571	c128_cart c128_flop c128_rom c64_cart c64_cass vic10 c64_flop_or
 c16	c16 c264 c1541	plus4_cart plus4_cass plus4_flop plus4_quik
 c64	c64 c1541	vic10 c64_cart c64_cass c64_flop_orig c64_flop_misc c64_quik
 casloopy	casloopy	casloopy
-cbm610	cbm610 b500 c8050fdc c8050	cbm2_cart cbm2_flop
+b128	b128 b500 c8050fdc c8050	cbm2_cart cbm2_flop
 cd32	cd32	amiga_workbench amiga_hardware amiga_apps amiga_flop amigaocs_flop amiga_demos amiga_cd photo_cd cd32 cdtv
 cdimono1	cdimono1	cdi photo_cd
 cdtv	cdtv a2000kbd_us	amiga_workbench amiga_hardware amiga_apps amiga_flop amigaocs_flop amiga_demos amiga_cd photo_cd cdtv
