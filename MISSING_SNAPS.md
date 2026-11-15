@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-15. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**37,953** of **341,440** games have no snap (88.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**37,668** of **341,440** games have no snap (89.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -32,7 +32,6 @@ Games on the site without a snap, per platform page, as of 2026-11-15. Regenerat
 | Dragon 32/64 | dragon64 | 461 | 1,094 | 58 % | Dragon_-_Dragon_64 |
 | Panasonic MSX1 | msx1 | 450 | 5,021 | 91 % | Microsoft_-_MSX |
 | Nintendo Game Boy Advance | gba | 441 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
-| MicroBee | mbee | 379 | 710 | 47 % | Applied_Technology_-_MicroBee |
 | Bally Astrocade | astrocade | 378 | 559 | 32 % | Bally_-_Astrocade |
 | Apple II | apple2 | 358 | 8,440 | 96 % | Apple_-_II |
 | Acorn Archimedes | archimedes | 319 | 473 | 33 % | Acorn_-_Archimedes |
@@ -53,9 +52,9 @@ Games on the site without a snap, per platform page, as of 2026-11-15. Regenerat
 | Nintendo Super NES | snes | 181 | 5,898 | 97 % | Nintendo_-_Super_Nintendo_Entertainment_System |
 | Elektronika BK | bk | 179 | 186 | 4 % | Elektronika_-_BK |
 | Robotron KC 85 | kc85 | 157 | 182 | 14 % | MAME |
+| MicroBee | mbee | 155 | 710 | 78 % | Applied_Technology_-_MicroBee |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
-| Commodore CBM-II | cbm2 | 139 | 139 | 0 % | Commodore_-_CBM-II |
 | Specialist | special | 139 | 162 | 14 % | MAME |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
 | Panasonic MSX2 | msx2 | 133 | 1,467 | 91 % | Microsoft_-_MSX2 |
@@ -74,6 +73,7 @@ Games on the site without a snap, per platform page, as of 2026-11-15. Regenerat
 | Commodore VIC-20 | c20 | 90 | 620 | 85 % | Commodore_-_VIC-20 |
 | Nintendo Entertainment System | nes | 89 | 12,159 | 99 % | Nintendo_-_Nintendo_Entertainment_System |
 | Commodore 128 | c128 | 88 | 100 | 12 % | Commodore_-_128 |
+| Commodore CBM-II | cbm2 | 84 | 139 | 40 % | Commodore_-_CBM-II |
 | Tatung Einstein | einstein | 81 | 113 | 28 % | Tatung_-_Einstein |
 | Apple I | apple1 | 80 | 80 | 0 % | Apple_-_I |
 | Sega Dreamcast | dreamcast | 79 | 2,272 | 97 % | Sega_-_Dreamcast |
@@ -135,7 +135,6 @@ Games on the site without a snap, per platform page, as of 2026-11-15. Regenerat
 | Sharp MZ-2000 | mz2000 | 17 | 19 | 11 % | Sharp_-_MZ-2000 |
 | Mattel Aquarius | aquarius | 16 | 60 | 73 % | Mattel_-_Aquarius |
 | Sega Advanced Pico Beena | beena | 16 | 122 | 87 % | Sega_-_Beena |
-| Hi-kara | hikara | 16 | 21 | 24 % | Takara_-_Hi-kara |
 | Sharp MZ-800 | mz800 | 16 | 16 | 0 % | Sharp_-_MZ-800 |
 | Commodore Amiga CD32 | amigacd32 | 15 | 483 | 97 % | Commodore_-_CD32 |
 | Kaypro | kaypro | 15 | 16 | 6 % | MAME |
@@ -153,6 +152,7 @@ Games on the site without a snap, per platform page, as of 2026-11-15. Regenerat
 | Casio PV-2000 | pv2000 | 11 | 24 | 54 % | Casio_-_PV-2000 |
 | Sega SG-1000 | sg1000 | 11 | 458 | 98 % | Sega_-_SG-1000 |
 | Vircon32 | vircon32 | 11 | 67 | 84 % | Vircon32 |
+| Hi-kara | hikara | 10 | 21 | 52 % | Takara_-_Hi-kara |
 | Ei Pecom 64 | pecom64 | 10 | 10 | 0 % | Pecom_-_64 |
 | Magnavox Odyssey² | odyssey2 | 9 | 353 | 97 % | Magnavox_-_Odyssey2 |
 | Pegasus | pegasus | 9 | 12 | 25 % | MAME |
