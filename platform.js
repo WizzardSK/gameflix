@@ -140,14 +140,22 @@ function generateFileLinks(romPath, imagePath) {
         var subor = fileName.includes("\t") ? fileName.split("\t")[0] : fileName;
         var nazov = fileName.includes("\t") ? fileName.split("\t")[1] : fileName.replace(/\.[^.]+$/, "");
         // a third field names the thumbnail where it is not the file's own
-        // name (Lindbergh, Chihiro: the snap of the MAME set, generate.sh)
+        // name (Lindbergh, Chihiro: the snap of the MAME set, generate.sh);
+        // "repo/name" takes it from another snap repo (VGMPlay: a console
+        // soundtrack's game, vgmplay_snaps.tsv)
         var obrazok = fileName.split("\t")[2] || "";
         return { subor: subor, nazov: nazov, obrazok: obrazok };
     }, function (g) {
         var nameWithoutExt = g.subor.includes(".") ? g.subor.slice(0, g.subor.lastIndexOf(".")) : g.subor;
         var nameWithoutBrackets = g.obrazok || nameWithoutExt.replace(/^([^)]*\([^)]*\)).*$/, "$1");
+        var snapRepo = imagePath;
+        var slash = nameWithoutBrackets.indexOf("/");
+        if (g.obrazok && slash > 0) {
+            snapRepo = nameWithoutBrackets.slice(0, slash);
+            nameWithoutBrackets = nameWithoutBrackets.slice(slash + 1);
+        }
         var fileUrl = `${encodedPath}/${encodeURIComponent(g.subor)}`;
         var href = wrapInJavatari ? `https://javatari.org/?rom=${encodeURIComponent(fileUrl)}` : fileUrl;
-        return figureHtml(href, `https://raw.githubusercontent.com/WizzardSK/${imagePath.replace(/[^\w.-]/g, "-")}/master/Named${gfThumbType}/${encodeURIComponent(nameWithoutBrackets)}.png`, nameWithoutExt, g.nazov, ' rel="noreferrer"');
+        return figureHtml(href, `https://raw.githubusercontent.com/WizzardSK/${snapRepo.replace(/[^\w.-]/g, "-")}/master/Named${gfThumbType}/${encodeURIComponent(nameWithoutBrackets)}.png`, nameWithoutExt, g.nazov, ' rel="noreferrer"');
     });
 }

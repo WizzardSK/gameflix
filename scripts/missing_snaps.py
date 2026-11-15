@@ -11,7 +11,8 @@ to it, as GitHub does not sort a Markdown table.
 <site checkout> is a clone of WizzardSK/wizzardsk.github.io. A game's snap is
 looked for as the page's script.js looks for it: Named_Snaps/<name>.png in the
 repo the section names (generateFileLinks' second argument), <name> being the
-entry's third field when it has one (the snap of another set or title), else
+entry's third field when it has one (the snap of another set or title; as
+"repo/name", a snap in another repo), else
 the file name without extension and without what follows its first
 "(...)". The repos' file lists come from the GitHub API (gh, or GITHUB_TOKEN
 with curl).
@@ -71,7 +72,9 @@ def tree(repo):
         return repo, None
 
 
-repos = sorted({r for p in pages.values() for r in p})
+repos = sorted({r for p in pages.values() for r in p} |
+               {k.split('/', 1)[0] for p in pages.values() for keys in p.values()
+                for k in keys if '/' in k})
 with cf.ThreadPoolExecutor(8) as ex:
     have = dict(ex.map(tree, repos))
 
@@ -82,7 +85,10 @@ for page, by_repo in pages.items():
         if have.get(repo) is None:
             continue
         total += len(keys)
-        missing += sum(1 for k in keys if '/' not in k and k not in have[repo])
+        # a "repo/name" key (VGMPlay) is a snap in that other repo
+        missing += sum(1 for k in keys
+                       if ('/' in k and k.split('/', 1)[1] not in (have.get(k.split('/', 1)[0]) or ()))
+                       or ('/' not in k and k not in have[repo]))
     if total:
         rows.append((missing, total, page, sorted(by_repo)))
 rows.sort(key=lambda r: (-r[0], r[2]))

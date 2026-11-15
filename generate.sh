@@ -279,6 +279,10 @@ mame_snap_of() {
     fi
   done
 }
+# VGMPlay soundtracks without a MAME snap of their own: their game's snap,
+# in that system's repo or the MAME set's (scripts/vgmplay_snaps.py)
+declare -A vgm_snap
+while IFS=$'\t' read -r vn vs; do [[ -n "$vs" ]] && vgm_snap["$vn"]="$vs"; done < vgmplay_snaps.tsv
 mame_fetch_end=$(date +%s)
 echo "=== MAME SOFTLIST NAMES DONE: ${#mame_name[@]} entries in $((mame_fetch_end - mame_fetch_start))s ==="
 
@@ -588,6 +592,7 @@ IFS=";"; for each in "${roms[@]}"; do
     # the page strips an extension after the last dot, which an Atari VCS
     # name with dots has not ("A.R.T.I. 7800"): name its snap outright
     [[ "${rom[0]}" == atarivcs && "$line" == *.* ]] && thumbname="$line"
+    [[ "${rom[0]}" == vgmplay && -z "$thumbname" && -n "${vgm_snap[$line2]}" ]] && thumbname="${vgm_snap[$line2]}"
     if [[ -n "$thumbname" ]]; then
       echo "\"${js_line}	${js_name}	${thumbname}\"," >&$html_fd
     elif [[ "$display_name" != "$line2" || "${rom[0]}" == atarivcs ]]; then
@@ -599,7 +604,9 @@ IFS=";"; for each in "${roms[@]}"; do
     if [[ "$line2" == *")"* ]]; then thumb="${line2%%)*})"; else thumb="$line2"; fi
     [[ -n "$thumbname" ]] && thumb="$thumbname"
     if [[ "$line" != *.* ]]; then polozka="folder"; else polozka="game"; fi
-    hra="<$polozka><path>./$foldername/${line}</path><name>${display_name}</name><image>~/../thumbs/${rom[5]}/Named_Snaps/${thumb}.png</image>"
+    # a "repo/name" snap is in that repo's folder
+    thumbrepo="${rom[5]}"; [[ "$thumb" == */* ]] && { thumbrepo="${thumb%%/*}"; thumb="${thumb#*/}"; }
+    hra="<$polozka><path>./$foldername/${line}</path><name>${display_name}</name><image>~/../thumbs/${thumbrepo}/Named_Snaps/${thumb}.png</image>"
     if [[ ! "$line" =~ $hidden_re ]]; then
       echo "${hra}</$polozka>" >&$xml_fd
     else echo "${hra}<hidden>true</hidden></$polozka>" >&$xml_fd; fi
