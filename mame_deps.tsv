@@ -100,7 +100,7 @@ lynx48k	lynx48k	camplynx_cass
 m5	m5	m5_cart m5_cass m5_flop
 macse	macse adbmodem	mac_flop_orig mac_flop_clcracked mac_flop mac_hdd mac_cdrom
 mbee	mbee	mbee_cass mbee_quik mbee_cart
-mbee56	mbee56 mbee	mbee_flop
+mbeepp	mbeepp mbee	mbee_flop
 mc10	mc10	mc10
 mc1000	mc1000	mc1000_cass
 megadriv	megadriv genesis	megadriv
