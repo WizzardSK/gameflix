@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-16. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**35,349** of **341,431** games have no snap (89.6 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**34,997** of **341,431** games have no snap (89.7 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -14,7 +14,6 @@ Games on the site without a snap, per platform page, as of 2026-11-16. Regenerat
 | Acorn BBC | bbcmicro | 1,363 | 2,686 | 49 % | Acorn_-_BBC |
 | Amstrad CPC | amstradcpc | 1,246 | 14,827 | 92 % | Amstrad_-_CPC |
 | Videoton TV Computer | tvc | 904 | 952 | 5 % | Enterprise_-_Enterprise |
-| Atari ST | atarist | 868 | 5,952 | 85 % | Atari_-_ST |
 | Sinclair ZX Spectrum | zxspectrum | 790 | 13,216 | 94 % | Sinclair_-_ZX_Spectrum |
 | Coleco Adam | adam | 729 | 1,183 | 38 % | Coleco_-_Adam |
 | VGMPlay | vgmplay | 699 | 3,870 | 82 % | MAME |
@@ -26,6 +25,7 @@ Games on the site without a snap, per platform page, as of 2026-11-16. Regenerat
 | NEC PC-8800 | pc88 | 615 | 2,074 | 70 % | NEC_-_PC-8001_-_PC-8801 |
 | NEC PC-9800 | pc98 | 568 | 2,673 | 79 % | NEC_-_PC-98 |
 | Acorn Electron | electron | 529 | 865 | 39 % | Acorn_-_Electron |
+| Atari ST | atarist | 516 | 5,952 | 91 % | Atari_-_ST |
 | Tandy TRS-80 | trs80 | 509 | 590 | 14 % | Tandy_-_TRS-80 |
 | IBM PC/AT 5170 | ibm5170 | 494 | 879 | 44 % | DOS |
 | Apple IIGS | apple2gs | 484 | 985 | 51 % | Apple_-_IIGS |
