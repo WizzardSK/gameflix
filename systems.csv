@@ -132,9 +132,6 @@ vii,Sport Vii,Sport Vii
 ekara,e-kara,Takara - e-kara
 hikara,Hi-kara,Takara - Hi-kara
 multivision,Othello Multivision,Othello - Multivision
-atomiswave,Sammy Atomiswave,MAME
-gaelco,Gaelco PowerVR,MAME
-triforce,Triforce,MAME
 videoart,VideoArt,MAME
 ,Monochrome computers,
 pdp1,DEC PDP-1,PDP-1
@@ -248,6 +245,9 @@ mame,MAME,MAME
 vgmplay,VGMPlay,MAME
 fbneo,FinalBurn Neo,MAME
 namco2x6,Namco System 246/256,MAME
+atomiswave,Sammy Atomiswave,MAME
+gaelco,Gaelco PowerVR,MAME
+triforce,Triforce,MAME
 neogeo,SNK Neo Geo AES,SNK - Neo Geo
 neogeocd,SNK Neo Geo CD,SNK - Neo Geo CD
 ngp,SNK Neo Geo Pocket,SNK - Neo Geo Pocket
