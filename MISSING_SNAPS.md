@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-16. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**34,978** of **341,431** games have no snap (89.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**34,834** of **341,431** games have no snap (89.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -11,7 +11,7 @@ Games on the site without a snap, per platform page, as of 2026-11-16. Regenerat
 | Commodore 64 | c64 | 2,052 | 63,862 | 97 % | Commodore_-_64 |
 | Sony PlayStation 3 | ps3 | 2,019 | 4,093 | 51 % | Sony_-_PlayStation_3 |
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
-| Acorn BBC | bbcmicro | 1,344 | 2,686 | 50 % | Acorn_-_BBC |
+| Acorn BBC | bbcmicro | 1,316 | 2,686 | 51 % | Acorn_-_BBC |
 | Amstrad CPC | amstradcpc | 1,246 | 14,827 | 92 % | Amstrad_-_CPC |
 | Videoton TV Computer | tvc | 904 | 952 | 5 % | Enterprise_-_Enterprise |
 | Sinclair ZX Spectrum | zxspectrum | 790 | 13,216 | 94 % | Sinclair_-_ZX_Spectrum |
@@ -25,13 +25,13 @@ Games on the site without a snap, per platform page, as of 2026-11-16. Regenerat
 | NEC PC-8800 | pc88 | 615 | 2,074 | 70 % | NEC_-_PC-8001_-_PC-8801 |
 | NEC PC-9800 | pc98 | 568 | 2,673 | 79 % | NEC_-_PC-98 |
 | Acorn Electron | electron | 529 | 865 | 39 % | Acorn_-_Electron |
-| Atari ST | atarist | 516 | 5,952 | 91 % | Atari_-_ST |
 | Tandy TRS-80 | trs80 | 509 | 590 | 14 % | Tandy_-_TRS-80 |
 | IBM PC/AT 5170 | ibm5170 | 494 | 879 | 44 % | DOS |
 | Apple IIGS | apple2gs | 484 | 985 | 51 % | Apple_-_IIGS |
 | Dragon 32/64 | dragon64 | 461 | 1,094 | 58 % | Dragon_-_Dragon_64 |
 | Panasonic MSX1 | msx1 | 450 | 5,021 | 91 % | Microsoft_-_MSX |
 | Nintendo Game Boy Advance | gba | 441 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
+| Atari ST | atarist | 400 | 5,952 | 93 % | Atari_-_ST |
 | Bally Astrocade | astrocade | 378 | 559 | 32 % | Bally_-_Astrocade |
 | Apple II | apple2 | 358 | 8,440 | 96 % | Apple_-_II |
 | Acorn Archimedes | archimedes | 319 | 473 | 33 % | Acorn_-_Archimedes |
