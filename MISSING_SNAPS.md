@@ -2,15 +2,15 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-16. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**35,918** of **341,431** games have no snap (89.5 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**35,350** of **341,431** games have no snap (89.6 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
 | Microsoft MS-DOS | dos | 2,857 | 23,819 | 88 % | DOS |
-| Philips CD-i | cdi | 2,141 | 2,976 | 28 % | Philips_-_CD-i |
 | Commodore Amiga | amiga500 | 2,053 | 29,213 | 93 % | Commodore_-_Amiga |
 | Commodore 64 | c64 | 2,052 | 63,862 | 97 % | Commodore_-_64 |
 | Sony PlayStation 3 | ps3 | 2,019 | 4,093 | 51 % | Sony_-_PlayStation_3 |
+| Philips CD-i | cdi | 1,573 | 2,976 | 47 % | Philips_-_CD-i |
 | Acorn BBC | bbcmicro | 1,363 | 2,686 | 49 % | Acorn_-_BBC |
 | Amstrad CPC | amstradcpc | 1,246 | 14,827 | 92 % | Amstrad_-_CPC |
 | Videoton TV Computer | tvc | 904 | 952 | 5 % | Enterprise_-_Enterprise |
