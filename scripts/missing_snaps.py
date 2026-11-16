@@ -25,6 +25,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 
 site = sys.argv[1]
 out = sys.argv[2] if len(sys.argv) > 2 else 'MISSING_SNAPS.md'
@@ -62,14 +63,22 @@ for line in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 
 
 def tree(repo):
     url = f'repos/WizzardSK/{repo}/git/trees/master:Named_Snaps'
-    try:
-        r = subprocess.run(['gh', 'api', url], capture_output=True, text=True, timeout=300)
-        if r.returncode:
-            return repo, None
-        d = json.loads(r.stdout)
-        return repo, {t['path'][:-4] for t in d['tree'] if t['path'].endswith('.png')}
-    except (OSError, subprocess.TimeoutExpired, ValueError):
-        return repo, None
+    # a dropped connection must not leave a platform out of the list: retry
+    # everything but a real 404 (a repo or folder that doesn't exist)
+    for attempt in range(5):
+        if attempt:
+            time.sleep(15 * attempt)
+        try:
+            r = subprocess.run(['gh', 'api', url], capture_output=True, text=True, timeout=300)
+            if r.returncode:
+                if 'HTTP 404' in r.stderr:
+                    return repo, None
+                continue
+            d = json.loads(r.stdout)
+            return repo, {t['path'][:-4] for t in d['tree'] if t['path'].endswith('.png')}
+        except (OSError, subprocess.TimeoutExpired, ValueError):
+            continue
+    sys.exit(f'{repo}: GitHub unreachable, nothing written')
 
 
 repos = sorted({r for p in pages.values() for r in p} |
