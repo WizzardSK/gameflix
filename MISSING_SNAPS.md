@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**33,940** of **341,431** games have no snap (90.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**33,505** of **341,431** games have no snap (90.2 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -22,7 +22,6 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Fujitsu FM Towns | fmtowns | 634 | 1,789 | 65 % | Fujitsu_-_FM_Towns |
 | Sony PlayStation 1 | psx | 620 | 7,042 | 91 % | Sony_-_PlayStation |
 | NEC PC-8800 | pc88 | 615 | 2,074 | 70 % | NEC_-_PC-8001_-_PC-8801 |
-| Videoton TV Computer | tvc | 612 | 952 | 36 % | Enterprise_-_Enterprise |
 | NEC PC-9800 | pc98 | 568 | 2,673 | 79 % | NEC_-_PC-98 |
 | Tandy TRS-80 | trs80 | 509 | 590 | 14 % | Tandy_-_TRS-80 |
 | IBM PC/AT 5170 | ibm5170 | 494 | 879 | 44 % | DOS |
@@ -51,6 +50,7 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Apple Macintosh | macintosh | 184 | 325 | 43 % | Apple_-_Macintosh |
 | Nintendo Super NES | snes | 181 | 5,898 | 97 % | Nintendo_-_Super_Nintendo_Entertainment_System |
 | Elektronika BK | bk | 179 | 186 | 4 % | Elektronika_-_BK |
+| Videoton TV Computer | tvc | 177 | 952 | 81 % | Enterprise_-_Enterprise |
 | Robotron KC 85 | kc85 | 157 | 182 | 14 % | MAME |
 | MicroBee | mbee | 155 | 710 | 78 % | Applied_Technology_-_MicroBee |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
