@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**32,847** of **341,431** games have no snap (90.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**32,629** of **341,431** games have no snap (90.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -18,7 +18,6 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | VGMPlay | vgmplay | 699 | 3,870 | 82 % | MAME |
 | Atari 800 | atari800 | 651 | 6,419 | 90 % | Atari_-_8-bit |
 | SAM Coupé | samcoupe | 643 | 870 | 26 % | MGT_-_Sam_Coupe |
-| Thomson MO/TO | thomson | 643 | 1,959 | 67 % | Thomson_-_MOTO |
 | Fujitsu FM Towns | fmtowns | 634 | 1,789 | 65 % | Fujitsu_-_FM_Towns |
 | Sony PlayStation 1 | psx | 620 | 7,042 | 91 % | Sony_-_PlayStation |
 | NEC PC-8800 | pc88 | 615 | 2,074 | 70 % | NEC_-_PC-8001_-_PC-8801 |
@@ -28,6 +27,7 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Tandy TRS-80 | trs80 | 478 | 590 | 19 % | Tandy_-_TRS-80 |
 | Panasonic MSX1 | msx1 | 450 | 5,021 | 91 % | Microsoft_-_MSX |
 | Nintendo Game Boy Advance | gba | 441 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
+| Thomson MO/TO | thomson | 425 | 1,959 | 78 % | Thomson_-_MOTO |
 | Atari ST | atarist | 400 | 5,952 | 93 % | Atari_-_ST |
 | Bally Astrocade | astrocade | 378 | 559 | 32 % | Bally_-_Astrocade |
 | Apple II | apple2 | 358 | 8,440 | 96 % | Apple_-_II |
