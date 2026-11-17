@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**32,576** of **341,431** games have no snap (90.5 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**32,476** of **341,431** games have no snap (90.5 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -28,12 +28,12 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Nintendo Game Boy Advance | gba | 441 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
 | Thomson MO/TO | thomson | 425 | 1,959 | 78 % | Thomson_-_MOTO |
 | Atari ST | atarist | 400 | 5,952 | 93 % | Atari_-_ST |
-| Panasonic MSX1 | msx1 | 397 | 5,021 | 92 % | Microsoft_-_MSX |
 | Bally Astrocade | astrocade | 378 | 559 | 32 % | Bally_-_Astrocade |
 | Apple II | apple2 | 358 | 8,440 | 96 % | Apple_-_II |
 | Dragon 32/64 | dragon64 | 334 | 1,094 | 69 % | Dragon_-_Dragon_64 |
 | Acorn Archimedes | archimedes | 319 | 473 | 33 % | Acorn_-_Archimedes |
 | Acorn Electron | electron | 303 | 865 | 65 % | Acorn_-_Electron |
+| Panasonic MSX1 | msx1 | 297 | 5,021 | 94 % | Microsoft_-_MSX |
 | MAME | mame | 296 | 20,130 | 99 % | MAME |
 | Sharp X68000 | x68000 | 294 | 3,153 | 91 % | Sharp_-_X68000 |
 | Commodore PET | pet | 263 | 309 | 15 % | Commodore_-_PET |
