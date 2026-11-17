@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**32,279** of **341,431** games have no snap (90.5 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**32,224** of **341,431** games have no snap (90.6 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -37,12 +37,12 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | MAME | mame | 296 | 20,130 | 99 % | MAME |
 | Commodore PET | pet | 263 | 309 | 15 % | Commodore_-_PET |
 | Nintendo 64 | n64 | 256 | 2,266 | 89 % | Nintendo_-_Nintendo_64 |
-| EACA Colour Genie | cgenie | 252 | 272 | 7 % | EACA_-_EG2000_Colour_Genie |
 | Sharp X68000 | x68000 | 245 | 3,153 | 92 % | Sharp_-_X68000 |
 | Fujitsu Micro 7 | fm7 | 230 | 752 | 69 % | Fujitsu_-_Micro_7 |
 | Sony PlayStation 2 | ps2 | 230 | 2,082 | 89 % | Sony_-_PlayStation_2 |
 | IBM PC 5150 | ibm5150 | 211 | 700 | 70 % | DOS |
 | Compucolor II | compclr2 | 203 | 220 | 8 % | MAME |
+| EACA Colour Genie | cgenie | 197 | 272 | 28 % | EACA_-_EG2000_Colour_Genie |
 | Nintendo Game Boy Color | gbc | 185 | 4,961 | 96 % | Nintendo_-_Game_Boy_Color |
 | Apple Macintosh | macintosh | 184 | 325 | 43 % | Apple_-_Macintosh |
 | Nintendo Super NES | snes | 181 | 5,898 | 97 % | Nintendo_-_Super_Nintendo_Entertainment_System |
