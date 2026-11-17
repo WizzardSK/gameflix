@@ -9,6 +9,10 @@
   `gh workflow run update.yml -R WizzardSK/wizzardsk.github.io`) clones this
   repo, runs `gamelist.sh` and commits the result there, with `gamelist.zip`
   for Batocera. Run it after a change here to deploy it.
+- `gh workflow run update.yml -R WizzardSK/wizzardsk.github.io -f main_only=true`
+  rebuilds only `main.html`, `systems.html` and `index.html` (`menu.sh`, with
+  the deployed menu's game counts), in seconds. `menu.sh` copies the markup of
+  `generate.sh`: change both together.
 
 ## How a click on the site starts a game
 
