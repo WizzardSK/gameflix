@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**33,420** of **341,431** games have no snap (90.2 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**33,283** of **341,431** games have no snap (90.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -50,7 +50,6 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Nintendo Super NES | snes | 181 | 5,898 | 97 % | Nintendo_-_Super_Nintendo_Entertainment_System |
 | Elektronika BK | bk | 179 | 186 | 4 % | Elektronika_-_BK |
 | Videoton TV Computer | tvc | 177 | 952 | 81 % | Enterprise_-_Enterprise |
-| Robotron KC 85 | kc85 | 157 | 182 | 14 % | MAME |
 | MicroBee | mbee | 155 | 710 | 78 % | Applied_Technology_-_MicroBee |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
@@ -100,9 +99,9 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Sega Saturn | saturn | 50 | 1,765 | 97 % | Sega_-_Saturn |
 | Sinclair ZX Spectrum +3 | specpls3 | 50 | 1,065 | 95 % | Sinclair_-_ZX_Spectrum_-3 |
 | Nintendo DSi | dsi | 47 | 49 | 4 % | Nintendo_-_Nintendo_DSi |
-| Orao | orao | 47 | 55 | 15 % | MAME |
 | Samsung SPC-1000 | spc1000 | 47 | 89 | 47 % | Samsung_-_SPC-1000 |
 | Memotech MTX | mtx | 46 | 61 | 25 % | Memotech_-_MTX512 |
+| Orao | orao | 46 | 55 | 16 % | MAME |
 | Nintendo Virtual Boy | virtualboy | 46 | 256 | 82 % | Nintendo_-_Virtual_Boy |
 | Commodore Amiga CD | amiga1200 | 43 | 625 | 93 % | Commodore_-_Amiga |
 | Atari Jaguar | jaguar | 43 | 480 | 91 % | Atari_-_Jaguar |
@@ -120,6 +119,7 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Sega Master System | mastersystem | 23 | 1,885 | 99 % | Sega_-_Master_System_-_Mark_III |
 | Bandai RX-78 | rx78 | 23 | 51 | 55 % | Bandai_-_Gundam_RX-78 |
 | Nintendo Game Boy | gb | 22 | 4,699 | 100 % | Nintendo_-_Game_Boy |
+| Robotron KC 85 | kc85 | 22 | 182 | 88 % | MAME |
 | Sord M5 | m5 | 22 | 67 | 67 % | Sord_-_M5 |
 | Nintendo Super Game Boy | sgb | 22 | 4,699 | 100 % | Nintendo_-_Game_Boy |
 | Mikrosha | mikrosha | 21 | 55 | 62 % | Mikrosha |
@@ -142,8 +142,8 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Sony SMC-777 | smc777 | 15 | 15 | 0 % | Sony_-_SMC-777 |
 | Commodore Amiga CDTV | amigacdtv | 14 | 180 | 92 % | Commodore_-_CDTV |
 | Panasonic MSX2+ | msx2+ | 14 | 59 | 76 % | Microsoft_-_MSX2 |
-| Philips VG-5000 | vg5k | 14 | 68 | 79 % | MAME |
 | Nintendo 64DD | n64dd | 13 | 19 | 32 % | Nintendo_-_Nintendo_64DD |
+| Philips VG-5000 | vg5k | 13 | 68 | 81 % | MAME |
 | Nintendo 3DS | 3ds | 12 | 153 | 92 % | Nintendo_-_Nintendo_3DS |
 | Mattel Intellivision | intellivision | 12 | 608 | 98 % | Mattel_-_Intellivision |
 | VTech V.Smile | vsmile | 12 | 325 | 96 % | VTech_-_V.Smile |
