@@ -38,7 +38,9 @@ SECTION = re.compile(r'fileNames\s*=\s*\[(.*?)\]\s*;?\s*\n?\s*generateFileLinks\
 def key_of(entry):
     parts = entry.split('\t')
     if len(parts) > 2 and parts[2]:
-        return parts[2]
+        # only a third field can name another repo ("repo/name"); a file in a
+        # subfolder ("dir/file.dsk") is no repo reference
+        return ('\0' + parts[2]) if '/' in parts[2] else parts[2]
     name = parts[0]
     stem = name[:name.rfind('.')] if '.' in name else name
     return re.sub(r'^([^)]*\([^)]*\)).*$', r'\1', stem)
@@ -82,8 +84,8 @@ def tree(repo):
 
 
 repos = sorted({r for p in pages.values() for r in p} |
-               {k.split('/', 1)[0] for p in pages.values() for keys in p.values()
-                for k in keys if '/' in k})
+               {k[1:].split('/', 1)[0] for p in pages.values() for keys in p.values()
+                for k in keys if k.startswith('\0')})
 with cf.ThreadPoolExecutor(8) as ex:
     have = dict(ex.map(tree, repos))
 
@@ -96,8 +98,8 @@ for page, by_repo in pages.items():
         total += len(keys)
         # a "repo/name" key (VGMPlay) is a snap in that other repo
         missing += sum(1 for k in keys
-                       if ('/' in k and k.split('/', 1)[1] not in (have.get(k.split('/', 1)[0]) or ()))
-                       or ('/' not in k and k not in have[repo]))
+                       if (k.startswith('\0') and k[1:].split('/', 1)[1] not in (have.get(k[1:].split('/', 1)[0]) or ()))
+                       or (not k.startswith('\0') and k not in have[repo]))
     if total:
         rows.append((missing, total, page, sorted(by_repo)))
 rows.sort(key=lambda r: (-r[0], r[2]))
