@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**33,505** of **341,431** games have no snap (90.2 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**33,420** of **341,431** games have no snap (90.2 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -42,7 +42,6 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | EACA Colour Genie | cgenie | 252 | 272 | 7 % | EACA_-_EG2000_Colour_Genie |
 | Fujitsu Micro 7 | fm7 | 230 | 752 | 69 % | Fujitsu_-_Micro_7 |
 | Sony PlayStation 2 | ps2 | 230 | 2,082 | 89 % | Sony_-_PlayStation_2 |
-| VTech Laser | laser310 | 214 | 431 | 50 % | VTech_-_Laser_310 |
 | IBM PC 5150 | ibm5150 | 211 | 700 | 70 % | DOS |
 | Compucolor II | compclr2 | 203 | 220 | 8 % | MAME |
 | Oric Atmos | oricatmos | 191 | 463 | 59 % | Tangerine_-_Oric_Atmos |
@@ -58,6 +57,7 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Specialist | special | 139 | 162 | 14 % | MAME |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
 | Panasonic MSX2 | msx2 | 133 | 1,467 | 91 % | Microsoft_-_MSX2 |
+| VTech Laser | laser310 | 129 | 431 | 70 % | VTech_-_Laser_310 |
 | Apple III | apple3 | 128 | 148 | 14 % | Apple_-_III |
 | Tandy TRS-80 Color Computer | coco | 128 | 227 | 44 % | Tandy_-_TRS-80_Color_Computer |
 | Dick Smith Super-80 | super80 | 121 | 137 | 12 % | MAME |
