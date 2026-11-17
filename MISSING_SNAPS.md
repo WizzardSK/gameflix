@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**33,234** of **341,431** games have no snap (90.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**33,075** of **341,431** games have no snap (90.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -28,10 +28,10 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Apple IIGS | apple2gs | 484 | 985 | 51 % | Apple_-_IIGS |
 | Panasonic MSX1 | msx1 | 450 | 5,021 | 91 % | Microsoft_-_MSX |
 | Nintendo Game Boy Advance | gba | 441 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
-| Dragon 32/64 | dragon64 | 412 | 1,094 | 62 % | Dragon_-_Dragon_64 |
 | Atari ST | atarist | 400 | 5,952 | 93 % | Atari_-_ST |
 | Bally Astrocade | astrocade | 378 | 559 | 32 % | Bally_-_Astrocade |
 | Apple II | apple2 | 358 | 8,440 | 96 % | Apple_-_II |
+| Dragon 32/64 | dragon64 | 340 | 1,094 | 69 % | Dragon_-_Dragon_64 |
 | Acorn Archimedes | archimedes | 319 | 473 | 33 % | Acorn_-_Archimedes |
 | Acorn Electron | electron | 303 | 865 | 65 % | Acorn_-_Electron |
 | MAME | mame | 296 | 20,130 | 99 % | MAME |
@@ -44,19 +44,18 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Sony PlayStation 2 | ps2 | 230 | 2,082 | 89 % | Sony_-_PlayStation_2 |
 | IBM PC 5150 | ibm5150 | 211 | 700 | 70 % | DOS |
 | Compucolor II | compclr2 | 203 | 220 | 8 % | MAME |
-| Oric Atmos | oricatmos | 191 | 463 | 59 % | Tangerine_-_Oric_Atmos |
 | Nintendo Game Boy Color | gbc | 185 | 4,961 | 96 % | Nintendo_-_Game_Boy_Color |
 | Apple Macintosh | macintosh | 184 | 325 | 43 % | Apple_-_Macintosh |
 | Nintendo Super NES | snes | 181 | 5,898 | 97 % | Nintendo_-_Super_Nintendo_Entertainment_System |
 | Elektronika BK | bk | 179 | 186 | 4 % | Elektronika_-_BK |
 | Videoton TV Computer | tvc | 177 | 952 | 81 % | Enterprise_-_Enterprise |
+| Oric Atmos | oricatmos | 175 | 463 | 62 % | Tangerine_-_Oric_Atmos |
 | MicroBee | mbee | 155 | 710 | 78 % | Applied_Technology_-_MicroBee |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Specialist | special | 139 | 162 | 14 % | MAME |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
 | Panasonic MSX2 | msx2 | 133 | 1,467 | 91 % | Microsoft_-_MSX2 |
-| VTech Laser | laser310 | 129 | 431 | 70 % | VTech_-_Laser_310 |
 | Apple III | apple3 | 128 | 148 | 14 % | Apple_-_III |
 | Tandy TRS-80 Color Computer | coco | 128 | 227 | 44 % | Tandy_-_TRS-80_Color_Computer |
 | Dick Smith Super-80 | super80 | 121 | 137 | 12 % | MAME |
@@ -94,6 +93,7 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Tandy MC-10 | mc10 | 60 | 182 | 67 % | Tandy_-_MC-10 |
 | Apogee BK-01 | apogee | 59 | 103 | 43 % | Apogee_-_BK-01 |
 | Nintendo Satellaview | satellaview | 59 | 292 | 80 % | Nintendo_-_Satellaview |
+| VTech Laser | laser310 | 58 | 431 | 87 % | VTech_-_Laser_310 |
 | Tesla PMD 85 | pmd85 | 57 | 57 | 0 % | Tesla_-_PMD_85 |
 | Acorn Atom | atom | 51 | 88 | 42 % | Acorn_-_Atom |
 | Sega Saturn | saturn | 50 | 1,765 | 97 % | Sega_-_Saturn |
