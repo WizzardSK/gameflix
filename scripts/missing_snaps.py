@@ -122,11 +122,9 @@ with open(out, 'w', encoding='utf-8') as f:
     done = [r for r in rows if not r[0]]
     if done:
         names = sorted((titles.get(r[2], r[2]) for r in done), key=str.lower)
-        # an HTML table: a Markdown one needs a (bold) header row
-        e = htmlmod.escape
-        f.write(f'\n## Complete ({len(done)})\n\n<table>\n'
-                + ''.join('<tr>' + ''.join(f'<td>{e(n)}</td>' for n in names[i:i + 5]) + '</tr>\n'
-                          for i in range(0, len(names), 5)) + '</table>\n')
+        names += [''] * (-len(names) % 5)
+        f.write(f'\n| Complete ({len(done)}) |' + ' |' * 4 + '\n|' + '---|' * 5 + '\n'
+                + ''.join('| ' + ' | '.join(names[i:i + 5]) + ' |\n' for i in range(0, len(names), 5)))
     if unreadable:
         f.write('\nNot counted (their repo could not be read): ' + ', '.join(unreadable) + '.\n')
 if html_out:
