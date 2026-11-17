@@ -1,8 +1,8 @@
 # Missing snaps
 
-Games on the site without a snap, per platform page, as of 2026-11-16. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
+Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**34,834** of **341,431** games have no snap (89.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**34,818** of **341,431** games have no snap (89.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -11,7 +11,7 @@ Games on the site without a snap, per platform page, as of 2026-11-16. Regenerat
 | Commodore 64 | c64 | 2,052 | 63,862 | 97 % | Commodore_-_64 |
 | Sony PlayStation 3 | ps3 | 2,019 | 4,093 | 51 % | Sony_-_PlayStation_3 |
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
-| Acorn BBC | bbcmicro | 1,316 | 2,686 | 51 % | Acorn_-_BBC |
+| Acorn BBC | bbcmicro | 1,300 | 2,686 | 52 % | Acorn_-_BBC |
 | Amstrad CPC | amstradcpc | 1,246 | 14,827 | 92 % | Amstrad_-_CPC |
 | Videoton TV Computer | tvc | 904 | 952 | 5 % | Enterprise_-_Enterprise |
 | Sinclair ZX Spectrum | zxspectrum | 790 | 13,216 | 94 % | Sinclair_-_ZX_Spectrum |
