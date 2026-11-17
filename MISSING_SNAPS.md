@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**34,226** of **341,431** games have no snap (90.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**34,000** of **341,431** games have no snap (90.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -24,7 +24,6 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | NEC PC-8800 | pc88 | 615 | 2,074 | 70 % | NEC_-_PC-8001_-_PC-8801 |
 | Videoton TV Computer | tvc | 612 | 952 | 36 % | Enterprise_-_Enterprise |
 | NEC PC-9800 | pc98 | 568 | 2,673 | 79 % | NEC_-_PC-98 |
-| Acorn Electron | electron | 529 | 865 | 39 % | Acorn_-_Electron |
 | Tandy TRS-80 | trs80 | 509 | 590 | 14 % | Tandy_-_TRS-80 |
 | IBM PC/AT 5170 | ibm5170 | 494 | 879 | 44 % | DOS |
 | Apple IIGS | apple2gs | 484 | 985 | 51 % | Apple_-_IIGS |
@@ -35,6 +34,7 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Bally Astrocade | astrocade | 378 | 559 | 32 % | Bally_-_Astrocade |
 | Apple II | apple2 | 358 | 8,440 | 96 % | Apple_-_II |
 | Acorn Archimedes | archimedes | 319 | 473 | 33 % | Acorn_-_Archimedes |
+| Acorn Electron | electron | 303 | 865 | 65 % | Acorn_-_Electron |
 | MAME | mame | 296 | 20,130 | 99 % | MAME |
 | Sharp X68000 | x68000 | 294 | 3,153 | 91 % | Sharp_-_X68000 |
 | Sharp MZ-700 | mz700 | 265 | 305 | 13 % | Sharp_-_MZ-700 |
