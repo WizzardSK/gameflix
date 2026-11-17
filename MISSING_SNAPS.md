@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**32,476** of **341,431** games have no snap (90.5 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**32,437** of **341,431** games have no snap (90.5 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -49,7 +49,6 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Nintendo Super NES | snes | 181 | 5,898 | 97 % | Nintendo_-_Super_Nintendo_Entertainment_System |
 | Elektronika BK | bk | 179 | 186 | 4 % | Elektronika_-_BK |
 | Videoton TV Computer | tvc | 174 | 952 | 82 % | Enterprise_-_Enterprise |
-| MicroBee | mbee | 155 | 710 | 78 % | Applied_Technology_-_MicroBee |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Specialist | special | 139 | 162 | 14 % | MAME |
@@ -59,6 +58,7 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Oric Atmos | oricatmos | 124 | 463 | 73 % | Tangerine_-_Oric_Atmos |
 | Dick Smith Super-80 | super80 | 121 | 137 | 12 % | MAME |
 | Sony PlayStation Portable | psp | 118 | 2,833 | 96 % | Sony_-_PlayStation_Portable |
+| MicroBee | mbee | 116 | 710 | 84 % | Applied_Technology_-_MicroBee |
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
 | Jupiter Ace | jupace | 112 | 131 | 15 % | MAME |
 | Exidy Sorcerer | sorcerer | 108 | 129 | 16 % | MAME |
