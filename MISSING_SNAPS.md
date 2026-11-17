@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**32,388** of **341,431** games have no snap (90.5 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**32,351** of **341,431** games have no snap (90.5 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -12,7 +12,7 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Sony PlayStation 3 | ps3 | 2,019 | 4,093 | 51 % | Sony_-_PlayStation_3 |
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
 | Amstrad CPC | amstradcpc | 1,246 | 14,827 | 92 % | Amstrad_-_CPC |
-| Acorn BBC | bbcmicro | 940 | 2,686 | 65 % | Acorn_-_BBC |
+| Acorn BBC | bbcmicro | 939 | 2,686 | 65 % | Acorn_-_BBC |
 | Sinclair ZX Spectrum | zxspectrum | 790 | 13,216 | 94 % | Sinclair_-_ZX_Spectrum |
 | Coleco Adam | adam | 729 | 1,183 | 38 % | Coleco_-_Adam |
 | VGMPlay | vgmplay | 699 | 3,870 | 82 % | MAME |
@@ -41,12 +41,12 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Sharp X68000 | x68000 | 245 | 3,153 | 92 % | Sharp_-_X68000 |
 | Fujitsu Micro 7 | fm7 | 230 | 752 | 69 % | Fujitsu_-_Micro_7 |
 | Sony PlayStation 2 | ps2 | 230 | 2,082 | 89 % | Sony_-_PlayStation_2 |
-| Sharp MZ-700 | mz700 | 216 | 305 | 29 % | Sharp_-_MZ-700 |
 | IBM PC 5150 | ibm5150 | 211 | 700 | 70 % | DOS |
 | Compucolor II | compclr2 | 203 | 220 | 8 % | MAME |
 | Nintendo Game Boy Color | gbc | 185 | 4,961 | 96 % | Nintendo_-_Game_Boy_Color |
 | Apple Macintosh | macintosh | 184 | 325 | 43 % | Apple_-_Macintosh |
 | Nintendo Super NES | snes | 181 | 5,898 | 97 % | Nintendo_-_Super_Nintendo_Entertainment_System |
+| Sharp MZ-700 | mz700 | 180 | 305 | 41 % | Sharp_-_MZ-700 |
 | Elektronika BK | bk | 179 | 186 | 4 % | Elektronika_-_BK |
 | Videoton TV Computer | tvc | 174 | 952 | 82 % | Enterprise_-_Enterprise |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
