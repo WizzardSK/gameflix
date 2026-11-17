@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**34,518** of **341,431** games have no snap (89.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**34,226** of **341,431** games have no snap (90.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -13,7 +13,6 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
 | Amstrad CPC | amstradcpc | 1,246 | 14,827 | 92 % | Amstrad_-_CPC |
 | Acorn BBC | bbcmicro | 1,000 | 2,686 | 63 % | Acorn_-_BBC |
-| Videoton TV Computer | tvc | 904 | 952 | 5 % | Enterprise_-_Enterprise |
 | Sinclair ZX Spectrum | zxspectrum | 790 | 13,216 | 94 % | Sinclair_-_ZX_Spectrum |
 | Coleco Adam | adam | 729 | 1,183 | 38 % | Coleco_-_Adam |
 | VGMPlay | vgmplay | 699 | 3,870 | 82 % | MAME |
@@ -23,6 +22,7 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Fujitsu FM Towns | fmtowns | 634 | 1,789 | 65 % | Fujitsu_-_FM_Towns |
 | Sony PlayStation 1 | psx | 620 | 7,042 | 91 % | Sony_-_PlayStation |
 | NEC PC-8800 | pc88 | 615 | 2,074 | 70 % | NEC_-_PC-8001_-_PC-8801 |
+| Videoton TV Computer | tvc | 612 | 952 | 36 % | Enterprise_-_Enterprise |
 | NEC PC-9800 | pc98 | 568 | 2,673 | 79 % | NEC_-_PC-98 |
 | Acorn Electron | electron | 529 | 865 | 39 % | Acorn_-_Electron |
 | Tandy TRS-80 | trs80 | 509 | 590 | 14 % | Tandy_-_TRS-80 |
