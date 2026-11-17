@@ -198,7 +198,7 @@ trs80m2	trs80m2 trs80m2kb	trs80m2
 trs80m3	trs80m3	trs80_cass trs80_quik trs80_flop
 ts2068	ts2068 spectrum	spectrum_cass timex_dock timex_cass
 tutor	tutor	tutor
-tvc64p	tvc64p tvc64	tvc_cart tvc_cass tvc_flop
+tvc64p	tvc64p tvc64 tvc_hbf	tvc_cart tvc_cass tvc_flop
 unichamp	unichamp gic	unichamp
 uzebox	uzebox	uzebox
 vboy	vboy	vboy
