@@ -121,7 +121,11 @@ with open(out, 'w', encoding='utf-8') as f:
         f.write(f'| {titles.get(page, page)} | {page} | {missing:,} | {total:,} | {100 * (total - missing) / total:.0f} % | {", ".join(rs)} |\n')
     done = [r for r in rows if not r[0]]
     if done:
-        f.write(f'\nComplete ({len(done)}): ' + ', '.join(titles.get(r[2], r[2]) for r in sorted(done, key=lambda r: r[2])) + '.\n')
+        names = sorted((titles.get(r[2], r[2]) for r in done), key=str.lower)
+        names += [''] * (-len(names) % 8)
+        f.write(f'\n## Complete ({len(done)})\n\n' + '|' + ' |' * 8 + '\n|' + '---|' * 8 + '\n')
+        for i in range(0, len(names), 8):
+            f.write('| ' + ' | '.join(names[i:i + 8]) + ' |\n')
     if unreadable:
         f.write('\nNot counted (their repo could not be read): ' + ', '.join(unreadable) + '.\n')
 if html_out:

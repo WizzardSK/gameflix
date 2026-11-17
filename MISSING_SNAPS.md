@@ -212,4 +212,14 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Commodore VIC-10 | vic10 | 1 | 23 | 96 % | Commodore_-_VIC-10 |
 | Sharp X1 | x1 | 1 | 446 | 100 % | Sharp_-_X1 |
 
-Complete (51): ChaiLove, Lutro, Emerson Arcadia 2001, Atari VCS, Sammy Atomiswave, Epoch Cassette Vision, Sega Chihiro, Gakken Compact Vision TV Boy, Entex Select-A-Game, Exel EXL 100, Gaelco PowerVR, TimeTop GameKing, TimeTop GameKing 3, Hi-kara, Sega Hikaru, Mattel HyperScan, IBM PCjr, Mattel Juice Box, Sega Lindbergh, Sega Model 1, Sega Model 2, Sega Model 3, Othello Multivision, Nichibutsu My Vision, Sharp MZ-2500, Sega Naomi, Sega Naomi 2, VM Labs Nuon, NEC PC-6000, Amstrad PCW, Hanimex Pencil II, Bandai Playdia, ScummVM, VTech Socrates, Sega ST-V, Nintendo Sufami Turbo, Super Acan, Bandai Super Vision 8000, Texas Instruments TI-99/4A, Triforce, Tomy Tutor, Unisonic Champion 2711, Uzebox, Interton VC 4000, VideoArt, VideoBrain FamilyComputer, Sport Vii, Video Information System, VTech V.Smile Baby, Microsoft Xbox, Atari XEGS.
+## Complete (51)
+
+| | | | | | | | |
+|---|---|---|---|---|---|---|---|
+| Amstrad PCW | Atari VCS | Atari XEGS | Bandai Playdia | Bandai Super Vision 8000 | ChaiLove | Emerson Arcadia 2001 | Entex Select-A-Game |
+| Epoch Cassette Vision | Exel EXL 100 | Gaelco PowerVR | Gakken Compact Vision TV Boy | Hanimex Pencil II | Hi-kara | IBM PCjr | Interton VC 4000 |
+| Lutro | Mattel HyperScan | Mattel Juice Box | Microsoft Xbox | NEC PC-6000 | Nichibutsu My Vision | Nintendo Sufami Turbo | Othello Multivision |
+| Sammy Atomiswave | ScummVM | Sega Chihiro | Sega Hikaru | Sega Lindbergh | Sega Model 1 | Sega Model 2 | Sega Model 3 |
+| Sega Naomi | Sega Naomi 2 | Sega ST-V | Sharp MZ-2500 | Sport Vii | Super Acan | Texas Instruments TI-99/4A | TimeTop GameKing |
+| TimeTop GameKing 3 | Tomy Tutor | Triforce | Unisonic Champion 2711 | Uzebox | Video Information System | VideoArt | VideoBrain FamilyComputer |
+| VM Labs Nuon | VTech Socrates | VTech V.Smile Baby |  |  |  |  |  |
