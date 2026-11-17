@@ -212,16 +212,17 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Commodore VIC-10 | vic10 | 1 | 23 | 96 % | Commodore_-_VIC-10 |
 | Sharp X1 | x1 | 1 | 446 | 100 % | Sharp_-_X1 |
 
-| Complete (51) | | | | |
-|---|---|---|---|---|
-| Amstrad PCW | Atari VCS | Atari XEGS | Bandai Playdia | Bandai Super Vision 8000 |
-| ChaiLove | Emerson Arcadia 2001 | Entex Select-A-Game | Epoch Cassette Vision | Exel EXL 100 |
-| Gaelco PowerVR | Gakken Compact Vision TV Boy | Hanimex Pencil II | Hi-kara | IBM PCjr |
-| Interton VC 4000 | Lutro | Mattel HyperScan | Mattel Juice Box | Microsoft Xbox |
-| NEC PC-6000 | Nichibutsu My Vision | Nintendo Sufami Turbo | Othello Multivision | Sammy Atomiswave |
-| ScummVM | Sega Chihiro | Sega Hikaru | Sega Lindbergh | Sega Model 1 |
-| Sega Model 2 | Sega Model 3 | Sega Naomi | Sega Naomi 2 | Sega ST-V |
-| Sharp MZ-2500 | Sport Vii | Super Acan | Texas Instruments TI-99/4A | TimeTop GameKing |
-| TimeTop GameKing 3 | Tomy Tutor | Triforce | Unisonic Champion 2711 | Uzebox |
-| Video Information System | VideoArt | VideoBrain FamilyComputer | VM Labs Nuon | VTech Socrates |
-| VTech V.Smile Baby |  |  |  |  |
+<table>
+<tr><th colspan="5">Complete (51)</th></tr>
+<tr><td>Amstrad PCW</td><td>Atari VCS</td><td>Atari XEGS</td><td>Bandai Playdia</td><td>Bandai Super Vision 8000</td></tr>
+<tr><td>ChaiLove</td><td>Emerson Arcadia 2001</td><td>Entex Select-A-Game</td><td>Epoch Cassette Vision</td><td>Exel EXL 100</td></tr>
+<tr><td>Gaelco PowerVR</td><td>Gakken Compact Vision TV Boy</td><td>Hanimex Pencil II</td><td>Hi-kara</td><td>IBM PCjr</td></tr>
+<tr><td>Interton VC 4000</td><td>Lutro</td><td>Mattel HyperScan</td><td>Mattel Juice Box</td><td>Microsoft Xbox</td></tr>
+<tr><td>NEC PC-6000</td><td>Nichibutsu My Vision</td><td>Nintendo Sufami Turbo</td><td>Othello Multivision</td><td>Sammy Atomiswave</td></tr>
+<tr><td>ScummVM</td><td>Sega Chihiro</td><td>Sega Hikaru</td><td>Sega Lindbergh</td><td>Sega Model 1</td></tr>
+<tr><td>Sega Model 2</td><td>Sega Model 3</td><td>Sega Naomi</td><td>Sega Naomi 2</td><td>Sega ST-V</td></tr>
+<tr><td>Sharp MZ-2500</td><td>Sport Vii</td><td>Super Acan</td><td>Texas Instruments TI-99/4A</td><td>TimeTop GameKing</td></tr>
+<tr><td>TimeTop GameKing 3</td><td>Tomy Tutor</td><td>Triforce</td><td>Unisonic Champion 2711</td><td>Uzebox</td></tr>
+<tr><td>Video Information System</td><td>VideoArt</td><td>VideoBrain FamilyComputer</td><td>VM Labs Nuon</td><td>VTech Socrates</td></tr>
+<tr><td>VTech V.Smile Baby</td></tr>
+</table>
