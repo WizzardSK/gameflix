@@ -214,12 +214,13 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 
 ## Complete (51)
 
-| | | | | | | | |
-|---|---|---|---|---|---|---|---|
-| Amstrad PCW | Atari VCS | Atari XEGS | Bandai Playdia | Bandai Super Vision 8000 | ChaiLove | Emerson Arcadia 2001 | Entex Select-A-Game |
-| Epoch Cassette Vision | Exel EXL 100 | Gaelco PowerVR | Gakken Compact Vision TV Boy | Hanimex Pencil II | Hi-kara | IBM PCjr | Interton VC 4000 |
-| Lutro | Mattel HyperScan | Mattel Juice Box | Microsoft Xbox | NEC PC-6000 | Nichibutsu My Vision | Nintendo Sufami Turbo | Othello Multivision |
-| Sammy Atomiswave | ScummVM | Sega Chihiro | Sega Hikaru | Sega Lindbergh | Sega Model 1 | Sega Model 2 | Sega Model 3 |
-| Sega Naomi | Sega Naomi 2 | Sega ST-V | Sharp MZ-2500 | Sport Vii | Super Acan | Texas Instruments TI-99/4A | TimeTop GameKing |
-| TimeTop GameKing 3 | Tomy Tutor | Triforce | Unisonic Champion 2711 | Uzebox | Video Information System | VideoArt | VideoBrain FamilyComputer |
-| VM Labs Nuon | VTech Socrates | VTech V.Smile Baby |  |  |  |  |  |
+| Amstrad PCW | Atari VCS | Atari XEGS | Bandai Playdia | Bandai Super Vision 8000 | ChaiLove |
+|---|---|---|---|---|---|
+| Emerson Arcadia 2001 | Entex Select-A-Game | Epoch Cassette Vision | Exel EXL 100 | Gaelco PowerVR | Gakken Compact Vision TV Boy |
+| Hanimex Pencil II | Hi-kara | IBM PCjr | Interton VC 4000 | Lutro | Mattel HyperScan |
+| Mattel Juice Box | Microsoft Xbox | NEC PC-6000 | Nichibutsu My Vision | Nintendo Sufami Turbo | Othello Multivision |
+| Sammy Atomiswave | ScummVM | Sega Chihiro | Sega Hikaru | Sega Lindbergh | Sega Model 1 |
+| Sega Model 2 | Sega Model 3 | Sega Naomi | Sega Naomi 2 | Sega ST-V | Sharp MZ-2500 |
+| Sport Vii | Super Acan | Texas Instruments TI-99/4A | TimeTop GameKing | TimeTop GameKing 3 | Tomy Tutor |
+| Triforce | Unisonic Champion 2711 | Uzebox | Video Information System | VideoArt | VideoBrain FamilyComputer |
+| VM Labs Nuon | VTech Socrates | VTech V.Smile Baby |  |  |  |

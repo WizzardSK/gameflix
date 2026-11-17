@@ -122,10 +122,10 @@ with open(out, 'w', encoding='utf-8') as f:
     done = [r for r in rows if not r[0]]
     if done:
         names = sorted((titles.get(r[2], r[2]) for r in done), key=str.lower)
-        names += [''] * (-len(names) % 8)
-        f.write(f'\n## Complete ({len(done)})\n\n' + '|' + ' |' * 8 + '\n|' + '---|' * 8 + '\n')
-        for i in range(0, len(names), 8):
-            f.write('| ' + ' | '.join(names[i:i + 8]) + ' |\n')
+        names += [''] * (-len(names) % 6)
+        # GitHub needs a header row: the first six names are it
+        rows6 = ['| ' + ' | '.join(names[i:i + 6]) + ' |\n' for i in range(0, len(names), 6)]
+        f.write(f'\n## Complete ({len(done)})\n\n' + rows6[0] + '|' + '---|' * 6 + '\n' + ''.join(rows6[1:]))
     if unreadable:
         f.write('\nNot counted (their repo could not be read): ' + ', '.join(unreadable) + '.\n')
 if html_out:
