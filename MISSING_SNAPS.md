@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**34,000** of **341,431** games have no snap (90.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**33,940** of **341,431** games have no snap (90.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -12,7 +12,7 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Sony PlayStation 3 | ps3 | 2,019 | 4,093 | 51 % | Sony_-_PlayStation_3 |
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
 | Amstrad CPC | amstradcpc | 1,246 | 14,827 | 92 % | Amstrad_-_CPC |
-| Acorn BBC | bbcmicro | 1,000 | 2,686 | 63 % | Acorn_-_BBC |
+| Acorn BBC | bbcmicro | 940 | 2,686 | 65 % | Acorn_-_BBC |
 | Sinclair ZX Spectrum | zxspectrum | 790 | 13,216 | 94 % | Sinclair_-_ZX_Spectrum |
 | Coleco Adam | adam | 729 | 1,183 | 38 % | Coleco_-_Adam |
 | VGMPlay | vgmplay | 699 | 3,870 | 82 % | MAME |
