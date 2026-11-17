@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**32,629** of **341,431** games have no snap (90.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**32,576** of **341,431** games have no snap (90.5 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -25,10 +25,10 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | IBM PC/AT 5170 | ibm5170 | 494 | 879 | 44 % | DOS |
 | Apple IIGS | apple2gs | 484 | 985 | 51 % | Apple_-_IIGS |
 | Tandy TRS-80 | trs80 | 478 | 590 | 19 % | Tandy_-_TRS-80 |
-| Panasonic MSX1 | msx1 | 450 | 5,021 | 91 % | Microsoft_-_MSX |
 | Nintendo Game Boy Advance | gba | 441 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
 | Thomson MO/TO | thomson | 425 | 1,959 | 78 % | Thomson_-_MOTO |
 | Atari ST | atarist | 400 | 5,952 | 93 % | Atari_-_ST |
+| Panasonic MSX1 | msx1 | 397 | 5,021 | 92 % | Microsoft_-_MSX |
 | Bally Astrocade | astrocade | 378 | 559 | 32 % | Bally_-_Astrocade |
 | Apple II | apple2 | 358 | 8,440 | 96 % | Apple_-_II |
 | Dragon 32/64 | dragon64 | 334 | 1,094 | 69 % | Dragon_-_Dragon_64 |
