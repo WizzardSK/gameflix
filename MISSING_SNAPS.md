@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-17. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**33,075** of **341,431** games have no snap (90.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**32,898** of **341,431** games have no snap (90.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -23,40 +23,39 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Sony PlayStation 1 | psx | 620 | 7,042 | 91 % | Sony_-_PlayStation |
 | NEC PC-8800 | pc88 | 615 | 2,074 | 70 % | NEC_-_PC-8001_-_PC-8801 |
 | NEC PC-9800 | pc98 | 568 | 2,673 | 79 % | NEC_-_PC-98 |
-| Tandy TRS-80 | trs80 | 509 | 590 | 14 % | Tandy_-_TRS-80 |
 | IBM PC/AT 5170 | ibm5170 | 494 | 879 | 44 % | DOS |
 | Apple IIGS | apple2gs | 484 | 985 | 51 % | Apple_-_IIGS |
+| Tandy TRS-80 | trs80 | 478 | 590 | 19 % | Tandy_-_TRS-80 |
 | Panasonic MSX1 | msx1 | 450 | 5,021 | 91 % | Microsoft_-_MSX |
 | Nintendo Game Boy Advance | gba | 441 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
 | Atari ST | atarist | 400 | 5,952 | 93 % | Atari_-_ST |
 | Bally Astrocade | astrocade | 378 | 559 | 32 % | Bally_-_Astrocade |
 | Apple II | apple2 | 358 | 8,440 | 96 % | Apple_-_II |
-| Dragon 32/64 | dragon64 | 340 | 1,094 | 69 % | Dragon_-_Dragon_64 |
+| Dragon 32/64 | dragon64 | 334 | 1,094 | 69 % | Dragon_-_Dragon_64 |
 | Acorn Archimedes | archimedes | 319 | 473 | 33 % | Acorn_-_Archimedes |
 | Acorn Electron | electron | 303 | 865 | 65 % | Acorn_-_Electron |
 | MAME | mame | 296 | 20,130 | 99 % | MAME |
 | Sharp X68000 | x68000 | 294 | 3,153 | 91 % | Sharp_-_X68000 |
-| Sharp MZ-700 | mz700 | 265 | 305 | 13 % | Sharp_-_MZ-700 |
 | Commodore PET | pet | 263 | 309 | 15 % | Commodore_-_PET |
 | Nintendo 64 | n64 | 256 | 2,266 | 89 % | Nintendo_-_Nintendo_64 |
 | EACA Colour Genie | cgenie | 252 | 272 | 7 % | EACA_-_EG2000_Colour_Genie |
 | Fujitsu Micro 7 | fm7 | 230 | 752 | 69 % | Fujitsu_-_Micro_7 |
 | Sony PlayStation 2 | ps2 | 230 | 2,082 | 89 % | Sony_-_PlayStation_2 |
+| Sharp MZ-700 | mz700 | 216 | 305 | 29 % | Sharp_-_MZ-700 |
 | IBM PC 5150 | ibm5150 | 211 | 700 | 70 % | DOS |
 | Compucolor II | compclr2 | 203 | 220 | 8 % | MAME |
 | Nintendo Game Boy Color | gbc | 185 | 4,961 | 96 % | Nintendo_-_Game_Boy_Color |
 | Apple Macintosh | macintosh | 184 | 325 | 43 % | Apple_-_Macintosh |
 | Nintendo Super NES | snes | 181 | 5,898 | 97 % | Nintendo_-_Super_Nintendo_Entertainment_System |
 | Elektronika BK | bk | 179 | 186 | 4 % | Elektronika_-_BK |
-| Videoton TV Computer | tvc | 177 | 952 | 81 % | Enterprise_-_Enterprise |
 | Oric Atmos | oricatmos | 175 | 463 | 62 % | Tangerine_-_Oric_Atmos |
+| Videoton TV Computer | tvc | 174 | 952 | 82 % | Enterprise_-_Enterprise |
 | MicroBee | mbee | 155 | 710 | 78 % | Applied_Technology_-_MicroBee |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Specialist | special | 139 | 162 | 14 % | MAME |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
 | Panasonic MSX2 | msx2 | 133 | 1,467 | 91 % | Microsoft_-_MSX2 |
-| Apple III | apple3 | 128 | 148 | 14 % | Apple_-_III |
 | Tandy TRS-80 Color Computer | coco | 128 | 227 | 44 % | Tandy_-_TRS-80_Color_Computer |
 | Dick Smith Super-80 | super80 | 121 | 137 | 12 % | MAME |
 | Sony PlayStation Portable | psp | 118 | 2,833 | 96 % | Sony_-_PlayStation_Portable |
@@ -105,6 +104,7 @@ Games on the site without a snap, per platform page, as of 2026-11-17. Regenerat
 | Nintendo Virtual Boy | virtualboy | 46 | 256 | 82 % | Nintendo_-_Virtual_Boy |
 | Commodore Amiga CD | amiga1200 | 43 | 625 | 93 % | Commodore_-_Amiga |
 | Atari Jaguar | jaguar | 43 | 480 | 91 % | Atari_-_Jaguar |
+| Apple III | apple3 | 40 | 148 | 73 % | Apple_-_III |
 | Apple Lisa | lisa | 39 | 39 | 0 % | Apple_-_Lisa |
 | CCE MC-1000 | mc1000 | 33 | 34 | 3 % | MAME |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
