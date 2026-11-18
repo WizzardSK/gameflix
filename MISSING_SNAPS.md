@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-18. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**31,446** of **341,431** games have no snap (90.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**31,443** of **341,431** games have no snap (90.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -34,8 +34,8 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Panasonic MSX1 | msx1 | 297 | 5,021 | 94 % | Microsoft_-_MSX |
 | MAME | mame | 296 | 20,130 | 99 % | MAME |
 | Nintendo 64 | n64 | 256 | 2,266 | 89 % | Nintendo_-_Nintendo_64 |
-| Thomson MO/TO | thomson | 253 | 1,959 | 87 % | Thomson_-_MOTO |
 | Dragon 32/64 | dragon64 | 251 | 1,094 | 77 % | Dragon_-_Dragon_64 |
+| Thomson MO/TO | thomson | 250 | 1,959 | 87 % | Thomson_-_MOTO |
 | Sharp X68000 | x68000 | 245 | 3,153 | 92 % | Sharp_-_X68000 |
 | Sony PlayStation 2 | ps2 | 230 | 2,082 | 89 % | Sony_-_PlayStation_2 |
 | Fujitsu Micro 7 | fm7 | 227 | 752 | 70 % | Fujitsu_-_Micro_7 |
