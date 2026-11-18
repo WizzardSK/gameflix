@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-18. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**31,956** of **341,431** games have no snap (90.6 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**31,815** of **341,431** games have no snap (90.7 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -35,7 +35,6 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Acorn Electron | electron | 303 | 865 | 65 % | Acorn_-_Electron |
 | Panasonic MSX1 | msx1 | 297 | 5,021 | 94 % | Microsoft_-_MSX |
 | MAME | mame | 296 | 20,130 | 99 % | MAME |
-| Commodore PET | pet | 263 | 309 | 15 % | Commodore_-_PET |
 | Nintendo 64 | n64 | 256 | 2,266 | 89 % | Nintendo_-_Nintendo_64 |
 | Sharp X68000 | x68000 | 245 | 3,153 | 92 % | Sharp_-_X68000 |
 | Fujitsu Micro 7 | fm7 | 230 | 752 | 69 % | Fujitsu_-_Micro_7 |
@@ -56,6 +55,7 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Panasonic MSX2 | msx2 | 133 | 1,467 | 91 % | Microsoft_-_MSX2 |
 | Tandy TRS-80 Color Computer | coco | 128 | 227 | 44 % | Tandy_-_TRS-80_Color_Computer |
 | Oric Atmos | oricatmos | 124 | 463 | 73 % | Tangerine_-_Oric_Atmos |
+| Commodore PET | pet | 122 | 309 | 61 % | Commodore_-_PET |
 | Dick Smith Super-80 | super80 | 119 | 137 | 13 % | MAME |
 | Sony PlayStation Portable | psp | 118 | 2,833 | 96 % | Sony_-_PlayStation_Portable |
 | MicroBee | mbee | 116 | 710 | 84 % | Applied_Technology_-_MicroBee |
