@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-18. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**30,406** of **341,431** games have no snap (91.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**30,361** of **341,431** games have no snap (91.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -72,7 +72,6 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Tatung Einstein | einstein | 81 | 113 | 28 % | Tatung_-_Einstein |
 | Apple I | apple1 | 80 | 80 | 0 % | Apple_-_I |
 | Sega Dreamcast | dreamcast | 79 | 2,272 | 97 % | Sega_-_Dreamcast |
-| Tiki 100 | tiki100 | 79 | 82 | 4 % | MAME |
 | Canon X-07 | x07 | 79 | 88 | 10 % | MAME |
 | Exidy Sorcerer | sorcerer | 78 | 129 | 40 % | MAME |
 | Atari Lynx | lynx | 75 | 591 | 87 % | Atari_-_Lynx |
@@ -106,6 +105,7 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Apple III | apple3 | 40 | 148 | 73 % | Apple_-_III |
 | Tandy TRS-80 Color Computer | coco | 39 | 227 | 83 % | Tandy_-_TRS-80_Color_Computer |
 | Apple Lisa | lisa | 39 | 39 | 0 % | Apple_-_Lisa |
+| Tiki 100 | tiki100 | 34 | 82 | 59 % | MAME |
 | CCE MC-1000 | mc1000 | 33 | 34 | 3 % | MAME |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
 | Atari 2600 | atari2600 | 30 | 4,197 | 99 % | Atari_-_2600 |
