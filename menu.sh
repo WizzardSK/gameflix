@@ -30,7 +30,7 @@ echo "<link rel=\"icon\" type=\"image/png\" href=\"/favicon.png\"><title>gamefli
 total=0; platforms=0
 entry() { # PAGE CAPTION BACKGROUND
   local n=${count[$1]:-0}
-  echo "<figure><a href='$1.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/$3.jpg'><figcaption>$2</figcaption></a>$n</figure>" >> $main
+  echo "<figure><a href='$1.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/thumbs/$3.jpg'><figcaption>$2</figcaption></a>$n</figure>" >> $main
   echo "<a href=\"$1.html\" target=\"main\">$2</a> <small>$n</small><br />" >> $menu
   ((total += n)); ((platforms++))
 }

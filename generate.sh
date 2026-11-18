@@ -318,7 +318,7 @@ for tic_cat in Games Tech Tools Music WIP Demoscene Livecoding; do
   printf ']; generateTicLinks("roms/TIC-80", "TIC-80");</script>\n' >> ~/gameflix/TIC-80.html
 done
 echo "<script src=\"script.js\"></script>" >> ~/gameflix/TIC-80.html
-echo "<figure><a href='TIC-80.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/tic80.jpg'><figcaption>TIC-80</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
+echo "<figure><a href='TIC-80.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/thumbs/tic80.jpg'><figcaption>TIC-80</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"TIC-80.html\" target=\"main\">TIC-80</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 echo "<game><path>./surf.tic</path><name>TIC-80 surf</name><image>./tic80.png</image></game></gameList>" >> ~/gamelists/tic80/gamelist.xml
 
@@ -350,7 +350,7 @@ section_open=0
 } > ~/gamelists/lowresnx/gamelist.xml
 printf ']; generateLrNXLinks("roms/LowresNX", "LowresNX");</script>\n' >> ~/gameflix/LowresNX.html
 echo "<script src=\"script.js\"></script>" >> ~/gameflix/LowresNX.html
-echo "<figure><a href='LowresNX.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/lowresnx.jpg'><figcaption>LowresNX</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
+echo "<figure><a href='LowresNX.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/thumbs/lowresnx.jpg'><figcaption>LowresNX</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"LowresNX.html\" target=\"main\">LowresNX</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 
 # WASM-4 - dual fd output (count from wasm4.org/play, works in CI without local ROMs)
@@ -371,7 +371,7 @@ exec 3>> ~/gameflix/WASM-4.html
   echo "</gameList>"
 } > ~/gamelists/wasm4/gamelist.xml
 exec 3>&-
-echo "<figure><a href='WASM-4.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/wasm4.jpg'><figcaption>WASM-4</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
+echo "<figure><a href='WASM-4.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/thumbs/wasm4.jpg'><figcaption>WASM-4</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"WASM-4.html\" target=\"main\">WASM-4</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 printf ']; generateWasmLinks("roms/WASM-4", "WASM-4");</script><script src=\"script.js\"></script>' >> ~/gameflix/WASM-4.html
 
@@ -392,7 +392,7 @@ while IFS=$'\t' read -r id rest; do
 done < fantasy/pico8.txt
 printf ']; generatePicoLinks("roms/PICO-8", "PICO-8");</script>\n' >> ~/gameflix/PICO-8.html
 echo "<script src=\"script.js\"></script>" >> ~/gameflix/PICO-8.html
-echo "<figure><a href='PICO-8.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/pico8.jpg'><figcaption>PICO-8</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
+echo "<figure><a href='PICO-8.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/thumbs/pico8.jpg'><figcaption>PICO-8</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"PICO-8.html\" target=\"main\">PICO-8</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 echo "<gameList></gameList>" > ~/gamelists/pico8/gamelist.xml
 
@@ -413,7 +413,7 @@ while IFS=$'\t' read -r id rest; do
 done < fantasy/voxatron.txt
 printf ']; generateVoxLinks("roms/Voxatron", "Voxatron");</script>\n' >> ~/gameflix/Voxatron.html
 echo "<script src=\"script.js\"></script>" >> ~/gameflix/Voxatron.html
-echo "<figure><a href='Voxatron.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/voxatron.jpg'><figcaption>Voxatron</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
+echo "<figure><a href='Voxatron.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/thumbs/voxatron.jpg'><figcaption>Voxatron</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
 echo "<a href=\"Voxatron.html\" target=\"main\">Voxatron</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 echo "<gameList></gameList>" > ~/gamelists/voxatron/gamelist.xml
 
@@ -438,7 +438,7 @@ buildbot_platform() {
     echo "</gameList>"
   } > ~/gamelists/$bg/gamelist.xml
   printf ']; generateFileLinks("roms/%s", "%s");</script>\n<script src="script.js"></script>\n' "$page" "$page" >> ~/gameflix/$page.html
-  echo "<figure><a href='$page.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/$bg.jpg'><figcaption>$page</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
+  echo "<figure><a href='$page.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/thumbs/$bg.jpg'><figcaption>$page</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
   echo "<a href=\"$page.html\" target=\"main\">$page</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 }
 # BIOS Check, Launcher and JSTest are the cores' own test and menu carts, not games
@@ -458,7 +458,7 @@ IFS=";"; for each in "${roms[@]}"; do
       echo "<script src=\"script.js\"></script>" >&$html_fd
       exec {html_fd}>&- {xml_fd}>&-
       echo ${rom[6]}
-      echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/${rom3}.jpg'><figcaption>${rom6}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
+      echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/thumbs/${rom3}.jpg'><figcaption>${rom6}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html
       echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html; ((platforms++))
     fi
     [[ -n "${separator[${rom[0]}]}" ]] && group="${separator[${rom[0]}]}" && echo "<br /><b>${separator[${rom[0]}]}</b><br />" >> ~/gameflix/systems.html && echo "<h3 id=\"${separator[${rom[0]}]}\" class=\"section-header\" style=\"width:100%\">${separator[${rom[0]}]}</h3>" >> ~/gameflix/main.html
@@ -640,7 +640,7 @@ done
 echo ']; generateFileLinks("'"$prev_romfolder"'", "'"${prev_imagepath}"'");</script>' >&$html_fd
 echo "<script src=\"script.js\"></script>" >&$html_fd
 exec {html_fd}>&- {xml_fd}>&-
-echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/background/${rom3}.jpg'><figcaption>${rom6}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html; ((platforms++))
+echo "<figure><a href='${rom3}.html'><img src='https://raw.githubusercontent.com/WizzardSK/gameflix/master/art/thumbs/${rom3}.jpg'><figcaption>${rom6}</figcaption></a>$pocet</figure>" >> ~/gameflix/main.html; ((platforms++))
 echo "<a href=\"${rom3}.html\" target=\"main\">${rom6}</a> <small>$pocet</small><br />" >> ~/gameflix/systems.html
 # Close all gamelist XMLs
 for k in "${!gamelist_started[@]}"; do
