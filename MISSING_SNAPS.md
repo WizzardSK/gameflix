@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-18. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**31,328** of **341,431** games have no snap (90.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**31,219** of **341,431** games have no snap (90.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -19,8 +19,8 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Atari 800 | atari800 | 651 | 6,419 | 90 % | Atari_-_8-bit |
 | SAM Coupé | samcoupe | 643 | 870 | 26 % | MGT_-_Sam_Coupe |
 | Fujitsu FM Towns | fmtowns | 634 | 1,789 | 65 % | Fujitsu_-_FM_Towns |
-| Sony PlayStation 1 | psx | 620 | 7,042 | 91 % | Sony_-_PlayStation |
 | NEC PC-8800 | pc88 | 615 | 2,074 | 70 % | NEC_-_PC-8001_-_PC-8801 |
+| Sony PlayStation 1 | psx | 588 | 7,042 | 92 % | Sony_-_PlayStation |
 | NEC PC-9800 | pc98 | 568 | 2,673 | 79 % | NEC_-_PC-98 |
 | IBM PC/AT 5170 | ibm5170 | 494 | 879 | 44 % | DOS |
 | Apple IIGS | apple2gs | 484 | 985 | 51 % | Apple_-_IIGS |
@@ -37,7 +37,6 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Dragon 32/64 | dragon64 | 251 | 1,094 | 77 % | Dragon_-_Dragon_64 |
 | Thomson MO/TO | thomson | 250 | 1,959 | 87 % | Thomson_-_MOTO |
 | Sharp X68000 | x68000 | 245 | 3,153 | 92 % | Sharp_-_X68000 |
-| Sony PlayStation 2 | ps2 | 230 | 2,082 | 89 % | Sony_-_PlayStation_2 |
 | Fujitsu Micro 7 | fm7 | 227 | 752 | 70 % | Fujitsu_-_Micro_7 |
 | IBM PC 5150 | ibm5150 | 211 | 700 | 70 % | DOS |
 | Compucolor II | compclr2 | 202 | 220 | 8 % | MAME |
@@ -48,6 +47,7 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Sharp MZ-700 | mz700 | 180 | 305 | 41 % | Sharp_-_MZ-700 |
 | Elektronika BK | bk | 179 | 186 | 4 % | Elektronika_-_BK |
 | Videoton TV Computer | tvc | 174 | 952 | 82 % | Enterprise_-_Enterprise |
+| Sony PlayStation 2 | ps2 | 153 | 2,082 | 93 % | Sony_-_PlayStation_2 |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Specialist | special | 138 | 162 | 15 % | MAME |
