@@ -2,13 +2,13 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-18. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**31,471** of **341,431** games have no snap (90.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**31,446** of **341,431** games have no snap (90.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
 | Microsoft MS-DOS | dos | 2,857 | 23,819 | 88 % | DOS |
-| Commodore Amiga | amiga500 | 2,053 | 29,213 | 93 % | Commodore_-_Amiga |
-| Commodore 64 | c64 | 2,052 | 63,862 | 97 % | Commodore_-_64 |
+| Commodore Amiga | amiga500 | 2,051 | 29,213 | 93 % | Commodore_-_Amiga |
+| Commodore 64 | c64 | 2,051 | 63,862 | 97 % | Commodore_-_64 |
 | Sony PlayStation 3 | ps3 | 2,019 | 4,093 | 51 % | Sony_-_PlayStation_3 |
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
 | Amstrad CPC | amstradcpc | 959 | 14,827 | 94 % | Amstrad_-_CPC |
@@ -25,9 +25,9 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | IBM PC/AT 5170 | ibm5170 | 494 | 879 | 44 % | DOS |
 | Apple IIGS | apple2gs | 484 | 985 | 51 % | Apple_-_IIGS |
 | Tandy TRS-80 | trs80 | 478 | 590 | 19 % | Tandy_-_TRS-80 |
-| Nintendo Game Boy Advance | gba | 441 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
+| Nintendo Game Boy Advance | gba | 440 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
 | Atari ST | atarist | 400 | 5,952 | 93 % | Atari_-_ST |
-| Bally Astrocade | astrocade | 378 | 559 | 32 % | Bally_-_Astrocade |
+| Bally Astrocade | astrocade | 376 | 559 | 33 % | Bally_-_Astrocade |
 | Apple II | apple2 | 358 | 8,440 | 96 % | Apple_-_II |
 | Acorn Archimedes | archimedes | 319 | 473 | 33 % | Acorn_-_Archimedes |
 | Acorn Electron | electron | 303 | 865 | 65 % | Acorn_-_Electron |
@@ -37,8 +37,8 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Thomson MO/TO | thomson | 253 | 1,959 | 87 % | Thomson_-_MOTO |
 | Dragon 32/64 | dragon64 | 251 | 1,094 | 77 % | Dragon_-_Dragon_64 |
 | Sharp X68000 | x68000 | 245 | 3,153 | 92 % | Sharp_-_X68000 |
-| Fujitsu Micro 7 | fm7 | 230 | 752 | 69 % | Fujitsu_-_Micro_7 |
 | Sony PlayStation 2 | ps2 | 230 | 2,082 | 89 % | Sony_-_PlayStation_2 |
+| Fujitsu Micro 7 | fm7 | 227 | 752 | 70 % | Fujitsu_-_Micro_7 |
 | IBM PC 5150 | ibm5150 | 211 | 700 | 70 % | DOS |
 | Compucolor II | compclr2 | 202 | 220 | 8 % | MAME |
 | EACA Colour Genie | cgenie | 197 | 272 | 28 % | EACA_-_EG2000_Colour_Genie |
@@ -65,9 +65,9 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | APF MP-1000 | apfm1000 | 99 | 142 | 30 % | APF_-_MP-1000 |
 | Radio-86RK | radio86 | 99 | 99 | 0 % | Radio-86RK |
 | Palm OS | palm | 91 | 269 | 66 % | Mobile_-_Palm_OS_-Digital- |
-| Commodore VIC-20 | c20 | 90 | 620 | 85 % | Commodore_-_VIC-20 |
 | Nintendo Entertainment System | nes | 89 | 12,159 | 99 % | Nintendo_-_Nintendo_Entertainment_System |
 | Commodore 128 | c128 | 88 | 100 | 12 % | Commodore_-_128 |
+| Commodore VIC-20 | c20 | 87 | 620 | 86 % | Commodore_-_VIC-20 |
 | Commodore CBM-II | cbm2 | 84 | 139 | 40 % | Commodore_-_CBM-II |
 | Tatung Einstein | einstein | 81 | 113 | 28 % | Tatung_-_Einstein |
 | Apple I | apple1 | 80 | 80 | 0 % | Apple_-_I |
@@ -94,15 +94,15 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | VTech Laser | laser310 | 58 | 431 | 87 % | VTech_-_Laser_310 |
 | Tesla PMD 85 | pmd85 | 57 | 57 | 0 % | Tesla_-_PMD_85 |
 | Acorn Atom | atom | 51 | 88 | 42 % | Acorn_-_Atom |
-| Sega Saturn | saturn | 50 | 1,765 | 97 % | Sega_-_Saturn |
 | Sinclair ZX Spectrum +3 | specpls3 | 50 | 1,065 | 95 % | Sinclair_-_ZX_Spectrum_-3 |
+| Sega Saturn | saturn | 49 | 1,765 | 97 % | Sega_-_Saturn |
 | Nintendo DSi | dsi | 47 | 49 | 4 % | Nintendo_-_Nintendo_DSi |
 | Samsung SPC-1000 | spc1000 | 47 | 89 | 47 % | Samsung_-_SPC-1000 |
 | Memotech MTX | mtx | 46 | 61 | 25 % | Memotech_-_MTX512 |
 | Orao | orao | 46 | 55 | 16 % | MAME |
 | Nintendo Virtual Boy | virtualboy | 46 | 256 | 82 % | Nintendo_-_Virtual_Boy |
 | Commodore Amiga CD | amiga1200 | 43 | 625 | 93 % | Commodore_-_Amiga |
-| Atari Jaguar | jaguar | 43 | 480 | 91 % | Atari_-_Jaguar |
+| Atari Jaguar | jaguar | 42 | 480 | 91 % | Atari_-_Jaguar |
 | Apple III | apple3 | 40 | 148 | 73 % | Apple_-_III |
 | Tandy TRS-80 Color Computer | coco | 39 | 227 | 83 % | Tandy_-_TRS-80_Color_Computer |
 | Apple Lisa | lisa | 39 | 39 | 0 % | Apple_-_Lisa |
@@ -145,14 +145,14 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Nintendo 64DD | n64dd | 13 | 19 | 32 % | Nintendo_-_Nintendo_64DD |
 | Philips VG-5000 | vg5k | 13 | 68 | 81 % | MAME |
 | Nintendo 3DS | 3ds | 12 | 153 | 92 % | Nintendo_-_Nintendo_3DS |
-| Mattel Intellivision | intellivision | 12 | 608 | 98 % | Mattel_-_Intellivision |
 | VTech V.Smile | vsmile | 12 | 325 | 96 % | VTech_-_V.Smile |
 | Bandai WonderSwan Color | wswanc | 12 | 456 | 97 % | Bandai_-_WonderSwan_Color |
+| Mattel Intellivision | intellivision | 11 | 608 | 98 % | Mattel_-_Intellivision |
 | Atari Jaguar CD | jaguarcd | 11 | 36 | 69 % | Atari_-_Jaguar |
 | Casio PV-2000 | pv2000 | 11 | 24 | 54 % | Casio_-_PV-2000 |
-| Sega SG-1000 | sg1000 | 11 | 458 | 98 % | Sega_-_SG-1000 |
 | Vircon32 | vircon32 | 11 | 67 | 84 % | Vircon32 |
 | Ei Pecom 64 | pecom64 | 10 | 10 | 0 % | Pecom_-_64 |
+| Sega SG-1000 | sg1000 | 10 | 458 | 98 % | Sega_-_SG-1000 |
 | Magnavox Odyssey² | odyssey2 | 9 | 353 | 97 % | Magnavox_-_Odyssey2 |
 | Pegasus | pegasus | 9 | 12 | 25 % | MAME |
 | Sony Pocket Station | pockstat | 9 | 109 | 92 % | Sony_-_Pocket_Station |
@@ -163,7 +163,6 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | SNK Neo Geo Pocket Color | ngpc | 7 | 381 | 98 % | SNK_-_Neo_Geo_Pocket_Color |
 | NEC PC Engine 1 | pcengine | 7 | 1,124 | 99 % | NEC_-_PC_Engine_-_TurboGrafx_16 |
 | Fairchild Channel F | channelf | 6 | 139 | 96 % | Fairchild_-_Channel_F |
-| Nintendo Family Disk System | fds | 6 | 816 | 99 % | Nintendo_-_Family_Computer_Disk_System |
 | GamePark GP32 | gp32 | 6 | 65 | 91 % | GamePark_-_GP32 |
 | Amstrad GX4000 | gx4000 | 6 | 80 | 92 % | Amstrad_-_GX4000 |
 | Java ME (J2ME) | j2me | 6 | 39 | 85 % | Mobile_-_J2ME |
@@ -175,21 +174,22 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Microsoft Xbox 360 | xbox360 | 6 | 143 | 96 % | Microsoft_-_Xbox_360 |
 | Sinclair ZX80 | zx80 | 6 | 6 | 0 % | Sinclair_-_ZX_80 |
 | Arduboy | arduboy | 5 | 392 | 99 % | Arduboy_Inc_-_Arduboy |
-| VTech CreatiVision | crvision | 5 | 85 | 94 % | VTech_-_CreatiVision |
 | Nintendo Gamecube | gamecube | 5 | 590 | 99 % | Nintendo_-_GameCube |
 | NEC PC Engine CD | pcenginecd | 5 | 1,297 | 100 % | NEC_-_PC_Engine_CD_-_TurboGrafx-CD |
 | Sega Visual Memory Unit | svmu | 5 | 131 | 96 % | Sega_-_Visual_Memory_Unit |
 | Atari 5200 | atari5200 | 4 | 369 | 99 % | Atari_-_5200 |
 | Casio Loopy | loopy | 4 | 24 | 83 % | Casio_-_Loopy |
 | M&D Monon Color | mononcolor | 4 | 20 | 80 % | M-D_-_Monon_Color |
-| Epoch Super Casette Vision | scv | 4 | 94 | 96 % | Epoch_-_Super_Cassette_Vision |
 | Samsung SPC-1500 | spc1500 | 4 | 4 | 0 % | Samsung_-_SPC-1500 |
 | CHIP-8 | chip8 | 3 | 71 | 96 % | CHIP-8 |
-| Coleco Colecovision | colecovision | 3 | 728 | 100 % | Coleco_-_ColecoVision |
+| VTech CreatiVision | crvision | 3 | 85 | 96 % | VTech_-_CreatiVision |
+| Nintendo Family Disk System | fds | 3 | 816 | 100 % | Nintendo_-_Family_Computer_Disk_System |
 | Hartung Game Master | gmaster | 3 | 55 | 95 % | Hartung_-_Game_Master |
 | SNK Neo Geo CD | neogeocd | 3 | 204 | 99 % | SNK_-_Neo_Geo_CD |
 | DEC PDP-1 | pdp1 | 3 | 3 | 0 % | PDP-1 |
+| Epoch Super Casette Vision | scv | 3 | 94 | 97 % | Epoch_-_Super_Cassette_Vision |
 | Adventure Vision | advision | 2 | 14 | 86 % | Entex_-_Adventure_Vision |
+| Coleco Colecovision | colecovision | 2 | 728 | 100 % | Coleco_-_ColecoVision |
 | Commander X16 | commanderx16 | 2 | 9 | 78 % | Commander_-_X16 |
 | Milton Bradley Microvision | microvision | 2 | 16 | 88 % | Milton_Bradley_-_Microvision |
 | SNK Neo Geo AES | neogeo | 2 | 167 | 99 % | SNK_-_Neo_Geo |
@@ -200,19 +200,17 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Panasonic 3DO | 3do | 1 | 938 | 100 % | The_3DO_Company_-_3DO |
 | VaporSpec | VaporSpec | 1 | 10 | 90 % | VaporSpec |
 | Bitcorp Gamate | gamate | 1 | 179 | 99 % | Bitcorp_-_Gamate |
-| Tiger Game.com | gamecom | 1 | 67 | 99 % | Tiger_-_Game.com |
 | Epoch Game Pocket Computer | gamepock | 1 | 11 | 91 % | Epoch_-_Game_Pocket_Computer |
 | Juku | juku | 1 | 1 | 0 % | MAME |
 | Sega MSU-MD | megadrive-msu | 1 | 60 | 98 % | Sega_-_Mega_Drive_-_Genesis |
 | Welback Mega Duck | megaduck | 1 | 50 | 98 % | Welback_-_Mega_Duck |
 | SNK Neo Geo Pocket | ngp | 1 | 34 | 97 % | SNK_-_Neo_Geo_Pocket |
-| Nintendo Pokémon Mini | pokemini | 1 | 79 | 99 % | Nintendo_-_Pokemon_Mini |
 | Sony PlayStation Vita | psvita | 1 | 1,023 | 100 % | Sony_-_PlayStation_Vita |
 | NEC PC Engine 2 | supergrafx | 1 | 16 | 94 % | NEC_-_PC_Engine_SuperGrafx |
 | Commodore VIC-10 | vic10 | 1 | 23 | 96 % | Commodore_-_VIC-10 |
 | Sharp X1 | x1 | 1 | 446 | 100 % | Sharp_-_X1 |
 
-## Complete (51)
+## Complete (53)
 
 | | | | | |
 |---|---|---|---|---|
@@ -220,10 +218,10 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | ChaiLove | Emerson Arcadia 2001 | Entex Select-A-Game | Epoch Cassette Vision | Exel EXL 100 |
 | Gaelco PowerVR | Gakken Compact Vision TV Boy | Hanimex Pencil II | Hi-kara | IBM PCjr |
 | Interton VC 4000 | Lutro | Mattel HyperScan | Mattel Juice Box | Microsoft Xbox |
-| NEC PC-6000 | Nichibutsu My Vision | Nintendo Sufami Turbo | Othello Multivision | Sammy Atomiswave |
-| ScummVM | Sega Chihiro | Sega Hikaru | Sega Lindbergh | Sega Model 1 |
-| Sega Model 2 | Sega Model 3 | Sega Naomi | Sega Naomi 2 | Sega ST-V |
-| Sharp MZ-2500 | Sport Vii | Super Acan | Texas Instruments TI-99/4A | TimeTop GameKing |
-| TimeTop GameKing 3 | Tomy Tutor | Triforce | Unisonic Champion 2711 | Uzebox |
-| Video Information System | VideoArt | VideoBrain FamilyComputer | VM Labs Nuon | VTech Socrates |
-| VTech V.Smile Baby |  |  |  |  |
+| NEC PC-6000 | Nichibutsu My Vision | Nintendo Pokémon Mini | Nintendo Sufami Turbo | Othello Multivision |
+| Sammy Atomiswave | ScummVM | Sega Chihiro | Sega Hikaru | Sega Lindbergh |
+| Sega Model 1 | Sega Model 2 | Sega Model 3 | Sega Naomi | Sega Naomi 2 |
+| Sega ST-V | Sharp MZ-2500 | Sport Vii | Super Acan | Texas Instruments TI-99/4A |
+| Tiger Game.com | TimeTop GameKing | TimeTop GameKing 3 | Tomy Tutor | Triforce |
+| Unisonic Champion 2711 | Uzebox | Video Information System | VideoArt | VideoBrain FamilyComputer |
+| VM Labs Nuon | VTech Socrates | VTech V.Smile Baby |  |  |
