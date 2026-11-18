@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-18. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**30,361** of **341,431** games have no snap (91.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**30,303** of **341,431** games have no snap (91.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -86,7 +86,6 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Partner-01.01 | partner | 63 | 75 | 16 % | MAME |
 | Sega Mega Drive | megadrive | 62 | 6,036 | 99 % | Sega_-_Mega_Drive_-_Genesis |
 | Nuova Elettronica Z80-NE | z80ne | 61 | 61 | 0 % | MAME |
-| e-kara | ekara | 60 | 215 | 72 % | Takara_-_e-kara |
 | Tandy MC-10 | mc10 | 60 | 182 | 67 % | Tandy_-_MC-10 |
 | Apogee BK-01 | apogee | 59 | 103 | 43 % | Apogee_-_BK-01 |
 | Nintendo Satellaview | satellaview | 59 | 292 | 80 % | Nintendo_-_Satellaview |
@@ -191,6 +190,7 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Adventure Vision | advision | 2 | 14 | 86 % | Entex_-_Adventure_Vision |
 | Coleco Colecovision | colecovision | 2 | 728 | 100 % | Coleco_-_ColecoVision |
 | Commander X16 | commanderx16 | 2 | 9 | 78 % | Commander_-_X16 |
+| e-kara | ekara | 2 | 215 | 99 % | Takara_-_e-kara |
 | SNK Neo Geo AES | neogeo | 2 | 167 | 99 % | SNK_-_Neo_Geo |
 | NEC PC-FX | pcfx | 2 | 123 | 98 % | NEC_-_PC-FX |
 | Sega PICO | pico | 2 | 725 | 100 % | Sega_-_PICO |
