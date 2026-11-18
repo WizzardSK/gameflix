@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-18. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**31,560** of **341,431** games have no snap (90.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**31,471** of **341,431** games have no snap (90.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -53,7 +53,6 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Specialist | special | 138 | 162 | 15 % | MAME |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
 | Panasonic MSX2 | msx2 | 133 | 1,467 | 91 % | Microsoft_-_MSX2 |
-| Tandy TRS-80 Color Computer | coco | 128 | 227 | 44 % | Tandy_-_TRS-80_Color_Computer |
 | Oric Atmos | oricatmos | 124 | 463 | 73 % | Tangerine_-_Oric_Atmos |
 | Commodore PET | pet | 122 | 309 | 61 % | Commodore_-_PET |
 | Dick Smith Super-80 | super80 | 119 | 137 | 13 % | MAME |
@@ -105,6 +104,7 @@ Games on the site without a snap, per platform page, as of 2026-11-18. Regenerat
 | Commodore Amiga CD | amiga1200 | 43 | 625 | 93 % | Commodore_-_Amiga |
 | Atari Jaguar | jaguar | 43 | 480 | 91 % | Atari_-_Jaguar |
 | Apple III | apple3 | 40 | 148 | 73 % | Apple_-_III |
+| Tandy TRS-80 Color Computer | coco | 39 | 227 | 83 % | Tandy_-_TRS-80_Color_Computer |
 | Apple Lisa | lisa | 39 | 39 | 0 % | Apple_-_Lisa |
 | CCE MC-1000 | mc1000 | 33 | 34 | 3 % | MAME |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
