@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-19. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,908** of **341,431** games have no snap (91.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,907** of **341,431** games have no snap (91.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -13,8 +13,10 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | a2gs2 | Apple_-_IIGS | 428 | 394 | running |
 | c64fetch | Commodore_-_64 | 205 | 205 | waiting |
 | cpcflop2 | Amstrad_-_CPC | 523 | 515 | waiting |
-| adamflop2 | Coleco_-_Adam | 221 | 221 | waiting |
-| pc88mf2 | NEC_-_PC-8001_-_PC-8801 | 203 | 203 | waiting |
+| adamflop2 | Coleco_-_Adam | 211 | 211 | waiting |
+| pc88mf2 | NEC_-_PC-8001_-_PC-8801 | 168 | 168 | waiting |
+| x68miss | Sharp_-_X68000 | 147 | 147 | waiting |
+| n64miss | Nintendo_-_Nintendo_64 | 254 | 254 | waiting |
 | ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
 | ps2zip | Sony_-_PlayStation_2 | 63 | 63 | waiting |
 
@@ -212,7 +214,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | VaporSpec | VaporSpec | 1 | 10 | 90 % | VaporSpec |
 | Bitcorp Gamate | gamate | 1 | 179 | 99 % | Bitcorp_-_Gamate |
 | Juku | juku | 1 | 1 | 0 % | MAME |
-| Sega MSU-MD | megadrive-msu | 1 | 60 | 98 % | Sega_-_Mega_Drive_-_Genesis |
 | Welback Mega Duck | megaduck | 1 | 50 | 98 % | Welback_-_Mega_Duck |
 | SNK Neo Geo AES | neogeo | 1 | 167 | 99 % | SNK_-_Neo_Geo |
 | NEC PC-FX | pcfx | 1 | 123 | 99 % | NEC_-_PC-FX |
@@ -221,7 +222,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | NEC PC Engine 2 | supergrafx | 1 | 16 | 94 % | NEC_-_PC_Engine_SuperGrafx |
 | Sharp X1 | x1 | 1 | 446 | 100 % | Sharp_-_X1 |
 
-## Complete (58)
+## Complete (59)
 
 | | | | | |
 |---|---|---|---|---|
@@ -232,8 +233,8 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Mattel Juice Box | Microsoft Xbox | Milton Bradley Microvision | NEC PC-6000 | Nichibutsu My Vision |
 | Nintendo Pokémon Mini | Nintendo Sufami Turbo | Othello Multivision | Panasonic 3DO | Sammy Atomiswave |
 | ScummVM | Sega Chihiro | Sega Hikaru | Sega Lindbergh | Sega Model 1 |
-| Sega Model 2 | Sega Model 3 | Sega Naomi 1 | Sega Naomi 2 | Sega ST-V |
-| Sharp MZ-2500 | SNK Neo Geo Pocket | Sport Vii | Super Acan | Texas Instruments TI-99/4A |
-| Tiger Game.com | TimeTop GameKing | TimeTop GameKing 3 | Tomy Tutor | Triforce |
-| Unisonic Champion 2711 | Uzebox | Video Information System | VideoArt | VideoBrain FamilyComputer |
-| VM Labs Nuon | VTech Socrates | VTech V.Smile Baby |  |  |
+| Sega Model 2 | Sega Model 3 | Sega MSU-MD | Sega Naomi 1 | Sega Naomi 2 |
+| Sega ST-V | Sharp MZ-2500 | SNK Neo Geo Pocket | Sport Vii | Super Acan |
+| Texas Instruments TI-99/4A | Tiger Game.com | TimeTop GameKing | TimeTop GameKing 3 | Tomy Tutor |
+| Triforce | Unisonic Champion 2711 | Uzebox | Video Information System | VideoArt |
+| VideoBrain FamilyComputer | VM Labs Nuon | VTech Socrates | VTech V.Smile Baby |  |
