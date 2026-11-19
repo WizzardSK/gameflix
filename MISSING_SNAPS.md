@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-19. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**29,530** of **341,431** games have no snap (91.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**29,471** of **341,431** games have no snap (91.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -20,7 +20,7 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | SAM Coupé | samcoupe | 643 | 870 | 26 % | MGT_-_Sam_Coupe |
 | Fujitsu FM Towns | fmtowns | 634 | 1,789 | 65 % | Fujitsu_-_FM_Towns |
 | NEC PC-9800 | pc98 | 568 | 2,673 | 79 % | NEC_-_PC-98 |
-| IBM PC/AT 5170 | ibm5170 | 494 | 879 | 44 % | DOS |
+| IBM PC/AT 5170 | ibm5170 | 491 | 879 | 44 % | DOS |
 | Apple IIGS | apple2gs | 484 | 985 | 51 % | Apple_-_IIGS |
 | Tandy TRS-80 | trs80 | 478 | 590 | 19 % | Tandy_-_TRS-80 |
 | Nintendo Game Boy Advance | gba | 440 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
@@ -37,7 +37,6 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | Thomson MO/TO | thomson | 250 | 1,959 | 87 % | Thomson_-_MOTO |
 | Sharp X68000 | x68000 | 245 | 3,153 | 92 % | Sharp_-_X68000 |
 | Fujitsu Micro 7 | fm7 | 227 | 752 | 70 % | Fujitsu_-_Micro_7 |
-| IBM PC 5150 | ibm5150 | 211 | 700 | 70 % | DOS |
 | Compucolor II | compclr2 | 202 | 220 | 8 % | MAME |
 | EACA Colour Genie | cgenie | 197 | 272 | 28 % | EACA_-_EG2000_Colour_Genie |
 | Nintendo Game Boy Color | gbc | 185 | 4,961 | 96 % | Nintendo_-_Game_Boy_Color |
@@ -46,6 +45,7 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | Sharp MZ-700 | mz700 | 180 | 305 | 41 % | Sharp_-_MZ-700 |
 | Elektronika BK | bk | 179 | 186 | 4 % | Elektronika_-_BK |
 | Videoton TV Computer | tvc | 174 | 952 | 82 % | Enterprise_-_Enterprise |
+| IBM PC 5150 | ibm5150 | 155 | 700 | 78 % | DOS |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Specialist | special | 138 | 162 | 15 % | MAME |
