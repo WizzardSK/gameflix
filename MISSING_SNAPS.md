@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-19. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**28,157** of **341,431** games have no snap (91.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,948** of **341,431** games have no snap (91.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -14,12 +14,12 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | Acorn BBC | bbcmicro | 939 | 2,686 | 65 % | Acorn_-_BBC |
 | Commodore 64 | c64 | 915 | 63,862 | 99 % | Commodore_-_64 |
 | Coleco Adam | adam | 713 | 1,183 | 40 % | Coleco_-_Adam |
-| Sinclair ZX Spectrum | zxspectrum | 713 | 13,216 | 95 % | Sinclair_-_ZX_Spectrum |
 | VGMPlay | vgmplay | 699 | 3,870 | 82 % | MAME |
 | SAM Coupé | samcoupe | 643 | 870 | 26 % | MGT_-_Sam_Coupe |
 | Fujitsu FM Towns | fmtowns | 634 | 1,789 | 65 % | Fujitsu_-_FM_Towns |
 | Atari 800 | atari800 | 617 | 6,419 | 90 % | Atari_-_8-bit |
 | NEC PC-9800 | pc98 | 568 | 2,673 | 79 % | NEC_-_PC-98 |
+| Sinclair ZX Spectrum | zxspectrum | 506 | 13,216 | 96 % | Sinclair_-_ZX_Spectrum |
 | Apple IIGS | apple2gs | 484 | 985 | 51 % | Apple_-_IIGS |
 | Tandy TRS-80 | trs80 | 478 | 590 | 19 % | Tandy_-_TRS-80 |
 | IBM PC/AT 5170 | ibm5170 | 447 | 879 | 49 % | DOS |
@@ -196,18 +196,16 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | Sega PICO | pico | 2 | 725 | 100 % | Sega_-_PICO |
 | Sega AI Computer | segaai | 2 | 23 | 91 % | Sega_-_AI_Computer |
 | Watara Supervision | supervision | 2 | 205 | 99 % | Watara_-_Supervision |
-| Panasonic 3DO | 3do | 1 | 938 | 100 % | The_3DO_Company_-_3DO |
 | VaporSpec | VaporSpec | 1 | 10 | 90 % | VaporSpec |
 | Bitcorp Gamate | gamate | 1 | 179 | 99 % | Bitcorp_-_Gamate |
 | Juku | juku | 1 | 1 | 0 % | MAME |
 | Sega MSU-MD | megadrive-msu | 1 | 60 | 98 % | Sega_-_Mega_Drive_-_Genesis |
 | Welback Mega Duck | megaduck | 1 | 50 | 98 % | Welback_-_Mega_Duck |
-| SNK Neo Geo Pocket | ngp | 1 | 34 | 97 % | SNK_-_Neo_Geo_Pocket |
 | Sony PlayStation Vita | psvita | 1 | 1,023 | 100 % | Sony_-_PlayStation_Vita |
 | NEC PC Engine 2 | supergrafx | 1 | 16 | 94 % | NEC_-_PC_Engine_SuperGrafx |
 | Sharp X1 | x1 | 1 | 446 | 100 % | Sharp_-_X1 |
 
-## Complete (56)
+## Complete (58)
 
 | | | | | |
 |---|---|---|---|---|
@@ -216,10 +214,10 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | Epoch Game Pocket Computer | Exel EXL 100 | Gaelco PowerVR | Gakken Compact Vision TV Boy | Hanimex Pencil II |
 | Hi-kara | IBM PCjr | Interton VC 4000 | Lutro | Mattel HyperScan |
 | Mattel Juice Box | Microsoft Xbox | Milton Bradley Microvision | NEC PC-6000 | Nichibutsu My Vision |
-| Nintendo Pokémon Mini | Nintendo Sufami Turbo | Othello Multivision | Sammy Atomiswave | ScummVM |
-| Sega Chihiro | Sega Hikaru | Sega Lindbergh | Sega Model 1 | Sega Model 2 |
-| Sega Model 3 | Sega Naomi 1 | Sega Naomi 2 | Sega ST-V | Sharp MZ-2500 |
-| Sport Vii | Super Acan | Texas Instruments TI-99/4A | Tiger Game.com | TimeTop GameKing |
-| TimeTop GameKing 3 | Tomy Tutor | Triforce | Unisonic Champion 2711 | Uzebox |
-| Video Information System | VideoArt | VideoBrain FamilyComputer | VM Labs Nuon | VTech Socrates |
-| VTech V.Smile Baby |  |  |  |  |
+| Nintendo Pokémon Mini | Nintendo Sufami Turbo | Othello Multivision | Panasonic 3DO | Sammy Atomiswave |
+| ScummVM | Sega Chihiro | Sega Hikaru | Sega Lindbergh | Sega Model 1 |
+| Sega Model 2 | Sega Model 3 | Sega Naomi 1 | Sega Naomi 2 | Sega ST-V |
+| Sharp MZ-2500 | SNK Neo Geo Pocket | Sport Vii | Super Acan | Texas Instruments TI-99/4A |
+| Tiger Game.com | TimeTop GameKing | TimeTop GameKing 3 | Tomy Tutor | Triforce |
+| Unisonic Champion 2711 | Uzebox | Video Information System | VideoArt | VideoBrain FamilyComputer |
+| VM Labs Nuon | VTech Socrates | VTech V.Smile Baby |  |  |
