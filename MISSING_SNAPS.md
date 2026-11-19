@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-19. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**29,427** of **341,431** games have no snap (91.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**29,404** of **341,431** games have no snap (91.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -36,7 +36,7 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | Dragon 32/64 | dragon64 | 251 | 1,094 | 77 % | Dragon_-_Dragon_64 |
 | Thomson MO/TO | thomson | 250 | 1,959 | 87 % | Thomson_-_MOTO |
 | Sharp X68000 | x68000 | 245 | 3,153 | 92 % | Sharp_-_X68000 |
-| Fujitsu Micro 7 | fm7 | 227 | 752 | 70 % | Fujitsu_-_Micro_7 |
+| Fujitsu Micro 7 | fm7 | 204 | 752 | 73 % | Fujitsu_-_Micro_7 |
 | Compucolor II | compclr2 | 202 | 220 | 8 % | MAME |
 | EACA Colour Genie | cgenie | 197 | 272 | 28 % | EACA_-_EG2000_Colour_Genie |
 | Nintendo Game Boy Color | gbc | 185 | 4,961 | 96 % | Nintendo_-_Game_Boy_Color |
