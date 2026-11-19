@@ -17,6 +17,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | pc88mf2 | NEC_-_PC-8001_-_PC-8801 | 168 | 168 | waiting |
 | x68miss | Sharp_-_X68000 | 147 | 147 | waiting |
 | n64miss | Nintendo_-_Nintendo_64 | 254 | 254 | waiting |
+| a2dsk | Apple_-_II | 77 | 77 | waiting |
 | ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
 | ps2zip | Sony_-_PlayStation_2 | 63 | 63 | waiting |
 
