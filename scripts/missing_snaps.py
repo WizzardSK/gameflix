@@ -16,6 +16,10 @@ entry's third field when it has one (the snap of another set or title; as
 the file name without extension and without what follows its first
 "(...)". The repos' file lists come from the GitHub API (gh, or GITHUB_TOKEN
 with curl).
+
+--queue <file> adds the capture batches still waiting: a JSON list of
+{"job", "repo", "keys", "state"} (the capture machine's queue_export.py),
+each listed with how many of its games still have no snap.
 """
 import concurrent.futures as cf
 import datetime
@@ -27,9 +31,15 @@ import subprocess
 import sys
 import time
 
-site = sys.argv[1]
-out = sys.argv[2] if len(sys.argv) > 2 else 'MISSING_SNAPS.md'
-html_out = sys.argv[3] if len(sys.argv) > 3 else None
+args = sys.argv[1:]
+queue = None
+if '--queue' in args:
+    i = args.index('--queue')
+    queue = json.load(open(args[i + 1]))
+    del args[i:i + 2]
+site = args[0]
+out = args[1] if len(args) > 1 else 'MISSING_SNAPS.md'
+html_out = args[2] if len(args) > 2 else None
 import html as htmlmod
 
 SECTION = re.compile(r'fileNames\s*=\s*\[(.*?)\]\s*;?\s*\n?\s*generateFileLinks\(\s*"([^"]*)"\s*,\s*"([^"]*)"\s*\)', re.S)
@@ -114,6 +124,15 @@ with open(out, 'w', encoding='utf-8') as f:
             f'Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.\n\n')
     f.write(f'**{all_missing:,}** of **{all_total:,}** games have no snap ({100 * (all_total - all_missing) / all_total:.1f} % covered). '
             'The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).\n\n')
+    if queue:
+        f.write('## Capture queue\n\nBatches waiting on the capture machine, in the order they run, '
+                'and how many of their games still have no snap.\n\n'
+                '| Batch | Snap repo | Games | Still missing | State |\n|---|---|---:|---:|---|\n')
+        for q in queue:
+            h = have.get(q['repo']) or set()
+            miss = sum(1 for k in q['keys'] if k not in h)
+            f.write(f"| {q['job']} | {q['repo']} | {len(q['keys']):,} | {miss:,} | {q['state']} |\n")
+        f.write('\n## Per platform\n\n')
     f.write('| Platform | Page | Missing | Games | Covered | Snap repos |\n|---|---|---:|---:|---:|---|\n')
     for missing, total, page, rs in rows:
         if not missing:

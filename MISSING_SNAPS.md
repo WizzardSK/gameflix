@@ -4,6 +4,20 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 
 **27,908** of **341,431** games have no snap (91.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
+## Capture queue
+
+Batches waiting on the capture machine, in the order they run, and how many of their games still have no snap.
+
+| Batch | Snap repo | Games | Still missing | State |
+|---|---|---:|---:|---|
+| a2gs2 | Apple_-_IIGS | 428 | 394 | running |
+| c64fetch | Commodore_-_64 | 205 | 205 | waiting |
+| cpcflop2 | Amstrad_-_CPC | 523 | 515 | waiting |
+| ps2b | Sony_-_PlayStation_2 | 91 | 14 | waiting |
+| ps2zip | Sony_-_PlayStation_2 | 63 | 63 | waiting |
+
+## Per platform
+
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
 | Microsoft MS-DOS | dos | 2,345 | 23,819 | 90 % | DOS |
