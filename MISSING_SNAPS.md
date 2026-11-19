@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-19. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,948** of **341,431** games have no snap (91.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,942** of **341,431** games have no snap (91.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -63,9 +63,9 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | APF MP-1000 | apfm1000 | 99 | 142 | 30 % | APF_-_MP-1000 |
 | Radio-86RK | radio86 | 99 | 99 | 0 % | Radio-86RK |
 | Panasonic MSX2 | msx2 | 97 | 1,467 | 93 % | Microsoft_-_MSX2 |
-| Palm OS | palm | 91 | 269 | 66 % | Mobile_-_Palm_OS_-Digital- |
 | Nintendo Entertainment System | nes | 89 | 12,159 | 99 % | Nintendo_-_Nintendo_Entertainment_System |
 | Commodore 128 | c128 | 88 | 100 | 12 % | Commodore_-_128 |
+| Palm OS | palm | 88 | 269 | 67 % | Mobile_-_Palm_OS_-Digital- |
 | Commodore VIC-20 | c20 | 87 | 620 | 86 % | Commodore_-_VIC-20 |
 | Commodore CBM-II | cbm2 | 84 | 139 | 40 % | Commodore_-_CBM-II |
 | Tatung Einstein | einstein | 81 | 113 | 28 % | Tatung_-_Einstein |
@@ -191,9 +191,6 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | Coleco Colecovision | colecovision | 2 | 728 | 100 % | Coleco_-_ColecoVision |
 | Commander X16 | commanderx16 | 2 | 9 | 78 % | Commander_-_X16 |
 | e-kara | ekara | 2 | 215 | 99 % | Takara_-_e-kara |
-| SNK Neo Geo AES | neogeo | 2 | 167 | 99 % | SNK_-_Neo_Geo |
-| NEC PC-FX | pcfx | 2 | 123 | 98 % | NEC_-_PC-FX |
-| Sega PICO | pico | 2 | 725 | 100 % | Sega_-_PICO |
 | Sega AI Computer | segaai | 2 | 23 | 91 % | Sega_-_AI_Computer |
 | Watara Supervision | supervision | 2 | 205 | 99 % | Watara_-_Supervision |
 | VaporSpec | VaporSpec | 1 | 10 | 90 % | VaporSpec |
@@ -201,6 +198,9 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | Juku | juku | 1 | 1 | 0 % | MAME |
 | Sega MSU-MD | megadrive-msu | 1 | 60 | 98 % | Sega_-_Mega_Drive_-_Genesis |
 | Welback Mega Duck | megaduck | 1 | 50 | 98 % | Welback_-_Mega_Duck |
+| SNK Neo Geo AES | neogeo | 1 | 167 | 99 % | SNK_-_Neo_Geo |
+| NEC PC-FX | pcfx | 1 | 123 | 99 % | NEC_-_PC-FX |
+| Sega PICO | pico | 1 | 725 | 100 % | Sega_-_PICO |
 | Sony PlayStation Vita | psvita | 1 | 1,023 | 100 % | Sony_-_PlayStation_Vita |
 | NEC PC Engine 2 | supergrafx | 1 | 16 | 94 % | NEC_-_PC_Engine_SuperGrafx |
 | Sharp X1 | x1 | 1 | 446 | 100 % | Sharp_-_X1 |
