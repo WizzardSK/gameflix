@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-19. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**28,234** of **341,431** games have no snap (91.7 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**28,157** of **341,431** games have no snap (91.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -13,8 +13,8 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | Amstrad CPC | amstradcpc | 959 | 14,827 | 94 % | Amstrad_-_CPC |
 | Acorn BBC | bbcmicro | 939 | 2,686 | 65 % | Acorn_-_BBC |
 | Commodore 64 | c64 | 915 | 63,862 | 99 % | Commodore_-_64 |
-| Sinclair ZX Spectrum | zxspectrum | 790 | 13,216 | 94 % | Sinclair_-_ZX_Spectrum |
 | Coleco Adam | adam | 713 | 1,183 | 40 % | Coleco_-_Adam |
+| Sinclair ZX Spectrum | zxspectrum | 713 | 13,216 | 95 % | Sinclair_-_ZX_Spectrum |
 | VGMPlay | vgmplay | 699 | 3,870 | 82 % | MAME |
 | SAM Coupé | samcoupe | 643 | 870 | 26 % | MGT_-_Sam_Coupe |
 | Fujitsu FM Towns | fmtowns | 634 | 1,789 | 65 % | Fujitsu_-_FM_Towns |
@@ -218,7 +218,7 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | Mattel Juice Box | Microsoft Xbox | Milton Bradley Microvision | NEC PC-6000 | Nichibutsu My Vision |
 | Nintendo Pokémon Mini | Nintendo Sufami Turbo | Othello Multivision | Sammy Atomiswave | ScummVM |
 | Sega Chihiro | Sega Hikaru | Sega Lindbergh | Sega Model 1 | Sega Model 2 |
-| Sega Model 3 | Sega Naomi | Sega Naomi 2 | Sega ST-V | Sharp MZ-2500 |
+| Sega Model 3 | Sega Naomi 1 | Sega Naomi 2 | Sega ST-V | Sharp MZ-2500 |
 | Sport Vii | Super Acan | Texas Instruments TI-99/4A | Tiger Game.com | TimeTop GameKing |
 | TimeTop GameKing 3 | Tomy Tutor | Triforce | Unisonic Champion 2711 | Uzebox |
 | Video Information System | VideoArt | VideoBrain FamilyComputer | VM Labs Nuon | VTech Socrates |
