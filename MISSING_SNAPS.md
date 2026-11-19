@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-19. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**29,471** of **341,431** games have no snap (91.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**29,427** of **341,431** games have no snap (91.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -20,9 +20,9 @@ Games on the site without a snap, per platform page, as of 2026-11-19. Regenerat
 | SAM Coupé | samcoupe | 643 | 870 | 26 % | MGT_-_Sam_Coupe |
 | Fujitsu FM Towns | fmtowns | 634 | 1,789 | 65 % | Fujitsu_-_FM_Towns |
 | NEC PC-9800 | pc98 | 568 | 2,673 | 79 % | NEC_-_PC-98 |
-| IBM PC/AT 5170 | ibm5170 | 491 | 879 | 44 % | DOS |
 | Apple IIGS | apple2gs | 484 | 985 | 51 % | Apple_-_IIGS |
 | Tandy TRS-80 | trs80 | 478 | 590 | 19 % | Tandy_-_TRS-80 |
+| IBM PC/AT 5170 | ibm5170 | 447 | 879 | 49 % | DOS |
 | Nintendo Game Boy Advance | gba | 440 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
 | NEC PC-8800 | pc88 | 430 | 2,074 | 79 % | NEC_-_PC-8001_-_PC-8801 |
 | Atari ST | atarist | 400 | 5,952 | 93 % | Atari_-_ST |
