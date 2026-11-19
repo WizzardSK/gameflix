@@ -13,7 +13,9 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | a2gs2 | Apple_-_IIGS | 428 | 394 | running |
 | c64fetch | Commodore_-_64 | 205 | 205 | waiting |
 | cpcflop2 | Amstrad_-_CPC | 523 | 515 | waiting |
-| ps2b | Sony_-_PlayStation_2 | 91 | 14 | waiting |
+| adamflop2 | Coleco_-_Adam | 221 | 221 | waiting |
+| pc88mf2 | NEC_-_PC-8001_-_PC-8801 | 203 | 203 | waiting |
+| ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
 | ps2zip | Sony_-_PlayStation_2 | 63 | 63 | waiting |
 
 ## Per platform
