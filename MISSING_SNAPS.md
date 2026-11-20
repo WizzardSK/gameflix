@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**25,300** of **341,431** games have no snap (92.6 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**25,263** of **341,431** games have no snap (92.6 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,9 +10,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| cpctosec | Amstrad_-_CPC | 98 | 98 | running |
-| ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
-| ps2zip | Sony_-_PlayStation_2 | 63 | 63 | waiting |
+| ps2zip | Sony_-_PlayStation_2 | 63 | 63 | running |
 
 ## Per platform
 
@@ -21,8 +19,8 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Microsoft MS-DOS | dos | 2,345 | 23,819 | 90 % | DOS |
 | Commodore Amiga | amiga500 | 1,675 | 29,213 | 94 % | Commodore_-_Amiga |
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
-| Amstrad CPC | amstradcpc | 956 | 14,827 | 94 % | Amstrad_-_CPC |
 | Acorn BBC | bbcmicro | 939 | 2,686 | 65 % | Acorn_-_BBC |
+| Amstrad CPC | amstradcpc | 927 | 14,827 | 94 % | Amstrad_-_CPC |
 | Commodore 64 | c64 | 736 | 63,862 | 99 % | Commodore_-_64 |
 | Coleco Adam | adam | 709 | 1,183 | 40 % | Coleco_-_Adam |
 | VGMPlay | vgmplay | 699 | 3,870 | 82 % | MAME |
@@ -69,9 +67,9 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | MicroBee | mbee | 116 | 710 | 84 % | Applied_Technology_-_MicroBee |
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
 | Jupiter Ace | jupace | 111 | 131 | 15 % | MAME |
-| Sony PlayStation 2 | ps2 | 109 | 2,082 | 95 % | Sony_-_PlayStation_2 |
 | GCE Vectrex | vectrex | 104 | 325 | 68 % | GCE_-_Vectrex |
 | Nintendo Wii | wii | 102 | 347 | 71 % | Nintendo_-_Wii |
+| Sony PlayStation 2 | ps2 | 101 | 2,082 | 95 % | Sony_-_PlayStation_2 |
 | APF MP-1000 | apfm1000 | 99 | 142 | 30 % | APF_-_MP-1000 |
 | Radio-86RK | radio86 | 99 | 99 | 0 % | Radio-86RK |
 | Panasonic MSX2 | msx2 | 97 | 1,467 | 93 % | Microsoft_-_MSX2 |
