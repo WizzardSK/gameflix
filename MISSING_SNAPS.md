@@ -2,17 +2,27 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**25,116** of **341,431** games have no snap (92.6 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**25,103** of **341,425** games have no snap (92.6 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+
+## Capture queue
+
+Batches waiting on the capture machine, in the order they run, and how many of their games still have no snap.
+
+| Batch | Snap repo | Games | Still missing | State |
+|---|---|---:|---:|---|
+| amigaadf | Commodore_-_Amiga | 1,225 | 1,225 | running |
+
+## Per platform
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
-| Microsoft MS-DOS | dos | 2,345 | 23,819 | 90 % | DOS |
+| Microsoft MS-DOS | dos | 2,342 | 23,816 | 90 % | DOS |
 | Commodore Amiga | amiga500 | 1,675 | 29,213 | 94 % | Commodore_-_Amiga |
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
 | Acorn BBC | bbcmicro | 939 | 2,686 | 65 % | Acorn_-_BBC |
 | Amstrad CPC | amstradcpc | 919 | 14,827 | 94 % | Amstrad_-_CPC |
 | Commodore 64 | c64 | 736 | 63,862 | 99 % | Commodore_-_64 |
-| Coleco Adam | adam | 709 | 1,183 | 40 % | Coleco_-_Adam |
+| Coleco Adam | adam | 702 | 1,183 | 41 % | Coleco_-_Adam |
 | VGMPlay | vgmplay | 699 | 3,870 | 82 % | MAME |
 | Fujitsu FM Towns | fmtowns | 634 | 1,789 | 65 % | Fujitsu_-_FM_Towns |
 | Atari 800 | atari800 | 617 | 6,419 | 90 % | Atari_-_8-bit |
@@ -57,7 +67,7 @@ Games on the site without a snap, per platform page, as of 2026-11-20. Regenerat
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
 | Jupiter Ace | jupace | 111 | 131 | 15 % | MAME |
 | GCE Vectrex | vectrex | 104 | 325 | 68 % | GCE_-_Vectrex |
-| Nintendo Wii | wii | 102 | 347 | 71 % | Nintendo_-_Wii |
+| Nintendo Wii | wii | 101 | 346 | 71 % | Nintendo_-_Wii |
 | APF MP-1000 | apfm1000 | 99 | 142 | 30 % | APF_-_MP-1000 |
 | Radio-86RK | radio86 | 99 | 99 | 0 % | Radio-86RK |
 | Panasonic MSX2 | msx2 | 97 | 1,467 | 93 % | Microsoft_-_MSX2 |
@@ -146,9 +156,9 @@ Games on the site without a snap, per platform page, as of 2026-11-20. Regenerat
 | Mattel Intellivision | intellivision | 11 | 608 | 98 % | Mattel_-_Intellivision |
 | Atari Jaguar CD | jaguarcd | 11 | 36 | 69 % | Atari_-_Jaguar |
 | Casio PV-2000 | pv2000 | 11 | 24 | 54 % | Casio_-_PV-2000 |
-| Vircon32 | vircon32 | 11 | 67 | 84 % | Vircon32 |
 | Ei Pecom 64 | pecom64 | 10 | 10 | 0 % | Pecom_-_64 |
 | Sega SG-1000 | sg1000 | 10 | 458 | 98 % | Sega_-_SG-1000 |
+| Vircon32 | vircon32 | 10 | 66 | 85 % | Vircon32 |
 | Magnavox Odyssey² | odyssey2 | 9 | 353 | 97 % | Magnavox_-_Odyssey2 |
 | Pegasus | pegasus | 9 | 12 | 25 % | MAME |
 | Sony Pocket Station | pockstat | 9 | 109 | 92 % | Sony_-_Pocket_Station |
@@ -200,11 +210,10 @@ Games on the site without a snap, per platform page, as of 2026-11-20. Regenerat
 | SNK Neo Geo AES | neogeo | 1 | 167 | 99 % | SNK_-_Neo_Geo |
 | NEC PC-FX | pcfx | 1 | 123 | 99 % | NEC_-_PC-FX |
 | Sega PICO | pico | 1 | 725 | 100 % | Sega_-_PICO |
-| Sony PlayStation Vita | psvita | 1 | 1,023 | 100 % | Sony_-_PlayStation_Vita |
 | NEC PC Engine 2 | supergrafx | 1 | 16 | 94 % | NEC_-_PC_Engine_SuperGrafx |
 | Sharp X1 | x1 | 1 | 446 | 100 % | Sharp_-_X1 |
 
-## Complete (59)
+## Complete (60)
 
 | | | | | |
 |---|---|---|---|---|
@@ -216,7 +225,7 @@ Games on the site without a snap, per platform page, as of 2026-11-20. Regenerat
 | Nintendo Pokémon Mini | Nintendo Sufami Turbo | Othello Multivision | Panasonic 3DO | Sammy Atomiswave |
 | ScummVM | Sega Chihiro | Sega Hikaru | Sega Lindbergh | Sega Model 1 |
 | Sega Model 2 | Sega Model 3 | Sega MSU-MD | Sega Naomi 1 | Sega Naomi 2 |
-| Sega ST-V | Sharp MZ-2500 | SNK Neo Geo Pocket | Sport Vii | Super Acan |
-| Texas Instruments TI-99/4A | Tiger Game.com | TimeTop GameKing | TimeTop GameKing 3 | Tomy Tutor |
-| Triforce | Unisonic Champion 2711 | Uzebox | Video Information System | VideoArt |
-| VideoBrain FamilyComputer | VM Labs Nuon | VTech Socrates | VTech V.Smile Baby |  |
+| Sega ST-V | Sharp MZ-2500 | SNK Neo Geo Pocket | Sony PlayStation Vita | Sport Vii |
+| Super Acan | Texas Instruments TI-99/4A | Tiger Game.com | TimeTop GameKing | TimeTop GameKing 3 |
+| Tomy Tutor | Triforce | Unisonic Champion 2711 | Uzebox | Video Information System |
+| VideoArt | VideoBrain FamilyComputer | VM Labs Nuon | VTech Socrates | VTech V.Smile Baby |
