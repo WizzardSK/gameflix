@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,418** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,362** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,8 +10,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| partnerc | MAME | 61 | 61 | running |
-| phc25s | MAME | 18 | 18 | waiting |
+| phc25s | MAME | 18 | 18 | running |
 | interactk | MAME | 19 | 19 | waiting |
 | osb1t | Osborne_-_1 | 18 | 18 | waiting |
 | stmono | Atari_-_ST | 53 | 53 | waiting |
@@ -63,8 +62,8 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Elektronika BK | bk | 152 | 186 | 18 % | Elektronika_-_BK |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
-| Specialist | special | 138 | 162 | 15 % | MAME |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
+| Specialist | special | 132 | 162 | 19 % | MAME |
 | Nintendo 64 | n64 | 124 | 2,266 | 95 % | Nintendo_-_Nintendo_64 |
 | Oric Atmos | oricatmos | 124 | 463 | 73 % | Tangerine_-_Oric_Atmos |
 | Commodore PET | pet | 122 | 309 | 61 % | Commodore_-_PET |
@@ -87,17 +86,16 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Tatung Einstein | einstein | 81 | 113 | 28 % | Tatung_-_Einstein |
 | Apple I | apple1 | 80 | 80 | 0 % | Apple_-_I |
 | Sega Dreamcast | dreamcast | 79 | 2,272 | 97 % | Sega_-_Dreamcast |
-| Canon X-07 | x07 | 79 | 88 | 10 % | MAME |
 | Exidy Sorcerer | sorcerer | 78 | 129 | 40 % | MAME |
+| Canon X-07 | x07 | 78 | 88 | 11 % | MAME |
 | Atari Lynx | lynx | 72 | 591 | 88 % | Atari_-_Lynx |
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
-| Nascom | nascom | 67 | 82 | 18 % | MAME |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
+| Nascom | nascom | 66 | 82 | 20 % | MAME |
 | Nintendo DS | nds | 64 | 1,518 | 96 % | Nintendo_-_Nintendo_DS |
 | Nintendo Wii U | wiiu | 64 | 238 | 73 % | Nintendo_-_Wii_U |
 | FinalBurn Neo | fbneo | 63 | 7,073 | 99 % | MAME |
 | Lviv PK-01 | lviv | 63 | 252 | 75 % | Lviv_-_PK-01 |
-| Partner-01.01 | partner | 63 | 75 | 16 % | MAME |
 | Sega Mega Drive | megadrive | 62 | 6,036 | 99 % | Sega_-_Mega_Drive_-_Genesis |
 | Sega SC-3000 | sc3000 | 61 | 79 | 23 % | Sega_-_SG-1000 |
 | Nuova Elettronica Z80-NE | z80ne | 61 | 61 | 0 % | MAME |
@@ -111,9 +109,9 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Sega Saturn | saturn | 49 | 1,765 | 97 % | Sega_-_Saturn |
 | Nintendo DSi | dsi | 47 | 49 | 4 % | Nintendo_-_Nintendo_DSi |
 | Samsung SPC-1000 | spc1000 | 47 | 89 | 47 % | Samsung_-_SPC-1000 |
-| Orao | orao | 46 | 55 | 16 % | MAME |
 | Tesla PMD 85 | pmd85 | 46 | 57 | 19 % | Tesla_-_PMD_85 |
 | Nintendo Virtual Boy | virtualboy | 46 | 256 | 82 % | Nintendo_-_Virtual_Boy |
+| Orao | orao | 45 | 55 | 18 % | MAME |
 | Commodore Amiga CD | amiga1200 | 43 | 625 | 93 % | Commodore_-_Amiga |
 | Atari Jaguar | jaguar | 42 | 480 | 91 % | Atari_-_Jaguar |
 | Apple III | apple3 | 40 | 148 | 73 % | Apple_-_III |
@@ -150,6 +148,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Mattel Aquarius | aquarius | 16 | 60 | 73 % | Mattel_-_Aquarius |
 | Sega Advanced Pico Beena | beena | 16 | 122 | 87 % | Sega_-_Beena |
 | Sharp MZ-800 | mz800 | 16 | 16 | 0 % | Sharp_-_MZ-800 |
+| Partner-01.01 | partner | 16 | 75 | 79 % | MAME |
 | Commodore Amiga CD32 | amigacd32 | 15 | 483 | 97 % | Commodore_-_CD32 |
 | Kaypro | kaypro | 15 | 16 | 6 % | MAME |
 | Korvet | korvet | 15 | 16 | 6 % | MAME |
