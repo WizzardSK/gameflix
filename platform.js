@@ -138,7 +138,9 @@ function generateFileLinks(romPath, imagePath) {
     var encodedPath = encodeURI(romPath);
     addFigureList(fileNames, function (fileName) {
         var subor = fileName.includes("\t") ? fileName.split("\t")[0] : fileName;
-        var nazov = fileName.includes("\t") ? fileName.split("\t")[1] : fileName.replace(/\.[^.]+$/, "");
+        // a game in its own folder inside the archive ("Game (1986)/Game
+        // (1986).bin") is shown by its file's name, without the folder
+        var nazov = fileName.includes("\t") ? fileName.split("\t")[1] : fileName.replace(/\.[^.]+$/, "").replace(/^.*\//, "");
         // a third field names the thumbnail where it is not the file's own
         // name (Lindbergh, Chihiro: the snap of the MAME set, generate.sh);
         // "repo/name" takes it from another snap repo (VGMPlay: a console
