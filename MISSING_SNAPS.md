@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,344** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,326** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,8 +10,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| interactk | MAME | 19 | 19 | running |
-| osb1t | Osborne_-_1 | 18 | 18 | waiting |
+| osb1t | Osborne_-_1 | 18 | 18 | running |
 | stmono | Atari_-_ST | 53 | 53 | waiting |
 | c64fetch | Commodore_-_64 | 205 | 205 | waiting |
 | ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
@@ -63,7 +62,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
-| Specialist | special | 132 | 162 | 19 % | MAME |
+| Specialist | special | 131 | 162 | 19 % | MAME |
 | Nintendo 64 | n64 | 124 | 2,266 | 95 % | Nintendo_-_Nintendo_64 |
 | Oric Atmos | oricatmos | 124 | 463 | 73 % | Tangerine_-_Oric_Atmos |
 | Commodore PET | pet | 122 | 309 | 61 % | Commodore_-_PET |
@@ -91,7 +90,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Atari Lynx | lynx | 72 | 591 | 88 % | Atari_-_Lynx |
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
-| Nascom | nascom | 66 | 82 | 20 % | MAME |
+| Nascom | nascom | 65 | 82 | 21 % | MAME |
 | Nintendo DS | nds | 64 | 1,518 | 96 % | Nintendo_-_Nintendo_DS |
 | Nintendo Wii U | wiiu | 64 | 238 | 73 % | Nintendo_-_Wii_U |
 | FinalBurn Neo | fbneo | 63 | 7,073 | 99 % | MAME |
@@ -111,7 +110,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Samsung SPC-1000 | spc1000 | 47 | 89 | 47 % | Samsung_-_SPC-1000 |
 | Tesla PMD 85 | pmd85 | 46 | 57 | 19 % | Tesla_-_PMD_85 |
 | Nintendo Virtual Boy | virtualboy | 46 | 256 | 82 % | Nintendo_-_Virtual_Boy |
-| Orao | orao | 45 | 55 | 18 % | MAME |
+| Orao | orao | 44 | 55 | 20 % | MAME |
 | Commodore Amiga CD | amiga1200 | 43 | 625 | 93 % | Commodore_-_Amiga |
 | Atari Jaguar | jaguar | 42 | 480 | 91 % | Atari_-_Jaguar |
 | Apple III | apple3 | 40 | 148 | 73 % | Apple_-_III |
@@ -136,7 +135,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Mikrosha | mikrosha | 21 | 55 | 62 % | Mikrosha |
 | Sinclair QL | ql | 21 | 27 | 22 % | Sinclair_-_QL |
 | Galaksija | galaxy | 20 | 61 | 67 % | Galaksija |
-| Interact Family Computer | interact | 19 | 28 | 32 % | MAME |
 | Magnavox Odyssey³ | videopacplus | 19 | 83 | 77 % | Philips_-_Videopac |
 | Osborne 1 | osborne1 | 18 | 18 | 0 % | Osborne_-_1 |
 | DEC Rainbow 100 | rainbow | 18 | 18 | 0 % | MAME |
@@ -191,6 +189,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | NEC PC Engine CD | pcenginecd | 5 | 1,297 | 100 % | NEC_-_PC_Engine_CD_-_TurboGrafx-CD |
 | Sega Visual Memory Unit | svmu | 5 | 131 | 96 % | Sega_-_Visual_Memory_Unit |
 | Atari 5200 | atari5200 | 4 | 369 | 99 % | Atari_-_5200 |
+| Interact Family Computer | interact | 4 | 28 | 86 % | MAME |
 | Casio Loopy | loopy | 4 | 24 | 83 % | Casio_-_Loopy |
 | M&D Monon Color | mononcolor | 4 | 20 | 80 % | M-D_-_Monon_Color |
 | Samsung SPC-1500 | spc1500 | 4 | 4 | 0 % | Samsung_-_SPC-1500 |
