@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,362** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,344** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,10 +10,10 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| phc25s | MAME | 18 | 18 | running |
-| interactk | MAME | 19 | 19 | waiting |
+| interactk | MAME | 19 | 19 | running |
 | osb1t | Osborne_-_1 | 18 | 18 | waiting |
 | stmono | Atari_-_ST | 53 | 53 | waiting |
+| c64fetch | Commodore_-_64 | 205 | 205 | waiting |
 | ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
 | ps2zip | Sony_-_PlayStation_2 | 63 | 63 | waiting |
 
@@ -67,8 +67,8 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Nintendo 64 | n64 | 124 | 2,266 | 95 % | Nintendo_-_Nintendo_64 |
 | Oric Atmos | oricatmos | 124 | 463 | 73 % | Tangerine_-_Oric_Atmos |
 | Commodore PET | pet | 122 | 309 | 61 % | Commodore_-_PET |
-| Dick Smith Super-80 | super80 | 119 | 137 | 13 % | MAME |
 | Sony PlayStation Portable | psp | 118 | 2,833 | 96 % | Sony_-_PlayStation_Portable |
+| Dick Smith Super-80 | super80 | 118 | 137 | 14 % | MAME |
 | MicroBee | mbee | 116 | 710 | 84 % | Applied_Technology_-_MicroBee |
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
 | Jupiter Ace | jupace | 111 | 131 | 15 % | MAME |
@@ -87,7 +87,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Apple I | apple1 | 80 | 80 | 0 % | Apple_-_I |
 | Sega Dreamcast | dreamcast | 79 | 2,272 | 97 % | Sega_-_Dreamcast |
 | Exidy Sorcerer | sorcerer | 78 | 129 | 40 % | MAME |
-| Canon X-07 | x07 | 78 | 88 | 11 % | MAME |
+| Canon X-07 | x07 | 77 | 88 | 12 % | MAME |
 | Atari Lynx | lynx | 72 | 591 | 88 % | Atari_-_Lynx |
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
@@ -120,7 +120,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Tiki 100 | tiki100 | 34 | 82 | 59 % | MAME |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
 | Atari 2600 | atari2600 | 30 | 4,197 | 99 % | Atari_-_2600 |
-| Matra Alice | alice | 27 | 59 | 54 % | MAME |
+| Matra Alice | alice | 26 | 59 | 56 % | MAME |
 | Sega Game Gear | gamegear | 26 | 1,694 | 98 % | Sega_-_Game_Gear |
 | Spectravideo SV-318/SV-328 | spectravideo | 26 | 214 | 88 % | Spectravideo_-_SVI-318_-_SVI-328 |
 | Cambridge Z88 | z88 | 26 | 30 | 13 % | MAME |
@@ -139,7 +139,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Interact Family Computer | interact | 19 | 28 | 32 % | MAME |
 | Magnavox Odyssey³ | videopacplus | 19 | 83 | 77 % | Philips_-_Videopac |
 | Osborne 1 | osborne1 | 18 | 18 | 0 % | Osborne_-_1 |
-| Sanyo PHC-25 | phc25 | 18 | 27 | 33 % | MAME |
 | DEC Rainbow 100 | rainbow | 18 | 18 | 0 % | MAME |
 | Vector-06C | vector06 | 18 | 18 | 0 % | Vector-06C |
 | Nintendo Family Computer | famicom | 17 | 27 | 37 % | Nintendo_-_Nintendo_Entertainment_System |
@@ -201,6 +200,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Hartung Game Master | gmaster | 3 | 55 | 95 % | Hartung_-_Game_Master |
 | SNK Neo Geo CD | neogeocd | 3 | 204 | 99 % | SNK_-_Neo_Geo_CD |
 | DEC PDP-1 | pdp1 | 3 | 3 | 0 % | PDP-1 |
+| Sanyo PHC-25 | phc25 | 3 | 27 | 89 % | MAME |
 | Epoch Super Casette Vision | scv | 3 | 94 | 97 % | Epoch_-_Super_Cassette_Vision |
 | Adventure Vision | advision | 2 | 14 | 86 % | Entex_-_Adventure_Vision |
 | Coleco Colecovision | colecovision | 2 | 728 | 100 % | Coleco_-_ColecoVision |
