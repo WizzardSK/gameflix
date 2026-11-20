@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,474** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,445** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,8 +10,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| mtxc | Memotech_-_MTX512 | 32 | 32 | running |
-| mc1000c | MAME | 33 | 33 | waiting |
+| mc1000c | MAME | 33 | 33 | running |
 | partnerc | MAME | 61 | 61 | waiting |
 | phc25s | MAME | 18 | 18 | waiting |
 | interactk | MAME | 19 | 19 | waiting |
@@ -113,7 +112,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Sega Saturn | saturn | 49 | 1,765 | 97 % | Sega_-_Saturn |
 | Nintendo DSi | dsi | 47 | 49 | 4 % | Nintendo_-_Nintendo_DSi |
 | Samsung SPC-1000 | spc1000 | 47 | 89 | 47 % | Samsung_-_SPC-1000 |
-| Memotech MTX | mtx | 46 | 61 | 25 % | Memotech_-_MTX512 |
 | Orao | orao | 46 | 55 | 16 % | MAME |
 | Tesla PMD 85 | pmd85 | 46 | 57 | 19 % | Tesla_-_PMD_85 |
 | Nintendo Virtual Boy | virtualboy | 46 | 256 | 82 % | Nintendo_-_Virtual_Boy |
@@ -149,6 +147,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | DEC Rainbow 100 | rainbow | 18 | 18 | 0 % | MAME |
 | Vector-06C | vector06 | 18 | 18 | 0 % | Vector-06C |
 | Nintendo Family Computer | famicom | 17 | 27 | 37 % | Nintendo_-_Nintendo_Entertainment_System |
+| Memotech MTX | mtx | 17 | 61 | 72 % | Memotech_-_MTX512 |
 | Sharp MZ-2000 | mz2000 | 17 | 19 | 11 % | Sharp_-_MZ-2000 |
 | Mattel Aquarius | aquarius | 16 | 60 | 73 % | Mattel_-_Aquarius |
 | Sega Advanced Pico Beena | beena | 16 | 122 | 87 % | Sega_-_Beena |
