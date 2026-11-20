@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,125** of **341,431** games have no snap (92.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**25,300** of **341,431** games have no snap (92.6 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -19,7 +19,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
 | Microsoft MS-DOS | dos | 2,345 | 23,819 | 90 % | DOS |
-| Sony PlayStation 3 | ps3 | 2,019 | 4,093 | 51 % | Sony_-_PlayStation_3 |
 | Commodore Amiga | amiga500 | 1,675 | 29,213 | 94 % | Commodore_-_Amiga |
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
 | Amstrad CPC | amstradcpc | 956 | 14,827 | 94 % | Amstrad_-_CPC |
@@ -50,6 +49,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Fujitsu Micro 7 | fm7 | 204 | 752 | 73 % | Fujitsu_-_Micro_7 |
 | Compucolor II | compclr2 | 202 | 220 | 8 % | MAME |
 | EACA Colour Genie | cgenie | 197 | 272 | 28 % | EACA_-_EG2000_Colour_Genie |
+| Sony PlayStation 3 | ps3 | 194 | 4,093 | 95 % | Sony_-_PlayStation_3 |
 | Nintendo Game Boy Color | gbc | 185 | 4,961 | 96 % | Nintendo_-_Game_Boy_Color |
 | Apple Macintosh | macintosh | 184 | 325 | 43 % | Apple_-_Macintosh |
 | Nintendo Super NES | snes | 181 | 5,898 | 97 % | Nintendo_-_Super_Nintendo_Entertainment_System |
