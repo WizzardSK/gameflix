@@ -1,8 +1,8 @@
 # Missing snaps
 
-Games on the site without a snap, per platform page, as of 2026-11-19. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
+Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,907** of **341,431** games have no snap (91.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,788** of **341,431** games have no snap (91.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,14 +10,9 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| a2gs2 | Apple_-_IIGS | 428 | 394 | running |
-| c64fetch | Commodore_-_64 | 205 | 205 | waiting |
-| cpcflop2 | Amstrad_-_CPC | 523 | 515 | waiting |
-| adamflop2 | Coleco_-_Adam | 211 | 211 | waiting |
-| pc88mf2 | NEC_-_PC-8001_-_PC-8801 | 168 | 168 | waiting |
-| x68miss | Sharp_-_X68000 | 147 | 147 | waiting |
-| n64miss | Nintendo_-_Nintendo_64 | 254 | 254 | waiting |
+| n64miss | Nintendo_-_Nintendo_64 | 254 | 254 | running |
 | a2dsk | Apple_-_II | 77 | 77 | waiting |
+| c64fetch | Commodore_-_64 | 205 | 205 | waiting |
 | ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
 | ps2zip | Sony_-_PlayStation_2 | 63 | 63 | waiting |
 
@@ -29,10 +24,10 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Sony PlayStation 3 | ps3 | 2,019 | 4,093 | 51 % | Sony_-_PlayStation_3 |
 | Commodore Amiga | amiga500 | 1,675 | 29,213 | 94 % | Commodore_-_Amiga |
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
-| Amstrad CPC | amstradcpc | 959 | 14,827 | 94 % | Amstrad_-_CPC |
+| Amstrad CPC | amstradcpc | 956 | 14,827 | 94 % | Amstrad_-_CPC |
 | Acorn BBC | bbcmicro | 939 | 2,686 | 65 % | Acorn_-_BBC |
 | Commodore 64 | c64 | 915 | 63,862 | 99 % | Commodore_-_64 |
-| Coleco Adam | adam | 713 | 1,183 | 40 % | Coleco_-_Adam |
+| Coleco Adam | adam | 709 | 1,183 | 40 % | Coleco_-_Adam |
 | VGMPlay | vgmplay | 699 | 3,870 | 82 % | MAME |
 | SAM Coupé | samcoupe | 643 | 870 | 26 % | MGT_-_Sam_Coupe |
 | Fujitsu FM Towns | fmtowns | 634 | 1,789 | 65 % | Fujitsu_-_FM_Towns |
@@ -40,13 +35,13 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | NEC PC-9800 | pc98 | 568 | 2,673 | 79 % | NEC_-_PC-98 |
 | Sinclair ZX Spectrum | zxspectrum | 506 | 13,216 | 96 % | Sinclair_-_ZX_Spectrum |
 | Tandy TRS-80 | trs80 | 478 | 590 | 19 % | Tandy_-_TRS-80 |
-| Apple IIGS | apple2gs | 450 | 985 | 54 % | Apple_-_IIGS |
 | IBM PC/AT 5170 | ibm5170 | 447 | 879 | 49 % | DOS |
 | Nintendo Game Boy Advance | gba | 440 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
-| NEC PC-8800 | pc88 | 430 | 2,074 | 79 % | NEC_-_PC-8001_-_PC-8801 |
+| NEC PC-8800 | pc88 | 421 | 2,074 | 80 % | NEC_-_PC-8001_-_PC-8801 |
 | Atari ST | atarist | 400 | 5,952 | 93 % | Atari_-_ST |
 | Bally Astrocade | astrocade | 376 | 559 | 33 % | Bally_-_Astrocade |
 | Apple II | apple2 | 358 | 8,440 | 96 % | Apple_-_II |
+| Apple IIGS | apple2gs | 351 | 985 | 64 % | Apple_-_IIGS |
 | Acorn Archimedes | archimedes | 319 | 473 | 33 % | Acorn_-_Archimedes |
 | Acorn Electron | electron | 303 | 865 | 65 % | Acorn_-_Electron |
 | Panasonic MSX1 | msx1 | 297 | 5,021 | 94 % | Microsoft_-_MSX |
@@ -54,7 +49,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Nintendo 64 | n64 | 256 | 2,266 | 89 % | Nintendo_-_Nintendo_64 |
 | Dragon 32/64 | dragon64 | 251 | 1,094 | 77 % | Dragon_-_Dragon_64 |
 | Thomson MO/TO | thomson | 250 | 1,959 | 87 % | Thomson_-_MOTO |
-| Sharp X68000 | x68000 | 245 | 3,153 | 92 % | Sharp_-_X68000 |
+| Sharp X68000 | x68000 | 241 | 3,153 | 92 % | Sharp_-_X68000 |
 | Fujitsu Micro 7 | fm7 | 204 | 752 | 73 % | Fujitsu_-_Micro_7 |
 | Compucolor II | compclr2 | 202 | 220 | 8 % | MAME |
 | EACA Colour Genie | cgenie | 197 | 272 | 28 % | EACA_-_EG2000_Colour_Genie |
