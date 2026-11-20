@@ -2,17 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**25,263** of **341,431** games have no snap (92.6 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
-
-## Capture queue
-
-Batches waiting on the capture machine, in the order they run, and how many of their games still have no snap.
-
-| Batch | Snap repo | Games | Still missing | State |
-|---|---|---:|---:|---|
-| ps2zip | Sony_-_PlayStation_2 | 63 | 63 | running |
-
-## Per platform
+**25,116** of **341,431** games have no snap (92.6 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -20,7 +10,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Commodore Amiga | amiga500 | 1,675 | 29,213 | 94 % | Commodore_-_Amiga |
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
 | Acorn BBC | bbcmicro | 939 | 2,686 | 65 % | Acorn_-_BBC |
-| Amstrad CPC | amstradcpc | 927 | 14,827 | 94 % | Amstrad_-_CPC |
+| Amstrad CPC | amstradcpc | 919 | 14,827 | 94 % | Amstrad_-_CPC |
 | Commodore 64 | c64 | 736 | 63,862 | 99 % | Commodore_-_64 |
 | Coleco Adam | adam | 709 | 1,183 | 40 % | Coleco_-_Adam |
 | VGMPlay | vgmplay | 699 | 3,870 | 82 % | MAME |
@@ -62,14 +52,12 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Nintendo 64 | n64 | 124 | 2,266 | 95 % | Nintendo_-_Nintendo_64 |
 | Oric Atmos | oricatmos | 124 | 463 | 73 % | Tangerine_-_Oric_Atmos |
 | Commodore PET | pet | 122 | 309 | 61 % | Commodore_-_PET |
-| Sony PlayStation Portable | psp | 118 | 2,833 | 96 % | Sony_-_PlayStation_Portable |
 | Dick Smith Super-80 | super80 | 118 | 137 | 14 % | MAME |
 | MicroBee | mbee | 116 | 710 | 84 % | Applied_Technology_-_MicroBee |
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
 | Jupiter Ace | jupace | 111 | 131 | 15 % | MAME |
 | GCE Vectrex | vectrex | 104 | 325 | 68 % | GCE_-_Vectrex |
 | Nintendo Wii | wii | 102 | 347 | 71 % | Nintendo_-_Wii |
-| Sony PlayStation 2 | ps2 | 101 | 2,082 | 95 % | Sony_-_PlayStation_2 |
 | APF MP-1000 | apfm1000 | 99 | 142 | 30 % | APF_-_MP-1000 |
 | Radio-86RK | radio86 | 99 | 99 | 0 % | Radio-86RK |
 | Panasonic MSX2 | msx2 | 97 | 1,467 | 93 % | Microsoft_-_MSX2 |
@@ -91,6 +79,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Nintendo Wii U | wiiu | 64 | 238 | 73 % | Nintendo_-_Wii_U |
 | FinalBurn Neo | fbneo | 63 | 7,073 | 99 % | MAME |
 | Lviv PK-01 | lviv | 63 | 252 | 75 % | Lviv_-_PK-01 |
+| Sony PlayStation 2 | ps2 | 63 | 2,082 | 97 % | Sony_-_PlayStation_2 |
 | Sega Mega Drive | megadrive | 62 | 6,036 | 99 % | Sega_-_Mega_Drive_-_Genesis |
 | Sega SC-3000 | sc3000 | 61 | 79 | 23 % | Sega_-_SG-1000 |
 | Nuova Elettronica Z80-NE | z80ne | 61 | 61 | 0 % | MAME |
@@ -137,6 +126,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Nintendo Family Computer | famicom | 17 | 27 | 37 % | Nintendo_-_Nintendo_Entertainment_System |
 | Memotech MTX | mtx | 17 | 61 | 72 % | Memotech_-_MTX512 |
 | Sharp MZ-2000 | mz2000 | 17 | 19 | 11 % | Sharp_-_MZ-2000 |
+| Sony PlayStation Portable | psp | 17 | 2,833 | 99 % | Sony_-_PlayStation_Portable |
 | Mattel Aquarius | aquarius | 16 | 60 | 73 % | Mattel_-_Aquarius |
 | Sega Advanced Pico Beena | beena | 16 | 122 | 87 % | Sega_-_Beena |
 | Sharp MZ-800 | mz800 | 16 | 16 | 0 % | Sharp_-_MZ-800 |
