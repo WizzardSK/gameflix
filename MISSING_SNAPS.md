@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,326** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,304** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,9 +10,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| osb1t | Osborne_-_1 | 18 | 18 | running |
-| stmono | Atari_-_ST | 53 | 53 | waiting |
-| c64fetch | Commodore_-_64 | 205 | 205 | waiting |
+| c64fetch | Commodore_-_64 | 205 | 205 | running |
 | ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
 | ps2zip | Sony_-_PlayStation_2 | 63 | 63 | waiting |
 
@@ -40,9 +38,9 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | NEC PC-8800 | pc88 | 421 | 2,074 | 80 % | NEC_-_PC-8001_-_PC-8801 |
 | Bally Astrocade | astrocade | 376 | 559 | 33 % | Bally_-_Astrocade |
 | Apple IIGS | apple2gs | 351 | 985 | 64 % | Apple_-_IIGS |
-| Atari ST | atarist | 331 | 5,952 | 94 % | Atari_-_ST |
 | Acorn Archimedes | archimedes | 319 | 473 | 33 % | Acorn_-_Archimedes |
 | Apple II | apple2 | 312 | 8,440 | 96 % | Apple_-_II |
+| Atari ST | atarist | 312 | 5,952 | 95 % | Atari_-_ST |
 | Acorn Electron | electron | 303 | 865 | 65 % | Acorn_-_Electron |
 | Panasonic MSX1 | msx1 | 297 | 5,021 | 94 % | Microsoft_-_MSX |
 | MAME | mame | 296 | 20,130 | 99 % | MAME |
@@ -136,7 +134,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Sinclair QL | ql | 21 | 27 | 22 % | Sinclair_-_QL |
 | Galaksija | galaxy | 20 | 61 | 67 % | Galaksija |
 | Magnavox Odyssey³ | videopacplus | 19 | 83 | 77 % | Philips_-_Videopac |
-| Osborne 1 | osborne1 | 18 | 18 | 0 % | Osborne_-_1 |
 | DEC Rainbow 100 | rainbow | 18 | 18 | 0 % | MAME |
 | Vector-06C | vector06 | 18 | 18 | 0 % | Vector-06C |
 | Nintendo Family Computer | famicom | 17 | 27 | 37 % | Nintendo_-_Nintendo_Entertainment_System |
@@ -149,6 +146,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Commodore Amiga CD32 | amigacd32 | 15 | 483 | 97 % | Commodore_-_CD32 |
 | Kaypro | kaypro | 15 | 16 | 6 % | MAME |
 | Korvet | korvet | 15 | 16 | 6 % | MAME |
+| Osborne 1 | osborne1 | 15 | 18 | 17 % | Osborne_-_1 |
 | Sony SMC-777 | smc777 | 15 | 15 | 0 % | Sony_-_SMC-777 |
 | Commodore Amiga CDTV | amigacdtv | 14 | 180 | 92 % | Commodore_-_CDTV |
 | Panasonic MSX2+ | msx2+ | 14 | 59 | 76 % | Microsoft_-_MSX2 |
