@@ -53,6 +53,8 @@ def key_of(entry):
         return ('\0' + parts[2]) if '/' in parts[2] else parts[2]
     name = parts[0]
     stem = name[:name.rfind('.')] if '.' in name else name
+    # a file in a subfolder takes the snap of its own name (platform.js)
+    stem = stem[stem.rfind('/') + 1:]
     return re.sub(r'^([^)]*\([^)]*\)).*$', r'\1', stem)
 
 

@@ -147,7 +147,9 @@ function generateFileLinks(romPath, imagePath) {
         return { subor: subor, nazov: nazov, obrazok: obrazok };
     }, function (g) {
         var nameWithoutExt = g.subor.includes(".") ? g.subor.slice(0, g.subor.lastIndexOf(".")) : g.subor;
-        var nameWithoutBrackets = g.obrazok || nameWithoutExt.replace(/^([^)]*\([^)]*\)).*$/, "$1");
+        // a file in a subfolder ("Dir/Game.dsk") takes the snap of its own name
+        var baseName = nameWithoutExt.slice(nameWithoutExt.lastIndexOf("/") + 1);
+        var nameWithoutBrackets = g.obrazok || baseName.replace(/^([^)]*\([^)]*\)).*$/, "$1");
         var snapRepo = imagePath;
         var slash = nameWithoutBrackets.indexOf("/");
         if (g.obrazok && slash > 0) {
