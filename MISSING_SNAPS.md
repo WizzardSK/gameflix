@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,788** of **341,431** games have no snap (91.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,656** of **341,431** games have no snap (91.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,8 +10,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| n64miss | Nintendo_-_Nintendo_64 | 254 | 254 | running |
-| a2dsk | Apple_-_II | 77 | 77 | waiting |
+| a2dsk | Apple_-_II | 77 | 77 | running |
 | c64fetch | Commodore_-_64 | 205 | 205 | waiting |
 | bkmiss | Elektronika_-_BK | 179 | 179 | waiting |
 | ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
@@ -47,7 +46,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Acorn Electron | electron | 303 | 865 | 65 % | Acorn_-_Electron |
 | Panasonic MSX1 | msx1 | 297 | 5,021 | 94 % | Microsoft_-_MSX |
 | MAME | mame | 296 | 20,130 | 99 % | MAME |
-| Nintendo 64 | n64 | 256 | 2,266 | 89 % | Nintendo_-_Nintendo_64 |
 | Dragon 32/64 | dragon64 | 251 | 1,094 | 77 % | Dragon_-_Dragon_64 |
 | Thomson MO/TO | thomson | 250 | 1,959 | 87 % | Thomson_-_MOTO |
 | Sharp X68000 | x68000 | 241 | 3,153 | 92 % | Sharp_-_X68000 |
@@ -65,6 +63,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Specialist | special | 138 | 162 | 15 % | MAME |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
+| Nintendo 64 | n64 | 124 | 2,266 | 95 % | Nintendo_-_Nintendo_64 |
 | Oric Atmos | oricatmos | 124 | 463 | 73 % | Tangerine_-_Oric_Atmos |
 | Commodore PET | pet | 122 | 309 | 61 % | Commodore_-_PET |
 | Dick Smith Super-80 | super80 | 119 | 137 | 13 % | MAME |
