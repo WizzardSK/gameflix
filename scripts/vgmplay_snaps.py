@@ -19,6 +19,7 @@ for the MAME repo; generate.sh writes it as the entry's third field, which the p
 (platform.js) reads as a snap in another repo when it holds a "/". The repos'
 file lists come from the GitHub API (gh).
 """
+import difflib
 import json
 import re
 import subprocess
@@ -56,10 +57,20 @@ for repo, sfx in {
     'SNK_-_Neo_Geo_Pocket_Color': 'ngpc',
     'Bandai_-_WonderSwan_Color': 'wsc',
     'DOS': 'pc at pco pcj t1k dos',
+    'Sharp_-_X1': 'x1 x1t x1to',
+    'GCE_-_Vectrex': 'vect',
+    'Sega_-_SG-1000': 'sg',
+    'Sega_-_PICO': 'pico',
+    'Apple_-_IIGS': '2gs',
 }.items():
     for s in sfx.split():
         REPO[s] = repo
 ARCADE = {'', 'bsys', 's18', 'sysc', 'w95', 'igs', '2610', '2203'}
+# loose matches checked by eye and found to be another game
+NOT_LOOSE = {'dizzyiii_zxs', 'dkong_gbc', 'eyebeho3_pc', 'btech_md', 'buster_x68',
+             'ys3_88', 'sorcer_msx2', 'sorcer_msx2o', 'spidxmen_md', 'svc_ngpc',
+             'ps2aa_md', 'miracle_sms', 'miracle_smsfm', 'legoisl2_zx',
+             'ohhajiki_x68', 'ilmlaser_x68', 'sorcerfe_pc'}
 
 
 def key(title):
@@ -132,11 +143,33 @@ for f in vgm:
         for sn in tree(repo):
             idx.setdefault(key(sn), []).append(sn)
         indexes[repo] = idx
+    found = False
     for t in titles:
         cand = indexes[repo].get(key(t))
         if cand:
             lines.append(f'{name}\t{repo}/{min(cand, key=lambda n: (rank(n), n))}')
+            found = True
             break
+    if not found and name not in NOT_LOOSE:
+        # no title with the same key: a leading "the" dropped, or one key
+        # starting with the other (a subtitle one of them leaves out), or a
+        # close spelling (difflib, 0.9); never with other figures
+        idx = indexes[repo]
+        for t in titles:
+            k = key(t)
+            k2 = k[3:] if k.startswith('the') else k
+            cands = [g for g in idx if g == k2 or (g.startswith('the') and g[3:] == k)]
+            if not cands and len(k) >= 8:
+                cands = [g for g in idx if len(g) >= 8 and (g.startswith(k) or k.startswith(g))]
+            if not cands:
+                cands = difflib.get_close_matches(k, list(idx), n=1, cutoff=0.9)
+            # the same figures in both (a sequel is another game: Chuck Rock
+            # II is not Chuck Rock)
+            cands = [g for g in cands if re.findall(r'[0-9]+', g) == re.findall(r'[0-9]+', k)]
+            if cands:
+                g = min(cands, key=lambda g: abs(len(g) - len(k)))
+                lines.append(f'{name}\t{repo}/{min(idx[g], key=lambda n: (rank(n), n))}')
+                break
 
 with open(out, 'w', encoding='utf-8') as fh:
     fh.write('\n'.join(sorted(lines)) + '\n')
