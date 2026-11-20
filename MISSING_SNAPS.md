@@ -10,8 +10,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| a2dsk | Apple_-_II | 77 | 77 | running |
-| c64fetch | Commodore_-_64 | 205 | 205 | waiting |
+| c64fetch | Commodore_-_64 | 205 | 205 | running |
 | bkmiss | Elektronika_-_BK | 179 | 179 | waiting |
 | ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
 | ps2zip | Sony_-_PlayStation_2 | 63 | 63 | waiting |
