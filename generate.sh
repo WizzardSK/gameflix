@@ -88,8 +88,12 @@ while IFS= read -r path; do
           # (<item>_files.xml, _meta.xml, _meta.sqlite, _reviews.xml,
           # _archive.torrent), the tile __ia_thumb.jpg and the uploader's
           # pictures with their _thumb.jpg derivatives, and a BIOS zip kept
-          # beside the games (ChihiroNetboot's "Chihiro BIOS.zip")
-          ls "$localpath" 2>/dev/null | grep -viE '^__ia_thumb\.jpg$|_(files|meta|reviews)\.xml$|_meta\.sqlite$|_archive\.torrent$|\.(jpe?g|png|gif)$| BIOS\.zip$' > "$cache/$h.txt"
+          # beside the games (ChihiroNetboot's "Chihiro BIOS.zip"); and the
+          # folders beside the games that are none (Vircon32's media, the Wii
+          # set's history, PS Vita's Launchbox, eXoDOS's !german and other
+          # language folders). A folder can be a game (a CHD set's), so only
+          # these by name; ls -p marks folders with a slash
+          ls -p "$localpath" 2>/dev/null | grep -viE '^__ia_thumb\.jpg$|_(files|meta|reviews)\.xml$|_meta\.sqlite$|_archive\.torrent$|\.(jpe?g|png|gif)$| BIOS\.zip$|^(media|history|launchbox|![a-z]+)/$' | sed 's|/$||' > "$cache/$h.txt"
         fi
       fi
     else
