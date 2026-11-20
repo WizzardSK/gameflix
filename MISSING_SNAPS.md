@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,550** of **341,431** games have no snap (91.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,481** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,7 +10,13 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| stauto | Atari_-_ST | 371 | 371 | running |
+| sc3kcart | Sega_-_SG-1000 | 8 | 8 | running |
+| mtxc | Memotech_-_MTX512 | 32 | 32 | waiting |
+| mc1000c | MAME | 33 | 33 | waiting |
+| partnerc | MAME | 61 | 61 | waiting |
+| phc25s | MAME | 18 | 18 | waiting |
+| interactk | MAME | 19 | 19 | waiting |
+| osb1t | Osborne_-_1 | 18 | 18 | waiting |
 | ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
 | ps2zip | Sony_-_PlayStation_2 | 63 | 63 | waiting |
 
@@ -36,9 +42,9 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | IBM PC/AT 5170 | ibm5170 | 447 | 879 | 49 % | DOS |
 | Nintendo Game Boy Advance | gba | 440 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
 | NEC PC-8800 | pc88 | 421 | 2,074 | 80 % | NEC_-_PC-8001_-_PC-8801 |
-| Atari ST | atarist | 400 | 5,952 | 93 % | Atari_-_ST |
 | Bally Astrocade | astrocade | 376 | 559 | 33 % | Bally_-_Astrocade |
 | Apple IIGS | apple2gs | 351 | 985 | 64 % | Apple_-_IIGS |
+| Atari ST | atarist | 331 | 5,952 | 94 % | Atari_-_ST |
 | Acorn Archimedes | archimedes | 319 | 473 | 33 % | Acorn_-_Archimedes |
 | Apple II | apple2 | 312 | 8,440 | 96 % | Apple_-_II |
 | Acorn Electron | electron | 303 | 865 | 65 % | Acorn_-_Electron |
