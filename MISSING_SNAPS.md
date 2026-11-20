@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,445** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,418** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,8 +10,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| mc1000c | MAME | 33 | 33 | running |
-| partnerc | MAME | 61 | 61 | waiting |
+| partnerc | MAME | 61 | 61 | running |
 | phc25s | MAME | 18 | 18 | waiting |
 | interactk | MAME | 19 | 19 | waiting |
 | osb1t | Osborne_-_1 | 18 | 18 | waiting |
@@ -73,7 +72,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Sony PlayStation Portable | psp | 118 | 2,833 | 96 % | Sony_-_PlayStation_Portable |
 | MicroBee | mbee | 116 | 710 | 84 % | Applied_Technology_-_MicroBee |
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
-| Jupiter Ace | jupace | 112 | 131 | 15 % | MAME |
+| Jupiter Ace | jupace | 111 | 131 | 15 % | MAME |
 | Sony PlayStation 2 | ps2 | 109 | 2,082 | 95 % | Sony_-_PlayStation_2 |
 | GCE Vectrex | vectrex | 104 | 325 | 68 % | GCE_-_Vectrex |
 | Nintendo Wii | wii | 102 | 347 | 71 % | Nintendo_-_Wii |
@@ -121,7 +120,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Tandy TRS-80 Color Computer | coco | 39 | 227 | 83 % | Tandy_-_TRS-80_Color_Computer |
 | Apple Lisa | lisa | 39 | 39 | 0 % | Apple_-_Lisa |
 | Tiki 100 | tiki100 | 34 | 82 | 59 % | MAME |
-| CCE MC-1000 | mc1000 | 33 | 34 | 3 % | MAME |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
 | Atari 2600 | atari2600 | 30 | 4,197 | 99 % | Atari_-_2600 |
 | Matra Alice | alice | 27 | 59 | 54 % | MAME |
@@ -175,6 +173,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Luxor ABC 80 | abc80 | 8 | 15 | 47 % | MAME |
 | RCA Studio II | studio2 | 8 | 30 | 73 % | RCA_-_Studio_II |
 | Atari 7800 | atari7800 | 7 | 429 | 98 % | Atari_-_7800 |
+| CCE MC-1000 | mc1000 | 7 | 34 | 79 % | MAME |
 | Sega CD | megacd | 7 | 411 | 98 % | Sega_-_Mega-CD_-_Sega_CD |
 | SNK Neo Geo Pocket Color | ngpc | 7 | 381 | 98 % | SNK_-_Neo_Geo_Pocket_Color |
 | NEC PC Engine 1 | pcengine | 7 | 1,124 | 99 % | NEC_-_PC_Engine_-_TurboGrafx_16 |
