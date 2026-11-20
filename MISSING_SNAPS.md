@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,304** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,125** of **341,431** games have no snap (92.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,7 +10,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| c64fetch | Commodore_-_64 | 205 | 205 | running |
+| cpctosec | Amstrad_-_CPC | 98 | 98 | running |
 | ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
 | ps2zip | Sony_-_PlayStation_2 | 63 | 63 | waiting |
 
@@ -24,7 +24,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
 | Amstrad CPC | amstradcpc | 956 | 14,827 | 94 % | Amstrad_-_CPC |
 | Acorn BBC | bbcmicro | 939 | 2,686 | 65 % | Acorn_-_BBC |
-| Commodore 64 | c64 | 915 | 63,862 | 99 % | Commodore_-_64 |
+| Commodore 64 | c64 | 736 | 63,862 | 99 % | Commodore_-_64 |
 | Coleco Adam | adam | 709 | 1,183 | 40 % | Coleco_-_Adam |
 | VGMPlay | vgmplay | 699 | 3,870 | 82 % | MAME |
 | Fujitsu FM Towns | fmtowns | 634 | 1,789 | 65 % | Fujitsu_-_FM_Towns |
