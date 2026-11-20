@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**27,481** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**27,474** of **341,431** games have no snap (92.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,13 +10,13 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| sc3kcart | Sega_-_SG-1000 | 8 | 8 | running |
-| mtxc | Memotech_-_MTX512 | 32 | 32 | waiting |
+| mtxc | Memotech_-_MTX512 | 32 | 32 | running |
 | mc1000c | MAME | 33 | 33 | waiting |
 | partnerc | MAME | 61 | 61 | waiting |
 | phc25s | MAME | 18 | 18 | waiting |
 | interactk | MAME | 19 | 19 | waiting |
 | osb1t | Osborne_-_1 | 18 | 18 | waiting |
+| stmono | Atari_-_ST | 53 | 53 | waiting |
 | ps2b | Sony_-_PlayStation_2 | 14 | 14 | waiting |
 | ps2zip | Sony_-_PlayStation_2 | 63 | 63 | waiting |
 
@@ -93,7 +93,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Exidy Sorcerer | sorcerer | 78 | 129 | 40 % | MAME |
 | Atari Lynx | lynx | 72 | 591 | 88 % | Atari_-_Lynx |
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
-| Sega SC-3000 | sc3000 | 68 | 79 | 14 % | Sega_-_SG-1000 |
 | Nascom | nascom | 67 | 82 | 18 % | MAME |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
 | Nintendo DS | nds | 64 | 1,518 | 96 % | Nintendo_-_Nintendo_DS |
@@ -102,6 +101,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Lviv PK-01 | lviv | 63 | 252 | 75 % | Lviv_-_PK-01 |
 | Partner-01.01 | partner | 63 | 75 | 16 % | MAME |
 | Sega Mega Drive | megadrive | 62 | 6,036 | 99 % | Sega_-_Mega_Drive_-_Genesis |
+| Sega SC-3000 | sc3000 | 61 | 79 | 23 % | Sega_-_SG-1000 |
 | Nuova Elettronica Z80-NE | z80ne | 61 | 61 | 0 % | MAME |
 | Tandy MC-10 | mc10 | 60 | 182 | 67 % | Tandy_-_MC-10 |
 | Apogee BK-01 | apogee | 59 | 103 | 43 % | Apogee_-_BK-01 |
