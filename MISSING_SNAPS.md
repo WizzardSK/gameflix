@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-21. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**24,846** of **341,425** games have no snap (92.7 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**24,590** of **341,425** games have no snap (92.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -19,12 +19,12 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | SAM Coupé | samcoupe | 613 | 870 | 30 % | MGT_-_Sam_Coupe |
 | NEC PC-9800 | pc98 | 568 | 2,673 | 79 % | NEC_-_PC-98 |
 | Sinclair ZX Spectrum | zxspectrum | 506 | 13,216 | 96 % | Sinclair_-_ZX_Spectrum |
-| Tandy TRS-80 | trs80 | 478 | 590 | 19 % | Tandy_-_TRS-80 |
 | IBM PC/AT 5170 | ibm5170 | 447 | 879 | 49 % | DOS |
 | Nintendo Game Boy Advance | gba | 440 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
 | NEC PC-8800 | pc88 | 421 | 2,074 | 80 % | NEC_-_PC-8001_-_PC-8801 |
 | Bally Astrocade | astrocade | 376 | 559 | 33 % | Bally_-_Astrocade |
 | Apple IIGS | apple2gs | 351 | 985 | 64 % | Apple_-_IIGS |
+| Tandy TRS-80 | trs80 | 323 | 590 | 45 % | Tandy_-_TRS-80 |
 | Acorn Archimedes | archimedes | 319 | 473 | 33 % | Acorn_-_Archimedes |
 | Apple II | apple2 | 312 | 8,440 | 96 % | Apple_-_II |
 | Atari ST | atarist | 312 | 5,952 | 95 % | Atari_-_ST |
@@ -35,7 +35,6 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Thomson MO/TO | thomson | 250 | 1,959 | 87 % | Thomson_-_MOTO |
 | Sharp X68000 | x68000 | 241 | 3,153 | 92 % | Sharp_-_X68000 |
 | Fujitsu Micro 7 | fm7 | 204 | 752 | 73 % | Fujitsu_-_Micro_7 |
-| Compucolor II | compclr2 | 202 | 220 | 8 % | MAME |
 | EACA Colour Genie | cgenie | 197 | 272 | 28 % | EACA_-_EG2000_Colour_Genie |
 | Sony PlayStation 3 | ps3 | 194 | 4,093 | 95 % | Sony_-_PlayStation_3 |
 | Nintendo Game Boy Color | gbc | 185 | 4,961 | 96 % | Nintendo_-_Game_Boy_Color |
@@ -48,14 +47,15 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
-| Specialist | special | 131 | 162 | 19 % | MAME |
+| Specialist | special | 130 | 162 | 20 % | MAME |
 | Nintendo 64 | n64 | 124 | 2,266 | 95 % | Nintendo_-_Nintendo_64 |
 | Oric Atmos | oricatmos | 124 | 463 | 73 % | Tangerine_-_Oric_Atmos |
 | Commodore PET | pet | 122 | 309 | 61 % | Commodore_-_PET |
 | Dick Smith Super-80 | super80 | 118 | 137 | 14 % | MAME |
 | MicroBee | mbee | 116 | 710 | 84 % | Applied_Technology_-_MicroBee |
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
-| Jupiter Ace | jupace | 111 | 131 | 15 % | MAME |
+| Jupiter Ace | jupace | 110 | 131 | 16 % | MAME |
+| Compucolor II | compclr2 | 106 | 220 | 52 % | MAME |
 | GCE Vectrex | vectrex | 104 | 325 | 68 % | GCE_-_Vectrex |
 | Nintendo Wii | wii | 101 | 346 | 71 % | Nintendo_-_Wii |
 | APF MP-1000 | apfm1000 | 99 | 142 | 30 % | APF_-_MP-1000 |
@@ -73,7 +73,7 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Apple I | apple1 | 70 | 80 | 12 % | Apple_-_I |
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
-| Nascom | nascom | 65 | 82 | 21 % | MAME |
+| Nascom | nascom | 64 | 82 | 22 % | MAME |
 | Nintendo DS | nds | 64 | 1,518 | 96 % | Nintendo_-_Nintendo_DS |
 | Nintendo Wii U | wiiu | 64 | 238 | 73 % | Nintendo_-_Wii_U |
 | FinalBurn Neo | fbneo | 63 | 7,073 | 99 % | MAME |
@@ -110,7 +110,7 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Cambridge Z88 | z88 | 26 | 30 | 13 % | MAME |
 | Commodore Plus-4 | cplus4 | 25 | 1,162 | 98 % | Commodore_-_Plus-4 |
 | Panasonic MSX TurboR | msxturbor | 25 | 83 | 70 % | Microsoft_-_MSX2 |
-| Processor Technology SOL-20 | sol20 | 25 | 27 | 7 % | MAME |
+| Processor Technology SOL-20 | sol20 | 24 | 27 | 11 % | MAME |
 | Sega Master System | mastersystem | 23 | 1,885 | 99 % | Sega_-_Master_System_-_Mark_III |
 | Bandai RX-78 | rx78 | 23 | 51 | 55 % | Bandai_-_Gundam_RX-78 |
 | Nintendo Game Boy | gb | 22 | 4,699 | 100 % | Nintendo_-_Game_Boy |
@@ -133,10 +133,10 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Partner-01.01 | partner | 16 | 75 | 79 % | MAME |
 | Commodore Amiga CD32 | amigacd32 | 15 | 483 | 97 % | Commodore_-_CD32 |
 | Kaypro | kaypro | 15 | 16 | 6 % | MAME |
-| Korvet | korvet | 15 | 16 | 6 % | MAME |
 | Osborne 1 | osborne1 | 15 | 18 | 17 % | Osborne_-_1 |
 | Sony SMC-777 | smc777 | 15 | 15 | 0 % | Sony_-_SMC-777 |
 | Commodore Amiga CDTV | amigacdtv | 14 | 180 | 92 % | Commodore_-_CDTV |
+| Korvet | korvet | 14 | 16 | 12 % | MAME |
 | Panasonic MSX2+ | msx2+ | 14 | 59 | 76 % | Microsoft_-_MSX2 |
 | Nintendo 64DD | n64dd | 13 | 19 | 32 % | Nintendo_-_Nintendo_64DD |
 | Philips VG-5000 | vg5k | 13 | 68 | 81 % | MAME |
