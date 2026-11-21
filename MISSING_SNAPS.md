@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-21. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**24,590** of **341,425** games have no snap (92.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**24,504** of **341,425** games have no snap (92.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -43,7 +43,6 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Sharp MZ-700 | mz700 | 180 | 305 | 41 % | Sharp_-_MZ-700 |
 | Videoton TV Computer | tvc | 174 | 952 | 82 % | Enterprise_-_Enterprise |
 | IBM PC 5150 | ibm5150 | 155 | 700 | 78 % | DOS |
-| Elektronika BK | bk | 152 | 186 | 18 % | Elektronika_-_BK |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
@@ -72,6 +71,7 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Atari Lynx | lynx | 72 | 591 | 88 % | Atari_-_Lynx |
 | Apple I | apple1 | 70 | 80 | 12 % | Apple_-_I |
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
+| Elektronika BK | bk | 66 | 186 | 65 % | Elektronika_-_BK |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
 | Nascom | nascom | 64 | 82 | 22 % | MAME |
 | Nintendo DS | nds | 64 | 1,518 | 96 % | Nintendo_-_Nintendo_DS |
