@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-21. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**24,349** of **341,425** games have no snap (92.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**24,200** of **341,425** games have no snap (92.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -35,7 +35,6 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Thomson MO/TO | thomson | 250 | 1,959 | 87 % | Thomson_-_MOTO |
 | Sharp X68000 | x68000 | 241 | 3,153 | 92 % | Sharp_-_X68000 |
 | Fujitsu Micro 7 | fm7 | 204 | 752 | 73 % | Fujitsu_-_Micro_7 |
-| EACA Colour Genie | cgenie | 197 | 272 | 28 % | EACA_-_EG2000_Colour_Genie |
 | Sony PlayStation 3 | ps3 | 194 | 4,093 | 95 % | Sony_-_PlayStation_3 |
 | Nintendo Game Boy Color | gbc | 185 | 4,961 | 96 % | Nintendo_-_Game_Boy_Color |
 | Apple Macintosh | macintosh | 184 | 325 | 43 % | Apple_-_Macintosh |
@@ -89,6 +88,7 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Acorn Atom | atom | 51 | 88 | 42 % | Acorn_-_Atom |
 | Sinclair ZX Spectrum +3 | specpls3 | 50 | 1,065 | 95 % | Sinclair_-_ZX_Spectrum_-3 |
 | Sega Saturn | saturn | 49 | 1,765 | 97 % | Sega_-_Saturn |
+| EACA Colour Genie | cgenie | 48 | 272 | 82 % | EACA_-_EG2000_Colour_Genie |
 | Radio-86RK | radio86 | 48 | 99 | 52 % | Radio-86RK |
 | Nintendo DSi | dsi | 47 | 49 | 4 % | Nintendo_-_Nintendo_DSi |
 | Samsung SPC-1000 | spc1000 | 47 | 89 | 47 % | Samsung_-_SPC-1000 |
