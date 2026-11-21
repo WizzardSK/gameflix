@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-21. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**24,200** of **341,425** games have no snap (92.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**24,130** of **341,425** games have no snap (92.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -44,17 +44,16 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
-| Specialist | special | 130 | 162 | 20 % | MAME |
+| Specialist | special | 129 | 162 | 20 % | MAME |
 | Nintendo 64 | n64 | 124 | 2,266 | 95 % | Nintendo_-_Nintendo_64 |
 | Oric Atmos | oricatmos | 124 | 463 | 73 % | Tangerine_-_Oric_Atmos |
 | Commodore PET | pet | 122 | 309 | 61 % | Commodore_-_PET |
-| Dick Smith Super-80 | super80 | 118 | 137 | 14 % | MAME |
 | MicroBee | mbee | 116 | 710 | 84 % | Applied_Technology_-_MicroBee |
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
-| Jupiter Ace | jupace | 110 | 131 | 16 % | MAME |
-| Compucolor II | compclr2 | 106 | 220 | 52 % | MAME |
+| Compucolor II | compclr2 | 105 | 220 | 52 % | MAME |
 | GCE Vectrex | vectrex | 104 | 325 | 68 % | GCE_-_Vectrex |
 | Nintendo Wii | wii | 101 | 346 | 71 % | Nintendo_-_Wii |
+| Dick Smith Super-80 | super80 | 100 | 137 | 27 % | MAME |
 | APF MP-1000 | apfm1000 | 99 | 142 | 30 % | APF_-_MP-1000 |
 | Panasonic MSX2 | msx2 | 97 | 1,467 | 93 % | Microsoft_-_MSX2 |
 | Nintendo Entertainment System | nes | 89 | 12,159 | 99 % | Nintendo_-_Nintendo_Entertainment_System |
@@ -71,7 +70,7 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
 | Elektronika BK | bk | 66 | 186 | 65 % | Elektronika_-_BK |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
-| Nascom | nascom | 64 | 82 | 22 % | MAME |
+| Jupiter Ace | jupace | 66 | 131 | 50 % | MAME |
 | Nintendo DS | nds | 64 | 1,518 | 96 % | Nintendo_-_Nintendo_DS |
 | Nintendo Wii U | wiiu | 64 | 238 | 73 % | Nintendo_-_Wii_U |
 | FinalBurn Neo | fbneo | 63 | 7,073 | 99 % | MAME |
@@ -82,6 +81,7 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Nuova Elettronica Z80-NE | z80ne | 61 | 61 | 0 % | MAME |
 | Tandy MC-10 | mc10 | 60 | 182 | 67 % | Tandy_-_MC-10 |
 | Apogee BK-01 | apogee | 59 | 103 | 43 % | Apogee_-_BK-01 |
+| Nascom | nascom | 59 | 82 | 28 % | MAME |
 | Nintendo Satellaview | satellaview | 59 | 292 | 80 % | Nintendo_-_Satellaview |
 | VTech Laser | laser310 | 58 | 431 | 87 % | VTech_-_Laser_310 |
 | Sony PlayStation 1 | psx | 55 | 7,042 | 99 % | Sony_-_PlayStation |
@@ -103,10 +103,10 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Tiki 100 | tiki100 | 34 | 82 | 59 % | MAME |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
 | Atari 2600 | atari2600 | 30 | 4,197 | 99 % | Atari_-_2600 |
-| Matra Alice | alice | 26 | 59 | 56 % | MAME |
 | Sega Game Gear | gamegear | 26 | 1,694 | 98 % | Sega_-_Game_Gear |
 | Spectravideo SV-318/SV-328 | spectravideo | 26 | 214 | 88 % | Spectravideo_-_SVI-318_-_SVI-328 |
 | Cambridge Z88 | z88 | 26 | 30 | 13 % | MAME |
+| Matra Alice | alice | 25 | 59 | 58 % | MAME |
 | Commodore Plus-4 | cplus4 | 25 | 1,162 | 98 % | Commodore_-_Plus-4 |
 | Panasonic MSX TurboR | msxturbor | 25 | 83 | 70 % | Microsoft_-_MSX2 |
 | Processor Technology SOL-20 | sol20 | 24 | 27 | 11 % | MAME |
