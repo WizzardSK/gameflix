@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-21. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**24,130** of **341,425** games have no snap (92.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**24,033** of **341,425** games have no snap (93.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -44,7 +44,6 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
-| Specialist | special | 129 | 162 | 20 % | MAME |
 | Nintendo 64 | n64 | 124 | 2,266 | 95 % | Nintendo_-_Nintendo_64 |
 | Oric Atmos | oricatmos | 124 | 463 | 73 % | Tangerine_-_Oric_Atmos |
 | Commodore PET | pet | 122 | 309 | 61 % | Commodore_-_PET |
@@ -64,13 +63,13 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Tatung Einstein | einstein | 81 | 113 | 28 % | Tatung_-_Einstein |
 | Sega Dreamcast | dreamcast | 79 | 2,272 | 97 % | Sega_-_Dreamcast |
 | Sharp MZ-700 | mz700 | 79 | 305 | 74 % | Sharp_-_MZ-700 |
-| Exidy Sorcerer | sorcerer | 78 | 129 | 40 % | MAME |
 | Canon X-07 | x07 | 77 | 88 | 12 % | MAME |
+| Exidy Sorcerer | sorcerer | 75 | 129 | 42 % | MAME |
 | Atari Lynx | lynx | 72 | 591 | 88 % | Atari_-_Lynx |
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
 | Elektronika BK | bk | 66 | 186 | 65 % | Elektronika_-_BK |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
-| Jupiter Ace | jupace | 66 | 131 | 50 % | MAME |
+| Jupiter Ace | jupace | 65 | 131 | 50 % | MAME |
 | Nintendo DS | nds | 64 | 1,518 | 96 % | Nintendo_-_Nintendo_DS |
 | Nintendo Wii U | wiiu | 64 | 238 | 73 % | Nintendo_-_Wii_U |
 | FinalBurn Neo | fbneo | 63 | 7,073 | 99 % | MAME |
@@ -98,6 +97,7 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Commodore Amiga CD | amiga1200 | 43 | 625 | 93 % | Commodore_-_Amiga |
 | Atari Jaguar | jaguar | 42 | 480 | 91 % | Atari_-_Jaguar |
 | Apple III | apple3 | 40 | 148 | 73 % | Apple_-_III |
+| Specialist | special | 40 | 162 | 75 % | MAME |
 | Tandy TRS-80 Color Computer | coco | 39 | 227 | 83 % | Tandy_-_TRS-80_Color_Computer |
 | Apple Lisa | lisa | 39 | 39 | 0 % | Apple_-_Lisa |
 | Tiki 100 | tiki100 | 34 | 82 | 59 % | MAME |
@@ -109,13 +109,13 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Matra Alice | alice | 25 | 59 | 58 % | MAME |
 | Commodore Plus-4 | cplus4 | 25 | 1,162 | 98 % | Commodore_-_Plus-4 |
 | Panasonic MSX TurboR | msxturbor | 25 | 83 | 70 % | Microsoft_-_MSX2 |
-| Processor Technology SOL-20 | sol20 | 24 | 27 | 11 % | MAME |
 | Sega Master System | mastersystem | 23 | 1,885 | 99 % | Sega_-_Master_System_-_Mark_III |
 | Bandai RX-78 | rx78 | 23 | 51 | 55 % | Bandai_-_Gundam_RX-78 |
 | Nintendo Game Boy | gb | 22 | 4,699 | 100 % | Nintendo_-_Game_Boy |
 | Robotron KC 85 | kc85 | 22 | 182 | 88 % | MAME |
 | Sord M5 | m5 | 22 | 67 | 67 % | Sord_-_M5 |
 | Nintendo Super Game Boy | sgb | 22 | 4,699 | 100 % | Nintendo_-_Game_Boy |
+| Processor Technology SOL-20 | sol20 | 22 | 27 | 19 % | MAME |
 | Mikrosha | mikrosha | 21 | 55 | 62 % | Mikrosha |
 | Sinclair QL | ql | 21 | 27 | 22 % | Sinclair_-_QL |
 | Galaksija | galaxy | 20 | 61 | 67 % | Galaksija |
@@ -130,17 +130,17 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Mattel Aquarius | aquarius | 16 | 60 | 73 % | Mattel_-_Aquarius |
 | Sega Advanced Pico Beena | beena | 16 | 122 | 87 % | Sega_-_Beena |
 | Sharp MZ-800 | mz800 | 16 | 16 | 0 % | Sharp_-_MZ-800 |
-| Partner-01.01 | partner | 16 | 75 | 79 % | MAME |
 | Commodore Amiga CD32 | amigacd32 | 15 | 483 | 97 % | Commodore_-_CD32 |
 | Kaypro | kaypro | 15 | 16 | 6 % | MAME |
 | Osborne 1 | osborne1 | 15 | 18 | 17 % | Osborne_-_1 |
+| Partner-01.01 | partner | 15 | 75 | 80 % | MAME |
 | Sony SMC-777 | smc777 | 15 | 15 | 0 % | Sony_-_SMC-777 |
 | Commodore Amiga CDTV | amigacdtv | 14 | 180 | 92 % | Commodore_-_CDTV |
 | Korvet | korvet | 14 | 16 | 12 % | MAME |
 | Panasonic MSX2+ | msx2+ | 14 | 59 | 76 % | Microsoft_-_MSX2 |
 | Nintendo 64DD | n64dd | 13 | 19 | 32 % | Nintendo_-_Nintendo_64DD |
-| Philips VG-5000 | vg5k | 13 | 68 | 81 % | MAME |
 | Nintendo 3DS | 3ds | 12 | 153 | 92 % | Nintendo_-_Nintendo_3DS |
+| Philips VG-5000 | vg5k | 12 | 68 | 82 % | MAME |
 | VTech V.Smile | vsmile | 12 | 325 | 96 % | VTech_-_V.Smile |
 | Bandai WonderSwan Color | wswanc | 12 | 456 | 97 % | Bandai_-_WonderSwan_Color |
 | Mattel Intellivision | intellivision | 11 | 608 | 98 % | Mattel_-_Intellivision |
