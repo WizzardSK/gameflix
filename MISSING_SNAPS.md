@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-21. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**24,504** of **341,425** games have no snap (92.8 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**24,349** of **341,425** games have no snap (92.9 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -40,7 +40,6 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Nintendo Game Boy Color | gbc | 185 | 4,961 | 96 % | Nintendo_-_Game_Boy_Color |
 | Apple Macintosh | macintosh | 184 | 325 | 43 % | Apple_-_Macintosh |
 | Nintendo Super NES | snes | 181 | 5,898 | 97 % | Nintendo_-_Super_Nintendo_Entertainment_System |
-| Sharp MZ-700 | mz700 | 180 | 305 | 41 % | Sharp_-_MZ-700 |
 | Videoton TV Computer | tvc | 174 | 952 | 82 % | Enterprise_-_Enterprise |
 | IBM PC 5150 | ibm5150 | 155 | 700 | 78 % | DOS |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
@@ -66,10 +65,10 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Commodore CBM-II | cbm2 | 84 | 139 | 40 % | Commodore_-_CBM-II |
 | Tatung Einstein | einstein | 81 | 113 | 28 % | Tatung_-_Einstein |
 | Sega Dreamcast | dreamcast | 79 | 2,272 | 97 % | Sega_-_Dreamcast |
+| Sharp MZ-700 | mz700 | 79 | 305 | 74 % | Sharp_-_MZ-700 |
 | Exidy Sorcerer | sorcerer | 78 | 129 | 40 % | MAME |
 | Canon X-07 | x07 | 77 | 88 | 12 % | MAME |
 | Atari Lynx | lynx | 72 | 591 | 88 % | Atari_-_Lynx |
-| Apple I | apple1 | 70 | 80 | 12 % | Apple_-_I |
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
 | Elektronika BK | bk | 66 | 186 | 65 % | Elektronika_-_BK |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
@@ -127,6 +126,7 @@ Games on the site without a snap, per platform page, as of 2026-11-21. Regenerat
 | Memotech MTX | mtx | 17 | 61 | 72 % | Memotech_-_MTX512 |
 | Sharp MZ-2000 | mz2000 | 17 | 19 | 11 % | Sharp_-_MZ-2000 |
 | Sony PlayStation Portable | psp | 17 | 2,833 | 99 % | Sony_-_PlayStation_Portable |
+| Apple I | apple1 | 16 | 80 | 80 % | Apple_-_I |
 | Mattel Aquarius | aquarius | 16 | 60 | 73 % | Mattel_-_Aquarius |
 | Sega Advanced Pico Beena | beena | 16 | 122 | 87 % | Sega_-_Beena |
 | Sharp MZ-800 | mz800 | 16 | 16 | 0 % | Sharp_-_MZ-800 |
