@@ -1,24 +1,13 @@
 # Missing snaps
 
-Games on the site without a snap, per platform page, as of 2026-11-20. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
+Games on the site without a snap, per platform page, as of 2026-11-21. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**25,064** of **341,425** games have no snap (92.7 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
-
-## Capture queue
-
-Batches waiting on the capture machine, in the order they run, and how many of their games still have no snap.
-
-| Batch | Snap repo | Games | Still missing | State |
-|---|---|---:|---:|---|
-| dosent | DOS | 1,179 | 1,179 | running |
-| radio86c | Radio-86RK | 61 | 61 | waiting |
-
-## Per platform
+**24,846** of **341,425** games have no snap (92.7 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
-| Microsoft MS-DOS | dos | 2,342 | 23,816 | 90 % | DOS |
-| Commodore Amiga | amiga500 | 1,674 | 29,213 | 94 % | Commodore_-_Amiga |
+| Microsoft MS-DOS | dos | 2,202 | 23,816 | 91 % | DOS |
+| Commodore Amiga | amiga500 | 1,619 | 29,213 | 94 % | Commodore_-_Amiga |
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
 | Acorn BBC | bbcmicro | 939 | 2,686 | 65 % | Acorn_-_BBC |
 | Amstrad CPC | amstradcpc | 919 | 14,827 | 94 % | Amstrad_-_CPC |
@@ -77,11 +66,11 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Commodore VIC-20 | c20 | 87 | 620 | 86 % | Commodore_-_VIC-20 |
 | Commodore CBM-II | cbm2 | 84 | 139 | 40 % | Commodore_-_CBM-II |
 | Tatung Einstein | einstein | 81 | 113 | 28 % | Tatung_-_Einstein |
-| Apple I | apple1 | 80 | 80 | 0 % | Apple_-_I |
 | Sega Dreamcast | dreamcast | 79 | 2,272 | 97 % | Sega_-_Dreamcast |
 | Exidy Sorcerer | sorcerer | 78 | 129 | 40 % | MAME |
 | Canon X-07 | x07 | 77 | 88 | 12 % | MAME |
 | Atari Lynx | lynx | 72 | 591 | 88 % | Atari_-_Lynx |
+| Apple I | apple1 | 70 | 80 | 12 % | Apple_-_I |
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
 | Nascom | nascom | 65 | 82 | 21 % | MAME |
@@ -91,7 +80,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Lviv PK-01 | lviv | 63 | 252 | 75 % | Lviv_-_PK-01 |
 | Sony PlayStation 2 | ps2 | 63 | 2,082 | 97 % | Sony_-_PlayStation_2 |
 | Sega Mega Drive | megadrive | 62 | 6,036 | 99 % | Sega_-_Mega_Drive_-_Genesis |
-| Radio-86RK | radio86 | 61 | 99 | 38 % | Radio-86RK |
 | Sega SC-3000 | sc3000 | 61 | 79 | 23 % | Sega_-_SG-1000 |
 | Nuova Elettronica Z80-NE | z80ne | 61 | 61 | 0 % | MAME |
 | Tandy MC-10 | mc10 | 60 | 182 | 67 % | Tandy_-_MC-10 |
@@ -102,6 +90,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Acorn Atom | atom | 51 | 88 | 42 % | Acorn_-_Atom |
 | Sinclair ZX Spectrum +3 | specpls3 | 50 | 1,065 | 95 % | Sinclair_-_ZX_Spectrum_-3 |
 | Sega Saturn | saturn | 49 | 1,765 | 97 % | Sega_-_Saturn |
+| Radio-86RK | radio86 | 48 | 99 | 52 % | Radio-86RK |
 | Nintendo DSi | dsi | 47 | 49 | 4 % | Nintendo_-_Nintendo_DSi |
 | Samsung SPC-1000 | spc1000 | 47 | 89 | 47 % | Samsung_-_SPC-1000 |
 | Tesla PMD 85 | pmd85 | 46 | 57 | 19 % | Tesla_-_PMD_85 |
