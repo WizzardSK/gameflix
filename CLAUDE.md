@@ -79,6 +79,35 @@
   Examples: `famicom famibs30`, `m5_cart:basici`, `to7 -cart basic`,
   `pce -cart scdsys`.
 
+## MAME start scripts (`lua/`)
+
+- Many machines only start a game after keys are typed, a tape is played and
+  RUN typed once it has run out. A fixed `-autoboot_command` types too early
+  or too late; the snap capture (capall) worked out recipes per platform, and
+  they are carried over here (the rule: every recipe found there goes here).
+- `platforms.csv` takes two pseudo switches, which the launchers (bash and
+  PowerShell) turn into `-autoboot_script` with a file written beside the
+  `.cmd`; MAME never sees them:
+  - `-gameflix_lua NAME`: `lua/NAME.lua` as it is.
+  - `-gameflix_tape 'PRE|POST|T|WAIT|GAP|BOOT'`: `lua/tape.lua` filled in.
+    Type PRE at T emulated seconds, play the tape, type POST two seconds after
+    it has run out (or after WAIT s with no tape: a disk loaded by a typed
+    command). GAP types one character every GAP s (keyboards that drop keys);
+    BOOT is typed at 2 s. PRE/POST use Lua escapes (`\n`, `\r`), a plain `"`;
+    no `|` or `;`.
+- `generate.sh` copies `lua/` to the site; the launchers fetch
+  `https://wizzardsk.github.io/lua/NAME.lua` into the cache (refetched after
+  7 days).
+- The script argument goes after the ROM: the table's last switch (`-cass`)
+  takes the next word. The core prefixes the content folder to the name
+  ("Parse path failed" in its log is harmless).
+- Android (`intent.js`) does not start cores with arguments, so it is not
+  affected.
+- Tested 22.11.2026 through the launcher: Galaksija, PMD 85, BBC tape, Oric,
+  TRS-80 tape (needs eight Returns before CLOAD: the prompts and BASIC's start
+  eat keys). C128 takes no screenshot even without a script (not checked
+  further).
+
 ## Firmware (Linux launcher)
 
 - Sources, in order:

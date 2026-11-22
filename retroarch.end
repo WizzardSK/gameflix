@@ -396,6 +396,37 @@ gameflix_mame_deps() {
   fi
 }
 
+# A MAME start script (lua/<name>.lua on the site, the recipes the snap
+# capture found for the platform): pressing keys, typing a load command,
+# playing the tape and typing RUN once it has run out. -gameflix_lua NAME in
+# the table names one; -gameflix_tape 'PRE|POST|T|WAIT|GAP|BOOT' fills in the
+# general tape script (lua/tape.lua): PRE and POST as in -autoboot_command
+# (\n escapes, a plain "), T and WAIT emulated seconds. Written to $2.
+gameflix_mame_lua() {
+  local name="$1" out="$2" spec="$3" cache="${XDG_CACHE_HOME:-$HOME/.cache}/gameflix/lua" f
+  mkdir -p "$cache"
+  f="$cache/$name.lua"
+  if [[ ! -s "$f" || -n "$(find "$f" -mtime +7 2>/dev/null)" ]]; then
+    curl -sfL --max-time 60 -o "$f.tmp" "https://wizzardsk.github.io/lua/$name.lua" && mv "$f.tmp" "$f"
+    rm -f "$f.tmp"
+  fi
+  [[ -s "$f" ]] || return 1
+  if [[ -z "$spec" ]]; then cp "$f" "$out"; return; fi
+  local pre post t wait gap boot body
+  IFS='|' read -r pre post t wait gap boot <<< "$spec"
+  # Lua strings: the escapes stay, a quote is escaped. With patsub_replacement
+  # (bash 5.2) a & in the replacement would stand for the match (PAGE=&E00).
+  shopt -u patsub_replacement 2>/dev/null
+  body=$(<"$f")
+  body=${body//@PRE@/${pre//\"/\\\"}}
+  body=${body//@POST@/${post//\"/\\\"}}
+  body=${body//@BOOT@/${boot//\"/\\\"}}
+  body=${body//@T@/${t:-4}}
+  body=${body//@WAIT@/${wait:-0}}
+  body=${body//@GAP@/${gap:-0}}
+  printf '%s\n' "$body" > "$out"
+}
+
 gameflix_fetch_mame_bios() {
   local driver="$1" dest="$HOME/share/bios" set tmp
   [[ -z "$driver" || "$driver" == -* ]] && return 0
@@ -880,6 +911,15 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
     for set in model1io model1io2 m1comm hd44780 hd44780u; do gameflix_fetch_mame_bios "$set"; done
   fi
   mame_args="${core#mame_libretro}"; mame_args="${mame_args# }"
+  # The start script, out of the arguments MAME gets (gameflix_mame_lua)
+  lua_name=""; lua_spec=""
+  if [[ "$mame_args" =~ (^|[[:space:]])-gameflix_tape[[:space:]]+\'([^\']*)\' ]]; then
+    lua_name=tape; lua_spec="${BASH_REMATCH[2]}"
+    mame_args="${mame_args/"${BASH_REMATCH[0]}"/ }"
+  elif [[ "$mame_args" =~ (^|[[:space:]])-gameflix_lua[[:space:]]+([^[:space:]]+) ]]; then
+    lua_name="${BASH_REMATCH[2]}"
+    mame_args="${mame_args/"${BASH_REMATCH[0]}"/ }"
+  fi
   gameflix_fetch_mame_bios "${mame_args%% *}"
   gameflix_fetch_mame_software "$mame_args"
   filename="${rom##*/}"; basename="${filename%.*}"
@@ -933,10 +973,22 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
     [[ "$a" == *[[:space:]\"]* ]] && a="\"${a//\"/\\x22}\""
     cmd_args+="${cmd_args:+ }$a"
   done
-  echo "${cmd_args:+$cmd_args }\"$rom\"${rompath:+ -rompath \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"" > "$cmd_file"
-  trap 'rm -f "$cmd_file"' EXIT   # do not litter the ROM dir if we are killed
+  # The start script goes beside the .cmd file: the core puts the content
+  # folder in front of an argument with a dot, so it is named without a path.
+  # It comes after the ROM: the table's last switch (-cass) takes the next word.
+  lua_file=""; lua_opt=""
+  if [[ -n "$lua_name" ]]; then
+    lua_file="$(dirname "$1")/.gameflix-$$.lua"
+    if gameflix_mame_lua "$lua_name" "$lua_file" "$lua_spec"; then
+      lua_opt=" -autoboot_script \"${lua_file##*/}\""
+    else
+      lua_file=""
+    fi
+  fi
+  echo "${cmd_args:+$cmd_args }\"$rom\"${rompath:+ -rompath \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"$lua_opt" > "$cmd_file"
+  trap 'rm -f "$cmd_file" ${lua_file:+"$lua_file"}' EXIT   # do not litter the ROM dir if we are killed
   retroarch -L "$corepath" "$cmd_file"
-  rm -f "$cmd_file"
+  rm -f "$cmd_file" ${lua_file:+"$lua_file"}
   exit
 fi
 

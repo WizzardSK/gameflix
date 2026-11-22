@@ -630,6 +630,34 @@ function Get-SoftlistName([string]$src) {
 # list XML. mame_libretro looks for it in <system>\mame\hash and ships none, so
 # without it the core dies before drawing a frame -- no error, just a black
 # screen (gameflix#12). Fetch the single list this game needs.
+# A MAME start script (lua/<name>.lua on the site, the recipes the snap
+# capture found for the platform): pressing keys, typing a load command,
+# playing the tape and typing RUN once it has run out. -gameflix_lua NAME in
+# the table names one; -gameflix_tape 'PRE|POST|T|WAIT|GAP|BOOT' fills in the
+# general tape script (lua/tape.lua): PRE and POST as in -autoboot_command
+# (\n escapes, a plain "), T and WAIT emulated seconds.
+function Write-MameLua([string]$name, [string]$out, [string]$spec) {
+  $dir = Join-Path $CacheDir 'lua'
+  New-Item -ItemType Directory -Force -Path $dir | Out-Null
+  $f = Join-Path $dir "$name.lua"
+  if (-not (Test-Path -LiteralPath $f) -or ((Get-Item -LiteralPath $f).LastWriteTime -lt (Get-Date).AddDays(-7))) {
+    try { Invoke-WebRequest -UseBasicParsing -TimeoutSec 60 -OutFile $f -Uri "https://wizzardsk.github.io/lua/$name.lua" } catch { }
+  }
+  if (-not (Test-Path -LiteralPath $f)) { return $false }
+  $body = [IO.File]::ReadAllText($f)
+  if ($spec) {
+    $p = $spec.Split('|')
+    $get = { param($i, $d) if ($p.Count -gt $i -and $p[$i] -ne '') { $p[$i] } else { $d } }
+    # Lua strings: the escapes stay, a quote is escaped
+    $body = $body.Replace('@PRE@', (& $get 0 '').Replace('"', '\"'))
+    $body = $body.Replace('@POST@', (& $get 1 '').Replace('"', '\"'))
+    $body = $body.Replace('@BOOT@', (& $get 5 '').Replace('"', '\"'))
+    $body = $body.Replace('@T@', (& $get 2 '4')).Replace('@WAIT@', (& $get 3 '0')).Replace('@GAP@', (& $get 4 '0'))
+  }
+  [IO.File]::WriteAllText($out, $body)
+  return $true
+}
+
 function Install-MameHash([string]$list) {
   if (-not $list) { return '' }
   $hashDir = $MameHash
@@ -686,6 +714,13 @@ try {
       $rompath = (Split-Path -Parent $local) + ';' + (Join-Path $RomsDir 'mame\MAME') + ';' + $BiosDir
     }
     $mameArgs = ($core -replace '^mame_libretro\s*', '')
+    # The start script, out of the arguments MAME gets (Write-MameLua)
+    $luaName = ''; $luaSpec = ''
+    if ($mameArgs -match "(^|\s)-gameflix_tape\s+'([^']*)'") {
+      $luaName = 'tape'; $luaSpec = $Matches[2]; $mameArgs = $mameArgs.Replace($Matches[0], ' ')
+    } elseif ($mameArgs -match '(^|\s)-gameflix_lua\s+(\S+)') {
+      $luaName = $Matches[2]; $mameArgs = $mameArgs.Replace($Matches[0], ' ')
+    }
     $words = Split-Command $mameArgs
     $driver = if ($words.Count -gt 0) { $words[0] } else { '' }
     Install-MameBios $driver
@@ -732,6 +767,15 @@ try {
     $line += " -skip_gameinfo -snapname `"$base`""
     $dll = Resolve-LibretroCore 'mame_libretro'
     $cmdFile = [IO.Path]::GetTempFileName() + '.cmd'
+    # The start script goes beside the .cmd file: the core puts the content
+    # folder in front of an argument with a dot, so it is named without a path.
+    $luaFile = ''
+    if ($luaName) {
+      $luaFile = $cmdFile -replace '\.cmd$', '.lua'
+      if (Write-MameLua $luaName $luaFile $luaSpec) {
+        $line += " -autoboot_script `"$(Split-Path -Leaf $luaFile)`""
+      } else { $luaFile = '' }
+    }
     Set-Content -LiteralPath $cmdFile -Value $line -Encoding ASCII
     # Launch from RetroArch's own directory so the mame_libretro core finds its
     # support data (hash/, artwork, plugins) -- relative to cwd, they are missing
@@ -742,6 +786,7 @@ try {
     $RetroArchDir = Split-Path -Parent $RetroArch
     Start-Process -FilePath $RetroArch -ArgumentList "-L `"$dll`" `"$cmdFile`"" -WorkingDirectory $RetroArchDir -Wait
     Remove-Item -LiteralPath $cmdFile -Force -ErrorAction SilentlyContinue
+    if ($luaFile) { Remove-Item -LiteralPath $luaFile -Force -ErrorAction SilentlyContinue }
   }
   elseif ($core -like '*libretro*') {
     if ($local -match '\\ps3\\') { Install-Ps3Key $rom }
