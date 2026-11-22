@@ -636,6 +636,10 @@ function Get-SoftlistName([string]$src) {
 # the table names one; -gameflix_tape 'PRE|POST|T|WAIT|GAP|BOOT' fills in the
 # general tape script (lua/tape.lua): PRE and POST as in -autoboot_command
 # (\n escapes, a plain "), T and WAIT emulated seconds.
+# Every script also gets @GAME@ (the image file), @HASH@ (the software list
+# XML) and @ITEM@ (the entry's name) from $LuaGame, $LuaHash and $LuaItem;
+# the tape spec's MODE and PREFIX are described in lua/tape.lua.
+function ConvertTo-LuaString([string]$v) { return $v.Replace('\', '\\').Replace('"', '\"') }
 function Write-MameLua([string]$name, [string]$out, [string]$spec) {
   $dir = Join-Path $CacheDir 'lua'
   New-Item -ItemType Directory -Force -Path $dir | Out-Null
@@ -645,6 +649,7 @@ function Write-MameLua([string]$name, [string]$out, [string]$spec) {
   }
   if (-not (Test-Path -LiteralPath $f)) { return $false }
   $body = [IO.File]::ReadAllText($f)
+  $body = $body.Replace('@GAME@', (ConvertTo-LuaString $LuaGame)).Replace('@HASH@', (ConvertTo-LuaString $LuaHash)).Replace('@ITEM@', (ConvertTo-LuaString $LuaItem))
   if ($spec -and $name -eq 'rk') {
     # GO|T: the run command and when I is typed
     $p = $spec.Split('|')
@@ -653,6 +658,8 @@ function Write-MameLua([string]$name, [string]$out, [string]$spec) {
     $p = $spec.Split('|')
     $get = { param($i, $d) if ($p.Count -gt $i -and $p[$i] -ne '') { $p[$i] } else { $d } }
     # Lua strings: the escapes stay, a quote is escaped
+    $body = $body.Replace('@PREFIX@', (& $get 7 '').Replace('"', '\"'))
+    $body = $body.Replace('@MODE@', (& $get 6 ''))
     $body = $body.Replace('@PRE@', (& $get 0 '').Replace('"', '\"'))
     $body = $body.Replace('@POST@', (& $get 1 '').Replace('"', '\"'))
     $body = $body.Replace('@BOOT@', (& $get 5 '').Replace('"', '\"'))
@@ -719,7 +726,10 @@ try {
     }
     $mameArgs = ($core -replace '^mame_libretro\s*', '')
     # The start script, out of the arguments MAME gets (Write-MameLua)
-    $luaName = ''; $luaSpec = ''
+    $luaName = ''; $luaSpec = ''; $luaNoMedia = $false
+    # -gameflix_nomedia: the start script puts the program into memory itself,
+    # so the image is not given to a device (MAME would refuse a .bas)
+    if ($mameArgs -match '(^|\s)-gameflix_nomedia(\s|$)') { $luaNoMedia = $true; $mameArgs = $mameArgs.Replace($Matches[0], ' ') }
     if ($mameArgs -match "(^|\s)-gameflix_tape\s+'([^']*)'") {
       $luaName = 'tape'; $luaSpec = $Matches[2]; $mameArgs = $mameArgs.Replace($Matches[0], ' ')
     } elseif ($mameArgs -match '(^|\s)-gameflix_rk\s+(be|le)(:(\d+))?') {
@@ -770,7 +780,7 @@ try {
       if ($w -match '[\s"]') { $w = '"' + ($w -replace '"', '\x22') + '"' }
       $line += "$w "
     }
-    $line += "`"$rom`""
+    if (-not $luaNoMedia) { $line += "`"$rom`"" }
     # -rompath, not -rp: current cores (0.28x) no longer merge a "-rp" path into
     # their own rompath, so the system ROMs were never found. A -rompath
     # replaces the core's own path, so RetroArch's system\mame\bios and
@@ -786,9 +796,26 @@ try {
     $cmdFile = [IO.Path]::GetTempFileName() + '.cmd'
     # The start script goes beside the .cmd file: the core puts the content
     # folder in front of an argument with a dot, so it is named without a path.
-    $luaFile = ''
+    $luaFile = ''; $luaImg = ''
     if ($luaName) {
       $luaFile = $cmdFile -replace '\.cmd$', '.lua'
+      # The script's image: the plain image itself, or a software-list
+      # entry's first file (not its notes or pictures) taken out of the zip
+      $LuaGame = $rom; $LuaItem = [IO.Path]::GetFileNameWithoutExtension($rom); $LuaHash = ''
+      if ($rom -notmatch '[\\/]' -and $local -match '\.zip$') {
+        try {
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          $zip = [IO.Compression.ZipFile]::OpenRead($local)
+          $ent = $zip.Entries | Where-Object { $_.Name -and $_.Name -notmatch '\.(txt|nfo|diz|jpe?g|png|gif|pdf|html?|xml)$' } | Select-Object -First 1
+          if ($ent) {
+            $luaImg = $cmdFile -replace '\.cmd$', [IO.Path]::GetExtension($ent.Name)
+            [IO.Compression.ZipFileExtensions]::ExtractToFile($ent, $luaImg, $true)
+            $LuaGame = $luaImg
+          }
+          $zip.Dispose()
+        } catch { }
+      }
+      if ($list -and $MameHash -and (Test-Path -LiteralPath (Join-Path $MameHash "$list.xml"))) { $LuaHash = Join-Path $MameHash "$list.xml" }
       if (Write-MameLua $luaName $luaFile $luaSpec) {
         $line += " -autoboot_script `"$(Split-Path -Leaf $luaFile)`""
       } else { $luaFile = '' }
@@ -804,6 +831,7 @@ try {
     Start-Process -FilePath $RetroArch -ArgumentList "-L `"$dll`" `"$cmdFile`"" -WorkingDirectory $RetroArchDir -Wait
     Remove-Item -LiteralPath $cmdFile -Force -ErrorAction SilentlyContinue
     if ($luaFile) { Remove-Item -LiteralPath $luaFile -Force -ErrorAction SilentlyContinue }
+    if ($luaImg) { Remove-Item -LiteralPath $luaImg -Force -ErrorAction SilentlyContinue }
   }
   elseif ($core -like '*libretro*') {
     if ($local -match '\\ps3\\') { Install-Ps3Key $rom }

@@ -95,6 +95,29 @@
     command). GAP types one character every GAP s (keyboards that drop keys);
     BOOT is typed at 2 s. PRE/POST use Lua escapes (`\n`, `\r`), a plain `"`;
     no `|` or `;`.
+  - Two more spec fields, `...|MODE|PREFIX`: MODE (`+`-separated, no comma:
+    the table's commas are field separators) lets the game change PRE/POST
+    inside `tape.lua`: `usage` (the software list's usage note for the item,
+    parsed as capall does), `cpc` / `dragon` / `coco` (the disk directory's
+    program), `ml` (CoCo/Dragon/MC-10 machine-code tape: CLOADM/EXEC).
+    PREFIX is typed before PRE (MSX boot prompts, FM-7, PHC-25 "1").
+  - Every script gets `@GAME@` (the image: the plain file, or a
+    software-list entry's first file unzipped beside the `.cmd`), `@HASH@`
+    (the list XML) and `@ITEM@`. Scripts that read the image: `pc80run`
+    (D88 directory), `adamrun`, `arcrun` (key-field typer + directory),
+    `apple1` (load range from the usage note / TOSEC name), and the
+    memory loaders `trsbas`, `cgrun`, `rksrun`, `mzrun`.
+  - `-gameflix_nomedia`: the ROM is not put on the command line (the memory
+    loaders; MAME would refuse a `.bas` on a device).
+  - Not carried over: pc98dos (needs a written MS-DOS boot disk), bkrun
+    (needs the tape decoded by bkwav2bin.py), Apple I programs that need
+    Integer BASIC and MZ-700 BASIC programs (no BASIC files to load).
+  - Tested 22.11.2026 in MAME 0.264 standalone on the VCS (scripts filled by
+    the launcher's own function), two entries each: CPC, Dragon, CoCo, ADAM,
+    Apple I, Colour Genie, PC-8001, PET, MSX, Jupiter Ace, Specialist, TRS-80
+    start; Archimedes types its command (start not seen in 100 s); Super-80
+    and MZ-700 machine code stayed on a blank screen (same commands as
+    capall).
   - `-gameflix_rk be|le[:T]`: `lua/rk.lua` for a Radio-86RK family tape
     (Radio-86RK, Mikrosha: big-endian; Specialist, Partner: little-endian).
     The launcher reads the start address from the first two bytes of the

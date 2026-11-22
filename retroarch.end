@@ -401,7 +401,11 @@ gameflix_mame_deps() {
 # playing the tape and typing RUN once it has run out. -gameflix_lua NAME in
 # the table names one; -gameflix_tape 'PRE|POST|T|WAIT|GAP|BOOT' fills in the
 # general tape script (lua/tape.lua): PRE and POST as in -autoboot_command
-# (\n escapes, a plain "), T and WAIT emulated seconds. Written to $2.
+# (\n escapes, a plain "), T and WAIT emulated seconds; MODE and PREFIX as
+# described in lua/tape.lua. Every script gets @GAME@ (the image file),
+# @HASH@ (the software list XML) and @ITEM@ (the entry's name) from
+# $lua_game, $lua_hash and $lua_item. Written to $2.
+gameflix_lua_str() { local v="${1//\\/\\\\}"; printf '%s' "${v//\"/\\\"}"; }
 gameflix_mame_lua() {
   local name="$1" out="$2" spec="$3" cache="${XDG_CACHE_HOME:-$HOME/.cache}/gameflix/lua" f
   mkdir -p "$cache"
@@ -411,24 +415,27 @@ gameflix_mame_lua() {
     rm -f "$f.tmp"
   fi
   [[ -s "$f" ]] || return 1
-  if [[ -z "$spec" ]]; then cp "$f" "$out"; return; fi
-  local pre post t wait gap boot body
+  local pre post t wait gap boot mode prefix body
   shopt -u patsub_replacement 2>/dev/null
+  body=$(<"$f")
+  body=${body//@GAME@/$(gameflix_lua_str "$lua_game")}
+  body=${body//@HASH@/$(gameflix_lua_str "$lua_hash")}
+  body=${body//@ITEM@/$(gameflix_lua_str "$lua_item")}
+  if [[ -z "$spec" ]]; then printf '%s\n' "$body" > "$out"; return; fi
   if [[ "$name" == rk ]]; then
     # GO|T: the run command and when I is typed
     IFS='|' read -r pre t <<< "$spec"
-    body=$(<"$f")
     body=${body//@GO@/$pre}
     body=${body//@T@/${t:-4}}
     printf '%s\n' "$body" > "$out"
     return
   fi
-  IFS='|' read -r pre post t wait gap boot <<< "$spec"
+  IFS='|' read -r pre post t wait gap boot mode prefix <<< "$spec"
   # Lua strings: the escapes stay, a quote is escaped. With patsub_replacement
   # (bash 5.2) a & in the replacement would stand for the match (PAGE=&E00).
-  shopt -u patsub_replacement 2>/dev/null
-  body=$(<"$f")
   body=${body//@PRE@/${pre//\"/\\\"}}
+  body=${body//@PREFIX@/${prefix//\"/\\\"}}
+  body=${body//@MODE@/$mode}
   body=${body//@POST@/${post//\"/\\\"}}
   body=${body//@BOOT@/${boot//\"/\\\"}}
   body=${body//@T@/${t:-4}}
@@ -922,7 +929,12 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
   fi
   mame_args="${core#mame_libretro}"; mame_args="${mame_args# }"
   # The start script, out of the arguments MAME gets (gameflix_mame_lua)
-  lua_name=""; lua_spec=""
+  lua_name=""; lua_spec=""; lua_nomedia=""
+  # -gameflix_nomedia: the start script puts the program into memory itself,
+  # so the image is not given to a device (MAME would refuse a .bas)
+  if [[ "$mame_args" =~ (^|[[:space:]])-gameflix_nomedia([[:space:]]|$) ]]; then
+    lua_nomedia=1; mame_args="${mame_args/"${BASH_REMATCH[0]}"/ }"
+  fi
   if [[ "$mame_args" =~ (^|[[:space:]])-gameflix_tape[[:space:]]+\'([^\']*)\' ]]; then
     lua_name=tape; lua_spec="${BASH_REMATCH[2]}"
     mame_args="${mame_args/"${BASH_REMATCH[0]}"/ }"
@@ -1000,19 +1012,33 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
   # The start script goes beside the .cmd file: the core puts the content
   # folder in front of an argument with a dot, so it is named without a path.
   # It comes after the ROM: the table's last switch (-cass) takes the next word.
-  lua_file=""; lua_opt=""
+  lua_file=""; lua_opt=""; lua_img=""
   if [[ -n "$lua_name" ]]; then
     lua_file="$(dirname "$1")/.gameflix-$$.lua"
+    # The script's image: the plain image itself, or a software-list entry's
+    # first file (not its notes or pictures) taken out of the zip
+    lua_game="$rom"; lua_item="${rom##*/}"; lua_item="${lua_item%.*}"; lua_hash=""
+    if [[ "$rom" != */* && "$1" == *.zip ]]; then
+      lua_m=$(unzip -Z1 "$1" 2>/dev/null | grep -viE '\.(txt|nfo|diz|jpe?g|png|gif|pdf|htm|html|xml)$|/$' | head -n 1)
+      if [[ -n "$lua_m" ]]; then
+        lua_img="$(dirname "$1")/.gameflix-$$.${lua_m##*.}"
+        unzip -p "$1" "$(printf '%s' "$lua_m" | sed 's/[][*?\\]/\\&/g')" > "$lua_img" 2>/dev/null
+        lua_game="$lua_img"
+      fi
+    fi
+    [[ "$src" =~ /mame-sl/([^/]+)\.zip/ && -f "$sysdir/mame/hash/${BASH_REMATCH[1]}.xml" ]] \
+      && lua_hash="$sysdir/mame/hash/${BASH_REMATCH[1]}.xml"
     if gameflix_mame_lua "$lua_name" "$lua_file" "$lua_spec"; then
       lua_opt=" -autoboot_script \"${lua_file##*/}\""
     else
       lua_file=""
     fi
   fi
-  echo "${cmd_args:+$cmd_args }\"$rom\"${rompath:+ -rompath \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"$lua_opt" > "$cmd_file"
-  trap 'rm -f "$cmd_file" ${lua_file:+"$lua_file"}' EXIT   # do not litter the ROM dir if we are killed
+  lua_rom="\"$rom\""; [[ -n "$lua_nomedia" ]] && lua_rom=""
+  echo "${cmd_args:+$cmd_args }$lua_rom${rompath:+ -rompath \"$rompath\"}$hashpath_opt -skip_gameinfo -snapname \"$basename\"$lua_opt" > "$cmd_file"
+  trap 'rm -f "$cmd_file" ${lua_file:+"$lua_file"} ${lua_img:+"$lua_img"}' EXIT   # do not litter the ROM dir if we are killed
   retroarch -L "$corepath" "$cmd_file"
-  rm -f "$cmd_file" ${lua_file:+"$lua_file"}
+  rm -f "$cmd_file" ${lua_file:+"$lua_file"} ${lua_img:+"$lua_img"}
   exit
 fi
 
