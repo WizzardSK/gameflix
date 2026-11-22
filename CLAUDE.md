@@ -95,6 +95,11 @@
     command). GAP types one character every GAP s (keyboards that drop keys);
     BOOT is typed at 2 s. PRE/POST use Lua escapes (`\n`, `\r`), a plain `"`;
     no `|` or `;`.
+  - `-gameflix_rk be|le[:T]`: `lua/rk.lua` for a Radio-86RK family tape
+    (Radio-86RK, Mikrosha: big-endian; Specialist, Partner: little-endian).
+    The launcher reads the start address from the first two bytes of the
+    zip's first file, I loads the tape, G<addr> runs it when it ran out.
+    Tested 22.11.2026: Radio-86RK Xonix.
 - `generate.sh` copies `lua/` to the site; the launchers fetch
   `https://wizzardsk.github.io/lua/NAME.lua` into the cache (refetched after
   7 days).

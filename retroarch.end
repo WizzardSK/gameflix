@@ -413,6 +413,16 @@ gameflix_mame_lua() {
   [[ -s "$f" ]] || return 1
   if [[ -z "$spec" ]]; then cp "$f" "$out"; return; fi
   local pre post t wait gap boot body
+  shopt -u patsub_replacement 2>/dev/null
+  if [[ "$name" == rk ]]; then
+    # GO|T: the run command and when I is typed
+    IFS='|' read -r pre t <<< "$spec"
+    body=$(<"$f")
+    body=${body//@GO@/$pre}
+    body=${body//@T@/${t:-4}}
+    printf '%s\n' "$body" > "$out"
+    return
+  fi
   IFS='|' read -r pre post t wait gap boot <<< "$spec"
   # Lua strings: the escapes stay, a quote is escaped. With patsub_replacement
   # (bash 5.2) a & in the replacement would stand for the match (PAGE=&E00).
@@ -916,6 +926,20 @@ if [[ "$core" == "mame_libretro" || "$core" == "mame_libretro "* ]]; then
   if [[ "$mame_args" =~ (^|[[:space:]])-gameflix_tape[[:space:]]+\'([^\']*)\' ]]; then
     lua_name=tape; lua_spec="${BASH_REMATCH[2]}"
     mame_args="${mame_args/"${BASH_REMATCH[0]}"/ }"
+  elif [[ "$mame_args" =~ (^|[[:space:]])-gameflix_rk[[:space:]]+(be|le)(:([0-9]+))? ]]; then
+    # A Radio-86RK family tape: G and the start address in its first two
+    # bytes (big-endian, little-endian on Specialist / Partner .rks)
+    lua_name=rk
+    mame_args="${mame_args/"${BASH_REMATCH[0]}"/ }"
+    rk_order="${BASH_REMATCH[2]}" rk_t="${BASH_REMATCH[4]}"
+    rk_hd=$(unzip -p "$1" 2>/dev/null | head -c 2 | od -An -tu1)
+    read -r rk_b0 rk_b1 <<< "$rk_hd"
+    if [[ -n "$rk_b1" ]]; then
+      if [[ "$rk_order" == le ]]; then rk_go=$(( rk_b1 << 8 | rk_b0 )); else rk_go=$(( rk_b0 << 8 | rk_b1 )); fi
+      lua_spec=$(printf 'G%04X|%s' "$rk_go" "${rk_t:-4}")
+    else
+      lua_spec="G0|${rk_t:-4}"
+    fi
   elif [[ "$mame_args" =~ (^|[[:space:]])-gameflix_lua[[:space:]]+([^[:space:]]+) ]]; then
     lua_name="${BASH_REMATCH[2]}"
     mame_args="${mame_args/"${BASH_REMATCH[0]}"/ }"

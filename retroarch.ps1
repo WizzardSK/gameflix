@@ -645,7 +645,11 @@ function Write-MameLua([string]$name, [string]$out, [string]$spec) {
   }
   if (-not (Test-Path -LiteralPath $f)) { return $false }
   $body = [IO.File]::ReadAllText($f)
-  if ($spec) {
+  if ($spec -and $name -eq 'rk') {
+    # GO|T: the run command and when I is typed
+    $p = $spec.Split('|')
+    $body = $body.Replace('@GO@', $p[0]).Replace('@T@', $(if ($p.Count -gt 1 -and $p[1]) { $p[1] } else { '4' }))
+  } elseif ($spec) {
     $p = $spec.Split('|')
     $get = { param($i, $d) if ($p.Count -gt $i -and $p[$i] -ne '') { $p[$i] } else { $d } }
     # Lua strings: the escapes stay, a quote is escaped
@@ -718,6 +722,19 @@ try {
     $luaName = ''; $luaSpec = ''
     if ($mameArgs -match "(^|\s)-gameflix_tape\s+'([^']*)'") {
       $luaName = 'tape'; $luaSpec = $Matches[2]; $mameArgs = $mameArgs.Replace($Matches[0], ' ')
+    } elseif ($mameArgs -match '(^|\s)-gameflix_rk\s+(be|le)(:(\d+))?') {
+      # A Radio-86RK family tape: G and the start address in its first two
+      # bytes (big-endian, little-endian on Specialist / Partner .rks)
+      $luaName = 'rk'; $mameArgs = $mameArgs.Replace($Matches[0], ' ')
+      $rkLe = $Matches[2] -eq 'le'; $rkT = if ($Matches[4]) { $Matches[4] } else { '4' }
+      $go = 'G0'
+      try {
+        Add-Type -AssemblyName System.IO.Compression.FileSystem
+        $zip = [IO.Compression.ZipFile]::OpenRead($local)
+        $st = $zip.Entries[0].Open(); $b0 = $st.ReadByte(); $b1 = $st.ReadByte(); $st.Close(); $zip.Dispose()
+        if ($b1 -ge 0) { $go = 'G{0:X4}' -f $(if ($rkLe) { $b1 * 256 + $b0 } else { $b0 * 256 + $b1 }) }
+      } catch { }
+      $luaSpec = "$go|$rkT"
     } elseif ($mameArgs -match '(^|\s)-gameflix_lua\s+(\S+)') {
       $luaName = $Matches[2]; $mameArgs = $mameArgs.Replace($Matches[0], ' ')
     }
