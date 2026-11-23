@@ -124,6 +124,7 @@ nes	nes	nes nes_ade nes_ntbrom nes_kstudio nes_datach famibox
 ngp	ngp	ngp ngpc
 ngpc	ngpc ngp	ngpc ngp
 orao	orao	orao
+orao103	orao103 orao	orao
 orica	orica oric1	oric1_cass
 orion128	orion128	orion_cass orion_flop orion_cart
 osborne1	osborne1	osborne1
