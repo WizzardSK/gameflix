@@ -13,6 +13,8 @@
 --   coco    Disk Extended BASIC disk without a usage note: its first program
 --   ml      CoCo / Dragon / MC-10 tape whose name block says machine code:
 --           CLOADM and EXEC
+--   mo5     Thomson MO5 .k7 whose header block says machine code:
+--           LOADM"",,R instead of RUN""
 -- PREFIX is typed before PRE (MSX: past the boot prompts into BASIC).
 -- GAME is the image file, HASH the software list XML, ITEM the item name.
 local stage, t_end = 0, 0
@@ -239,6 +241,13 @@ pcall(function()
     local b = readf(game, 4096) or ""
     local i = b:find("\60\0", 1, true)
     if i and #b >= i + 11 and b:byte(i + 11) == 2 then pre, post = "CLOADM\n", "EXEC\n" end
+  end
+  if has("mo5") and lg:match("%.k7$") and pre == prefix .. 'RUN""\n' then
+    -- the header block: 3C 5A 00 len, 8-byte name, 3-byte extension, then
+    -- the type (2 = machine code, which RUN"" refuses with Error 51)
+    local b = readf(game, 16384) or ""
+    local i = b:find("\60\90\0", 1, true)
+    if i and #b >= i + 15 and b:byte(i + 15) == 2 then pre = prefix .. 'LOADM"",,R\n' end
   end
 end)
 
