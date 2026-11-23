@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-23. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**23,734** of **341,414** games have no snap (93.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**23,731** of **341,414** games have no snap (93.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -48,8 +48,8 @@ Games on the site without a snap, per platform page, as of 2026-11-23. Regenerat
 | Nintendo 64 | n64 | 124 | 2,266 | 95 % | Nintendo_-_Nintendo_64 |
 | Oric Atmos | oricatmos | 124 | 463 | 73 % | Tangerine_-_Oric_Atmos |
 | Commodore PET | pet | 122 | 309 | 61 % | Commodore_-_PET |
-| Dick Smith Super-80 | super80 | 119 | 137 | 13 % | Dick_Smith_-_Super-80 |
 | MicroBee | mbee | 116 | 710 | 84 % | Applied_Technology_-_MicroBee |
+| Dick Smith Super-80 | super80 | 116 | 137 | 15 % | Dick_Smith_-_Super-80 |
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
 | GCE Vectrex | vectrex | 104 | 325 | 68 % | GCE_-_Vectrex |
 | Nintendo Wii | wii | 101 | 346 | 71 % | Nintendo_-_Wii |
