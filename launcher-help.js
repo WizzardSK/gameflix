@@ -10,12 +10,10 @@
  * shows how to install it. After one launch that did take the focus it stays
  * quiet for good (localStorage), and its "installed" button does the same for
  * browsers that ask before they open the app.
- *
- * Desktop only: Android launches through intent.js.
  */
 (function () {
     "use strict";
-    if (typeof navigator === "undefined" || /Android/i.test(navigator.userAgent)) return;
+    if (typeof navigator === "undefined") return;
 
     var KEY = "gfLauncherOk";
     var WAIT_MS = 2500;
@@ -56,8 +54,7 @@
             '<p>Games start through the gameflix launcher, which opens <code>play://</code> links in RetroArch. ' +
             'It does not seem to be installed on this computer. Install it once, then click the game again:</p>' +
             (isWindows ? windows + linux : linux + windows) +
-            '<p class="gfh-note">More in the <a href="https://github.com/WizzardSK/gameflix#quick-start" target="_blank" rel="noreferrer">README</a>. ' +
-            'On Android, tapping a game downloads it and opens it in the RetroArch app.</p>' +
+            '<p class="gfh-note">More in the <a href="https://github.com/WizzardSK/gameflix#quick-start" target="_blank" rel="noreferrer">README</a>.</p>' +
             '<div class="gfh-buttons"><button type="button" data-act="ok">It\'s installed, don\'t show again</button>' +
             '<button type="button" data-act="close">Close</button></div></div>';
         box.addEventListener("click", function (ev) {

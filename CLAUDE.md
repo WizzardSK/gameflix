@@ -24,15 +24,12 @@
   - a `case` table generated from `platforms.csv`
     (`*"/platform/list/"*) core=...; ext=...; src=...;;`),
   - `retroarch.end` (all the logic).
-- It also writes `launch.tsv` (read by the Windows launcher), and
-  `gen_cores.py launch.tsv` writes `cores.json` (Android).
+- It also writes `launch.tsv` (read by the Windows launcher).
 - Deploying without running all of `generate.sh`, which mounts archives:
   - Rebuild the deployed `retroarch.sh`: its tail is the previous
     `retroarch.end`. Swap it for the new one and check with `bash -n`.
   - After changing cores in `platforms.csv`, apply the same change to the core
     column of the deployed `retroarch.sh` and `launch.tsv`.
-  - Then run `gen_cores.py launch.tsv > cores.json` and copy the result here
-    too.
   - Copy `mame_deps.tsv` and `retroarch.ps1` to the site.
 - `generate.sh` escapes `$` in list names inside the case patterns. Before that
   fix, `Demo [$B]` never matched.
@@ -129,8 +126,6 @@
 - The script argument goes after the ROM: the table's last switch (`-cass`)
   takes the next word. The core prefixes the content folder to the name
   ("Parse path failed" in its log is harmless).
-- Android (`intent.js`) does not start cores with arguments, so it is not
-  affected.
 - Tested 22.11.2026 through the launcher: Galaksija, PMD 85, BBC tape, Oric,
   TRS-80 tape (needs eight Returns before CLOAD: the prompts and BASIC's start
   eat keys). C128 takes no screenshot even without a script (not checked
