@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-23. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**23,768** of **341,414** games have no snap (93.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**23,754** of **341,414** games have no snap (93.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -32,8 +32,8 @@ Games on the site without a snap, per platform page, as of 2026-11-23. Regenerat
 | Panasonic MSX1 | msx1 | 297 | 5,021 | 94 % | Microsoft_-_MSX |
 | MAME | mame | 296 | 20,130 | 99 % | MAME |
 | Dragon 32/64 | dragon64 | 251 | 1,094 | 77 % | Dragon_-_Dragon_64 |
-| Thomson MO/TO | thomson | 246 | 1,959 | 87 % | Thomson_-_MOTO |
 | Sharp X68000 | x68000 | 241 | 3,153 | 92 % | Sharp_-_X68000 |
+| Thomson MO/TO | thomson | 232 | 1,959 | 88 % | Thomson_-_MOTO |
 | Fujitsu Micro 7 | fm7 | 204 | 752 | 73 % | Fujitsu_-_Micro_7 |
 | Sony PlayStation 3 | ps3 | 194 | 4,093 | 95 % | Sony_-_PlayStation_3 |
 | Nintendo Game Boy Color | gbc | 185 | 4,961 | 96 % | Nintendo_-_Game_Boy_Color |
