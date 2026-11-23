@@ -6,7 +6,7 @@
 #
 # The input is AntoPISA's allMAMErenamed.txt (progettosnaps renameSET, every
 # rename from MAME 0.1 on, with the machine's ID and the version):
-#   python3 gen_mame_renames.py allMAMErenamed.txt > mame_renames.tsv
+#   python3 scripts/gen_mame_renames.py allMAMErenamed.txt > mame_renames.tsv
 # Columns: list folder, set name in that list, set name now.
 #
 # A rename belongs to a machine (its ID); a name can pass from one machine to

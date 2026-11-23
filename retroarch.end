@@ -375,7 +375,7 @@ gameflix_from_mame_set() {
 # clone's ROMs are in its parent's zip in a merged set, and the keyboard, disk
 # controller or cassette interface of the default configuration have zips of
 # their own (abc80 needs abc80kb, apple2ee needs apple2e). mame_deps.tsv, made
-# by gen_mame_deps.py from MAME's -listxml, lists them per driver.
+# by scripts/gen_mame_deps.py from MAME's -listxml, lists them per driver.
 # With a second argument of 3, the driver's software lists instead.
 gameflix_mame_deps() {
   local cache="${XDG_CACHE_HOME:-$HOME/.cache}/gameflix" deps col="${2:-2}"

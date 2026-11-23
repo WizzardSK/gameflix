@@ -11,7 +11,7 @@
 #
 # The input is the -listxml of the MAME version the core is built from, so the
 # device names match it (mame0289lx.zip from the MAME releases on GitHub):
-#   python3 gen_mame_deps.py mame0289.xml ~/gameflix/retroarch.sh > mame_deps.tsv
+#   python3 scripts/gen_mame_deps.py mame0289.xml ~/gameflix/retroarch.sh > mame_deps.tsv
 import re, sys, xml.etree.ElementTree as ET
 
 xml_path, launcher = sys.argv[1], sys.argv[2]

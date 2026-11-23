@@ -503,7 +503,7 @@ function Install-Ps3Key([string]$image) {
   Remove-Item -LiteralPath $zip -Force -ErrorAction SilentlyContinue
 }
 
-# mame_deps.tsv (made by gen_mame_deps.py): per MAME driver, the zips of the
+# mame_deps.tsv (made by scripts/gen_mame_deps.py): per MAME driver, the zips of the
 # merged set it needs - its own (the parent's, for a clone), the BIOS chain and
 # the ROM devices of its default configuration - and its software lists. With
 # the driver's own zip alone most machines stop with "Required files are

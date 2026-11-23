@@ -25,7 +25,7 @@ item_count=0
 mount_start=$(date +%s)
 mkdir -p ~/mount ~/dircache
 cache=~/dircache
-ia_ziplist="$PWD/ia_ziplist.py"  # authenticated HTTP fallback lister for archive:*.zip
+ia_ziplist="$PWD/scripts/ia_ziplist.py"  # authenticated HTTP fallback lister for archive:*.zip
 mounted_file=$(mktemp)
 
 # Mount each unique IA item once: archive:ni-roms -> ~/mount/ni-roms
@@ -210,7 +210,7 @@ while IFS=$'\t' read -r sn par; do [[ -n "$sn" ]] && mame_parent["$sn"]="$par"; 
 # Adventure's old bad dump, in the Model 3 list)
 mame_parent[mgtrkbad]=magtruck
 # Sets MAME renamed since an older list's version: the list's name -> today's,
-# per list folder (gen_mame_renames.py, from progettosnaps' allMAMErenamed)
+# per list folder (scripts/gen_mame_renames.py, from progettosnaps' allMAMErenamed)
 declare -A mame_ren
 while IFS=$'\t' read -r fo sn now; do [[ -n "$sn" ]] && mame_ren["$fo:$sn"]="$now"; done < mame_renames.tsv
 
