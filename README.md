@@ -15,7 +15,7 @@ I made this project for my own personal needs, to have the same setup on all my 
 | Tool | Purpose | Required |
 |------|---------|----------|
 | [mount-zip](https://github.com/niclas-ahden/mount-zip) | Mounts zipped disc images (PSP, PS2, PC Engine CD, etc.) instead of unpacking them | Optional (without it the zip is unpacked with unzip) |
-| [fuse-archive](https://github.com/fdegros/mount-archive) | Mounts `.rar` / `.7z` archives (Wii U, No-Intro DS) instead of unpacking them | No: when it is not installed, the launcher downloads a static build from [bin/](bin) (x86_64, aarch64; built by `.github/workflows/fuse-archive.yml`) |
+| [fuse-archive](https://github.com/fdegros/mount-archive) | Mounts non-solid `.rar` / `.7z` archives (No-Intro DS) at once, unpacking only what the core reads. A solid archive (7-Zip's default, one compressed stream) cannot be read that way quickly, so the launcher unpacks it once with 7z into `~/.cache/gameflix/unpacked/` and keeps it (delete that folder to free the space) | No: when it is not installed, the launcher downloads a static build from [bin/](bin) (x86_64, aarch64; built by `.github/workflows/fuse-archive.yml`) |
 | [ratarmount](https://github.com/mxmlnkn/ratarmount) | The same, used when fuse-archive cannot run (about half as fast) | Optional |
 | 7z or bsdtar | Unpacking `.rar` / `.7z` when neither can mount them | Optional |
 | curl / wget | Bootstrap fetch, ROM, core and firmware downloads | Yes |

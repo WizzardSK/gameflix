@@ -668,26 +668,60 @@ gameflix_fuse_archive() {
   printf '%s' "$bin"
 }
 
-# An archive at ~/iso: mounted by mount-zip (zips), fuse-archive or ratarmount
-# (.rar, .7z), all optional (README); without them, unpacked there instead.
-# Without any tool the image was never found, and RetroArch started the core
-# with no content at all (ScummVM, every CD system in a zip).
+# An archive opened at $isodir (~/iso, or a kept unpack in the cache):
+# mounted by mount-zip (zips), fuse-archive or ratarmount (.rar, .7z), all
+# optional (README); without them, unpacked there instead. Without any tool
+# the image was never found, and RetroArch started the core with no content at
+# all (ScummVM, every CD system in a zip).
+#
+# .rar/.7z: a non-solid archive (each file compressed on its own) is mounted
+# by fuse-archive -o lazycache: at once, and only what the core reads is
+# unpacked. A solid one (one stream: a file is reached only by unpacking all
+# before it; 7-Zip's default) read that way unpacks from the start again for
+# every jump (8 minutes instead of 15 s in a test), so it is unpacked once
+# into the cache and kept: later starts are instant, at the cost of the disk
+# space. 7z tells which (Solid = +); without 7z, fuse-archive unpacks the
+# whole archive at every mount, into the cache's tmp/ (deleted at unmount).
 gameflix_open_archive() {
-  local fa
+  local fa cache="${XDG_CACHE_HOME:-$HOME/.cache}/gameflix" keep mode=""
+  isodir=~/iso
   fusermount3 -uz ~/iso 2>/dev/null || fusermount -uz ~/iso 2>/dev/null || umount -l ~/iso 2>/dev/null
   mkdir -p ~/iso
   if [[ "$1" == *.rar || "$1" == *.7z ]]; then
-    # its cache (the unpacked archive, deleted at unmount) goes to disk, not
-    # to /tmp, which is often in RAM and too small for a Wii U title
-    fa=$(gameflix_fuse_archive) && mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/gameflix/tmp" &&
-      TMPDIR="${XDG_CACHE_HOME:-$HOME/.cache}/gameflix/tmp" "$fa" "$1" ~/iso && return
+    if command -v 7z >/dev/null; then
+      if 7z l -slt -- "$1" 2>/dev/null | grep -q '^Solid = +'; then
+        keep="$cache/unpacked/$(basename "$1")"
+        if [[ ! -f "$keep.done" ]]; then
+          echo "Unpacking $(basename "$1") once (solid archive) ..." >&2
+          rm -rf "$keep" "$keep.part"; mkdir -p "$keep.part"
+          if 7z x -y -bd -o"$keep.part" -- "$1" >/dev/null; then
+            mv "$keep.part" "$keep" && touch "$keep.done"
+          else
+            rm -rf "$keep.part"
+          fi
+        fi
+        if [[ -f "$keep.done" ]]; then
+          # a lone top folder is skipped, as fuse-archive does
+          isodir="$keep"
+          [[ $(find "$keep" -mindepth 1 -maxdepth 1 | wc -l) == 1 && -d $(find "$keep" -mindepth 1 -maxdepth 1) ]] &&
+            isodir=$(find "$keep" -mindepth 1 -maxdepth 1)
+          return
+        fi
+      else
+        mode="-o lazycache"
+      fi
+    fi
+    # the cache of fuse-archive goes to disk, not to /tmp, which is often in
+    # RAM and too small for a Wii U title
+    fa=$(gameflix_fuse_archive) && mkdir -p "$cache/tmp" &&
+      TMPDIR="$cache/tmp" "$fa" $mode "$1" ~/iso && return
     command -v ratarmount >/dev/null && ratarmount "$1" ~/iso && return
   else
     command -v mount-zip >/dev/null && mount-zip "$1" ~/iso && return
   fi
   # never into a mount point that failed to come off
   mountpoint -q ~/iso 2>/dev/null && { echo "$HOME/iso is still mounted" >&2; return 1; }
-  echo "Unpacking $(basename "$1") (no mount-zip/ratarmount) ..." >&2
+  echo "Unpacking $(basename "$1") (no mount-zip/fuse-archive/ratarmount) ..." >&2
   find ~/iso -mindepth 1 -delete
   if [[ "$1" == *.zip ]] && command -v unzip >/dev/null; then
     unzip -qo "$1" -d ~/iso
@@ -704,18 +738,18 @@ elif [ -n "$ext" ]; then
   # mount-zip reads zips only; .rar and .7z (Wii U NUS titles ship as .7z) go
   # through fuse-archive or ratarmount, which handle both.
   gameflix_open_archive "$1"
-  rom=$(gameflix_pick_image ~/iso "$ext")
+  rom=$(gameflix_pick_image "$isodir" "$ext")
   # ScummVM detects the game in the folder of the file it is given: a file
   # straight inside the game's folder, never one from a subfolder of it
   if [[ "$core" == scummvm_libretro* ]]; then
-    rom=$(find ~/iso -mindepth 1 -maxdepth 2 -type f -exec stat -c '%s	%n' {} + | awk -F'\t' '{print split($2, parts, "/") "\t" $0}' | sort -t$'\t' -k1,1n -k2,2nr | head -n 1 | cut -f3-)
+    rom=$(find "$isodir" -mindepth 1 -maxdepth 2 -type f -exec stat -c '%s	%n' {} + | awk -F'\t' '{print split($2, parts, "/") "\t" $0}' | sort -t$'\t' -k1,1n -k2,2nr | head -n 1 | cut -f3-)
   fi
 elif [[ "$1" == *.rar || "$1" == *.7z ]]; then
   gameflix_open_archive "$1"
   # A title of many files (Wii U NUS) is started from its folder; a single
   # image (a No-Intro DS .7z) is handed over itself.
-  rom=~/iso
-  [[ $(find ~/iso -type f | head -n 2 | wc -l) == 1 ]] && rom=$(find ~/iso -type f)
+  rom="$isodir"
+  [[ $(find "$isodir" -type f | head -n 2 | wc -l) == 1 ]] && rom=$(find "$isodir" -type f)
 else
   rom="$1"
 fi
