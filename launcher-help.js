@@ -40,8 +40,7 @@
     function show() {
         if (document.getElementById("gfHelp")) return;
         var linux = command("Linux", LINUX_CMD,
-            'Needs <a href="https://www.retroarch.com/" target="_blank" rel="noreferrer">RetroArch</a>, ' +
-            '<a href="https://rclone.org/downloads/" target="_blank" rel="noreferrer">rclone</a>, curl and unzip. Run in a terminal:');
+            'Needs <a href="https://www.retroarch.com/" target="_blank" rel="noreferrer">RetroArch</a>, curl and unzip. Run in a terminal:');
         var windows = command("Windows", WINDOWS_CMD,
             'Install <a href="https://www.retroarch.com/" target="_blank" rel="noreferrer">RetroArch</a> first, then run in PowerShell ' +
             '(or download and run <a href="' + REPO + 'mount.bat" target="_blank" rel="noreferrer">mount.bat</a>):');
