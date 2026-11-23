@@ -650,6 +650,8 @@ gameflix_pick_image() {
 # gameflix repo (bin/linux-<arch>, .github/workflows/fuse-archive.yml),
 # downloaded once into the cache. It mounts about twice as fast as ratarmount
 # (it unpacks the archive once, ratarmount reads it twice) and needs no Python.
+# The unpacked data is a temporary file that is gone after the unmount, so
+# every start of a game unpacks it again.
 gameflix_fuse_archive() {
   command -v fuse-archive && return
   local arch bin="${XDG_CACHE_HOME:-$HOME/.cache}/gameflix/bin/fuse-archive"
@@ -675,7 +677,10 @@ gameflix_open_archive() {
   fusermount3 -uz ~/iso 2>/dev/null || fusermount -uz ~/iso 2>/dev/null || umount -l ~/iso 2>/dev/null
   mkdir -p ~/iso
   if [[ "$1" == *.rar || "$1" == *.7z ]]; then
-    fa=$(gameflix_fuse_archive) && "$fa" "$1" ~/iso && return
+    # its cache (the unpacked archive, deleted at unmount) goes to disk, not
+    # to /tmp, which is often in RAM and too small for a Wii U title
+    fa=$(gameflix_fuse_archive) && mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/gameflix/tmp" &&
+      TMPDIR="${XDG_CACHE_HOME:-$HOME/.cache}/gameflix/tmp" "$fa" "$1" ~/iso && return
     command -v ratarmount >/dev/null && ratarmount "$1" ~/iso && return
   else
     command -v mount-zip >/dev/null && mount-zip "$1" ~/iso && return
