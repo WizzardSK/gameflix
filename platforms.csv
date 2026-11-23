@@ -1093,7 +1093,7 @@ abc80,archive:mame-sl/mame-sl/abc80_flop.zip,Flop MAME,mame_libretro abc80 -flop
 abc80,archive:mame-sl/mame-sl/abc80_cass.zip,Cass MAME,mame_libretro abc80 -cass,
 abc80,archive:mame-sl/mame-sl/abc80_rom.zip,ROM MAME,mame_libretro abc80 -cart,
 juku,archive:mame-sl/mame-sl/juku.zip,MAME,mame_libretro juku -flop1,
-x07,archive:mame-sl/mame-sl/x07_cass.zip,MAME,mame_libretro x07 -gameflix_lua x07 -cass,
+x07,archive:mame-sl/mame-sl/x07_cass.zip,MAME,mame_libretro x07 -gameflix_tape 'CLOAD\n|RUN\n|5|90' -cass,
 x07,archive:mame-sl/mame-sl/x07_card.zip,Card MAME,mame_libretro x07 -cart,
 kaypro,archive:mame-sl/mame-sl/kaypro.zip,MAME,mame_libretro kaypro2x -flop1,
 ekara,archive:mame-sl/mame-sl/ekara_cart.zip,MAME,mame_libretro ekara -cart,
