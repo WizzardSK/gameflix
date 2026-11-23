@@ -508,7 +508,7 @@ thomson,archive:mame-sl/mame-sl/mo5_cass.zip,MO5 Cass MAME,"mame_libretro mo5 -g
 thomson,archive:mame-sl/mame-sl/mo5_flop.zip,MO5 Flop MAME,mame_libretro mo5 -extension cd90_640 -flop,
 thomson,archive:mame-sl/mame-sl/mo6_cass.zip,MO6 Cass MAME,"mame_libretro mo6 -autoboot_command '2\nRUN""""\n' -autoboot_delay 5 -cass",
 thomson,archive:mame-sl/mame-sl/mo6_flop.zip,MO6 Flop MAME,mame_libretro mo6 -extension cd90_640 -flop,
-thomson,archive:mame-sl/mame-sl/to_flop.zip,TO Flop MAME,mame_libretro to8 -gameflix_tape '2||3' -flop,
+thomson,archive:mame-sl/mame-sl/to_flop.zip,TO Flop MAME,mame_libretro to8 -gameflix_tape 'B||3' -flop,
 thomson,archive:mame-sl/mame-sl/to7_cart.zip,TO7 Cart MAME,mame_libretro to7 -cart,
 thomson,archive:mame-sl/mame-sl/to7_cass.zip,TO7 Cass MAME,"mame_libretro to7 -cart basic -autoboot_command '1\nRUN""""\n' -autoboot_delay 5 -cass",
 thomson,archive:mame-sl/mame-sl/to8_cass.zip,TO8 Cass MAME,"mame_libretro to8 -autoboot_command '2\nRUN""""\n' -autoboot_delay 5 -cass",
