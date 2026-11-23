@@ -1,0 +1,67 @@
+# Static fuse-archive binaries for the Linux launcher (bin/linux-*/fuse-archive).
+# retroarch.end downloads the one for the machine when fuse-archive is not
+# installed, and mounts .rar/.7z games with it (faster than ratarmount, no
+# Python). Built in Alpine against musl and static libraries, so one binary
+# runs on any distribution; the host only needs fusermount3.
+name: fuse-archive binaries
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: fdegros/mount-archive tag
+        default: v1.26
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - arch: x86_64
+            runner: ubuntu-24.04
+          - arch: aarch64
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Build in Alpine
+        run: |
+          docker run --rm -v "$PWD:/out" -e VER="${{ inputs.version }}" alpine:3.22 sh -euxc '
+            apk add --no-cache build-base git pkgconf boost-dev libarchive-dev fuse3-dev
+            for p in libarchive-static fuse3-static zlib-static xz-static zstd-static bzip2-static lz4-static openssl-libs-static acl-static attr-static expat-static libb2-static; do apk add --no-cache $p || echo "no $p"; done
+            git clone -q --depth 1 -b "$VER" https://github.com/fdegros/mount-archive /src
+            cd /src
+            make -j"$(nproc)" all PKG_CONFIG="pkg-config --static" LDFLAGS="-static"
+            strip out/fuse-archive
+            file out/fuse-archive || true
+            ./out/fuse-archive --version
+            cp out/fuse-archive /out/fuse-archive
+          '
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fuse-archive-${{ matrix.arch }}
+          path: fuse-archive
+
+  commit:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: dl
+      - name: Commit binaries
+        run: |
+          for a in x86_64 aarch64; do
+            mkdir -p bin/linux-$a
+            install -m 755 dl/fuse-archive-$a/fuse-archive bin/linux-$a/fuse-archive
+          done
+          git config user.name WizzardSK
+          git config user.email 42868978+WizzardSK@users.noreply.github.com
+          git add bin/linux-*/fuse-archive
+          git diff --cached --quiet && exit 0
+          git commit -m "fuse-archive ${{ inputs.version }} static binaries (Linux x86_64, aarch64)"
+          git pull --rebase -q
+          git push
