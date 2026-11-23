@@ -1083,7 +1083,7 @@ nascom,archive:mame-sl/mame-sl/nascom_flop.zip,Flop MAME,mame_libretro nascom2 -
 nascom,archive:mame-sl/mame-sl/nascom_socket.zip,ROM MAME,mame_libretro nascom2 -rom1,
 partner,archive:mame-sl/mame-sl/partner_cass.zip,Cass MAME,mame_libretro partner -gameflix_rk le -cass,
 partner,archive:mame-sl/mame-sl/partner_flop.zip,Flop MAME,mame_libretro partner -flop1,
-vg5k,archive:mame-sl/mame-sl/vg5k.zip,MAME,mame_libretro vg5k -cass,
+vg5k,archive:mame-sl/mame-sl/vg5k.zip,MAME,mame_libretro vg5k -gameflix_tape 'CLOAD\n|RUN\n|5' -cass,
 orao,archive:mame-sl/mame-sl/orao.zip,MAME,mame_libretro orao103 -gameflix_lua oraot -cass,
 z88,archive:mame-sl/mame-sl/z88_cart.zip,MAME,mame_libretro z88 -cart1,
 exl100,archive:mame-sl/mame-sl/exl100.zip,MAME,mame_libretro exl100 -cart,
