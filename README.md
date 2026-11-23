@@ -15,8 +15,9 @@ I made this project for my own personal needs, to have the same setup on all my 
 | Tool | Purpose | Required |
 |------|---------|----------|
 | [mount-zip](https://github.com/niclas-ahden/mount-zip) | Mounts zipped disc images (PSP, PS2, PC Engine CD, etc.) instead of unpacking them | Optional (without it the zip is unpacked with unzip) |
-| [ratarmount](https://github.com/mxmlnkn/ratarmount) | Mounts `.rar` / `.7z` archives (Wii U, No-Intro DS) instead of unpacking them | Optional (without it they are unpacked with 7z or bsdtar) |
-| 7z or bsdtar | Unpacking `.rar` / `.7z` when ratarmount is missing | For `.rar` / `.7z` games without ratarmount |
+| [fuse-archive](https://github.com/fdegros/mount-archive) | Mounts `.rar` / `.7z` archives (Wii U, No-Intro DS) instead of unpacking them | No: when it is not installed, the launcher downloads a static build from [bin/](bin) (x86_64, aarch64; built by `.github/workflows/fuse-archive.yml`) |
+| [ratarmount](https://github.com/mxmlnkn/ratarmount) | The same, used when fuse-archive cannot run (about half as fast) | Optional |
+| 7z or bsdtar | Unpacking `.rar` / `.7z` when neither can mount them | Optional |
 | curl / wget | Bootstrap fetch, ROM, core and firmware downloads | Yes |
 | unzip / zip | Archive extraction at launch | Yes |
 | [RetroArch](https://www.retroarch.com/) | Main emulation frontend | Yes |
@@ -87,7 +88,7 @@ Open <https://wizzardsk.github.io/> and click a game. The ROM downloads into `%U
 Multi-file disc images (`.cue`/`.bin`, `.gdi`) need the whole archive visible. The launcher tries, in order:
 
 1. [Pismo File Mount](https://pismotec.com/pfm/) (`pfm.exe`) — **recommended**: tiny, free, no Python; mounts zip/iso in place as a folder, no extraction
-2. [7-Zip](https://www.7-zip.org/) (`7z.exe`) — extracts the whole archive to `%TEMP%\gameflix-iso\` (cached for reuse); uses disk space
+2. [7-Zip](https://www.7-zip.org/) (`7z.exe`) — extracts the whole archive to `%TEMP%\gameflix-iso\` (cached for reuse); uses disk space. When 7-Zip is not installed, the launcher downloads `7z.exe` and `7z.dll` (7-Zip 26.06, reads `.7z`, `.rar` and zip) from [bin/windows-x64](bin/windows-x64) into `%LOCALAPPDATA%\gameflix\bin`
 3. [ratarmount](https://github.com/mxmlnkn/ratarmount) + [WinFsp](https://winfsp.dev/) — optional, mainly a Linux tool; kept for parity
 
 Install **one** of these only if you play CD-based systems. For cartridge consoles you can skip this step.

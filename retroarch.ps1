@@ -257,7 +257,8 @@ if ($src -match '/sega-naomi-naomi2/' -and $local -like '*.zip') {
 # A .cue/.gdi image references separate track files, so the emulator needs the
 # whole archive visible. Preferred backends on Windows, in order:
 #   1. Pismo File Mount (pfm.exe) - native, lightweight, mounts zip+iso in place
-#   2. 7-Zip (7z.exe)             - extracts the whole archive to %TEMP% (uses disk)
+#   2. 7-Zip (7z.exe)             - extracts the whole archive to %TEMP% (uses disk);
+#                                   downloaded from the repo's bin/windows-x64 when missing
 #   3. ratarmount                 - optional; mainly a Linux tool, needs WinFsp here
 $rom = $local
 $script:MountBackend = ''   # 'pfm' | 'ratarmount' | ''
@@ -266,6 +267,31 @@ $script:MountTarget  = ''
 function Get-Tool($names) {
   foreach ($n in $names) { $c = Get-Command $n -ErrorAction SilentlyContinue; if ($c) { return $c } }
   return $null
+}
+
+# 7-Zip: the installed one, else 7z.exe + 7z.dll (they read .7z, .rar and
+# zip) downloaded once from the gameflix repo into the cache. 7za.exe is the
+# last resort: it has no RAR support.
+function Get-SevenZip {
+  $t = Get-Tool @('7z.exe')
+  if ($t) { return $t }
+  foreach ($d in @("$env:ProgramFiles\7-Zip", "${env:ProgramFiles(x86)}\7-Zip")) {
+    if ($d -and (Test-Path (Join-Path $d '7z.exe'))) { return Get-Command (Join-Path $d '7z.exe') }
+  }
+  $bin = Join-Path $CacheDir 'bin'
+  $exe = Join-Path $bin '7z.exe'
+  if (-not (Test-Path $exe) -or -not (Test-Path (Join-Path $bin '7z.dll'))) {
+    New-Item -ItemType Directory -Force -Path $bin | Out-Null
+    try {
+      foreach ($f in @('7z.dll', '7z.exe')) {
+        Invoke-WebRequest -UseBasicParsing -TimeoutSec 120 -OutFile (Join-Path $bin "$f.part") `
+          -Uri "https://raw.githubusercontent.com/WizzardSK/gameflix/main/bin/windows-x64/$f"
+        Move-Item -Force (Join-Path $bin "$f.part") (Join-Path $bin $f)
+      }
+    } catch { }
+  }
+  if (Test-Path $exe) { return Get-Command $exe }
+  return Get-Tool @('7za.exe')
 }
 
 # Mount $local's contents as a browsable folder; return the root dir, or $null.
@@ -297,7 +323,7 @@ function Dismount-Archive {
 
 # 7-Zip fallback: extract the whole archive to a cached folder; return it or $null.
 function Expand-Archive7z {
-  $sevenzip = Get-Tool @('7z.exe', '7za.exe')
+  $sevenzip = Get-SevenZip
   if (-not $sevenzip) { return $null }
   $dir  = Join-Path $MountDir ([IO.Path]::GetFileNameWithoutExtension($local))
   $done = Join-Path $dir '.gameflix-done'
@@ -363,7 +389,7 @@ if ($lindberghDir) {
     Write-Host "Unpacking $(Split-Path -Leaf $local) ..."
     $part = "$lindberghDir.part"
     Remove-Item -LiteralPath $part -Recurse -Force -ErrorAction SilentlyContinue
-    $sevenzip = Get-Tool @('7z.exe', '7za.exe')
+    $sevenzip = Get-SevenZip
     if ($sevenzip) { & $sevenzip.Source x -y "-o$part" $local | Out-Null; $ok = ($LASTEXITCODE -eq 0) }
     else { try { Expand-Archive -LiteralPath $local -DestinationPath $part -Force; $ok = $true } catch { $ok = $false } }
     if (-not $ok) { Remove-Item -LiteralPath $part -Recurse -Force -ErrorAction SilentlyContinue; Write-Error "Could not unpack $local"; exit 1 }
