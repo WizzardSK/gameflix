@@ -1,5 +1,5 @@
--- Orao: BC, two Returns, LMEM "" typed key by key, then the tape played (emulated seconds)
-local plan = {{3, "type", "BC\n"}, {5, "type", "\n"}, {6.5, "type", "\n"}, {8, "type", "LMEM \"\"\n"}, {10, "play"}}
+-- Orao: BC, two Returns, LMEM"" typed key by key, then the tape played (emulated seconds)
+local plan = {{3, "type", "BC\n"}, {5, "type", "\n"}, {6.5, "type", "\n"}, {8, "type", "LMEM\"\"\n"}, {10, "play"}}
 local keys, shift, ctrl = nil, nil, nil
 local function scan()
   keys = {}
