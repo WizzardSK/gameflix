@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-23. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**23,731** of **341,414** games have no snap (93.0 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**23,703** of **341,414** games have no snap (93.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -102,7 +102,6 @@ Games on the site without a snap, per platform page, as of 2026-11-23. Regenerat
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
 | Atari 2600 | atari2600 | 30 | 4,197 | 99 % | Atari_-_2600 |
 | Cambridge Z88 | z88 | 30 | 30 | 0 % | Cambridge_-_Z88 |
-| Matra Alice | alice | 29 | 59 | 51 % | Matra_-_Alice |
 | Processor Technology SOL-20 | sol20 | 27 | 27 | 0 % | Processor_Technology_-_SOL-20 |
 | Sega Game Gear | gamegear | 26 | 1,694 | 98 % | Sega_-_Game_Gear |
 | Robotron KC 85 | kc85 | 26 | 182 | 86 % | Robotron_-_KC_85 |
@@ -119,7 +118,6 @@ Games on the site without a snap, per platform page, as of 2026-11-23. Regenerat
 | Galaksija | galaxy | 20 | 61 | 67 % | Galaksija |
 | Orao | orao | 20 | 55 | 64 % | PEL_-_Orao |
 | Partner-01.01 | partner | 20 | 75 | 73 % | Partner_-_01.01 |
-| Philips VG-5000 | vg5k | 19 | 68 | 72 % | Philips_-_VG-5000 |
 | Magnavox Odyssey³ | videopacplus | 19 | 83 | 77 % | Philips_-_Videopac |
 | DEC Rainbow 100 | rainbow | 18 | 18 | 0 % | DEC_-_Rainbow_100 |
 | Vector-06C | vector06 | 18 | 18 | 0 % | Vector-06C |
@@ -137,6 +135,7 @@ Games on the site without a snap, per platform page, as of 2026-11-23. Regenerat
 | Commodore Amiga CD32 | amigacd32 | 15 | 483 | 97 % | Commodore_-_CD32 |
 | Osborne 1 | osborne1 | 15 | 18 | 17 % | Osborne_-_1 |
 | Sony SMC-777 | smc777 | 15 | 15 | 0 % | Sony_-_SMC-777 |
+| Matra Alice | alice | 14 | 59 | 76 % | Matra_-_Alice |
 | Commodore Amiga CDTV | amigacdtv | 14 | 180 | 92 % | Commodore_-_CDTV |
 | Panasonic MSX2+ | msx2+ | 14 | 59 | 76 % | Microsoft_-_MSX2 |
 | Nintendo 64DD | n64dd | 13 | 19 | 32 % | Nintendo_-_Nintendo_64DD |
@@ -167,6 +166,7 @@ Games on the site without a snap, per platform page, as of 2026-11-23. Regenerat
 | Casio PV-1000 | pv1000 | 6 | 48 | 88 % | Casio_-_PV-1000 |
 | Sega 32x | sega32x | 6 | 340 | 98 % | Sega_-_32X |
 | Nintendo SNES MSU-1 | snes-msu1 | 6 | 149 | 96 % | Nintendo_-_Super_Nintendo_Entertainment_System |
+| Philips VG-5000 | vg5k | 6 | 68 | 91 % | Philips_-_VG-5000 |
 | Bandai WonderSwan | wswan | 6 | 507 | 99 % | Bandai_-_WonderSwan |
 | Microsoft Xbox 360 | xbox360 | 6 | 143 | 96 % | Microsoft_-_Xbox_360 |
 | Sinclair ZX80 | zx80 | 6 | 6 | 0 % | Sinclair_-_ZX_80 |
