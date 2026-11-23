@@ -29,7 +29,7 @@ zx81,Sinclair ZX81,Sinclair - ZX 81
 zxspectrum,Sinclair ZX Spectrum,Sinclair - ZX Spectrum
 specpls3,Sinclair ZX Spectrum +3,Sinclair - ZX Spectrum +3
 ql,Sinclair QL,Sinclair - QL
-z88,Cambridge Z88,MAME
+z88,Cambridge Z88,Cambridge - Z88
 amstradcpc,Amstrad CPC,Amstrad - CPC
 gx4000,Amstrad GX4000,Amstrad - GX4000
 pcw,Amstrad PCW,Amstrad - PCW
@@ -132,52 +132,52 @@ vii,Sport Vii,Sport Vii
 ekara,e-kara,Takara - e-kara
 hikara,Hi-kara,Takara - Hi-kara
 multivision,Othello Multivision,Othello - Multivision
-videoart,VideoArt,MAME
+videoart,VideoArt,LJN - VideoArt
 ,Monochrome computers,
 pdp1,DEC PDP-1,PDP-1
-sol20,Processor Technology SOL-20,MAME
+sol20,Processor Technology SOL-20,Processor Technology - SOL-20
 trs80,Tandy TRS-80,Tandy - TRS-80
-sorcerer,Exidy Sorcerer,MAME
-z80ne,Nuova Elettronica Z80-NE,MAME
+sorcerer,Exidy Sorcerer,Exidy - Sorcerer
+z80ne,Nuova Elettronica Z80-NE,Nuova Elettronica - Z80-NE
 osborne1,Osborne 1,Osborne - 1
-jupace,Jupiter Ace,MAME
-nascom,Nascom,MAME
-abc80,Luxor ABC 80,MAME
-kaypro,Kaypro,MAME
+jupace,Jupiter Ace,Jupiter Cantab - Jupiter Ace
+nascom,Nascom,Nascom - Nascom
+abc80,Luxor ABC 80,Luxor - ABC 80
+kaypro,Kaypro,Kaypro - Kaypro
 galaxy,Galaksija,Galaksija
-special,Specialist,MAME
+special,Specialist,Specialist
 apogee,Apogee BK-01,Apogee - BK-01
 radio86,Radio-86RK,Radio-86RK
 mikrosha,Mikrosha,Mikrosha
-partner,Partner-01.01,MAME
-korvet,Korvet,MAME
+partner,Partner-01.01,Partner - 01.01
+korvet,Korvet,Korvet
 ,Computers up to 8 colors,
 atom,Acorn Atom,Acorn - Atom
-interact,Interact Family Computer,MAME
+interact,Interact Family Computer,Interact - Family Computer
 spc1000,Samsung SPC-1000,Samsung - SPC-1000
 cgenie,EACA Colour Genie,EACA - EG2000 Colour Genie
 dragon64,Dragon 32/64,Dragon - Dragon 64
 oricatmos,Oric Atmos,Tangerine - Oric Atmos
 camplynx,Camputers Lynx,Camputers - Lynx
-orao,Orao,MAME
-vg5k,Philips VG-5000,MAME
-pegasus,Pegasus,MAME
-juku,Juku,MAME
-x07,Canon X-07,MAME
-alice,Matra Alice,MAME
+orao,Orao,PEL - Orao
+vg5k,Philips VG-5000,Philips - VG-5000
+pegasus,Pegasus,Technosys - Pegasus
+juku,Juku,Juku
+x07,Canon X-07,Canon - X-07
+alice,Matra Alice,Matra - Alice
 mc10,Tandy MC-10,Tandy - MC-10
-phc25,Sanyo PHC-25,MAME
+phc25,Sanyo PHC-25,Sanyo - PHC-25
 laser310,VTech Laser,VTech - Laser 310
 bk,Elektronika BK,Elektronika - BK
 pmd85,Tesla PMD 85,Tesla - PMD 85
 lviv,Lviv PK-01,Lviv - PK-01
-mc1000,CCE MC-1000,MAME
+mc1000,CCE MC-1000,CCE - MC-1000
 pecom64,Ei Pecom 64,Pecom - 64
 spc1500,Samsung SPC-1500,Samsung - SPC-1500
 orion128,Orion 128,Orion - 128
 ,Computers with 16 colors,
 videobrain,VideoBrain FamilyComputer,VideoBrain - FamilyComputer
-super80,Dick Smith Super-80,MAME
+super80,Dick Smith Super-80,Dick Smith - Super-80
 bbcmicro,Acorn BBC,Acorn - BBC
 ti99,Texas Instruments TI-99/4A,Texas Instruments - TI-99
 mbee,MicroBee,Applied Technology - MicroBee
@@ -186,14 +186,14 @@ aquarius,Mattel Aquarius,Mattel - Aquarius
 adam,Coleco Adam,Coleco - Adam
 spectravideo,Spectravideo SV-318/SV-328,Spectravideo - SVI-318 - SVI-328
 mtx,Memotech MTX,Memotech - MTX512
-pencil2,Hanimex Pencil II,MAME
+pencil2,Hanimex Pencil II,Hanimex - Pencil II
 electron,Acorn Electron,Acorn - Electron
 tutor,Tomy Tutor,Tomy - Tutor
-exl100,Exel EXL 100,MAME
-compclr2,Compucolor II,MAME
+exl100,Exel EXL 100,Exel - EXL 100
+compclr2,Compucolor II,Compucolor - Compucolor II
 myvision,Nichibutsu My Vision,Nichibutsu - My Vision
 einstein,Tatung Einstein,Tatung - Einstein
-kc85,Robotron KC 85,MAME
+kc85,Robotron KC 85,Robotron - KC 85
 tvc,Videoton TV Computer,Enterprise - Enterprise
 ,Computers with extended palette,
 rx78,Bandai RX-78,Bandai - Gundam RX-78
@@ -203,8 +203,8 @@ enterprise,Enterprise 64/128,Enterprise - Enterprise
 vector06,Vector-06C,Vector-06C
 socrates,VTech Socrates,VTech - Socrates
 thomson,Thomson MO/TO,Thomson - MOTO
-rainbow,DEC Rainbow 100,MAME
-tiki100,Tiki 100,MAME
+rainbow,DEC Rainbow 100,DEC - Rainbow 100
+tiki100,Tiki 100,Tiki - Tiki 100
 pro128,Olivetti Prodest PC 128,Olivetti - Prodest PC 128
 pro128s,Olivetti Prodest PC 128S,Olivetti - Prodest PC 128S
 archimedes,Acorn Archimedes,Acorn - Archimedes
@@ -260,7 +260,7 @@ wswanc,Bandai WonderSwan Color,Bandai - WonderSwan Color
 megaduck,Welback Mega Duck,Welback - Mega Duck
 microvision,Milton Bradley Microvision,Milton Bradley - Microvision
 gamate,Bitcorp Gamate,Bitcorp - Gamate
-juicebox,Mattel Juice Box,MAME
+juicebox,Mattel Juice Box,Mattel - Juice Box
 gmaster,Hartung Game Master,Hartung - Game Master
 gamecom,Tiger Game.com,Tiger - Game.com
 gp32,GamePark GP32,GamePark - GP32
