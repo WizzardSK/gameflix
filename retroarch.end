@@ -647,7 +647,7 @@ gameflix_pick_image() {
 }
 
 # An archive at ~/iso: mounted by mount-zip (zips) or ratarmount (.rar, .7z),
-# as the README asks for; without them, unpacked there instead. Without either
+# both optional (README); without them, unpacked there instead. Without either
 # tool the image was never found, and RetroArch started the core with no
 # content at all (ScummVM, every CD system in a zip).
 gameflix_open_archive() {

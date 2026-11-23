@@ -14,7 +14,9 @@ I made this project for my own personal needs, to have the same setup on all my 
 
 | Tool | Purpose | Required |
 |------|---------|----------|
-| [mount-zip](https://github.com/niclas-ahden/mount-zip) | Mounting zipped ISO files (PSP, PS2, PC Engine CD, etc.) | For CD-based systems |
+| [mount-zip](https://github.com/niclas-ahden/mount-zip) | Mounts zipped disc images (PSP, PS2, PC Engine CD, etc.) instead of unpacking them | Optional (without it the zip is unpacked with unzip) |
+| [ratarmount](https://github.com/mxmlnkn/ratarmount) | Mounts `.rar` / `.7z` archives (Wii U, No-Intro DS) instead of unpacking them | Optional (without it they are unpacked with 7z or bsdtar) |
+| 7z or bsdtar | Unpacking `.rar` / `.7z` when ratarmount is missing | For `.rar` / `.7z` games without ratarmount |
 | curl / wget | Bootstrap fetch, ROM, core and firmware downloads | Yes |
 | unzip / zip | Archive extraction at launch | Yes |
 | [RetroArch](https://www.retroarch.com/) | Main emulation frontend | Yes |
