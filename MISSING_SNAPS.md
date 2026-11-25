@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-25. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**23,669** of **341,414** games have no snap (93.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**23,661** of **341,414** games have no snap (93.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -134,7 +134,6 @@ Games on the site without a snap, per platform page, as of 2026-11-25. Regenerat
 | Sony SMC-777 | smc777 | 15 | 15 | 0 % | Sony_-_SMC-777 |
 | Matra Alice | alice | 14 | 59 | 76 % | Matra_-_Alice |
 | Commodore Amiga CDTV | amigacdtv | 14 | 180 | 92 % | Commodore_-_CDTV |
-| Kaypro | kaypro | 14 | 16 | 12 % | Kaypro_-_Kaypro |
 | Panasonic MSX2+ | msx2+ | 14 | 59 | 76 % | Microsoft_-_MSX2 |
 | Nintendo 64DD | n64dd | 13 | 19 | 32 % | Nintendo_-_Nintendo_64DD |
 | Nintendo 3DS | 3ds | 12 | 153 | 92 % | Nintendo_-_Nintendo_3DS |
@@ -152,6 +151,7 @@ Games on the site without a snap, per platform page, as of 2026-11-25. Regenerat
 | Luxor ABC 80 | abc80 | 8 | 15 | 47 % | Luxor_-_ABC_80 |
 | RCA Studio II | studio2 | 8 | 30 | 73 % | RCA_-_Studio_II |
 | Atari 7800 | atari7800 | 7 | 429 | 98 % | Atari_-_7800 |
+| Kaypro | kaypro | 7 | 16 | 56 % | Kaypro_-_Kaypro |
 | CCE MC-1000 | mc1000 | 7 | 34 | 79 % | CCE_-_MC-1000 |
 | Sega CD | megacd | 7 | 411 | 98 % | Sega_-_Mega-CD_-_Sega_CD |
 | SNK Neo Geo Pocket Color | ngpc | 7 | 381 | 98 % | SNK_-_Neo_Geo_Pocket_Color |
@@ -197,7 +197,6 @@ Games on the site without a snap, per platform page, as of 2026-11-25. Regenerat
 | VaporSpec | VaporSpec | 1 | 10 | 90 % | VaporSpec |
 | Bitcorp Gamate | gamate | 1 | 179 | 99 % | Bitcorp_-_Gamate |
 | Hi-kara | hikara | 1 | 13 | 92 % | Takara_-_Hi-kara |
-| Juku | juku | 1 | 1 | 0 % | Juku |
 | Welback Mega Duck | megaduck | 1 | 50 | 98 % | Welback_-_Mega_Duck |
 | SNK Neo Geo AES | neogeo | 1 | 167 | 99 % | SNK_-_Neo_Geo |
 | NEC PC-FX | pcfx | 1 | 123 | 99 % | NEC_-_PC-FX |
@@ -205,19 +204,19 @@ Games on the site without a snap, per platform page, as of 2026-11-25. Regenerat
 | NEC PC Engine 2 | supergrafx | 1 | 16 | 94 % | NEC_-_PC_Engine_SuperGrafx |
 | Sharp X1 | x1 | 1 | 446 | 100 % | Sharp_-_X1 |
 
-## Complete (58)
+## Complete (59)
 
 | | | | | |
 |---|---|---|---|---|
 | Amstrad PCW | Atari VCS | Atari XEGS | Bandai Playdia | Bandai Super Vision 8000 |
 | ChaiLove | Commodore VIC-10 | Emerson Arcadia 2001 | Entex Select-A-Game | Epoch Cassette Vision |
 | Epoch Game Pocket Computer | Exel EXL 100 | Gaelco PowerVR | Gakken Compact Vision TV Boy | IBM PCjr |
-| Interton VC 4000 | Lutro | Mattel HyperScan | Mattel Juice Box | Microsoft Xbox |
-| Milton Bradley Microvision | NEC PC-6000 | Nichibutsu My Vision | Nintendo Pokémon Mini | Nintendo Sufami Turbo |
-| Othello Multivision | Panasonic 3DO | Sammy Atomiswave | ScummVM | Sega Chihiro |
-| Sega Hikaru | Sega Lindbergh | Sega Model 1 | Sega Model 2 | Sega Model 3 |
-| Sega MSU-MD | Sega Naomi 1 | Sega Naomi 2 | Sega ST-V | Sharp MZ-2500 |
-| SNK Neo Geo Pocket | Sony PlayStation Vita | Sport Vii | Super Acan | Texas Instruments TI-99/4A |
-| Tiger Game.com | TimeTop GameKing | TimeTop GameKing 3 | Tomy Tutor | Triforce |
-| Unisonic Champion 2711 | Uzebox | Video Information System | VideoArt | VideoBrain FamilyComputer |
-| VM Labs Nuon | VTech Socrates | VTech V.Smile Baby |  |  |
+| Interton VC 4000 | Juku | Lutro | Mattel HyperScan | Mattel Juice Box |
+| Microsoft Xbox | Milton Bradley Microvision | NEC PC-6000 | Nichibutsu My Vision | Nintendo Pokémon Mini |
+| Nintendo Sufami Turbo | Othello Multivision | Panasonic 3DO | Sammy Atomiswave | ScummVM |
+| Sega Chihiro | Sega Hikaru | Sega Lindbergh | Sega Model 1 | Sega Model 2 |
+| Sega Model 3 | Sega MSU-MD | Sega Naomi 1 | Sega Naomi 2 | Sega ST-V |
+| Sharp MZ-2500 | SNK Neo Geo Pocket | Sony PlayStation Vita | Sport Vii | Super Acan |
+| Texas Instruments TI-99/4A | Tiger Game.com | TimeTop GameKing | TimeTop GameKing 3 | Tomy Tutor |
+| Triforce | Unisonic Champion 2711 | Uzebox | Video Information System | VideoArt |
+| VideoBrain FamilyComputer | VM Labs Nuon | VTech Socrates | VTech V.Smile Baby |  |
