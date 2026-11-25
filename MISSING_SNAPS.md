@@ -1,8 +1,8 @@
 # Missing snaps
 
-Games on the site without a snap, per platform page, as of 2026-11-23. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
+Games on the site without a snap, per platform page, as of 2026-11-25. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**23,703** of **341,414** games have no snap (93.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**23,669** of **341,414** games have no snap (93.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -102,7 +102,6 @@ Games on the site without a snap, per platform page, as of 2026-11-23. Regenerat
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
 | Atari 2600 | atari2600 | 30 | 4,197 | 99 % | Atari_-_2600 |
 | Cambridge Z88 | z88 | 30 | 30 | 0 % | Cambridge_-_Z88 |
-| Processor Technology SOL-20 | sol20 | 27 | 27 | 0 % | Processor_Technology_-_SOL-20 |
 | Sega Game Gear | gamegear | 26 | 1,694 | 98 % | Sega_-_Game_Gear |
 | Robotron KC 85 | kc85 | 26 | 182 | 86 % | Robotron_-_KC_85 |
 | Spectravideo SV-318/SV-328 | spectravideo | 26 | 214 | 88 % | Spectravideo_-_SVI-318_-_SVI-328 |
@@ -129,18 +128,17 @@ Games on the site without a snap, per platform page, as of 2026-11-23. Regenerat
 | Apple I | apple1 | 16 | 80 | 80 % | Apple_-_I |
 | Mattel Aquarius | aquarius | 16 | 60 | 73 % | Mattel_-_Aquarius |
 | Sega Advanced Pico Beena | beena | 16 | 122 | 87 % | Sega_-_Beena |
-| Kaypro | kaypro | 16 | 16 | 0 % | Kaypro_-_Kaypro |
-| Korvet | korvet | 16 | 16 | 0 % | Korvet |
 | Sharp MZ-800 | mz800 | 16 | 16 | 0 % | Sharp_-_MZ-800 |
 | Commodore Amiga CD32 | amigacd32 | 15 | 483 | 97 % | Commodore_-_CD32 |
 | Osborne 1 | osborne1 | 15 | 18 | 17 % | Osborne_-_1 |
 | Sony SMC-777 | smc777 | 15 | 15 | 0 % | Sony_-_SMC-777 |
 | Matra Alice | alice | 14 | 59 | 76 % | Matra_-_Alice |
 | Commodore Amiga CDTV | amigacdtv | 14 | 180 | 92 % | Commodore_-_CDTV |
+| Kaypro | kaypro | 14 | 16 | 12 % | Kaypro_-_Kaypro |
 | Panasonic MSX2+ | msx2+ | 14 | 59 | 76 % | Microsoft_-_MSX2 |
 | Nintendo 64DD | n64dd | 13 | 19 | 32 % | Nintendo_-_Nintendo_64DD |
 | Nintendo 3DS | 3ds | 12 | 153 | 92 % | Nintendo_-_Nintendo_3DS |
-| Pegasus | pegasus | 12 | 12 | 0 % | Technosys_-_Pegasus |
+| Processor Technology SOL-20 | sol20 | 12 | 27 | 56 % | Processor_Technology_-_SOL-20 |
 | VTech V.Smile | vsmile | 12 | 325 | 96 % | VTech_-_V.Smile |
 | Bandai WonderSwan Color | wswanc | 12 | 456 | 97 % | Bandai_-_WonderSwan_Color |
 | Mattel Intellivision | intellivision | 11 | 608 | 98 % | Mattel_-_Intellivision |
@@ -162,6 +160,7 @@ Games on the site without a snap, per platform page, as of 2026-11-23. Regenerat
 | GamePark GP32 | gp32 | 6 | 65 | 91 % | GamePark_-_GP32 |
 | Amstrad GX4000 | gx4000 | 6 | 80 | 92 % | Amstrad_-_GX4000 |
 | Java ME (J2ME) | j2me | 6 | 39 | 85 % | Mobile_-_J2ME |
+| Pegasus | pegasus | 6 | 12 | 50 % | Technosys_-_Pegasus |
 | Olivetti Prodest PC 128S | pro128s | 6 | 35 | 83 % | Olivetti_-_Prodest_PC_128S |
 | Casio PV-1000 | pv1000 | 6 | 48 | 88 % | Casio_-_PV-1000 |
 | Sega 32x | sega32x | 6 | 340 | 98 % | Sega_-_32X |
@@ -172,6 +171,7 @@ Games on the site without a snap, per platform page, as of 2026-11-23. Regenerat
 | Sinclair ZX80 | zx80 | 6 | 6 | 0 % | Sinclair_-_ZX_80 |
 | Arduboy | arduboy | 5 | 392 | 99 % | Arduboy_Inc_-_Arduboy |
 | Nintendo Gamecube | gamecube | 5 | 590 | 99 % | Nintendo_-_GameCube |
+| Korvet | korvet | 5 | 16 | 69 % | Korvet |
 | NEC PC Engine CD | pcenginecd | 5 | 1,297 | 100 % | NEC_-_PC_Engine_CD_-_TurboGrafx-CD |
 | Sega Visual Memory Unit | svmu | 5 | 131 | 96 % | Sega_-_Visual_Memory_Unit |
 | Atari 5200 | atari5200 | 4 | 369 | 99 % | Atari_-_5200 |
