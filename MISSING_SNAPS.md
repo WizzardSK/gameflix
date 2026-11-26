@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-26. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**23,360** of **341,414** games have no snap (93.2 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**23,338** of **341,414** games have no snap (93.2 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -98,24 +98,22 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Commodore VIC-20 | c20 | 37 | 620 | 94 % | Commodore_-_VIC-20 |
 | Tiki 100 | tiki100 | 35 | 82 | 57 % | Tiki_-_Tiki_100 |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
-| Atari 2600 | atari2600 | 30 | 4,197 | 99 % | Atari_-_2600 |
 | Nintendo Virtual Boy | virtualboy | 30 | 256 | 88 % | Nintendo_-_Virtual_Boy |
 | Cambridge Z88 | z88 | 30 | 30 | 0 % | Cambridge_-_Z88 |
-| Sega Game Gear | gamegear | 26 | 1,694 | 98 % | Sega_-_Game_Gear |
+| Atari 2600 | atari2600 | 27 | 4,197 | 99 % | Atari_-_2600 |
 | Robotron KC 85 | kc85 | 26 | 182 | 86 % | Robotron_-_KC_85 |
 | Spectravideo SV-318/SV-328 | spectravideo | 26 | 214 | 88 % | Spectravideo_-_SVI-318_-_SVI-328 |
 | Commodore Plus-4 | cplus4 | 25 | 1,162 | 98 % | Commodore_-_Plus-4 |
+| Sega Game Gear | gamegear | 25 | 1,694 | 99 % | Sega_-_Game_Gear |
 | Panasonic MSX TurboR | msxturbor | 25 | 83 | 70 % | Microsoft_-_MSX2 |
-| Sega Master System | mastersystem | 23 | 1,885 | 99 % | Sega_-_Master_System_-_Mark_III |
 | Bandai RX-78 | rx78 | 23 | 51 | 55 % | Bandai_-_Gundam_RX-78 |
-| Nintendo Game Boy | gb | 22 | 4,699 | 100 % | Nintendo_-_Game_Boy |
 | Sord M5 | m5 | 22 | 67 | 67 % | Sord_-_M5 |
-| Nintendo Super Game Boy | sgb | 22 | 4,699 | 100 % | Nintendo_-_Game_Boy |
 | Mikrosha | mikrosha | 21 | 55 | 62 % | Mikrosha |
 | Sinclair QL | ql | 21 | 27 | 22 % | Sinclair_-_QL |
 | Galaksija | galaxy | 20 | 61 | 67 % | Galaksija |
 | Orao | orao | 20 | 55 | 64 % | PEL_-_Orao |
 | Partner-01.01 | partner | 20 | 75 | 73 % | Partner_-_01.01 |
+| Sega Master System | mastersystem | 19 | 1,885 | 99 % | Sega_-_Master_System_-_Mark_III |
 | Magnavox Odyssey³ | videopacplus | 19 | 83 | 77 % | Philips_-_Videopac |
 | DEC Rainbow 100 | rainbow | 18 | 18 | 0 % | DEC_-_Rainbow_100 |
 | Vector-06C | vector06 | 18 | 18 | 0 % | Vector-06C |
@@ -129,7 +127,9 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Sega Advanced Pico Beena | beena | 16 | 122 | 87 % | Sega_-_Beena |
 | Sharp MZ-800 | mz800 | 16 | 16 | 0 % | Sharp_-_MZ-800 |
 | Commodore Amiga CD32 | amigacd32 | 15 | 483 | 97 % | Commodore_-_CD32 |
+| Nintendo Game Boy | gb | 15 | 4,699 | 100 % | Nintendo_-_Game_Boy |
 | Osborne 1 | osborne1 | 15 | 18 | 17 % | Osborne_-_1 |
+| Nintendo Super Game Boy | sgb | 15 | 4,699 | 100 % | Nintendo_-_Game_Boy |
 | Sony SMC-777 | smc777 | 15 | 15 | 0 % | Sony_-_SMC-777 |
 | Matra Alice | alice | 14 | 59 | 76 % | Matra_-_Alice |
 | Commodore Amiga CDTV | amigacdtv | 14 | 180 | 92 % | Commodore_-_CDTV |
