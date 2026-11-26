@@ -2,17 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-26. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**23,382** of **341,414** games have no snap (93.2 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
-
-## Capture queue
-
-Batches waiting on the capture machine, in the order they run, and how many of their games still have no snap.
-
-| Batch | Snap repo | Games | Still missing | State |
-|---|---|---:|---:|---|
-| vbp | Nintendo_-_Virtual_Boy | 45 | 45 | running |
-
-## Per platform
+**23,366** of **341,414** games have no snap (93.2 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -99,7 +89,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Nintendo DSi | dsi | 47 | 49 | 4 % | Nintendo_-_Nintendo_DSi |
 | Samsung SPC-1000 | spc1000 | 47 | 89 | 47 % | Samsung_-_SPC-1000 |
 | Tesla PMD 85 | pmd85 | 46 | 57 | 19 % | Tesla_-_PMD_85 |
-| Nintendo Virtual Boy | virtualboy | 46 | 256 | 82 % | Nintendo_-_Virtual_Boy |
 | Commodore Amiga CD | amiga1200 | 43 | 625 | 93 % | Commodore_-_Amiga |
 | Atari Jaguar | jaguar | 42 | 480 | 91 % | Atari_-_Jaguar |
 | Nascom | nascom | 42 | 82 | 49 % | Nascom_-_Nascom |
@@ -110,6 +99,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Tiki 100 | tiki100 | 35 | 82 | 57 % | Tiki_-_Tiki_100 |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
 | Atari 2600 | atari2600 | 30 | 4,197 | 99 % | Atari_-_2600 |
+| Nintendo Virtual Boy | virtualboy | 30 | 256 | 88 % | Nintendo_-_Virtual_Boy |
 | Cambridge Z88 | z88 | 30 | 30 | 0 % | Cambridge_-_Z88 |
 | Sega Game Gear | gamegear | 26 | 1,694 | 98 % | Sega_-_Game_Gear |
 | Robotron KC 85 | kc85 | 26 | 182 | 86 % | Robotron_-_KC_85 |
