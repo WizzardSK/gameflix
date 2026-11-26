@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-26. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**23,555** of **341,414** games have no snap (93.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**23,461** of **341,414** games have no snap (93.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -51,7 +51,6 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | MicroBee | mbee | 116 | 710 | 84 % | Applied_Technology_-_MicroBee |
 | Dick Smith Super-80 | super80 | 116 | 137 | 15 % | Dick_Smith_-_Super-80 |
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
-| GCE Vectrex | vectrex | 104 | 325 | 68 % | GCE_-_Vectrex |
 | Nintendo Wii | wii | 101 | 346 | 71 % | Nintendo_-_Wii |
 | APF MP-1000 | apfm1000 | 99 | 142 | 30 % | APF_-_MP-1000 |
 | Panasonic MSX2 | msx2 | 97 | 1,467 | 93 % | Microsoft_-_MSX2 |
@@ -145,6 +144,7 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Casio PV-2000 | pv2000 | 11 | 24 | 54 % | Casio_-_PV-2000 |
 | Ei Pecom 64 | pecom64 | 10 | 10 | 0 % | Pecom_-_64 |
 | Sega SG-1000 | sg1000 | 10 | 458 | 98 % | Sega_-_SG-1000 |
+| GCE Vectrex | vectrex | 10 | 325 | 97 % | GCE_-_Vectrex |
 | Vircon32 | vircon32 | 10 | 66 | 85 % | Vircon32 |
 | Magnavox Odyssey² | odyssey2 | 9 | 353 | 97 % | Magnavox_-_Odyssey2 |
 | Sony Pocket Station | pockstat | 9 | 109 | 92 % | Sony_-_Pocket_Station |
