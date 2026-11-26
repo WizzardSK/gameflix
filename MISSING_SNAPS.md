@@ -2,14 +2,13 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-26. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**23,338** of **341,414** games have no snap (93.2 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,817** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
 | Microsoft MS-DOS | dos | 2,202 | 23,816 | 91 % | DOS |
 | Commodore Amiga | amiga500 | 1,619 | 29,213 | 94 % | Commodore_-_Amiga |
 | Philips CD-i | cdi | 1,572 | 2,976 | 47 % | Philips_-_CD-i |
-| Acorn BBC | bbcmicro | 939 | 2,686 | 65 % | Acorn_-_BBC |
 | Amstrad CPC | amstradcpc | 919 | 14,827 | 94 % | Amstrad_-_CPC |
 | Commodore 64 | c64 | 736 | 63,862 | 99 % | Commodore_-_64 |
 | Coleco Adam | adam | 702 | 1,183 | 41 % | Coleco_-_Adam |
@@ -22,6 +21,7 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Nintendo Game Boy Advance | gba | 440 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
 | VGMPlay | vgmplay | 436 | 3,857 | 89 % | MAME |
 | NEC PC-8800 | pc88 | 421 | 2,074 | 80 % | NEC_-_PC-8001_-_PC-8801 |
+| Acorn BBC | bbcmicro | 418 | 2,686 | 84 % | Acorn_-_BBC |
 | Bally Astrocade | astrocade | 376 | 559 | 33 % | Bally_-_Astrocade |
 | Apple IIGS | apple2gs | 351 | 985 | 64 % | Apple_-_IIGS |
 | Tandy TRS-80 | trs80 | 323 | 590 | 45 % | Tandy_-_TRS-80 |
