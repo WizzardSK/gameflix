@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-26. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,793** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,767** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -72,7 +72,6 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Commodore 128 | c128 | 62 | 100 | 38 % | Commodore_-_128 |
 | Sega Mega Drive | megadrive | 62 | 6,036 | 99 % | Sega_-_Mega_Drive_-_Genesis |
 | Sega SC-3000 | sc3000 | 61 | 79 | 23 % | Sega_-_SG-1000 |
-| Nuova Elettronica Z80-NE | z80ne | 61 | 61 | 0 % | Nuova_Elettronica_-_Z80-NE |
 | Tandy MC-10 | mc10 | 60 | 182 | 67 % | Tandy_-_MC-10 |
 | Nintendo Entertainment System | nes | 60 | 12,159 | 100 % | Nintendo_-_Nintendo_Entertainment_System |
 | Exidy Sorcerer | sorcerer | 60 | 129 | 53 % | Exidy_-_Sorcerer |
@@ -97,6 +96,7 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Apple Lisa | lisa | 39 | 39 | 0 % | Apple_-_Lisa |
 | Commodore VIC-20 | c20 | 37 | 620 | 94 % | Commodore_-_VIC-20 |
 | Tiki 100 | tiki100 | 35 | 82 | 57 % | Tiki_-_Tiki_100 |
+| Nuova Elettronica Z80-NE | z80ne | 35 | 61 | 43 % | Nuova_Elettronica_-_Z80-NE |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
 | Nintendo Virtual Boy | virtualboy | 30 | 256 | 88 % | Nintendo_-_Virtual_Boy |
 | Atari 2600 | atari2600 | 27 | 4,197 | 99 % | Atari_-_2600 |
