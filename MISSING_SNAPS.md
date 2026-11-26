@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-26. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,817** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,793** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -99,7 +99,6 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Tiki 100 | tiki100 | 35 | 82 | 57 % | Tiki_-_Tiki_100 |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
 | Nintendo Virtual Boy | virtualboy | 30 | 256 | 88 % | Nintendo_-_Virtual_Boy |
-| Cambridge Z88 | z88 | 30 | 30 | 0 % | Cambridge_-_Z88 |
 | Atari 2600 | atari2600 | 27 | 4,197 | 99 % | Atari_-_2600 |
 | Robotron KC 85 | kc85 | 26 | 182 | 86 % | Robotron_-_KC_85 |
 | Spectravideo SV-318/SV-328 | spectravideo | 26 | 214 | 88 % | Spectravideo_-_SVI-318_-_SVI-328 |
@@ -168,6 +167,7 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Philips VG-5000 | vg5k | 6 | 68 | 91 % | Philips_-_VG-5000 |
 | Bandai WonderSwan | wswan | 6 | 507 | 99 % | Bandai_-_WonderSwan |
 | Microsoft Xbox 360 | xbox360 | 6 | 143 | 96 % | Microsoft_-_Xbox_360 |
+| Cambridge Z88 | z88 | 6 | 30 | 80 % | Cambridge_-_Z88 |
 | Sinclair ZX80 | zx80 | 6 | 6 | 0 % | Sinclair_-_ZX_80 |
 | Arduboy | arduboy | 5 | 392 | 99 % | Arduboy_Inc_-_Arduboy |
 | Nintendo Gamecube | gamecube | 5 | 590 | 99 % | Nintendo_-_GameCube |
