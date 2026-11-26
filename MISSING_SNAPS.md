@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-26. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**23,389** of **341,414** games have no snap (93.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**23,382** of **341,414** games have no snap (93.2 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,8 +10,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| vbt | Nintendo_-_Virtual_Boy | 45 | 45 | running |
-| nesm | Nintendo_-_Nintendo_Entertainment_System | 61 | 61 | waiting |
+| vbp | Nintendo_-_Virtual_Boy | 45 | 45 | running |
 
 ## Per platform
 
@@ -73,7 +72,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Jupiter Ace | jupace | 74 | 131 | 44 % | Jupiter_Cantab_-_Jupiter_Ace |
 | Atari Lynx | lynx | 72 | 591 | 88 % | Atari_-_Lynx |
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
-| Nintendo Entertainment System | nes | 67 | 12,159 | 99 % | Nintendo_-_Nintendo_Entertainment_System |
 | Elektronika BK | bk | 66 | 186 | 65 % | Elektronika_-_BK |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
 | Nintendo DS | nds | 64 | 1,518 | 96 % | Nintendo_-_Nintendo_DS |
@@ -86,6 +84,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Sega SC-3000 | sc3000 | 61 | 79 | 23 % | Sega_-_SG-1000 |
 | Nuova Elettronica Z80-NE | z80ne | 61 | 61 | 0 % | Nuova_Elettronica_-_Z80-NE |
 | Tandy MC-10 | mc10 | 60 | 182 | 67 % | Tandy_-_MC-10 |
+| Nintendo Entertainment System | nes | 60 | 12,159 | 100 % | Nintendo_-_Nintendo_Entertainment_System |
 | Exidy Sorcerer | sorcerer | 60 | 129 | 53 % | Exidy_-_Sorcerer |
 | Apogee BK-01 | apogee | 59 | 103 | 43 % | Apogee_-_BK-01 |
 | Nintendo Satellaview | satellaview | 59 | 292 | 80 % | Nintendo_-_Satellaview |
