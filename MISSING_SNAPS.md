@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-26. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,767** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,736** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -60,7 +60,6 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Sega Dreamcast | dreamcast | 79 | 2,272 | 97 % | Sega_-_Dreamcast |
 | Sharp MZ-700 | mz700 | 79 | 305 | 74 % | Sharp_-_MZ-700 |
 | Jupiter Ace | jupace | 74 | 131 | 44 % | Jupiter_Cantab_-_Jupiter_Ace |
-| Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
 | Elektronika BK | bk | 66 | 186 | 65 % | Elektronika_-_BK |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
 | Atari Lynx | lynx | 66 | 591 | 89 % | Atari_-_Lynx |
@@ -95,6 +94,7 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Tandy TRS-80 Color Computer | coco | 39 | 227 | 83 % | Tandy_-_TRS-80_Color_Computer |
 | Apple Lisa | lisa | 39 | 39 | 0 % | Apple_-_Lisa |
 | Commodore VIC-20 | c20 | 37 | 620 | 94 % | Commodore_-_VIC-20 |
+| Olivetti Prodest PC 128 | pro128 | 37 | 68 | 46 % | Olivetti_-_Prodest_PC_128 |
 | Tiki 100 | tiki100 | 35 | 82 | 57 % | Tiki_-_Tiki_100 |
 | Nuova Elettronica Z80-NE | z80ne | 35 | 61 | 43 % | Nuova_Elettronica_-_Z80-NE |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
