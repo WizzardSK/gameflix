@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-26. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**23,567** of **341,414** games have no snap (93.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**23,555** of **341,414** games have no snap (93.1 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -62,7 +62,6 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Tatung Einstein | einstein | 81 | 113 | 28 % | Tatung_-_Einstein |
 | Sega Dreamcast | dreamcast | 79 | 2,272 | 97 % | Sega_-_Dreamcast |
 | Sharp MZ-700 | mz700 | 79 | 305 | 74 % | Sharp_-_MZ-700 |
-| Commodore 128 | c128 | 74 | 100 | 26 % | Commodore_-_128 |
 | Jupiter Ace | jupace | 74 | 131 | 44 % | Jupiter_Cantab_-_Jupiter_Ace |
 | Atari Lynx | lynx | 72 | 591 | 88 % | Atari_-_Lynx |
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
@@ -73,6 +72,7 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | FinalBurn Neo | fbneo | 63 | 7,073 | 99 % | MAME |
 | Lviv PK-01 | lviv | 63 | 252 | 75 % | Lviv_-_PK-01 |
 | Sony PlayStation 2 | ps2 | 63 | 2,082 | 97 % | Sony_-_PlayStation_2 |
+| Commodore 128 | c128 | 62 | 100 | 38 % | Commodore_-_128 |
 | Sega Mega Drive | megadrive | 62 | 6,036 | 99 % | Sega_-_Mega_Drive_-_Genesis |
 | Sega SC-3000 | sc3000 | 61 | 79 | 23 % | Sega_-_SG-1000 |
 | Nuova Elettronica Z80-NE | z80ne | 61 | 61 | 0 % | Nuova_Elettronica_-_Z80-NE |
