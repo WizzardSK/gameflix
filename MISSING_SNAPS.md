@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-26. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**23,366** of **341,414** games have no snap (93.2 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**23,360** of **341,414** games have no snap (93.2 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -60,10 +60,10 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Sega Dreamcast | dreamcast | 79 | 2,272 | 97 % | Sega_-_Dreamcast |
 | Sharp MZ-700 | mz700 | 79 | 305 | 74 % | Sharp_-_MZ-700 |
 | Jupiter Ace | jupace | 74 | 131 | 44 % | Jupiter_Cantab_-_Jupiter_Ace |
-| Atari Lynx | lynx | 72 | 591 | 88 % | Atari_-_Lynx |
 | Olivetti Prodest PC 128 | pro128 | 68 | 68 | 0 % | Olivetti_-_Prodest_PC_128 |
 | Elektronika BK | bk | 66 | 186 | 65 % | Elektronika_-_BK |
 | Camputers Lynx | camplynx | 66 | 93 | 29 % | Camputers_-_Lynx |
+| Atari Lynx | lynx | 66 | 591 | 89 % | Atari_-_Lynx |
 | Nintendo DS | nds | 64 | 1,518 | 96 % | Nintendo_-_Nintendo_DS |
 | Nintendo Wii U | wiiu | 64 | 238 | 73 % | Nintendo_-_Wii_U |
 | FinalBurn Neo | fbneo | 63 | 7,073 | 99 % | MAME |
