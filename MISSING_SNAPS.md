@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-26. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,736** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,724** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -115,7 +115,6 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Sega Master System | mastersystem | 19 | 1,885 | 99 % | Sega_-_Master_System_-_Mark_III |
 | Magnavox Odyssey³ | videopacplus | 19 | 83 | 77 % | Philips_-_Videopac |
 | DEC Rainbow 100 | rainbow | 18 | 18 | 0 % | DEC_-_Rainbow_100 |
-| Vector-06C | vector06 | 18 | 18 | 0 % | Vector-06C |
 | Nintendo Family Computer | famicom | 17 | 27 | 37 % | Nintendo_-_Nintendo_Entertainment_System |
 | Memotech MTX | mtx | 17 | 61 | 72 % | Memotech_-_MTX512 |
 | Sharp MZ-2000 | mz2000 | 17 | 19 | 11 % | Sharp_-_MZ-2000 |
@@ -164,6 +163,7 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Casio PV-1000 | pv1000 | 6 | 48 | 88 % | Casio_-_PV-1000 |
 | Sega 32x | sega32x | 6 | 340 | 98 % | Sega_-_32X |
 | Nintendo SNES MSU-1 | snes-msu1 | 6 | 149 | 96 % | Nintendo_-_Super_Nintendo_Entertainment_System |
+| Vector-06C | vector06 | 6 | 18 | 67 % | Vector-06C |
 | Philips VG-5000 | vg5k | 6 | 68 | 91 % | Philips_-_VG-5000 |
 | Bandai WonderSwan | wswan | 6 | 507 | 99 % | Bandai_-_WonderSwan |
 | Microsoft Xbox 360 | xbox360 | 6 | 143 | 96 % | Microsoft_-_Xbox_360 |
