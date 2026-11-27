@@ -29,6 +29,7 @@ zx81,Sinclair ZX81,Sinclair - ZX 81
 zxspectrum,Sinclair ZX Spectrum,Sinclair - ZX Spectrum
 specpls3,Sinclair ZX Spectrum +3,Sinclair - ZX Spectrum +3
 ql,Sinclair QL,Sinclair - QL
+jupace,Jupiter Ace,Jupiter Cantab - Jupiter Ace
 z88,Cambridge Z88,Cambridge - Z88
 amstradcpc,Amstrad CPC,Amstrad - CPC
 gx4000,Amstrad GX4000,Amstrad - GX4000
@@ -140,7 +141,6 @@ trs80,Tandy TRS-80,Tandy - TRS-80
 sorcerer,Exidy Sorcerer,Exidy - Sorcerer
 z80ne,Nuova Elettronica Z80-NE,Nuova Elettronica - Z80-NE
 osborne1,Osborne 1,Osborne - 1
-jupace,Jupiter Ace,Jupiter Cantab - Jupiter Ace
 nascom,Nascom,Nascom - Nascom
 abc80,Luxor ABC 80,Luxor - ABC 80
 kaypro,Kaypro,Kaypro - Kaypro
