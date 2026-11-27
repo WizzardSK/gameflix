@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-27. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,703** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,700** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -178,7 +178,6 @@ Games on the site without a snap, per platform page, as of 2026-11-27. Regenerat
 | Casio Loopy | loopy | 4 | 24 | 83 % | Casio_-_Loopy |
 | M&D Monon Color | mononcolor | 4 | 20 | 80 % | M-D_-_Monon_Color |
 | SNK Neo Geo CD | neogeocd | 4 | 205 | 98 % | SNK_-_Neo_Geo_CD |
-| Samsung SPC-1500 | spc1500 | 4 | 4 | 0 % | Samsung_-_SPC-1500 |
 | CHIP-8 | chip8 | 3 | 71 | 96 % | CHIP-8 |
 | VTech CreatiVision | crvision | 3 | 85 | 96 % | VTech_-_CreatiVision |
 | Nintendo Family Disk System | fds | 3 | 816 | 100 % | Nintendo_-_Family_Computer_Disk_System |
@@ -199,6 +198,7 @@ Games on the site without a snap, per platform page, as of 2026-11-27. Regenerat
 | SNK Neo Geo AES | neogeo | 1 | 167 | 99 % | SNK_-_Neo_Geo |
 | NEC PC-FX | pcfx | 1 | 123 | 99 % | NEC_-_PC-FX |
 | Sega PICO | pico | 1 | 725 | 100 % | Sega_-_PICO |
+| Samsung SPC-1500 | spc1500 | 1 | 4 | 75 % | Samsung_-_SPC-1500 |
 | NEC PC Engine 2 | supergrafx | 1 | 16 | 94 % | NEC_-_PC_Engine_SuperGrafx |
 | Sharp X1 | x1 | 1 | 446 | 100 % | Sharp_-_X1 |
 | Sinclair ZX80 | zx80 | 1 | 6 | 83 % | Sinclair_-_ZX_80 |
