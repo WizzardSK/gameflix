@@ -1,8 +1,8 @@
 # Missing snaps
 
-Games on the site without a snap, per platform page, as of 2026-11-27. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
+Games on the site without a snap, per platform page, as of 2026-11-28. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,700** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,690** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -140,7 +140,6 @@ Games on the site without a snap, per platform page, as of 2026-11-27. Regenerat
 | Atari Jaguar CD | jaguarcd | 11 | 36 | 69 % | Atari_-_Jaguar |
 | Sharp MZ-800 | mz800 | 11 | 16 | 31 % | Sharp_-_MZ-800 |
 | Casio PV-2000 | pv2000 | 11 | 24 | 54 % | Casio_-_PV-2000 |
-| Ei Pecom 64 | pecom64 | 10 | 10 | 0 % | Pecom_-_64 |
 | Sega SG-1000 | sg1000 | 10 | 458 | 98 % | Sega_-_SG-1000 |
 | GCE Vectrex | vectrex | 10 | 325 | 97 % | GCE_-_Vectrex |
 | Vircon32 | vircon32 | 10 | 66 | 85 % | Vircon32 |
@@ -203,19 +202,20 @@ Games on the site without a snap, per platform page, as of 2026-11-27. Regenerat
 | Sharp X1 | x1 | 1 | 446 | 100 % | Sharp_-_X1 |
 | Sinclair ZX80 | zx80 | 1 | 6 | 83 % | Sinclair_-_ZX_80 |
 
-## Complete (60)
+## Complete (61)
 
 | | | | | |
 |---|---|---|---|---|
 | Amstrad PCW | Atari VCS | Atari XEGS | Bandai Playdia | Bandai Super Vision 8000 |
-| ChaiLove | Commodore VIC-10 | Emerson Arcadia 2001 | Entex Select-A-Game | Epoch Cassette Vision |
-| Epoch Game Pocket Computer | Exel EXL 100 | Gaelco PowerVR | Gakken Compact Vision TV Boy | Hanimex Pencil II |
-| IBM PCjr | Interton VC 4000 | Juku | Lutro | Mattel HyperScan |
-| Mattel Juice Box | Microsoft Xbox | Milton Bradley Microvision | NEC PC-6000 | Nichibutsu My Vision |
-| Nintendo Pokémon Mini | Nintendo Sufami Turbo | Othello Multivision | Panasonic 3DO | Sammy Atomiswave |
-| ScummVM | Sega Chihiro | Sega Hikaru | Sega Lindbergh | Sega Model 1 |
-| Sega Model 2 | Sega Model 3 | Sega MSU-MD | Sega Naomi 1 | Sega Naomi 2 |
-| Sega ST-V | Sharp MZ-2500 | SNK Neo Geo Pocket | Sony PlayStation Vita | Sport Vii |
-| Super Acan | Texas Instruments TI-99/4A | Tiger Game.com | TimeTop GameKing | TimeTop GameKing 3 |
-| Tomy Tutor | Triforce | Unisonic Champion 2711 | Uzebox | Video Information System |
-| VideoArt | VideoBrain FamilyComputer | VM Labs Nuon | VTech Socrates | VTech V.Smile Baby |
+| ChaiLove | Commodore VIC-10 | Ei Pecom 64 | Emerson Arcadia 2001 | Entex Select-A-Game |
+| Epoch Cassette Vision | Epoch Game Pocket Computer | Exel EXL 100 | Gaelco PowerVR | Gakken Compact Vision TV Boy |
+| Hanimex Pencil II | IBM PCjr | Interton VC 4000 | Juku | Lutro |
+| Mattel HyperScan | Mattel Juice Box | Microsoft Xbox | Milton Bradley Microvision | NEC PC-6000 |
+| Nichibutsu My Vision | Nintendo Pokémon Mini | Nintendo Sufami Turbo | Othello Multivision | Panasonic 3DO |
+| Sammy Atomiswave | ScummVM | Sega Chihiro | Sega Hikaru | Sega Lindbergh |
+| Sega Model 1 | Sega Model 2 | Sega Model 3 | Sega MSU-MD | Sega Naomi 1 |
+| Sega Naomi 2 | Sega ST-V | Sharp MZ-2500 | SNK Neo Geo Pocket | Sony PlayStation Vita |
+| Sport Vii | Super Acan | Texas Instruments TI-99/4A | Tiger Game.com | TimeTop GameKing |
+| TimeTop GameKing 3 | Tomy Tutor | Triforce | Unisonic Champion 2711 | Uzebox |
+| Video Information System | VideoArt | VideoBrain FamilyComputer | VM Labs Nuon | VTech Socrates |
+| VTech V.Smile Baby |  |  |  |  |
