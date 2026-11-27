@@ -1,8 +1,8 @@
 # Missing snaps
 
-Games on the site without a snap, per platform page, as of 2026-11-26. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
+Games on the site without a snap, per platform page, as of 2026-11-27. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,722** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,717** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -123,7 +123,6 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Apple I | apple1 | 16 | 80 | 80 % | Apple_-_I |
 | Mattel Aquarius | aquarius | 16 | 60 | 73 % | Mattel_-_Aquarius |
 | Sega Advanced Pico Beena | beena | 16 | 122 | 87 % | Sega_-_Beena |
-| Sharp MZ-800 | mz800 | 16 | 16 | 0 % | Sharp_-_MZ-800 |
 | Commodore Amiga CD32 | amigacd32 | 15 | 483 | 97 % | Commodore_-_CD32 |
 | Nintendo Game Boy | gb | 15 | 4,699 | 100 % | Nintendo_-_Game_Boy |
 | Osborne 1 | osborne1 | 15 | 18 | 17 % | Osborne_-_1 |
@@ -139,6 +138,7 @@ Games on the site without a snap, per platform page, as of 2026-11-26. Regenerat
 | Bandai WonderSwan Color | wswanc | 12 | 456 | 97 % | Bandai_-_WonderSwan_Color |
 | Mattel Intellivision | intellivision | 11 | 608 | 98 % | Mattel_-_Intellivision |
 | Atari Jaguar CD | jaguarcd | 11 | 36 | 69 % | Atari_-_Jaguar |
+| Sharp MZ-800 | mz800 | 11 | 16 | 31 % | Sharp_-_MZ-800 |
 | Casio PV-2000 | pv2000 | 11 | 24 | 54 % | Casio_-_PV-2000 |
 | Ei Pecom 64 | pecom64 | 10 | 10 | 0 % | Pecom_-_64 |
 | Sega SG-1000 | sg1000 | 10 | 458 | 98 % | Sega_-_SG-1000 |
