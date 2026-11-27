@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-27. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,717** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,712** of **341,414** games have no snap (93.3 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -168,7 +168,6 @@ Games on the site without a snap, per platform page, as of 2026-11-27. Regenerat
 | Bandai WonderSwan | wswan | 6 | 507 | 99 % | Bandai_-_WonderSwan |
 | Microsoft Xbox 360 | xbox360 | 6 | 143 | 96 % | Microsoft_-_Xbox_360 |
 | Cambridge Z88 | z88 | 6 | 30 | 80 % | Cambridge_-_Z88 |
-| Sinclair ZX80 | zx80 | 6 | 6 | 0 % | Sinclair_-_ZX_80 |
 | Arduboy | arduboy | 5 | 392 | 99 % | Arduboy_Inc_-_Arduboy |
 | Nintendo Gamecube | gamecube | 5 | 590 | 99 % | Nintendo_-_GameCube |
 | Korvet | korvet | 5 | 16 | 69 % | Korvet |
@@ -202,6 +201,7 @@ Games on the site without a snap, per platform page, as of 2026-11-27. Regenerat
 | Sega PICO | pico | 1 | 725 | 100 % | Sega_-_PICO |
 | NEC PC Engine 2 | supergrafx | 1 | 16 | 94 % | NEC_-_PC_Engine_SuperGrafx |
 | Sharp X1 | x1 | 1 | 446 | 100 % | Sharp_-_X1 |
+| Sinclair ZX80 | zx80 | 1 | 6 | 83 % | Sinclair_-_ZX_80 |
 
 ## Complete (60)
 
