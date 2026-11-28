@@ -2,17 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-28. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,485** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
-
-## Capture queue
-
-Batches waiting on the capture machine, in the order they run, and how many of their games still have no snap.
-
-| Batch | Snap repo | Games | Still missing | State |
-|---|---|---:|---:|---|
-| csppc88 | NEC_-_PC-8001_-_PC-8801 | 363 | 363 | running |
-
-## Per platform
+**22,355** of **341,414** games have no snap (93.5 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -30,7 +20,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | IBM PC/AT 5170 | ibm5170 | 447 | 879 | 49 % | DOS |
 | Nintendo Game Boy Advance | gba | 440 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
 | VGMPlay | vgmplay | 436 | 3,857 | 89 % | MAME |
-| NEC PC-8800 | pc88 | 420 | 2,074 | 80 % | NEC_-_PC-8001_-_PC-8801 |
 | Acorn BBC | bbcmicro | 418 | 2,686 | 84 % | Acorn_-_BBC |
 | Bally Astrocade | astrocade | 376 | 559 | 33 % | Bally_-_Astrocade |
 | Apple IIGS | apple2gs | 351 | 985 | 64 % | Apple_-_IIGS |
@@ -40,6 +29,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Atari ST | atarist | 312 | 5,952 | 95 % | Atari_-_ST |
 | Panasonic MSX1 | msx1 | 297 | 5,021 | 94 % | Microsoft_-_MSX |
 | MAME | mame | 296 | 20,130 | 99 % | MAME |
+| NEC PC-8800 | pc88 | 290 | 2,074 | 86 % | NEC_-_PC-8001_-_PC-8801 |
 | Dragon 32/64 | dragon64 | 251 | 1,094 | 77 % | Dragon_-_Dragon_64 |
 | Sharp X68000 | x68000 | 241 | 3,153 | 92 % | Sharp_-_X68000 |
 | Thomson MO/TO | thomson | 232 | 1,959 | 88 % | Thomson_-_MOTO |
