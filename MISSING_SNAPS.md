@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-28. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,680** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,668** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -127,7 +127,6 @@ Games on the site without a snap, per platform page, as of 2026-11-28. Regenerat
 | Nintendo Game Boy | gb | 15 | 4,699 | 100 % | Nintendo_-_Game_Boy |
 | Osborne 1 | osborne1 | 15 | 18 | 17 % | Osborne_-_1 |
 | Nintendo Super Game Boy | sgb | 15 | 4,699 | 100 % | Nintendo_-_Game_Boy |
-| Sony SMC-777 | smc777 | 15 | 15 | 0 % | Sony_-_SMC-777 |
 | Matra Alice | alice | 14 | 59 | 76 % | Matra_-_Alice |
 | Commodore Amiga CDTV | amigacdtv | 14 | 180 | 92 % | Commodore_-_CDTV |
 | Panasonic MSX2+ | msx2+ | 14 | 59 | 76 % | Microsoft_-_MSX2 |
@@ -184,6 +183,7 @@ Games on the site without a snap, per platform page, as of 2026-11-28. Regenerat
 | DEC PDP-1 | pdp1 | 3 | 3 | 0 % | PDP-1 |
 | Sanyo PHC-25 | phc25 | 3 | 27 | 89 % | Sanyo_-_PHC-25 |
 | Epoch Super Casette Vision | scv | 3 | 94 | 97 % | Epoch_-_Super_Cassette_Vision |
+| Sony SMC-777 | smc777 | 3 | 15 | 80 % | Sony_-_SMC-777 |
 | Adventure Vision | advision | 2 | 14 | 86 % | Entex_-_Adventure_Vision |
 | Coleco Colecovision | colecovision | 2 | 728 | 100 % | Coleco_-_ColecoVision |
 | Commander X16 | commanderx16 | 2 | 9 | 78 % | Commander_-_X16 |
