@@ -2,7 +2,19 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-28. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,668** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,616** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+
+## Capture queue
+
+Batches waiting on the capture machine, in the order they run, and how many of their games still have no snap.
+
+| Batch | Snap repo | Games | Still missing | State |
+|---|---|---:|---:|---|
+| csppc80 | NEC_-_PC-8001_-_PC-8801 | 145 | 145 | running |
+| cspsc3k | Sega_-_SG-1000 | 47 | 47 | waiting |
+| csprx78 | Bandai_-_Gundam_RX-78 | 21 | 21 | waiting |
+
+## Per platform
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -34,13 +46,13 @@ Games on the site without a snap, per platform page, as of 2026-11-28. Regenerat
 | Sharp X68000 | x68000 | 241 | 3,153 | 92 % | Sharp_-_X68000 |
 | Thomson MO/TO | thomson | 232 | 1,959 | 88 % | Thomson_-_MOTO |
 | Acorn Electron | electron | 223 | 865 | 74 % | Acorn_-_Electron |
-| Fujitsu Micro 7 | fm7 | 204 | 752 | 73 % | Fujitsu_-_Micro_7 |
 | Sony PlayStation 3 | ps3 | 194 | 4,093 | 95 % | Sony_-_PlayStation_3 |
 | Nintendo Game Boy Color | gbc | 185 | 4,961 | 96 % | Nintendo_-_Game_Boy_Color |
 | Apple Macintosh | macintosh | 184 | 325 | 43 % | Apple_-_Macintosh |
 | Nintendo Super NES | snes | 181 | 5,898 | 97 % | Nintendo_-_Super_Nintendo_Entertainment_System |
 | Videoton TV Computer | tvc | 174 | 952 | 82 % | Enterprise_-_Enterprise |
 | IBM PC 5150 | ibm5150 | 155 | 700 | 78 % | DOS |
+| Fujitsu Micro 7 | fm7 | 152 | 752 | 80 % | Fujitsu_-_Micro_7 |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
