@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-28. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,690** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,680** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -92,13 +92,13 @@ Games on the site without a snap, per platform page, as of 2026-11-28. Regenerat
 | Nascom | nascom | 42 | 82 | 49 % | Nascom_-_Nascom |
 | Apple III | apple3 | 40 | 148 | 73 % | Apple_-_III |
 | Tandy TRS-80 Color Computer | coco | 39 | 227 | 83 % | Tandy_-_TRS-80_Color_Computer |
-| Apple Lisa | lisa | 39 | 39 | 0 % | Apple_-_Lisa |
 | Commodore VIC-20 | c20 | 37 | 620 | 94 % | Commodore_-_VIC-20 |
 | Olivetti Prodest PC 128 | pro128 | 37 | 68 | 46 % | Olivetti_-_Prodest_PC_128 |
 | Tiki 100 | tiki100 | 35 | 82 | 57 % | Tiki_-_Tiki_100 |
 | Nuova Elettronica Z80-NE | z80ne | 35 | 61 | 43 % | Nuova_Elettronica_-_Z80-NE |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
 | Nintendo Virtual Boy | virtualboy | 30 | 256 | 88 % | Nintendo_-_Virtual_Boy |
+| Apple Lisa | lisa | 29 | 39 | 26 % | Apple_-_Lisa |
 | Atari 2600 | atari2600 | 27 | 4,197 | 99 % | Atari_-_2600 |
 | Robotron KC 85 | kc85 | 26 | 182 | 86 % | Robotron_-_KC_85 |
 | Spectravideo SV-318/SV-328 | spectravideo | 26 | 214 | 88 % | Spectravideo_-_SVI-318_-_SVI-328 |
