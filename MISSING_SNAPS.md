@@ -2,17 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-28. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,542** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
-
-## Capture queue
-
-Batches waiting on the capture machine, in the order they run, and how many of their games still have no snap.
-
-| Batch | Snap repo | Games | Still missing | State |
-|---|---|---:|---:|---|
-| cspfm7t | Fujitsu_-_Micro_7 | 78 | 78 | running |
-
-## Per platform
+**22,493** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -50,7 +40,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Nintendo Super NES | snes | 181 | 5,898 | 97 % | Nintendo_-_Super_Nintendo_Entertainment_System |
 | Videoton TV Computer | tvc | 174 | 952 | 82 % | Enterprise_-_Enterprise |
 | IBM PC 5150 | ibm5150 | 155 | 700 | 78 % | DOS |
-| Fujitsu Micro 7 | fm7 | 152 | 752 | 80 % | Fujitsu_-_Micro_7 |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
 | Compucolor II | compclr2 | 126 | 220 | 43 % | Compucolor_-_Compucolor_II |
@@ -61,6 +50,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Dick Smith Super-80 | super80 | 116 | 137 | 15 % | Dick_Smith_-_Super-80 |
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
 | NEC PC-8000 | pc80 | 110 | 176 | 38 % | NEC_-_PC-8001_-_PC-8801 |
+| Fujitsu Micro 7 | fm7 | 103 | 752 | 86 % | Fujitsu_-_Micro_7 |
 | Nintendo Wii | wii | 101 | 346 | 71 % | Nintendo_-_Wii |
 | APF MP-1000 | apfm1000 | 99 | 142 | 30 % | APF_-_MP-1000 |
 | Panasonic MSX2 | msx2 | 97 | 1,467 | 93 % | Microsoft_-_MSX2 |
