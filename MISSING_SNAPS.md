@@ -2,7 +2,17 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-28. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,493** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,485** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+
+## Capture queue
+
+Batches waiting on the capture machine, in the order they run, and how many of their games still have no snap.
+
+| Batch | Snap repo | Games | Still missing | State |
+|---|---|---:|---:|---|
+| csppc88 | NEC_-_PC-8001_-_PC-8801 | 363 | 363 | running |
+
+## Per platform
 
 | Platform | Page | Missing | Games | Covered | Snap repos |
 |---|---|---:|---:|---:|---|
@@ -50,10 +60,10 @@ Games on the site without a snap, per platform page, as of 2026-11-28. Regenerat
 | Dick Smith Super-80 | super80 | 116 | 137 | 15 % | Dick_Smith_-_Super-80 |
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
 | NEC PC-8000 | pc80 | 110 | 176 | 38 % | NEC_-_PC-8001_-_PC-8801 |
-| Fujitsu Micro 7 | fm7 | 103 | 752 | 86 % | Fujitsu_-_Micro_7 |
 | Nintendo Wii | wii | 101 | 346 | 71 % | Nintendo_-_Wii |
 | APF MP-1000 | apfm1000 | 99 | 142 | 30 % | APF_-_MP-1000 |
 | Panasonic MSX2 | msx2 | 97 | 1,467 | 93 % | Microsoft_-_MSX2 |
+| Fujitsu Micro 7 | fm7 | 95 | 752 | 87 % | Fujitsu_-_Micro_7 |
 | Palm OS | palm | 88 | 269 | 67 % | Mobile_-_Palm_OS_-Digital- |
 | Commodore CBM-II | cbm2 | 84 | 139 | 40 % | Commodore_-_CBM-II |
 | Tatung Einstein | einstein | 81 | 113 | 28 % | Tatung_-_Einstein |
