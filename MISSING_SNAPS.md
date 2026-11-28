@@ -2,7 +2,7 @@
 
 Games on the site without a snap, per platform page, as of 2026-11-28. Regenerate with `python3 scripts/missing_snaps.py <clone of wizzardsk.github.io>`.
 
-**22,616** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
+**22,542** of **341,414** games have no snap (93.4 % covered). The same table, sortable by any column: [wizzardsk.github.io/missing.html](https://wizzardsk.github.io/missing.html).
 
 ## Capture queue
 
@@ -10,9 +10,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 
 | Batch | Snap repo | Games | Still missing | State |
 |---|---|---:|---:|---|
-| csppc80 | NEC_-_PC-8001_-_PC-8801 | 145 | 145 | running |
-| cspsc3k | Sega_-_SG-1000 | 47 | 47 | waiting |
-| csprx78 | Bandai_-_Gundam_RX-78 | 21 | 21 | waiting |
+| cspfm7t | Fujitsu_-_Micro_7 | 78 | 78 | running |
 
 ## Per platform
 
@@ -32,7 +30,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | IBM PC/AT 5170 | ibm5170 | 447 | 879 | 49 % | DOS |
 | Nintendo Game Boy Advance | gba | 440 | 5,746 | 92 % | Nintendo_-_Game_Boy_Advance |
 | VGMPlay | vgmplay | 436 | 3,857 | 89 % | MAME |
-| NEC PC-8800 | pc88 | 421 | 2,074 | 80 % | NEC_-_PC-8001_-_PC-8801 |
+| NEC PC-8800 | pc88 | 420 | 2,074 | 80 % | NEC_-_PC-8001_-_PC-8801 |
 | Acorn BBC | bbcmicro | 418 | 2,686 | 84 % | Acorn_-_BBC |
 | Bally Astrocade | astrocade | 376 | 559 | 33 % | Bally_-_Astrocade |
 | Apple IIGS | apple2gs | 351 | 985 | 64 % | Apple_-_IIGS |
@@ -54,7 +52,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | IBM PC 5150 | ibm5150 | 155 | 700 | 78 % | DOS |
 | Fujitsu Micro 7 | fm7 | 152 | 752 | 80 % | Fujitsu_-_Micro_7 |
 | Enterprise 64/128 | enterprise | 145 | 217 | 33 % | Enterprise_-_Enterprise |
-| NEC PC-8000 | pc80 | 145 | 176 | 18 % | NEC_-_PC-8001_-_PC-8801 |
 | Orion 128 | orion128 | 136 | 195 | 30 % | Orion_-_128 |
 | Compucolor II | compclr2 | 126 | 220 | 43 % | Compucolor_-_Compucolor_II |
 | Nintendo 64 | n64 | 124 | 2,266 | 95 % | Nintendo_-_Nintendo_64 |
@@ -63,6 +60,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | MicroBee | mbee | 116 | 710 | 84 % | Applied_Technology_-_MicroBee |
 | Dick Smith Super-80 | super80 | 116 | 137 | 15 % | Dick_Smith_-_Super-80 |
 | Sinclair ZX81 | zx81 | 115 | 532 | 78 % | Sinclair_-_ZX_81 |
+| NEC PC-8000 | pc80 | 110 | 176 | 38 % | NEC_-_PC-8001_-_PC-8801 |
 | Nintendo Wii | wii | 101 | 346 | 71 % | Nintendo_-_Wii |
 | APF MP-1000 | apfm1000 | 99 | 142 | 30 % | APF_-_MP-1000 |
 | Panasonic MSX2 | msx2 | 97 | 1,467 | 93 % | Microsoft_-_MSX2 |
@@ -82,7 +80,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Sony PlayStation 2 | ps2 | 63 | 2,082 | 97 % | Sony_-_PlayStation_2 |
 | Commodore 128 | c128 | 62 | 100 | 38 % | Commodore_-_128 |
 | Sega Mega Drive | megadrive | 62 | 6,036 | 99 % | Sega_-_Mega_Drive_-_Genesis |
-| Sega SC-3000 | sc3000 | 61 | 79 | 23 % | Sega_-_SG-1000 |
 | Tandy MC-10 | mc10 | 60 | 182 | 67 % | Tandy_-_MC-10 |
 | Nintendo Entertainment System | nes | 60 | 12,159 | 100 % | Nintendo_-_Nintendo_Entertainment_System |
 | Exidy Sorcerer | sorcerer | 60 | 129 | 53 % | Exidy_-_Sorcerer |
@@ -106,6 +103,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Tandy TRS-80 Color Computer | coco | 39 | 227 | 83 % | Tandy_-_TRS-80_Color_Computer |
 | Commodore VIC-20 | c20 | 37 | 620 | 94 % | Commodore_-_VIC-20 |
 | Olivetti Prodest PC 128 | pro128 | 37 | 68 | 46 % | Olivetti_-_Prodest_PC_128 |
+| Sega SC-3000 | sc3000 | 35 | 79 | 56 % | Sega_-_SG-1000 |
 | Tiki 100 | tiki100 | 35 | 82 | 57 % | Tiki_-_Tiki_100 |
 | Nuova Elettronica Z80-NE | z80ne | 35 | 61 | 43 % | Nuova_Elettronica_-_Z80-NE |
 | Namco System 246/256 | namco2x6 | 32 | 57 | 44 % | MAME |
@@ -117,7 +115,6 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Commodore Plus-4 | cplus4 | 25 | 1,162 | 98 % | Commodore_-_Plus-4 |
 | Sega Game Gear | gamegear | 25 | 1,694 | 99 % | Sega_-_Game_Gear |
 | Panasonic MSX TurboR | msxturbor | 25 | 83 | 70 % | Microsoft_-_MSX2 |
-| Bandai RX-78 | rx78 | 23 | 51 | 55 % | Bandai_-_Gundam_RX-78 |
 | Sord M5 | m5 | 22 | 67 | 67 % | Sord_-_M5 |
 | Mikrosha | mikrosha | 21 | 55 | 62 % | Mikrosha |
 | Sinclair QL | ql | 21 | 27 | 22 % | Sinclair_-_QL |
@@ -151,6 +148,7 @@ Batches waiting on the capture machine, in the order they run, and how many of t
 | Atari Jaguar CD | jaguarcd | 11 | 36 | 69 % | Atari_-_Jaguar |
 | Sharp MZ-800 | mz800 | 11 | 16 | 31 % | Sharp_-_MZ-800 |
 | Casio PV-2000 | pv2000 | 11 | 24 | 54 % | Casio_-_PV-2000 |
+| Bandai RX-78 | rx78 | 11 | 51 | 78 % | Bandai_-_Gundam_RX-78 |
 | Sega SG-1000 | sg1000 | 10 | 458 | 98 % | Sega_-_SG-1000 |
 | GCE Vectrex | vectrex | 10 | 325 | 97 % | GCE_-_Vectrex |
 | Vircon32 | vircon32 | 10 | 66 | 85 % | Vircon32 |
